@@ -1,0 +1,73 @@
+{
+  "schemaVersion": "d1-run/1",
+  "evaluatorVersion": "0.1.0",
+  "runId": "stage5-C-01-NOT_RUN",
+  "case": {
+    "caseId": "C-01",
+    "caseType": "C",
+    "title": "GitHub Copilot Free 50 chat requests 说法来源关系",
+    "question": "关于 GitHub Copilot Free 每月包含 2,000 次代码补全和 50 次 chat requests 的几条说法，哪些是独立来源，哪些只是同一作者或同一文章的转载？",
+    "questionSha256": "a00babf0802eba93d6957cfbd35ec3e3eb99157812df749dc69042e0d411b99d",
+    "casePath": "cases/C/C-01/case.md",
+    "referencePath": "cases/C/C-01/reference.md",
+    "caseSha256": "af9241ea0698fc47517afbe311cbd4d355669733859f1849b3ee1065fa658843",
+    "referenceSha256": "89da04506f36d6636dbfbf1269fb53ad6abe5759a32a7fdc6c8e72e10c63a5c6",
+    "referenceStatus": "待人工核实",
+    "confirmedBy": null,
+    "confirmedAt": null
+  },
+  "submission": {
+    "runAt": "2026-10-24T15:04:58.536Z",
+    "intent": "objective",
+    "question": "关于 GitHub Copilot Free 每月包含 2,000 次代码补全和 50 次 chat requests 的几条说法，哪些是独立来源，哪些只是同一作者或同一文章的转载？",
+    "questionSha256": "a00babf0802eba93d6957cfbd35ec3e3eb99157812df749dc69042e0d411b99d"
+  },
+  "execution": "NOT_RUN",
+  "system": {
+    "investigationId": null,
+    "snapshotId": null,
+    "snapshotVersion": null,
+    "snapshotGeneratedAt": null,
+    "contractVersion": null,
+    "appVersion": "0.1.0",
+    "nodeVersion": "v24.20.0",
+    "readOnly": true
+  },
+  "snapshot": null,
+  "answers": [],
+  "adviceCount": null,
+  "snapshotSha256": null,
+  "checks": [
+    {
+      "id": "SYSTEM_RUN",
+      "status": "NOT_RUN",
+      "message": "真实调查未运行",
+      "details": "正式调查 handler 仍返回 unavailable('investigation orchestration')（PROVIDER_NOT_CONFIGURED）；retrieval/identity 默认不可用；.env 注明真实适配器未实现。无 investigation ID/snapshot ID，未提交。"
+    }
+  ],
+  "independentOrigins": [],
+  "issues": [
+    {
+      "id": "SYSTEM_RUN",
+      "checkId": "SYSTEM_RUN",
+      "severity": "blocking",
+      "owner": "甲",
+      "title": "正式调查模块未接入，无法产生真实 investigation/snapshot",
+      "reproduction": "运行 npm run d1:evaluate -- --case <ID> --not-run --reason <具体阻塞>",
+      "expected": "使用正式 API/Worker 提交问题，得到真实 investigation ID、终态和 snapshot ID",
+      "actual": "正式调查 handler 仍返回 unavailable('investigation orchestration')（PROVIDER_NOT_CONFIGURED）；retrieval/identity 默认不可用；.env 注明真实适配器未实现。无 investigation ID/snapshot ID，未提交。",
+      "evidence": "src/server/investigation/handler.ts 的 unavailable('investigation orchestration')；.env 注明真实适配器未实现",
+      "status": "open"
+    }
+  ],
+  "review": {
+    "status": "NOT_REVIEWED",
+    "reviewer": null,
+    "reviewedAt": null,
+    "opinionPath": null
+  },
+  "verdict": "NOT_RUN",
+  "notes": [
+    "NOT_RUN：没有模拟调查结果。"
+  ]
+}

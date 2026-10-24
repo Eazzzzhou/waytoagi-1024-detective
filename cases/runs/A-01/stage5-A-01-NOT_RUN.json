@@ -1,0 +1,73 @@
+{
+  "schemaVersion": "d1-run/1",
+  "evaluatorVersion": "0.1.0",
+  "runId": "stage5-A-01-NOT_RUN",
+  "case": {
+    "caseId": "A-01",
+    "caseType": "A",
+    "title": "Amazon Q Developer Free Tier 额度",
+    "question": "Amazon Q Developer 的免费版（Free Tier）额度是多少？按月重置、按次消耗，还是一次性额度？",
+    "questionSha256": "dce259e238cc27e4b99bf2e4cdbb568d22a590da94c8b32e6c1dadee2838ea97",
+    "casePath": "cases/A/A-01/case.md",
+    "referencePath": "cases/A/A-01/reference.md",
+    "caseSha256": "a50fd4030e468289419e37e7d4f68257e7fdfd6d3ea520ddba5fda3f8cc73813",
+    "referenceSha256": "c2ba4154382afbfc6b850c04fbbb99851edc06dc3f59eadbfc91e054e719034a",
+    "referenceStatus": "待人工核实",
+    "confirmedBy": null,
+    "confirmedAt": null
+  },
+  "submission": {
+    "runAt": "2026-10-24T15:04:57.506Z",
+    "intent": "objective",
+    "question": "Amazon Q Developer 的免费版（Free Tier）额度是多少？按月重置、按次消耗，还是一次性额度？",
+    "questionSha256": "dce259e238cc27e4b99bf2e4cdbb568d22a590da94c8b32e6c1dadee2838ea97"
+  },
+  "execution": "NOT_RUN",
+  "system": {
+    "investigationId": null,
+    "snapshotId": null,
+    "snapshotVersion": null,
+    "snapshotGeneratedAt": null,
+    "contractVersion": null,
+    "appVersion": "0.1.0",
+    "nodeVersion": "v24.20.0",
+    "readOnly": true
+  },
+  "snapshot": null,
+  "answers": [],
+  "adviceCount": null,
+  "snapshotSha256": null,
+  "checks": [
+    {
+      "id": "SYSTEM_RUN",
+      "status": "NOT_RUN",
+      "message": "真实调查未运行",
+      "details": "正式调查 handler 仍返回 unavailable('investigation orchestration')（PROVIDER_NOT_CONFIGURED）；retrieval/identity 默认不可用；.env 注明真实适配器未实现。无 investigation ID/snapshot ID，未提交。"
+    }
+  ],
+  "independentOrigins": [],
+  "issues": [
+    {
+      "id": "SYSTEM_RUN",
+      "checkId": "SYSTEM_RUN",
+      "severity": "blocking",
+      "owner": "甲",
+      "title": "正式调查模块未接入，无法产生真实 investigation/snapshot",
+      "reproduction": "运行 npm run d1:evaluate -- --case <ID> --not-run --reason <具体阻塞>",
+      "expected": "使用正式 API/Worker 提交问题，得到真实 investigation ID、终态和 snapshot ID",
+      "actual": "正式调查 handler 仍返回 unavailable('investigation orchestration')（PROVIDER_NOT_CONFIGURED）；retrieval/identity 默认不可用；.env 注明真实适配器未实现。无 investigation ID/snapshot ID，未提交。",
+      "evidence": "src/server/investigation/handler.ts 的 unavailable('investigation orchestration')；.env 注明真实适配器未实现",
+      "status": "open"
+    }
+  ],
+  "review": {
+    "status": "NOT_REVIEWED",
+    "reviewer": null,
+    "reviewedAt": null,
+    "opinionPath": null
+  },
+  "verdict": "NOT_RUN",
+  "notes": [
+    "NOT_RUN：没有模拟调查结果。"
+  ]
+}

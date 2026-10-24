@@ -13,7 +13,7 @@
 - 五个本地 HTTP API：首页提交、详情轮询、身份确认、有限手动重试、回答与证据展示。
 - 测试使用专用测试数据库中的随机 schema，未配置真实服务时明确失败。
 
-本版不包含真实搜索算法、D1 真实案例录入、补查执行、自动建议、认证／权限或限流。仅用于本地协作，不直接公开部署付费搜索入口。
+本版不包含真实搜索算法、D1 真实案例的最终确认与系统对照、补查执行、自动建议、认证／权限或限流。D1 案例规范、模板、评估器与评估标准已在 `cases/`、`scripts/d1` 建立；A-01（Amazon Q Developer）、B-01（Devin）与 C-01（GitHub Copilot Free 50 chat 说法）已录入真实材料与人工参考草稿，待人工确认；系统对照未运行（NOT_RUN）。仅用于本地协作，不直接公开部署付费搜索入口。
 
 ## 完整启动步骤
 
@@ -67,6 +67,7 @@ npm audit
 | npm run test:runtime | 全新隔离 schema 的真实 Prisma migrate deploy、生产 Web/独立 Worker 进程、实际 HTTP、优雅关闭 |
 | npm run audit:bundles | 构建产物未含当前配置的服务端敏感值、数据库运行时或夹具导入 |
 | npm run docs:check | 活跃文档的本地链接有效性 |
+| npm run d1:evaluate -- --case A-01 ... | D1 评估器：真实运行读取 investigation/snapshot/answers/advice，或记录 NOT_RUN；不写生产数据 |
 | npm run verify | 顺序、失败即停止地执行上述验收；不跳过数据库测试 |
 
 独立运行 test:runtime、audit:bundles 前先 build。详细结果、限制与修复项见 [公共工程验收记录与结论](docs/公共工程验收记录与结论.md)。测试夹具只证明基础设施和显示行为，不证明真实搜索或核查效果。
@@ -78,6 +79,8 @@ npm audit
 - [异步任务队列与租约恢复机制](docs/异步任务队列与租约恢复机制.md)：归属、时钟、状态、重试和发布语义。
 - [HTTP接口与错误码说明](docs/HTTP接口与错误码说明.md)：请求、响应、错误码与仅文档预留的补查／建议契约。
 - [三人职责分工与协作边界](docs/三人职责分工与协作边界.md)：甲的全部入口、丙的接口和组件／展示规范。
+- [D1 案例规范与评估标准](cases/README.md)：A/B/C 案例工作目录、六项要求对照、阻断性错误与参考隔离。
+- [D1 五阶段总交接](cases/D1-五阶段总交接.md)：三案材料、系统对照工具、NOT_RUN、问题清单与验收结论。
 - [甲的真实服务接入方法](docs/甲的真实服务接入方法.md) · [丙的真实服务接入方法](docs/丙的真实服务接入方法.md)。
 
 ## 目录结构
@@ -89,6 +92,7 @@ prisma/                 关系模型、已追加的迁移；禁止用 db push �
 public/fonts/           本地字体与许可
 scripts/
   acceptance/           独立进程、构建配置泄露与文档检查
+  d1/                   D1 只读评估器、确定性规则与运行记录
   db/                   测试库迁移命令
   investigation/        命令行幂等入队
 src/
@@ -107,6 +111,7 @@ docs/
   archive/              历史阶段记录，不是当前启动说明
   reference/队友交接包/  原始策划与素材，整体保留内部相对链接
   *.md                  当前唯一交接文档
+cases/                  D1 案例、规范、评估记录；runs/ 只追加；不参与 Web／Worker 运行时
 .cache/                 忽略的 npm、TS 缓存、设计记录和验收报告
 .next/、node_modules/    标准工具产物，不纳入源码交付
 ```

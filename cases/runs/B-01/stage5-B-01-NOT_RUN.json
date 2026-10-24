@@ -1,0 +1,73 @@
+{
+  "schemaVersion": "d1-run/1",
+  "evaluatorVersion": "0.1.0",
+  "runId": "stage5-B-01-NOT_RUN",
+  "case": {
+    "caseId": "B-01",
+    "caseType": "B",
+    "title": "Devin 自主软件工程能力",
+    "question": "Cognition 官方称 Devin 是“first autonomous software engineer”并能独立完成软件工程任务；Hacker News 和独立测试的实际使用报告是否支持这一说法？",
+    "questionSha256": "b53901e4c8505769745d6601abe55a87e65e175f9a793934c0d7fb7a4cb468f7",
+    "casePath": "cases/B/B-01/case.md",
+    "referencePath": "cases/B/B-01/reference.md",
+    "caseSha256": "d2635571677f50376780624db2dedd0e119dc39c1eb174ce427420476cbfccab",
+    "referenceSha256": "132dabd60749bd89375196c9d8c045d7538bdfeea18c52e80df4f7349300fc62",
+    "referenceStatus": "待人工核实",
+    "confirmedBy": null,
+    "confirmedAt": null
+  },
+  "submission": {
+    "runAt": "2026-10-24T15:04:58.021Z",
+    "intent": "objective",
+    "question": "Cognition 官方称 Devin 是“first autonomous software engineer”并能独立完成软件工程任务；Hacker News 和独立测试的实际使用报告是否支持这一说法？",
+    "questionSha256": "b53901e4c8505769745d6601abe55a87e65e175f9a793934c0d7fb7a4cb468f7"
+  },
+  "execution": "NOT_RUN",
+  "system": {
+    "investigationId": null,
+    "snapshotId": null,
+    "snapshotVersion": null,
+    "snapshotGeneratedAt": null,
+    "contractVersion": null,
+    "appVersion": "0.1.0",
+    "nodeVersion": "v24.20.0",
+    "readOnly": true
+  },
+  "snapshot": null,
+  "answers": [],
+  "adviceCount": null,
+  "snapshotSha256": null,
+  "checks": [
+    {
+      "id": "SYSTEM_RUN",
+      "status": "NOT_RUN",
+      "message": "真实调查未运行",
+      "details": "正式调查 handler 仍返回 unavailable('investigation orchestration')（PROVIDER_NOT_CONFIGURED）；retrieval/identity 默认不可用；.env 注明真实适配器未实现。无 investigation ID/snapshot ID，未提交。"
+    }
+  ],
+  "independentOrigins": [],
+  "issues": [
+    {
+      "id": "SYSTEM_RUN",
+      "checkId": "SYSTEM_RUN",
+      "severity": "blocking",
+      "owner": "甲",
+      "title": "正式调查模块未接入，无法产生真实 investigation/snapshot",
+      "reproduction": "运行 npm run d1:evaluate -- --case <ID> --not-run --reason <具体阻塞>",
+      "expected": "使用正式 API/Worker 提交问题，得到真实 investigation ID、终态和 snapshot ID",
+      "actual": "正式调查 handler 仍返回 unavailable('investigation orchestration')（PROVIDER_NOT_CONFIGURED）；retrieval/identity 默认不可用；.env 注明真实适配器未实现。无 investigation ID/snapshot ID，未提交。",
+      "evidence": "src/server/investigation/handler.ts 的 unavailable('investigation orchestration')；.env 注明真实适配器未实现",
+      "status": "open"
+    }
+  ],
+  "review": {
+    "status": "NOT_REVIEWED",
+    "reviewer": null,
+    "reviewedAt": null,
+    "opinionPath": null
+  },
+  "verdict": "NOT_RUN",
+  "notes": [
+    "NOT_RUN：没有模拟调查结果。"
+  ]
+}
