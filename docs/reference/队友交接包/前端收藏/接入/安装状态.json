@@ -1,0 +1,39 @@
+{
+  "checked_at": "2026-10-20T09:05:28.370842+00:00",
+  "config_path": "C:\\Users\\qianchen\\.codex\\config.toml",
+  "backup_path": "C:\\Users\\qianchen\\.codex\\config.frontend-backup-20261020-170528.toml",
+  "package_path": "C:\\Users\\qianchen\\.codex\\tools\\frontend-mcp",
+  "activation": "两个stdio服务已实测；Codex需新会话或重启加载新增配置。21st等待账号密钥后再启用。",
+  "servers": [
+    {
+      "id": "frontend-shadcn",
+      "status": "installed_verified",
+      "version": "4.22.1",
+      "resources": [
+        "react-bits",
+        "aceternity",
+        "shadcnblocks"
+      ],
+      "workspace": "C:\\Users\\qianchen\\Desktop\\前端收藏\\接入\\registry-workspace"
+    },
+    {
+      "id": "frontend-magicui",
+      "status": "installed_verified",
+      "version": "2.0.0",
+      "resources": [
+        "magic-ui"
+      ]
+    },
+    {
+      "id": "frontend-21st",
+      "status": "configured_disabled_needs_auth",
+      "resources": [
+        "21st"
+      ],
+      "reason": "缺少用户API_KEY_21ST；未尝试付费调用或浏览器登录。"
+    }
+  ],
+  "existing_mcp_preserved": true,
+  "agent_pointer": "C:\\Users\\qianchen\\.codex\\AGENTS.md",
+  "verification_file": "mcp-verification.json"
+}

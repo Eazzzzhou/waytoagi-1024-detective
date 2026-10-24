@@ -1,0 +1,19 @@
+{
+  "mcpServers": {
+    "frontend-shadcn": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "shadcn@4.22.1",
+        "mcp"
+      ]
+    },
+    "frontend-magicui": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@magicuidesign/mcp@2.0.0"
+      ]
+    }
+  }
+}

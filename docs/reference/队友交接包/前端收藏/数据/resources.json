@@ -1,0 +1,1710 @@
+{
+  "schema_version": 1,
+  "updated_at": "2026-10-21",
+  "timezone": "Asia/Hong_Kong",
+  "scope": "前端素材与作品集灵感收藏，记录导航、选型和获取方法，不镜像第三方素材。",
+  "categories": [
+    {
+      "id": "foundations",
+      "folder": "01-设计基础与配色",
+      "name": "设计基础与配色",
+      "question": "页面用什么颜色，颜色分别承担什么角色？"
+    },
+    {
+      "id": "illustrations",
+      "folder": "02-插画与人物",
+      "name": "插画与人物",
+      "question": "空状态、介绍页和人物故事用什么配图？"
+    },
+    {
+      "id": "components",
+      "folder": "03-基础组件与交互",
+      "name": "基础组件与交互",
+      "question": "按钮、输入框、弹窗和反馈控件从哪里取？"
+    },
+    {
+      "id": "blocks",
+      "folder": "04-页面区块与布局",
+      "name": "页面区块与布局",
+      "question": "首屏、定价、功能展示等页面结构如何快速搭建？"
+    },
+    {
+      "id": "motion",
+      "folder": "05-动效与视觉特效",
+      "name": "动效与视觉特效",
+      "question": "文字、鼠标、滚动和字符视觉如何运动？"
+    },
+    {
+      "id": "backgrounds",
+      "folder": "06-背景与纹理",
+      "name": "背景与纹理",
+      "question": "页面底层的图案、纹理与装饰如何选择？"
+    },
+    {
+      "id": "inspiration",
+      "folder": "作品集灵感",
+      "name": "作品集灵感",
+      "question": "去哪里探索互动作品、3D网页与趣味小站？"
+    }
+  ],
+  "resources": [
+    {
+      "id": "happy-hues",
+      "name": "Happy Hues · Palette 14",
+      "url": "https://www.happyhues.co/palettes/14",
+      "category": "foundations",
+      "secondary_categories": [],
+      "tags": [
+        "配色",
+        "设计令牌",
+        "白色",
+        "黄色",
+        "浅青",
+        "深紫"
+      ],
+      "stack": [
+        "任何技术栈"
+      ],
+      "output": [
+        "HEX色值",
+        "语义配色参考",
+        "本库CSS变量"
+      ],
+      "summary": "把配色放进真实网页层级里展示，能同时看到背景、标题、正文、按钮和插画如何分工。14号仅作为普通收藏案例。",
+      "features": [
+        "白底、深紫标题、明黄按钮与浅青辅助底色，适合友好、清晰的产品界面。",
+        "同一套颜色展示在多个内容区块中，比孤立色卡更容易判断实际效果。",
+        "作为视觉起点使用；不同项目仍需按品牌、内容和对比度调整。"
+      ],
+      "use_for": [
+        "产品工具首页",
+        "轻量知识库",
+        "友好型SaaS",
+        "从零建立语义色彩变量"
+      ],
+      "access": {
+        "kind": "复制色值",
+        "steps": [
+          "打开14号配色，按页面的颜色角色复制HEX。",
+          "需要查看已保存的示例色值时，读取 配色参考/Happy-Hues-14.md 和 tokens.css。",
+          "将颜色映射为background、text、primary、surface等语义变量，再做对比度检查。"
+        ],
+        "commands": []
+      },
+      "free": {
+        "status": "免费参考",
+        "note": "网页配色可直接查看和复制。这里保存色值及原创使用建议，不复制整站设计或插画。"
+      },
+      "license": {
+        "label": "色值参考；整站内容许可另计",
+        "note": "配色参考不等于获得站点全部设计、文案和插画的再分发许可。",
+        "url": "https://www.happyhues.co/palettes/14"
+      },
+      "mcp": {
+        "status": "not_verified",
+        "label": "未核实官方MCP",
+        "note": "色值已保存为本地令牌，agent直接读文件即可。"
+      },
+      "cautions": [
+        "黄色适合做按钮背景，按钮文字用深色；黄色不宜直接充当白底上的小字号正文。",
+        "此配色是普通收藏案例；项目配色依据品牌、内容与具体需求选择。"
+      ],
+      "favorite": false,
+      "sources": [
+        "https://www.happyhues.co/palettes/14"
+      ],
+      "preview_image": "https://cdn.prod.website-files.com/5dd40aa8049df8748c72d0ee/5ddd471cbe5e6601554a2a4d_happy-hues.jpeg"
+    },
+    {
+      "id": "open-peeps",
+      "name": "Open Peeps",
+      "url": "https://www.openpeeps.com/",
+      "category": "illustrations",
+      "secondary_categories": [],
+      "tags": [
+        "手绘",
+        "人物",
+        "头像",
+        "组合插画",
+        "黑白",
+        "友好"
+      ],
+      "stack": [
+        "任何技术栈",
+        "SVG",
+        "Figma等设计工具"
+      ],
+      "output": [
+        "SVG",
+        "PNG",
+        "可组合人物素材"
+      ],
+      "summary": "由发型、服装、表情和身体姿态组成的手绘人物库，既能拿现成人物，也能在设计工具里重新组合。",
+      "features": [
+        "手绘线条与大面积留白，人物表情自然，适合降低产品的距离感。",
+        "站立、坐姿、半身等不同构图可适应头像、卡片和大图场景。",
+        "人物部件可组合，更适合持续扩展一套统一的插画风格。"
+      ],
+      "use_for": [
+        "团队介绍",
+        "用户画像",
+        "引导页",
+        "友好型空状态"
+      ],
+      "access": {
+        "kind": "下载矢量或图片",
+        "steps": [
+          "在官网Grab and go区域选择SVG或PNG直接下载。",
+          "需要组合人物时使用完整素材库及兼容的设计工具。",
+          "以SVG优先，保留viewBox；信息性图片写alt，纯装饰图片使用空alt。"
+        ],
+        "commands": []
+      },
+      "free": {
+        "status": "免费",
+        "note": "官网标注个人与商业用途免费。Blush编辑器的其他功能与套餐不包含在这一结论内。"
+      },
+      "license": {
+        "label": "CC0",
+        "note": "官网明确标注CC0；可修改并用于商业项目。",
+        "url": "https://www.openpeeps.com/"
+      },
+      "mcp": {
+        "status": "not_verified",
+        "label": "未核实官方MCP",
+        "note": "直接下载SVG/PNG；没有必要为静态素材另装服务。"
+      },
+      "cautions": [
+        "与Open Doodles都是手绘，但人物比例与笔触不同，同一页面要控制混用。",
+        "不要把装饰插画当作必须等待加载的关键内容。"
+      ],
+      "favorite": false,
+      "sources": [
+        "https://www.openpeeps.com/"
+      ],
+      "preview_image": "https://cdn.prod.website-files.com/5e51b3b0337309d672efd94c/5e51ce05258ffe802886ef21_cover-1.png"
+    },
+    {
+      "id": "open-doodles",
+      "name": "Open Doodles",
+      "url": "https://www.opendoodles.com/",
+      "category": "illustrations",
+      "secondary_categories": [],
+      "tags": [
+        "涂鸦",
+        "人物",
+        "场景",
+        "松弛",
+        "粗线条"
+      ],
+      "stack": [
+        "任何技术栈",
+        "SVG"
+      ],
+      "output": [
+        "SVG",
+        "PNG",
+        "部分GIF链接"
+      ],
+      "summary": "现成的生活与人物场景涂鸦插画，粗线条、自由构图，适合表达阅读、休息、运动和等待等状态。",
+      "features": [
+        "表达场景与情绪的能力强于规则的界面图标。",
+        "下载入口按图提供SVG和PNG，适合从单个场景开始使用。",
+        "可配合少量品牌色做视觉点缀，保留手绘的轻松气质。"
+      ],
+      "use_for": [
+        "404或空状态",
+        "引导说明",
+        "博客与活动页",
+        "轻松的产品介绍"
+      ],
+      "access": {
+        "kind": "逐图下载",
+        "steps": [
+          "选择具体插画，点击对应SVG或PNG链接。",
+          "按项目尺寸处理，保持长宽比；SVG只作与该素材一致的局部调整。",
+          "若转到Blush编辑，先区分原站下载与编辑器套餐。"
+        ],
+        "commands": []
+      },
+      "free": {
+        "status": "免费素材集",
+        "note": "官网明确为免费开源插画集，并提供素材直链。"
+      },
+      "license": {
+        "label": "官网标注免费开源；具体归档需复核许可",
+        "note": "本次页面未找到独立许可全文，因此不把某个推测的许可证写成已核实事实。用于项目时保存下载页和许可记录。",
+        "url": "https://www.opendoodles.com/"
+      },
+      "mcp": {
+        "status": "not_verified",
+        "label": "未核实官方MCP",
+        "note": "使用素材直链或浏览器下载。"
+      },
+      "cautions": [
+        "更适合插画和说明，不适合作为按钮上的小图标。",
+        "人物动作可能带有情绪含义，要与当前状态文案相符。"
+      ],
+      "favorite": false,
+      "sources": [
+        "https://www.opendoodles.com/"
+      ],
+      "preview_image": "https://cdn.prod.website-files.com/5d5d5904f8a21bfe5ff69367/5da4cb5454976755fcac7930_seo-doodles.jpg"
+    },
+    {
+      "id": "ascii-cnlibs",
+      "name": "ascii/cnlibs",
+      "url": "https://ascii.cnlibs.com/",
+      "category": "components",
+      "secondary_categories": [
+        "foundations"
+      ],
+      "tags": [
+        "ASCII",
+        "终端风",
+        "等宽字体",
+        "字符边框",
+        "完整组件体系"
+      ],
+      "stack": [
+        "React",
+        "Tailwind CSS",
+        "Base UI",
+        "shadcn registry"
+      ],
+      "output": [
+        "组件源码",
+        "主题变量",
+        "字符边框原语"
+      ],
+      "summary": "用真实字符绘制边框和控件外观的完整UI体系。交互建立在Base UI之上，适合做整套终端气质的应用。",
+      "features": [
+        "不仅是一个动画：表单、弹窗、菜单和表格都共享字符网格与主题。",
+        "使用ch与lh组织横纵尺度，等宽字体决定字符边框能否对齐。",
+        "主题不仅更换颜色，还可以替换绘制边框的字形。"
+      ],
+      "use_for": [
+        "开发者工具",
+        "终端风仪表盘",
+        "复古实验界面",
+        "整套ASCII设计系统"
+      ],
+      "access": {
+        "kind": "shadcn registry安装源码",
+        "steps": [
+          "先读官方Installation和Theming，使用主题页给出的当前命令。",
+          "加入调色板和AsciiCharsProvider，并设置等宽字体。",
+          "再逐个添加组件；命名空间和命令以组件页当日内容为准。"
+        ],
+        "commands": []
+      },
+      "free": {
+        "status": "源码免费",
+        "note": "官方关联的ekmas/cnlibs仓库为MIT。页面存在beta/unstable提示时，应评估组件成熟度。"
+      },
+      "license": {
+        "label": "MIT（cnlibs仓库）",
+        "note": "保留版权及许可声明。",
+        "url": "https://github.com/ekmas/cnlibs/blob/main/LICENSE"
+      },
+      "mcp": {
+        "status": "registry_possible",
+        "label": "可用shadcn兼容方式；本站未单独配置",
+        "note": "站点提供registry获取方式；未核实独立官方MCP。先从当前组件页取得准确registry信息。"
+      },
+      "cautions": [
+        "中英文混排、缩放和可变宽字体会影响字符网格，需要真实内容验证。",
+        "整套风格很强，不宜随意混入圆润、重阴影的另一套组件体系。"
+      ],
+      "favorite": false,
+      "sources": [
+        "https://ascii.cnlibs.com/docs",
+        "https://ascii.cnlibs.com/docs/installation",
+        "https://github.com/ekmas/cnlibs/blob/main/LICENSE"
+      ],
+      "preview_image": "https://ascii.cnlibs.com/preview.png"
+    },
+    {
+      "id": "asciify",
+      "name": "Asciify Components",
+      "url": "https://asciify.org/components",
+      "category": "components",
+      "secondary_categories": [
+        "motion",
+        "backgrounds"
+      ],
+      "tags": [
+        "ASCII",
+        "Canvas",
+        "字符交互",
+        "AI提示词",
+        "图片视频转换"
+      ],
+      "stack": [
+        "浏览器Canvas",
+        "JavaScript",
+        "TypeScript",
+        "可集成React等框架"
+      ],
+      "output": [
+        "组件提示词",
+        "asciify-engine包",
+        "Canvas字符渲染"
+      ],
+      "summary": "围绕字符渲染引擎组织的交互案例库，包含按钮反馈、命令面板、AI状态、文字转场和媒体字符化。",
+      "features": [
+        "预览组件后复制其提示词，让agent按引擎文档实现；不是所有案例都等同于一份可直接下载的React文件。",
+        "可将图片、视频等输入转成不同字符与图案风格。",
+        "官方提供agent skill、llms.txt和引擎API文档，便于agent获取当前用法。"
+      ],
+      "use_for": [
+        "字符化品牌视觉",
+        "交互式ASCII首屏",
+        "AI状态反馈",
+        "图片视频的字符艺术效果"
+      ],
+      "access": {
+        "kind": "提示词加npm引擎",
+        "steps": [
+          "从组件页复制目标案例的Prompt。",
+          "读官方Docs与skill页面，按项目选择框架集成。",
+          "仅在实际项目安装引擎；本收藏库不预装各站点的全部运行依赖。"
+        ],
+        "commands": [
+          "npm install asciify-engine"
+        ]
+      },
+      "free": {
+        "status": "引擎免费开源",
+        "note": "官方页标注MIT；编辑器、未来付费功能应与开源引擎分开判断。"
+      },
+      "license": {
+        "label": "MIT（官方引擎）",
+        "note": "外部输入图片、视频的版权仍属于各自来源。",
+        "url": "https://github.com/ayangabryl/asciify-engine"
+      },
+      "mcp": {
+        "status": "skill_available",
+        "label": "官方提供Skill；未核实独立MCP",
+        "note": "Skill和MCP是两种不同接入方式。本库保存官方Skill入口，不把Skill标记为MCP。"
+      },
+      "cautions": [
+        "Canvas只在浏览器运行，SSR项目要处理客户端边界。",
+        "保留可选中的真实HTML文字，避免把关键信息只画进Canvas。"
+      ],
+      "favorite": false,
+      "sources": [
+        "https://asciify.org/components",
+        "https://asciify.org/docs",
+        "https://asciify.org/skill"
+      ],
+      "preview_image": "https://asciify.org/brand/green-v1/social.png"
+    },
+    {
+      "id": "uiverse",
+      "name": "Uiverse",
+      "url": "https://uiverse.io/",
+      "category": "components",
+      "secondary_categories": [
+        "motion",
+        "backgrounds"
+      ],
+      "tags": [
+        "按钮",
+        "开关",
+        "加载",
+        "表单",
+        "卡片",
+        "CSS实验"
+      ],
+      "stack": [
+        "HTML/CSS",
+        "Tailwind CSS",
+        "部分React示例"
+      ],
+      "output": [
+        "HTML/CSS代码",
+        "部分其他形式代码"
+      ],
+      "summary": "社区贡献的小型UI素材集合，擅长按钮、开关、输入框和加载动画，适合补齐一个具体控件。",
+      "features": [
+        "同一功能有大量不同视觉版本，能按风格而非只按功能挑选。",
+        "许多实现主要依靠CSS，适合不想引入完整React动效库的项目。",
+        "社区作品的命名、结构和可访问性参差不齐，选择后应做项目化整理。"
+      ],
+      "use_for": [
+        "单个按钮或开关",
+        "加载反馈",
+        "卡片装饰",
+        "轻量CSS交互"
+      ],
+      "access": {
+        "kind": "预览后复制代码",
+        "steps": [
+          "按Buttons、Inputs、Loaders等类别筛选。",
+          "打开具体作品，复制页面实际提供的代码形式。",
+          "隔离类名、补全语义标签与键盘焦点，然后统一颜色、尺寸和状态。"
+        ],
+        "commands": []
+      },
+      "free": {
+        "status": "UI素材免费",
+        "note": "官网标注个人及商业用途免费。"
+      },
+      "license": {
+        "label": "MIT",
+        "note": "保留相关版权与许可声明。",
+        "url": "https://uiverse.io/"
+      },
+      "mcp": {
+        "status": "not_verified",
+        "label": "未核实官方MCP",
+        "note": "使用官网Get code，或官方关联的开源仓库；不安装同名第三方服务。"
+      },
+      "cautions": [
+        "避免复制全局body样式覆盖整个项目。",
+        "装饰动画不应让按钮文字不可读，或掩盖禁用、加载和错误状态。"
+      ],
+      "favorite": false,
+      "sources": [
+        "https://uiverse.io/"
+      ],
+      "preview_image": ""
+    },
+    {
+      "id": "21st",
+      "name": "21st.dev",
+      "url": "https://21st.dev/",
+      "category": "blocks",
+      "secondary_categories": [
+        "components",
+        "motion"
+      ],
+      "tags": [
+        "聚合搜索",
+        "React",
+        "Hero",
+        "模板",
+        "多作者",
+        "AI"
+      ],
+      "stack": [
+        "React",
+        "Tailwind CSS",
+        "shadcn生态"
+      ],
+      "output": [
+        "组件代码",
+        "安装提示词",
+        "主题与模板入口"
+      ],
+      "summary": "多作者的React组件与模板聚合目录，适合先按目标效果搜索，再比较不同作者和来源。",
+      "features": [
+        "覆盖Hero、定价、导航、主题、shader等多类资源，搜索面比单一组件库更广。",
+        "可把选中的真实组件及提示词交给agent继续集成。",
+        "它是聚合目录，不代表所有内容共享同一许可或付费规则。"
+      ],
+      "use_for": [
+        "搜索页面结构",
+        "比较多种实现",
+        "寻找具体视觉参考",
+        "发现组件作者"
+      ],
+      "access": {
+        "kind": "网页复制或账号MCP",
+        "steps": [
+          "先搜索与预览组件，确认作者和许可。",
+          "官网当前提供每天2次免费组件复制/安装；超出后需相应会员。",
+          "MCP入口为https://21st.dev/api/mcp，Codex使用API_KEY_21ST环境变量。"
+        ],
+        "commands": []
+      },
+      "free": {
+        "status": "有免费额度",
+        "note": "搜索免费；代码获取当前2次/日。生成UI另有额度与付费规则。"
+      },
+      "license": {
+        "label": "逐项查看作者许可",
+        "note": "网页可浏览、账号可复制与允许再分发是不同条件。",
+        "url": "https://21st.dev/"
+      },
+      "mcp": {
+        "status": "needs_auth",
+        "label": "官方MCP；待账号认证",
+        "server": "frontend-21st",
+        "url": "https://21st.dev/api/mcp",
+        "note": "已保存可复用配置。未取得用户账号密钥时保持禁用，不声称可调用。"
+      },
+      "cautions": [
+        "优先免费项目，不把生成式AI的调用费用与组件代码获取混为一谈。",
+        "MCP中还存在发布和管理能力；本库只需要搜索、预览与获取。"
+      ],
+      "favorite": false,
+      "sources": [
+        "https://21st.dev/",
+        "https://docs.21st.dev/blog/introducing-agents-cli",
+        "https://21st.dev/magic/console"
+      ],
+      "preview_image": "https://21st.dev/opengraph-image.png"
+    },
+    {
+      "id": "shadcnblocks",
+      "name": "Shadcnblocks",
+      "url": "https://www.shadcnblocks.com/",
+      "category": "blocks",
+      "secondary_categories": [
+        "components"
+      ],
+      "tags": [
+        "页面区块",
+        "Hero",
+        "定价",
+        "功能展示",
+        "SaaS",
+        "整页结构"
+      ],
+      "stack": [
+        "React",
+        "Tailwind CSS",
+        "shadcn/ui"
+      ],
+      "output": [
+        "区块源码",
+        "组件源码",
+        "CLI安装"
+      ],
+      "summary": "围绕营销页面结构组织的区块库。相比只拿一个按钮，更适合一次取一整段首屏、功能、定价或页脚。",
+      "features": [
+        "区块本身包含信息层级、栅格和响应式结构，能缩短页面骨架搭建时间。",
+        "可通过shadcn CLI连同相关组件依赖安装。",
+        "目录中有免费、Basic和付费内容，预览可见不等于当前账号能下载。"
+      ],
+      "use_for": [
+        "官网首屏",
+        "功能介绍",
+        "定价与FAQ",
+        "快速建立营销页骨架"
+      ],
+      "access": {
+        "kind": "免费区块复制或registry",
+        "steps": [
+          "先进入Free Blocks，确认该区块的当前权限。",
+          "在实际项目合并本库的registry片段，保留项目已有配置。",
+          "通过已安装的shadcn MCP搜索与查看，再安装具体免费区块。"
+        ],
+        "commands": []
+      },
+      "free": {
+        "status": "部分免费",
+        "note": "有可直接复制的免费区块；部分Basic内容需要登录，Pro内容需要购买及密钥。"
+      },
+      "license": {
+        "label": "站点专有许可；逐项核对",
+        "note": "用户项目内使用与重新销售组件包不同。",
+        "url": "https://www.shadcnblocks.com/"
+      },
+      "mcp": {
+        "status": "shared_shadcn",
+        "label": "通过已安装shadcn MCP",
+        "server": "frontend-shadcn",
+        "registry": "@shadcnblocks",
+        "note": "公共registry可接入；付费项仍受登录、API Key及购买权限限制。"
+      },
+      "cautions": [
+        "先替换示例文案、图片和信息架构，再调整装饰。",
+        "本库不是React项目，不在收藏目录运行组件add命令。"
+      ],
+      "favorite": false,
+      "sources": [
+        "https://www.shadcnblocks.com/",
+        "https://www.shadcnblocks.com/shadcn-cli",
+        "https://www.shadcnblocks.com/shadcn-mcp"
+      ],
+      "preview_image": "https://cdn.shadcnblocks.com/shadcnblocks/images/og/og-default.png"
+    },
+    {
+      "id": "ascii-rest",
+      "name": "ascii.rest",
+      "url": "https://ascii.rest/",
+      "category": "motion",
+      "secondary_categories": [
+        "backgrounds",
+        "components"
+      ],
+      "tags": [
+        "ASCII",
+        "场景",
+        "星空",
+        "波浪",
+        "字符动画",
+        "终端"
+      ],
+      "stack": [
+        "原生HTML",
+        "JavaScript",
+        "React",
+        "Next.js",
+        "终端"
+      ],
+      "output": [
+        "npm包",
+        "网页嵌入",
+        "React组件",
+        "终端播放"
+      ],
+      "summary": "以小型字符动画作品为单位的素材库，覆盖自然场景、几何形状、文字、图表和终端元素。",
+      "features": [
+        "每件作品是一段持续生成的字符动画，适合独立的视觉焦点或局部背景。",
+        "提供网页、React、README和终端等使用路径，形式比静态ASCII文本丰富。",
+        "既能选现成作品，也能通过绘制工具组合自己的字符场景。"
+      ],
+      "use_for": [
+        "开发者作品集",
+        "终端风首页",
+        "局部ASCII背景",
+        "字符加载与状态展示"
+      ],
+      "access": {
+        "kind": "npm或官网嵌入代码",
+        "steps": [
+          "从站点选择具体piece并查看该作品用法。",
+          "按HTML或React路径取代码；项目集成时固定包版本。",
+          "先处理字符网格、容器尺寸、帧率和reduced-motion，再微调颜色。"
+        ],
+        "commands": [
+          "npm install ascii.rest",
+          "npx ascii.rest list"
+        ]
+      },
+      "free": {
+        "status": "免费开源",
+        "note": "官方文档明确免费，可用于免费或付费项目。"
+      },
+      "license": {
+        "label": "MIT",
+        "note": "保留版权与许可声明。",
+        "url": "https://ascii.rest/docs"
+      },
+      "mcp": {
+        "status": "skill_available",
+        "label": "官方有agent文档/Skill路径；未核实独立MCP",
+        "note": "通过官方docs或npm附带说明获取最新API。"
+      },
+      "cautions": [
+        "不要将整页正文转换成字符画；保留正常的文档结构。",
+        "避免同时播放多幅高频动画造成CPU负担。"
+      ],
+      "favorite": false,
+      "sources": [
+        "https://ascii.rest/",
+        "https://ascii.rest/docs",
+        "https://github.com/bas3line/ascii"
+      ],
+      "preview_image": "https://ascii.rest/og.png"
+    },
+    {
+      "id": "ascii-magic",
+      "name": "ASCII Magic · 动画库",
+      "url": "https://www.ascii-magic.com/ascii",
+      "category": "motion",
+      "secondary_categories": [
+        "backgrounds"
+      ],
+      "tags": [
+        "ASCII",
+        "动画素材",
+        "Web Component",
+        "黑客风",
+        "字符场景"
+      ],
+      "stack": [
+        "Web Component",
+        "JavaScript",
+        "React等框架"
+      ],
+      "output": [
+        "ascii-art元素",
+        "npm包",
+        "单个动画模块"
+      ],
+      "summary": "可直接嵌入的ASCII动画作品库，适合选择已有的字符效果，而不是从头设计一个字符渲染器。",
+      "features": [
+        "官方提供Web Component形式，普通HTML也可接入。",
+        "动画作品可单独选择，适合按需加载。",
+        "开源动画库与把用户照片、视频转换成ASCII的编辑器属于不同产品范围。"
+      ],
+      "use_for": [
+        "字符艺术装饰",
+        "黑客风首屏",
+        "现成ASCII动画",
+        "非React网页"
+      ],
+      "access": {
+        "kind": "Web Component或npm",
+        "steps": [
+          "从动画库选piece，复制其嵌入示例。",
+          "原生网页可按文档加载模块后放入ascii-art元素。",
+          "有构建工具的项目按文档使用npm包，按需引入作品。"
+        ],
+        "commands": [
+          "npm install ascii-magic-art"
+        ]
+      },
+      "free": {
+        "status": "动画库免费开源",
+        "note": "不等于编辑器全部功能免费。"
+      },
+      "license": {
+        "label": "MIT为主；两幅照片场景例外",
+        "note": "官方说明Ocean Sunset、Starry Ridge保留原照片的Unsplash许可；使用时查NOTICE。",
+        "url": "https://www.ascii-magic.com/ascii/docs"
+      },
+      "mcp": {
+        "status": "not_verified",
+        "label": "未核实官方MCP",
+        "note": "使用官方文档、npm与嵌入代码。"
+      },
+      "cautions": [
+        "主视觉之外留出足够安静的阅读区域。",
+        "检查选中作品是否属于照片许可例外。"
+      ],
+      "favorite": false,
+      "sources": [
+        "https://www.ascii-magic.com/ascii",
+        "https://www.ascii-magic.com/ascii/docs"
+      ],
+      "preview_image": "https://www.ascii-magic.com/og.jpg"
+    },
+    {
+      "id": "react-bits",
+      "name": "React Bits",
+      "url": "https://reactbits.dev/",
+      "category": "motion",
+      "secondary_categories": [
+        "backgrounds",
+        "components"
+      ],
+      "tags": [
+        "粒子",
+        "动态背景",
+        "文字动画",
+        "鼠标跟随",
+        "创意视觉",
+        "WebGL"
+      ],
+      "stack": [
+        "React",
+        "JavaScript/TypeScript",
+        "CSS或Tailwind",
+        "部分组件额外依赖"
+      ],
+      "output": [
+        "组件源码",
+        "registry条目",
+        "CLI安装"
+      ],
+      "summary": "偏创意视觉的React素材库，擅长文字、背景、粒子与鼠标交互，适合让一个重点区域形成识别度。",
+      "features": [
+        "同一组件可选择JS/TS与CSS/Tailwind形式，方便匹配现有工程。",
+        "可调参数多，适合从预览中先找到运动方式，再收敛成自己的视觉。",
+        "部分效果涉及Canvas、WebGL或额外库，需要按组件判断成本。"
+      ],
+      "use_for": [
+        "作品集首屏",
+        "产品视觉焦点",
+        "动态背景",
+        "文字与鼠标特效"
+      ],
+      "access": {
+        "kind": "复制源码或registry",
+        "steps": [
+          "在组件页选择与项目一致的语言和样式版本。",
+          "预览依赖和参数后复制代码，或用@react-bits registry安装。",
+          "通过已安装shadcn MCP查看候选项；先预览再安装。"
+        ],
+        "commands": []
+      },
+      "free": {
+        "status": "公共组件免费；Pro另售",
+        "note": "源码可获取不表示所有工具和导出可单独再分发。"
+      },
+      "license": {
+        "label": "MIT + Commons Clause",
+        "note": "允许集成到个人及商业应用；禁止把组件、工具或导出物本身重新打包销售/分发。不是纯MIT。",
+        "url": "https://github.com/DavidHDev/react-bits/blob/main/LICENSE.md"
+      },
+      "mcp": {
+        "status": "shared_shadcn",
+        "label": "通过已安装shadcn MCP",
+        "server": "frontend-shadcn",
+        "registry": "@react-bits",
+        "note": "官方MCP页指定https://reactbits.dev/r/{name}.json。"
+      },
+      "cautions": [
+        "文字动画要有稳定可读状态，不能让用户等待动画才能理解标题。",
+        "移动端、低性能设备与prefers-reduced-motion需要降级方案。"
+      ],
+      "favorite": false,
+      "sources": [
+        "https://reactbits.dev/",
+        "https://reactbits.dev/get-started/mcp",
+        "https://github.com/DavidHDev/react-bits/blob/main/LICENSE.md"
+      ],
+      "preview_image": "https://reactbits.dev/og.jpg"
+    },
+    {
+      "id": "aceternity",
+      "name": "Aceternity UI",
+      "url": "https://ui.aceternity.com/components",
+      "category": "motion",
+      "secondary_categories": [
+        "blocks",
+        "backgrounds",
+        "components"
+      ],
+      "tags": [
+        "光束",
+        "3D卡片",
+        "视差",
+        "Bento",
+        "滚动叙事",
+        "产品官网"
+      ],
+      "stack": [
+        "React",
+        "Tailwind CSS",
+        "Motion",
+        "shadcn registry"
+      ],
+      "output": [
+        "组件源码",
+        "页面区块",
+        "CLI安装"
+      ],
+      "summary": "以官网视觉表现为强项的React组件与区块库，擅长光效、立体卡片、视差和滚动展示。",
+      "features": [
+        "更适合产品展示与营销页的视觉节奏，不只是基础表单控件。",
+        "组件可作为局部插入，不必把整套页面搬进项目。",
+        "官方接入shadcn registry，可先查看依赖与源码再添加。"
+      ],
+      "use_for": [
+        "产品官网首屏",
+        "作品展示",
+        "功能卡片",
+        "视觉叙事区块"
+      ],
+      "access": {
+        "kind": "免费组件源码或registry",
+        "steps": [
+          "从Components挑选明确可免费获取的条目。",
+          "使用@aceternity registry的view/search核对源码与依赖。",
+          "安装到实际项目后统一布局、字号、颜色和运动节奏。"
+        ],
+        "commands": [
+          "npx shadcn@latest view @aceternity/3d-marquee"
+        ]
+      },
+      "free": {
+        "status": "部分免费",
+        "note": "公共组件可用；All-Access、Pro区块与模板单独计费。"
+      },
+      "license": {
+        "label": "按所选组件及产品许可",
+        "note": "从具体组件页和官方代码来源确认许可，不能将整站笼统标为MIT。",
+        "url": "https://ui.aceternity.com/components"
+      },
+      "mcp": {
+        "status": "shared_shadcn",
+        "label": "通过已安装shadcn MCP",
+        "server": "frontend-shadcn",
+        "registry": "@aceternity",
+        "note": "官方CLI文档给出registry及MCP方式。"
+      },
+      "cautions": [
+        "光效、视差、悬浮和粒子选择一两种作为主视觉语言即可。",
+        "确保悬停效果在触摸设备上仍能呈现信息。"
+      ],
+      "favorite": false,
+      "sources": [
+        "https://ui.aceternity.com/components",
+        "https://ui.aceternity.com/components/cli"
+      ],
+      "preview_image": "https://ui.aceternity.com/banner.png"
+    },
+    {
+      "id": "magic-ui",
+      "name": "Magic UI",
+      "url": "https://magicui.design/",
+      "category": "motion",
+      "secondary_categories": [
+        "backgrounds",
+        "components",
+        "blocks"
+      ],
+      "tags": [
+        "SaaS",
+        "数字动画",
+        "跑马灯",
+        "光效边框",
+        "shadcn",
+        "功能展示"
+      ],
+      "stack": [
+        "React",
+        "TypeScript",
+        "Tailwind CSS",
+        "Motion"
+      ],
+      "output": [
+        "组件源码",
+        "安装说明",
+        "MCP检索结果"
+      ],
+      "summary": "适合产品和SaaS官网的动效组件库，可与shadcn/ui基础组件配合，常用于数据、品牌和功能展示。",
+      "features": [
+        "数字滚动、Logo跑马灯、Bento和边框光效能直接对应常见产品展示需求。",
+        "组件粒度较小，适合在既有设计系统上增加有限的动效。",
+        "官方MCP读取实时registry，提供列举、搜索和条目详情工具。"
+      ],
+      "use_for": [
+        "SaaS官网",
+        "产品功能展示",
+        "Logo墙",
+        "统计数字与渐入动画"
+      ],
+      "access": {
+        "kind": "组件代码或官方MCP",
+        "steps": [
+          "从公共组件文档选条目，区分Components与Pro Templates。",
+          "让frontend-magicui MCP搜索并返回源码、依赖及安装方法。",
+          "将组件引入实际应用，统一基础token并检查动效降级。"
+        ],
+        "commands": []
+      },
+      "free": {
+        "status": "公共组件免费；Pro另售",
+        "note": "公共组件与独立收费模板不是同一范围。"
+      },
+      "license": {
+        "label": "公共仓库许可；Pro独立条款",
+        "note": "使用时保留所下载组件的许可，收费模板另按购买范围。",
+        "url": "https://github.com/magicuidesign/magicui"
+      },
+      "mcp": {
+        "status": "official_installed",
+        "label": "独立官方MCP已安装",
+        "server": "frontend-magicui",
+        "note": "本机固定@magicuidesign/mcp 2.0.0，免账号的公共registry检索。"
+      },
+      "cautions": [
+        "不要因组件名字相似而和Aceternity同时引入重复动效。",
+        "统计数字要直接有最终可读值，避免只靠动画传递信息。"
+      ],
+      "favorite": false,
+      "sources": [
+        "https://magicui.design/",
+        "https://magicui.design/docs/mcp",
+        "https://github.com/magicuidesign/mcp"
+      ],
+      "preview_image": "https://magicui.design/og"
+    },
+    {
+      "id": "animata",
+      "name": "Animata",
+      "url": "https://animata.design/",
+      "category": "motion",
+      "secondary_categories": [
+        "components",
+        "blocks"
+      ],
+      "tags": [
+        "微交互",
+        "按钮",
+        "悬停",
+        "文字动画",
+        "卡片",
+        "可复制源码"
+      ],
+      "stack": [
+        "React",
+        "Tailwind CSS",
+        "按组件添加依赖"
+      ],
+      "output": [
+        "组件源码",
+        "示例代码"
+      ],
+      "summary": "以可复制React动画组件为主的素材库，适合为具体控件增加反馈，而不改变整个页面体系。",
+      "features": [
+        "按钮、卡片、文字、列表等组件粒度适合逐个加入现有页面。",
+        "代码可读性有利于理解动画触发方式，再调整到项目需求。",
+        "用户指定收藏Ripple Button，已在本库建立独立案例页。"
+      ],
+      "use_for": [
+        "按钮反馈",
+        "卡片悬停",
+        "局部文字动画",
+        "学习微交互实现"
+      ],
+      "access": {
+        "kind": "复制组件及示例源码",
+        "steps": [
+          "打开具体组件页，分别查看Preview、源码和使用示例。",
+          "只安装该组件真正需要的依赖。",
+          "指定案例见 案例/Animata-Ripple-Button.md。"
+        ],
+        "commands": []
+      },
+      "free": {
+        "status": "免费开源",
+        "note": "官网标注MIT与免费使用。"
+      },
+      "license": {
+        "label": "MIT",
+        "note": "保留版权与许可声明。",
+        "url": "https://animata.design/"
+      },
+      "mcp": {
+        "status": "not_verified",
+        "label": "未核实官方MCP",
+        "note": "直接读组件文档和代码，不把第三方同名MCP当成官方。"
+      },
+      "cautions": [
+        "依赖浏览器事件的组件需要在SSR工程中设定正确客户端边界。",
+        "按钮必须保留键盘激活、焦点、禁用和加载状态。"
+      ],
+      "favorite": false,
+      "sources": [
+        "https://animata.design/",
+        "https://animata.design/docs/button/ripple-button"
+      ],
+      "preview_image": "https://assets.animata.design/og/animata-og-2026.png"
+    },
+    {
+      "id": "hover-dev",
+      "name": "Hover.dev",
+      "url": "https://www.hover.dev/",
+      "category": "motion",
+      "secondary_categories": [
+        "components",
+        "blocks"
+      ],
+      "tags": [
+        "悬停",
+        "按钮",
+        "导航",
+        "卡片",
+        "表单",
+        "交互细节"
+      ],
+      "stack": [
+        "React",
+        "Tailwind CSS",
+        "Motion"
+      ],
+      "output": [
+        "React组件代码",
+        "页面区块代码"
+      ],
+      "summary": "强调交互手感的React与Tailwind素材库，适合挑选按钮、导航和卡片上的局部动画。",
+      "features": [
+        "预览能直接感受鼠标进入、离开及点击时的运动反馈。",
+        "既有小控件也有Hero、表单和FAQ等页面区块。",
+        "免费与付费内容混排，明确标记Free的组件才属于免费范围。"
+      ],
+      "use_for": [
+        "强调交互的按钮",
+        "导航与菜单",
+        "悬停卡片",
+        "小范围交互优化"
+      ],
+      "access": {
+        "kind": "Free条目直接复制代码",
+        "steps": [
+          "寻找带Free标记的条目。",
+          "按官网说明直接复制组件；Free条目无需注册或购买。",
+          "对齐项目Motion版本、Tailwind样式与触摸设备行为。"
+        ],
+        "commands": []
+      },
+      "free": {
+        "status": "部分免费",
+        "note": "官方许可明确Free组件无需注册或购买，其余需要Hover Pro。"
+      },
+      "license": {
+        "label": "专有许可；Free可商用",
+        "note": "可在个人和商业网站中修改使用，无需署名；不能把组件本身作为独立产品再销售/分发。",
+        "url": "https://www.hover.dev/license"
+      },
+      "mcp": {
+        "status": "not_verified",
+        "label": "未核实官方MCP",
+        "note": "使用官网代码；本库不保存受限组件的镜像。"
+      },
+      "cautions": [
+        "Hover效果不能是获取关键信息的唯一入口。",
+        "动效强度要与页面其余部分匹配，尤其是表单操作区。"
+      ],
+      "favorite": false,
+      "sources": [
+        "https://www.hover.dev/",
+        "https://www.hover.dev/license"
+      ],
+      "preview_image": ""
+    },
+    {
+      "id": "svg-backgrounds",
+      "name": "SVG Backgrounds",
+      "url": "https://www.svgbackgrounds.com/",
+      "category": "backgrounds",
+      "secondary_categories": [
+        "illustrations"
+      ],
+      "tags": [
+        "SVG",
+        "图案",
+        "纹理",
+        "几何",
+        "静态背景",
+        "可调色"
+      ],
+      "stack": [
+        "任何技术栈",
+        "SVG",
+        "CSS background"
+      ],
+      "output": [
+        "SVG文件",
+        "背景代码",
+        "按具体工具导出"
+      ],
+      "summary": "静态SVG图案、背景与装饰图形素材站，适合在较低运行成本下增加页面层次。",
+      "features": [
+        "矢量背景适合不同分辨率，颜色可配合设计token调整。",
+        "图案更适合衬托内容，不需要增加持续动画。",
+        "Free与Premium许可不同，免费使用存在署名要求。"
+      ],
+      "use_for": [
+        "Hero底图",
+        "区块背景",
+        "轻量纹理",
+        "卡片装饰"
+      ],
+      "access": {
+        "kind": "Free素材导出SVG或代码",
+        "steps": [
+          "先进入免费资源，选择具体背景并调整颜色。",
+          "按素材页面支持的方式导出SVG或CSS。",
+          "免费使用按官方Attribution页面添加署名，在项目素材清单保存来源。"
+        ],
+        "commands": []
+      },
+      "free": {
+        "status": "部分免费；免费素材需署名",
+        "note": "Premium需要订阅，且不是下载后无限用于未来新项目。"
+      },
+      "license": {
+        "label": "SVG Backgrounds专有许可",
+        "note": "免费项目需按官方要求署名；禁止把素材整理成可再分发素材包。本收藏库只保留链接和说明。",
+        "url": "https://www.svgbackgrounds.com/license/"
+      },
+      "mcp": {
+        "status": "not_verified",
+        "label": "未核实官方MCP",
+        "note": "网页生成/导出即可，不额外安装服务。"
+      },
+      "cautions": [
+        "检查背景与正文的对比度，必要时加纯色内容层。",
+        "依据订阅期和项目范围管理Premium，不能笼统当成永久素材库。"
+      ],
+      "favorite": false,
+      "sources": [
+        "https://www.svgbackgrounds.com/",
+        "https://www.svgbackgrounds.com/license/",
+        "https://www.svgbackgrounds.com/attribution/"
+      ],
+      "preview_image": "https://www.svgbackgrounds.com/img/svg-backgrounds-preview.png"
+    },
+    {
+      "id": "threejs",
+      "name": "Three.js",
+      "url": "https://threejs.org/",
+      "category": "inspiration",
+      "secondary_categories": [],
+      "tags": [
+        "3D",
+        "Three.js",
+        "作品展示"
+      ],
+      "stack": [
+        "浏览器体验；具体项目技术栈另查"
+      ],
+      "output": [
+        "在线体验",
+        "创意参考"
+      ],
+      "summary": "JavaScript 3D 库官网及作品入口，作为本次收藏的起点。",
+      "features": [
+        "JavaScript 3D 库官网及作品入口，作为本次收藏的起点。"
+      ],
+      "use_for": [
+        "作品集灵感",
+        "互动网页探索"
+      ],
+      "access": {
+        "kind": "浏览官网与原作品",
+        "steps": [
+          "打开合集，选择具体作品进入原站体验。",
+          "需要复用实现时，前往作品自己的源码仓库或许可页面核实。"
+        ],
+        "commands": []
+      },
+      "free": {
+        "status": "公开浏览入口",
+        "note": "各具体作品的访问条件、收费功能和资源使用范围以原站为准。"
+      },
+      "license": {
+        "label": "作品许可分别核实",
+        "note": "收录链接用于体验与灵感参考，不代表获得代码、设计、音频或图像的复用许可。",
+        "url": "https://threejs.org/"
+      },
+      "mcp": {
+        "status": "not_verified",
+        "label": "未核实官方MCP",
+        "note": "通过浏览器探索。"
+      },
+      "cautions": [
+        "部分历史实验可能失效；3D作品的流畅度受浏览器与设备影响。"
+      ],
+      "favorite": false,
+      "sources": [
+        "https://threejs.org/"
+      ],
+      "preview_image": ""
+    },
+    {
+      "id": "mesh3d",
+      "name": "Mesh3D",
+      "url": "https://mesh3d.gallery/",
+      "category": "inspiration",
+      "secondary_categories": [],
+      "tags": [
+        "WebGL",
+        "3D",
+        "作品集"
+      ],
+      "stack": [
+        "浏览器体验；具体项目技术栈另查"
+      ],
+      "output": [
+        "在线体验",
+        "创意参考"
+      ],
+      "summary": "集中收录 Three.js、WebGL 与实时 3D 互动网站，适合寻找作品集和沉浸式网页灵感。",
+      "features": [
+        "集中收录 Three.js、WebGL 与实时 3D 互动网站，适合寻找作品集和沉浸式网页灵感。"
+      ],
+      "use_for": [
+        "作品集灵感",
+        "互动网页探索"
+      ],
+      "access": {
+        "kind": "浏览官网与原作品",
+        "steps": [
+          "打开合集，选择具体作品进入原站体验。",
+          "需要复用实现时，前往作品自己的源码仓库或许可页面核实。"
+        ],
+        "commands": []
+      },
+      "free": {
+        "status": "公开浏览入口",
+        "note": "各具体作品的访问条件、收费功能和资源使用范围以原站为准。"
+      },
+      "license": {
+        "label": "作品许可分别核实",
+        "note": "收录链接用于体验与灵感参考，不代表获得代码、设计、音频或图像的复用许可。",
+        "url": "https://mesh3d.gallery/"
+      },
+      "mcp": {
+        "status": "not_verified",
+        "label": "未核实官方MCP",
+        "note": "通过浏览器探索。"
+      },
+      "cautions": [
+        "部分历史实验可能失效；3D作品的流畅度受浏览器与设备影响。"
+      ],
+      "favorite": false,
+      "sources": [
+        "https://mesh3d.gallery/"
+      ],
+      "preview_image": ""
+    },
+    {
+      "id": "google-experiments",
+      "name": "Experiments with Google",
+      "url": "https://experiments.withgoogle.com/",
+      "category": "inspiration",
+      "secondary_categories": [],
+      "tags": [
+        "交互实验",
+        "艺术",
+        "音乐"
+      ],
+      "stack": [
+        "浏览器体验；具体项目技术栈另查"
+      ],
+      "output": [
+        "在线体验",
+        "创意参考"
+      ],
+      "summary": "艺术、音乐、科学与交互实验的综合档案；官网保留 1,605 个历史实验。",
+      "features": [
+        "艺术、音乐、科学与交互实验的综合档案；官网保留 1,605 个历史实验。"
+      ],
+      "use_for": [
+        "作品集灵感",
+        "互动网页探索"
+      ],
+      "access": {
+        "kind": "浏览官网与原作品",
+        "steps": [
+          "打开合集，选择具体作品进入原站体验。",
+          "需要复用实现时，前往作品自己的源码仓库或许可页面核实。"
+        ],
+        "commands": []
+      },
+      "free": {
+        "status": "公开浏览入口",
+        "note": "各具体作品的访问条件、收费功能和资源使用范围以原站为准。"
+      },
+      "license": {
+        "label": "作品许可分别核实",
+        "note": "收录链接用于体验与灵感参考，不代表获得代码、设计、音频或图像的复用许可。",
+        "url": "https://experiments.withgoogle.com/"
+      },
+      "mcp": {
+        "status": "not_verified",
+        "label": "未核实官方MCP",
+        "note": "通过浏览器探索。"
+      },
+      "cautions": [
+        "部分历史实验可能失效；3D作品的流畅度受浏览器与设备影响。"
+      ],
+      "favorite": false,
+      "sources": [
+        "https://experiments.withgoogle.com/"
+      ],
+      "preview_image": ""
+    },
+    {
+      "id": "chrome-webgl",
+      "name": "Chrome Experiments · WebGL",
+      "url": "https://experiments.withgoogle.com/collection/chrome?tag=WebGL",
+      "category": "inspiration",
+      "secondary_categories": [],
+      "tags": [
+        "WebGL",
+        "粒子",
+        "图形实验"
+      ],
+      "stack": [
+        "浏览器体验；具体项目技术栈另查"
+      ],
+      "output": [
+        "在线体验",
+        "创意参考"
+      ],
+      "summary": "Google 实验合集中的 WebGL 入口，偏 3D、粒子与图形互动；与总档案有内容重叠。",
+      "features": [
+        "Google 实验合集中的 WebGL 入口，偏 3D、粒子与图形互动；与总档案有内容重叠。"
+      ],
+      "use_for": [
+        "作品集灵感",
+        "互动网页探索"
+      ],
+      "access": {
+        "kind": "浏览官网与原作品",
+        "steps": [
+          "打开合集，选择具体作品进入原站体验。",
+          "需要复用实现时，前往作品自己的源码仓库或许可页面核实。"
+        ],
+        "commands": []
+      },
+      "free": {
+        "status": "公开浏览入口",
+        "note": "各具体作品的访问条件、收费功能和资源使用范围以原站为准。"
+      },
+      "license": {
+        "label": "作品许可分别核实",
+        "note": "收录链接用于体验与灵感参考，不代表获得代码、设计、音频或图像的复用许可。",
+        "url": "https://experiments.withgoogle.com/collection/chrome?tag=WebGL"
+      },
+      "mcp": {
+        "status": "not_verified",
+        "label": "未核实官方MCP",
+        "note": "通过浏览器探索。"
+      },
+      "cautions": [
+        "部分历史实验可能失效；3D作品的流畅度受浏览器与设备影响。"
+      ],
+      "favorite": false,
+      "sources": [
+        "https://experiments.withgoogle.com/collection/chrome?tag=WebGL"
+      ],
+      "preview_image": ""
+    },
+    {
+      "id": "sael-lab",
+      "name": "SAEL Lab",
+      "url": "https://lab.sael.net/",
+      "category": "inspiration",
+      "secondary_categories": [],
+      "tags": [
+        "创意网页",
+        "交互",
+        "独立创作"
+      ],
+      "stack": [
+        "浏览器体验；具体项目技术栈另查"
+      ],
+      "output": [
+        "在线体验",
+        "创意参考"
+      ],
+      "summary": "精选创意网页、交互界面和 Three.js 世界，适合探索独立创作者的实验作品。",
+      "features": [
+        "精选创意网页、交互界面和 Three.js 世界，适合探索独立创作者的实验作品。"
+      ],
+      "use_for": [
+        "作品集灵感",
+        "互动网页探索"
+      ],
+      "access": {
+        "kind": "浏览官网与原作品",
+        "steps": [
+          "打开合集，选择具体作品进入原站体验。",
+          "需要复用实现时，前往作品自己的源码仓库或许可页面核实。"
+        ],
+        "commands": []
+      },
+      "free": {
+        "status": "公开浏览入口",
+        "note": "各具体作品的访问条件、收费功能和资源使用范围以原站为准。"
+      },
+      "license": {
+        "label": "作品许可分别核实",
+        "note": "收录链接用于体验与灵感参考，不代表获得代码、设计、音频或图像的复用许可。",
+        "url": "https://lab.sael.net/"
+      },
+      "mcp": {
+        "status": "not_verified",
+        "label": "未核实官方MCP",
+        "note": "通过浏览器探索。"
+      },
+      "cautions": [
+        "部分历史实验可能失效；3D作品的流畅度受浏览器与设备影响。"
+      ],
+      "favorite": false,
+      "sources": [
+        "https://lab.sael.net/"
+      ],
+      "preview_image": ""
+    },
+    {
+      "id": "useless-web",
+      "name": "The Useless Web",
+      "url": "https://theuselessweb.com/",
+      "category": "inspiration",
+      "secondary_categories": [],
+      "tags": [
+        "随机网站",
+        "脑洞",
+        "趣味"
+      ],
+      "stack": [
+        "浏览器体验；具体项目技术栈另查"
+      ],
+      "output": [
+        "在线体验",
+        "创意参考"
+      ],
+      "summary": "点击按钮随机前往古怪、搞笑或单纯好玩的独立小站。",
+      "features": [
+        "点击按钮随机前往古怪、搞笑或单纯好玩的独立小站。"
+      ],
+      "use_for": [
+        "作品集灵感",
+        "互动网页探索"
+      ],
+      "access": {
+        "kind": "浏览官网与原作品",
+        "steps": [
+          "打开合集，选择具体作品进入原站体验。",
+          "需要复用实现时，前往作品自己的源码仓库或许可页面核实。"
+        ],
+        "commands": []
+      },
+      "free": {
+        "status": "公开浏览入口",
+        "note": "各具体作品的访问条件、收费功能和资源使用范围以原站为准。"
+      },
+      "license": {
+        "label": "作品许可分别核实",
+        "note": "收录链接用于体验与灵感参考，不代表获得代码、设计、音频或图像的复用许可。",
+        "url": "https://theuselessweb.com/"
+      },
+      "mcp": {
+        "status": "not_verified",
+        "label": "未核实官方MCP",
+        "note": "通过浏览器探索。"
+      },
+      "cautions": [
+        "部分历史实验可能失效；3D作品的流畅度受浏览器与设备影响。"
+      ],
+      "favorite": false,
+      "sources": [
+        "https://theuselessweb.com/"
+      ],
+      "preview_image": ""
+    },
+    {
+      "id": "neal-fun",
+      "name": "Neal.fun",
+      "url": "https://neal.fun/",
+      "category": "inspiration",
+      "secondary_categories": [],
+      "tags": [
+        "小游戏",
+        "互动叙事",
+        "趣味"
+      ],
+      "stack": [
+        "浏览器体验；具体项目技术栈另查"
+      ],
+      "output": [
+        "在线体验",
+        "创意参考"
+      ],
+      "summary": "Neal 的网页游戏与互动作品合集，适合参考简单概念如何做成可玩的网页。",
+      "features": [
+        "Neal 的网页游戏与互动作品合集，适合参考简单概念如何做成可玩的网页。"
+      ],
+      "use_for": [
+        "作品集灵感",
+        "互动网页探索"
+      ],
+      "access": {
+        "kind": "浏览官网与原作品",
+        "steps": [
+          "打开合集，选择具体作品进入原站体验。",
+          "需要复用实现时，前往作品自己的源码仓库或许可页面核实。"
+        ],
+        "commands": []
+      },
+      "free": {
+        "status": "公开浏览入口",
+        "note": "各具体作品的访问条件、收费功能和资源使用范围以原站为准。"
+      },
+      "license": {
+        "label": "作品许可分别核实",
+        "note": "收录链接用于体验与灵感参考，不代表获得代码、设计、音频或图像的复用许可。",
+        "url": "https://neal.fun/"
+      },
+      "mcp": {
+        "status": "not_verified",
+        "label": "未核实官方MCP",
+        "note": "通过浏览器探索。"
+      },
+      "cautions": [
+        "部分历史实验可能失效；3D作品的流畅度受浏览器与设备影响。"
+      ],
+      "favorite": false,
+      "sources": [
+        "https://neal.fun/"
+      ],
+      "preview_image": ""
+    },
+    {
+      "id": "music-lab",
+      "name": "Chrome Music Lab",
+      "url": "https://musiclab.chromeexperiments.com/",
+      "category": "inspiration",
+      "secondary_categories": [],
+      "tags": [
+        "音乐",
+        "声音",
+        "可视化"
+      ],
+      "stack": [
+        "浏览器体验；具体项目技术栈另查"
+      ],
+      "output": [
+        "在线体验",
+        "创意参考"
+      ],
+      "summary": "浏览器里的声音、节奏与作曲互动实验，适合体验音乐可视化和即时反馈。",
+      "features": [
+        "浏览器里的声音、节奏与作曲互动实验，适合体验音乐可视化和即时反馈。"
+      ],
+      "use_for": [
+        "作品集灵感",
+        "互动网页探索"
+      ],
+      "access": {
+        "kind": "浏览官网与原作品",
+        "steps": [
+          "打开合集，选择具体作品进入原站体验。",
+          "需要复用实现时，前往作品自己的源码仓库或许可页面核实。"
+        ],
+        "commands": []
+      },
+      "free": {
+        "status": "公开浏览入口",
+        "note": "各具体作品的访问条件、收费功能和资源使用范围以原站为准。"
+      },
+      "license": {
+        "label": "作品许可分别核实",
+        "note": "收录链接用于体验与灵感参考，不代表获得代码、设计、音频或图像的复用许可。",
+        "url": "https://musiclab.chromeexperiments.com/"
+      },
+      "mcp": {
+        "status": "not_verified",
+        "label": "未核实官方MCP",
+        "note": "通过浏览器探索。"
+      },
+      "cautions": [
+        "部分历史实验可能失效；3D作品的流畅度受浏览器与设备影响。"
+      ],
+      "favorite": false,
+      "sources": [
+        "https://musiclab.chromeexperiments.com/"
+      ],
+      "preview_image": ""
+    }
+  ],
+  "examples": [
+    {
+      "id": "animata-ripple-button",
+      "name": "Animata · Ripple Button",
+      "resource_id": "animata",
+      "url": "https://animata.design/docs/button/ripple-button",
+      "category": "motion",
+      "tags": [
+        "指定收藏",
+        "按钮",
+        "点击反馈",
+        "涟漪",
+        "微交互"
+      ],
+      "summary": "用户指定的具体组件案例。点击时从触点扩散涟漪，是动作反馈而非页面持续装饰。",
+      "access": "查看官方组件页的源码及示例，复制到实际React项目；本库只存选型与集成检查，不镜像组件实现。",
+      "checks": [
+        "真实button标签，type与表单语义一致。",
+        "鼠标、触摸和键盘均能触发明确反馈。",
+        "disabled与loading时不重复提交。",
+        "涟漪裁剪在按钮内，不挡文字和焦点环。",
+        "prefers-reduced-motion下保留静态反馈。"
+      ]
+    }
+  ]
+}

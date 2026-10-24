@@ -1,0 +1,320 @@
+[
+  {
+    "server": "frontend-shadcn",
+    "version": "4.22.1",
+    "checkedAt": "2026-10-20T09:14:42.012Z",
+    "initialized": true,
+    "tools": [
+      {
+        "name": "get_project_registries",
+        "inputSchema": {
+          "type": "object",
+          "properties": {},
+          "$schema": "http://json-schema.org/draft-07/schema#",
+          "additionalProperties": false
+        }
+      },
+      {
+        "name": "list_items_in_registries",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "registries": {
+              "description": "Array of registry names to list (e.g., ['@shadcn', '@acme']). Omit to list from every registry configured in components.json.",
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "types": {
+              "description": "Filter by item type. One of: lib, block, component, ui, hook, page, file, theme, style, item, base, font.",
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "limit": {
+              "description": "Maximum number of items to return (defaults to 100; use 0 for no limit)",
+              "type": "number"
+            },
+            "offset": {
+              "description": "Number of items to skip for pagination",
+              "type": "number"
+            }
+          },
+          "$schema": "http://json-schema.org/draft-07/schema#",
+          "additionalProperties": false
+        }
+      },
+      {
+        "name": "search_items_in_registries",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "registries": {
+              "description": "Array of registry names to search (e.g., ['@shadcn', '@acme']). Omit to search every registry configured in components.json.",
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "query": {
+              "type": "string",
+              "description": "Search query string for fuzzy matching against item names and descriptions"
+            },
+            "types": {
+              "description": "Filter by item type. One of: lib, block, component, ui, hook, page, file, theme, style, item, base, font.",
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "limit": {
+              "description": "Maximum number of items to return (defaults to 100; use 0 for no limit)",
+              "type": "number"
+            },
+            "offset": {
+              "description": "Number of items to skip for pagination",
+              "type": "number"
+            }
+          },
+          "required": [
+            "query"
+          ],
+          "$schema": "http://json-schema.org/draft-07/schema#",
+          "additionalProperties": false
+        }
+      },
+      {
+        "name": "view_items_in_registries",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "items": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "description": "Array of item names with registry prefix (e.g., ['@shadcn/button', '@shadcn/card'])"
+            }
+          },
+          "required": [
+            "items"
+          ],
+          "$schema": "http://json-schema.org/draft-07/schema#",
+          "additionalProperties": false
+        }
+      },
+      {
+        "name": "get_item_examples_from_registries",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "registries": {
+              "description": "Array of registry names to search (e.g., ['@shadcn', '@acme']). Omit to search every registry configured in components.json.",
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "query": {
+              "type": "string",
+              "description": "Search query for examples (e.g., 'accordion-demo', 'button demo', 'card example', 'tooltip-demo', 'example-booking-form', 'example-hero'). Common patterns: '{item-name}-demo', '{item-name} example', 'example {item-name}'"
+            }
+          },
+          "required": [
+            "query"
+          ],
+          "$schema": "http://json-schema.org/draft-07/schema#",
+          "additionalProperties": false
+        }
+      },
+      {
+        "name": "get_add_command_for_items",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "items": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "description": "Array of items to get the add command for prefixed with the registry name (e.g., ['@shadcn/button', '@shadcn/card'])"
+            }
+          },
+          "required": [
+            "items"
+          ],
+          "$schema": "http://json-schema.org/draft-07/schema#",
+          "additionalProperties": false
+        }
+      },
+      {
+        "name": "get_audit_checklist",
+        "inputSchema": {
+          "type": "object",
+          "properties": {},
+          "$schema": "http://json-schema.org/draft-07/schema#",
+          "additionalProperties": false
+        }
+      }
+    ],
+    "registries": {
+      "content": [
+        {
+          "type": "text",
+          "text": "The following registries are configured in the current project:\n\n- @shadcn\n- @react-bits\n- @aceternity\n- @shadcnblocks\n\nYou can view the items in a registry by running:\n`npx shadcn@latest view @name-of-registry`\n\nFor example: `npx shadcn@latest view @shadcn` or `npx shadcn@latest view @shadcn @acme` to view multiple registries."
+        }
+      ]
+    },
+    "readProbe": {
+      "tool": "search_items_in_registries",
+      "ok": true,
+      "result": {
+        "content": [
+          {
+            "type": "text",
+            "text": "Found 1 items matching \"3d-marquee\" in registries @aceternity:\n\nShowing items 1-1 of 1:\n\n- 3d-marquee (registry:ui) [@aceternity] \n  Add command: `npx shadcn@latest add @aceternity/3d-marquee`"
+          }
+        ]
+      }
+    },
+    "extraProbes": [
+      {
+        "registry": "@react-bits",
+        "ok": true,
+        "result": {
+          "content": [
+            {
+              "type": "text",
+              "text": "Found 178 items matching \"text\" in registries @react-bits:\n\nShowing items 1-1 of 178:\n\n- TextType-JS-TW (registry:component) - Typewriter effect with blinking cursor and adjustable typing cadence. [@react-bits] \n  Add command: `npx shadcn@latest add @react-bits/TextType-JS-TW`\n\nMore items available. Use offset: 1 to see the next page."
+            }
+          ]
+        }
+      },
+      {
+        "registry": "@shadcnblocks",
+        "ok": true,
+        "result": {
+          "content": [
+            {
+              "type": "text",
+              "text": "Found 3407 items matching \"hero\" in registries @shadcnblocks:\n\nShowing items 1-1 of 3407:\n\n- hero5 (registry:block) - A hero pairing headline, supporting line, and large shadcn/ui primary button with leading icon opposite an aspect-video rounded image. [@shadcnblocks] \n  Add command: `npx shadcn@latest add @shadcnblocks/hero5`\n\nMore items available. Use offset: 1 to see the next page."
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "server": "frontend-magicui",
+    "version": "2.0.0",
+    "checkedAt": "2026-10-20T09:14:49.937Z",
+    "initialized": true,
+    "tools": [
+      {
+        "name": "listRegistryItems",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "kind": {
+              "type": "string",
+              "description": "Optional kind filter such as component, example, style, or a raw registry type like registry:ui."
+            },
+            "query": {
+              "type": "string",
+              "description": "Optional text filter applied to names, titles, descriptions, and registry types."
+            },
+            "limit": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 150,
+              "description": "Maximum number of items to return. Defaults to 25."
+            },
+            "offset": {
+              "type": "integer",
+              "minimum": 0,
+              "description": "Pagination offset for exhaustive registry browsing. Defaults to 0."
+            }
+          },
+          "additionalProperties": false,
+          "$schema": "http://json-schema.org/draft-07/schema#"
+        }
+      },
+      {
+        "name": "getRegistryItem",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string",
+              "description": "Exact registry item name, for example marquee."
+            },
+            "includeSource": {
+              "type": "boolean",
+              "description": "Include the item's source code content."
+            },
+            "includeExamples": {
+              "type": "boolean",
+              "description": "Include related example code when the item is a component."
+            },
+            "includeRelated": {
+              "type": "boolean",
+              "description": "Include related registry items such as examples or dependencies."
+            }
+          },
+          "required": [
+            "name"
+          ],
+          "additionalProperties": false,
+          "$schema": "http://json-schema.org/draft-07/schema#"
+        }
+      },
+      {
+        "name": "searchRegistryItems",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "query": {
+              "type": "string",
+              "minLength": 1,
+              "description": "Search query matched against names, titles, descriptions, and registry types."
+            },
+            "kind": {
+              "type": "string",
+              "description": "Optional kind filter such as component, example, or style."
+            },
+            "limit": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 150,
+              "description": "Maximum number of results to return. Defaults to 25."
+            },
+            "offset": {
+              "type": "integer",
+              "minimum": 0,
+              "description": "Pagination offset for stepping through ranked search results. Defaults to 0."
+            }
+          },
+          "required": [
+            "query"
+          ],
+          "additionalProperties": false,
+          "$schema": "http://json-schema.org/draft-07/schema#"
+        }
+      }
+    ],
+    "readProbe": {
+      "tool": "searchRegistryItems",
+      "ok": true,
+      "result": {
+        "content": [
+          {
+            "type": "text",
+            "text": "{\n  \"query\": \"marquee\",\n  \"total\": 5,\n  \"limit\": 1,\n  \"offset\": 0,\n  \"hasMore\": true,\n  \"nextOffset\": 1,\n  \"availableKinds\": [\n    \"component\",\n    \"example\",\n    \"lib\",\n    \"style\"\n  ],\n  \"items\": [\n    {\n      \"name\": \"marquee\",\n      \"title\": \"Marquee\",\n      \"description\": \"An infinite scrolling component that can be used to display text, images, or videos.\",\n      \"kind\": \"component\",\n      \"registryType\": \"registry:ui\"\n    }\n  ]\n}"
+          }
+        ]
+      }
+    }
+  }
+]

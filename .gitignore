@@ -1,30 +1,13 @@
-# Local credentials and session data
-.env
-.env.*
-!.env.example
-*.pem
-*.key
-cookies*.txt
-*cookies*.json
-*.har
-.auth/
-playwright/.auth/
-
-# Dependencies and generated outputs
 node_modules/
 .next/
 dist/
-build/
 coverage/
-__pycache__/
-.venv/
+.cache/
+.taste-skill/
+*.tsbuildinfo
+src/generated/
+.env
+.env.*
+!.env.example
 *.log
-research/probe-results.json
-
-# Local-only research scratch and browser artifacts
-.scratch/
-.playwright-mcp/
-test-results/
-playwright-report/
 .DS_Store
-Thumbs.db

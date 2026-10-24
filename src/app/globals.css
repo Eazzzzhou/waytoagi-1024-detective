@@ -1,0 +1,15 @@
+@font-face { font-family: Geist; src: url('/fonts/geist-latin.woff2') format('woff2'); font-weight: 100 900; font-display: swap; }
+@font-face { font-family: 'Geist Mono'; src: url('/fonts/geist-mono-latin.woff2') format('woff2'); font-weight: 100 900; font-display: swap; }
+:root {
+  --ground: #f2f4f7; --surface: #fff; --raised: #eee; --border: #e6e6e6; --rule: #f0f0f0; --control: #d4d4d4;
+  --text: #0a0a0a; --muted: #626262; --accent: #343434; --negative: #b12028;
+  --radius-card: 8px; --radius-control: 6px; --gap: 12px; --pad: 24px;
+}
+* { box-sizing: border-box; }
+html { color-scheme: light; }
+body { margin: 0; background: var(--ground); color: var(--text); font-family: Geist, 'Microsoft YaHei', 'PingFang SC', sans-serif; font-size: 14px; line-height: 1.65; }
+a { color: inherit; text-underline-offset: 3px; }
+code { font-family: 'Geist Mono', monospace; font-size: 12px; overflow-wrap: anywhere; }
+button, input, textarea { font: inherit; }
+:focus-visible { outline: 2px solid var(--text); outline-offset: 3px; }
+::selection { background: var(--control); }
