@@ -17,6 +17,7 @@ export const GenerationConfigSchema = z.strictObject({
   model: TextSchema,
   promptVersion: TextSchema,
   temperature: z.number().min(0).max(2).nullable(),
+  thinkingMode: z.enum(["ENABLED", "DISABLED", "PROVIDER_DEFAULT"]).optional(),
   generatedAt: TimestampSchema
 });
 export type GenerationConfig = z.infer<typeof GenerationConfigSchema>;

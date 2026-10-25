@@ -49,7 +49,7 @@ try {
   await waitUntil(async () => { try { return (await fetch(base)).ok; } catch { return false; } }, "Production Web did not become ready");
   checks.push("production_web_start");
   const key = randomUUID();
-  const submit = () => fetch(`${base}/api/investigations`, { method: "POST", headers: { "Content-Type": "application/json", Origin: base, "Idempotency-Key": key }, body: JSON.stringify({ question: "公共工程隔离验收：缺少提供方时保存明确失败" }) });
+  const submit = () => fetch(`${base}/api/investigations`, { method: "POST", headers: { "Content-Type": "application/json", Origin: base, "Idempotency-Key": key }, body: JSON.stringify({ question: "公共工程隔离验收：未知产品需要用户确认身份" }) });
   const response = await submit(); assert.equal(response.status, 202);
   const created = AcceptedInvestigationSchema.parse(await response.json());
   const repeated = await submit(); assert.equal(repeated.status, 202);
@@ -59,14 +59,14 @@ try {
   checks.push("real_http_enqueue", "idempotent_network_submission");
 
   worker = launch(["--import", "tsx", "tests/support/worker-process.ts"], { ...process.env, DATABASE_URL: database.connectionString, WORKER_POLL_MS: "50", WORKER_LEASE_MS: "2000", WORKER_HEARTBEAT_MS: "200", WORKER_TIMEOUT_MS: "3000", WORKER_SHUTDOWN_GRACE_MS: "2000" }, true);
-  await waitUntil(async () => (await read()).investigation.status === "FAILED", "Production Worker did not record a terminal error");
+  await waitUntil(async () => (await read()).investigation.status === "AWAITING_CONFIRMATION", "Production Worker did not request identity confirmation");
   for (let count = 0; count < 2; count++) {
-    const state = await read(); assert.equal(state.investigation.error?.code, "PROVIDER_NOT_CONFIGURED"); assert.equal(state.investigation.resultSnapshotId, null);
+    const state = await read(); assert.equal(state.investigation.error, null); assert.equal(state.identityConfirmation?.identity.confirmationStatus, "NEEDS_CONFIRMATION"); assert.equal(state.investigation.resultSnapshotId, null);
     assert(!JSON.stringify(state).includes("executionToken"));
   }
   assert.equal(await database.db.executionAttempt.count(), 1);
   assert.equal(await database.db.evidenceSnapshot.count(), 0);
-  checks.push("real_worker_claim", "provider_not_configured", "fresh_api_reads_preserve_failure", "no_synthetic_result");
+  checks.push("real_worker_claim", "unknown_identity_awaits_confirmation", "fresh_api_reads_preserve_confirmation", "no_synthetic_result");
   worker.child.send("shutdown");
   const [code] = await Promise.race([worker.exited, delay(5000).then(() => { throw new Error("Worker did not shut down gracefully"); })]);
   assert.equal(code, 0); assert(worker.output().includes('"event":"worker.stopped"'));

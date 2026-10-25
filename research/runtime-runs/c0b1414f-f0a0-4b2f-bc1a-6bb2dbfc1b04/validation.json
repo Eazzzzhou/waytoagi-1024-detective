@@ -1,0 +1,114 @@
+{
+  "investigationId": "c0b1414f-f0a0-4b2f-bc1a-6bb2dbfc1b04",
+  "snapshotId": "5f78ed93-d7a2-4a9b-a734-683cd4d52933",
+  "status": "SUCCEEDED",
+  "url": "http://127.0.0.1:3000/investigations/c0b1414f-f0a0-4b2f-bc1a-6bb2dbfc1b04",
+  "citations": 3,
+  "exactQuoteChecks": "PASSED",
+  "semanticChecks": [
+    {
+      "marker": "[1]",
+      "supported": true,
+      "reason": "第0段的三项事实均有原句直接对应：hysenlabs 原句称仓库标注“Apache 2.0”但 LICENSE 文件是“Dify Open Source License”（Apache 2.0 加附加条件）；cnblogs 原句称不是“纯 Apache-2.0”而是基于 Apache-2.0 的 Dify Open Source License。段落同时明确这些为第三方转述而非官方原文，与原句来源性质一致，未把转述升格为事实。"
+    },
+    {
+      "marker": "[2]",
+      "supported": true,
+      "reason": "第1段所列条件逐项对应原句：aiprofind 原句含“未经 Dify 书面授权不得以源码运营多租户环境”和“不得移除或修改控制台 logo 与版权信息”；aitoolradar 原句含“无商业许可不得作为多租户 SaaS 转售”及 logo/版权不可改。段落结论“open-source 不等于无额外限制的 Apache 2.0”与两处原句一致，且均标为转述，未扩展原句未说的版本或套餐条件。"
+    },
+    {
+      "marker": "[3]",
+      "supported": true,
+      "reason": "第2段称条款来自第三方转述、未核到官方 LICENSE 原文，与所给证据仅为博客/评测站点转述相符；aiprofind 原句确实提出 source-available 而非开源、附加限制不符合 OSI 定义，段落将其标为观点；dify.ai 官方原句仅称“Hosted by Dify. Build, test, and launch AI apps without managing infrastructure”，段落对官方描述的概括与之一致，且指出官方摘录未涉及许可条款，未以官方宣称补证许可事实。"
+    }
+  ],
+  "review": {
+    "status": "NOT_CONFIGURED",
+    "reason": "未配置第二模型；不声称完成独立模型复核或精度提高。",
+    "independentAssessment": null,
+    "findings": []
+  },
+  "retrieval": [
+    {
+      "provider": "tencent-yuanbao-search-api",
+      "status": "SUCCEEDED",
+      "returnedSources": 6,
+      "adopted": 5
+    },
+    {
+      "provider": "bing-rss-public-search",
+      "status": "SUCCEEDED",
+      "returnedSources": 6,
+      "adopted": 0
+    },
+    {
+      "provider": "hacker-news-algolia",
+      "status": "SUCCEEDED",
+      "returnedSources": 0,
+      "adopted": 0
+    }
+  ],
+  "modelCalls": [
+    {
+      "provider": "api.deepseek.com",
+      "model": "deepseek-flash",
+      "promptVersion": "a2-evidence-v3",
+      "temperature": null,
+      "thinkingMode": "DISABLED",
+      "generatedAt": "2026-10-25T00:10:35.457Z",
+      "id": "4299e9a4-13be-42b8-af29-630dc172ebc8",
+      "purpose": "claim-extraction",
+      "startedAt": "2026-10-25T00:10:33.156Z",
+      "durationMs": 2301,
+      "outcome": "SUCCEEDED",
+      "inputTokens": 3154,
+      "outputTokens": 460
+    },
+    {
+      "provider": "api.deepseek.com",
+      "model": "deepseek-flash",
+      "promptVersion": "a2-evidence-v3",
+      "temperature": null,
+      "thinkingMode": "DISABLED",
+      "generatedAt": "2026-10-25T00:10:45.335Z",
+      "id": "afef822b-6752-4156-83a5-edfac09bcd75",
+      "purpose": "claim-evidence-verification",
+      "startedAt": "2026-10-25T00:10:35.462Z",
+      "durationMs": 9873,
+      "outcome": "SUCCEEDED",
+      "inputTokens": 5486,
+      "outputTokens": 2592
+    },
+    {
+      "provider": "api.deepseek.com",
+      "model": "deepseek-flash",
+      "promptVersion": "a2-evidence-v3",
+      "temperature": null,
+      "thinkingMode": "DISABLED",
+      "generatedAt": "2026-10-25T00:10:48.617Z",
+      "id": "3bc787bc-44e9-48f0-a1d8-bbdf2695d1b8",
+      "purpose": "cited-answer-generation",
+      "startedAt": "2026-10-25T00:10:45.350Z",
+      "durationMs": 3267,
+      "outcome": "SUCCEEDED",
+      "inputTokens": 5663,
+      "outputTokens": 629
+    },
+    {
+      "provider": "api.deepseek.com",
+      "model": "deepseek-flash",
+      "promptVersion": "a2-evidence-v3",
+      "temperature": null,
+      "thinkingMode": "DISABLED",
+      "generatedAt": "2026-10-25T00:10:50.841Z",
+      "id": "63fc05db-8767-47c3-a841-534e3458e158",
+      "purpose": "citation-semantic-support-check",
+      "startedAt": "2026-10-25T00:10:48.618Z",
+      "durationMs": 2223,
+      "outcome": "SUCCEEDED",
+      "inputTokens": 4239,
+      "outputTokens": 382
+    }
+  ],
+  "directory": "C:\\Users\\qianchen\\Documents\\waytoagi-1024-detective-a1\\research\\runtime-runs\\c0b1414f-f0a0-4b2f-bc1a-6bb2dbfc1b04"
+}

@@ -1,0 +1,32 @@
+{
+  "capturedAt": "2026-10-25T00:13:23.246Z",
+  "url": "http://127.0.0.1:3000/investigations/e079d9c2-aadc-481d-89bd-c68765b231f1",
+  "detail": {
+    "investigation": {
+      "id": "e079d9c2-aadc-481d-89bd-c68765b231f1",
+      "question": "Dify 官方所说的 open-source 是否等于 Apache 2.0 无额外限制？核对海外英文原文，区分品牌和多租户商用条件及同源转载。",
+      "status": "SUCCEEDED",
+      "stage": "COMPLETED",
+      "error": null,
+      "createdAt": "2026-10-25T00:12:43.575Z",
+      "updatedAt": "2026-10-25T00:13:19.032Z",
+      "startedAt": "2026-10-25T00:12:43.908Z",
+      "completedAt": "2026-10-25T00:13:19.032Z",
+      "resultSnapshotId": "3b1a7fc1-0938-4c5f-afba-d515576ddeb7"
+    },
+    "identityConfirmation": null,
+    "retry": {
+      "allowed": false,
+      "reason": "仅失败的调查可以手动重试。",
+      "remaining": 2,
+      "expectedAttemptCount": 1
+    }
+  },
+  "observedStates": [
+    {
+      "status": "SUCCEEDED",
+      "stage": "COMPLETED",
+      "observedAt": "2026-10-25T00:13:23.244Z"
+    }
+  ]
+}

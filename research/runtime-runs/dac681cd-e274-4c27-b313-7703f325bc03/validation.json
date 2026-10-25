@@ -1,0 +1,162 @@
+{
+  "investigationId": "dac681cd-e274-4c27-b313-7703f325bc03",
+  "snapshotId": "adf39692-11c4-4014-9753-bd7a9d010d7e",
+  "status": "SUCCEEDED",
+  "url": "http://127.0.0.1:3000/investigations/dac681cd-e274-4c27-b313-7703f325bc03",
+  "citations": 3,
+  "exactQuoteChecks": "PASSED",
+  "excerptHashChecks": "PASSED",
+  "semanticChecks": [
+    {
+      "marker": "[1]",
+      "supported": true,
+      "reason": "原句明确说Dify仓库标注“Apache 2.0”，但LICENSE文件是Dify Open Source License，即Apache 2.0加附加条件，与来源报告转述的社区文章主张一致；适用范围的发布日期与hysenlabs.com域名也与元数据相符，版本未注明也与原文未提版本一致。"
+    },
+    {
+      "marker": "[2]",
+      "supported": true,
+      "reason": "原句称Dify属于source-available而非开源，许可证为Apache 2.0加两项限制：未经Dify书面授权不得以多租户环境运营源码，以及不得移除或修改logo与版权信息，与来源报告转述的两项限制及适用范围一致。"
+    },
+    {
+      "marker": "[3]",
+      "supported": false,
+      "reason": "被反驳的主张是“Dify官方将其产品描述为开源，但官网英文首页摘录未给出许可证名称或附加条件”。提供的官网首页原句只描述托管服务“Hosted by Dify. Build, test, and launch AI apps without managing infrastructure.”，既未称Dify为开源，也未给出任何许可证信息；该原句不能蕴含对“官方将其描述为开源”这一部分的否定，也不能证明摘录未给出许可证名称或附加条件，因此不足以支持反驳该主张。"
+    },
+    {
+      "marker": "[4]",
+      "supported": true,
+      "reason": "原句称Dify许可证为Apache 2.0加两项条件：未经商业许可不得作为多租户SaaS转售，以及不得移除或修改Dify logo/版权，并称自托管内部使用基本不受影响但并非无条件开源，与来源报告转述的AIToolRadar指南内容及适用范围一致。"
+    }
+  ],
+  "review": {
+    "status": "NOT_CONFIGURED",
+    "reason": "未配置第二模型；不声称完成独立模型复核或精度提高。",
+    "independentAssessment": null,
+    "findings": []
+  },
+  "retrieval": [
+    {
+      "provider": "tencent-yuanbao-search-api",
+      "status": "SUCCEEDED",
+      "returnedSources": 6,
+      "adopted": 5
+    },
+    {
+      "provider": "bing-rss-public-search",
+      "status": "SUCCEEDED",
+      "returnedSources": 6,
+      "adopted": 0
+    },
+    {
+      "provider": "hacker-news-algolia",
+      "status": "SUCCEEDED",
+      "returnedSources": 0,
+      "adopted": 0
+    },
+    {
+      "provider": "tencent-yuanbao-search-api",
+      "status": "SUCCEEDED",
+      "returnedSources": 6,
+      "adopted": 0
+    },
+    {
+      "provider": "bing-rss-public-search",
+      "status": "SUCCEEDED",
+      "returnedSources": 6,
+      "adopted": 1
+    }
+  ],
+  "modelCalls": [
+    {
+      "provider": "api.deepseek.com",
+      "model": "deepseek-flash",
+      "promptVersion": "a2-evidence-v4",
+      "temperature": null,
+      "thinkingMode": "DISABLED",
+      "generatedAt": "2026-10-25T00:17:19.653Z",
+      "id": "03826dec-067e-4b17-b963-655bc5a1e21a",
+      "purpose": "claim-extraction",
+      "startedAt": "2026-10-25T00:17:16.482Z",
+      "durationMs": 3170,
+      "outcome": "SUCCEEDED",
+      "inputTokens": 2813,
+      "outputTokens": 531
+    },
+    {
+      "provider": "api.deepseek.com",
+      "model": "deepseek-flash",
+      "promptVersion": "a2-evidence-v4",
+      "temperature": null,
+      "thinkingMode": "DISABLED",
+      "generatedAt": "2026-10-25T00:17:28.860Z",
+      "id": "07b57828-0ee1-49b5-970a-59d73143cce8",
+      "purpose": "claim-evidence-verification",
+      "startedAt": "2026-10-25T00:17:19.657Z",
+      "durationMs": 9203,
+      "outcome": "SUCCEEDED",
+      "inputTokens": 5184,
+      "outputTokens": 2264
+    },
+    {
+      "provider": "api.deepseek.com",
+      "model": "deepseek-flash",
+      "promptVersion": "a2-evidence-v4",
+      "temperature": null,
+      "thinkingMode": "DISABLED",
+      "generatedAt": "2026-10-25T00:17:30.296Z",
+      "id": "3a6980e2-17f9-46ad-8559-8873680357cd",
+      "purpose": "bounded-followup-value-assessment",
+      "startedAt": "2026-10-25T00:17:28.865Z",
+      "durationMs": 1431,
+      "outcome": "SUCCEEDED",
+      "inputTokens": 4112,
+      "outputTokens": 140
+    },
+    {
+      "provider": "api.deepseek.com",
+      "model": "deepseek-flash",
+      "promptVersion": "a2-evidence-v4",
+      "temperature": null,
+      "thinkingMode": "DISABLED",
+      "generatedAt": "2026-10-25T00:17:40.946Z",
+      "id": "92bb3a94-aea7-4921-ae6e-28e2c250585a",
+      "purpose": "claim-evidence-verification",
+      "startedAt": "2026-10-25T00:17:32.174Z",
+      "durationMs": 8771,
+      "outcome": "SUCCEEDED",
+      "inputTokens": 6098,
+      "outputTokens": 2393
+    },
+    {
+      "provider": "api.deepseek.com",
+      "model": "deepseek-flash",
+      "promptVersion": "a2-evidence-v4",
+      "temperature": null,
+      "thinkingMode": "DISABLED",
+      "generatedAt": "2026-10-25T00:17:42.021Z",
+      "id": "5534a4ad-d8db-48dd-9bdd-385132031208",
+      "purpose": "cited-answer-selection",
+      "startedAt": "2026-10-25T00:17:40.961Z",
+      "durationMs": 1060,
+      "outcome": "SUCCEEDED",
+      "inputTokens": 1534,
+      "outputTokens": 98
+    },
+    {
+      "provider": "api.deepseek.com",
+      "model": "deepseek-flash",
+      "promptVersion": "a2-evidence-v4",
+      "temperature": null,
+      "thinkingMode": "DISABLED",
+      "generatedAt": "2026-10-25T00:17:44.394Z",
+      "id": "ba60dec9-dc76-421c-bcfe-2f48616a4028",
+      "purpose": "citation-semantic-support-check",
+      "startedAt": "2026-10-25T00:17:42.021Z",
+      "durationMs": 2372,
+      "outcome": "SUCCEEDED",
+      "inputTokens": 2282,
+      "outputTokens": 359
+    }
+  ],
+  "directory": "C:\\Users\\qianchen\\Documents\\waytoagi-1024-detective-a1\\research\\runtime-runs\\dac681cd-e274-4c27-b313-7703f325bc03"
+}

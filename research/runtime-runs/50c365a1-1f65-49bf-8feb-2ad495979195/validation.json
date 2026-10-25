@@ -1,0 +1,103 @@
+{
+  "investigationId": "50c365a1-1f65-49bf-8feb-2ad495979195",
+  "snapshotId": "f423f093-cea5-4c16-9322-ab0414b6bade",
+  "status": "SUCCEEDED",
+  "url": "http://127.0.0.1:3000/investigations/50c365a1-1f65-49bf-8feb-2ad495979195",
+  "citations": 2,
+  "exactQuoteChecks": "PASSED",
+  "semanticChecks": [
+    {
+      "marker": "[1]",
+      "supported": true,
+      "reason": "中文原句“Dify 是一个用于构建 AI 应用的开源平台”与英文原句“Dify is an open-source platform for building AI applications”均直接支持官方文档将Dify描述为开源平台；段落已限定为“官网表述的直接依据”，未越出官方声称范围。"
+    },
+    {
+      "marker": "[2]",
+      "supported": true,
+      "reason": "段落引用的中英文原句与保存原句一致，并明确限定“仅能证明官方如此宣称，不等于独立实测”，且指出未标注版本与日期，均与原句及元数据相符。"
+    }
+  ],
+  "review": {
+    "status": "NOT_CONFIGURED",
+    "reason": "未配置第二模型；不声称完成独立模型复核或精度提高。",
+    "independentAssessment": null,
+    "findings": []
+  },
+  "retrieval": [
+    {
+      "provider": "tencent-yuanbao-search-api",
+      "status": "SUCCEEDED",
+      "returnedSources": 6,
+      "adopted": 6
+    },
+    {
+      "provider": "bing-rss-public-search",
+      "status": "SUCCEEDED",
+      "returnedSources": 6,
+      "adopted": 0
+    }
+  ],
+  "modelCalls": [
+    {
+      "provider": "api.deepseek.com",
+      "model": "deepseek-flash",
+      "promptVersion": "a2-evidence-v3",
+      "temperature": null,
+      "thinkingMode": "DISABLED",
+      "generatedAt": "2026-10-25T00:10:58.536Z",
+      "id": "be20e8a0-c844-42ea-96d8-816d4032e068",
+      "purpose": "claim-extraction",
+      "startedAt": "2026-10-25T00:10:57.319Z",
+      "durationMs": 1217,
+      "outcome": "SUCCEEDED",
+      "inputTokens": 3371,
+      "outputTokens": 157
+    },
+    {
+      "provider": "api.deepseek.com",
+      "model": "deepseek-flash",
+      "promptVersion": "a2-evidence-v3",
+      "temperature": null,
+      "thinkingMode": "DISABLED",
+      "generatedAt": "2026-10-25T00:11:02.961Z",
+      "id": "423838c0-ef20-4496-b402-3f174e192b2a",
+      "purpose": "claim-evidence-verification",
+      "startedAt": "2026-10-25T00:10:58.539Z",
+      "durationMs": 4422,
+      "outcome": "SUCCEEDED",
+      "inputTokens": 5172,
+      "outputTokens": 1043
+    },
+    {
+      "provider": "api.deepseek.com",
+      "model": "deepseek-flash",
+      "promptVersion": "a2-evidence-v3",
+      "temperature": null,
+      "thinkingMode": "DISABLED",
+      "generatedAt": "2026-10-25T00:11:05.027Z",
+      "id": "e44335f1-9d2e-4751-a162-38a1a623ae5a",
+      "purpose": "cited-answer-generation",
+      "startedAt": "2026-10-25T00:11:02.969Z",
+      "durationMs": 2058,
+      "outcome": "SUCCEEDED",
+      "inputTokens": 4851,
+      "outputTokens": 358
+    },
+    {
+      "provider": "api.deepseek.com",
+      "model": "deepseek-flash",
+      "promptVersion": "a2-evidence-v3",
+      "temperature": null,
+      "thinkingMode": "DISABLED",
+      "generatedAt": "2026-10-25T00:11:06.160Z",
+      "id": "bcbea223-771d-446f-af15-6a616e65f1ba",
+      "purpose": "citation-semantic-support-check",
+      "startedAt": "2026-10-25T00:11:05.027Z",
+      "durationMs": 1132,
+      "outcome": "SUCCEEDED",
+      "inputTokens": 2823,
+      "outputTokens": 135
+    }
+  ],
+  "directory": "C:\\Users\\qianchen\\Documents\\waytoagi-1024-detective-a1\\research\\runtime-runs\\50c365a1-1f65-49bf-8feb-2ad495979195"
+}

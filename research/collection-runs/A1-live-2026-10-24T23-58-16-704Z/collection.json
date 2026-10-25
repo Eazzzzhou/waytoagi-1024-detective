@@ -1,0 +1,341 @@
+{
+  "runId": "A1-live-2026-10-24T23-58-16-704Z",
+  "question": "Dify 官网是否将 Dify 描述为开源平台？只核实官网表述。",
+  "startedAt": "2026-10-24T23:58:16.704Z",
+  "finishedAt": "2026-10-24T23:58:24.720Z",
+  "result": {
+    "identity": {
+      "name": "Dify",
+      "officialWebsite": "https://dify.ai",
+      "version": null,
+      "plan": null,
+      "confirmationStatus": "CONFIRMED",
+      "confirmationBasis": [
+        {
+          "url": "https://dify.ai/",
+          "excerpt": "Hosted by Dify. Build, test, and launch AI apps without managing infrastructure.",
+          "retrievedAt": "2026-10-24T23:58:17.821Z",
+          "reason": "Unique explicit product name in question, matched in freshly read official domain text; version and plan unknown"
+        }
+      ]
+    },
+    "retrievalRecords": [
+      {
+        "id": "94373cf2-44ae-4929-b106-3a6a418a6d10",
+        "provider": "tencent-yuanbao-search-api",
+        "query": "Dify 官网是否将 Dify 描述为开源平台？只核实官网表述。",
+        "calledAt": "2026-10-24T23:58:17.887Z",
+        "status": "FAILED",
+        "error": "Yuanbao service InvalidParameter",
+        "returnedSources": []
+      },
+      {
+        "id": "d363f0c9-28b8-4b61-bd39-3e2877c6c82e",
+        "provider": "bing-rss-public-search",
+        "query": "Dify 官网是否将 Dify 描述为开源平台？只核实官网表述。",
+        "calledAt": "2026-10-24T23:58:17.975Z",
+        "status": "SUCCEEDED",
+        "error": null,
+        "returnedSources": [
+          {
+            "url": "https://dify.ai/zh",
+            "title": "Dify - 构建生产级 AI 应用",
+            "snippet": "Dify 的独特之处在于它能让 AI agent 开发变得触手可及。 强大的 AI/ML 能力结合无代码平台，让快速部署和直观操作成为可能，即便是初学者也能轻松上手，显著推动了全员数字化开发。",
+            "adoption": "ADOPTED",
+            "adoptionReason": "Original text fetched; relevance and claim support require A2 verification",
+            "evidenceId": "626e6f46-5d5d-4a6d-b7b7-8ca94a892a63"
+          },
+          {
+            "url": "https://www.runoob.com/ai-agent/dify-usage.html",
+            "title": "Dify 入门教程 | 菜鸟教程",
+            "snippet": "Dify 入门教程 Dify（Do It For You）是当前最受欢迎的开源 LLM 应用开发平台，专为构建由大型语言模型（LLM）驱动的生成式 AI 应用而设计。",
+            "adoption": "ADOPTED",
+            "adoptionReason": "Original text fetched; relevance and claim support require A2 verification",
+            "evidenceId": "a755f39e-929b-4f3c-b975-2151e25ed629"
+          },
+          {
+            "url": "https://github.com/langgenius/dify",
+            "title": "GitHub - langgenius/dify: Build Agentic workflows, RAG pipelines, with ...",
+            "snippet": "Dify is an open-source LLM app development platform. Its intuitive interface combines AI workflow, RAG pipeline, agent capabilities, model management, observability features (including Opik, Langfuse, and Arize Phoenix) and more, letting you quickly go from prototype to production.",
+            "adoption": "ADOPTED",
+            "adoptionReason": "Original text fetched; relevance and claim support require A2 verification",
+            "evidenceId": "a77b1a97-cb71-41c1-b4dd-b2366a34a5da"
+          },
+          {
+            "url": "https://dify.ai/",
+            "title": "Dify - The Platform for Production-Ready Agentic Workflows",
+            "snippet": "Dify is the platform for production-ready agentic workflows. Build agents, knowledge pipelines, models, and tools on one canvas, deployable on Cloud, in your VPC, or self-hosted.",
+            "adoption": "ADOPTED",
+            "adoptionReason": "Original text fetched; relevance and claim support require A2 verification",
+            "evidenceId": "380f8fb1-0021-4769-bed4-adbf3bc708c1"
+          },
+          {
+            "url": "https://blog.csdn.net/xin_yao_xin/article/details/159434653",
+            "title": "大模型应用开发Dify 安装、使用（小白超详细所用功能2026）",
+            "snippet": "本文系统介绍开源大模型应用平台Dify的安装部署（含Docker配置、常见错误排查）、核心功能使用（聊天助手、知识库RAG、文本生成、Agent智能体、Chatflow对话流、工作流）及扩展能力（Ollama集成、自定义工具、MCP、HTTP API与前端嵌入）。",
+            "adoption": "ADOPTED",
+            "adoptionReason": "Original text fetched; relevance and claim support require A2 verification",
+            "evidenceId": "9c43d98f-ae27-4637-a4f3-63735ff8baec"
+          }
+        ]
+      }
+    ],
+    "evidence": [
+      {
+        "id": "626e6f46-5d5d-4a6d-b7b7-8ca94a892a63",
+        "sourceUrl": "https://dify.ai/zh",
+        "originalExcerpt": "由 Dify 托管。无需运维基础设施即可构建、测试与上线 AI 应用。",
+        "translation": null,
+        "originalLocation": {
+          "kind": "TEXT",
+          "locator": "https://dify.ai/zh :: article:first :: blocks(p,li,pre,td,h1,h2,h3)[2]; normalized UTF-16 [0,35)",
+          "context": "由 Dify 托管。无需运维基础设施即可构建、测试与上线 AI 应用。"
+        },
+        "metadata": {
+          "title": "Dify - 构建生产级 AI 应用",
+          "siteName": "dify.ai",
+          "author": null,
+          "publishedAt": null,
+          "language": "zh",
+          "sourceType": "OFFICIAL",
+          "contentKind": "OFFICIAL_CLAIM",
+          "productVersion": null,
+          "plan": null,
+          "upstreamUrl": null,
+          "independence": "UNKNOWN",
+          "originGroupId": null,
+          "independenceReason": null
+        },
+        "retrievedAt": "2026-10-24T23:58:18.706Z",
+        "readStatus": "READ",
+        "readError": null,
+        "contentHash": "0de78b263a83a1b99b18a549b0b6657a2cb1435fd85f9854a232b531112116ac"
+      },
+      {
+        "id": "a755f39e-929b-4f3c-b975-2151e25ed629",
+        "sourceUrl": "https://www.runoob.com/ai-agent/dify-usage.html",
+        "originalExcerpt": "Dify（Do It For You）是当前最受欢迎的开源 LLM 应用开发平台，专为构建由大型语言模型（LLM）驱动的生成式 AI 应用而设计。",
+        "translation": null,
+        "originalLocation": {
+          "kind": "TEXT",
+          "locator": "https://www.runoob.com/ai-agent/dify-usage.html :: body :: blocks(p,li,pre,td,h1,h2,h3)[17]; normalized UTF-16 [0,73)",
+          "context": "Dify（Do It For You）是当前最受欢迎的开源 LLM 应用开发平台，专为构建由大型语言模型（LLM）驱动的生成式 AI 应用而设计。"
+        },
+        "metadata": {
+          "title": "Dify 入门教程 | 菜鸟教程",
+          "siteName": "www.runoob.com",
+          "author": null,
+          "publishedAt": null,
+          "language": "zh-Hans",
+          "sourceType": "UNKNOWN",
+          "contentKind": "UNKNOWN",
+          "productVersion": null,
+          "plan": null,
+          "upstreamUrl": null,
+          "independence": "UNKNOWN",
+          "originGroupId": null,
+          "independenceReason": null
+        },
+        "retrievedAt": "2026-10-24T23:58:19.011Z",
+        "readStatus": "READ",
+        "readError": null,
+        "contentHash": "fa230e8ad52a3547a4408c4d7c073b62a0250dafbd7b42bc3b7a1b9ad498857b"
+      },
+      {
+        "id": "a77b1a97-cb71-41c1-b4dd-b2366a34a5da",
+        "sourceUrl": "https://github.com/langgenius/dify",
+        "originalExcerpt": "Dify Cloud · Self-hosting · Documentation · Dify edition overview",
+        "translation": null,
+        "originalLocation": {
+          "kind": "TEXT",
+          "locator": "https://github.com/langgenius/dify :: article:first :: blocks(p,li,pre,td,h1,h2,h3)[1]; normalized UTF-16 [0,65)",
+          "context": "Dify Cloud · Self-hosting · Documentation · Dify edition overview"
+        },
+        "metadata": {
+          "title": "GitHub - langgenius/dify: Build Agentic workflows, RAG pipelines, with rich AI model and tool support on one collaborative workspace. Deploy on cloud, VPC, or self-hosted, so teams move from prototype to production without rebuilding the stack. · GitHub",
+          "siteName": "github.com",
+          "author": null,
+          "publishedAt": null,
+          "language": "en",
+          "sourceType": "COMMUNITY",
+          "contentKind": "UNKNOWN",
+          "productVersion": null,
+          "plan": null,
+          "upstreamUrl": null,
+          "independence": "UNKNOWN",
+          "originGroupId": null,
+          "independenceReason": null
+        },
+        "retrievedAt": "2026-10-24T23:58:20.501Z",
+        "readStatus": "READ",
+        "readError": null,
+        "contentHash": "2606d32f6e47220a6028d42d27fbcfee350cb90bc936612ff262f214cd1c594f"
+      },
+      {
+        "id": "380f8fb1-0021-4769-bed4-adbf3bc708c1",
+        "sourceUrl": "https://dify.ai/",
+        "originalExcerpt": "Hosted by Dify. Build, test, and launch AI apps without managing infrastructure.",
+        "translation": null,
+        "originalLocation": {
+          "kind": "TEXT",
+          "locator": "https://dify.ai/ :: article:first :: blocks(p,li,pre,td,h1,h2,h3)[2]; normalized UTF-16 [0,80)",
+          "context": "Hosted by Dify. Build, test, and launch AI apps without managing infrastructure."
+        },
+        "metadata": {
+          "title": "Dify - The Platform for Production-Ready Agentic Workflows",
+          "siteName": "dify.ai",
+          "author": null,
+          "publishedAt": null,
+          "language": "en",
+          "sourceType": "OFFICIAL",
+          "contentKind": "OFFICIAL_CLAIM",
+          "productVersion": null,
+          "plan": null,
+          "upstreamUrl": null,
+          "independence": "UNKNOWN",
+          "originGroupId": null,
+          "independenceReason": null
+        },
+        "retrievedAt": "2026-10-24T23:58:20.738Z",
+        "readStatus": "READ",
+        "readError": null,
+        "contentHash": "259f093a7ca0c5482dbf3f4b989f96997badb219f7289743a2c3109d962c5420"
+      },
+      {
+        "id": "9c43d98f-ae27-4637-a4f3-63735ff8baec",
+        "sourceUrl": "https://blog.csdn.net/xin_yao_xin/article/details/159434653",
+        "originalExcerpt": "Dify 是一款开源的大模型应用开发 / 运营平台（LLMOps），零代码 / 低代码快速搭建企业级 AI 应用，支持对话机器人、RAG 知识库、工作流、智能 Agent 等场景，开箱即用。",
+        "translation": null,
+        "originalLocation": {
+          "kind": "TEXT",
+          "locator": "https://blog.csdn.net/xin_yao_xin/article/details/159434653 :: article:first :: blocks(p,li,pre,td,h1,h2,h3)[1]; normalized UTF-16 [0,95)",
+          "context": "Dify 是一款开源的大模型应用开发 / 运营平台（LLMOps），零代码 / 低代码快速搭建企业级 AI 应用，支持对话机器人、RAG 知识库、工作流、智能 Agent 等场景，开箱即用。"
+        },
+        "metadata": {
+          "title": "大模型应用开发Dify 安装、使用（小白超详细所用功能2026）_dify安装-CSDN博客",
+          "siteName": "blog.csdn.net",
+          "author": null,
+          "publishedAt": "2026-03-30T01:32:53.000Z",
+          "language": "zh-CN",
+          "sourceType": "UNKNOWN",
+          "contentKind": "UNKNOWN",
+          "productVersion": null,
+          "plan": null,
+          "upstreamUrl": null,
+          "independence": "UNKNOWN",
+          "originGroupId": null,
+          "independenceReason": null
+        },
+        "retrievedAt": "2026-10-24T23:58:21.532Z",
+        "readStatus": "READ",
+        "readError": null,
+        "contentHash": "1182d381cda27aea9f8c5daa7341901a829bef809fa4178c528a897541a00515"
+      }
+    ]
+  },
+  "supplementalDiscovery": {
+    "scope": "Product-name HN discovery; not asserted relevant to the question",
+    "record": {
+      "id": "dc038b48-028b-451e-aa56-0c50bd107685",
+      "provider": "hacker-news-algolia",
+      "query": "Dify",
+      "calledAt": "2026-10-24T23:58:21.587Z",
+      "status": "SUCCEEDED",
+      "error": null,
+      "returnedSources": [
+        {
+          "url": "https://news.ycombinator.com/item?id=40121318",
+          "title": "Dify, a visual workflow to build/test LLM applications",
+          "snippet": null,
+          "adoption": "PENDING",
+          "adoptionReason": null,
+          "evidenceId": null
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=36053688",
+          "title": "Show HN: Dify.ai – Open-source platform for LLMOps, define your AI-native apps",
+          "snippet": null,
+          "adoption": "PENDING",
+          "adoptionReason": null,
+          "evidenceId": null
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=40992179",
+          "title": "Dify vs. LangChain: Make the Choice Betweet Low Code and Python Library",
+          "snippet": null,
+          "adoption": "PENDING",
+          "adoptionReason": null,
+          "evidenceId": null
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=48803007",
+          "title": "SvelteChatKit: Provider agnostic AI chat UI for OpenAI, Dify, n8n, and others",
+          "snippet": null,
+          "adoption": "PENDING",
+          "adoptionReason": null,
+          "evidenceId": null
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=47850807",
+          "title": "Midjourney and Suno v4 and Veo 3.1 chained in one Dify workflow for $0.35 per ad",
+          "snippet": null,
+          "adoption": "PENDING",
+          "adoptionReason": null,
+          "evidenceId": null
+        }
+      ]
+    },
+    "evidence": {
+      "id": "3818a465-af75-4576-84d4-ce6a15414337",
+      "sourceUrl": "https://news.ycombinator.com/item?id=40121318",
+      "originalExcerpt": "Dify, a visual workflow to build/test LLM applications (github.com/langgenius)185 points by mountainview on April 22, 2024 | hide | past | favorite | 38 comments jeswin on April 23, 2024 | [–] > Dify is licensed under the Apache License 2.0, with the following additional conditions ...I am totally f",
+      "translation": null,
+      "originalLocation": {
+        "kind": "TEXT",
+        "locator": "https://news.ycombinator.com/item?id=40121318 :: body :: blocks(p,li,pre,td,h1,h2,h3)[4]; normalized UTF-16 [0,300)",
+        "context": "Dify, a visual workflow to build/test LLM applications (github.com/langgenius)185 points by mountainview on April 22, 2024 | hide | past | favorite | 38 comments jeswin on April 23, 2024 | [–] > Dify is licensed under the Apache License 2.0, with the following additional conditions ...I am totally fine with closed-source/commercial licenses, but please don't do a \"Like Apache 2.0 but not really\" t"
+      },
+      "metadata": {
+        "title": "Dify, a visual workflow to build/test LLM applications | Hacker News",
+        "siteName": "news.ycombinator.com",
+        "author": null,
+        "publishedAt": null,
+        "language": "en",
+        "sourceType": "COMMUNITY",
+        "contentKind": "UNKNOWN",
+        "productVersion": null,
+        "plan": null,
+        "upstreamUrl": null,
+        "independence": "UNKNOWN",
+        "originGroupId": null,
+        "independenceReason": null
+      },
+      "retrievedAt": "2026-10-24T23:58:24.640Z",
+      "readStatus": "READ",
+      "readError": null,
+      "contentHash": "3bff5ea8c96acf61829efe857e01f58adb0902fff15e032d7a4d49b33f80a923"
+    }
+  },
+  "unauthenticatedProbe": {
+    "endpoint": "https://api.wsa.cloud.tencent.com/SearchPro",
+    "httpStatus": 200,
+    "response": {
+      "Response": {
+        "Error": {
+          "Code": "UnauthorizedOperation",
+          "Message": "未授权操作。"
+        },
+        "RequestId": "cbd2a358-56a9-48de-a51a-cf52a8f65a7a"
+      }
+    },
+    "bodyHash": "8732bee927c94678d62128263f10cd48343c7dc20eecca4751534eca525a4eae",
+    "note": "No Authorization header; HTTP 200 with service Error is failure"
+  },
+  "contribution": [
+    {
+      "status": "FAILED",
+      "error": "Yuanbao service InvalidParameter",
+      "sources": []
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "capturedAt": "2026-10-25T00:01:50.070Z",
+  "url": "http://127.0.0.1:3000/investigations/1e71dca0-c0fd-4743-ab67-627280748294",
+  "detail": {
+    "investigation": {
+      "id": "1e71dca0-c0fd-4743-ab67-627280748294",
+      "question": "Dify 官网是否将 Dify 描述为开源平台？只核实官网表述。",
+      "status": "SUCCEEDED",
+      "stage": "COMPLETED",
+      "error": null,
+      "createdAt": "2026-10-25T00:00:40.942Z",
+      "updatedAt": "2026-10-25T00:01:49.790Z",
+      "startedAt": "2026-10-25T00:00:41.967Z",
+      "completedAt": "2026-10-25T00:01:49.790Z",
+      "resultSnapshotId": "a57c92c9-fa2d-4780-92f1-0a2f511a7c19"
+    },
+    "identityConfirmation": null,
+    "retry": {
+      "allowed": false,
+      "reason": "仅失败的调查可以手动重试。",
+      "remaining": 2,
+      "expectedAttemptCount": 1
+    }
+  },
+  "observedStates": [
+    {
+      "status": "RUNNING",
+      "stage": "ANSWER",
+      "observedAt": "2026-10-25T00:01:39.788Z"
+    },
+    {
+      "status": "SUCCEEDED",
+      "stage": "COMPLETED",
+      "observedAt": "2026-10-25T00:01:50.069Z"
+    }
+  ]
+}

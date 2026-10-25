@@ -1,0 +1,41 @@
+{
+  "capturedAt": "2026-10-25T00:05:02.312Z",
+  "url": "http://127.0.0.1:3000/investigations/8c4cf6ce-a6a8-445b-b3cd-771a5c96eeee",
+  "detail": {
+    "investigation": {
+      "id": "8c4cf6ce-a6a8-445b-b3cd-771a5c96eeee",
+      "question": "Dify 官方所说的 open-source 是否等于 Apache 2.0 无额外限制？核对海外英文原文，区分品牌和多租户商用条件及同源转载。",
+      "status": "FAILED",
+      "stage": "VERIFICATION",
+      "error": {
+        "code": "PROVIDER_FAILED",
+        "message": "MODEL: network, timeout or validated JSON output failed",
+        "retryable": false
+      },
+      "createdAt": "2026-10-25T00:04:22.240Z",
+      "updatedAt": "2026-10-25T00:05:01.831Z",
+      "startedAt": "2026-10-25T00:04:22.301Z",
+      "completedAt": "2026-10-25T00:05:01.831Z",
+      "resultSnapshotId": null
+    },
+    "identityConfirmation": null,
+    "retry": {
+      "allowed": false,
+      "reason": "此错误不可重试，请先解决配置或输入问题，再发起新调查。",
+      "remaining": 2,
+      "expectedAttemptCount": 1
+    }
+  },
+  "observedStates": [
+    {
+      "status": "RUNNING",
+      "stage": "VERIFICATION",
+      "observedAt": "2026-10-25T00:04:55.017Z"
+    },
+    {
+      "status": "FAILED",
+      "stage": "VERIFICATION",
+      "observedAt": "2026-10-25T00:05:02.311Z"
+    }
+  ]
+}

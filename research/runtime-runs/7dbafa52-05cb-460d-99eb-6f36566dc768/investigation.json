@@ -1,0 +1,36 @@
+{
+  "capturedAt": "2026-10-25T00:09:36.690Z",
+  "url": "http://127.0.0.1:3000/investigations/7dbafa52-05cb-460d-99eb-6f36566dc768",
+  "detail": {
+    "investigation": {
+      "id": "7dbafa52-05cb-460d-99eb-6f36566dc768",
+      "question": "Dify 官方所说的 open-source 是否等于 Apache 2.0 无额外限制？核对海外英文原文，区分品牌和多租户商用条件及同源转载。",
+      "status": "FAILED",
+      "stage": "ANSWER",
+      "error": {
+        "code": "PROVIDER_FAILED",
+        "message": "Evidence validation: answer cites unresolved claim as a conclusion",
+        "retryable": false
+      },
+      "createdAt": "2026-10-25T00:08:57.039Z",
+      "updatedAt": "2026-10-25T00:09:27.278Z",
+      "startedAt": "2026-10-25T00:08:57.118Z",
+      "completedAt": "2026-10-25T00:09:27.278Z",
+      "resultSnapshotId": null
+    },
+    "identityConfirmation": null,
+    "retry": {
+      "allowed": false,
+      "reason": "此错误不可重试，请先解决配置或输入问题，再发起新调查。",
+      "remaining": 2,
+      "expectedAttemptCount": 1
+    }
+  },
+  "observedStates": [
+    {
+      "status": "FAILED",
+      "stage": "ANSWER",
+      "observedAt": "2026-10-25T00:09:36.688Z"
+    }
+  ]
+}

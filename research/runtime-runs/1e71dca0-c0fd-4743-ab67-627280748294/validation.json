@@ -1,0 +1,109 @@
+{
+  "investigationId": "1e71dca0-c0fd-4743-ab67-627280748294",
+  "snapshotId": "a57c92c9-fa2d-4780-92f1-0a2f511a7c19",
+  "status": "SUCCEEDED",
+  "url": "http://127.0.0.1:3000/investigations/1e71dca0-c0fd-4743-ab67-627280748294",
+  "citations": 4,
+  "exactQuoteChecks": "PASSED",
+  "semanticChecks": [
+    {
+      "marker": "[1]",
+      "supported": true,
+      "reason": "原句直接支持：docs.dify.ai 中文与英文摘录均称 Dify 是开源平台；dify.ai 英文/中文首页及“关于我们”摘录只含托管、构建、测试、上线或团队理念，未见开源表述。回答按官方文档站与主站短摘录区分范围，未把短摘录未出现当作主站全部页面否定，事实与限定均有原句依据。"
+    },
+    {
+      "marker": "[2]",
+      "supported": true,
+      "reason": "docs.dify.ai 中文原句写明“Dify 是一个用于构建 AI 应用的开源平台”，英文原句包含“Dify is an open-source platform for building AI applications”。回答只据此证明官方文档站如此表述，并明确其不等于独立实测、也不覆盖主站全部页面，限定与原句范围一致。"
+    },
+    {
+      "marker": "[3]",
+      "supported": true,
+      "reason": "dify.ai 英文与中文首页原句确为托管、构建、测试和上线 AI 应用，未出现“开源/open-source”；“关于我们”原句谈团队理念，未涉及开源。回答明确这些只是已读短摘录，不能据此断定主站其他页面没有该表述，符合原句范围。"
+    },
+    {
+      "marker": "[4]",
+      "supported": true,
+      "reason": "两条 dify-china 关于我们原句均称 Dify 是“面向未来的开源LLM应用开发平台”；其 URL 与 dify.ai 不同，且原文与 contentHash 相同，可支持同一来源家族、非独立佐证的判断。回答对该来源与 dify.ai 官网表述的区分有原句和元数据依据。"
+    }
+  ],
+  "review": {
+    "status": "NOT_CONFIGURED",
+    "reason": "未配置第二模型；不声称完成独立模型复核或精度提高。",
+    "independentAssessment": null,
+    "findings": []
+  },
+  "retrieval": [
+    {
+      "provider": "tencent-yuanbao-search-api",
+      "status": "SUCCEEDED",
+      "returnedSources": 6,
+      "adopted": 6
+    },
+    {
+      "provider": "bing-rss-public-search",
+      "status": "SUCCEEDED",
+      "returnedSources": 6,
+      "adopted": 0
+    }
+  ],
+  "modelCalls": [
+    {
+      "provider": "api.deepseek.com",
+      "model": "deepseek-flash",
+      "promptVersion": "a2-evidence-v1",
+      "temperature": null,
+      "generatedAt": "2026-10-25T00:00:54.219Z",
+      "id": "842d26c2-f72c-4ff5-acc0-505b7f3f0b74",
+      "purpose": "claim-extraction",
+      "startedAt": "2026-10-25T00:00:45.194Z",
+      "durationMs": 9025,
+      "outcome": "SUCCEEDED",
+      "inputTokens": 3174,
+      "outputTokens": 1508
+    },
+    {
+      "provider": "api.deepseek.com",
+      "model": "deepseek-flash",
+      "promptVersion": "a2-evidence-v1",
+      "temperature": null,
+      "generatedAt": "2026-10-25T00:01:14.398Z",
+      "id": "575e8d2e-8afe-43bd-9946-efe760d891ae",
+      "purpose": "claim-evidence-verification",
+      "startedAt": "2026-10-25T00:00:54.223Z",
+      "durationMs": 20180,
+      "outcome": "SUCCEEDED",
+      "inputTokens": 5193,
+      "outputTokens": 3732
+    },
+    {
+      "provider": "api.deepseek.com",
+      "model": "deepseek-flash",
+      "promptVersion": "a2-evidence-v1",
+      "temperature": null,
+      "generatedAt": "2026-10-25T00:01:30.979Z",
+      "id": "0d89b19e-e9e5-450a-afcc-30ad49c708ef",
+      "purpose": "cited-answer-generation",
+      "startedAt": "2026-10-25T00:01:14.413Z",
+      "durationMs": 16566,
+      "outcome": "SUCCEEDED",
+      "inputTokens": 5240,
+      "outputTokens": 3011
+    },
+    {
+      "provider": "api.deepseek.com",
+      "model": "deepseek-flash",
+      "promptVersion": "a2-evidence-v1",
+      "temperature": null,
+      "generatedAt": "2026-10-25T00:01:49.756Z",
+      "id": "1ed26b56-be84-47da-9aee-8e2324c335c8",
+      "purpose": "citation-semantic-support-check",
+      "startedAt": "2026-10-25T00:01:30.980Z",
+      "durationMs": 18776,
+      "outcome": "SUCCEEDED",
+      "inputTokens": 6894,
+      "outputTokens": 3300
+    }
+  ],
+  "directory": "C:\\Users\\qianchen\\Documents\\waytoagi-1024-detective-a1\\research\\runtime-runs\\1e71dca0-c0fd-4743-ab67-627280748294"
+}

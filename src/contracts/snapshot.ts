@@ -4,6 +4,7 @@ import { ProductIdentitySchema } from "./identity";
 import { EvidenceSchema } from "./evidence";
 import { ClaimSchema, ConflictSchema, EvidenceRelationSchema, GapSchema } from "./claim";
 import { RetrievalRecordSchema } from "./retrieval";
+import { VerificationAuditSchema } from "./verification-audit";
 
 export const EvidenceSnapshotSchema = z.strictObject({
   id: IdSchema,
@@ -17,6 +18,7 @@ export const EvidenceSnapshotSchema = z.strictObject({
   conflicts: z.array(ConflictSchema),
   gaps: z.array(GapSchema),
   retrievalRecords: z.array(RetrievalRecordSchema),
+  verificationAudit: VerificationAuditSchema.optional(),
   generatedAt: TimestampSchema,
   contractVersion: z.literal(CONTRACT_VERSION)
 }).superRefine((value, ctx) => {
@@ -42,6 +44,11 @@ export const EvidenceSnapshotSchema = z.strictObject({
   for (const item of value.gaps) if (item.claimIds.some((id) => !claims.has(id))) issue("Dangling gap reference");
   for (const record of value.retrievalRecords) for (const source of record.returnedSources) {
     if (source.evidenceId && !evidence.has(source.evidenceId)) issue("Dangling retrieved source reference");
+  }
+  for (const finding of value.verificationAudit?.review.findings ?? []) {
+    if (finding.claimId && !claims.has(finding.claimId)) issue("Dangling model review claim reference");
+    if (finding.evidenceIds.some((id) => evidence.get(id)?.readStatus !== "READ")) issue("Model review must refer to readable original evidence");
+    if (finding.decision === "ACCEPTED" && !finding.evidenceIds.length) issue("Accepted model review requires concrete evidence");
   }
 });
 export type EvidenceSnapshot = z.infer<typeof EvidenceSnapshotSchema>;

@@ -20,13 +20,14 @@ const silent = () => undefined;
 async function submit() { return queue.enqueue({ question: "Worker test only", idempotencyKey: randomUUID() }); }
 
 describe("independent Worker execution with real PostgreSQL", () => {
-  it("runs the production entry and records PROVIDER_NOT_CONFIGURED without publishing", async () => {
+  it("runs the production entry and requests identity confirmation without publishing unknown products", async () => {
     const created = await submit();
     const worker = new WorkerRunner(queue, investigationHandler, "real-entry-test", { heartbeatMs: 50 }, silent);
     expect(await worker.processOne()).toBe(true);
     const job = await database.db.job.findUniqueOrThrow({ where: { id: created.jobId } });
-    expect(job.status).toBe("FAILED");
-    expect(job.lastError).toMatchObject({ code: "PROVIDER_NOT_CONFIGURED", retryable: false });
+    expect(job.status).toBe("AWAITING_CONFIRMATION");
+    expect(job.lastError).toBeNull();
+    expect((await database.db.investigation.findUniqueOrThrow({ where: { id: created.investigation!.id } })).status).toBe("AWAITING_CONFIRMATION");
     expect((await database.db.executionAttempt.findFirstOrThrow()).stage).toBe("IDENTITY");
     expect(await database.db.evidenceSnapshot.count()).toBe(0);
     expect(await database.db.answer.count()).toBe(0);

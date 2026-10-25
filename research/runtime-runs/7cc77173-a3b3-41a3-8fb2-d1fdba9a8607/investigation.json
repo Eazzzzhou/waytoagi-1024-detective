@@ -1,0 +1,46 @@
+{
+  "capturedAt": "2026-10-25T00:16:00.416Z",
+  "url": "http://127.0.0.1:3000/investigations/7cc77173-a3b3-41a3-8fb2-d1fdba9a8607",
+  "detail": {
+    "investigation": {
+      "id": "7cc77173-a3b3-41a3-8fb2-d1fdba9a8607",
+      "question": "Dify 官方所说的 open-source 是否等于 Apache 2.0 无额外限制？核对海外英文原文，区分品牌和多租户商用条件及同源转载。",
+      "status": "FAILED",
+      "stage": "VERIFICATION",
+      "error": {
+        "code": "PROVIDER_FAILED",
+        "message": "MODEL: claim-extraction failed (output-schema; :unrecognized_keys)",
+        "retryable": false
+      },
+      "createdAt": "2026-10-25T00:15:41.720Z",
+      "updatedAt": "2026-10-25T00:16:00.031Z",
+      "startedAt": "2026-10-25T00:15:51.007Z",
+      "completedAt": "2026-10-25T00:16:00.031Z",
+      "resultSnapshotId": null
+    },
+    "identityConfirmation": null,
+    "retry": {
+      "allowed": false,
+      "reason": "此错误不可重试，请先解决配置或输入问题，再发起新调查。",
+      "remaining": 2,
+      "expectedAttemptCount": 1
+    }
+  },
+  "observedStates": [
+    {
+      "status": "RUNNING",
+      "stage": "SOURCE_FETCH",
+      "observedAt": "2026-10-25T00:15:54.251Z"
+    },
+    {
+      "status": "RUNNING",
+      "stage": "VERIFICATION",
+      "observedAt": "2026-10-25T00:15:56.297Z"
+    },
+    {
+      "status": "FAILED",
+      "stage": "VERIFICATION",
+      "observedAt": "2026-10-25T00:16:00.415Z"
+    }
+  ]
+}

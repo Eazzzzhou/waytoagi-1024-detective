@@ -40,8 +40,9 @@ describe("HTTP handlers against real PostgreSQL", () => {
     const fresh = new InvestigationHttpApi(database.competitor);
     const response = await fresh.detail(request(`/api/investigations/${investigationId}`), investigationId);
     const result = InvestigationDetailSchema.parse(await response.json());
-    expect(result.investigation.status).toBe("FAILED");
-    expect(result.investigation.error).toMatchObject({ code: "PROVIDER_NOT_CONFIGURED" });
+    expect(result.investigation.status).toBe("AWAITING_CONFIRMATION");
+    expect(result.investigation.error).toBeNull();
+    expect(result.identityConfirmation?.identity.confirmationStatus).toBe("NEEDS_CONFIRMATION");
     expect(result.retry.allowed).toBe(false);
     expect(response.headers.get("Cache-Control")).toBe("no-store");
     const text = JSON.stringify(result);

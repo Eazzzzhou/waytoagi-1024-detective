@@ -1,0 +1,880 @@
+{
+  "snapshot": {
+    "id": "3b1a7fc1-0938-4c5f-afba-d515576ddeb7",
+    "investigationId": "e079d9c2-aadc-481d-89bd-c68765b231f1",
+    "version": 1,
+    "parentSnapshotId": null,
+    "productIdentity": {
+      "name": "Dify",
+      "officialWebsite": "https://dify.ai",
+      "version": null,
+      "plan": null,
+      "confirmationStatus": "CONFIRMED",
+      "confirmationBasis": [
+        {
+          "url": "https://dify.ai/",
+          "excerpt": "Hosted by Dify. Build, test, and launch AI apps without managing infrastructure.",
+          "retrievedAt": "2026-10-25T00:12:44.930Z",
+          "reason": "Unique explicit product name in question, matched in freshly read official domain text; version and plan unknown"
+        }
+      ]
+    },
+    "evidence": [
+      {
+        "id": "c958076c-cbc6-4d7f-b619-81061c1dd8d9",
+        "sourceUrl": "https://hysenlabs.com/community/t/4-dify-is-apache-2-0-plus-two-conditions-read-them-before-you",
+        "originalExcerpt": "Dify's repository says \"Apache 2.0\", and the page here lists it that way, but the LICENSE file is the Dify Open Source License, which is Apache 2.0 with additional conditions. At the time of writing they are:",
+        "translation": null,
+        "originalLocation": {
+          "kind": "TEXT",
+          "locator": "https://hysenlabs.com/posts/4-dify-is-apache-2-0-plus-two-conditions-read-them-before-you :: article:first :: blocks(p,li,pre,td,h1,h2,h3)[0]; normalized UTF-16 [0,208)",
+          "context": "Dify's repository says \"Apache 2.0\", and the page here lists it that way, but the LICENSE file is the Dify Open Source License, which is Apache 2.0 with additional conditions. At the time of writing they are:"
+        },
+        "metadata": {
+          "title": "Dify is Apache 2.0 plus two conditions. Read them before you host it for other people | Hysen Labs",
+          "siteName": "hysenlabs.com",
+          "author": null,
+          "publishedAt": "2026-10-08T12:40:00.000Z",
+          "language": "en",
+          "sourceType": "UNKNOWN",
+          "contentKind": "UNKNOWN",
+          "productVersion": null,
+          "plan": null,
+          "upstreamUrl": null,
+          "independence": "UNKNOWN",
+          "originGroupId": null,
+          "independenceReason": null
+        },
+        "retrievedAt": "2026-10-25T00:12:46.891Z",
+        "readStatus": "READ",
+        "readError": null,
+        "contentHash": "ca9cbce69a82bd7fd8a4e0533493fb22f1f4d9d35e8195d6cb9d4e2159ab2b8c"
+      },
+      {
+        "id": "47d15552-f395-4811-aa6a-7401163eaffc",
+        "sourceUrl": "https://aiwiki.ai/wiki/dify",
+        "originalExcerpt": null,
+        "translation": null,
+        "originalLocation": null,
+        "metadata": {
+          "title": null,
+          "siteName": "aiwiki.ai",
+          "author": null,
+          "publishedAt": null,
+          "language": null,
+          "sourceType": "UNKNOWN",
+          "contentKind": "UNKNOWN",
+          "productVersion": null,
+          "plan": null,
+          "upstreamUrl": null,
+          "independence": "UNKNOWN",
+          "originGroupId": null,
+          "independenceReason": null
+        },
+        "retrievedAt": "2026-10-25T00:12:47.219Z",
+        "readStatus": "RESTRICTED",
+        "readError": "Source HTTP 429",
+        "contentHash": null
+      },
+      {
+        "id": "49159d23-bfed-4ead-a0d6-c5f6f9b03ac2",
+        "sourceUrl": "https://github.com/vstorm-co/agenticos/blob/main/docs/about/dify.md",
+        "originalExcerpt": "ducts self-host and both do document retrieval, so the difference is elsewhere. Dify is a visual canvas for LLM apps and workflows, with multi-workspace tenancy, SSO and audit logs in its Enterprise edition. AgenticOS is Apache-2.0 and multi-tenant in the open-source product, with budgets, approvals",
+        "translation": null,
+        "originalLocation": {
+          "kind": "TEXT",
+          "locator": "https://github.com/vstorm-co/agenticos/blob/main/docs/about/dify.md :: article:first :: blocks(p,li,pre,td,h1,h2,h3)[4]; normalized UTF-16 [8,308)",
+          "context": "Both products self-host and both do document retrieval, so the difference is elsewhere. Dify is a visual canvas for LLM apps and workflows, with multi-workspace tenancy, SSO and audit logs in its Enterprise edition. AgenticOS is Apache-2.0 and multi-tenant in the open-source product, with budgets, approvals, directory sign-in and a tamper-evident audit log included."
+        },
+        "metadata": {
+          "title": "agenticos/docs/about/dify.md at main · vstorm-co/agenticos · GitHub",
+          "siteName": "github.com",
+          "author": null,
+          "publishedAt": null,
+          "language": "en",
+          "sourceType": "COMMUNITY",
+          "contentKind": "UNKNOWN",
+          "productVersion": null,
+          "plan": null,
+          "upstreamUrl": null,
+          "independence": "UNKNOWN",
+          "originGroupId": null,
+          "independenceReason": null
+        },
+        "retrievedAt": "2026-10-25T00:12:48.055Z",
+        "readStatus": "READ",
+        "readError": null,
+        "contentHash": "56b3a0e87faf84519f0a1f52b4863a7617bcc414b4167a77497b2d25c3fdf21e"
+      },
+      {
+        "id": "491c9ff2-fc07-40a0-8f45-5f7dbd0bef16",
+        "sourceUrl": "https://www.aiprofind.com/united-states/san-francisco/ai-tools/dify",
+        "originalExcerpt": "Dify is source-available, not open source, and readers should not skip past that. The license is Apache 2.0 with two added restrictions: you may not operate a multi-tenant environment from the source without written authorization from Dify, and you may not remove or modify the logo and copyright inf",
+        "translation": null,
+        "originalLocation": {
+          "kind": "TEXT",
+          "locator": "https://www.aiprofind.com/united-states/san-francisco/ai-tools/dify :: main:first :: blocks(p,li,pre,td,h1,h2,h3)[28]; normalized UTF-16 [0,300)",
+          "context": "Dify is source-available, not open source, and readers should not skip past that. The license is Apache 2.0 with two added restrictions: you may not operate a multi-tenant environment from the source without written authorization from Dify, and you may not remove or modify the logo and copyright information in the console. Those additions are incompatible with the Open Source Initiative definition"
+        },
+        "metadata": {
+          "title": "Dify - AI Tools - Artificial Intelligence",
+          "siteName": "www.aiprofind.com",
+          "author": null,
+          "publishedAt": null,
+          "language": "en-US",
+          "sourceType": "UNKNOWN",
+          "contentKind": "UNKNOWN",
+          "productVersion": null,
+          "plan": null,
+          "upstreamUrl": null,
+          "independence": "UNKNOWN",
+          "originGroupId": null,
+          "independenceReason": null
+        },
+        "retrievedAt": "2026-10-25T00:12:48.483Z",
+        "readStatus": "READ",
+        "readError": null,
+        "contentHash": "892c514c8fd16fae9deaea16e0fd206cb0f999042a0e4a09ccaa438a50a7edfd"
+      },
+      {
+        "id": "c80501e0-030a-4d90-93ea-1b812d089058",
+        "sourceUrl": "https://aitoolradar.io/guides/dify",
+        "originalExcerpt": "Mostly. Dify's license is Apache 2.0 with two added conditions: you cannot resell Dify as a multi-tenant SaaS without a commercial license, and you cannot remove or modify the Dify logo/copyright. For self-hosted internal use this is rarely a problem, but it is not an unconditional open-source licen",
+        "translation": null,
+        "originalLocation": {
+          "kind": "TEXT",
+          "locator": "https://aitoolradar.io/guides/dify :: article:first :: blocks(p,li,pre,td,h1,h2,h3)[110]; normalized UTF-16 [0,300)",
+          "context": "Mostly. Dify's license is Apache 2.0 with two added conditions: you cannot resell Dify as a multi-tenant SaaS without a commercial license, and you cannot remove or modify the Dify logo/copyright. For self-hosted internal use this is rarely a problem, but it is not an unconditional open-source license, so check the terms if you plan to build a commercial product on top of it."
+        },
+        "metadata": {
+          "title": "Dify Review 2026: Open-Source LLM App Platform, Tested",
+          "siteName": "aitoolradar.io",
+          "author": null,
+          "publishedAt": null,
+          "language": "en",
+          "sourceType": "UNKNOWN",
+          "contentKind": "UNKNOWN",
+          "productVersion": null,
+          "plan": null,
+          "upstreamUrl": null,
+          "independence": "UNKNOWN",
+          "originGroupId": null,
+          "independenceReason": null
+        },
+        "retrievedAt": "2026-10-25T00:12:47.565Z",
+        "readStatus": "READ",
+        "readError": null,
+        "contentHash": "2422ca096f0276f646202a1fd72a742c1f2c2288a78efb333878930b0d3964ca"
+      },
+      {
+        "id": "e1059a98-33b3-4024-aa69-ff3c8a5918e8",
+        "sourceUrl": "https://www.cnblogs.com/xgss/articles/21818508",
+        "originalExcerpt": "开源：Dify 是开源的，但它用的不是“纯 Apache-2.0”，而是自己定义的一份“基于 Apache-2.0 的 Dify Open Source License（附加了一些限制，比如对多租户 SaaS 再销售、商业使用有一定约束）",
+        "translation": null,
+        "originalLocation": {
+          "kind": "TEXT",
+          "locator": "https://www.cnblogs.com/xgss/articles/21818508 :: body :: blocks(p,li,pre,td,h1,h2,h3)[15]; normalized UTF-16 [0,119)",
+          "context": "开源：Dify 是开源的，但它用的不是“纯 Apache-2.0”，而是自己定义的一份“基于 Apache-2.0 的 Dify Open Source License（附加了一些限制，比如对多租户 SaaS 再销售、商业使用有一定约束）"
+        },
+        "metadata": {
+          "title": "dify总结 - 星光闪闪 - 博客园",
+          "siteName": "www.cnblogs.com",
+          "author": null,
+          "publishedAt": null,
+          "language": "zh-cn",
+          "sourceType": "UNKNOWN",
+          "contentKind": "UNKNOWN",
+          "productVersion": null,
+          "plan": null,
+          "upstreamUrl": null,
+          "independence": "UNKNOWN",
+          "originGroupId": null,
+          "independenceReason": null
+        },
+        "retrievedAt": "2026-10-25T00:12:46.421Z",
+        "readStatus": "READ",
+        "readError": null,
+        "contentHash": "30e92a68aeb7fe422cf87cc530d79d7541c9a6989185071781f6cf5f9555141b"
+      },
+      {
+        "id": "39fc7875-419e-45c0-905b-210f709c09a9",
+        "sourceUrl": "https://dify.ai/",
+        "originalExcerpt": "Hosted by Dify. Build, test, and launch AI apps without managing infrastructure.",
+        "translation": null,
+        "originalLocation": {
+          "kind": "TEXT",
+          "locator": "https://dify.ai/ :: article:first :: blocks(p,li,pre,td,h1,h2,h3)[2]; normalized UTF-16 [0,80)",
+          "context": "Hosted by Dify. Build, test, and launch AI apps without managing infrastructure."
+        },
+        "metadata": {
+          "title": "Dify - The Platform for Production-Ready Agentic Workflows",
+          "siteName": "dify.ai",
+          "author": null,
+          "publishedAt": null,
+          "language": "en",
+          "sourceType": "OFFICIAL",
+          "contentKind": "OFFICIAL_CLAIM",
+          "productVersion": null,
+          "plan": null,
+          "upstreamUrl": null,
+          "independence": "UNKNOWN",
+          "originGroupId": "official-publisher:dify.ai",
+          "independenceReason": "Same confirmed official publisher, including language variants and subdomains; not independent experiments. Claim-level shared-origin assessment belongs to verification."
+        },
+        "retrievedAt": "2026-10-25T00:12:48.792Z",
+        "readStatus": "READ",
+        "readError": null,
+        "contentHash": "259f093a7ca0c5482dbf3f4b989f96997badb219f7289743a2c3109d962c5420"
+      },
+      {
+        "id": "858705f8-262d-48c6-aa22-8d8a8abc3dda",
+        "sourceUrl": "https://github.com/Reixhp2014/dify/blob/main/LICENSE",
+        "originalExcerpt": null,
+        "translation": null,
+        "originalLocation": null,
+        "metadata": {
+          "title": null,
+          "siteName": "github.com",
+          "author": null,
+          "publishedAt": null,
+          "language": null,
+          "sourceType": "UNKNOWN",
+          "contentKind": "UNKNOWN",
+          "productVersion": null,
+          "plan": null,
+          "upstreamUrl": null,
+          "independence": "UNKNOWN",
+          "originGroupId": null,
+          "independenceReason": null
+        },
+        "retrievedAt": "2026-10-25T00:13:04.480Z",
+        "readStatus": "FAILED",
+        "readError": "No readable article blocks; JavaScript shell/empty page is not original material",
+        "contentHash": null
+      },
+      {
+        "id": "74c79923-f5de-46cd-bc00-b7eae8ec1fba",
+        "sourceUrl": "https://github.com/erickech/dify/blob/main/LICENSE",
+        "originalExcerpt": null,
+        "translation": null,
+        "originalLocation": null,
+        "metadata": {
+          "title": null,
+          "siteName": "github.com",
+          "author": null,
+          "publishedAt": null,
+          "language": null,
+          "sourceType": "UNKNOWN",
+          "contentKind": "UNKNOWN",
+          "productVersion": null,
+          "plan": null,
+          "upstreamUrl": null,
+          "independence": "UNKNOWN",
+          "originGroupId": null,
+          "independenceReason": null
+        },
+        "retrievedAt": "2026-10-25T00:13:04.773Z",
+        "readStatus": "FAILED",
+        "readError": "No readable article blocks; JavaScript shell/empty page is not original material",
+        "contentHash": null
+      }
+    ],
+    "claims": [
+      {
+        "id": "64b0e452-0437-4fa9-9f92-0c0128a0ce71",
+        "statement": "Dify 官方以“open-source”描述其产品，但已读的官方页面摘录未给出许可证文本或是否等同 Apache 2.0。",
+        "kind": "OFFICIAL_CLAIM",
+        "verificationStatus": "INSUFFICIENT",
+        "verificationReason": "唯一已读官方原句只描述托管建应用，未提“open-source”或许可证；无官方许可证文本可核。",
+        "scope": "Dify 官方网站（dify.ai），版本与套餐未知，2026-10-25 读取"
+      },
+      {
+        "id": "8890497e-580e-4537-8524-746784c4afec",
+        "statement": "来源报告（未独立复现）：第三方英文文章称 Dify 仓库标注 Apache 2.0，但 LICENSE 文件实为 Dify Open Source License，即在 Apache 2.0 基础上附加条件。",
+        "kind": "USER_REPORT",
+        "verificationStatus": "SUPPORTED",
+        "verificationReason": "hysenlabs 原句明确称仓库标 Apache 2.0，而 LICENSE 为带附加条件的 Dify Open Source License，正是该转述；但仅为该文单方陈述，未含许可证原文。",
+        "scope": "hysenlabs.com 文章（2026-10-08）对 Dify 许可证文件的转述，版本未知"
+      },
+      {
+        "id": "15534cab-1212-45f2-9bf4-02df6930c2d5",
+        "statement": "来源报告（未独立复现）：据第三方英文文章转述，Dify 附加条件之一为：未经 Dify 书面授权，不得用其源码运营多租户环境。",
+        "kind": "USER_REPORT",
+        "verificationStatus": "SUPPORTED",
+        "verificationReason": "aiprofind 原句称不得无书面授权以源码运营多租户环境，直接对应此条件；aitoolradar 类似但说商业许可。均属第三方转述，条件可比。",
+        "scope": "aiprofind.com 与 aitoolradar.io 的英文介绍，版本与套餐未知"
+      },
+      {
+        "id": "402319cd-4c66-4c75-87b7-c5a150c8afde",
+        "statement": "来源报告（未独立复现）：据第三方英文文章转述，Dify 附加条件之一为：不得移除或修改 Dify 的 logo 与版权信息。",
+        "kind": "USER_REPORT",
+        "verificationStatus": "SUPPORTED",
+        "verificationReason": "aiprofind 原句明确不得移除或修改 logo 与版权信息；aitoolradar 也说不得移除或修改 logo/版权。两文转述一致但非原始许可文本。",
+        "scope": "aiprofind.com 与 aitoolradar.io 的英文介绍，版本与套餐未知"
+      },
+      {
+        "id": "ff323681-671f-47ac-bdf3-0cb7e2c3a305",
+        "statement": "来源观点：某英文评测意见认为，自托管内部使用很少受上述条件影响，但该许可证并非无条件的开源许可证。",
+        "kind": "OPINION",
+        "verificationStatus": "SUPPORTED",
+        "verificationReason": "aitoolradar 原句称自托管内部使用很少有问题，但不是无条件开源许可，正对应此观点；属作者评价，非事实核验。",
+        "scope": "aitoolradar.io 评测作者观点，针对自托管内部使用场景，版本未知"
+      },
+      {
+        "id": "353914f8-85c3-4df8-ad73-f53792699f46",
+        "statement": "来源报告（未独立复现）：中文博客称 Dify 使用自定义的 Dify Open Source License，基于 Apache-2.0 但对多租户 SaaS 再销售等有限制。",
+        "kind": "USER_REPORT",
+        "verificationStatus": "SUPPORTED",
+        "verificationReason": "cnblogs 原句称非纯 Apache-2.0 而是 Dify Open Source License，对多租户 SaaS 再销售、商业使用有约束，正对应；中文转述，未引用许可原文。",
+        "scope": "cnblogs.com 中文博客转述，版本未知"
+      },
+      {
+        "id": "a346e2c6-252e-4e8d-abb4-0662ce91a519",
+        "statement": "来源报告（未独立复现）：GitHub 上一份第三方文档称 Dify 的多工作区租户、SSO 与审计日志属于 Enterprise 版功能。",
+        "kind": "USER_REPORT",
+        "verificationStatus": "SUPPORTED",
+        "verificationReason": "agenticos 文档原句称 Dify 由可视化画布及 Enterprise 版的多工作区租户、SSO、审计日志构成，支持该归属；竞品文档单方陈述。",
+        "scope": "github.com/vstorm-co/agenticos 文档，版本未知"
+      }
+    ],
+    "relations": [
+      {
+        "claimId": "64b0e452-0437-4fa9-9f92-0c0128a0ce71",
+        "evidenceId": "39fc7875-419e-45c0-905b-210f709c09a9",
+        "relation": "UNCERTAIN",
+        "reason": "官方原句只讲托管建应用，未提 open-source 或许可证，无法支持或反驳该主张。"
+      },
+      {
+        "claimId": "8890497e-580e-4537-8524-746784c4afec",
+        "evidenceId": "c958076c-cbc6-4d7f-b619-81061c1dd8d9",
+        "relation": "SUPPORTS",
+        "reason": "原句称仓库标 Apache 2.0 而 LICENSE 为带附加条件的 Dify Open Source License，直接对应被转述内容。"
+      },
+      {
+        "claimId": "15534cab-1212-45f2-9bf4-02df6930c2d5",
+        "evidenceId": "491c9ff2-fc07-40a0-8f45-5f7dbd0bef16",
+        "relation": "SUPPORTS",
+        "reason": "原句称无 Dify 书面授权不得以源码运营多租户环境，正对应此附加条件。"
+      },
+      {
+        "claimId": "15534cab-1212-45f2-9bf4-02df6930c2d5",
+        "evidenceId": "c80501e0-030a-4d90-93ea-1b812d089058",
+        "relation": "SUPPORTS",
+        "reason": "原句称无商业许可不得把 Dify 作为多租户 SaaS 转售，与书面授权说相近，同属第三方转述。"
+      },
+      {
+        "claimId": "402319cd-4c66-4c75-87b7-c5a150c8afde",
+        "evidenceId": "491c9ff2-fc07-40a0-8f45-5f7dbd0bef16",
+        "relation": "SUPPORTS",
+        "reason": "原句明确不得移除或修改 logo 与版权信息，对应此附加条件。"
+      },
+      {
+        "claimId": "402319cd-4c66-4c75-87b7-c5a150c8afde",
+        "evidenceId": "c80501e0-030a-4d90-93ea-1b812d089058",
+        "relation": "SUPPORTS",
+        "reason": "原句称不得移除或修改 Dify logo/版权，与此转述一致。"
+      },
+      {
+        "claimId": "ff323681-671f-47ac-bdf3-0cb7e2c3a305",
+        "evidenceId": "c80501e0-030a-4d90-93ea-1b812d089058",
+        "relation": "SUPPORTS",
+        "reason": "原句称自托管内部使用很少有问题，但不是无条件开源许可，即该评测观点本身。"
+      },
+      {
+        "claimId": "353914f8-85c3-4df8-ad73-f53792699f46",
+        "evidenceId": "e1059a98-33b3-4024-aa69-ff3c8a5918e8",
+        "relation": "SUPPORTS",
+        "reason": "中文原句称非纯 Apache-2.0 而是 Dify Open Source License，对多租户 SaaS 再销售等有限制。"
+      },
+      {
+        "claimId": "a346e2c6-252e-4e8d-abb4-0662ce91a519",
+        "evidenceId": "49159d23-bfed-4ead-a0d6-c5f6f9b03ac2",
+        "relation": "SUPPORTS",
+        "reason": "原句称多工作区租户、SSO 与审计日志属 Enterprise 版，支持该归属。"
+      },
+      {
+        "claimId": "8890497e-580e-4537-8524-746784c4afec",
+        "evidenceId": "491c9ff2-fc07-40a0-8f45-5f7dbd0bef16",
+        "relation": "CONTEXT",
+        "reason": "该文亦称 Dify 非开源源而是 source-available、Apache 2.0 加两项限制，属同向转述，非原始许可文本。"
+      }
+    ],
+    "conflicts": [],
+    "gaps": [
+      {
+        "id": "884c8d59-507c-4b73-8290-c1d3cb44f93e",
+        "claimIds": [],
+        "kind": "READ_FAILED",
+        "description": "https://aiwiki.ai/wiki/dify：RESTRICTED；Source HTTP 429",
+        "searchScope": null
+      },
+      {
+        "id": "979a98ca-bee1-44a4-b7de-5f37c0502ae9",
+        "claimIds": [
+          "64b0e452-0437-4fa9-9f92-0c0128a0ce71"
+        ],
+        "kind": "INSUFFICIENT_EVIDENCE",
+        "description": "唯一已读官方原句只描述托管建应用，未提“open-source”或许可证；无官方许可证文本可核。",
+        "searchScope": null
+      },
+      {
+        "id": "0d5b8f2a-6e1c-4c3a-9a1f-3f7e2b9c4d10",
+        "claimIds": [
+          "8890497e-580e-4537-8524-746784c4afec",
+          "15534cab-1212-45f2-9bf4-02df6930c2d5",
+          "402319cd-4c66-4c75-87b7-c5a150c8afde"
+        ],
+        "kind": "INSUFFICIENT_EVIDENCE",
+        "description": "两个尝试读取 Dify 仓库 LICENSE 的地址均失败（JavaScript 外壳/无可读正文），未能取得许可证原文核对附加条件。",
+        "searchScope": "github.com 上 Dify 镜像仓库的 LICENSE 文件"
+      }
+    ],
+    "retrievalRecords": [
+      {
+        "id": "e22e0d0b-87f1-4af4-b44d-985b82664024",
+        "provider": "tencent-yuanbao-search-api",
+        "query": "Dify 官方所说的 open-source 是否等于 Apache 2.0 无额外限制？核对海外英文原文，区分品牌和多租户商用条件及同源转载。",
+        "calledAt": "2026-10-25T00:12:45.049Z",
+        "status": "SUCCEEDED",
+        "error": null,
+        "returnedSources": [
+          {
+            "url": "https://hysenlabs.com/community/t/4-dify-is-apache-2-0-plus-two-conditions-read-them-before-you",
+            "title": "Dify is Apache 2.0 plus two conditions. Read them before you host it for other people",
+            "snippet": "Dify is Apache 2.0 plus two conditions. Read them before you host it for other people。Dify is Apache 2.0 plus two conditions. Read them before you host it for other people Dify's repository says \"Apache 2.0\", and the page here lists it that way, but the LICENSE file is the Dify Open Source License, which is Apache 2.0 with additional conditions. At the time of writing they are: You may not use Dify to operate a multi-tenant environment (one deployment serving several unrelated tenants) without written authorisation from the company. The exception is where a tenant is a separate deployment. You may not remove or alter the LOGO and copyright information in the frontend console, and this applies to the apps it generates as well. For a team running Dify for itself, none of this matters. It mat...",
+            "adoption": "ADOPTED",
+            "adoptionReason": "取得并保存原句；是否支持问题由后续逐主张核查决定，不按搜索排名确证。",
+            "evidenceId": "c958076c-cbc6-4d7f-b619-81061c1dd8d9"
+          },
+          {
+            "url": "https://aiwiki.ai/wiki/dify",
+            "title": "Dify",
+            "snippet": "Dify AI Wiki。 \"message credits\" govern certain hosted features rather than reselling raw tokens. Adoption The company reports that more than 2,000 teams and over 280 enterprises run on commercial versions of Dify. Named adopters cited in its 2026 funding announcement and marketing include Maersk, ETS (Educational Testing Service), Anker Innovations, Novartis, Volvo Cars, Thermo Fisher Scientific, and Ricoh. Reported use cases span document-review pipelines, internal copilots grounded in enterprise knowledge, customer-support automation with escalation paths, and operational workflows such as invoice auditing and correspondence drafting. The company has described a customer Q&A deployment serving more than 19,000 employees across over 20 departments. These figures are largely self-reported ...",
+            "adoption": "REJECTED",
+            "adoptionReason": "来源原文不可用：RESTRICTED。Source HTTP 429",
+            "evidenceId": "47d15552-f395-4811-aa6a-7401163eaffc"
+          },
+          {
+            "url": "https://github.com/vstorm-co/agenticos/blob/main/docs/about/dify.md",
+            "title": "AgenticOS vs Dify",
+            "snippet": "AgenticOS vs Dify GitHub。title AgenticOS vs Dify seo_title AgenticOS vs Dify: an Apache-2.0, multi-tenant alternative description Compare Dify and AgenticOS, two self-hosted AI agent platforms: licence conditions, multi-tenancy, SSO, budgets, approvals, audit logs and pricing. AgenticOS vs Dify Both products self-host and both do document retrieval, so the difference is elsewhere. Dify is a visual canvas for LLM apps and workflows, with multi-workspace tenancy, SSO and audit logs in its Enterprise edition. AgenticOS is Apache-2.0 and multi-tenant in the open-source product, with budgets, approvals, directory sign-in and a tamper-evident audit log included. Maintained by the AgenticOS team. Sources checked 21 October 2026. AgenticOS baseline: v1.10.0. Dify scope: the public repository at 1....",
+            "adoption": "ADOPTED",
+            "adoptionReason": "取得并保存原句；是否支持问题由后续逐主张核查决定，不按搜索排名确证。",
+            "evidenceId": "49159d23-bfed-4ead-a0d6-c5f6f9b03ac2"
+          },
+          {
+            "url": "https://www.aiprofind.com/united-states/san-francisco/ai-tools/dify",
+            "title": "Dify",
+            "snippet": "Dify AIPROFIND。 you need to run database and plugin data migrations, and back up your database, Redis, vector store, and persistent storage first. Self-hosting Dify is free in license terms and not free in engineering attention. The Open Source Question: Dify is source-available, not open source, and readers should not skip past that. The license is Apache 2.0 with two added restrictions: you may not operate a multi-tenant environment from the source without written authorization from Dify, and you may not remove or modify the logo and copyright information in the console. Those additions are incompatible with the Open Source Initiative definition, and community members have filed issues asking the project to stop naming it the \"Dify Open Source License.\" Practically, this is fine for the ...",
+            "adoption": "ADOPTED",
+            "adoptionReason": "取得并保存原句；是否支持问题由后续逐主张核查决定，不按搜索排名确证。",
+            "evidenceId": "491c9ff2-fc07-40a0-8f45-5f7dbd0bef16"
+          },
+          {
+            "url": "https://aitoolradar.io/guides/dify",
+            "title": "Dify Review 2026: Open-Source LLM App Platform, Tested",
+            "snippet": "Dify Review 2026: Open-Source LLM App Platform, Tested AI Tool Radar。# It depends on how you run it. Self-hosting the Community Edition on your own EU infrastructure keeps all data in the EU and is the GDPR-clean path. Dify Cloud, however, does not guarantee EU data residency: its privacy policy lists China and the US among processing locations. Dify provides a DPA with EU Standard Contractual Clauses, and the UI supports German. For strict GDPR compliance, self-host. Dify vs Flowise vs n8n: which should I choose?# Dify is the most complete for building LLM apps with integrated RAG and strong observability. Flowise is lighter and LangChain-centric. n8n is a broader automation platform with AI nodes. If your focus is building RAG chatbots and agents, Dify; if you want lightweight LangChain ...",
+            "adoption": "ADOPTED",
+            "adoptionReason": "取得并保存原句；是否支持问题由后续逐主张核查决定，不按搜索排名确证。",
+            "evidenceId": "c80501e0-030a-4d90-93ea-1b812d089058"
+          },
+          {
+            "url": "https://www.cnblogs.com/xgss/articles/21818508",
+            "title": "dify总结",
+            "snippet": "dify总结 博客园。简介 Dify,是苏州语灵人工智能科技有限公司旗下开源的大语言模型(LLM)应用开发平台,提供零代码/低代码开发模式及私有化部署能力 Dify.AI成立于2023年,截至2025年,其GitHub Star数突破90K,位居全球开源项目Top 100。 Dify 通过集成 RAG 流水线、AI 工作流、可观测性工具和模型管理,简化了 AI 应用的创建过程。 Dify 是零代码/低代码搭建 AI 应用的平台 可以通过拖拽界面快速构建智能体工作流并将其发布为应用。 开源:Dify 是开源的,但它用的不是“纯 Apache-2.0”,而是自己定义的一份“基于 Apache-2.0 的 Dify Open Source License(附加了一些限制,比如对多租户 SaaS 再销售、商业使用有一定约束) Dify 的运行方式: 1、Dify Cloud:在托管平台上立即开始构建。无需安装,并包含免费的 Sandbox 套餐。 2、自部署:在你自己的基础设施上运行开源的 Community Edition。使用 Docker Compose 几分钟即可完成部署。 官网: https://dify.ai/zh https://cloud.dify.ai 官方文档:https://docs.dify.ai/zh/cloud/use-dify/getting-started/introduction 社区版github地址:https://github.com/langgenius/dify 本地部署文档:https://docs.dify.ai/zh/self-host/deploy/quick-start/docker-compose 代码组成:后端:Python(Flask 框架);前端:TypeScript / JavaScript(Next.js 框架); ...",
+            "adoption": "ADOPTED",
+            "adoptionReason": "取得并保存原句；是否支持问题由后续逐主张核查决定，不按搜索排名确证。",
+            "evidenceId": "e1059a98-33b3-4024-aa69-ff3c8a5918e8"
+          }
+        ]
+      },
+      {
+        "id": "5522a5d5-7870-47f8-ac7a-184f1555c723",
+        "provider": "bing-rss-public-search",
+        "query": "Dify 官方所说的 open-source 是否等于 Apache 2.0 无额外限制？核对海外英文原文，区分品牌和多租户商用条件及同源转载。",
+        "calledAt": "2026-10-25T00:12:45.049Z",
+        "status": "SUCCEEDED",
+        "error": null,
+        "returnedSources": [
+          {
+            "url": "https://dify.ai/zh",
+            "title": "Dify - 构建生产级 AI 应用",
+            "snippet": "Dify 的独特之处在于它能让 AI agent 开发变得触手可及。 强大的 AI/ML 能力结合无代码平台，让快速部署和直观操作成为可能，即便是初学者也能轻松上手，显著推动了全员数字化开发。",
+            "adoption": "REJECTED",
+            "adoptionReason": "达到本轮原文读取预算；摘要未升级为原文证据。",
+            "evidenceId": null
+          },
+          {
+            "url": "https://www.runoob.com/ai-agent/dify-usage.html",
+            "title": "Dify 入门教程 | 菜鸟教程",
+            "snippet": "Dify 入门教程 Dify（Do It For You）是当前最受欢迎的开源 LLM 应用开发平台，专为构建由大型语言模型（LLM）驱动的生成式 AI 应用而设计。",
+            "adoption": "REJECTED",
+            "adoptionReason": "达到本轮原文读取预算；摘要未升级为原文证据。",
+            "evidenceId": null
+          },
+          {
+            "url": "https://github.com/langgenius/dify",
+            "title": "GitHub - langgenius/dify: Build Agentic workflows, RAG pipelines, with ...",
+            "snippet": "Dify is an open-source LLM app development platform. Its intuitive interface combines AI workflow, RAG pipeline, agent capabilities, model management, observability features (including Opik, Langfuse, and Arize Phoenix) and more, letting you quickly go from prototype to production.",
+            "adoption": "REJECTED",
+            "adoptionReason": "达到本轮原文读取预算；摘要未升级为原文证据。",
+            "evidenceId": null
+          },
+          {
+            "url": "https://dify.ai/",
+            "title": "Dify - The Platform for Production-Ready Agentic Workflows",
+            "snippet": "Dify is the platform for production-ready agentic workflows. Build agents, knowledge pipelines, models, and tools on one canvas, deployable on Cloud, in your VPC, or self-hosted.",
+            "adoption": "REJECTED",
+            "adoptionReason": "达到本轮原文读取预算；摘要未升级为原文证据。",
+            "evidenceId": null
+          },
+          {
+            "url": "https://blog.csdn.net/xin_yao_xin/article/details/159434653",
+            "title": "大模型应用开发Dify 安装、使用（小白超详细所用功能2026）",
+            "snippet": "本文系统介绍开源大模型应用平台Dify的安装部署（含Docker配置、常见错误排查）、核心功能使用（聊天助手、知识库RAG、文本生成、Agent智能体、Chatflow对话流、工作流）及扩展能力（Ollama集成、自定义工具、MCP、HTTP API与前端嵌入）。",
+            "adoption": "REJECTED",
+            "adoptionReason": "达到本轮原文读取预算；摘要未升级为原文证据。",
+            "evidenceId": null
+          },
+          {
+            "url": "https://gitee.com/dify_ai",
+            "title": "Dify.AI: 一个简单易用的开源 LLMOps 平台。",
+            "snippet": "组织介绍 Dify.AI 是一款简单易用且开源的 LLMOps 平台，帮助开发者更简单、更快速地创建 AI 应用。 它的核心理念是通过可声明式的 YAML 文件定义 AI 应用的各个方面，包括 Prompt、上下文和插件等。 Dify 提供了可视化的 Prompt 编排、运营、数据集管理等功能。",
+            "adoption": "REJECTED",
+            "adoptionReason": "达到本轮原文读取预算；摘要未升级为原文证据。",
+            "evidenceId": null
+          }
+        ]
+      },
+      {
+        "id": "cfcc7de5-dbec-438b-903b-8befcd662356",
+        "provider": "hacker-news-algolia",
+        "query": "Dify Dify 官方所说的 open-source 是否等于 Apache 2.0 无额外限制？核对海外英文原文，区分品牌和多租户商用条件及同源转载。",
+        "calledAt": "2026-10-25T00:12:45.050Z",
+        "status": "SUCCEEDED",
+        "error": null,
+        "returnedSources": []
+      },
+      {
+        "id": "0004dc70-0448-4923-955e-225296926510",
+        "provider": "tencent-yuanbao-search-api",
+        "query": "Dify LICENSE file \"Dify Open Source License\" Apache 2.0 additional conditions GitHub langgenius/dify",
+        "calledAt": "2026-10-25T00:13:01.732Z",
+        "status": "SUCCEEDED",
+        "error": null,
+        "returnedSources": [
+          {
+            "url": "https://github.com/Reixhp2014/dify/blob/main/LICENSE",
+            "title": "LICENSE",
+            "snippet": "LICENSE GitHub。Repository navigation More items Files Expand file tree main Breadcrumbs LICENSE Copy path More file actions More file actions Latest commit History 22 lines (13 loc) · 1.76 KB main Breadcrumbs Copy path Top File metadata and controls Code Blame 22 lines (13 loc) · 1.76 KB Copy raw file Download raw file Open symbols panel Edit and raw actions # Open Source License Dify is licensed under a modified version of the Apache License 2.0, with the following additional conditions: 1. Dify may be utilized commercially, including as a backend service for other applications or as an application development platform for enterprises. Should the conditions below be met, a commercial license must be obtained from the producer: a. Multi-tenant service: Unless explicitly authorized by Dify ...",
+            "adoption": "REJECTED",
+            "adoptionReason": "来源原文不可用：FAILED。No readable article blocks; JavaScript shell/empty page is not original material",
+            "evidenceId": "858705f8-262d-48c6-aa22-8d8a8abc3dda"
+          },
+          {
+            "url": "https://github.com/erickech/dify/blob/main/LICENSE",
+            "title": "LICENSE",
+            "snippet": "LICENSE GitHub。Repository navigation More items Files Expand file tree main Breadcrumbs LICENSE Copy path More file actions More file actions Latest commit History 36 lines (22 loc) · 1.87 KB main Breadcrumbs Copy path Top File metadata and controls Code Blame 36 lines (22 loc) · 1.87 KB Copy raw file Download raw file Open symbols panel Edit and raw actions # Dify Open Source License The Dify project is licensed under the Apache License 2.0, with the following additional conditions: 1. Dify is permitted to be used for commercialization, such as using Dify as a \"backend-as-a-service\" for your other applications, or delivering it to enterprises as an application development platform. However, when the following conditions are met, you must contact the producer to obtain a commercial license...",
+            "adoption": "REJECTED",
+            "adoptionReason": "来源原文不可用：FAILED。No readable article blocks; JavaScript shell/empty page is not original material",
+            "evidenceId": "74c79923-f5de-46cd-bc00-b7eae8ec1fba"
+          },
+          {
+            "url": "https://github.com/ronaksingh27/dify/blob/refs/heads/ronak02/LICENSE",
+            "title": "LICENSE",
+            "snippet": "LICENSE GitHub。LICENSE LICENSE # Open Source License Dify is licensed under the Apache License 2.0, with the following additional conditions: 1. Dify may be utilized commercially, including as a backend service for other applications or as an application development platform for enterprises. Should the conditions below be met, a commercial license must be obtained from the producer: a. Multi-tenant service: Unless explicitly authorized by Dify in writing, you may not use the Dify source code to operate a multi-tenant environment. - Tenant Definition: Within the context of Dify, one tenant corresponds to one workspace. The workspace provides a separated area for each tenant's data and configurations. b. LOGO and copyright information: In the process of using Dify's frontend components, you ...",
+            "adoption": "REJECTED",
+            "adoptionReason": "达到本轮原文读取预算；摘要未升级为原文证据。",
+            "evidenceId": null
+          },
+          {
+            "url": "https://github.com/newsouther/dify/blob/main/LICENSE",
+            "title": "LICENSE",
+            "snippet": "LICENSE GitHub。# Dify Open Source License The Dify project is licensed under the Apache License 2.0, with the following additional conditions: 1. Dify is permitted to be used for commercialization, such as using Dify as a \"backend-as-a-service\" for your other applications, or delivering it to enterprises as an application development platform. However, when the following conditions are met, you must contact the producer to obtain a commercial license: a. Multi-tenant SaaS service: Unless explicitly authorized by Dify in writing, you may not use the Dify.AI source code to operate a multi-tenant SaaS service that is similar to the Dify.AI service edition. b. LOGO and copyright information: In the process of using Dify, you may not remove or modify the LOGO or copyright information in the Dif...",
+            "adoption": "REJECTED",
+            "adoptionReason": "达到本轮原文读取预算；摘要未升级为原文证据。",
+            "evidenceId": null
+          },
+          {
+            "url": "https://github.com/weepsdanky/dify-docs/blob/main/en/policies/open-source.md",
+            "title": "Open-Source License",
+            "snippet": "Open-Source License GitHub。Open-Source License Dify Open Source License The Dify project is licensed under the Apache License 2.0, with the following additional conditions: Dify is permitted to be used for commercialization, such as using Dify as a \"backend-as-a-service\" for your other applications, or delivering it to enterprises as an application development platform. However, when the following conditions are met, you must contact the producer to obtain a commercial license: Multi-tenant SaaS service: Unless explicitly authorized by Dify in writing, you may not use the Dify.AI source code to operate a multi-tenant SaaS service that is similar to the Dify.AI service edition. LOGO and copyright information: In the process of using Dify, you may not remove or modify the LOGO or copyright i...",
+            "adoption": "REJECTED",
+            "adoptionReason": "达到本轮原文读取预算；摘要未升级为原文证据。",
+            "evidenceId": null
+          },
+          {
+            "url": "https://github.com/AAEE86/dify/blob/main/LICENSE",
+            "title": "dify/LICENSE at main · AAEE86/dify",
+            "snippet": "dify/LICENSE at main · AAEE86/dify GitHub。LICENSE File metadata and controls 22 lines (13 loc) · 1.76 KB Copy raw file Download raw file Edit and raw actions 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 Open Source License Dify is licensed under a modified version of the Apache License 2.0, with the following additional conditions: Dify may be utilized commercially, including as a backend service for other applications or as an application development platform for enterprises. Should the conditions below be met, a commercial license must be obtained from the producer: a. Multi-tenant service: Unless explicitly authorized by Dify in writing, you may not use the Dify source code to operate a multi-tenant environment. Tenant Definition: Within the context of Dify, one tenant corre...",
+            "adoption": "REJECTED",
+            "adoptionReason": "达到本轮原文读取预算；摘要未升级为原文证据。",
+            "evidenceId": null
+          }
+        ]
+      },
+      {
+        "id": "0bc857b5-0b9e-41b3-812b-61ca5aa938e9",
+        "provider": "bing-rss-public-search",
+        "query": "Dify LICENSE file \"Dify Open Source License\" Apache 2.0 additional conditions GitHub langgenius/dify",
+        "calledAt": "2026-10-25T00:13:01.732Z",
+        "status": "SUCCEEDED",
+        "error": null,
+        "returnedSources": [
+          {
+            "url": "https://dify.ai/zh",
+            "title": "Dify - 构建生产级 AI 应用",
+            "snippet": "Dify 的独特之处在于它能让 AI agent 开发变得触手可及。 强大的 AI/ML 能力结合无代码平台，让快速部署和直观操作成为可能，即便是初学者也能轻松上手，显著推动了全员数字化开发。",
+            "adoption": "REJECTED",
+            "adoptionReason": "达到本轮原文读取预算；摘要未升级为原文证据。",
+            "evidenceId": null
+          },
+          {
+            "url": "https://www.runoob.com/ai-agent/dify-usage.html",
+            "title": "Dify 入门教程 | 菜鸟教程",
+            "snippet": "Dify 入门教程 Dify（Do It For You）是当前最受欢迎的开源 LLM 应用开发平台，专为构建由大型语言模型（LLM）驱动的生成式 AI 应用而设计。",
+            "adoption": "REJECTED",
+            "adoptionReason": "达到本轮原文读取预算；摘要未升级为原文证据。",
+            "evidenceId": null
+          },
+          {
+            "url": "https://github.com/langgenius/dify",
+            "title": "GitHub - langgenius/dify: Build Agentic workflows, RAG pipelines, with ...",
+            "snippet": "Dify is an open-source LLM app development platform. Its intuitive interface combines AI workflow, RAG pipeline, agent capabilities, model management, observability features (including Opik, Langfuse, and Arize Phoenix) and more, letting you quickly go from prototype to production.",
+            "adoption": "REJECTED",
+            "adoptionReason": "达到本轮原文读取预算；摘要未升级为原文证据。",
+            "evidenceId": null
+          },
+          {
+            "url": "https://dify.ai/",
+            "title": "Dify - The Platform for Production-Ready Agentic Workflows",
+            "snippet": "Dify is the platform for production-ready agentic workflows. Build agents, knowledge pipelines, models, and tools on one canvas, deployable on Cloud, in your VPC, or self-hosted.",
+            "adoption": "ADOPTED",
+            "adoptionReason": "取得并保存原句；是否支持问题由后续逐主张核查决定，不按搜索排名确证。",
+            "evidenceId": "39fc7875-419e-45c0-905b-210f709c09a9"
+          },
+          {
+            "url": "https://blog.csdn.net/xin_yao_xin/article/details/159434653",
+            "title": "大模型应用开发Dify 安装、使用（小白超详细所用功能2026）",
+            "snippet": "本文系统介绍开源大模型应用平台Dify的安装部署（含Docker配置、常见错误排查）、核心功能使用（聊天助手、知识库RAG、文本生成、Agent智能体、Chatflow对话流、工作流）及扩展能力（Ollama集成、自定义工具、MCP、HTTP API与前端嵌入）。",
+            "adoption": "REJECTED",
+            "adoptionReason": "达到本轮原文读取预算；摘要未升级为原文证据。",
+            "evidenceId": null
+          },
+          {
+            "url": "https://gitee.com/dify_ai",
+            "title": "Dify.AI: 一个简单易用的开源 LLMOps 平台。",
+            "snippet": "组织介绍 Dify.AI 是一款简单易用且开源的 LLMOps 平台，帮助开发者更简单、更快速地创建 AI 应用。 它的核心理念是通过可声明式的 YAML 文件定义 AI 应用的各个方面，包括 Prompt、上下文和插件等。 Dify 提供了可视化的 Prompt 编排、运营、数据集管理等功能。",
+            "adoption": "REJECTED",
+            "adoptionReason": "达到本轮原文读取预算；摘要未升级为原文证据。",
+            "evidenceId": null
+          }
+        ]
+      }
+    ],
+    "verificationAudit": {
+      "modelCalls": [
+        {
+          "provider": "api.deepseek.com",
+          "model": "deepseek-flash",
+          "promptVersion": "a2-evidence-v3",
+          "temperature": null,
+          "thinkingMode": "DISABLED",
+          "generatedAt": "2026-10-25T00:12:51.600Z",
+          "id": "de1ef1b5-f3e8-4bed-8714-d53750ebf5b9",
+          "purpose": "claim-extraction",
+          "startedAt": "2026-10-25T00:12:48.824Z",
+          "durationMs": 2776,
+          "outcome": "SUCCEEDED",
+          "inputTokens": 2812,
+          "outputTokens": 452
+        },
+        {
+          "provider": "api.deepseek.com",
+          "model": "deepseek-flash",
+          "promptVersion": "a2-evidence-v3",
+          "temperature": null,
+          "thinkingMode": "DISABLED",
+          "generatedAt": "2026-10-25T00:13:00.165Z",
+          "id": "398f62f8-aa56-469f-ad77-bb948a2eb5da",
+          "purpose": "claim-evidence-verification",
+          "startedAt": "2026-10-25T00:12:51.604Z",
+          "durationMs": 8562,
+          "outcome": "SUCCEEDED",
+          "inputTokens": 5100,
+          "outputTokens": 2004
+        },
+        {
+          "provider": "api.deepseek.com",
+          "model": "deepseek-flash",
+          "promptVersion": "a2-evidence-v3",
+          "temperature": null,
+          "thinkingMode": "DISABLED",
+          "generatedAt": "2026-10-25T00:13:01.732Z",
+          "id": "2f3ac335-580b-473e-985b-eb534709102a",
+          "purpose": "bounded-followup-value-assessment",
+          "startedAt": "2026-10-25T00:13:00.172Z",
+          "durationMs": 1560,
+          "outcome": "SUCCEEDED",
+          "inputTokens": 3555,
+          "outputTokens": 140
+        },
+        {
+          "provider": "api.deepseek.com",
+          "model": "deepseek-flash",
+          "promptVersion": "a2-evidence-v3",
+          "temperature": null,
+          "thinkingMode": "DISABLED",
+          "generatedAt": "2026-10-25T00:13:13.066Z",
+          "id": "646ebd1c-87ba-4901-a152-9698fa6139d5",
+          "purpose": "claim-evidence-verification",
+          "startedAt": "2026-10-25T00:13:04.833Z",
+          "durationMs": 8233,
+          "outcome": "SUCCEEDED",
+          "inputTokens": 5797,
+          "outputTokens": 2294
+        },
+        {
+          "provider": "api.deepseek.com",
+          "model": "deepseek-flash",
+          "promptVersion": "a2-evidence-v3",
+          "temperature": null,
+          "thinkingMode": "DISABLED",
+          "generatedAt": "2026-10-25T00:13:16.399Z",
+          "id": "37d1b29b-9d0d-4418-9831-dbeea647e611",
+          "purpose": "cited-answer-generation",
+          "startedAt": "2026-10-25T00:13:13.084Z",
+          "durationMs": 3315,
+          "outcome": "SUCCEEDED",
+          "inputTokens": 5263,
+          "outputTokens": 601
+        },
+        {
+          "provider": "api.deepseek.com",
+          "model": "deepseek-flash",
+          "promptVersion": "a2-evidence-v3",
+          "temperature": null,
+          "thinkingMode": "DISABLED",
+          "generatedAt": "2026-10-25T00:13:19.014Z",
+          "id": "2ae26b5d-556c-42da-ad21-c402984849ab",
+          "purpose": "citation-semantic-support-check",
+          "startedAt": "2026-10-25T00:13:16.400Z",
+          "durationMs": 2615,
+          "outcome": "SUCCEEDED",
+          "inputTokens": 2944,
+          "outputTokens": 445
+        }
+      ],
+      "review": {
+        "status": "NOT_CONFIGURED",
+        "reason": "未配置第二模型；不声称完成独立模型复核或精度提高。",
+        "independentAssessment": null,
+        "findings": []
+      },
+      "citationChecks": [
+        {
+          "marker": "[1]",
+          "supported": true,
+          "reason": "原句 c958076c 明确说仓库标为 Apache 2.0，但 LICENSE 文件是 Dify Open Source License（Apache 2.0 加附加条件），支持“第三方英文转述称仓库标 Apache 2.0 但 LICENSE 为附加条件的自定义许可”。原句 e1059a98 明确说“不是纯 Apache-2.0，而是基于 Apache-2.0 的 Dify Open Source License，附加限制”，支持中文博客转述部分。text 中“读取官方 LICENSE 尝试失败、仅为转述”属于对检索状态的限定说明，未与原句冲突，原句本身也只是作者转述。未将转述说成官方事实。"
+        },
+        {
+          "marker": "[2]",
+          "supported": true,
+          "reason": "原句 491c9ff2 列出两条附加限制：未经 Dify 书面授权不得运营多租户环境、不得移除或修改 logo 与版权信息，支持“未经书面授权不得多租户运营”和“不得移除/修改 logo 与版权”的转述。原句 c80501e0 说未经商业许可不得将 Dify 作为多租户 SaaS 转售，并不得移除/修改 logo/版权，支持“转售需商业许可”的转述。text 将所有内容定性为第三方单方转述、无原始许可文本佐证，符合证据性质。"
+        },
+        {
+          "marker": "[3]",
+          "supported": true,
+          "reason": "原句 c80501e0 说自托管内部使用“很少成为问题”，但并非无条件开源许可，支持“英文评测认为自托管内部使用很少受影响、但非无条件开源”这一作者观点，text 也将其定性为作者评价。原句 49159d23 说 Dify 的 Enterprise 版含 multi-workspace tenancy、SSO 和审计日志，支持“第三方竞品文档称多工作区租户、SSO、审计日志属 Enterprise 版功能”，text 同样定性为单方陈述、不构成独立验证。"
+        }
+      ],
+      "followup": {
+        "queriesUsed": 1,
+        "maxQueries": 1,
+        "stopReason": "已达到一次补查预算；剩余缺口保留并完成回答。触发理由：唯一未决主张是 Dify 官方许可条款究竟如何：已读官方页面未给出许可证文本，现有非官方证据互相一致地称其为带多租户与品牌附加条件的 Apache 2.0，但缺少原始许可文本。检索 Dify 上游代码库的 LICENSE 原文可直接解决该未决点，且此前查询未针对该原文。"
+      }
+    },
+    "generatedAt": "2026-10-25T00:13:19.017Z",
+    "contractVersion": "1.0.0"
+  },
+  "answers": [
+    {
+      "id": "1b29a671-1d7b-499e-a9e7-ebe88dbbd825",
+      "snapshotId": "3b1a7fc1-0938-4c5f-afba-d515576ddeb7",
+      "body": "不能等同。结论需谨慎：据现有第三方英文转述（尚未核实官方许可条款原文），Dify 仓库标注为 Apache 2.0，但其 LICENSE 文件为在 Apache 2.0 基础上附加条件的 Dify Open Source License；中文博客也转述其为“基于 Apache-2.0”的自定义许可、并含限制。读取官方 LICENSE 的尝试失败，因此这一判断目前仅为转述，不能当无条件的官方事实。 [1]\n\n转述中列出的附加条件主要针对多租户运营与品牌：据海外英文文章转述，未经 Dify 书面授权不得用其源码运营多租户环境，也不得移除或修改 Dify 的 logo 与版权信息；另有转述称未经商业许可不得将其作为多租户 SaaS 转售。这些均属第三方单方转述，尚无原始许可文本佐证，具体措辞与适用版本待核实。 [2]\n\n来源观点方面，有英文评测认为自托管内部使用很少受这些条件影响，但该许可证并非无条件开源许可；这属于作者评价，不是独立实测。另有第三方竞品文档称多工作区租户、SSO 与审计日志属 Enterprise 版功能，同样为单方陈述，转载或不同站点的一致说法不构成独立验证。 [3]\n\n尚不能确定：Dify 官方以“open-source”描述其产品，但已读的官方页面摘录未给出许可证文本或是否等同 Apache 2.0。\n唯一已读官方原句只描述托管建应用，未提“open-source”或许可证；无官方许可证文本可核。（条件：Dify 官方网站（dify.ai），版本与套餐未知，2026-10-25 读取）\n\n核查缺口：\n• https://aiwiki.ai/wiki/dify：RESTRICTED；Source HTTP 429\n• 唯一已读官方原句只描述托管建应用，未提“open-source”或许可证；无官方许可证文本可核。\n• 两个尝试读取 Dify 仓库 LICENSE 的地址均失败（JavaScript 外壳/无可读正文），未能取得许可证原文核对附加条件。",
+      "citations": [
+        {
+          "marker": "[1]",
+          "claimIds": [
+            "8890497e-580e-4537-8524-746784c4afec",
+            "353914f8-85c3-4df8-ad73-f53792699f46"
+          ],
+          "evidenceIds": [
+            "c958076c-cbc6-4d7f-b619-81061c1dd8d9",
+            "e1059a98-33b3-4024-aa69-ff3c8a5918e8"
+          ],
+          "quotes": [
+            {
+              "evidenceId": "c958076c-cbc6-4d7f-b619-81061c1dd8d9",
+              "originalExcerpt": "Dify's repository says \"Apache 2.0\", and the page here lists it that way, but the LICENSE file is the Dify Open Source License, which is Apache 2.0 with additional conditions. At the time of writing they are:"
+            },
+            {
+              "evidenceId": "e1059a98-33b3-4024-aa69-ff3c8a5918e8",
+              "originalExcerpt": "开源：Dify 是开源的，但它用的不是“纯 Apache-2.0”，而是自己定义的一份“基于 Apache-2.0 的 Dify Open Source License（附加了一些限制，比如对多租户 SaaS 再销售、商业使用有一定约束）"
+            }
+          ]
+        },
+        {
+          "marker": "[2]",
+          "claimIds": [
+            "15534cab-1212-45f2-9bf4-02df6930c2d5",
+            "402319cd-4c66-4c75-87b7-c5a150c8afde"
+          ],
+          "evidenceIds": [
+            "491c9ff2-fc07-40a0-8f45-5f7dbd0bef16",
+            "c80501e0-030a-4d90-93ea-1b812d089058"
+          ],
+          "quotes": [
+            {
+              "evidenceId": "491c9ff2-fc07-40a0-8f45-5f7dbd0bef16",
+              "originalExcerpt": "Dify is source-available, not open source, and readers should not skip past that. The license is Apache 2.0 with two added restrictions: you may not operate a multi-tenant environment from the source without written authorization from Dify, and you may not remove or modify the logo and copyright inf"
+            },
+            {
+              "evidenceId": "c80501e0-030a-4d90-93ea-1b812d089058",
+              "originalExcerpt": "Mostly. Dify's license is Apache 2.0 with two added conditions: you cannot resell Dify as a multi-tenant SaaS without a commercial license, and you cannot remove or modify the Dify logo/copyright. For self-hosted internal use this is rarely a problem, but it is not an unconditional open-source licen"
+            }
+          ]
+        },
+        {
+          "marker": "[3]",
+          "claimIds": [
+            "ff323681-671f-47ac-bdf3-0cb7e2c3a305",
+            "a346e2c6-252e-4e8d-abb4-0662ce91a519"
+          ],
+          "evidenceIds": [
+            "c80501e0-030a-4d90-93ea-1b812d089058",
+            "49159d23-bfed-4ead-a0d6-c5f6f9b03ac2"
+          ],
+          "quotes": [
+            {
+              "evidenceId": "c80501e0-030a-4d90-93ea-1b812d089058",
+              "originalExcerpt": "Mostly. Dify's license is Apache 2.0 with two added conditions: you cannot resell Dify as a multi-tenant SaaS without a commercial license, and you cannot remove or modify the Dify logo/copyright. For self-hosted internal use this is rarely a problem, but it is not an unconditional open-source licen"
+            },
+            {
+              "evidenceId": "49159d23-bfed-4ead-a0d6-c5f6f9b03ac2",
+              "originalExcerpt": "ducts self-host and both do document retrieval, so the difference is elsewhere. Dify is a visual canvas for LLM apps and workflows, with multi-workspace tenancy, SSO and audit logs in its Enterprise edition. AgenticOS is Apache-2.0 and multi-tenant in the open-source product, with budgets, approvals"
+            }
+          ]
+        }
+      ],
+      "generationConfig": {
+        "provider": "api.deepseek.com",
+        "model": "deepseek-flash",
+        "promptVersion": "a2-evidence-v3",
+        "temperature": null,
+        "thinkingMode": "DISABLED",
+        "generatedAt": "2026-10-25T00:13:19.015Z"
+      }
+    }
+  ]
+}
