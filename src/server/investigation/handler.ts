@@ -212,7 +212,7 @@ export function createInvestigationHandler(dependencies: {
             gap(`阶段核查未完成：${errorText(error)}；保留原句并在最终预算内核查。`);
           }
         }
-        log.outcome = "STOPPED"; log.detail = decision.reason; loop.stopReason = decision.reason; break;
+        log.outcome = "STOPPED"; log.detail = decision.reason; loop.stopReason = `模型选择结束，已执行${loop.searchRounds}轮搜索、${loop.readsUsed}次读取；具体决策理由保留在记录中，事实与未解决项以最终原句核查为准。`; break;
       }
       if (decision.action === "SEARCH") {
         if (loop.searchRounds >= loop.maxSearchRounds) { reject("已到三轮搜索预算；可读取已有来源或结束。 "); continue; }

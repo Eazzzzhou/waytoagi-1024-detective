@@ -132,6 +132,15 @@ describe("A2 synthetic boundary regressions (not real investigation acceptance)"
     expect(answer.citations).toHaveLength(0);
     expect(answer.body).toContain("尚不能确定");
   });
+  it("does not force unrelated verified background into an answer", async () => {
+    const snapshot = supportedSnapshot();
+    const requests: ModelRequest<unknown>[] = [];
+    const providers = createVerificationProviders({ model: scriptedModel([{ claimIds: [] }], requests), env: {} });
+    const answer = await providers.answer.generate(snapshot, { question: "A different question with no relevant verified claim" });
+    expect(answer.citations).toEqual([]);
+    expect(answer.body).toContain("不足");
+    expect(requests).toHaveLength(1);
+  });
   it("independently reads raw evidence before draft review and retains rejected suggestion reasons", async () => {
     const snapshot = supportedSnapshot();
     const reviewRequests: ModelRequest<unknown>[] = [];
