@@ -7,6 +7,7 @@ import { PostgresInvestigationQueue, IdempotencyConflictError, LeaseLostError, t
 import { createQueueTestDatabase } from "../support/database";
 import { emptyCompletion } from "../fixtures/empty-completion";
 import { createDatabaseClient } from "../../src/server/storage/client";
+import { InvestigationRepository } from "../../src/server/storage/repository";
 import { classifyFailure } from "../../src/server/queue/errors";
 
 let database: Awaited<ReturnType<typeof createQueueTestDatabase>>;
@@ -37,6 +38,15 @@ async function ready(id: string) {
 }
 
 describe("PostgreSQL reliable queue", () => {
+  it("uses the database clock when a submitting application's clock is an hour ahead", async () => {
+    vi.useFakeTimers({ toFake: ["Date"] });
+    vi.setSystemTime(new Date(Date.now() + 3600000));
+    let created: Awaited<ReturnType<typeof enqueue>>;
+    try { created = await enqueue(); } finally { vi.useRealTimers(); }
+    const current = await queue.claim("skew-test");
+    expect(current?.jobId).toBe(created.jobId);
+    expect((await new InvestigationRepository(database.db).findInvestigation(current!.investigationId))?.status).toBe("RUNNING");
+  });
   it("allows only one of two workers to claim the same job", async () => {
     const created = await enqueue();
     const results = await Promise.all([queue.claim("worker-a"), otherQueue.claim("worker-b")]);

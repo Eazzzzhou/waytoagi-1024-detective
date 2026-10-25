@@ -50,7 +50,7 @@ export async function writeAdviceCapture(path: string, record: Awaited<ReturnTyp
 }
 
 async function main() {
-  const [investigationId, requestId, output, baseUrl = "http://127.0.0.1:3000"] = process.argv.slice(2);
+  const [investigationId, requestId, output, baseUrl = "http://127.0.0.1:3405"] = process.argv.slice(2);
   if (!investigationId || !requestId || !output) throw new Error("Usage: npm run advice:capture -- <investigationId> <requestId> <new-output.json> [local-origin]");
   const record = await captureAdvice({ investigationId, requestId, baseUrl });
   await writeAdviceCapture(output, record);

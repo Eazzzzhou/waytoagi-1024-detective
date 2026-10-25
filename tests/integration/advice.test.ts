@@ -9,6 +9,8 @@ import { IdempotencyConflictError, PostgresInvestigationQueue } from "../../src/
 import { InvestigationHttpApi } from "../../src/server/http/api";
 import { makeAnswer, makeSnapshot } from "../fixtures/snapshot";
 import { createQueueTestDatabase } from "../support/database";
+import type { Prisma } from "../../src/generated/prisma/client";
+import { readDatabaseTime } from "../../src/server/storage/database-time";
 
 let database: Awaited<ReturnType<typeof createQueueTestDatabase>>;
 let repository: AdviceRepository;
@@ -16,6 +18,11 @@ let api: InvestigationHttpApi;
 const conditions: UserConditions = { useCase: "Synthetic acceptance use case", experience: null, budget: null, requirements: [] };
 const base = "http://127.0.0.1:3000";
 const get = () => new Request(base);
+// Deliberately corrupt only the field under test; host clock skew must not trigger an unrelated timestamp constraint.
+async function updateRequest(input: Prisma.AdviceRequestUpdateArgs) {
+  const now = await readDatabaseTime(database.db);
+  return database.db.adviceRequest.update({ ...input, data: { ...input.data, updatedAt: now, ...(input.data.completedAt instanceof Date ? { completedAt: now } : {}) } });
+}
 const post = (body: unknown, key: string = randomUUID(), headers: Record<string, string> = {}) => new Request(base, { method: "POST", headers: { "Content-Type": "application/json", "Idempotency-Key": key, ...headers }, body: JSON.stringify(body) });
 beforeAll(async () => { database = await createQueueTestDatabase(); });
 afterAll(async () => { await database?.close(); });
@@ -144,7 +151,7 @@ describe("advice request persistence and HTTP", () => {
     await expect(repository.createAdviceForRequest(source.investigationId, success.request.id, { ...result, id: randomUUID(), userConditions: { ...conditions, budget: "Wrong request conditions" } })).rejects.toBeInstanceOf(IdempotencyConflictError);
     await expect(repository.createAdviceForRequest(source.investigationId, success.request.id, { ...result, id: randomUUID(), snapshotId: randomUUID() })).rejects.toBeInstanceOf(IdempotencyConflictError);
     // Test-only state setup; production task publication belongs to the stage-4 lease transaction.
-    await database.db.adviceRequest.update({ where: { id: success.request.id }, data: { status: "SUCCEEDED", resultAdviceId: result.id, completedAt: new Date() } });
+    await updateRequest({ where: { id: success.request.id }, data: { status: "SUCCEEDED", resultAdviceId: result.id, completedAt: new Date() } });
     const state = await detail(source.investigationId, success.request.id);
     expect(state.advice).toEqual(result);
     expect(state.request.status).toBe("SUCCEEDED");
@@ -152,13 +159,13 @@ describe("advice request persistence and HTTP", () => {
     await expect(repository.createAdviceForRequest(source.investigationId, success.request.id, { ...result, id: randomUUID() })).rejects.toBeInstanceOf(IdempotencyConflictError);
     const insufficient = await create();
     const conditionsIssue = { message: "Synthetic provider needs a concrete deployment requirement", missingConditions: ["Deployment requirement"] };
-    await database.db.adviceRequest.update({ where: { id: insufficient.request.id }, data: { status: "INSUFFICIENT_CONDITIONS", conditionsIssue, completedAt: new Date() } });
+    await updateRequest({ where: { id: insufficient.request.id }, data: { status: "INSUFFICIENT_CONDITIONS", conditionsIssue, completedAt: new Date() } });
     const missing = await detail(source.investigationId, insufficient.request.id);
     expect(missing.request.conditionsIssue).toEqual(conditionsIssue);
     expect(missing.request.error).toBeNull();
     expect(missing.advice).toBeNull();
     const failed = await create();
-    await database.db.adviceRequest.update({ where: { id: failed.request.id }, data: { status: "FAILED", error: { code: "PROVIDER_NOT_CONFIGURED", message: "Synthetic missing provider", retryable: false }, completedAt: new Date() } });
+    await updateRequest({ where: { id: failed.request.id }, data: { status: "FAILED", error: { code: "PROVIDER_NOT_CONFIGURED", message: "Synthetic missing provider", retryable: false }, completedAt: new Date() } });
     const failure = await detail(source.investigationId, failed.request.id);
     expect(failure.request.error?.code).toBe("PROVIDER_NOT_CONFIGURED");
     expect(failure.request.conditionsIssue).toBeNull();
@@ -169,16 +176,16 @@ describe("advice request persistence and HTTP", () => {
   it("fails closed on damaged task JSON, hashes, results and relational metadata", async () => {
     const source = await seed();
     const created = await repository.createRequest(source.investigationId, { snapshotId: source.snapshot.id, userConditions: conditions }, randomUUID());
-    await database.db.adviceRequest.update({ where: { id: created.request.id }, data: { userConditions: {} } });
+    await updateRequest({ where: { id: created.request.id }, data: { userConditions: {} } });
     let response = await api.adviceRequest(get(), source.investigationId, created.request.id);
     expect(response.status).toBe(500);
     expect(ApiErrorResponseSchema.parse(await response.json()).error.code).toBe("INVALID_STORED_DATA");
-    await database.db.adviceRequest.update({ where: { id: created.request.id }, data: { userConditions: conditions, requestHash: "0".repeat(64) } });
+    await updateRequest({ where: { id: created.request.id }, data: { userConditions: conditions, requestHash: "0".repeat(64) } });
     expect((await api.adviceRequest(get(), source.investigationId, created.request.id)).status).toBe(500);
     const correct = await repository.createRequest(source.investigationId, { snapshotId: source.snapshot.id, userConditions: conditions }, randomUUID());
     const result = advice(source.snapshot.id);
     await repository.createAdvice(source.investigationId, result);
-    await database.db.adviceRequest.update({ where: { id: correct.request.id }, data: { status: "SUCCEEDED", resultAdviceId: result.id, completedAt: new Date() } });
+    await updateRequest({ where: { id: correct.request.id }, data: { status: "SUCCEEDED", resultAdviceId: result.id, completedAt: new Date() } });
     await database.db.advice.update({ where: { id: result.id }, data: { body: { ...result, userConditions: { ...conditions, budget: "Mismatched conditions" } } } });
     expect((await api.adviceRequest(get(), source.investigationId, correct.request.id)).status).toBe(500);
     await database.db.advice.update({ where: { id: result.id }, data: { body: { ...result, id: randomUUID() } } });
@@ -196,10 +203,10 @@ describe("advice request persistence and HTTP", () => {
     const b = await seed();
     const request = (await repository.createRequest(a.investigationId, { snapshotId: a.snapshot.id, userConditions: conditions }, randomUUID())).request;
     const result = await repository.createAdvice(b.investigationId, advice(b.snapshot.id));
-    await expect(database.db.adviceRequest.update({ where: { id: request.id }, data: { status: "SUCCEEDED", resultAdviceId: result.id, completedAt: new Date() } })).rejects.toThrow();
-    await expect(database.db.adviceRequest.update({ where: { id: request.id }, data: { status: "SUCCEEDED", completedAt: new Date() } })).rejects.toThrow();
-    await expect(database.db.adviceRequest.update({ where: { id: request.id }, data: { status: "FAILED", completedAt: new Date() } })).rejects.toThrow();
-    await expect(database.db.adviceRequest.update({ where: { id: request.id }, data: { snapshotId: b.snapshot.id } })).rejects.toThrow();
+    await expect(updateRequest({ where: { id: request.id }, data: { status: "SUCCEEDED", resultAdviceId: result.id, completedAt: new Date() } })).rejects.toThrow();
+    await expect(updateRequest({ where: { id: request.id }, data: { status: "SUCCEEDED", completedAt: new Date() } })).rejects.toThrow();
+    await expect(updateRequest({ where: { id: request.id }, data: { status: "FAILED", completedAt: new Date() } })).rejects.toThrow();
+    await expect(updateRequest({ where: { id: request.id }, data: { snapshotId: b.snapshot.id } })).rejects.toThrow();
   });
 });
 

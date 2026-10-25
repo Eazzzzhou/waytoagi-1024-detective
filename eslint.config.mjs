@@ -11,7 +11,7 @@ export default defineConfig([
   { files: ["src/app/**/*.{ts,tsx}"], plugins: { "@next/next": nextPlugin }, rules: { ...nextPlugin.configs.recommended.rules, ...nextPlugin.configs["core-web-vitals"].rules } },
   globalIgnores([".next/**", "src/generated/**", "next-env.d.ts", ".cache/**", ".taste-skill/**", ".agents/**", ".codex/**", "docs/reference/**"]),
   {
-    files: ["src/components/**/*.{ts,tsx}"],
+    files: ["src/components/**/*.{ts,tsx}", "src/frontend/**/*.{ts,tsx}"],
     rules: {
       "no-restricted-imports": ["error", { patterns: [{ group: ["@/server/**", "**/server/**", "@/worker/**", "**/worker/**", "@/generated/**", "**/generated/**", "@prisma/**", "pg", "node:*"], message: "UI components must use HTTP contracts and must not access server modules or database clients." }] }]
     }

@@ -5,6 +5,7 @@ import { AdviceRequestDetailSchema, AdviceRequestSchema, AdviceSchema, CreateAdv
 import { IdempotencyConflictError } from "../queue/errors";
 import { ResourceNotFoundError, StoredDataError } from "./errors";
 import { InvestigationRepository } from "./repository";
+import { readDatabaseTime } from "./database-time";
 
 type Database = PrismaClient | Prisma.TransactionClient;
 const KeySchema = TextSchema.max(200);
@@ -38,8 +39,9 @@ export class AdviceRepository {
     const maxAttempts = z.number().int().min(1).max(20).parse(maxAttemptsInput);
     await this.snapshot(investigationId, body.snapshotId);
     const requestHash = digest(investigationId, body);
+    const now = await readDatabaseTime(this.db);
     const created = await this.db.adviceRequest.createMany({
-      data: { investigationId, ...body, idempotencyKey, requestHash, maxAttempts }, skipDuplicates: true
+      data: { investigationId, ...body, idempotencyKey, requestHash, maxAttempts, availableAt: now, createdAt: now, updatedAt: now }, skipDuplicates: true
     });
     const row = await this.db.adviceRequest.findUniqueOrThrow({ where: { investigationId_idempotencyKey: { investigationId, idempotencyKey } } });
     const request = this.parseRequest(row);

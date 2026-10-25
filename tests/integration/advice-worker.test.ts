@@ -4,19 +4,20 @@ import { fork } from "node:child_process";
 import { once } from "node:events";
 import { readFile } from "node:fs/promises";
 import { setTimeout as delay } from "node:timers/promises";
-import { afterAll, beforeAll, beforeEach, describe, expect, it, vi } from "vitest";
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, vi } from "vitest";
 import { AdviceRequestDetailSchema, type Advice } from "../../src/contracts";
 import { AdviceRepository, InvestigationRepository, createDatabaseClient } from "../../src/server/storage";
 import { AdviceExecutionLeaseSchema, type AdviceExecutionLease, type AdviceHandlerResult } from "../../src/server/queue/advice-contracts";
 import { PostgresAdviceQueue } from "../../src/server/queue/advice-postgres";
 import { IdempotencyConflictError, LeaseLostError, TaskFailure, classifyFailure } from "../../src/server/queue/errors";
 import { AdviceWorkerRunner } from "../../src/worker/advice-runner";
-import { adviceHandler, createAdviceHandler, type AdviceHandler } from "../../src/worker/advice-handler";
+import { createAdviceHandler, type AdviceHandler } from "../../src/worker/advice-handler";
 import { createRecommendationProvider } from "../../src/server/recommendation";
-import type { ModelProvider, ModelRequest } from "../../src/server/models";
+import { createModelProvider, type ModelProvider, type ModelRequest } from "../../src/server/models";
 import { InvestigationHttpApi } from "../../src/server/http/api";
 import { createQueueTestDatabase } from "../support/database";
 import { makeAnswer, makeSnapshot } from "../fixtures/snapshot";
+import { readDatabaseTime } from "../../src/server/storage/database-time";
 
 let database: Awaited<ReturnType<typeof createQueueTestDatabase>>;
 let queue: PostgresAdviceQueue;
@@ -26,6 +27,7 @@ const retryError = { code: "PROVIDER_FAILED" as const, message: "Synthetic trans
 const silent = () => undefined;
 beforeAll(async () => { database = await createQueueTestDatabase(); });
 afterAll(async () => { await database?.close(); });
+afterEach(() => { vi.unstubAllEnvs(); });
 beforeEach(async () => {
   await database.pool.query('TRUNCATE "AdviceExecutionAttempt", "AdviceRequest", "Job", "ExecutionAttempt", "Investigation", "EvidenceSnapshot", "Answer", "Advice" CASCADE');
   queue = new PostgresAdviceQueue(database.db, { leaseMs: 2000, attemptTimeoutMs: 10000, retryBaseMs: 500, retryMaxMs: 1000 });
@@ -63,6 +65,15 @@ async function httpState(investigationId: string, requestId: string) {
 }
 
 describe("advice queue execution ownership and atomic publication", () => {
+  it("uses the database clock for advice creation despite an hour of application clock skew", async () => {
+    vi.useFakeTimers({ toFake: ["Date"] });
+    vi.setSystemTime(new Date(Date.now() + 3600000));
+    let source: Awaited<ReturnType<typeof submit>>;
+    try { source = await submit(); } finally { vi.useRealTimers(); }
+    const current = await claim("advice-skew-test");
+    expect(current.requestId).toBe(source.request.id);
+    expect((await httpState(source.request.investigationId, source.request.id)).request.status).toBe("RUNNING");
+  });
   it("claims once under competition and skips a locked candidate", async () => {
     const a = await submit();
     const claimed = await Promise.all([queue.claim("one"), other.claim("two")]);
@@ -138,7 +149,7 @@ describe("advice queue execution ownership and atomic publication", () => {
     expect(state.advice).toBeNull();
     expect(await queue.claim("no-retry")).toBeNull();
     expect((await read(source.request.id)).failureCount).toBe(0);
-    await database.db.adviceRequest.update({ where: { id: source.request.id }, data: { conditionsIssue: { ...result.issue, message: "Structurally valid changed issue" } } });
+    await database.db.adviceRequest.update({ where: { id: source.request.id }, data: { updatedAt: await readDatabaseTime(database.db), conditionsIssue: { ...result.issue, message: "Structurally valid changed issue" } } });
     await expect(queue.complete(lease, result)).rejects.toThrow();
   });
 
@@ -289,9 +300,11 @@ describe("advice runner bounded execution", () => {
   });
 
   it("fails production missing configuration once, is visible through HTTP, and logs no input", async () => {
+    vi.stubEnv("MODEL_API_KEY", "");
     const source = await submit();
     const logs: Record<string, unknown>[] = [];
-    expect(await new AdviceWorkerRunner(queue, adviceHandler, "real-advice-entry", { heartbeatMs: 50 }, (event) => logs.push(event)).processOne()).toBe(true);
+    const unconfigured = createAdviceHandler(createRecommendationProvider({ model: createModelProvider({ env: {} }) }));
+    expect(await new AdviceWorkerRunner(queue, unconfigured, "real-advice-entry", { heartbeatMs: 50 }, (event) => logs.push(event)).processOne()).toBe(true);
     const state = await httpState(source.request.investigationId, source.request.id);
     expect(state.request.status).toBe("FAILED");
     expect(state.request.error).toMatchObject({ code: "PROVIDER_NOT_CONFIGURED", retryable: false });
@@ -303,16 +316,16 @@ describe("advice runner bounded execution", () => {
 
   it("keeps a handler alive with real heartbeats and atomically exposes its test-only result", async () => {
     const source = await submit();
-    const short = new PostgresAdviceQueue(database.db, { leaseMs: 400, attemptTimeoutMs: 3000 });
+    const short = new PostgresAdviceQueue(database.db, { leaseMs: 1200, attemptTimeoutMs: 6000 });
     const handler: AdviceHandler = async ({ request, signal }) => {
-      await delay(700, undefined, { signal });
+      await delay(1500, undefined, { signal });
       const lease = { snapshotId: request.snapshotId } as AdviceExecutionLease;
       return completion(lease);
     };
-    await new AdviceWorkerRunner(short, handler, "heartbeat", { heartbeatMs: 50 }, silent).processOne();
+    expect(await new AdviceWorkerRunner(short, handler, "heartbeat", { heartbeatMs: 50 }, silent).processOne()).toBe(true);
     expect((await httpState(source.request.investigationId, source.request.id)).request.status).toBe("SUCCEEDED");
     const attempt = await database.db.adviceExecutionAttempt.findFirstOrThrow();
-    expect(attempt.heartbeatAt.getTime()).toBeGreaterThan(attempt.startedAt.getTime() + 400);
+    expect(attempt.heartbeatAt.getTime()).toBeGreaterThan(attempt.startedAt.getTime() + 1200);
   });
 
   it("bounds a handler ignoring cancellation and rejects its late result", async () => {
@@ -351,7 +364,7 @@ describe("advice runner bounded execution", () => {
       await delay(10000, undefined, { signal: context.signal });
       return completion({ snapshotId: context.snapshot.id } as AdviceExecutionLease);
     };
-    await new AdviceWorkerRunner(queue, handler, "lost-heartbeat", { heartbeatMs: 50 }, silent).processOne();
+    expect(await new AdviceWorkerRunner(queue, handler, "lost-heartbeat", { heartbeatMs: 50 }, silent).processOne()).toBe(true);
     expect(signal?.aborted).toBe(true);
     expect(await database.db.advice.count()).toBe(0);
     expect(await queue.recoverExpired()).toBe(1);
@@ -364,7 +377,7 @@ describe("advice runner bounded execution", () => {
     await new AdviceWorkerRunner(queue, invalid, "bad-output", { heartbeatMs: 50 }, silent).processOne();
     expect((await read(first.request.id)).error).toMatchObject({ code: "INVALID_INPUT", retryable: false });
     const second = await submit();
-    await database.db.adviceRequest.update({ where: { id: second.request.id }, data: { requestHash: "0".repeat(64) } });
+    await database.db.adviceRequest.update({ where: { id: second.request.id }, data: { updatedAt: await readDatabaseTime(database.db), requestHash: "0".repeat(64) } });
     let called = false;
     const never: AdviceHandler = async () => { called = true; throw new Error("unreachable"); };
     await new AdviceWorkerRunner(queue, never, "bad-input", { heartbeatMs: 50 }, silent).processOne();

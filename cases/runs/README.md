@@ -22,4 +22,6 @@ npm run d1:evaluate -- --case A-01 --failed --investigation <真实UUID> --reaso
 
 snapshot / answers是运行时只读副本，权威数据仍在数据库；referenceSha256绑定当时参考文件，参考变化后不得将旧记录冒充新对照。review默认NOT_REVIEWED，只能关联实际参与者的意见，不自动产生独立复核。
 
-现有记录：[A-01](A-01/stage5-A-01-NOT_RUN.json)、[B-01](B-01/stage5-B-01-NOT_RUN.json)、[C-01](C-01/stage5-C-01-NOT_RUN.json)。三份为历史NOT_RUN申明，未执行正式调查，不是实际失败运行记录。历史owner／版本／hash保留；测试夹具不能写入本目录。
+本轮正式记录：[A-01](A-01/formal-2026-10-25T07-17-01-085Z.json)、[B-01](B-01/formal-2026-10-25T07-17-01-085Z.json)、[C-01](C-01/formal-2026-10-25T07-17-01-085Z.json)。实际任务均成功生成快照，但 R4 来源元数据不完整，verdict=FAIL，独立人工复核未完成。
+
+历史记录：[A-01](A-01/stage5-A-01-NOT_RUN.json)、[B-01](B-01/stage5-B-01-NOT_RUN.json)、[C-01](C-01/stage5-C-01-NOT_RUN.json)。三份为当时的 NOT_RUN 申明，不覆盖；历史 owner／版本／hash 保留，测试夹具不能写入本目录。

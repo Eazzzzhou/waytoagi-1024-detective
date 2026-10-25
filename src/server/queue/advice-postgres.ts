@@ -36,10 +36,10 @@ export class PostgresAdviceQueue {
         UPDATE "AdviceRequest" SET "status" = 'RUNNING', "attemptCount" = "attemptCount" + 1,
           "executionToken" = ${token}::uuid, "leaseOwner" = ${workerId}, "heartbeatAt" = clock_timestamp(),
           "leaseExpiresAt" = LEAST(clock_timestamp() + ${this.options.leaseMs} * interval '1 millisecond', clock_timestamp() + ${this.options.attemptTimeoutMs} * interval '1 millisecond'),
-          "runDeadlineAt" = clock_timestamp() + ${this.options.attemptTimeoutMs} * interval '1 millisecond', "updatedAt" = clock_timestamp()
+          "runDeadlineAt" = clock_timestamp() + ${this.options.attemptTimeoutMs} * interval '1 millisecond', "updatedAt" = GREATEST(clock_timestamp(), "createdAt")
         WHERE "id" = ${candidate.id}::uuid RETURNING *`;
       const request = row!;
-      const attempt = await tx.adviceExecutionAttempt.create({ data: { requestId: request.id, attemptNumber: request.attemptCount, executionToken: token, workerId } });
+      const attempt = await tx.adviceExecutionAttempt.create({ data: { requestId: request.id, attemptNumber: request.attemptCount, executionToken: token, workerId, startedAt: request.heartbeatAt!, heartbeatAt: request.heartbeatAt! } });
       return AdviceExecutionLeaseSchema.parse({ requestId: request.id, investigationId: request.investigationId, snapshotId: request.snapshotId, attemptId: attempt.id, executionToken: token, workerId, expiresAt: request.leaseExpiresAt });
     });
   }
@@ -71,7 +71,7 @@ export class PostgresAdviceQueue {
     return this.transaction(async (tx) => {
       await this.lockOwned(tx, lease);
       const [row] = await tx.$queryRaw<AdviceRequest[]>`
-        UPDATE "AdviceRequest" SET "heartbeatAt" = clock_timestamp(), "updatedAt" = clock_timestamp(),
+        UPDATE "AdviceRequest" SET "heartbeatAt" = clock_timestamp(), "updatedAt" = GREATEST(clock_timestamp(), "createdAt"),
           "leaseExpiresAt" = LEAST(clock_timestamp() + ${this.options.leaseMs} * interval '1 millisecond', "runDeadlineAt")
         WHERE "id" = ${lease.requestId}::uuid AND "status" = 'RUNNING' AND "executionToken" = ${lease.executionToken}::uuid
           AND "leaseExpiresAt" > clock_timestamp() AND "runDeadlineAt" > clock_timestamp() RETURNING *`;
@@ -118,7 +118,7 @@ export class PostgresAdviceQueue {
         UPDATE "AdviceRequest" SET "status" = ${status}::"AdviceRequestStatus", "resultAdviceId" = ${adviceId}::uuid,
           "conditionsIssue" = CASE WHEN ${issue !== null} THEN ${JSON.stringify(issue)}::jsonb ELSE NULL END,
           "completionHash" = ${completionHash}, "lastError" = NULL, "error" = NULL,
-          "completedAt" = clock_timestamp(), "updatedAt" = clock_timestamp(), "leaseExpiresAt" = NULL, "runDeadlineAt" = NULL
+          "completedAt" = GREATEST(clock_timestamp(), "createdAt"), "updatedAt" = GREATEST(clock_timestamp(), "createdAt"), "leaseExpiresAt" = NULL, "runDeadlineAt" = NULL
         WHERE "id" = ${request.id}::uuid AND "status" = 'RUNNING' AND "executionToken" = ${lease.executionToken}::uuid
           AND "leaseExpiresAt" > clock_timestamp() AND "runDeadlineAt" > clock_timestamp()`;
       if (changed !== 1) throw new LeaseLostError();
@@ -148,8 +148,8 @@ export class PostgresAdviceQueue {
       UPDATE "AdviceRequest" SET "status" = ${terminal ? "FAILED" : "PENDING"}::"AdviceRequestStatus", "failureCount" = ${failures},
         "lastError" = ${JSON.stringify(error)}::jsonb, "error" = CASE WHEN ${terminal} THEN ${JSON.stringify(error)}::jsonb ELSE NULL END,
         "availableAt" = clock_timestamp() + ${backoff} * interval '1 millisecond',
-        "completedAt" = CASE WHEN ${terminal} THEN clock_timestamp() ELSE NULL END,
-        "updatedAt" = clock_timestamp(), "leaseExpiresAt" = NULL, "runDeadlineAt" = NULL
+        "completedAt" = CASE WHEN ${terminal} THEN GREATEST(clock_timestamp(), "createdAt") ELSE NULL END,
+        "updatedAt" = GREATEST(clock_timestamp(), "createdAt"), "leaseExpiresAt" = NULL, "runDeadlineAt" = NULL
       WHERE "id" = ${request.id}::uuid AND "status" = 'RUNNING' AND "executionToken" = ${request.executionToken}::uuid
         AND (${!requireLive} OR ("leaseExpiresAt" > clock_timestamp() AND "runDeadlineAt" > clock_timestamp()))`;
     if (changed !== 1) throw new LeaseLostError();

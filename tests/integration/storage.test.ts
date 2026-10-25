@@ -4,6 +4,7 @@ import { afterAll, beforeAll, describe, expect, it } from "vitest";
 import type { Prisma } from "../../src/generated/prisma/client";
 import { createQueueTestDatabase } from "../support/database";
 import { InvestigationRepository } from "../../src/server/storage/repository";
+import { readDatabaseTime } from "../../src/server/storage/database-time";
 import { makeAnswer, makeSnapshot } from "../fixtures/snapshot";
 
 // Missing DB is a failure, never a silent skip. Each test rolls back its fixture writes.
@@ -27,7 +28,8 @@ describe("real PostgreSQL storage", () => {
     const answer = makeAnswer(snapshot);
     await repo.createAnswer(answer);
     expect(await repo.findAnswer(answer.id)).toEqual(answer);
-    await tx.investigation.update({ where: { id: investigation.id }, data: { status: "SUCCEEDED", stage: "COMPLETED", completedAt: new Date(), resultSnapshotId: snapshot.id } });
+    const completedAt = await readDatabaseTime(tx);
+    await tx.investigation.update({ where: { id: investigation.id }, data: { status: "SUCCEEDED", stage: "COMPLETED", completedAt, updatedAt: completedAt, resultSnapshotId: snapshot.id } });
     expect((await repo.findInvestigation(investigation.id))?.status).toBe("SUCCEEDED");
   }));
   it("rejects invalid input before writing", () => rollbackTest(async (tx, repo) => {

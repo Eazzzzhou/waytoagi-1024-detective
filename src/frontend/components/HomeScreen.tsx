@@ -38,19 +38,26 @@ export function HomeScreen({
   onExample,
   onArchive,
   askRef,
+  live = false,
+  initialText = '',
+  busy = false,
 }: {
   onSubmit: (text: string) => void
   onExample: (scenarioId: keyof typeof SCENARIOS, question: string) => void
   onArchive: (scenarioId: string, at: string, caseNo: string) => void
   askRef: RefObject<HTMLTextAreaElement | null>
+  live?: boolean
+  initialText?: string
+  busy?: boolean
 }) {
-  const [text, setText] = useState('')
+  const [text, setText] = useState(initialText)
   const [focused, setFocused] = useState(false)
   const [conditionsOpen, setConditionsOpen] = useState(false)
 
   const activeConditions = QUICK_TAGS.filter((tag) => tagActive(text, tag))
 
   const submit = () => {
+    if (busy) return
     const value = text.trim()
     if (!value) {
       askRef.current?.focus()
@@ -213,7 +220,7 @@ export function HomeScreen({
                   </button>
                   <button
                     type="submit"
-                    disabled={!text.trim()}
+                    disabled={busy || !text.trim()}
                     aria-label="开始调查"
                     className={cn(
                       'grid h-10 w-10 place-items-center rounded-full transition-colors',
@@ -239,6 +246,7 @@ export function HomeScreen({
                   return (
                     <motion.button
                       key={example.scenarioId}
+                      disabled={busy}
                       type="button"
                       initial={{ opacity: 0, y: 8 }}
                       animate={{ opacity: 1, y: 0 }}
@@ -297,16 +305,18 @@ export function HomeScreen({
             <div className="flex items-center justify-between border-b border-line pb-3">
               <span className="flex items-center gap-2 font-mono text-[9px] tracking-[0.2em] text-ink-faint">
                 <FolderOpen size={13} />
-                案卷柜
+                {live ? '演示样稿' : '案卷柜'}
               </span>
-              <span className="font-mono text-[9px] text-ink-faint">最近 3 份</span>
+              <span className="font-mono text-[9px] text-ink-faint">{live ? '预置示例' : '最近 3 份'}</span>
             </div>
 
             <div className="mt-3 space-y-2.5">
+              {live && <p className="mb-3 text-xs leading-relaxed text-ink-soft">下方是演示材料，打开不会发起真实调查。左侧提交和示例问题会创建正式任务。</p>}
               {HOME_ARCHIVE.map((item) => (
                 <button
                   key={item.caseNo}
                   type="button"
+                  disabled={busy}
                   onClick={() => onArchive(item.scenarioId, item.at, item.caseNo)}
                   className="corner-reveal-card group/file w-full p-4 text-left"
                 >

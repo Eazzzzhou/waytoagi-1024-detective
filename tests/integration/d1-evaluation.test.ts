@@ -9,6 +9,7 @@ import { afterAll, beforeAll, describe, expect, it } from "vitest";
 import type { Prisma } from "../../src/generated/prisma/client";
 import { createQueueTestDatabase } from "../support/database";
 import { InvestigationRepository } from "../../src/server/storage/repository";
+import { readDatabaseTime } from "../../src/server/storage/database-time";
 import { makeAnswer, makeSnapshot } from "../fixtures/snapshot";
 import { D1RunRecordSchema, evaluateSnapshot } from "../../scripts/d1/rules";
 import { loadCaseRecord } from "../../scripts/d1/case";
@@ -43,7 +44,7 @@ describe("D1 read-only snapshot evaluation", () => {
       await writeFile(evidence, "test-only state evidence");
       expect(cli(failureFlags).status).toBe(1); // PENDING cannot masquerade as FAILED.
       await database.db.investigation.update({ where: { id: investigation.id }, data: {
-        status: "FAILED", stage: "IDENTITY", completedAt: new Date(),
+        status: "FAILED", stage: "IDENTITY", completedAt: await readDatabaseTime(database.db), updatedAt: await readDatabaseTime(database.db),
         error: { code: "PROVIDER_NOT_CONFIGURED", message: "Synthetic integration failure", retryable: false }
       } });
       const before = await database.db.investigation.findUniqueOrThrow({ where: { id: investigation.id } });
@@ -91,7 +92,8 @@ describe("D1 read-only snapshot evaluation", () => {
     await repo.createSnapshot(snapshot);
     const answer = makeAnswer(snapshot);
     await repo.createAnswer(answer);
-    await tx.investigation.update({ where: { id: investigation.id }, data: { status: "SUCCEEDED", stage: "COMPLETED", completedAt: new Date(), resultSnapshotId: snapshot.id } });
+    const completedAt = await readDatabaseTime(tx);
+    await tx.investigation.update({ where: { id: investigation.id }, data: { status: "SUCCEEDED", stage: "COMPLETED", completedAt, updatedAt: completedAt, resultSnapshotId: snapshot.id } });
 
     const loadedInvestigation = await repo.findInvestigation(investigation.id);
     const loadedSnapshot = await repo.findSnapshot(snapshot.id);

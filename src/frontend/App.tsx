@@ -16,6 +16,7 @@ import { SearchGraph } from './components/SearchGraph'
 import { MethodSheet } from './components/MethodSheet'
 import { DemoPanel } from './components/DemoPanel'
 import { Footer } from './components/Footer'
+import { LiveWorkspace } from './components/LiveWorkspace'
 
 const EMPTY_SOURCES: Evidence[] = []
 
@@ -30,6 +31,11 @@ function detectScenario(text: string) {
 }
 
 export default function App() {
+  const [demo, setDemo] = useState(false)
+  return demo ? <><div className="sticky top-0 z-50 flex items-center justify-between gap-4 bg-seal px-5 py-3 text-sm text-white"><span>演示样稿 · 以下为预置内容，不是本次调查结果</span><button className="shrink-0 underline" onClick={() => setDemo(false)}>返回正式调查</button></div><DemoApp /></> : <LiveWorkspace onDemo={() => setDemo(true)} />
+}
+
+function DemoApp() {
   const [view, setView] = useState<View>({ name: 'home' })
   const [runId, setRunId] = useState(0)
   const [methodOpen, setMethodOpen] = useState(false)

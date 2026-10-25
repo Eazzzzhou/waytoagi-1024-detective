@@ -2,6 +2,7 @@ import type { Prisma, PrismaClient } from "../../generated/prisma/client";
 import { z } from "zod";
 import { AnswerSchema, CreateInvestigationSchema, EvidenceSnapshotSchema, IdSchema, InvestigationSchema, assertAnswerReferences } from "../../contracts";
 import { StoredDataError } from "./errors";
+import { readDatabaseTime } from "./database-time";
 
 type Database = PrismaClient | Prisma.TransactionClient;
 
@@ -11,7 +12,8 @@ export class InvestigationRepository {
 
   async createInvestigation(input: unknown) {
     const data = CreateInvestigationSchema.parse(input);
-    const row = await this.db.investigation.create({ data });
+    const now = await readDatabaseTime(this.db);
+    const row = await this.db.investigation.create({ data: { ...data, createdAt: now, updatedAt: now } });
     return this.parseInvestigation(row);
   }
 

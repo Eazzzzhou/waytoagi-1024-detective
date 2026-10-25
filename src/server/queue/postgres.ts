@@ -39,7 +39,8 @@ export class PostgresInvestigationQueue {
         return { investigation: await new InvestigationRepository(tx).findInvestigation(existing.investigationId), jobId: existing.id, reused: true };
       }
       const investigation = await new InvestigationRepository(tx).createInvestigation({ question: request.question, researchDepth: request.researchDepth });
-      const job = await tx.job.create({ data: { investigationId: investigation.id, idempotencyKey: request.idempotencyKey, requestHash, maxAttempts: this.options.maxAttempts } });
+      const now = await this.now(tx);
+      const job = await tx.job.create({ data: { investigationId: investigation.id, idempotencyKey: request.idempotencyKey, requestHash, maxAttempts: this.options.maxAttempts, availableAt: now, createdAt: now, updatedAt: now } });
       return { investigation, jobId: job.id, reused: false };
     });
   }
