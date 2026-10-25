@@ -1,0 +1,1491 @@
+{
+  "snapshot": {
+    "id": "fbe4e951-1d54-43cb-9a79-43a792d944ba",
+    "investigationId": "c073843d-7dd5-4b8d-a68e-fdc8d8ac72b9",
+    "version": 1,
+    "parentSnapshotId": null,
+    "productIdentity": {
+      "name": "Cognition 官方称 Devin 是“首个自主软件工程师”，能独立完成软件工程任务；Hacker News 上开发者的实际使用报告支持这个说法吗？",
+      "officialWebsite": null,
+      "version": null,
+      "plan": null,
+      "confirmationStatus": "UNRESOLVED",
+      "confirmationBasis": []
+    },
+    "evidence": [
+      {
+        "id": "43340e00-1cc6-4181-b77f-d5f2d9597d08",
+        "sourceUrl": "https://cognition.com/blog/introducing-devin",
+        "originalExcerpt": "Devin can autonomously find and fix bugs in codebases",
+        "translation": null,
+        "originalLocation": {
+          "kind": "TEXT",
+          "locator": "https://cognition.com/blog/introducing-devin :: article:first :: blocks(p,li,pre,tr,h1,h2,h3)[10]; normalized UTF-16 [0,53)",
+          "context": "Devin can autonomously find and fix bugs in codebases"
+        },
+        "metadata": {
+          "title": "Introducing Devin, the first AI software engineer",
+          "siteName": "cognition.com",
+          "author": "Scott Wu",
+          "publishedAt": null,
+          "language": "en",
+          "sourceType": "UNKNOWN",
+          "contentKind": "UNKNOWN",
+          "productVersion": null,
+          "plan": null,
+          "upstreamUrl": null,
+          "independence": "UNKNOWN",
+          "originGroupId": null,
+          "independenceReason": null
+        },
+        "retrievedAt": "2026-10-25T04:11:02.007Z",
+        "readStatus": "READ",
+        "readError": null,
+        "contentHash": "8bc2d77cb9c332c40cf39b4d8f484304188e1b525f3011b19464461496c955d6"
+      },
+      {
+        "id": "79d424d1-7a95-4a18-97c7-aebb0ee58964",
+        "sourceUrl": "https://news.ycombinator.com/item?id=46711589",
+        "originalExcerpt": "AI reviewing AI does lead to a cycle of ouroboros slop, that’s why Devin Review is actually more of a UI for you to read code easier, not like other code review tools that try to do all the reviewing themselvesDisclaimer: i work here",
+        "translation": null,
+        "originalLocation": {
+          "kind": "COMMENT",
+          "locator": "https://hn.algolia.com/api/v1/items/46711589 :: HN comment #46712183; API $.children[1].children[1].text; normalized UTF-16 [0,233)",
+          "context": "AI reviewing AI does lead to a cycle of ouroboros slop, that’s why Devin Review is actually more of a UI for you to read code easier, not like other code review tools that try to do all the reviewing themselvesDisclaimer: i work here"
+        },
+        "metadata": {
+          "title": "Devin Review: AI to Stop Slop",
+          "siteName": "news.ycombinator.com",
+          "author": "gaodrew",
+          "publishedAt": "2026-01-21T21:58:43.000Z",
+          "language": null,
+          "sourceType": "COMMUNITY",
+          "contentKind": "UNKNOWN",
+          "productVersion": null,
+          "plan": null,
+          "upstreamUrl": "https://cognition.ai/blog/devin-review",
+          "independence": "SHARED_ORIGIN",
+          "originGroupId": "origin:61209acc-d9a8-4760-9219-a12b676117da",
+          "independenceReason": "保存的相同原文/重定向URL、明确upstreamUrl、采集来源组，或同路径且同hash的www别名相连；重复读取/转载不增加独立证据数量。"
+        },
+        "retrievedAt": "2026-10-25T04:11:02.096Z",
+        "readStatus": "READ",
+        "readError": null,
+        "contentHash": "40cb450db17bd12086706d6309e86559003a0b6749cb51f78a011c34b7a2cdf4"
+      },
+      {
+        "id": "c51d25b8-a1ba-4e8d-961a-f98c3f1df756",
+        "sourceUrl": "https://news.ycombinator.com/item?id=49613312",
+        "originalExcerpt": "Devin was the first ai developer harness I ever heard of — and in fact the first one I ever used as I had gotten an invite while it was in private beta. Now it seems like the product has faded (into irrelevance?) between other harnesses like cursor especially and all the major harnesses having a clo",
+        "translation": null,
+        "originalLocation": {
+          "kind": "COMMENT",
+          "locator": "https://hn.algolia.com/api/v1/items/49613312 :: HN comment #49618009; API $.children[0].text; normalized UTF-16 [0,300)",
+          "context": "Devin was the first ai developer harness I ever heard of — and in fact the first one I ever used as I had gotten an invite while it was in private beta. Now it seems like the product has faded (into irrelevance?) between other harnesses like cursor especially and all the major harnesses having a cloud mode. Is there some other area Devin has become really popular / has stayed competitive?"
+        },
+        "metadata": {
+          "title": "Cognition (Devin) raises $2B at $48B valuation",
+          "siteName": "news.ycombinator.com",
+          "author": "edude03",
+          "publishedAt": "2026-09-08T22:22:36.000Z",
+          "language": null,
+          "sourceType": "COMMUNITY",
+          "contentKind": "UNKNOWN",
+          "productVersion": null,
+          "plan": null,
+          "upstreamUrl": "https://cognition.com/blog/series-e",
+          "independence": "SHARED_ORIGIN",
+          "originGroupId": "origin:921f2fe6-14e1-4025-ab15-53c6d1fee3ec",
+          "independenceReason": "保存的相同原文/重定向URL、明确upstreamUrl、采集来源组，或同路径且同hash的www别名相连；重复读取/转载不增加独立证据数量。"
+        },
+        "retrievedAt": "2026-10-25T04:11:02.147Z",
+        "readStatus": "READ",
+        "readError": null,
+        "contentHash": "bda9474252a8cefc878f1c50c45b60129a96aaf3616284b96bc532932e4b9ffd"
+      },
+      {
+        "id": "3041f24b-1e57-4743-92a5-c4bf5c8a1f0e",
+        "sourceUrl": "https://news.ycombinator.com/item?id=39679787",
+        "originalExcerpt": "I mean, this might just be existential cope, but my first thought when looking at the Upwork demo posted on Twitter (https://x.com/cognition_labs/status/1767548768734294113?s=20) was that it seemed a little bit suspicious.Namely, the client was asking for an unusually specific (for Upwork) ask. It w",
+        "translation": null,
+        "originalLocation": {
+          "kind": "COMMENT",
+          "locator": "https://hn.algolia.com/api/v1/items/39679787 :: HN comment #39681335; API $.children[1].text; normalized UTF-16 [0,300)",
+          "context": "I mean, this might just be existential cope, but my first thought when looking at the Upwork demo posted on Twitter (https://x.com/cognition_labs/status/1767548768734294113?s=20) was that it seemed a little bit suspicious.Namely, the client was asking for an unusually specific (for Upwork) ask. It was an almost perfect example of a job to be given to an AI agent for testing purposes."
+        },
+        "metadata": {
+          "title": "Devin: AI Software Engineer",
+          "siteName": "news.ycombinator.com",
+          "author": "Bjorkbat",
+          "publishedAt": "2024-03-12T16:21:36.000Z",
+          "language": null,
+          "sourceType": "COMMUNITY",
+          "contentKind": "UNKNOWN",
+          "productVersion": null,
+          "plan": null,
+          "upstreamUrl": "https://www.cognition-labs.com/blog",
+          "independence": "SHARED_ORIGIN",
+          "originGroupId": "origin:3041f24b-1e57-4743-92a5-c4bf5c8a1f0e",
+          "independenceReason": "保存的相同原文/重定向URL、明确upstreamUrl、采集来源组，或同路径且同hash的www别名相连；重复读取/转载不增加独立证据数量。"
+        },
+        "retrievedAt": "2026-10-25T04:11:03.318Z",
+        "readStatus": "READ",
+        "readError": null,
+        "contentHash": "782bbca5df0d54296b3be4ad2933bca6c41e9f082ae3270d714a8ad61ba3fbc3"
+      },
+      {
+        "id": "61209acc-d9a8-4760-9219-a12b676117da",
+        "sourceUrl": "https://news.ycombinator.com/item?id=46711589",
+        "originalExcerpt": "Apropos of nothing: I hate that they used my name for their product.",
+        "translation": null,
+        "originalLocation": {
+          "kind": "COMMENT",
+          "locator": "https://hn.algolia.com/api/v1/items/46711589 :: HN comment #46711985; API $.children[0].text; normalized UTF-16 [0,68)",
+          "context": "Apropos of nothing: I hate that they used my name for their product."
+        },
+        "metadata": {
+          "title": "Devin Review: AI to Stop Slop",
+          "siteName": "news.ycombinator.com",
+          "author": "devin",
+          "publishedAt": "2026-01-21T21:42:54.000Z",
+          "language": null,
+          "sourceType": "COMMUNITY",
+          "contentKind": "UNKNOWN",
+          "productVersion": null,
+          "plan": null,
+          "upstreamUrl": "https://cognition.ai/blog/devin-review",
+          "independence": "SHARED_ORIGIN",
+          "originGroupId": "origin:61209acc-d9a8-4760-9219-a12b676117da",
+          "independenceReason": "保存的相同原文/重定向URL、明确upstreamUrl、采集来源组，或同路径且同hash的www别名相连；重复读取/转载不增加独立证据数量。"
+        },
+        "retrievedAt": "2026-10-25T04:11:06.023Z",
+        "readStatus": "READ",
+        "readError": null,
+        "contentHash": "9144c0e1792365740abb5c05564273a67414305f49fc30dddcc614c36a6b6f80"
+      },
+      {
+        "id": "921f2fe6-14e1-4025-ab15-53c6d1fee3ec",
+        "sourceUrl": "https://news.ycombinator.com/item?id=49613312",
+        "originalExcerpt": "Devin was the first ai developer harness I ever heard of — and in fact the first one I ever used as I had gotten an invite while it was in private beta. Now it seems like the product has faded (into irrelevance?) between other harnesses like cursor especially and all the major harnesses having a clo",
+        "translation": null,
+        "originalLocation": {
+          "kind": "COMMENT",
+          "locator": "https://hn.algolia.com/api/v1/items/49613312 :: HN comment #49618009; API $.children[0].text; normalized UTF-16 [0,300)",
+          "context": "Devin was the first ai developer harness I ever heard of — and in fact the first one I ever used as I had gotten an invite while it was in private beta. Now it seems like the product has faded (into irrelevance?) between other harnesses like cursor especially and all the major harnesses having a cloud mode. Is there some other area Devin has become really popular / has stayed competitive?"
+        },
+        "metadata": {
+          "title": "Cognition (Devin) raises $2B at $48B valuation",
+          "siteName": "news.ycombinator.com",
+          "author": "edude03",
+          "publishedAt": "2026-09-08T22:22:36.000Z",
+          "language": null,
+          "sourceType": "COMMUNITY",
+          "contentKind": "UNKNOWN",
+          "productVersion": null,
+          "plan": null,
+          "upstreamUrl": "https://cognition.com/blog/series-e",
+          "independence": "SHARED_ORIGIN",
+          "originGroupId": "origin:921f2fe6-14e1-4025-ab15-53c6d1fee3ec",
+          "independenceReason": "保存的相同原文/重定向URL、明确upstreamUrl、采集来源组，或同路径且同hash的www别名相连；重复读取/转载不增加独立证据数量。"
+        },
+        "retrievedAt": "2026-10-25T04:11:06.059Z",
+        "readStatus": "READ",
+        "readError": null,
+        "contentHash": "bda9474252a8cefc878f1c50c45b60129a96aaf3616284b96bc532932e4b9ffd"
+      },
+      {
+        "id": "5d971d82-f245-4ffa-832d-b0d8a76b828a",
+        "sourceUrl": "https://news.ycombinator.com/item?id=39679787",
+        "originalExcerpt": "It doesn't seem like Devin actually did the work requested, which was to provide instructions for using AWS?",
+        "translation": null,
+        "originalLocation": {
+          "kind": "COMMENT",
+          "locator": "https://hn.algolia.com/api/v1/items/39679787 :: HN comment #39688893; API $.children[1].children[3].text; normalized UTF-16 [0,108)",
+          "context": "It doesn't seem like Devin actually did the work requested, which was to provide instructions for using AWS?"
+        },
+        "metadata": {
+          "title": "Devin: AI Software Engineer",
+          "siteName": "news.ycombinator.com",
+          "author": "zeroonetwothree",
+          "publishedAt": "2024-03-13T07:31:05.000Z",
+          "language": null,
+          "sourceType": "COMMUNITY",
+          "contentKind": "UNKNOWN",
+          "productVersion": null,
+          "plan": null,
+          "upstreamUrl": "https://www.cognition-labs.com/blog",
+          "independence": "SHARED_ORIGIN",
+          "originGroupId": "origin:3041f24b-1e57-4743-92a5-c4bf5c8a1f0e",
+          "independenceReason": "保存的相同原文/重定向URL、明确upstreamUrl、采集来源组，或同路径且同hash的www别名相连；重复读取/转载不增加独立证据数量。"
+        },
+        "retrievedAt": "2026-10-25T04:11:07.454Z",
+        "readStatus": "READ",
+        "readError": null,
+        "contentHash": "f3b694e56f2a8b45a530b7a4c4e85b6575511b2ac6c3175b2060c4d83f62969d"
+      },
+      {
+        "id": "718a87d7-2d52-4337-83ea-e85ca4af1f83",
+        "sourceUrl": "https://dev.to/alanwest/i-gave-devin-10-real-tasks-it-completed-3-3063",
+        "originalExcerpt": "I spent two weeks giving Devin real tasks from my actual backlog. Not toy problems. Not \"build me a calculator.\" Real tickets that a junior developer on my team would handle. Here's what happened.",
+        "translation": null,
+        "originalLocation": {
+          "kind": "TEXT",
+          "locator": "https://dev.to/alanwest/i-gave-devin-10-real-tasks-it-completed-3-3063 :: article:first :: blocks(p,li,pre,tr,h1,h2,h3)[2]; normalized UTF-16 [0,196)",
+          "context": "I spent two weeks giving Devin real tasks from my actual backlog. Not toy problems. Not \"build me a calculator.\" Real tickets that a junior developer on my team would handle. Here's what happened."
+        },
+        "metadata": {
+          "title": "I Gave Devin 10 Real Tasks. It Completed 3. - DEV Community",
+          "siteName": "dev.to",
+          "author": null,
+          "publishedAt": null,
+          "language": "en",
+          "sourceType": "UNKNOWN",
+          "contentKind": "UNKNOWN",
+          "productVersion": null,
+          "plan": null,
+          "upstreamUrl": null,
+          "independence": "UNKNOWN",
+          "originGroupId": null,
+          "independenceReason": null
+        },
+        "retrievedAt": "2026-10-25T04:11:15.186Z",
+        "readStatus": "READ",
+        "readError": null,
+        "contentHash": "7700b1ceacd8daf83655328d9b3b3bb64da63f9a081e4e14b333508bdba76b2c"
+      },
+      {
+        "id": "4f3bedda-d5c0-4bd6-af9f-3cefd836c303",
+        "sourceUrl": "https://cognition.com/blog/devin-annual-performance-review-2025",
+        "originalExcerpt": "A large bank was migrating hundreds of thousands of proprietary ETL framework files. Devin completed each file's migration in 3-4 hours vs 30-40 for human engineers (10x improvement).",
+        "translation": null,
+        "originalLocation": {
+          "kind": "TEXT",
+          "locator": "https://cognition.com/blog/devin-annual-performance-review-2025 :: article:first :: blocks(p,li,pre,tr,h1,h2,h3)[16]; normalized UTF-16 [0,183)",
+          "context": "A large bank was migrating hundreds of thousands of proprietary ETL framework files. Devin completed each file's migration in 3-4 hours vs 30-40 for human engineers (10x improvement)."
+        },
+        "metadata": {
+          "title": "Devin's 2025 Performance Review: Learnings From 18 Months of Agents At Work",
+          "siteName": "cognition.com",
+          "author": "The Cognition Team",
+          "publishedAt": null,
+          "language": "en",
+          "sourceType": "UNKNOWN",
+          "contentKind": "UNKNOWN",
+          "productVersion": null,
+          "plan": null,
+          "upstreamUrl": null,
+          "independence": "UNKNOWN",
+          "originGroupId": null,
+          "independenceReason": null
+        },
+        "retrievedAt": "2026-10-25T04:11:15.256Z",
+        "readStatus": "READ",
+        "readError": null,
+        "contentHash": "e0cbc86ebed0967f04f48844fe777fadd9e5d037bc55d97503566c60b87d8be0"
+      },
+      {
+        "id": "f397d60d-a314-4d0e-b6f0-eeb5c301aec2",
+        "sourceUrl": "https://news.ycombinator.com/item?id=39679787",
+        "originalExcerpt": "There's another post both are not really getting attention.I really wanted to see what hacker news had to say on this :(",
+        "translation": null,
+        "originalLocation": {
+          "kind": "COMMENT",
+          "locator": "https://hn.algolia.com/api/v1/items/39679787 :: HN comment #39681086; API $.children[0].children[1].text; normalized UTF-16 [0,120)",
+          "context": "There's another post both are not really getting attention.I really wanted to see what hacker news had to say on this :("
+        },
+        "metadata": {
+          "title": "Devin: AI Software Engineer",
+          "siteName": "news.ycombinator.com",
+          "author": "sohzm",
+          "publishedAt": "2024-03-12T16:00:33.000Z",
+          "language": null,
+          "sourceType": "COMMUNITY",
+          "contentKind": "UNKNOWN",
+          "productVersion": null,
+          "plan": null,
+          "upstreamUrl": "https://www.cognition-labs.com/blog",
+          "independence": "SHARED_ORIGIN",
+          "originGroupId": "origin:3041f24b-1e57-4743-92a5-c4bf5c8a1f0e",
+          "independenceReason": "保存的相同原文/重定向URL、明确upstreamUrl、采集来源组，或同路径且同hash的www别名相连；重复读取/转载不增加独立证据数量。"
+        },
+        "retrievedAt": "2026-10-25T04:11:16.320Z",
+        "readStatus": "READ",
+        "readError": null,
+        "contentHash": "36ebbd111fe46f3482ad1a28a3343f0c41c50bf23bf7574f0ffd4dc9f9c786f0"
+      }
+    ],
+    "claims": [
+      {
+        "id": "1d4f526a-428b-447d-ae13-f3f72f93829a",
+        "statement": "Cognition 官方在介绍 Devin 的博客中声称 Devin 能自主发现并修复代码库中的缺陷。",
+        "kind": "OFFICIAL_CLAIM",
+        "verificationStatus": "SUPPORTED",
+        "verificationReason": "原句明确写有 Devin can autonomously find and fix bugs in codebases，仅证明官方如此声称。",
+        "scope": "cognition.com 官方博客；未标注版本、日期、套餐或地域"
+      },
+      {
+        "id": "0aa03a44-bb35-4937-878f-887daaf753cc",
+        "statement": "Cognition 官方博客标题将 Devin 称为“首个 AI 软件工程师”。",
+        "kind": "OFFICIAL_CLAIM",
+        "verificationStatus": "INSUFFICIENT",
+        "verificationReason": "保存原句为“first AI software engineer”，不等于“首个自主软件工程师”；摘录亦未含“自主”“独立完成”表述。",
+        "scope": "cognition.com 官方博客标题；未标注日期与版本"
+      },
+      {
+        "id": "a935b0fb-11f6-4860-9ee6-9187612c52d9",
+        "statement": "来源报告（未独立复现）：Hacker News 有评论者转述，在 2024 年 3 月讨论的 Upwork 演示中，Devin 似乎并未完成所要求的任务（提供 AWS 使用说明）。",
+        "kind": "USER_REPORT",
+        "verificationStatus": "SUPPORTED",
+        "verificationReason": "原句称 Devin 似乎未完成所请求的 AWS 使用说明工作，且讨论于 2024 年 3 月；仅为个案评论。",
+        "scope": "Hacker News 评论；针对 2024 年 3 月官方 Twitter 上发布的 Upwork 演示"
+      },
+      {
+        "id": "4707ba98-7c02-4cd8-8945-1cf65ab55977",
+        "statement": "来源观点：Hacker News 有评论者认为所展示的 Upwork 演示看起来有些可疑，因为客户提出了对于 Upwork 而言异常具体的请求。",
+        "kind": "OPINION",
+        "verificationStatus": "SUPPORTED",
+        "verificationReason": "原句写有该评论者觉得演示有点可疑，并称客户请求对 Upwork 而言异常具体。",
+        "scope": "Hacker News 评论者 Bjorkbat 的个人判断；针对 2024 年 3 月 Upwork 演示"
+      },
+      {
+        "id": "9de70ee4-285c-4f66-ba9b-f24a097a7bd9",
+        "statement": "来源报告（未独立复现）：Hacker News 有评论者称 Devin 是其听说过的第一个 AI 开发工具，也是其在私有测试阶段受邀使用的第一个此类工具，并认为该产品如今似乎已被其他工具边缘化。",
+        "kind": "USER_REPORT",
+        "verificationStatus": "SUPPORTED",
+        "verificationReason": "原句称其为听说并私测使用的第一个 AI 开发工具，且认为产品已褪色；属个人经历与观感。",
+        "scope": "Hacker News 评论者 edude03 的个人经历与观感；2026 年 9 月发帖"
+      },
+      {
+        "id": "de696738-2dd3-4a05-82cc-aa7688290022",
+        "statement": "来源报告（未独立复现）：Hacker News 有评论者表示，其认为 Devin Review 更像供用户阅读代码的界面，而非像其他代码审查工具那样自行完成全部审查。",
+        "kind": "USER_REPORT",
+        "verificationStatus": "SUPPORTED",
+        "verificationReason": "原句称 Devin Review 更是让用户读代码的 UI，不像试图自行完成审查的工具；评论者自称在此工作。",
+        "scope": "Hacker News 评论；评论者自称在该公司工作"
+      },
+      {
+        "id": "d3b8a8fc-1375-4b10-bc88-4905096bad4a",
+        "statement": "来源报告（未独立复现）：一名开发者在 dev.to 上报告称，其在两周内用 10 个真实待办任务测试 Devin，结果完成了 3 个。",
+        "kind": "USER_REPORT",
+        "verificationStatus": "INSUFFICIENT",
+        "verificationReason": "原句仅称花两周给 Devin 真实任务，标题含“10 个完成 3 个”，正文摘录未述完成数，未能由原句直接核实。",
+        "scope": "dev.to 个人博客；未标注产品版本、套餐与日期"
+      }
+    ],
+    "relations": [
+      {
+        "claimId": "1d4f526a-428b-447d-ae13-f3f72f93829a",
+        "evidenceId": "43340e00-1cc6-4181-b77f-d5f2d9597d08",
+        "relation": "SUPPORTS",
+        "reason": "原句直述 Devin 可自主查找并修复代码库中的缺陷，与官方声称逐字对应。"
+      },
+      {
+        "claimId": "0aa03a44-bb35-4937-878f-887daaf753cc",
+        "evidenceId": "43340e00-1cc6-4181-b77f-d5f2d9597d08",
+        "relation": "CONTEXT",
+        "reason": "标题含“first AI software engineer”，但缺“自主”及独立完成任务表述，不能支撑该复合主张。"
+      },
+      {
+        "claimId": "a935b0fb-11f6-4860-9ee6-9187612c52d9",
+        "evidenceId": "5d971d82-f245-4ffa-832d-b0d8a76b828a",
+        "relation": "SUPPORTS",
+        "reason": "原句称 Devin 似乎未完成提供 AWS 使用说明的任务，与个案转述一致，讨论时间为 2024 年 3 月。"
+      },
+      {
+        "claimId": "4707ba98-7c02-4cd8-8945-1cf65ab55977",
+        "evidenceId": "3041f24b-1e57-4743-92a5-c4bf5c8a1f0e",
+        "relation": "SUPPORTS",
+        "reason": "原句含“有点可疑”及客户请求对 Upwork 异常具体，支撑该评论者观点。"
+      },
+      {
+        "claimId": "9de70ee4-285c-4f66-ba9b-f24a097a7bd9",
+        "evidenceId": "c51d25b8-a1ba-4e8d-961a-f98c3f1df756",
+        "relation": "SUPPORTS",
+        "reason": "原句称 Devin 是首个听说及私测使用的 AI 开发工具，并认为产品已褪色边缘化。"
+      },
+      {
+        "claimId": "de696738-2dd3-4a05-82cc-aa7688290022",
+        "evidenceId": "79d424d1-7a95-4a18-97c7-aebb0ee58964",
+        "relation": "SUPPORTS",
+        "reason": "原句称 Devin Review 更像供读代码的 UI，而非自行完成审查；评论者自称在此工作。"
+      },
+      {
+        "claimId": "d3b8a8fc-1375-4b10-bc88-4905096bad4a",
+        "evidenceId": "718a87d7-2d52-4337-83ea-e85ca4af1f83",
+        "relation": "UNCERTAIN",
+        "reason": "原句只说两周真实任务，标题提 10 个完成 3 个；正文摘录未含完成数，无法直接核实。"
+      },
+      {
+        "claimId": "0aa03a44-bb35-4937-878f-887daaf753cc",
+        "evidenceId": "5d971d82-f245-4ffa-832d-b0d8a76b828a",
+        "relation": "CONTEXT",
+        "reason": "个案称未完成所要求任务，与“自主完成软件工程”存在张力，但时代与场景不同，不直接反驳标题主张。"
+      }
+    ],
+    "conflicts": [],
+    "gaps": [
+      {
+        "id": "5f6a2c2e-9a35-4a7e-b3f4-7e9f9d3c1a01",
+        "claimIds": [
+          "0aa03a44-bb35-4937-878f-887daaf753cc"
+        ],
+        "kind": "INSUFFICIENT_EVIDENCE",
+        "description": "已读官方博客摘录仅含“first AI software engineer”，未保存“自主”“独立完成软件工程任务”的原句，无法核实该复合表述。",
+        "searchScope": "cognition.com 博客介绍 Devin 页面已读短摘录"
+      },
+      {
+        "id": "5f6a2c2e-9a35-4a7e-b3f4-7e9f9d3c1a02",
+        "claimIds": [
+          "d3b8a8fc-1375-4b10-bc88-4905096bad4a"
+        ],
+        "kind": "INSUFFICIENT_EVIDENCE",
+        "description": "dev.to 正文摘录未包含“10 个任务完成 3 个”的原句，完成数仅见于标题，缺少正文依据。",
+        "searchScope": "dev.to 文章已读短摘录"
+      }
+    ],
+    "retrievalRecords": [
+      {
+        "id": "a2e289df-4898-4e58-bbb0-58924dc9932d",
+        "provider": "tencent-yuanbao-search-api",
+        "query": "Cognition Devin autonomous software engineer Hacker News review",
+        "calledAt": "2026-10-25T04:10:56.796Z",
+        "status": "SUCCEEDED",
+        "error": null,
+        "returnedSources": [
+          {
+            "url": "https://plainai.tech/articles/honest-devin-review-spring-2026-pricing-pros-cons-alternatives",
+            "title": "Honest Devin Review (Spring 2026): Pricing, Pros, Cons & Alternatives",
+            "snippet": "Honest Devin Review (Spring 2026): Pricing, Pros, Cons & Alternatives Plain AI。We analyzed recent user and expert reviews from multiple independent sites without any bias. Sources include: PlainAI.tech: 0/5 from 0 reviews (recently added) in AI Coding. Trustpilot: 3.0/5 — meaningful gap from Cursor (G2 4.7) and GitHub Copilot (G2 4.5). Gartner Peer Insights: mixed — strong from enterprise teams, weak from individuals. Independent benchmarks: ~75% task-completion claimed by Cognition; one independent test showed 14 failures, 3 successes, 3 unclear from 20 tasks. Hacker News and Reddit: deeply split — fans love the long-horizon execution; critics note compute limits and slow output speed at $20/month. How realistic are the reviews? The split tracks reality. Devin shines at well-defined repet...",
+            "adoption": "REJECTED",
+            "adoptionReason": "本轮未读取；搜索摘要不是原文证据。",
+            "evidenceId": null
+          },
+          {
+            "url": "https://bestaiq.com/devin-review",
+            "title": "Devin by Cognition Review (2026): An Autonomous Coding Agent Reviewed on Pricing, Security, and Real-World Results",
+            "snippet": "Devin by Cognition Review (2026): An Autonomous Coding Agent Reviewed on Pricing, Security, and Real-World Results。 independent testing found Devin can spend days stuck on tasks that ultimately fail ✕Budget-conscious solo developers or small teams wary of ACU-based billing, where real costs can exceed the advertised $20/month by several multiples ✕Buyers who need a verified, independent 2026 benchmark or review-site rating before purchasing; none could be confirmed at the time of writing TABLE · HOW IT COMPARES Tool Score Tier From Free Link Devin by CognitionTHIS TOOL 5.8 Fair · T3 $0/mo[liveFacts] Yes — Playwright 8.4 EXCELLENT · T1 $0[liveFacts] Yes Review → Claude Code 7.9 GREAT · T2 $17/mo[liveFacts] No Review → GitHub Copilot 7.8 GREAT · T2 $0/mo[liveFacts] Yes Review → //What users ...",
+            "adoption": "REJECTED",
+            "adoptionReason": "本轮未读取；搜索摘要不是原文证据。",
+            "evidenceId": null
+          },
+          {
+            "url": "https://murmure.nanocorp.app/blog/what-reddit-thinks-about-devin-ai",
+            "title": "What Reddit Really Thinks About Devin AI in 2026 Murmure",
+            "snippet": "What Reddit Really Thinks About Devin AI in 2026 | Murmure。What Reddit Really Thinks About Devin AI in 2026 Devin AI Reddit 2026 is a pricing, trust, and workflow story. We analyzed 340+ Reddit and Hacker News discussions on Cognition's Devin to map what developers praise, what they distrust, and whether Devin's $500/month price feels worth it. Hook: 340+ Reddit and Hacker News discussions analyzed. Here is the unfiltered truth. Searches like 'Devin AI Reddit 2026', 'Cognition AI Devin review Reddit', and 'Devin AI software engineer review' all point to the same high-stakes question: does Devin actually deliver autonomous engineering value, or is it still a very polished promise with a very expensive seat price? We reviewed 340+ Reddit and Hacker News discussions to answer that question fr...",
+            "adoption": "REJECTED",
+            "adoptionReason": "本轮未读取；搜索摘要不是原文证据。",
+            "evidenceId": null
+          },
+          {
+            "url": "https://www.aiprofind.com/united-states/san-francisco/ai-tools/devin",
+            "title": "Devin",
+            "snippet": "Devin AI ProFind。 On the technical side, Devin does not carry long-term memory across sessions. It performs best with complete context and clear acceptance criteria up front, and its performance drops noticeably on vague or open-ended requests. How It Compares: Devin sits at the higher-autonomy, higher-cost end of the AI coding tool spectrum. In-editor assistants like Cursor and terminal-based agents like Aider keep a developer in the loop on every change, which trades some autonomy for lower cost and tighter control. Claude's own coding tooling is frequently cited by developers as offering comparable or better reasoning at a fraction of Devin's price for teams that do not need cloud-hosted, fully autonomous multi-hour runs. For narrower jobs, CodeRabbit focuses specifically on automated P...",
+            "adoption": "REJECTED",
+            "adoptionReason": "本轮未读取；搜索摘要不是原文证据。",
+            "evidenceId": null
+          },
+          {
+            "url": "https://www.sitepoint.com/devin-ai-engineers-production-realities/",
+            "title": "The 'Devin' Aftermath: How AI Software Engineers Are Actually Being Used in Production",
+            "snippet": "The 'Devin' Aftermath: How AI Software Engineers Are Actually Being Used in Production SitePoint。The 'Devin' Aftermath: How AI Software Engineers Are Actually Being Used in Production The AI briefing for Developers Stay up to date with AI tools, model releases, and developer workflows that matter. When Cognition Labs announced Devin AI in March 2024, the pitch was extraordinary: a fully autonomous AI software engineer that could plan, write, debug, and deploy code end to end. Fourteen months later, autonomous coding looks more fragmented and less autonomous than those demos promised. Table of Contents The Devin Hype vs. the Devin Reality What Devin (and Its Competitors) Can Actually Do Today Real Production Use Cases: What Teams Are Actually Doing The Metrics That Matter: Production Data f...",
+            "adoption": "REJECTED",
+            "adoptionReason": "本轮未读取；搜索摘要不是原文证据。",
+            "evidenceId": null
+          },
+          {
+            "url": "https://news.ycombinator.com/item?id=46711589",
+            "title": "Devin Review: AI to Stop Slop",
+            "snippet": "Devin Review: AI to Stop Slop Hacker News。 Do they haveanyusers at all? Ironically, their product has probably got massively better in the last couple of years, because the underlying LLMs got massively better at coding and long-context tasks. But that doth not a successful business model make, and unless you’re Cursor (and even then I’m not so sure) this is a very very hard space to succeed in without owning your own frontier model (i.e being Anthropic, OpenAI, or Google). ninjha16 days ago| parent | next [–] yeah there is apparently not a lot of overlap between hn/twitter users and devin users, and we don’t really do marketing campaigns either logos on website if you want to see some of our customers lol esafak16 days ago| parent | prev | next [–] I use their deepwiki often. snowmobile16...",
+            "adoption": "ADOPTED",
+            "adoptionReason": "保存原句；是否支持问题由逐主张核查决定。",
+            "evidenceId": "61209acc-d9a8-4760-9219-a12b676117da"
+          }
+        ]
+      },
+      {
+        "id": "7861b07d-8d6a-49fe-8bf0-c799d9c16927",
+        "provider": "tavily-search-api:keyless-capped",
+        "query": "Cognition Devin autonomous software engineer Hacker News review",
+        "calledAt": "2026-10-25T04:10:56.796Z",
+        "status": "SUCCEEDED",
+        "error": null,
+        "returnedSources": [
+          {
+            "url": "https://news.ycombinator.com/item?id=39679787",
+            "title": "Devin: AI Software Engineer | Hacker News",
+            "snippet": "| | | | | --- | | | Devin: AI Software Engineer (cognition-labs.com) | | | | 530 points by neural\\_thing on March 12, 2024 | hide | past | favorite | 553 comments | | | | | | | | | | --- --- | | | | | | --- | | | steve\\_adams\\_86 on March 12, 2024 | next (javascript:void(0)) Although the demos are impressive, they seem short and limited in scope which makes me wonder how well this will work outside of these planned cases. Can it do software architecture at all? Is [...] | | | | --- | | Hacker Newsnew | past | comments | <ask> | <show> | <jobs> | <submit> | login | | | | | --- | | | Devin: AI Software Engineer (cognition-labs.com) | | | | 530 points by neural\\_thing on March 12, 2024 | hide | past | favorite | 553 comments | | | | | [...] | | | pedalpete on March 12, 2024 | prev | next (javascript:void(0)) I'd really like it if Cognition Labs would put the resulting code from the demo into an open-source repository so we could examine it directly. When I was using chatGPT to help guide me through some coding tasks, I'd find it could create somewhat useful code, but where it fell down was that it would put things into variables which would be better put into a class. It is this structuring of a complete system which is",
+            "adoption": "ADOPTED",
+            "adoptionReason": "保存原句；是否支持问题由逐主张核查决定。",
+            "evidenceId": "f397d60d-a314-4d0e-b6f0-eeb5c301aec2"
+          },
+          {
+            "url": "https://news.ycombinator.com/item?id=46711589",
+            "title": "Devin Review: AI to Stop Slop | Hacker News",
+            "snippet": "| | | | | --- | | | Devin Review: AI to Stop Slop (cognition.ai) | | | | 36 points by agtestdvn 9 months ago | hide | past | favorite | 32 comments | | | | | | | | | | --- --- | | | | | | --- | | | illnewsthat 9 months ago | next (javascript:void(0)) > Devin Review is free and available for PRs on regular GitHub repositories (not GitHub Enterprise). Public PRs don’t require a Devin account. I guess the tokens are cheap enough or their pockets are deep enough, but [...] | | | | --- | | Hacker Newsnew | past | comments | <ask> | <show> | <jobs> | <submit> | login | | | | | --- | | | Devin Review: AI to Stop Slop (cognition.ai) | | | | 36 points by agtestdvn 9 months ago | hide | past | favorite | 32 comments | | | | | [...] | | | | | --- | | | ninjha 9 months ago | parent | next (javascript:void(0)) (I work at Cognition, opinions my own etcetc) True! Devin Review doesn’t make the kind of judgements you mention, it just does its best to find bugs and help you understand the code faster. I managed to review a PR on an airplane (without starlink) with it earlier this week lol | |",
+            "adoption": "ADOPTED",
+            "adoptionReason": "保存原句；是否支持问题由逐主张核查决定。",
+            "evidenceId": "61209acc-d9a8-4760-9219-a12b676117da"
+          },
+          {
+            "url": "https://fritz.ai/cognition-ai-review",
+            "title": "Cognition AI Review: Is This the First Real AI Software Engineer? - Fritz ai",
+            "snippet": "### Beta Tester Feedback “It’s like having a junior dev who can work independently, but you still need to check its code.” — Early access user on Hacker News “Devin did 90% of the setup for a Node.js backend I’ve been working on. I just had to clean up a few things.” — Beta tester via Reddit ### Where It Performs Well ### Where It Still Needs Work In short: it’s powerful — but not perfect. ## How Devin Compares to GitHub Copilot & Other Tools [...] Fritz ai # Cognition AI Review: Is This the First Real AI Software Engineer? If you subscribe to a service from a link on this page, we may earn a commission. cat illustration Avatar photo Cognition AI claims to offer the world’s first autonomous AI software engineer, named Devin. That’s a bold statement in a market full of smart assistants and coding copilots. [...] Their flagship product, Devin, is positioned as a fully autonomous AI software engineer — not just a chatbot or code assistant. | Feature | Details | --- | | Product name | Devin (AI software engineer) | | Parent company | Cognition AI | | Founded by | Scott Wu (former CTO of Quora ML) | | Funding | Backed by Founders Fund and strategic investors | | Public access | Currently closed beta |",
+            "adoption": "REJECTED",
+            "adoptionReason": "本轮未读取；搜索摘要不是原文证据。",
+            "evidenceId": null
+          },
+          {
+            "url": "https://cognition.com/blog/introducing-devin",
+            "title": "Introducing Devin, the first AI software engineer | Cognition",
+            "snippet": "Devin makes an interactive website which simulates the Game of Life! It incrementally adds features requested by the user and then deploys the app to Netlify. ### Devin can autonomously find and fix bugs in codebases Devin helps Andrew maintain and debug his open source competitive programming book. ### Devin can train and fine tune its own AI models Devin sets up fine tuning for a large language model given only a link to a research repository on GitHub. [...] # Introducing Devin, the first AI software engineer By Scott Wu03.12.24 Devin is a tireless, skilled teammate, equally ready to build alongside you or independently complete tasks for you to review. With Devin, engineers can focus on more interesting problems and engineering teams can strive for more ambitious goals. ## Devin's Capabilities [...] Devin correctly resolves 13.86%\\ of the issues end-to-end, far exceeding the previous state-of-the-art of 1.96%. Even when given the exact files to edit, the best previous models can only resolve 4.80% of issues. Devin was evaluated on a random 25% subset of the dataset. Devin was unassisted, whereas all other models were assisted (meaning the model was told exactly which files need to be edited). We plan to publish a more detailed technical report soon—stay tuned for more details.",
+            "adoption": "ADOPTED",
+            "adoptionReason": "保存原句；是否支持问题由逐主张核查决定。",
+            "evidenceId": "43340e00-1cc6-4181-b77f-d5f2d9597d08"
+          },
+          {
+            "url": "https://cognition.com/blog",
+            "title": "Blog | Cognition",
+            "snippet": "05.21.26 Devin now builds, runs, and tests natively in Windows VMs, bringing the full power of autonomous AI engineering to the world's most mature developer ecosystem. ## Introducing Auto-Triage 05.18.26 Devin can monitor for bugs, alerts, and incidents. When something breaks, Devin responds immediately, investigates with your tools, connects related reports, and can open a PR. ## Devin now supports Android emulators 05.13.26 [...] 03.15.24 One of our goals at Cognition is to enable Devin, an AI agent specializing in software development, to contribute code successfully to large, complex codebases. ## Introducing Devin, the first AI software engineer 03.12.24 Setting a new state of the art on the SWE-bench coding benchmark. Meet Devin, the world’s first fully autonomous AI software engineer. [...] 01.07.26 Infosys, a global leader in digital services and consulting, has partnered with Cognition to deploy Devin, the AI software engineer, across its organization and global client base. ## Devin's 2025 Performance Review: Learnings From 18 Months of Agents At Work 11.14.25",
+            "adoption": "REJECTED",
+            "adoptionReason": "本轮未读取；搜索摘要不是原文证据。",
+            "evidenceId": null
+          },
+          {
+            "url": "https://news.ycombinator.com/item?id=49613312",
+            "title": "Cognition (Devin) raises $2B at $48B valuation | Hacker News",
+            "snippet": "| | | | | --- | | | Cognition (Devin) raises $2B at $48B valuation (cognition.com) | | | | 24 points by meco 40 days ago | hide | past | favorite | 12 comments | | | | | | | | | | --- --- | | | | | | --- | | | edude03 40 days ago | next (javascript:void(0)) Devin was the first ai developer harness I ever heard of — and in fact the first one I ever used as I had gotten an invite while it was in private beta. Now it seems like the product has faded (into [...] | | | | | --- | | | steve-atx-7600 40 days ago | prev | next (javascript:void(0)) Seems insane. It isn’t that had to use anthropic managed agents to build something similar - work with an in house version that I think is superior. I’m sure Devin is a good fit for some companies…but struggling to see where Devin adds $2 billion value. Edit 48billion I just noticed. Someone’s getting fleeced. | | [...] have a first mover advantage on autonomous AI employee space. So big enterprises will all default to them given all their competitors will be \"startups\" uncertain to be around long term. | | | | | | | --- | | | NewJazz 40 days ago | root | parent | next (javascript:void(0)) Big enterprises have heard of ChatGPT and Claude, not Devin. | | | | | | | --- | | | andriy\\_koval 39 days ago | root | parent | next (javascript:void(0)) I am not sure what is devin's value proposition,",
+            "adoption": "ADOPTED",
+            "adoptionReason": "保存原句；是否支持问题由逐主张核查决定。",
+            "evidenceId": "921f2fe6-14e1-4025-ab15-53c6d1fee3ec"
+          }
+        ]
+      },
+      {
+        "id": "c8a9f506-7e5a-4226-8f19-7c248d5ed635",
+        "provider": "tencent-yuanbao-search-api",
+        "query": "Devin Cognition hands-on review \"I used Devin\" experience tasks completed",
+        "calledAt": "2026-10-25T04:11:09.632Z",
+        "status": "SUCCEEDED",
+        "error": null,
+        "returnedSources": [
+          {
+            "url": "https://dev.to/alanwest/i-gave-devin-10-real-tasks-it-completed-3-3063",
+            "title": "I Gave Devin 10 Real Tasks. It Completed 3.",
+            "snippet": "I Gave Devin 10 Real Tasks. It Completed 3. DEV Community。I Gave Devin 10 Real Tasks. It Completed 3. The $500-to-$20 AI Developer That Still Can't Ship Last year, Cognition launched Devin at $500/month and called it the world's first AI software engineer. The internet lost its mind. Engineers panicked. Twitter predicted mass layoffs. Fast forward to 2026, and Devin costs $20/month -- the same price as a Claude Code or Cursor Pro subscription. That price drop tells you everything you need to know about how reality met the hype. I spent two weeks giving Devin real tasks from my actual backlog. Not toy problems. Not \"build me a calculator.\" Real tickets that a junior developer on my team would handle. Here's what happened. The Test Setup I picked 10 tasks spanning different categories: 2 bug...",
+            "adoption": "ADOPTED",
+            "adoptionReason": "保存原句；是否支持问题由逐主张核查决定。",
+            "evidenceId": "718a87d7-2d52-4337-83ea-e85ca4af1f83"
+          },
+          {
+            "url": "https://aidxn.com/blog/devin-ai-developer-review",
+            "title": "Devin AI Review [2026]: Tested on 5 Real Projects",
+            "snippet": "Devin AI Review [2026]: Tested on 5 Real Projects Aidxn Design。Devin AI Review [2026]: Tested on 5 Real Projects We Tested It So You Don't Have To 🤖 When Cognition launched Devin in March 2024, the internet collectively lost its mind. “The first AI software engineer.” A demo showing it building and deploying full applications autonomously, while mainstream media ran “AI will replace programmers” headlines for weeks straight. Then people actually used it, and the vibes shifted hard. Now that Devin has been in the wild for almost a year, we pulled five real tasks off our own backlog and made it earn its keep. Spoiler: it is neither the end of programming nor a scam — it is something far more mundane, and far more interesting. What Devin Actually Is Devin is an autonomous AI coding agent that...",
+            "adoption": "REJECTED",
+            "adoptionReason": "本轮未读取；搜索摘要不是原文证据。",
+            "evidenceId": null
+          },
+          {
+            "url": "https://news.qq.com/rain/a/20240315A00RPH00",
+            "title": "首个AI程序员:能接单干私活,自动微调大模型!",
+            "snippet": "首个AI程序员:能接单干私活,自动微调大模型! 腾讯新闻。AI初创公司Cognition在官网发布了首个AI程序员——Devin。同时获得了2100万美元A轮融资。其实,AI编程这事不新鲜,ChatGPT、GithubCopilot、讯飞星火、文心一言等通过问答方式都能轻松完成。Devin的神奇之处在于,不仅能反馈答案,还能像人一样实现端到端的部署、调试、优化代码,对整个开发项目进行缜密的计划,微调大模型等,几乎与编程相关的任务都能自动化完成。其展示的案例中,在Upwork(自由工作平台)上为Devin找了一个编程的私活,要求提供一份关于Github的视觉模型的配置和推理文件。Devin接单独立完成任务演示当Devin接到任务后,从代码库拷贝、配置、Bug修复、代码更新、调试运行等全部自己独立完成,最后提交了成功运行结果以及一份详细的配置文件。性能非常强悍,感觉像是一个智能代理+ChatGPT的结合体。Devin其他功能展示除了接单干私活之外,Cognition还展示了Devin其他超强功能。例如,发送一个Github存储库,然后按照其文档说明来微调Llama-7B大模型。Devin:没问题,我会查看存储库并按照Readme中的说明对Llama7B模型进行微调。首先,我需要克隆存储库并查看文档以了解全部过程,随时会向开发者通报最新进展。接着,Devin在部署的时候遇到了问题,是一个关于Nvidia配置的事情,很快它便自行解决开始了模型微调工作。在微调的过程中,开发者也可以将Devin设置成待命状态,就不会主动执行监督微调工作,可以帮你完成其他任务。经过大约1小时的时间,询问Devin微调进行的怎么样了?它会告诉你,在计划中的1万次迭代中,已经完成了404次,损失值总体呈下降趋势效果显著,并且会持续监视,当出现任何问题时会及时向你汇报。Devin可以轻松处理开源软件源中的错误...",
+            "adoption": "REJECTED",
+            "adoptionReason": "本轮未读取；搜索摘要不是原文证据。",
+            "evidenceId": null
+          },
+          {
+            "url": "https://www.aimadetools.com/blog/devin-one-week-review",
+            "title": "I Used Devin for a Week — Here's What Actually Happened",
+            "snippet": "I Used Devin for a Week — Here's What Actually Happened AI Made Tools。I Used Devin for a Week — Here's What Actually Happened This is week 6 of my “I Used It for a Week” series. So far I’ve reviewed Cursor (speed), Kiro (specs), GitHub Copilot (ecosystem), Windsurf (budget), and ChatGPT Plus (thinking tool). This week: the one that claims to replace us entirely. Model update, September 11, 2026: Cognition has released SWE-2 in Devin Desktop and CLI, with Web and Fusion rollout underway. Read our SWE-2 benchmark, access and cost analysis. The hands-on observations below describe the earlier Devin experience and should not be treated as a test of SWE-2. Devin is the most hyped AI tool in recent memory. Cognition Labs called it “the first AI software engineer” and the demo videos showed it bu...",
+            "adoption": "REJECTED",
+            "adoptionReason": "本轮未读取；搜索摘要不是原文证据。",
+            "evidenceId": null
+          },
+          {
+            "url": "https://awesomeagents.ai/reviews/review-devin",
+            "title": "Devin Review: The Autonomous Coding Agent That Wants to Replace Your Junior Dev",
+            "snippet": "Devin Review: The Autonomous Coding Agent That Wants to Replace Your Junior Dev Awesome Agents。 One enterprise customer reported that Devin resolves security vulnerabilities in 1.5 minutes per issue versus 30 minutes for a human developer - a 20x improvement. These are typically well-structured tasks with clear inputs (CVE description, affected code) and verifiable outputs (patched code that passes security scans). The structured nature plays to Devin's strengths. Test generation. Devin pushed test coverage from 50-60% to 80-90% in several deployments. Test writing is another task with clear specifications and verifiable results, making it a natural fit for autonomous execution. The common thread is scope. When the requirements are clear, the success criteria are verifiable, and the task d...",
+            "adoption": "REJECTED",
+            "adoptionReason": "本轮未读取；搜索摘要不是原文证据。",
+            "evidenceId": null
+          },
+          {
+            "url": "http://m.haoling.cc/wenzhang/590466",
+            "title": "初创公司使用 AI “码农” Devin 一个月的体验",
+            "snippet": "初创公司使用 AI “码农” Devin 一个月的体验 号令天下。这种合作模式,和团队里带新人的方式,非常相似。 上手体验:流畅得不像AI Devin的使用体验和上手流程,设计得相当出色。只需将它连接到你的GitHub仓库,它就会自动分析你的代码库,了解主要组件、编译步骤、代码风格和最佳实践。即便对我们这样的初创公司来说,代码库内容不算丰富,Devin也能自动推理出构建流程的基本要素。 初步分析完成后,Devin会展示其结果,并邀请你根据每个源码目录的需要,补充额外的安装或配置步骤。为了验证配置是否正确,它还会尝试执行所有步骤。 指派新任务也很直接。目前它还没法对接Linear或Jira这类任务管理系统,就是一个简单的文本框,输入任务描述就行。(你也能在Slack的摘录对话串里标记任务,但实测下来,感觉效率不高。) (图片来源:Cognition的Devin。使用聊天界面是最快的指派任务方式。) 当你指派一个新任务时,Devin会先审查代码库来制定行动计划,确定它认为应该修改的代码。你能在web app里实时目睹它审查文件和修改代码的全过程(这个功能挺酷的)。完成后,它会运行代码检查和测试,解决问题,最后创建一个PR(pull request)。你可以在PR里留言,指导它修改或修复bug。 一句话总结:Devin的上手体验,直观且易于融入工程团队的工作流程。 强项:小范围、明确定义的代码修改 Devin最擅长的,是范围狭窄、定义明确的代码修改,这些修改只涉及单个组件和少数几个代码文件。我们最初让它完成的任务包括:优化饼图的显示格式、修正API返回数据时的边界问题、以及在创建新数据源时设定默认的更新计划。这些活儿如果由人来干,每个大概需要花一小时去研究、实施和测试。但有了Devin,只需一两分钟描述任务,再用五分钟检验它完成的工作,就能合并。 (图片来源:Cognition公...",
+            "adoption": "REJECTED",
+            "adoptionReason": "本轮未读取；搜索摘要不是原文证据。",
+            "evidenceId": null
+          }
+        ]
+      },
+      {
+        "id": "42aa3303-04e3-4a6c-9491-6f403d333dc7",
+        "provider": "tavily-search-api:keyless-capped",
+        "query": "Devin Cognition hands-on review \"I used Devin\" experience tasks completed",
+        "calledAt": "2026-10-25T04:11:09.632Z",
+        "status": "SUCCEEDED",
+        "error": null,
+        "returnedSources": [
+          {
+            "url": "https://truvora.ai/reviews/devin",
+            "title": "Devin Review: Features, Pricing, Pros, Cons & My Verdict",
+            "snippet": "> “I tested Devin by assigning it real coding tasks and reviewing the results. For small tasks, the output was REALLY good. > > My biggest complaint? Vague prompts can waste your usage. If your instructions are NOT clear enough, Devin can waste your time. > > If you already have an existing codebase with tasks, Devin is definitely worth trying. But if you’re building a new app from scratch, you should try an AI app builder like Replit or Lovable.” Rahul Kuntala · Editorial Reviewer [...] With tools like Cursor or Replit, YOU sit there while the AI works. With Devin, you assign a task (for example, “fix this bug” or “add dark mode”), close your laptop, and come back later to review your work. Devin runs in its own cloud computer and handles everything: Planning the task and writing the code Running and testing it Debugging its own failures Sending you the finished work for review [...] What We Liked True hands-off automation, as Devin works in the cloud while you work on something else You can assign tasks straight from Slack, Linear, Jira, GitHub, GitLab, or Bitbucket, no coding tool needed Run up to 10 tasks at the same time, even on the $20 Pro plan Comes with Devin Desktop, a full AI code editor (formerly Windsurf) with unlimited Tab completions Free use of SWE 1.6 (Cognition's own AI model) and open source models on paid plans What Could be Better",
+            "adoption": "REJECTED",
+            "adoptionReason": "本轮未读取；搜索摘要不是原文证据。",
+            "evidenceId": null
+          },
+          {
+            "url": "https://frontierai.substack.com/p/one-month-of-using-devin",
+            "title": "One month of using Devin",
+            "snippet": "Scott Wu (the CEO of Cognition) shared his team’s mental model for using Devin in an interview that we found quite interesting: The “right” way to use Devin is to give it a task first thing in the morning and let it run while you’re doing other work. A few hours later, you can come back to it, inspect the progress it made, and provide any necessary guidance. By the end of the day, it should have been able to complete the task you set it. This aligns very well with how you might collaborate with [...] Where Devin excels is in making narrowly-scoped and well-defined changes that are restricted to a single component and touch a few files. Some of the first things that we had it do were: improve the formatting of a pie chart, fix an edge case in how our API was returning data, and set a default update schedule when creating a new data source. Each of these tasks would have taken a person about an hour to investigate, implement, and test. With Devin, it took a minute or two to write a task [...] ### Introduction Devin presents itself as a fairly humble and self-aware tool. The expectation it sets is that it’s a junior software engineer that’s able to accomplish tasks with sufficiently specific guidance. Its rule of thumb is that ~3 hours of work can be accomplish autonomously before they worry about the agent diverging. The expectation setting was clear and quite helpful, and this aligns well with what we’ve written previously about AI work and human handoffs.",
+            "adoption": "REJECTED",
+            "adoptionReason": "本轮未读取；搜索摘要不是原文证据。",
+            "evidenceId": null
+          },
+          {
+            "url": "https://www.lindy.ai/blog/devin-review",
+            "title": "Devin AI Review: My Experience Testing It as a Non-Coder | Lindy",
+            "snippet": "No, Devin cannot replace a software engineer. It can automate scoped coding work, but still needs human oversight for creative and complex problems. ### What is Devin Cognition? Devin Cognition, also called Devin by Cognition, is an AI coding tool that lets engineering teams automate tasks like debugging, planning, and refactoring. ### What’s the best Devin AI alternative? [...] Devin AI is worth it for teams that manage a consistent number of engineering tasks every month. These teams can reduce handoffs and save developer time by using Devin to run planning, coding, and testing in one environment. [...] Devin will work for you if you need an AI coding agent that can execute well-defined tasks, like planning and pull requests. It handles bug fixes, refactors, and prototypes with autonomy, and is more capable than autocomplete tools. However, you must understand its trade-offs like unpredictable costs and limited creative problem-solving. Devin works for scoped engineering work, but it isn’t designed to replace human engineers.",
+            "adoption": "REJECTED",
+            "adoptionReason": "本轮未读取；搜索摘要不是原文证据。",
+            "evidenceId": null
+          },
+          {
+            "url": "https://www.idlen.io/blog/devin-ai-engineer-review-limits-2026",
+            "title": "Devin, the AI Engineer: Review, Testing & Limitations in 2026 | Idlen",
+            "snippet": "This is an honest, in-depth review based on extensive testing across real-world projects. No sponsored content, no affiliate links—just a thorough assessment of what Devin can and cannot do in 2026. ## What Is Devin? ### Overview Devin is an autonomous AI software engineer built by Cognition Labs. Unlike copilots that assist you while you code, Devin takes a task description and works independently—planning, coding, testing, debugging, and iterating until the task is complete. [...] We tested Devin across a range of tasks on real codebases to evaluate its capabilities honestly. Here are the results. ### Test Setup Codebases: 5 real-world projects (React/Next.js frontend, Node.js API, Python data pipeline, Django web app, Go microservice) Task types: Bug fixes, feature additions, refactoring, test writing, documentation Evaluation criteria: Correctness, code quality, time to completion, number of interventions needed ### Test Results Summary [...] ## Conclusion Devin is a genuinely impressive piece of technology that delivers real value when used correctly. It is not the \"replacement for software engineers\" that some headlines suggested, but it is a powerful tool that can handle a significant portion of well-defined engineering tasks autonomously.",
+            "adoption": "REJECTED",
+            "adoptionReason": "本轮未读取；搜索摘要不是原文证据。",
+            "evidenceId": null
+          },
+          {
+            "url": "https://cognition.com/blog/devin-annual-performance-review-2025",
+            "title": "Devin's 2025 Performance Review: Learnings From 18 Months of Agents At Work | Cognition",
+            "snippet": "A few standout examples: One large organization saved 5-10% of total developer time by using Devin for security fixes. Another saw 20x efficiency gain: human developers average 30 minutes per vulnerability, Devin, 1.5 minutes. ### Language and framework upgrades, migrations, and modernization Customers use Devin for modernization and migrations, like SAS → PySpark, COBOL, Angular → React, .NET Framework → .NET Core, or switching off proprietary frameworks. [...] Once it gets instructions on how to update each repo, a fleet of Devins can execute on every repo in parallel. This results in massive savings. A few examples from this year: A large bank was migrating hundreds of thousands of proprietary ETL framework files. Devin completed each file's migration in 3-4 hours vs 30-40 for human engineers (10x improvement). When Oracle sunsetted legacy support for one Java version, Devin was able to migrate each repo in 14x less time than a human engineer. [...] ### Scope changes and iterative collaboration Devin handles clear upfront scoping well, but not mid-task requirement changes. It usually performs worse when you keep telling it more after it starts the task. This differs from human juniors: you can coach a human through iterative problem-solving. This puts more of a responsibility on the engineer to scope work well up-front. Engineers working with Devin have to adjust to learning how to \"manage\" Devin effectively.",
+            "adoption": "ADOPTED",
+            "adoptionReason": "保存原句；是否支持问题由逐主张核查决定。",
+            "evidenceId": "4f3bedda-d5c0-4bd6-af9f-3cefd836c303"
+          },
+          {
+            "url": "https://docs.devin.ai/get-started/devin-intro",
+            "title": "Introducing Devin - Devin Docs",
+            "snippet": "Devin is an autonomous AI software engineer that can write, run and test code. Devin can handle most tasks, excluding extremely difficult tasks. As a rule of thumb, if you can do it in three hours, Devin can most likely do it. Ask Devin to tackle Linear/Jira tickets, implement entirely new features, repro and fix bugs, build internal tools, and more! See what’s new with Devin in our release notes! [...] 1. Tackling many tasks in parallel, before they end up in your backlog Linear/Jira tickets Entire features from scratch Bug reports App testing 2. Code migrations, refactors, and modernization Language migrations (e.g. JavaScript to TypeScript) Framework upgrades (e.g. Angular 16 -> 18) Monorepo to submodule conversions Removing unused feature flags Extracting common code into libraries 3. Common, repetitive engineering tasks PR Review Codebase Q&A [...] To get the best results from Devin: Write clear prompts with explicit completion criteria — the clearer the task, the higher the success rate, especially for complex work. Make tasks easy to verify — e.g. checking that CI passes or testing an automatic deployment. For harder tasks, break them into well-scoped steps and provide relevant context or examples. Follow our best practices and pre-task checklist. The most successful workflows include:",
+            "adoption": "REJECTED",
+            "adoptionReason": "本轮未读取；搜索摘要不是原文证据。",
+            "evidenceId": null
+          }
+        ]
+      }
+    ],
+    "verificationAudit": {
+      "modelCalls": [
+        {
+          "provider": "api.deepseek.com",
+          "model": "deepseek-flash",
+          "promptVersion": "a2-evidence-v4",
+          "temperature": null,
+          "thinkingMode": "DISABLED",
+          "generatedAt": "2026-10-25T04:10:56.787Z",
+          "id": "20a40b5f-85af-41ae-b4a3-7c6ee0631c30",
+          "purpose": "investigation-initial-decision",
+          "startedAt": "2026-10-25T04:10:55.616Z",
+          "durationMs": 1171,
+          "outcome": "SUCCEEDED",
+          "inputTokens": 1430,
+          "outputTokens": 116
+        },
+        {
+          "provider": "api.deepseek.com",
+          "model": "deepseek-flash",
+          "promptVersion": "a2-evidence-v4",
+          "temperature": null,
+          "thinkingMode": "DISABLED",
+          "generatedAt": "2026-10-25T04:11:01.128Z",
+          "id": "a3bec528-044e-4b0f-904a-4bb86e24c23b",
+          "purpose": "investigation-evidence-decision",
+          "startedAt": "2026-10-25T04:10:59.456Z",
+          "durationMs": 1672,
+          "outcome": "SUCCEEDED",
+          "inputTokens": 5555,
+          "outputTokens": 221
+        },
+        {
+          "provider": "api.deepseek.com",
+          "model": "deepseek-flash",
+          "promptVersion": "a2-evidence-v4",
+          "temperature": null,
+          "thinkingMode": "DISABLED",
+          "generatedAt": "2026-10-25T04:11:05.479Z",
+          "id": "43b19ae5-1995-4f10-ae1c-e7a91131ad1c",
+          "purpose": "investigation-evidence-decision",
+          "startedAt": "2026-10-25T04:11:03.354Z",
+          "durationMs": 2126,
+          "outcome": "SUCCEEDED",
+          "inputTokens": 7354,
+          "outputTokens": 348
+        },
+        {
+          "provider": "api.deepseek.com",
+          "model": "deepseek-flash",
+          "promptVersion": "a2-evidence-v4",
+          "temperature": null,
+          "thinkingMode": "DISABLED",
+          "generatedAt": "2026-10-25T04:11:09.626Z",
+          "id": "f4955ef5-0085-408d-9c6c-926663596490",
+          "purpose": "investigation-evidence-decision",
+          "startedAt": "2026-10-25T04:11:07.495Z",
+          "durationMs": 2131,
+          "outcome": "SUCCEEDED",
+          "inputTokens": 8744,
+          "outputTokens": 359
+        },
+        {
+          "provider": "api.deepseek.com",
+          "model": "deepseek-flash",
+          "promptVersion": "a2-evidence-v4",
+          "temperature": null,
+          "thinkingMode": "DISABLED",
+          "generatedAt": "2026-10-25T04:11:14.122Z",
+          "id": "f7898de9-13e6-4071-b3e8-c656ffe44c09",
+          "purpose": "investigation-evidence-decision",
+          "startedAt": "2026-10-25T04:11:12.060Z",
+          "durationMs": 2063,
+          "outcome": "SUCCEEDED",
+          "inputTokens": 13461,
+          "outputTokens": 373
+        },
+        {
+          "provider": "api.deepseek.com",
+          "model": "deepseek-flash",
+          "promptVersion": "a2-evidence-v4",
+          "temperature": null,
+          "thinkingMode": "DISABLED",
+          "generatedAt": "2026-10-25T04:11:19.596Z",
+          "id": "e63fbc20-9c97-4529-899d-540a6e1d0435",
+          "purpose": "investigation-evidence-decision",
+          "startedAt": "2026-10-25T04:11:16.348Z",
+          "durationMs": 3248,
+          "outcome": "SUCCEEDED",
+          "inputTokens": 14958,
+          "outputTokens": 512
+        },
+        {
+          "provider": "api.deepseek.com",
+          "model": "deepseek-flash",
+          "promptVersion": "a2-evidence-v4",
+          "temperature": null,
+          "thinkingMode": "DISABLED",
+          "generatedAt": "2026-10-25T04:11:22.511Z",
+          "id": "b6dd4810-13cb-4203-bca7-391203611489",
+          "purpose": "claim-extraction",
+          "startedAt": "2026-10-25T04:11:19.607Z",
+          "durationMs": 2904,
+          "outcome": "SUCCEEDED",
+          "inputTokens": 4244,
+          "outputTokens": 465
+        },
+        {
+          "provider": "api.deepseek.com",
+          "model": "deepseek-flash",
+          "promptVersion": "a2-evidence-v4",
+          "temperature": null,
+          "thinkingMode": "DISABLED",
+          "generatedAt": "2026-10-25T04:11:30.669Z",
+          "id": "cf59c687-043d-4b66-aebb-8b4ec1d83fb1",
+          "purpose": "claim-evidence-verification",
+          "startedAt": "2026-10-25T04:11:22.512Z",
+          "durationMs": 8162,
+          "outcome": "SUCCEEDED",
+          "inputTokens": 6780,
+          "outputTokens": 1972
+        },
+        {
+          "provider": "api.deepseek.com",
+          "model": "deepseek-flash",
+          "promptVersion": "a2-evidence-v4",
+          "temperature": null,
+          "thinkingMode": "DISABLED",
+          "generatedAt": "2026-10-25T04:11:34.552Z",
+          "id": "aa8fc83f-ebae-4b3f-8d18-00afcd4ecb80",
+          "purpose": "investigation-evidence-decision",
+          "startedAt": "2026-10-25T04:11:30.671Z",
+          "durationMs": 3881,
+          "outcome": "SUCCEEDED",
+          "inputTokens": 16757,
+          "outputTokens": 569
+        },
+        {
+          "provider": "api.deepseek.com",
+          "model": "deepseek-flash",
+          "promptVersion": "a2-evidence-v4",
+          "temperature": null,
+          "thinkingMode": "DISABLED",
+          "generatedAt": "2026-10-25T04:11:35.405Z",
+          "id": "981ecd9c-ceec-4602-9ead-51c5f799a5d1",
+          "purpose": "cited-answer-selection",
+          "startedAt": "2026-10-25T04:11:34.558Z",
+          "durationMs": 846,
+          "outcome": "SUCCEEDED",
+          "inputTokens": 1584,
+          "outputTokens": 56
+        },
+        {
+          "provider": "api.deepseek.com",
+          "model": "deepseek-flash",
+          "promptVersion": "a2-evidence-v4",
+          "temperature": null,
+          "thinkingMode": "DISABLED",
+          "generatedAt": "2026-10-25T04:11:38.221Z",
+          "id": "e311f1fe-94cd-450f-9677-ed37a15565c4",
+          "purpose": "citation-semantic-support-check",
+          "startedAt": "2026-10-25T04:11:35.405Z",
+          "durationMs": 2816,
+          "outcome": "SUCCEEDED",
+          "inputTokens": 1754,
+          "outputTokens": 332
+        }
+      ],
+      "review": {
+        "status": "NOT_CONFIGURED",
+        "reason": "未配置第二模型；不声称完成独立模型复核或精度提高。",
+        "independentAssessment": null,
+        "findings": []
+      },
+      "citationChecks": [
+        {
+          "marker": "[1]",
+          "supported": true,
+          "reason": "原句为Hacker News评论者直接质问“Devin似乎并未完成所要求的任务，即提供AWS使用说明吗？”，是评论者本人对演示的看法，并未自称转述他人；但该评论针对的演示（Cognition官方Twitter发布的Upwork演示）由原文位置与检索时间/标题间接关联。原句确实支持‘Devin似乎未完成所要求任务（提供AWS使用说明）’这一说法，并明确将其归属为Hacker News评论。摘要附加的‘转述’和具体日期2024年3月官方Twitter演示等细节在原句中并不直接可见，但评论发布于2024-03-13，标题为“Devin: AI Software Engineer”，与所指演示大体对应。原句本身并未声明未独立复现，但该声明属于来源标注而非事实主张；核心事实（评论者认为Devin似乎未完成AWS说明任务）由原句直接支持。"
+        },
+        {
+          "marker": "[2]",
+          "supported": true,
+          "reason": "原句明确说‘Devin是我听说过的第一个AI开发工具——事实上也是我第一个使用的，因为我在私有测试阶段收到了邀请。现在这个产品似乎已经在cursor等其他工具之间褪色（变得无关紧要？）’。这支持‘第一个听说/第一个使用（私有测试受邀）’及‘似乎已被其他工具边缘化’的个人经历与观感；作者为edude03，发布于2026-09-08，与适用范围一致。摘要中的‘未独立复现’属于来源标注，不影响核心事实。"
+        }
+      ],
+      "followup": {
+        "queriesUsed": 1,
+        "maxQueries": 2,
+        "stopReason": "模型选择结束，已执行2轮搜索、10次读取；具体决策理由保留在记录中，事实与未解决项以最终原句核查为准。"
+      },
+      "investigationLoop": {
+        "startedAt": "2026-10-25T04:10:55.611Z",
+        "durationMs": 42616,
+        "totalBudgetMs": 180000,
+        "answerReserveMs": 45000,
+        "maxSearchRounds": 3,
+        "searchRounds": 2,
+        "maxReads": 10,
+        "readsUsed": 10,
+        "stopReason": "模型选择结束，已执行2轮搜索、10次读取；具体决策理由保留在记录中，事实与未解决项以最终原句核查为准。",
+        "httpAttempts": [
+          {
+            "url": "https://api.wsa.cloud.tencent.com/SearchPro",
+            "method": "POST",
+            "startedAt": "2026-10-25T04:10:56.796Z",
+            "finishedAt": "2026-10-25T04:10:57.507Z",
+            "requestSent": true,
+            "status": 200,
+            "error": null,
+            "ownerId": "a2e289df-4898-4e58-bbb0-58924dc9932d"
+          },
+          {
+            "url": "https://api.tavily.com/search",
+            "method": "POST",
+            "startedAt": "2026-10-25T04:10:56.796Z",
+            "finishedAt": "2026-10-25T04:10:59.455Z",
+            "requestSent": true,
+            "status": 200,
+            "error": null,
+            "ownerId": "7861b07d-8d6a-49fe-8bf0-c799d9c16927"
+          },
+          {
+            "url": "https://cognition.com/blog/introducing-devin",
+            "method": "GET",
+            "startedAt": "2026-10-25T04:11:01.132Z",
+            "finishedAt": "2026-10-25T04:11:02.007Z",
+            "requestSent": true,
+            "status": 200,
+            "error": null,
+            "ownerId": "43340e00-1cc6-4181-b77f-d5f2d9597d08"
+          },
+          {
+            "url": "https://hn.algolia.com/api/v1/items/39679787",
+            "method": "GET",
+            "startedAt": "2026-10-25T04:11:01.132Z",
+            "finishedAt": "2026-10-25T04:11:03.318Z",
+            "requestSent": true,
+            "status": 200,
+            "error": null,
+            "ownerId": "3041f24b-1e57-4743-92a5-c4bf5c8a1f0e"
+          },
+          {
+            "url": "https://hn.algolia.com/api/v1/items/46711589",
+            "method": "GET",
+            "startedAt": "2026-10-25T04:11:01.133Z",
+            "finishedAt": "2026-10-25T04:11:02.096Z",
+            "requestSent": true,
+            "status": 200,
+            "error": null,
+            "ownerId": "79d424d1-7a95-4a18-97c7-aebb0ee58964"
+          },
+          {
+            "url": "https://hn.algolia.com/api/v1/items/49613312",
+            "method": "GET",
+            "startedAt": "2026-10-25T04:11:01.133Z",
+            "finishedAt": "2026-10-25T04:11:02.147Z",
+            "requestSent": true,
+            "status": 200,
+            "error": null,
+            "ownerId": "c51d25b8-a1ba-4e8d-961a-f98c3f1df756"
+          },
+          {
+            "url": "https://hn.algolia.com/api/v1/items/39679787",
+            "method": "GET",
+            "startedAt": "2026-10-25T04:11:05.488Z",
+            "finishedAt": "2026-10-25T04:11:07.454Z",
+            "requestSent": true,
+            "status": 200,
+            "error": null,
+            "ownerId": "5d971d82-f245-4ffa-832d-b0d8a76b828a"
+          },
+          {
+            "url": "https://hn.algolia.com/api/v1/items/46711589",
+            "method": "GET",
+            "startedAt": "2026-10-25T04:11:05.488Z",
+            "finishedAt": "2026-10-25T04:11:06.023Z",
+            "requestSent": true,
+            "status": 200,
+            "error": null,
+            "ownerId": "61209acc-d9a8-4760-9219-a12b676117da"
+          },
+          {
+            "url": "https://hn.algolia.com/api/v1/items/49613312",
+            "method": "GET",
+            "startedAt": "2026-10-25T04:11:05.489Z",
+            "finishedAt": "2026-10-25T04:11:06.059Z",
+            "requestSent": true,
+            "status": 200,
+            "error": null,
+            "ownerId": "921f2fe6-14e1-4025-ab15-53c6d1fee3ec"
+          },
+          {
+            "url": "https://api.wsa.cloud.tencent.com/SearchPro",
+            "method": "POST",
+            "startedAt": "2026-10-25T04:11:09.632Z",
+            "finishedAt": "2026-10-25T04:11:10.110Z",
+            "requestSent": true,
+            "status": 200,
+            "error": null,
+            "ownerId": "c8a9f506-7e5a-4226-8f19-7c248d5ed635"
+          },
+          {
+            "url": "https://api.tavily.com/search",
+            "method": "POST",
+            "startedAt": "2026-10-25T04:11:09.632Z",
+            "finishedAt": "2026-10-25T04:11:12.058Z",
+            "requestSent": true,
+            "status": 200,
+            "error": null,
+            "ownerId": "42aa3303-04e3-4a6c-9491-6f403d333dc7"
+          },
+          {
+            "url": "https://dev.to/alanwest/i-gave-devin-10-real-tasks-it-completed-3-3063",
+            "method": "GET",
+            "startedAt": "2026-10-25T04:11:14.128Z",
+            "finishedAt": "2026-10-25T04:11:15.186Z",
+            "requestSent": true,
+            "status": 200,
+            "error": null,
+            "ownerId": "718a87d7-2d52-4337-83ea-e85ca4af1f83"
+          },
+          {
+            "url": "https://hn.algolia.com/api/v1/items/39679787",
+            "method": "GET",
+            "startedAt": "2026-10-25T04:11:14.128Z",
+            "finishedAt": "2026-10-25T04:11:16.320Z",
+            "requestSent": true,
+            "status": 200,
+            "error": null,
+            "ownerId": "f397d60d-a314-4d0e-b6f0-eeb5c301aec2"
+          },
+          {
+            "url": "https://cognition.com/blog/devin-annual-performance-review-2025",
+            "method": "GET",
+            "startedAt": "2026-10-25T04:11:14.128Z",
+            "finishedAt": "2026-10-25T04:11:15.256Z",
+            "requestSent": true,
+            "status": 200,
+            "error": null,
+            "ownerId": "4f3bedda-d5c0-4bd6-af9f-3cefd836c303"
+          }
+        ],
+        "collectionDiagnostics": [],
+        "decisions": [
+          {
+            "step": 1,
+            "decidedAt": "2026-10-25T04:10:56.787Z",
+            "remainingMs": 178824,
+            "decision": {
+              "action": "SEARCH",
+              "query": "Cognition Devin autonomous software engineer Hacker News review",
+              "entries": [
+                "yuanbao",
+                "tavily"
+              ],
+              "readUrls": [],
+              "reason": "需要官方说法原文和 HN 开发者实际使用报告两方材料；首轮按规则使用元宝，并用 tavily 同时检索 HN 讨论。",
+              "observedGap": "尚无任何证据：缺 Cognition 官方声明原文和 HN 使用报告。",
+              "basisEvidenceIds": [],
+              "basisRecordIds": [],
+              "clarification": null,
+              "discoveredIdentity": null
+            },
+            "availableEvidenceIds": [],
+            "availableRecordIds": [],
+            "outcome": "EXECUTED",
+            "detail": "实际入口：yuanbao,tavily；返回记录：a2e289df-4898-4e58-bbb0-58924dc9932d:SUCCEEDED,7861b07d-8d6a-49fe-8bf0-c799d9c16927:SUCCEEDED。"
+          },
+          {
+            "step": 2,
+            "decidedAt": "2026-10-25T04:11:01.128Z",
+            "remainingMs": 174483,
+            "decision": {
+              "action": "READ",
+              "query": "Devin first AI software engineer autonomous",
+              "entries": [],
+              "readUrls": [
+                "https://cognition.com/blog/introducing-devin",
+                "https://news.ycombinator.com/item?id=39679787",
+                "https://news.ycombinator.com/item?id=46711589",
+                "https://news.ycombinator.com/item?id=49613312"
+              ],
+              "reason": "已有官方原文和三条 HN 讨论的返回 URL；先读取以获取原句：官方声明“首个自主软件工程师”和能力主张，以及 HN 开发者对实际使用/自主性的说法。",
+              "observedGap": "缺官方声明原句与 HN 实际使用报告原句；摘要不可当证据。",
+              "basisEvidenceIds": [],
+              "basisRecordIds": [
+                "a2e289df-4898-4e58-bbb0-58924dc9932d",
+                "7861b07d-8d6a-49fe-8bf0-c799d9c16927"
+              ],
+              "clarification": null,
+              "discoveredIdentity": null
+            },
+            "availableEvidenceIds": [],
+            "availableRecordIds": [
+              "a2e289df-4898-4e58-bbb0-58924dc9932d",
+              "7861b07d-8d6a-49fe-8bf0-c799d9c16927"
+            ],
+            "outcome": "EXECUTED",
+            "detail": "已尝试读取：https://cognition.com/blog/introducing-devin,https://news.ycombinator.com/item?id=39679787,https://news.ycombinator.com/item?id=46711589,https://news.ycombinator.com/item?id=49613312；累计保存4份原文状态。"
+          },
+          {
+            "step": 3,
+            "decidedAt": "2026-10-25T04:11:05.479Z",
+            "remainingMs": 170131,
+            "decision": {
+              "action": "READ",
+              "query": "Devin used hands-on experience tasks",
+              "entries": [],
+              "readUrls": [
+                "https://news.ycombinator.com/item?id=39679787",
+                "https://news.ycombinator.com/item?id=46711589",
+                "https://news.ycombinator.com/item?id=49613312"
+              ],
+              "reason": "已读原句多为旁观质疑、产品淡出或 Cognition 员工自辩，尚缺开发者亲身使用 Devin 完成软件工程任务的实际报告原句；对三条已返回 HN 讨论定向重读，定位“我用过/实际使用”段落。官方声明原句已取得，不需重读。",
+              "observedGap": "缺 HN 上开发者实际使用 Devin 的任务完成情况原句，无法判断官方“独立完成软件工程任务”说法是否被支持。",
+              "basisEvidenceIds": [
+                "43340e00-1cc6-4181-b77f-d5f2d9597d08",
+                "3041f24b-1e57-4743-92a5-c4bf5c8a1f0e",
+                "79d424d1-7a95-4a18-97c7-aebb0ee58964",
+                "c51d25b8-a1ba-4e8d-961a-f98c3f1df756"
+              ],
+              "basisRecordIds": [
+                "a2e289df-4898-4e58-bbb0-58924dc9932d",
+                "7861b07d-8d6a-49fe-8bf0-c799d9c16927"
+              ],
+              "clarification": null,
+              "discoveredIdentity": null
+            },
+            "availableEvidenceIds": [
+              "43340e00-1cc6-4181-b77f-d5f2d9597d08",
+              "79d424d1-7a95-4a18-97c7-aebb0ee58964",
+              "c51d25b8-a1ba-4e8d-961a-f98c3f1df756",
+              "3041f24b-1e57-4743-92a5-c4bf5c8a1f0e"
+            ],
+            "availableRecordIds": [
+              "a2e289df-4898-4e58-bbb0-58924dc9932d",
+              "7861b07d-8d6a-49fe-8bf0-c799d9c16927"
+            ],
+            "outcome": "EXECUTED",
+            "detail": "已尝试读取：https://news.ycombinator.com/item?id=39679787,https://news.ycombinator.com/item?id=46711589,https://news.ycombinator.com/item?id=49613312；累计保存7份原文状态。"
+          },
+          {
+            "step": 4,
+            "decidedAt": "2026-10-25T04:11:09.626Z",
+            "remainingMs": 165985,
+            "decision": {
+              "action": "SEARCH",
+              "query": "Devin Cognition hands-on review \"I used Devin\" experience tasks completed",
+              "entries": [
+                "yuanbao",
+                "tavily"
+              ],
+              "readUrls": [],
+              "reason": "已读 HN 原句多为旁观质疑、产品淡出评论或 Cognition 员工自辩，尚无开发者亲身使用 Devin 完成任务的报告原句；官方声明原句已有。距读完 HN 各帖未获使用报告，故改用针对“亲自使用经验”的查询补搜 HN/开发者实际使用报告。",
+              "observedGap": "缺 HN 上开发者亲身使用 Devin 完成软件工程任务的实际报告原句；现有 HN 证据只显示质疑与产品淡出观感，不能支持或反驳“独立完成软件工程任务”。",
+              "basisEvidenceIds": [
+                "43340e00-1cc6-4181-b77f-d5f2d9597d08",
+                "3041f24b-1e57-4743-92a5-c4bf5c8a1f0e",
+                "79d424d1-7a95-4a18-97c7-aebb0ee58964",
+                "c51d25b8-a1ba-4e8d-961a-f98c3f1df756",
+                "5d971d82-f245-4ffa-832d-b0d8a76b828a"
+              ],
+              "basisRecordIds": [
+                "a2e289df-4898-4e58-bbb0-58924dc9932d",
+                "7861b07d-8d6a-49fe-8bf0-c799d9c16927"
+              ],
+              "clarification": null,
+              "discoveredIdentity": null
+            },
+            "availableEvidenceIds": [
+              "43340e00-1cc6-4181-b77f-d5f2d9597d08",
+              "79d424d1-7a95-4a18-97c7-aebb0ee58964",
+              "c51d25b8-a1ba-4e8d-961a-f98c3f1df756",
+              "3041f24b-1e57-4743-92a5-c4bf5c8a1f0e",
+              "61209acc-d9a8-4760-9219-a12b676117da",
+              "921f2fe6-14e1-4025-ab15-53c6d1fee3ec",
+              "5d971d82-f245-4ffa-832d-b0d8a76b828a"
+            ],
+            "availableRecordIds": [
+              "a2e289df-4898-4e58-bbb0-58924dc9932d",
+              "7861b07d-8d6a-49fe-8bf0-c799d9c16927"
+            ],
+            "outcome": "EXECUTED",
+            "detail": "实际入口：yuanbao,tavily；返回记录：c8a9f506-7e5a-4226-8f19-7c248d5ed635:SUCCEEDED,42aa3303-04e3-4a6c-9491-6f403d333dc7:SUCCEEDED。"
+          },
+          {
+            "step": 5,
+            "decidedAt": "2026-10-25T04:11:14.122Z",
+            "remainingMs": 161489,
+            "decision": {
+              "action": "READ",
+              "query": "I Gave Devin 10 Real Tasks It Completed 3",
+              "entries": [],
+              "readUrls": [
+                "https://dev.to/alanwest/i-gave-devin-10-real-tasks-it-completed-3-3063",
+                "https://news.ycombinator.com/item?id=39679787",
+                "https://cognition.com/blog/devin-annual-performance-review-2025"
+              ],
+              "reason": "已有官方声明原句，但仍缺开发者亲身使用 Devin 完成软件工程任务的实际报告。dev.to 标题直接报告亲手测试 10 个真实任务完成情况；HN 39679787 主帖可定位更多亲历评论；Cognition 年度回顾可作为官方对自主性的口径对照。",
+              "observedGap": "缺 HN 上开发者亲身使用 Devin 并说明任务完成情况的原句；现有 HN 原句仅为质疑、产品淡出观感或员工自辩。",
+              "basisEvidenceIds": [
+                "43340e00-1cc6-4181-b77f-d5f2d9597d08",
+                "3041f24b-1e57-4743-92a5-c4bf5c8a1f0e",
+                "5d971d82-f245-4ffa-832d-b0d8a76b828a"
+              ],
+              "basisRecordIds": [
+                "c8a9f506-7e5a-4226-8f19-7c248d5ed635",
+                "7861b07d-8d6a-49fe-8bf0-c799d9c16927",
+                "42aa3303-04e3-4a6c-9491-6f403d333dc7"
+              ],
+              "clarification": null,
+              "discoveredIdentity": null
+            },
+            "availableEvidenceIds": [
+              "43340e00-1cc6-4181-b77f-d5f2d9597d08",
+              "79d424d1-7a95-4a18-97c7-aebb0ee58964",
+              "c51d25b8-a1ba-4e8d-961a-f98c3f1df756",
+              "3041f24b-1e57-4743-92a5-c4bf5c8a1f0e",
+              "61209acc-d9a8-4760-9219-a12b676117da",
+              "921f2fe6-14e1-4025-ab15-53c6d1fee3ec",
+              "5d971d82-f245-4ffa-832d-b0d8a76b828a"
+            ],
+            "availableRecordIds": [
+              "a2e289df-4898-4e58-bbb0-58924dc9932d",
+              "7861b07d-8d6a-49fe-8bf0-c799d9c16927",
+              "c8a9f506-7e5a-4226-8f19-7c248d5ed635",
+              "42aa3303-04e3-4a6c-9491-6f403d333dc7"
+            ],
+            "outcome": "EXECUTED",
+            "detail": "已尝试读取：https://dev.to/alanwest/i-gave-devin-10-real-tasks-it-completed-3-3063,https://news.ycombinator.com/item?id=39679787,https://cognition.com/blog/devin-annual-performance-review-2025；累计保存10份原文状态。"
+          },
+          {
+            "step": 6,
+            "decidedAt": "2026-10-25T04:11:19.596Z",
+            "remainingMs": 156015,
+            "decision": {
+              "action": "FINISH",
+              "query": null,
+              "entries": [],
+              "readUrls": [],
+              "reason": "已覆盖两方：官方原文称 Devin 可“autonomously find and fix bugs”并自称首个 AI 软件工程师；HN 开发者报告则多为保留/质疑——2024 年首发讨论有评论称 Devin 未实际完成所请求的 AWS 工作，另有质疑演示真实性；2026 年讨论更多称产品影响力下降。另有 dev.to 亲测 10 个真实任务仅完成 3 个。因此 HN 实际使用报告不支持“能独立完成软件工程任务”的强主张。剩余未读搜索中有第三方实测标题，但搜索预算已用尽、无更多读取轮次，且现有原句已足以回答。",
+              "observedGap": "HN 上缺少系统性的开发者亲测任务完成率原句；现有 HN 原句以质疑与产品淡出为主，并有一条称 Devin 未完成请求任务。第三方 dev.to 实测提供了不足三成完成率的对照，但非 HN 来源，故只作补充而非 HN 证据。",
+              "basisEvidenceIds": [
+                "43340e00-1cc6-4181-b77f-d5f2d9597d08",
+                "5d971d82-f245-4ffa-832d-b0d8a76b828a",
+                "3041f24b-1e57-4743-92a5-c4bf5c8a1f0e",
+                "c51d25b8-a1ba-4e8d-961a-f98c3f1df756",
+                "79d424d1-7a95-4a18-97c7-aebb0ee58964",
+                "718a87d7-2d52-4337-83ea-e85ca4af1f83"
+              ],
+              "basisRecordIds": [
+                "a2e289df-4898-4e58-bbb0-58924dc9932d",
+                "7861b07d-8d6a-49fe-8bf0-c799d9c16927",
+                "c8a9f506-7e5a-4226-8f19-7c248d5ed635",
+                "42aa3303-04e3-4a6c-9491-6f403d333dc7"
+              ],
+              "clarification": null,
+              "discoveredIdentity": null
+            },
+            "availableEvidenceIds": [
+              "43340e00-1cc6-4181-b77f-d5f2d9597d08",
+              "79d424d1-7a95-4a18-97c7-aebb0ee58964",
+              "c51d25b8-a1ba-4e8d-961a-f98c3f1df756",
+              "3041f24b-1e57-4743-92a5-c4bf5c8a1f0e",
+              "61209acc-d9a8-4760-9219-a12b676117da",
+              "921f2fe6-14e1-4025-ab15-53c6d1fee3ec",
+              "5d971d82-f245-4ffa-832d-b0d8a76b828a",
+              "718a87d7-2d52-4337-83ea-e85ca4af1f83",
+              "4f3bedda-d5c0-4bd6-af9f-3cefd836c303",
+              "f397d60d-a314-4d0e-b6f0-eeb5c301aec2"
+            ],
+            "availableRecordIds": [
+              "a2e289df-4898-4e58-bbb0-58924dc9932d",
+              "7861b07d-8d6a-49fe-8bf0-c799d9c16927",
+              "c8a9f506-7e5a-4226-8f19-7c248d5ed635",
+              "42aa3303-04e3-4a6c-9491-6f403d333dc7"
+            ],
+            "outcome": "REJECTED",
+            "detail": "逐主张核查发现缺口或未决项，已将核查结果交回下一轮决策；由模型决定定向补查或如实结束。"
+          },
+          {
+            "step": 7,
+            "decidedAt": "2026-10-25T04:11:34.552Z",
+            "remainingMs": 141054,
+            "decision": {
+              "action": "FINISH",
+              "query": null,
+              "entries": [],
+              "readUrls": [],
+              "reason": "核查后仍有缺口，但已无搜索轮次与读取轮次，只能如实结束。已覆盖：官方介绍页原文只说“first AI software engineer”并能“autonomously find and fix bugs”，未保存“首个自主软件工程师/独立完成全部软件工程任务”的原句；故该复合主张只能部分核实为官方自称。HN 原句：2024 年首发讨论有评论称 Devin 似乎未完成所请求的 AWS 使用说明任务，另有评论质疑演示真实性；2026 年讨论多为产品淡出观感或员工自辩，未见开发者亲测完成率原句。另有 dev.to 亲测报告（非 HN）称两周 10 个真实任务完成情况，但原句未含完成数，仅标题可见。结论：HN 实际使用报告不支持“能独立完成软件工程任务”的强主张，更多是保留与质疑；同时也不足以系统反驳，因缺亲测任务完成数据。",
+              "observedGap": "官方“首个自主软件工程师、独立完成软件工程任务”的完整原句未保存；HN 上缺开发者亲测任务完成率/独立完成情况的原句；dev.to 完成数仅有标题、正文原句未覆盖。剩余预算为 0，无法定向补读。",
+              "basisEvidenceIds": [
+                "43340e00-1cc6-4181-b77f-d5f2d9597d08",
+                "5d971d82-f245-4ffa-832d-b0d8a76b828a",
+                "3041f24b-1e57-4743-92a5-c4bf5c8a1f0e",
+                "c51d25b8-a1ba-4e8d-961a-f98c3f1df756",
+                "79d424d1-7a95-4a18-97c7-aebb0ee58964",
+                "718a87d7-2d52-4337-83ea-e85ca4af1f83"
+              ],
+              "basisRecordIds": [
+                "a2e289df-4898-4e58-bbb0-58924dc9932d",
+                "7861b07d-8d6a-49fe-8bf0-c799d9c16927",
+                "c8a9f506-7e5a-4226-8f19-7c248d5ed635",
+                "42aa3303-04e3-4a6c-9491-6f403d333dc7"
+              ],
+              "clarification": null,
+              "discoveredIdentity": null
+            },
+            "availableEvidenceIds": [
+              "43340e00-1cc6-4181-b77f-d5f2d9597d08",
+              "79d424d1-7a95-4a18-97c7-aebb0ee58964",
+              "c51d25b8-a1ba-4e8d-961a-f98c3f1df756",
+              "3041f24b-1e57-4743-92a5-c4bf5c8a1f0e",
+              "61209acc-d9a8-4760-9219-a12b676117da",
+              "921f2fe6-14e1-4025-ab15-53c6d1fee3ec",
+              "5d971d82-f245-4ffa-832d-b0d8a76b828a",
+              "718a87d7-2d52-4337-83ea-e85ca4af1f83",
+              "4f3bedda-d5c0-4bd6-af9f-3cefd836c303",
+              "f397d60d-a314-4d0e-b6f0-eeb5c301aec2"
+            ],
+            "availableRecordIds": [
+              "a2e289df-4898-4e58-bbb0-58924dc9932d",
+              "7861b07d-8d6a-49fe-8bf0-c799d9c16927",
+              "c8a9f506-7e5a-4226-8f19-7c248d5ed635",
+              "42aa3303-04e3-4a6c-9491-6f403d333dc7"
+            ],
+            "outcome": "STOPPED",
+            "detail": "核查后仍有缺口，但已无搜索轮次与读取轮次，只能如实结束。已覆盖：官方介绍页原文只说“first AI software engineer”并能“autonomously find and fix bugs”，未保存“首个自主软件工程师/独立完成全部软件工程任务”的原句；故该复合主张只能部分核实为官方自称。HN 原句：2024 年首发讨论有评论称 Devin 似乎未完成所请求的 AWS 使用说明任务，另有评论质疑演示真实性；2026 年讨论多为产品淡出观感或员工自辩，未见开发者亲测完成率原句。另有 dev.to 亲测报告（非 HN）称两周 10 个真实任务完成情况，但原句未含完成数，仅标题可见。结论：HN 实际使用报告不支持“能独立完成软件工程任务”的强主张，更多是保留与质疑；同时也不足以系统反驳，因缺亲测任务完成数据。"
+          }
+        ],
+        "collectionCalls": [
+          {
+            "operation": "search:yuanbao",
+            "target": "Cognition Devin autonomous software engineer Hacker News review",
+            "startedAt": "2026-10-25T04:10:56.795Z",
+            "durationMs": 713,
+            "outcome": "SUCCEEDED",
+            "resultId": "a2e289df-4898-4e58-bbb0-58924dc9932d",
+            "error": null
+          },
+          {
+            "operation": "search:tavily",
+            "target": "Cognition Devin autonomous software engineer Hacker News review",
+            "startedAt": "2026-10-25T04:10:56.796Z",
+            "durationMs": 2661,
+            "outcome": "SUCCEEDED",
+            "resultId": "7861b07d-8d6a-49fe-8bf0-c799d9c16927",
+            "error": null
+          },
+          {
+            "operation": "read",
+            "target": "https://cognition.com/blog/introducing-devin",
+            "startedAt": "2026-10-25T04:11:01.132Z",
+            "durationMs": 889,
+            "outcome": "SUCCEEDED",
+            "resultId": "43340e00-1cc6-4181-b77f-d5f2d9597d08",
+            "error": null
+          },
+          {
+            "operation": "read",
+            "target": "https://news.ycombinator.com/item?id=46711589",
+            "startedAt": "2026-10-25T04:11:01.132Z",
+            "durationMs": 967,
+            "outcome": "SUCCEEDED",
+            "resultId": "79d424d1-7a95-4a18-97c7-aebb0ee58964",
+            "error": null
+          },
+          {
+            "operation": "read",
+            "target": "https://news.ycombinator.com/item?id=49613312",
+            "startedAt": "2026-10-25T04:11:01.132Z",
+            "durationMs": 1016,
+            "outcome": "SUCCEEDED",
+            "resultId": "c51d25b8-a1ba-4e8d-961a-f98c3f1df756",
+            "error": null
+          },
+          {
+            "operation": "read",
+            "target": "https://news.ycombinator.com/item?id=39679787",
+            "startedAt": "2026-10-25T04:11:01.132Z",
+            "durationMs": 2221,
+            "outcome": "SUCCEEDED",
+            "resultId": "3041f24b-1e57-4743-92a5-c4bf5c8a1f0e",
+            "error": null
+          },
+          {
+            "operation": "read",
+            "target": "https://news.ycombinator.com/item?id=46711589",
+            "startedAt": "2026-10-25T04:11:05.488Z",
+            "durationMs": 537,
+            "outcome": "SUCCEEDED",
+            "resultId": "61209acc-d9a8-4760-9219-a12b676117da",
+            "error": null
+          },
+          {
+            "operation": "read",
+            "target": "https://news.ycombinator.com/item?id=49613312",
+            "startedAt": "2026-10-25T04:11:05.488Z",
+            "durationMs": 572,
+            "outcome": "SUCCEEDED",
+            "resultId": "921f2fe6-14e1-4025-ab15-53c6d1fee3ec",
+            "error": null
+          },
+          {
+            "operation": "read",
+            "target": "https://news.ycombinator.com/item?id=39679787",
+            "startedAt": "2026-10-25T04:11:05.488Z",
+            "durationMs": 2007,
+            "outcome": "SUCCEEDED",
+            "resultId": "5d971d82-f245-4ffa-832d-b0d8a76b828a",
+            "error": null
+          },
+          {
+            "operation": "search:yuanbao",
+            "target": "Devin Cognition hands-on review \"I used Devin\" experience tasks completed",
+            "startedAt": "2026-10-25T04:11:09.632Z",
+            "durationMs": 479,
+            "outcome": "SUCCEEDED",
+            "resultId": "c8a9f506-7e5a-4226-8f19-7c248d5ed635",
+            "error": null
+          },
+          {
+            "operation": "search:tavily",
+            "target": "Devin Cognition hands-on review \"I used Devin\" experience tasks completed",
+            "startedAt": "2026-10-25T04:11:09.632Z",
+            "durationMs": 2427,
+            "outcome": "SUCCEEDED",
+            "resultId": "42aa3303-04e3-4a6c-9491-6f403d333dc7",
+            "error": null
+          },
+          {
+            "operation": "read",
+            "target": "https://dev.to/alanwest/i-gave-devin-10-real-tasks-it-completed-3-3063",
+            "startedAt": "2026-10-25T04:11:14.127Z",
+            "durationMs": 1072,
+            "outcome": "SUCCEEDED",
+            "resultId": "718a87d7-2d52-4337-83ea-e85ca4af1f83",
+            "error": null
+          },
+          {
+            "operation": "read",
+            "target": "https://cognition.com/blog/devin-annual-performance-review-2025",
+            "startedAt": "2026-10-25T04:11:14.127Z",
+            "durationMs": 1139,
+            "outcome": "SUCCEEDED",
+            "resultId": "4f3bedda-d5c0-4bd6-af9f-3cefd836c303",
+            "error": null
+          },
+          {
+            "operation": "read",
+            "target": "https://news.ycombinator.com/item?id=39679787",
+            "startedAt": "2026-10-25T04:11:14.127Z",
+            "durationMs": 2220,
+            "outcome": "SUCCEEDED",
+            "resultId": "f397d60d-a314-4d0e-b6f0-eeb5c301aec2",
+            "error": null
+          }
+        ]
+      }
+    },
+    "generatedAt": "2026-10-25T04:11:38.222Z",
+    "contractVersion": "1.0.0"
+  },
+  "answers": [
+    {
+      "id": "810e2512-2ba3-45f2-9647-4789e58a4e66",
+      "snapshotId": "fbe4e951-1d54-43cb-9a79-43a792d944ba",
+      "body": "来源报告（未独立复现）：Hacker News 有评论者转述，在 2024 年 3 月讨论的 Upwork 演示中，Devin 似乎并未完成所要求的任务（提供 AWS 使用说明）。\n适用范围：Hacker News 评论；针对 2024 年 3 月官方 Twitter 上发布的 Upwork 演示 [1]\n\n来源报告（未独立复现）：Hacker News 有评论者称 Devin 是其听说过的第一个 AI 开发工具，也是其在私有测试阶段受邀使用的第一个此类工具，并认为该产品如今似乎已被其他工具边缘化。\n适用范围：Hacker News 评论者 edude03 的个人经历与观感；2026 年 9 月发帖 [2]\n\n尚不能确定：Cognition 官方博客标题将 Devin 称为“首个 AI 软件工程师”。\n保存原句为“first AI software engineer”，不等于“首个自主软件工程师”；摘录亦未含“自主”“独立完成”表述。（条件：cognition.com 官方博客标题；未标注日期与版本）\n\n尚不能确定：来源报告（未独立复现）：一名开发者在 dev.to 上报告称，其在两周内用 10 个真实待办任务测试 Devin，结果完成了 3 个。\n原句仅称花两周给 Devin 真实任务，标题含“10 个完成 3 个”，正文摘录未述完成数，未能由原句直接核实。（条件：dev.to 个人博客；未标注产品版本、套餐与日期）\n\n核查缺口：\n• 已读官方博客摘录仅含“first AI software engineer”，未保存“自主”“独立完成软件工程任务”的原句，无法核实该复合表述。\n• dev.to 正文摘录未包含“10 个任务完成 3 个”的原句，完成数仅见于标题，缺少正文依据。",
+      "citations": [
+        {
+          "marker": "[1]",
+          "claimIds": [
+            "a935b0fb-11f6-4860-9ee6-9187612c52d9"
+          ],
+          "evidenceIds": [
+            "5d971d82-f245-4ffa-832d-b0d8a76b828a"
+          ],
+          "quotes": [
+            {
+              "evidenceId": "5d971d82-f245-4ffa-832d-b0d8a76b828a",
+              "originalExcerpt": "It doesn't seem like Devin actually did the work requested, which was to provide instructions for using AWS?"
+            }
+          ]
+        },
+        {
+          "marker": "[2]",
+          "claimIds": [
+            "9de70ee4-285c-4f66-ba9b-f24a097a7bd9"
+          ],
+          "evidenceIds": [
+            "c51d25b8-a1ba-4e8d-961a-f98c3f1df756"
+          ],
+          "quotes": [
+            {
+              "evidenceId": "c51d25b8-a1ba-4e8d-961a-f98c3f1df756",
+              "originalExcerpt": "Devin was the first ai developer harness I ever heard of — and in fact the first one I ever used as I had gotten an invite while it was in private beta. Now it seems like the product has faded (into irrelevance?) between other harnesses like cursor especially and all the major harnesses having a clo"
+            }
+          ]
+        }
+      ],
+      "generationConfig": {
+        "provider": "api.deepseek.com",
+        "model": "deepseek-flash",
+        "promptVersion": "a2-evidence-v4",
+        "temperature": null,
+        "thinkingMode": "DISABLED",
+        "generatedAt": "2026-10-25T04:11:38.221Z"
+      }
+    }
+  ]
+}

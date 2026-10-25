@@ -1,0 +1,1685 @@
+{
+  "schemaVersion": "source-document/v1",
+  "id": "c5d29257fc5bc54f05f6c59234444900af93e53267bb82b8350adda61461533d",
+  "version": "3233837df887de4ad5257bdd1672a974883b0bed49771ab3101d9e1f8ab7ef3a",
+  "requestedUrl": "https://docs.github.com/zh/copilot/concepts/billing-and-usage/individuals/billing",
+  "finalUrl": "https://docs.github.com/zh/copilot/concepts/billing-and-usage/individuals/billing",
+  "retrievedAt": "2026-10-25T04:35:25.117Z",
+  "contentType": "text/html; charset=utf-8",
+  "status": "READ",
+  "readError": null,
+  "rawHash": "e69da6c9cfd3b84c1579f258917e23881bdc57e663c01bb68bef2911eaff1e39",
+  "textHash": "3f22c7f4e471fd5d52ed173eb6e0ceb6ce71bb9a5e0fdec2e6db12540271e659",
+  "text": "Skip to main content\n\nSkip to content\n\n在本文中\n\n个人基于使用情况的计费\n\n你的 Copilot 计划包含 GitHub AI Credits 的月度配额。 如果你用尽了 AI credits，则可以支付额外的费用来继续工作。\n\n复制 markdown\n\n在本文中\n\nCopilot 使用量以 AI credits 为单位。 所有 Copilot 计划均包含 AI credits 的月度配额。 如果用尽计划中包含的所有信用额度，可以购买更多额度并继续工作。\n\n什么是 GitHub AI Credits？\n\n使用 Copilot时，交互使用令牌：输入令牌（发送到模型的内容）、输出令牌（模型生成的内容）和缓存令牌（模型重用或存储上下文）。 每个令牌都基于所使用的模型定价。\n\n因此，交互的成本取决于以下两项：\n\n使用的模型\n\n使用的令牌数\n\n此总计转换为 AI credits （1AI credit = $0.01 USD）。\n\n例如：\n\n在 Copilot Chat 中使用轻量级模型进行一次快速查询，可能仅消耗 AI credit 的一小部分。\n\n使用跨多个文件的边界模型进行长时间 Copilot cloud agent 会话将花费更多 AI credits，因为它需要做更多的工作。\n\nCopilot若要查看支持的模型及其定价，请参阅 GitHub Copilot 的模型和定价。\n\nAI credits 如何工作？\n\n所有个人计划（Copilot Free、Copilot Pro和Copilot Pro+Copilot Max）包括按计划变化的GitHub AI Credits每月津贴。\n\n每个付费计划包括以下内容：\n\n基本额度：每个月都包含在计划订阅中。 这些匹配你的订阅价格，并且它们永远不会更改。\n\n弹性额度：这是在您的基础额度之外每月额外提供的额度。 弹性分配是你所包含使用量的可变部分；它旨在随着 AI 经济的发展而适应，包括模型定价、新模型和效率的提高。\n\n首先使用基本信用额度。 如果您超出了基础额度，弹性额度将自动按相同费率应用于您的 IDE、GitHub.com 和 Copilot CLI。 无需再执行任何设置。 使用情况仪表板显示可用的津贴和已使用的内容。\n\n包含的 AI credits 不会结转到下个月。 未使用的额度将被没收，你的津贴将在每个日历月的第一天重置为 00：00：00 UTC 的完整月金额。 此重置日期是固定的，不会根据订阅计费日期更改。 请参阅“计费周期”。\n\n按计划划分的 GitHub AI Credits 配额\n\n下表显示了每个付费计划中包含的内容。\n\n计划每月价格基础积分Flex 分配每月总数 AI creditsCopilot Pro$10 USD1,0005001,500Copilot Pro+$39 USD3,9003,1007,000Copilot Max$100 USD10,00010,00020,000\n\nCopilot Free和Copilot Student的额度均为AI credits，且只能通过auto model selection访问模型。 Copilot Free 包括每月 2000 次代码补全，Copilot Student 包括无限次代码补全。\n\n如果使用计划中包含的所有内容，可以购买更多内容并继续工作。 请参阅如果超过了包含的 AI credits，会发生什么情况？。\n\n在AI credits中如何计费？\n\nCopilot 使用 AI 模型的功能会消耗 AI credits，例如：\n\nCopilot Chat\n\nCopilot CLI\n\nCopilot cloud agent\n\nCopilot Spaces\n\nSpark\n\n第三方编码代理\n\n代码补全和 next edit suggestions 功能不计入 AI credits 费用，且所有付费套餐均不限次数。\n\n哪些影响我的使用情况？\n\n更复杂的交互消耗更多的使用津贴。 主要因素包括：\n\n会话长度和复杂性：更长的对话和更复杂的任务涉及与模型的更多来回，消耗更多。\n\n代理功能：代理模式等功能，可以在 Copilot cloud agent 单个任务中涉及多个模型调用。 跨大型代码库的复杂会话将比在聊天中提出的简单问题消耗更多资源。\n\n模型选择：不同的模型具有不同的每个令牌的成本。 设计用于更复杂推理的高能模型比为快速任务而设计的轻量模型成本更高。 切换到成本较低的模型是扩展使用津贴的一种方法。\n\n注意\n\n如果你使用的是付费Copilot计划，则在Copilot CLI、GitHub Copilot app、Copilot cloud agent或auto model selection中使用Copilot Chat时，便有资格享受模型成本 10% 的折扣。\n\n如果使用的是 Copilot Max 计划，则在使用 auto model selection 期间，截至 2026 年 10 月 28 日可享受 30% 折扣。\n\n有关如何优化使用情况和减少支出的指导，包括如何为代理任务设置会话限制上限，请参阅 优化 AI 使用情况以最大限度地提高效率和降低成本。\n\n如果超过了包含的 AI credits，会发生什么情况？\n\n注意\n\n本部分适用于使用 Copilot Individual 方案的用户。 如果你通过 Copilot Enterprise 或 Copilot 套餐使用 Copilot Business，并用完了所有的 AI credits，你会在 GitHub.com 上看到一条横幅，提示你可以向管理员申请更多预算。\n\nAI credits 耗尽后，你可以：\n\n升级计划。 接近使用限制时， Copilot 会提示你升级到下一层。 升级成本只是当前计划和新计划之间的价格差异， 而不是 新计划的全价。 计费周期前面的使用情况计入新计划的较大限额内，因此可以立即获得额外的额度。 同一时段内，你不会因这两个计划而被重复收费。\n\n请继续使用现有计划，并支付更多使用量费用。 如果已包含的额度已用尽，您可以通过为 额外用量 设置预算来继续使用。 请注意，额外用量可能设有上限，因此若要继续使用，您需要先付清已产生的任何额外用量费用。\n\n或者，等到下一个月度周期，届时套餐内用量将重置。\n\n额外的使用预算以美元为单位设置，你的使用情况会在 GitHub AI Credits 内显示。 GitHub AI Credits 以固定比率制定预算：1 AI credits = $0.01 USD，因此，10 美元的预算涵盖 1,000 AI credits。\n\n若要为 GitHub AI Credits 设置预算，请参阅 设置预算以控制按流量计费的产品的支出。\n\n关于对 Copilot 计划的更改\n\n如果你当前有有效的Copilot Pro、Copilot Pro+或Copilot Max计划，随后又被分配到Copilot Business或Copilot Enterprise计划中的一个席位，你的个人Copilot计划将被自动取消。 你将收到个人计划当前计费周期剩余部分的按比例退款。 然后，可以根据公司设置的策略继续使用 Copilot 。\n\n您可以随时取消您的 Copilot 计划。 取消将在当前计费周期结束时生效。 请参阅“查看和更改GitHub Copilot 计划”。\n\n确定计费日期\n\n你的计费日期将取决于你是否已正在被 GitHub 计费。\n\n如果你尚未被 GitHub 计费，则大多数情况下，你的计费周期将从你注册 Copilot 当天开始。 例如，如果在 9 月 3 日注册并按月计费，则初始计费周期为 9 月 3 日至（包括）10 月 2 日，然后在后续月份的相同日期生效。\n\n如果您已有计费周期， Copilot 的费用将包含在您的下一个账单中。 您将按比例支付初始期间的费用。\n\n更新 IDE、客户端和扩展\n\n为了获得最佳基于使用情况的计费体验，请将 IDE、客户端和 Copilot 扩展更新到下面列出的至少版本。\n\n注意\n\n旧版本将继续工作，但可能会显示不正确的模型定价、不准确的使用情况信息或过时的计费术语。 使用情况警报通知也可能不按预期显示。\n\nIDE、客户端或扩展最低版本VS Code1.120Visual Studio 2022 （17.x）17.14.33Visual Studio 2026 （18.x）18.6.0SQL Server Management Studio22.6JetBrains IDE （插件）1.9.1Eclipse （插件）0.18.0Xcode （扩展）0.50.0Copilot CLI1.0.48\n\n建议将 IDE、客户端和 Copilot 扩展保留在最新的可用稳定版本上。 有关配置自动更新的信息，请参阅 在环境中配置 GitHub Copilot。 若要更新 Copilot CLI，请参阅 安装 GitHub Copilot CLI。\n\n延伸阅读\n\nGitHub Copilot计划\n\n管理GitHub Copilot帐户\n\n管理付款和账单信息",
+  "rawSources": [
+    {
+      "mode": "STATIC",
+      "hash": "e69da6c9cfd3b84c1579f258917e23881bdc57e663c01bb68bef2911eaff1e39",
+      "path": "C:\\Users\\qianchen\\Documents\\waytoagi-1024-detective-a2-v4\\.cache\\source-documents-v4\\737f002b-e06e-4d0e-b1af-652db0899914\\c5d29257fc5bc54f05f6c59234444900af93e53267bb82b8350adda61461533d\\raw.bin"
+    }
+  ],
+  "storage": {
+    "rawPath": "C:\\Users\\qianchen\\Documents\\waytoagi-1024-detective-a2-v4\\.cache\\source-documents-v4\\737f002b-e06e-4d0e-b1af-652db0899914\\c5d29257fc5bc54f05f6c59234444900af93e53267bb82b8350adda61461533d\\raw.bin",
+    "textPath": "C:\\Users\\qianchen\\Documents\\waytoagi-1024-detective-a2-v4\\.cache\\source-documents-v4\\737f002b-e06e-4d0e-b1af-652db0899914\\c5d29257fc5bc54f05f6c59234444900af93e53267bb82b8350adda61461533d\\source.txt",
+    "manifestPath": "C:\\Users\\qianchen\\Documents\\waytoagi-1024-detective-a2-v4\\.cache\\source-documents-v4\\737f002b-e06e-4d0e-b1af-652db0899914\\c5d29257fc5bc54f05f6c59234444900af93e53267bb82b8350adda61461533d\\manifest.json"
+  },
+  "parser": {
+    "name": "readability+source-dom",
+    "version": "readability-0.6.0+jsdom-30.1.3+source-dom-2",
+    "normalization": "source-text/v1",
+    "mode": "STATIC"
+  },
+  "metadata": {
+    "title": "个人基于使用情况的计费 - GitHub 文档",
+    "author": null,
+    "publishedAt": null,
+    "language": "zh"
+  },
+  "completeness": "COMPLETE",
+  "warnings": [],
+  "blocks": [
+    {
+      "start": 0,
+      "end": 20,
+      "id": "b0",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[0]",
+      "headingPath": [],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 22,
+      "end": 37,
+      "id": "b1",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[1]",
+      "headingPath": [],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 39,
+      "end": 43,
+      "id": "b2",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[2]",
+      "headingPath": [],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 45,
+      "end": 56,
+      "id": "b3",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[3]",
+      "headingPath": [
+        "个人基于使用情况的计费"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 58,
+      "end": 133,
+      "id": "b4",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[4]",
+      "headingPath": [
+        "个人基于使用情况的计费"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 135,
+      "end": 146,
+      "id": "b5",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[5]",
+      "headingPath": [
+        "个人基于使用情况的计费"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 148,
+      "end": 152,
+      "id": "b6",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[6]",
+      "headingPath": [
+        "个人基于使用情况的计费",
+        "在本文中"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 154,
+      "end": 249,
+      "id": "b7",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[7]",
+      "headingPath": [
+        "个人基于使用情况的计费",
+        "在本文中"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 251,
+      "end": 273,
+      "id": "b8",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[8]",
+      "headingPath": [
+        "个人基于使用情况的计费",
+        "什么是 GitHub AI Credits？"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 275,
+      "end": 357,
+      "id": "b9",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[9]",
+      "headingPath": [
+        "个人基于使用情况的计费",
+        "什么是 GitHub AI Credits？"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 359,
+      "end": 375,
+      "id": "b10",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[10]",
+      "headingPath": [
+        "个人基于使用情况的计费",
+        "什么是 GitHub AI Credits？"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 377,
+      "end": 382,
+      "id": "b11",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[11]",
+      "headingPath": [
+        "个人基于使用情况的计费",
+        "什么是 GitHub AI Credits？"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 384,
+      "end": 390,
+      "id": "b12",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[12]",
+      "headingPath": [
+        "个人基于使用情况的计费",
+        "什么是 GitHub AI Credits？"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 392,
+      "end": 435,
+      "id": "b13",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[13]",
+      "headingPath": [
+        "个人基于使用情况的计费",
+        "什么是 GitHub AI Credits？"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 437,
+      "end": 440,
+      "id": "b14",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[14]",
+      "headingPath": [
+        "个人基于使用情况的计费",
+        "什么是 GitHub AI Credits？"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 442,
+      "end": 496,
+      "id": "b15",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[15]",
+      "headingPath": [
+        "个人基于使用情况的计费",
+        "什么是 GitHub AI Credits？"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 498,
+      "end": 567,
+      "id": "b16",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[16]",
+      "headingPath": [
+        "个人基于使用情况的计费",
+        "什么是 GitHub AI Credits？"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 569,
+      "end": 616,
+      "id": "b17",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[17]",
+      "headingPath": [
+        "个人基于使用情况的计费",
+        "什么是 GitHub AI Credits？"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 618,
+      "end": 634,
+      "id": "b18",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[18]",
+      "headingPath": [
+        "个人基于使用情况的计费",
+        "AI credits 如何工作？"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 636,
+      "end": 722,
+      "id": "b19",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[19]",
+      "headingPath": [
+        "个人基于使用情况的计费",
+        "AI credits 如何工作？"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 724,
+      "end": 737,
+      "id": "b20",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[20]",
+      "headingPath": [
+        "个人基于使用情况的计费",
+        "AI credits 如何工作？"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 739,
+      "end": 780,
+      "id": "b21",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[21]",
+      "headingPath": [
+        "个人基于使用情况的计费",
+        "AI credits 如何工作？"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 782,
+      "end": 862,
+      "id": "b22",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[22]",
+      "headingPath": [
+        "个人基于使用情况的计费",
+        "AI credits 如何工作？"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 864,
+      "end": 968,
+      "id": "b23",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[23]",
+      "headingPath": [
+        "个人基于使用情况的计费",
+        "AI credits 如何工作？"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 970,
+      "end": 1080,
+      "id": "b24",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[24]",
+      "headingPath": [
+        "个人基于使用情况的计费",
+        "AI credits 如何工作？"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1082,
+      "end": 1109,
+      "id": "b25",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[25]",
+      "headingPath": [
+        "个人基于使用情况的计费",
+        "AI credits 如何工作？",
+        "按计划划分的 GitHub AI Credits 配额"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1111,
+      "end": 1129,
+      "id": "b26",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[26]",
+      "headingPath": [
+        "个人基于使用情况的计费",
+        "AI credits 如何工作？",
+        "按计划划分的 GitHub AI Credits 配额"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1131,
+      "end": 1265,
+      "id": "b27",
+      "kind": "TABLE",
+      "locator": "source DOM normalized block[27]",
+      "headingPath": [
+        "个人基于使用情况的计费",
+        "AI credits 如何工作？",
+        "按计划划分的 GitHub AI Credits 配额"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1267,
+      "end": 1397,
+      "id": "b28",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[28]",
+      "headingPath": [
+        "个人基于使用情况的计费",
+        "AI credits 如何工作？",
+        "按计划划分的 GitHub AI Credits 配额"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1399,
+      "end": 1461,
+      "id": "b29",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[29]",
+      "headingPath": [
+        "个人基于使用情况的计费",
+        "AI credits 如何工作？",
+        "按计划划分的 GitHub AI Credits 配额"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1463,
+      "end": 1480,
+      "id": "b30",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[30]",
+      "headingPath": [
+        "个人基于使用情况的计费",
+        "在AI credits中如何计费？"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1482,
+      "end": 1519,
+      "id": "b31",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[31]",
+      "headingPath": [
+        "个人基于使用情况的计费",
+        "在AI credits中如何计费？"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1521,
+      "end": 1533,
+      "id": "b32",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[32]",
+      "headingPath": [
+        "个人基于使用情况的计费",
+        "在AI credits中如何计费？"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1535,
+      "end": 1546,
+      "id": "b33",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[33]",
+      "headingPath": [
+        "个人基于使用情况的计费",
+        "在AI credits中如何计费？"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1548,
+      "end": 1567,
+      "id": "b34",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[34]",
+      "headingPath": [
+        "个人基于使用情况的计费",
+        "在AI credits中如何计费？"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1569,
+      "end": 1583,
+      "id": "b35",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[35]",
+      "headingPath": [
+        "个人基于使用情况的计费",
+        "在AI credits中如何计费？"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1585,
+      "end": 1590,
+      "id": "b36",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[36]",
+      "headingPath": [
+        "个人基于使用情况的计费",
+        "在AI credits中如何计费？"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1592,
+      "end": 1599,
+      "id": "b37",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[37]",
+      "headingPath": [
+        "个人基于使用情况的计费",
+        "在AI credits中如何计费？"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1601,
+      "end": 1662,
+      "id": "b38",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[38]",
+      "headingPath": [
+        "个人基于使用情况的计费",
+        "在AI credits中如何计费？"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1664,
+      "end": 1675,
+      "id": "b39",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[39]",
+      "headingPath": [
+        "个人基于使用情况的计费",
+        "哪些影响我的使用情况？"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1677,
+      "end": 1701,
+      "id": "b40",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[40]",
+      "headingPath": [
+        "个人基于使用情况的计费",
+        "哪些影响我的使用情况？"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1703,
+      "end": 1740,
+      "id": "b41",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[41]",
+      "headingPath": [
+        "个人基于使用情况的计费",
+        "哪些影响我的使用情况？"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1742,
+      "end": 1825,
+      "id": "b42",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[42]",
+      "headingPath": [
+        "个人基于使用情况的计费",
+        "哪些影响我的使用情况？"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1827,
+      "end": 1908,
+      "id": "b43",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[43]",
+      "headingPath": [
+        "个人基于使用情况的计费",
+        "哪些影响我的使用情况？"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1910,
+      "end": 1912,
+      "id": "b44",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[44]",
+      "headingPath": [
+        "个人基于使用情况的计费",
+        "哪些影响我的使用情况？"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1914,
+      "end": 2042,
+      "id": "b45",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[45]",
+      "headingPath": [
+        "个人基于使用情况的计费",
+        "哪些影响我的使用情况？"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2044,
+      "end": 2125,
+      "id": "b46",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[46]",
+      "headingPath": [
+        "个人基于使用情况的计费",
+        "哪些影响我的使用情况？"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2127,
+      "end": 2194,
+      "id": "b47",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[47]",
+      "headingPath": [
+        "个人基于使用情况的计费",
+        "哪些影响我的使用情况？"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2196,
+      "end": 2224,
+      "id": "b48",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[48]",
+      "headingPath": [
+        "个人基于使用情况的计费",
+        "如果超过了包含的 AI credits，会发生什么情况？"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2226,
+      "end": 2228,
+      "id": "b49",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[49]",
+      "headingPath": [
+        "个人基于使用情况的计费",
+        "如果超过了包含的 AI credits，会发生什么情况？"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2230,
+      "end": 2380,
+      "id": "b50",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[50]",
+      "headingPath": [
+        "个人基于使用情况的计费",
+        "如果超过了包含的 AI credits，会发生什么情况？"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2382,
+      "end": 2401,
+      "id": "b51",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[51]",
+      "headingPath": [
+        "个人基于使用情况的计费",
+        "如果超过了包含的 AI credits，会发生什么情况？"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2403,
+      "end": 2533,
+      "id": "b52",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[52]",
+      "headingPath": [
+        "个人基于使用情况的计费",
+        "如果超过了包含的 AI credits，会发生什么情况？"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2535,
+      "end": 2635,
+      "id": "b53",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[53]",
+      "headingPath": [
+        "个人基于使用情况的计费",
+        "如果超过了包含的 AI credits，会发生什么情况？"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2637,
+      "end": 2661,
+      "id": "b54",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[54]",
+      "headingPath": [
+        "个人基于使用情况的计费",
+        "如果超过了包含的 AI credits，会发生什么情况？"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2663,
+      "end": 2795,
+      "id": "b55",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[55]",
+      "headingPath": [
+        "个人基于使用情况的计费",
+        "如果超过了包含的 AI credits，会发生什么情况？"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2797,
+      "end": 2847,
+      "id": "b56",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[56]",
+      "headingPath": [
+        "个人基于使用情况的计费",
+        "如果超过了包含的 AI credits，会发生什么情况？"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2849,
+      "end": 2866,
+      "id": "b57",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[57]",
+      "headingPath": [
+        "个人基于使用情况的计费",
+        "关于对 Copilot 计划的更改"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2868,
+      "end": 3042,
+      "id": "b58",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[58]",
+      "headingPath": [
+        "个人基于使用情况的计费",
+        "关于对 Copilot 计划的更改"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3044,
+      "end": 3111,
+      "id": "b59",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[59]",
+      "headingPath": [
+        "个人基于使用情况的计费",
+        "关于对 Copilot 计划的更改"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3113,
+      "end": 3119,
+      "id": "b60",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[60]",
+      "headingPath": [
+        "个人基于使用情况的计费",
+        "确定计费日期"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3121,
+      "end": 3149,
+      "id": "b61",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[61]",
+      "headingPath": [
+        "个人基于使用情况的计费",
+        "确定计费日期"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3151,
+      "end": 3269,
+      "id": "b62",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[62]",
+      "headingPath": [
+        "个人基于使用情况的计费",
+        "确定计费日期"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3271,
+      "end": 3322,
+      "id": "b63",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[63]",
+      "headingPath": [
+        "个人基于使用情况的计费",
+        "确定计费日期"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3324,
+      "end": 3337,
+      "id": "b64",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[64]",
+      "headingPath": [
+        "个人基于使用情况的计费",
+        "更新 IDE、客户端和扩展"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3339,
+      "end": 3392,
+      "id": "b65",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[65]",
+      "headingPath": [
+        "个人基于使用情况的计费",
+        "更新 IDE、客户端和扩展"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3394,
+      "end": 3396,
+      "id": "b66",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[66]",
+      "headingPath": [
+        "个人基于使用情况的计费",
+        "更新 IDE、客户端和扩展"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3398,
+      "end": 3460,
+      "id": "b67",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[67]",
+      "headingPath": [
+        "个人基于使用情况的计费",
+        "更新 IDE、客户端和扩展"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3462,
+      "end": 3658,
+      "id": "b68",
+      "kind": "TABLE",
+      "locator": "source DOM normalized block[68]",
+      "headingPath": [
+        "个人基于使用情况的计费",
+        "更新 IDE、客户端和扩展"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3660,
+      "end": 3780,
+      "id": "b69",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[69]",
+      "headingPath": [
+        "个人基于使用情况的计费",
+        "更新 IDE、客户端和扩展"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3782,
+      "end": 3786,
+      "id": "b70",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[70]",
+      "headingPath": [
+        "个人基于使用情况的计费",
+        "延伸阅读"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3788,
+      "end": 3804,
+      "id": "b71",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[71]",
+      "headingPath": [
+        "个人基于使用情况的计费",
+        "延伸阅读"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3806,
+      "end": 3824,
+      "id": "b72",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[72]",
+      "headingPath": [
+        "个人基于使用情况的计费",
+        "延伸阅读"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3826,
+      "end": 3835,
+      "id": "b73",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[73]",
+      "headingPath": [
+        "个人基于使用情况的计费",
+        "延伸阅读"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    }
+  ],
+  "links": [
+    {
+      "url": "https://docs.github.com/zh/copilot/reference/copilot-billing/models-and-pricing",
+      "text": "GitHub Copilot 的模型和定价",
+      "blockId": "b17",
+      "relation": "LINK",
+      "locator": "source DOM link[472]"
+    },
+    {
+      "url": "https://docs.github.com/zh/billing/concepts/billing-cycles",
+      "text": "计费周期",
+      "blockId": "b24",
+      "relation": "LINK",
+      "locator": "source DOM link[474]"
+    },
+    {
+      "url": "https://docs.github.com/zh/copilot/tutorials/optimize-ai-usage",
+      "text": "优化 AI 使用情况以最大限度地提高效率和降低成本",
+      "blockId": "b47",
+      "relation": "LINK",
+      "locator": "source DOM link[479]"
+    },
+    {
+      "url": "https://docs.github.com/zh/billing/how-tos/set-up-budgets",
+      "text": "设置预算以控制按流量计费的产品的支出",
+      "blockId": "b56",
+      "relation": "LINK",
+      "locator": "source DOM link[481]"
+    },
+    {
+      "url": "https://docs.github.com/zh/copilot/how-tos/manage-your-account/view-and-change-your-copilot-plan",
+      "text": "查看和更改GitHub Copilot 计划",
+      "blockId": "b59",
+      "relation": "LINK",
+      "locator": "source DOM link[483]"
+    },
+    {
+      "url": "https://docs.github.com/zh/copilot/how-tos/copilot-in-your-ide/set-up-copilot/configure-in-ide",
+      "text": "在环境中配置 GitHub Copilot",
+      "blockId": "b69",
+      "relation": "LINK",
+      "locator": "source DOM link[486]"
+    },
+    {
+      "url": "https://docs.github.com/zh/copilot/how-tos/copilot-cli/set-up-copilot-cli/install-copilot-cli",
+      "text": "安装 GitHub Copilot CLI",
+      "blockId": "b69",
+      "relation": "LINK",
+      "locator": "source DOM link[487]"
+    },
+    {
+      "url": "https://docs.github.com/zh/copilot/get-started/plans",
+      "text": "GitHub Copilot计划",
+      "blockId": "b71",
+      "relation": "LINK",
+      "locator": "source DOM link[489]"
+    },
+    {
+      "url": "https://docs.github.com/zh/copilot/how-tos/manage-your-account",
+      "text": "管理GitHub Copilot帐户",
+      "blockId": "b72",
+      "relation": "LINK",
+      "locator": "source DOM link[490]"
+    },
+    {
+      "url": "https://docs.github.com/zh/billing/how-tos/set-up-payment/manage-payment-info",
+      "text": "管理付款和账单信息",
+      "blockId": "b73",
+      "relation": "LINK",
+      "locator": "source DOM link[491]"
+    }
+  ],
+  "tables": [
+    {
+      "blockId": "b27",
+      "rows": [
+        {
+          "start": 1131,
+          "end": 1163,
+          "cells": [
+            {
+              "start": 1131,
+              "end": 1133,
+              "text": "计划",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1133,
+              "end": 1137,
+              "text": "每月价格",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1137,
+              "end": 1141,
+              "text": "基础积分",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1141,
+              "end": 1148,
+              "text": "Flex 分配",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1148,
+              "end": 1163,
+              "text": "每月总数 AI credits",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 1163,
+          "end": 1194,
+          "cells": [
+            {
+              "start": 1163,
+              "end": 1174,
+              "text": "Copilot Pro",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1174,
+              "end": 1181,
+              "text": "$10 USD",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1181,
+              "end": 1186,
+              "text": "1,000",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1186,
+              "end": 1189,
+              "text": "500",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1189,
+              "end": 1194,
+              "text": "1,500",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 1194,
+          "end": 1228,
+          "cells": [
+            {
+              "start": 1194,
+              "end": 1206,
+              "text": "Copilot Pro+",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1206,
+              "end": 1213,
+              "text": "$39 USD",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1213,
+              "end": 1218,
+              "text": "3,900",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1218,
+              "end": 1223,
+              "text": "3,100",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1223,
+              "end": 1228,
+              "text": "7,000",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 1228,
+          "end": 1265,
+          "cells": [
+            {
+              "start": 1228,
+              "end": 1239,
+              "text": "Copilot Max",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1239,
+              "end": 1247,
+              "text": "$100 USD",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1247,
+              "end": 1253,
+              "text": "10,000",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1253,
+              "end": 1259,
+              "text": "10,000",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1259,
+              "end": 1265,
+              "text": "20,000",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "blockId": "b68",
+      "rows": [
+        {
+          "start": 3462,
+          "end": 3476,
+          "cells": [
+            {
+              "start": 3462,
+              "end": 3472,
+              "text": "IDE、客户端或扩展",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 3472,
+              "end": 3476,
+              "text": "最低版本",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 3476,
+          "end": 3488,
+          "cells": [
+            {
+              "start": 3476,
+              "end": 3483,
+              "text": "VS Code",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 3483,
+              "end": 3488,
+              "text": "1.120",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 3488,
+          "end": 3521,
+          "cells": [
+            {
+              "start": 3488,
+              "end": 3513,
+              "text": "Visual Studio 2022 （17.x）",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 3513,
+              "end": 3521,
+              "text": "17.14.33",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 3521,
+          "end": 3552,
+          "cells": [
+            {
+              "start": 3521,
+              "end": 3546,
+              "text": "Visual Studio 2026 （18.x）",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 3546,
+              "end": 3552,
+              "text": "18.6.0",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 3552,
+          "end": 3584,
+          "cells": [
+            {
+              "start": 3552,
+              "end": 3580,
+              "text": "SQL Server Management Studio",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 3580,
+              "end": 3584,
+              "text": "22.6",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 3584,
+          "end": 3607,
+          "cells": [
+            {
+              "start": 3584,
+              "end": 3602,
+              "text": "JetBrains IDE （插件）",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 3602,
+              "end": 3607,
+              "text": "1.9.1",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 3607,
+          "end": 3625,
+          "cells": [
+            {
+              "start": 3607,
+              "end": 3619,
+              "text": "Eclipse （插件）",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 3619,
+              "end": 3625,
+              "text": "0.18.0",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 3625,
+          "end": 3641,
+          "cells": [
+            {
+              "start": 3625,
+              "end": 3635,
+              "text": "Xcode （扩展）",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 3635,
+              "end": 3641,
+              "text": "0.50.0",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 3641,
+          "end": 3658,
+          "cells": [
+            {
+              "start": 3641,
+              "end": 3652,
+              "text": "Copilot CLI",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 3652,
+              "end": 3658,
+              "text": "1.0.48",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

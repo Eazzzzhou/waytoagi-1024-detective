@@ -1,0 +1,1613 @@
+{
+  "schemaVersion": "source-document/v1",
+  "id": "e5f7c1446255a66cfffb0c119375ddb27249743797f7523eaa90f68b9456bf24",
+  "version": "34a2687b692bbdf681d4a3b6e2131c532aeb89d5d1be35712876ff42e656e184",
+  "requestedUrl": "https://spin.atomicobject.com/?p=3668445%2F",
+  "finalUrl": "https://spin.atomicobject.com/blender-scripting-with-ai/",
+  "retrievedAt": "2026-10-25T04:43:25.277Z",
+  "contentType": "text/html; charset=UTF-8",
+  "status": "READ",
+  "readError": null,
+  "rawHash": "8fdae4e54f671e7f87d55c5e8ef91a2a96a9b1990342d570984a71ac56ba193b",
+  "textHash": "ffaf7c8113e8f7c3d772ffff9807fafe4c0abdd9f6ee0396f930dc0b620b3d15",
+  "text": "← Back to Blog Home\n\nWhat Happened When I Tried Blender Scripting with AI\n\nAI for Developers by: Meghan Harris July 7, 2025\n\nTwitter\n\nFacebook\n\nLinkedin\n\nHackernews\n\nArticle summary\n\nBrief Intro to Cursor and Blender Scripting\n\nBasic Example: a simple 3D house\n\nIntermediate Examples: an animation, and the Blender Donut\n\nAdvanced Examples: a diamond pyramid, and geometry nodes\n\nFuture Considerations and Unanswered Questions\n\nSince I began working with AI tools, I’ve looked for their boundaries—what can I use them for, and when do I abandon them for another tool instead? Another question I’ve been asking myself: how would AI tooling fare in generating 3D models?\n\nSpecifically, I wanted to know how well a Cursor Agent could help me write a set of Blender scripts to generate 3D models. Doing so would test both the agent’s ability to follow simple instructions, interact with the Blender API, and find the limits of Blender scripting itself.\n\nBrief Intro to Cursor and Blender Scripting\n\nCursor is an AI-powered IDE that I currently use as a software developer. Scripting in Blender is accomplished through Python and the built-in scripting editor in Blender.\n\nThe code is very specific because Blender is a stateful, context-based system. For instance, many operations rely on what’s currently “active” or selected:\n\n# This depends on what object is currently active\nbpy.context.active_object.name = \"Door_Cutter\"\n\n# This requires setting the active object first\nbpy.context.view_layer.objects.active = front_wall\nbpy.ops.object.modifier_apply(modifier=\"Door_Boolean\")\n\nAlso, objects must exist before you can modify them:\n\n# Must create material first\nwall_material = create_material(\"Wall_Material\", (0.8, 0.7, 0.6))\n# Then create object\nfront_wall = create_cube(\"Front_Wall\", (0, -4, 1.5), (6, 0.2, 3))\n# Then apply material\nfront_wall.data.materials.append(wall_material)\n\nBasic Example: a simple 3D house\n\nFor starters, I asked Cursor to make a script for Blender that would render a house without any other prompting. Simple, right? 💥 Let the Runtime Errors Ensue 💥:\n\nPython: Traceback (most recent call last):\nFile \"/Text\", line 251, in\nFile \"/Text\", line 232, in main\nFile \"/Text\", line 217, in setup_render_settings\nTypeError: bpy_struct: item.attr = val: enum \"BLENDER_EEVEE\" not found in ('BLENDER_EEVEE_NEXT', 'BLENDER_WORKBENCH', 'CYCLES')\n\nAfter lots of attempts to access attributes that didn’t exist or passing the wrong datatype to a function, I realized one key issue: I hadn’t told the agent what Blender version I was using. From that point on, we did run into issues, but they were less.\n\nThe generated code specified a foundation, walls, roof, door, windows, chimney, porch, and ground (with green grass). Behold the house:\n\nNice roof, right? I relayed that the roof looked a bit cockeyed and the agent said something about a pitched roof, and I responded, “Well, the point of a roof is to not let the elements inside, so…,” and eventually we had a flat roof.\n\nThat’s a lot of cycles just for a house that I’m not super impressed with. Also, note, there were indeed doors and windows, but the doors and windows were only internally visible, which is cool. I asked it to make them visible from the outside, and it did (kind of):\n\nWut? Really, the cutting out of windows and a door in Blender take very little time once you are in Edit Mode in Blender’s UI. So, this isn’t necessarily an AI shortcoming—sometimes the manual tool is easier and more precise.\n\nOne more thing, where did the grass go? Oh, that’s where:\n\nYikes 😑. Let’s move on.\n\nIntermediate Examples: an animation, and the Blender Donut\n\nA Bouncy Ball\n\nMy prompt again was simple: create an animation of a ball bouncing with a Python script for Blender with version 4.3.2. I’ll spare you and say that the Cursor agent again had some more trouble with the Blender version, but we finally got an animation:\n\nhttps://spin.atomicobject.com/wp-content/uploads/Blender_Bouncing_Ball.mp4\n\nThe cool thing is that the agent was able to write the code to create the ball, the animation, and the camera. Another aspect of this scripting is that the agent “knew” to set up the lighting in both this example and the house. I appreciate that whatever dataset it was trained on, the agent utilized one of the most common components of setting a scene.\n\nThe Blender Donut\n\nIf you’ve spent anytime looking for Blender anything, especially a tutorial, you’ve run into the Blender Donut.\n\nI thought if ever there was a measure of how well an AI tool can follow instructions, to really test its dataset, it would be the Blender Donut, since its creation is well-documented, and tutorials abound.\n\nSurely, then, it should be able to create the Blender Donut. This is the result after I gave the AI agent the above picture:\n\nSo, where is the frosting? And, why do the sprinkles look like they’re in some weird, inner gravitational field in the donut’s hole?\n\nWe gave it another try:\n\nThe frosting is still missing, but now the sprinkles are where we’d expect them.\n\nI asked the agent one more time to add the frosting. Behold:\n\nSweet! Frosting, but also orbiting sprinkles? 🙃\n\nTakeaway: the agent did a fairly good job rendering the donut, and frosting (extra points for shininess), but with lots of coaching. Plus, if you’ve ever done the donut tutorial you know that a realistic donut isn’t perfectly symmetrical, and, during that tutorial, you learned how to make it look more realistic. This is certainly reminiscent of a donut, but those final touches seem much more achievable with the Blender UI than with AI-led scripting.\n\nAdvanced Examples: a diamond pyramid, and geometry nodes\n\nA Diamond Pyramid\n\nI asked the agent to create a diamond pyramid. The material considerations and the lighting techniques to simulate that type of sparkle would mean both the agent and the Blender API could be used to achieve something significant. My prompt was simple: create a diamond pyramid with a Python script for Blender with version 4.3.2.\n\nI was imagining a multi-faceted prism. This is what it created:\n\nThis mirrored pyramid is what was rendered, though I’m doubtful how close scripting would get me to a realistic diamond pyramid.\n\nGeometry Nodes\n\nFor another advanced example, I asked the agent to show me what it could do with geometry nodes. Geometry nodes are great for creating customizable, and non-destructive (the original geometry is preserved while operations on that geometry can be reordered or removed) models and scenes through procedural workflows.\n\nThis is what the agent was able to create:\n\nNote the different positions, and sizes, but also the patterns:\n\nNow from above:\n\nWhat excites me about this is that I see potential for reducing the amount of time it takes me to set up a surface or structure with lots of repeating features. I imagine using this to create a scene in a video game, a procedural landscape, or a set piece in a movie. Again, geometry nodes are reproducible and non-destructive. Combine those with scripting, and I can set up similar landscapes with some of the same code, reducing the amount of time it takes to create each scene.\n\nFuture Considerations and Unanswered Questions\n\nOverall, the AI agent wasn’t so hot at creating the realistic touches I was looking for, but I also don’t know that scripting can accomplish something so inherently visual. Cursor paired with scripting can, however, help me iterate on scene setup. Here I can see scripting help me set up scenes with large landscapes much more quickly, while I use the UI to add the more complex features.\n\nI think there’s a lot of promise in the combination of tools for geometry nodes. Scripting naturally aligns with geometry nodes because both create systems and rules rather than direct manual manipulation. They’re more procedural. Add in AI that’s well-trained on how to script with the Blender API, and you have a tool mash-up that actually delivers.\n\nI still have lots of unanswered and unexplored questions like:\n\nCould it stand up to a high level of animation that requires joint movement? How might I advance my prompting to get better results? Would there be better results? Where does the Blender API really struggle? How could I make some of the scripting more reusable?\n\nRelated Posts\n\nAI for Developers How to Run SQL Server Outside Docker Sandboxes\n\nAI for Developers Reduce AI Decision Fatigue: Lessons from Game Design\n\nAI for Developers My Coding Agents Moved Off My Laptop and Onto a Remote Server\n\nKeep up with our latest posts.\n\nWe’ll send our latest tips, learnings, and case studies from the Atomic braintrust on a monthly basis.\n\n[mailpoet_form id=\"1\"]\n\nConversation\n\nJoin the conversation Cancel reply\n\nArtificial Intelligence Category\n\nAI for Designers\n\nAI for Developers\n\nRelated Posts\n\nAI for Developers\n\nHow to Run SQL Server Outside Docker Sandboxes\n\nAI for Developers\n\nReduce AI Decision Fatigue: Lessons from Game Design\n\nAI for Developers\n\nMy Coding Agents Moved Off My Laptop and Onto a Remote Server\n\nTell Us About Your Project\n\nWe’d love to talk with you about your next great software project. Fill out this form and we’ll get back to you within two business days.\n\nShare Your Project",
+  "rawSources": [
+    {
+      "mode": "STATIC",
+      "hash": "8fdae4e54f671e7f87d55c5e8ef91a2a96a9b1990342d570984a71ac56ba193b",
+      "path": "C:\\Users\\qianchen\\Documents\\waytoagi-1024-detective-a2-v4\\.cache\\source-documents-v4\\1b770812-831e-444b-9bd6-f858f030b627\\e5f7c1446255a66cfffb0c119375ddb27249743797f7523eaa90f68b9456bf24\\raw.bin"
+    }
+  ],
+  "storage": {
+    "rawPath": "C:\\Users\\qianchen\\Documents\\waytoagi-1024-detective-a2-v4\\.cache\\source-documents-v4\\1b770812-831e-444b-9bd6-f858f030b627\\e5f7c1446255a66cfffb0c119375ddb27249743797f7523eaa90f68b9456bf24\\raw.bin",
+    "textPath": "C:\\Users\\qianchen\\Documents\\waytoagi-1024-detective-a2-v4\\.cache\\source-documents-v4\\1b770812-831e-444b-9bd6-f858f030b627\\e5f7c1446255a66cfffb0c119375ddb27249743797f7523eaa90f68b9456bf24\\source.txt",
+    "manifestPath": "C:\\Users\\qianchen\\Documents\\waytoagi-1024-detective-a2-v4\\.cache\\source-documents-v4\\1b770812-831e-444b-9bd6-f858f030b627\\e5f7c1446255a66cfffb0c119375ddb27249743797f7523eaa90f68b9456bf24\\manifest.json"
+  },
+  "parser": {
+    "name": "readability+source-dom",
+    "version": "readability-0.6.0+jsdom-30.1.3+source-dom-2",
+    "normalization": "source-text/v1",
+    "mode": "STATIC"
+  },
+  "metadata": {
+    "title": "Trying Blender Scripting with AI",
+    "author": "Meghan Harris",
+    "publishedAt": "2025-07-07T12:00:03.000Z",
+    "language": "en-US"
+  },
+  "completeness": "COMPLETE",
+  "warnings": [],
+  "blocks": [
+    {
+      "start": 0,
+      "end": 19,
+      "id": "b0",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[0]",
+      "headingPath": [],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 21,
+      "end": 73,
+      "id": "b1",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[1]",
+      "headingPath": [
+        "What Happened When I Tried Blender Scripting with AI"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 75,
+      "end": 123,
+      "id": "b2",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[2]",
+      "headingPath": [
+        "What Happened When I Tried Blender Scripting with AI"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 125,
+      "end": 132,
+      "id": "b3",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[3]",
+      "headingPath": [
+        "What Happened When I Tried Blender Scripting with AI"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 134,
+      "end": 142,
+      "id": "b4",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[4]",
+      "headingPath": [
+        "What Happened When I Tried Blender Scripting with AI"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 144,
+      "end": 152,
+      "id": "b5",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[5]",
+      "headingPath": [
+        "What Happened When I Tried Blender Scripting with AI"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 154,
+      "end": 164,
+      "id": "b6",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[6]",
+      "headingPath": [
+        "What Happened When I Tried Blender Scripting with AI"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 166,
+      "end": 181,
+      "id": "b7",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[7]",
+      "headingPath": [
+        "What Happened When I Tried Blender Scripting with AI",
+        "Article summary"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 183,
+      "end": 226,
+      "id": "b8",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[8]",
+      "headingPath": [
+        "What Happened When I Tried Blender Scripting with AI",
+        "Article summary"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 228,
+      "end": 260,
+      "id": "b9",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[9]",
+      "headingPath": [
+        "What Happened When I Tried Blender Scripting with AI",
+        "Article summary"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 262,
+      "end": 320,
+      "id": "b10",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[10]",
+      "headingPath": [
+        "What Happened When I Tried Blender Scripting with AI",
+        "Article summary"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 322,
+      "end": 378,
+      "id": "b11",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[11]",
+      "headingPath": [
+        "What Happened When I Tried Blender Scripting with AI",
+        "Article summary"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 380,
+      "end": 426,
+      "id": "b12",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[12]",
+      "headingPath": [
+        "What Happened When I Tried Blender Scripting with AI",
+        "Article summary"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 428,
+      "end": 668,
+      "id": "b13",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[13]",
+      "headingPath": [
+        "What Happened When I Tried Blender Scripting with AI",
+        "Article summary"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 670,
+      "end": 948,
+      "id": "b14",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[14]",
+      "headingPath": [
+        "What Happened When I Tried Blender Scripting with AI",
+        "Article summary"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 950,
+      "end": 993,
+      "id": "b15",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[15]",
+      "headingPath": [
+        "What Happened When I Tried Blender Scripting with AI",
+        "Brief Intro to Cursor and Blender Scripting"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 995,
+      "end": 1166,
+      "id": "b16",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[16]",
+      "headingPath": [
+        "What Happened When I Tried Blender Scripting with AI",
+        "Brief Intro to Cursor and Blender Scripting"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1168,
+      "end": 1323,
+      "id": "b17",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[17]",
+      "headingPath": [
+        "What Happened When I Tried Blender Scripting with AI",
+        "Brief Intro to Cursor and Blender Scripting"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1325,
+      "end": 1421,
+      "id": "b18",
+      "kind": "CODE",
+      "locator": "source DOM normalized block[18]",
+      "headingPath": [
+        "What Happened When I Tried Blender Scripting with AI",
+        "Brief Intro to Cursor and Blender Scripting"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1423,
+      "end": 1576,
+      "id": "b19",
+      "kind": "CODE",
+      "locator": "source DOM normalized block[19]",
+      "headingPath": [
+        "What Happened When I Tried Blender Scripting with AI",
+        "Brief Intro to Cursor and Blender Scripting"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1578,
+      "end": 1630,
+      "id": "b20",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[20]",
+      "headingPath": [
+        "What Happened When I Tried Blender Scripting with AI",
+        "Brief Intro to Cursor and Blender Scripting"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1632,
+      "end": 1883,
+      "id": "b21",
+      "kind": "CODE",
+      "locator": "source DOM normalized block[21]",
+      "headingPath": [
+        "What Happened When I Tried Blender Scripting with AI",
+        "Brief Intro to Cursor and Blender Scripting"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1885,
+      "end": 1917,
+      "id": "b22",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[22]",
+      "headingPath": [
+        "What Happened When I Tried Blender Scripting with AI",
+        "Basic Example: a simple 3D house"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1919,
+      "end": 2082,
+      "id": "b23",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[23]",
+      "headingPath": [
+        "What Happened When I Tried Blender Scripting with AI",
+        "Basic Example: a simple 3D house"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2084,
+      "end": 2362,
+      "id": "b24",
+      "kind": "CODE",
+      "locator": "source DOM normalized block[24]",
+      "headingPath": [
+        "What Happened When I Tried Blender Scripting with AI",
+        "Basic Example: a simple 3D house"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2364,
+      "end": 2618,
+      "id": "b25",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[25]",
+      "headingPath": [
+        "What Happened When I Tried Blender Scripting with AI",
+        "Basic Example: a simple 3D house"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2620,
+      "end": 2755,
+      "id": "b26",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[26]",
+      "headingPath": [
+        "What Happened When I Tried Blender Scripting with AI",
+        "Basic Example: a simple 3D house"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2757,
+      "end": 2991,
+      "id": "b27",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[27]",
+      "headingPath": [
+        "What Happened When I Tried Blender Scripting with AI",
+        "Basic Example: a simple 3D house"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2993,
+      "end": 3259,
+      "id": "b28",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[28]",
+      "headingPath": [
+        "What Happened When I Tried Blender Scripting with AI",
+        "Basic Example: a simple 3D house"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3261,
+      "end": 3486,
+      "id": "b29",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[29]",
+      "headingPath": [
+        "What Happened When I Tried Blender Scripting with AI",
+        "Basic Example: a simple 3D house"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3488,
+      "end": 3545,
+      "id": "b30",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[30]",
+      "headingPath": [
+        "What Happened When I Tried Blender Scripting with AI",
+        "Basic Example: a simple 3D house"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3547,
+      "end": 3571,
+      "id": "b31",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[31]",
+      "headingPath": [
+        "What Happened When I Tried Blender Scripting with AI",
+        "Basic Example: a simple 3D house"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3573,
+      "end": 3631,
+      "id": "b32",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[32]",
+      "headingPath": [
+        "What Happened When I Tried Blender Scripting with AI",
+        "Intermediate Examples: an animation, and the Blender Donut"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3633,
+      "end": 3646,
+      "id": "b33",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[33]",
+      "headingPath": [
+        "What Happened When I Tried Blender Scripting with AI",
+        "Intermediate Examples: an animation, and the Blender Donut",
+        "A Bouncy Ball"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3648,
+      "end": 3899,
+      "id": "b34",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[34]",
+      "headingPath": [
+        "What Happened When I Tried Blender Scripting with AI",
+        "Intermediate Examples: an animation, and the Blender Donut",
+        "A Bouncy Ball"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3901,
+      "end": 3975,
+      "id": "b35",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[35]",
+      "headingPath": [
+        "What Happened When I Tried Blender Scripting with AI",
+        "Intermediate Examples: an animation, and the Blender Donut",
+        "A Bouncy Ball"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3977,
+      "end": 4331,
+      "id": "b36",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[36]",
+      "headingPath": [
+        "What Happened When I Tried Blender Scripting with AI",
+        "Intermediate Examples: an animation, and the Blender Donut",
+        "A Bouncy Ball"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4333,
+      "end": 4350,
+      "id": "b37",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[37]",
+      "headingPath": [
+        "What Happened When I Tried Blender Scripting with AI",
+        "Intermediate Examples: an animation, and the Blender Donut",
+        "The Blender Donut"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4352,
+      "end": 4463,
+      "id": "b38",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[38]",
+      "headingPath": [
+        "What Happened When I Tried Blender Scripting with AI",
+        "Intermediate Examples: an animation, and the Blender Donut",
+        "The Blender Donut"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4465,
+      "end": 4670,
+      "id": "b39",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[39]",
+      "headingPath": [
+        "What Happened When I Tried Blender Scripting with AI",
+        "Intermediate Examples: an animation, and the Blender Donut",
+        "The Blender Donut"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4672,
+      "end": 4796,
+      "id": "b40",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[40]",
+      "headingPath": [
+        "What Happened When I Tried Blender Scripting with AI",
+        "Intermediate Examples: an animation, and the Blender Donut",
+        "The Blender Donut"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4798,
+      "end": 4930,
+      "id": "b41",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[41]",
+      "headingPath": [
+        "What Happened When I Tried Blender Scripting with AI",
+        "Intermediate Examples: an animation, and the Blender Donut",
+        "The Blender Donut"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4932,
+      "end": 4955,
+      "id": "b42",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[42]",
+      "headingPath": [
+        "What Happened When I Tried Blender Scripting with AI",
+        "Intermediate Examples: an animation, and the Blender Donut",
+        "The Blender Donut"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4957,
+      "end": 5037,
+      "id": "b43",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[43]",
+      "headingPath": [
+        "What Happened When I Tried Blender Scripting with AI",
+        "Intermediate Examples: an animation, and the Blender Donut",
+        "The Blender Donut"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5039,
+      "end": 5099,
+      "id": "b44",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[44]",
+      "headingPath": [
+        "What Happened When I Tried Blender Scripting with AI",
+        "Intermediate Examples: an animation, and the Blender Donut",
+        "The Blender Donut"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5101,
+      "end": 5149,
+      "id": "b45",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[45]",
+      "headingPath": [
+        "What Happened When I Tried Blender Scripting with AI",
+        "Intermediate Examples: an animation, and the Blender Donut",
+        "The Blender Donut"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5151,
+      "end": 5604,
+      "id": "b46",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[46]",
+      "headingPath": [
+        "What Happened When I Tried Blender Scripting with AI",
+        "Intermediate Examples: an animation, and the Blender Donut",
+        "The Blender Donut"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5606,
+      "end": 5662,
+      "id": "b47",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[47]",
+      "headingPath": [
+        "What Happened When I Tried Blender Scripting with AI",
+        "Advanced Examples: a diamond pyramid, and geometry nodes"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5664,
+      "end": 5681,
+      "id": "b48",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[48]",
+      "headingPath": [
+        "What Happened When I Tried Blender Scripting with AI",
+        "Advanced Examples: a diamond pyramid, and geometry nodes",
+        "A Diamond Pyramid"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5683,
+      "end": 6012,
+      "id": "b49",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[49]",
+      "headingPath": [
+        "What Happened When I Tried Blender Scripting with AI",
+        "Advanced Examples: a diamond pyramid, and geometry nodes",
+        "A Diamond Pyramid"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 6014,
+      "end": 6077,
+      "id": "b50",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[50]",
+      "headingPath": [
+        "What Happened When I Tried Blender Scripting with AI",
+        "Advanced Examples: a diamond pyramid, and geometry nodes",
+        "A Diamond Pyramid"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 6079,
+      "end": 6207,
+      "id": "b51",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[51]",
+      "headingPath": [
+        "What Happened When I Tried Blender Scripting with AI",
+        "Advanced Examples: a diamond pyramid, and geometry nodes",
+        "A Diamond Pyramid"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 6209,
+      "end": 6223,
+      "id": "b52",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[52]",
+      "headingPath": [
+        "What Happened When I Tried Blender Scripting with AI",
+        "Advanced Examples: a diamond pyramid, and geometry nodes",
+        "Geometry Nodes"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 6225,
+      "end": 6540,
+      "id": "b53",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[53]",
+      "headingPath": [
+        "What Happened When I Tried Blender Scripting with AI",
+        "Advanced Examples: a diamond pyramid, and geometry nodes",
+        "Geometry Nodes"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 6542,
+      "end": 6584,
+      "id": "b54",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[54]",
+      "headingPath": [
+        "What Happened When I Tried Blender Scripting with AI",
+        "Advanced Examples: a diamond pyramid, and geometry nodes",
+        "Geometry Nodes"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 6586,
+      "end": 6649,
+      "id": "b55",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[55]",
+      "headingPath": [
+        "What Happened When I Tried Blender Scripting with AI",
+        "Advanced Examples: a diamond pyramid, and geometry nodes",
+        "Geometry Nodes"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 6651,
+      "end": 6666,
+      "id": "b56",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[56]",
+      "headingPath": [
+        "What Happened When I Tried Blender Scripting with AI",
+        "Advanced Examples: a diamond pyramid, and geometry nodes",
+        "Geometry Nodes"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 6668,
+      "end": 7148,
+      "id": "b57",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[57]",
+      "headingPath": [
+        "What Happened When I Tried Blender Scripting with AI",
+        "Advanced Examples: a diamond pyramid, and geometry nodes",
+        "Geometry Nodes"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 7150,
+      "end": 7196,
+      "id": "b58",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[58]",
+      "headingPath": [
+        "What Happened When I Tried Blender Scripting with AI",
+        "Future Considerations and Unanswered Questions"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 7198,
+      "end": 7586,
+      "id": "b59",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[59]",
+      "headingPath": [
+        "What Happened When I Tried Blender Scripting with AI",
+        "Future Considerations and Unanswered Questions"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 7588,
+      "end": 7939,
+      "id": "b60",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[60]",
+      "headingPath": [
+        "What Happened When I Tried Blender Scripting with AI",
+        "Future Considerations and Unanswered Questions"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 7941,
+      "end": 8003,
+      "id": "b61",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[61]",
+      "headingPath": [
+        "What Happened When I Tried Blender Scripting with AI",
+        "Future Considerations and Unanswered Questions"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 8005,
+      "end": 8266,
+      "id": "b62",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[62]",
+      "headingPath": [
+        "What Happened When I Tried Blender Scripting with AI",
+        "Future Considerations and Unanswered Questions"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 8268,
+      "end": 8281,
+      "id": "b63",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[63]",
+      "headingPath": [
+        "What Happened When I Tried Blender Scripting with AI",
+        "Future Considerations and Unanswered Questions",
+        "Related Posts"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 8283,
+      "end": 8347,
+      "id": "b64",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[64]",
+      "headingPath": [
+        "What Happened When I Tried Blender Scripting with AI",
+        "Future Considerations and Unanswered Questions",
+        "Related Posts"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 8349,
+      "end": 8419,
+      "id": "b65",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[65]",
+      "headingPath": [
+        "What Happened When I Tried Blender Scripting with AI",
+        "Future Considerations and Unanswered Questions",
+        "Related Posts"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 8421,
+      "end": 8500,
+      "id": "b66",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[66]",
+      "headingPath": [
+        "What Happened When I Tried Blender Scripting with AI",
+        "Future Considerations and Unanswered Questions",
+        "Related Posts"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 8502,
+      "end": 8532,
+      "id": "b67",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[67]",
+      "headingPath": [
+        "What Happened When I Tried Blender Scripting with AI",
+        "Keep up with our latest posts."
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 8534,
+      "end": 8636,
+      "id": "b68",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[68]",
+      "headingPath": [
+        "What Happened When I Tried Blender Scripting with AI",
+        "Keep up with our latest posts."
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 8638,
+      "end": 8660,
+      "id": "b69",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[69]",
+      "headingPath": [
+        "What Happened When I Tried Blender Scripting with AI",
+        "Keep up with our latest posts."
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 8662,
+      "end": 8674,
+      "id": "b70",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[70]",
+      "headingPath": [
+        "What Happened When I Tried Blender Scripting with AI",
+        "Keep up with our latest posts."
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 8676,
+      "end": 8710,
+      "id": "b71",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[71]",
+      "headingPath": [
+        "What Happened When I Tried Blender Scripting with AI",
+        "Keep up with our latest posts.",
+        "Join the conversation Cancel reply"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 8712,
+      "end": 8744,
+      "id": "b72",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[72]",
+      "headingPath": [
+        "What Happened When I Tried Blender Scripting with AI",
+        "Keep up with our latest posts.",
+        "Artificial Intelligence Category"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 8746,
+      "end": 8762,
+      "id": "b73",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[73]",
+      "headingPath": [
+        "What Happened When I Tried Blender Scripting with AI",
+        "Keep up with our latest posts.",
+        "Artificial Intelligence Category"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 8764,
+      "end": 8781,
+      "id": "b74",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[74]",
+      "headingPath": [
+        "What Happened When I Tried Blender Scripting with AI",
+        "Keep up with our latest posts.",
+        "Artificial Intelligence Category"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 8783,
+      "end": 8796,
+      "id": "b75",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[75]",
+      "headingPath": [
+        "What Happened When I Tried Blender Scripting with AI",
+        "Keep up with our latest posts.",
+        "Artificial Intelligence Category"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 8798,
+      "end": 8815,
+      "id": "b76",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[76]",
+      "headingPath": [
+        "What Happened When I Tried Blender Scripting with AI",
+        "Keep up with our latest posts.",
+        "Artificial Intelligence Category"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 8817,
+      "end": 8863,
+      "id": "b77",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[77]",
+      "headingPath": [
+        "What Happened When I Tried Blender Scripting with AI",
+        "Keep up with our latest posts.",
+        "Artificial Intelligence Category"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 8865,
+      "end": 8882,
+      "id": "b78",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[78]",
+      "headingPath": [
+        "What Happened When I Tried Blender Scripting with AI",
+        "Keep up with our latest posts.",
+        "Artificial Intelligence Category"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 8884,
+      "end": 8936,
+      "id": "b79",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[79]",
+      "headingPath": [
+        "What Happened When I Tried Blender Scripting with AI",
+        "Keep up with our latest posts.",
+        "Artificial Intelligence Category"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 8938,
+      "end": 8955,
+      "id": "b80",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[80]",
+      "headingPath": [
+        "What Happened When I Tried Blender Scripting with AI",
+        "Keep up with our latest posts.",
+        "Artificial Intelligence Category"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 8957,
+      "end": 9018,
+      "id": "b81",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[81]",
+      "headingPath": [
+        "What Happened When I Tried Blender Scripting with AI",
+        "Keep up with our latest posts.",
+        "Artificial Intelligence Category"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 9020,
+      "end": 9046,
+      "id": "b82",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[82]",
+      "headingPath": [
+        "What Happened When I Tried Blender Scripting with AI",
+        "Keep up with our latest posts.",
+        "Tell Us About Your Project"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 9048,
+      "end": 9185,
+      "id": "b83",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[83]",
+      "headingPath": [
+        "What Happened When I Tried Blender Scripting with AI",
+        "Keep up with our latest posts.",
+        "Tell Us About Your Project"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 9187,
+      "end": 9205,
+      "id": "b84",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[84]",
+      "headingPath": [
+        "What Happened When I Tried Blender Scripting with AI",
+        "Keep up with our latest posts.",
+        "Tell Us About Your Project"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    }
+  ],
+  "links": [
+    {
+      "url": "https://spin.atomicobject.com/blender-scripting-with-ai/",
+      "text": "",
+      "blockId": null,
+      "relation": "CANONICAL",
+      "locator": "source DOM link[0]"
+    },
+    {
+      "url": "https://spin.atomicobject.com/",
+      "text": "← Back to Blog Home",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[58]"
+    },
+    {
+      "url": "https://spin.atomicobject.com/artificial-intelligence/ai-developers/",
+      "text": "AI for Developers",
+      "blockId": "b2",
+      "relation": "LINK",
+      "locator": "source DOM link[59]"
+    },
+    {
+      "url": "https://spin.atomicobject.com/author/meghan-harris/",
+      "text": "Meghan Harris",
+      "blockId": "b2",
+      "relation": "LINK",
+      "locator": "source DOM link[60]"
+    },
+    {
+      "url": "https://twitter.com/intent/tweet?related=&text=What+Happened+When+I+Tried+Blender+Scripting+with+AI&url=https%3A%2F%2Fspin.atomicobject.com%2Fblender-scripting-with-ai%2F%23.VNUemPABEaM.twitter",
+      "text": "Twitter",
+      "blockId": "b3",
+      "relation": "LINK",
+      "locator": "source DOM link[61]"
+    },
+    {
+      "url": "https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fspin.atomicobject.com%2Fblender-scripting-with-ai%2F%23.VNUemgHMI00.facebook",
+      "text": "Facebook",
+      "blockId": "b4",
+      "relation": "LINK",
+      "locator": "source DOM link[62]"
+    },
+    {
+      "url": "https://www.linkedin.com/shareArticle?mini=true&ro=false&source=&summary=&title=What+Happened+When+I+Tried+Blender+Scripting+with+AI&url=https%3A%2F%2Fspin.atomicobject.com%2Fblender-scripting-with-ai%2F%23.VNUeuSKf2A4.linkedin",
+      "text": "Linkedin",
+      "blockId": "b5",
+      "relation": "LINK",
+      "locator": "source DOM link[63]"
+    },
+    {
+      "url": "https://news.ycombinator.com/submitlink?t=What+Happened+When+I+Tried+Blender+Scripting+with+AI&u=https%3A%2F%2Fspin.atomicobject.com%2Fblender-scripting-with-ai%2F%23.VNUdMcs6UCk.hackernews",
+      "text": "Hackernews",
+      "blockId": "b6",
+      "relation": "LINK",
+      "locator": "source DOM link[64]"
+    },
+    {
+      "url": "https://spin.atomicobject.com/wp-content/uploads/Blender_Bouncing_Ball.mp4",
+      "text": "https://spin.atomicobject.com/wp-content/uploads/Blender_Bouncing_Ball.mp4",
+      "blockId": "b35",
+      "relation": "LINK",
+      "locator": "source DOM link[73]"
+    },
+    {
+      "url": "https://spin.atomicobject.com/artificial-intelligence/ai-developers/",
+      "text": "AI for Developers",
+      "blockId": "b64",
+      "relation": "LINK",
+      "locator": "source DOM link[87]"
+    },
+    {
+      "url": "https://spin.atomicobject.com/sql-server-outside-sandboxes/",
+      "text": "How to Run SQL Server Outside Docker Sandboxes",
+      "blockId": "b64",
+      "relation": "LINK",
+      "locator": "source DOM link[88]"
+    },
+    {
+      "url": "https://spin.atomicobject.com/artificial-intelligence/ai-developers/",
+      "text": "AI for Developers",
+      "blockId": "b65",
+      "relation": "LINK",
+      "locator": "source DOM link[89]"
+    },
+    {
+      "url": "https://spin.atomicobject.com/ai-decision-fatigue-game-design/",
+      "text": "Reduce AI Decision Fatigue: Lessons from Game Design",
+      "blockId": "b65",
+      "relation": "LINK",
+      "locator": "source DOM link[90]"
+    },
+    {
+      "url": "https://spin.atomicobject.com/artificial-intelligence/ai-developers/",
+      "text": "AI for Developers",
+      "blockId": "b66",
+      "relation": "LINK",
+      "locator": "source DOM link[91]"
+    },
+    {
+      "url": "https://spin.atomicobject.com/coding-agents-remote-server/",
+      "text": "My Coding Agents Moved Off My Laptop and Onto a Remote Server",
+      "blockId": "b66",
+      "relation": "LINK",
+      "locator": "source DOM link[92]"
+    },
+    {
+      "url": "https://spin.atomicobject.com/blender-scripting-with-ai/",
+      "text": "Cancel reply",
+      "blockId": "b71",
+      "relation": "LINK",
+      "locator": "source DOM link[93]"
+    },
+    {
+      "url": "https://spin.atomicobject.com/artificial-intelligence/ai-designers/",
+      "text": "AI for Designers",
+      "blockId": "b73",
+      "relation": "LINK",
+      "locator": "source DOM link[94]"
+    },
+    {
+      "url": "https://spin.atomicobject.com/artificial-intelligence/ai-developers/",
+      "text": "AI for Developers",
+      "blockId": "b74",
+      "relation": "LINK",
+      "locator": "source DOM link[95]"
+    },
+    {
+      "url": "https://spin.atomicobject.com/artificial-intelligence/ai-developers/",
+      "text": "AI for Developers",
+      "blockId": "b76",
+      "relation": "LINK",
+      "locator": "source DOM link[97]"
+    },
+    {
+      "url": "https://spin.atomicobject.com/sql-server-outside-sandboxes/",
+      "text": "How to Run SQL Server Outside Docker Sandboxes",
+      "blockId": "b77",
+      "relation": "LINK",
+      "locator": "source DOM link[98]"
+    },
+    {
+      "url": "https://spin.atomicobject.com/artificial-intelligence/ai-developers/",
+      "text": "AI for Developers",
+      "blockId": "b78",
+      "relation": "LINK",
+      "locator": "source DOM link[100]"
+    },
+    {
+      "url": "https://spin.atomicobject.com/ai-decision-fatigue-game-design/",
+      "text": "Reduce AI Decision Fatigue: Lessons from Game Design",
+      "blockId": "b79",
+      "relation": "LINK",
+      "locator": "source DOM link[101]"
+    },
+    {
+      "url": "https://spin.atomicobject.com/artificial-intelligence/ai-developers/",
+      "text": "AI for Developers",
+      "blockId": "b80",
+      "relation": "LINK",
+      "locator": "source DOM link[103]"
+    },
+    {
+      "url": "https://spin.atomicobject.com/coding-agents-remote-server/",
+      "text": "My Coding Agents Moved Off My Laptop and Onto a Remote Server",
+      "blockId": "b81",
+      "relation": "LINK",
+      "locator": "source DOM link[104]"
+    },
+    {
+      "url": "https://atomicobject.com/contact",
+      "text": "Share Your Project",
+      "blockId": "b84",
+      "relation": "LINK",
+      "locator": "source DOM link[105]"
+    }
+  ],
+  "tables": []
+}

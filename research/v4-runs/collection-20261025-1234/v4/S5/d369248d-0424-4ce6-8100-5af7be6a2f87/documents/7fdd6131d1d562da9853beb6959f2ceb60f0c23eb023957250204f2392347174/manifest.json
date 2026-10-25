@@ -1,0 +1,1405 @@
+{
+  "schemaVersion": "source-document/v1",
+  "id": "7fdd6131d1d562da9853beb6959f2ceb60f0c23eb023957250204f2392347174",
+  "version": "bfb4c7d975c9d1a88835808e5801a783ebe0eee11f253dabd689278c680a848e",
+  "requestedUrl": "http://www.lpqz.cn/news/187560",
+  "finalUrl": "http://www.lpqz.cn/news/187560",
+  "retrievedAt": "2026-10-25T04:38:13.235Z",
+  "contentType": "text/html; charset=utf-8",
+  "status": "READ",
+  "readError": null,
+  "rawHash": "064e06b5b0deb1b748c42db3001cef30e4ffad40995dce4f84e99513ff5ddeb2",
+  "textHash": "efc006c1b248ec30c667b96356a4d1f02cddc1e799265cbdcf233e98df9e1dde",
+  "text": "首页核心服务+获客网站定制转化型网站搭建营销落地页设计私域流量网站转化率优化CRO关键词SEO优化网站获客诊断竞品网站拆解数据分析报告数字营销全案广告投放策划私域运营陪跑品牌官网定制品牌官网改版商城型网站集团企业官网行业门户网站外贸独立站企业CMS建站多语言网站建设SEO搜索引擎优化SEM竞价托管营销文案撰写内容营销策划营销日历策划网站代运营百度爱采购推广品牌定位策划企业宣传片电商大促页面动效与交互动画产品原型设计UX体验设计企业技术官网高稳定防护开发性能加速优化SSL证书部署服务器托管域名注册备案数据备份运维监控网站安全加固行业方案+制造业官网方案科技企业官网零售电商方案金融服务网站教育机构官网服务型企业网站制造业解决方案医疗健康官网教育培训网站律师事务所网站房产家居网站餐饮连锁官网物流运输网站跨境电商独立站美妆个护官网旅游文旅网站汽车后市场网站B2B企业服务官网金融科技官网农业食品网站文化创意网站小程序开发数据可视化大屏AI智能客服视频营销网站会员系统建设预约挂号系统招聘官网建设企业邮箱建设案例展示+制造业获客案例科技企业官网案例零售电商转化案例客户成功故事集客户评价合作伙伴资讯中心+资讯中心行业动态营销干货营销型网站设计指南企业官网SEO白皮书转化率提升清单企业建站避坑指南2026建站趋势解读外贸获客指南内容运营指南网站加速指南ICP备案指南域名注册指南服务器选购指南网站安全指南在线支付指南关于我们+关于我们核心团队团队文化网站建设流程网站诊断报告常见问题FAQ定制网站报价免费诊断申请联系我们免费获取建站方案\n\n首页 / 资讯中心 / 正文\n\nYOUTU · 资讯\n\nCursor 配 TaoToken：Blender-MCP 生成 3D 模型配置与验证\n\n尧 尧图网络科技 原创内容团队 📅 发布时间：2026/10/25 3:35:43 👁 阅读 2.4k 微 博 链\n\n1. 为什么要在 Cursor 里接 Blender-MCP 生成 3D 模型如果你平时用 Blender 建模又刚好在用 Cursor 写代码那这套组合值得试一次在 Cursor 里通过 MCP 协议连上 Blender用自然语言描述就能让 Blender 自动生成基础 3D 模型比如“做一个低多边形的小房子”“生成一个带倒角的立方体阵列”。它适合三类人想快速出草模的 3D 爱好者、需要批量生成简单几何体的开发者、以及想把 AI 能力接进自己工作流的 Cursor 用户。Blender-MCP 的本质是一个跑在本地的 MCP Server它通过 socket 和 Blender 里的插件通信。Cursor 负责把模型对话转成 MCP 调用Blender 负责执行建模命令。中间这条链路需要一个稳定的 API 通道来驱动模型TaoToken 在这里的作用就是统一 Key 和 API 入口让你不用在 Cursor、Blender-MCP 之间来回换配置。下面我会把 settings.json、config.toml 骨架、连接参数和验证动作都写清楚你照着改就能跑。2. TaoToken 前置准备Key 与 API 通道TaoToken 是一个统一的大模型 API 接入层你可以把它理解成“一个 Key 走通多个模型”的通道。对 Blender-MCP 这种需要频繁调用模型生成建模指令的场景来说统一入口能省掉很多切换成本。你需要先拿到两样东西API Key 和 API Base URL。打开官网 https://taotoken.net/?utm_sourcetaotoken_aicg_blog_endutm_mediumcsdnutm_campaignrewriteutm_content 注册后进入控制台在 API Keys 页面创建一个新 Key。建议给这个 Key 起个能认出来的名字比如cursor-blender-mcp方便后面排查。创建完复制保存页面只显示一次。API 地址用 https://taotoken.net/api 注意这个地址不带 UTM 参数直接填在配置里就行。如果你用的是 Claude Code 或 Anthropic 风格的客户端接入文档里有对应的 base_url 写法可以对照 https://taotoken.net/doc 调整。注意Key 不要写进会提交到 Git 的文件里。下面配置里我用环境变量占位你本地替换成真实值即可。3. 可复制配置settings.json 与 config.toml 骨架Cursor 的 MCP 配置放在用户目录下的settings.json里不同系统路径不一样Windows 是%APPDATA%\\Cursor\\User\\settings.jsonmacOS 是~/Library/Application Support/Cursor/User/settings.json。如果你更习惯用项目级配置也可以在项目根目录建.cursor/mcp.json。先看 Cursor 侧的settings.json骨架重点是mcpServers这一段{ mcpServers: { blender: { command: uvx, args: [blender-mcp], env: { BLENDER_HOST: 127.0.0.1, BLENDER_PORT: 9876, TAOTOKEN_API_KEY: sk-你的Key, TAOTOKEN_BASE_URL: https://taotoken.net/api } } } }这里command用uvx是为了免安装直接跑blender-mcp包。如果你本地没装 uvWindows 下执行pip install uvmacOS 下执行brew install uv。BLENDER_HOST和BLENDER_PORT是 Blender 插件监听的地址和端口默认 9876后面插件里要保持一致。再看config.toml骨架这个文件主要给 Blender-MCP 读取模型通道参数用放在项目根目录或用户配置目录都行[model] provider taotoken api_key sk-你的Key base_url https://taotoken.net/api model_name claude-3-5-sonnet [blender] host 127.0.0.1 port 9876 timeout 30 [mcp] transport stdio log_level infomodel_name按你实际想用的模型填TaoToken 支持多种模型具体列表在模型对话页面能看到。timeout给 30 秒是保守值生成复杂模型时可以调到 60。4. Blender 插件安装与连接参数配置写完还不算完Blender 那边要装插件并启动监听。打开 Blender进入Edit Preferences Add-ons点Install选择你 clone 下来的blender-mcp仓库里的插件文件。装好后勾选启用在 3D 视图侧边栏会出现 Blender-MCP 面板。在面板里设置监听参数要和settings.json里的BLENDER_HOST、BLENDER_PORT对上# Blender 插件面板里对应的参数 host 127.0.0.1 port 9876 auto_start True勾选auto_start后Blender 启动时会自动开监听。你也可以手动点Start Server。启动成功后Blender 底部状态栏会显示类似MCP server listening on 127.0.0.1:9876的提示。命令行侧可以单独验证一下blender-mcp能不能跑起来uvx blender-mcp --host 127.0.0.1 --port 9876如果这条命令报找不到包说明 uv 环境没配好回到第 2 步检查。正常情况它会打印启动日志并等待连接。5. 验证 MCP 调用与 3D 模型生成结果配置和插件都就绪后打开 Cursor在对话窗口里输入一句建模指令比如“在 Blender 里生成一个边长 2 的立方体并加 0.1 的倒角”。Cursor 会通过 MCP 把这条指令转给 Blender-MCP再由插件在 Blender 里执行。验证分三步。第一步看 Cursor 的 MCP 状态在设置里找到 MCP Serversblender那一项应该显示绿色已连接。第二步看 Blender 控制台执行建模指令时会有日志输出类似Executing bpy.ops.mesh.primitive_cube_add。第三步看 3D 视图模型应该出现在场景里。如果模型没出现先在 Cursor 里发一条最简单的测试指令“列出当前 Blender 场景里的所有对象”。这条不涉及建模只验证通信链路。能返回对象列表说明 MCP 通道是通的问题出在建模指令本身。返回为空或报错就回到第 4 步检查端口和插件状态。生成成功后你可以继续用自然语言调整比如“把倒角改成 0.3”“复制三个并排排列”。每次调整都会触发一次 MCP 调用Blender 里实时更新。实测下来简单几何体的生成延迟在 2 到 5 秒之间取决于模型响应速度。6. 本篇常见错排查报错uvx: command not founduv 没装或没加进 PATH。Windows 下重新执行pip install uv并确认 Python Scripts 目录在环境变量里macOS 下brew install uv后重开终端。Cursor 里 MCP 显示红色未连接先确认settings.json的 JSON 格式没写错逗号、引号最容易出问题。再用uvx blender-mcp手动跑一次看能不能启动。如果手动能启动但 Cursor 连不上检查 Cursor 是否重启过配置改动后需要重启 Cursor 才生效。Blender 插件启动后端口被占用9876 被别的进程占了。换个端口比如 9877同时改settings.json和插件面板里的port两边必须一致。建模指令执行了但场景没变化确认 Blender 当前处于 Object 模式而不是 Edit 模式Edit 模式下部分操作不会生效。另外检查插件面板里的auto_start是否勾选没勾选的话每次都要手动 Start Server。API 调用报 401 或 403Key 填错了或过期了。回到 TaoToken 控制台的 API Keys 页面重新生成一个替换settings.json和config.toml里的值。注意 Key 前面有没有多余空格。如果你在排障过程中需要确认模型通道是否正常可以直接用模型对话页面发一条测试消息能正常返回就说明 Key 和 API 地址没问题问题在 MCP 链路。接入文档里有更细的 base_url 和 header 写法对照检查一遍通常能定位到问题。长期在 Cursor 里做编码和 Agent 类任务的话Coding Plan 会比按次调用更划算适合高频使用 Blender-MCP 生成模型的场景。配置过程中遇到链路问题优先查 API Keys 和接入文档两处大部分报错都能在那里找到对应说明。 营销建站 行业洞察 尧图原创 尧 尧图内容团队 10+ 年营销建站经验沉淀\n\n相关资讯\n\n延伸阅读 · 更多营销建站实战思考\n\n盘石网站建设从零搭建：告别模板丑陋，流量转化翻倍\n\n2026/10/13 8:21:06\n\n终于把OpenClaw接入微信了：openclaw.json 配置与安全验证全流程\n\n2026/10/24 13:31:09\n\nCodex 接入 Kimi 模型：Key、Endpoint、Provider、Model 四层配置一次讲清\n\n2026/10/23 18:56:11\n\n最新发布 LATEST\n\n【FreeRTOS学习笔记】（二）\n\n2026/10/24 11:57:42\n\nBuzz Mac 版安装教程：选对芯片架构，离线语音转文字 2 步装好\n\n2026/10/24 11:57:48\n\n3 步搭好你的二次元发卡店铺\n\n2026/10/25 10:02:44\n\n列表的操作 3\n\n2026/10/25 10:02:44\n\nAI编程工具格局大变：Copilot付费用户暴涨200%，但免费工具也在崛起——TaoToken统一Key接入Cline与CC Switch的配置骨架\n\n2026/10/25 10:02:44\n\nSemantica 知识图谱可视化实战指南：3 个场景把图数据变成交互式 HTML\n\n2026/10/25 10:02:44\n\n今日资讯 TODAY\n\n本周精选 WEEKLY\n\n本月精选\n\n本月最受关注的营销建站内容\n\n有想法？来聊聊您的项目\n\n看完文章，如果对您的项目有所启发，欢迎联系我们的建站顾问，获取免费的方案咨询与诊断建议。\n\n免费咨询 →",
+  "rawSources": [
+    {
+      "mode": "STATIC",
+      "hash": "064e06b5b0deb1b748c42db3001cef30e4ffad40995dce4f84e99513ff5ddeb2",
+      "path": "C:\\Users\\qianchen\\Documents\\waytoagi-1024-detective-a2-v4\\.cache\\source-documents-v4\\d369248d-0424-4ce6-8100-5af7be6a2f87\\7fdd6131d1d562da9853beb6959f2ceb60f0c23eb023957250204f2392347174\\raw.bin"
+    }
+  ],
+  "storage": {
+    "rawPath": "C:\\Users\\qianchen\\Documents\\waytoagi-1024-detective-a2-v4\\.cache\\source-documents-v4\\d369248d-0424-4ce6-8100-5af7be6a2f87\\7fdd6131d1d562da9853beb6959f2ceb60f0c23eb023957250204f2392347174\\raw.bin",
+    "textPath": "C:\\Users\\qianchen\\Documents\\waytoagi-1024-detective-a2-v4\\.cache\\source-documents-v4\\d369248d-0424-4ce6-8100-5af7be6a2f87\\7fdd6131d1d562da9853beb6959f2ceb60f0c23eb023957250204f2392347174\\source.txt",
+    "manifestPath": "C:\\Users\\qianchen\\Documents\\waytoagi-1024-detective-a2-v4\\.cache\\source-documents-v4\\d369248d-0424-4ce6-8100-5af7be6a2f87\\7fdd6131d1d562da9853beb6959f2ceb60f0c23eb023957250204f2392347174\\manifest.json"
+  },
+  "parser": {
+    "name": "readability+source-dom",
+    "version": "readability-0.6.0+jsdom-30.1.3+source-dom-2",
+    "normalization": "source-text/v1",
+    "mode": "STATIC"
+  },
+  "metadata": {
+    "title": "Cursor 配 TaoToken：Blender-MCP 生成 3D 模型配置与验证-北京尧图网络科技有限公司",
+    "author": "尧 尧图内容团队 10+ 年营销建站经验沉淀",
+    "publishedAt": null,
+    "language": "zh-CN"
+  },
+  "completeness": "COMPLETE",
+  "warnings": [],
+  "blocks": [
+    {
+      "start": 0,
+      "end": 668,
+      "id": "b0",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[0]",
+      "headingPath": [],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 670,
+      "end": 684,
+      "id": "b1",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[1]",
+      "headingPath": [],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 686,
+      "end": 696,
+      "id": "b2",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[2]",
+      "headingPath": [],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 698,
+      "end": 741,
+      "id": "b3",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[3]",
+      "headingPath": [
+        "Cursor 配 TaoToken：Blender-MCP 生成 3D 模型配置与验证"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 743,
+      "end": 802,
+      "id": "b4",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[4]",
+      "headingPath": [
+        "Cursor 配 TaoToken：Blender-MCP 生成 3D 模型配置与验证"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 804,
+      "end": 4709,
+      "id": "b5",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[5]",
+      "headingPath": [
+        "Cursor 配 TaoToken：Blender-MCP 生成 3D 模型配置与验证"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4711,
+      "end": 4715,
+      "id": "b6",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[6]",
+      "headingPath": [
+        "Cursor 配 TaoToken：Blender-MCP 生成 3D 模型配置与验证",
+        "相关资讯"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4717,
+      "end": 4734,
+      "id": "b7",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[7]",
+      "headingPath": [
+        "Cursor 配 TaoToken：Blender-MCP 生成 3D 模型配置与验证",
+        "相关资讯"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4736,
+      "end": 4760,
+      "id": "b8",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[8]",
+      "headingPath": [
+        "Cursor 配 TaoToken：Blender-MCP 生成 3D 模型配置与验证",
+        "相关资讯",
+        "盘石网站建设从零搭建：告别模板丑陋，流量转化翻倍"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4762,
+      "end": 4780,
+      "id": "b9",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[9]",
+      "headingPath": [
+        "Cursor 配 TaoToken：Blender-MCP 生成 3D 模型配置与验证",
+        "相关资讯",
+        "盘石网站建设从零搭建：告别模板丑陋，流量转化翻倍"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4782,
+      "end": 4823,
+      "id": "b10",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[10]",
+      "headingPath": [
+        "Cursor 配 TaoToken：Blender-MCP 生成 3D 模型配置与验证",
+        "相关资讯",
+        "盘石网站建设从零搭建：告别模板丑陋，流量转化翻倍",
+        "终于把OpenClaw接入微信了：openclaw.json 配置与安全验证全流程"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4825,
+      "end": 4844,
+      "id": "b11",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[11]",
+      "headingPath": [
+        "Cursor 配 TaoToken：Blender-MCP 生成 3D 模型配置与验证",
+        "相关资讯",
+        "盘石网站建设从零搭建：告别模板丑陋，流量转化翻倍",
+        "终于把OpenClaw接入微信了：openclaw.json 配置与安全验证全流程"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4846,
+      "end": 4899,
+      "id": "b12",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[12]",
+      "headingPath": [
+        "Cursor 配 TaoToken：Blender-MCP 生成 3D 模型配置与验证",
+        "相关资讯",
+        "盘石网站建设从零搭建：告别模板丑陋，流量转化翻倍",
+        "Codex 接入 Kimi 模型：Key、Endpoint、Provider、Model 四层配置一次讲清"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4901,
+      "end": 4920,
+      "id": "b13",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[13]",
+      "headingPath": [
+        "Cursor 配 TaoToken：Blender-MCP 生成 3D 模型配置与验证",
+        "相关资讯",
+        "盘石网站建设从零搭建：告别模板丑陋，流量转化翻倍",
+        "Codex 接入 Kimi 模型：Key、Endpoint、Provider、Model 四层配置一次讲清"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4922,
+      "end": 4933,
+      "id": "b14",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[14]",
+      "headingPath": [
+        "Cursor 配 TaoToken：Blender-MCP 生成 3D 模型配置与验证",
+        "相关资讯",
+        "最新发布 LATEST"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4935,
+      "end": 4952,
+      "id": "b15",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[15]",
+      "headingPath": [
+        "Cursor 配 TaoToken：Blender-MCP 生成 3D 模型配置与验证",
+        "相关资讯",
+        "最新发布 LATEST",
+        "【FreeRTOS学习笔记】（二）"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4954,
+      "end": 4973,
+      "id": "b16",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[16]",
+      "headingPath": [
+        "Cursor 配 TaoToken：Blender-MCP 生成 3D 模型配置与验证",
+        "相关资讯",
+        "最新发布 LATEST",
+        "【FreeRTOS学习笔记】（二）"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4975,
+      "end": 5010,
+      "id": "b17",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[17]",
+      "headingPath": [
+        "Cursor 配 TaoToken：Blender-MCP 生成 3D 模型配置与验证",
+        "相关资讯",
+        "最新发布 LATEST",
+        "Buzz Mac 版安装教程：选对芯片架构，离线语音转文字 2 步装好"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5012,
+      "end": 5031,
+      "id": "b18",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[18]",
+      "headingPath": [
+        "Cursor 配 TaoToken：Blender-MCP 生成 3D 模型配置与验证",
+        "相关资讯",
+        "最新发布 LATEST",
+        "Buzz Mac 版安装教程：选对芯片架构，离线语音转文字 2 步装好"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5033,
+      "end": 5047,
+      "id": "b19",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[19]",
+      "headingPath": [
+        "Cursor 配 TaoToken：Blender-MCP 生成 3D 模型配置与验证",
+        "相关资讯",
+        "最新发布 LATEST",
+        "3 步搭好你的二次元发卡店铺"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5049,
+      "end": 5068,
+      "id": "b20",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[20]",
+      "headingPath": [
+        "Cursor 配 TaoToken：Blender-MCP 生成 3D 模型配置与验证",
+        "相关资讯",
+        "最新发布 LATEST",
+        "3 步搭好你的二次元发卡店铺"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5070,
+      "end": 5077,
+      "id": "b21",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[21]",
+      "headingPath": [
+        "Cursor 配 TaoToken：Blender-MCP 生成 3D 模型配置与验证",
+        "相关资讯",
+        "最新发布 LATEST",
+        "列表的操作 3"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5079,
+      "end": 5098,
+      "id": "b22",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[22]",
+      "headingPath": [
+        "Cursor 配 TaoToken：Blender-MCP 生成 3D 模型配置与验证",
+        "相关资讯",
+        "最新发布 LATEST",
+        "列表的操作 3"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5100,
+      "end": 5175,
+      "id": "b23",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[23]",
+      "headingPath": [
+        "Cursor 配 TaoToken：Blender-MCP 生成 3D 模型配置与验证",
+        "相关资讯",
+        "最新发布 LATEST",
+        "AI编程工具格局大变：Copilot付费用户暴涨200%，但免费工具也在崛起——TaoToken统一Key接入Cline与CC Switch的配置骨架"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5177,
+      "end": 5196,
+      "id": "b24",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[24]",
+      "headingPath": [
+        "Cursor 配 TaoToken：Blender-MCP 生成 3D 模型配置与验证",
+        "相关资讯",
+        "最新发布 LATEST",
+        "AI编程工具格局大变：Copilot付费用户暴涨200%，但免费工具也在崛起——TaoToken统一Key接入Cline与CC Switch的配置骨架"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5198,
+      "end": 5239,
+      "id": "b25",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[25]",
+      "headingPath": [
+        "Cursor 配 TaoToken：Blender-MCP 生成 3D 模型配置与验证",
+        "相关资讯",
+        "最新发布 LATEST",
+        "Semantica 知识图谱可视化实战指南：3 个场景把图数据变成交互式 HTML"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5241,
+      "end": 5260,
+      "id": "b26",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[26]",
+      "headingPath": [
+        "Cursor 配 TaoToken：Blender-MCP 生成 3D 模型配置与验证",
+        "相关资讯",
+        "最新发布 LATEST",
+        "Semantica 知识图谱可视化实战指南：3 个场景把图数据变成交互式 HTML"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5262,
+      "end": 5272,
+      "id": "b27",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[27]",
+      "headingPath": [
+        "Cursor 配 TaoToken：Blender-MCP 生成 3D 模型配置与验证",
+        "相关资讯",
+        "今日资讯 TODAY"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5274,
+      "end": 5285,
+      "id": "b28",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[28]",
+      "headingPath": [
+        "Cursor 配 TaoToken：Blender-MCP 生成 3D 模型配置与验证",
+        "相关资讯",
+        "本周精选 WEEKLY"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5287,
+      "end": 5291,
+      "id": "b29",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[29]",
+      "headingPath": [
+        "Cursor 配 TaoToken：Blender-MCP 生成 3D 模型配置与验证",
+        "本月精选"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5293,
+      "end": 5306,
+      "id": "b30",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[30]",
+      "headingPath": [
+        "Cursor 配 TaoToken：Blender-MCP 生成 3D 模型配置与验证",
+        "本月精选"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5308,
+      "end": 5319,
+      "id": "b31",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[31]",
+      "headingPath": [
+        "Cursor 配 TaoToken：Blender-MCP 生成 3D 模型配置与验证",
+        "有想法？来聊聊您的项目"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5321,
+      "end": 5365,
+      "id": "b32",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[32]",
+      "headingPath": [
+        "Cursor 配 TaoToken：Blender-MCP 生成 3D 模型配置与验证",
+        "有想法？来聊聊您的项目"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5367,
+      "end": 5373,
+      "id": "b33",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[33]",
+      "headingPath": [
+        "Cursor 配 TaoToken：Blender-MCP 生成 3D 模型配置与验证",
+        "有想法？来聊聊您的项目"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    }
+  ],
+  "links": [
+    {
+      "url": "http://www.lpqz.cn/index.html",
+      "text": "首页",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[110]"
+    },
+    {
+      "url": "http://www.lpqz.cn/services.html",
+      "text": "核心服务+",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[111]"
+    },
+    {
+      "url": "http://www.lpqz.cn/huoke.html",
+      "text": "获客网站定制",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[112]"
+    },
+    {
+      "url": "http://www.lpqz.cn/zhuanhua.html",
+      "text": "转化型网站搭建",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[113]"
+    },
+    {
+      "url": "http://www.lpqz.cn/landing-page.html",
+      "text": "营销落地页设计",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[114]"
+    },
+    {
+      "url": "http://www.lpqz.cn/private-domain.html",
+      "text": "私域流量网站",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[115]"
+    },
+    {
+      "url": "http://www.lpqz.cn/cro.html",
+      "text": "转化率优化CRO",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[116]"
+    },
+    {
+      "url": "http://www.lpqz.cn/keyword-seo.html",
+      "text": "关键词SEO优化",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[117]"
+    },
+    {
+      "url": "http://www.lpqz.cn/acquisition-audit.html",
+      "text": "网站获客诊断",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[118]"
+    },
+    {
+      "url": "http://www.lpqz.cn/competitor-teardown.html",
+      "text": "竞品网站拆解",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[119]"
+    },
+    {
+      "url": "http://www.lpqz.cn/analytics-report.html",
+      "text": "数据分析报告",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[120]"
+    },
+    {
+      "url": "http://www.lpqz.cn/digital-marketing.html",
+      "text": "数字营销全案",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[121]"
+    },
+    {
+      "url": "http://www.lpqz.cn/ad-planning.html",
+      "text": "广告投放策划",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[122]"
+    },
+    {
+      "url": "http://www.lpqz.cn/private-domain-op.html",
+      "text": "私域运营陪跑",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[123]"
+    },
+    {
+      "url": "http://www.lpqz.cn/brand-website.html",
+      "text": "品牌官网定制",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[124]"
+    },
+    {
+      "url": "http://www.lpqz.cn/rebrand.html",
+      "text": "品牌官网改版",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[125]"
+    },
+    {
+      "url": "http://www.lpqz.cn/mall-website.html",
+      "text": "商城型网站",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[126]"
+    },
+    {
+      "url": "http://www.lpqz.cn/group-website.html",
+      "text": "集团企业官网",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[127]"
+    },
+    {
+      "url": "http://www.lpqz.cn/portal-website.html",
+      "text": "行业门户网站",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[128]"
+    },
+    {
+      "url": "http://www.lpqz.cn/foreign-website.html",
+      "text": "外贸独立站",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[129]"
+    },
+    {
+      "url": "http://www.lpqz.cn/cms-website.html",
+      "text": "企业CMS建站",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[130]"
+    },
+    {
+      "url": "http://www.lpqz.cn/multi-site.html",
+      "text": "多语言网站建设",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[131]"
+    },
+    {
+      "url": "http://www.lpqz.cn/seo.html",
+      "text": "SEO搜索引擎优化",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[132]"
+    },
+    {
+      "url": "http://www.lpqz.cn/sem.html",
+      "text": "SEM竞价托管",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[133]"
+    },
+    {
+      "url": "http://www.lpqz.cn/content-writing.html",
+      "text": "营销文案撰写",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[134]"
+    },
+    {
+      "url": "http://www.lpqz.cn/content-marketing.html",
+      "text": "内容营销策划",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[135]"
+    },
+    {
+      "url": "http://www.lpqz.cn/marketing-calendar.html",
+      "text": "营销日历策划",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[136]"
+    },
+    {
+      "url": "http://www.lpqz.cn/operation-service.html",
+      "text": "网站代运营",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[137]"
+    },
+    {
+      "url": "http://www.lpqz.cn/baidu-b2b.html",
+      "text": "百度爱采购推广",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[138]"
+    },
+    {
+      "url": "http://www.lpqz.cn/brand-positioning.html",
+      "text": "品牌定位策划",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[139]"
+    },
+    {
+      "url": "http://www.lpqz.cn/brand-video.html",
+      "text": "企业宣传片",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[140]"
+    },
+    {
+      "url": "http://www.lpqz.cn/promo-page.html",
+      "text": "电商大促页面",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[141]"
+    },
+    {
+      "url": "http://www.lpqz.cn/motion-design.html",
+      "text": "动效与交互动画",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[142]"
+    },
+    {
+      "url": "http://www.lpqz.cn/prototype-design.html",
+      "text": "产品原型设计",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[143]"
+    },
+    {
+      "url": "http://www.lpqz.cn/ux-design.html",
+      "text": "UX体验设计",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[144]"
+    },
+    {
+      "url": "http://www.lpqz.cn/service-technology.html",
+      "text": "企业技术官网",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[145]"
+    },
+    {
+      "url": "http://www.lpqz.cn/fanghu.html",
+      "text": "高稳定防护开发",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[146]"
+    },
+    {
+      "url": "http://www.lpqz.cn/website-speed.html",
+      "text": "性能加速优化",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[147]"
+    },
+    {
+      "url": "http://www.lpqz.cn/ssl.html",
+      "text": "SSL证书部署",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[148]"
+    },
+    {
+      "url": "http://www.lpqz.cn/hosting.html",
+      "text": "服务器托管",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[149]"
+    },
+    {
+      "url": "http://www.lpqz.cn/domain.html",
+      "text": "域名注册备案",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[150]"
+    },
+    {
+      "url": "http://www.lpqz.cn/backup.html",
+      "text": "数据备份",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[151]"
+    },
+    {
+      "url": "http://www.lpqz.cn/website-monitoring.html",
+      "text": "运维监控",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[152]"
+    },
+    {
+      "url": "http://www.lpqz.cn/security-hardening.html",
+      "text": "网站安全加固",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[153]"
+    },
+    {
+      "url": "http://www.lpqz.cn/solutions.html",
+      "text": "行业方案+",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[154]"
+    },
+    {
+      "url": "http://www.lpqz.cn/hangye.html",
+      "text": "制造业官网方案",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[155]"
+    },
+    {
+      "url": "http://www.lpqz.cn/manufacturing-website.html",
+      "text": "制造业解决方案",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[161]"
+    },
+    {
+      "url": "http://www.lpqz.cn/medical-website.html",
+      "text": "医疗健康官网",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[162]"
+    },
+    {
+      "url": "http://www.lpqz.cn/education-website.html",
+      "text": "教育培训网站",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[163]"
+    },
+    {
+      "url": "http://www.lpqz.cn/legal-website.html",
+      "text": "律师事务所网站",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[164]"
+    },
+    {
+      "url": "http://www.lpqz.cn/realestate-website.html",
+      "text": "房产家居网站",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[165]"
+    },
+    {
+      "url": "http://www.lpqz.cn/catering-website.html",
+      "text": "餐饮连锁官网",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[166]"
+    },
+    {
+      "url": "http://www.lpqz.cn/logistics-website.html",
+      "text": "物流运输网站",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[167]"
+    },
+    {
+      "url": "http://www.lpqz.cn/crossborder-website.html",
+      "text": "跨境电商独立站",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[168]"
+    },
+    {
+      "url": "http://www.lpqz.cn/beauty-website.html",
+      "text": "美妆个护官网",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[169]"
+    },
+    {
+      "url": "http://www.lpqz.cn/travel-website.html",
+      "text": "旅游文旅网站",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[170]"
+    },
+    {
+      "url": "http://www.lpqz.cn/auto-website.html",
+      "text": "汽车后市场网站",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[171]"
+    },
+    {
+      "url": "http://www.lpqz.cn/b2b-website.html",
+      "text": "B2B企业服务官网",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[172]"
+    },
+    {
+      "url": "http://www.lpqz.cn/fintech-website.html",
+      "text": "金融科技官网",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[173]"
+    },
+    {
+      "url": "http://www.lpqz.cn/agri-website.html",
+      "text": "农业食品网站",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[174]"
+    },
+    {
+      "url": "http://www.lpqz.cn/culture-website.html",
+      "text": "文化创意网站",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[175]"
+    },
+    {
+      "url": "http://www.lpqz.cn/miniapp.html",
+      "text": "小程序开发",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[176]"
+    },
+    {
+      "url": "http://www.lpqz.cn/data-screen.html",
+      "text": "数据可视化大屏",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[177]"
+    },
+    {
+      "url": "http://www.lpqz.cn/ai-chatbot.html",
+      "text": "AI智能客服",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[178]"
+    },
+    {
+      "url": "http://www.lpqz.cn/video-website.html",
+      "text": "视频营销网站",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[179]"
+    },
+    {
+      "url": "http://www.lpqz.cn/member-system.html",
+      "text": "会员系统建设",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[180]"
+    },
+    {
+      "url": "http://www.lpqz.cn/booking-system.html",
+      "text": "预约挂号系统",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[181]"
+    },
+    {
+      "url": "http://www.lpqz.cn/recruitment-website.html",
+      "text": "招聘官网建设",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[182]"
+    },
+    {
+      "url": "http://www.lpqz.cn/enterprise-email.html",
+      "text": "企业邮箱建设",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[183]"
+    },
+    {
+      "url": "http://www.lpqz.cn/cases.html",
+      "text": "案例展示+",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[184]"
+    },
+    {
+      "url": "http://www.lpqz.cn/case_detail1.html",
+      "text": "制造业获客案例",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[185]"
+    },
+    {
+      "url": "http://www.lpqz.cn/case_detail2.html",
+      "text": "科技企业官网案例",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[186]"
+    },
+    {
+      "url": "http://www.lpqz.cn/case_detail3.html",
+      "text": "零售电商转化案例",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[187]"
+    },
+    {
+      "url": "http://www.lpqz.cn/case-stories.html",
+      "text": "客户成功故事集",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[188]"
+    },
+    {
+      "url": "http://www.lpqz.cn/pingjia.html",
+      "text": "客户评价",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[189]"
+    },
+    {
+      "url": "http://www.lpqz.cn/hezuo.html",
+      "text": "合作伙伴",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[190]"
+    },
+    {
+      "url": "http://www.lpqz.cn/news.html",
+      "text": "资讯中心+",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[191]"
+    },
+    {
+      "url": "http://www.lpqz.cn/news_detail1.html",
+      "text": "行业动态",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[193]"
+    },
+    {
+      "url": "http://www.lpqz.cn/news_detail2.html",
+      "text": "营销干货",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[194]"
+    },
+    {
+      "url": "http://www.lpqz.cn/design-guide.html",
+      "text": "营销型网站设计指南",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[195]"
+    },
+    {
+      "url": "http://www.lpqz.cn/seo-whitepaper.html",
+      "text": "企业官网SEO白皮书",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[196]"
+    },
+    {
+      "url": "http://www.lpqz.cn/conversion-checklist.html",
+      "text": "转化率提升清单",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[197]"
+    },
+    {
+      "url": "http://www.lpqz.cn/pitfalls-guide.html",
+      "text": "企业建站避坑指南",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[198]"
+    },
+    {
+      "url": "http://www.lpqz.cn/trends-2026.html",
+      "text": "2026建站趋势解读",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[199]"
+    },
+    {
+      "url": "http://www.lpqz.cn/foreign-trade-guide.html",
+      "text": "外贸获客指南",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[200]"
+    },
+    {
+      "url": "http://www.lpqz.cn/content-guide.html",
+      "text": "内容运营指南",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[201]"
+    },
+    {
+      "url": "http://www.lpqz.cn/speed-guide.html",
+      "text": "网站加速指南",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[202]"
+    },
+    {
+      "url": "http://www.lpqz.cn/icp-guide.html",
+      "text": "ICP备案指南",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[203]"
+    },
+    {
+      "url": "http://www.lpqz.cn/domain-guide.html",
+      "text": "域名注册指南",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[204]"
+    },
+    {
+      "url": "http://www.lpqz.cn/server-guide.html",
+      "text": "服务器选购指南",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[205]"
+    },
+    {
+      "url": "http://www.lpqz.cn/security-guide.html",
+      "text": "网站安全指南",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[206]"
+    },
+    {
+      "url": "http://www.lpqz.cn/payment-guide.html",
+      "text": "在线支付指南",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[207]"
+    },
+    {
+      "url": "http://www.lpqz.cn/about.html",
+      "text": "关于我们+",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[208]"
+    },
+    {
+      "url": "http://www.lpqz.cn/team.html",
+      "text": "核心团队",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[210]"
+    },
+    {
+      "url": "http://www.lpqz.cn/tuandui.html",
+      "text": "团队文化",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[211]"
+    },
+    {
+      "url": "http://www.lpqz.cn/liucheng.html",
+      "text": "网站建设流程",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[212]"
+    },
+    {
+      "url": "http://www.lpqz.cn/baogao.html",
+      "text": "网站诊断报告",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[213]"
+    },
+    {
+      "url": "http://www.lpqz.cn/faq.html",
+      "text": "常见问题FAQ",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[214]"
+    },
+    {
+      "url": "http://www.lpqz.cn/price-custom.html",
+      "text": "定制网站报价",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[215]"
+    },
+    {
+      "url": "http://www.lpqz.cn/free-audit.html",
+      "text": "免费诊断申请",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[216]"
+    },
+    {
+      "url": "http://www.lpqz.cn/contact.html",
+      "text": "联系我们",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[217]"
+    },
+    {
+      "url": "http://www.lpqz.cn/index.html",
+      "text": "首页",
+      "blockId": "b1",
+      "relation": "LINK",
+      "locator": "source DOM link[219]"
+    },
+    {
+      "url": "http://www.lpqz.cn/news.html",
+      "text": "资讯中心",
+      "blockId": "b1",
+      "relation": "LINK",
+      "locator": "source DOM link[220]"
+    },
+    {
+      "url": "http://www.lpqz.cn/news/187559",
+      "text": "盘石网站建设从零搭建：告别模板丑陋，流量转化翻倍",
+      "blockId": "b8",
+      "relation": "LINK",
+      "locator": "source DOM link[221]"
+    },
+    {
+      "url": "http://www.lpqz.cn/news/187558",
+      "text": "终于把OpenClaw接入微信了：openclaw.json 配置与安全验证全流程",
+      "blockId": "b10",
+      "relation": "LINK",
+      "locator": "source DOM link[222]"
+    },
+    {
+      "url": "http://www.lpqz.cn/news/187557",
+      "text": "Codex 接入 Kimi 模型：Key、Endpoint、Provider、Model 四层配置一次讲清",
+      "blockId": "b12",
+      "relation": "LINK",
+      "locator": "source DOM link[223]"
+    },
+    {
+      "url": "http://www.lpqz.cn/news/218156",
+      "text": "【FreeRTOS学习笔记】（二）",
+      "blockId": "b15",
+      "relation": "LINK",
+      "locator": "source DOM link[224]"
+    },
+    {
+      "url": "http://www.lpqz.cn/news/216527",
+      "text": "Buzz Mac 版安装教程：选对芯片架构，离线语音转文字 2 步装好",
+      "blockId": "b17",
+      "relation": "LINK",
+      "locator": "source DOM link[225]"
+    },
+    {
+      "url": "http://www.lpqz.cn/news/216516",
+      "text": "3 步搭好你的二次元发卡店铺",
+      "blockId": "b19",
+      "relation": "LINK",
+      "locator": "source DOM link[226]"
+    },
+    {
+      "url": "http://www.lpqz.cn/news/216454",
+      "text": "列表的操作 3",
+      "blockId": "b21",
+      "relation": "LINK",
+      "locator": "source DOM link[227]"
+    },
+    {
+      "url": "http://www.lpqz.cn/news/216419",
+      "text": "AI编程工具格局大变：Copilot付费用户暴涨200%，但免费工具也在崛起——TaoToken统一Key接入Cline与CC Switch的配置骨架",
+      "blockId": "b23",
+      "relation": "LINK",
+      "locator": "source DOM link[228]"
+    },
+    {
+      "url": "http://www.lpqz.cn/news/216418",
+      "text": "Semantica 知识图谱可视化实战指南：3 个场景把图数据变成交互式 HTML",
+      "blockId": "b25",
+      "relation": "LINK",
+      "locator": "source DOM link[229]"
+    },
+    {
+      "url": "http://www.lpqz.cn/contact.html",
+      "text": "免费咨询 →",
+      "blockId": "b33",
+      "relation": "LINK",
+      "locator": "source DOM link[230]"
+    }
+  ],
+  "tables": []
+}

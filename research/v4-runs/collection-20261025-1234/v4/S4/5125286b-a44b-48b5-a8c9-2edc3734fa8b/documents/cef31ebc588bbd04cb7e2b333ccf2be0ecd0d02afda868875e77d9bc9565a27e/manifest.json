@@ -1,0 +1,2052 @@
+{
+  "schemaVersion": "source-document/v1",
+  "id": "cef31ebc588bbd04cb7e2b333ccf2be0ecd0d02afda868875e77d9bc9565a27e",
+  "version": "a2678d51b3d4f08559f7de2e8a693418b47e1262d7aa8b24a280932615c33a05",
+  "requestedUrl": "https://devblogs.microsoft.com/commandline/terminal-chat-now-included-in-github-copilot-free/",
+  "finalUrl": "https://devblogs.microsoft.com/commandline/terminal-chat-now-included-in-github-copilot-free/",
+  "retrievedAt": "2026-10-25T04:37:21.722Z",
+  "contentType": "text/html; charset=UTF-8",
+  "status": "READ",
+  "readError": null,
+  "rawHash": "a1cb45fbac9248c84b0354dad17beed3837a8fb63fa641385cd26c56982c1688",
+  "textHash": "6b8028917879de2ed85bd1ede3c2e6f148371af0a22958988194feed0ec70e0e",
+  "text": "Skip to main content Dev Blogs AI All .NET posts .NET MAUI ASP.NET Core Blazor Entity Framework C++ C# F# TypeScript NuGet Servicing .NET Blog in Chinese Microsoft for Developers Agent Framework Develop from the cloud Xcode ISE Developer TypeScript PowerShell Python Java Java Blog in Chinese Go Microsoft Edge Dev Microsoft 365 Developer Microsoft Entra Identity Developer Microsoft Entra PowerShell Visual Studio Visual Studio Code Aspire All things Azure Azure SDK Azure VM Runtime Team Microsoft Azure Azure Cosmos DB Azure DocumentDB Azure Data Studio Azure SQL DevOps DirectX Microsoft Foundry Power Platform OData Unified Data Model (IDEAs) Windows Command Line #ifdef Windows Inside MSIX MIDI and music React Native The Old New Thing Foundry on Windows Windows Developer\n\nFebruary 26th, 2025 0 reactions\n\nTerminal Chat now included in GitHub Copilot Free\n\nChristopher Nguyen Product Manager II, Windows Terminal\n\nWindows Terminal Canary users can now use Terminal Chat with the GitHub Copilot Free plan! 🚀\n\nGitHub Copilot Free is limited to 50 chat messages per month. This includes the usage of Copilot in the CLI, VS Code, and Visual Studio. If you reach your quota, you can upgrade on the web.\n\nYou can sign up for GitHub Copilot Free through the Copilot setting in your GitHub account. No subscription needed! 😀\n\nWhat is GitHub Copilot?\n\nGitHub Copilot is an AI coding assistant that helps you write code faster and with less effort, allowing you to focus more energy on problem solving and collaboration.\n\nGitHub Copilot has been proven to increase developer productivity and accelerate the pace of software development. For more information, see “Research: quantifying GitHub Copilot’s impact on developer productivity and happiness” in the GitHub blog.\n\nWhat is GitHub Copilot Free?\n\nGitHub Copilot Free provides limited access to select features of Copilot, allowing you to experience AI-powered coding assistance without a subscription. For more information on the features and limitations, see “About GitHub Copilot Free.”\n\nWhat is Terminal Chat?\n\nTerminal Chat is a feature in Windows Terminal Canary that allows the user to chat with an AI service (like GitHub Copilot 😉) to get intelligent suggestions in their terminal.\n\nThis feature does not ship with its own large-language model and can also be managed by Group Policy. See “Group Policy for Windows Terminal” for more information.\n\nUse GitHub Copilot Free in Terminal Chat\n\nConnecting GitHub Copilot in Terminal Chat allows you to get command suggestions and explanations without leaving the terminal. This is available for all GitHub Copilot customers using Windows Terminal Canary.\n\nGitHub Copilot Free is limited to 50 chat messages per month. This includes the usage of Copilot in the CLI, VS Code, and Visual Studio. If you reach your quota, you can upgrade on the web.\n\nPrerequisites\n\nAccess to GitHub Copilot. If you don’t already have access to GitHub Copilot, you can sign up for GitHub Copilot Free without a subscription\n\nWindows Terminal Canary. You can download the latest build of Windows Terminal Canary from the Windows Terminal GitHub repository\n\nSetup\n\nOpen the dropdown menu and select Settings\n\nGo to the Terminal Chat (Experimental) setting\n\nUnder Service Providers, select GitHub Copilot and Authenticate via GitHub to sign in to your GitHub account\n\nAfter successfully authenticating, ensure that Set as active provider is checked and click Save\n\nAfter this, you will be able to use GitHub Copilot in Terminal Chat!\n\nIn the GIF above, you will see an end-to-end demo of the authorization flow and how to use Terminal Chat.\n\nClicking on Terminal Chat’s suggestion will copy it to the input line of your terminal. Terminal Chat will not run the suggestion automatically– This way, you will have time to reason over the command before executing it 🙂\n\nFor those that haven’t used Terminal Chat in a while, you’ll also notice that chat content can now be copied to the clipboard. We also changed the way we render commands in the chat (with horizontal scrolling too!)\n\nIf you used Terminal Chat with another GitHub Copilot plan in the past and have issues authenticating with your new GitHub Copilot Free plan, we recommend you selecting Clear stored auth tokens in the Terminal Chat (Experimental) setting and restarting Windows Terminal Canary.\n\nTerminal Chat only communicates to GitHub Copilot when the user sends a message. The chat history and name of the user’s active shell is also appended to the message sent to GitHub Copilot. For more information on how to use GitHub Copilot responsibly with Windows Terminal, see “Responsible use of GitHub Copilot in Windows Terminal“.\n\nLet’s Build Together\n\nFor now, Terminal Chat is only available in Windows Terminal Canary. We are committed to transparency and listening to user feedback. We strongly believe that the inclusion of the open-source community will help us define the roadmap for our core product, Windows Terminal.\n\nIf you are interested in the AI experiences that we are building, then check out the feature/llm branch of the Windows Terminal repository or download the latest build of Windows Terminal Canary.\n\nIf you have a feature request or found a bug, then please submit a new Issue on our GitHub repository. Send us feedback! Help us grow! And let’s build together!\n\nIf you need to set Group Policies for Terminal Chat, see our Group Policy documentation.\n\nLastly, if you want to explore the other features you get with GitHub Copilot (which includes GitHub Copilot in Visual Studio Code and Visual Studio) then check out the GitHub Copilot website!\n\nThank you!\n\nCategory\n\nCommand Line\n\nOpen-Source\n\nWindows\n\nWindows Terminal\n\nShare\n\nAuthor\n\nChristopher NguyenProduct Manager II, Windows Terminal\n\n1 comment\n\nDiscussion is closed. Login to edit/delete existing comments.\n\nSort by : Newest Newest Popular Oldest\n\nShubham Sahay April 22, 2025 0 Copy link to comment by Shubham Sahay Collapse comment by Shubham Sahay Great update! I’m particularly curious about the distinction between using GitHub Copilot in Windows Terminal versus Using GitHub Copilot in the command line. Could you outline the key differences? Understanding when to use each would be really helpful for optimizing workflow efficiency.\n\nRead next\n\nMay 6, 2025\n\nFedora Linux is now an official WSL distro\n\nJeremy Cline\n\nMay 19, 2025\n\nEdit is now open source\n\nChristopher Nguyen\n\nStay informed\n\nGet notified when new posts are published.\n\nFollow this blog\n\nSign in\n\nTheme\n\nSurface Laptop Ultra Surface Pro Surface Laptop Surface RTX Spark Dev Box Explore Copilot Explore Microsoft products Windows 11 apps Account profile Download Center Microsoft Store support Returns Order tracking Certified Refurbished Why buy from Microsoft Store Flexible Payments Microsoft in education Devices for education Microsoft Teams for Education Microsoft 365 Education How to buy for your school Educator training and development Deals for students and parents AI for education Microsoft AI Microsoft Security Dynamics 365 Microsoft 365 Microsoft Power Platform Microsoft Teams Microsoft Copilot Small Business Azure Microsoft Developer Microsoft Learn Support for AI marketplace apps Microsoft Tech Community Microsoft Marketplace Software companies Visual Studio Careers About Microsoft Company news Privacy at Microsoft Investors Diversity and inclusion Accessibility Sustainability Your Privacy Choices Consumer Health Privacy Sitemap Contact Microsoft Privacy Manage cookies Terms of use Trademarks Safety & eco Recycling About our ads",
+  "rawSources": [
+    {
+      "mode": "STATIC",
+      "hash": "a1cb45fbac9248c84b0354dad17beed3837a8fb63fa641385cd26c56982c1688",
+      "path": "C:\\Users\\qianchen\\Documents\\waytoagi-1024-detective-a2-v4\\.cache\\source-documents-v4\\5125286b-a44b-48b5-a8c9-2edc3734fa8b\\cef31ebc588bbd04cb7e2b333ccf2be0ecd0d02afda868875e77d9bc9565a27e\\raw.bin"
+    }
+  ],
+  "storage": {
+    "rawPath": "C:\\Users\\qianchen\\Documents\\waytoagi-1024-detective-a2-v4\\.cache\\source-documents-v4\\5125286b-a44b-48b5-a8c9-2edc3734fa8b\\cef31ebc588bbd04cb7e2b333ccf2be0ecd0d02afda868875e77d9bc9565a27e\\raw.bin",
+    "textPath": "C:\\Users\\qianchen\\Documents\\waytoagi-1024-detective-a2-v4\\.cache\\source-documents-v4\\5125286b-a44b-48b5-a8c9-2edc3734fa8b\\cef31ebc588bbd04cb7e2b333ccf2be0ecd0d02afda868875e77d9bc9565a27e\\source.txt",
+    "manifestPath": "C:\\Users\\qianchen\\Documents\\waytoagi-1024-detective-a2-v4\\.cache\\source-documents-v4\\5125286b-a44b-48b5-a8c9-2edc3734fa8b\\cef31ebc588bbd04cb7e2b333ccf2be0ecd0d02afda868875e77d9bc9565a27e\\manifest.json"
+  },
+  "parser": {
+    "name": "readability+source-dom",
+    "version": "readability-0.6.0+jsdom-30.1.3+source-dom-2",
+    "normalization": "source-text/v1",
+    "mode": "STATIC"
+  },
+  "metadata": {
+    "title": "Terminal Chat now included in GitHub Copilot Free - Windows Command Line",
+    "author": "Christopher Nguyen",
+    "publishedAt": "2025-02-26T17:32:27.000Z",
+    "language": "en-US"
+  },
+  "completeness": "COMPLETE",
+  "warnings": [],
+  "blocks": [
+    {
+      "start": 0,
+      "end": 778,
+      "id": "b0",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[0]",
+      "headingPath": [],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 780,
+      "end": 811,
+      "id": "b1",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[1]",
+      "headingPath": [],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 813,
+      "end": 862,
+      "id": "b2",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[2]",
+      "headingPath": [
+        "Terminal Chat now included in GitHub Copilot Free"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 864,
+      "end": 919,
+      "id": "b3",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[3]",
+      "headingPath": [
+        "Terminal Chat now included in GitHub Copilot Free"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 921,
+      "end": 1014,
+      "id": "b4",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[4]",
+      "headingPath": [
+        "Terminal Chat now included in GitHub Copilot Free"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1016,
+      "end": 1205,
+      "id": "b5",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[5]",
+      "headingPath": [
+        "Terminal Chat now included in GitHub Copilot Free"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1207,
+      "end": 1325,
+      "id": "b6",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[6]",
+      "headingPath": [
+        "Terminal Chat now included in GitHub Copilot Free"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1327,
+      "end": 1350,
+      "id": "b7",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[7]",
+      "headingPath": [
+        "What is GitHub Copilot?"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1352,
+      "end": 1519,
+      "id": "b8",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[8]",
+      "headingPath": [
+        "What is GitHub Copilot?"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1521,
+      "end": 1769,
+      "id": "b9",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[9]",
+      "headingPath": [
+        "What is GitHub Copilot?"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1771,
+      "end": 1799,
+      "id": "b10",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[10]",
+      "headingPath": [
+        "What is GitHub Copilot?",
+        "What is GitHub Copilot Free?"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1801,
+      "end": 2042,
+      "id": "b11",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[11]",
+      "headingPath": [
+        "What is GitHub Copilot?",
+        "What is GitHub Copilot Free?"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2044,
+      "end": 2066,
+      "id": "b12",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[12]",
+      "headingPath": [
+        "What is Terminal Chat?"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2068,
+      "end": 2244,
+      "id": "b13",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[13]",
+      "headingPath": [
+        "What is Terminal Chat?"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2246,
+      "end": 2409,
+      "id": "b14",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[14]",
+      "headingPath": [
+        "What is Terminal Chat?"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2411,
+      "end": 2451,
+      "id": "b15",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[15]",
+      "headingPath": [
+        "What is Terminal Chat?",
+        "Use GitHub Copilot Free in Terminal Chat"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2453,
+      "end": 2662,
+      "id": "b16",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[16]",
+      "headingPath": [
+        "What is Terminal Chat?",
+        "Use GitHub Copilot Free in Terminal Chat"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2664,
+      "end": 2853,
+      "id": "b17",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[17]",
+      "headingPath": [
+        "What is Terminal Chat?",
+        "Use GitHub Copilot Free in Terminal Chat"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2855,
+      "end": 2868,
+      "id": "b18",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[18]",
+      "headingPath": [
+        "What is Terminal Chat?",
+        "Use GitHub Copilot Free in Terminal Chat",
+        "Prerequisites"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2870,
+      "end": 3010,
+      "id": "b19",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[19]",
+      "headingPath": [
+        "What is Terminal Chat?",
+        "Use GitHub Copilot Free in Terminal Chat",
+        "Prerequisites"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3012,
+      "end": 3141,
+      "id": "b20",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[20]",
+      "headingPath": [
+        "What is Terminal Chat?",
+        "Use GitHub Copilot Free in Terminal Chat",
+        "Prerequisites"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3143,
+      "end": 3148,
+      "id": "b21",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[21]",
+      "headingPath": [
+        "What is Terminal Chat?",
+        "Use GitHub Copilot Free in Terminal Chat",
+        "Setup"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3150,
+      "end": 3192,
+      "id": "b22",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[22]",
+      "headingPath": [
+        "What is Terminal Chat?",
+        "Use GitHub Copilot Free in Terminal Chat",
+        "Setup"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3194,
+      "end": 3240,
+      "id": "b23",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[23]",
+      "headingPath": [
+        "What is Terminal Chat?",
+        "Use GitHub Copilot Free in Terminal Chat",
+        "Setup"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3242,
+      "end": 3350,
+      "id": "b24",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[24]",
+      "headingPath": [
+        "What is Terminal Chat?",
+        "Use GitHub Copilot Free in Terminal Chat",
+        "Setup"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3352,
+      "end": 3447,
+      "id": "b25",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[25]",
+      "headingPath": [
+        "What is Terminal Chat?",
+        "Use GitHub Copilot Free in Terminal Chat",
+        "Setup"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3449,
+      "end": 3517,
+      "id": "b26",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[26]",
+      "headingPath": [
+        "What is Terminal Chat?",
+        "Use GitHub Copilot Free in Terminal Chat",
+        "Setup"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3519,
+      "end": 3624,
+      "id": "b27",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[27]",
+      "headingPath": [
+        "What is Terminal Chat?",
+        "Use GitHub Copilot Free in Terminal Chat",
+        "Setup"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3626,
+      "end": 3849,
+      "id": "b28",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[28]",
+      "headingPath": [
+        "What is Terminal Chat?",
+        "Use GitHub Copilot Free in Terminal Chat",
+        "Setup"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3851,
+      "end": 4065,
+      "id": "b29",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[29]",
+      "headingPath": [
+        "What is Terminal Chat?",
+        "Use GitHub Copilot Free in Terminal Chat",
+        "Setup"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4067,
+      "end": 4344,
+      "id": "b30",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[30]",
+      "headingPath": [
+        "What is Terminal Chat?",
+        "Use GitHub Copilot Free in Terminal Chat",
+        "Setup"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4346,
+      "end": 4681,
+      "id": "b31",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[31]",
+      "headingPath": [
+        "What is Terminal Chat?",
+        "Use GitHub Copilot Free in Terminal Chat",
+        "Setup"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4683,
+      "end": 4703,
+      "id": "b32",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[32]",
+      "headingPath": [
+        "Let’s Build Together"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4705,
+      "end": 4978,
+      "id": "b33",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[33]",
+      "headingPath": [
+        "Let’s Build Together"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4980,
+      "end": 5175,
+      "id": "b34",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[34]",
+      "headingPath": [
+        "Let’s Build Together"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5177,
+      "end": 5337,
+      "id": "b35",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[35]",
+      "headingPath": [
+        "Let’s Build Together"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5339,
+      "end": 5427,
+      "id": "b36",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[36]",
+      "headingPath": [
+        "Let’s Build Together"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5429,
+      "end": 5621,
+      "id": "b37",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[37]",
+      "headingPath": [
+        "Let’s Build Together"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5623,
+      "end": 5633,
+      "id": "b38",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[38]",
+      "headingPath": [
+        "Let’s Build Together"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5635,
+      "end": 5643,
+      "id": "b39",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[39]",
+      "headingPath": [
+        "Let’s Build Together",
+        "Category"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5645,
+      "end": 5657,
+      "id": "b40",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[40]",
+      "headingPath": [
+        "Let’s Build Together",
+        "Category"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5659,
+      "end": 5670,
+      "id": "b41",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[41]",
+      "headingPath": [
+        "Let’s Build Together",
+        "Category"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5672,
+      "end": 5679,
+      "id": "b42",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[42]",
+      "headingPath": [
+        "Let’s Build Together",
+        "Category"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5681,
+      "end": 5697,
+      "id": "b43",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[43]",
+      "headingPath": [
+        "Let’s Build Together",
+        "Category"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5699,
+      "end": 5704,
+      "id": "b44",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[44]",
+      "headingPath": [
+        "Let’s Build Together",
+        "Category",
+        "Share"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5706,
+      "end": 5712,
+      "id": "b45",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[45]",
+      "headingPath": [
+        "Let’s Build Together",
+        "Author"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5714,
+      "end": 5768,
+      "id": "b46",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[46]",
+      "headingPath": [
+        "Let’s Build Together",
+        "Author"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5770,
+      "end": 5779,
+      "id": "b47",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[47]",
+      "headingPath": [
+        "Let’s Build Together",
+        "1 comment"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": "2025-04-22T17:14:23.000Z",
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5781,
+      "end": 5842,
+      "id": "b48",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[48]",
+      "headingPath": [
+        "Let’s Build Together",
+        "1 comment"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": "2025-04-22T17:14:23.000Z",
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5844,
+      "end": 5882,
+      "id": "b49",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[49]",
+      "headingPath": [
+        "Let’s Build Together",
+        "1 comment"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": "2025-04-22T17:14:23.000Z",
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5884,
+      "end": 6275,
+      "id": "b50",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[50]",
+      "headingPath": [
+        "Let’s Build Together",
+        "1 comment"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": "2025-04-22T17:14:23.000Z",
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 6277,
+      "end": 6286,
+      "id": "b51",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[51]",
+      "headingPath": [
+        "Let’s Build Together",
+        "Read next"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 6288,
+      "end": 6299,
+      "id": "b52",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[52]",
+      "headingPath": [
+        "Let’s Build Together",
+        "Read next"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 6301,
+      "end": 6343,
+      "id": "b53",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[53]",
+      "headingPath": [
+        "Let’s Build Together",
+        "Read next",
+        "Fedora Linux is now an official WSL distro"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 6345,
+      "end": 6357,
+      "id": "b54",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[54]",
+      "headingPath": [
+        "Let’s Build Together",
+        "Read next",
+        "Fedora Linux is now an official WSL distro"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 6359,
+      "end": 6371,
+      "id": "b55",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[55]",
+      "headingPath": [
+        "Let’s Build Together",
+        "Read next",
+        "Fedora Linux is now an official WSL distro"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 6373,
+      "end": 6396,
+      "id": "b56",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[56]",
+      "headingPath": [
+        "Let’s Build Together",
+        "Read next",
+        "Edit is now open source"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 6398,
+      "end": 6416,
+      "id": "b57",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[57]",
+      "headingPath": [
+        "Let’s Build Together",
+        "Read next",
+        "Edit is now open source"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 6418,
+      "end": 6431,
+      "id": "b58",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[58]",
+      "headingPath": [
+        "Let’s Build Together",
+        "Stay informed"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 6433,
+      "end": 6475,
+      "id": "b59",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[59]",
+      "headingPath": [
+        "Let’s Build Together",
+        "Stay informed"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 6477,
+      "end": 6493,
+      "id": "b60",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[60]",
+      "headingPath": [
+        "Let’s Build Together",
+        "Stay informed"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 6495,
+      "end": 6502,
+      "id": "b61",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[61]",
+      "headingPath": [
+        "Let’s Build Together",
+        "Stay informed"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 6504,
+      "end": 6509,
+      "id": "b62",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[62]",
+      "headingPath": [
+        "Let’s Build Together",
+        "Stay informed"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 6511,
+      "end": 7562,
+      "id": "b63",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[63]",
+      "headingPath": [
+        "Let’s Build Together",
+        "Stay informed"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    }
+  ],
+  "links": [
+    {
+      "url": "https://devblogs.microsoft.com/commandline/terminal-chat-now-included-in-github-copilot-free/",
+      "text": "",
+      "blockId": null,
+      "relation": "CANONICAL",
+      "locator": "source DOM link[0]"
+    },
+    {
+      "url": "https://www.microsoft.com/",
+      "text": "",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[2]"
+    },
+    {
+      "url": "https://devblogs.microsoft.com/",
+      "text": "Dev Blogs",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[3]"
+    },
+    {
+      "url": "https://devblogs.microsoft.com/ai",
+      "text": "AI",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[4]"
+    },
+    {
+      "url": "https://devblogs.microsoft.com/dotnet/",
+      "text": "All .NET posts",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[5]"
+    },
+    {
+      "url": "https://devblogs.microsoft.com/dotnet/category/maui/",
+      "text": ".NET MAUI",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[6]"
+    },
+    {
+      "url": "https://devblogs.microsoft.com/dotnet/category/dotnet-aspire/",
+      "text": "ASP.NET Core",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[7]"
+    },
+    {
+      "url": "https://devblogs.microsoft.com/dotnet/category/blazor/",
+      "text": "Blazor",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[8]"
+    },
+    {
+      "url": "https://devblogs.microsoft.com/dotnet/category/entity-framework/",
+      "text": "Entity Framework",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[9]"
+    },
+    {
+      "url": "https://devblogs.microsoft.com/cppblog/",
+      "text": "C++",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[10]"
+    },
+    {
+      "url": "https://devblogs.microsoft.com/dotnet/category/csharp/",
+      "text": "C#",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[11]"
+    },
+    {
+      "url": "https://devblogs.microsoft.com/dotnet/category/fsharp/",
+      "text": "F#",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[12]"
+    },
+    {
+      "url": "https://devblogs.microsoft.com/typescript/",
+      "text": "TypeScript",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[13]"
+    },
+    {
+      "url": "https://devblogs.microsoft.com/dotnet/category/nuget/",
+      "text": "NuGet",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[14]"
+    },
+    {
+      "url": "https://devblogs.microsoft.com/dotnet/category/maintenance-and-updates/",
+      "text": "Servicing",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[15]"
+    },
+    {
+      "url": "https://devblogs.microsoft.com/dotnet-ch/",
+      "text": ".NET Blog in Chinese",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[16]"
+    },
+    {
+      "url": "https://developer.microsoft.com/blog/",
+      "text": "Microsoft for Developers",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[17]"
+    },
+    {
+      "url": "https://devblogs.microsoft.com/agent-framework/",
+      "text": "Agent Framework",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[18]"
+    },
+    {
+      "url": "https://devblogs.microsoft.com/develop-from-the-cloud/",
+      "text": "Develop from the cloud",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[19]"
+    },
+    {
+      "url": "https://devblogs.microsoft.com/xcode/",
+      "text": "Xcode",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[20]"
+    },
+    {
+      "url": "https://devblogs.microsoft.com/ise/",
+      "text": "ISE Developer",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[21]"
+    },
+    {
+      "url": "https://devblogs.microsoft.com/powershell/",
+      "text": "PowerShell",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[23]"
+    },
+    {
+      "url": "https://devblogs.microsoft.com/python/",
+      "text": "Python",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[24]"
+    },
+    {
+      "url": "https://devblogs.microsoft.com/java/",
+      "text": "Java",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[25]"
+    },
+    {
+      "url": "https://devblogs.microsoft.com/java-ch/",
+      "text": "Java Blog in Chinese",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[26]"
+    },
+    {
+      "url": "https://devblogs.microsoft.com/go/",
+      "text": "Go",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[27]"
+    },
+    {
+      "url": "https://blogs.windows.com/msedgedev/",
+      "text": "Microsoft Edge Dev",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[28]"
+    },
+    {
+      "url": "https://devblogs.microsoft.com/microsoft365dev/",
+      "text": "Microsoft 365 Developer",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[29]"
+    },
+    {
+      "url": "https://devblogs.microsoft.com/identity/",
+      "text": "Microsoft Entra Identity Developer",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[30]"
+    },
+    {
+      "url": "https://devblogs.microsoft.com/entrapowershell/",
+      "text": "Microsoft Entra PowerShell",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[31]"
+    },
+    {
+      "url": "https://devblogs.microsoft.com/visualstudio/",
+      "text": "Visual Studio",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[32]"
+    },
+    {
+      "url": "https://devblogs.microsoft.com/vscode-blog",
+      "text": "Visual Studio Code",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[33]"
+    },
+    {
+      "url": "https://devblogs.microsoft.com/aspire/",
+      "text": "Aspire",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[34]"
+    },
+    {
+      "url": "https://devblogs.microsoft.com/all-things-azure/",
+      "text": "All things Azure",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[35]"
+    },
+    {
+      "url": "https://devblogs.microsoft.com/azure-sdk/",
+      "text": "Azure SDK",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[36]"
+    },
+    {
+      "url": "https://devblogs.microsoft.com/azure-vm-runtime/",
+      "text": "Azure VM Runtime Team",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[37]"
+    },
+    {
+      "url": "https://azure.microsoft.com/blog/",
+      "text": "Microsoft Azure",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[38]"
+    },
+    {
+      "url": "https://devblogs.microsoft.com/cosmosdb/",
+      "text": "Azure Cosmos DB",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[39]"
+    },
+    {
+      "url": "https://devblogs.microsoft.com/documentdb/",
+      "text": "Azure DocumentDB",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[40]"
+    },
+    {
+      "url": "https://cloudblogs.microsoft.com/sqlserver/?product=azure-data-studio",
+      "text": "Azure Data Studio",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[41]"
+    },
+    {
+      "url": "https://devblogs.microsoft.com/azure-sql/",
+      "text": "Azure SQL",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[42]"
+    },
+    {
+      "url": "https://devblogs.microsoft.com/devops/",
+      "text": "DevOps",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[43]"
+    },
+    {
+      "url": "https://devblogs.microsoft.com/directx/",
+      "text": "DirectX",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[44]"
+    },
+    {
+      "url": "https://devblogs.microsoft.com/foundry/",
+      "text": "Microsoft Foundry",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[45]"
+    },
+    {
+      "url": "https://devblogs.microsoft.com/powerplatform/",
+      "text": "Power Platform",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[46]"
+    },
+    {
+      "url": "https://devblogs.microsoft.com/odata/",
+      "text": "OData",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[47]"
+    },
+    {
+      "url": "https://devblogs.microsoft.com/udm/",
+      "text": "Unified Data Model (IDEAs)",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[48]"
+    },
+    {
+      "url": "https://devblogs.microsoft.com/commandline/",
+      "text": "Windows Command Line",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[49]"
+    },
+    {
+      "url": "https://devblogs.microsoft.com/ifdef-windows/",
+      "text": "#ifdef Windows",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[50]"
+    },
+    {
+      "url": "https://devblogs.microsoft.com/insidemsix/",
+      "text": "Inside MSIX",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[51]"
+    },
+    {
+      "url": "https://devblogs.microsoft.com/windows-music-dev/",
+      "text": "MIDI and music",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[52]"
+    },
+    {
+      "url": "https://devblogs.microsoft.com/react-native/",
+      "text": "React Native",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[53]"
+    },
+    {
+      "url": "https://devblogs.microsoft.com/oldnewthing/",
+      "text": "The Old New Thing",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[54]"
+    },
+    {
+      "url": "https://devblogs.microsoft.com/foundry-on-windows/",
+      "text": "Foundry on Windows",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[55]"
+    },
+    {
+      "url": "https://blogs.windows.com/windowsdeveloper/",
+      "text": "Windows Developer",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[56]"
+    },
+    {
+      "url": "https://devblogs.microsoft.com/commandline/author/chrnguyen",
+      "text": "Christopher Nguyen",
+      "blockId": "b3",
+      "relation": "LINK",
+      "locator": "source DOM link[59]"
+    },
+    {
+      "url": "https://github.com/microsoft/terminal",
+      "text": "Windows Terminal Canary",
+      "blockId": "b4",
+      "relation": "LINK",
+      "locator": "source DOM link[61]"
+    },
+    {
+      "url": "https://learn.microsoft.com/windows/terminal/terminal-chat",
+      "text": "Terminal Chat",
+      "blockId": "b4",
+      "relation": "LINK",
+      "locator": "source DOM link[62]"
+    },
+    {
+      "url": "https://docs.github.com/copilot/managing-copilot/managing-copilot-as-an-individual-subscriber/about-github-copilot-free",
+      "text": "GitHub Copilot Free",
+      "blockId": "b4",
+      "relation": "LINK",
+      "locator": "source DOM link[63]"
+    },
+    {
+      "url": "https://aka.ms/terminal-gh-copilot-trial",
+      "text": "Copilot setting",
+      "blockId": "b6",
+      "relation": "LINK",
+      "locator": "source DOM link[64]"
+    },
+    {
+      "url": "https://aka.ms/terminal-gh-copilot-features",
+      "text": "GitHub Copilot",
+      "blockId": "b8",
+      "relation": "LINK",
+      "locator": "source DOM link[66]"
+    },
+    {
+      "url": "https://github.blog/news-insights/research/research-quantifying-github-copilots-impact-on-developer-productivity-and-happiness/",
+      "text": "Research: quantifying GitHub Copilot’s impact on developer productivity and happiness",
+      "blockId": "b9",
+      "relation": "LINK",
+      "locator": "source DOM link[67]"
+    },
+    {
+      "url": "https://docs.github.com/copilot/managing-copilot/managing-copilot-as-an-individual-subscriber/about-github-copilot-free",
+      "text": "About GitHub Copilot Free",
+      "blockId": "b11",
+      "relation": "LINK",
+      "locator": "source DOM link[68]"
+    },
+    {
+      "url": "https://learn.microsoft.com/windows/terminal/terminal-chat",
+      "text": "Terminal Chat",
+      "blockId": "b13",
+      "relation": "LINK",
+      "locator": "source DOM link[69]"
+    },
+    {
+      "url": "https://github.com/microsoft/terminal",
+      "text": "Windows Terminal Canary",
+      "blockId": "b13",
+      "relation": "LINK",
+      "locator": "source DOM link[70]"
+    },
+    {
+      "url": "https://learn.microsoft.com/windows/terminal/group-policy",
+      "text": "Group Policy for Windows Terminal",
+      "blockId": "b14",
+      "relation": "LINK",
+      "locator": "source DOM link[71]"
+    },
+    {
+      "url": "https://aka.ms/terminal-gh-copilot-trial",
+      "text": "sign up for GitHub Copilot Free",
+      "blockId": "b19",
+      "relation": "LINK",
+      "locator": "source DOM link[72]"
+    },
+    {
+      "url": "https://github.com/microsoft/terminal",
+      "text": "download the latest build of Windows Terminal Canary",
+      "blockId": "b20",
+      "relation": "LINK",
+      "locator": "source DOM link[73]"
+    },
+    {
+      "url": "https://docs.github.com/copilot/responsible-use-of-github-copilot-features/responsible-use-of-github-copilot-in-windows-terminal",
+      "text": "Responsible use of GitHub Copilot in Windows Terminal",
+      "blockId": "b31",
+      "relation": "LINK",
+      "locator": "source DOM link[76]"
+    },
+    {
+      "url": "https://github.com/microsoft/terminal",
+      "text": "download the latest build of Windows Terminal Canary",
+      "blockId": "b34",
+      "relation": "LINK",
+      "locator": "source DOM link[77]"
+    },
+    {
+      "url": "https://github.com/microsoft/terminal/issues",
+      "text": "submit a new Issue",
+      "blockId": "b35",
+      "relation": "LINK",
+      "locator": "source DOM link[78]"
+    },
+    {
+      "url": "https://learn.microsoft.com/windows/terminal/group-policy",
+      "text": "Group Policy documentation",
+      "blockId": "b36",
+      "relation": "LINK",
+      "locator": "source DOM link[79]"
+    },
+    {
+      "url": "https://aka.ms/terminal-gh-copilot-features",
+      "text": "GitHub Copilot website",
+      "blockId": "b37",
+      "relation": "LINK",
+      "locator": "source DOM link[80]"
+    },
+    {
+      "url": "https://devblogs.microsoft.com/commandline/category/commandline/",
+      "text": "Command Line",
+      "blockId": "b40",
+      "relation": "LINK",
+      "locator": "source DOM link[86]"
+    },
+    {
+      "url": "https://devblogs.microsoft.com/commandline/category/open-source/",
+      "text": "Open-Source",
+      "blockId": "b41",
+      "relation": "LINK",
+      "locator": "source DOM link[87]"
+    },
+    {
+      "url": "https://devblogs.microsoft.com/commandline/category/windows/",
+      "text": "Windows",
+      "blockId": "b42",
+      "relation": "LINK",
+      "locator": "source DOM link[88]"
+    },
+    {
+      "url": "https://devblogs.microsoft.com/commandline/category/windows-terminal/",
+      "text": "Windows Terminal",
+      "blockId": "b43",
+      "relation": "LINK",
+      "locator": "source DOM link[89]"
+    },
+    {
+      "url": "https://devblogs.microsoft.com/commandline/author/chrnguyen",
+      "text": "Christopher Nguyen",
+      "blockId": "b46",
+      "relation": "LINK",
+      "locator": "source DOM link[93]"
+    },
+    {
+      "url": "https://devblogs.microsoft.com/commandline/wp-login.php?redirect_to=https%3A%2F%2Fdevblogs.microsoft.com%2Fcommandline%2Fterminal-chat-now-included-in-github-copilot-free%2F%23comments",
+      "text": "Login to edit/delete existing comments.",
+      "blockId": "b48",
+      "relation": "LINK",
+      "locator": "source DOM link[94]"
+    },
+    {
+      "url": "https://docs.github.com/en/copilot/using-github-copilot/asking-github-copilot-questions-in-windows-terminal",
+      "text": "GitHub Copilot in Windows Terminal",
+      "blockId": "b50",
+      "relation": "LINK",
+      "locator": "source DOM link[99]"
+    },
+    {
+      "url": "https://docs.github.com/en/copilot/using-github-copilot/using-github-copilot-in-the-command-line",
+      "text": "Using GitHub Copilot in the command line",
+      "blockId": "b50",
+      "relation": "LINK",
+      "locator": "source DOM link[100]"
+    },
+    {
+      "url": "https://devblogs.microsoft.com/commandline/fedora-linux-is-now-an-official-wsl-distro/",
+      "text": "Fedora Linux is now an official WSL distro",
+      "blockId": "b53",
+      "relation": "LINK",
+      "locator": "source DOM link[101]"
+    },
+    {
+      "url": "https://devblogs.microsoft.com/commandline/edit-is-now-open-source/",
+      "text": "Edit is now open source",
+      "blockId": "b56",
+      "relation": "LINK",
+      "locator": "source DOM link[102]"
+    },
+    {
+      "url": "https://devblogs.microsoft.com/commandline/wp-login.php?redirect_to=https%3A%2F%2Fdevblogs.microsoft.com%2Fcommandline%2Fterminal-chat-now-included-in-github-copilot-free%2F",
+      "text": "Sign in",
+      "blockId": "b61",
+      "relation": "LINK",
+      "locator": "source DOM link[105]"
+    },
+    {
+      "url": "https://www.microsoft.com/en-us/surface/devices/surface-laptop-ultra?icid=DSM_Footer_WhatsNew_SurfaceLaptopUltra",
+      "text": "Surface Laptop Ultra",
+      "blockId": "b63",
+      "relation": "LINK",
+      "locator": "source DOM link[106]"
+    },
+    {
+      "url": "https://www.microsoft.com/surface/devices/surface-pro",
+      "text": "Surface Pro",
+      "blockId": "b63",
+      "relation": "LINK",
+      "locator": "source DOM link[107]"
+    },
+    {
+      "url": "https://www.microsoft.com/surface/devices/surface-laptop",
+      "text": "Surface Laptop",
+      "blockId": "b63",
+      "relation": "LINK",
+      "locator": "source DOM link[108]"
+    },
+    {
+      "url": "https://www.microsoft.com/en-us/surface/devices/surface-rtx-spark-dev-box?icid=DSM_Footer_WhatsNew_SurfaceRTXSparkDevBox",
+      "text": "Surface RTX Spark Dev Box",
+      "blockId": "b63",
+      "relation": "LINK",
+      "locator": "source DOM link[109]"
+    },
+    {
+      "url": "https://www.microsoft.com/en-us/copilot?icid=DSM_Footer_WhatsNew_Copilot",
+      "text": "Explore Copilot",
+      "blockId": "b63",
+      "relation": "LINK",
+      "locator": "source DOM link[110]"
+    },
+    {
+      "url": "https://www.microsoft.com/en-us/microsoft-products-and-apps",
+      "text": "Explore Microsoft products",
+      "blockId": "b63",
+      "relation": "LINK",
+      "locator": "source DOM link[111]"
+    },
+    {
+      "url": "https://www.microsoft.com/en-us/windows/apps-for-windows?icid=DSM_Footer_WhatsNew_Windows11apps",
+      "text": "Windows 11 apps",
+      "blockId": "b63",
+      "relation": "LINK",
+      "locator": "source DOM link[112]"
+    },
+    {
+      "url": "https://account.microsoft.com/",
+      "text": "Account profile",
+      "blockId": "b63",
+      "relation": "LINK",
+      "locator": "source DOM link[113]"
+    },
+    {
+      "url": "https://www.microsoft.com/en-us/download",
+      "text": "Download Center",
+      "blockId": "b63",
+      "relation": "LINK",
+      "locator": "source DOM link[114]"
+    },
+    {
+      "url": "https://go.microsoft.com/fwlink/?linkid=2139749",
+      "text": "Microsoft Store support",
+      "blockId": "b63",
+      "relation": "LINK",
+      "locator": "source DOM link[115]"
+    },
+    {
+      "url": "https://www.microsoft.com/en-us/store/b/returns",
+      "text": "Returns",
+      "blockId": "b63",
+      "relation": "LINK",
+      "locator": "source DOM link[116]"
+    },
+    {
+      "url": "https://www.microsoft.com/en-us/store/b/order-tracking",
+      "text": "Order tracking",
+      "blockId": "b63",
+      "relation": "LINK",
+      "locator": "source DOM link[117]"
+    },
+    {
+      "url": "https://www.microsoft.com/en-us/store/b/certified-refurbished-products",
+      "text": "Certified Refurbished",
+      "blockId": "b63",
+      "relation": "LINK",
+      "locator": "source DOM link[118]"
+    },
+    {
+      "url": "https://www.microsoft.com/en-us/store/b/why-microsoft-store?icid=footer_why-msft-store%3Ficid%3DDSM_Footer_MicrosoftStore_WhyBuy",
+      "text": "Why buy from Microsoft Store",
+      "blockId": "b63",
+      "relation": "LINK",
+      "locator": "source DOM link[119]"
+    },
+    {
+      "url": "https://www.microsoft.com/en-us/store/b/payment-financing-options?icid=footer_financing_vcc",
+      "text": "Flexible Payments",
+      "blockId": "b63",
+      "relation": "LINK",
+      "locator": "source DOM link[120]"
+    },
+    {
+      "url": "https://www.microsoft.com/en-us/education",
+      "text": "Microsoft in education",
+      "blockId": "b63",
+      "relation": "LINK",
+      "locator": "source DOM link[121]"
+    },
+    {
+      "url": "https://www.microsoft.com/en-us/education/devices/overview",
+      "text": "Devices for education",
+      "blockId": "b63",
+      "relation": "LINK",
+      "locator": "source DOM link[122]"
+    },
+    {
+      "url": "https://www.microsoft.com/en-us/education/products/teams",
+      "text": "Microsoft Teams for Education",
+      "blockId": "b63",
+      "relation": "LINK",
+      "locator": "source DOM link[123]"
+    },
+    {
+      "url": "https://www.microsoft.com/en-us/education/products/microsoft-365",
+      "text": "Microsoft 365 Education",
+      "blockId": "b63",
+      "relation": "LINK",
+      "locator": "source DOM link[124]"
+    },
+    {
+      "url": "https://www.microsoft.com/education/how-to-buy",
+      "text": "How to buy for your school",
+      "blockId": "b63",
+      "relation": "LINK",
+      "locator": "source DOM link[125]"
+    },
+    {
+      "url": "https://education.microsoft.com/",
+      "text": "Educator training and development",
+      "blockId": "b63",
+      "relation": "LINK",
+      "locator": "source DOM link[126]"
+    },
+    {
+      "url": "https://www.microsoft.com/en-us/store/b/education",
+      "text": "Deals for students and parents",
+      "blockId": "b63",
+      "relation": "LINK",
+      "locator": "source DOM link[127]"
+    },
+    {
+      "url": "https://www.microsoft.com/en-us/education/ai-in-education",
+      "text": "AI for education",
+      "blockId": "b63",
+      "relation": "LINK",
+      "locator": "source DOM link[128]"
+    },
+    {
+      "url": "https://www.microsoft.com/en-us/ai?icid=DSM_Footer_AI",
+      "text": "Microsoft AI",
+      "blockId": "b63",
+      "relation": "LINK",
+      "locator": "source DOM link[129]"
+    },
+    {
+      "url": "https://www.microsoft.com/en-us/security",
+      "text": "Microsoft Security",
+      "blockId": "b63",
+      "relation": "LINK",
+      "locator": "source DOM link[130]"
+    },
+    {
+      "url": "https://www.microsoft.com/en-us/dynamics-365",
+      "text": "Dynamics 365",
+      "blockId": "b63",
+      "relation": "LINK",
+      "locator": "source DOM link[131]"
+    },
+    {
+      "url": "https://www.microsoft.com/en-us/microsoft-365/business",
+      "text": "Microsoft 365",
+      "blockId": "b63",
+      "relation": "LINK",
+      "locator": "source DOM link[132]"
+    },
+    {
+      "url": "https://www.microsoft.com/en-us/power-platform",
+      "text": "Microsoft Power Platform",
+      "blockId": "b63",
+      "relation": "LINK",
+      "locator": "source DOM link[133]"
+    },
+    {
+      "url": "https://www.microsoft.com/en-us/microsoft-teams/group-chat-software",
+      "text": "Microsoft Teams",
+      "blockId": "b63",
+      "relation": "LINK",
+      "locator": "source DOM link[134]"
+    },
+    {
+      "url": "https://www.microsoft.com/en-us/copilot?icid=DSM_Footer_Business_Copilot",
+      "text": "Microsoft Copilot",
+      "blockId": "b63",
+      "relation": "LINK",
+      "locator": "source DOM link[135]"
+    },
+    {
+      "url": "https://www.microsoft.com/en-us/store/b/business?icid=CNavBusinessStore",
+      "text": "Small Business",
+      "blockId": "b63",
+      "relation": "LINK",
+      "locator": "source DOM link[136]"
+    },
+    {
+      "url": "https://azure.microsoft.com/en-us/",
+      "text": "Azure",
+      "blockId": "b63",
+      "relation": "LINK",
+      "locator": "source DOM link[137]"
+    },
+    {
+      "url": "https://developer.microsoft.com/en-us/",
+      "text": "Microsoft Developer",
+      "blockId": "b63",
+      "relation": "LINK",
+      "locator": "source DOM link[138]"
+    },
+    {
+      "url": "https://learn.microsoft.com/",
+      "text": "Microsoft Learn",
+      "blockId": "b63",
+      "relation": "LINK",
+      "locator": "source DOM link[139]"
+    },
+    {
+      "url": "https://www.microsoft.com/software-development-companies/offers-benefits/isv-success?icid=DSM_Footer_SupportAIMarketplace&ocid=cmm3atxvn98",
+      "text": "Support for AI marketplace apps",
+      "blockId": "b63",
+      "relation": "LINK",
+      "locator": "source DOM link[140]"
+    },
+    {
+      "url": "https://techcommunity.microsoft.com/",
+      "text": "Microsoft Tech Community",
+      "blockId": "b63",
+      "relation": "LINK",
+      "locator": "source DOM link[141]"
+    },
+    {
+      "url": "https://marketplace.microsoft.com/?icid=DSM_Footer_Marketplace&ocid=cmm3atxvn98",
+      "text": "Microsoft Marketplace",
+      "blockId": "b63",
+      "relation": "LINK",
+      "locator": "source DOM link[142]"
+    },
+    {
+      "url": "https://www.microsoft.com/software-development-companies?icid=DSM_Footer_SoftwareCompanies&ocid=cmm3atxvn98",
+      "text": "Software companies",
+      "blockId": "b63",
+      "relation": "LINK",
+      "locator": "source DOM link[143]"
+    },
+    {
+      "url": "https://visualstudio.microsoft.com/",
+      "text": "Visual Studio",
+      "blockId": "b63",
+      "relation": "LINK",
+      "locator": "source DOM link[144]"
+    },
+    {
+      "url": "https://careers.microsoft.com/",
+      "text": "Careers",
+      "blockId": "b63",
+      "relation": "LINK",
+      "locator": "source DOM link[145]"
+    },
+    {
+      "url": "https://www.microsoft.com/about",
+      "text": "About Microsoft",
+      "blockId": "b63",
+      "relation": "LINK",
+      "locator": "source DOM link[146]"
+    },
+    {
+      "url": "https://news.microsoft.com/source/?icid=DSM_Footer_Company_CompanyNews",
+      "text": "Company news",
+      "blockId": "b63",
+      "relation": "LINK",
+      "locator": "source DOM link[147]"
+    },
+    {
+      "url": "https://www.microsoft.com/en-us/privacy?icid=DSM_Footer_Company_Privacy",
+      "text": "Privacy at Microsoft",
+      "blockId": "b63",
+      "relation": "LINK",
+      "locator": "source DOM link[148]"
+    },
+    {
+      "url": "https://www.microsoft.com/investor/default.aspx",
+      "text": "Investors",
+      "blockId": "b63",
+      "relation": "LINK",
+      "locator": "source DOM link[149]"
+    },
+    {
+      "url": "https://www.microsoft.com/en-us/diversity/default?icid=DSM_Footer_Company_Diversity",
+      "text": "Diversity and inclusion",
+      "blockId": "b63",
+      "relation": "LINK",
+      "locator": "source DOM link[150]"
+    },
+    {
+      "url": "https://www.microsoft.com/en-us/accessibility",
+      "text": "Accessibility",
+      "blockId": "b63",
+      "relation": "LINK",
+      "locator": "source DOM link[151]"
+    },
+    {
+      "url": "https://www.microsoft.com/en-us/corporate-responsibility/sustainability?icid=DSM_Footer_Sustainability",
+      "text": "Sustainability",
+      "blockId": "b63",
+      "relation": "LINK",
+      "locator": "source DOM link[152]"
+    },
+    {
+      "url": "https://aka.ms/yourcaliforniaprivacychoices",
+      "text": "Your Privacy Choices",
+      "blockId": "b63",
+      "relation": "LINK",
+      "locator": "source DOM link[153]"
+    },
+    {
+      "url": "https://go.microsoft.com/fwlink/?linkid=2259814",
+      "text": "Consumer Health Privacy",
+      "blockId": "b63",
+      "relation": "LINK",
+      "locator": "source DOM link[154]"
+    },
+    {
+      "url": "https://www.microsoft.com/en-us/sitemap1.aspx",
+      "text": "Sitemap",
+      "blockId": "b63",
+      "relation": "LINK",
+      "locator": "source DOM link[155]"
+    },
+    {
+      "url": "https://support.microsoft.com/contactus",
+      "text": "Contact Microsoft",
+      "blockId": "b63",
+      "relation": "LINK",
+      "locator": "source DOM link[156]"
+    },
+    {
+      "url": "https://go.microsoft.com/fwlink/?LinkId=521839",
+      "text": "Privacy",
+      "blockId": "b63",
+      "relation": "LINK",
+      "locator": "source DOM link[157]"
+    },
+    {
+      "url": "https://go.microsoft.com/fwlink/?LinkID=206977",
+      "text": "Terms of use",
+      "blockId": "b63",
+      "relation": "LINK",
+      "locator": "source DOM link[159]"
+    },
+    {
+      "url": "https://go.microsoft.com/fwlink/?linkid=2196228",
+      "text": "Trademarks",
+      "blockId": "b63",
+      "relation": "LINK",
+      "locator": "source DOM link[160]"
+    },
+    {
+      "url": "https://go.microsoft.com/fwlink/?linkid=2196227",
+      "text": "Safety & eco",
+      "blockId": "b63",
+      "relation": "LINK",
+      "locator": "source DOM link[161]"
+    },
+    {
+      "url": "https://www.microsoft.com/en-us/legal/compliance/recycling",
+      "text": "Recycling",
+      "blockId": "b63",
+      "relation": "LINK",
+      "locator": "source DOM link[162]"
+    },
+    {
+      "url": "https://choice.microsoft.com/",
+      "text": "About our ads",
+      "blockId": "b63",
+      "relation": "LINK",
+      "locator": "source DOM link[163]"
+    }
+  ],
+  "tables": []
+}

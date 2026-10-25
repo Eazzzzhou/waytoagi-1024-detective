@@ -1,0 +1,2353 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="awa-expId" content="tv-downloadv2:1469049;" />
+	<meta name="awa-env" content="prod" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="google-site-verification" content="hNs7DXrTySP_X-0P_AC0WulAXvUwgSXEmgfcO2r79dw" />
+
+	<!-- Twitter and Facebook OpenGraph Metadata-->
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:site" content="@code" />
+
+	<meta name="description" content="Use chat in VS Code to ask about code, send requests, add context, and review AI-generated changes." />
+<meta name="keywords" content="" />
+<meta name="ms.prod" content="vs-code" />
+<meta name="ms.TOCTitle" content="" />
+<meta name="ms.ContentId" content="557a7e74-f77e-488d-90ea-fd2cfecfffda" />
+<meta name="ms.date" content="10/21/2026" />
+<meta name="ms.topic" content="conceptual" />
+<!-- Twitter and Facebook OpenGraph Metadata-->
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="og:url" content="https://code.visualstudio.com/docs/chat/chat-overview" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Use chat in VS Code" />
+<meta property="og:description" content="Use chat in VS Code to ask about code, send requests, add context, and review AI-generated changes." />
+
+<meta property="og:image" content="https://code.visualstudio.com/opengraphimg/generated/docs/chat/chat-overview.webp" />
+
+
+
+	<link rel="shortcut icon" href="/assets/favicon.ico" sizes="128x128" />
+	<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+
+	<title>Use chat in VS Code</title>
+
+	<link rel="stylesheet" href="/dist/style.css">
+
+	<script src="https://consentdeliveryfd.azurefd.net/mscc/lib/v2/wcp-consent.js"></script>
+	<script type="text/javascript" src="https://js.monitor.azure.com/scripts/c/ms.analytics-web-4.min.js"></script>
+	
+	<script type="text/javascript">
+	// Leave as var; siteConsent is initialized and referenced elsewhere.
+	var siteConsent = null;
+	
+	const GPC_DataSharingOptIn = false;
+	WcpConsent.onInitCallback(function () {
+		window.appInsights = new oneDS.ApplicationInsights();
+		window.appInsights.initialize({
+			instrumentationKey: "1a3eb3104447440391ad5f2a6ee06a0a-62879566-bc58-4741-9650-302bf2af703f-7103",
+			propertyConfiguration: {
+				userConsented: false,
+				gpcDataSharingOptIn: false,
+				callback: {
+					// Stable closure: the SDK calls this per-event, so it picks up the
+					// real consent state once WcpConsent.init() resolves (siteConsent
+					// is still null when this callback is registered).
+					userConsentDetails: function () {
+						return siteConsent ? siteConsent.getConsent() : undefined;
+					}
+				},
+			},
+			cookieCfg: {
+				ignoreCookies: ["MSCC"]
+			},
+			webAnalyticsConfiguration:{ // Web Analytics Plugin configuration
+				urlCollectQuery: true,
+				urlCollectHash: true,
+				autoCapture: {
+					scroll: true,
+					pageView: true,
+					onLoad: true,
+					onUnload: true,
+					click: true,
+					resize: true,
+					jsError: true
+				}
+			}
+		}, []);
+	
+		window.appInsights.getPropertyManager().getPropertiesContext().web.gpcDataSharingOptIn = GPC_DataSharingOptIn;
+	});
+	</script>
+	<link rel="alternate" type="application/atom+xml" title="RSS Feed for code.visualstudio.com" href="/feed.xml" />
+</head>
+
+<body >
+	<div class="sr-only" aria-hidden="true">
+		AI agents: See <a href="/llms.txt" tabindex="-1">llms.txt</a> for documentation discovery and navigation. Documentation articles are also available as Markdown by appending <code>.md</code> to the article URL.
+	</div>
+	<!-- Setting theme here to avoid FOUC -->
+	<script>
+		function setTheme(themeName) {
+			if (themeName === 'dark') {
+				document.documentElement.removeAttribute('data-theme'); // dark is default, so no data-theme attribute needed
+			}
+
+			if (themeName === 'light') {
+				document.documentElement.setAttribute('data-theme', themeName);
+			}
+			return;
+		}
+
+		// Determine initial theme: user preference or system preference
+		let theme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+		setTheme(theme); // Apply the initial theme
+
+		// Listen for changes in the system theme preference
+		window.matchMedia('(prefers-color-scheme: dark)').addListener(e => {
+			if (!localStorage.getItem('theme')) { // Only if no user preference is saved
+				setTheme(e.matches ? 'dark' : 'light');
+			}
+		});
+	</script>
+
+	<div id="main">
+		<div class="navbar-fixed-container">
+			<div class="navbar navbar-inverse navbar-fixed-top ">
+				<div id='cookie-banner'></div>		<nav role="navigation" aria-label="Top Level">
+					<div class="container">
+						<div class="nav navbar-header">
+							<a class="navbar-brand" href="/"><span>Visual Studio Code</span></a>
+						</div>
+						<div class="navbar-collapse collapse">
+							<ul class="nav navbar-nav navbar-left" data-m='{"cN":"top-navbar","aN":"navigation"}'>
+								<li class="nav-dropdown">
+									<a id="nav-features" href="#" class="nav-dropdown-toggle" role="button" aria-haspopup="true" aria-expanded="false" data-m='{"cN":"Features","aN":"navigation","cT":"toggle"}'>
+										Features <span class="nav-dropdown-caret" aria-hidden="true"></span>
+									</a>
+									<ul class="nav-dropdown-menu" role="menu">
+										<li role="none"><a role="menuitem" href="/features/agents" data-m='{"cN":"Agents","aN":"navigation - Features"}'>Agents</a></li>
+										<li role="none"><a role="menuitem" href="/features/customizations" data-m='{"cN":"Agent Customization","aN":"navigation - Features"}'>Agent Customization</a></li>
+										<li role="none"><a role="menuitem" href="/features/models" data-m='{"cN":"Models &amp; Agent Harnesses","aN":"navigation - Features"}'>Models &amp; Agent Harnesses</a></li>
+										<li role="none"><a role="menuitem" href="/features/code-editing" data-m='{"cN":"Write Code","aN":"navigation - Features"}'>Write Code</a></li>
+										<li role="none"><a role="menuitem" href="/features/enterprise" data-m='{"cN":"Enterprise","aN":"navigation - Features"}'>Enterprise</a></li>
+										<li role="none"><a role="menuitem" href="/features/extensibility" data-m='{"cN":"Extensibility","aN":"navigation - Features"}'>Extensibility</a></li>
+									</ul>
+								</li>
+								<li class="nav-dropdown active">
+									<a id="nav-docs" href="#" class="nav-dropdown-toggle" role="button" aria-haspopup="true" aria-expanded="false" data-m='{"cN":"Docs","aN":"navigation","cT":"toggle"}'>
+										Docs <span class="nav-dropdown-caret" aria-hidden="true"></span>
+									</a>
+									<ul class="nav-dropdown-menu" role="menu">
+										<li role="none"><a role="menuitem" href="/docs" data-m='{"cN":"Documentation","aN":"navigation - Docs"}'>Documentation</a></li>
+										<li role="none"><a role="menuitem" href="/api" data-m='{"cN":"API","aN":"navigation - Docs"}'>API</a></li>
+										<li role="none"><a role="menuitem" id="nav-faqs" href="/docs/supporting/faq" data-m='{"cN":"FAQ","aN":"navigation - Docs"}'>FAQ</a></li>
+									</ul>
+								</li>
+								<li ><a id="nav-updates" href="/updates" data-m='{"cN":"Release Notes"}'>Release Notes</a>
+								</li>
+								<li ><a id="nav-blogs" href="/blogs" data-m='{"cN":"Blog"}'>Blog</a></li>
+								<li ><a id="nav-learn" href="/learn" data-m='{"cN":"Learn"}'>Learn</a></li>
+								<li><a id="nav-events" href="https://aka.ms/vscode/live" target="_blank" rel="noopener" data-m='{"cN":"Events"}'>Events<span class="codicon codicon-link-external nav-external-icon" aria-hidden="true"></span></a></li>
+								<li class="nav-dropdown">
+									<a id="nav-resources" href="#" class="nav-dropdown-toggle" role="button" aria-haspopup="true" aria-expanded="false" data-m='{"cN":"Resources","aN":"navigation","cT":"toggle"}'>
+										Resources <span class="nav-dropdown-caret" aria-hidden="true"></span>
+									</a>
+									<ul class="nav-dropdown-menu" role="menu">
+										<li role="none"><a role="menuitem" href="https://marketplace.visualstudio.com/VSCode" target="_blank" rel="noopener"
+												id="nav-extensions" data-m='{"cN":"Extensions","aN":"navigation - Resources"}'>Extensions<span class="codicon codicon-link-external nav-external-icon" aria-hidden="true"></span></a></li>
+										<li role="none"><a role="menuitem" id="nav-mcp" href="/mcp" target="_blank" rel="noopener" data-m='{"cN":"MCP","aN":"navigation - Resources"}'>MCP<span class="codicon codicon-link-external nav-external-icon" aria-hidden="true"></span></a></li>
+									</ul>
+								</li>
+							</ul>
+							<ul class="nav navbar-nav navbar-right" role="presentation">
+								<li>
+									<a class="link-button" href="/download" id="nav-download">
+										<span>Download</span>
+									</a>
+								</li>
+							</ul>
+						</div>
+						<div class="navbar-actions">
+							<div class="search" role="presentation">
+								<div class="nav-search search-control" role="button" tabindex="0" aria-label="Open search dialog">
+									<div class="input-group" role="presentation">
+										<span class="input-group-btn">
+											<span class="btn search-icon-container" aria-hidden="true">
+												<img class="search-icon-dark" src="/assets/icons/search-dark.svg" alt="" />
+												<img class="search-icon-light" src="/assets/icons/search.svg" alt="" />
+											</span>
+										</span>
+										<span class="search-box form-control" aria-hidden="true" role="presentation"></span>
+										<span class="search-shortcut-placeholder">Search</span>
+										<span class="search-shortcut-overlay"></span>
+									</div>
+								</div>					</div>
+							<button type="button" class="theme-switch" id="theme-toggle">
+								<img class="theme-icon-light" src="/assets/icons/theme-light.svg" alt="Switch to the dark theme" />
+								<img class="theme-icon-dark" src="/assets/icons/theme-dark.svg" alt="Switch to the light theme" />
+							</button>
+							<a class="link-button navbar-actions-download" href="/Download">
+								<span>Download</span>
+							</a>
+						</div>
+						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"
+							aria-label="Expand and Collapse Menu">
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+					</div>
+				</nav>
+			</div>
+		</div>		<div data-announcement-version="2026-10-21-gh-universe" data-rotation-interval-seconds="8" class="updates-banner ">
+			<div class="container banner-messages">
+				<p class="message active" data-banner-message aria-hidden="false" ><a href="https://githubuniverse.com/?utm_source=website&utm_medium=Social&utm_campaign=code_livestream&source=vsc-website-banner" target="_blank" rel="noopener">Join VS Code at GitHub Universe!</a></p>
+			</div>
+			<button type="button" title="Dismiss this update" class="dismiss-btn" id="banner-dismiss-btn"><span class="sr-only">Dismiss this update</span><span aria-hidden="true" class="glyph-icon"></span></button>
+		</div>
+		<script>
+			// Restore dismissal and the session's random starting message before first paint.
+			(function () {
+				var banner = document.currentScript.previousElementSibling;
+				if (!banner) {
+					return;
+				}
+		
+				var version = banner.getAttribute('data-announcement-version');
+				try {
+					if (localStorage.getItem('dismissedAnnouncementVersion') === version) {
+						banner.classList.add('js-hidden');
+					}
+				} catch (error) {
+					console.warn('Unable to restore banner dismissal state.', error);
+				}
+		
+				var messages = banner.querySelectorAll('[data-banner-message]');
+				if (messages.length < 2) {
+					return;
+				}
+		
+				var storageKey = 'initialAnnouncementMessage:' + version;
+				var activeIndex;
+				try {
+					var storedIndex = sessionStorage.getItem(storageKey);
+					if (storedIndex !== null) {
+						activeIndex = Number(storedIndex);
+					}
+				} catch (error) {
+					console.warn('Unable to restore the initial banner message.', error);
+				}
+				if (!Number.isInteger(activeIndex) || activeIndex < 0 || activeIndex >= messages.length) {
+					activeIndex = Math.floor(Math.random() * messages.length);
+					try {
+						sessionStorage.setItem(storageKey, String(activeIndex));
+					} catch (error) {
+						console.warn('Unable to remember the initial banner message.', error);
+					}
+				}
+		
+				for (var index = 0; index < messages.length; index++) {
+					var isActive = index === activeIndex;
+					messages[index].classList.toggle('active', isActive);
+					messages[index].setAttribute('aria-hidden', String(!isActive));
+					messages[index].toggleAttribute('inert', !isActive);
+				}
+				banner.setAttribute('data-active-message-index', String(activeIndex));
+			})();
+		</script>
+		<!-- This div wraps around the entire site -->
+		<!-- The body itself should already have a main tag -->
+		<main id="main-content">
+			<div class="body-content docs docs-github-layout" data-reading-article>
+    <progress class="reading-progress" data-reading-progress max="100" value="0" aria-label="Reading progress" hidden></progress>
+    <div class="docs-layout-wrapper">
+        <!-- Left sidebar - Table of Contents -->
+        <aside class="docs-left-sidebar">
+            <nav id="docs-navbar" aria-label="Topics" class="docs-nav visible-md visible-lg" data-m='{"cN":"docs-left-nav","aN":"navigation"}'>
+              
+              <h4>Documentation</h4>
+              <ul class="nav" id="main-nav">
+                
+                <li>
+                  <a href="/docs" data-m='{&quot;cN&quot;:&quot;Overview&quot;}'>Overview</a>
+                </li>
+            
+                
+            <li class="panel collapsed">
+              <a class="area" role="button" href="#docs-docs-0-articles" data-parent="#main-nav" data-toggle="collapse" aria-controls="docs-docs-0-articles" aria-expanded="false" data-m='{&quot;cN&quot;:&quot;Get Started&quot;,&quot;cT&quot;:&quot;toggle&quot;}'>Get Started</a>
+              <ul id="docs-docs-0-articles" class="collapse">
+                
+                <li>
+                  <a href="/docs/getstarted/overview" data-m='{&quot;cN&quot;:&quot;Overview&quot;,&quot;aN&quot;:&quot;Get Started&quot;}'>Overview</a>
+                </li>
+            
+                <li>
+                  <a href="/docs/agents/quickstart" data-m='{&quot;cN&quot;:&quot;Agents Quickstart&quot;,&quot;aN&quot;:&quot;Get Started&quot;}'>Agents Quickstart</a>
+                </li>
+            
+                <li>
+                  <a href="/docs/editing/getting-started/editor-tutorial" data-m='{&quot;cN&quot;:&quot;Editor Tutorial&quot;,&quot;aN&quot;:&quot;Get Started&quot;}'>Editor Tutorial</a>
+                </li>
+            
+                <li>
+                  <a href="/docs/getstarted/introvideos" data-m='{&quot;cN&quot;:&quot;Intro Videos&quot;,&quot;aN&quot;:&quot;Get Started&quot;}'>Intro Videos</a>
+                </li>
+            
+              </ul>
+            </li>
+            
+            <li class="panel active expanded">
+              <a class="area" role="button" href="#docs-docs-1-articles" data-parent="#main-nav" data-toggle="collapse" aria-controls="docs-docs-1-articles" aria-expanded="true" data-m='{&quot;cN&quot;:&quot;AI in VS Code&quot;,&quot;cT&quot;:&quot;toggle&quot;}'>AI in VS Code</a>
+              <ul id="docs-docs-1-articles" class="collapse in">
+                
+                <li>
+                  <a href="/docs/agents/overview" data-m='{&quot;cN&quot;:&quot;Overview&quot;,&quot;aN&quot;:&quot;AI in VS Code&quot;}'>Overview</a>
+                </li>
+            
+            <li class="panel collapsed">
+              <a class="area" role="button" href="#docs-docs-1-1-articles" data-toggle="collapse" aria-controls="docs-docs-1-1-articles" aria-expanded="false" data-m='{&quot;cN&quot;:&quot;Get Started&quot;,&quot;aN&quot;:&quot;AI in VS Code&quot;,&quot;cT&quot;:&quot;toggle&quot;}'>Get Started</a>
+              <ul id="docs-docs-1-1-articles" class="collapse">
+                
+                <li>
+                  <a href="/docs/setup/copilot" data-m='{&quot;cN&quot;:&quot;Set Up GitHub Copilot&quot;,&quot;aN&quot;:&quot;AI in VS Code - Get Started&quot;}'>Set Up GitHub Copilot</a>
+                </li>
+            
+                <li>
+                  <a href="/docs/agents/quickstart" data-m='{&quot;cN&quot;:&quot;Agents Quickstart&quot;,&quot;aN&quot;:&quot;AI in VS Code - Get Started&quot;}'>Agents Quickstart</a>
+                </li>
+            
+                <li>
+                  <a href="/docs/agents/agents-tutorial" data-m='{&quot;cN&quot;:&quot;Agents Tutorial&quot;,&quot;aN&quot;:&quot;AI in VS Code - Get Started&quot;}'>Agents Tutorial</a>
+                </li>
+            
+                <li>
+                  <a href="/docs/agents/best-practices" data-m='{&quot;cN&quot;:&quot;Best Practices&quot;,&quot;aN&quot;:&quot;AI in VS Code - Get Started&quot;}'>Best Practices</a>
+                </li>
+            
+                <li>
+                  <a href="/docs/agents/guides/overview" data-m='{&quot;cN&quot;:&quot;Find a Guide&quot;,&quot;aN&quot;:&quot;AI in VS Code - Get Started&quot;}'>Find a Guide</a>
+                </li>
+            
+              </ul>
+            </li>
+            
+            <li class="panel active expanded">
+              <a class="area" role="button" href="#docs-docs-1-2-articles" data-toggle="collapse" aria-controls="docs-docs-1-2-articles" aria-expanded="true" data-m='{&quot;cN&quot;:&quot;Chat &amp; Context&quot;,&quot;aN&quot;:&quot;AI in VS Code&quot;,&quot;cT&quot;:&quot;toggle&quot;}'>Chat &amp; Context</a>
+              <ul id="docs-docs-1-2-articles" class="collapse in">
+                
+                <li class="active">
+                  <a href="/docs/chat/chat-overview" data-m='{&quot;cN&quot;:&quot;Use Chat&quot;,&quot;aN&quot;:&quot;AI in VS Code - Chat &amp; Context&quot;}' aria-current="page" aria-label="Current Page: Use Chat">Use Chat</a>
+                </li>
+            
+                <li>
+                  <a href="/docs/chat/inline-chat" data-m='{&quot;cN&quot;:&quot;Inline Chat &amp; Quick Chat&quot;,&quot;aN&quot;:&quot;AI in VS Code - Chat &amp; Context&quot;}'>Inline Chat &amp; Quick Chat</a>
+                </li>
+            
+                <li>
+                  <a href="/docs/chat/copilot-chat-context" data-m='{&quot;cN&quot;:&quot;Add Prompt Context&quot;,&quot;aN&quot;:&quot;AI in VS Code - Chat &amp; Context&quot;}'>Add Prompt Context</a>
+                </li>
+            
+                <li>
+                  <a href="/docs/agent-customization/language-models" data-m='{&quot;cN&quot;:&quot;Choose and Configure Models&quot;,&quot;aN&quot;:&quot;AI in VS Code - Chat &amp; Context&quot;}'>Choose and Configure Models</a>
+                </li>
+            
+              </ul>
+            </li>
+            
+            <li class="panel collapsed">
+              <a class="area" role="button" href="#docs-docs-1-3-articles" data-toggle="collapse" aria-controls="docs-docs-1-3-articles" aria-expanded="false" data-m='{&quot;cN&quot;:&quot;Run Agents&quot;,&quot;aN&quot;:&quot;AI in VS Code&quot;,&quot;cT&quot;:&quot;toggle&quot;}'>Run Agents</a>
+              <ul id="docs-docs-1-3-articles" class="collapse">
+                
+                <li>
+                  <a href="/docs/agents/run/overview" data-m='{&quot;cN&quot;:&quot;Overview&quot;,&quot;aN&quot;:&quot;AI in VS Code - Run Agents&quot;}'>Overview</a>
+                </li>
+            
+                <li>
+                  <a href="/docs/agents/run/chat-view" data-m='{&quot;cN&quot;:&quot;Chat View &amp; Layout&quot;,&quot;aN&quot;:&quot;AI in VS Code - Run Agents&quot;}'>Chat View &amp; Layout</a>
+                </li>
+            
+                <li>
+                  <a href="/docs/agents/run/agents-window" data-m='{&quot;cN&quot;:&quot;Agents Window&quot;,&quot;aN&quot;:&quot;AI in VS Code - Run Agents&quot;}'>Agents Window</a>
+                </li>
+            
+                <li>
+                  <a href="/docs/agents/run/agent-harnesses" data-m='{&quot;cN&quot;:&quot;Choose an Agent Harness&quot;,&quot;aN&quot;:&quot;AI in VS Code - Run Agents&quot;}'>Choose an Agent Harness</a>
+                </li>
+            
+                <li>
+                  <a href="/docs/agents/run/agents-window-configuration" data-m='{&quot;cN&quot;:&quot;Configure the Agents Window&quot;,&quot;aN&quot;:&quot;AI in VS Code - Run Agents&quot;}'>Configure the Agents Window</a>
+                </li>
+            
+                <li>
+                  <a href="/docs/agents/run/review-code-edits" data-m='{&quot;cN&quot;:&quot;Review &amp; Revert Changes&quot;,&quot;aN&quot;:&quot;AI in VS Code - Run Agents&quot;}'>Review &amp; Revert Changes</a>
+                </li>
+            
+            <li class="panel collapsed">
+              <a class="area" role="button" href="#docs-docs-1-3-6-articles" data-toggle="collapse" aria-controls="docs-docs-1-3-6-articles" aria-expanded="false" data-m='{&quot;cN&quot;:&quot;Plan and Run Tasks&quot;,&quot;aN&quot;:&quot;AI in VS Code - Run Agents&quot;,&quot;cT&quot;:&quot;toggle&quot;}'>Plan and Run Tasks</a>
+              <ul id="docs-docs-1-3-6-articles" class="collapse">
+                
+                <li>
+                  <a href="/docs/agents/run/planning" data-m='{&quot;cN&quot;:&quot;Plan Work&quot;,&quot;aN&quot;:&quot;AI in VS Code - Run Agents - Plan and Run Tasks&quot;}'>Plan Work</a>
+                </li>
+            
+                <li>
+                  <a href="/docs/agents/run/compare-models" data-m='{&quot;cN&quot;:&quot;Compare Model Results&quot;,&quot;aN&quot;:&quot;AI in VS Code - Run Agents - Plan and Run Tasks&quot;}'>Compare Model Results</a>
+                </li>
+            
+                <li>
+                  <a href="/docs/agents/run/tools" data-m='{&quot;cN&quot;:&quot;Use Tools&quot;,&quot;aN&quot;:&quot;AI in VS Code - Run Agents - Plan and Run Tasks&quot;}'>Use Tools</a>
+                </li>
+            
+                <li>
+                  <a href="/docs/agent-customization/mcp-servers" data-m='{&quot;cN&quot;:&quot;Add MCP Servers&quot;,&quot;aN&quot;:&quot;AI in VS Code - Run Agents - Plan and Run Tasks&quot;}'>Add MCP Servers</a>
+                </li>
+            
+                <li>
+                  <a href="/docs/agents/run/manage-mcp-servers" data-m='{&quot;cN&quot;:&quot;Manage MCP Servers&quot;,&quot;aN&quot;:&quot;AI in VS Code - Run Agents - Plan and Run Tasks&quot;}'>Manage MCP Servers</a>
+                </li>
+            
+                <li>
+                  <a href="/docs/agents/run/browser-tools" data-m='{&quot;cN&quot;:&quot;Browser Tools&quot;,&quot;aN&quot;:&quot;AI in VS Code - Run Agents - Plan and Run Tasks&quot;}'>Browser Tools</a>
+                </li>
+            
+                <li>
+                  <a href="/docs/agents/run/subagents" data-m='{&quot;cN&quot;:&quot;Subagents&quot;,&quot;aN&quot;:&quot;AI in VS Code - Run Agents - Plan and Run Tasks&quot;}'>Subagents</a>
+                </li>
+            
+                <li>
+                  <a href="/docs/agents/run/automations" data-m='{&quot;cN&quot;:&quot;Automations&quot;,&quot;aN&quot;:&quot;AI in VS Code - Run Agents - Plan and Run Tasks&quot;}'>Automations</a>
+                </li>
+            
+              </ul>
+            </li>
+            
+            <li class="panel collapsed">
+              <a class="area" role="button" href="#docs-docs-1-3-7-articles" data-toggle="collapse" aria-controls="docs-docs-1-3-7-articles" aria-expanded="false" data-m='{&quot;cN&quot;:&quot;Sessions&quot;,&quot;aN&quot;:&quot;AI in VS Code - Run Agents&quot;,&quot;cT&quot;:&quot;toggle&quot;}'>Sessions</a>
+              <ul id="docs-docs-1-3-7-articles" class="collapse">
+                
+                <li>
+                  <a href="/docs/agents/run/sessions/manage-sessions" data-m='{&quot;cN&quot;:&quot;Manage Sessions&quot;,&quot;aN&quot;:&quot;AI in VS Code - Run Agents - Sessions&quot;}'>Manage Sessions</a>
+                </li>
+            
+                <li>
+                  <a href="/docs/agents/run/sessions/session-history" data-m='{&quot;cN&quot;:&quot;Session History&quot;,&quot;aN&quot;:&quot;AI in VS Code - Run Agents - Sessions&quot;}'>Session History</a>
+                </li>
+            
+                <li>
+                  <a href="/docs/agents/run/remote-agent-sessions" data-m='{&quot;cN&quot;:&quot;Remote Agent Sessions&quot;,&quot;aN&quot;:&quot;AI in VS Code - Run Agents - Sessions&quot;}'>Remote Agent Sessions</a>
+                </li>
+            
+                <li>
+                  <a href="/docs/agents/run/memory" data-m='{&quot;cN&quot;:&quot;Memory&quot;,&quot;aN&quot;:&quot;AI in VS Code - Run Agents - Sessions&quot;}'>Memory</a>
+                </li>
+            
+                <li>
+                  <a href="/docs/agents/run/artifacts" data-m='{&quot;cN&quot;:&quot;Artifacts&quot;,&quot;aN&quot;:&quot;AI in VS Code - Run Agents - Sessions&quot;}'>Artifacts</a>
+                </li>
+            
+              </ul>
+            </li>
+            
+            <li class="panel collapsed">
+              <a class="area" role="button" href="#docs-docs-1-3-8-articles" data-toggle="collapse" aria-controls="docs-docs-1-3-8-articles" aria-expanded="false" data-m='{&quot;cN&quot;:&quot;Permissions and Security&quot;,&quot;aN&quot;:&quot;AI in VS Code - Run Agents&quot;,&quot;cT&quot;:&quot;toggle&quot;}'>Permissions and Security</a>
+              <ul id="docs-docs-1-3-8-articles" class="collapse">
+                
+                <li>
+                  <a href="/docs/agents/run/approvals" data-m='{&quot;cN&quot;:&quot;Approvals &amp; Permissions&quot;,&quot;aN&quot;:&quot;AI in VS Code - Run Agents - Permissions and Security&quot;}'>Approvals &amp; Permissions</a>
+                </li>
+            
+                <li>
+                  <a href="/docs/agents/run/agent-sandboxing" data-m='{&quot;cN&quot;:&quot;Agent Sandboxing&quot;,&quot;aN&quot;:&quot;AI in VS Code - Run Agents - Permissions and Security&quot;}'>Agent Sandboxing</a>
+                </li>
+            
+                <li>
+                  <a href="/docs/agents/run/security" data-m='{&quot;cN&quot;:&quot;AI Security&quot;,&quot;aN&quot;:&quot;AI in VS Code - Run Agents - Permissions and Security&quot;}'>AI Security</a>
+                </li>
+            
+              </ul>
+            </li>
+            
+              </ul>
+            </li>
+            
+            <li class="panel collapsed">
+              <a class="area" role="button" href="#docs-docs-1-4-articles" data-toggle="collapse" aria-controls="docs-docs-1-4-articles" aria-expanded="false" data-m='{&quot;cN&quot;:&quot;Customize Agents&quot;,&quot;aN&quot;:&quot;AI in VS Code&quot;,&quot;cT&quot;:&quot;toggle&quot;}'>Customize Agents</a>
+              <ul id="docs-docs-1-4-articles" class="collapse">
+                
+                <li>
+                  <a href="/docs/agent-customization/overview" data-m='{&quot;cN&quot;:&quot;Create and Manage&quot;,&quot;aN&quot;:&quot;AI in VS Code - Customize Agents&quot;}'>Create and Manage</a>
+                </li>
+            
+                <li>
+                  <a href="/docs/agent-customization/custom-instructions" data-m='{&quot;cN&quot;:&quot;Instructions&quot;,&quot;aN&quot;:&quot;AI in VS Code - Customize Agents&quot;}'>Instructions</a>
+                </li>
+            
+                <li>
+                  <a href="/docs/agent-customization/agent-skills" data-m='{&quot;cN&quot;:&quot;Agent Skills&quot;,&quot;aN&quot;:&quot;AI in VS Code - Customize Agents&quot;}'>Agent Skills</a>
+                </li>
+            
+                <li>
+                  <a href="/docs/agent-customization/custom-agents" data-m='{&quot;cN&quot;:&quot;Custom Agents&quot;,&quot;aN&quot;:&quot;AI in VS Code - Customize Agents&quot;}'>Custom Agents</a>
+                </li>
+            
+                <li>
+                  <a href="/docs/agent-customization/hooks" data-m='{&quot;cN&quot;:&quot;Hooks&quot;,&quot;aN&quot;:&quot;AI in VS Code - Customize Agents&quot;}'>Hooks</a>
+                </li>
+            
+                <li>
+                  <a href="/docs/agent-customization/agent-plugins" data-m='{&quot;cN&quot;:&quot;Plugins&quot;,&quot;aN&quot;:&quot;AI in VS Code - Customize Agents&quot;}'>Plugins</a>
+                </li>
+            
+                <li>
+                  <a href="/docs/agent-customization/prompt-files" data-m='{&quot;cN&quot;:&quot;Prompt Files&quot;,&quot;aN&quot;:&quot;AI in VS Code - Customize Agents&quot;}'>Prompt Files</a>
+                </li>
+            
+                <li>
+                  <a href="/docs/agent-customization/migrate-customizations" data-m='{&quot;cN&quot;:&quot;Migrate Existing Customizations&quot;,&quot;aN&quot;:&quot;AI in VS Code - Customize Agents&quot;}'>Migrate Existing Customizations</a>
+                </li>
+            
+              </ul>
+            </li>
+            
+            <li class="panel collapsed">
+              <a class="area" role="button" href="#docs-docs-1-5-articles" data-toggle="collapse" aria-controls="docs-docs-1-5-articles" aria-expanded="false" data-m='{&quot;cN&quot;:&quot;Tutorials &amp; Guides&quot;,&quot;aN&quot;:&quot;AI in VS Code&quot;,&quot;cT&quot;:&quot;toggle&quot;}'>Tutorials &amp; Guides</a>
+              <ul id="docs-docs-1-5-articles" class="collapse">
+                
+                <li>
+                  <a href="/docs/agents/guides/overview" data-m='{&quot;cN&quot;:&quot;Find a Guide&quot;,&quot;aN&quot;:&quot;AI in VS Code - Tutorials &amp; Guides&quot;}'>Find a Guide</a>
+                </li>
+            
+                <li>
+                  <a href="/docs/agents/guides/explore-a-codebase" data-m='{&quot;cN&quot;:&quot;Explore a Codebase&quot;,&quot;aN&quot;:&quot;AI in VS Code - Tutorials &amp; Guides&quot;}'>Explore a Codebase</a>
+                </li>
+            
+                <li>
+                  <a href="/docs/agents/guides/add-a-feature" data-m='{&quot;cN&quot;:&quot;Add a Feature&quot;,&quot;aN&quot;:&quot;AI in VS Code - Tutorials &amp; Guides&quot;}'>Add a Feature</a>
+                </li>
+            
+                <li>
+                  <a href="/docs/agents/guides/fix-a-bug-with-agents" data-m='{&quot;cN&quot;:&quot;Fix a Bug&quot;,&quot;aN&quot;:&quot;AI in VS Code - Tutorials &amp; Guides&quot;}'>Fix a Bug</a>
+                </li>
+            
+                <li>
+                  <a href="/docs/agents/guides/refactor-safely" data-m='{&quot;cN&quot;:&quot;Refactor Safely&quot;,&quot;aN&quot;:&quot;AI in VS Code - Tutorials &amp; Guides&quot;}'>Refactor Safely</a>
+                </li>
+            
+                <li>
+                  <a href="/docs/agents/guides/test-code-with-ai" data-m='{&quot;cN&quot;:&quot;Add Tests&quot;,&quot;aN&quot;:&quot;AI in VS Code - Tutorials &amp; Guides&quot;}'>Add Tests</a>
+                </li>
+            
+                <li>
+                  <a href="/docs/agents/guides/browser-agent-testing-guide" data-m='{&quot;cN&quot;:&quot;Test Web Apps&quot;,&quot;aN&quot;:&quot;AI in VS Code - Tutorials &amp; Guides&quot;}'>Test Web Apps</a>
+                </li>
+            
+                <li>
+                  <a href="/docs/agents/guides/delegate-two-tasks" data-m='{&quot;cN&quot;:&quot;Run Parallel Tasks&quot;,&quot;aN&quot;:&quot;AI in VS Code - Tutorials &amp; Guides&quot;}'>Run Parallel Tasks</a>
+                </li>
+            
+                <li>
+                  <a href="/docs/agents/guides/get-agent-back-on-track" data-m='{&quot;cN&quot;:&quot;Get Back on Track&quot;,&quot;aN&quot;:&quot;AI in VS Code - Tutorials &amp; Guides&quot;}'>Get Back on Track</a>
+                </li>
+            
+                <li>
+                  <a href="/docs/agents/guides/customize-copilot-guide" data-m='{&quot;cN&quot;:&quot;Adapt Agents to Your Project&quot;,&quot;aN&quot;:&quot;AI in VS Code - Tutorials &amp; Guides&quot;}'>Adapt Agents to Your Project</a>
+                </li>
+            
+                <li>
+                  <a href="/docs/agents/guides/context-engineering-guide" data-m='{&quot;cN&quot;:&quot;Context Engineering&quot;,&quot;aN&quot;:&quot;AI in VS Code - Tutorials &amp; Guides&quot;}'>Context Engineering</a>
+                </li>
+            
+                <li>
+                  <a href="/docs/agents/guides/test-driven-development-guide" data-m='{&quot;cN&quot;:&quot;Test-Driven Development&quot;,&quot;aN&quot;:&quot;AI in VS Code - Tutorials &amp; Guides&quot;}'>Test-Driven Development</a>
+                </li>
+            
+                <li>
+                  <a href="/docs/agents/guides/notebooks-with-ai" data-m='{&quot;cN&quot;:&quot;Jupyter Notebooks&quot;,&quot;aN&quot;:&quot;AI in VS Code - Tutorials &amp; Guides&quot;}'>Jupyter Notebooks</a>
+                </li>
+            
+                <li>
+                  <a href="/docs/agents/guides/optimize-usage" data-m='{&quot;cN&quot;:&quot;Reduce Credit Usage&quot;,&quot;aN&quot;:&quot;AI in VS Code - Tutorials &amp; Guides&quot;}'>Reduce Credit Usage</a>
+                </li>
+            
+                <li>
+                  <a href="/docs/agents/guides/prompt-examples" data-m='{&quot;cN&quot;:&quot;Prompt Examples&quot;,&quot;aN&quot;:&quot;AI in VS Code - Tutorials &amp; Guides&quot;}'>Prompt Examples</a>
+                </li>
+            
+              </ul>
+            </li>
+            
+            <li class="panel collapsed">
+              <a class="area" role="button" href="#docs-docs-1-6-articles" data-toggle="collapse" aria-controls="docs-docs-1-6-articles" aria-expanded="false" data-m='{&quot;cN&quot;:&quot;Concepts&quot;,&quot;aN&quot;:&quot;AI in VS Code&quot;,&quot;cT&quot;:&quot;toggle&quot;}'>Concepts</a>
+              <ul id="docs-docs-1-6-articles" class="collapse">
+                
+                <li>
+                  <a href="/docs/agents/concepts/agents" data-m='{&quot;cN&quot;:&quot;Agents&quot;,&quot;aN&quot;:&quot;AI in VS Code - Concepts&quot;}'>Agents</a>
+                </li>
+            
+                <li>
+                  <a href="/docs/agents/concepts/language-models" data-m='{&quot;cN&quot;:&quot;How Models Work&quot;,&quot;aN&quot;:&quot;AI in VS Code - Concepts&quot;}'>How Models Work</a>
+                </li>
+            
+                <li>
+                  <a href="/docs/agents/concepts/context" data-m='{&quot;cN&quot;:&quot;Context&quot;,&quot;aN&quot;:&quot;AI in VS Code - Concepts&quot;}'>Context</a>
+                </li>
+            
+                <li>
+                  <a href="/docs/agents/concepts/tools" data-m='{&quot;cN&quot;:&quot;Tools&quot;,&quot;aN&quot;:&quot;AI in VS Code - Concepts&quot;}'>Tools</a>
+                </li>
+            
+                <li>
+                  <a href="/docs/agents/concepts/sessions" data-m='{&quot;cN&quot;:&quot;Sessions and Chats&quot;,&quot;aN&quot;:&quot;AI in VS Code - Concepts&quot;}'>Sessions and Chats</a>
+                </li>
+            
+                <li>
+                  <a href="/docs/agents/concepts/trust-and-safety" data-m='{&quot;cN&quot;:&quot;Trust &amp; Safety&quot;,&quot;aN&quot;:&quot;AI in VS Code - Concepts&quot;}'>Trust &amp; Safety</a>
+                </li>
+            
+                <li>
+                  <a href="/docs/agents/concepts/customization" data-m='{&quot;cN&quot;:&quot;Agent Customization&quot;,&quot;aN&quot;:&quot;AI in VS Code - Concepts&quot;}'>Agent Customization</a>
+                </li>
+            
+                <li>
+                  <a href="/docs/agents/concepts/agent-harnesses" data-m='{&quot;cN&quot;:&quot;Agent Harnesses&quot;,&quot;aN&quot;:&quot;AI in VS Code - Concepts&quot;}'>Agent Harnesses</a>
+                </li>
+            
+                <li>
+                  <a href="/docs/agents/reference/workspace-context" data-m='{&quot;cN&quot;:&quot;Workspace Context&quot;,&quot;aN&quot;:&quot;AI in VS Code - Concepts&quot;}'>Workspace Context</a>
+                </li>
+            
+              </ul>
+            </li>
+            
+            <li class="panel collapsed">
+              <a class="area" role="button" href="#docs-docs-1-7-articles" data-toggle="collapse" aria-controls="docs-docs-1-7-articles" aria-expanded="false" data-m='{&quot;cN&quot;:&quot;Reference&quot;,&quot;aN&quot;:&quot;AI in VS Code&quot;,&quot;cT&quot;:&quot;toggle&quot;}'>Reference</a>
+              <ul id="docs-docs-1-7-articles" class="collapse">
+                
+                <li>
+                  <a href="/docs/agents/reference/ai-features-cheat-sheet" data-m='{&quot;cN&quot;:&quot;Cheat Sheet&quot;,&quot;aN&quot;:&quot;AI in VS Code - Reference&quot;}'>Cheat Sheet</a>
+                </li>
+            
+                <li>
+                  <a href="/docs/agents/reference/tools-reference" data-m='{&quot;cN&quot;:&quot;Tools and Context&quot;,&quot;aN&quot;:&quot;AI in VS Code - Reference&quot;}'>Tools and Context</a>
+                </li>
+            
+                <li>
+                  <a href="/docs/agents/reference/ai-settings" data-m='{&quot;cN&quot;:&quot;Settings Reference&quot;,&quot;aN&quot;:&quot;AI in VS Code - Reference&quot;}'>Settings Reference</a>
+                </li>
+            
+                <li>
+                  <a href="/docs/agents/reference/chat-pet" data-m='{&quot;cN&quot;:&quot;VS Code Pet&quot;,&quot;aN&quot;:&quot;AI in VS Code - Reference&quot;}'>VS Code Pet</a>
+                </li>
+            
+                <li>
+                  <a href="/docs/agents/reference/custom-agent-file-reference" data-m='{&quot;cN&quot;:&quot;Custom Agent File Reference&quot;,&quot;aN&quot;:&quot;AI in VS Code - Reference&quot;}'>Custom Agent File Reference</a>
+                </li>
+            
+                <li>
+                  <a href="/docs/agents/reference/agent-plugin-reference" data-m='{&quot;cN&quot;:&quot;Agent Plugin Authoring Reference&quot;,&quot;aN&quot;:&quot;AI in VS Code - Reference&quot;}'>Agent Plugin Authoring Reference</a>
+                </li>
+            
+                <li>
+                  <a href="/docs/agents/reference/mcp-configuration" data-m='{&quot;cN&quot;:&quot;MCP Configuration&quot;,&quot;aN&quot;:&quot;AI in VS Code - Reference&quot;}'>MCP Configuration</a>
+                </li>
+            
+                <li>
+                  <a href="/docs/agents/reference/hooks-reference" data-m='{&quot;cN&quot;:&quot;Hooks Reference&quot;,&quot;aN&quot;:&quot;AI in VS Code - Reference&quot;}'>Hooks Reference</a>
+                </li>
+            
+                <li>
+                  <a href="/docs/agents/guides/monitoring-agents" data-m='{&quot;cN&quot;:&quot;OpenTelemetry Monitoring&quot;,&quot;aN&quot;:&quot;AI in VS Code - Reference&quot;}'>OpenTelemetry Monitoring</a>
+                </li>
+            
+                <li>
+                  <a href="/docs/agents/concepts/agent-host" data-m='{&quot;cN&quot;:&quot;Agent Host Architecture&quot;,&quot;aN&quot;:&quot;AI in VS Code - Reference&quot;}'>Agent Host Architecture</a>
+                </li>
+            
+              </ul>
+            </li>
+            
+            <li class="panel collapsed">
+              <a class="area" role="button" href="#docs-docs-1-8-articles" data-toggle="collapse" aria-controls="docs-docs-1-8-articles" aria-expanded="false" data-m='{&quot;cN&quot;:&quot;Troubleshooting&quot;,&quot;aN&quot;:&quot;AI in VS Code&quot;,&quot;cT&quot;:&quot;toggle&quot;}'>Troubleshooting</a>
+              <ul id="docs-docs-1-8-articles" class="collapse">
+                
+                <li>
+                  <a href="/docs/agents/agent-troubleshooting/troubleshooting" data-m='{&quot;cN&quot;:&quot;Troubleshooting&quot;,&quot;aN&quot;:&quot;AI in VS Code - Troubleshooting&quot;}'>Troubleshooting</a>
+                </li>
+            
+                <li>
+                  <a href="/docs/agents/agent-troubleshooting/chat-debug-view" data-m='{&quot;cN&quot;:&quot;Debug Chat Interactions&quot;,&quot;aN&quot;:&quot;AI in VS Code - Troubleshooting&quot;}'>Debug Chat Interactions</a>
+                </li>
+            
+                <li>
+                  <a href="/docs/agents/agent-troubleshooting/cache-explorer" data-m='{&quot;cN&quot;:&quot;Diagnose Prompt Caching&quot;,&quot;aN&quot;:&quot;AI in VS Code - Troubleshooting&quot;}'>Diagnose Prompt Caching</a>
+                </li>
+            
+                <li>
+                  <a href="/docs/agents/agent-troubleshooting/faq" data-m='{&quot;cN&quot;:&quot;FAQ&quot;,&quot;aN&quot;:&quot;AI in VS Code - Troubleshooting&quot;}'>FAQ</a>
+                </li>
+            
+              </ul>
+            </li>
+            
+              </ul>
+            </li>
+            
+            <li class="panel collapsed">
+              <a class="area" role="button" href="#docs-docs-2-articles" data-parent="#main-nav" data-toggle="collapse" aria-controls="docs-docs-2-articles" aria-expanded="false" data-m='{&quot;cN&quot;:&quot;Editor&quot;,&quot;cT&quot;:&quot;toggle&quot;}'>Editor</a>
+              <ul id="docs-docs-2-articles" class="collapse">
+                
+                <li>
+                  <a href="/docs/editing/getting-started/overview" data-m='{&quot;cN&quot;:&quot;Overview&quot;,&quot;aN&quot;:&quot;Editor&quot;}'>Overview</a>
+                </li>
+            
+            <li class="panel collapsed">
+              <a class="area" role="button" href="#docs-docs-2-1-articles" data-toggle="collapse" aria-controls="docs-docs-2-1-articles" aria-expanded="false" data-m='{&quot;cN&quot;:&quot;Getting Started&quot;,&quot;aN&quot;:&quot;Editor&quot;,&quot;cT&quot;:&quot;toggle&quot;}'>Getting Started</a>
+              <ul id="docs-docs-2-1-articles" class="collapse">
+                
+                <li>
+                  <a href="/docs/editing/getting-started/editor-tutorial" data-m='{&quot;cN&quot;:&quot;Editor Tutorial&quot;,&quot;aN&quot;:&quot;Editor - Getting Started&quot;}'>Editor Tutorial</a>
+                </li>
+            
+                <li>
+                  <a href="/docs/editing/getting-started/userinterface" data-m='{&quot;cN&quot;:&quot;User Interface&quot;,&quot;aN&quot;:&quot;Editor - Getting Started&quot;}'>User Interface</a>
+                </li>
+            
+                <li>
+                  <a href="/docs/editing/getting-started/tips-and-tricks" data-m='{&quot;cN&quot;:&quot;Tips and Tricks&quot;,&quot;aN&quot;:&quot;Editor - Getting Started&quot;}'>Tips and Tricks</a>
+                </li>
+            
+              </ul>
+            </li>
+            
+            <li class="panel collapsed">
+              <a class="area" role="button" href="#docs-docs-2-2-articles" data-toggle="collapse" aria-controls="docs-docs-2-2-articles" aria-expanded="false" data-m='{&quot;cN&quot;:&quot;Write code&quot;,&quot;aN&quot;:&quot;Editor&quot;,&quot;cT&quot;:&quot;toggle&quot;}'>Write code</a>
+              <ul id="docs-docs-2-2-articles" class="collapse">
+                
+                <li>
+                  <a href="/docs/editing/codebasics" data-m='{&quot;cN&quot;:&quot;Basic Editing&quot;,&quot;aN&quot;:&quot;Editor - Write code&quot;}'>Basic Editing</a>
+                </li>
+            
+                <li>
+                  <a href="/docs/editing/intellisense" data-m='{&quot;cN&quot;:&quot;IntelliSense&quot;,&quot;aN&quot;:&quot;Editor - Write code&quot;}'>IntelliSense</a>
+                </li>
+            
+                <li>
+                  <a href="/docs/editing/ai-powered-suggestions" data-m='{&quot;cN&quot;:&quot;Inline Suggestions&quot;,&quot;aN&quot;:&quot;Editor - Write code&quot;}'>Inline Suggestions</a>
+                </li>
+            
+                <li>
+                  <a href="/docs/editing/copilot-smart-actions" data-m='{&quot;cN&quot;:&quot;Smart Actions&quot;,&quot;aN&quot;:&quot;Editor - Write code&quot;}'>Smart Actions</a>
+                </li>
+            
+                <li>
+                  <a href="/docs/editing/editingevolved" data-m='{&quot;cN&quot;:&quot;Code Navigation&quot;,&quot;aN&quot;:&quot;Editor - Write code&quot;}'>Code Navigation</a>
+                </li>
+            
+                <li>
+                  <a href="/docs/editing/refactoring" data-m='{&quot;cN&quot;:&quot;Refactoring&quot;,&quot;aN&quot;:&quot;Editor - Write code&quot;}'>Refactoring</a>
+                </li>
+            
+                <li>
+                  <a href="/docs/editing/userdefinedsnippets" data-m='{&quot;cN&quot;:&quot;Snippets&quot;,&quot;aN&quot;:&quot;Editor - Write code&quot;}'>Snippets</a>
+                </li>
+            
+            <li class="panel collapsed">
+              <a class="area" role="button" href="#docs-docs-2-2-7-articles" data-toggle="collapse" aria-controls="docs-docs-2-2-7-articles" aria-expanded="false" data-m='{&quot;cN&quot;:&quot;Workspaces&quot;,&quot;aN&quot;:&quot;Editor - Write code&quot;,&quot;cT&quot;:&quot;toggle&quot;}'>Workspaces</a>
+              <ul id="docs-docs-2-2-7-articles" class="collapse">
+                
+                <li>
+                  <a href="/docs/editing/workspaces/workspaces" data-m='{&quot;cN&quot;:&quot;Overview&quot;,&quot;aN&quot;:&quot;Editor - Write code - Workspaces&quot;}'>Overview</a>
+                </li>
+            
+                <li>
+                  <a href="/docs/editing/workspaces/multi-root-workspaces" data-m='{&quot;cN&quot;:&quot;Multi-Root Workspaces&quot;,&quot;aN&quot;:&quot;Editor - Write code - Workspaces&quot;}'>Multi-Root Workspaces</a>
+                </li>
+            
+                <li>
+                  <a href="/docs/editing/workspaces/workspace-trust" data-m='{&quot;cN&quot;:&quot;Workspace Trust&quot;,&quot;aN&quot;:&quot;Editor - Write code - Workspaces&quot;}'>Workspace Trust</a>
+                </li>
+            
+              </ul>
+            </li>
+            
+              </ul>
+            </li>
+            
+            <li class="panel collapsed">
+              <a class="area" role="button" href="#docs-docs-2-3-articles" data-toggle="collapse" aria-controls="docs-docs-2-3-articles" aria-expanded="false" data-m='{&quot;cN&quot;:&quot;Configure the editor&quot;,&quot;aN&quot;:&quot;Editor&quot;,&quot;cT&quot;:&quot;toggle&quot;}'>Configure the editor</a>
+              <ul id="docs-docs-2-3-articles" class="collapse">
+                
+                <li>
+                  <a href="/docs/configure/locales" data-m='{&quot;cN&quot;:&quot;Display Language&quot;,&quot;aN&quot;:&quot;Editor - Configure the editor&quot;}'>Display Language</a>
+                </li>
+            
+                <li>
+                  <a href="/docs/configure/custom-layout" data-m='{&quot;cN&quot;:&quot;Layout&quot;,&quot;aN&quot;:&quot;Editor - Configure the editor&quot;}'>Layout</a>
+                </li>
+            
+                <li>
+                  <a href="/docs/configure/keybindings" data-m='{&quot;cN&quot;:&quot;Keyboard Shortcuts&quot;,&quot;aN&quot;:&quot;Editor - Configure the editor&quot;}'>Keyboard Shortcuts</a>
+                </li>
+            
+                <li>
+                  <a href="/docs/configure/settings" data-m='{&quot;cN&quot;:&quot;Settings&quot;,&quot;aN&quot;:&quot;Editor - Configure the editor&quot;}'>Settings</a>
+                </li>
+            
+                <li>
+                  <a href="/docs/configure/settings-sync" data-m='{&quot;cN&quot;:&quot;Settings Sync&quot;,&quot;aN&quot;:&quot;Editor - Configure the editor&quot;}'>Settings Sync</a>
+                </li>
+            
+            <li class="panel collapsed">
+              <a class="area" role="button" href="#docs-docs-2-3-5-articles" data-toggle="collapse" aria-controls="docs-docs-2-3-5-articles" aria-expanded="false" data-m='{&quot;cN&quot;:&quot;Extensions&quot;,&quot;aN&quot;:&quot;Editor - Configure the editor&quot;,&quot;cT&quot;:&quot;toggle&quot;}'>Extensions</a>
+              <ul id="docs-docs-2-3-5-articles" class="collapse">
+                
+                <li>
+                  <a href="/docs/configure/extensions/extensions" data-m='{&quot;cN&quot;:&quot;Overview&quot;,&quot;aN&quot;:&quot;Editor - Configure the editor - Extensions&quot;}'>Overview</a>
+                </li>
+            
+                <li>
+                  <a href="/docs/configure/extensions/extension-marketplace" data-m='{&quot;cN&quot;:&quot;Extension Marketplace&quot;,&quot;aN&quot;:&quot;Editor - Configure the editor - Extensions&quot;}'>Extension Marketplace</a>
+                </li>
+            
+                <li>
+                  <a href="/docs/configure/extensions/extension-runtime-security" data-m='{&quot;cN&quot;:&quot;Extension Runtime Security&quot;,&quot;aN&quot;:&quot;Editor - Configure the editor - Extensions&quot;}'>Extension Runtime Security</a>
+                </li>
+            
+              </ul>
+            </li>
+            
+                <li>
+                  <a href="/docs/configure/themes" data-m='{&quot;cN&quot;:&quot;Themes&quot;,&quot;aN&quot;:&quot;Editor - Configure the editor&quot;}'>Themes</a>
+                </li>
+            
+                <li>
+                  <a href="/docs/configure/profiles" data-m='{&quot;cN&quot;:&quot;Profiles&quot;,&quot;aN&quot;:&quot;Editor - Configure the editor&quot;}'>Profiles</a>
+                </li>
+            
+            <li class="panel collapsed">
+              <a class="area" role="button" href="#docs-docs-2-3-8-articles" data-toggle="collapse" aria-controls="docs-docs-2-3-8-articles" aria-expanded="false" data-m='{&quot;cN&quot;:&quot;Accessibility&quot;,&quot;aN&quot;:&quot;Editor - Configure the editor&quot;,&quot;cT&quot;:&quot;toggle&quot;}'>Accessibility</a>
+              <ul id="docs-docs-2-3-8-articles" class="collapse">
+                
+                <li>
+                  <a href="/docs/configure/accessibility/accessibility" data-m='{&quot;cN&quot;:&quot;Overview&quot;,&quot;aN&quot;:&quot;Editor - Configure the editor - Accessibility&quot;}'>Overview</a>
+                </li>
+            
+                <li>
+                  <a href="/docs/configure/accessibility/voice" data-m='{&quot;cN&quot;:&quot;Voice Interactions&quot;,&quot;aN&quot;:&quot;Editor - Configure the editor - Accessibility&quot;}'>Voice Interactions</a>
+                </li>
+            
+              </ul>
+            </li>
+            
+                <li>
+                  <a href="/docs/configure/command-line" data-m='{&quot;cN&quot;:&quot;Command Line Interface&quot;,&quot;aN&quot;:&quot;Editor - Configure the editor&quot;}'>Command Line Interface</a>
+                </li>
+            
+                <li>
+                  <a href="/docs/configure/telemetry" data-m='{&quot;cN&quot;:&quot;Telemetry&quot;,&quot;aN&quot;:&quot;Editor - Configure the editor&quot;}'>Telemetry</a>
+                </li>
+            
+              </ul>
+            </li>
+            
+            <li class="panel collapsed">
+              <a class="area" role="button" href="#docs-docs-2-4-articles" data-toggle="collapse" aria-controls="docs-docs-2-4-articles" aria-expanded="false" data-m='{&quot;cN&quot;:&quot;Reference&quot;,&quot;aN&quot;:&quot;Editor&quot;,&quot;cT&quot;:&quot;toggle&quot;}'>Reference</a>
+              <ul id="docs-docs-2-4-articles" class="collapse">
+                
+                <li>
+                  <a href="/docs/reference/default-keybindings" data-m='{&quot;cN&quot;:&quot;Default Keyboard Shortcuts&quot;,&quot;aN&quot;:&quot;Editor - Reference&quot;}'>Default Keyboard Shortcuts</a>
+                </li>
+            
+                <li>
+                  <a href="/docs/reference/default-settings" data-m='{&quot;cN&quot;:&quot;Default Settings&quot;,&quot;aN&quot;:&quot;Editor - Reference&quot;}'>Default Settings</a>
+                </li>
+            
+                <li>
+                  <a href="/docs/reference/variables-reference" data-m='{&quot;cN&quot;:&quot;Substitution Variables&quot;,&quot;aN&quot;:&quot;Editor - Reference&quot;}'>Substitution Variables</a>
+                </li>
+            
+                <li>
+                  <a href="/docs/reference/tasks-appendix" data-m='{&quot;cN&quot;:&quot;Tasks Schema&quot;,&quot;aN&quot;:&quot;Editor - Reference&quot;}'>Tasks Schema</a>
+                </li>
+            
+              </ul>
+            </li>
+            
+              </ul>
+            </li>
+            
+            <li class="panel collapsed">
+              <a class="area" role="button" href="#docs-docs-3-articles" data-parent="#main-nav" data-toggle="collapse" aria-controls="docs-docs-3-articles" aria-expanded="false" data-m='{&quot;cN&quot;:&quot;Source Control&quot;,&quot;cT&quot;:&quot;toggle&quot;}'>Source Control</a>
+              <ul id="docs-docs-3-articles" class="collapse">
+                
+                <li>
+                  <a href="/docs/sourcecontrol/overview" data-m='{&quot;cN&quot;:&quot;Overview&quot;,&quot;aN&quot;:&quot;Source Control&quot;}'>Overview</a>
+                </li>
+            
+                <li>
+                  <a href="/docs/sourcecontrol/quickstart" data-m='{&quot;cN&quot;:&quot;Quickstart&quot;,&quot;aN&quot;:&quot;Source Control&quot;}'>Quickstart</a>
+                </li>
+            
+                <li>
+                  <a href="/docs/sourcecontrol/repos-remotes" data-m='{&quot;cN&quot;:&quot;Repositories &amp; Remotes&quot;,&quot;aN&quot;:&quot;Source Control&quot;}'>Repositories &amp; Remotes</a>
+                </li>
+            
+                <li>
+                  <a href="/docs/sourcecontrol/staging-commits" data-m='{&quot;cN&quot;:&quot;Staging, Commits &amp; Undo&quot;,&quot;aN&quot;:&quot;Source Control&quot;}'>Staging, Commits &amp; Undo</a>
+                </li>
+            
+                <li>
+                  <a href="/docs/sourcecontrol/history" data-m='{&quot;cN&quot;:&quot;History &amp; Blame&quot;,&quot;aN&quot;:&quot;Source Control&quot;}'>History &amp; Blame</a>
+                </li>
+            
+                <li>
+                  <a href="/docs/sourcecontrol/branches-worktrees" data-m='{&quot;cN&quot;:&quot;Branches, Stashes &amp; Worktrees&quot;,&quot;aN&quot;:&quot;Source Control&quot;}'>Branches, Stashes &amp; Worktrees</a>
+                </li>
+            
+                <li>
+                  <a href="/docs/sourcecontrol/merge-conflicts" data-m='{&quot;cN&quot;:&quot;Merge Conflicts&quot;,&quot;aN&quot;:&quot;Source Control&quot;}'>Merge Conflicts</a>
+                </li>
+            
+                <li>
+                  <a href="/docs/sourcecontrol/github" data-m='{&quot;cN&quot;:&quot;Collaborate on GitHub&quot;,&quot;aN&quot;:&quot;Source Control&quot;}'>Collaborate on GitHub</a>
+                </li>
+            
+                <li>
+                  <a href="/docs/sourcecontrol/troubleshooting" data-m='{&quot;cN&quot;:&quot;Troubleshooting&quot;,&quot;aN&quot;:&quot;Source Control&quot;}'>Troubleshooting</a>
+                </li>
+            
+                <li>
+                  <a href="/docs/sourcecontrol/faq" data-m='{&quot;cN&quot;:&quot;FAQ&quot;,&quot;aN&quot;:&quot;Source Control&quot;}'>FAQ</a>
+                </li>
+            
+              </ul>
+            </li>
+            
+            <li class="panel collapsed">
+              <a class="area" role="button" href="#docs-docs-4-articles" data-parent="#main-nav" data-toggle="collapse" aria-controls="docs-docs-4-articles" aria-expanded="false" data-m='{&quot;cN&quot;:&quot;Terminal&quot;,&quot;cT&quot;:&quot;toggle&quot;}'>Terminal</a>
+              <ul id="docs-docs-4-articles" class="collapse">
+                
+                <li>
+                  <a href="/docs/terminal/getting-started" data-m='{&quot;cN&quot;:&quot;Get Started&quot;,&quot;aN&quot;:&quot;Terminal&quot;}'>Get Started</a>
+                </li>
+            
+                <li>
+                  <a href="/docs/terminal/basics" data-m='{&quot;cN&quot;:&quot;Terminal Basics&quot;,&quot;aN&quot;:&quot;Terminal&quot;}'>Terminal Basics</a>
+                </li>
+            
+                <li>
+                  <a href="/docs/terminal/profiles" data-m='{&quot;cN&quot;:&quot;Terminal Profiles&quot;,&quot;aN&quot;:&quot;Terminal&quot;}'>Terminal Profiles</a>
+                </li>
+            
+                <li>
+                  <a href="/docs/terminal/shell-integration" data-m='{&quot;cN&quot;:&quot;Shell Integration&quot;,&quot;aN&quot;:&quot;Terminal&quot;}'>Shell Integration</a>
+                </li>
+            
+                <li>
+                  <a href="/docs/terminal/appearance" data-m='{&quot;cN&quot;:&quot;Appearance&quot;,&quot;aN&quot;:&quot;Terminal&quot;}'>Appearance</a>
+                </li>
+            
+                <li>
+                  <a href="/docs/terminal/advanced" data-m='{&quot;cN&quot;:&quot;Advanced&quot;,&quot;aN&quot;:&quot;Terminal&quot;}'>Advanced</a>
+                </li>
+            
+              </ul>
+            </li>
+            
+            <li class="panel collapsed">
+              <a class="area" role="button" href="#docs-docs-5-articles" data-parent="#main-nav" data-toggle="collapse" aria-controls="docs-docs-5-articles" aria-expanded="false" data-m='{&quot;cN&quot;:&quot;Debugging &amp; Testing&quot;,&quot;cT&quot;:&quot;toggle&quot;}'>Debugging &amp; Testing</a>
+              <ul id="docs-docs-5-articles" class="collapse">
+                
+                <li>
+                  <a href="/docs/debugtest/debugging" data-m='{&quot;cN&quot;:&quot;Debugging&quot;,&quot;aN&quot;:&quot;Debugging &amp; Testing&quot;}'>Debugging</a>
+                </li>
+            
+                <li>
+                  <a href="/docs/debugtest/debugging-configuration" data-m='{&quot;cN&quot;:&quot;Debug Configuration&quot;,&quot;aN&quot;:&quot;Debugging &amp; Testing&quot;}'>Debug Configuration</a>
+                </li>
+            
+                <li>
+                  <a href="/docs/debugtest/tasks" data-m='{&quot;cN&quot;:&quot;Tasks&quot;,&quot;aN&quot;:&quot;Debugging &amp; Testing&quot;}'>Tasks</a>
+                </li>
+            
+                <li>
+                  <a href="/docs/debugtest/testing" data-m='{&quot;cN&quot;:&quot;Testing&quot;,&quot;aN&quot;:&quot;Debugging &amp; Testing&quot;}'>Testing</a>
+                </li>
+            
+                <li>
+                  <a href="/docs/debugtest/integrated-browser" data-m='{&quot;cN&quot;:&quot;Integrated Browser&quot;,&quot;aN&quot;:&quot;Debugging &amp; Testing&quot;}'>Integrated Browser</a>
+                </li>
+            
+                <li>
+                  <a href="/docs/debugtest/port-forwarding" data-m='{&quot;cN&quot;:&quot;Port Forwarding&quot;,&quot;aN&quot;:&quot;Debugging &amp; Testing&quot;}'>Port Forwarding</a>
+                </li>
+            
+            <li class="panel collapsed">
+              <a class="area" role="button" href="#docs-docs-5-6-articles" data-toggle="collapse" aria-controls="docs-docs-5-6-articles" aria-expanded="false" data-m='{&quot;cN&quot;:&quot;Guides &amp; Tutorials&quot;,&quot;aN&quot;:&quot;Debugging &amp; Testing&quot;,&quot;cT&quot;:&quot;toggle&quot;}'>Guides &amp; Tutorials</a>
+              <ul id="docs-docs-5-6-articles" class="collapse">
+                
+                <li>
+                  <a href="/docs/agents/guides/test-driven-development-guide" data-m='{&quot;cN&quot;:&quot;Test-Driven Development&quot;,&quot;aN&quot;:&quot;Debugging &amp; Testing - Guides &amp; Tutorials&quot;}'>Test-Driven Development</a>
+                </li>
+            
+                <li>
+                  <a href="/docs/agents/guides/browser-agent-testing-guide" data-m='{&quot;cN&quot;:&quot;Test Web Apps&quot;,&quot;aN&quot;:&quot;Debugging &amp; Testing - Guides &amp; Tutorials&quot;}'>Test Web Apps</a>
+                </li>
+            
+              </ul>
+            </li>
+            
+              </ul>
+            </li>
+            
+            <li class="panel collapsed">
+              <a class="area" role="button" href="#docs-docs-6-articles" data-parent="#main-nav" data-toggle="collapse" aria-controls="docs-docs-6-articles" aria-expanded="false" data-m='{&quot;cN&quot;:&quot;Enterprise&quot;,&quot;cT&quot;:&quot;toggle&quot;}'>Enterprise</a>
+              <ul id="docs-docs-6-articles" class="collapse">
+                
+                <li>
+                  <a href="/docs/enterprise/overview" data-m='{&quot;cN&quot;:&quot;Overview&quot;,&quot;aN&quot;:&quot;Enterprise&quot;}'>Overview</a>
+                </li>
+            
+                <li>
+                  <a href="/docs/enterprise/policies" data-m='{&quot;cN&quot;:&quot;Enterprise Policies&quot;,&quot;aN&quot;:&quot;Enterprise&quot;}'>Enterprise Policies</a>
+                </li>
+            
+                <li>
+                  <a href="/docs/enterprise/manage-ai-settings" data-m='{&quot;cN&quot;:&quot;Manage AI Settings&quot;,&quot;aN&quot;:&quot;Enterprise&quot;}'>Manage AI Settings</a>
+                </li>
+            
+                <li>
+                  <a href="/docs/enterprise/extensions" data-m='{&quot;cN&quot;:&quot;Extensions&quot;,&quot;aN&quot;:&quot;Enterprise&quot;}'>Extensions</a>
+                </li>
+            
+                <li>
+                  <a href="/docs/enterprise/telemetry" data-m='{&quot;cN&quot;:&quot;Telemetry&quot;,&quot;aN&quot;:&quot;Enterprise&quot;}'>Telemetry</a>
+                </li>
+            
+                <li>
+                  <a href="/docs/enterprise/updates" data-m='{&quot;cN&quot;:&quot;Updates&quot;,&quot;aN&quot;:&quot;Enterprise&quot;}'>Updates</a>
+                </li>
+            
+              </ul>
+            </li>
+            
+            <li class="panel collapsed">
+              <a class="area" role="button" href="#docs-docs-7-articles" data-parent="#main-nav" data-toggle="collapse" aria-controls="docs-docs-7-articles" aria-expanded="false" data-m='{&quot;cN&quot;:&quot;Remote&quot;,&quot;cT&quot;:&quot;toggle&quot;}'>Remote</a>
+              <ul id="docs-docs-7-articles" class="collapse">
+                
+                <li>
+                  <a href="/docs/remote/remote-overview" data-m='{&quot;cN&quot;:&quot;Overview&quot;,&quot;aN&quot;:&quot;Remote&quot;}'>Overview</a>
+                </li>
+            
+                <li>
+                  <a href="/docs/remote/vscode-web" data-m='{&quot;cN&quot;:&quot;VS Code for the Web&quot;,&quot;aN&quot;:&quot;Remote&quot;}'>VS Code for the Web</a>
+                </li>
+            
+                <li>
+                  <a href="/docs/remote/ssh" data-m='{&quot;cN&quot;:&quot;SSH&quot;,&quot;aN&quot;:&quot;Remote&quot;}'>SSH</a>
+                </li>
+            
+                <li>
+                  <a href="/docs/remote/ssh-tutorial" data-m='{&quot;cN&quot;:&quot;SSH Tutorial&quot;,&quot;aN&quot;:&quot;Remote&quot;}'>SSH Tutorial</a>
+                </li>
+            
+                <li>
+                  <a href="/docs/remote/tunnels" data-m='{&quot;cN&quot;:&quot;Tunnels&quot;,&quot;aN&quot;:&quot;Remote&quot;}'>Tunnels</a>
+                </li>
+            
+                <li>
+                  <a href="/docs/remote/dev-containers" data-m='{&quot;cN&quot;:&quot;Dev Containers&quot;,&quot;aN&quot;:&quot;Remote&quot;}'>Dev Containers</a>
+                </li>
+            
+                <li>
+                  <a href="/docs/remote/wsl" data-m='{&quot;cN&quot;:&quot;WSL&quot;,&quot;aN&quot;:&quot;Remote&quot;}'>WSL</a>
+                </li>
+            
+                <li>
+                  <a href="/docs/remote/wsl-tutorial" data-m='{&quot;cN&quot;:&quot;WSL Tutorial&quot;,&quot;aN&quot;:&quot;Remote&quot;}'>WSL Tutorial</a>
+                </li>
+            
+                <li>
+                  <a href="/docs/remote/codespaces" data-m='{&quot;cN&quot;:&quot;GitHub Codespaces&quot;,&quot;aN&quot;:&quot;Remote&quot;}'>GitHub Codespaces</a>
+                </li>
+            
+                <li>
+                  <a href="/docs/remote/vscode-server" data-m='{&quot;cN&quot;:&quot;VS Code Server&quot;,&quot;aN&quot;:&quot;Remote&quot;}'>VS Code Server</a>
+                </li>
+            
+                <li>
+                  <a href="/docs/remote/linux" data-m='{&quot;cN&quot;:&quot;Linux Prerequisites&quot;,&quot;aN&quot;:&quot;Remote&quot;}'>Linux Prerequisites</a>
+                </li>
+            
+                <li>
+                  <a href="/docs/remote/troubleshooting" data-m='{&quot;cN&quot;:&quot;Tips and Tricks&quot;,&quot;aN&quot;:&quot;Remote&quot;}'>Tips and Tricks</a>
+                </li>
+            
+                <li>
+                  <a href="/docs/remote/faq" data-m='{&quot;cN&quot;:&quot;FAQ&quot;,&quot;aN&quot;:&quot;Remote&quot;}'>FAQ</a>
+                </li>
+            
+              </ul>
+            </li>
+            
+            <li class="panel collapsed">
+              <a class="area" role="button" href="#docs-docs-8-articles" data-parent="#main-nav" data-toggle="collapse" aria-controls="docs-docs-8-articles" aria-expanded="false" data-m='{&quot;cN&quot;:&quot;Advanced Setup&quot;,&quot;cT&quot;:&quot;toggle&quot;}'>Advanced Setup</a>
+              <ul id="docs-docs-8-articles" class="collapse">
+                
+                <li>
+                  <a href="/docs/setup/copilot" data-m='{&quot;cN&quot;:&quot;GitHub Copilot Setup&quot;,&quot;aN&quot;:&quot;Advanced Setup&quot;}'>GitHub Copilot Setup</a>
+                </li>
+            
+                <li>
+                  <a href="/docs/setup/linux" data-m='{&quot;cN&quot;:&quot;Linux&quot;,&quot;aN&quot;:&quot;Advanced Setup&quot;}'>Linux</a>
+                </li>
+            
+                <li>
+                  <a href="/docs/setup/mac" data-m='{&quot;cN&quot;:&quot;macOS&quot;,&quot;aN&quot;:&quot;Advanced Setup&quot;}'>macOS</a>
+                </li>
+            
+                <li>
+                  <a href="/docs/setup/windows" data-m='{&quot;cN&quot;:&quot;Windows&quot;,&quot;aN&quot;:&quot;Advanced Setup&quot;}'>Windows</a>
+                </li>
+            
+                <li>
+                  <a href="/docs/setup/raspberry-pi" data-m='{&quot;cN&quot;:&quot;Raspberry Pi&quot;,&quot;aN&quot;:&quot;Advanced Setup&quot;}'>Raspberry Pi</a>
+                </li>
+            
+                <li>
+                  <a href="/docs/setup/network" data-m='{&quot;cN&quot;:&quot;Network&quot;,&quot;aN&quot;:&quot;Advanced Setup&quot;}'>Network</a>
+                </li>
+            
+                <li>
+                  <a href="/docs/setup/portable" data-m='{&quot;cN&quot;:&quot;Portable Mode&quot;,&quot;aN&quot;:&quot;Advanced Setup&quot;}'>Portable Mode</a>
+                </li>
+            
+                <li>
+                  <a href="/docs/setup/additional-components" data-m='{&quot;cN&quot;:&quot;Additional Components&quot;,&quot;aN&quot;:&quot;Advanced Setup&quot;}'>Additional Components</a>
+                </li>
+            
+                <li>
+                  <a href="/docs/setup/uninstall" data-m='{&quot;cN&quot;:&quot;Uninstall&quot;,&quot;aN&quot;:&quot;Advanced Setup&quot;}'>Uninstall</a>
+                </li>
+            
+              </ul>
+            </li>
+            
+                <li>
+                  <a class="area" href="/docs/languages/overview" data-m='{&quot;cN&quot;:&quot;Languages &amp; Runtimes&quot;}'>Languages &amp; Runtimes</a>
+                </li>
+            
+                <li>
+                  <a class="area" href="/docs/extension-docs/overview" data-m='{&quot;cN&quot;:&quot;Extension Docs&quot;}'>Extension Docs</a>
+                </li>
+            
+              </ul>
+            </nav>
+            <nav id="small-nav" aria-label="Topics" class="docs-nav hidden-md hidden-lg">
+              <label class="faux-h4" for="small-nav-dropdown">Topics</label>
+              <select id="small-nav-dropdown" aria-label="topics">
+                
+                
+                <option value="/docs">Overview</option>
+            
+                <optgroup label="Get Started">
+                <option value="/docs/getstarted/overview">Overview</option>
+            
+                <option value="/docs/agents/quickstart">Agents Quickstart</option>
+            
+                <option value="/docs/editing/getting-started/editor-tutorial">Editor Tutorial</option>
+            
+                <option value="/docs/getstarted/introvideos">Intro Videos</option>
+            </optgroup><optgroup label="AI in VS Code">
+                <option value="/docs/agents/overview">Overview</option>
+            <option disabled>Get Started</option>
+                <option value="/docs/setup/copilot">    Set Up GitHub Copilot</option>
+            
+                <option value="/docs/agents/quickstart">    Agents Quickstart</option>
+            
+                <option value="/docs/agents/agents-tutorial">    Agents Tutorial</option>
+            
+                <option value="/docs/agents/best-practices">    Best Practices</option>
+            
+                <option value="/docs/agents/guides/overview">    Find a Guide</option>
+            <option disabled>Chat &amp; Context</option>
+                <option value="/docs/chat/chat-overview" selected>    Use Chat</option>
+            
+                <option value="/docs/chat/inline-chat">    Inline Chat &amp; Quick Chat</option>
+            
+                <option value="/docs/chat/copilot-chat-context">    Add Prompt Context</option>
+            
+                <option value="/docs/agent-customization/language-models">    Choose and Configure Models</option>
+            <option disabled>Run Agents</option>
+                <option value="/docs/agents/run/overview">    Overview</option>
+            
+                <option value="/docs/agents/run/chat-view">    Chat View &amp; Layout</option>
+            
+                <option value="/docs/agents/run/agents-window">    Agents Window</option>
+            
+                <option value="/docs/agents/run/agent-harnesses">    Choose an Agent Harness</option>
+            
+                <option value="/docs/agents/run/agents-window-configuration">    Configure the Agents Window</option>
+            
+                <option value="/docs/agents/run/review-code-edits">    Review &amp; Revert Changes</option>
+            <option disabled>    Plan and Run Tasks</option>
+                <option value="/docs/agents/run/planning">        Plan Work</option>
+            
+                <option value="/docs/agents/run/compare-models">        Compare Model Results</option>
+            
+                <option value="/docs/agents/run/tools">        Use Tools</option>
+            
+                <option value="/docs/agent-customization/mcp-servers">        Add MCP Servers</option>
+            
+                <option value="/docs/agents/run/manage-mcp-servers">        Manage MCP Servers</option>
+            
+                <option value="/docs/agents/run/browser-tools">        Browser Tools</option>
+            
+                <option value="/docs/agents/run/subagents">        Subagents</option>
+            
+                <option value="/docs/agents/run/automations">        Automations</option>
+            <option disabled>    Sessions</option>
+                <option value="/docs/agents/run/sessions/manage-sessions">        Manage Sessions</option>
+            
+                <option value="/docs/agents/run/sessions/session-history">        Session History</option>
+            
+                <option value="/docs/agents/run/remote-agent-sessions">        Remote Agent Sessions</option>
+            
+                <option value="/docs/agents/run/memory">        Memory</option>
+            
+                <option value="/docs/agents/run/artifacts">        Artifacts</option>
+            <option disabled>    Permissions and Security</option>
+                <option value="/docs/agents/run/approvals">        Approvals &amp; Permissions</option>
+            
+                <option value="/docs/agents/run/agent-sandboxing">        Agent Sandboxing</option>
+            
+                <option value="/docs/agents/run/security">        AI Security</option>
+            <option disabled>Customize Agents</option>
+                <option value="/docs/agent-customization/overview">    Create and Manage</option>
+            
+                <option value="/docs/agent-customization/custom-instructions">    Instructions</option>
+            
+                <option value="/docs/agent-customization/agent-skills">    Agent Skills</option>
+            
+                <option value="/docs/agent-customization/custom-agents">    Custom Agents</option>
+            
+                <option value="/docs/agent-customization/hooks">    Hooks</option>
+            
+                <option value="/docs/agent-customization/agent-plugins">    Plugins</option>
+            
+                <option value="/docs/agent-customization/prompt-files">    Prompt Files</option>
+            
+                <option value="/docs/agent-customization/migrate-customizations">    Migrate Existing Customizations</option>
+            <option disabled>Tutorials &amp; Guides</option>
+                <option value="/docs/agents/guides/overview">    Find a Guide</option>
+            
+                <option value="/docs/agents/guides/explore-a-codebase">    Explore a Codebase</option>
+            
+                <option value="/docs/agents/guides/add-a-feature">    Add a Feature</option>
+            
+                <option value="/docs/agents/guides/fix-a-bug-with-agents">    Fix a Bug</option>
+            
+                <option value="/docs/agents/guides/refactor-safely">    Refactor Safely</option>
+            
+                <option value="/docs/agents/guides/test-code-with-ai">    Add Tests</option>
+            
+                <option value="/docs/agents/guides/browser-agent-testing-guide">    Test Web Apps</option>
+            
+                <option value="/docs/agents/guides/delegate-two-tasks">    Run Parallel Tasks</option>
+            
+                <option value="/docs/agents/guides/get-agent-back-on-track">    Get Back on Track</option>
+            
+                <option value="/docs/agents/guides/customize-copilot-guide">    Adapt Agents to Your Project</option>
+            
+                <option value="/docs/agents/guides/context-engineering-guide">    Context Engineering</option>
+            
+                <option value="/docs/agents/guides/test-driven-development-guide">    Test-Driven Development</option>
+            
+                <option value="/docs/agents/guides/notebooks-with-ai">    Jupyter Notebooks</option>
+            
+                <option value="/docs/agents/guides/optimize-usage">    Reduce Credit Usage</option>
+            
+                <option value="/docs/agents/guides/prompt-examples">    Prompt Examples</option>
+            <option disabled>Concepts</option>
+                <option value="/docs/agents/concepts/agents">    Agents</option>
+            
+                <option value="/docs/agents/concepts/language-models">    How Models Work</option>
+            
+                <option value="/docs/agents/concepts/context">    Context</option>
+            
+                <option value="/docs/agents/concepts/tools">    Tools</option>
+            
+                <option value="/docs/agents/concepts/sessions">    Sessions and Chats</option>
+            
+                <option value="/docs/agents/concepts/trust-and-safety">    Trust &amp; Safety</option>
+            
+                <option value="/docs/agents/concepts/customization">    Agent Customization</option>
+            
+                <option value="/docs/agents/concepts/agent-harnesses">    Agent Harnesses</option>
+            
+                <option value="/docs/agents/reference/workspace-context">    Workspace Context</option>
+            <option disabled>Reference</option>
+                <option value="/docs/agents/reference/ai-features-cheat-sheet">    Cheat Sheet</option>
+            
+                <option value="/docs/agents/reference/tools-reference">    Tools and Context</option>
+            
+                <option value="/docs/agents/reference/ai-settings">    Settings Reference</option>
+            
+                <option value="/docs/agents/reference/chat-pet">    VS Code Pet</option>
+            
+                <option value="/docs/agents/reference/custom-agent-file-reference">    Custom Agent File Reference</option>
+            
+                <option value="/docs/agents/reference/agent-plugin-reference">    Agent Plugin Authoring Reference</option>
+            
+                <option value="/docs/agents/reference/mcp-configuration">    MCP Configuration</option>
+            
+                <option value="/docs/agents/reference/hooks-reference">    Hooks Reference</option>
+            
+                <option value="/docs/agents/guides/monitoring-agents">    OpenTelemetry Monitoring</option>
+            
+                <option value="/docs/agents/concepts/agent-host">    Agent Host Architecture</option>
+            <option disabled>Troubleshooting</option>
+                <option value="/docs/agents/agent-troubleshooting/troubleshooting">    Troubleshooting</option>
+            
+                <option value="/docs/agents/agent-troubleshooting/chat-debug-view">    Debug Chat Interactions</option>
+            
+                <option value="/docs/agents/agent-troubleshooting/cache-explorer">    Diagnose Prompt Caching</option>
+            
+                <option value="/docs/agents/agent-troubleshooting/faq">    FAQ</option>
+            </optgroup><optgroup label="Editor">
+                <option value="/docs/editing/getting-started/overview">Overview</option>
+            <option disabled>Getting Started</option>
+                <option value="/docs/editing/getting-started/editor-tutorial">    Editor Tutorial</option>
+            
+                <option value="/docs/editing/getting-started/userinterface">    User Interface</option>
+            
+                <option value="/docs/editing/getting-started/tips-and-tricks">    Tips and Tricks</option>
+            <option disabled>Write code</option>
+                <option value="/docs/editing/codebasics">    Basic Editing</option>
+            
+                <option value="/docs/editing/intellisense">    IntelliSense</option>
+            
+                <option value="/docs/editing/ai-powered-suggestions">    Inline Suggestions</option>
+            
+                <option value="/docs/editing/copilot-smart-actions">    Smart Actions</option>
+            
+                <option value="/docs/editing/editingevolved">    Code Navigation</option>
+            
+                <option value="/docs/editing/refactoring">    Refactoring</option>
+            
+                <option value="/docs/editing/userdefinedsnippets">    Snippets</option>
+            <option disabled>    Workspaces</option>
+                <option value="/docs/editing/workspaces/workspaces">        Overview</option>
+            
+                <option value="/docs/editing/workspaces/multi-root-workspaces">        Multi-Root Workspaces</option>
+            
+                <option value="/docs/editing/workspaces/workspace-trust">        Workspace Trust</option>
+            <option disabled>Configure the editor</option>
+                <option value="/docs/configure/locales">    Display Language</option>
+            
+                <option value="/docs/configure/custom-layout">    Layout</option>
+            
+                <option value="/docs/configure/keybindings">    Keyboard Shortcuts</option>
+            
+                <option value="/docs/configure/settings">    Settings</option>
+            
+                <option value="/docs/configure/settings-sync">    Settings Sync</option>
+            <option disabled>    Extensions</option>
+                <option value="/docs/configure/extensions/extensions">        Overview</option>
+            
+                <option value="/docs/configure/extensions/extension-marketplace">        Extension Marketplace</option>
+            
+                <option value="/docs/configure/extensions/extension-runtime-security">        Extension Runtime Security</option>
+            
+                <option value="/docs/configure/themes">    Themes</option>
+            
+                <option value="/docs/configure/profiles">    Profiles</option>
+            <option disabled>    Accessibility</option>
+                <option value="/docs/configure/accessibility/accessibility">        Overview</option>
+            
+                <option value="/docs/configure/accessibility/voice">        Voice Interactions</option>
+            
+                <option value="/docs/configure/command-line">    Command Line Interface</option>
+            
+                <option value="/docs/configure/telemetry">    Telemetry</option>
+            <option disabled>Reference</option>
+                <option value="/docs/reference/default-keybindings">    Default Keyboard Shortcuts</option>
+            
+                <option value="/docs/reference/default-settings">    Default Settings</option>
+            
+                <option value="/docs/reference/variables-reference">    Substitution Variables</option>
+            
+                <option value="/docs/reference/tasks-appendix">    Tasks Schema</option>
+            </optgroup><optgroup label="Source Control">
+                <option value="/docs/sourcecontrol/overview">Overview</option>
+            
+                <option value="/docs/sourcecontrol/quickstart">Quickstart</option>
+            
+                <option value="/docs/sourcecontrol/repos-remotes">Repositories &amp; Remotes</option>
+            
+                <option value="/docs/sourcecontrol/staging-commits">Staging, Commits &amp; Undo</option>
+            
+                <option value="/docs/sourcecontrol/history">History &amp; Blame</option>
+            
+                <option value="/docs/sourcecontrol/branches-worktrees">Branches, Stashes &amp; Worktrees</option>
+            
+                <option value="/docs/sourcecontrol/merge-conflicts">Merge Conflicts</option>
+            
+                <option value="/docs/sourcecontrol/github">Collaborate on GitHub</option>
+            
+                <option value="/docs/sourcecontrol/troubleshooting">Troubleshooting</option>
+            
+                <option value="/docs/sourcecontrol/faq">FAQ</option>
+            </optgroup><optgroup label="Terminal">
+                <option value="/docs/terminal/getting-started">Get Started</option>
+            
+                <option value="/docs/terminal/basics">Terminal Basics</option>
+            
+                <option value="/docs/terminal/profiles">Terminal Profiles</option>
+            
+                <option value="/docs/terminal/shell-integration">Shell Integration</option>
+            
+                <option value="/docs/terminal/appearance">Appearance</option>
+            
+                <option value="/docs/terminal/advanced">Advanced</option>
+            </optgroup><optgroup label="Debugging &amp; Testing">
+                <option value="/docs/debugtest/debugging">Debugging</option>
+            
+                <option value="/docs/debugtest/debugging-configuration">Debug Configuration</option>
+            
+                <option value="/docs/debugtest/tasks">Tasks</option>
+            
+                <option value="/docs/debugtest/testing">Testing</option>
+            
+                <option value="/docs/debugtest/integrated-browser">Integrated Browser</option>
+            
+                <option value="/docs/debugtest/port-forwarding">Port Forwarding</option>
+            <option disabled>Guides &amp; Tutorials</option>
+                <option value="/docs/agents/guides/test-driven-development-guide">    Test-Driven Development</option>
+            
+                <option value="/docs/agents/guides/browser-agent-testing-guide">    Test Web Apps</option>
+            </optgroup><optgroup label="Enterprise">
+                <option value="/docs/enterprise/overview">Overview</option>
+            
+                <option value="/docs/enterprise/policies">Enterprise Policies</option>
+            
+                <option value="/docs/enterprise/manage-ai-settings">Manage AI Settings</option>
+            
+                <option value="/docs/enterprise/extensions">Extensions</option>
+            
+                <option value="/docs/enterprise/telemetry">Telemetry</option>
+            
+                <option value="/docs/enterprise/updates">Updates</option>
+            </optgroup><optgroup label="Remote">
+                <option value="/docs/remote/remote-overview">Overview</option>
+            
+                <option value="/docs/remote/vscode-web">VS Code for the Web</option>
+            
+                <option value="/docs/remote/ssh">SSH</option>
+            
+                <option value="/docs/remote/ssh-tutorial">SSH Tutorial</option>
+            
+                <option value="/docs/remote/tunnels">Tunnels</option>
+            
+                <option value="/docs/remote/dev-containers">Dev Containers</option>
+            
+                <option value="/docs/remote/wsl">WSL</option>
+            
+                <option value="/docs/remote/wsl-tutorial">WSL Tutorial</option>
+            
+                <option value="/docs/remote/codespaces">GitHub Codespaces</option>
+            
+                <option value="/docs/remote/vscode-server">VS Code Server</option>
+            
+                <option value="/docs/remote/linux">Linux Prerequisites</option>
+            
+                <option value="/docs/remote/troubleshooting">Tips and Tricks</option>
+            
+                <option value="/docs/remote/faq">FAQ</option>
+            </optgroup><optgroup label="Advanced Setup">
+                <option value="/docs/setup/copilot">GitHub Copilot Setup</option>
+            
+                <option value="/docs/setup/linux">Linux</option>
+            
+                <option value="/docs/setup/mac">macOS</option>
+            
+                <option value="/docs/setup/windows">Windows</option>
+            
+                <option value="/docs/setup/raspberry-pi">Raspberry Pi</option>
+            
+                <option value="/docs/setup/network">Network</option>
+            
+                <option value="/docs/setup/portable">Portable Mode</option>
+            
+                <option value="/docs/setup/additional-components">Additional Components</option>
+            
+                <option value="/docs/setup/uninstall">Uninstall</option>
+            </optgroup>
+                <option value="/docs/languages/overview">Languages &amp; Runtimes</option>
+            
+                <option value="/docs/extension-docs/overview">Extension Docs</option>
+            
+              </select>
+            </nav>        </aside>
+        
+        <!-- Content wrapper contains main content + right sidebar -->
+        <div class="docs-content-wrapper">
+            <!-- Right sidebar - On This Page -->
+            <aside class="docs-right-sidebar hidden-xs">
+                <nav id="docs-subnavbar" aria-label="On Page">
+                    
+                    <h4><span class="sr-only">On this page there are 15 sections</span><span
+                            aria-hidden="true">On this page</span></h4>
+                    <ul class="nav">
+                        
+                        <li><a href="#_choose-where-to-chat">Choose where to chat</a></li>
+                        
+                        <li><a href="#_send-a-chat-request">Send a chat request</a></li>
+                        
+                        <li><a href="#_run-terminal-commands-from-chat">Run terminal commands from chat</a></li>
+                        
+                        <li><a href="#_send-messages-while-a-request-is-running">Send messages while a request is running</a></li>
+                        
+                        <li><a href="#_add-context-to-your-prompts">Add context to your prompts</a></li>
+                        
+                        <li><a href="#_image-carousel">Image carousel</a></li>
+                        
+                        <li><a href="#_review-and-manage-changes">Review and manage changes</a></li>
+                        
+                        <li><a href="#_get-notified-about-chat-responses">Get notified about chat responses</a></li>
+                        
+                        <li><a href="#_find-text-in-a-chat-session">Find text in a chat session</a></li>
+                        
+                        <li><a href="#_navigate-between-prompts-in-a-chat-session">Navigate between prompts in a chat session</a></li>
+                        
+                        <li><a href="#_personalize-chat">Personalize chat</a></li>
+                        
+                        <li><a href="#_get-better-responses">Get better responses</a></li>
+                        
+                        <li><a href="#_troubleshoot-chat-interactions">Troubleshoot chat interactions</a></li>
+                        
+                        <li><a href="#_support">Support</a></li>
+                        
+                        <li><a href="#_related-resources">Related resources</a></li>
+                        
+                    </ul>
+                    
+                </nav>
+                
+                <section class="sidebar-try-this" role="region" aria-labelledby="try-this-heading" data-m='{"cN":"sidebar-try-this","aN":"sidebar"}'>
+                    <h4 id="try-this-heading">
+                        <span class="codicon codicon-play" aria-hidden="true"></span>
+                        <span>Related</span>
+                    </h4>
+                    
+                    
+                    <div class="sidebar-action-card" 
+                         id="sidebar-action-get-started-with-agents-0"
+                         data-section="intro"
+                         >
+                        <span class="sidebar-action-title">Get started with agents</span>
+                        
+                        <p class="sidebar-action-desc">Follow a hands-on tutorial to build an app with AI agents in VS Code.</p>
+                        
+                        <div class="sidebar-action-links">
+                            
+                            
+                            <a href="/docs/agents/agents-tutorial" 
+                               class="sidebar-action-btn"
+                               
+                               aria-label="Start agentic coding tutorial">
+                                Start agentic coding tutorial
+                            </a>
+                            
+                            
+                        </div>
+                    </div>
+                    
+                </section>
+                
+            </aside>
+            
+            <!-- Main article content -->
+            <main class="docs-main-content body" data-reading-content>
+                
+                <h1>Use chat in VS Code</h1>
+                
+                
+
+
+
+
+<div class="docs-markdown-actions" data-vscode-installation-info="both">
+	<div class="docs-markdown-dropdown" data-markdown-url="/docs/chat/chat-overview.md">
+		<button type="button" class="docs-markdown-btn-main" data-action="copy-markdown" aria-label="Copy as Markdown">
+			<span class="codicon codicon-copy" aria-hidden="true"></span>
+			<span>Copy as Markdown</span>
+		</button>
+		<button type="button" class="docs-markdown-btn-trigger" aria-haspopup="menu" aria-expanded="false" aria-label="More page actions">
+			<span class="codicon codicon-chevron-down docs-markdown-chevron" aria-hidden="true"></span>
+		</button>
+		<ul class="docs-markdown-menu" role="menu" aria-label="Page actions">
+			<li role="none">
+				<button type="button" role="menuitem" data-action="copy-markdown">
+					<span class="codicon codicon-copy" aria-hidden="true"></span>
+					<span>Copy as Markdown</span>
+				</button>
+			</li>
+			<li role="none">
+				<a role="menuitem" data-action="view-markdown" href="/docs/chat/chat-overview.md" target="_blank" rel="noopener noreferrer">
+					<span class="codicon codicon-file" aria-hidden="true"></span>
+					<span>View as Markdown</span>
+					<span class="codicon codicon-link-external" aria-hidden="true"></span>
+				</a>
+			</li>
+			<li class="docs-markdown-menu-separator" role="separator"></li>
+			<li role="none">
+				<a role="menuitem" data-action="ask-vscode" data-version="stable" href="vscode://GitHub.Copilot-Chat/chat?prompt=Read%20https%3A%2F%2Fcode.visualstudio.com%2Fdocs%2Fchat%2Fchat-overview%20and%20answer%20questions%20about%20the%20content.&amp;windowId=_blank">
+					<span class="codicon codicon-chat-sparkle" aria-hidden="true"></span>
+					<span>Ask in VS Code</span>
+				</a>
+			</li>
+			<li role="none">
+				<a role="menuitem" data-action="ask-vscode" data-version="insiders" href="vscode-insiders://GitHub.Copilot-Chat/chat?prompt=Read%20https%3A%2F%2Fcode.visualstudio.com%2Fdocs%2Fchat%2Fchat-overview%20and%20answer%20questions%20about%20the%20content.&amp;windowId=_blank">
+					<span class="codicon codicon-chat-sparkle" aria-hidden="true"></span>
+					<span>Ask in VS Code Insiders</span>
+				</a>
+			</li>
+		</ul>
+	</div>
+	<noscript>
+		<a class="docs-page-actions-noscript" href="vscode://GitHub.Copilot-Chat/chat?prompt=Read%20https%3A%2F%2Fcode.visualstudio.com%2Fdocs%2Fchat%2Fchat-overview%20and%20answer%20questions%20about%20the%20content.&amp;windowId=_blank">
+			<span class="codicon codicon-chat-sparkle" aria-hidden="true"></span>
+			<span>Ask in VS Code</span>
+		</a>
+	</noscript>
+</div>
+
+                <hr class="docs-article-header-divider" aria-hidden="true">
+                
+                
+<p>Chat in Visual Studio Code lets you use natural language for interacting with AI agents. Ask questions about your code, get help understanding complex logic, generate new features, fix bugs, and more, all through a conversational interface.</p>
+<p>This article describes interaction mechanics shared by chat surfaces in VS Code, including how to send and steer requests, add context, navigate a conversation, and personalize the chat display. For an introduction to AI workflows, agents, and the available interfaces, see <a href="/docs/agents/overview">Build with AI in VS Code</a>.</p>
+
+<h2 id="_choose-where-to-chat" data-needslink="_choose-where-to-chat">Choose where to chat</h2>
+<p>The interaction mechanics in this article apply to the Chat view, chat editor tabs, and the Agents window. Both the Chat view and the Agents window run agents. To choose between collaborating over code in your current workspace and coordinating work across projects, see <a href="/docs/agents/run/overview#_choose-an-interface">Run agents</a>.</p>
+<p>For lightweight interactions, use <a href="/docs/chat/inline-chat">inline chat</a> to edit code or get terminal suggestions in place, or open <a href="/docs/chat/inline-chat#_use-quick-chat">Quick Chat</a> for a temporary conversation.</p>
+<h2 id="_send-a-chat-request" data-needslink="_send-a-chat-request">Send a chat request</h2>
+<p>Type your message in the chat input box and press <span class="keybinding">Enter</span> or select the <strong>Send</strong> button. The agent can answer questions, analyze your code, run tools, make changes, and respond with a summary. You can then continue the conversation with follow-up messages. For example, you might ask an agent to make this change:</p>
+<pre class="shiki" data-lang="prompt" shiki-themes dark-plus light-plus" style="--shiki-dark:#D4D4D4;--shiki-light:#000000;--shiki-dark-bg:#1E1E1E;--shiki-light-bg:#FFFFFF" tabindex="0"><code><span class="line"><span>Add input validation to the signup form</span></span>
+<span class="line"><span></span></span></code></pre>
+<p>For a hands-free conversation, start <a href="/docs/configure/accessibility/voice#_use-voice-mode">Voice Mode</a> from the chat input. Voice Mode listens for follow-up requests and reads the agent's responses aloud. <span class="docs-feature-lifecycle-inline docs-feature-lifecycle-inline--experimental">
+  <button type="button" class="docs-feature-lifecycle-trigger" aria-label="Experimental: Voice Mode feature status. Show details" aria-haspopup="dialog" aria-expanded="false" aria-controls="docs-feature-status-voice-mode-1" aria-describedby="docs-feature-status-voice-mode-1"><span class="codicon codicon-beaker" aria-hidden="true"></span></button>
+  <span id="docs-feature-status-voice-mode-1" class="docs-feature-lifecycle-popover" role="dialog" aria-label="Voice Mode feature status details"><strong>Voice Mode</strong> is experimental and might change or be removed.</span>
+</span></p>
+<p>To give extra project-specific context, you can <a href="#_add-context-to-your-prompts">add context to your prompt</a> by referencing files, symbols, or other information with <code>#</code>-mentions.</p>
+<p>For common tasks, you can use slash commands as shortcuts for frequently used prompts or to invoke <a href="/docs/agent-customization/agent-skills">agent skills</a>. Type <code>/</code> in the chat input to see all available commands.</p>
+<p>You can run multiple sessions in parallel and switch between them without losing context. Learn more in <a href="/docs/agents/run/sessions/manage-sessions">Manage agent sessions</a>.</p>
+<p>Each session has controls that shape how the agent responds: <strong>Session Target</strong>, <strong>Agent</strong>, <strong>Language model</strong>, and <strong>Permissions</strong>. Learn how to <a href="/docs/agents/run/agent-harnesses#_compare-agent-harnesses">compare agent harnesses</a> and <a href="/docs/agents/run/agent-harnesses#_select-a-harness">select one for a session</a>.</p>
+<div class="markdown-alert tip" dir="auto">
+      <span>
+        <svg class="markdown-alert-icon" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
+          <path d="M8 1.5c-2.363 0-4 1.69-4 3.75 0 .984.424 1.625.984 2.304l.214.253c.223.264.47.556.673.848.284.411.537.896.621 1.49a.75.75 0 0 1-1.484.211c-.04-.282-.163-.547-.37-.847a8.456 8.456 0 0 0-.542-.68c-.084-.1-.173-.205-.268-.32C3.201 7.75 2.5 6.766 2.5 5.25 2.5 2.31 4.863 0 8 0s5.5 2.31 5.5 5.25c0 1.516-.701 2.5-1.328 3.259-.095.115-.184.22-.268.319-.207.245-.383.453-.541.681-.208.3-.33.565-.37.847a.751.751 0 0 1-1.485-.212c.084-.593.337-1.078.621-1.489.203-.292.45-.584.673-.848.075-.088.147-.173.213-.253.561-.679.985-1.32.985-2.304 0-2.06-1.637-3.75-4-3.75ZM5.75 12h4.5a.75.75 0 0 1 0 1.5h-4.5a.75.75 0 0 1 0-1.5ZM6 15.25a.75.75 0 0 1 .75-.75h2.5a.75.75 0 0 1 0 1.5h-2.5a.75.75 0 0 1-.75-.75Z">
+          </path>
+        </svg>
+        Tip
+      </span><p>To get the best results, be specific about what you want, provide relevant context, and write clear instructions. For more information, see <a href="#_get-better-responses">Get better responses</a>.</p>
+</div><h2 id="_run-terminal-commands-from-chat" data-needslink="_run-terminal-commands-from-chat">Run terminal commands from chat</h2>
+<p>Start a message with <code>!</code> to run a terminal command directly from the Chat view or Agents window. The <code>!</code> must be the first character and must be followed by a command.</p>
+<p>For example, enter the following message to run your tests:</p>
+<pre class="shiki" data-lang="shell" shiki-themes dark-plus light-plus" style="--shiki-dark:#D4D4D4;--shiki-light:#000000;--shiki-dark-bg:#1E1E1E;--shiki-light-bg:#FFFFFF" tabindex="0"><code><span class="line"><span style="--shiki-dark:#D4D4D4;--shiki-light:#000000">!</span><span style="--shiki-dark:#DCDCAA;--shiki-light:#795E26">npm</span><span style="--shiki-dark:#CE9178;--shiki-light:#A31515"> test</span></span>
+<span class="line"></span></code></pre>
+<p>The command runs immediately in the session's default shell, without sending the message to the agent or asking for approval. It uses the session folder or worktree as the working directory. The command output and exit status appear in the chat transcript.</p>
+<div class="markdown-alert note" dir="auto">
+      <span>
+        <svg class="markdown-alert-icon" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
+          <path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8Zm8-6.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13ZM6.5 7.75A.75.75 0 0 1 7.25 7h1a.75.75 0 0 1 .75.75v2.75h.25a.75.75 0 0 1 0 1.5h-2a.75.75 0 0 1 0-1.5h.25v-2h-.25a.75.75 0 0 1-.75-.75ZM8 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z">
+          </path>
+        </svg>
+        Note
+      </span><p>The <code>!</code> command isn't available in Local harness sessions, cloud sessions, or extension-based agent integrations. Use the <a href="/docs/terminal/getting-started">integrated terminal</a> to run commands yourself instead.</p>
+</div><h2 id="_send-messages-while-a-request-is-running" data-needslink="_send-messages-while-a-request-is-running">Send messages while a request is running</h2>
+<p>You don't have to wait for a response to finish before sending your next message. While a request is in progress, the <strong>Send</strong> button changes to a dropdown that gives you three options for how to handle the new message.</p>
+<p><img src="/assets/docs/chat/chat-sessions/send-dropdown.png" alt="Screenshot of the Send button dropdown menu showing options to queue, steer, or stop and send a new message." loading="lazy"></p>
+<ul>
+<li><strong>Add to Queue</strong>: your message waits and sends automatically after the current response completes. The current response finishes uninterrupted.</li>
+<li><strong>Steer with Message</strong>: signals the current request to yield after finishing the current tool execution. The current response stops and your new message processes immediately. Use this to redirect the agent when it's heading in the wrong direction.</li>
+<li><strong>Stop and Send</strong>: cancels the current request entirely and sends your new message right away.</li>
+</ul>
+<p>Stopping a request doesn't undo file edits, terminal commands, or other actions that already completed. To restore affected workspace files and chat history, <a href="/docs/agents/run/review-code-edits#_restore-a-checkpoint">restore a checkpoint</a>. Checkpoints don't reverse changes to external services.</p>
+<p>For examples of when to steer or stop a request and how to write a focused correction, see <a href="/docs/agents/guides/get-agent-back-on-track#_redirect-a-running-request">Get an agent back on track</a>.</p>
+<p>The default action for the <strong>Send</strong> button is configurable. Use <span class="setting"><span class="setting-dropdown" data-setting-id="chat.requestQueuing.defaultAction" data-vscode-installation-info="both">
+    <span class="setting-link-main">
+      <span class="codicon codicon-settings-gear dynamic-setting-icon"></span>
+      chat.requestQueuing.defaultAction
+      
+    </span>
+    <button 
+      type="button"
+      class="setting-dropdown-trigger"
+      data-vscode-installation-info-action
+      aria-haspopup="menu"
+      aria-expanded="false"
+      aria-label="Open setting in VS Code">
+        <svg class="setting-dropdown-chevron" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+        <path d="M7.976 10.072l4.357-4.357.62.618L8.284 11h-.618L3 6.333l.619-.618 4.357 4.357z"/>
+        </svg>
+    </button>
+    <span class="setting-dropdown-menu" role="menu" aria-label="Open setting">
+      <span role="menuitem" class="setting-action-item" data-vscode-installation-info-action data-version="stable" tabindex="0">Open in VS Code</span>
+      <span role="menuitem" class="setting-action-item" data-vscode-installation-info-action data-version="insiders" tabindex="-1">Open in VS Code Insiders</span>
+    </span>
+  </span></span> to set it to <code>steer</code> (default) or <code>queue</code>.</p>
+<h3 id="_reorder-pending-messages" data-needslink="_reorder-pending-messages">Reorder pending messages</h3>
+<p>When you have multiple pending messages (queued or steering), you can drag and drop them to change the order in which they are processed. A drag handle appears on hover when more than one message of the same type is pending.</p>
+<p><img src="/assets/docs/chat/chat-sessions/pending-messages.png" alt="Screenshot of pending messages in the chat input box with drag handles to reorder them." loading="lazy"></p>
+<h2 id="_add-context-to-your-prompts" data-needslink="_add-context-to-your-prompts">Add context to your prompts</h2>
+<p>Providing the right context helps the AI generate more relevant and accurate responses.</p>
+<ul>
+<li>
+<p><strong>Implicit context</strong>: VS Code can include or suggest editor context, such as the active file or selection. The behavior depends on the interface, harness, and context settings. Attach important files explicitly instead of assuming that opening a file adds its contents to the request. Learn how <a href="/docs/agents/concepts/context#_implicit-context">implicit context works</a>.</p>
+</li>
+<li>
+<p><strong><code>#</code>-mentions</strong>: type <code>#</code> in the chat input to explicitly reference files (<code>#file</code>), folders, symbols, your codebase (<code>#codebase</code>), terminal output (<code>#terminalSelection</code>), or tools like <code>#fetch</code>.</p>
+</li>
+<li>
+<p><strong>Vision</strong>: attach images, such as screenshots or UI mockups, as context for your prompt.</p>
+</li>
+<li>
+<p><strong>Browser elements</strong>: select elements from the <a href="/docs/debugtest/integrated-browser">integrated browser</a> to add HTML, CSS, and screenshot context to your prompt.</p>
+</li>
+</ul>
+<p>Learn more about <a href="/docs/chat/copilot-chat-context">managing context for AI</a>.</p>
+<h2 id="_image-carousel" data-needslink="_image-carousel">Image carousel</h2>
+<p>You can select images or videos in chat responses to open a dedicated carousel view. Media files from tool results (such as the integrated browser, Playwright, or other MCP servers) and inlined in assistant messages are all accessible from the carousel.</p>
+<p><img src="/assets/docs/chat/chat-sessions/image-carousel.png" alt="Screenshot showing the image carousel view with multiple images." loading="lazy"></p>
+<p>To disable the image carousel, set <span class="setting"><span class="setting-dropdown" data-setting-id="imageCarousel.chat.enabled" data-vscode-installation-info="both">
+    <span class="setting-link-main">
+      <span class="codicon codicon-settings-gear dynamic-setting-icon"></span>
+      imageCarousel.chat.enabled
+      
+    </span>
+    <button 
+      type="button"
+      class="setting-dropdown-trigger"
+      data-vscode-installation-info-action
+      aria-haspopup="menu"
+      aria-expanded="false"
+      aria-label="Open setting in VS Code">
+        <svg class="setting-dropdown-chevron" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+        <path d="M7.976 10.072l4.357-4.357.62.618L8.284 11h-.618L3 6.333l.619-.618 4.357 4.357z"/>
+        </svg>
+    </button>
+    <span class="setting-dropdown-menu" role="menu" aria-label="Open setting">
+      <span role="menuitem" class="setting-action-item" data-vscode-installation-info-action data-version="stable" tabindex="0">Open in VS Code</span>
+      <span role="menuitem" class="setting-action-item" data-vscode-installation-info-action data-version="insiders" tabindex="-1">Open in VS Code Insiders</span>
+    </span>
+  </span></span> to <code>false</code>.</p>
+<h2 id="_review-and-manage-changes" data-needslink="_review-and-manage-changes">Review and manage changes</h2>
+<p>After the AI changes files, review and validate the result before you commit or integrate it. In the Chat view, select a changed file in the response to open its diff. In the Agents window, use the <strong>Changes</strong> panel.</p>
+<p>For keyboard and screen reader access to a diff, use the <a href="/docs/configure/accessibility/accessibility#_diff-editor-accessibility">Accessible Diff Viewer</a>.</p>
+<p>For instructions about requesting revisions, restoring checkpoints, and integrating folder or worktree changes, see <a href="/docs/agents/run/review-code-edits">Review AI-generated code edits</a>.</p>
+<h2 id="_get-notified-about-chat-responses" data-needslink="_get-notified-about-chat-responses">Get notified about chat responses</h2>
+<p>When you're working in another window or application, VS Code can send you OS notifications to let you know about important chat events, so you don't have to keep checking back.</p>
+<p>Use <span class="setting"><span class="setting-dropdown" data-setting-id="chat.notifyWindowOnResponseReceived" data-vscode-installation-info="both">
+    <span class="setting-link-main">
+      <span class="codicon codicon-settings-gear dynamic-setting-icon"></span>
+      chat.notifyWindowOnResponseReceived
+      
+    </span>
+    <button 
+      type="button"
+      class="setting-dropdown-trigger"
+      data-vscode-installation-info-action
+      aria-haspopup="menu"
+      aria-expanded="false"
+      aria-label="Open setting in VS Code">
+        <svg class="setting-dropdown-chevron" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+        <path d="M7.976 10.072l4.357-4.357.62.618L8.284 11h-.618L3 6.333l.619-.618 4.357 4.357z"/>
+        </svg>
+    </button>
+    <span class="setting-dropdown-menu" role="menu" aria-label="Open setting">
+      <span role="menuitem" class="setting-action-item" data-vscode-installation-info-action data-version="stable" tabindex="0">Open in VS Code</span>
+      <span role="menuitem" class="setting-action-item" data-vscode-installation-info-action data-version="insiders" tabindex="-1">Open in VS Code Insiders</span>
+    </span>
+  </span></span> to configure when you receive an OS notification when a chat response is received. The notification includes a preview of the response, and selecting it brings focus to the chat session.</p>
+<p>Use <span class="setting"><span class="setting-dropdown" data-setting-id="chat.notifyWindowOnConfirmation" data-vscode-installation-info="both">
+    <span class="setting-link-main">
+      <span class="codicon codicon-settings-gear dynamic-setting-icon"></span>
+      chat.notifyWindowOnConfirmation
+      
+    </span>
+    <button 
+      type="button"
+      class="setting-dropdown-trigger"
+      data-vscode-installation-info-action
+      aria-haspopup="menu"
+      aria-expanded="false"
+      aria-label="Open setting in VS Code">
+        <svg class="setting-dropdown-chevron" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+        <path d="M7.976 10.072l4.357-4.357.62.618L8.284 11h-.618L3 6.333l.619-.618 4.357 4.357z"/>
+        </svg>
+    </button>
+    <span class="setting-dropdown-menu" role="menu" aria-label="Open setting">
+      <span role="menuitem" class="setting-action-item" data-vscode-installation-info-action data-version="stable" tabindex="0">Open in VS Code</span>
+      <span role="menuitem" class="setting-action-item" data-vscode-installation-info-action data-version="insiders" tabindex="-1">Open in VS Code Insiders</span>
+    </span>
+  </span></span> to configure when you receive an OS notification when the agent needs your input or confirmation to continue.</p>
+<p>Both settings have three possible values:</p>
+<ul>
+<li><code>off</code>: never show notifications</li>
+<li><code>windowNotFocused</code> (default): show notifications only when the VS Code window is not focused</li>
+<li><code>always</code>: show notifications even when the VS Code window is in focus</li>
+</ul>
+<div class="markdown-alert tip" dir="auto">
+      <span>
+        <svg class="markdown-alert-icon" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
+          <path d="M8 1.5c-2.363 0-4 1.69-4 3.75 0 .984.424 1.625.984 2.304l.214.253c.223.264.47.556.673.848.284.411.537.896.621 1.49a.75.75 0 0 1-1.484.211c-.04-.282-.163-.547-.37-.847a8.456 8.456 0 0 0-.542-.68c-.084-.1-.173-.205-.268-.32C3.201 7.75 2.5 6.766 2.5 5.25 2.5 2.31 4.863 0 8 0s5.5 2.31 5.5 5.25c0 1.516-.701 2.5-1.328 3.259-.095.115-.184.22-.268.319-.207.245-.383.453-.541.681-.208.3-.33.565-.37.847a.751.751 0 0 1-1.485-.212c.084-.593.337-1.078.621-1.489.203-.292.45-.584.673-.848.075-.088.147-.173.213-.253.561-.679.985-1.32.985-2.304 0-2.06-1.637-3.75-4-3.75ZM5.75 12h4.5a.75.75 0 0 1 0 1.5h-4.5a.75.75 0 0 1 0-1.5ZM6 15.25a.75.75 0 0 1 .75-.75h2.5a.75.75 0 0 1 0 1.5h-2.5a.75.75 0 0 1-.75-.75Z">
+          </path>
+        </svg>
+        Tip
+      </span><p>Set the value to <code>always</code> if you want to stay aware of chat activity while working in other parts of VS Code, such as when running long agent tasks in the background.</p>
+</div><h2 id="_find-text-in-a-chat-session" data-needslink="_find-text-in-a-chat-session">Find text in a chat session</h2>
+<p>Press <span class="dynamic-keybinding" data-commandId="workbench.action.chat.find" data-osx="⌘F" data-win="Ctrl+F" data-linux="Ctrl+F"><span class="keybinding">⌘F</span> (Windows, Linux <span class="keybinding">Ctrl+F</span>)</span> to search the entire conversation. Find is available in the Chat view, chat editor tabs, and the Agents window. It searches prompts and responses, including off-screen content and code blocks.</p>
+<p>Use <span class="dynamic-keybinding" data-commandId="workbench.action.chat.findNext" data-osx="Enter" data-win="Enter" data-linux="Enter"><span class="keybinding">Enter</span></span> and <span class="dynamic-keybinding" data-commandId="workbench.action.chat.findPrevious" data-osx="⇧Enter" data-win="Shift+Enter" data-linux="Shift+Enter"><span class="keybinding">⇧Enter</span> (Windows, Linux <span class="keybinding">Shift+Enter</span>)</span> to navigate between matches. When a match is inside a collapsed <strong>Completed N steps</strong> section, navigating to the match expands the section. Use the <strong>Match Case</strong>, <strong>Whole Word</strong>, and <strong>Regular Expression</strong> options to refine the results.</p>
+<div class="markdown-alert note" dir="auto">
+      <span>
+        <svg class="markdown-alert-icon" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
+          <path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8Zm8-6.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13ZM6.5 7.75A.75.75 0 0 1 7.25 7h1a.75.75 0 0 1 .75.75v2.75h.25a.75.75 0 0 1 0 1.5h-2a.75.75 0 0 1 0-1.5h.25v-2h-.25a.75.75 0 0 1-.75-.75ZM8 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z">
+          </path>
+        </svg>
+        Note
+      </span><p>Find is not available in Quick Chat or inline chat. It does not search text inside tool pills or collapsed reasoning.</p>
+</div><h2 id="_navigate-between-prompts-in-a-chat-session" data-needslink="_navigate-between-prompts-in-a-chat-session">Navigate between prompts in a chat session</h2>
+<p>Use the following keyboard shortcuts to navigate between prompts in a chat session:</p>
+<ul>
+<li><span class="dynamic-keybinding" data-commandId="workbench.action.chat.previousUserPrompt" data-osx="⌥⌘↑" data-win="Ctrl+Alt+Up" data-linux="Ctrl+Alt+Up"><span class="keybinding">⌥⌘↑</span> (Windows, Linux <span class="keybinding">Ctrl+Alt+Up</span>)</span>: Go to the previous prompt in the chat session.</li>
+<li><span class="dynamic-keybinding" data-commandId="workbench.action.chat.nextUserPrompt" data-osx="⌥⌘↓" data-win="Ctrl+Alt+Down" data-linux="Ctrl+Alt+Down"><span class="keybinding">⌥⌘↓</span> (Windows, Linux <span class="keybinding">Ctrl+Alt+Down</span>)</span>: Go to the next prompt in the chat session.</li>
+<li><span class="dynamic-keybinding" data-commandId="workbench.action.chat.previousCodeBlock" data-osx="⌥⌘PageUp" data-win="Ctrl+Alt+PageUp" data-linux="Ctrl+Alt+PageUp"><span class="keybinding">⌥⌘PageUp</span> (Windows, Linux <span class="keybinding">Ctrl+Alt+PageUp</span>)</span>: Go to the previous code block in the chat session.</li>
+<li><span class="dynamic-keybinding" data-commandId="workbench.action.chat.nextCodeBlock" data-osx="⌥⌘PageDown" data-win="Ctrl+Alt+PageDown" data-linux="Ctrl+Alt+PageDown"><span class="keybinding">⌥⌘PageDown</span> (Windows, Linux <span class="keybinding">Ctrl+Alt+PageDown</span>)</span>: Go to the next code block in the chat session.</li>
+</ul>
+<p>To inspect a chat response character by character or line by line with a keyboard or screen reader, run <strong>Open Accessible View</strong> (<span class="dynamic-keybinding" data-commandId="editor.action.accessibleView" data-osx="⌥F2" data-win="Alt+F2" data-linux="Shift+Alt+F2"><span class="keybinding">⌥F2</span> (Windows <span class="keybinding">Alt+F2</span>, Linux <span class="keybinding">Shift+Alt+F2</span>)</span>). Learn more about the <a href="/docs/configure/accessibility/accessibility#_accessible-view">Accessible View</a>.</p>
+<h2 id="_personalize-chat" data-needslink="_personalize-chat">Personalize chat</h2>
+<p>Adjust how chat content appears, add an interactive pet, or set a decorative background in the Agents window.</p>
+<h3 id="_customize-the-chat-display" data-needslink="_customize-the-chat-display">Customize the chat display</h3>
+<p>Use these settings to adjust the chat transcript:</p>
+<table class="table table-striped">
+<thead>
+<tr>
+<th>Display option</th>
+<th>Settings</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Markdown font</td>
+<td>Set the font family with <span class="setting"><span class="setting-dropdown" data-setting-id="chat.fontFamily" data-vscode-installation-info="both">
+    <span class="setting-link-main">
+      <span class="codicon codicon-settings-gear dynamic-setting-icon"></span>
+      chat.fontFamily
+      
+    </span>
+    <button 
+      type="button"
+      class="setting-dropdown-trigger"
+      data-vscode-installation-info-action
+      aria-haspopup="menu"
+      aria-expanded="false"
+      aria-label="Open setting in VS Code">
+        <svg class="setting-dropdown-chevron" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+        <path d="M7.976 10.072l4.357-4.357.62.618L8.284 11h-.618L3 6.333l.619-.618 4.357 4.357z"/>
+        </svg>
+    </button>
+    <span class="setting-dropdown-menu" role="menu" aria-label="Open setting">
+      <span role="menuitem" class="setting-action-item" data-vscode-installation-info-action data-version="stable" tabindex="0">Open in VS Code</span>
+      <span role="menuitem" class="setting-action-item" data-vscode-installation-info-action data-version="insiders" tabindex="-1">Open in VS Code Insiders</span>
+    </span>
+  </span></span> and the font size with <span class="setting"><span class="setting-dropdown" data-setting-id="chat.fontSize" data-vscode-installation-info="both">
+    <span class="setting-link-main">
+      <span class="codicon codicon-settings-gear dynamic-setting-icon"></span>
+      chat.fontSize
+      
+    </span>
+    <button 
+      type="button"
+      class="setting-dropdown-trigger"
+      data-vscode-installation-info-action
+      aria-haspopup="menu"
+      aria-expanded="false"
+      aria-label="Open setting in VS Code">
+        <svg class="setting-dropdown-chevron" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+        <path d="M7.976 10.072l4.357-4.357.62.618L8.284 11h-.618L3 6.333l.619-.618 4.357 4.357z"/>
+        </svg>
+    </button>
+    <span class="setting-dropdown-menu" role="menu" aria-label="Open setting">
+      <span role="menuitem" class="setting-action-item" data-vscode-installation-info-action data-version="stable" tabindex="0">Open in VS Code</span>
+      <span role="menuitem" class="setting-action-item" data-vscode-installation-info-action data-version="insiders" tabindex="-1">Open in VS Code Insiders</span>
+    </span>
+  </span></span>.</td>
+</tr>
+<tr>
+<td>Code block font and layout</td>
+<td>Set the font family, size, weight, and line height with <span class="setting"><span class="setting-dropdown" data-setting-id="chat.editor.fontFamily" data-vscode-installation-info="both">
+    <span class="setting-link-main">
+      <span class="codicon codicon-settings-gear dynamic-setting-icon"></span>
+      chat.editor.fontFamily
+      
+    </span>
+    <button 
+      type="button"
+      class="setting-dropdown-trigger"
+      data-vscode-installation-info-action
+      aria-haspopup="menu"
+      aria-expanded="false"
+      aria-label="Open setting in VS Code">
+        <svg class="setting-dropdown-chevron" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+        <path d="M7.976 10.072l4.357-4.357.62.618L8.284 11h-.618L3 6.333l.619-.618 4.357 4.357z"/>
+        </svg>
+    </button>
+    <span class="setting-dropdown-menu" role="menu" aria-label="Open setting">
+      <span role="menuitem" class="setting-action-item" data-vscode-installation-info-action data-version="stable" tabindex="0">Open in VS Code</span>
+      <span role="menuitem" class="setting-action-item" data-vscode-installation-info-action data-version="insiders" tabindex="-1">Open in VS Code Insiders</span>
+    </span>
+  </span></span>, <span class="setting"><span class="setting-dropdown" data-setting-id="chat.editor.fontSize" data-vscode-installation-info="both">
+    <span class="setting-link-main">
+      <span class="codicon codicon-settings-gear dynamic-setting-icon"></span>
+      chat.editor.fontSize
+      
+    </span>
+    <button 
+      type="button"
+      class="setting-dropdown-trigger"
+      data-vscode-installation-info-action
+      aria-haspopup="menu"
+      aria-expanded="false"
+      aria-label="Open setting in VS Code">
+        <svg class="setting-dropdown-chevron" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+        <path d="M7.976 10.072l4.357-4.357.62.618L8.284 11h-.618L3 6.333l.619-.618 4.357 4.357z"/>
+        </svg>
+    </button>
+    <span class="setting-dropdown-menu" role="menu" aria-label="Open setting">
+      <span role="menuitem" class="setting-action-item" data-vscode-installation-info-action data-version="stable" tabindex="0">Open in VS Code</span>
+      <span role="menuitem" class="setting-action-item" data-vscode-installation-info-action data-version="insiders" tabindex="-1">Open in VS Code Insiders</span>
+    </span>
+  </span></span>, <span class="setting"><span class="setting-dropdown" data-setting-id="chat.editor.fontWeight" data-vscode-installation-info="both">
+    <span class="setting-link-main">
+      <span class="codicon codicon-settings-gear dynamic-setting-icon"></span>
+      chat.editor.fontWeight
+      
+    </span>
+    <button 
+      type="button"
+      class="setting-dropdown-trigger"
+      data-vscode-installation-info-action
+      aria-haspopup="menu"
+      aria-expanded="false"
+      aria-label="Open setting in VS Code">
+        <svg class="setting-dropdown-chevron" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+        <path d="M7.976 10.072l4.357-4.357.62.618L8.284 11h-.618L3 6.333l.619-.618 4.357 4.357z"/>
+        </svg>
+    </button>
+    <span class="setting-dropdown-menu" role="menu" aria-label="Open setting">
+      <span role="menuitem" class="setting-action-item" data-vscode-installation-info-action data-version="stable" tabindex="0">Open in VS Code</span>
+      <span role="menuitem" class="setting-action-item" data-vscode-installation-info-action data-version="insiders" tabindex="-1">Open in VS Code Insiders</span>
+    </span>
+  </span></span>, and <span class="setting"><span class="setting-dropdown" data-setting-id="chat.editor.lineHeight" data-vscode-installation-info="both">
+    <span class="setting-link-main">
+      <span class="codicon codicon-settings-gear dynamic-setting-icon"></span>
+      chat.editor.lineHeight
+      
+    </span>
+    <button 
+      type="button"
+      class="setting-dropdown-trigger"
+      data-vscode-installation-info-action
+      aria-haspopup="menu"
+      aria-expanded="false"
+      aria-label="Open setting in VS Code">
+        <svg class="setting-dropdown-chevron" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+        <path d="M7.976 10.072l4.357-4.357.62.618L8.284 11h-.618L3 6.333l.619-.618 4.357 4.357z"/>
+        </svg>
+    </button>
+    <span class="setting-dropdown-menu" role="menu" aria-label="Open setting">
+      <span role="menuitem" class="setting-action-item" data-vscode-installation-info-action data-version="stable" tabindex="0">Open in VS Code</span>
+      <span role="menuitem" class="setting-action-item" data-vscode-installation-info-action data-version="insiders" tabindex="-1">Open in VS Code Insiders</span>
+    </span>
+  </span></span>. Control line wrapping with <span class="setting"><span class="setting-dropdown" data-setting-id="chat.editor.wordWrap" data-vscode-installation-info="both">
+    <span class="setting-link-main">
+      <span class="codicon codicon-settings-gear dynamic-setting-icon"></span>
+      chat.editor.wordWrap
+      
+    </span>
+    <button 
+      type="button"
+      class="setting-dropdown-trigger"
+      data-vscode-installation-info-action
+      aria-haspopup="menu"
+      aria-expanded="false"
+      aria-label="Open setting in VS Code">
+        <svg class="setting-dropdown-chevron" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+        <path d="M7.976 10.072l4.357-4.357.62.618L8.284 11h-.618L3 6.333l.619-.618 4.357 4.357z"/>
+        </svg>
+    </button>
+    <span class="setting-dropdown-menu" role="menu" aria-label="Open setting">
+      <span role="menuitem" class="setting-action-item" data-vscode-installation-info-action data-version="stable" tabindex="0">Open in VS Code</span>
+      <span role="menuitem" class="setting-action-item" data-vscode-installation-info-action data-version="insiders" tabindex="-1">Open in VS Code Insiders</span>
+    </span>
+  </span></span>.</td>
+</tr>
+<tr>
+<td>Sticky prompts</td>
+<td>Use <span class="setting"><span class="setting-dropdown" data-setting-id="chat.stickyScroll.enabled" data-vscode-installation-info="both">
+    <span class="setting-link-main">
+      <span class="codicon codicon-settings-gear dynamic-setting-icon"></span>
+      chat.stickyScroll.enabled
+      
+    </span>
+    <button 
+      type="button"
+      class="setting-dropdown-trigger"
+      data-vscode-installation-info-action
+      aria-haspopup="menu"
+      aria-expanded="false"
+      aria-label="Open setting in VS Code">
+        <svg class="setting-dropdown-chevron" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+        <path d="M7.976 10.072l4.357-4.357.62.618L8.284 11h-.618L3 6.333l.619-.618 4.357 4.357z"/>
+        </svg>
+    </button>
+    <span class="setting-dropdown-menu" role="menu" aria-label="Open setting">
+      <span role="menuitem" class="setting-action-item" data-vscode-installation-info-action data-version="stable" tabindex="0">Open in VS Code</span>
+      <span role="menuitem" class="setting-action-item" data-vscode-installation-info-action data-version="insiders" tabindex="-1">Open in VS Code Insiders</span>
+    </span>
+  </span></span> to pin the current prompt to the top of the transcript while you scroll.</td>
+</tr>
+<tr>
+<td>Request timestamps</td>
+<td>Use <span class="setting"><span class="setting-dropdown" data-setting-id="chat.verbose" data-vscode-installation-info="both">
+    <span class="setting-link-main">
+      <span class="codicon codicon-settings-gear dynamic-setting-icon"></span>
+      chat.verbose
+      
+    </span>
+    <button 
+      type="button"
+      class="setting-dropdown-trigger"
+      data-vscode-installation-info-action
+      aria-haspopup="menu"
+      aria-expanded="false"
+      aria-label="Open setting in VS Code">
+        <svg class="setting-dropdown-chevron" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+        <path d="M7.976 10.072l4.357-4.357.62.618L8.284 11h-.618L3 6.333l.619-.618 4.357 4.357z"/>
+        </svg>
+    </button>
+    <span class="setting-dropdown-menu" role="menu" aria-label="Open setting">
+      <span role="menuitem" class="setting-action-item" data-vscode-installation-info-action data-version="stable" tabindex="0">Open in VS Code</span>
+      <span role="menuitem" class="setting-action-item" data-vscode-installation-info-action data-version="insiders" tabindex="-1">Open in VS Code Insiders</span>
+    </span>
+  </span></span> to show or hide request and completion timestamps. Hover over a completion timestamp to view the elapsed response time.</td>
+</tr>
+<tr>
+<td>Persistent progress (Experimental)</td>
+<td>Use <span class="setting"><span class="setting-dropdown" data-setting-id="chat.experimental.persistentProgress" data-vscode-installation-info="both">
+    <span class="setting-link-main">
+      <span class="codicon codicon-settings-gear dynamic-setting-icon"></span>
+      chat.experimental.persistentProgress
+      
+    </span>
+    <button 
+      type="button"
+      class="setting-dropdown-trigger"
+      data-vscode-installation-info-action
+      aria-haspopup="menu"
+      aria-expanded="false"
+      aria-label="Open setting in VS Code">
+        <svg class="setting-dropdown-chevron" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+        <path d="M7.976 10.072l4.357-4.357.62.618L8.284 11h-.618L3 6.333l.619-.618 4.357 4.357z"/>
+        </svg>
+    </button>
+    <span class="setting-dropdown-menu" role="menu" aria-label="Open setting">
+      <span role="menuitem" class="setting-action-item" data-vscode-installation-info-action data-version="stable" tabindex="0">Open in VS Code</span>
+      <span role="menuitem" class="setting-action-item" data-vscode-installation-info-action data-version="insiders" tabindex="-1">Open in VS Code Insiders</span>
+    </span>
+  </span></span> to keep a progress indicator visible until an agent response finishes. Choose a colored or monochrome <strong>Draw</strong> animation, or turn the indicator off.</td>
+</tr>
+</tbody>
+</table>
+<p>With persistent progress, reasoning appears in separate collapsible previews and tool calls remain visible while they run. <span class="setting"><span class="setting-dropdown" data-setting-id="chat.experimental.persistentProgressVerbosity" data-vscode-installation-info="both">
+    <span class="setting-link-main">
+      <span class="codicon codicon-settings-gear dynamic-setting-icon"></span>
+      chat.experimental.persistentProgressVerbosity
+      
+    </span>
+    <button 
+      type="button"
+      class="setting-dropdown-trigger"
+      data-vscode-installation-info-action
+      aria-haspopup="menu"
+      aria-expanded="false"
+      aria-label="Open setting in VS Code">
+        <svg class="setting-dropdown-chevron" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+        <path d="M7.976 10.072l4.357-4.357.62.618L8.284 11h-.618L3 6.333l.619-.618 4.357 4.357z"/>
+        </svg>
+    </button>
+    <span class="setting-dropdown-menu" role="menu" aria-label="Open setting">
+      <span role="menuitem" class="setting-action-item" data-vscode-installation-info-action data-version="stable" tabindex="0">Open in VS Code</span>
+      <span role="menuitem" class="setting-action-item" data-vscode-installation-info-action data-version="insiders" tabindex="-1">Open in VS Code Insiders</span>
+    </span>
+  </span></span> controls completed tool-call details. <strong>Compact</strong> replaces completed groups with expandable summaries when response text resumes or the response finishes. <strong>Verbose</strong> keeps the full details visible.</p>
+<p>Persistent progress defaults to <strong>Draw</strong> in Insiders and <strong>Off</strong> in Stable.</p>
+<p>For more chat preferences, see the <a href="/docs/agents/reference/ai-settings#_chat-experience">AI settings reference</a>.</p>
+<h3 id="_customize-the-agents-window-chat-background" data-needslink="_customize-the-agents-window-chat-background">Customize the Agents window chat background</h3>
+<aside class="docs-feature-lifecycle docs-feature-lifecycle--experimental" aria-label="Agents window chat backgrounds feature status: Experimental">
+  <span class="docs-feature-lifecycle-badge">Experimental</span>
+  <span><strong>Agents window chat backgrounds</strong> is experimental and might change or be removed.</span>
+</aside>
+<p>Add a decorative background to the chat area of the Agents window without changing chat in the main VS Code window.</p>
+<p>To set a background, run the <strong>Chat: Set Background...</strong> command from the Command Palette (<span class="dynamic-keybinding" data-commandId="workbench.action.showCommands" data-osx="⇧⌘P" data-win="Ctrl+Shift+P" data-linux="Ctrl+Shift+P"><span class="keybinding">⇧⌘P</span> (Windows, Linux <span class="keybinding">Ctrl+Shift+P</span>)</span>) or right-click an empty area of the chat. Then, choose one of these options:</p>
+<ul>
+<li><strong>No Background</strong>: remove the background for the current color theme.</li>
+<li><strong>Codicons</strong>: use a theme-aware pattern of built-in VS Code icons.</li>
+<li><strong>Image...</strong>: select an image from your machine.</li>
+<li><strong>Recently used</strong>: reuse one of your five most recent background images.</li>
+</ul>
+<p>For an image background, run <strong>Chat: Change Background Layout...</strong> to repeat, stretch, center, or position the image along an edge or in a corner for the current color theme. Moving through the layout options previews each one. Select an option to save it, or dismiss the picker to restore the previous layout.</p>
+<div class="markdown-alert note" dir="auto">
+      <span>
+        <svg class="markdown-alert-icon" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
+          <path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8Zm8-6.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13ZM6.5 7.75A.75.75 0 0 1 7.25 7h1a.75.75 0 0 1 .75.75v2.75h.25a.75.75 0 0 1 0 1.5h-2a.75.75 0 0 1 0-1.5h.25v-2h-.25a.75.75 0 0 1-.75-.75ZM8 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z">
+          </path>
+        </svg>
+        Note
+      </span><p>Light and dark color themes have separate backgrounds and image layouts. These choices are stored on the current machine and don't sync across devices.</p>
+</div><p>Backgrounds are hidden in high contrast themes to preserve chat readability. The background commands are also unavailable while a high contrast theme is active.</p>
+<h2 id="_get-better-responses" data-needslink="_get-better-responses">Get better responses</h2>
+<p>Chat provides several ways to improve the quality and relevance of AI responses:</p>
+<ul>
+<li>
+<p><strong>Write effective prompts</strong>: be specific about what you want, reference relevant files and symbols, and use <code>/</code> commands for common tasks. Get inspired by <a href="/docs/agents/guides/prompt-examples">prompt examples</a> or review the full <a href="/docs/agents/best-practices">prompt engineering guide</a>.</p>
+</li>
+<li>
+<p><strong>Customize the AI</strong>: tailor the AI's behavior to your project by adding <a href="/docs/agent-customization/custom-instructions">custom instructions</a>, creating reusable <a href="/docs/agent-customization/prompt-files">prompt files</a>, or building <a href="/docs/agent-customization/custom-agents">custom agents</a> for specialized workflows. For example, create a &quot;Code Reviewer&quot; agent that provides feedback on code quality and adherence to your team's coding standards.</p>
+</li>
+<li>
+<p><strong>Extend with tools</strong>: connect <a href="/docs/agent-customization/mcp-servers">MCP servers</a> or install extensions that contribute tools to give the agent access to external services, databases, or APIs.</p>
+</li>
+</ul>
+<p>For more information, see <a href="/docs/agent-customization/overview">Customize agent behavior in VS Code</a>.</p>
+<h2 id="_troubleshoot-chat-interactions" data-needslink="_troubleshoot-chat-interactions">Troubleshoot chat interactions</h2>
+<p>Use <a href="/docs/agents/agent-troubleshooting/chat-debug-view">Agent Logs and the Chat Debug view</a> to inspect what happens when you send a prompt. Agent Logs shows a chronological event log of tool calls, LLM requests, and prompt file discovery. The Chat Debug view shows the raw system prompt, user prompt, context, and tool payloads for each interaction. These tools are useful for understanding why the AI responded in a certain way or for troubleshooting unexpected results.</p>
+<h2 id="_support" data-needslink="_support">Support</h2>
+<p>Support for GitHub Copilot Chat is provided by GitHub and can be reached at <a href="https://support.github.com" class="external-link" target="_blank">https://support.github.com</a>.</p>
+<p>To learn more about Copilot's security, privacy, compliance, and transparency, see the <a href="https://copilot.github.trust.page/faq" class="external-link" target="_blank">GitHub Copilot Trust Center FAQ</a>.</p>
+<h2 id="_related-resources" data-needslink="_related-resources">Related resources</h2>
+<ul>
+<li>
+<p><a href="/docs/agents/run/sessions/manage-sessions">Create and manage agent sessions</a></p>
+</li>
+<li>
+<p><a href="/docs/agents/run/agent-harnesses">Choose an agent harness</a></p>
+</li>
+<li>
+<p><a href="/docs/agents/guides/prompt-examples">Prompt examples</a></p>
+</li>
+</ul>
+
+                <div class="feedback" data-edit-url="https://vscode.dev/github/microsoft/vscode-docs/blob/main/docs/chat/chat-overview.md"></div>
+                
+                <div class="body-footer">10/21/2026</div>
+                
+            </main>
+        </div>
+        
+        <!-- Mobile connect widget -->
+        <div class="docs-mobile-widgets visible-xs">
+            <div class="connect-widget"></div>
+        </div>
+    </div>
+</div>
+		</main>
+	</div>
+
+	<div id="search-popup-overlay" class="search-popup-overlay" role="dialog" aria-modal="true" aria-label="Search">
+		<div class="search-popup-container">
+			<div class="search-popup-header">
+				<form class="search-popup-form">
+					<div class="input-group">
+						<input type="text" name="q" class="search-box form-control" placeholder="Search the website"
+							aria-label="Search text" role="combobox" aria-expanded="false"
+							aria-autocomplete="list" aria-controls="search-results-listbox"
+							aria-activedescendant="" />
+						<span class="input-group-btn">
+							<button tabindex="0" class="btn" type="submit" aria-label="Search">
+								<img class="search-icon-dark" src="/assets/icons/search-dark.svg" alt="Search" />
+								<img class="search-icon-light" src="/assets/icons/search.svg" alt="Search" />
+							</button>
+						</span>
+					</div>
+				</form>
+				<button class="search-popup-close" type="button" aria-label="Close search"><i class="codicon codicon-close" aria-hidden="true"></i></button>
+			</div>
+			<div class="search-popup-results">
+				<ul class="search-popup-results-list" id="search-results-listbox" role="listbox" aria-label="Search results"></ul>
+			</div>
+			<div class="sr-only" role="status" aria-live="polite" aria-atomic="true" id="search-popup-status"></div>
+		</div>
+	</div>
+
+
+	<footer role="contentinfo" class="container">
+		<div class="footer-container">
+			<div class="footer-row">
+				<div class="footer-social">
+					<ul class="links">
+						<li>
+							<a href="https://github.com/microsoft/vscode"><img src="/assets/icons/github-icon.svg" alt="VS Code on Github"></a>
+						</li>
+						<li>
+							<a href="https://go.microsoft.com/fwlink/?LinkID=533687"><img src="/assets/icons/x-icon.svg" class="x-icon" alt="Follow us on X"></a>
+						</li>
+						<li>
+							<a href="https://www.linkedin.com/showcase/vs-code"><img src="/assets/icons/linkedin-icon.svg" alt="VS Code on LinkedIn"></a>
+						</li>
+						<li>
+							<a href="https://bsky.app/profile/vscode.dev"><img src="/assets/icons/bluesky-icon.svg" alt="VS Code on Bluesky"></a>
+						</li>
+						<li>
+							<a href="https://www.reddit.com/r/vscode/"><img src="/assets/icons/reddit-icon.svg" alt="Join the VS Code community on Reddit"></a>
+						</li>
+						<li>
+							<a href="https://www.vscodepodcast.com"><img src="/assets/icons/podcast-icon.svg" alt="The VS Code Insiders Podcast"></a>
+						</li>
+						<li>
+							<a href="https://www.instagram.com/vscode.ig"><img src="/assets/icons/instagram-icon.svg" alt="VS Code on Instagram"></a>
+						</li>
+						<li>
+							<a href="https://www.tiktok.com/@vscode"><img src="/assets/icons/tiktok-icon.svg" alt="VS Code on TikTok"></a>
+						</li>
+						<li>
+							<a href="https://www.youtube.com/@code"><img src="/assets/icons/youtube-icon.svg" alt="VS Code on YouTube"></a>
+						</li>
+						<script>
+							function manageConsent() {
+								if (siteConsent && siteConsent.isConsentRequired) {
+									siteConsent.manageConsent();
+								}
+							}
+						</script>
+					</ul>
+					<a id="footer-microsoft-link" class="microsoft-logo" href="https://www.microsoft.com">
+						<img src="/assets/icons/microsoft.svg" alt="Microsoft homepage" />
+					</a>
+				</div>
+			</div>
+			<div class="footer-row">
+				<ul class="links">
+					<li><a id="footer-support-link" href="https://support.serviceshub.microsoft.com/supportforbusiness/create?sapId=d66407ed-3967-b000-4cfb-2c318cad363d"
+						target="_blank" rel="noopener" title="Get support for VS Code"
+						aria-label="Get support for VS Code (opens in new tab)">Support</a></li>
+					<li><a id="footer-privacy-link" href="https://go.microsoft.com/fwlink/?LinkId=521839"
+						target="_blank" rel="noopener" title="View the Microsoft privacy statement"
+						aria-label="Microsoft privacy statement (opens in new tab)">Privacy</a></li>
+					<li style="display: none;"><a id="footer-cookie-link" style="cursor: pointer;" onclick="manageConsent()"
+						target="_blank" rel="noopener">Manage Cookies</a></li>
+					<li><a id="footer-terms-link" href="https://www.microsoft.com/legal/terms-of-use"
+						target="_blank" rel="noopener" title="View the Microsoft Terms of Use"
+						aria-label="Microsoft Terms of Use (opens in new tab)">Terms of Use</a></li>
+					<li><a id="footer-license-link" href="/License"
+						target="_blank" rel="noopener" title="View the Visual Studio Code license"
+						aria-label="Visual Studio Code license (opens in new tab)">License</a></li>
+				</ul>
+			</div>
+			<div class="footer-row">
+				<ul class="links">
+					<li>
+						<svg class="privacy-choices" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 14" xml:space="preserve" height="16" width="43">
+							<title>Your Privacy Choices Opt-Out Icon</title>
+							<path d="M7.4 12.8h6.8l3.1-11.6H7.4C4.2 1.2 1.6 3.8 1.6 7s2.6 5.8 5.8 5.8z" style="fill-rule:evenodd;clip-rule:evenodd;fill:#fff"></path>
+							<path d="M22.6 0H7.4c-3.9 0-7 3.1-7 7s3.1 7 7 7h15.2c3.9 0 7-3.1 7-7s-3.2-7-7-7zm-21 7c0-3.2 2.6-5.8 5.8-5.8h9.9l-3.1 11.6H7.4c-3.2 0-5.8-2.6-5.8-5.8z" style="fill-rule:evenodd;clip-rule:evenodd;fill:#06f"></path>
+							<path d="M24.6 4c.2.2.2.6 0 .8L22.5 7l2.2 2.2c.2.2.2.6 0 .8-.2.2-.6.2-.8 0l-2.2-2.2-2.2 2.2c-.2.2-.6.2-.8 0-.2-.2-.2-.6 0-.8L20.8 7l-2.2-2.2c-.2-.2-.2-.6 0-.8.2-.2.6-.2.8 0l2.2 2.2L23.8 4c.2-.2.6-.2.8 0z" style="fill:#fff"></path>
+							<path d="M12.7 4.1c.2.2.3.6.1.8L8.6 9.8c-.1.1-.2.2-.3.2-.2.1-.5.1-.7-.1L5.4 7.7c-.2-.2-.2-.6 0-.8.2-.2.6-.2.8 0L8 8.6l3.8-4.5c.2-.2.6-.2.9 0z" style="fill:#06f"></path>
+						</svg>
+						<a id="footer-privacy-choices-link" href="https://aka.ms/YourCaliforniaPrivacyChoices"
+						target="_blank" rel="noopener" title="View Your Privacy Choices"
+						aria-label="Your Privacy Choices (opens in new tab)">Your Privacy Choices</a></li>
+					<li><a id="footer-consumer-health-privacy-link" href="https://go.microsoft.com/fwlink/?linkid=2259814"
+						target="_blank" rel="noopener" title="View the Microsoft Consumer Health Privacy policy"
+						aria-label="Microsoft Consumer Health Privacy policy (opens in new tab)">Consumer Health Privacy</a></li>
+				</ul>
+			</div>
+		</div>
+	</footer>
+	<script type="module">
+		document.addEventListener('DOMContentLoaded', () => {
+			const copilotDeepLinks = document.querySelectorAll('.copilot-deep-link');
+			if (copilotDeepLinks.length === 0) {
+				return;
+			}
+			if (window.innerWidth < 992) {
+				for (const link of copilotDeepLinks) {
+					link.href = 'https://aka.ms/vscode-activatecopilotfree';
+				}
+			}
+		});
+	</script>
+
+	<script src="/dist/index.js"></script>
+
+	
+
+	<script type="application/ld+json">
+		{
+			"@context" : "http://schema.org",
+			"@type" : "SoftwareApplication",
+			"name" : "Visual Studio Code",
+			"softwareVersion": "1.143",
+			"offers": {
+				"@type": "Offer",
+				"price": "0",
+				"priceCurrency": "USD"
+			},
+			"applicationCategory": "DeveloperApplication",
+			"applicationSubCategory": "AI Code Editor",
+			"description": "Visual Studio Code is a free, open source AI code editor for agent-first development. Build with AI agents, manage multi-agent workflows, and code across any environment.",
+			"alternateName": "VS Code",
+			"datePublished": "2021-11-03",
+			"operatingSystem": "Mac, Linux, Windows",
+			"logo": "https://code.visualstudio.com/assets/apple-touch-icon.png",
+			"screenshot": "https://code.visualstudio.com/assets/images/product-screenshot.png",
+			"releaseNotes": "https://code.visualstudio.com/updates",
+			"downloadUrl": "https://code.visualstudio.com/download",
+			"license": "https://code.visualstudio.com/license",
+			"softwareRequirements": "https://code.visualstudio.com/docs/supporting/requirements",
+			"url" : "https://code.visualstudio.com",
+			"author": {
+				"@type": "Organization",
+				"name": "Microsoft"
+			},
+			"publisher": {
+				"@type": "Organization",
+				"name": "Microsoft"
+			},
+			"maintainer": {
+				"@type": "Organization",
+				"name": "Microsoft"
+			},
+			"potentialAction": {
+				"@type": "SearchAction",
+				"target": "https://code.visualstudio.com/Search?q={search_term_string}",
+				"query-input": "required name=search_term_string"
+			},
+			"sameAs" : [
+				"https://en.wikipedia.org/wiki/Visual_Studio_Code",
+				"https://twitter.com/code",
+				"https://www.youtube.com/code",
+				"https://www.tiktok.com/@vscode",
+				"https://github.com/microsoft/vscode"
+			]
+		}
+	</script>
+</body>
+
+</html>

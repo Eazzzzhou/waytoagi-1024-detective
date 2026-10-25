@@ -1,0 +1,53 @@
+{
+  "capturedAt": "2026-10-25T04:34:44.670Z",
+  "url": "http://127.0.0.1:3104/investigations/a677801d-17f5-447a-8285-64ede5279be8",
+  "detail": {
+    "investigation": {
+      "id": "a677801d-17f5-447a-8285-64ede5279be8",
+      "question": "DeepSeek API 的 deepseek-chat 模型上下文长度、最大输出和价格分别是多少？",
+      "researchDepth": "AUTO",
+      "status": "SUCCEEDED",
+      "stage": "COMPLETED",
+      "error": null,
+      "createdAt": "2026-10-25T04:33:57.214Z",
+      "updatedAt": "2026-10-25T04:34:43.846Z",
+      "startedAt": "2026-10-25T04:33:57.430Z",
+      "completedAt": "2026-10-25T04:34:43.846Z",
+      "resultSnapshotId": "4e5d205d-b3b5-4dfe-a8ad-b2f05bf1cffa"
+    },
+    "identityConfirmation": null,
+    "retry": {
+      "allowed": false,
+      "reason": "仅失败的调查可以手动重试。",
+      "remaining": 2,
+      "expectedAttemptCount": 1
+    }
+  },
+  "observedStates": [
+    {
+      "status": "RUNNING",
+      "stage": "RETRIEVAL",
+      "observedAt": "2026-10-25T04:33:58.925Z"
+    },
+    {
+      "status": "RUNNING",
+      "stage": "SOURCE_FETCH",
+      "observedAt": "2026-10-25T04:34:05.003Z"
+    },
+    {
+      "status": "RUNNING",
+      "stage": "VERIFICATION",
+      "observedAt": "2026-10-25T04:34:23.351Z"
+    },
+    {
+      "status": "RUNNING",
+      "stage": "ANSWER",
+      "observedAt": "2026-10-25T04:34:38.560Z"
+    },
+    {
+      "status": "SUCCEEDED",
+      "stage": "COMPLETED",
+      "observedAt": "2026-10-25T04:34:44.668Z"
+    }
+  ]
+}

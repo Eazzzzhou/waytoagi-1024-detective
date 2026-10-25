@@ -1,0 +1,438 @@
+{
+  "schemaVersion": "source-document/v1",
+  "id": "43e7e2625bd4e08839de07c4d83ad397564784af1de148a9ce0295bd2ccca04f",
+  "version": "854286409ca7c046024f2516601cafcdc7fd8e78dc09211d92547640b3f1e483",
+  "requestedUrl": "https://api-docs.deepseek.com/zh-cn/news/news250325",
+  "finalUrl": "https://api-docs.deepseek.com/zh-cn/news/news250325/",
+  "retrievedAt": "2026-10-25T04:07:44.227Z",
+  "contentType": "text/html",
+  "status": "READ",
+  "readError": null,
+  "rawHash": "1618bcb9330227f6e28a6e97c283f1f26e9ccc3b75d02d113c6884d4a6c184c8",
+  "textHash": "f170e1243a61d15adc8be415959098d1525808f8f110ba20305d249485f4c02c",
+  "text": "跳到主要内容\n\nSearch / Fetch API 已上线，使用自研搜索引擎，支持网页搜索与抓取，点此查看使用指南。\n\n本页目录\n\nDeepSeek-V3 模型更新，各项能力全面进阶\n\nDeepSeek V3 模型已完成小版本升级，目前版本号 DeepSeek-V3-0324，用户登录官方网页、APP、小程序进入对话界面后，关闭深度思考即可体验。API 接口和使用方式保持不变。\n\n如非复杂推理任务，建议使用新版本 V3 模型，即刻享受速度更加流畅、效果全面提升的对话体验。\n\n模型能力提升一览​\n\n推理任务表现提高​\n\n新版 V3 模型借鉴 DeepSeek-R1 模型训练过程中所使用的强化学习技术，大幅提高了在推理类任务上的表现水平，在数学、代码类相关评测集上取得了超过 GPT-4.5 的得分成绩。\n\n前端开发能力增强​\n\n在 HTML 等代码前端任务上，新版 V3 模型生成的代码可用性更高，视觉效果也更加美观、富有设计感。\n\n中文写作升级​\n\n在中文写作任务方面，新版 V3 模型基于 R1 的写作水平进行了进一步优化，同时特别提升了中长篇文本创作的内容质量。\n\n中文搜索能力优化​\n\n新版 V3 模型可以在联网搜索场景下，对于报告生成类指令输出内容更为详实准确、排版更加清晰美观的结果。\n\n此外，新版 V3 模型在工具调用、角色扮演、问答闲聊等方面也得到了一定幅度的能力提升。\n\n模型开源​\n\nDeepSeek-V3-0324 与之前的 DeepSeek-V3 使用同样的 base 模型，仅改进了后训练方法。私有化部署时只需要更新 checkpoint 和 tokenizer_config.json（tool calls 相关变动）。模型参数约 660B，开源版本上下文长度为 128K（网页端、App 和 API 提供 64K 上下文）。V3-0324 模型权重下载请参考：\n\nModel Scope: https://modelscope.cn/models/deepseek-ai/DeepSeek-V3-0324\n\nHuggingface: https://huggingface.co/deepseek-ai/DeepSeek-V3-0324\n\n与 DeepSeek-R1 保持一致，此次我们的开源仓库（包括模型权重）统一采用 MIT License，并允许用户利用模型输出、通过模型蒸馏等方式训练其他模型。\n\n模型能力提升一览推理任务表现提高前端开发能力增强中文写作升级中文搜索能力优化\n\n模型开源",
+  "rawSources": [
+    {
+      "mode": "STATIC",
+      "hash": "1618bcb9330227f6e28a6e97c283f1f26e9ccc3b75d02d113c6884d4a6c184c8",
+      "path": "C:\\Users\\qianchen\\Documents\\waytoagi-1024-detective-a2-v4\\.cache\\source-documents-v4\\02bb025f-d778-4b24-a295-a8bfe6aedf14\\43e7e2625bd4e08839de07c4d83ad397564784af1de148a9ce0295bd2ccca04f\\raw.bin"
+    }
+  ],
+  "storage": {
+    "rawPath": "C:\\Users\\qianchen\\Documents\\waytoagi-1024-detective-a2-v4\\.cache\\source-documents-v4\\02bb025f-d778-4b24-a295-a8bfe6aedf14\\43e7e2625bd4e08839de07c4d83ad397564784af1de148a9ce0295bd2ccca04f\\raw.bin",
+    "textPath": "C:\\Users\\qianchen\\Documents\\waytoagi-1024-detective-a2-v4\\.cache\\source-documents-v4\\02bb025f-d778-4b24-a295-a8bfe6aedf14\\43e7e2625bd4e08839de07c4d83ad397564784af1de148a9ce0295bd2ccca04f\\source.txt",
+    "manifestPath": "C:\\Users\\qianchen\\Documents\\waytoagi-1024-detective-a2-v4\\.cache\\source-documents-v4\\02bb025f-d778-4b24-a295-a8bfe6aedf14\\43e7e2625bd4e08839de07c4d83ad397564784af1de148a9ce0295bd2ccca04f\\manifest.json"
+  },
+  "parser": {
+    "name": "readability+source-dom",
+    "version": "readability-0.6.0+jsdom-30.1.3+source-dom-2",
+    "normalization": "source-text/v1",
+    "mode": "STATIC"
+  },
+  "metadata": {
+    "title": "DeepSeek-V3 模型更新，各项能力全面进阶 | DeepSeek API Docs",
+    "author": null,
+    "publishedAt": null,
+    "language": "zh-cn"
+  },
+  "completeness": "COMPLETE",
+  "warnings": [],
+  "blocks": [
+    {
+      "start": 0,
+      "end": 6,
+      "id": "b0",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[0]",
+      "headingPath": [],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 8,
+      "end": 59,
+      "id": "b1",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[1]",
+      "headingPath": [],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 61,
+      "end": 65,
+      "id": "b2",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[2]",
+      "headingPath": [],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 67,
+      "end": 92,
+      "id": "b3",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[3]",
+      "headingPath": [
+        "DeepSeek-V3 模型更新，各项能力全面进阶"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 94,
+      "end": 191,
+      "id": "b4",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[4]",
+      "headingPath": [
+        "DeepSeek-V3 模型更新，各项能力全面进阶"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 193,
+      "end": 239,
+      "id": "b5",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[5]",
+      "headingPath": [
+        "DeepSeek-V3 模型更新，各项能力全面进阶"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 241,
+      "end": 250,
+      "id": "b6",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[6]",
+      "headingPath": [
+        "DeepSeek-V3 模型更新，各项能力全面进阶",
+        "模型能力提升一览​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 252,
+      "end": 261,
+      "id": "b7",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[7]",
+      "headingPath": [
+        "DeepSeek-V3 模型更新，各项能力全面进阶",
+        "模型能力提升一览​",
+        "推理任务表现提高​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 263,
+      "end": 355,
+      "id": "b8",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[8]",
+      "headingPath": [
+        "DeepSeek-V3 模型更新，各项能力全面进阶",
+        "模型能力提升一览​",
+        "推理任务表现提高​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 357,
+      "end": 366,
+      "id": "b9",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[9]",
+      "headingPath": [
+        "DeepSeek-V3 模型更新，各项能力全面进阶",
+        "模型能力提升一览​",
+        "前端开发能力增强​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 368,
+      "end": 419,
+      "id": "b10",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[10]",
+      "headingPath": [
+        "DeepSeek-V3 模型更新，各项能力全面进阶",
+        "模型能力提升一览​",
+        "前端开发能力增强​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 421,
+      "end": 428,
+      "id": "b11",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[11]",
+      "headingPath": [
+        "DeepSeek-V3 模型更新，各项能力全面进阶",
+        "模型能力提升一览​",
+        "中文写作升级​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 430,
+      "end": 488,
+      "id": "b12",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[12]",
+      "headingPath": [
+        "DeepSeek-V3 模型更新，各项能力全面进阶",
+        "模型能力提升一览​",
+        "中文写作升级​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 490,
+      "end": 499,
+      "id": "b13",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[13]",
+      "headingPath": [
+        "DeepSeek-V3 模型更新，各项能力全面进阶",
+        "模型能力提升一览​",
+        "中文搜索能力优化​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 501,
+      "end": 552,
+      "id": "b14",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[14]",
+      "headingPath": [
+        "DeepSeek-V3 模型更新，各项能力全面进阶",
+        "模型能力提升一览​",
+        "中文搜索能力优化​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 554,
+      "end": 597,
+      "id": "b15",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[15]",
+      "headingPath": [
+        "DeepSeek-V3 模型更新，各项能力全面进阶",
+        "模型能力提升一览​",
+        "中文搜索能力优化​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 599,
+      "end": 604,
+      "id": "b16",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[16]",
+      "headingPath": [
+        "DeepSeek-V3 模型更新，各项能力全面进阶",
+        "模型开源​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 606,
+      "end": 799,
+      "id": "b17",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[17]",
+      "headingPath": [
+        "DeepSeek-V3 模型更新，各项能力全面进阶",
+        "模型开源​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 801,
+      "end": 871,
+      "id": "b18",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[18]",
+      "headingPath": [
+        "DeepSeek-V3 模型更新，各项能力全面进阶",
+        "模型开源​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 873,
+      "end": 937,
+      "id": "b19",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[19]",
+      "headingPath": [
+        "DeepSeek-V3 模型更新，各项能力全面进阶",
+        "模型开源​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 939,
+      "end": 1020,
+      "id": "b20",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[20]",
+      "headingPath": [
+        "DeepSeek-V3 模型更新，各项能力全面进阶",
+        "模型开源​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1022,
+      "end": 1060,
+      "id": "b21",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[21]",
+      "headingPath": [
+        "DeepSeek-V3 模型更新，各项能力全面进阶",
+        "模型开源​"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1062,
+      "end": 1066,
+      "id": "b22",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[22]",
+      "headingPath": [
+        "DeepSeek-V3 模型更新，各项能力全面进阶",
+        "模型开源​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    }
+  ],
+  "links": [
+    {
+      "url": "https://api-docs.deepseek.com/zh-cn/news/news250325",
+      "text": "",
+      "blockId": null,
+      "relation": "CANONICAL",
+      "locator": "source DOM link[0]"
+    },
+    {
+      "url": "https://api-docs.deepseek.com/zh-cn/guides/search",
+      "text": "点此查看使用指南。",
+      "blockId": "b1",
+      "relation": "LINK",
+      "locator": "source DOM link[2]"
+    },
+    {
+      "url": "https://modelscope.cn/models/deepseek-ai/DeepSeek-V3-0324",
+      "text": "https://modelscope.cn/models/deepseek-ai/DeepSeek-V3-0324",
+      "blockId": "b18",
+      "relation": "LINK",
+      "locator": "source DOM link[44]"
+    },
+    {
+      "url": "https://huggingface.co/deepseek-ai/DeepSeek-V3-0324",
+      "text": "https://huggingface.co/deepseek-ai/DeepSeek-V3-0324",
+      "blockId": "b19",
+      "relation": "LINK",
+      "locator": "source DOM link[45]"
+    }
+  ],
+  "tables": []
+}

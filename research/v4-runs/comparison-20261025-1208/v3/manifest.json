@@ -1,0 +1,60 @@
+{
+  "startedAt": "2026-10-25T04:07:40.417Z",
+  "engine": "v3",
+  "codeCommit": "9596bd31d729000cc300268e3bfa5e666539c119",
+  "dirty": "?? research/v4-runs/",
+  "base": "http://127.0.0.1:3104",
+  "requestedDepth": "AUTO",
+  "comparisonCeilings": {
+    "totalMs": 180000,
+    "searchCalls": 6,
+    "documentAttempts": 10,
+    "reserveMs": 45000
+  },
+  "cases": [
+    {
+      "id": "S0",
+      "question": "DeepSeek API 的上下文长度是多少？"
+    },
+    {
+      "id": "S1",
+      "question": "DeepSeek API 的 deepseek-chat 模型上下文长度、最大输出和价格分别是多少？"
+    },
+    {
+      "id": "S2",
+      "question": "GitHub Copilot Free 每月包含多少次代码补全、多少次 chat？超出后怎么办？"
+    },
+    {
+      "id": "S3",
+      "question": "Cognition 官方称 Devin 是“首个自主软件工程师”，能独立完成软件工程任务；Hacker News 上开发者的实际使用报告支持这个说法吗？"
+    },
+    {
+      "id": "S4",
+      "question": "关于 GitHub Copilot Free 每月 50 次 chat 的说法，哪些来源是独立的，哪些只是同一篇文章的转载？"
+    },
+    {
+      "id": "S5",
+      "question": "Cursor 的 Agent 模式在 3D 建模（CAD/Blender）工作流里的真实使用评价怎么样？"
+    },
+    {
+      "id": "S6",
+      "question": "Copilot 免费版每月有多少次对话？"
+    },
+    {
+      "id": "S7",
+      "question": "知乎上开发者怎么评价 Devin 的实际能力？"
+    },
+    {
+      "id": "S8",
+      "question": "帮我写一首关于秋天的诗"
+    }
+  ],
+  "runs": [
+    {
+      "case": "S0",
+      "investigationId": "02bb025f-d778-4b24-a295-a8bfe6aedf14",
+      "captureExit": 0,
+      "completedAt": "2026-10-25T04:07:55.723Z"
+    }
+  ]
+}

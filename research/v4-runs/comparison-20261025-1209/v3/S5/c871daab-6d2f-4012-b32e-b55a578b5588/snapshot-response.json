@@ -1,0 +1,1712 @@
+{
+  "snapshot": {
+    "id": "0db26388-7c3c-4405-a8e8-2ccf490f775c",
+    "investigationId": "c871daab-6d2f-4012-b32e-b55a578b5588",
+    "version": 1,
+    "parentSnapshotId": null,
+    "productIdentity": {
+      "name": "Cursor 的 Agent 模式在 3D 建模（CAD/Blender）工作流里的真实使用评价怎么样？",
+      "officialWebsite": null,
+      "version": null,
+      "plan": null,
+      "confirmationStatus": "UNRESOLVED",
+      "confirmationBasis": []
+    },
+    "evidence": [
+      {
+        "id": "384cdc34-ab40-4190-8629-59f7721c9656",
+        "sourceUrl": "https://developer.cloud.tencent.com/article/2504593",
+        "originalExcerpt": "过了把3D建模的瘾！MCP 让 Cursor 控制 Blender，小白也能一句话建模！",
+        "translation": null,
+        "originalLocation": {
+          "kind": "TEXT",
+          "locator": "https://developer.cloud.tencent.com/article/2504593 :: body :: blocks(p,li,pre,tr,h1,h2,h3)[0]; normalized UTF-16 [0,44)",
+          "context": "过了把3D建模的瘾！MCP 让 Cursor 控制 Blender，小白也能一句话建模！"
+        },
+        "metadata": {
+          "title": "过了把3D建模的瘾！MCP 让 Cursor 控制 Blender，小白也能一句话建模！-腾讯云开发者社区-腾讯云",
+          "siteName": "developer.cloud.tencent.com",
+          "author": null,
+          "publishedAt": null,
+          "language": "zh",
+          "sourceType": "UNKNOWN",
+          "contentKind": "UNKNOWN",
+          "productVersion": null,
+          "plan": null,
+          "upstreamUrl": null,
+          "independence": "SHARED_ORIGIN",
+          "originGroupId": "origin:384cdc34-ab40-4190-8629-59f7721c9656",
+          "independenceReason": "保存的相同原文/重定向URL、明确upstreamUrl、采集来源组，或同路径且同hash的www别名相连；重复读取/转载不增加独立证据数量。"
+        },
+        "retrievedAt": "2026-10-25T04:12:29.054Z",
+        "readStatus": "READ",
+        "readError": null,
+        "contentHash": "70b527985405d6073bee6899937a6c8d0a3d4a6fb3d458ea9f41bc9bfc7a7ac8"
+      },
+      {
+        "id": "5fec5c6b-9d63-4f71-91e8-2904b565393d",
+        "sourceUrl": "https://blendermcp.org/zh-cn/setup/cursor",
+        "originalExcerpt": "在 Cursor 里打开 AI 对话(Agent 模式),你应该能看到 Blender MCP 的工具已经可用。",
+        "translation": null,
+        "originalLocation": {
+          "kind": "TEXT",
+          "locator": "https://blendermcp.org/zh-cn/setup/cursor :: article:first :: blocks(p,li,pre,tr,h1,h2,h3)[32]; normalized UTF-16 [0,56)",
+          "context": "在 Cursor 里打开 AI 对话(Agent 模式),你应该能看到 Blender MCP 的工具已经可用。"
+        },
+        "metadata": {
+          "title": "Blender MCP + Cursor 配置指南 | 一步一步来",
+          "siteName": "blendermcp.org",
+          "author": null,
+          "publishedAt": null,
+          "language": "zh-CN",
+          "sourceType": "UNKNOWN",
+          "contentKind": "UNKNOWN",
+          "productVersion": null,
+          "plan": null,
+          "upstreamUrl": null,
+          "independence": "UNKNOWN",
+          "originGroupId": null,
+          "independenceReason": null
+        },
+        "retrievedAt": "2026-10-25T04:12:30.095Z",
+        "readStatus": "READ",
+        "readError": null,
+        "contentHash": "22c4d0b23406b158f257fa175fe80b58e791e8b82044e7d98aa7032047c6d5bf"
+      },
+      {
+        "id": "6b219dca-0386-460b-a565-ab7d3e299ba4",
+        "sourceUrl": "https://agihunt.info/en/e/19f5609be2748217799dea52292",
+        "originalExcerpt": "Beginner Runs Blender Rendering via Cursor and MCP",
+        "translation": null,
+        "originalLocation": {
+          "kind": "TEXT",
+          "locator": "https://agihunt.info/en/e/19f5609be2748217799dea52292 :: article:first :: blocks(p,li,pre,tr,h1,h2,h3)[0]; normalized UTF-16 [0,50)",
+          "context": "Beginner Runs Blender Rendering via Cursor and MCP"
+        },
+        "metadata": {
+          "title": "Beginner Runs Blender Rendering via Cursor… · AGI Hunt",
+          "siteName": "agihunt.info",
+          "author": null,
+          "publishedAt": null,
+          "language": "en",
+          "sourceType": "UNKNOWN",
+          "contentKind": "UNKNOWN",
+          "productVersion": null,
+          "plan": null,
+          "upstreamUrl": null,
+          "independence": "SHARED_ORIGIN",
+          "originGroupId": "origin:344b28cc-9dc7-424d-bf4c-cea77dadc84c",
+          "independenceReason": "保存的相同原文/重定向URL、明确upstreamUrl、采集来源组，或同路径且同hash的www别名相连；重复读取/转载不增加独立证据数量。"
+        },
+        "retrievedAt": "2026-10-25T04:12:30.125Z",
+        "readStatus": "READ",
+        "readError": null,
+        "contentHash": "e2972d01ed76deb3fd967ddcfe6b2d9a41c5be199fe34110b829b8b5472bcf3a"
+      },
+      {
+        "id": "80d3727e-6972-48b6-8496-8b603bf88f04",
+        "sourceUrl": "https://spin.atomicobject.com/?p=3668445%2F",
+        "originalExcerpt": "Specifically, I wanted to know how well a Cursor Agent could help me write a set of Blender scripts to generate 3D models. Doing so would test both the agent’s ability to follow simple instructions, interact with the Blender API, and find the limits of Blender scripting itself.",
+        "translation": null,
+        "originalLocation": {
+          "kind": "TEXT",
+          "locator": "https://spin.atomicobject.com/blender-scripting-with-ai/ :: article:first :: blocks(p,li,pre,tr,h1,h2,h3)[7]; normalized UTF-16 [0,278)",
+          "context": "Specifically, I wanted to know how well a Cursor Agent could help me write a set of Blender scripts to generate 3D models. Doing so would test both the agent’s ability to follow simple instructions, interact with the Blender API, and find the limits of Blender scripting itself."
+        },
+        "metadata": {
+          "title": "Trying Blender Scripting with AI",
+          "siteName": "spin.atomicobject.com",
+          "author": "Meghan Harris",
+          "publishedAt": "2025-07-07T12:00:03.000Z",
+          "language": "en-US",
+          "sourceType": "UNKNOWN",
+          "contentKind": "UNKNOWN",
+          "productVersion": null,
+          "plan": null,
+          "upstreamUrl": null,
+          "independence": "SHARED_ORIGIN",
+          "originGroupId": "origin:70b221d8-0e68-4387-bd2d-58d684cbfd36",
+          "independenceReason": "保存的相同原文/重定向URL、明确upstreamUrl、采集来源组，或同路径且同hash的www别名相连；重复读取/转载不增加独立证据数量。"
+        },
+        "retrievedAt": "2026-10-25T04:12:30.258Z",
+        "readStatus": "READ",
+        "readError": null,
+        "contentHash": "1e71a7359eb4e5f84e7764a7f8140506639b5333278aa2e880585fb2054911d3"
+      },
+      {
+        "id": "90f5a3ca-1e7c-4e06-bf36-0e4e3f59b9b0",
+        "sourceUrl": "https://developer.cloud.tencent.com/article/2504593",
+        "originalExcerpt": "过了把3D建模的瘾！MCP 让 Cursor 控制 Blender，小白也能一句话建模！",
+        "translation": null,
+        "originalLocation": {
+          "kind": "TEXT",
+          "locator": "https://developer.cloud.tencent.com/article/2504593 :: body :: blocks(p,li,pre,tr,h1,h2,h3)[0]; normalized UTF-16 [0,44)",
+          "context": "过了把3D建模的瘾！MCP 让 Cursor 控制 Blender，小白也能一句话建模！"
+        },
+        "metadata": {
+          "title": "过了把3D建模的瘾！MCP 让 Cursor 控制 Blender，小白也能一句话建模！-腾讯云开发者社区-腾讯云",
+          "siteName": "developer.cloud.tencent.com",
+          "author": null,
+          "publishedAt": null,
+          "language": "zh",
+          "sourceType": "UNKNOWN",
+          "contentKind": "UNKNOWN",
+          "productVersion": null,
+          "plan": null,
+          "upstreamUrl": null,
+          "independence": "SHARED_ORIGIN",
+          "originGroupId": "origin:384cdc34-ab40-4190-8629-59f7721c9656",
+          "independenceReason": "保存的相同原文/重定向URL、明确upstreamUrl、采集来源组，或同路径且同hash的www别名相连；重复读取/转载不增加独立证据数量。"
+        },
+        "retrievedAt": "2026-10-25T04:12:32.508Z",
+        "readStatus": "READ",
+        "readError": null,
+        "contentHash": "70b527985405d6073bee6899937a6c8d0a3d4a6fb3d458ea9f41bc9bfc7a7ac8"
+      },
+      {
+        "id": "70b221d8-0e68-4387-bd2d-58d684cbfd36",
+        "sourceUrl": "https://spin.atomicobject.com/?p=3668445%2F",
+        "originalExcerpt": "Takeaway: the agent did a fairly good job rendering the donut, and frosting (extra points for shininess), but with lots of coaching. Plus, if you’ve ever done the donut tutorial you know that a realistic donut isn’t perfectly symmetrical, and, during that tutorial, you learned how to make it look mo",
+        "translation": null,
+        "originalLocation": {
+          "kind": "TEXT",
+          "locator": "https://spin.atomicobject.com/blender-scripting-with-ai/ :: article:first :: blocks(p,li,pre,tr,h1,h2,h3)[47]; normalized UTF-16 [0,300)",
+          "context": "Takeaway: the agent did a fairly good job rendering the donut, and frosting (extra points for shininess), but with lots of coaching. Plus, if you’ve ever done the donut tutorial you know that a realistic donut isn’t perfectly symmetrical, and, during that tutorial, you learned how to make it look more realistic. This is certainly reminiscent of a donut, but those final touches seem much more achie"
+        },
+        "metadata": {
+          "title": "Trying Blender Scripting with AI",
+          "siteName": "spin.atomicobject.com",
+          "author": "Meghan Harris",
+          "publishedAt": "2025-07-07T12:00:03.000Z",
+          "language": "en-US",
+          "sourceType": "UNKNOWN",
+          "contentKind": "UNKNOWN",
+          "productVersion": null,
+          "plan": null,
+          "upstreamUrl": null,
+          "independence": "SHARED_ORIGIN",
+          "originGroupId": "origin:70b221d8-0e68-4387-bd2d-58d684cbfd36",
+          "independenceReason": "保存的相同原文/重定向URL、明确upstreamUrl、采集来源组，或同路径且同hash的www别名相连；重复读取/转载不增加独立证据数量。"
+        },
+        "retrievedAt": "2026-10-25T04:12:32.853Z",
+        "readStatus": "READ",
+        "readError": null,
+        "contentHash": "785eb9eaec05a26e05a64a1a58f0f800cc7325dbfa8145b3a625183bcf183f64"
+      },
+      {
+        "id": "344b28cc-9dc7-424d-bf4c-cea77dadc84c",
+        "sourceUrl": "https://agihunt.info/en/e/19f5609be2748217799dea52292",
+        "originalExcerpt": "Beginner Runs Blender Rendering via Cursor and MCP",
+        "translation": null,
+        "originalLocation": {
+          "kind": "TEXT",
+          "locator": "https://agihunt.info/en/e/19f5609be2748217799dea52292 :: article:first :: blocks(p,li,pre,tr,h1,h2,h3)[0]; normalized UTF-16 [0,50)",
+          "context": "Beginner Runs Blender Rendering via Cursor and MCP"
+        },
+        "metadata": {
+          "title": "Beginner Runs Blender Rendering via Cursor… · AGI Hunt",
+          "siteName": "agihunt.info",
+          "author": null,
+          "publishedAt": null,
+          "language": "en",
+          "sourceType": "UNKNOWN",
+          "contentKind": "UNKNOWN",
+          "productVersion": null,
+          "plan": null,
+          "upstreamUrl": null,
+          "independence": "SHARED_ORIGIN",
+          "originGroupId": "origin:344b28cc-9dc7-424d-bf4c-cea77dadc84c",
+          "independenceReason": "保存的相同原文/重定向URL、明确upstreamUrl、采集来源组，或同路径且同hash的www别名相连；重复读取/转载不增加独立证据数量。"
+        },
+        "retrievedAt": "2026-10-25T04:12:33.131Z",
+        "readStatus": "READ",
+        "readError": null,
+        "contentHash": "e2972d01ed76deb3fd967ddcfe6b2d9a41c5be199fe34110b829b8b5472bcf3a"
+      },
+      {
+        "id": "db0921b4-53eb-4a83-adb3-3cc36b8d9cda",
+        "sourceUrl": "https://spin.atomicobject.com/?p=3668445%2F",
+        "originalExcerpt": "Cursor is an AI-powered IDE that I currently use as a software developer. Scripting in Blender is accomplished through Python and the built-in scripting editor in Blender.",
+        "translation": null,
+        "originalLocation": {
+          "kind": "TEXT",
+          "locator": "https://spin.atomicobject.com/blender-scripting-with-ai/ :: article:first :: blocks(p,li,pre,tr,h1,h2,h3)[9]; normalized UTF-16 [0,171)",
+          "context": "Cursor is an AI-powered IDE that I currently use as a software developer. Scripting in Blender is accomplished through Python and the built-in scripting editor in Blender."
+        },
+        "metadata": {
+          "title": "Trying Blender Scripting with AI",
+          "siteName": "spin.atomicobject.com",
+          "author": "Meghan Harris",
+          "publishedAt": "2025-07-07T12:00:03.000Z",
+          "language": "en-US",
+          "sourceType": "UNKNOWN",
+          "contentKind": "UNKNOWN",
+          "productVersion": null,
+          "plan": null,
+          "upstreamUrl": null,
+          "independence": "SHARED_ORIGIN",
+          "originGroupId": "origin:70b221d8-0e68-4387-bd2d-58d684cbfd36",
+          "independenceReason": "保存的相同原文/重定向URL、明确upstreamUrl、采集来源组，或同路径且同hash的www别名相连；重复读取/转载不增加独立证据数量。"
+        },
+        "retrievedAt": "2026-10-25T04:12:35.925Z",
+        "readStatus": "READ",
+        "readError": null,
+        "contentHash": "da1249871eafac60eeef3282a7e6fcc60864e921d62c0fe8a562bf41cb4468fb"
+      },
+      {
+        "id": "dc54f0f1-e78b-401c-bfae-4a329421ac79",
+        "sourceUrl": "https://spin.atomicobject.com/?p=3668445%2F",
+        "originalExcerpt": "For another advanced example, I asked the agent to show me what it could do with geometry nodes. Geometry nodes are great for creating customizable, and non-destructive (the original geometry is preserved while operations on that geometry can be reordered or removed) models and scenes through proced",
+        "translation": null,
+        "originalLocation": {
+          "kind": "TEXT",
+          "locator": "https://spin.atomicobject.com/blender-scripting-with-ai/ :: article:first :: blocks(p,li,pre,tr,h1,h2,h3)[55]; normalized UTF-16 [0,300)",
+          "context": "For another advanced example, I asked the agent to show me what it could do with geometry nodes. Geometry nodes are great for creating customizable, and non-destructive (the original geometry is preserved while operations on that geometry can be reordered or removed) models and scenes through procedural workflows."
+        },
+        "metadata": {
+          "title": "Trying Blender Scripting with AI",
+          "siteName": "spin.atomicobject.com",
+          "author": "Meghan Harris",
+          "publishedAt": "2025-07-07T12:00:03.000Z",
+          "language": "en-US",
+          "sourceType": "UNKNOWN",
+          "contentKind": "UNKNOWN",
+          "productVersion": null,
+          "plan": null,
+          "upstreamUrl": null,
+          "independence": "SHARED_ORIGIN",
+          "originGroupId": "origin:70b221d8-0e68-4387-bd2d-58d684cbfd36",
+          "independenceReason": "保存的相同原文/重定向URL、明确upstreamUrl、采集来源组，或同路径且同hash的www别名相连；重复读取/转载不增加独立证据数量。"
+        },
+        "retrievedAt": "2026-10-25T04:12:58.787Z",
+        "readStatus": "READ",
+        "readError": null,
+        "contentHash": "c243ba08073663a3e97aae80fbdab58c0d699c3f1163ca75699349ef4171fe34"
+      },
+      {
+        "id": "01c93fdf-4615-4d43-912c-74626c236e84",
+        "sourceUrl": "https://app.daily.dev/posts/what-happened-when-i-tried-blender-scripting-with-ai-pxnfsyia7",
+        "originalExcerpt": null,
+        "translation": null,
+        "originalLocation": null,
+        "metadata": {
+          "title": null,
+          "siteName": "app.daily.dev",
+          "author": null,
+          "publishedAt": null,
+          "language": null,
+          "sourceType": "UNKNOWN",
+          "contentKind": "UNKNOWN",
+          "productVersion": null,
+          "plan": null,
+          "upstreamUrl": null,
+          "independence": "UNKNOWN",
+          "originGroupId": null,
+          "independenceReason": null
+        },
+        "retrievedAt": "2026-10-25T04:12:59.367Z",
+        "readStatus": "FAILED",
+        "readError": "No readable article blocks; JavaScript shell/empty page is not original material",
+        "contentHash": null
+      }
+    ],
+    "claims": [
+      {
+        "id": "8626f9c8-ec6f-472a-9d7b-d749b4273209",
+        "statement": "有配置指南说明在 Cursor 中以 Agent 模式可看到 Blender MCP 工具已可用。",
+        "kind": "OFFICIAL_CLAIM",
+        "verificationStatus": "SUPPORTED",
+        "verificationReason": "原句写明在 Cursor 打开 AI 对话(Agent 模式)应能看到 Blender MCP 工具已可用，仅证明该指南如此说明。",
+        "scope": "blendermcp.org 的 Cursor 配置指南，未注明版本与日期"
+      },
+      {
+        "id": "1699e7c4-28af-4861-8785-fa499de56c27",
+        "statement": "来源报告（未独立复现）：腾讯云开发者社区文章标题宣称 MCP 能让 Cursor 控制 Blender，让新手也能一句话建模。",
+        "kind": "USER_REPORT",
+        "verificationStatus": "SUPPORTED",
+        "verificationReason": "保存的原句即该标题文字，忠实转述标题宣称，未添加实测结论。",
+        "scope": "腾讯云开发者社区文章标题，未注明 Cursor/Blender 版本、日期与实测条件"
+      },
+      {
+        "id": "60ff7558-74f4-46a8-bb6a-a22898fd8ff0",
+        "statement": "来源报告（未独立复现）：AGI Hunt 的一则标题报告称有初学者通过 Cursor 和 MCP 完成 Blender 渲染。",
+        "kind": "USER_REPORT",
+        "verificationStatus": "SUPPORTED",
+        "verificationReason": "原句为标题“Beginner Runs Blender Rendering via Cursor and MCP”，与主张一致，仅为标题报告。",
+        "scope": "agihunt.info 标题，未注明版本、日期与具体流程"
+      },
+      {
+        "id": "0a66c5c0-88e9-42d4-8acf-e34bd0c30e99",
+        "statement": "来源报告（未独立复现）：一篇署名 Meghan Harris、日期为 2025-07-07 的实践文章称，其目的是检验 Cursor Agent 能否帮助编写一套生成 3D 模型的 Blender 脚本，并借此测试该代理遵循简单指令、与 Blender API 交互的能力以及 Blender 脚本本身的极限。",
+        "kind": "USER_REPORT",
+        "verificationStatus": "SUPPORTED",
+        "verificationReason": "原句明确写出该目的：测试 Cursor Agent 编写 Blender 脚本、遵循指令、调用 Blender API 及脚本极限；署名与日期来自元数据。",
+        "scope": "spin.atomicobject.com 该文，2025-07-07，未注明 Cursor 版本与套餐"
+      },
+      {
+        "id": "b51f9f5e-27f1-4f64-868c-474e55ec17e7",
+        "statement": "来源报告（未独立复现）：同一篇文章评价称，该代理渲染甜甜圈和糖霜的效果相当不错，但需要大量指导。",
+        "kind": "USER_REPORT",
+        "verificationStatus": "SUPPORTED",
+        "verificationReason": "原句 Takeaway 写明渲染甜甜圈和糖霜相当不错但需要大量指导，主张忠实转述。",
+        "scope": "spin.atomicobject.com 该文对一次 Blender 脚本实验的评价，未注明 Cursor 版本与套餐"
+      },
+      {
+        "id": "649df38d-a8d1-4c38-8ed4-9902ab29d230",
+        "statement": "来源报告（未独立复现）：同一篇文章称，作者要求代理展示其在几何节点上的能力。",
+        "kind": "USER_REPORT",
+        "verificationStatus": "SUPPORTED",
+        "verificationReason": "原句写明作者要求代理展示几何节点方面的能力，与主张一致。",
+        "scope": "spin.atomicobject.com 该文描述的一次实验请求，未给出结果评价"
+      },
+      {
+        "id": "ebbe3328-d306-4c94-862c-724096515107",
+        "statement": "现有材料未提供 Cursor Agent 在 CAD 工作流中的使用评价。",
+        "kind": "FACT",
+        "verificationStatus": "INSUFFICIENT",
+        "verificationReason": "已读摘录均围绕 Blender 脚本/MCP，但检索不完整、daily.dev 读取失败，不能据此断言 CAD 评价缺失。",
+        "scope": "本次已读的全部摘录"
+      }
+    ],
+    "relations": [
+      {
+        "claimId": "8626f9c8-ec6f-472a-9d7b-d749b4273209",
+        "evidenceId": "5fec5c6b-9d63-4f71-91e8-2904b565393d",
+        "relation": "SUPPORTS",
+        "reason": "原句直接说明在 Cursor 的 Agent 模式中应能看到 Blender MCP 工具已可用，支持该指南层面的宣称。"
+      },
+      {
+        "claimId": "1699e7c4-28af-4861-8785-fa499de56c27",
+        "evidenceId": "384cdc34-ab40-4190-8629-59f7721c9656",
+        "relation": "SUPPORTS",
+        "reason": "原句即腾讯云文章标题，包含 MCP 让 Cursor 控制 Blender、小白一句话建模的宣称。"
+      },
+      {
+        "claimId": "60ff7558-74f4-46a8-bb6a-a22898fd8ff0",
+        "evidenceId": "6b219dca-0386-460b-a565-ab7d3e299ba4",
+        "relation": "SUPPORTS",
+        "reason": "原句标题称初学者通过 Cursor 和 MCP 完成 Blender 渲染，与转述一致。"
+      },
+      {
+        "claimId": "0a66c5c0-88e9-42d4-8acf-e34bd0c30e99",
+        "evidenceId": "80d3727e-6972-48b6-8496-8b603bf88f04",
+        "relation": "SUPPORTS",
+        "reason": "原句明确表达测试 Cursor Agent 编写 Blender 脚本、遵循指令和调用 Blender API 的意图。"
+      },
+      {
+        "claimId": "b51f9f5e-27f1-4f64-868c-474e55ec17e7",
+        "evidenceId": "70b221d8-0e68-4387-bd2d-58d684cbfd36",
+        "relation": "SUPPORTS",
+        "reason": "原句 Takeaway 写明渲染甜甜圈和糖霜效果不错但需大量指导，支持该评价转述。"
+      },
+      {
+        "claimId": "649df38d-a8d1-4c38-8ed4-9902ab29d230",
+        "evidenceId": "dc54f0f1-e78b-401c-bfae-4a329421ac79",
+        "relation": "SUPPORTS",
+        "reason": "原句称作者要求代理展示几何节点能力，支持该请求描述。"
+      },
+      {
+        "claimId": "b51f9f5e-27f1-4f64-868c-474e55ec17e7",
+        "evidenceId": "db0921b4-53eb-4a83-adb3-3cc36b8d9cda",
+        "relation": "CONTEXT",
+        "reason": "原句说明作者以软件开发者身份使用 Cursor、Blender 通过 Python 脚本操作，限定该评价的技术背景。"
+      },
+      {
+        "claimId": "ebbe3328-d306-4c94-862c-724096515107",
+        "evidenceId": "01c93fdf-4615-4d43-912c-74626c236e84",
+        "relation": "UNCERTAIN",
+        "reason": "daily.dev 页面读取失败，无法确认其是否含 CAD 相关评价，不扩大为缺失断言。"
+      }
+    ],
+    "conflicts": [],
+    "gaps": [
+      {
+        "id": "c9f1b0a2-5d3e-4b7a-9c1d-2e8f4a6b7c01",
+        "claimIds": [
+          "ebbe3328-d306-4c94-862c-724096515107",
+          "b51f9f5e-27f1-4f64-868c-474e55ec17e7"
+        ],
+        "kind": "INSUFFICIENT_EVIDENCE",
+        "description": "仅有 Blender 脚本/MCP 的个体报告与标题，缺少 CAD/Blender 工作流中可比的真实使用评价，且 Cursor 版本与套餐未记录。",
+        "searchScope": "已读摘录：blendermcp.org 配置指南、腾讯云文章标题、agihunt 标题、atomicobject 文章摘录"
+      },
+      {
+        "id": "d2b7c4e5-6a8f-4c3b-8d9e-0f1a3b5c7d02",
+        "claimIds": [
+          "ebbe3328-d306-4c94-862c-724096515107"
+        ],
+        "kind": "READ_FAILED",
+        "description": "daily.dev 链接读取失败（无可读文章块），无法确认其内容是否涉及 CAD 工作流评价。",
+        "searchScope": "https://app.daily.dev/posts/what-happened-when-i-tried-blender-scripting-with-ai-pxnfsyia7"
+      },
+      {
+        "id": "5ff28f47-2c00-41c7-b0cb-4ba2c2a6c2f4",
+        "claimIds": [],
+        "kind": "READ_FAILED",
+        "description": "https://app.daily.dev/posts/what-happened-when-i-tried-blender-scripting-with-ai-pxnfsyia7：FAILED；No readable article blocks; JavaScript shell/empty page is not original material",
+        "searchScope": null
+      }
+    ],
+    "retrievalRecords": [
+      {
+        "id": "e5ce0f57-08d3-4399-bcf2-82caba2b00fa",
+        "provider": "tencent-yuanbao-search-api",
+        "query": "Cursor Agent 模式 Blender 3D 建模 使用体验 评价",
+        "calledAt": "2026-10-25T04:12:23.973Z",
+        "status": "SUCCEEDED",
+        "error": null,
+        "returnedSources": [
+          {
+            "url": "https://vagon.io/blog/how-to-use-the-3d-cursor-in-blender",
+            "title": "How to Use the 3D Cursor in Blender",
+            "snippet": "How to Use the 3D Cursor in Blender Vagon。 Production is different. This is where the 3D Cursor quietly earns its keep. In hard surface modeling, I use the cursor constantly as a temporary anchor. Let’s say I’m building a sci-fi panel with repeating cutouts and hinge-like details. I’ll snap the cursor to a single vertex or edge, rotate a piece around it, then reuse that same cursor position for three or four other operations. No recalculating. No eyeballing. The cursor becomes a fixed reference in a scene that’s otherwise changing fast. Animation is another big one. Temporary pivots are everything. Imagine rotating a character’s hand around an improvised grip point or adjusting a prop that wasn’t rigged perfectly. Instead of restructuring the rig or adding helpers, I’ll place the 3D Cursor...",
+            "adoption": "REJECTED",
+            "adoptionReason": "本轮未读取；搜索摘要不是原文证据。",
+            "evidenceId": null
+          },
+          {
+            "url": "https://spin.atomicobject.com/?p=3668445%2F",
+            "title": "What Happened When I Tried Blender Scripting with AI",
+            "snippet": "What Happened When I Tried Blender Scripting with AI。Article summary Brief Intro to Cursor and Blender Scripting Basic Example: a simple 3D house Intermediate Examples: an animation, and the Blender Donut Advanced Examples: a diamond pyramid, and geometry nodes Future Considerations and Unanswered Questions Since I began working with AI tools, I’ve looked for their boundaries—what can I use them for, and when do I abandon them for another tool instead? Another question I’ve been asking myself: how would AI tooling fare in generating 3D models? Specifically, I wanted to know how well a Cursor Agent could help me write a set of Blender scripts to generate 3D models. Doing so would test both the agent’s ability to follow simple instructions, interact with the Blender API, and find the limits ...",
+            "adoption": "ADOPTED",
+            "adoptionReason": "保存原句；是否支持问题由逐主张核查决定。",
+            "evidenceId": "dc54f0f1-e78b-401c-bfae-4a329421ac79"
+          },
+          {
+            "url": "https://agihunt.info/en/e/19f5609be2748217799dea52292",
+            "title": "Beginner Runs Blender Rendering via Cursor… · AGI Hunt",
+            "snippet": "Beginner Runs Blender Rendering via Cursor… · AGI Hunt AGI Hunt。Beginner Runs Blender Rendering via Cursor and MCP Recently, a user with almost no prior experience successfully configured Blender MCP using GPT-5.6 Sol in Cursor, directly generating and rendering a realistic floating MacBook. This case drew attention because it demonstrates that AI coding tools can now form operable workflows with 3D and desktop software, significantly lowering the barrier to entry for professional software. Key Details and Workflow According to the posts, the user had never really opened Blender before but managed to complete the entire process from setup to final output using the model and MCP. Regarding tool selection, the user initially tried Fable but found the results lacking. Following Grok's advice,...",
+            "adoption": "ADOPTED",
+            "adoptionReason": "保存原句；是否支持问题由逐主张核查决定。",
+            "evidenceId": "344b28cc-9dc7-424d-bf4c-cea77dadc84c"
+          },
+          {
+            "url": "https://grokipedia.com/page/cursor",
+            "title": "Cursor",
+            "snippet": "Cursor。 Users typically manipulate it via mouse input, where clicking in orthographic or perspective projections sets its coordinates; for instance, in orthographic mode, it aligns to the active plane, while in perspective views, it adjusts along the ray cast from the viewport center. These features support efficient modeling by reducing errors in multi-axis environments, with additional controls for snapping to vertices, edges, or faces to enhance precision during editing. Prominent examples illustrate its practical application: in Blender, the 3D cursor acts as a customizable tool for setting mesh origins during import or modeling, allowing users to snap new geometry to its location for seamless assembly. Similarly, Autodesk Maya's equivalent manipulator pivot supports comparable placeme...",
+            "adoption": "REJECTED",
+            "adoptionReason": "本轮未读取；搜索摘要不是原文证据。",
+            "evidenceId": null
+          },
+          {
+            "url": "https://app.daily.dev/posts/what-happened-when-i-tried-blender-scripting-with-ai-pxnfsyia7",
+            "title": "What Happened When I Tried Blender Scripting with AI",
+            "snippet": "What Happened When I Tried Blender Scripting with AI daily.dev。A developer explores using Cursor AI agent to generate Blender Python scripts for 3D modeling tasks. The experiment covers basic house creation, animations, the famous Blender donut tutorial, and advanced geometry nodes. While the AI struggled with realistic details and required extensive coaching, it showed promise for procedural scene setup and geometry node workflows. The combination works better for systematic, rule-based modeling rather than fine visual details....",
+            "adoption": "REJECTED",
+            "adoptionReason": "原文不可用：FAILED；No readable article blocks; JavaScript shell/empty page is not original material",
+            "evidenceId": "01c93fdf-4615-4d43-912c-74626c236e84"
+          },
+          {
+            "url": "https://developer.volcengine.com/articles/7517866334034591755",
+            "title": "3D 小白亲测:用 Trae Blender MCP 从零开始 AI 建模(附踩坑指南)",
+            "snippet": "3D 小白亲测:用 Trae + Blender MCP 从零开始 AI 建模(附踩坑指南) 火山引擎开发者社区。 然后打开Blender,点击“编辑”下的“偏好设置”,选择“插件”,点击右上角的倒三角,选择“从磁盘安装”,导入刚刚下载的“addon.py”文件。 然后在插件列表中就可以看到Blender MCP,就说明安装成功了。 回到主面板,点击右上角的小箭头(快捷键N)。 找到Blender MCP,勾选上使用Poly Haven和使用Rodin ,这两个可以使创建的3D模型效果得到质的提升。使用Rodin需要添加API Key,这里可以直接使用Blender MCP提供的免费试用的key(当然可以去官网开通会员创建自己key)。然后点击“Connect to MCP server”即可。 完成这一步就可以去Trae(Cursor、Claude)中进行创建了。 5、开始创建模型 可以直接选择“Builder with MCP”,可以创建一个单独的智能体进行对话。 比如这里我创建了一个“3D建模与渲染专家”。 使用这个智能体进行对话,直接表达想要创建一个什么场景。这里我选用的大模型是Claude 3.7(开始使用的是DeepSeek v3,但是效果不是很好)。 最终效果就是如下图所示。 结语:当AI遇见创造力 虽然效果不是很完美,但这种“动动嘴皮子就能造物”的未来感, 真的让我起了一身鸡皮疙瘩! 这次深度体验后,最让我感慨的不是技术本身,而是它如何改变了创作的过程: 焦虑变少了:不用担心“学不会复杂软件” 乐趣变多了:能更快看到创意实现 可能性更广了:敢尝试以前不敢碰的复杂项目 感觉像是在和AI玩创意接龙——它抛个砖,我引个玉, 最后出来的作品往往超出预期! 技术永远是画笔,而握着画笔、决定画什么、怎么画的那双手,永远是你自己的!🧠 AI 是强大的副驾驶,但方向盘必须牢...",
+            "adoption": "REJECTED",
+            "adoptionReason": "本轮未读取；搜索摘要不是原文证据。",
+            "evidenceId": null
+          }
+        ]
+      },
+      {
+        "id": "bc4a7bff-b192-43b8-960a-5470aebebea7",
+        "provider": "tavily-search-api:keyless-capped",
+        "query": "Cursor Agent 模式 Blender 3D 建模 使用体验 评价",
+        "calledAt": "2026-10-25T04:12:23.973Z",
+        "status": "SUCCEEDED",
+        "error": null,
+        "returnedSources": [
+          {
+            "url": "https://developer.cloud.tencent.com/article/2504593",
+            "title": "过了把3D建模的瘾！MCP 让 Cursor 控制 Blender，小白也能一句话建模！-腾讯云开发者社区-腾讯云",
+            "snippet": "Blender 本来就是个开源免费的 3D 创作软件，挺厉害的，建模、动画、渲染、视频编辑，啥都能干。 以前觉得 3D 建模是高手专属？ 现在，咱也能试试了。 我用 Cursor 加 MCP，能直接搭个乌漆嘛黑的建筑出来。： 算是过了把3D建模的瘾。 以前觉得Blender、AE 是专业大神用的，根本不敢碰 。 现在用 Cursor + MCP，我也是好起来了，能简单操作两下了。 这不，网友们都炸锅了。 MCP 这玩法一下就火了，有人觉得这是 MCP 最棒的用法，也有人说终于看懂 MCP 能干啥了。 精彩的案例，不止这一个。我还把自己创建的一个“梦幻森林场景”的过程整个录了下来： 本来还想优化调整的，可惜昨天Cursor Claude模型3.5、3.7都高频限制了，是一堆人如此。。 声明一下哈，Blender 这软件我真不懂，就听说过。 你们懂的，这种专业软件，上手前都得深呼吸。 不过，用 MCP 连上 Blender，也能瞎鼓捣一下。 边玩边学，现学现卖。快捷键？ 用到啥搜啥。就跟玩游戏一样。 [...] MCP，是AI解锁更强能力的起点。 下面是相关文章： MCP是什么：Windsurf Wave3：MCP协议让AI直接读取控制台错误，自动化网页调试不用复制粘贴了！Tab智能跳转、Turbo模式。 Cline的MCP商店来了。 MCP怎么配置、报错解决：Windows下MCP报错的救星来了，1分钟教你完美解决Cursor配置问题。 MCP实践：Cursor + MCP：效率狂飙！一键克隆网站、自动调试错误，社区：每个人都在谈论MCP！ 最新MCP托管平台：让Cursor秒变数据库专家，一键对接Github，开发效率暴增！ 短短两天就突破1k Star，应该有不少非3d建模专业用户在玩这个 。。 那么，这个Blender MCP工具地址在这： 另外一点，对于 Blender 新手来说，边实践边学，效果肯定比光看教程强。现在 AI时代，给了我们这种机会。 就算你啥也不懂，也能先渲染出点东西，这本身就是一个“祛魅”的过程，让你更有信心学下去。 遇到问题，直接问 AI，“这软件下一步该调哪儿？” [...] Blender 只是个例子，下一步，Unity3D、PS、PR、AE 这些，是不是也能通过 MCP，实现这种 AI 辅助学习？ 当然之前像AE这种，我们不乏看到有人让LLM给出脚本代码。然后让它生成相应的动画。 不过那个时候还没有引入这个mcp，现在的mcp，就好像以前文章所说的：直接连接数据库比我们截图、复制控制台谢谢这些更好，一方面效率，一方面能给到一个更完整的上下文。 所以，这不仅仅是现在AI能控制Blender这样的软件能做出什么效果，更重要的是，它代表了一种新的可能，一个很有前景的方向。 而且，很多传统软件，可能现在正在用 AI 进行重构。。 前面MCP的实践文章其实有好几篇了，这个Blender的MCP也一样安装，比如你可以像以前文章那样介绍的使用Agent。 但，许久没更新合集了，有时候也在找题材，下篇就把：Blender 安装、MCP 配置、Blender 插件安装、渲染、Blender 快捷键，写一遍吧。。 当然，知识星球因为帖子性质，一般发得比较快： 本文参与 腾讯云自媒体同步曝光计划，分享自微信公众号。",
+            "adoption": "ADOPTED",
+            "adoptionReason": "保存原句；是否支持问题由逐主张核查决定。",
+            "evidenceId": "90f5a3ca-1e7c-4e06-bf36-0e4e3f59b9b0"
+          },
+          {
+            "url": "https://www.bilibili.com/video/BV14eQPYoETS",
+            "title": "过了把3D建模的瘾！Cursor控制Blender，一句提示秒变3D模型，小白也能玩转专业软件！_哔哩哔哩_bilibili",
+            "snippet": "bilibili language 过了把3D建模的瘾！Cursor控制Blender，一句提示秒变3D模型，小白也能玩转专业软件！ # 过了把3D建模的瘾！Cursor控制Blender，一句提示秒变3D模型，小白也能玩转专业软件！ 10+ 个神级MCP推荐！ ## 10+ 个神级MCP推荐！ Cursor + MCP：效率狂飙！一键克隆网站、自动调试错误，社区：每个人都在谈论MCP！ ## Cursor + MCP：效率狂飙！一键克隆网站、自动调试错误，社区：每个人都在谈论MCP！ 比Playwright更高效！BrowserTools MCP 让Cursor直接控制当前浏览器，AI调试+SEO审计效率狂飙！ ## 比Playwright更高效！BrowserTools MCP 让Cursor直接控制当前浏览器，AI调试+SEO审计效率狂飙！ V0 模型直接进驻 Cursor，UI 生成效果炸裂，氛围编码体验再升级。 ## V0 模型直接进驻 Cursor，UI 生成效果炸裂，氛围编码体验再升级。 [...] Git 是给工程师的，YoYo 是给 Vibe Coders 的！网友：“这才是 AI 时代的版本控制！” ## Git 是给工程师的，YoYo 是给 Vibe Coders 的！网友：“这才是 AI 时代的版本控制！” Windsurf：这款全新免费的 AI IDE 击败了Cursor 吗？超强上下文感知 、AI代理和工作流支持（详细教程） ## Windsurf：这款全新免费的 AI IDE 击败了Cursor 吗？超强上下文感知 、AI代理和工作流支持（详细教程） 用户协议隐私协议Bilibili社区准则版权投诉",
+            "adoption": "REJECTED",
+            "adoptionReason": "本轮未读取；搜索摘要不是原文证据。",
+            "evidenceId": null
+          },
+          {
+            "url": "https://www.youtube.com/watch?v=RjOMs1AyW1w",
+            "title": "Cursor+ MCP + Blender = 人人都能3D建模？",
+            "snippet": "# Cursor+ MCP + Blender = 人人都能3D建模？ ## Channel: feicaiclub 12.9K subscribers 1K likes ### Description 39,261 views Posted: 2025-03-19 Manus出圈儿带火了Anthropic公司推出的MCP协议，这期视频不讲理论直接实操，教你如何通过MCP，使用Cursor控制Blender进行3D建模。方法是通用的，学会了，你就可以使使用AI大模型控制任何支持MCP协议的工具。 📚 每期提示词框架，攻略及教程统一整理到了废才俱乐部学堂：",
+            "adoption": "REJECTED",
+            "adoptionReason": "本轮未读取；搜索摘要不是原文证据。",
+            "evidenceId": null
+          },
+          {
+            "url": "https://blendermcp.org/zh-cn/setup/cursor",
+            "title": "Blender MCP + Cursor 配置指南 | 一步一步来",
+            "snippet": "要确认 MCP 服务端已经连上: 1. 进入 Cursor Settings → MCP —— 应该能看到 “blender” 在列表里,状态是绿色的 2. 在 Agent 对话中,MCP 工具会出现在工具列表里 3. 如果状态显示为红色/未连接,试着重启 Cursor ## MCP 让 Cursor 多了什么能力? 连上 Blender MCP 之后,Cursor 的 AI agent 可以: 创建和修改 3D 物体 —— 网格、材质、灯光 查看你的 Blender 场景 —— 获取物体列表、材质数据和场景结构 下载素材 —— Poly Haven 的 HDRI / 贴图 / 模型,以及 Sketchfab 的模型 生成 3D 模型 —— 通过 Hyper3D Rodin 和 Hunyuan3D 执行 Python 代码 —— 运行任意 Blender Python 脚本 截取视图画面 —— 让 AI 看到你当前的场景 这和用 Cursor 写代码不是一回事——MCP 工具让 Cursor 直接接触到 Blender 的 3D 环境。 ## 排错 [...] MCP 让 Cursor 的 AI agent 能够调用外部工具。接上 Blender MCP 之后,Cursor 可以创建 3D 物体、设置材质、布置灯光、从 Poly Haven 下载素材、用 AI 生成模型、在 Blender 中执行 Python 代码,以及截取视图画面。 ### 在 Cursor 上用 Blender MCP 要花钱吗? 不用。Blender MCP 免费且开源。Cursor 本身也有包含 AI 功能的免费版本。整套配置本身不产生费用。 配置还是不顺利?这正是开源那条路的代价 —— AI 客户端、模型和配置都要你自己选、自己维护。我们自己的付费应用 3D-Agent 则把 AI 和整套工具一并包含在内。对比 Blender MCP 与 3D-Agent → 最后更新于 ClaudeVSCode --- [...] 上面的步骤给 Cursor 的是底层的 Blender 工具:由 Cursor 的智能体规划每一步,再自己调用 Blender。如果你更想把整个任务交出去,3D-Agent 的 MCP 服务端走的是另一条路。它是一个本地 MCP 服务端,只有一个工具 `3d_agent(task)`:Cursor 把任务发给它,比如”做一座带发光灯的低多边形灯塔”,3D-Agent 自己的智能体就会在你打开的 Blender 场景里把它做出来。它包含在 3D-Agent 的付费 Ultra 套餐里(没有免费版),每次调用算作一次 3D-Agent 提示词。 这是一种取舍,而不是替代:Blender MCP 免费,让你逐步掌控每一步;3D-Agent 则把整个任务从你的客户端手里接过去。 本页的文字步骤是完整的,不看视频也能配完。想对照着看的话,下面这段配置演示录屏在 YouTube 上,只有英文;在你点开之前,本页不会加载它的任何内容。 在 YouTube 上观看(英文,能否访问取决于你自己的网络) ### Blender MCP 配置演示 用的是别的 AI 客户端?",
+            "adoption": "ADOPTED",
+            "adoptionReason": "保存原句；是否支持问题由逐主张核查决定。",
+            "evidenceId": "5fec5c6b-9d63-4f71-91e8-2904b565393d"
+          },
+          {
+            "url": "https://cursor.com/cn/blog/agent-best-practices",
+            "title": "使用智能体编码的最佳实践 · Cursor",
+            "snippet": "他们会提供可验证的目标。 agent 无法修复它“看不见”的问题。使用强类型语言，配置 linters，并编写测试。给 agent 明确的信号，以判断更改是否正确。 他们把 agent 当作有能力的协作者。 让它给出计划，要求它解释，对你不认可的方案要敢于提出质疑。 Agent 正在快速进化。即使模式会随着新模型而变化，我们也希望这些经验能帮助你在使用编程 agent 时更高效地完成工作。 开始使用 Cursor 的 agent 来尝试这些技巧吧。 ## 相关文章 ·产品 使用插件扩展 Cursor Cursor Team · 5 分钟阅读 ·产品 扩展我们的长时间运行 Agent 研究预览 Cursor Team · 1 分钟阅读 ·产品 智能体用量提升 Cursor Team · 1 分钟阅读 查看更多文章 → [...] 他们会提供可验证的目标。 agent 无法修复它“看不见”的问题。使用强类型语言，配置 linters，并编写测试。给 agent 明确的信号，以判断更改是否正确。 他们把 agent 当作有能力的协作者。 让它给出计划，要求它解释，对你不认可的方案要敢于提出质疑。 Agent 正在快速进化。即使模式会随着新模型而变化，我们也希望这些经验能帮助你在使用编程 agent 时更高效地完成工作。 开始使用 Cursor 的 agent 来尝试这些技巧吧。 ## 相关文章 ·产品 使用插件扩展 Cursor Cursor Team · 5 分钟阅读 ·产品 扩展我们的长时间运行 Agent 研究预览 Cursor Team · 1 分钟阅读 ·产品 Cursor Team · 1 分钟阅读 查看更多文章 → 跳至内容 Cursor 登录联系联系销售下载 Blog / 产品 ·产品 # 使用智能体编码的最佳实践 Lee Robinson · 8 分钟阅读 编码智能体正在改变软件的构建方式。 [...] ## #并行运行 Agent Cursor 让你可以轻松并行运行多个 Agent，而且它们之间不会互相干扰。我们发现，让多个模型同时尝试解决同一个问题，再从中选出最优结果，可以显著提升最终输出质量，尤其适用于更棘手的任务。 ### #原生 worktree 支持 Cursor 会为并行运行的 agent 自动创建和管理 git worktrees。每个 agent 都在自己的 worktree 中运行，文件和更改彼此隔离，因此各个 agent 可以编辑、构建和测试代码，而不会相互干扰。 要在 worktree 中运行 agent，请在 agent 的下拉菜单中选择 worktree 选项。agent 完成后，点击 Apply，将其更改合并回你当前的工作分支。 ### #同时运行多个模型 一种非常强大的使用方式是：让同一个提示词同时在多个模型上运行。从下拉菜单中选择多个模型，提交你的提示词，然后将结果并排比较。Cursor 还会提示它认为最优的解决方案。 这在以下场景中特别有用：",
+            "adoption": "REJECTED",
+            "adoptionReason": "本轮未读取；搜索摘要不是原文证据。",
+            "evidenceId": null
+          },
+          {
+            "url": "https://hk.finance.yahoo.com/news/%E8%BC%9D%E9%81%94%E5%B7%A5%E7%A8%8B%E5%B8%AB%E9%83%BD%E5%9C%A8%E7%94%A8-ai%E5%AF%AB%E7%A8%8B%E5%BC%8F%E5%B7%A5%E5%85%B7cursor%E7%99%BC%E5%B8%832-0%E7%89%88%E6%9C%AC%E6%8E%A8%E8%87%AA%E7%A0%94%E6%A8%A1%E5%9E%8B-193727987.html",
+            "title": "輝達工程師都在用！AI寫程式工具Cursor發布2.0版本推自研模型",
+            "snippet": "跳至導覽 跳過主要內容 跳至右欄 [...] 8. 28Hse.com 9. AM730 10. Infocast 11. 鉅亨網 12. 詠竹坊 13. Money Club 14. investing.com HK [...] 這款模型採用專家混合 (MoE) 架構，支援長文本生成與理解，並透過強化學習針對軟體工程進行優化。在訓練過程中，模型不僅學會使用讀取、編輯檔案等基本工具，還能執行終端指令和整個程式庫的語義搜尋。強化學習讓模型自主學會執行複雜搜尋、修復程式錯誤，以及撰寫並執行單元測試等進階能力。 ###### 多項創新功能上線 這次更新重構了交互邏輯，引入多 AI 代理模式，單次指令可同時並行運行最多 8 個 AI 代理，透過 git worktrees 或遠端機器防止檔案衝突。 對前端開發者而言，最實用的新功能是將瀏覽器嵌入編輯器。開發者可直接在瀏覽器選取元素，Cursor 會自動識別對應程式碼並將 DOM 資訊轉發給編輯器，大幅提升開發效率。 此外，新版本還導入語音模式 (Voice Mode)，實現「動嘴寫程式」。改良的程式碼審查功能讓開發者更容易檢視 AI 代理在多個檔案中的所有變更，無需反覆切換檔案。 系統也改進了上下文處理方式，移除 @Definitions、@Web、@Link 等選項，AI 代理現在可自行收集上下文，無需手動附加。 ###### 擺脫依賴外部模型困境",
+            "adoption": "REJECTED",
+            "adoptionReason": "本轮未读取；搜索摘要不是原文证据。",
+            "evidenceId": null
+          }
+        ]
+      },
+      {
+        "id": "3534225d-1039-4249-a70c-f53e2c8b480c",
+        "provider": "tencent-yuanbao-search-api",
+        "query": "Cursor Agent FreeCAD 或 SketchUp CAD 建模 实测 评价 局限",
+        "calledAt": "2026-10-25T04:12:52.686Z",
+        "status": "SUCCEEDED",
+        "error": null,
+        "returnedSources": [
+          {
+            "url": "https://www.saashub.com/compare-cursor-vs-sketchup",
+            "title": "Cursor VS SketchUp - compare differences & reviews?",
+            "snippet": "Cursor VS SketchUp - compare differences & reviews?。Cursor VS SketchUp Compare Cursor VS SketchUp and see what are their differences 3D Cityplanner 3D Cityplanner for smarter spatial design featured Cursor Claude Code Windsurf Editor GitHub Copilot replit warp by spolu Lovable VS Code The AI-first Code Editor. Build software faster in an editor designed for pair-programming with AI. SketchUp Blender Autodesk 3DS Max FreeCAD Cinema 4D Sculptris ZBrush Autodesk Maya 3D for Everyone Landing page // 2025-02-04 Landing page // 2023-07-18 Cursor Website cursor.com Pricing URL Categories #Developer Tools #Coding #Code Autocomplete #AI Edit details SketchUp Website sketchup.trimble.com Pricing URL Official SketchUp Pricing Categories #3D #Architecture #3D Modeling #Digital Drawing And Painting Edi...",
+            "adoption": "REJECTED",
+            "adoptionReason": "本轮未读取；搜索摘要不是原文证据。",
+            "evidenceId": null
+          },
+          {
+            "url": "https://www.saashub.com/compare-freecad-vs-cursor",
+            "title": "FreeCAD VS Cursor - compare differences & reviews?",
+            "snippet": "FreeCAD VS Cursor - compare differences & reviews?。FreeCAD VS Cursor Compare FreeCAD VS Cursor and see what are their differences UMA Vision The intelligent platform for managing hybrid workplaces featured FreeCAD SketchUp LibreCAD Onshape SolidWorks Autodesk AutoCAD OpenSCAD Blender An open-source parametric 3D modeler Cursor Claude Code Windsurf Editor GitHub Copilot replit warp by spolu Lovable VS Code The AI-first Code Editor. Build software faster in an editor designed for pair-programming with AI. Landing page // 2023-10-23 Landing page // 2025-02-04 FreeCAD Website freecad.org $ Details Categories #3D #3D Modeling #CAD #Architecture Edit details Cursor Website cursor.com $ Details Categories #Developer Tools #Coding #Code Autocomplete #AI Edit details FreeCAD features and specs Open...",
+            "adoption": "REJECTED",
+            "adoptionReason": "本轮未读取；搜索摘要不是原文证据。",
+            "evidenceId": null
+          },
+          {
+            "url": "https://www.saashub.com/compare-sketchup-vs-cursor-chaos",
+            "title": "SketchUp VS Cursor Chaos - compare differences & reviews?",
+            "snippet": "SketchUp VS Cursor Chaos - compare differences & reviews? SaaSHub。SketchUp VS Cursor Chaos Compare SketchUp VS Cursor Chaos and see what are their differences SketchUp Blender Autodesk 3DS Max FreeCAD Cinema 4D Sculptris Autodesk Maya ZBrush 3D for Everyone Rating 0 reviews Alternatives Is it good? VS CC Cursor Chaos Cursor Pro Keyma.sh FYI Cursors eesel cursorOS Clew Keyboard-controlled mini-game action! Rating 0 reviews Alternatives Is it good? Sugarbug Connect your tools into a living knowledge graph. Sugarbug captures every signal to deliver compounding insights and unified context. sponsored Which is more popular? Based on our record, SketchUp seems to be more popular. It has been mentioned 5 times since March 2021. social mentions 5 vs 0 3D popularity 100% vs 0% alternatives listed 2...",
+            "adoption": "REJECTED",
+            "adoptionReason": "本轮未读取；搜索摘要不是原文证据。",
+            "evidenceId": null
+          },
+          {
+            "url": "https://thelinuxcode.com/freecad-vs-sketchup-for-modern-makers-a-senior-engineers-practical-comparison-2026",
+            "title": "FreeCAD vs SketchUp for Modern Makers: A Senior Engineer’s Practical Comparison (2026)",
+            "snippet": "FreeCAD vs SketchUp for Modern Makers: A Senior Engineer’s Practical Comparison (2026) TheLinuxCode。 Advantages I See in Practice Fast visual iteration: The push/pull modeling flow is a time-saver. If I need to show five layout options in a meeting, I can get there faster than I can with parametric CAD. Rendering separation: I can render surfaces separately, which helps keep iteration snappy on mid-range hardware. Plugin ecosystem: The plugin ecosystem is extensive. If I need a specialized feature, there’s often a plugin for it. Reusable components: Pre-built components reduce time spent on repetitive elements like doors, windows, or fixtures. Limitations I Keep in Mind Output quality: Rendered photos can look less realistic than images produced with dedicated render engines or more advanc...",
+            "adoption": "REJECTED",
+            "adoptionReason": "本轮未读取；搜索摘要不是原文证据。",
+            "evidenceId": null
+          },
+          {
+            "url": "https://eathealthy365.com/comparing-top-rated-cad-software-for-a-woodworker/",
+            "title": "Comparing Top-Rated CAD Software for a Woodworker",
+            "snippet": "Comparing Top-Rated CAD Software for a Woodworker。 most features require a Pro plan Excellent for freeform ideation and concept design Lacks integrated CAM for CNC users Who it’s for: The design-focused woodworker, the professional who needs to sketch ideas with clients, and anyone who loves a polished, modern user experience and works across multiple devices. Pricing (as of early 2026): Free (limited to 2 designs), Pro Subscription (~$25/month billed annually). The Verdict: If you own an iPad with a Pencil, the free trial is a must. It’s a joy to use and might just be the most “fun” you can have with CAD. FreeCAD – The Open-Source Champion For those who champion open-source software and have a zero-dollar budget, FreeCAD is an astonishingly powerful option. It is a full-fledged parametric...",
+            "adoption": "REJECTED",
+            "adoptionReason": "本轮未读取；搜索摘要不是原文证据。",
+            "evidenceId": null
+          },
+          {
+            "url": "https://eathealthy365.com/an-honest-review-of-free-architectural-software",
+            "title": "An Honest Review of Free Architectural Software",
+            "snippet": "An Honest Review of Free Architectural Software Flavor365。 We’re looking for active forums, extensive tutorials, and helpful communities. The Top Free Architectural Software: A Head-to-Head Comparison Alright, let’s get to the main event. I’ve spent countless hours in each of these programs, pushing them to their limits. Here’s the real-world breakdown of the best free options available in 2026. 1. SketchUp Free: The King of Conceptual Design SketchUp is often the first program people think of, and for good reason. Its approach to 3D modeling is so intuitive that it feels more like digital sculpting than technical drafting. Best For: Students, hobbyists, interior designers, and architects in the early concept/schematic design phase. Key Strengths vs. Drawbacks Strengths Drawbacks Incredibl...",
+            "adoption": "REJECTED",
+            "adoptionReason": "本轮未读取；搜索摘要不是原文证据。",
+            "evidenceId": null
+          }
+        ]
+      },
+      {
+        "id": "69c331f9-c72b-4697-ac21-cef691b89fca",
+        "provider": "tavily-search-api:keyless-capped",
+        "query": "Cursor Agent FreeCAD 或 SketchUp CAD 建模 实测 评价 局限",
+        "calledAt": "2026-10-25T04:12:52.686Z",
+        "status": "SUCCEEDED",
+        "error": null,
+        "returnedSources": [
+          {
+            "url": "https://forums.sketchup.com/t/freecad-anyone-tried-it/147984",
+            "title": "Freecad - anyone tried it? - Off Topic - SketchUp Community",
+            "snippet": "FreeCAD has some incumbrances, mainly in it’s lack of ability to texture materials nicely, the difficulty on generating terrains, the unintuitive modelling workflows and somewhat basic support for 2D layouts. I still prefer my Sketchup workflow a lot more, but I see much potential in FreeCAD. In the future, for me, if Sketchup will fall short (which has never happened), FreeCAD might be one of my top choices. BlenderBIM should also be looked upon. [...] up pro user but will contribute no more towards it, unless updates are re-introduced and certainly never rent software. Another low cost stand alone NURBS CAD to look at is ViaCAD. I have been quite impressed with it’s ease of use. [...] It certainly looks to have as much potential as Blender. I found it pretty raw last time I messed with it but I am glad to see it still advancing. I think it needs a GUI overall again much like Blender got and needed. imo just downloaded it… it has an architectural plugin which I might play around with… agree it could leap ahead if it got blender style support… lots of angst with REVIT and non performing subscription based software",
+            "adoption": "REJECTED",
+            "adoptionReason": "本轮未读取；搜索摘要不是原文证据。",
+            "evidenceId": null
+          },
+          {
+            "url": "https://www.youtube.com/watch?v=OohxRdnRW8k",
+            "title": "AI Agent驱动的CAD三维建模实测",
+            "snippet": "# AI Agent驱动的CAD三维建模实测 ## Channel: GoFly 2.67K subscribers 5 likes ### Description 592 views Posted: 2026-07-22 这期视频实测了 AI 通过 MCP 连接 Autodesk Fusion 进行自动化三维建模的能力。案例包括一个参考公开资料生成的火箭模型，以及一个只用简单提示词生成的 V8 发动机模型。虽然目前 AI 建模距离真实工业生产还有差距，但在零部件空间关系理解、分段建模和演示级模型生成方面，已经展现出很强的潜力。AI 自动化 CAD 三维建模，离真正落地还有多远？ #Ai #CAD #AGENT #AI建模",
+            "adoption": "REJECTED",
+            "adoptionReason": "本轮未读取；搜索摘要不是原文证据。",
+            "evidenceId": null
+          },
+          {
+            "url": "https://www.youtube.com/watch?v=1yLUA8TTSdU",
+            "title": "快速 Agent 时代来临！Cursor 2.0 + Composer，Windsurf + SWE-1.5",
+            "snippet": "资源： ### Chapters [0:00] 速度为何更重要 [1:19] Composer 模型详解 [4:01] SWE-1.5 技术亮点 [5:03] Cursor 2.0 新功能总览 [6:49] 实测 Composer、Cursor 2.0 [...] # 快速 Agent 时代来临！Cursor 2.0 + Composer，Windsurf + SWE-1.5 ## Channel: NiceKate AI 17.3K subscribers 37 likes ### Description 2,010 views Posted: 2025-10-30 欢迎关注我的知识星球： ​我会分享最新AI资讯、源代码、回答你的提问。 Twitter： 微信公众号：kate人不错 本期视频介绍两款AI编程重磅新品： Cursor Composer 模型：多文件编辑、并行代理、速度飞起 Cognition SWE-1.5：950 tokens/秒的极致体验 我用四个真实项目进行实测： 元素周期表：约1500行代码，自动修复/检查，符合IUPAC布局 WebOS 仿真系统：约2000行代码，Windows风格UI，多场景切换 数字绘图应用：古代纹样库、临摹模式、回放绘制流程 真假美猴王：并行模型优化（Grok Code vs Composer），界面与交互提升 核心亮点 [...] 核心亮点 Composer 采用 MoE 架构，支持 200K 上下文，实际速度显著快于 Haiku 4.5，体验上对标/超越 Sonnet 4 Cursor 2.0 支持最多 8 个代理并行，Git worktrees/远程机避免冲突，浏览器能力、代码审查、安全沙盒全面升级 SWE-1.5 搭配 Windsurf Cascade 表现最佳；在 GB200 芯片集群训练，并与 Cerebras 合作优化部署 定价方面：Composer 与 GPT-5 Codex 定价一致，成本示例：周期表约 $0.31、WebOS 约 $0.29 时间戳 00:00 速度为何更重要 01:19 Composer 模型详解 04:01 SWE-1.5 技术亮点 05:03 Cursor 2.0 新功能总览 06:49 实测 Composer、Cursor 2.0 资源：",
+            "adoption": "REJECTED",
+            "adoptionReason": "本轮未读取；搜索摘要不是原文证据。",
+            "evidenceId": null
+          },
+          {
+            "url": "https://cursor.com/zh-Hant",
+            "title": "AI Coding Agent for Building Ambitious Software | Cursor",
+            "snippet": "swhitmore5m 我希望能前往 cursor.com/changelog#1.0 來查看 1.0 版更新日誌 eric avatar eric4m 看起來沒問題 @cursor can you take a stab? Cursor avatar CursorAPP2m 我為更新日誌項目加入了直接連結，並更新了整個專案中的 Node.js 版本限制，以提升可維護性。 檢視 PR在 Cursor 中開啟在 Web 版中開啟 cursor-agent > agent Cursor Agent ~/anysphere/research · main →Plan, search, build anything GPT-5.6 Sol Extra High Fast / commands · @ files · ! shell ### 把工作交給 AI（人工智慧）隊友 Bot 可以登入您的工具，像您一樣操作，並帶回完成的工作成果。 下載 Grok Bot → Abstract waves background [...] swhitmore5m 我希望能前往 cursor.com/changelog#1.0 來查看 1.0 版更新日誌 eric avatar eric4m 看起來沒問題 @cursor can you take a stab? Cursor avatar CursorAPP2m 我為更新日誌項目加入了直接連結，並更新了整個專案中的 Node.js 版本限制，以提升可維護性。 檢視 PR在 Cursor 中開啟在 Web 版中開啟 cursor-agent > agent Cursor Agent ~/anysphere/research · main →Plan, search, build anything GPT-5.6 Sol Extra High Fast / commands · @ files · ! shell ### 把工作交給 AI（人工智慧）隊友 Bot 可以登入您的工具，像您一樣操作，並帶回完成的工作成果。 下載 Grok Bot → Abstract waves background [...] 檢視所有部落格文章 → ## 立即試用 Cursor。 下載 macOS 版 ⤓ 開始使用 → 跳至內容 Cursor 登入聯絡聯絡銷售團隊下載 # Cursor 是你的程式開發代理，助你打造具雄心的軟體。 下載 macOS 版 ⤓ 開始使用 → This element contains an interactive demo for sighted users showing multiple Cursor interfaces: Cursor Desktop interface, Cursor CLI interface. The interface is displayed over a subtle, solid brand background. Cursor Desktop Acme Labs",
+            "adoption": "REJECTED",
+            "adoptionReason": "本轮未读取；搜索摘要不是原文证据。",
+            "evidenceId": null
+          },
+          {
+            "url": "https://tracxn.com/d/companies/sketchup/__4E8sLRffUM-RrN5ytuGCst8uAbfrPYjCcxeCDoZbpOI",
+            "title": "SketchUp - 2026 Company Profile & Competitors - Tracxn",
+            "snippet": "| 9th | Logo for SIMUFORM SIMUFORM 2005, Dortmund (Germany), Seed | Developer of CAD product data visualization software LBBW Venture Capital, Kfw & 2 others | 38/100 | | 10th | Logo for FreeCAD FreeCAD 2001, Belgium, Unfunded | 3D CAD modeling platform - | 34/100 | | 84th | Logo for SketchUp SketchUp Miltenberg (Germany), Unfunded | 3D modeling platform - | 16/100 | [...] Logo for Dassault Systems Logo for 3D Modeling App Logo for Prisma3D_1576127572866.png?devicePixelRatio=2&height=30&width=30) Logo for Cove.tool Logo for Bezi Logo for CAD Exchanger Logo for Cognitive Design Systems Logo for Toggle3D Logo for SIMUFORM_1560499185042.png?devicePixelRatio=2&height=30&width=30) Logo for FreeCAD Logo for SketchUp lock ## SketchUp's Investments and acquisitions ## Reports related to SketchUp An image depicting 3D Animation - Sector Report [...] | Rank | Company Details | Short Description | Total Funding | Investors | Tracxn Score | --- --- --- | | 1st | Logo for Dassault Systems Dassault Systems 1981, Velizy Villacoublay (France), Public | Developer of software for virtual product design and simulation modeling Multeam, Europa & 1 others | 57/100 | | 2nd | Logo for 3D Modeling App 3D Modeling App 2020, Newark (United States), Unfunded | Provider of 3D CAD modelling app for mobile phones - | 46/100 |",
+            "adoption": "REJECTED",
+            "adoptionReason": "本轮未读取；搜索摘要不是原文证据。",
+            "evidenceId": null
+          },
+          {
+            "url": "https://cn.investing.com/equities/china-merchants-port-adr",
+            "title": "招商局港口控股有限公司(CMHHY)股票最新价格行情,实时走势图,股价分析预测_英为财情Investing.com",
+            "snippet": "打开应用程序搜索市场、新闻、分析…Ctrl+K 劲爆优惠50% 登录 免费注册 [...] 招商局港口(00144)发布中期业绩 股东应占溢利38.32亿港元 同比增长6.92% 智通财经 2026年8月28日 Image 47 Image 48 中金：量增价稳现金流充裕 港口板块防御价值凸显 智通财经 2026年7月29日 Image 49 Image 50 智通港股沽空统计|7月24日 智通财经 2026年7月24日 Image 51 Image 52 港股异动 | 招商局港口(00144)涨超4% 上半年总集装箱吞吐量保持稳定上升 将受益扩建项目带来新增产能支撑 智通财经 2026年7月20日 显示更多 ## 技术分析 1 分钟 解锁5分钟 解锁15分钟 解锁30分钟 卖出 1小时 中性 5 小时 中性 1日 中性 1周 强力买入 1个月 强力买入 总结 强力卖出 卖出 中性 买入 强力买入 中性 技术指标 强力卖出 卖出 中性 买入 [...] 智通港股52周新高、新低统计|9月29日 智通财经 2026年9月29日 Image 27 Image 28 智通港股沽空统计|7月24日 智通财经 2026年7月24日 Image 29 Image 30 智通港股52周新高、新低统计|9月28日 智通财经 2026年9月28日 Image 31 Image 32 港股异动 | 招商局港口(00144)涨超4% 上半年总集装箱吞吐量保持稳定上升 将受益扩建项目带来新增产能支撑 智通财经 2026年7月20日 Image 33 Image 34 招商局港口(00144)附属终止南亚商贸物流中心项目 智通财经 2026年10月15日 Image 35 Image 36",
+            "adoption": "REJECTED",
+            "adoptionReason": "本轮未读取；搜索摘要不是原文证据。",
+            "evidenceId": null
+          }
+        ]
+      }
+    ],
+    "verificationAudit": {
+      "modelCalls": [
+        {
+          "provider": "api.deepseek.com",
+          "model": "deepseek-flash",
+          "promptVersion": "a2-evidence-v4",
+          "temperature": null,
+          "thinkingMode": "DISABLED",
+          "generatedAt": "2026-10-25T04:12:23.969Z",
+          "id": "54edace0-dc5f-44ff-968c-df514e0f22ad",
+          "purpose": "investigation-initial-decision",
+          "startedAt": "2026-10-25T04:12:22.572Z",
+          "durationMs": 1397,
+          "outcome": "SUCCEEDED",
+          "inputTokens": 1408,
+          "outputTokens": 128
+        },
+        {
+          "provider": "api.deepseek.com",
+          "model": "deepseek-flash",
+          "promptVersion": "a2-evidence-v4",
+          "temperature": null,
+          "thinkingMode": "DISABLED",
+          "generatedAt": "2026-10-25T04:12:28.677Z",
+          "id": "56c61646-8912-4c00-aa99-3cdd1269e51c",
+          "purpose": "investigation-evidence-decision",
+          "startedAt": "2026-10-25T04:12:26.684Z",
+          "durationMs": 1993,
+          "outcome": "SUCCEEDED",
+          "inputTokens": 6951,
+          "outputTokens": 293
+        },
+        {
+          "provider": "api.deepseek.com",
+          "model": "deepseek-flash",
+          "promptVersion": "a2-evidence-v4",
+          "temperature": null,
+          "thinkingMode": "DISABLED",
+          "generatedAt": "2026-10-25T04:12:32.238Z",
+          "id": "d4886742-3fa3-4e80-a5c6-aa107417d382",
+          "purpose": "investigation-evidence-decision",
+          "startedAt": "2026-10-25T04:12:30.278Z",
+          "durationMs": 1965,
+          "outcome": "SUCCEEDED",
+          "inputTokens": 8717,
+          "outputTokens": 290
+        },
+        {
+          "provider": "api.deepseek.com",
+          "model": "deepseek-flash",
+          "promptVersion": "a2-evidence-v4",
+          "temperature": null,
+          "thinkingMode": "DISABLED",
+          "generatedAt": "2026-10-25T04:12:35.450Z",
+          "id": "596b7c46-a45d-4d7b-bafe-c54501c53c1e",
+          "purpose": "investigation-evidence-decision",
+          "startedAt": "2026-10-25T04:12:33.133Z",
+          "durationMs": 2317,
+          "outcome": "SUCCEEDED",
+          "inputTokens": 10086,
+          "outputTokens": 260
+        },
+        {
+          "provider": "api.deepseek.com",
+          "model": "deepseek-flash",
+          "promptVersion": "a2-evidence-v4",
+          "temperature": null,
+          "thinkingMode": "DISABLED",
+          "generatedAt": "2026-10-25T04:12:39.120Z",
+          "id": "a310c714-75de-4b6d-b448-aebb9dc9b689",
+          "purpose": "investigation-evidence-decision",
+          "startedAt": "2026-10-25T04:12:35.954Z",
+          "durationMs": 3165,
+          "outcome": "SUCCEEDED",
+          "inputTokens": 10713,
+          "outputTokens": 465
+        },
+        {
+          "provider": "api.deepseek.com",
+          "model": "deepseek-flash",
+          "promptVersion": "a2-evidence-v4",
+          "temperature": null,
+          "thinkingMode": "DISABLED",
+          "generatedAt": "2026-10-25T04:12:41.899Z",
+          "id": "a2968e63-3c10-44f7-9134-be3fbb8a9dc9",
+          "purpose": "claim-extraction",
+          "startedAt": "2026-10-25T04:12:39.124Z",
+          "durationMs": 2775,
+          "outcome": "SUCCEEDED",
+          "inputTokens": 3477,
+          "outputTokens": 386
+        },
+        {
+          "provider": "api.deepseek.com",
+          "model": "deepseek-flash",
+          "promptVersion": "a2-evidence-v4",
+          "temperature": null,
+          "thinkingMode": "DISABLED",
+          "generatedAt": "2026-10-25T04:12:50.443Z",
+          "id": "6e638472-0da7-4095-a0ff-65f2fcd9d2be",
+          "purpose": "claim-evidence-verification",
+          "startedAt": "2026-10-25T04:12:41.900Z",
+          "durationMs": 8543,
+          "outcome": "SUCCEEDED",
+          "inputTokens": 5882,
+          "outputTokens": 2071
+        },
+        {
+          "provider": "api.deepseek.com",
+          "model": "deepseek-flash",
+          "promptVersion": "a2-evidence-v4",
+          "temperature": null,
+          "thinkingMode": "DISABLED",
+          "generatedAt": "2026-10-25T04:12:52.678Z",
+          "id": "f1c9c21e-840e-49b5-8059-1e960845ecad",
+          "purpose": "investigation-evidence-decision",
+          "startedAt": "2026-10-25T04:12:50.445Z",
+          "durationMs": 2232,
+          "outcome": "SUCCEEDED",
+          "inputTokens": 12570,
+          "outputTokens": 291
+        },
+        {
+          "provider": "api.deepseek.com",
+          "model": "deepseek-flash",
+          "promptVersion": "a2-evidence-v4",
+          "temperature": null,
+          "thinkingMode": "DISABLED",
+          "generatedAt": "2026-10-25T04:12:57.854Z",
+          "id": "b28f9141-5276-4a6e-bd9f-e9e70a4760b0",
+          "purpose": "investigation-evidence-decision",
+          "startedAt": "2026-10-25T04:12:55.207Z",
+          "durationMs": 2647,
+          "outcome": "SUCCEEDED",
+          "inputTokens": 17270,
+          "outputTokens": 372
+        },
+        {
+          "provider": "api.deepseek.com",
+          "model": "deepseek-flash",
+          "promptVersion": "a2-evidence-v4",
+          "temperature": null,
+          "thinkingMode": "DISABLED",
+          "generatedAt": "2026-10-25T04:13:02.907Z",
+          "id": "b9200d9a-aaa8-4d02-8b88-34fab6fd7465",
+          "purpose": "investigation-evidence-decision",
+          "startedAt": "2026-10-25T04:12:59.373Z",
+          "durationMs": 3534,
+          "outcome": "SUCCEEDED",
+          "inputTokens": 18286,
+          "outputTokens": 512
+        },
+        {
+          "provider": "api.deepseek.com",
+          "model": "deepseek-flash",
+          "promptVersion": "a2-evidence-v4",
+          "temperature": null,
+          "thinkingMode": "DISABLED",
+          "generatedAt": "2026-10-25T04:13:07.912Z",
+          "id": "522c1706-ced6-4e48-bd28-468063a4d999",
+          "purpose": "claim-extraction",
+          "startedAt": "2026-10-25T04:13:02.913Z",
+          "durationMs": 2652,
+          "outcome": "FAILED",
+          "inputTokens": 3819,
+          "outputTokens": 441,
+          "failureCategory": "output-schema"
+        },
+        {
+          "provider": "api.deepseek.com",
+          "model": "deepseek-flash",
+          "promptVersion": "a2-evidence-v4",
+          "temperature": null,
+          "thinkingMode": "DISABLED",
+          "generatedAt": "2026-10-25T04:13:07.912Z",
+          "id": "25325821-3065-4a77-b16f-5de19e39b7ed",
+          "purpose": "claim-extraction:format-repair",
+          "startedAt": "2026-10-25T04:13:05.565Z",
+          "durationMs": 2347,
+          "outcome": "SUCCEEDED",
+          "inputTokens": 3870,
+          "outputTokens": 416
+        },
+        {
+          "provider": "api.deepseek.com",
+          "model": "deepseek-flash",
+          "promptVersion": "a2-evidence-v4",
+          "temperature": null,
+          "thinkingMode": "DISABLED",
+          "generatedAt": "2026-10-25T04:13:16.997Z",
+          "id": "100d8c26-0b2e-413e-9a7c-8837f1b83da3",
+          "purpose": "claim-evidence-verification",
+          "startedAt": "2026-10-25T04:13:07.914Z",
+          "durationMs": 9084,
+          "outcome": "SUCCEEDED",
+          "inputTokens": 6574,
+          "outputTokens": 2187
+        },
+        {
+          "provider": "api.deepseek.com",
+          "model": "deepseek-flash",
+          "promptVersion": "a2-evidence-v4",
+          "temperature": null,
+          "thinkingMode": "DISABLED",
+          "generatedAt": "2026-10-25T04:13:24.984Z",
+          "id": "6d7fe371-d631-4870-964e-424495e436df",
+          "purpose": "claim-evidence-verification:validation-repair",
+          "startedAt": "2026-10-25T04:13:16.998Z",
+          "durationMs": 7986,
+          "outcome": "SUCCEEDED",
+          "inputTokens": 6647,
+          "outputTokens": 1948
+        },
+        {
+          "provider": "api.deepseek.com",
+          "model": "deepseek-flash",
+          "promptVersion": "a2-evidence-v4",
+          "temperature": null,
+          "thinkingMode": "DISABLED",
+          "generatedAt": "2026-10-25T04:13:27.746Z",
+          "id": "a33408e1-dd5b-420a-8784-13a60a1e4743",
+          "purpose": "investigation-evidence-decision",
+          "startedAt": "2026-10-25T04:13:24.986Z",
+          "durationMs": 2760,
+          "outcome": "SUCCEEDED",
+          "inputTokens": 18725,
+          "outputTokens": 537
+        },
+        {
+          "provider": "api.deepseek.com",
+          "model": "deepseek-flash",
+          "promptVersion": "a2-evidence-v4",
+          "temperature": null,
+          "thinkingMode": "DISABLED",
+          "generatedAt": "2026-10-25T04:13:28.328Z",
+          "id": "c5453fbc-c231-4345-9d0d-cc448348c4e6",
+          "purpose": "cited-answer-selection",
+          "startedAt": "2026-10-25T04:13:27.757Z",
+          "durationMs": 571,
+          "outcome": "SUCCEEDED",
+          "inputTokens": 1673,
+          "outputTokens": 61
+        },
+        {
+          "provider": "api.deepseek.com",
+          "model": "deepseek-flash",
+          "promptVersion": "a2-evidence-v4",
+          "temperature": null,
+          "thinkingMode": "DISABLED",
+          "generatedAt": "2026-10-25T04:13:29.952Z",
+          "id": "7cf18159-ab27-4291-96e9-4380c86d7875",
+          "purpose": "citation-semantic-support-check",
+          "startedAt": "2026-10-25T04:13:28.328Z",
+          "durationMs": 1624,
+          "outcome": "SUCCEEDED",
+          "inputTokens": 1777,
+          "outputTokens": 201
+        }
+      ],
+      "review": {
+        "status": "NOT_CONFIGURED",
+        "reason": "未配置第二模型；不声称完成独立模型复核或精度提高。",
+        "independentAssessment": null,
+        "findings": []
+      },
+      "citationChecks": [
+        {
+          "marker": "[1]",
+          "supported": true,
+          "reason": "原句明确提到作者想了解 Cursor Agent 协助编写一组 Blender 脚本生成 3D 模型的能力，并表示这样能测试代理遵循简单指令、与 Blender API 交互的能力及 Blender 脚本自身的极限。署名 Meghan Harris、日期 2025-07-07 来自该证据来源的元数据，与保存原句属同一来源记录。适用范围中“未注明 Cursor 版本与套餐”也吻合证据元数据 productVersion 和 plan 为空。"
+        },
+        {
+          "marker": "[2]",
+          "supported": true,
+          "reason": "原句直接写道：代理渲染甜甜圈和糖霜效果“fairly good”（额外加分项是光泽），但“with lots of coaching”，即需要大量指导；这与主张一致。该评价仅针对一次甜甜圈教程实验，证据元数据未注明 Cursor 版本和套餐，与适用范围所列条件一致。"
+        }
+      ],
+      "followup": {
+        "queriesUsed": 1,
+        "maxQueries": 2,
+        "stopReason": "模型选择结束，已执行2轮搜索、10次读取；具体决策理由保留在记录中，事实与未解决项以最终原句核查为准。"
+      },
+      "investigationLoop": {
+        "startedAt": "2026-10-25T04:12:22.567Z",
+        "durationMs": 67391,
+        "totalBudgetMs": 180000,
+        "answerReserveMs": 45000,
+        "maxSearchRounds": 3,
+        "searchRounds": 2,
+        "maxReads": 10,
+        "readsUsed": 10,
+        "stopReason": "模型选择结束，已执行2轮搜索、10次读取；具体决策理由保留在记录中，事实与未解决项以最终原句核查为准。",
+        "httpAttempts": [
+          {
+            "url": "https://api.wsa.cloud.tencent.com/SearchPro",
+            "method": "POST",
+            "startedAt": "2026-10-25T04:12:23.974Z",
+            "finishedAt": "2026-10-25T04:12:24.359Z",
+            "requestSent": true,
+            "status": 200,
+            "error": null,
+            "ownerId": "e5ce0f57-08d3-4399-bcf2-82caba2b00fa"
+          },
+          {
+            "url": "https://api.tavily.com/search",
+            "method": "POST",
+            "startedAt": "2026-10-25T04:12:23.973Z",
+            "finishedAt": "2026-10-25T04:12:26.680Z",
+            "requestSent": true,
+            "status": 200,
+            "error": null,
+            "ownerId": "bc4a7bff-b192-43b8-960a-5470aebebea7"
+          },
+          {
+            "url": "https://spin.atomicobject.com/?p=3668445%2F",
+            "method": "GET",
+            "startedAt": "2026-10-25T04:12:28.691Z",
+            "finishedAt": "2026-10-25T04:12:30.258Z",
+            "requestSent": true,
+            "status": 301,
+            "error": null,
+            "ownerId": "80d3727e-6972-48b6-8496-8b603bf88f04"
+          },
+          {
+            "url": "https://spin.atomicobject.com/blender-scripting-with-ai/",
+            "method": "GET",
+            "startedAt": "2026-10-25T04:12:29.573Z",
+            "finishedAt": "2026-10-25T04:12:30.258Z",
+            "requestSent": true,
+            "status": 200,
+            "error": null,
+            "ownerId": "80d3727e-6972-48b6-8496-8b603bf88f04"
+          },
+          {
+            "url": "https://developer.cloud.tencent.com/article/2504593",
+            "method": "GET",
+            "startedAt": "2026-10-25T04:12:28.692Z",
+            "finishedAt": "2026-10-25T04:12:29.054Z",
+            "requestSent": true,
+            "status": 200,
+            "error": null,
+            "ownerId": "384cdc34-ab40-4190-8629-59f7721c9656"
+          },
+          {
+            "url": "https://blendermcp.org/zh-cn/setup/cursor",
+            "method": "GET",
+            "startedAt": "2026-10-25T04:12:28.692Z",
+            "finishedAt": "2026-10-25T04:12:30.095Z",
+            "requestSent": true,
+            "status": 200,
+            "error": null,
+            "ownerId": "5fec5c6b-9d63-4f71-91e8-2904b565393d"
+          },
+          {
+            "url": "https://agihunt.info/en/e/19f5609be2748217799dea52292",
+            "method": "GET",
+            "startedAt": "2026-10-25T04:12:28.692Z",
+            "finishedAt": "2026-10-25T04:12:30.125Z",
+            "requestSent": true,
+            "status": 200,
+            "error": null,
+            "ownerId": "6b219dca-0386-460b-a565-ab7d3e299ba4"
+          },
+          {
+            "url": "https://spin.atomicobject.com/?p=3668445%2F",
+            "method": "GET",
+            "startedAt": "2026-10-25T04:12:32.247Z",
+            "finishedAt": "2026-10-25T04:12:32.853Z",
+            "requestSent": true,
+            "status": 301,
+            "error": null,
+            "ownerId": "70b221d8-0e68-4387-bd2d-58d684cbfd36"
+          },
+          {
+            "url": "https://spin.atomicobject.com/blender-scripting-with-ai/",
+            "method": "GET",
+            "startedAt": "2026-10-25T04:12:32.397Z",
+            "finishedAt": "2026-10-25T04:12:32.853Z",
+            "requestSent": true,
+            "status": 200,
+            "error": null,
+            "ownerId": "70b221d8-0e68-4387-bd2d-58d684cbfd36"
+          },
+          {
+            "url": "https://developer.cloud.tencent.com/article/2504593",
+            "method": "GET",
+            "startedAt": "2026-10-25T04:12:32.247Z",
+            "finishedAt": "2026-10-25T04:12:32.508Z",
+            "requestSent": true,
+            "status": 200,
+            "error": null,
+            "ownerId": "90f5a3ca-1e7c-4e06-bf36-0e4e3f59b9b0"
+          },
+          {
+            "url": "https://agihunt.info/en/e/19f5609be2748217799dea52292",
+            "method": "GET",
+            "startedAt": "2026-10-25T04:12:32.247Z",
+            "finishedAt": "2026-10-25T04:12:33.131Z",
+            "requestSent": true,
+            "status": 200,
+            "error": null,
+            "ownerId": "344b28cc-9dc7-424d-bf4c-cea77dadc84c"
+          },
+          {
+            "url": "https://spin.atomicobject.com/?p=3668445%2F",
+            "method": "GET",
+            "startedAt": "2026-10-25T04:12:35.455Z",
+            "finishedAt": "2026-10-25T04:12:35.925Z",
+            "requestSent": true,
+            "status": 301,
+            "error": null,
+            "ownerId": "db0921b4-53eb-4a83-adb3-3cc36b8d9cda"
+          },
+          {
+            "url": "https://spin.atomicobject.com/blender-scripting-with-ai/",
+            "method": "GET",
+            "startedAt": "2026-10-25T04:12:35.598Z",
+            "finishedAt": "2026-10-25T04:12:35.925Z",
+            "requestSent": true,
+            "status": 200,
+            "error": null,
+            "ownerId": "db0921b4-53eb-4a83-adb3-3cc36b8d9cda"
+          },
+          {
+            "url": "https://api.wsa.cloud.tencent.com/SearchPro",
+            "method": "POST",
+            "startedAt": "2026-10-25T04:12:52.686Z",
+            "finishedAt": "2026-10-25T04:12:53.302Z",
+            "requestSent": true,
+            "status": 200,
+            "error": null,
+            "ownerId": "3534225d-1039-4249-a70c-f53e2c8b480c"
+          },
+          {
+            "url": "https://api.tavily.com/search",
+            "method": "POST",
+            "startedAt": "2026-10-25T04:12:52.686Z",
+            "finishedAt": "2026-10-25T04:12:55.205Z",
+            "requestSent": true,
+            "status": 200,
+            "error": null,
+            "ownerId": "69c331f9-c72b-4697-ac21-cef691b89fca"
+          },
+          {
+            "url": "https://spin.atomicobject.com/?p=3668445%2F",
+            "method": "GET",
+            "startedAt": "2026-10-25T04:12:57.865Z",
+            "finishedAt": "2026-10-25T04:12:58.787Z",
+            "requestSent": true,
+            "status": 301,
+            "error": null,
+            "ownerId": "dc54f0f1-e78b-401c-bfae-4a329421ac79"
+          },
+          {
+            "url": "https://spin.atomicobject.com/blender-scripting-with-ai/",
+            "method": "GET",
+            "startedAt": "2026-10-25T04:12:58.379Z",
+            "finishedAt": "2026-10-25T04:12:58.787Z",
+            "requestSent": true,
+            "status": 200,
+            "error": null,
+            "ownerId": "dc54f0f1-e78b-401c-bfae-4a329421ac79"
+          },
+          {
+            "url": "https://app.daily.dev/posts/what-happened-when-i-tried-blender-scripting-with-ai-pxnfsyia7",
+            "method": "GET",
+            "startedAt": "2026-10-25T04:12:57.865Z",
+            "finishedAt": "2026-10-25T04:12:59.367Z",
+            "requestSent": true,
+            "status": 308,
+            "error": null,
+            "ownerId": "01c93fdf-4615-4d43-912c-74626c236e84"
+          },
+          {
+            "url": "https://daily.dev/posts/what-happened-when-i-tried-blender-scripting-with-ai-pxnfsyia7",
+            "method": "GET",
+            "startedAt": "2026-10-25T04:12:58.378Z",
+            "finishedAt": "2026-10-25T04:12:59.367Z",
+            "requestSent": true,
+            "status": 200,
+            "error": null,
+            "ownerId": "01c93fdf-4615-4d43-912c-74626c236e84"
+          }
+        ],
+        "collectionDiagnostics": [],
+        "decisions": [
+          {
+            "step": 1,
+            "decidedAt": "2026-10-25T04:12:23.969Z",
+            "remainingMs": 178597,
+            "decision": {
+              "action": "SEARCH",
+              "query": "Cursor Agent 模式 Blender 3D 建模 使用体验 评价",
+              "entries": [
+                "yuanbao",
+                "tavily"
+              ],
+              "readUrls": [],
+              "reason": "首轮检索需先获取真实使用报告与官方材料；用户问的是实际工作流评价，需找社区/用户实测与相关文档。",
+              "observedGap": "尚无任何证据，缺 Cursor Agent 在 CAD/Blender 工作流中的真实使用报告与官方说明。",
+              "basisEvidenceIds": [],
+              "basisRecordIds": [],
+              "clarification": null,
+              "discoveredIdentity": null
+            },
+            "availableEvidenceIds": [],
+            "availableRecordIds": [],
+            "outcome": "EXECUTED",
+            "detail": "实际入口：yuanbao,tavily；返回记录：e5ce0f57-08d3-4399-bcf2-82caba2b00fa:SUCCEEDED,bc4a7bff-b192-43b8-960a-5470aebebea7:SUCCEEDED。"
+          },
+          {
+            "step": 2,
+            "decidedAt": "2026-10-25T04:12:28.677Z",
+            "remainingMs": 173889,
+            "decision": {
+              "action": "READ",
+              "query": "Cursor Agent Blender scripting evaluation",
+              "entries": [],
+              "readUrls": [
+                "https://spin.atomicobject.com/?p=3668445%2F",
+                "https://developer.cloud.tencent.com/article/2504593",
+                "https://blendermcp.org/zh-cn/setup/cursor",
+                "https://agihunt.info/en/e/19f5609be2748217799dea52292"
+              ],
+              "reason": "首轮搜索已返回多个候选来源，但摘要不能作为证据。优先读取最直接回答真实使用评价的来源：Atomic Object 亲测 Cursor Agent 写 Blender 脚本的边界与效果；腾讯云开发者社区 Cursor+MCP 控制 Blender 的实际体验与限制；Blender MCP 官方配置指南说明能力范围；AGI Hunt 新手案例说明 MCP 工作流可行性。",
+              "observedGap": "尚未读取任何原文，缺 Cursor Agent 在 Blender/CAD 工作流中的实际效果、适用边界、失败模式与用户原始评价。",
+              "basisEvidenceIds": [],
+              "basisRecordIds": [
+                "e5ce0f57-08d3-4399-bcf2-82caba2b00fa",
+                "bc4a7bff-b192-43b8-960a-5470aebebea7"
+              ],
+              "clarification": null,
+              "discoveredIdentity": null
+            },
+            "availableEvidenceIds": [],
+            "availableRecordIds": [
+              "e5ce0f57-08d3-4399-bcf2-82caba2b00fa",
+              "bc4a7bff-b192-43b8-960a-5470aebebea7"
+            ],
+            "outcome": "EXECUTED",
+            "detail": "已尝试读取：https://spin.atomicobject.com/?p=3668445%2F,https://developer.cloud.tencent.com/article/2504593,https://blendermcp.org/zh-cn/setup/cursor,https://agihunt.info/en/e/19f5609be2748217799dea52292；累计保存4份原文状态。"
+          },
+          {
+            "step": 3,
+            "decidedAt": "2026-10-25T04:12:32.238Z",
+            "remainingMs": 170324,
+            "decision": {
+              "action": "READ",
+              "query": "Cursor Agent Blender limitations realism coaching geometry nodes",
+              "entries": [],
+              "readUrls": [
+                "https://spin.atomicobject.com/?p=3668445%2F",
+                "https://developer.cloud.tencent.com/article/2504593",
+                "https://agihunt.info/en/e/19f5609be2748217799dea52292"
+              ],
+              "reason": "现有原句仅说明评测意图/配置可行性，仍缺实际效果与局限的原文表述。定向重读 Atomic Object 同一篇中讨论 AI 失败与局限的段落，以及两篇实测中关于效果边界的具体描述。",
+              "observedGap": "已读原句只覆盖“想测试什么”和“能连上/能用”，缺真实评价所需的：生成质量、失败模式、需要人工干预程度、适用任务类型。",
+              "basisEvidenceIds": [
+                "80d3727e-6972-48b6-8496-8b603bf88f04",
+                "384cdc34-ab40-4190-8629-59f7721c9656",
+                "6b219dca-0386-460b-a565-ab7d3e299ba4"
+              ],
+              "basisRecordIds": [
+                "bc4a7bff-b192-43b8-960a-5470aebebea7"
+              ],
+              "clarification": null,
+              "discoveredIdentity": null
+            },
+            "availableEvidenceIds": [
+              "384cdc34-ab40-4190-8629-59f7721c9656",
+              "5fec5c6b-9d63-4f71-91e8-2904b565393d",
+              "6b219dca-0386-460b-a565-ab7d3e299ba4",
+              "80d3727e-6972-48b6-8496-8b603bf88f04"
+            ],
+            "availableRecordIds": [
+              "e5ce0f57-08d3-4399-bcf2-82caba2b00fa",
+              "bc4a7bff-b192-43b8-960a-5470aebebea7"
+            ],
+            "outcome": "EXECUTED",
+            "detail": "已尝试读取：https://spin.atomicobject.com/?p=3668445%2F,https://developer.cloud.tencent.com/article/2504593,https://agihunt.info/en/e/19f5609be2748217799dea52292；累计保存7份原文状态。"
+          },
+          {
+            "step": 4,
+            "decidedAt": "2026-10-25T04:12:35.450Z",
+            "remainingMs": 167111,
+            "decision": {
+              "action": "READ",
+              "query": "Blender Python 脚本 失败 局限 复杂几何 人工调整",
+              "entries": [],
+              "readUrls": [
+                "https://spin.atomicobject.com/?p=3668445%2F"
+              ],
+              "reason": "已有原句确认 Cursor Agent 可生成基础 Blender 脚本（甜甜圈渲染尚可但需大量指导），但缺失败模式与复杂 CAD 任务的适用边界原文。定向重读同篇讨论中级/高级示例与未来考虑的部分，以补齐真实评价的关键缺口。",
+              "observedGap": "缺 Cursor Agent 在更复杂建模任务（动画、几何节点、钻石金字塔）上的具体失败表现与人工干预程度；腾讯云与 AGI Hunt 原句偏体验叙述，无规格级细节。",
+              "basisEvidenceIds": [
+                "70b221d8-0e68-4387-bd2d-58d684cbfd36",
+                "80d3727e-6972-48b6-8496-8b603bf88f04"
+              ],
+              "basisRecordIds": [
+                "bc4a7bff-b192-43b8-960a-5470aebebea7"
+              ],
+              "clarification": null,
+              "discoveredIdentity": null
+            },
+            "availableEvidenceIds": [
+              "384cdc34-ab40-4190-8629-59f7721c9656",
+              "5fec5c6b-9d63-4f71-91e8-2904b565393d",
+              "6b219dca-0386-460b-a565-ab7d3e299ba4",
+              "80d3727e-6972-48b6-8496-8b603bf88f04",
+              "90f5a3ca-1e7c-4e06-bf36-0e4e3f59b9b0",
+              "70b221d8-0e68-4387-bd2d-58d684cbfd36",
+              "344b28cc-9dc7-424d-bf4c-cea77dadc84c"
+            ],
+            "availableRecordIds": [
+              "e5ce0f57-08d3-4399-bcf2-82caba2b00fa",
+              "bc4a7bff-b192-43b8-960a-5470aebebea7"
+            ],
+            "outcome": "EXECUTED",
+            "detail": "已尝试读取：https://spin.atomicobject.com/?p=3668445%2F；累计保存8份原文状态。"
+          },
+          {
+            "step": 5,
+            "decidedAt": "2026-10-25T04:12:39.120Z",
+            "remainingMs": 163442,
+            "decision": {
+              "action": "FINISH",
+              "query": null,
+              "entries": [],
+              "readUrls": [],
+              "reason": "已读原文覆盖：Atomic Object 亲测（Cursor Agent 写 Blender Python 脚本，甜甜圈渲染尚可但需大量指导；系统性/规则化建模优于细节）、腾讯云开发者社区实测（非专业用户用 Cursor+MCP 控制 Blender，体验门槛低、可出粗模型，但缺快捷键/专业操作细节）、Blender MCP 官方配置指南（Agent 模式下可创建物体/材质/灯光、执行 Python、截图，能力范围明确）、AGI Hunt 新手案例（零基础经 MCP 完成生成与渲染，但依赖模型选择与外援建议）。可给出有条件的真实评价：适合程序化/规则化建模与脚本化场景搭建，细节与写实效果需人工反复指导，非 CAD 精度场景。缺口：无 CAD（非 Blender）专用软件的真实使用报告、无长期/专业工作流评价；剩余预算不足以再做一轮有效定向补查，如实说明。",
+              "observedGap": "缺 CAD 类软件（如 FreeCAD/SketchUp 等）的 Cursor Agent 真实使用报告与专业级精度/稳定性评价；已读材料集中于 Blender MCP 玩法。",
+              "basisEvidenceIds": [
+                "70b221d8-0e68-4387-bd2d-58d684cbfd36",
+                "db0921b4-53eb-4a83-adb3-3cc36b8d9cda",
+                "384cdc34-ab40-4190-8629-59f7721c9656",
+                "5fec5c6b-9d63-4f71-91e8-2904b565393d",
+                "6b219dca-0386-460b-a565-ab7d3e299ba4"
+              ],
+              "basisRecordIds": [
+                "bc4a7bff-b192-43b8-960a-5470aebebea7",
+                "e5ce0f57-08d3-4399-bcf2-82caba2b00fa"
+              ],
+              "clarification": null,
+              "discoveredIdentity": null
+            },
+            "availableEvidenceIds": [
+              "384cdc34-ab40-4190-8629-59f7721c9656",
+              "5fec5c6b-9d63-4f71-91e8-2904b565393d",
+              "6b219dca-0386-460b-a565-ab7d3e299ba4",
+              "80d3727e-6972-48b6-8496-8b603bf88f04",
+              "90f5a3ca-1e7c-4e06-bf36-0e4e3f59b9b0",
+              "70b221d8-0e68-4387-bd2d-58d684cbfd36",
+              "344b28cc-9dc7-424d-bf4c-cea77dadc84c",
+              "db0921b4-53eb-4a83-adb3-3cc36b8d9cda"
+            ],
+            "availableRecordIds": [
+              "e5ce0f57-08d3-4399-bcf2-82caba2b00fa",
+              "bc4a7bff-b192-43b8-960a-5470aebebea7"
+            ],
+            "outcome": "REJECTED",
+            "detail": "逐主张核查发现缺口或未决项，已将核查结果交回下一轮决策；由模型决定定向补查或如实结束。"
+          },
+          {
+            "step": 6,
+            "decidedAt": "2026-10-25T04:12:52.678Z",
+            "remainingMs": 149884,
+            "decision": {
+              "action": "SEARCH",
+              "query": "Cursor Agent FreeCAD 或 SketchUp CAD 建模 实测 评价 局限",
+              "entries": [
+                "yuanbao",
+                "tavily"
+              ],
+              "readUrls": [],
+              "reason": "现有材料仅为 Blender（MCP 演示、甜甜圈教程个人试用、标题式宣传），缺 CAD 类工作流的真实使用报告；问题明确涵盖 CAD，需针对 CAD 软件做一次定向补查。用户问的是真实使用评价，需社区实测而非官方文档，故用元宝与 tavily 同时检索。",
+              "observedGap": "缺 Cursor Agent 在 CAD 类软件（FreeCAD/SketchUp 等）建模工作流的实测评价、精度与稳定性反馈；Blender 侧也仅一篇个人试用，缺其他独立报告。",
+              "basisEvidenceIds": [
+                "70b221d8-0e68-4387-bd2d-58d684cbfd36",
+                "db0921b4-53eb-4a83-adb3-3cc36b8d9cda"
+              ],
+              "basisRecordIds": [
+                "e5ce0f57-08d3-4399-bcf2-82caba2b00fa",
+                "bc4a7bff-b192-43b8-960a-5470aebebea7"
+              ],
+              "clarification": null,
+              "discoveredIdentity": null
+            },
+            "availableEvidenceIds": [
+              "384cdc34-ab40-4190-8629-59f7721c9656",
+              "5fec5c6b-9d63-4f71-91e8-2904b565393d",
+              "6b219dca-0386-460b-a565-ab7d3e299ba4",
+              "80d3727e-6972-48b6-8496-8b603bf88f04",
+              "90f5a3ca-1e7c-4e06-bf36-0e4e3f59b9b0",
+              "70b221d8-0e68-4387-bd2d-58d684cbfd36",
+              "344b28cc-9dc7-424d-bf4c-cea77dadc84c",
+              "db0921b4-53eb-4a83-adb3-3cc36b8d9cda"
+            ],
+            "availableRecordIds": [
+              "e5ce0f57-08d3-4399-bcf2-82caba2b00fa",
+              "bc4a7bff-b192-43b8-960a-5470aebebea7"
+            ],
+            "outcome": "EXECUTED",
+            "detail": "实际入口：yuanbao,tavily；返回记录：3534225d-1039-4249-a70c-f53e2c8b480c:SUCCEEDED,69c331f9-c72b-4697-ac21-cef691b89fca:SUCCEEDED。"
+          },
+          {
+            "step": 7,
+            "decidedAt": "2026-10-25T04:12:57.854Z",
+            "remainingMs": 144707,
+            "decision": {
+              "action": "READ",
+              "query": "agent limitations realism coaching geometry nodes",
+              "entries": [],
+              "readUrls": [
+                "https://spin.atomicobject.com/?p=3668445%2F",
+                "https://app.daily.dev/posts/what-happened-when-i-tried-blender-scripting-with-ai-pxnfsyia7"
+              ],
+              "reason": "CAD 定向补查只返回软件对比页和无关内容，无 CAD 实测；剩余预算内改为补齐 Blender 侧最有价值的缺口：Atomic Object 同篇中关于失败模式/局限与几何节点、动画等复杂任务的原文段落，以及 daily.dev 对该实验的总结（是否明确写道具化细节差、更适规则化建模）。这两处可直接支撑真实评价，而非标题式宣传。",
+              "observedGap": "已读原句只有“甜甜圈渲染尚可但需大量指导”和测试意图，缺具体失败模式、复杂任务表现、以及“适合程序化/规则化而非精细视觉细节”的原文表述；CAD 实测路径已确认检索不到。",
+              "basisEvidenceIds": [
+                "70b221d8-0e68-4387-bd2d-58d684cbfd36",
+                "db0921b4-53eb-4a83-adb3-3cc36b8d9cda",
+                "5fec5c6b-9d63-4f71-91e8-2904b565393d"
+              ],
+              "basisRecordIds": [
+                "bc4a7bff-b192-43b8-960a-5470aebebea7",
+                "3534225d-1039-4249-a70c-f53e2c8b480c"
+              ],
+              "clarification": null,
+              "discoveredIdentity": null
+            },
+            "availableEvidenceIds": [
+              "384cdc34-ab40-4190-8629-59f7721c9656",
+              "5fec5c6b-9d63-4f71-91e8-2904b565393d",
+              "6b219dca-0386-460b-a565-ab7d3e299ba4",
+              "80d3727e-6972-48b6-8496-8b603bf88f04",
+              "90f5a3ca-1e7c-4e06-bf36-0e4e3f59b9b0",
+              "70b221d8-0e68-4387-bd2d-58d684cbfd36",
+              "344b28cc-9dc7-424d-bf4c-cea77dadc84c",
+              "db0921b4-53eb-4a83-adb3-3cc36b8d9cda"
+            ],
+            "availableRecordIds": [
+              "e5ce0f57-08d3-4399-bcf2-82caba2b00fa",
+              "bc4a7bff-b192-43b8-960a-5470aebebea7",
+              "3534225d-1039-4249-a70c-f53e2c8b480c",
+              "69c331f9-c72b-4697-ac21-cef691b89fca"
+            ],
+            "outcome": "EXECUTED",
+            "detail": "已尝试读取：https://spin.atomicobject.com/?p=3668445%2F,https://app.daily.dev/posts/what-happened-when-i-tried-blender-scripting-with-ai-pxnfsyia7；累计保存10份原文状态。"
+          },
+          {
+            "step": 8,
+            "decidedAt": "2026-10-25T04:13:02.907Z",
+            "remainingMs": 139655,
+            "decision": {
+              "action": "FINISH",
+              "query": null,
+              "entries": [],
+              "readUrls": [],
+              "reason": "已读原文勾出可用评价：Atomic Object 亲测（Cursor Agent 写 Blender Python 脚本，甜甜圈渲染尚可但需大量指导；系统性/规则化建模优于精细细节，另有几何节点等进阶测试）、腾讯云开发者社区实测（非专业用户用 Cursor+MCP 控制 Blender，门槛低、可出粗模型，但缺专业操作细节）、Blender MCP 配置指南（Agent 模式下可创建物体、材质、灯光、执行 Python、截图）、AGI Hunt 新手案例（零基础经 MCP 完成生成与渲染）。可给出有条件评价：适合程序化/规则化建模与脚本化场景搭建，写实细节需人工反复指导。剩余读取预算为 0，CAD 类实测定向补查未返回结果，如实说明该缺口。",
+              "observedGap": "缺 CAD 类软件（FreeCAD/SketchUp 等）上 Cursor Agent 的实测评价与精度/稳定性报告；Blender 侧仅一篇较完整个人试用，缺独立重复验证与版本/套餐条件。",
+              "basisEvidenceIds": [
+                "70b221d8-0e68-4387-bd2d-58d684cbfd36",
+                "db0921b4-53eb-4a83-adb3-3cc36b8d9cda",
+                "dc54f0f1-e78b-401c-bfae-4a329421ac79",
+                "384cdc34-ab40-4190-8629-59f7721c9656",
+                "5fec5c6b-9d63-4f71-91e8-2904b565393d",
+                "6b219dca-0386-460b-a565-ab7d3e299ba4"
+              ],
+              "basisRecordIds": [
+                "bc4a7bff-b192-43b8-960a-5470aebebea7",
+                "e5ce0f57-08d3-4399-bcf2-82caba2b00fa",
+                "3534225d-1039-4249-a70c-f53e2c8b480c",
+                "69c331f9-c72b-4697-ac21-cef691b89fca"
+              ],
+              "clarification": null,
+              "discoveredIdentity": null
+            },
+            "availableEvidenceIds": [
+              "384cdc34-ab40-4190-8629-59f7721c9656",
+              "5fec5c6b-9d63-4f71-91e8-2904b565393d",
+              "6b219dca-0386-460b-a565-ab7d3e299ba4",
+              "80d3727e-6972-48b6-8496-8b603bf88f04",
+              "90f5a3ca-1e7c-4e06-bf36-0e4e3f59b9b0",
+              "70b221d8-0e68-4387-bd2d-58d684cbfd36",
+              "344b28cc-9dc7-424d-bf4c-cea77dadc84c",
+              "db0921b4-53eb-4a83-adb3-3cc36b8d9cda",
+              "dc54f0f1-e78b-401c-bfae-4a329421ac79",
+              "01c93fdf-4615-4d43-912c-74626c236e84"
+            ],
+            "availableRecordIds": [
+              "e5ce0f57-08d3-4399-bcf2-82caba2b00fa",
+              "bc4a7bff-b192-43b8-960a-5470aebebea7",
+              "3534225d-1039-4249-a70c-f53e2c8b480c",
+              "69c331f9-c72b-4697-ac21-cef691b89fca"
+            ],
+            "outcome": "REJECTED",
+            "detail": "逐主张核查发现缺口或未决项，已将核查结果交回下一轮决策；由模型决定定向补查或如实结束。"
+          },
+          {
+            "step": 9,
+            "decidedAt": "2026-10-25T04:13:27.746Z",
+            "remainingMs": 114816,
+            "decision": {
+              "action": "FINISH",
+              "query": null,
+              "entries": [],
+              "readUrls": [],
+              "reason": "读取预算已用尽，且两轮检索中 CAD 方向补查只返回软件对比页与无关内容，未得到任何 CAD 实测原文。现有已读原句足以支撑一个有条件的真实评价：Atomic Object 作者亲测 Cursor Agent 写 Blender Python 脚本，甜甜圈渲染尚可但需大量指导，并测试了几何节点等进阶任务；腾讯云开发者社区的非专业用户用 Cursor+MCP 控制 Blender 能出粗略模型，但缺专业操作细节；Blender MCP 配置指南说明 Agent 模式下可创建物体、材质、灯光、执行 Python、截图，能力边界明确；AGI Hunt 标题报告零基础用户经 MCP 完成生成与渲染。结论应限定为程序化/规则化建模与脚本化场景搭建较适合，写实细节需人工反复指导，CAD 精度场景无证据。剩余缺口如实声明。",
+              "observedGap": "缺 CAD 类软件（FreeCAD/SketchUp 等）上 Cursor Agent 的实测评价与精度/稳定性报告；Blender 侧仅一篇较完整个人试用，缺独立重复验证与版本/套餐条件；daily.dev 页面读取失败。",
+              "basisEvidenceIds": [
+                "70b221d8-0e68-4387-bd2d-58d684cbfd36",
+                "db0921b4-53eb-4a83-adb3-3cc36b8d9cda",
+                "dc54f0f1-e78b-401c-bfae-4a329421ac79",
+                "384cdc34-ab40-4190-8629-59f7721c9656",
+                "5fec5c6b-9d63-4f71-91e8-2904b565393d",
+                "6b219dca-0386-460b-a565-ab7d3e299ba4"
+              ],
+              "basisRecordIds": [
+                "bc4a7bff-b192-43b8-960a-5470aebebea7",
+                "e5ce0f57-08d3-4399-bcf2-82caba2b00fa",
+                "3534225d-1039-4249-a70c-f53e2c8b480c",
+                "69c331f9-c72b-4697-ac21-cef691b89fca"
+              ],
+              "clarification": null,
+              "discoveredIdentity": null
+            },
+            "availableEvidenceIds": [
+              "384cdc34-ab40-4190-8629-59f7721c9656",
+              "5fec5c6b-9d63-4f71-91e8-2904b565393d",
+              "6b219dca-0386-460b-a565-ab7d3e299ba4",
+              "80d3727e-6972-48b6-8496-8b603bf88f04",
+              "90f5a3ca-1e7c-4e06-bf36-0e4e3f59b9b0",
+              "70b221d8-0e68-4387-bd2d-58d684cbfd36",
+              "344b28cc-9dc7-424d-bf4c-cea77dadc84c",
+              "db0921b4-53eb-4a83-adb3-3cc36b8d9cda",
+              "dc54f0f1-e78b-401c-bfae-4a329421ac79",
+              "01c93fdf-4615-4d43-912c-74626c236e84"
+            ],
+            "availableRecordIds": [
+              "e5ce0f57-08d3-4399-bcf2-82caba2b00fa",
+              "bc4a7bff-b192-43b8-960a-5470aebebea7",
+              "3534225d-1039-4249-a70c-f53e2c8b480c",
+              "69c331f9-c72b-4697-ac21-cef691b89fca"
+            ],
+            "outcome": "STOPPED",
+            "detail": "读取预算已用尽，且两轮检索中 CAD 方向补查只返回软件对比页与无关内容，未得到任何 CAD 实测原文。现有已读原句足以支撑一个有条件的真实评价：Atomic Object 作者亲测 Cursor Agent 写 Blender Python 脚本，甜甜圈渲染尚可但需大量指导，并测试了几何节点等进阶任务；腾讯云开发者社区的非专业用户用 Cursor+MCP 控制 Blender 能出粗略模型，但缺专业操作细节；Blender MCP 配置指南说明 Agent 模式下可创建物体、材质、灯光、执行 Python、截图，能力边界明确；AGI Hunt 标题报告零基础用户经 MCP 完成生成与渲染。结论应限定为程序化/规则化建模与脚本化场景搭建较适合，写实细节需人工反复指导，CAD 精度场景无证据。剩余缺口如实声明。"
+          }
+        ],
+        "collectionCalls": [
+          {
+            "operation": "search:yuanbao",
+            "target": "Cursor Agent 模式 Blender 3D 建模 使用体验 评价",
+            "startedAt": "2026-10-25T04:12:23.973Z",
+            "durationMs": 387,
+            "outcome": "SUCCEEDED",
+            "resultId": "e5ce0f57-08d3-4399-bcf2-82caba2b00fa",
+            "error": null
+          },
+          {
+            "operation": "search:tavily",
+            "target": "Cursor Agent 模式 Blender 3D 建模 使用体验 评价",
+            "startedAt": "2026-10-25T04:12:23.973Z",
+            "durationMs": 2710,
+            "outcome": "SUCCEEDED",
+            "resultId": "bc4a7bff-b192-43b8-960a-5470aebebea7",
+            "error": null
+          },
+          {
+            "operation": "read",
+            "target": "https://developer.cloud.tencent.com/article/2504593",
+            "startedAt": "2026-10-25T04:12:28.691Z",
+            "durationMs": 374,
+            "outcome": "SUCCEEDED",
+            "resultId": "384cdc34-ab40-4190-8629-59f7721c9656",
+            "error": null
+          },
+          {
+            "operation": "read",
+            "target": "https://blendermcp.org/zh-cn/setup/cursor",
+            "startedAt": "2026-10-25T04:12:28.691Z",
+            "durationMs": 1425,
+            "outcome": "SUCCEEDED",
+            "resultId": "5fec5c6b-9d63-4f71-91e8-2904b565393d",
+            "error": null
+          },
+          {
+            "operation": "read",
+            "target": "https://agihunt.info/en/e/19f5609be2748217799dea52292",
+            "startedAt": "2026-10-25T04:12:28.691Z",
+            "durationMs": 1436,
+            "outcome": "SUCCEEDED",
+            "resultId": "6b219dca-0386-460b-a565-ab7d3e299ba4",
+            "error": null
+          },
+          {
+            "operation": "read",
+            "target": "https://spin.atomicobject.com/?p=3668445%2F",
+            "startedAt": "2026-10-25T04:12:28.691Z",
+            "durationMs": 1586,
+            "outcome": "SUCCEEDED",
+            "resultId": "80d3727e-6972-48b6-8496-8b603bf88f04",
+            "error": null
+          },
+          {
+            "operation": "read",
+            "target": "https://developer.cloud.tencent.com/article/2504593",
+            "startedAt": "2026-10-25T04:12:32.247Z",
+            "durationMs": 271,
+            "outcome": "SUCCEEDED",
+            "resultId": "90f5a3ca-1e7c-4e06-bf36-0e4e3f59b9b0",
+            "error": null
+          },
+          {
+            "operation": "read",
+            "target": "https://spin.atomicobject.com/?p=3668445%2F",
+            "startedAt": "2026-10-25T04:12:32.247Z",
+            "durationMs": 616,
+            "outcome": "SUCCEEDED",
+            "resultId": "70b221d8-0e68-4387-bd2d-58d684cbfd36",
+            "error": null
+          },
+          {
+            "operation": "read",
+            "target": "https://agihunt.info/en/e/19f5609be2748217799dea52292",
+            "startedAt": "2026-10-25T04:12:32.247Z",
+            "durationMs": 886,
+            "outcome": "SUCCEEDED",
+            "resultId": "344b28cc-9dc7-424d-bf4c-cea77dadc84c",
+            "error": null
+          },
+          {
+            "operation": "read",
+            "target": "https://spin.atomicobject.com/?p=3668445%2F",
+            "startedAt": "2026-10-25T04:12:35.455Z",
+            "durationMs": 499,
+            "outcome": "SUCCEEDED",
+            "resultId": "db0921b4-53eb-4a83-adb3-3cc36b8d9cda",
+            "error": null
+          },
+          {
+            "operation": "search:yuanbao",
+            "target": "Cursor Agent FreeCAD 或 SketchUp CAD 建模 实测 评价 局限",
+            "startedAt": "2026-10-25T04:12:52.685Z",
+            "durationMs": 618,
+            "outcome": "SUCCEEDED",
+            "resultId": "3534225d-1039-4249-a70c-f53e2c8b480c",
+            "error": null
+          },
+          {
+            "operation": "search:tavily",
+            "target": "Cursor Agent FreeCAD 或 SketchUp CAD 建模 实测 评价 局限",
+            "startedAt": "2026-10-25T04:12:52.686Z",
+            "durationMs": 2521,
+            "outcome": "SUCCEEDED",
+            "resultId": "69c331f9-c72b-4697-ac21-cef691b89fca",
+            "error": null
+          },
+          {
+            "operation": "read",
+            "target": "https://spin.atomicobject.com/?p=3668445%2F",
+            "startedAt": "2026-10-25T04:12:57.865Z",
+            "durationMs": 933,
+            "outcome": "SUCCEEDED",
+            "resultId": "dc54f0f1-e78b-401c-bfae-4a329421ac79",
+            "error": null
+          },
+          {
+            "operation": "read",
+            "target": "https://app.daily.dev/posts/what-happened-when-i-tried-blender-scripting-with-ai-pxnfsyia7",
+            "startedAt": "2026-10-25T04:12:57.865Z",
+            "durationMs": 1507,
+            "outcome": "FAILED",
+            "resultId": "01c93fdf-4615-4d43-912c-74626c236e84",
+            "error": "No readable article blocks; JavaScript shell/empty page is not original material"
+          }
+        ]
+      }
+    },
+    "generatedAt": "2026-10-25T04:13:29.953Z",
+    "contractVersion": "1.0.0"
+  },
+  "answers": [
+    {
+      "id": "715e4fa4-9082-44da-84fb-1e10de852157",
+      "snapshotId": "0db26388-7c3c-4405-a8e8-2ccf490f775c",
+      "body": "来源报告（未独立复现）：一篇署名 Meghan Harris、日期为 2025-07-07 的实践文章称，其目的是检验 Cursor Agent 能否帮助编写一套生成 3D 模型的 Blender 脚本，并借此测试该代理遵循简单指令、与 Blender API 交互的能力以及 Blender 脚本本身的极限。\n适用范围：spin.atomicobject.com 该文，2025-07-07，未注明 Cursor 版本与套餐 [1]\n\n来源报告（未独立复现）：同一篇文章评价称，该代理渲染甜甜圈和糖霜的效果相当不错，但需要大量指导。\n适用范围：spin.atomicobject.com 该文对一次 Blender 脚本实验的评价，未注明 Cursor 版本与套餐 [2]\n\n尚不能确定：现有材料未提供 Cursor Agent 在 CAD 工作流中的使用评价。\n已读摘录均围绕 Blender 脚本/MCP，但检索不完整、daily.dev 读取失败，不能据此断言 CAD 评价缺失。（条件：本次已读的全部摘录）\n\n核查缺口：\n• 仅有 Blender 脚本/MCP 的个体报告与标题，缺少 CAD/Blender 工作流中可比的真实使用评价，且 Cursor 版本与套餐未记录。\n• daily.dev 链接读取失败（无可读文章块），无法确认其内容是否涉及 CAD 工作流评价。\n• https://app.daily.dev/posts/what-happened-when-i-tried-blender-scripting-with-ai-pxnfsyia7：FAILED；No readable article blocks; JavaScript shell/empty page is not original material",
+      "citations": [
+        {
+          "marker": "[1]",
+          "claimIds": [
+            "0a66c5c0-88e9-42d4-8acf-e34bd0c30e99"
+          ],
+          "evidenceIds": [
+            "80d3727e-6972-48b6-8496-8b603bf88f04"
+          ],
+          "quotes": [
+            {
+              "evidenceId": "80d3727e-6972-48b6-8496-8b603bf88f04",
+              "originalExcerpt": "Specifically, I wanted to know how well a Cursor Agent could help me write a set of Blender scripts to generate 3D models. Doing so would test both the agent’s ability to follow simple instructions, interact with the Blender API, and find the limits of Blender scripting itself."
+            }
+          ]
+        },
+        {
+          "marker": "[2]",
+          "claimIds": [
+            "b51f9f5e-27f1-4f64-868c-474e55ec17e7"
+          ],
+          "evidenceIds": [
+            "70b221d8-0e68-4387-bd2d-58d684cbfd36"
+          ],
+          "quotes": [
+            {
+              "evidenceId": "70b221d8-0e68-4387-bd2d-58d684cbfd36",
+              "originalExcerpt": "Takeaway: the agent did a fairly good job rendering the donut, and frosting (extra points for shininess), but with lots of coaching. Plus, if you’ve ever done the donut tutorial you know that a realistic donut isn’t perfectly symmetrical, and, during that tutorial, you learned how to make it look mo"
+            }
+          ]
+        }
+      ],
+      "generationConfig": {
+        "provider": "api.deepseek.com",
+        "model": "deepseek-flash",
+        "promptVersion": "a2-evidence-v4",
+        "temperature": null,
+        "thinkingMode": "DISABLED",
+        "generatedAt": "2026-10-25T04:13:29.952Z"
+      }
+    }
+  ]
+}

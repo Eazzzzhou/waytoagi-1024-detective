@@ -1,0 +1,58 @@
+{
+  "capturedAt": "2026-10-25T04:37:11.659Z",
+  "url": "http://127.0.0.1:3104/investigations/2f854f35-1c32-4a2e-b7a6-1599e6db213f",
+  "detail": {
+    "investigation": {
+      "id": "2f854f35-1c32-4a2e-b7a6-1599e6db213f",
+      "question": "Cognition 官方称 Devin 是“首个自主软件工程师”，能独立完成软件工程任务；Hacker News 上开发者的实际使用报告支持这个说法吗？",
+      "researchDepth": "AUTO",
+      "status": "SUCCEEDED",
+      "stage": "COMPLETED",
+      "error": null,
+      "createdAt": "2026-10-25T04:36:14.119Z",
+      "updatedAt": "2026-10-25T04:37:10.923Z",
+      "startedAt": "2026-10-25T04:36:14.802Z",
+      "completedAt": "2026-10-25T04:37:10.923Z",
+      "resultSnapshotId": "aaff6975-2cb9-4ab4-9452-b6a134595ed3"
+    },
+    "identityConfirmation": null,
+    "retry": {
+      "allowed": false,
+      "reason": "仅失败的调查可以手动重试。",
+      "remaining": 2,
+      "expectedAttemptCount": 1
+    }
+  },
+  "observedStates": [
+    {
+      "status": "RUNNING",
+      "stage": "IDENTITY",
+      "observedAt": "2026-10-25T04:36:15.818Z"
+    },
+    {
+      "status": "RUNNING",
+      "stage": "RETRIEVAL",
+      "observedAt": "2026-10-25T04:36:16.838Z"
+    },
+    {
+      "status": "RUNNING",
+      "stage": "SOURCE_FETCH",
+      "observedAt": "2026-10-25T04:36:23.909Z"
+    },
+    {
+      "status": "RUNNING",
+      "stage": "VERIFICATION",
+      "observedAt": "2026-10-25T04:36:42.157Z"
+    },
+    {
+      "status": "RUNNING",
+      "stage": "ANSWER",
+      "observedAt": "2026-10-25T04:37:05.563Z"
+    },
+    {
+      "status": "SUCCEEDED",
+      "stage": "COMPLETED",
+      "observedAt": "2026-10-25T04:37:11.658Z"
+    }
+  ]
+}

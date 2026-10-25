@@ -1,0 +1,1360 @@
+{
+  "schemaVersion": "source-document/v1",
+  "id": "00dc03ffcae01949533ba99a86e65bc8d4ded90973692bf024dae99353f8168b",
+  "version": "91ac568d245d12aab3094aaa017ffe4ea7e2e7fd3af2850c226cd27949f867cb",
+  "requestedUrl": "https://plainai.tech/articles/honest-devin-review-spring-2026-pricing-pros-cons-alternatives",
+  "finalUrl": "https://plainai.tech/articles/honest-devin-review-spring-2026-pricing-pros-cons-alternatives",
+  "retrievedAt": "2026-10-25T04:36:30.654Z",
+  "contentType": "text/html; charset=utf-8",
+  "status": "READ",
+  "readError": null,
+  "rawHash": "66ba640ab686fb2367e1834dfd160ec17806b1945156ec87c8b9ca2fbf05e3de",
+  "textHash": "ada995e983893a098e7497c57605fc79f0c5aae0e65f97300bc8c496bec9213f",
+  "text": "← Back to Articles\n\nHonest review April 27, 2026\n\nHonest Devin Review (Spring 2026): Pricing, Pros, Cons & Alternatives\n\nBy Elena Hmelovs • 1364 views\n\nWe analyzed recent user and expert reviews from multiple independent sites without any bias. Sources include:\n\nPlainAI.tech: 0/5 from 0 reviews (recently added) in AI Coding.\n\nTrustpilot: 3.0/5 — meaningful gap from Cursor (G2 4.7) and GitHub Copilot (G2 4.5).\n\nGartner Peer Insights: mixed — strong from enterprise teams, weak from individuals.\n\nIndependent benchmarks: ~75% task-completion claimed by Cognition; one independent test showed 14 failures, 3 successes, 3 unclear from 20 tasks.\n\nHacker News and Reddit: deeply split — fans love the long-horizon execution; critics note compute limits and slow output speed at $20/month.\n\nHow realistic are the reviews?\n\nThe split tracks reality. Devin shines at well-defined repetitive engineering work (library upgrades, bug fixes with clear repro, boilerplate, test writing). It struggles on novel architecture, ambiguous requirements, and tasks where the spec itself is the hard part. The Trustpilot 3.0 reflects the reality that the free $20 tier hits compute limits fast and that real success rates depend heavily on task type. Net read: Devin is genuinely the most autonomous coding agent on the market — and it works best when you scope the work carefully.\n\nWhat is Devin?\n\nDevin is the autonomous AI software engineer from Cognition Labs — currently on v3.0 — that plans and executes complex engineering tasks across thousands of decisions inside a sandboxed compute environment with shell, code editor, and browser. Devin handles long-horizon work end-to-end: breaking vague requirements into step-by-step plans, dynamically re-planning when blocked, reading docs and StackOverflow, running tests, fixing failures autonomously, and reporting progress in real time. Coordinates sub-agents for parallel work and learns from feedback over time. Cognition is reportedly raising at a $25B valuation as of April 2026.\n\nBest for\n\nDevin works best for teams that:\n\nHave clearly scoped repetitive engineering work (migrations, upgrades, boilerplate)\n\nWant bug fixes with clear reproduction steps handled autonomously\n\nNeed test coverage written across an existing codebase\n\nHave engineering oversight to review Devin's PRs before merge\n\nAre large enough to justify Enterprise pricing for custom data and audit logs\n\nIt is less ideal for solo developers on tight budgets ($20/month tier hits compute limits fast), novel architectural work (Cursor or Claude Code with human in the loop is better), or workflows requiring rich interactive editing.\n\nStrengths\n\nTruly autonomous — works without prompting through long task chains\n\nSandboxed environment with shell, code editor, and browser\n\nReads docs, runs tests, iterates on failures\n\nCoordinates sub-agents for parallel work\n\nStrong on migrations, library upgrades, boilerplate, test writing\n\nReal-time progress reporting and collaboration\n\nEnterprise tier with custom data, audit logs, security controls\n\nUsed by Goldman Sachs, MongoDB, Ramp, Nubank\n\nWeaknesses\n\nIndependent benchmarks show ~15–30% real-world success (vs Cognition's 75% claim)\n\n$20/month tier hits compute limits fast — heavy use needs Team/Enterprise\n\nSlower than Cursor or Claude Code for interactive coding\n\nStruggles on novel architecture or vague specs\n\nReports of task failures without clear explanation\n\nTrustpilot 3.0/5 — meaningfully behind Cursor/Copilot ratings\n\nBest results require carefully scoped, well-defined tasks\n\nPricing (April 2026)\n\nStandard: $20/month — basic Devin access, limited compute (frequently hits caps)\n\nTeam: ~$500/month — multi-seat access, higher compute\n\nEnterprise: custom — custom data, audit logs, security controls, SLA\n\nCognition often offers free trials and credits for new accounts\n\nHow does Devin compare?\n\nvs Cursor — Cursor keeps a human in the loop with strong interactive UX. Devin runs autonomous in a sandbox. Different jobs.\n\nvs Claude Code — Claude Code is terminal-first, human-in-the-loop, more cost-predictable. Devin is fully autonomous.\n\nvs GitHub Copilot Workspace — Copilot Workspace is similar in ambition (autonomous agent) but more integrated with GitHub. Devin is platform-independent.\n\nvs OpenHands (open-source) — OpenHands is the open-source autonomous-agent equivalent. Devin has more polish and managed infra.\n\nvs Replit Agent 4 — Replit Agent 4 ships full-stack apps from prompts. Devin is more general-purpose engineering.\n\nFAQ\n\nIs Devin worth $20/month?\n\nFor developers exploring autonomous agents on a few small tasks per month — yes. For daily heavy use, you'll need Team or Enterprise.\n\nWhat tasks does Devin do best?\n\nLibrary upgrades, framework migrations, bug fixes with clear repro steps, boilerplate generation, test writing, documentation updates.\n\nWhat tasks does Devin struggle with?\n\nNovel architecture decisions, ambiguous specifications, tasks where understanding the problem is the hard part, very large monorepos.\n\nShould I use Devin or Cursor?\n\nCursor for interactive engineering with human oversight. Devin for sending off well-defined tasks to run autonomously while you do other work.\n\nIs Devin safe to use on production code?\n\nAlways have engineering oversight and proper PR review. Devin makes real changes — it's not a sandbox simulator. Use Enterprise tier with audit logs for production-grade safety.\n\nBottom line\n\nDevin is genuinely the most autonomous coding agent on the market in 2026. The Trustpilot 3.0 isn't a damning verdict — it reflects reasonable user disappointment with the gap between marketing claims and real-world success rates on novel work. If you have well-scoped engineering tasks and review discipline, Devin can save real time. If you want interactive coding with human oversight, Cursor or Claude Code are the safer default. For most teams, the smart move is to use Devin alongside (not instead of) interactive tools.\n\n#Honest review #devin #cognition labs #autonomous coding agent #ai engineer\n\nAbout the Author\n\nElena Hmelovs\n\n<p>Elena Hmelovs is a founder and operator who moved from venture investing into building products, and who now writes most of the review and interview output on Plain AI. She co-founded Big Layout Data, a proptech startup in the UAE, and since February 2026 has been the publication's most prolific author.</p> <p style=\"margin-top: 1.5em;\"><strong>Background</strong></p> <ul style=\"list-style: none; padding-left: 0;\"> <li>✦ Co-founder and COO of Big Layout Data, a proptech startup that paired a database of apartment layouts with AI to recommend furniture sets matched to a specific floor plan, room size and budget. Andrejs Hmelovs was CEO.</li> <li>✦ The company sold through furniture retailers and property platforms rather than to consumers directly, taking a share of purchases completed through its widget. The project is no longer operating.</li> <li>✦ She was working out of Dubai's In5 Tech accelerator in 2022, where she met <a href=\"/founders/olga-nayda\" style=\"color: #51A1E8; text-decoration: none;\">Olga Nayda</a>, whom she later interviewed for Plain AI.</li> </ul> <p style=\"margin-top: 1.5em;\"><strong>Writing on Plain AI</strong></p> <ul style=\"list-style: none; padding-left: 0;\"> <li>✦ Published 63 articles between 9 February and 13 August 2026, together drawing about 27,000 reads.</li> <li>✦ The bulk of it is the Honest Review series — 44 pieces pricing and stress-testing individual tools, from <a href=\"/tools/harvey\" style=\"color: #51A1E8; text-decoration: none;\">Harvey</a> and <a href=\"/tools/lovable\" style=\"color: #51A1E8; text-decoration: none;\">Lovable</a> to <a href=\"/tools/deepseek\" style=\"color: #51A1E8; text-decoration: none;\">DeepSeek</a> and <a href=\"/tools/canva-ai\" style=\"color: #51A1E8; text-decoration: none;\">Canva AI</a>, each with pros, cons and alternatives rather than a verdict alone.</li> <li>✦ Four Benchmark reports in August 2026 tested models on ordinary back-office work: invoice processing, expense verification, contract review and résumé screening.</li> <li>✦ Seven Use Case pieces cover the practical edges of chatbot use — what your conversation history is worth as a data asset, what it exposes, and whether politeness costs tokens.</li> <li>✦ She also writes the Ai Talks interview series and news explainers, including a guide to the EU AI Act for startups outside Europe (8 June 2026).</li> </ul> <p style=\"margin-top: 1.5em;\"><small>Information accurate as of 22 September 2026.</small></p>\n\nYou may also like\n\nJul 14, 2026\n\nWho Owns Genspark AI? The Company, the Founders, and the $1B Story Behind It\n\nJun 22, 2026\n\nAI Agents Explained: What They Are and What They Can't Do Yet\n\nJun 21, 2026\n\nBest Local LLM for Running Models on Your Own Machine (June 2026)\n\nJun 18, 2026\n\nHermes Agent: The AI That Remembers You. And Keeps Getting Smarter.",
+  "rawSources": [
+    {
+      "mode": "STATIC",
+      "hash": "66ba640ab686fb2367e1834dfd160ec17806b1945156ec87c8b9ca2fbf05e3de",
+      "path": "C:\\Users\\qianchen\\Documents\\waytoagi-1024-detective-a2-v4\\.cache\\source-documents-v4\\2f854f35-1c32-4a2e-b7a6-1599e6db213f\\00dc03ffcae01949533ba99a86e65bc8d4ded90973692bf024dae99353f8168b\\raw.bin"
+    }
+  ],
+  "storage": {
+    "rawPath": "C:\\Users\\qianchen\\Documents\\waytoagi-1024-detective-a2-v4\\.cache\\source-documents-v4\\2f854f35-1c32-4a2e-b7a6-1599e6db213f\\00dc03ffcae01949533ba99a86e65bc8d4ded90973692bf024dae99353f8168b\\raw.bin",
+    "textPath": "C:\\Users\\qianchen\\Documents\\waytoagi-1024-detective-a2-v4\\.cache\\source-documents-v4\\2f854f35-1c32-4a2e-b7a6-1599e6db213f\\00dc03ffcae01949533ba99a86e65bc8d4ded90973692bf024dae99353f8168b\\source.txt",
+    "manifestPath": "C:\\Users\\qianchen\\Documents\\waytoagi-1024-detective-a2-v4\\.cache\\source-documents-v4\\2f854f35-1c32-4a2e-b7a6-1599e6db213f\\00dc03ffcae01949533ba99a86e65bc8d4ded90973692bf024dae99353f8168b\\manifest.json"
+  },
+  "parser": {
+    "name": "readability+source-dom",
+    "version": "readability-0.6.0+jsdom-30.1.3+source-dom-2",
+    "normalization": "source-text/v1",
+    "mode": "STATIC"
+  },
+  "metadata": {
+    "title": "Honest Devin Review (Spring 2026): Pricing, Pros, Cons & Alternatives | Plain AI",
+    "author": null,
+    "publishedAt": null,
+    "language": "en"
+  },
+  "completeness": "COMPLETE",
+  "warnings": [],
+  "blocks": [
+    {
+      "start": 0,
+      "end": 18,
+      "id": "b0",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[0]",
+      "headingPath": [],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 20,
+      "end": 48,
+      "id": "b1",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[1]",
+      "headingPath": [],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 50,
+      "end": 119,
+      "id": "b2",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[2]",
+      "headingPath": [
+        "Honest Devin Review (Spring 2026): Pricing, Pros, Cons & Alternatives"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 121,
+      "end": 150,
+      "id": "b3",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[3]",
+      "headingPath": [
+        "Honest Devin Review (Spring 2026): Pricing, Pros, Cons & Alternatives"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 152,
+      "end": 261,
+      "id": "b4",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[4]",
+      "headingPath": [
+        "Honest Devin Review (Spring 2026): Pricing, Pros, Cons & Alternatives"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 263,
+      "end": 326,
+      "id": "b5",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[5]",
+      "headingPath": [
+        "Honest Devin Review (Spring 2026): Pricing, Pros, Cons & Alternatives"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 328,
+      "end": 412,
+      "id": "b6",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[6]",
+      "headingPath": [
+        "Honest Devin Review (Spring 2026): Pricing, Pros, Cons & Alternatives"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 414,
+      "end": 497,
+      "id": "b7",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[7]",
+      "headingPath": [
+        "Honest Devin Review (Spring 2026): Pricing, Pros, Cons & Alternatives"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 499,
+      "end": 644,
+      "id": "b8",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[8]",
+      "headingPath": [
+        "Honest Devin Review (Spring 2026): Pricing, Pros, Cons & Alternatives"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 646,
+      "end": 786,
+      "id": "b9",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[9]",
+      "headingPath": [
+        "Honest Devin Review (Spring 2026): Pricing, Pros, Cons & Alternatives"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 788,
+      "end": 818,
+      "id": "b10",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[10]",
+      "headingPath": [
+        "Honest Devin Review (Spring 2026): Pricing, Pros, Cons & Alternatives",
+        "How realistic are the reviews?"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 820,
+      "end": 1363,
+      "id": "b11",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[11]",
+      "headingPath": [
+        "Honest Devin Review (Spring 2026): Pricing, Pros, Cons & Alternatives",
+        "How realistic are the reviews?"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1365,
+      "end": 1379,
+      "id": "b12",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[12]",
+      "headingPath": [
+        "Honest Devin Review (Spring 2026): Pricing, Pros, Cons & Alternatives",
+        "What is Devin?"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1381,
+      "end": 2020,
+      "id": "b13",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[13]",
+      "headingPath": [
+        "Honest Devin Review (Spring 2026): Pricing, Pros, Cons & Alternatives",
+        "What is Devin?"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2022,
+      "end": 2030,
+      "id": "b14",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[14]",
+      "headingPath": [
+        "Honest Devin Review (Spring 2026): Pricing, Pros, Cons & Alternatives",
+        "Best for"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2032,
+      "end": 2064,
+      "id": "b15",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[15]",
+      "headingPath": [
+        "Honest Devin Review (Spring 2026): Pricing, Pros, Cons & Alternatives",
+        "Best for"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2066,
+      "end": 2149,
+      "id": "b16",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[16]",
+      "headingPath": [
+        "Honest Devin Review (Spring 2026): Pricing, Pros, Cons & Alternatives",
+        "Best for"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2151,
+      "end": 2216,
+      "id": "b17",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[17]",
+      "headingPath": [
+        "Honest Devin Review (Spring 2026): Pricing, Pros, Cons & Alternatives",
+        "Best for"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2218,
+      "end": 2272,
+      "id": "b18",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[18]",
+      "headingPath": [
+        "Honest Devin Review (Spring 2026): Pricing, Pros, Cons & Alternatives",
+        "Best for"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2274,
+      "end": 2335,
+      "id": "b19",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[19]",
+      "headingPath": [
+        "Honest Devin Review (Spring 2026): Pricing, Pros, Cons & Alternatives",
+        "Best for"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2337,
+      "end": 2414,
+      "id": "b20",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[20]",
+      "headingPath": [
+        "Honest Devin Review (Spring 2026): Pricing, Pros, Cons & Alternatives",
+        "Best for"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2416,
+      "end": 2644,
+      "id": "b21",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[21]",
+      "headingPath": [
+        "Honest Devin Review (Spring 2026): Pricing, Pros, Cons & Alternatives",
+        "Best for"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2646,
+      "end": 2655,
+      "id": "b22",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[22]",
+      "headingPath": [
+        "Honest Devin Review (Spring 2026): Pricing, Pros, Cons & Alternatives",
+        "Strengths"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2657,
+      "end": 2724,
+      "id": "b23",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[23]",
+      "headingPath": [
+        "Honest Devin Review (Spring 2026): Pricing, Pros, Cons & Alternatives",
+        "Strengths"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2726,
+      "end": 2784,
+      "id": "b24",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[24]",
+      "headingPath": [
+        "Honest Devin Review (Spring 2026): Pricing, Pros, Cons & Alternatives",
+        "Strengths"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2786,
+      "end": 2830,
+      "id": "b25",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[25]",
+      "headingPath": [
+        "Honest Devin Review (Spring 2026): Pricing, Pros, Cons & Alternatives",
+        "Strengths"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2832,
+      "end": 2872,
+      "id": "b26",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[26]",
+      "headingPath": [
+        "Honest Devin Review (Spring 2026): Pricing, Pros, Cons & Alternatives",
+        "Strengths"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2874,
+      "end": 2939,
+      "id": "b27",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[27]",
+      "headingPath": [
+        "Honest Devin Review (Spring 2026): Pricing, Pros, Cons & Alternatives",
+        "Strengths"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2941,
+      "end": 2987,
+      "id": "b28",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[28]",
+      "headingPath": [
+        "Honest Devin Review (Spring 2026): Pricing, Pros, Cons & Alternatives",
+        "Strengths"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2989,
+      "end": 3052,
+      "id": "b29",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[29]",
+      "headingPath": [
+        "Honest Devin Review (Spring 2026): Pricing, Pros, Cons & Alternatives",
+        "Strengths"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3054,
+      "end": 3098,
+      "id": "b30",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[30]",
+      "headingPath": [
+        "Honest Devin Review (Spring 2026): Pricing, Pros, Cons & Alternatives",
+        "Strengths"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3100,
+      "end": 3110,
+      "id": "b31",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[31]",
+      "headingPath": [
+        "Honest Devin Review (Spring 2026): Pricing, Pros, Cons & Alternatives",
+        "Weaknesses"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3112,
+      "end": 3193,
+      "id": "b32",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[32]",
+      "headingPath": [
+        "Honest Devin Review (Spring 2026): Pricing, Pros, Cons & Alternatives",
+        "Weaknesses"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3195,
+      "end": 3268,
+      "id": "b33",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[33]",
+      "headingPath": [
+        "Honest Devin Review (Spring 2026): Pricing, Pros, Cons & Alternatives",
+        "Weaknesses"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3270,
+      "end": 3326,
+      "id": "b34",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[34]",
+      "headingPath": [
+        "Honest Devin Review (Spring 2026): Pricing, Pros, Cons & Alternatives",
+        "Weaknesses"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3328,
+      "end": 3374,
+      "id": "b35",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[35]",
+      "headingPath": [
+        "Honest Devin Review (Spring 2026): Pricing, Pros, Cons & Alternatives",
+        "Weaknesses"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3376,
+      "end": 3426,
+      "id": "b36",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[36]",
+      "headingPath": [
+        "Honest Devin Review (Spring 2026): Pricing, Pros, Cons & Alternatives",
+        "Weaknesses"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3428,
+      "end": 3489,
+      "id": "b37",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[37]",
+      "headingPath": [
+        "Honest Devin Review (Spring 2026): Pricing, Pros, Cons & Alternatives",
+        "Weaknesses"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3491,
+      "end": 3548,
+      "id": "b38",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[38]",
+      "headingPath": [
+        "Honest Devin Review (Spring 2026): Pricing, Pros, Cons & Alternatives",
+        "Weaknesses"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3550,
+      "end": 3570,
+      "id": "b39",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[39]",
+      "headingPath": [
+        "Honest Devin Review (Spring 2026): Pricing, Pros, Cons & Alternatives",
+        "Pricing (April 2026)"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3572,
+      "end": 3652,
+      "id": "b40",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[40]",
+      "headingPath": [
+        "Honest Devin Review (Spring 2026): Pricing, Pros, Cons & Alternatives",
+        "Pricing (April 2026)"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3654,
+      "end": 3707,
+      "id": "b41",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[41]",
+      "headingPath": [
+        "Honest Devin Review (Spring 2026): Pricing, Pros, Cons & Alternatives",
+        "Pricing (April 2026)"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3709,
+      "end": 3777,
+      "id": "b42",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[42]",
+      "headingPath": [
+        "Honest Devin Review (Spring 2026): Pricing, Pros, Cons & Alternatives",
+        "Pricing (April 2026)"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3779,
+      "end": 3842,
+      "id": "b43",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[43]",
+      "headingPath": [
+        "Honest Devin Review (Spring 2026): Pricing, Pros, Cons & Alternatives",
+        "Pricing (April 2026)"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3844,
+      "end": 3867,
+      "id": "b44",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[44]",
+      "headingPath": [
+        "Honest Devin Review (Spring 2026): Pricing, Pros, Cons & Alternatives",
+        "How does Devin compare?"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3869,
+      "end": 3993,
+      "id": "b45",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[45]",
+      "headingPath": [
+        "Honest Devin Review (Spring 2026): Pricing, Pros, Cons & Alternatives",
+        "How does Devin compare?"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3995,
+      "end": 4111,
+      "id": "b46",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[46]",
+      "headingPath": [
+        "Honest Devin Review (Spring 2026): Pricing, Pros, Cons & Alternatives",
+        "How does Devin compare?"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4113,
+      "end": 4266,
+      "id": "b47",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[47]",
+      "headingPath": [
+        "Honest Devin Review (Spring 2026): Pricing, Pros, Cons & Alternatives",
+        "How does Devin compare?"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4268,
+      "end": 4395,
+      "id": "b48",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[48]",
+      "headingPath": [
+        "Honest Devin Review (Spring 2026): Pricing, Pros, Cons & Alternatives",
+        "How does Devin compare?"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4397,
+      "end": 4510,
+      "id": "b49",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[49]",
+      "headingPath": [
+        "Honest Devin Review (Spring 2026): Pricing, Pros, Cons & Alternatives",
+        "How does Devin compare?"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4512,
+      "end": 4515,
+      "id": "b50",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[50]",
+      "headingPath": [
+        "Honest Devin Review (Spring 2026): Pricing, Pros, Cons & Alternatives",
+        "FAQ"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4517,
+      "end": 4542,
+      "id": "b51",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[51]",
+      "headingPath": [
+        "Honest Devin Review (Spring 2026): Pricing, Pros, Cons & Alternatives",
+        "FAQ",
+        "Is Devin worth $20/month?"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4544,
+      "end": 4677,
+      "id": "b52",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[52]",
+      "headingPath": [
+        "Honest Devin Review (Spring 2026): Pricing, Pros, Cons & Alternatives",
+        "FAQ",
+        "Is Devin worth $20/month?"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4679,
+      "end": 4709,
+      "id": "b53",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[53]",
+      "headingPath": [
+        "Honest Devin Review (Spring 2026): Pricing, Pros, Cons & Alternatives",
+        "FAQ",
+        "What tasks does Devin do best?"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4711,
+      "end": 4845,
+      "id": "b54",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[54]",
+      "headingPath": [
+        "Honest Devin Review (Spring 2026): Pricing, Pros, Cons & Alternatives",
+        "FAQ",
+        "What tasks does Devin do best?"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4847,
+      "end": 4883,
+      "id": "b55",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[55]",
+      "headingPath": [
+        "Honest Devin Review (Spring 2026): Pricing, Pros, Cons & Alternatives",
+        "FAQ",
+        "What tasks does Devin struggle with?"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4885,
+      "end": 5018,
+      "id": "b56",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[56]",
+      "headingPath": [
+        "Honest Devin Review (Spring 2026): Pricing, Pros, Cons & Alternatives",
+        "FAQ",
+        "What tasks does Devin struggle with?"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5020,
+      "end": 5049,
+      "id": "b57",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[57]",
+      "headingPath": [
+        "Honest Devin Review (Spring 2026): Pricing, Pros, Cons & Alternatives",
+        "FAQ",
+        "Should I use Devin or Cursor?"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5051,
+      "end": 5193,
+      "id": "b58",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[58]",
+      "headingPath": [
+        "Honest Devin Review (Spring 2026): Pricing, Pros, Cons & Alternatives",
+        "FAQ",
+        "Should I use Devin or Cursor?"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5195,
+      "end": 5235,
+      "id": "b59",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[59]",
+      "headingPath": [
+        "Honest Devin Review (Spring 2026): Pricing, Pros, Cons & Alternatives",
+        "FAQ",
+        "Is Devin safe to use on production code?"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5237,
+      "end": 5414,
+      "id": "b60",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[60]",
+      "headingPath": [
+        "Honest Devin Review (Spring 2026): Pricing, Pros, Cons & Alternatives",
+        "FAQ",
+        "Is Devin safe to use on production code?"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5416,
+      "end": 5427,
+      "id": "b61",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[61]",
+      "headingPath": [
+        "Honest Devin Review (Spring 2026): Pricing, Pros, Cons & Alternatives",
+        "Bottom line"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5429,
+      "end": 5955,
+      "id": "b62",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[62]",
+      "headingPath": [
+        "Honest Devin Review (Spring 2026): Pricing, Pros, Cons & Alternatives",
+        "Bottom line"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5957,
+      "end": 6032,
+      "id": "b63",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[63]",
+      "headingPath": [
+        "Honest Devin Review (Spring 2026): Pricing, Pros, Cons & Alternatives",
+        "Bottom line"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 6034,
+      "end": 6050,
+      "id": "b64",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[64]",
+      "headingPath": [
+        "Honest Devin Review (Spring 2026): Pricing, Pros, Cons & Alternatives",
+        "Bottom line",
+        "About the Author"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 6052,
+      "end": 6065,
+      "id": "b65",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[65]",
+      "headingPath": [
+        "Honest Devin Review (Spring 2026): Pricing, Pros, Cons & Alternatives",
+        "Bottom line",
+        "About the Author",
+        "Elena Hmelovs"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 6067,
+      "end": 8531,
+      "id": "b66",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[66]",
+      "headingPath": [
+        "Honest Devin Review (Spring 2026): Pricing, Pros, Cons & Alternatives",
+        "Bottom line",
+        "About the Author",
+        "Elena Hmelovs"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 8533,
+      "end": 8550,
+      "id": "b67",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[67]",
+      "headingPath": [
+        "Honest Devin Review (Spring 2026): Pricing, Pros, Cons & Alternatives",
+        "You may also like"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 8552,
+      "end": 8564,
+      "id": "b68",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[68]",
+      "headingPath": [
+        "Honest Devin Review (Spring 2026): Pricing, Pros, Cons & Alternatives",
+        "You may also like"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 8566,
+      "end": 8642,
+      "id": "b69",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[69]",
+      "headingPath": [
+        "Honest Devin Review (Spring 2026): Pricing, Pros, Cons & Alternatives",
+        "You may also like",
+        "Who Owns Genspark AI? The Company, the Founders, and the $1B Story Behind It"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 8644,
+      "end": 8656,
+      "id": "b70",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[70]",
+      "headingPath": [
+        "Honest Devin Review (Spring 2026): Pricing, Pros, Cons & Alternatives",
+        "You may also like",
+        "Who Owns Genspark AI? The Company, the Founders, and the $1B Story Behind It"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 8658,
+      "end": 8719,
+      "id": "b71",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[71]",
+      "headingPath": [
+        "Honest Devin Review (Spring 2026): Pricing, Pros, Cons & Alternatives",
+        "You may also like",
+        "AI Agents Explained: What They Are and What They Can't Do Yet"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 8721,
+      "end": 8733,
+      "id": "b72",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[72]",
+      "headingPath": [
+        "Honest Devin Review (Spring 2026): Pricing, Pros, Cons & Alternatives",
+        "You may also like",
+        "AI Agents Explained: What They Are and What They Can't Do Yet"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 8735,
+      "end": 8800,
+      "id": "b73",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[73]",
+      "headingPath": [
+        "Honest Devin Review (Spring 2026): Pricing, Pros, Cons & Alternatives",
+        "You may also like",
+        "Best Local LLM for Running Models on Your Own Machine (June 2026)"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 8802,
+      "end": 8814,
+      "id": "b74",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[74]",
+      "headingPath": [
+        "Honest Devin Review (Spring 2026): Pricing, Pros, Cons & Alternatives",
+        "You may also like",
+        "Best Local LLM for Running Models on Your Own Machine (June 2026)"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 8816,
+      "end": 8883,
+      "id": "b75",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[75]",
+      "headingPath": [
+        "Honest Devin Review (Spring 2026): Pricing, Pros, Cons & Alternatives",
+        "You may also like",
+        "Hermes Agent: The AI That Remembers You. And Keeps Getting Smarter."
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    }
+  ],
+  "links": [
+    {
+      "url": "https://plainai.tech/articles/honest-devin-review-spring-2026-pricing-pros-cons-alternatives",
+      "text": "",
+      "blockId": null,
+      "relation": "CANONICAL",
+      "locator": "source DOM link[0]"
+    },
+    {
+      "url": "https://plainai.tech/articles",
+      "text": "← Back to Articles",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[10]"
+    },
+    {
+      "url": "https://plainai.tech/founders/elena-hmelovs",
+      "text": "Elena Hmelovs",
+      "blockId": "b3",
+      "relation": "LINK",
+      "locator": "source DOM link[11]"
+    },
+    {
+      "url": "https://plainai.tech/tools/devin",
+      "text": "Devin",
+      "blockId": "b11",
+      "relation": "LINK",
+      "locator": "source DOM link[12]"
+    },
+    {
+      "url": "https://plainai.tech/tools/devin",
+      "text": "Devin",
+      "blockId": "b13",
+      "relation": "LINK",
+      "locator": "source DOM link[13]"
+    },
+    {
+      "url": "https://plainai.tech/tools/devin",
+      "text": "Devin",
+      "blockId": "b15",
+      "relation": "LINK",
+      "locator": "source DOM link[14]"
+    },
+    {
+      "url": "https://plainai.tech/tools/devin",
+      "text": "Devin",
+      "blockId": "b62",
+      "relation": "LINK",
+      "locator": "source DOM link[15]"
+    },
+    {
+      "url": "https://plainai.tech/search?q=Honest+review",
+      "text": "#Honest review",
+      "blockId": "b63",
+      "relation": "LINK",
+      "locator": "source DOM link[16]"
+    },
+    {
+      "url": "https://plainai.tech/search?q=devin",
+      "text": "#devin",
+      "blockId": "b63",
+      "relation": "LINK",
+      "locator": "source DOM link[17]"
+    },
+    {
+      "url": "https://plainai.tech/search?q=cognition+labs",
+      "text": "#cognition labs",
+      "blockId": "b63",
+      "relation": "LINK",
+      "locator": "source DOM link[18]"
+    },
+    {
+      "url": "https://plainai.tech/search?q=autonomous+coding+agent",
+      "text": "#autonomous coding agent",
+      "blockId": "b63",
+      "relation": "LINK",
+      "locator": "source DOM link[19]"
+    },
+    {
+      "url": "https://plainai.tech/search?q=ai+engineer",
+      "text": "#ai engineer",
+      "blockId": "b63",
+      "relation": "LINK",
+      "locator": "source DOM link[20]"
+    },
+    {
+      "url": "https://plainai.tech/founders/elena-hmelovs",
+      "text": "Elena Hmelovs",
+      "blockId": "b65",
+      "relation": "LINK",
+      "locator": "source DOM link[21]"
+    }
+  ],
+  "tables": []
+}

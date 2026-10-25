@@ -1,0 +1,1685 @@
+{
+  "schemaVersion": "source-document/v1",
+  "id": "16182be6a28fddb2bd93db944f2f3ceaf03af1612eeca7701dd050016d4e1b47",
+  "version": "e7b736f85f43c240acb749fb8cafc3bd01ce1039be4f0a812ebeeaba32284208",
+  "requestedUrl": "https://blog.csdn.net/fenglingguitar/article/details/146746000",
+  "finalUrl": "https://blog.csdn.net/fenglingguitar/article/details/146746000",
+  "retrievedAt": "2026-10-25T04:44:00.753Z",
+  "contentType": "text/html;charset=utf-8",
+  "status": "READ",
+  "readError": null,
+  "rawHash": "6b0560c3b3844282273cf1b9493ea077c3683ae46e8da2b14ba5af397411ff95",
+  "textHash": "f25ba9ab1635340f4bfe7294c37ff5d9af24adacb40cb59eb3645d9c72f94db1",
+  "text": "首页 博客 下载 学习 社区 模型市场 AI搜索 AtomGit InsCode 技术会议 墨衍 MoGrow 收藏 历史 会员中心 创作中心\n\nMCP - 使用 BlenderMCP 让 Claude AI 控制你的 Blender 模型创作\n\n花千树｜企业级 Agent 工程化 墨衍会员 · AI 创作全网分发 墨衍智能分发 本文由作者通过墨衍一键同步至各平台 1分发平台 6k累计阅读 6k平均单平台 已同步平台 CSDN 微信公众号 微博 知乎 掘金 百家号 博客园 抖音 小红书 你的文章也可以这样分发 墨衍会员 ¥399起/年，写一次发全网 我也要 码龄17年 关注 VIP免费 原创 最新推荐文章于 2026-03-24 20:25:14 发布 6k 阅读 AI 写同款· GEO 优化 ›\n\nwindsurf配置blender-mcp和qgis-mcp 建议重启一下blender，再次打开到插件页面勾选Blender MCP，而后在界面右侧会看到此插件，如果没有这个插件（但是有条目，工具这些）请查看是否勾选了Blender MCP，如果都没看到，请使用快捷键。而后，我们需要修改下端口号（因为默认都是9876），所以我们修改qgis-mcp的端口号为9880（可以不同），我们首先打开qigs插件目录下我们刚刚复制的qgis_mcp_plugin文件夹，然后打开。接下来打开windsurf，点击配置mcp，打开后是一个json，将下面代码复制过去，然后保存。 阅读详情\n\nBlenderMCP 是一种基于 MCP（Model Context Protocol，模型上下文协议）的插件系统，可将 Blender 与 Claude AI 无缝连接。通过该集成，Claude 可以读取 Blender 场景信息，甚至直接控制建模、材质、相机等操作，让 AI 参与到你的 3D 建模工作流中，大幅提升效率。\n\n本文将一步步教你如何安装所需组件、配置环境，并在 Claude 中通过自然语言指令控制 Blender。\n\n一、所需软件与安装顺序\n\n以下是使用 BlenderMCP 所需的组件，请按照顺序安装：\n\n1. Blender（3.0 或更高版本）\n\n前往 Blender 官网 下载并安装最新版本。推荐使用稳定版本 3.0 以上。\n\n2. Python（3.10 或更高版本）\n\nBlender 自带内置 Python，但 MCP 服务依赖系统中的 Python 环境。你可以从 Python 官网 安装 Python 3.10+，并确保 python 命令可在终端中使用。\n\n3. 安装 uv 包管理器\n\nBlenderMCP 使用 uv 来运行服务，安装方式如下：\n\nmacOS 用户\n\nbrew\n\n最低0.47元/天 解锁文章\n\n·\n\n收录于\n\n当前文章被以下社区和专栏收录：\n\n标签 #人工智能 #blender #AIGC #3d #gpt\n\n首款3D建模专用的AI员工BlenderMCP BlenderMCP 通过模型上下文协议（MCP）将 Blender 连接到 Claude AI，使 Claude 能够直接与 Blender 交互和控制。这种集成实现了辅助提示的 3D 建模、场景创建和操作。 阅读详情\n\n相关推荐\n\n换一换\n\nMCP blender 实现一键式设计\n\n本文旨在为 macOS 用户提供一份完整的 Blender嵌入MCP协议操作指南，特别针对小白用户，以创建一个红色苹果为例，结合详细步骤和注意事项，供学习和参考。。。💗，一起来实践吧 🐛🐛🐛**\n\nKelaru的博客 1496\n\n【实战解析】RTL8306MB交换芯片驱动开发中的RMII接口调试陷阱\n\n本文深入剖析了RTL8306MB交换芯片驱动开发中RMII接口的典型调试陷阱。通过一个工业网关项目的实战案例，揭示了因硬件原理图设计疏忽导致TX_EN与CRS_DV信号线错接，从而引发网络“哑火”的根本原因。文章详细展示了使用示波器从时钟、数据到控制信号的系统性排查方法，并总结了关键的设计警示与自查清单，为嵌入式网络开发中的软硬件协同调试提供了宝贵经验。\n\nqqq44的博客 1018\n\nUI-TARS本地部署\n\nUI-TARS是一个用于本地部署的交互控制模型，支持桌面应用的自动化操作。部署步骤包括：首先，从官方GitHub仓库下载项目源码和模型checkpoint；其次，使用vLLM框架进行本地模型部署，启动API服务；最后，通过客户端调用API实现功能。部署过程中可能遇到pynvml模块或模型配置问题，提供了相应的解决方案。此外，还支持通过UI-TARS-Desktop客户端进行本地桌面应用的交互控制。整体流程旨在帮助用户快速实现UI-TARS的本地部署与应用。\n\nDYF的博客 2516\n\n从手机到自动驾驶：MIPI-CSI2协议演进史与车规级改造要点\n\n本文追溯了MIPI-CSI2协议从智能手机摄像头到自动驾驶核心传感器的演进历程。重点剖析了该协议在车规级改造中面临的严苛挑战，包括物理层稳定性、EMC防护、功能安全与数据可靠性等关键要点，并探讨了其在多传感器融合与高带宽实时传输中的工程实践。\n\nweixin_28318011的博客 299\n\n快速玩转 Llama2！机器学习 PAI 最佳实践（一）—低代码 Lora 微调及部署\n\n本实践将采用阿里云机器学习平台PAI-快速开始模块针对 Llama-2-7b-chat 进行开发。PAI-快速开始支持基于开源模型的低代码训练、布署和推理全流程，适合想要快速开箱体验预训练模型的开发者。\n\n阿里云云栖号 1758\n\n构建 Skill 的完整指南\n\nSkill开发指南摘要 Skill是用于定制Claude AI行为的指令包，包含SKILL.md主文件及可选脚本、参考文档和资源。本文提供了完整的Skill开发指南： 核心概念 三层渐进式披露结构（元数据/主指令/参考文档） 支持独立工作流和MCP集成 跨平台兼容性（Claude.ai/ClaudeCode/API） 开发流程 规划：明确2-3个具体用例 结构要求：kebab-case命名、必备YAML元数据 编写规范：清晰触发条件、分步指令、错误处理 典型应用模式 • 文档生成（类别1） • 工作流自动化\n\nwjianwei666的专栏 267\n\n改进YOLOv9的CT图像肺结节检测与分类算法：从原理到实战\n\n本文将详细介绍如何改进YOLOv9算法，使其更好地适应CT图像肺结节检测与分类任务。我们将从数据集准备、模型改进、训练优化到最终部署，完整呈现一个端到端的深度学习项目，并提供完整的代码实现。\n\nYOLO 182\n\n《网络摄像机实战11：flutter_webrtc支持 AWS Kinesis Video Streams信令服务器》\n\n本文介绍了如何在Flutter项目中集成WebRTC实现网络摄像头的实时视频和音频对讲功能。通过使用flutter_webrtc插件，开发者可以快速构建跨平台的视频通信应用。文章详细说明了集成步骤：1）安装flutter_webrtc插件；2）配置信令服务器和KVS服务；3）初始化本地/远程视频渲染器；4）建立WebRTC连接并进行设备呼叫。最后展示了实际应用效果图，证明该方案能有效实现移动端与摄像头的实时音视频交互。该方案为开发智能家居监控等应用提供了技术参考。\n\nlvj_158的专栏 351\n\nlwip-2.0.3\n\nlwip是瑞典计算机科学院(SICS)的Adam Dunkels 开发的一个小型开源的TCP/IP协议栈。实现的重点是在保持TCP协议主要功能的基础上减少对RAM 的占用。\n\n温度PID控制PLC程序\n\n温度PID稳定控制程序，适用于欧姆龙PLC，对其他PLC也具有很大参考价值\n\nefm32 入门.pdf\n\n本PDF共计22页，介绍的是操作驱动API，下载与否自己斟酌。\n\nVC中sqlite的使用\n\n在VC中对sqlite的使用，实现数据库大批数据的快速插入，读取数据库中的数据在ListCtrl中显示\n\n上一篇： 使用 Helm 在 Kubernetes 上部署高可用的 Dify 系统 下一篇： MySQL 数据库备份和恢复全指南\n\n目录\n\n展开全部\n\n收起\n\n30\n\n5\n\n41\n\n复制链接 分享到 QQ 分享到新浪微博 扫一扫\n\n打赏 举报\n\n花千树｜企业级 Agent 工程化 码龄17年 1914粉丝 312原创 + 关注 专栏目录\n\n评论 5 查看更多评论 条评论被折叠 查看 被折叠的 条评论 为什么被折叠? 到【灌水乐园】发言 查看更多评论 添加红包\n\n打赏作者\n\n花千树｜企业级 Agent 工程化 你的鼓励将是我创作的最大动力\n\n¥1 ¥2 ¥4 ¥6 ¥10 ¥20\n\n扫码支付：¥1 获取中 扫码支付\n\n您的余额不足，请更换扫码支付或充值\n\n打赏作者\n\n实付元\n\n使用余额支付\n\n点击重新获取 扫码支付\n\n钱包余额\n\n0\n\n抵扣说明：\n\n1.余额是钱包充值的虚拟货币，按照1:1的比例进行支付金额的抵扣。 2.余额无法直接购买下载，可以购买VIP、付费专栏及课程。\n\n余额充值",
+  "rawSources": [
+    {
+      "mode": "STATIC",
+      "hash": "6b0560c3b3844282273cf1b9493ea077c3683ae46e8da2b14ba5af397411ff95",
+      "path": "C:\\Users\\qianchen\\Documents\\waytoagi-1024-detective-a2-v4\\.cache\\source-documents-v4\\1b770812-831e-444b-9bd6-f858f030b627\\16182be6a28fddb2bd93db944f2f3ceaf03af1612eeca7701dd050016d4e1b47\\raw.bin"
+    }
+  ],
+  "storage": {
+    "rawPath": "C:\\Users\\qianchen\\Documents\\waytoagi-1024-detective-a2-v4\\.cache\\source-documents-v4\\1b770812-831e-444b-9bd6-f858f030b627\\16182be6a28fddb2bd93db944f2f3ceaf03af1612eeca7701dd050016d4e1b47\\raw.bin",
+    "textPath": "C:\\Users\\qianchen\\Documents\\waytoagi-1024-detective-a2-v4\\.cache\\source-documents-v4\\1b770812-831e-444b-9bd6-f858f030b627\\16182be6a28fddb2bd93db944f2f3ceaf03af1612eeca7701dd050016d4e1b47\\source.txt",
+    "manifestPath": "C:\\Users\\qianchen\\Documents\\waytoagi-1024-detective-a2-v4\\.cache\\source-documents-v4\\1b770812-831e-444b-9bd6-f858f030b627\\16182be6a28fddb2bd93db944f2f3ceaf03af1612eeca7701dd050016d4e1b47\\manifest.json"
+  },
+  "parser": {
+    "name": "readability+source-dom",
+    "version": "readability-0.6.0+jsdom-30.1.3+source-dom-2",
+    "normalization": "source-text/v1",
+    "mode": "STATIC"
+  },
+  "metadata": {
+    "title": "MCP - 使用 BlenderMCP 让 Claude AI 控制你的 Blender 模型创作_blender mcp-CSDN博客",
+    "author": "花千树｜企业级 Agent 工程化",
+    "publishedAt": "2025-03-30T05:15:40.000Z",
+    "language": "zh-CN"
+  },
+  "completeness": "COMPLETE",
+  "warnings": [],
+  "blocks": [
+    {
+      "start": 0,
+      "end": 71,
+      "id": "b0",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[0]",
+      "headingPath": [],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 73,
+      "end": 122,
+      "id": "b1",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[1]",
+      "headingPath": [
+        "MCP - 使用 BlenderMCP 让 Claude AI 控制你的 Blender 模型创作"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 124,
+      "end": 353,
+      "id": "b2",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[2]",
+      "headingPath": [
+        "MCP - 使用 BlenderMCP 让 Claude AI 控制你的 Blender 模型创作"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 355,
+      "end": 646,
+      "id": "b3",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[3]",
+      "headingPath": [
+        "MCP - 使用 BlenderMCP 让 Claude AI 控制你的 Blender 模型创作"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 648,
+      "end": 811,
+      "id": "b4",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[4]",
+      "headingPath": [
+        "MCP - 使用 BlenderMCP 让 Claude AI 控制你的 Blender 模型创作"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 813,
+      "end": 865,
+      "id": "b5",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[5]",
+      "headingPath": [
+        "MCP - 使用 BlenderMCP 让 Claude AI 控制你的 Blender 模型创作"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 867,
+      "end": 878,
+      "id": "b6",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[6]",
+      "headingPath": [
+        "MCP - 使用 BlenderMCP 让 Claude AI 控制你的 Blender 模型创作",
+        "一、所需软件与安装顺序"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 880,
+      "end": 911,
+      "id": "b7",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[7]",
+      "headingPath": [
+        "MCP - 使用 BlenderMCP 让 Claude AI 控制你的 Blender 模型创作",
+        "一、所需软件与安装顺序"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 913,
+      "end": 934,
+      "id": "b8",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[8]",
+      "headingPath": [
+        "MCP - 使用 BlenderMCP 让 Claude AI 控制你的 Blender 模型创作",
+        "一、所需软件与安装顺序",
+        "1. Blender（3.0 或更高版本）"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 936,
+      "end": 976,
+      "id": "b9",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[9]",
+      "headingPath": [
+        "MCP - 使用 BlenderMCP 让 Claude AI 控制你的 Blender 模型创作",
+        "一、所需软件与安装顺序",
+        "1. Blender（3.0 或更高版本）"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 978,
+      "end": 999,
+      "id": "b10",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[10]",
+      "headingPath": [
+        "MCP - 使用 BlenderMCP 让 Claude AI 控制你的 Blender 模型创作",
+        "一、所需软件与安装顺序",
+        "1. Blender（3.0 或更高版本）",
+        "2. Python（3.10 或更高版本）"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1001,
+      "end": 1098,
+      "id": "b11",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[11]",
+      "headingPath": [
+        "MCP - 使用 BlenderMCP 让 Claude AI 控制你的 Blender 模型创作",
+        "一、所需软件与安装顺序",
+        "1. Blender（3.0 或更高版本）",
+        "2. Python（3.10 或更高版本）"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1100,
+      "end": 1113,
+      "id": "b12",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[12]",
+      "headingPath": [
+        "MCP - 使用 BlenderMCP 让 Claude AI 控制你的 Blender 模型创作",
+        "一、所需软件与安装顺序",
+        "1. Blender（3.0 或更高版本）",
+        "3. 安装 uv 包管理器"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1115,
+      "end": 1145,
+      "id": "b13",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[13]",
+      "headingPath": [
+        "MCP - 使用 BlenderMCP 让 Claude AI 控制你的 Blender 模型创作",
+        "一、所需软件与安装顺序",
+        "1. Blender（3.0 或更高版本）",
+        "3. 安装 uv 包管理器"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1147,
+      "end": 1155,
+      "id": "b14",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[14]",
+      "headingPath": [
+        "MCP - 使用 BlenderMCP 让 Claude AI 控制你的 Blender 模型创作",
+        "一、所需软件与安装顺序",
+        "1. Blender（3.0 或更高版本）",
+        "3. 安装 uv 包管理器",
+        "macOS 用户"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1157,
+      "end": 1161,
+      "id": "b15",
+      "kind": "CODE",
+      "locator": "source DOM normalized block[15]",
+      "headingPath": [
+        "MCP - 使用 BlenderMCP 让 Claude AI 控制你的 Blender 模型创作",
+        "一、所需软件与安装顺序",
+        "1. Blender（3.0 或更高版本）",
+        "3. 安装 uv 包管理器",
+        "macOS 用户"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1163,
+      "end": 1177,
+      "id": "b16",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[16]",
+      "headingPath": [
+        "MCP - 使用 BlenderMCP 让 Claude AI 控制你的 Blender 模型创作",
+        "一、所需软件与安装顺序",
+        "1. Blender（3.0 或更高版本）",
+        "3. 安装 uv 包管理器",
+        "macOS 用户"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1179,
+      "end": 1180,
+      "id": "b17",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[17]",
+      "headingPath": [
+        "MCP - 使用 BlenderMCP 让 Claude AI 控制你的 Blender 模型创作",
+        "一、所需软件与安装顺序",
+        "1. Blender（3.0 或更高版本）",
+        "3. 安装 uv 包管理器",
+        "macOS 用户"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1182,
+      "end": 1185,
+      "id": "b18",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[18]",
+      "headingPath": [
+        "MCP - 使用 BlenderMCP 让 Claude AI 控制你的 Blender 模型创作",
+        "一、所需软件与安装顺序",
+        "1. Blender（3.0 或更高版本）",
+        "3. 安装 uv 包管理器",
+        "macOS 用户"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1187,
+      "end": 1202,
+      "id": "b19",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[19]",
+      "headingPath": [
+        "MCP - 使用 BlenderMCP 让 Claude AI 控制你的 Blender 模型创作",
+        "一、所需软件与安装顺序",
+        "1. Blender（3.0 或更高版本）",
+        "3. 安装 uv 包管理器",
+        "macOS 用户"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1204,
+      "end": 1236,
+      "id": "b20",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[20]",
+      "headingPath": [
+        "MCP - 使用 BlenderMCP 让 Claude AI 控制你的 Blender 模型创作",
+        "一、所需软件与安装顺序",
+        "1. Blender（3.0 或更高版本）",
+        "3. 安装 uv 包管理器",
+        "macOS 用户"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1238,
+      "end": 1372,
+      "id": "b21",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[21]",
+      "headingPath": [
+        "MCP - 使用 BlenderMCP 让 Claude AI 控制你的 Blender 模型创作",
+        "一、所需软件与安装顺序",
+        "1. Blender（3.0 或更高版本）",
+        "3. 安装 uv 包管理器",
+        "macOS 用户"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1374,
+      "end": 1378,
+      "id": "b22",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[22]",
+      "headingPath": [
+        "MCP - 使用 BlenderMCP 让 Claude AI 控制你的 Blender 模型创作",
+        "一、所需软件与安装顺序",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1380,
+      "end": 1383,
+      "id": "b23",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[23]",
+      "headingPath": [
+        "MCP - 使用 BlenderMCP 让 Claude AI 控制你的 Blender 模型创作",
+        "一、所需软件与安装顺序",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1385,
+      "end": 1404,
+      "id": "b24",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[24]",
+      "headingPath": [
+        "MCP - 使用 BlenderMCP 让 Claude AI 控制你的 Blender 模型创作",
+        "一、所需软件与安装顺序",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1406,
+      "end": 1507,
+      "id": "b25",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[25]",
+      "headingPath": [
+        "MCP - 使用 BlenderMCP 让 Claude AI 控制你的 Blender 模型创作",
+        "一、所需软件与安装顺序",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1509,
+      "end": 1523,
+      "id": "b26",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[26]",
+      "headingPath": [
+        "MCP - 使用 BlenderMCP 让 Claude AI 控制你的 Blender 模型创作",
+        "一、所需软件与安装顺序",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1525,
+      "end": 1560,
+      "id": "b27",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[27]",
+      "headingPath": [
+        "MCP - 使用 BlenderMCP 让 Claude AI 控制你的 Blender 模型创作",
+        "一、所需软件与安装顺序",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1562,
+      "end": 1740,
+      "id": "b28",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[28]",
+      "headingPath": [
+        "MCP - 使用 BlenderMCP 让 Claude AI 控制你的 Blender 模型创作",
+        "一、所需软件与安装顺序",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1742,
+      "end": 1755,
+      "id": "b29",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[29]",
+      "headingPath": [
+        "MCP - 使用 BlenderMCP 让 Claude AI 控制你的 Blender 模型创作",
+        "一、所需软件与安装顺序",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1757,
+      "end": 1768,
+      "id": "b30",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[30]",
+      "headingPath": [
+        "MCP - 使用 BlenderMCP 让 Claude AI 控制你的 Blender 模型创作",
+        "一、所需软件与安装顺序",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1770,
+      "end": 2000,
+      "id": "b31",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[31]",
+      "headingPath": [
+        "MCP - 使用 BlenderMCP 让 Claude AI 控制你的 Blender 模型创作",
+        "一、所需软件与安装顺序",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2002,
+      "end": 2013,
+      "id": "b32",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[32]",
+      "headingPath": [
+        "MCP - 使用 BlenderMCP 让 Claude AI 控制你的 Blender 模型创作",
+        "一、所需软件与安装顺序",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2015,
+      "end": 2046,
+      "id": "b33",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[33]",
+      "headingPath": [
+        "MCP - 使用 BlenderMCP 让 Claude AI 控制你的 Blender 模型创作",
+        "一、所需软件与安装顺序",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2048,
+      "end": 2169,
+      "id": "b34",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[34]",
+      "headingPath": [
+        "MCP - 使用 BlenderMCP 让 Claude AI 控制你的 Blender 模型创作",
+        "一、所需软件与安装顺序",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2171,
+      "end": 2193,
+      "id": "b35",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[35]",
+      "headingPath": [
+        "MCP - 使用 BlenderMCP 让 Claude AI 控制你的 Blender 模型创作",
+        "一、所需软件与安装顺序",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2195,
+      "end": 2238,
+      "id": "b36",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[36]",
+      "headingPath": [
+        "MCP - 使用 BlenderMCP 让 Claude AI 控制你的 Blender 模型创作",
+        "一、所需软件与安装顺序",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2240,
+      "end": 2341,
+      "id": "b37",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[37]",
+      "headingPath": [
+        "MCP - 使用 BlenderMCP 让 Claude AI 控制你的 Blender 模型创作",
+        "一、所需软件与安装顺序",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2343,
+      "end": 2354,
+      "id": "b38",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[38]",
+      "headingPath": [
+        "MCP - 使用 BlenderMCP 让 Claude AI 控制你的 Blender 模型创作",
+        "一、所需软件与安装顺序",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2356,
+      "end": 2370,
+      "id": "b39",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[39]",
+      "headingPath": [
+        "MCP - 使用 BlenderMCP 让 Claude AI 控制你的 Blender 模型创作",
+        "一、所需软件与安装顺序",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2372,
+      "end": 2628,
+      "id": "b40",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[40]",
+      "headingPath": [
+        "MCP - 使用 BlenderMCP 让 Claude AI 控制你的 Blender 模型创作",
+        "一、所需软件与安装顺序",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2630,
+      "end": 2648,
+      "id": "b41",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[41]",
+      "headingPath": [
+        "MCP - 使用 BlenderMCP 让 Claude AI 控制你的 Blender 模型创作",
+        "一、所需软件与安装顺序",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2650,
+      "end": 2680,
+      "id": "b42",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[42]",
+      "headingPath": [
+        "MCP - 使用 BlenderMCP 让 Claude AI 控制你的 Blender 模型创作",
+        "一、所需软件与安装顺序",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2682,
+      "end": 2777,
+      "id": "b43",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[43]",
+      "headingPath": [
+        "MCP - 使用 BlenderMCP 让 Claude AI 控制你的 Blender 模型创作",
+        "一、所需软件与安装顺序",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2779,
+      "end": 2787,
+      "id": "b44",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[44]",
+      "headingPath": [
+        "MCP - 使用 BlenderMCP 让 Claude AI 控制你的 Blender 模型创作",
+        "一、所需软件与安装顺序",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2789,
+      "end": 2848,
+      "id": "b45",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[45]",
+      "headingPath": [
+        "MCP - 使用 BlenderMCP 让 Claude AI 控制你的 Blender 模型创作",
+        "一、所需软件与安装顺序",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2850,
+      "end": 3084,
+      "id": "b46",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[46]",
+      "headingPath": [
+        "MCP - 使用 BlenderMCP 让 Claude AI 控制你的 Blender 模型创作",
+        "一、所需软件与安装顺序",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3086,
+      "end": 3100,
+      "id": "b47",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[47]",
+      "headingPath": [
+        "MCP - 使用 BlenderMCP 让 Claude AI 控制你的 Blender 模型创作",
+        "一、所需软件与安装顺序",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3102,
+      "end": 3112,
+      "id": "b48",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[48]",
+      "headingPath": [
+        "MCP - 使用 BlenderMCP 让 Claude AI 控制你的 Blender 模型创作",
+        "一、所需软件与安装顺序",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3114,
+      "end": 3200,
+      "id": "b49",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[49]",
+      "headingPath": [
+        "MCP - 使用 BlenderMCP 让 Claude AI 控制你的 Blender 模型创作",
+        "一、所需软件与安装顺序",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3202,
+      "end": 3214,
+      "id": "b50",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[50]",
+      "headingPath": [
+        "MCP - 使用 BlenderMCP 让 Claude AI 控制你的 Blender 模型创作",
+        "一、所需软件与安装顺序",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3216,
+      "end": 3253,
+      "id": "b51",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[51]",
+      "headingPath": [
+        "MCP - 使用 BlenderMCP 让 Claude AI 控制你的 Blender 模型创作",
+        "一、所需软件与安装顺序",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3255,
+      "end": 3267,
+      "id": "b52",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[52]",
+      "headingPath": [
+        "MCP - 使用 BlenderMCP 让 Claude AI 控制你的 Blender 模型创作",
+        "一、所需软件与安装顺序",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3269,
+      "end": 3300,
+      "id": "b53",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[53]",
+      "headingPath": [
+        "MCP - 使用 BlenderMCP 让 Claude AI 控制你的 Blender 模型创作",
+        "一、所需软件与安装顺序",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3302,
+      "end": 3314,
+      "id": "b54",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[54]",
+      "headingPath": [
+        "MCP - 使用 BlenderMCP 让 Claude AI 控制你的 Blender 模型创作",
+        "一、所需软件与安装顺序",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3316,
+      "end": 3367,
+      "id": "b55",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[55]",
+      "headingPath": [
+        "MCP - 使用 BlenderMCP 让 Claude AI 控制你的 Blender 模型创作",
+        "一、所需软件与安装顺序",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3369,
+      "end": 3433,
+      "id": "b56",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[56]",
+      "headingPath": [
+        "MCP - 使用 BlenderMCP 让 Claude AI 控制你的 Blender 模型创作",
+        "一、所需软件与安装顺序",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3435,
+      "end": 3437,
+      "id": "b57",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[57]",
+      "headingPath": [
+        "MCP - 使用 BlenderMCP 让 Claude AI 控制你的 Blender 模型创作",
+        "一、所需软件与安装顺序",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3439,
+      "end": 3443,
+      "id": "b58",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[58]",
+      "headingPath": [
+        "MCP - 使用 BlenderMCP 让 Claude AI 控制你的 Blender 模型创作",
+        "一、所需软件与安装顺序",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3445,
+      "end": 3447,
+      "id": "b59",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[59]",
+      "headingPath": [
+        "MCP - 使用 BlenderMCP 让 Claude AI 控制你的 Blender 模型创作",
+        "一、所需软件与安装顺序",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3449,
+      "end": 3451,
+      "id": "b60",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[60]",
+      "headingPath": [
+        "MCP - 使用 BlenderMCP 让 Claude AI 控制你的 Blender 模型创作",
+        "一、所需软件与安装顺序",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3453,
+      "end": 3454,
+      "id": "b61",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[61]",
+      "headingPath": [
+        "MCP - 使用 BlenderMCP 让 Claude AI 控制你的 Blender 模型创作",
+        "一、所需软件与安装顺序",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3456,
+      "end": 3458,
+      "id": "b62",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[62]",
+      "headingPath": [
+        "MCP - 使用 BlenderMCP 让 Claude AI 控制你的 Blender 模型创作",
+        "一、所需软件与安装顺序",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3460,
+      "end": 3483,
+      "id": "b63",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[63]",
+      "headingPath": [
+        "MCP - 使用 BlenderMCP 让 Claude AI 控制你的 Blender 模型创作",
+        "一、所需软件与安装顺序",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3485,
+      "end": 3490,
+      "id": "b64",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[64]",
+      "headingPath": [
+        "MCP - 使用 BlenderMCP 让 Claude AI 控制你的 Blender 模型创作",
+        "一、所需软件与安装顺序",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3492,
+      "end": 3538,
+      "id": "b65",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[65]",
+      "headingPath": [
+        "MCP - 使用 BlenderMCP 让 Claude AI 控制你的 Blender 模型创作",
+        "一、所需软件与安装顺序",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3540,
+      "end": 3600,
+      "id": "b66",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[66]",
+      "headingPath": [
+        "MCP - 使用 BlenderMCP 让 Claude AI 控制你的 Blender 模型创作",
+        "一、所需软件与安装顺序",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3602,
+      "end": 3606,
+      "id": "b67",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[67]",
+      "headingPath": [
+        "MCP - 使用 BlenderMCP 让 Claude AI 控制你的 Blender 模型创作",
+        "一、所需软件与安装顺序",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3608,
+      "end": 3640,
+      "id": "b68",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[68]",
+      "headingPath": [
+        "MCP - 使用 BlenderMCP 让 Claude AI 控制你的 Blender 模型创作",
+        "一、所需软件与安装顺序",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3642,
+      "end": 3661,
+      "id": "b69",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[69]",
+      "headingPath": [
+        "MCP - 使用 BlenderMCP 让 Claude AI 控制你的 Blender 模型创作",
+        "一、所需软件与安装顺序",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3663,
+      "end": 3679,
+      "id": "b70",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[70]",
+      "headingPath": [
+        "MCP - 使用 BlenderMCP 让 Claude AI 控制你的 Blender 模型创作",
+        "一、所需软件与安装顺序",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3681,
+      "end": 3698,
+      "id": "b71",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[71]",
+      "headingPath": [
+        "MCP - 使用 BlenderMCP 让 Claude AI 控制你的 Blender 模型创作",
+        "一、所需软件与安装顺序",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3700,
+      "end": 3704,
+      "id": "b72",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[72]",
+      "headingPath": [
+        "MCP - 使用 BlenderMCP 让 Claude AI 控制你的 Blender 模型创作",
+        "一、所需软件与安装顺序",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3706,
+      "end": 3709,
+      "id": "b73",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[73]",
+      "headingPath": [
+        "MCP - 使用 BlenderMCP 让 Claude AI 控制你的 Blender 模型创作",
+        "一、所需软件与安装顺序",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3711,
+      "end": 3717,
+      "id": "b74",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[74]",
+      "headingPath": [
+        "MCP - 使用 BlenderMCP 让 Claude AI 控制你的 Blender 模型创作",
+        "一、所需软件与安装顺序",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3719,
+      "end": 3730,
+      "id": "b75",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[75]",
+      "headingPath": [
+        "MCP - 使用 BlenderMCP 让 Claude AI 控制你的 Blender 模型创作",
+        "一、所需软件与安装顺序",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3732,
+      "end": 3736,
+      "id": "b76",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[76]",
+      "headingPath": [
+        "MCP - 使用 BlenderMCP 让 Claude AI 控制你的 Blender 模型创作",
+        "一、所需软件与安装顺序",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3738,
+      "end": 3739,
+      "id": "b77",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[77]",
+      "headingPath": [
+        "MCP - 使用 BlenderMCP 让 Claude AI 控制你的 Blender 模型创作",
+        "一、所需软件与安装顺序",
+        "相关推荐"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3741,
+      "end": 3746,
+      "id": "b78",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[78]",
+      "headingPath": [
+        "MCP - 使用 BlenderMCP 让 Claude AI 控制你的 Blender 模型创作",
+        "一、所需软件与安装顺序",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3748,
+      "end": 3811,
+      "id": "b79",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[79]",
+      "headingPath": [
+        "MCP - 使用 BlenderMCP 让 Claude AI 控制你的 Blender 模型创作",
+        "一、所需软件与安装顺序",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3813,
+      "end": 3817,
+      "id": "b80",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[80]",
+      "headingPath": [
+        "MCP - 使用 BlenderMCP 让 Claude AI 控制你的 Blender 模型创作",
+        "一、所需软件与安装顺序",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    }
+  ],
+  "links": [
+    {
+      "url": "https://blog.csdn.net/fenglingguitar/article/details/146746000",
+      "text": "",
+      "blockId": null,
+      "relation": "CANONICAL",
+      "locator": "source DOM link[0]"
+    },
+    {
+      "url": "https://www.csdn.net/",
+      "text": "",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[1]"
+    },
+    {
+      "url": "https://blog.csdn.net/",
+      "text": "博客",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[4]"
+    },
+    {
+      "url": "https://download.csdn.net/",
+      "text": "下载",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[5]"
+    },
+    {
+      "url": "https://edu.csdn.net/",
+      "text": "学习",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[6]"
+    },
+    {
+      "url": "https://devpress.csdn.net/",
+      "text": "社区",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[7]"
+    },
+    {
+      "url": "https://ai.csdn.net/coding-plan",
+      "text": "模型市场",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[8]"
+    },
+    {
+      "url": "https://ai.csdn.net/chat",
+      "text": "AI搜索",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[9]"
+    },
+    {
+      "url": "https://link.csdn.net/?target=https%3A%2F%2Fgitcode.com%3Futm_source%3Dcsdn_toolbar",
+      "text": "AtomGit",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[10]"
+    },
+    {
+      "url": "https://agent.inscode.net/",
+      "text": "InsCode",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[11]"
+    },
+    {
+      "url": "https://summit.csdn.net/",
+      "text": "技术会议",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[12]"
+    },
+    {
+      "url": "https://mp.csdn.net/creation_overview",
+      "text": "墨衍 MoGrow",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[13]"
+    },
+    {
+      "url": "https://www.csdn.net/i/collections",
+      "text": "收藏",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[14]"
+    },
+    {
+      "url": "https://www.csdn.net/i/history",
+      "text": "历史",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[15]"
+    },
+    {
+      "url": "https://mall.csdn.net/vip",
+      "text": "会员中心",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[16]"
+    },
+    {
+      "url": "https://mp.csdn.net/",
+      "text": "创作中心",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[17]"
+    },
+    {
+      "url": "https://blog.csdn.net/fenglingguitar",
+      "text": "花千树｜企业级 Agent 工程化",
+      "blockId": "b2",
+      "relation": "LINK",
+      "locator": "source DOM link[18]"
+    },
+    {
+      "url": "https://mp.csdn.net/vip?spm=1001.2101.3001.11990",
+      "text": "墨衍会员 · AI 创作全网分发",
+      "blockId": "b2",
+      "relation": "LINK",
+      "locator": "source DOM link[19]"
+    },
+    {
+      "url": "https://mall.csdn.net/vip",
+      "text": "VIP免费",
+      "blockId": "b2",
+      "relation": "LINK",
+      "locator": "source DOM link[22]"
+    },
+    {
+      "url": "https://mp.csdn.net/creation_topic?spm=1001.2101.3001.11779",
+      "text": "AI 写同款· GEO 优化 ›",
+      "blockId": "b2",
+      "relation": "LINK",
+      "locator": "source DOM link[23]"
+    },
+    {
+      "url": "https://blog.csdn.net/qq_44897914/article/details/146323260",
+      "text": "windsurf配置blender-mcp和qgis-mcp 建议重启一下blender，再次打开到插件页面勾选Blender MCP，而后在界面右侧会看到此插件，如果没有这个插件（但是有条目，工具这些）请查看是否勾选了Blender MCP，如果都没看到，请使用快捷键。而后，我们需要修改下端口号（因为默认都是9876），所以我们修改qgis-mcp的端口号为9880（可以不同），我们首先打开qigs插件目录下我们刚刚复制的qgis_mcp_plugin文件夹，然后打开。接下来打开windsurf，点击配置mcp，打开后是一个json，将下面代码复制过去，然后保存。 阅读详情",
+      "blockId": "b3",
+      "relation": "LINK",
+      "locator": "source DOM link[24]"
+    },
+    {
+      "url": "https://www.blender.org/download/",
+      "text": "Blender 官网",
+      "blockId": "b9",
+      "relation": "LINK",
+      "locator": "source DOM link[25]"
+    },
+    {
+      "url": "https://www.python.org/downloads/",
+      "text": "Python 官网",
+      "blockId": "b11",
+      "relation": "LINK",
+      "locator": "source DOM link[26]"
+    },
+    {
+      "url": "https://astral.sh/uv",
+      "text": "uv",
+      "blockId": "b13",
+      "relation": "LINK",
+      "locator": "source DOM link[27]"
+    },
+    {
+      "url": "https://so.csdn.net/so/search/s.do?f=&from_code=app_blog_art&from_tracking_code=tag_word&l=&o=vip&q=%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD&s=&t=all&viparticle=",
+      "text": "#人工智能",
+      "blockId": "b20",
+      "relation": "LINK",
+      "locator": "source DOM link[28]"
+    },
+    {
+      "url": "https://so.csdn.net/so/search/s.do?f=&from_code=app_blog_art&from_tracking_code=tag_word&l=&o=vip&q=blender&s=&t=all&viparticle=",
+      "text": "#blender",
+      "blockId": "b20",
+      "relation": "LINK",
+      "locator": "source DOM link[29]"
+    },
+    {
+      "url": "https://so.csdn.net/so/search/s.do?f=&from_code=app_blog_art&from_tracking_code=tag_word&l=&o=vip&q=AIGC&s=&t=all&viparticle=",
+      "text": "#AIGC",
+      "blockId": "b20",
+      "relation": "LINK",
+      "locator": "source DOM link[30]"
+    },
+    {
+      "url": "https://so.csdn.net/so/search/s.do?f=&from_code=app_blog_art&from_tracking_code=tag_word&l=&o=vip&q=3d&s=&t=all&viparticle=",
+      "text": "#3d",
+      "blockId": "b20",
+      "relation": "LINK",
+      "locator": "source DOM link[31]"
+    },
+    {
+      "url": "https://so.csdn.net/so/search/s.do?f=&from_code=app_blog_art&from_tracking_code=tag_word&l=&o=vip&q=gpt&s=&t=all&viparticle=",
+      "text": "#gpt",
+      "blockId": "b20",
+      "relation": "LINK",
+      "locator": "source DOM link[32]"
+    },
+    {
+      "url": "https://blog.csdn.net/changjuanfang/article/details/146223325",
+      "text": "首款3D建模专用的AI员工BlenderMCP BlenderMCP 通过模型上下文协议（MCP）将 Blender 连接到 Claude AI，使 Claude 能够直接与 Blender 交互和控制。这种集成实现了辅助提示的 3D 建模、场景创建和操作。 阅读详情",
+      "blockId": "b21",
+      "relation": "LINK",
+      "locator": "source DOM link[33]"
+    },
+    {
+      "url": "https://blog.csdn.net/fenglingguitar/article/details/146596580",
+      "text": "使用 Helm 在 Kubernetes 上部署高可用的 Dify 系统",
+      "blockId": "b56",
+      "relation": "LINK",
+      "locator": "source DOM link[46]"
+    },
+    {
+      "url": "https://blog.csdn.net/fenglingguitar/article/details/147257838",
+      "text": "MySQL 数据库备份和恢复全指南",
+      "blockId": "b56",
+      "relation": "LINK",
+      "locator": "source DOM link[47]"
+    },
+    {
+      "url": "https://blog.csdn.net/fenglingguitar",
+      "text": "",
+      "blockId": "b65",
+      "relation": "LINK",
+      "locator": "source DOM link[80]"
+    },
+    {
+      "url": "https://blogdev.blog.csdn.net/article/details/122245662",
+      "text": "为什么被折叠?",
+      "blockId": "b66",
+      "relation": "LINK",
+      "locator": "source DOM link[83]"
+    },
+    {
+      "url": "https://bbs.csdn.net/forums/FreeZone",
+      "text": "到【灌水乐园】发言",
+      "blockId": "b66",
+      "relation": "LINK",
+      "locator": "source DOM link[84]"
+    },
+    {
+      "url": "https://i.csdn.net/",
+      "text": "充值",
+      "blockId": "b71",
+      "relation": "LINK",
+      "locator": "source DOM link[88]"
+    },
+    {
+      "url": "https://i.csdn.net/",
+      "text": "余额充值",
+      "blockId": "b80",
+      "relation": "LINK",
+      "locator": "source DOM link[90]"
+    }
+  ],
+  "tables": []
+}

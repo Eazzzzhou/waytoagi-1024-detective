@@ -1,0 +1,48 @@
+{
+  "capturedAt": "2026-10-25T04:07:55.619Z",
+  "url": "http://127.0.0.1:3104/investigations/02bb025f-d778-4b24-a295-a8bfe6aedf14",
+  "detail": {
+    "investigation": {
+      "id": "02bb025f-d778-4b24-a295-a8bfe6aedf14",
+      "question": "DeepSeek API 的上下文长度是多少？",
+      "researchDepth": "AUTO",
+      "status": "SUCCEEDED",
+      "stage": "COMPLETED",
+      "error": null,
+      "createdAt": "2026-10-25T04:07:40.609Z",
+      "updatedAt": "2026-10-25T04:07:55.088Z",
+      "startedAt": "2026-10-25T04:07:40.806Z",
+      "completedAt": "2026-10-25T04:07:55.088Z",
+      "resultSnapshotId": "a4fb4ddf-4e9f-4580-9216-cb8832ca09fc"
+    },
+    "identityConfirmation": null,
+    "retry": {
+      "allowed": false,
+      "reason": "仅失败的调查可以手动重试。",
+      "remaining": 2,
+      "expectedAttemptCount": 1
+    }
+  },
+  "observedStates": [
+    {
+      "status": "RUNNING",
+      "stage": "RETRIEVAL",
+      "observedAt": "2026-10-25T04:07:42.451Z"
+    },
+    {
+      "status": "RUNNING",
+      "stage": "VERIFICATION",
+      "observedAt": "2026-10-25T04:07:44.476Z"
+    },
+    {
+      "status": "RUNNING",
+      "stage": "ANSWER",
+      "observedAt": "2026-10-25T04:07:52.572Z"
+    },
+    {
+      "status": "SUCCEEDED",
+      "stage": "COMPLETED",
+      "observedAt": "2026-10-25T04:07:55.616Z"
+    }
+  ]
+}

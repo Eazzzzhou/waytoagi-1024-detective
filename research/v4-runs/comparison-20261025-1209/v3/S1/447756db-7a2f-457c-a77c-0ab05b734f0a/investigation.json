@@ -1,0 +1,78 @@
+{
+  "capturedAt": "2026-10-25T04:10:28.493Z",
+  "url": "http://127.0.0.1:3104/investigations/447756db-7a2f-457c-a77c-0ab05b734f0a",
+  "detail": {
+    "investigation": {
+      "id": "447756db-7a2f-457c-a77c-0ab05b734f0a",
+      "question": "DeepSeek API 的 deepseek-chat 模型上下文长度、最大输出和价格分别是多少？",
+      "researchDepth": "AUTO",
+      "status": "SUCCEEDED",
+      "stage": "COMPLETED",
+      "error": null,
+      "createdAt": "2026-10-25T04:09:37.699Z",
+      "updatedAt": "2026-10-25T04:10:28.230Z",
+      "startedAt": "2026-10-25T04:09:37.714Z",
+      "completedAt": "2026-10-25T04:10:28.230Z",
+      "resultSnapshotId": "bdaefcb0-edad-428e-ac4a-5f72a6801808"
+    },
+    "identityConfirmation": null,
+    "retry": {
+      "allowed": false,
+      "reason": "仅失败的调查可以手动重试。",
+      "remaining": 2,
+      "expectedAttemptCount": 1
+    }
+  },
+  "observedStates": [
+    {
+      "status": "RUNNING",
+      "stage": "RETRIEVAL",
+      "observedAt": "2026-10-25T04:09:39.820Z"
+    },
+    {
+      "status": "RUNNING",
+      "stage": "SOURCE_FETCH",
+      "observedAt": "2026-10-25T04:09:42.863Z"
+    },
+    {
+      "status": "RUNNING",
+      "stage": "RETRIEVAL",
+      "observedAt": "2026-10-25T04:09:47.928Z"
+    },
+    {
+      "status": "RUNNING",
+      "stage": "SOURCE_FETCH",
+      "observedAt": "2026-10-25T04:09:52.983Z"
+    },
+    {
+      "status": "RUNNING",
+      "stage": "VERIFICATION",
+      "observedAt": "2026-10-25T04:09:55.008Z"
+    },
+    {
+      "status": "RUNNING",
+      "stage": "RETRIEVAL",
+      "observedAt": "2026-10-25T04:10:12.238Z"
+    },
+    {
+      "status": "RUNNING",
+      "stage": "SOURCE_FETCH",
+      "observedAt": "2026-10-25T04:10:18.307Z"
+    },
+    {
+      "status": "RUNNING",
+      "stage": "VERIFICATION",
+      "observedAt": "2026-10-25T04:10:21.363Z"
+    },
+    {
+      "status": "RUNNING",
+      "stage": "ANSWER",
+      "observedAt": "2026-10-25T04:10:26.465Z"
+    },
+    {
+      "status": "SUCCEEDED",
+      "stage": "COMPLETED",
+      "observedAt": "2026-10-25T04:10:28.492Z"
+    }
+  ]
+}

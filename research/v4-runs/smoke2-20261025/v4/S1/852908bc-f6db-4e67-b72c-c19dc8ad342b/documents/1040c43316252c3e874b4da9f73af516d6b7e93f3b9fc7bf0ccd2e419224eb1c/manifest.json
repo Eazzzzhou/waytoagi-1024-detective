@@ -1,0 +1,510 @@
+{
+  "schemaVersion": "source-document/v1",
+  "id": "1040c43316252c3e874b4da9f73af516d6b7e93f3b9fc7bf0ccd2e419224eb1c",
+  "version": "a2826b692e27e1f460b6a9e1682d96dd60f6706d1ee3e7e2e6cf43aaf324e1d3",
+  "requestedUrl": "https://api-docs.deepseek.com/",
+  "finalUrl": "https://api-docs.deepseek.com/",
+  "retrievedAt": "2026-10-25T04:06:24.840Z",
+  "contentType": "text/html",
+  "status": "READ",
+  "readError": null,
+  "rawHash": "50490e85b6a47700cef1c847cfb505afb136a0d45ce48f519255960c7f63b9f3",
+  "textHash": "72b711066a69404efd42a8e4705c768b11db46f9b27c0abddb1597349393ba06",
+  "text": "Skip to main content\n\nSearch / Fetch API is now available, powered by our in-house search engine and supporting web search and fetch. Click here to view the guide.\n\nOn this page\n\nYour First API Call\n\nThe DeepSeek API uses an API format compatible with OpenAI/Anthropic. By modifying the configuration, you can use the OpenAI/Anthropic SDK or softwares compatible with the OpenAI/Anthropic API to access the DeepSeek API.\n\nPARAMVALUEbase_url (OpenAI)https://api.deepseek.combase_url (Anthropic)https://api.deepseek.com/anthropicapi_keyapply for an API keymodeldeepseek-flash(1)deepseek-v4-pro\n\n(1) Use deepseek-flash as the model name. It is now served by DeepSeek-V4.1-Flash-1017, and the calling method remains unchanged. The legacy names deepseek-v4-flash and deepseek-v4-flash-vision-exp are still accepted, but the corresponding models have been retired; their requests are served by DeepSeek-V4.1-Flash-1017 and billed at the Flash price.\n\nIntegrate with Agent Tools​\n\nDeepSeek Harness is now in developer preview for agent harness developers worldwide. See the DeepSeek Harness Guide for details.\n\nThe DeepSeek API is supported by many popular AI agent and coding assistant tools. If you use tools like Claude Code, GitHub Copilot, or OpenCode, you can use DeepSeek as the backend model directly — no code required.\n\nSee the Agent Integrations Guide for details.\n\nInvoke The Chat API​\n\nOnce you have obtained an API key, you can access the DeepSeek model using the following example scripts in the OpenAI API format. This is a non-stream example, you can set the stream parameter to true to get stream response.\n\nFor examples using the Anthropic API format, please refer to Anthropic API.\n\ncurl\n\npython\n\nnodejs\n\ncurl https://api.deepseek.com/chat/completions \\  -H \"Content-Type: application/json\" \\  -H \"Authorization: Bearer ${DEEPSEEK_API_KEY}\" \\  -d '{        \"model\": \"deepseek-flash\",        \"messages\": [          {\"role\": \"system\", \"content\": \"You are a helpful assistant.\"},          {\"role\": \"user\", \"content\": \"Hello!\"}        ],        \"thinking\": {\"type\": \"enabled\"},        \"reasoning_effort\": \"high\",        \"stream\": false      }'\n\nIntegrate with Agent Tools\n\nInvoke The Chat API",
+  "rawSources": [
+    {
+      "mode": "STATIC",
+      "hash": "50490e85b6a47700cef1c847cfb505afb136a0d45ce48f519255960c7f63b9f3",
+      "path": "C:\\Users\\qianchen\\Documents\\waytoagi-1024-detective-a2-v4\\.cache\\source-documents-v4\\852908bc-f6db-4e67-b72c-c19dc8ad342b\\1040c43316252c3e874b4da9f73af516d6b7e93f3b9fc7bf0ccd2e419224eb1c\\raw.bin"
+    }
+  ],
+  "storage": {
+    "rawPath": "C:\\Users\\qianchen\\Documents\\waytoagi-1024-detective-a2-v4\\.cache\\source-documents-v4\\852908bc-f6db-4e67-b72c-c19dc8ad342b\\1040c43316252c3e874b4da9f73af516d6b7e93f3b9fc7bf0ccd2e419224eb1c\\raw.bin",
+    "textPath": "C:\\Users\\qianchen\\Documents\\waytoagi-1024-detective-a2-v4\\.cache\\source-documents-v4\\852908bc-f6db-4e67-b72c-c19dc8ad342b\\1040c43316252c3e874b4da9f73af516d6b7e93f3b9fc7bf0ccd2e419224eb1c\\source.txt",
+    "manifestPath": "C:\\Users\\qianchen\\Documents\\waytoagi-1024-detective-a2-v4\\.cache\\source-documents-v4\\852908bc-f6db-4e67-b72c-c19dc8ad342b\\1040c43316252c3e874b4da9f73af516d6b7e93f3b9fc7bf0ccd2e419224eb1c\\manifest.json"
+  },
+  "parser": {
+    "name": "readability+source-dom",
+    "version": "readability-0.6.0+jsdom-30.1.3+source-dom-2",
+    "normalization": "source-text/v1",
+    "mode": "STATIC"
+  },
+  "metadata": {
+    "title": "Your First API Call | DeepSeek API Docs",
+    "author": null,
+    "publishedAt": null,
+    "language": "en"
+  },
+  "completeness": "COMPLETE",
+  "warnings": [],
+  "blocks": [
+    {
+      "start": 0,
+      "end": 20,
+      "id": "b0",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[0]",
+      "headingPath": [],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 22,
+      "end": 163,
+      "id": "b1",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[1]",
+      "headingPath": [],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 165,
+      "end": 177,
+      "id": "b2",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[2]",
+      "headingPath": [],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 179,
+      "end": 198,
+      "id": "b3",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[3]",
+      "headingPath": [
+        "Your First API Call"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 200,
+      "end": 420,
+      "id": "b4",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[4]",
+      "headingPath": [
+        "Your First API Call"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 422,
+      "end": 591,
+      "id": "b5",
+      "kind": "TABLE",
+      "locator": "source DOM normalized block[5]",
+      "headingPath": [
+        "Your First API Call"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 593,
+      "end": 943,
+      "id": "b6",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[6]",
+      "headingPath": [
+        "Your First API Call"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 945,
+      "end": 972,
+      "id": "b7",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[7]",
+      "headingPath": [
+        "Your First API Call",
+        "Integrate with Agent Tools​"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 974,
+      "end": 1102,
+      "id": "b8",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[8]",
+      "headingPath": [
+        "Your First API Call",
+        "Integrate with Agent Tools​"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1104,
+      "end": 1321,
+      "id": "b9",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[9]",
+      "headingPath": [
+        "Your First API Call",
+        "Integrate with Agent Tools​"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1323,
+      "end": 1368,
+      "id": "b10",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[10]",
+      "headingPath": [
+        "Your First API Call",
+        "Integrate with Agent Tools​"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1370,
+      "end": 1390,
+      "id": "b11",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[11]",
+      "headingPath": [
+        "Your First API Call",
+        "Invoke The Chat API​"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1392,
+      "end": 1617,
+      "id": "b12",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[12]",
+      "headingPath": [
+        "Your First API Call",
+        "Invoke The Chat API​"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1619,
+      "end": 1694,
+      "id": "b13",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[13]",
+      "headingPath": [
+        "Your First API Call",
+        "Invoke The Chat API​"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1696,
+      "end": 1700,
+      "id": "b14",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[14]",
+      "headingPath": [
+        "Your First API Call",
+        "Invoke The Chat API​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1702,
+      "end": 1708,
+      "id": "b15",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[15]",
+      "headingPath": [
+        "Your First API Call",
+        "Invoke The Chat API​"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1710,
+      "end": 1716,
+      "id": "b16",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[16]",
+      "headingPath": [
+        "Your First API Call",
+        "Invoke The Chat API​"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1718,
+      "end": 2152,
+      "id": "b17",
+      "kind": "CODE",
+      "locator": "source DOM normalized block[17]",
+      "headingPath": [
+        "Your First API Call",
+        "Invoke The Chat API​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2154,
+      "end": 2180,
+      "id": "b18",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[18]",
+      "headingPath": [
+        "Your First API Call",
+        "Invoke The Chat API​"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2182,
+      "end": 2201,
+      "id": "b19",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[19]",
+      "headingPath": [
+        "Your First API Call",
+        "Invoke The Chat API​"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    }
+  ],
+  "links": [
+    {
+      "url": "https://api-docs.deepseek.com/",
+      "text": "",
+      "blockId": null,
+      "relation": "CANONICAL",
+      "locator": "source DOM link[0]"
+    },
+    {
+      "url": "https://api-docs.deepseek.com/guides/search",
+      "text": "Click here to view the guide.",
+      "blockId": "b1",
+      "relation": "LINK",
+      "locator": "source DOM link[2]"
+    },
+    {
+      "url": "https://platform.deepseek.com/api_keys",
+      "text": "API key",
+      "blockId": "b5",
+      "relation": "LINK",
+      "locator": "source DOM link[34]"
+    },
+    {
+      "url": "https://deepseek-harness.github.io/deepseek-harness/en/guide/quickstart",
+      "text": "DeepSeek Harness Guide",
+      "blockId": "b8",
+      "relation": "LINK",
+      "locator": "source DOM link[36]"
+    },
+    {
+      "url": "https://api-docs.deepseek.com/quick_start/agent_integrations/claude_code",
+      "text": "Agent Integrations Guide",
+      "blockId": "b10",
+      "relation": "LINK",
+      "locator": "source DOM link[37]"
+    },
+    {
+      "url": "https://api-docs.deepseek.com/guides/anthropic_api",
+      "text": "Anthropic API",
+      "blockId": "b13",
+      "relation": "LINK",
+      "locator": "source DOM link[39]"
+    }
+  ],
+  "tables": [
+    {
+      "blockId": "b5",
+      "rows": [
+        {
+          "start": 422,
+          "end": 432,
+          "cells": [
+            {
+              "start": 422,
+              "end": 427,
+              "text": "PARAM",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 427,
+              "end": 432,
+              "text": "VALUE",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 432,
+          "end": 473,
+          "cells": [
+            {
+              "start": 432,
+              "end": 449,
+              "text": "base_url (OpenAI)",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 449,
+              "end": 473,
+              "text": "https://api.deepseek.com",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 473,
+          "end": 527,
+          "cells": [
+            {
+              "start": 473,
+              "end": 493,
+              "text": "base_url (Anthropic)",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 493,
+              "end": 527,
+              "text": "https://api.deepseek.com/anthropic",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 527,
+          "end": 554,
+          "cells": [
+            {
+              "start": 527,
+              "end": 534,
+              "text": "api_key",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 534,
+              "end": 554,
+              "text": "apply for an API key",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 554,
+          "end": 591,
+          "cells": [
+            {
+              "start": 554,
+              "end": 559,
+              "text": "model",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 559,
+              "end": 591,
+              "text": "deepseek-flash(1)deepseek-v4-pro",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

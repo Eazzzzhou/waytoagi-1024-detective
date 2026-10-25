@@ -1,0 +1,1506 @@
+{
+  "schemaVersion": "source-document/v1",
+  "id": "4470e51a6f50229b1f9b3fba22a85bce1728967e1c508166e26b070418768260",
+  "version": "0fe1b56480ab84cce0edb36f50e7bbd479ea1db5ae335a5d69ef6953a2d5ef88",
+  "requestedUrl": "https://vibecoding.app/blog/zh/devin-pingce-2026",
+  "finalUrl": "https://vibecoding.app/blog/zh/devin-pingce-2026",
+  "retrievedAt": "2026-10-25T04:40:06.864Z",
+  "contentType": "text/html; charset=utf-8",
+  "status": "READ",
+  "readError": null,
+  "rawHash": "06160f87114f0bafc55c3e095bebaa71b87d5d748df3faca064926531dc42b6f",
+  "textHash": "ad5150d4e3fd49658d6f9a14bf1f728bded613a9c4052fad15725119f2b52dc3",
+  "text": "Skip to main content\n\nSponsored by BluehostSponsored by Bluehost\n\nJump to table of contents (8 sections)\n\n← 返回 Devin (Cognition Suite)免费试用免费试用 Devin (Cognition Suite)\n\nDevin 评测 2026：全自主 AI 软件工程师值得用吗\n\nZane2026年5月19日8 min read\n\n🇺🇸English version\n\nJump to table of contents (8 sections)\n\nDevin 是 Cognition 公司推出的全自主 AI 软件工程师。它和 Cursor、Copilot 这种「副驾驶」工具有根本区别：你不是和它一起写代码，而是给它派任务，它自己规划、写代码、跑测试、调 bug、提 PR。本文实测它在 2026 年的真实表现，以及国内团队该不该上车。\n\nDevin 是什么\n\nDevin 在自己的沙箱开发环境里工作，配备完整的代码编辑器、终端和浏览器。你通过聊天界面或 Slack 给它派活，过一会儿回来收 PR。\n\n核心区别：Devin 不是增强你的编码会话，它在跑它自己的编码会话。 你像派任务给初级工程师一样派任务给它：写清需求、给上下文，然后让它执行。\n\n核心功能\n\n全自主执行\n\n派一个任务比如「给用户列表 API 加分页」，Devin 会完成整个流程：读代码库、规划实现、写代码、跑测试、调 bug、开 PR。它能在多步问题之间推理，方案失败会回退重试。\n\n沙箱 IDE\n\n每个 Devin 会话跑在独立的环境里，你可以实时看它工作：读哪些文件、跑什么命令、怎么调 bug。这种透明度建立信任，方向不对的时候你能及时纠偏。\n\nDevin Wiki\n\nDevin 会自动生成代码库文档：架构概览、关键文件说明、依赖关系图。下次它接手新任务时上手更快，对团队也是一份活文档。\n\nAPI 集成\n\n提供 API 用于程序化派任务。可以接到 CI/CD、Slack 工作流、issue tracker 上做自动化。\n\n价格：ACU 计费模式\n\nDevin 用 Agent Compute Units（ACU）计费，根据任务复杂度、代码库大小、会话时长消耗不等。\n\n计划 月费 ACU 配额 单位 ACU 价格 Core $20/月（约 ¥144/月）+ 按用量 按需付费 $2.25/ACU Team $500/月（约 ¥3600/月） 含 250 ACU $2.00/ACU Enterprise 联系销售 定制 定制\n\n关键问题：ACU 成本不可预测。 一个简单 bug 修复可能消耗 1-2 ACU；一个复杂功能可能用掉 10+ ACU。新团队头一个月要密切关注用量。\n\n折算下来：\n\n一个中等任务大概 ¥30-100\n\nTeam 版包含 250 ACU，相当于每个任务平均 ¥14 才划算\n\n月用量超过 200 ACU 才推荐升级 Team\n\n国内团队能用吗\n\n几个现实问题：\n\n支付：需要海外信用卡或公司 Stripe 账户。个人开发者难度大，公司订阅相对容易。\n\n网络：Devin 控制台需要稳定的海外网络访问，团队部署需要企业级 VPN。\n\n代码安全：Devin 会读你的代码库，对涉及核心 IP 的项目要谨慎。Enterprise 版本支持 VPC 部署，但价格不公开。\n\n知乎和 V2EX 上的讨论里，国内用 Devin 的团队大多是出海公司或者外资分部。纯内资团队更多选择本地化方案，比如 OpenClaw 完全安装指南 里讲的自托管智能体。\n\n优点和缺点\n\n优点： 真正自主、沙箱安全、可观察、Devin Wiki 自动生成代码文档、API 集成 CI/CD、无限座位。\n\n缺点： ACU 成本不可预测、不能实时结对、需求写不清就烧 ACU、Core 计划 10 个并发上限、执行延迟从分钟到小时。\n\nDevin vs 其他工具\n\nvs Cursor：Cursor 是副驾驶 IDE，你写代码 + AI 辅助。Devin 是自主智能体，你派任务 + 审核结果。两者互补。\n\nvs Claude Code CLI：Claude Code 在终端跑、需要人在回路。Devin 在沙箱跑、完全自主。\n\nvs OpenHands：OpenHands 是 Devin 的开源替代，可自托管，代价是配置复杂。\n\n适合谁\n\n适合：出海团队、想并行实现任务的小团队、偏好「描述需求」的 vibe coder、有成熟代码库需要持续维护的。\n\n不适合：享受交互式编程的单兵开发者、需要实时结对的、预算紧任务量不稳定的。\n\n总结\n\nDevin 代表 vibe coding 最激进的愿景：描述需求，AI 自主交付。建议先用 Core 计划摸清 ACU 基线再决定升级。国内团队如果支付和网络难解决，看看本地化方案：Coding Plan 对比评测 性价比更高。\n\n作者\n\nZane\n\nAI Tools Editor\n\nAI editorial avatar for the Vibe Coding team. Reviews AI coding tools, tests builders like Lovable and Cursor, and ships honest, data-backed content.\n\n关注查看全部文章\n\n相关文章\n\n5月20日8 min read\n\nAI 编程革命 2026：Vibe Coding 完整指南与工具地图\n\n2026 年 AI 编程已经从自动补全进化到智能体协作。本文盘点 15+ 主流 AI 编程工具、Vibe Coding 方法论与国内开发者的落地路径。\n\n5月21日9 min read\n\nAI 应用构建器对比 2026：10 款工具功能与价格横向评测\n\n10 款 AI 应用构建器并排对比，覆盖功能矩阵、价格、代码归属和典型使用场景。Lovable、Bolt.new、Replit、Cursor、Bubble 谁更适合你？\n\n5月21日8 min read\n\nAI 应用构建器价格对比 2026：免费层到企业版全解析\n\n主流 AI 应用构建器价格完整对比：Lovable、Bolt.new、Replit、Cursor、Windsurf、GitHub Copilot。免费层能做什么、隐藏成本、最佳性价比组合。\n\n5月21日8 min read\n\nAI 移动应用构建工具对比：iOS 与 Android 最佳选择 2026\n\nAI 怎么做移动 App？原生 iOS/Android 和响应式 Web 各有什么差异？FlutterFlow、Adalo、Bubble、Lovable 实战对比与决策建议。\n\n返回中文博客\n\n最新文章\n\nAI 编程革命 2026：Vibe Coding 完整指南与工具地图\n\n5月20日8 min read\n\nAI 应用构建器对比 2026：10 款工具功能与价格横向评测\n\n5月21日9 min read\n\nAI 应用构建器价格对比 2026：免费层到企业版全解析\n\n5月21日8 min read",
+  "rawSources": [
+    {
+      "mode": "STATIC",
+      "hash": "06160f87114f0bafc55c3e095bebaa71b87d5d748df3faca064926531dc42b6f",
+      "path": "C:\\Users\\qianchen\\Documents\\waytoagi-1024-detective-a2-v4\\.cache\\source-documents-v4\\99bd40b0-0e40-40f6-ba53-6b819aa05ac4\\4470e51a6f50229b1f9b3fba22a85bce1728967e1c508166e26b070418768260\\raw.bin"
+    }
+  ],
+  "storage": {
+    "rawPath": "C:\\Users\\qianchen\\Documents\\waytoagi-1024-detective-a2-v4\\.cache\\source-documents-v4\\99bd40b0-0e40-40f6-ba53-6b819aa05ac4\\4470e51a6f50229b1f9b3fba22a85bce1728967e1c508166e26b070418768260\\raw.bin",
+    "textPath": "C:\\Users\\qianchen\\Documents\\waytoagi-1024-detective-a2-v4\\.cache\\source-documents-v4\\99bd40b0-0e40-40f6-ba53-6b819aa05ac4\\4470e51a6f50229b1f9b3fba22a85bce1728967e1c508166e26b070418768260\\source.txt",
+    "manifestPath": "C:\\Users\\qianchen\\Documents\\waytoagi-1024-detective-a2-v4\\.cache\\source-documents-v4\\99bd40b0-0e40-40f6-ba53-6b819aa05ac4\\4470e51a6f50229b1f9b3fba22a85bce1728967e1c508166e26b070418768260\\manifest.json"
+  },
+  "parser": {
+    "name": "readability+source-dom",
+    "version": "readability-0.6.0+jsdom-30.1.3+source-dom-2",
+    "normalization": "source-text/v1",
+    "mode": "STATIC"
+  },
+  "metadata": {
+    "title": "Devin 评测 2026：AI 工程师真能替代初级开发吗 | vibecoding.app",
+    "author": "Zane",
+    "publishedAt": "2026-05-19T12:15:00.000Z",
+    "language": "zh-CN"
+  },
+  "completeness": "COMPLETE",
+  "warnings": [],
+  "blocks": [
+    {
+      "start": 0,
+      "end": 20,
+      "id": "b0",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[0]",
+      "headingPath": [],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 22,
+      "end": 64,
+      "id": "b1",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[1]",
+      "headingPath": [],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 66,
+      "end": 104,
+      "id": "b2",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[2]",
+      "headingPath": [],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 106,
+      "end": 166,
+      "id": "b3",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[3]",
+      "headingPath": [],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 168,
+      "end": 198,
+      "id": "b4",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[4]",
+      "headingPath": [
+        "Devin 评测 2026：全自主 AI 软件工程师值得用吗"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 200,
+      "end": 224,
+      "id": "b5",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[5]",
+      "headingPath": [
+        "Devin 评测 2026：全自主 AI 软件工程师值得用吗"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 226,
+      "end": 245,
+      "id": "b6",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[6]",
+      "headingPath": [
+        "Devin 评测 2026：全自主 AI 软件工程师值得用吗"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 247,
+      "end": 285,
+      "id": "b7",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[7]",
+      "headingPath": [
+        "Devin 评测 2026：全自主 AI 软件工程师值得用吗"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 287,
+      "end": 431,
+      "id": "b8",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[8]",
+      "headingPath": [
+        "Devin 评测 2026：全自主 AI 软件工程师值得用吗"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 433,
+      "end": 442,
+      "id": "b9",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[9]",
+      "headingPath": [
+        "Devin 评测 2026：全自主 AI 软件工程师值得用吗",
+        "Devin 是什么"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 444,
+      "end": 513,
+      "id": "b10",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[10]",
+      "headingPath": [
+        "Devin 评测 2026：全自主 AI 软件工程师值得用吗",
+        "Devin 是什么"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 515,
+      "end": 586,
+      "id": "b11",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[11]",
+      "headingPath": [
+        "Devin 评测 2026：全自主 AI 软件工程师值得用吗",
+        "Devin 是什么"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 588,
+      "end": 592,
+      "id": "b12",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[12]",
+      "headingPath": [
+        "Devin 评测 2026：全自主 AI 软件工程师值得用吗",
+        "核心功能"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 594,
+      "end": 599,
+      "id": "b13",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[13]",
+      "headingPath": [
+        "Devin 评测 2026：全自主 AI 软件工程师值得用吗",
+        "核心功能",
+        "全自主执行"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 601,
+      "end": 689,
+      "id": "b14",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[14]",
+      "headingPath": [
+        "Devin 评测 2026：全自主 AI 软件工程师值得用吗",
+        "核心功能",
+        "全自主执行"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 691,
+      "end": 697,
+      "id": "b15",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[15]",
+      "headingPath": [
+        "Devin 评测 2026：全自主 AI 软件工程师值得用吗",
+        "核心功能",
+        "沙箱 IDE"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 699,
+      "end": 773,
+      "id": "b16",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[16]",
+      "headingPath": [
+        "Devin 评测 2026：全自主 AI 软件工程师值得用吗",
+        "核心功能",
+        "沙箱 IDE"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 775,
+      "end": 785,
+      "id": "b17",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[17]",
+      "headingPath": [
+        "Devin 评测 2026：全自主 AI 软件工程师值得用吗",
+        "核心功能",
+        "Devin Wiki"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 787,
+      "end": 847,
+      "id": "b18",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[18]",
+      "headingPath": [
+        "Devin 评测 2026：全自主 AI 软件工程师值得用吗",
+        "核心功能",
+        "Devin Wiki"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 849,
+      "end": 855,
+      "id": "b19",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[19]",
+      "headingPath": [
+        "Devin 评测 2026：全自主 AI 软件工程师值得用吗",
+        "核心功能",
+        "API 集成"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 857,
+      "end": 914,
+      "id": "b20",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[20]",
+      "headingPath": [
+        "Devin 评测 2026：全自主 AI 软件工程师值得用吗",
+        "核心功能",
+        "API 集成"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 916,
+      "end": 927,
+      "id": "b21",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[21]",
+      "headingPath": [
+        "Devin 评测 2026：全自主 AI 软件工程师值得用吗",
+        "价格：ACU 计费模式"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 929,
+      "end": 987,
+      "id": "b22",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[22]",
+      "headingPath": [
+        "Devin 评测 2026：全自主 AI 软件工程师值得用吗",
+        "价格：ACU 计费模式"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 989,
+      "end": 1117,
+      "id": "b23",
+      "kind": "TABLE",
+      "locator": "source DOM normalized block[23]",
+      "headingPath": [
+        "Devin 评测 2026：全自主 AI 软件工程师值得用吗",
+        "价格：ACU 计费模式"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1119,
+      "end": 1194,
+      "id": "b24",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[24]",
+      "headingPath": [
+        "Devin 评测 2026：全自主 AI 软件工程师值得用吗",
+        "价格：ACU 计费模式"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1196,
+      "end": 1201,
+      "id": "b25",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[25]",
+      "headingPath": [
+        "Devin 评测 2026：全自主 AI 软件工程师值得用吗",
+        "价格：ACU 计费模式"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1203,
+      "end": 1219,
+      "id": "b26",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[26]",
+      "headingPath": [
+        "Devin 评测 2026：全自主 AI 软件工程师值得用吗",
+        "价格：ACU 计费模式"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1221,
+      "end": 1255,
+      "id": "b27",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[27]",
+      "headingPath": [
+        "Devin 评测 2026：全自主 AI 软件工程师值得用吗",
+        "价格：ACU 计费模式"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1257,
+      "end": 1281,
+      "id": "b28",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[28]",
+      "headingPath": [
+        "Devin 评测 2026：全自主 AI 软件工程师值得用吗",
+        "价格：ACU 计费模式"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1283,
+      "end": 1290,
+      "id": "b29",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[29]",
+      "headingPath": [
+        "Devin 评测 2026：全自主 AI 软件工程师值得用吗",
+        "国内团队能用吗"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1292,
+      "end": 1299,
+      "id": "b30",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[30]",
+      "headingPath": [
+        "Devin 评测 2026：全自主 AI 软件工程师值得用吗",
+        "国内团队能用吗"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1301,
+      "end": 1343,
+      "id": "b31",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[31]",
+      "headingPath": [
+        "Devin 评测 2026：全自主 AI 软件工程师值得用吗",
+        "国内团队能用吗"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1345,
+      "end": 1383,
+      "id": "b32",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[32]",
+      "headingPath": [
+        "Devin 评测 2026：全自主 AI 软件工程师值得用吗",
+        "国内团队能用吗"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1385,
+      "end": 1450,
+      "id": "b33",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[33]",
+      "headingPath": [
+        "Devin 评测 2026：全自主 AI 软件工程师值得用吗",
+        "国内团队能用吗"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1452,
+      "end": 1538,
+      "id": "b34",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[34]",
+      "headingPath": [
+        "Devin 评测 2026：全自主 AI 软件工程师值得用吗",
+        "国内团队能用吗"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1540,
+      "end": 1545,
+      "id": "b35",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[35]",
+      "headingPath": [
+        "Devin 评测 2026：全自主 AI 软件工程师值得用吗",
+        "优点和缺点"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1547,
+      "end": 1603,
+      "id": "b36",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[36]",
+      "headingPath": [
+        "Devin 评测 2026：全自主 AI 软件工程师值得用吗",
+        "优点和缺点"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1605,
+      "end": 1667,
+      "id": "b37",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[37]",
+      "headingPath": [
+        "Devin 评测 2026：全自主 AI 软件工程师值得用吗",
+        "优点和缺点"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1669,
+      "end": 1682,
+      "id": "b38",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[38]",
+      "headingPath": [
+        "Devin 评测 2026：全自主 AI 软件工程师值得用吗",
+        "Devin vs 其他工具"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1684,
+      "end": 1753,
+      "id": "b39",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[39]",
+      "headingPath": [
+        "Devin 评测 2026：全自主 AI 软件工程师值得用吗",
+        "Devin vs 其他工具"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1755,
+      "end": 1814,
+      "id": "b40",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[40]",
+      "headingPath": [
+        "Devin 评测 2026：全自主 AI 软件工程师值得用吗",
+        "Devin vs 其他工具"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1816,
+      "end": 1866,
+      "id": "b41",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[41]",
+      "headingPath": [
+        "Devin 评测 2026：全自主 AI 软件工程师值得用吗",
+        "Devin vs 其他工具"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1868,
+      "end": 1871,
+      "id": "b42",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[42]",
+      "headingPath": [
+        "Devin 评测 2026：全自主 AI 软件工程师值得用吗",
+        "适合谁"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1873,
+      "end": 1928,
+      "id": "b43",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[43]",
+      "headingPath": [
+        "Devin 评测 2026：全自主 AI 软件工程师值得用吗",
+        "适合谁"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1930,
+      "end": 1967,
+      "id": "b44",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[44]",
+      "headingPath": [
+        "Devin 评测 2026：全自主 AI 软件工程师值得用吗",
+        "适合谁"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1969,
+      "end": 1971,
+      "id": "b45",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[45]",
+      "headingPath": [
+        "Devin 评测 2026：全自主 AI 软件工程师值得用吗",
+        "总结"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1973,
+      "end": 2087,
+      "id": "b46",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[46]",
+      "headingPath": [
+        "Devin 评测 2026：全自主 AI 软件工程师值得用吗",
+        "总结"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2089,
+      "end": 2091,
+      "id": "b47",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[47]",
+      "headingPath": [
+        "Devin 评测 2026：全自主 AI 软件工程师值得用吗",
+        "总结"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2093,
+      "end": 2097,
+      "id": "b48",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[48]",
+      "headingPath": [
+        "Devin 评测 2026：全自主 AI 软件工程师值得用吗",
+        "总结"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2099,
+      "end": 2114,
+      "id": "b49",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[49]",
+      "headingPath": [
+        "Devin 评测 2026：全自主 AI 软件工程师值得用吗",
+        "总结"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2116,
+      "end": 2265,
+      "id": "b50",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[50]",
+      "headingPath": [
+        "Devin 评测 2026：全自主 AI 软件工程师值得用吗",
+        "总结"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2267,
+      "end": 2275,
+      "id": "b51",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[51]",
+      "headingPath": [
+        "Devin 评测 2026：全自主 AI 软件工程师值得用吗",
+        "总结"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2277,
+      "end": 2281,
+      "id": "b52",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[52]",
+      "headingPath": [
+        "Devin 评测 2026：全自主 AI 软件工程师值得用吗",
+        "相关文章"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2283,
+      "end": 2298,
+      "id": "b53",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[53]",
+      "headingPath": [
+        "Devin 评测 2026：全自主 AI 软件工程师值得用吗",
+        "相关文章"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2300,
+      "end": 2334,
+      "id": "b54",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[54]",
+      "headingPath": [
+        "Devin 评测 2026：全自主 AI 软件工程师值得用吗",
+        "相关文章",
+        "AI 编程革命 2026：Vibe Coding 完整指南与工具地图"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2336,
+      "end": 2411,
+      "id": "b55",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[55]",
+      "headingPath": [
+        "Devin 评测 2026：全自主 AI 软件工程师值得用吗",
+        "相关文章",
+        "AI 编程革命 2026：Vibe Coding 完整指南与工具地图"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2413,
+      "end": 2428,
+      "id": "b56",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[56]",
+      "headingPath": [
+        "Devin 评测 2026：全自主 AI 软件工程师值得用吗",
+        "相关文章",
+        "AI 编程革命 2026：Vibe Coding 完整指南与工具地图"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2430,
+      "end": 2461,
+      "id": "b57",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[57]",
+      "headingPath": [
+        "Devin 评测 2026：全自主 AI 软件工程师值得用吗",
+        "相关文章",
+        "AI 应用构建器对比 2026：10 款工具功能与价格横向评测"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2463,
+      "end": 2547,
+      "id": "b58",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[58]",
+      "headingPath": [
+        "Devin 评测 2026：全自主 AI 软件工程师值得用吗",
+        "相关文章",
+        "AI 应用构建器对比 2026：10 款工具功能与价格横向评测"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2549,
+      "end": 2564,
+      "id": "b59",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[59]",
+      "headingPath": [
+        "Devin 评测 2026：全自主 AI 软件工程师值得用吗",
+        "相关文章",
+        "AI 应用构建器对比 2026：10 款工具功能与价格横向评测"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2566,
+      "end": 2594,
+      "id": "b60",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[60]",
+      "headingPath": [
+        "Devin 评测 2026：全自主 AI 软件工程师值得用吗",
+        "相关文章",
+        "AI 应用构建器价格对比 2026：免费层到企业版全解析"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2596,
+      "end": 2690,
+      "id": "b61",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[61]",
+      "headingPath": [
+        "Devin 评测 2026：全自主 AI 软件工程师值得用吗",
+        "相关文章",
+        "AI 应用构建器价格对比 2026：免费层到企业版全解析"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2692,
+      "end": 2707,
+      "id": "b62",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[62]",
+      "headingPath": [
+        "Devin 评测 2026：全自主 AI 软件工程师值得用吗",
+        "相关文章",
+        "AI 应用构建器价格对比 2026：免费层到企业版全解析"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2709,
+      "end": 2746,
+      "id": "b63",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[63]",
+      "headingPath": [
+        "Devin 评测 2026：全自主 AI 软件工程师值得用吗",
+        "相关文章",
+        "AI 移动应用构建工具对比：iOS 与 Android 最佳选择 2026"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2748,
+      "end": 2835,
+      "id": "b64",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[64]",
+      "headingPath": [
+        "Devin 评测 2026：全自主 AI 软件工程师值得用吗",
+        "相关文章",
+        "AI 移动应用构建工具对比：iOS 与 Android 最佳选择 2026"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2837,
+      "end": 2843,
+      "id": "b65",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[65]",
+      "headingPath": [
+        "Devin 评测 2026：全自主 AI 软件工程师值得用吗",
+        "相关文章",
+        "AI 移动应用构建工具对比：iOS 与 Android 最佳选择 2026"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2845,
+      "end": 2849,
+      "id": "b66",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[66]",
+      "headingPath": [
+        "Devin 评测 2026：全自主 AI 软件工程师值得用吗",
+        "相关文章",
+        "最新文章"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2851,
+      "end": 2885,
+      "id": "b67",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[67]",
+      "headingPath": [
+        "Devin 评测 2026：全自主 AI 软件工程师值得用吗",
+        "相关文章",
+        "最新文章",
+        "AI 编程革命 2026：Vibe Coding 完整指南与工具地图"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2887,
+      "end": 2902,
+      "id": "b68",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[68]",
+      "headingPath": [
+        "Devin 评测 2026：全自主 AI 软件工程师值得用吗",
+        "相关文章",
+        "最新文章",
+        "AI 编程革命 2026：Vibe Coding 完整指南与工具地图"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2904,
+      "end": 2935,
+      "id": "b69",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[69]",
+      "headingPath": [
+        "Devin 评测 2026：全自主 AI 软件工程师值得用吗",
+        "相关文章",
+        "最新文章",
+        "AI 应用构建器对比 2026：10 款工具功能与价格横向评测"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2937,
+      "end": 2952,
+      "id": "b70",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[70]",
+      "headingPath": [
+        "Devin 评测 2026：全自主 AI 软件工程师值得用吗",
+        "相关文章",
+        "最新文章",
+        "AI 应用构建器对比 2026：10 款工具功能与价格横向评测"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2954,
+      "end": 2982,
+      "id": "b71",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[71]",
+      "headingPath": [
+        "Devin 评测 2026：全自主 AI 软件工程师值得用吗",
+        "相关文章",
+        "最新文章",
+        "AI 应用构建器价格对比 2026：免费层到企业版全解析"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2984,
+      "end": 2999,
+      "id": "b72",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[72]",
+      "headingPath": [
+        "Devin 评测 2026：全自主 AI 软件工程师值得用吗",
+        "相关文章",
+        "最新文章",
+        "AI 应用构建器价格对比 2026：免费层到企业版全解析"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    }
+  ],
+  "links": [
+    {
+      "url": "https://vibecoding.app/blog/zh/devin-pingce-2026",
+      "text": "",
+      "blockId": null,
+      "relation": "CANONICAL",
+      "locator": "source DOM link[0]"
+    },
+    {
+      "url": "https://bluehost.sjv.io/c/6860257/1376228/11352?u=https%3A%2F%2Fwww.bluehost.com%2Fall-access",
+      "text": "Sponsored by BluehostSponsored by Bluehost",
+      "blockId": "b1",
+      "relation": "LINK",
+      "locator": "source DOM link[2]"
+    },
+    {
+      "url": "https://vibecoding.app/tools/devin",
+      "text": "← 返回 Devin (Cognition Suite)",
+      "blockId": "b3",
+      "relation": "LINK",
+      "locator": "source DOM link[34]"
+    },
+    {
+      "url": "https://devin.ai/",
+      "text": "免费试用免费试用 Devin (Cognition Suite)",
+      "blockId": "b3",
+      "relation": "LINK",
+      "locator": "source DOM link[35]"
+    },
+    {
+      "url": "https://vibecoding.app/author/zane",
+      "text": "Zane",
+      "blockId": "b5",
+      "relation": "LINK",
+      "locator": "source DOM link[36]"
+    },
+    {
+      "url": "https://vibecoding.app/blog/devin-review",
+      "text": "🇺🇸English version",
+      "blockId": "b6",
+      "relation": "LINK",
+      "locator": "source DOM link[37]"
+    },
+    {
+      "url": "https://vibecoding.app/tools/devin",
+      "text": "Devin",
+      "blockId": "b8",
+      "relation": "LINK",
+      "locator": "source DOM link[39]"
+    },
+    {
+      "url": "https://vibecoding.app/tools/cursor",
+      "text": "Cursor",
+      "blockId": "b8",
+      "relation": "LINK",
+      "locator": "source DOM link[40]"
+    },
+    {
+      "url": "https://vibecoding.app/blog/zh/openclaw-wanquan-anzhuang-zhinan-2026",
+      "text": "OpenClaw 完全安装指南",
+      "blockId": "b34",
+      "relation": "LINK",
+      "locator": "source DOM link[41]"
+    },
+    {
+      "url": "https://vibecoding.app/tools/claude-code-cli",
+      "text": "Claude Code CLI",
+      "blockId": "b40",
+      "relation": "LINK",
+      "locator": "source DOM link[42]"
+    },
+    {
+      "url": "https://vibecoding.app/tools/claude-code",
+      "text": "Claude Code",
+      "blockId": "b40",
+      "relation": "LINK",
+      "locator": "source DOM link[43]"
+    },
+    {
+      "url": "https://vibecoding.app/tools/openhands",
+      "text": "OpenHands",
+      "blockId": "b41",
+      "relation": "LINK",
+      "locator": "source DOM link[44]"
+    },
+    {
+      "url": "https://vibecoding.app/blog/zh/coding-plan-duibi-pingce-2026",
+      "text": "Coding Plan 对比评测",
+      "blockId": "b46",
+      "relation": "LINK",
+      "locator": "source DOM link[45]"
+    },
+    {
+      "url": "https://vibecoding.app/author/zane",
+      "text": "Zane",
+      "blockId": "b48",
+      "relation": "LINK",
+      "locator": "source DOM link[55]"
+    },
+    {
+      "url": "https://x.com/agent_zane",
+      "text": "关注",
+      "blockId": "b51",
+      "relation": "LINK",
+      "locator": "source DOM link[56]"
+    },
+    {
+      "url": "https://vibecoding.app/author/zane",
+      "text": "查看全部文章",
+      "blockId": "b51",
+      "relation": "LINK",
+      "locator": "source DOM link[57]"
+    },
+    {
+      "url": "https://vibecoding.app/blog/zh",
+      "text": "返回中文博客",
+      "blockId": "b65",
+      "relation": "LINK",
+      "locator": "source DOM link[62]"
+    }
+  ],
+  "tables": [
+    {
+      "blockId": "b23",
+      "rows": [
+        {
+          "start": 989,
+          "end": 1011,
+          "cells": [
+            {
+              "start": 989,
+              "end": 991,
+              "text": "计划",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 992,
+              "end": 994,
+              "text": "月费",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 995,
+              "end": 1001,
+              "text": "ACU 配额",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1002,
+              "end": 1011,
+              "text": "单位 ACU 价格",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 1012,
+          "end": 1052,
+          "cells": [
+            {
+              "start": 1012,
+              "end": 1016,
+              "text": "Core",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1017,
+              "end": 1037,
+              "text": "$20/月（约 ¥144/月）+ 按用量",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1038,
+              "end": 1042,
+              "text": "按需付费",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1043,
+              "end": 1052,
+              "text": "$2.25/ACU",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 1053,
+          "end": 1095,
+          "cells": [
+            {
+              "start": 1053,
+              "end": 1057,
+              "text": "Team",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1058,
+              "end": 1075,
+              "text": "$500/月（约 ¥3600/月）",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1076,
+              "end": 1085,
+              "text": "含 250 ACU",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1086,
+              "end": 1095,
+              "text": "$2.00/ACU",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 1096,
+          "end": 1117,
+          "cells": [
+            {
+              "start": 1096,
+              "end": 1106,
+              "text": "Enterprise",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1107,
+              "end": 1111,
+              "text": "联系销售",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1112,
+              "end": 1114,
+              "text": "定制",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1115,
+              "end": 1117,
+              "text": "定制",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

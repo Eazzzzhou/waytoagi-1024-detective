@@ -1,0 +1,58 @@
+{
+  "capturedAt": "2026-10-25T04:25:05.200Z",
+  "url": "http://127.0.0.1:3104/investigations/5783aece-4e6e-4f6f-bde3-65266cab9ee4",
+  "detail": {
+    "investigation": {
+      "id": "5783aece-4e6e-4f6f-bde3-65266cab9ee4",
+      "question": "Cursor 的 Agent 模式在 3D 建模（CAD/Blender）工作流里的真实使用评价怎么样？",
+      "researchDepth": "AUTO",
+      "status": "SUCCEEDED",
+      "stage": "COMPLETED",
+      "error": null,
+      "createdAt": "2026-10-25T04:24:25.961Z",
+      "updatedAt": "2026-10-25T04:25:04.680Z",
+      "startedAt": "2026-10-25T04:24:26.854Z",
+      "completedAt": "2026-10-25T04:25:04.680Z",
+      "resultSnapshotId": "c43a77f1-d38b-4cc5-870b-7bc29f8a1aa5"
+    },
+    "identityConfirmation": null,
+    "retry": {
+      "allowed": false,
+      "reason": "仅失败的调查可以手动重试。",
+      "remaining": 2,
+      "expectedAttemptCount": 1
+    }
+  },
+  "observedStates": [
+    {
+      "status": "RUNNING",
+      "stage": "IDENTITY",
+      "observedAt": "2026-10-25T04:24:27.706Z"
+    },
+    {
+      "status": "RUNNING",
+      "stage": "RETRIEVAL",
+      "observedAt": "2026-10-25T04:24:29.749Z"
+    },
+    {
+      "status": "RUNNING",
+      "stage": "SOURCE_FETCH",
+      "observedAt": "2026-10-25T04:24:38.852Z"
+    },
+    {
+      "status": "RUNNING",
+      "stage": "VERIFICATION",
+      "observedAt": "2026-10-25T04:24:43.903Z"
+    },
+    {
+      "status": "RUNNING",
+      "stage": "ANSWER",
+      "observedAt": "2026-10-25T04:24:57.103Z"
+    },
+    {
+      "status": "SUCCEEDED",
+      "stage": "COMPLETED",
+      "observedAt": "2026-10-25T04:25:05.197Z"
+    }
+  ]
+}

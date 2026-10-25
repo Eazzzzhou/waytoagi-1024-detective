@@ -1,0 +1,1421 @@
+{
+  "schemaVersion": "source-document/v1",
+  "id": "51d3ec344ff9fa275b5c18ff79557090049bd6654dac641792bbd270846cff7b",
+  "version": "a350695e4197415b17d0b4c966d08efa3df1144738cea2277d13174c1ad5752f",
+  "requestedUrl": "https://docs.github.com/zh/copilot/concepts/billing/copilot-requests",
+  "finalUrl": "https://docs.github.com/zh/copilot/reference/copilot-billing/request-based-billing-legacy/copilot-requests",
+  "retrievedAt": "2026-10-25T04:35:31.008Z",
+  "contentType": "text/html; charset=utf-8",
+  "status": "READ",
+  "readError": null,
+  "rawHash": "89c02ad7cbd64fde04dbfbee4c2454c7211dd9a7803311c213f52cc90763145d",
+  "textHash": "38f52adaec385dcf1a39b7e14179faa4a894a32d4aa79cb5afc351d1b1b3034d",
+  "text": "Skip to main content\n\nSkip to content\n\n在本文中\n\nGitHub Copilot中的请求（旧版）\n\n了解 Copilot 中的请求，包括高级请求、它们的工作方式以及如何有效管理您的使用情况。\n\n复制 markdown\n\n在本文中\n\n重要\n\n本文仅适用于现有年度计划中在 2026 年 6 月 1 日之后仍使用旧版基于高级请求计费方式的 Copilot Pro 和 Copilot Pro+ 订阅者。\n\n什么是请求？\n\n请求是你要求 Copilot 你执行某些操作的任何交互，无论是生成代码、回答问题还是帮助你完成扩展。 每次在聊天窗口中发送提示或触发来自 Copilot的响应时，都会发出请求。 对于代理特征，只有您发送的提示会被视为高级请求；而操作 Copilot 为完成任务自动执行的操作，例如工具调用，则不计入。 例如，使用 /plan 在 Copilot CLI 中会被计作一个高级请求，您发送的任何后续提示则被视为另一个请求。\n\n什么是高级请求？\n\n某些 Copilot 功能使用更高级的处理能力，并计入高级请求。 某个功能使用的高级请求数可能有所不同，具体取决于所使用的功能和 AI 模型。\n\n高级功能\n\n以下 Copilot 功能可以使用高级请求。\n\n重要\n\n从 2026 年 6 月 1 日开始， Copilot code review 模型乘数将为 13。 这意味着每次 Copilot 审阅拉取请求或在你的 IDE 中审阅代码时，你的每月 Copilot 高级请求配额将减少 13。\n\n功能高级请求消耗量SKU 归属Copilot ChatCopilot Chat 对每个用户提示使用一次高级请求，并乘以模型的费率。 这包括 IDE 中的 Copilot Chat 请求、编辑、代理和计划模式。Copilot 付费请求Copilot CLICopilot CLI 的每个提示将使用默认模型的一个高级请求。 对于其他模型，这乘以模型的速率。Copilot 付费请求Copilot 代码评审每次 Copilot 审查拉取请求（当被分配为审阅者时）或审查 IDE 中的代码时，都会消耗 13 次高级请求。Copilot 付费请求Copilot cloud agentCopilot cloud agent 每个会话使用一个高级请求，乘以模型的费率。 当提示 Copilot 执行任务时，会开始会话。 此外，在活动会话期间发出的每条实时指导评论，每个会话使用一个高级请求，乘以模型的速率。Copilot cloud agent 付费请求Copilot SpacesCopilot Spaces 对每个用户提示使用一次高级请求，并乘以模型的费率。Copilot 付费请求OpenAI CodexVisual Studio Code 集成在预览版中，OpenAI Codex 的每个提示使用一个高级请求乘以模型乘数费率。Copilot 付费请求第三方编码代理在预览版中，每次向第三方编码智能体发送提示消耗的请求数量是 1 次高级请求乘以模型的倍率。Copilot 付费请求\n\n注意\n\n从 2025 年 11 月 1 日开始，针对Spark和Copilot cloud agent的高级请求将在专用 SKU 中进行跟踪。 这为每个 AI 产品提供更好的成本可见性和预算控制。\n\n提示\n\n有关查看已使用的高级请求数以及使用情况优化方式相关建议的说明，请参阅“监控 GitHub Copilot 的使用情况和权益（旧版）”。\n\n各计划的请求限额是如何运作的？\n\n注意\n\n高级请求的计费从 2025 年 6 月 18 日开始，所有付费的 Copilot 计划从 GitHub.com 开始，到 2025 年 8 月 1 日从 GHE.com 开始。 仅为付费计划将请求计数器重置为零。\n\n如果你使用的是付费计划，则可获得无限内联建议。 已设置速率限制以满足高需求。 请参阅“GitHub Copilot 的使用限制”。\n\n付费计划还每月提供一定额度的高级请求，可用于高级聊天交互、使用高级模型的内联建议以及其他高级功能。\n\nCopilot ProCopilot Pro+定价$10 USD 每月（对某些用户免费）$39 USD 每月付费请求每月 300 个每月 1500 个以每次请求 0.04 美元的价格购买额外的高级请求\n\n月底未使用的请求会怎样？\n\n上个月未使用的请求不会结转到下个月。 高级请求计数器在每个月的第一天 00:00:00 UTC 重置。 请参阅“监控 GitHub Copilot 的使用情况和权益（旧版）”。\n\n如果高级请求用完了怎么办？\n\n注意\n\n以下用户无法获取额外的高级请求：\n\n在 iOS 或 Android 上通过 Copilot Pro 订阅或已经订阅 Copilot Pro+ 或 GitHub Mobile 的用户。\n\n如果你用完了所有高级请求，当月剩余时间内，你仍然可以使用包含了其中一个内置模型的 Copilot。 此规定可能会有变化。 在高使用率期间，包含的模型的响应时间可能会有所不同。 对包含的模型的请求可能会受到速率限制。 请参阅“GitHub Copilot 的使用限制”。\n\n如果您需要超出每月额度的更多高级请求，请为额外的高级请求设置预算，或升级到更高等级的套餐。 请参阅“设置预算以控制按流量计费的产品的支出”。\n\n模型乘数\n\n每个模型都有一个高级请求乘数，具体取决于其复杂性和资源使用情况。 根据此乘数扣除保费请求津贴。\n\n请参阅“按请求计费的年度套餐模型乘数（旧版）”。",
+  "rawSources": [
+    {
+      "mode": "STATIC",
+      "hash": "89c02ad7cbd64fde04dbfbee4c2454c7211dd9a7803311c213f52cc90763145d",
+      "path": "C:\\Users\\qianchen\\Documents\\waytoagi-1024-detective-a2-v4\\.cache\\source-documents-v4\\737f002b-e06e-4d0e-b1af-652db0899914\\51d3ec344ff9fa275b5c18ff79557090049bd6654dac641792bbd270846cff7b\\raw.bin"
+    }
+  ],
+  "storage": {
+    "rawPath": "C:\\Users\\qianchen\\Documents\\waytoagi-1024-detective-a2-v4\\.cache\\source-documents-v4\\737f002b-e06e-4d0e-b1af-652db0899914\\51d3ec344ff9fa275b5c18ff79557090049bd6654dac641792bbd270846cff7b\\raw.bin",
+    "textPath": "C:\\Users\\qianchen\\Documents\\waytoagi-1024-detective-a2-v4\\.cache\\source-documents-v4\\737f002b-e06e-4d0e-b1af-652db0899914\\51d3ec344ff9fa275b5c18ff79557090049bd6654dac641792bbd270846cff7b\\source.txt",
+    "manifestPath": "C:\\Users\\qianchen\\Documents\\waytoagi-1024-detective-a2-v4\\.cache\\source-documents-v4\\737f002b-e06e-4d0e-b1af-652db0899914\\51d3ec344ff9fa275b5c18ff79557090049bd6654dac641792bbd270846cff7b\\manifest.json"
+  },
+  "parser": {
+    "name": "readability+source-dom",
+    "version": "readability-0.6.0+jsdom-30.1.3+source-dom-2",
+    "normalization": "source-text/v1",
+    "mode": "STATIC"
+  },
+  "metadata": {
+    "title": "GitHub Copilot中的请求（旧版） - GitHub 文档",
+    "author": null,
+    "publishedAt": null,
+    "language": "zh"
+  },
+  "completeness": "COMPLETE",
+  "warnings": [],
+  "blocks": [
+    {
+      "start": 0,
+      "end": 20,
+      "id": "b0",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[0]",
+      "headingPath": [],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 22,
+      "end": 37,
+      "id": "b1",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[1]",
+      "headingPath": [],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 39,
+      "end": 43,
+      "id": "b2",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[2]",
+      "headingPath": [],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 45,
+      "end": 67,
+      "id": "b3",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[3]",
+      "headingPath": [
+        "GitHub Copilot中的请求（旧版）"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 69,
+      "end": 114,
+      "id": "b4",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[4]",
+      "headingPath": [
+        "GitHub Copilot中的请求（旧版）"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 116,
+      "end": 127,
+      "id": "b5",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[5]",
+      "headingPath": [
+        "GitHub Copilot中的请求（旧版）"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 129,
+      "end": 133,
+      "id": "b6",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[6]",
+      "headingPath": [
+        "GitHub Copilot中的请求（旧版）",
+        "在本文中"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 135,
+      "end": 137,
+      "id": "b7",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[7]",
+      "headingPath": [
+        "GitHub Copilot中的请求（旧版）",
+        "在本文中"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 139,
+      "end": 218,
+      "id": "b8",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[8]",
+      "headingPath": [
+        "GitHub Copilot中的请求（旧版）",
+        "在本文中"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 220,
+      "end": 226,
+      "id": "b9",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[9]",
+      "headingPath": [
+        "GitHub Copilot中的请求（旧版）",
+        "什么是请求？"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 228,
+      "end": 437,
+      "id": "b10",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[10]",
+      "headingPath": [
+        "GitHub Copilot中的请求（旧版）",
+        "什么是请求？"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 439,
+      "end": 447,
+      "id": "b11",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[11]",
+      "headingPath": [
+        "GitHub Copilot中的请求（旧版）",
+        "什么是高级请求？"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 449,
+      "end": 520,
+      "id": "b12",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[12]",
+      "headingPath": [
+        "GitHub Copilot中的请求（旧版）",
+        "什么是高级请求？"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 522,
+      "end": 526,
+      "id": "b13",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[13]",
+      "headingPath": [
+        "GitHub Copilot中的请求（旧版）",
+        "什么是高级请求？",
+        "高级功能"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 528,
+      "end": 550,
+      "id": "b14",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[14]",
+      "headingPath": [
+        "GitHub Copilot中的请求（旧版）",
+        "什么是高级请求？",
+        "高级功能"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 552,
+      "end": 554,
+      "id": "b15",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[15]",
+      "headingPath": [
+        "GitHub Copilot中的请求（旧版）",
+        "什么是高级请求？",
+        "高级功能"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 556,
+      "end": 670,
+      "id": "b16",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[16]",
+      "headingPath": [
+        "GitHub Copilot中的请求（旧版）",
+        "什么是高级请求？",
+        "高级功能"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 672,
+      "end": 1309,
+      "id": "b17",
+      "kind": "TABLE",
+      "locator": "source DOM normalized block[17]",
+      "headingPath": [
+        "GitHub Copilot中的请求（旧版）",
+        "什么是高级请求？",
+        "高级功能"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1311,
+      "end": 1313,
+      "id": "b18",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[18]",
+      "headingPath": [
+        "GitHub Copilot中的请求（旧版）",
+        "什么是高级请求？",
+        "高级功能"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1315,
+      "end": 1409,
+      "id": "b19",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[19]",
+      "headingPath": [
+        "GitHub Copilot中的请求（旧版）",
+        "什么是高级请求？",
+        "高级功能"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1411,
+      "end": 1413,
+      "id": "b20",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[20]",
+      "headingPath": [
+        "GitHub Copilot中的请求（旧版）",
+        "什么是高级请求？",
+        "高级功能"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1415,
+      "end": 1482,
+      "id": "b21",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[21]",
+      "headingPath": [
+        "GitHub Copilot中的请求（旧版）",
+        "什么是高级请求？",
+        "高级功能"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1484,
+      "end": 1499,
+      "id": "b22",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[22]",
+      "headingPath": [
+        "GitHub Copilot中的请求（旧版）",
+        "各计划的请求限额是如何运作的？"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1501,
+      "end": 1503,
+      "id": "b23",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[23]",
+      "headingPath": [
+        "GitHub Copilot中的请求（旧版）",
+        "各计划的请求限额是如何运作的？"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1505,
+      "end": 1611,
+      "id": "b24",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[24]",
+      "headingPath": [
+        "GitHub Copilot中的请求（旧版）",
+        "各计划的请求限额是如何运作的？"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1613,
+      "end": 1678,
+      "id": "b25",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[25]",
+      "headingPath": [
+        "GitHub Copilot中的请求（旧版）",
+        "各计划的请求限额是如何运作的？"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1680,
+      "end": 1729,
+      "id": "b26",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[26]",
+      "headingPath": [
+        "GitHub Copilot中的请求（旧版）",
+        "各计划的请求限额是如何运作的？"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1731,
+      "end": 1831,
+      "id": "b27",
+      "kind": "TABLE",
+      "locator": "source DOM normalized block[27]",
+      "headingPath": [
+        "GitHub Copilot中的请求（旧版）",
+        "各计划的请求限额是如何运作的？"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1833,
+      "end": 1845,
+      "id": "b28",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[28]",
+      "headingPath": [
+        "GitHub Copilot中的请求（旧版）",
+        "月底未使用的请求会怎样？"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1847,
+      "end": 1935,
+      "id": "b29",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[29]",
+      "headingPath": [
+        "GitHub Copilot中的请求（旧版）",
+        "月底未使用的请求会怎样？"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1937,
+      "end": 1950,
+      "id": "b30",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[30]",
+      "headingPath": [
+        "GitHub Copilot中的请求（旧版）",
+        "如果高级请求用完了怎么办？"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1952,
+      "end": 1954,
+      "id": "b31",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[31]",
+      "headingPath": [
+        "GitHub Copilot中的请求（旧版）",
+        "如果高级请求用完了怎么办？"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1956,
+      "end": 1972,
+      "id": "b32",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[32]",
+      "headingPath": [
+        "GitHub Copilot中的请求（旧版）",
+        "如果高级请求用完了怎么办？"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1974,
+      "end": 2047,
+      "id": "b33",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[33]",
+      "headingPath": [
+        "GitHub Copilot中的请求（旧版）",
+        "如果高级请求用完了怎么办？"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2049,
+      "end": 2183,
+      "id": "b34",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[34]",
+      "headingPath": [
+        "GitHub Copilot中的请求（旧版）",
+        "如果高级请求用完了怎么办？"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2185,
+      "end": 2255,
+      "id": "b35",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[35]",
+      "headingPath": [
+        "GitHub Copilot中的请求（旧版）",
+        "如果高级请求用完了怎么办？"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2257,
+      "end": 2261,
+      "id": "b36",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[36]",
+      "headingPath": [
+        "GitHub Copilot中的请求（旧版）",
+        "模型乘数"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2263,
+      "end": 2310,
+      "id": "b37",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[37]",
+      "headingPath": [
+        "GitHub Copilot中的请求（旧版）",
+        "模型乘数"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2312,
+      "end": 2336,
+      "id": "b38",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[38]",
+      "headingPath": [
+        "GitHub Copilot中的请求（旧版）",
+        "模型乘数"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    }
+  ],
+  "links": [
+    {
+      "url": "https://docs.github.com/zh/copilot/how-tos/copilot-in-your-ide/chat-with-copilot",
+      "text": "Copilot Chat",
+      "blockId": "b17",
+      "relation": "LINK",
+      "locator": "source DOM link[471]"
+    },
+    {
+      "url": "https://docs.github.com/zh/copilot/concepts/copilot-surfaces/copilot-cli",
+      "text": "Copilot CLI",
+      "blockId": "b17",
+      "relation": "LINK",
+      "locator": "source DOM link[472]"
+    },
+    {
+      "url": "https://docs.github.com/zh/copilot/how-tos/use-copilot-agents/request-a-code-review/use-code-review",
+      "text": "Copilot 代码评审",
+      "blockId": "b17",
+      "relation": "LINK",
+      "locator": "source DOM link[473]"
+    },
+    {
+      "url": "https://docs.github.com/zh/copilot/concepts/copilot-surfaces/copilot-on-github",
+      "text": "Copilot cloud agent",
+      "blockId": "b17",
+      "relation": "LINK",
+      "locator": "source DOM link[474]"
+    },
+    {
+      "url": "https://docs.github.com/zh/copilot/concepts/prompting-and-context/spaces",
+      "text": "Copilot Spaces",
+      "blockId": "b17",
+      "relation": "LINK",
+      "locator": "source DOM link[475]"
+    },
+    {
+      "url": "https://docs.github.com/zh/copilot/concepts/agent-capabilities/about-agents/about-third-party-coding-agents",
+      "text": "OpenAI CodexVisual Studio Code 集成",
+      "blockId": "b17",
+      "relation": "LINK",
+      "locator": "source DOM link[476]"
+    },
+    {
+      "url": "https://docs.github.com/zh/copilot/reference/copilot-billing/request-based-billing-legacy/monitor-premium-requests",
+      "text": "监控 GitHub Copilot 的使用情况和权益（旧版）",
+      "blockId": "b21",
+      "relation": "LINK",
+      "locator": "source DOM link[478]"
+    },
+    {
+      "url": "https://docs.github.com/zh/copilot/concepts/billing-and-usage/individuals/usage-limits",
+      "text": "GitHub Copilot 的使用限制",
+      "blockId": "b25",
+      "relation": "LINK",
+      "locator": "source DOM link[480]"
+    },
+    {
+      "url": "https://docs.github.com/zh/copilot/reference/copilot-billing/request-based-billing-legacy/monitor-premium-requests",
+      "text": "监控 GitHub Copilot 的使用情况和权益（旧版）",
+      "blockId": "b29",
+      "relation": "LINK",
+      "locator": "source DOM link[482]"
+    },
+    {
+      "url": "https://docs.github.com/zh/copilot/concepts/billing-and-usage/individuals/usage-limits",
+      "text": "GitHub Copilot 的使用限制",
+      "blockId": "b34",
+      "relation": "LINK",
+      "locator": "source DOM link[484]"
+    },
+    {
+      "url": "https://docs.github.com/zh/billing/how-tos/set-up-budgets",
+      "text": "设置预算以控制按流量计费的产品的支出",
+      "blockId": "b35",
+      "relation": "LINK",
+      "locator": "source DOM link[485]"
+    },
+    {
+      "url": "https://docs.github.com/zh/copilot/reference/copilot-billing/request-based-billing-legacy/model-multipliers-for-annual-plans",
+      "text": "按请求计费的年度套餐模型乘数（旧版）",
+      "blockId": "b38",
+      "relation": "LINK",
+      "locator": "source DOM link[487]"
+    }
+  ],
+  "tables": [
+    {
+      "blockId": "b17",
+      "rows": [
+        {
+          "start": 672,
+          "end": 687,
+          "cells": [
+            {
+              "start": 672,
+              "end": 674,
+              "text": "功能",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 674,
+              "end": 681,
+              "text": "高级请求消耗量",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 681,
+              "end": 687,
+              "text": "SKU 归属",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 687,
+          "end": 699,
+          "cells": [
+            {
+              "start": 687,
+              "end": 699,
+              "text": "Copilot Chat",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 699,
+              "end": 699,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 699,
+              "end": 699,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 699,
+          "end": 776,
+          "cells": [
+            {
+              "start": 699,
+              "end": 776,
+              "text": "Copilot Chat 对每个用户提示使用一次高级请求，并乘以模型的费率。 这包括 IDE 中的 Copilot Chat 请求、编辑、代理和计划模式。",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 776,
+              "end": 776,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 776,
+              "end": 776,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 776,
+          "end": 788,
+          "cells": [
+            {
+              "start": 776,
+              "end": 788,
+              "text": "Copilot 付费请求",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 788,
+              "end": 788,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 788,
+              "end": 788,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 788,
+          "end": 799,
+          "cells": [
+            {
+              "start": 788,
+              "end": 799,
+              "text": "Copilot CLI",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 799,
+              "end": 799,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 799,
+              "end": 799,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 799,
+          "end": 848,
+          "cells": [
+            {
+              "start": 799,
+              "end": 848,
+              "text": "Copilot CLI 的每个提示将使用默认模型的一个高级请求。 对于其他模型，这乘以模型的速率。",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 848,
+              "end": 848,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 848,
+              "end": 848,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 848,
+          "end": 860,
+          "cells": [
+            {
+              "start": 848,
+              "end": 860,
+              "text": "Copilot 付费请求",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 860,
+              "end": 860,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 860,
+              "end": 860,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 860,
+          "end": 940,
+          "cells": [
+            {
+              "start": 860,
+              "end": 872,
+              "text": "Copilot 代码评审",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 872,
+              "end": 928,
+              "text": "每次 Copilot 审查拉取请求（当被分配为审阅者时）或审查 IDE 中的代码时，都会消耗 13 次高级请求。",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 928,
+              "end": 940,
+              "text": "Copilot 付费请求",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 940,
+          "end": 959,
+          "cells": [
+            {
+              "start": 940,
+              "end": 959,
+              "text": "Copilot cloud agent",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 959,
+              "end": 959,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 959,
+              "end": 959,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 959,
+          "end": 1069,
+          "cells": [
+            {
+              "start": 959,
+              "end": 1069,
+              "text": "Copilot cloud agent 每个会话使用一个高级请求，乘以模型的费率。 当提示 Copilot 执行任务时，会开始会话。 此外，在活动会话期间发出的每条实时指导评论，每个会话使用一个高级请求，乘以模型的速率。",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1069,
+              "end": 1069,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1069,
+              "end": 1069,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 1069,
+          "end": 1093,
+          "cells": [
+            {
+              "start": 1069,
+              "end": 1093,
+              "text": "Copilot cloud agent 付费请求",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1093,
+              "end": 1093,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1093,
+              "end": 1093,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 1093,
+          "end": 1107,
+          "cells": [
+            {
+              "start": 1093,
+              "end": 1107,
+              "text": "Copilot Spaces",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1107,
+              "end": 1107,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1107,
+              "end": 1107,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 1107,
+          "end": 1147,
+          "cells": [
+            {
+              "start": 1107,
+              "end": 1147,
+              "text": "Copilot Spaces 对每个用户提示使用一次高级请求，并乘以模型的费率。",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1147,
+              "end": 1147,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1147,
+              "end": 1147,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 1147,
+          "end": 1159,
+          "cells": [
+            {
+              "start": 1147,
+              "end": 1159,
+              "text": "Copilot 付费请求",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1159,
+              "end": 1159,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1159,
+              "end": 1159,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 1159,
+          "end": 1245,
+          "cells": [
+            {
+              "start": 1159,
+              "end": 1192,
+              "text": "OpenAI CodexVisual Studio Code 集成",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1192,
+              "end": 1233,
+              "text": "在预览版中，OpenAI Codex 的每个提示使用一个高级请求乘以模型乘数费率。",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1233,
+              "end": 1245,
+              "text": "Copilot 付费请求",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 1245,
+          "end": 1309,
+          "cells": [
+            {
+              "start": 1245,
+              "end": 1252,
+              "text": "第三方编码代理",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1252,
+              "end": 1297,
+              "text": "在预览版中，每次向第三方编码智能体发送提示消耗的请求数量是 1 次高级请求乘以模型的倍率。",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1297,
+              "end": 1309,
+              "text": "Copilot 付费请求",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "blockId": "b27",
+      "rows": [
+        {
+          "start": 1731,
+          "end": 1754,
+          "cells": [
+            {
+              "start": 1731,
+              "end": 1731,
+              "text": "",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1731,
+              "end": 1742,
+              "text": "Copilot Pro",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1742,
+              "end": 1754,
+              "text": "Copilot Pro+",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 1754,
+          "end": 1756,
+          "cells": [
+            {
+              "start": 1754,
+              "end": 1756,
+              "text": "定价",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1756,
+              "end": 1756,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1756,
+              "end": 1756,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 1756,
+          "end": 1775,
+          "cells": [
+            {
+              "start": 1756,
+              "end": 1775,
+              "text": "$10 USD 每月（对某些用户免费）",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1775,
+              "end": 1775,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1775,
+              "end": 1775,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 1775,
+          "end": 1785,
+          "cells": [
+            {
+              "start": 1775,
+              "end": 1785,
+              "text": "$39 USD 每月",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1785,
+              "end": 1785,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1785,
+              "end": 1785,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 1785,
+          "end": 1806,
+          "cells": [
+            {
+              "start": 1785,
+              "end": 1789,
+              "text": "付费请求",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1789,
+              "end": 1797,
+              "text": "每月 300 个",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1797,
+              "end": 1806,
+              "text": "每月 1500 个",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 1806,
+          "end": 1831,
+          "cells": [
+            {
+              "start": 1806,
+              "end": 1831,
+              "text": "以每次请求 0.04 美元的价格购买额外的高级请求",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1831,
+              "end": 1831,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1831,
+              "end": 1831,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

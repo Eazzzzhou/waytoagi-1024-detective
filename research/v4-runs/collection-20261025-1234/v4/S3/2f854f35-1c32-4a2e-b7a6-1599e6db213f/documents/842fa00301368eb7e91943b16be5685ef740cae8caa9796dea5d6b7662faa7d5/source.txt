@@ -1,0 +1,125 @@
+This is really cool and a much needed contribution to helping LLMs run better on large code bases.
+
+Thanks! Would love to see this algorithm in LlamaIndex.
+
+Also thank you! I had an idea of how this all worked but this definitely concreted my thoughts.
+
+I'm glad to hear! Let me know if you need more questions or are interested in implementing this chunking algo.
+
+oh really ? Thats awfully kind. I'll take that in for EdgeChains as well.https://github.com/arakoodev/EdgeChains/issues/172
+
+Feel free to use the algo! Happy to help and reach out if you need help with implementation!
+
+For others in this thread, this algo is now publicly accessible in LlamaIndex at https://github.com/jerryjliu/llama_index/blob/e567e6a20cf89b...
+
+Next step is to train models directly on syntax trees. Higher probability of correct output.
+
+That's interesting, I've seen a few papers about this. I'm personally curious about editing syntax trees using language models, since it would prevent syntax errors altogether.
+
+Which papers?
+
+Here's some of the papers: https://arxiv.org/abs/1911.09983 and https://aclanthology.org/2021.findings-acl.384.pdf
+
+In my limited use, I've never seen these models (chatgpt, and github copilot) generate invalid syntax. I don't see much to improve thereI do see them generate code that fails the type checker though.
+
+For editing code there's a decent chance of syntax errors or undefined variables since it's only modifying a subset of the code.
+
+John McCarthy was right
+
+This is interesting. I'm taking a read on this.
+
+I'd guess these model's understand works more closely to people so encoding in text is more token efficient and things like comments help.Also syntax seems a lot easier to understand for them than semantics/logic. If you've used GPT-4 it almost never makes syntax errors. Logical errors on the other hand...
+
+From my experience, GPT-4 never makes syntax errors directly but when making edits to existing code it's harder to prevent these syntax errors from appearing. We used to add a second pass to check for these syntax errors.It also frequently makes undefined variables and the like, however.
+
+Did you get rid of the second pass? I'm working on something quite similar and find a pass that inspects and rejects erroneous code to be a big boost to correctness.
+
+We got rid of it. Our new edit framework works around search-and-replace pairs with an example at https://github.com/sweepai/sweep/blob/d37dda3a626f09dea3b322...
+
+I’ve built out an end to end automated fix pipeline, it’s getting the bug fixes right, but been having trouble with line number errors.Looking forward to reading through your docs and repo later tonight to see how you’re addressing issues like this.
+
+We used to use line numbers but it became problematic so we switched over to search-and-replace pairs, which works significantly better. The only potential problems are with setting up a fuzzy search system since sometimes the search doesn't match exactly with the code (missing comments, etc.). We're going to write about our core algo and diff managing system soon.
+
+Ah, interesting. I completely abandoned diff style updates in favour of AST substitution, but that was only possible because my tradeoffs are different to yours.I'm building a bot that's building itself, so it doesn't have to support large legacy code bases with different languages.
+
+This is interesting, I'm wondering what you mean by AST substitution. Is this like an agent that traverses the tree and picks what to edit? Is this language model based? Also, thankfully we don't support too many uncommon languages. The most recent ones we added support for are embedded templates (ERB/EJS for flask and Ruby) and mustache. Fortunately many uncommon languages are subsets of other languages.
+
+The agent specifies what function, class, method etc to replace, along with its full source. It's more costly, but I believe it leads to fewer hallucinations as it is generating a coherent piece of code.But it requires parsing AST and language specific instructions. And things like metaprogramming or macros could cause some hairy confusion.All of these factors don't hurt my use case.
+
+We have a similar method under the hood, except it's purely text-based search-and-replace. The model decides what to replace. It seems to be consistent and is easy to implement.
+
+My gut feeling based on my experience over the last couple of months is that substitution of an entire function is more reliable than some lines of a function. The surrounding context reduces the chance of hallucinations.Gut feeling doesn't account for much though - I'm working on an evals system to be able to quantify system performance. It won't be cheap to run.It could easily be that your method is superior.
+
+From our experience, single or few line replacements generally fine, since many of the changes are many few-line changes in multiple spots accross multiple files. We also provide surrounding context for the search-and-replace pairs, which helps with the model. Beyond 10 lines and the model also usually add the function headers in there which helps with the code generation.I'm also curious, how are you guys evaluating the performance of your models?
+
+There's no systematic evaluation yet which is the next step. It's successfully bootstrapping itself which is a fairly high bar, but quantitative performance measurements are getting more and more important as the project progresses.
+
+I feel the same, benchmarking in general is a pain but a good benchmark for us could go a long way.
+
+That edit format looks familiar!https://github.com/paul-gauthier/aider/blob/d5a7aac560d4584d...https://aider.chat/docs/benchmarks.html
+
+Yup it's based on the aider blogs. They're perfect for our use case and are very reliable compared to our old attempts.
+
+Programming languages are artificial languages. LLM are able to synthesize human languages with almost perfect grammatical quality, they are in fact, very unlikely to make obvious syntactic errors on programming languages.Also, syntax level information are local or short sighted, it is called context-free grammar for a reason. My own observation with playing with those coding LLMs all day, is that they most likely had acquired the grammar themselves implicitly. Providing explicit regularization by enforcing grammar, is going to provide at best modest benefits, and that is dependent on good that parser is written, in many cases, it is not a given.
+
+Ya I think forcing correct syntax at the generation level likely will not be extremely beneficial. At Sweep, we iterate the language models on linters and type-checkers using GitHub Actions and it yields better results.
+
+Indeed, it's intuitively more efficient for LLMs to operate on ASTs instead of raw source code. I came across a recent paper[1] that takes this approach.[1]: https://arxiv.org/abs/2305.00909
+
+This is interesting, I'll take a look. My main concern with running this in production is that there is more text data in the world than code. Further, a pure tree-manipulation model has less explainabilities since you can always ask GPT-4 what it's thinking.
+
+IIUC, doc-strings and comments in code will still be processed as text.
+
+Also git diffs and execution traces.
+
+Congrats! Your project is off to a very good start as shown at https://devboard.gitsense.com/sweepaiWhat is interesting to me is the sharp increase in forks, which is a good indicator that others will contribute code in the near future.Full Disclosure: This is my tool
+
+Hey thanks for showing this dashboard. There's some crazy analytics in here, the tool looks awesome!
+
+Thanks. For privacy reasons, I'm not showing a lot, but in the future when auth is in place, I can show deeper insights for repo members.
+
+That would be awesome. Let me know when it's out and I'd love to try it out.
+
+Sure. Update your profile for a way to reach out or send me an email (in my profile).
+
+Shot an email. Thanks!
+
+I just wanted to say the site looks a little odd on mobileEdit: I guess it is just the app I am using, it looks fine on my mobile browser but odd in the app
+
+Which app? We did notice a few visual errors a while back.
+
+Would see great improvments in retrieval accuracy by finetuning e5-base-v2 or the newer leaders on mteb benchmark.
+
+Definitely. I prefer the sentence-transformers ones since they have been fine-tuned on codesearchnet. I'm also really excited about the latest gte models by Alibaba, their smallest model is the size of MiniLM L6 but beats MPNet.
+
+Awesome first step. Next is to figure out how to apply syntax trees for diffs and then train the LLM on code and diffs but all in syntax trees somehow.
+
+Yup, saw a few papers about this over the past two years, using graph neural networks for code generation. There's also another thread below on this topic.Edit: Here's some of the papers: https://arxiv.org/abs/1911.09983 and https://aclanthology.org/2021.findings-acl.384.pdf
+
+Very interesting! Thank you.I’ll try to explain something I’m thinking, it comes down to a type of agglutination.https://en.wikipedia.org/wiki/AgglutinationThe ASTs need to become sequences of tokens for LLMs to work well. Also the embedding space is related, this should all be specifically optimized for code, not based on general human language .Of course the description of the code would be english. But my point is that a subspace of the encoding should be specifically designed for an agglutination based sequential expression of ASTs.Not sure any of that makes sense to someone with more expertise in this space than me.
+
+This is really interesting, will take a look. So is this basically English to code translation?
+
+Yeah what I’m thinking about is that and how an LLM could use ASTs expressed in some type of compact encoding and with that code tied to english descriptions, perhaps it will learn really well the semantic cross space.
+
+Like stochastically generate into an intermediate representation that can be procedurally compiled to code right?
+
+Yes
+
+Tangent, are there any other similar alternatives to sweep that is not restricted to github but can be installed in other places like gitlab, bitbucket or even self hosted.
+
+Not a great answer but we are open-source so forking us is an option.
+
+Yes I had that thought, but your license looked custom so was not sure if that was allowed.
+
+Update: this algo is now publicly accessible in LlamaIndex at https://github.com/jerryjliu/llama_index/blob/e567e6a20cf89b...
+
+curious why it is under "langchain_helpers"... I assume there is nothing specific to langchain here?
+
+Currently all of LlamaIndex's text splitters were/are Langchain compatible.
+
+OT: I'm not clear on whether or not Sweep is fully open source - I mean, can you run it fully self-hosted (apart from the GPT4 engine obv), or is the repo essentially a client to a Sweep API/binary?Cool project btw!
+
+Thanks! The repo is just the backend that runs the GitHub webhooks. We used to have a "chat with your code" client but stopped supporting it. Now it's only the GitHub interface with creating tickets and comments.
+
+Thanks for the clarification.

@@ -1,0 +1,147 @@
+Skip to main content
+
+Skip to content
+
+在本文中
+
+个人基于使用情况的计费
+
+你的 Copilot 计划包含 GitHub AI Credits 的月度配额。 如果你用尽了 AI credits，则可以支付额外的费用来继续工作。
+
+复制 markdown
+
+在本文中
+
+Copilot 使用量以 AI credits 为单位。 所有 Copilot 计划均包含 AI credits 的月度配额。 如果用尽计划中包含的所有信用额度，可以购买更多额度并继续工作。
+
+什么是 GitHub AI Credits？
+
+使用 Copilot时，交互使用令牌：输入令牌（发送到模型的内容）、输出令牌（模型生成的内容）和缓存令牌（模型重用或存储上下文）。 每个令牌都基于所使用的模型定价。
+
+因此，交互的成本取决于以下两项：
+
+使用的模型
+
+使用的令牌数
+
+此总计转换为 AI credits （1AI credit = $0.01 USD）。
+
+例如：
+
+在 Copilot Chat 中使用轻量级模型进行一次快速查询，可能仅消耗 AI credit 的一小部分。
+
+使用跨多个文件的边界模型进行长时间 Copilot cloud agent 会话将花费更多 AI credits，因为它需要做更多的工作。
+
+Copilot若要查看支持的模型及其定价，请参阅 GitHub Copilot 的模型和定价。
+
+AI credits 如何工作？
+
+所有个人计划（Copilot Free、Copilot Pro和Copilot Pro+Copilot Max）包括按计划变化的GitHub AI Credits每月津贴。
+
+每个付费计划包括以下内容：
+
+基本额度：每个月都包含在计划订阅中。 这些匹配你的订阅价格，并且它们永远不会更改。
+
+弹性额度：这是在您的基础额度之外每月额外提供的额度。 弹性分配是你所包含使用量的可变部分；它旨在随着 AI 经济的发展而适应，包括模型定价、新模型和效率的提高。
+
+首先使用基本信用额度。 如果您超出了基础额度，弹性额度将自动按相同费率应用于您的 IDE、GitHub.com 和 Copilot CLI。 无需再执行任何设置。 使用情况仪表板显示可用的津贴和已使用的内容。
+
+包含的 AI credits 不会结转到下个月。 未使用的额度将被没收，你的津贴将在每个日历月的第一天重置为 00：00：00 UTC 的完整月金额。 此重置日期是固定的，不会根据订阅计费日期更改。 请参阅“计费周期”。
+
+按计划划分的 GitHub AI Credits 配额
+
+下表显示了每个付费计划中包含的内容。
+
+计划每月价格基础积分Flex 分配每月总数 AI creditsCopilot Pro$10 USD1,0005001,500Copilot Pro+$39 USD3,9003,1007,000Copilot Max$100 USD10,00010,00020,000
+
+Copilot Free和Copilot Student的额度均为AI credits，且只能通过auto model selection访问模型。 Copilot Free 包括每月 2000 次代码补全，Copilot Student 包括无限次代码补全。
+
+如果使用计划中包含的所有内容，可以购买更多内容并继续工作。 请参阅如果超过了包含的 AI credits，会发生什么情况？。
+
+在AI credits中如何计费？
+
+Copilot 使用 AI 模型的功能会消耗 AI credits，例如：
+
+Copilot Chat
+
+Copilot CLI
+
+Copilot cloud agent
+
+Copilot Spaces
+
+Spark
+
+第三方编码代理
+
+代码补全和 next edit suggestions 功能不计入 AI credits 费用，且所有付费套餐均不限次数。
+
+哪些影响我的使用情况？
+
+更复杂的交互消耗更多的使用津贴。 主要因素包括：
+
+会话长度和复杂性：更长的对话和更复杂的任务涉及与模型的更多来回，消耗更多。
+
+代理功能：代理模式等功能，可以在 Copilot cloud agent 单个任务中涉及多个模型调用。 跨大型代码库的复杂会话将比在聊天中提出的简单问题消耗更多资源。
+
+模型选择：不同的模型具有不同的每个令牌的成本。 设计用于更复杂推理的高能模型比为快速任务而设计的轻量模型成本更高。 切换到成本较低的模型是扩展使用津贴的一种方法。
+
+注意
+
+如果你使用的是付费Copilot计划，则在Copilot CLI、GitHub Copilot app、Copilot cloud agent或auto model selection中使用Copilot Chat时，便有资格享受模型成本 10% 的折扣。
+
+如果使用的是 Copilot Max 计划，则在使用 auto model selection 期间，截至 2026 年 10 月 28 日可享受 30% 折扣。
+
+有关如何优化使用情况和减少支出的指导，包括如何为代理任务设置会话限制上限，请参阅 优化 AI 使用情况以最大限度地提高效率和降低成本。
+
+如果超过了包含的 AI credits，会发生什么情况？
+
+注意
+
+本部分适用于使用 Copilot Individual 方案的用户。 如果你通过 Copilot Enterprise 或 Copilot 套餐使用 Copilot Business，并用完了所有的 AI credits，你会在 GitHub.com 上看到一条横幅，提示你可以向管理员申请更多预算。
+
+AI credits 耗尽后，你可以：
+
+升级计划。 接近使用限制时， Copilot 会提示你升级到下一层。 升级成本只是当前计划和新计划之间的价格差异， 而不是 新计划的全价。 计费周期前面的使用情况计入新计划的较大限额内，因此可以立即获得额外的额度。 同一时段内，你不会因这两个计划而被重复收费。
+
+请继续使用现有计划，并支付更多使用量费用。 如果已包含的额度已用尽，您可以通过为 额外用量 设置预算来继续使用。 请注意，额外用量可能设有上限，因此若要继续使用，您需要先付清已产生的任何额外用量费用。
+
+或者，等到下一个月度周期，届时套餐内用量将重置。
+
+额外的使用预算以美元为单位设置，你的使用情况会在 GitHub AI Credits 内显示。 GitHub AI Credits 以固定比率制定预算：1 AI credits = $0.01 USD，因此，10 美元的预算涵盖 1,000 AI credits。
+
+若要为 GitHub AI Credits 设置预算，请参阅 设置预算以控制按流量计费的产品的支出。
+
+关于对 Copilot 计划的更改
+
+如果你当前有有效的Copilot Pro、Copilot Pro+或Copilot Max计划，随后又被分配到Copilot Business或Copilot Enterprise计划中的一个席位，你的个人Copilot计划将被自动取消。 你将收到个人计划当前计费周期剩余部分的按比例退款。 然后，可以根据公司设置的策略继续使用 Copilot 。
+
+您可以随时取消您的 Copilot 计划。 取消将在当前计费周期结束时生效。 请参阅“查看和更改GitHub Copilot 计划”。
+
+确定计费日期
+
+你的计费日期将取决于你是否已正在被 GitHub 计费。
+
+如果你尚未被 GitHub 计费，则大多数情况下，你的计费周期将从你注册 Copilot 当天开始。 例如，如果在 9 月 3 日注册并按月计费，则初始计费周期为 9 月 3 日至（包括）10 月 2 日，然后在后续月份的相同日期生效。
+
+如果您已有计费周期， Copilot 的费用将包含在您的下一个账单中。 您将按比例支付初始期间的费用。
+
+更新 IDE、客户端和扩展
+
+为了获得最佳基于使用情况的计费体验，请将 IDE、客户端和 Copilot 扩展更新到下面列出的至少版本。
+
+注意
+
+旧版本将继续工作，但可能会显示不正确的模型定价、不准确的使用情况信息或过时的计费术语。 使用情况警报通知也可能不按预期显示。
+
+IDE、客户端或扩展最低版本VS Code1.120Visual Studio 2022 （17.x）17.14.33Visual Studio 2026 （18.x）18.6.0SQL Server Management Studio22.6JetBrains IDE （插件）1.9.1Eclipse （插件）0.18.0Xcode （扩展）0.50.0Copilot CLI1.0.48
+
+建议将 IDE、客户端和 Copilot 扩展保留在最新的可用稳定版本上。 有关配置自动更新的信息，请参阅 在环境中配置 GitHub Copilot。 若要更新 Copilot CLI，请参阅 安装 GitHub Copilot CLI。
+
+延伸阅读
+
+GitHub Copilot计划
+
+管理GitHub Copilot帐户
+
+管理付款和账单信息

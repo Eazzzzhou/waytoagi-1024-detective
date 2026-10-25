@@ -1,0 +1,37 @@
+{
+  "investigationId": "a5039f17-002b-4a84-8f24-02c9fa6b2c03",
+  "snapshotId": "263d00e1-c5d6-4df2-b7a7-2f62fd256854",
+  "status": "SUCCEEDED",
+  "url": "http://127.0.0.1:3104/investigations/a5039f17-002b-4a84-8f24-02c9fa6b2c03",
+  "citations": 0,
+  "exactQuoteChecks": "PASSED",
+  "excerptHashChecks": "PASSED",
+  "semanticChecks": [],
+  "documentReferenceChecks": 0,
+  "documentIntegrityChecks": "PASSED",
+  "review": {
+    "status": "NOT_CONFIGURED",
+    "reason": "本轮未完成第二模型独立原文复核；不同搜索入口不等于独立模型。",
+    "independentAssessment": null,
+    "findings": []
+  },
+  "retrieval": [],
+  "modelCalls": [
+    {
+      "provider": "api.deepseek.com",
+      "model": "deepseek-flash",
+      "promptVersion": "a2-evidence-v4",
+      "temperature": null,
+      "thinkingMode": "DISABLED",
+      "generatedAt": "2026-10-25T04:26:51.130Z",
+      "id": "ee90bd60-a80d-4d3b-addb-f11c5006e383",
+      "purpose": "v4-research-plan",
+      "startedAt": "2026-10-25T04:26:50.610Z",
+      "durationMs": 520,
+      "outcome": "SUCCEEDED",
+      "inputTokens": 626,
+      "outputTokens": 25
+    }
+  ],
+  "directory": "C:\\Users\\qianchen\\Documents\\waytoagi-1024-detective-a2-v4\\research\\v4-runs\\comparison-20261025-1209\\v4\\S8\\a5039f17-002b-4a84-8f24-02c9fa6b2c03"
+}

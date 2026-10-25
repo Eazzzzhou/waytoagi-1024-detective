@@ -1,0 +1,98 @@
+{
+  "capturedAt": "2026-10-25T04:45:27.162Z",
+  "url": "http://127.0.0.1:3104/investigations/1b770812-831e-444b-9bd6-f858f030b627",
+  "detail": {
+    "investigation": {
+      "id": "1b770812-831e-444b-9bd6-f858f030b627",
+      "question": "Cursor 的 Agent 模式在 3D 建模（CAD/Blender）工作流里的真实使用评价怎么样？",
+      "researchDepth": "STANDARD",
+      "status": "SUCCEEDED",
+      "stage": "COMPLETED",
+      "error": null,
+      "createdAt": "2026-10-25T04:43:16.456Z",
+      "updatedAt": "2026-10-25T04:45:26.902Z",
+      "startedAt": "2026-10-25T04:43:17.443Z",
+      "completedAt": "2026-10-25T04:45:26.902Z",
+      "resultSnapshotId": "ac2b013e-b709-4533-8902-d9956226e4b0"
+    },
+    "identityConfirmation": null,
+    "retry": {
+      "allowed": false,
+      "reason": "仅失败的调查可以手动重试。",
+      "remaining": 2,
+      "expectedAttemptCount": 1
+    }
+  },
+  "observedStates": [
+    {
+      "status": "RUNNING",
+      "stage": "IDENTITY",
+      "observedAt": "2026-10-25T04:43:18.092Z"
+    },
+    {
+      "status": "RUNNING",
+      "stage": "RETRIEVAL",
+      "observedAt": "2026-10-25T04:43:20.125Z"
+    },
+    {
+      "status": "RUNNING",
+      "stage": "SOURCE_FETCH",
+      "observedAt": "2026-10-25T04:43:24.177Z"
+    },
+    {
+      "status": "RUNNING",
+      "stage": "RETRIEVAL",
+      "observedAt": "2026-10-25T04:43:30.273Z"
+    },
+    {
+      "status": "RUNNING",
+      "stage": "SOURCE_FETCH",
+      "observedAt": "2026-10-25T04:43:43.490Z"
+    },
+    {
+      "status": "RUNNING",
+      "stage": "RETRIEVAL",
+      "observedAt": "2026-10-25T04:43:49.592Z"
+    },
+    {
+      "status": "RUNNING",
+      "stage": "SOURCE_FETCH",
+      "observedAt": "2026-10-25T04:43:54.685Z"
+    },
+    {
+      "status": "RUNNING",
+      "stage": "RETRIEVAL",
+      "observedAt": "2026-10-25T04:44:05.842Z"
+    },
+    {
+      "status": "RUNNING",
+      "stage": "SOURCE_FETCH",
+      "observedAt": "2026-10-25T04:44:09.891Z"
+    },
+    {
+      "status": "RUNNING",
+      "stage": "RETRIEVAL",
+      "observedAt": "2026-10-25T04:44:29.183Z"
+    },
+    {
+      "status": "RUNNING",
+      "stage": "SOURCE_FETCH",
+      "observedAt": "2026-10-25T04:44:37.325Z"
+    },
+    {
+      "status": "RUNNING",
+      "stage": "VERIFICATION",
+      "observedAt": "2026-10-25T04:44:43.447Z"
+    },
+    {
+      "status": "RUNNING",
+      "stage": "ANSWER",
+      "observedAt": "2026-10-25T04:45:15.993Z"
+    },
+    {
+      "status": "SUCCEEDED",
+      "stage": "COMPLETED",
+      "observedAt": "2026-10-25T04:45:27.161Z"
+    }
+  ]
+}

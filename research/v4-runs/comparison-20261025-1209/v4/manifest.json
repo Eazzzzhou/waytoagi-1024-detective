@@ -1,0 +1,108 @@
+{
+  "startedAt": "2026-10-25T04:21:04.941Z",
+  "engine": "v4",
+  "codeCommit": "2405e3d7349d8b804abcb67a757e96e74b56199b",
+  "dirty": "?? research/v4-evaluation/smoke2-S1-review.md\n?? research/v4-runs/",
+  "base": "http://127.0.0.1:3104",
+  "requestedDepth": "AUTO",
+  "comparisonCeilings": {
+    "totalMs": 180000,
+    "searchCalls": 6,
+    "documentAttempts": 10,
+    "reserveMs": 45000
+  },
+  "cases": [
+    {
+      "id": "S1",
+      "question": "DeepSeek API 的 deepseek-chat 模型上下文长度、最大输出和价格分别是多少？"
+    },
+    {
+      "id": "S0",
+      "question": "DeepSeek API 的上下文长度是多少？"
+    },
+    {
+      "id": "S2",
+      "question": "GitHub Copilot Free 每月包含多少次代码补全、多少次 chat？超出后怎么办？"
+    },
+    {
+      "id": "S3",
+      "question": "Cognition 官方称 Devin 是“首个自主软件工程师”，能独立完成软件工程任务；Hacker News 上开发者的实际使用报告支持这个说法吗？"
+    },
+    {
+      "id": "S4",
+      "question": "关于 GitHub Copilot Free 每月 50 次 chat 的说法，哪些来源是独立的，哪些只是同一篇文章的转载？"
+    },
+    {
+      "id": "S5",
+      "question": "Cursor 的 Agent 模式在 3D 建模（CAD/Blender）工作流里的真实使用评价怎么样？"
+    },
+    {
+      "id": "S6",
+      "question": "Copilot 免费版每月有多少次对话？"
+    },
+    {
+      "id": "S7",
+      "question": "知乎上开发者怎么评价 Devin 的实际能力？"
+    },
+    {
+      "id": "S8",
+      "question": "帮我写一首关于秋天的诗"
+    }
+  ],
+  "runs": [
+    {
+      "case": "S1",
+      "investigationId": "299b5433-9e33-4b79-ae35-0a3c32b5455e",
+      "captureExit": 0,
+      "completedAt": "2026-10-25T04:21:56.276Z"
+    },
+    {
+      "case": "S0",
+      "investigationId": "42df84a5-9bb7-40dd-8aff-a474c98d87a7",
+      "captureExit": 0,
+      "completedAt": "2026-10-25T04:22:18.868Z"
+    },
+    {
+      "case": "S2",
+      "investigationId": "665d6eba-270a-4eb5-9073-f7118a79ae58",
+      "captureExit": 0,
+      "completedAt": "2026-10-25T04:23:11.013Z"
+    },
+    {
+      "case": "S3",
+      "investigationId": "0b578ad1-9e1a-419b-a88c-8252c8ec6ef0",
+      "captureExit": 0,
+      "completedAt": "2026-10-25T04:23:30.163Z"
+    },
+    {
+      "case": "S4",
+      "investigationId": "0d5db2c1-9aad-4b5b-9364-139aa20e8bb7",
+      "captureExit": 0,
+      "completedAt": "2026-10-25T04:24:25.951Z"
+    },
+    {
+      "case": "S5",
+      "investigationId": "5783aece-4e6e-4f6f-bde3-65266cab9ee4",
+      "captureExit": 0,
+      "completedAt": "2026-10-25T04:25:05.359Z"
+    },
+    {
+      "case": "S6",
+      "investigationId": "1b8f36cb-0893-4a96-9b35-d1c8034acbb9",
+      "captureExit": 0,
+      "completedAt": "2026-10-25T04:25:48.921Z"
+    },
+    {
+      "case": "S7",
+      "investigationId": "0483997e-37c1-4032-9d1d-d4bd017edd80",
+      "captureExit": 0,
+      "completedAt": "2026-10-25T04:26:49.881Z"
+    },
+    {
+      "case": "S8",
+      "investigationId": "a5039f17-002b-4a84-8f24-02c9fa6b2c03",
+      "captureExit": 0,
+      "completedAt": "2026-10-25T04:26:51.689Z"
+    }
+  ]
+}

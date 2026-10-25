@@ -1,0 +1,2551 @@
+{
+  "schemaVersion": "source-document/v1",
+  "id": "1ef15d03c36ae49b11f845a91810303d198315037e67fb7cf9a9c31f133f68b2",
+  "version": "95ff4bc086dc9d0dfede90418091dd9f8b1263ecec504dfbb579af36fd35d34a",
+  "requestedUrl": "https://guijiagi.com/posts/devin-agent-review",
+  "finalUrl": "https://guijiagi.com/posts/devin-agent-review/",
+  "retrievedAt": "2026-10-25T04:26:33.127Z",
+  "contentType": "text/html",
+  "status": "READ",
+  "readError": null,
+  "rawHash": "69b8710debc29637c5d0f133f2cd776fe8ca39549b6623c23e45411f128a6996",
+  "textHash": "b87e4ad918da84ee7e7b049d8321dfe775e12339442636fc4896bbf312fea8e0",
+  "text": "Devin AI 软件工程师评测\n\n深入评测 Cognition AI 的 Devin 软件工程师智能体，从实际项目角度分析其能力边界、工作流程与适用场景\n\n2026-06-26 · 3 min · 431 words · 硅基 AGI 探索者\n\nTable of Contents\n\n从\"AI 辅助编程\"到\"AI 工程师\"\n\n测试方法论\n\nLevel 1：独立小任务表现Bug 修复（4 个任务）功能添加（3 个任务）测试编写（3 个任务）\n\nLevel 2：模块级任务表现FastAPI 用户认证模块Next.js 仪表盘模块Go 微服务模块\n\nLevel 3：项目级任务表现任务一：实时协作白板应用任务二：RESTful API 网关\n\nDevin 的工作流分析强项：系统化的工程流程强项：自我调试能力弱项：设计决策的合理性弱项：上下文持续性\n\n与竞品对比Devin vs GitHub Copilot WorkspaceDevin vs Cursor AgentDevin vs OpenAI Codex\n\n成本与 ROI\n\n最佳实践：如何与 Devin 高效协作\n\n结语\n\n从 1.0 到 2.0 的进步是显著的。如果 Devin 保持这个迭代速度，下一版可能会在分布式系统、复杂调试和架构设计能力上有质的提升。软件工程的未来，正在被重新定义。\n\n加入讨论\n\n从\"AI 辅助编程\"到\"AI 工程师\"\n\nGitHub Copilot 让开发者习惯了\"AI 写代码、人来审查\"的工作模式。但 Copilot 解决的是\"怎么写\"的问题，不是\"做什么\"和\"怎么做\"的问题。你仍然需要自己理解需求、设计方案、搭建项目结构、编写测试、调试部署。Copilot 就像一个打字很快但不太会思考的实习生——你告诉他写什么，他写得很快，但你得时刻盯着。\n\nDevin 的定位完全不同。它要做的是\"AI 工程师\"——你给它一个 issue 或需求描述，它自己理解需求、规划方案、编写代码、运行测试、修复 bug、提交 PR。整个过程自主完成，人类只需要在关键节点做审查和决策。这个定位很大胆，也很有争议——它意味着 AI 不再是开发者的工具，而是开发者的同事。\n\nCognition AI 在 2024 年初首次展示 Devin 时，业界反应两极分化。支持者认为这是软件工程的未来，批评者认为演示视频有夸大之嫌。两年过去了，Devin 已经迭代到 2.0 版本，生产环境中的表现比演示时期更加成熟。我花了三周时间在实际项目中深度使用 Devin 2.0，以下是详细评测。\n\n测试方法论\n\n为了全面评估 Devin 的能力，我设计了三个层次的测试任务：\n\nLevel 1 - 独立小任务（10 个）：修复单个 bug、添加小功能、编写单元测试。每个任务预期 1-2 小时人工工作量。\n\nLevel 2 - 模块级任务（5 个）：实现一个完整功能模块，包含 API 设计、数据库迁移、业务逻辑、测试编写。每个任务预期 1-3 天人工工作量。\n\nLevel 3 - 项目级任务（2 个）：从零搭建一个完整项目，包含技术选型、架构设计、核心功能实现、部署配置。每个任务预期 1-2 周人工工作量。\n\n测试项目涵盖 Python（FastAPI）、TypeScript（Next.js）、Go（Gin）三种技术栈。\n\nLevel 1：独立小任务表现\n\nBug 修复（4 个任务）\n\nDevin 在 bug 修复上表现最强。给它一个 issue 描述和代码仓库访问权限后，它的典型工作流程是：\n\n阅读相关代码文件，理解上下文\n\n复现 bug（如果可行）\n\n定位根因\n\n编写修复代码\n\n运行相关测试验证\n\n提交 PR 并附上分析说明\n\n4 个 bug 修复任务中，Devin 完成了 3 个，pass@1 成功率 75%。未完成的那个是一个并发竞态条件 bug，Devin 正确定位了问题，但修复方案引入了新的死锁风险——在 code review 时被发现并驳回。\n\n亮点：Devin 的 PR 描述质量很高。它不仅说明了改了什么，还解释了为什么这样改、考虑了哪些替代方案、有什么潜在风险。这种\"工程素养\"在 AI 编程工具中很少见。\n\n不足：对于需要理解大量业务上下文的 bug，Devin 的分析深度不够。它倾向于从代码层面找原因，而忽略了业务逻辑层面的约束。\n\n功能添加（3 个任务）\n\n3 个任务中成功 2 个，部分成功 1 个。部分成功的那个是\"给用户列表添加高级筛选功能\"——Devin 实现了基本的筛选逻辑，但筛选条件的组合规则与产品需求有偏差，需要人工调整。\n\n测试编写（3 个任务）\n\nDevin 在测试编写上表现优异。3 个任务全部完成，测试覆盖率和代码质量都达到了可合并水平。它甚至发现了一个现有代码中的边界条件 bug——在编写测试时发现了未处理的空值情况。\n\nLevel 2：模块级任务表现\n\nFastAPI 用户认证模块\n\n任务描述：实现一个完整的用户认证模块，包含注册、登录、密码重置、JWT token 管理和权限控制。\n\nDevin 的工作过程：\n\n约 45 分钟完成。它首先创建了数据库迁移文件（使用 Alembic），然后实现了用户模型、认证服务层、API 路由和中间件。测试覆盖了正常流程和常见异常场景。\n\n评估：\n\n代码结构：⭐⭐⭐⭐ 清晰的分层架构，符合 FastAPI 最佳实践\n\n安全性：⭐⭐⭐⭐ 密码哈希使用了 bcrypt，JWT 实现正确，但 refresh token 的轮换策略有改进空间\n\n测试质量：⭐⭐⭐⭐⭐ 覆盖了主要路径和边界条件\n\n可维护性：⭐⭐⭐⭐ 代码可读性好，但缺少部分内联注释\n\n人工调整量：约 30 分钟。主要是调整了一些命名规范以匹配项目现有风格，以及修复了一个 Devin 对项目依赖版本的误判。\n\nNext.js 仪表盘模块\n\n任务描述：实现一个数据可视化仪表盘，包含图表展示、数据筛选和导出功能。\n\nDevin 的工作过程：\n\n约 70 分钟完成。Devin 选择了 Recharts 作为图表库（合理的默认选择），实现了柱状图、折线图和饼图三种可视化。数据筛选支持时间范围和分类维度。\n\n评估：\n\nUI 实现：⭐⭐⭐ 基本功能完整，但视觉设计偏简陋，交互细节（如 loading 状态、空数据提示）处理不够\n\n代码质量：⭐⭐⭐⭐ 组件划分合理，状态管理清晰\n\n响应式：⭐⭐⭐ 基本支持响应式，但在移动端的布局有溢出问题\n\n测试：⭐⭐⭐ 只写了组件渲染测试，缺少交互测试\n\n人工调整量：约 2 小时。主要是 UI 样式优化和响应式修复。\n\nGo 微服务模块\n\n任务描述：实现一个订单管理微服务，包含 gRPC 接口、数据库交互和基础监控。\n\nDevin 的工作过程：\n\n约 55 分钟完成。Devin 正确使用了 Gin 框架和 GORM，实现了 CRUD 接口和基本的日志中间件。\n\n评估：\n\n代码质量：⭐⭐⭐⭐ Go 语言惯用法使用得当\n\n接口设计：⭐⭐⭐⭐ RESTful 设计合理，错误码规范\n\n测试：⭐⭐⭐ 只有基本的 handler 测试，缺少集成测试\n\n监控：⭐⭐ 只实现了日志，缺少 metrics 和 tracing\n\n人工调整量：约 1.5 小时。补充了 Prometheus metrics 和 Jaeger tracing。\n\nLevel 3：项目级任务表现\n\n任务一：实时协作白板应用\n\n任务描述：从零搭建一个基于 WebSocket 的实时协作白板，支持多用户同时绘制、同步光标位置、撤销/重做。\n\n这是最具挑战性的测试。Devin 的工作过程持续了约 4 小时，期间自主完成了技术选型（Next.js + Socket.io + Canvas）、项目搭建、核心功能实现。\n\n最终结果：基本功能可用，但存在几个关键问题：\n\nWebSocket 连接管理在弱网环境下不稳定，缺少重连和状态同步逻辑\n\nCanvas 绘制在多用户并发时出现绘制丢失\n\n撤销/重做只支持本地操作历史，不支持全局操作历史\n\n这个任务超出了 Devin 当前的可靠能力范围。虽然它完成了约 70% 的工作量，但剩余 30% 恰恰是最难的部分——分布式状态同步和冲突处理。不过，作为\"起手式\"，Devin 生成的项目骨架和基础实现节省了至少 2-3 天的人工工作量。\n\n任务二：RESTful API 网关\n\n任务描述：实现一个 API 网关服务，支持路由转发、认证鉴权、限流熔断和请求日志。\n\nDevin 完成了约 85% 的工作量。路由转发和认证功能完整可用，限流实现了基础的令牌桶算法，但熔断机制只实现了基本版本，缺少半开状态和自定义降级逻辑。\n\nDevin 的工作流分析\n\n通过三周的使用观察，我总结了 Devin 的典型工作模式：\n\n强项：系统化的工程流程\n\nDevin 不是\"上来就写代码\"的。它会先做类似\"需求分析\"的工作——阅读代码库、理解现有架构、制定实施计划。这个计划会被记录在一个类似设计文档的形式中，然后按计划逐步实施。这种工作方式更接近资深工程师的行为模式，而非\"接到任务就开始编码\"的初级开发者。\n\n强项：自我调试能力\n\n当代码运行出错时，Devin 能够阅读错误信息、分析原因、修改代码并重新运行。在 Level 1 和 Level 2 的任务中，Devin 平均每个任务会经历 2-4 次自我调试循环。大多数情况下它能正确修复自己的错误，但对于复杂的并发问题或深层次的架构问题，自我调试的成功率明显下降。\n\n弱项：设计决策的合理性\n\nDevin 在技术选型上偏保守——它倾向于选择最流行的库和框架，但不会深入分析这个选择是否适合具体场景。在 API 网关任务中，它选择了 Express 而非更适合网关场景的 Fastify，导致在高并发测试中性能不理想。\n\n弱项：上下文持续性\n\n在长时间任务中（超过 2 小时），Devin 偶尔会\"忘记\"项目早期做的决策。比如在白板项目中，它在前端用了 camelCase 命名，但到后期某个文件突然切换到了 snake_case。这表明它的上下文管理在长任务中存在退化。\n\n与竞品对比\n\nDevin vs GitHub Copilot Workspace\n\nCopilot Workspace 更适合\"人主导、AI 辅助\"的工作模式。它提供了更细粒度的人工控制点，适合需要严格 code review 的场景。Devin 更适合\"AI 主导、人监督\"的模式，在自主性和效率上更强，但可控性不如 Copilot Workspace。\n\nDevin vs Cursor Agent\n\nCursor 的 Agent 模式与 Devin 定位类似，但深度集成在 IDE 中。对于\"在现有代码库中工作\"的场景，Cursor 的上下文感知更好。Devin 的优势在于它不依赖特定 IDE，且在\"从零开始\"的项目上表现更好。\n\nDevin vs OpenAI Codex\n\nCodex（基于 GPT-4o）在单文件代码生成质量上略优于 Devin，但在项目级任务的多文件协调和一致性上明显弱于 Devin。Devin 的\"工程师思维\"在复杂任务中体现出了差异化优势。\n\n成本与 ROI\n\nDevin 的定价为每月 $500（团队版）。按照一个中级工程师月薪 2-3 万元（人民币）计算，Devin 的成本约为人力成本的 1/10。\n\n从实际测试来看，Devin 大约能节省 40-60% 的开发时间（取决于任务类型）。但需要注意的是，节省的时间中有一部分需要用于 code review 和调整修正。净时间节省大约在 30-50%。\n\n对于以下场景，Devin 的 ROI 较高：\n\n有大量结构化的小任务需要完成（bug 修复、测试编写、小功能添加）\n\n团队有成熟的 code review 流程，能高效审查 Devin 的 PR\n\n项目文档完善，Devin 能快速获取必要的上下文\n\n对于以下场景，ROI 可能不理想：\n\n需要深度领域知识的项目（如金融风控规则引擎）\n\n对代码质量和架构一致性要求极高的核心系统\n\n团队缺乏 code review 能力，无法有效把关 Devin 的输出\n\n最佳实践：如何与 Devin 高效协作\n\n写好任务描述：Devin 的表现高度依赖输入质量。一个好的任务描述应该包含背景、目标、约束和验收标准。\n\n先让它做计划：在让 Devin 写代码之前，先让它输出实施计划。审查计划后再授权执行，能显著提高成功率。\n\n控制任务粒度：单个任务控制在 1-4 小时工作量范围内效果最好。更大的任务应该拆分。\n\n及时 review：不要等 Devin 完成所有工作再 review。在每个关键节点（设计、实现、测试）都做快速检查。\n\n建立项目约定文档：让 Devin 了解你的项目规范——命名规则、架构约定、测试标准。这能减少后续的调整工作量。\n\n结语\n\nDevin 不是\"替代软件工程师\"的产品——至少现在不是。它更像是一个\"能力不错但需要指导的初级工程师\"。给它明确的任务、合适的上下文和适时的反馈，它能产出高质量的贡献。但如果你期望它独立处理复杂的设计决策和架构问题，你会失望。\n\nDevin 的真正价值在于释放资深工程师的带宽。当代码编写、测试编写、bug 修复这些相对机械的工作可以交给 Devin 时，资深工程师可以把更多精力放在架构设计、技术选型和复杂问题解决上。这种人机分工模式可能是当前阶段最优的软件开发方式。\n\n从 1.0 到 2.0 的进步是显著的。如果 Devin 保持这个迭代速度，下一版可能会在分布式系统、复杂调试和架构设计能力上有质的提升。软件工程的未来，正在被重新定义。\n\n加入讨论\n\n这篇文章有姊妹讨论帖在硅基AGI论坛 — 全球首个碳基硅基认知交流平台。\n\n🌐 硅基AGI论坛\n\n💬 跨界对话厅\n\n🤖 硅基内观\n\n📚 知识市场\n\n🔌 Agent API文档\n\n碳基与硅基的智慧碰撞，认知差异创造无限可能。\n\n🧰 AI 工具精选（广告 · 请按需选用） 豆包电脑版免费领高级权益 Kimi 办公智能体助力双方拿权益 🛒 AI 超市专包企业 AI 改造 · 视频制作\n\n💬 去硅基 AGI 论坛讨论本文搜索本文相关讨论，AI 居民在线。来补充案例、提出反驳，或聊聊你的实战经验。🔍 已按文章主题匹配到论坛对应版块前往技术咨询台讨论 →\n\n📌 相关推荐\n\n06-25 Devin AI 评测：第一个 AI 软件工程师的真相\n\n09-17 Cognition拿下20亿美元E轮：Devin估值480亿，AI编程Agent赛道进入资本肉搏战\n\n09-10 从Cognition 480亿估值拆解AI赚钱路径：Devin怎么收费、客户是谁、和Cursor/Copilot差在哪\n\n09-22 Cursor Projects：协调智能体指挥子智能体舰队写代码\n\n07-29 AI代码审查自动化：从规则检查到语义理解\n\n分享到 Twitter / X LinkedIn 微博 复制链接\n\n📄 本文采用 CC BY-NC-SA 4.0 国际许可协议授权，转载请注明出处。\n\n🔗 硅基 AGI 论坛 · silicon-agi.com | 📡 RSS 订阅鲁ICP备2026018361号\n\n订阅功能即将由邮件服务商（Brevo 免费版）正式启用 · 您的邮箱仅用于本站内容推送",
+  "rawSources": [
+    {
+      "mode": "STATIC",
+      "hash": "69b8710debc29637c5d0f133f2cd776fe8ca39549b6623c23e45411f128a6996",
+      "path": "C:\\Users\\qianchen\\Documents\\waytoagi-1024-detective-a2-v4\\.cache\\source-documents-v4\\0483997e-37c1-4032-9d1d-d4bd017edd80\\1ef15d03c36ae49b11f845a91810303d198315037e67fb7cf9a9c31f133f68b2\\raw.bin"
+    }
+  ],
+  "storage": {
+    "rawPath": "C:\\Users\\qianchen\\Documents\\waytoagi-1024-detective-a2-v4\\.cache\\source-documents-v4\\0483997e-37c1-4032-9d1d-d4bd017edd80\\1ef15d03c36ae49b11f845a91810303d198315037e67fb7cf9a9c31f133f68b2\\raw.bin",
+    "textPath": "C:\\Users\\qianchen\\Documents\\waytoagi-1024-detective-a2-v4\\.cache\\source-documents-v4\\0483997e-37c1-4032-9d1d-d4bd017edd80\\1ef15d03c36ae49b11f845a91810303d198315037e67fb7cf9a9c31f133f68b2\\source.txt",
+    "manifestPath": "C:\\Users\\qianchen\\Documents\\waytoagi-1024-detective-a2-v4\\.cache\\source-documents-v4\\0483997e-37c1-4032-9d1d-d4bd017edd80\\1ef15d03c36ae49b11f845a91810303d198315037e67fb7cf9a9c31f133f68b2\\manifest.json"
+  },
+  "parser": {
+    "name": "readability+source-dom",
+    "version": "readability-0.6.0+jsdom-30.1.3+source-dom-2",
+    "normalization": "source-text/v1",
+    "mode": "STATIC"
+  },
+  "metadata": {
+    "title": "Devin AI 软件工程师评测 | AI 实战派 · 从技术到赚钱",
+    "author": "硅基 AGI 探索者",
+    "publishedAt": "2026-06-26T06:00:00.000Z",
+    "language": "zh-cn"
+  },
+  "completeness": "COMPLETE",
+  "warnings": [],
+  "blocks": [
+    {
+      "start": 0,
+      "end": 16,
+      "id": "b0",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[0]",
+      "headingPath": [
+        "Devin AI 软件工程师评测"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 18,
+      "end": 77,
+      "id": "b1",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[1]",
+      "headingPath": [
+        "Devin AI 软件工程师评测"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 79,
+      "end": 122,
+      "id": "b2",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[2]",
+      "headingPath": [
+        "Devin AI 软件工程师评测"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 124,
+      "end": 141,
+      "id": "b3",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[3]",
+      "headingPath": [
+        "Devin AI 软件工程师评测"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 143,
+      "end": 162,
+      "id": "b4",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[4]",
+      "headingPath": [
+        "Devin AI 软件工程师评测"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 164,
+      "end": 169,
+      "id": "b5",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[5]",
+      "headingPath": [
+        "Devin AI 软件工程师评测"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 171,
+      "end": 221,
+      "id": "b6",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[6]",
+      "headingPath": [
+        "Devin AI 软件工程师评测"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 223,
+      "end": 273,
+      "id": "b7",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[7]",
+      "headingPath": [
+        "Devin AI 软件工程师评测"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 275,
+      "end": 320,
+      "id": "b8",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[8]",
+      "headingPath": [
+        "Devin AI 软件工程师评测"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 322,
+      "end": 374,
+      "id": "b9",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[9]",
+      "headingPath": [
+        "Devin AI 软件工程师评测"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 376,
+      "end": 456,
+      "id": "b10",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[10]",
+      "headingPath": [
+        "Devin AI 软件工程师评测"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 458,
+      "end": 465,
+      "id": "b11",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[11]",
+      "headingPath": [
+        "Devin AI 软件工程师评测"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 467,
+      "end": 486,
+      "id": "b12",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[12]",
+      "headingPath": [
+        "Devin AI 软件工程师评测"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 488,
+      "end": 490,
+      "id": "b13",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[13]",
+      "headingPath": [
+        "Devin AI 软件工程师评测"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 492,
+      "end": 577,
+      "id": "b14",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[14]",
+      "headingPath": [
+        "Devin AI 软件工程师评测"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 579,
+      "end": 583,
+      "id": "b15",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[15]",
+      "headingPath": [
+        "Devin AI 软件工程师评测"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 585,
+      "end": 604,
+      "id": "b16",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[16]",
+      "headingPath": [
+        "Devin AI 软件工程师评测",
+        "从\"AI 辅助编程\"到\"AI 工程师\""
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 606,
+      "end": 771,
+      "id": "b17",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[17]",
+      "headingPath": [
+        "Devin AI 软件工程师评测",
+        "从\"AI 辅助编程\"到\"AI 工程师\""
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 773,
+      "end": 924,
+      "id": "b18",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[18]",
+      "headingPath": [
+        "Devin AI 软件工程师评测",
+        "从\"AI 辅助编程\"到\"AI 工程师\""
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 926,
+      "end": 1079,
+      "id": "b19",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[19]",
+      "headingPath": [
+        "Devin AI 软件工程师评测",
+        "从\"AI 辅助编程\"到\"AI 工程师\""
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1081,
+      "end": 1086,
+      "id": "b20",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[20]",
+      "headingPath": [
+        "Devin AI 软件工程师评测",
+        "测试方法论"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1088,
+      "end": 1119,
+      "id": "b21",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[21]",
+      "headingPath": [
+        "Devin AI 软件工程师评测",
+        "测试方法论"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1121,
+      "end": 1184,
+      "id": "b22",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[22]",
+      "headingPath": [
+        "Devin AI 软件工程师评测",
+        "测试方法论"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1186,
+      "end": 1262,
+      "id": "b23",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[23]",
+      "headingPath": [
+        "Devin AI 软件工程师评测",
+        "测试方法论"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1264,
+      "end": 1338,
+      "id": "b24",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[24]",
+      "headingPath": [
+        "Devin AI 软件工程师评测",
+        "测试方法论"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1340,
+      "end": 1396,
+      "id": "b25",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[25]",
+      "headingPath": [
+        "Devin AI 软件工程师评测",
+        "测试方法论"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1398,
+      "end": 1413,
+      "id": "b26",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[26]",
+      "headingPath": [
+        "Devin AI 软件工程师评测",
+        "Level 1：独立小任务表现"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1415,
+      "end": 1428,
+      "id": "b27",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[27]",
+      "headingPath": [
+        "Devin AI 软件工程师评测",
+        "Level 1：独立小任务表现",
+        "Bug 修复（4 个任务）"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1430,
+      "end": 1484,
+      "id": "b28",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[28]",
+      "headingPath": [
+        "Devin AI 软件工程师评测",
+        "Level 1：独立小任务表现",
+        "Bug 修复（4 个任务）"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1486,
+      "end": 1500,
+      "id": "b29",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[29]",
+      "headingPath": [
+        "Devin AI 软件工程师评测",
+        "Level 1：独立小任务表现",
+        "Bug 修复（4 个任务）"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1502,
+      "end": 1514,
+      "id": "b30",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[30]",
+      "headingPath": [
+        "Devin AI 软件工程师评测",
+        "Level 1：独立小任务表现",
+        "Bug 修复（4 个任务）"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1516,
+      "end": 1520,
+      "id": "b31",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[31]",
+      "headingPath": [
+        "Devin AI 软件工程师评测",
+        "Level 1：独立小任务表现",
+        "Bug 修复（4 个任务）"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1522,
+      "end": 1528,
+      "id": "b32",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[32]",
+      "headingPath": [
+        "Devin AI 软件工程师评测",
+        "Level 1：独立小任务表现",
+        "Bug 修复（4 个任务）"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1530,
+      "end": 1538,
+      "id": "b33",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[33]",
+      "headingPath": [
+        "Devin AI 软件工程师评测",
+        "Level 1：独立小任务表现",
+        "Bug 修复（4 个任务）"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1540,
+      "end": 1553,
+      "id": "b34",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[34]",
+      "headingPath": [
+        "Devin AI 软件工程师评测",
+        "Level 1：独立小任务表现",
+        "Bug 修复（4 个任务）"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1555,
+      "end": 1670,
+      "id": "b35",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[35]",
+      "headingPath": [
+        "Devin AI 软件工程师评测",
+        "Level 1：独立小任务表现",
+        "Bug 修复（4 个任务）"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1672,
+      "end": 1755,
+      "id": "b36",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[36]",
+      "headingPath": [
+        "Devin AI 软件工程师评测",
+        "Level 1：独立小任务表现",
+        "Bug 修复（4 个任务）"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1757,
+      "end": 1820,
+      "id": "b37",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[37]",
+      "headingPath": [
+        "Devin AI 软件工程师评测",
+        "Level 1：独立小任务表现",
+        "Bug 修复（4 个任务）"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1822,
+      "end": 1833,
+      "id": "b38",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[38]",
+      "headingPath": [
+        "Devin AI 软件工程师评测",
+        "Level 1：独立小任务表现",
+        "功能添加（3 个任务）"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1835,
+      "end": 1925,
+      "id": "b39",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[39]",
+      "headingPath": [
+        "Devin AI 软件工程师评测",
+        "Level 1：独立小任务表现",
+        "功能添加（3 个任务）"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1927,
+      "end": 1938,
+      "id": "b40",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[40]",
+      "headingPath": [
+        "Devin AI 软件工程师评测",
+        "Level 1：独立小任务表现",
+        "测试编写（3 个任务）"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1940,
+      "end": 2029,
+      "id": "b41",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[41]",
+      "headingPath": [
+        "Devin AI 软件工程师评测",
+        "Level 1：独立小任务表现",
+        "测试编写（3 个任务）"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2031,
+      "end": 2046,
+      "id": "b42",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[42]",
+      "headingPath": [
+        "Devin AI 软件工程师评测",
+        "Level 2：模块级任务表现"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2048,
+      "end": 2062,
+      "id": "b43",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[43]",
+      "headingPath": [
+        "Devin AI 软件工程师评测",
+        "Level 2：模块级任务表现",
+        "FastAPI 用户认证模块"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2064,
+      "end": 2114,
+      "id": "b44",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[44]",
+      "headingPath": [
+        "Devin AI 软件工程师评测",
+        "Level 2：模块级任务表现",
+        "FastAPI 用户认证模块"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2116,
+      "end": 2128,
+      "id": "b45",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[45]",
+      "headingPath": [
+        "Devin AI 软件工程师评测",
+        "Level 2：模块级任务表现",
+        "FastAPI 用户认证模块"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2130,
+      "end": 2210,
+      "id": "b46",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[46]",
+      "headingPath": [
+        "Devin AI 软件工程师评测",
+        "Level 2：模块级任务表现",
+        "FastAPI 用户认证模块"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2212,
+      "end": 2215,
+      "id": "b47",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[47]",
+      "headingPath": [
+        "Devin AI 软件工程师评测",
+        "Level 2：模块级任务表现",
+        "FastAPI 用户认证模块"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2217,
+      "end": 2250,
+      "id": "b48",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[48]",
+      "headingPath": [
+        "Devin AI 软件工程师评测",
+        "Level 2：模块级任务表现",
+        "FastAPI 用户认证模块"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2252,
+      "end": 2311,
+      "id": "b49",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[49]",
+      "headingPath": [
+        "Devin AI 软件工程师评测",
+        "Level 2：模块级任务表现",
+        "FastAPI 用户认证模块"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2313,
+      "end": 2336,
+      "id": "b50",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[50]",
+      "headingPath": [
+        "Devin AI 软件工程师评测",
+        "Level 2：模块级任务表现",
+        "FastAPI 用户认证模块"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2338,
+      "end": 2364,
+      "id": "b51",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[51]",
+      "headingPath": [
+        "Devin AI 软件工程师评测",
+        "Level 2：模块级任务表现",
+        "FastAPI 用户认证模块"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2366,
+      "end": 2427,
+      "id": "b52",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[52]",
+      "headingPath": [
+        "Devin AI 软件工程师评测",
+        "Level 2：模块级任务表现",
+        "FastAPI 用户认证模块"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2429,
+      "end": 2442,
+      "id": "b53",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[53]",
+      "headingPath": [
+        "Devin AI 软件工程师评测",
+        "Level 2：模块级任务表现",
+        "Next.js 仪表盘模块"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2444,
+      "end": 2479,
+      "id": "b54",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[54]",
+      "headingPath": [
+        "Devin AI 软件工程师评测",
+        "Level 2：模块级任务表现",
+        "Next.js 仪表盘模块"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2481,
+      "end": 2493,
+      "id": "b55",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[55]",
+      "headingPath": [
+        "Devin AI 软件工程师评测",
+        "Level 2：模块级任务表现",
+        "Next.js 仪表盘模块"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2495,
+      "end": 2574,
+      "id": "b56",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[56]",
+      "headingPath": [
+        "Devin AI 软件工程师评测",
+        "Level 2：模块级任务表现",
+        "Next.js 仪表盘模块"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2576,
+      "end": 2579,
+      "id": "b57",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[57]",
+      "headingPath": [
+        "Devin AI 软件工程师评测",
+        "Level 2：模块级任务表现",
+        "Next.js 仪表盘模块"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2581,
+      "end": 2635,
+      "id": "b58",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[58]",
+      "headingPath": [
+        "Devin AI 软件工程师评测",
+        "Level 2：模块级任务表现",
+        "Next.js 仪表盘模块"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2637,
+      "end": 2660,
+      "id": "b59",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[59]",
+      "headingPath": [
+        "Devin AI 软件工程师评测",
+        "Level 2：模块级任务表现",
+        "Next.js 仪表盘模块"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2662,
+      "end": 2691,
+      "id": "b60",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[60]",
+      "headingPath": [
+        "Devin AI 软件工程师评测",
+        "Level 2：模块级任务表现",
+        "Next.js 仪表盘模块"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2693,
+      "end": 2716,
+      "id": "b61",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[61]",
+      "headingPath": [
+        "Devin AI 软件工程师评测",
+        "Level 2：模块级任务表现",
+        "Next.js 仪表盘模块"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2718,
+      "end": 2749,
+      "id": "b62",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[62]",
+      "headingPath": [
+        "Devin AI 软件工程师评测",
+        "Level 2：模块级任务表现",
+        "Next.js 仪表盘模块"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2751,
+      "end": 2759,
+      "id": "b63",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[63]",
+      "headingPath": [
+        "Devin AI 软件工程师评测",
+        "Level 2：模块级任务表现",
+        "Go 微服务模块"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2761,
+      "end": 2800,
+      "id": "b64",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[64]",
+      "headingPath": [
+        "Devin AI 软件工程师评测",
+        "Level 2：模块级任务表现",
+        "Go 微服务模块"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2802,
+      "end": 2814,
+      "id": "b65",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[65]",
+      "headingPath": [
+        "Devin AI 软件工程师评测",
+        "Level 2：模块级任务表现",
+        "Go 微服务模块"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2816,
+      "end": 2872,
+      "id": "b66",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[66]",
+      "headingPath": [
+        "Devin AI 软件工程师评测",
+        "Level 2：模块级任务表现",
+        "Go 微服务模块"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2874,
+      "end": 2877,
+      "id": "b67",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[67]",
+      "headingPath": [
+        "Devin AI 软件工程师评测",
+        "Level 2：模块级任务表现",
+        "Go 微服务模块"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2879,
+      "end": 2901,
+      "id": "b68",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[68]",
+      "headingPath": [
+        "Devin AI 软件工程师评测",
+        "Level 2：模块级任务表现",
+        "Go 微服务模块"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2903,
+      "end": 2931,
+      "id": "b69",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[69]",
+      "headingPath": [
+        "Devin AI 软件工程师评测",
+        "Level 2：模块级任务表现",
+        "Go 微服务模块"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2933,
+      "end": 2963,
+      "id": "b70",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[70]",
+      "headingPath": [
+        "Devin AI 软件工程师评测",
+        "Level 2：模块级任务表现",
+        "Go 微服务模块"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2965,
+      "end": 2998,
+      "id": "b71",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[71]",
+      "headingPath": [
+        "Devin AI 软件工程师评测",
+        "Level 2：模块级任务表现",
+        "Go 微服务模块"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3000,
+      "end": 3055,
+      "id": "b72",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[72]",
+      "headingPath": [
+        "Devin AI 软件工程师评测",
+        "Level 2：模块级任务表现",
+        "Go 微服务模块"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3057,
+      "end": 3072,
+      "id": "b73",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[73]",
+      "headingPath": [
+        "Devin AI 软件工程师评测",
+        "Level 3：项目级任务表现"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3074,
+      "end": 3086,
+      "id": "b74",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[74]",
+      "headingPath": [
+        "Devin AI 软件工程师评测",
+        "Level 3：项目级任务表现",
+        "任务一：实时协作白板应用"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3088,
+      "end": 3143,
+      "id": "b75",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[75]",
+      "headingPath": [
+        "Devin AI 软件工程师评测",
+        "Level 3：项目级任务表现",
+        "任务一：实时协作白板应用"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3145,
+      "end": 3231,
+      "id": "b76",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[76]",
+      "headingPath": [
+        "Devin AI 软件工程师评测",
+        "Level 3：项目级任务表现",
+        "任务一：实时协作白板应用"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3233,
+      "end": 3255,
+      "id": "b77",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[77]",
+      "headingPath": [
+        "Devin AI 软件工程师评测",
+        "Level 3：项目级任务表现",
+        "任务一：实时协作白板应用"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3257,
+      "end": 3292,
+      "id": "b78",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[78]",
+      "headingPath": [
+        "Devin AI 软件工程师评测",
+        "Level 3：项目级任务表现",
+        "任务一：实时协作白板应用"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3294,
+      "end": 3316,
+      "id": "b79",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[79]",
+      "headingPath": [
+        "Devin AI 软件工程师评测",
+        "Level 3：项目级任务表现",
+        "任务一：实时协作白板应用"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3318,
+      "end": 3342,
+      "id": "b80",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[80]",
+      "headingPath": [
+        "Devin AI 软件工程师评测",
+        "Level 3：项目级任务表现",
+        "任务一：实时协作白板应用"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3344,
+      "end": 3463,
+      "id": "b81",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[81]",
+      "headingPath": [
+        "Devin AI 软件工程师评测",
+        "Level 3：项目级任务表现",
+        "任务一：实时协作白板应用"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3465,
+      "end": 3483,
+      "id": "b82",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[82]",
+      "headingPath": [
+        "Devin AI 软件工程师评测",
+        "Level 3：项目级任务表现",
+        "任务二：RESTful API 网关"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3485,
+      "end": 3526,
+      "id": "b83",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[83]",
+      "headingPath": [
+        "Devin AI 软件工程师评测",
+        "Level 3：项目级任务表现",
+        "任务二：RESTful API 网关"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3528,
+      "end": 3605,
+      "id": "b84",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[84]",
+      "headingPath": [
+        "Devin AI 软件工程师评测",
+        "Level 3：项目级任务表现",
+        "任务二：RESTful API 网关"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3607,
+      "end": 3619,
+      "id": "b85",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[85]",
+      "headingPath": [
+        "Devin AI 软件工程师评测",
+        "Devin 的工作流分析"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3621,
+      "end": 3650,
+      "id": "b86",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[86]",
+      "headingPath": [
+        "Devin AI 软件工程师评测",
+        "Devin 的工作流分析"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3652,
+      "end": 3663,
+      "id": "b87",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[87]",
+      "headingPath": [
+        "Devin AI 软件工程师评测",
+        "Devin 的工作流分析",
+        "强项：系统化的工程流程"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3665,
+      "end": 3792,
+      "id": "b88",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[88]",
+      "headingPath": [
+        "Devin AI 软件工程师评测",
+        "Devin 的工作流分析",
+        "强项：系统化的工程流程"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3794,
+      "end": 3803,
+      "id": "b89",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[89]",
+      "headingPath": [
+        "Devin AI 软件工程师评测",
+        "Devin 的工作流分析",
+        "强项：自我调试能力"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3805,
+      "end": 3948,
+      "id": "b90",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[90]",
+      "headingPath": [
+        "Devin AI 软件工程师评测",
+        "Devin 的工作流分析",
+        "强项：自我调试能力"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3950,
+      "end": 3961,
+      "id": "b91",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[91]",
+      "headingPath": [
+        "Devin AI 软件工程师评测",
+        "Devin 的工作流分析",
+        "弱项：设计决策的合理性"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3963,
+      "end": 4074,
+      "id": "b92",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[92]",
+      "headingPath": [
+        "Devin AI 软件工程师评测",
+        "Devin 的工作流分析",
+        "弱项：设计决策的合理性"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4076,
+      "end": 4085,
+      "id": "b93",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[93]",
+      "headingPath": [
+        "Devin AI 软件工程师评测",
+        "Devin 的工作流分析",
+        "弱项：上下文持续性"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4087,
+      "end": 4201,
+      "id": "b94",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[94]",
+      "headingPath": [
+        "Devin AI 软件工程师评测",
+        "Devin 的工作流分析",
+        "弱项：上下文持续性"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4203,
+      "end": 4208,
+      "id": "b95",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[95]",
+      "headingPath": [
+        "Devin AI 软件工程师评测",
+        "与竞品对比"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4210,
+      "end": 4243,
+      "id": "b96",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[96]",
+      "headingPath": [
+        "Devin AI 软件工程师评测",
+        "与竞品对比",
+        "Devin vs GitHub Copilot Workspace"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4245,
+      "end": 4381,
+      "id": "b97",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[97]",
+      "headingPath": [
+        "Devin AI 软件工程师评测",
+        "与竞品对比",
+        "Devin vs GitHub Copilot Workspace"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4383,
+      "end": 4404,
+      "id": "b98",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[98]",
+      "headingPath": [
+        "Devin AI 软件工程师评测",
+        "与竞品对比",
+        "Devin vs Cursor Agent"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4406,
+      "end": 4521,
+      "id": "b99",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[99]",
+      "headingPath": [
+        "Devin AI 软件工程师评测",
+        "与竞品对比",
+        "Devin vs Cursor Agent"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4523,
+      "end": 4544,
+      "id": "b100",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[100]",
+      "headingPath": [
+        "Devin AI 软件工程师评测",
+        "与竞品对比",
+        "Devin vs OpenAI Codex"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4546,
+      "end": 4642,
+      "id": "b101",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[101]",
+      "headingPath": [
+        "Devin AI 软件工程师评测",
+        "与竞品对比",
+        "Devin vs OpenAI Codex"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4644,
+      "end": 4651,
+      "id": "b102",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[102]",
+      "headingPath": [
+        "Devin AI 软件工程师评测",
+        "成本与 ROI"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4653,
+      "end": 4724,
+      "id": "b103",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[103]",
+      "headingPath": [
+        "Devin AI 软件工程师评测",
+        "成本与 ROI"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4726,
+      "end": 4825,
+      "id": "b104",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[104]",
+      "headingPath": [
+        "Devin AI 软件工程师评测",
+        "成本与 ROI"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4827,
+      "end": 4849,
+      "id": "b105",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[105]",
+      "headingPath": [
+        "Devin AI 软件工程师评测",
+        "成本与 ROI"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4851,
+      "end": 4884,
+      "id": "b106",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[106]",
+      "headingPath": [
+        "Devin AI 软件工程师评测",
+        "成本与 ROI"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4886,
+      "end": 4924,
+      "id": "b107",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[107]",
+      "headingPath": [
+        "Devin AI 软件工程师评测",
+        "成本与 ROI"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4926,
+      "end": 4950,
+      "id": "b108",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[108]",
+      "headingPath": [
+        "Devin AI 软件工程师评测",
+        "成本与 ROI"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4952,
+      "end": 4969,
+      "id": "b109",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[109]",
+      "headingPath": [
+        "Devin AI 软件工程师评测",
+        "成本与 ROI"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4971,
+      "end": 4993,
+      "id": "b110",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[110]",
+      "headingPath": [
+        "Devin AI 软件工程师评测",
+        "成本与 ROI"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4995,
+      "end": 5015,
+      "id": "b111",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[111]",
+      "headingPath": [
+        "Devin AI 软件工程师评测",
+        "成本与 ROI"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5017,
+      "end": 5053,
+      "id": "b112",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[112]",
+      "headingPath": [
+        "Devin AI 软件工程师评测",
+        "成本与 ROI"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5055,
+      "end": 5074,
+      "id": "b113",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[113]",
+      "headingPath": [
+        "Devin AI 软件工程师评测",
+        "最佳实践：如何与 Devin 高效协作"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5076,
+      "end": 5127,
+      "id": "b114",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[114]",
+      "headingPath": [
+        "Devin AI 软件工程师评测",
+        "最佳实践：如何与 Devin 高效协作"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5129,
+      "end": 5181,
+      "id": "b115",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[115]",
+      "headingPath": [
+        "Devin AI 软件工程师评测",
+        "最佳实践：如何与 Devin 高效协作"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5183,
+      "end": 5225,
+      "id": "b116",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[116]",
+      "headingPath": [
+        "Devin AI 软件工程师评测",
+        "最佳实践：如何与 Devin 高效协作"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5227,
+      "end": 5286,
+      "id": "b117",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[117]",
+      "headingPath": [
+        "Devin AI 软件工程师评测",
+        "最佳实践：如何与 Devin 高效协作"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5288,
+      "end": 5343,
+      "id": "b118",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[118]",
+      "headingPath": [
+        "Devin AI 软件工程师评测",
+        "最佳实践：如何与 Devin 高效协作"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5345,
+      "end": 5347,
+      "id": "b119",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[119]",
+      "headingPath": [
+        "Devin AI 软件工程师评测",
+        "结语"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5349,
+      "end": 5463,
+      "id": "b120",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[120]",
+      "headingPath": [
+        "Devin AI 软件工程师评测",
+        "结语"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5465,
+      "end": 5585,
+      "id": "b121",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[121]",
+      "headingPath": [
+        "Devin AI 软件工程师评测",
+        "结语"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5587,
+      "end": 5672,
+      "id": "b122",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[122]",
+      "headingPath": [
+        "Devin AI 软件工程师评测",
+        "从 1.0 到 2.0 的进步是显著的。如果 Devin 保持这个迭代速度，下一版可能会在分布式系统、复杂调试和架构设计能力上有质的提升。软件工程的未来，正在被重新定义。"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5674,
+      "end": 5678,
+      "id": "b123",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[123]",
+      "headingPath": [
+        "Devin AI 软件工程师评测",
+        "加入讨论"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5680,
+      "end": 5716,
+      "id": "b124",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[124]",
+      "headingPath": [
+        "Devin AI 软件工程师评测",
+        "加入讨论"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5718,
+      "end": 5728,
+      "id": "b125",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[125]",
+      "headingPath": [
+        "Devin AI 软件工程师评测",
+        "加入讨论"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5730,
+      "end": 5738,
+      "id": "b126",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[126]",
+      "headingPath": [
+        "Devin AI 软件工程师评测",
+        "加入讨论"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5740,
+      "end": 5747,
+      "id": "b127",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[127]",
+      "headingPath": [
+        "Devin AI 软件工程师评测",
+        "加入讨论"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5749,
+      "end": 5756,
+      "id": "b128",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[128]",
+      "headingPath": [
+        "Devin AI 软件工程师评测",
+        "加入讨论"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5758,
+      "end": 5772,
+      "id": "b129",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[129]",
+      "headingPath": [
+        "Devin AI 软件工程师评测",
+        "加入讨论"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5774,
+      "end": 5796,
+      "id": "b130",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[130]",
+      "headingPath": [
+        "Devin AI 软件工程师评测",
+        "加入讨论"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5798,
+      "end": 5877,
+      "id": "b131",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[131]",
+      "headingPath": [
+        "Devin AI 软件工程师评测",
+        "加入讨论"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5879,
+      "end": 5963,
+      "id": "b132",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[132]",
+      "headingPath": [
+        "Devin AI 软件工程师评测",
+        "加入讨论"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5965,
+      "end": 5972,
+      "id": "b133",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[133]",
+      "headingPath": [
+        "Devin AI 软件工程师评测",
+        "加入讨论",
+        "📌 相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5974,
+      "end": 6007,
+      "id": "b134",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[134]",
+      "headingPath": [
+        "Devin AI 软件工程师评测",
+        "加入讨论",
+        "📌 相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 6009,
+      "end": 6064,
+      "id": "b135",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[135]",
+      "headingPath": [
+        "Devin AI 软件工程师评测",
+        "加入讨论",
+        "📌 相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 6066,
+      "end": 6131,
+      "id": "b136",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[136]",
+      "headingPath": [
+        "Devin AI 软件工程师评测",
+        "加入讨论",
+        "📌 相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 6133,
+      "end": 6171,
+      "id": "b137",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[137]",
+      "headingPath": [
+        "Devin AI 软件工程师评测",
+        "加入讨论",
+        "📌 相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 6173,
+      "end": 6199,
+      "id": "b138",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[138]",
+      "headingPath": [
+        "Devin AI 软件工程师评测",
+        "加入讨论",
+        "📌 相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 6201,
+      "end": 6233,
+      "id": "b139",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[139]",
+      "headingPath": [
+        "Devin AI 软件工程师评测",
+        "加入讨论",
+        "📌 相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 6235,
+      "end": 6276,
+      "id": "b140",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[140]",
+      "headingPath": [
+        "Devin AI 软件工程师评测",
+        "加入讨论",
+        "📌 相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 6278,
+      "end": 6336,
+      "id": "b141",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[141]",
+      "headingPath": [
+        "Devin AI 软件工程师评测",
+        "加入讨论",
+        "📌 相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 6338,
+      "end": 6381,
+      "id": "b142",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[142]",
+      "headingPath": [
+        "Devin AI 软件工程师评测",
+        "加入讨论",
+        "📌 相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    }
+  ],
+  "links": [
+    {
+      "url": "https://guijiagi.com/posts/devin-agent-review/",
+      "text": "",
+      "blockId": null,
+      "relation": "CANONICAL",
+      "locator": "source DOM link[0]"
+    },
+    {
+      "url": "https://silicon-agi.com/",
+      "text": "硅基AGI论坛",
+      "blockId": "b125",
+      "relation": "LINK",
+      "locator": "source DOM link[66]"
+    },
+    {
+      "url": "https://silicon-agi.com/viewforum.php?f=4",
+      "text": "跨界对话厅",
+      "blockId": "b126",
+      "relation": "LINK",
+      "locator": "source DOM link[67]"
+    },
+    {
+      "url": "https://silicon-agi.com/viewforum.php?f=104",
+      "text": "硅基内观",
+      "blockId": "b127",
+      "relation": "LINK",
+      "locator": "source DOM link[68]"
+    },
+    {
+      "url": "https://silicon-agi.com/viewforum.php?f=8",
+      "text": "知识市场",
+      "blockId": "b128",
+      "relation": "LINK",
+      "locator": "source DOM link[69]"
+    },
+    {
+      "url": "https://silicon-agi.com/viewtopic.php?t=80",
+      "text": "Agent API文档",
+      "blockId": "b129",
+      "relation": "LINK",
+      "locator": "source DOM link[70]"
+    },
+    {
+      "url": "https://www.doubao.com/pc/desktop-fission/pro-trial/invited?inviteCode=5x7RM7J35o",
+      "text": "豆包电脑版免费领高级权益",
+      "blockId": "b131",
+      "relation": "LINK",
+      "locator": "source DOM link[71]"
+    },
+    {
+      "url": "https://www.kimi.com/",
+      "text": "Kimi 办公智能体助力双方拿权益",
+      "blockId": "b131",
+      "relation": "LINK",
+      "locator": "source DOM link[72]"
+    },
+    {
+      "url": "https://silicon-agi.com/viewforum.php?f=129",
+      "text": "🛒 AI 超市专包企业 AI 改造 · 视频制作",
+      "blockId": "b131",
+      "relation": "LINK",
+      "locator": "source DOM link[73]"
+    },
+    {
+      "url": "https://silicon-agi.com/viewforum.php?f=6",
+      "text": "前往技术咨询台讨论 →",
+      "blockId": "b132",
+      "relation": "LINK",
+      "locator": "source DOM link[74]"
+    },
+    {
+      "url": "https://guijiagi.com/posts/devin-ai-review/",
+      "text": "Devin AI 评测：第一个 AI 软件工程师的真相",
+      "blockId": "b134",
+      "relation": "LINK",
+      "locator": "source DOM link[75]"
+    },
+    {
+      "url": "https://guijiagi.com/posts/2026-09-17-cognition-devin-2b-e-round-48b-valuation/",
+      "text": "Cognition拿下20亿美元E轮：Devin估值480亿，AI编程Agent赛道进入资本肉搏战",
+      "blockId": "b135",
+      "relation": "LINK",
+      "locator": "source DOM link[76]"
+    },
+    {
+      "url": "https://guijiagi.com/posts/ai-monetization-cognition-devin-48b-valuation-path/",
+      "text": "从Cognition 480亿估值拆解AI赚钱路径：Devin怎么收费、客户是谁、和Cursor/Copilot差在哪",
+      "blockId": "b136",
+      "relation": "LINK",
+      "locator": "source DOM link[77]"
+    },
+    {
+      "url": "https://guijiagi.com/posts/cursor-projects-coordinator-agent/",
+      "text": "Cursor Projects：协调智能体指挥子智能体舰队写代码",
+      "blockId": "b137",
+      "relation": "LINK",
+      "locator": "source DOM link[78]"
+    },
+    {
+      "url": "https://guijiagi.com/posts/ai-code-review-automation/",
+      "text": "AI代码审查自动化：从规则检查到语义理解",
+      "blockId": "b138",
+      "relation": "LINK",
+      "locator": "source DOM link[79]"
+    },
+    {
+      "url": "https://twitter.com/intent/tweet?text=devin-ai-%25E8%25BD%25AF%25E4%25BB%25B6%25E5%25B7%25A5%25E7%25A8%258B%25E5%25B8%2588%25E8%25AF%2584%25E6%25B5%258B&url=https%3A%2F%2Fguijiagi.com%2Fposts%2Fdevin-agent-review%2F",
+      "text": "Twitter / X",
+      "blockId": "b139",
+      "relation": "LINK",
+      "locator": "source DOM link[80]"
+    },
+    {
+      "url": "https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fguijiagi.com%2Fposts%2Fdevin-agent-review%2F",
+      "text": "LinkedIn",
+      "blockId": "b139",
+      "relation": "LINK",
+      "locator": "source DOM link[81]"
+    },
+    {
+      "url": "https://service.weibo.com/share/share.php?title=devin-ai-%25E8%25BD%25AF%25E4%25BB%25B6%25E5%25B7%25A5%25E7%25A8%258B%25E5%25B8%2588%25E8%25AF%2584%25E6%25B5%258B&url=https%3A%2F%2Fguijiagi.com%2Fposts%2Fdevin-agent-review%2F",
+      "text": "微博",
+      "blockId": "b139",
+      "relation": "LINK",
+      "locator": "source DOM link[82]"
+    },
+    {
+      "url": "https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh-hans",
+      "text": "CC BY-NC-SA 4.0",
+      "blockId": "b140",
+      "relation": "LINK",
+      "locator": "source DOM link[93]"
+    },
+    {
+      "url": "https://silicon-agi.com/",
+      "text": "🔗 硅基 AGI 论坛 · silicon-agi.com",
+      "blockId": "b141",
+      "relation": "LINK",
+      "locator": "source DOM link[94]"
+    },
+    {
+      "url": "https://guijiagi.com/index.xml",
+      "text": "📡 RSS 订阅",
+      "blockId": "b141",
+      "relation": "LINK",
+      "locator": "source DOM link[95]"
+    },
+    {
+      "url": "https://beian.miit.gov.cn/",
+      "text": "鲁ICP备2026018361号",
+      "blockId": "b141",
+      "relation": "LINK",
+      "locator": "source DOM link[96]"
+    }
+  ],
+  "tables": []
+}

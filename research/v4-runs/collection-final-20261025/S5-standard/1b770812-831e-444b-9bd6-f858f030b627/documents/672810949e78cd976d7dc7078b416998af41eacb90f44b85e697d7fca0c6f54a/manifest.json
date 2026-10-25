@@ -1,0 +1,4013 @@
+{
+  "schemaVersion": "source-document/v1",
+  "id": "672810949e78cd976d7dc7078b416998af41eacb90f44b85e697d7fca0c6f54a",
+  "version": "82f4571694d309044085fa22aa1bbde0688fc3da6d05fe4bd06b6768bcb3d1a4",
+  "requestedUrl": "https://aialleyway.com/cursor-review",
+  "finalUrl": "https://aialleyway.com/cursor-review/",
+  "retrievedAt": "2026-10-25T04:43:56.413Z",
+  "contentType": "text/html; charset=utf-8",
+  "status": "READ",
+  "readError": null,
+  "rawHash": "dce4b948bbd95c68e35251470ed5e7adf97c965ae55d24189fcb0b2ef941181a",
+  "textHash": "78dd5c1c86642283d87775af749f5b647b65a2842e59f5ba114ca630af554052",
+  "text": "Review Build Coding\n\nCursor review: I paid for 11 months, then cancelled\n\nCursor review from someone who actually paid: $510.70 across 11 months, a third of it metered usage. What it does well, and what I got wrong about the bill.\n\n★★★★★ ★★★★★ 4.2 / 5 Power Tool\n\nBy Ryan Parker 2026-07-28 updated 2026-08-01\n\nContents\n\nIs Cursor worth it?\n\nYes, with one condition: set a spend limit on day one. A flat $20 buys a genuinely good editor, and the metered usage on top is fair but unbounded. I paid Cursor $510.70 across eleven months before cancelling, a third of it metered charges I could have capped and never did, and the editor was never the reason I left.\n\nFor how Cursor compares with everything else I have measured, see the same brief run through seven tools.\n\nTry Cursor free\n\nWhere I stand, so you can weigh the rest: I moved from Cursor to Claude Code in January 2026, and we earn referral credits on Claude signups. Every figure below is from my own invoices.\n\nWhat does Cursor actually do in 2026?\n\nOpen Cursor today and you do not land in a code editor. You land in an agent.\n\nThat screenshot is the default view on a current install. A prompt box, a model selector, a “Plan New Idea” button, and a hint that /shell runs terminal commands. No file tree in the centre, no open buffer, no cursor blinking in code.\n\nThe 2026 reviews have caught up with this and lead on agents. What has not caught up is Cursor’s reputation, which is still “VS Code with good autocomplete”, and several of the older published reviews describe exactly that product. The centre of gravity has moved from typing alongside an assistant to briefing one, which puts Cursor closer to a terminal agent than most people expect.\n\nThe VS Code lineage is still underneath. It remains a fork, so your extensions, keybindings and settings carry over, and that is still the strongest practical argument for choosing it over a tool that asks you to abandon your setup. You can drop back into a normal editor window whenever you want.\n\nWhat sits on top is now a full agent stack: skills you define, hooks, a plan mode, and Composer as the in-house model alongside frontier models from other labs. The pitch is that you brief work, review a result, and stay in one window while doing it.\n\nThe slash commands tell you what it wants you to do\n\nA product’s hint text is an honest signal of where its makers think the value is, and Cursor cycles through several on that empty home screen. /shell runs terminal commands without leaving the window. /plan switches on Plan Mode, described in the app as a way to improve agent execution. /create-skill builds a reusable skill, with the app framing skills as the way you customise Cursor around your own workflows.\n\nNone of those are editor features. They are agent-management features, and they are what the product leads with before you have typed anything. Two years ago the equivalent hints would have been about autocomplete.\n\nWhat the app surfacesWhat it does/shellRuns terminal commands without leaving the window/planPlan Mode, framed as improving agent execution/create-skillBuilds a reusable skill for your own workflows@Pulls specific files or symbols into contextShift-Tab twiceDebug Mode, for reproducing and solving hard bugs⌘NStarts a new agent\n\nEvery row is an instruction for managing an agent. Not one autocomplete or formatting command among the things Cursor advertises on an empty screen. The tiling matters too: the interface assumes you will run several agents at once and want to watch them in parallel.\n\nHow it gets context\n\nThe prompt box advertises two symbols, and they carry most of the workflow. @ pulls in context, letting you point the agent at specific files, folders, docs or past chats rather than hoping it finds them. / reaches your skills.\n\nThis is the meaningful difference from a terminal agent that simply reads whatever it decides it needs. Cursor makes context an explicit act. You choose what goes in. Whether that is a strength depends on your temperament: it is more control and more typing, and it means a badly-scoped prompt is your fault rather than the model’s.\n\nA model selector sits under the prompt, showing Composer 2.5 Fast on my account with a lock icon beside it. On the free tier the better models are visible but gated.\n\nWhat the paid tiers actually add\n\nThe pricing page is specific about the jump from free to paid, and it is mostly about limits rather than capability. Individual buys extended limits on the agent, generous limits for Grok and Composer, access to frontier models, and MCPs, skills and hooks. Cloud agents are included. Bugbot, the agentic code reviewer, arrives on usage-based billing.\n\nThat last phrase is the pattern in miniature: a headline feature listed under a $20 plan that the $20 does not cover. It is available to you, and it bills separately.\n\nTeams at $40 per user adds shared context across a team, a marketplace for internal rules and skills, usage analytics, a team-wide privacy mode and SSO. Cursor also states that with privacy mode enabled, code data is not used for training by them or their model providers, which is the answer most people working on client code will want before installing anything.\n\nHow much does Cursor really cost?\n\nThe plans are simple. The bill is not. Across eleven months I paid $510.70: $340 in subscription and $170.70 in on-demand charges billed after the fact, on a plan advertised at $20 a month. Here is how that happens.\n\nPlanPriceWhat you getHobby$0, no card requiredLimited agent requests, access to ComposerPro$20 / monthExtended agent limits, frontier models, MCPs, skills, hooks, cloud agentsPro Plus$60 / monthThe tier Cursor recommends for daily agent usersUltra$200 / monthThe tier Cursor recommends for agent power usersTeams Standard$40 / user / monthTeam billing, shared context, Bugbot code review, SSOTeams Premium$120 / user / monthHigher included usage across the teamEnterpriseOn requestPooled usage, SCIM, audit logs, access controls\n\nPro, Pro Plus and Ultra sit behind a tier picker inside the Individual card, so the $20 is the only figure on the card itself. All three prices are published in Cursor’s billing docs. Two things the table does not show decide what you actually pay. The first is on-demand usage: Cursor’s pricing page states that every plan includes a set amount of model usage, and that usage continues past it, billed in arrears. The second is that prices exclude tax, which the same page notes in its FAQ.\n\nHere is my real invoice history, from the month I subscribed to the month I stopped.\n\nI subscribed to Cursor Pro at $20 in March 2025. For five months the bill was exactly $20 and I had no complaints. In August, on-demand charges started appearing alongside the subscription. In late October I upgraded to Cursor Pro Plus at $60, hoping a bigger allowance would end the overage. It did not.\n\nOctober 2025 cost me $159.22 across four separate charges: $20 for Pro, $60 for the Pro Plus upgrade, and $79.22 of on-demand usage. November came to $110.00, of which $50 was usage. Neither month involved unusual work.\n\nAcross the full eleven months I paid Cursor $510.70. Of that, $340 was subscription and $170.70 was on-demand billing charged after the work was done. A third of my total spend was not predictable from the plan price I thought I had bought.\n\nWhat you can do about it\n\nThe control I needed existed on the plan I was already paying for, and I never used it. Cursor’s spend-limit docs are unambiguous: on Pro, Pro Plus and Ultra you set a monthly cap on on-demand usage from the Spending tab in your dashboard. Not an enterprise feature, not a support ticket. A field I could have filled in during my first week.\n\nThat reframes my own story, so I will say it plainly rather than bury it: a meaningful share of my $170.70 is my fault. I assumed the subscription was the cost, did not read the billing docs, and noticed the charges only when the card statement arrived. If you take one thing from this review, make it that field.\n\nThe other lever is model choice. The expensive lines on my invoices were the reasoning-heavy models, and the cheaper ones barely registered. Matching model to task is the single biggest thing under your control, and the interface makes it a one-click change.\n\nWho is Cursor for?\n\nDevelopers who want AI in an editor they already know. The VS Code foundation means no migration cost, and that is a real advantage over tools that ask you to change how you work.\n\nPeople who code moderately and predictably. My five flat $20 months are the proof this works. If your usage sits inside the allowance, $20 buys a lot.\n\nTeams that want code review built in. The $40 tier adds Bugbot, shared context and SSO, which is a coherent package rather than a price bump.\n\nPeople working under a confidentiality obligation. Cursor states that with privacy mode on, code data is not used for training by them or their model providers, and the team tier can enforce it across everyone rather than trusting each person to tick a box.\n\nAnyone who wants model choice in one place. Frontier models from several labs behind one subscription is genuinely convenient.\n\nNot for heavy agent users, or anyone who needs a predictable bill. This is the group I fell into. If you delegate large tasks all day, the meter runs, and you will find out how fast only in arrears.\n\nThe dividing line is not seniority or language or project size. It is whether your usage is bursty. A steady drip of small edits sits comfortably inside the allowance for $20 a month. A habit of handing over large, multi-file jobs several times a day does not, and no plan on the page reliably contains it.\n\nIf the honest description of your situation is that there is no codebase yet, then the category is wrong rather than the plan. An app builder will get you a working prototype faster than any editor will, and Lovable is the one I have put through a measured build.\n\nIf you are unsure which side you fall on, the free tier answers it faster than any review can, including the rest of our picks. Use it for a fortnight on real work and watch how quickly you meet the limits. That tells you more about your future bill than the plan cards do.\n\nThe good\n\nIt was worth $20 for five months straight\n\nThe most honest evidence I can give is my own invoice column. March through July 2025 read $20.00, $20.00, $20.00, $20.00, $20.00, with no usage charges attached. During those months Cursor did everything I asked at list price, and I would have told you it was excellent value. That period is why the rating here is not lower.\n\nFive consecutive clean months is not a trial. It is long enough to build habits, ship real work and form a settled opinion, and my settled opinion at the time was that $20 was cheap.\n\nThe VS Code foundation removes the switching cost\n\nIt is a fork, so extensions, themes, keybindings and settings come across intact. Compared with adopting a terminal agent, where you rebuild your habits from scratch, this is the least disruptive way to get serious AI help into an existing workflow. That advantage is structural and no amount of billing frustration takes it away.\n\nAdopting it is a download rather than a migration, with no need to defend a tooling change to colleagues who like their setup. When I left, this was the thing I actually missed.\n\nModel choice in one subscription is genuinely useful\n\nMy invoices name the models I was calling: Claude Sonnet and Claude Opus variants, alongside Cursor’s own Composer. Being able to pick a model per task, without holding separate subscriptions, is convenience you notice daily.\n\nIt also has a cost benefit if you use it deliberately. Each usage line on my Cursor invoices names its model and its call count, so the per-call cost falls straight out of the arithmetic:\n\nModel on my invoicesCallsChargedPer callSonnet 488$2.34$0.027Sonnet 4 thinking371$17.16$0.046Sonnet 4.5 thinking510$40.69$0.080Opus 4.5 high-thinking15$1.27$0.085\n\nThree times the cost per call between the cheapest and the dearest, for work that often did not need the difference. Matching model to task is the biggest lever you control, and a tool tied to a single lab cannot offer it at all.\n\nThe free tier lets you reach the real product\n\nHobby costs nothing and asks for no card, and it gives you limited agent requests plus Composer access rather than a crippled demo. My cancelled account still sits there. Plenty of tools in this category gate the actual experience behind a card; this one does not.\n\nThe agent stack is deeper than its reputation\n\nSkills, hooks, plan mode, cloud agents and a /shell command add up to something you can shape around your own workflow. If your mental model of Cursor is “VS Code with autocomplete”, it has moved a long way past that.\n\nThe tiled agent panes are the detail that gave me most pause about leaving. Being able to run several agents and watch them side by side in a graphical window is something a terminal genuinely does worse, and if parallel delegation is how you work, that interface is a real argument for staying.\n\nTeam features are a real package, not a price bump\n\nAt $40 per user the Teams tier adds Bugbot for agentic code review, shared team context, usage analytics and SSO. For a team already standardised on VS Code, that is a coherent step up rather than the usual enterprise tax.\n\nThe bad\n\nA third of what I paid Cursor was not the subscription\n\nOf the $510.70 I paid Cursor across eleven months, $170.70 was on-demand billing. That is 33% of my total spend arriving after the fact, on a product whose headline price is $20. Nothing about it is hidden: the pricing page states that on-demand usage continues after your included amount and is billed in arrears, and the docs set out the rates.\n\nThe complaint is about emphasis rather than concealment. The card says $20 in large type and the metering is a sentence in an FAQ, so the number that anchors your expectation is the one least likely to match your invoice.\n\nMy Cursor invoice history, March 2025 to January 2026, split between what I agreed to in advance and what arrived afterwards:\n\nMonthSubscriptionOn-demandTotalMar–Jul 2025$20.00 eachnone$20.00 eachAug 2025$20.00$37.16$57.16Sep 2025$20.00$2.29$22.29Oct 2025$80.00$79.22$159.22Nov 2025$60.00$50.00$110.00Dec 2025$60.00$1.27$61.27Jan 2026none$0.76$0.76Eleven months$340.00$170.70$510.70\n\nRead the on-demand column on its own and the pattern is obvious: it is near zero when the work is light and it is the largest line on the invoice when the work is interesting.\n\nThe $60 plan ran out in about a week\n\nI upgraded to Pro Plus specifically to stop the overage. The larger allowance was gone in roughly a week of normal work, and the on-demand charges resumed on top of the higher subscription. Paying three times more did not buy predictability, which is the thing I was actually trying to purchase.\n\nThat is the moment the product lost me, and it is worth being precise about why. I did not object to paying more for more. I objected to paying three times more and still not knowing what the month would cost. An upgrade that raises the floor without lowering the variance solves the wrong problem.\n\nTwo of my last four months cost more than $100\n\nOctober 2025: $159.22. November 2025: $110.00. Those are not stories about a runaway script or a mistake, they are ordinary months. When a $20 tool bills $159, the number on the plan card has stopped being useful for budgeting.\n\nOctober is the clearest example of how the charges arrive. Four separate hits: $20 for the old plan, $40 of usage, $60 for the upgrade, then another $39.22 of usage six days later. No single charge looks alarming. The sum is eight times the advertised price.\n\nMetered API rates lose to a flat cap once you are heavy\n\nI assumed for months that Cursor was taking a cut on the Anthropic models my invoices show me calling. It is not. The billing docs are clear that third-party models on individual plans are charged at the model’s API price, and the $0.25 per million token Cursor Token Rate applies only to Teams and Enterprise. I was paying list.\n\nThat correction sharpens the real point rather than removing it. Metered API pricing is honest and it is also unbounded, so at high volume you are competing against capped subscriptions from the labs themselves. Being precise about the arithmetic, because it is easy to flatter my own decision here: my two heaviest Cursor months carried $79.22 and $50.00 of metered usage on top of the subscription, for totals of $159.22 and $110.00. Claude Max 5x bills me $110 a month once tax is added. The gap is not that one is cheap and the other expensive. It is that one has a ceiling and the other does not.\n\nYou carry the context burden\n\nThe prompt box makes context an explicit act. @ points the agent at files, folders or symbols, which is more control than an agent that decides for itself, and also more work. Every session you are choosing what goes in.\n\nThat has a real failure mode: a badly-scoped prompt produces a confidently wrong answer, and the fault is yours rather than the model’s. A terminal agent that reads the repository on its own removes that step and the mistake with it. Which trade you prefer is temperament, but it is the one place where Cursor asks more of you than its rivals do, and it is not a billing complaint.\n\nThe public rating is genuinely bad\n\nAs of July 2026, Cursor holds 1.6 out of 5 on Trustpilot across 278 ratings, with the summary citing an unstable interface and frequent changes. Aggregate ratings skew negative for developer tools and this should not be read as the whole picture, but a score that low on that many reviews is not noise either, and billing complaints are a recurring theme in it.\n\nTwo things stop that number meaning what it looks like it means. Claude sits at 1.5 across 1,720 ratings on the same platform, so the tool I switched to scores no better. And on G2, where reviewers are verified business users, Cursor holds 4.7 out of 5 from 307 reviews, tying Claude Code’s 4.7 with roughly three times the review volume.\n\nAggregateCursorClaude / Claude CodeTrustpilot1.6 / 5 from 2781.5 / 5 from 1,720G2, the coding products4.7 / 5 from 3074.7 / 5 from 108G2, parent product—4.6 / 5 from 403\n\nThe two platforms flatly disagree, and that is the honest summary. Trustpilot skews toward people moved to write by a bill they did not expect, and rates both tools about the same. G2 skews toward people evaluating a tool at work, and rates both coding products identically at 4.7, with Cursor carrying three times the volume. Neither is a reason to buy or skip either one.\n\nIt is worth holding that number against the rest of the evidence rather than in place of it. During my own first five months I would have rated Cursor around four out of five without hesitation, and nothing I saw in that period resembles a 1.6. A product can be genuinely good and still collect a wall of angry reviews when the thing people are angry about is the invoice, and that is roughly what the split looks like here.\n\nWhat I got wrong, and what I am not claiming\n\nThree criticisms I had drafted did not survive checking Cursor’s own documentation, and cutting them is more useful to you than keeping them. I believed the Pro Plus and Ultra prices were unpublished; they are, at $60 and $200. I believed Cursor took a margin on third-party models; on individual plans it charges the model’s API rate. I believed the plan I bought had been renamed away; “Cursor Pro Plus” at $60 is still exactly that.\n\nThe one that stings is the spend limit, because it was available on my plan the whole time and I never opened the Spending tab. A meaningful share of my $170.70 is a documented control I did not use.\n\nThe score gap with my whether Claude Code is worth it also invites an inference I want to head off: it is not a judgement that Cursor writes worse code. In eleven months it never produced a wrong-answer failure costly enough that I still remember it. I cannot give you a rigorous capability verdict either, because I did not run the two tools side by side on identical tasks. What I have is eleven months of invoices, and the 4.2 reflects cost behaviour, which is the axis I can actually evidence.\n\nWhat are the best Cursor alternatives?\n\nIf the metered billing is what puts you off, three options are worth a look.\n\nClaude Code is where I went, and I put the two side by side in Claude Code vs Cursor. It is a terminal agent rather than an editor, which is a real workflow change, and its own pricing has a two-layer limit system worth understanding first. What it gave me was a ceiling. Its own pricing has its surprises, which I cover there.\n\nCodex is the closest like-for-like if you want an agent without leaving OpenAI’s ecosystem. It is included on every ChatGPT tier from Free upward, with a Go tier at $8 and Plus at $20 below the heavier plans, and it ships a local CLI and IDE extension alongside a cloud sandbox.\n\nAntigravity is the low-commitment way to test whether agent-style work suits you, because it costs nothing. Google retired Gemini CLI in June 2026 and moved those users here. I ran a full build on its free tier for the Google Antigravity review.\n\nNone of these makes Cursor a bad tool, and two of the three ask you to give up the editor entirely, which is a real cost rather than a footnote. They matter only if unpredictable billing is your specific objection, and if it is not, staying put is the sensible answer.\n\nFinal word\n\nThe short version of this Cursor review: a good editor attached to a pricing model that punishes the people who use it most. For five months it was the best $20 I spent on software, and I would still recommend it at that level without hesitation. The trouble starts precisely when the tool succeeds, because the more work you delegate, the further your bill drifts from the number that sold you the plan.\n\nIf you are a moderate user, buy it and enjoy it. If you are heading toward daily agent work, do the arithmetic first, because I did not, and eleven months later I had paid $510.70 for a $20 subscription and moved on.\n\nThe version of this review I expected to write was harsher, and checking Cursor’s documentation made it milder twice over. The first seven months are a good tool at a fair price. The last four are a cautionary tale about a meter I could have capped with one field and did not. Both halves are true, and which one you get depends on how much you delegate and whether you read the billing docs before the card statement.\n\nIf youThenCode moderately, inside the included allowancePro at $20 is good value. Set a limit anywayDelegate heavily most daysPrice Pro Plus at $60 or Ultra at $200 properly before assuming $20Cannot tolerate a variable billSet the spend limit on day one, or buy a flat-rate toolWant to keep the editor you already knowThe VS Code base is the strongest single reason to stay\n\nSo set a spend limit on day one, pick cheaper models for routine work, and check the invoice rather than the plan card at the end of month two. Do that and Cursor is a Power Tool many people will be happy with for years. Skip it and you will learn what I did, more expensively.\n\nTry Cursor free\n\nFrequently asked questions\n\nIs Cursor worth it?\n\nIt depends entirely on how hard you push it, which is not the answer the pricing page implies. I paid for Cursor for eleven months and it was good value for five of them, when my bill was a flat $20 and the included allowance covered everything I did. The editor is capable, the model range is wide, and building on VS Code means your extensions and shortcuts come with you.\n\nIt stopped being worth it for me when I started running agents seriously. Usage past your included allowance is billed after the fact, and my October 2025 bill came to $159.22 with roughly half of that unplanned.\n\nAcross the full eleven months I paid $510.70, of which $170.70 was on-demand billing rather than subscription. If you code moderately, it is a solid $20 tool. If you delegate heavily, price the meter rather than the plan. I score it 4.2 out of 5.\n\nHow much does Cursor actually cost?\n\nHobby is free with no card required. The paid individual tiers are Pro at $20 a month, Pro Plus at $60 and Ultra at $200, and teams pay $40 or $120 per user. Only the $20 shows on the pricing card itself, because Pro Plus and Ultra sit behind a tier picker, but all three prices are published in Cursor's billing docs.\n\nThose are not the numbers on your card if you use agents at volume. Every plan includes a set amount of model usage, and on-demand usage continues past it, billed in arrears at the model's API rate.\n\nIn my case that added $170.70 across eleven months on top of $340 in subscriptions. Prices also exclude tax. You can cap the metered part with a monthly spend limit from the Spending tab, on any paid individual plan, which is the single most useful thing to know before subscribing.\n\nWhy did you switch from Cursor to Claude Code?\n\nCost predictability, not capability. When I upgraded to the $60 plan the included allowance ran out in about a week, and metered charges pushed my monthly total past $100 more than once. I had assumed Cursor was taking a margin on the Anthropic models my invoices show me calling, and while writing this review I checked and found that is wrong: individual plans are charged at the model's API price, with no Cursor markup.\n\nSo the honest reason is arithmetic rather than grievance. Metered API pricing is fair and it is also unbounded, and at my volume a capped subscription won. My two heaviest Cursor months totalled $159.22 and $110.00, of which $79.22 and $50.00 were metered; Claude Max 5x bills me $110 including tax, with a hard cap.\n\nI should add that Cursor offers a spend limit on paid individual plans and I never set one, which would have changed the picture. I cancelled and was downgraded to the free tier, where the account still sits.\n\nIs Cursor still just a VS Code fork?\n\nLess than it used to be, and this is where most reviews are out of date. Cursor started as a VS Code fork with AI woven into the editor, and most published reviews still describe it that way, leading on tab completion and inline edits.\n\nOpen it today and the default screen is an agent prompt reading 'Plan, Build, / for skills, @ for context', with a Composer model selector and a Plan New Idea button. There are skills, hooks, a /shell command and a plan mode.\n\nThe VS Code lineage is still there and your extensions still work, but the product's centre of gravity has moved from typing alongside an assistant to briefing an agent, which puts it much closer to terminal agents than the older reviews suggest.\n\nIs Cursor better than Claude Code?\n\nFor most people who want AI inside an editor, yes. Cursor keeps you in a VS Code window with your extensions and keybindings intact, shows you changes inline, and starts at $20 against Claude Max's $100. If you want to watch the work happen rather than review it afterwards, Cursor is the better fit and the cheaper one.\n\nI moved to Claude Code anyway, for one reason: my Cursor bill was metered and unbounded, and at my volume a capped plan won. That is a statement about my usage, not about which tool writes better code. I scored the two head to head in Claude Code vs Cursor, where three axes tie and Cursor takes three of the rest.\n\nWhat is Cursor's free plan good for?\n\nEvaluating the tool, and not much beyond that. The Hobby tier costs nothing, needs no credit card, and gives you limited agent requests plus access to Composer, which is enough to judge whether the workflow suits you before paying anything.\n\nThe limits bite quickly on real work, and the better models carry a lock icon until you upgrade, so you can see what you are missing without being able to use it. Treat it as a genuine trial rather than a permanent home.\n\nThat said, it is a more honest free tier than most, because you reach the actual product rather than a crippled demo, and my own cancelled account has sat on it since January without being nagged into resubscribing. If you are trying to work out whether you would blow past the included allowance on a paid plan, a fortnight of real work on Hobby will answer that faster than any pricing page can.\n\nShare Copy link\n\nKeep reading\n\nCursor AI pricing: what the plans cost and what I paid\n\nCursor AI pricing runs free to $200 a month, plus metered usage. I paid $510.70 across eleven months on a plan advertised at $20. Every tier, verified live.\n\nRyan Parker 2026-08-11\n\nCursor vs Codex: I paid for one and quit the other\n\nCursor vs Codex from someone who cancelled Cursor after $510.70 and walked away from Codex too. What each actually costs, and which one I'd go back to.\n\nRyan Parker 2026-08-02\n\nCursor alternatives: I left after $510.70, here's where I went\n\nCursor alternatives from someone who actually cancelled. Real invoices, what each option does about the metered bill, and which ones I've tested.\n\nRyan Parker 2026-08-04\n\nGitHub Copilot alternatives: what you are actually leaving for\n\nGitHub Copilot alternatives ranked by a build test, not a feature table. Four took the identical brief Copilot took. Here is what each produced and cost.\n\nRyan Parker 2026-08-15\n\nAffiliate disclosure\n\nSome links on this page are affiliate links: if you sign up through one, the partner pays us a commission at no extra cost to you. This funds the publication. It does not buy a good review.\n\nRyan Parker Editor\n\nRyan runs the make-and-build side of the AI tool landscape for AI Alleyway: the voice and music generators he produces with, the slide tools he builds decks in, and the coding assistants, app builders, and automations he wires his own workflow together with. He has strong opinions about pricing pages that hide their pricing, onboarding flows that want a sales call before they show the product, and demos that fall apart the moment you ship real work. The reviews start with real use — his own accounts, actual projects, the numbers straight off the dashboard — and lean on documentation, user reports, and public benchmarks for anything he hasn't run himself. No invented test marathons, no made-up scores. When a tool gets recommended here, it earned the spot.\n\nLiked this? Get one of these in your inbox every week.\n\nOne email a week. Unsubscribe anytime. We never share your address.",
+  "rawSources": [
+    {
+      "mode": "STATIC",
+      "hash": "dce4b948bbd95c68e35251470ed5e7adf97c965ae55d24189fcb0b2ef941181a",
+      "path": "C:\\Users\\qianchen\\Documents\\waytoagi-1024-detective-a2-v4\\.cache\\source-documents-v4\\1b770812-831e-444b-9bd6-f858f030b627\\672810949e78cd976d7dc7078b416998af41eacb90f44b85e697d7fca0c6f54a\\raw.bin"
+    }
+  ],
+  "storage": {
+    "rawPath": "C:\\Users\\qianchen\\Documents\\waytoagi-1024-detective-a2-v4\\.cache\\source-documents-v4\\1b770812-831e-444b-9bd6-f858f030b627\\672810949e78cd976d7dc7078b416998af41eacb90f44b85e697d7fca0c6f54a\\raw.bin",
+    "textPath": "C:\\Users\\qianchen\\Documents\\waytoagi-1024-detective-a2-v4\\.cache\\source-documents-v4\\1b770812-831e-444b-9bd6-f858f030b627\\672810949e78cd976d7dc7078b416998af41eacb90f44b85e697d7fca0c6f54a\\source.txt",
+    "manifestPath": "C:\\Users\\qianchen\\Documents\\waytoagi-1024-detective-a2-v4\\.cache\\source-documents-v4\\1b770812-831e-444b-9bd6-f858f030b627\\672810949e78cd976d7dc7078b416998af41eacb90f44b85e697d7fca0c6f54a\\manifest.json"
+  },
+  "parser": {
+    "name": "readability+source-dom",
+    "version": "readability-0.6.0+jsdom-30.1.3+source-dom-2",
+    "normalization": "source-text/v1",
+    "mode": "STATIC"
+  },
+  "metadata": {
+    "title": "Cursor review: I paid for 11 months, then cancelled",
+    "author": "By Ryan Parker · 2026-07-28 · updated 2026-08-01",
+    "publishedAt": null,
+    "language": "en"
+  },
+  "completeness": "COMPLETE",
+  "warnings": [],
+  "blocks": [
+    {
+      "start": 0,
+      "end": 19,
+      "id": "b0",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[0]",
+      "headingPath": [],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 21,
+      "end": 72,
+      "id": "b1",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[1]",
+      "headingPath": [
+        "Cursor review: I paid for 11 months, then cancelled"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 74,
+      "end": 230,
+      "id": "b2",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[2]",
+      "headingPath": [
+        "Cursor review: I paid for 11 months, then cancelled"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 232,
+      "end": 262,
+      "id": "b3",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[3]",
+      "headingPath": [
+        "Cursor review: I paid for 11 months, then cancelled"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 264,
+      "end": 308,
+      "id": "b4",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[4]",
+      "headingPath": [
+        "Cursor review: I paid for 11 months, then cancelled"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 310,
+      "end": 318,
+      "id": "b5",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[5]",
+      "headingPath": [
+        "Cursor review: I paid for 11 months, then cancelled"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 320,
+      "end": 339,
+      "id": "b6",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[6]",
+      "headingPath": [
+        "Cursor review: I paid for 11 months, then cancelled",
+        "Is Cursor worth it?"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 341,
+      "end": 659,
+      "id": "b7",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[7]",
+      "headingPath": [
+        "Cursor review: I paid for 11 months, then cancelled",
+        "Is Cursor worth it?"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 661,
+      "end": 766,
+      "id": "b8",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[8]",
+      "headingPath": [
+        "Cursor review: I paid for 11 months, then cancelled",
+        "Is Cursor worth it?"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 768,
+      "end": 783,
+      "id": "b9",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[9]",
+      "headingPath": [
+        "Cursor review: I paid for 11 months, then cancelled",
+        "Is Cursor worth it?"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 785,
+      "end": 970,
+      "id": "b10",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[10]",
+      "headingPath": [
+        "Cursor review: I paid for 11 months, then cancelled",
+        "Is Cursor worth it?"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 972,
+      "end": 1009,
+      "id": "b11",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[11]",
+      "headingPath": [
+        "Cursor review: I paid for 11 months, then cancelled",
+        "What does Cursor actually do in 2026?"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1011,
+      "end": 1088,
+      "id": "b12",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[12]",
+      "headingPath": [
+        "Cursor review: I paid for 11 months, then cancelled",
+        "What does Cursor actually do in 2026?"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1090,
+      "end": 1324,
+      "id": "b13",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[13]",
+      "headingPath": [
+        "Cursor review: I paid for 11 months, then cancelled",
+        "What does Cursor actually do in 2026?"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1326,
+      "end": 1711,
+      "id": "b14",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[14]",
+      "headingPath": [
+        "Cursor review: I paid for 11 months, then cancelled",
+        "What does Cursor actually do in 2026?"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1713,
+      "end": 2010,
+      "id": "b15",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[15]",
+      "headingPath": [
+        "Cursor review: I paid for 11 months, then cancelled",
+        "What does Cursor actually do in 2026?"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2012,
+      "end": 2262,
+      "id": "b16",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[16]",
+      "headingPath": [
+        "Cursor review: I paid for 11 months, then cancelled",
+        "What does Cursor actually do in 2026?"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2264,
+      "end": 2315,
+      "id": "b17",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[17]",
+      "headingPath": [
+        "Cursor review: I paid for 11 months, then cancelled",
+        "What does Cursor actually do in 2026?",
+        "The slash commands tell you what it wants you to do"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2317,
+      "end": 2730,
+      "id": "b18",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[18]",
+      "headingPath": [
+        "Cursor review: I paid for 11 months, then cancelled",
+        "What does Cursor actually do in 2026?",
+        "The slash commands tell you what it wants you to do"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2732,
+      "end": 2946,
+      "id": "b19",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[19]",
+      "headingPath": [
+        "Cursor review: I paid for 11 months, then cancelled",
+        "What does Cursor actually do in 2026?",
+        "The slash commands tell you what it wants you to do"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2948,
+      "end": 3275,
+      "id": "b20",
+      "kind": "TABLE",
+      "locator": "source DOM normalized block[20]",
+      "headingPath": [
+        "Cursor review: I paid for 11 months, then cancelled",
+        "What does Cursor actually do in 2026?",
+        "The slash commands tell you what it wants you to do"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3277,
+      "end": 3543,
+      "id": "b21",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[21]",
+      "headingPath": [
+        "Cursor review: I paid for 11 months, then cancelled",
+        "What does Cursor actually do in 2026?",
+        "The slash commands tell you what it wants you to do"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3545,
+      "end": 3564,
+      "id": "b22",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[22]",
+      "headingPath": [
+        "Cursor review: I paid for 11 months, then cancelled",
+        "What does Cursor actually do in 2026?",
+        "How it gets context"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3566,
+      "end": 3793,
+      "id": "b23",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[23]",
+      "headingPath": [
+        "Cursor review: I paid for 11 months, then cancelled",
+        "What does Cursor actually do in 2026?",
+        "How it gets context"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3795,
+      "end": 4127,
+      "id": "b24",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[24]",
+      "headingPath": [
+        "Cursor review: I paid for 11 months, then cancelled",
+        "What does Cursor actually do in 2026?",
+        "How it gets context"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4129,
+      "end": 4294,
+      "id": "b25",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[25]",
+      "headingPath": [
+        "Cursor review: I paid for 11 months, then cancelled",
+        "What does Cursor actually do in 2026?",
+        "How it gets context"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4296,
+      "end": 4328,
+      "id": "b26",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[26]",
+      "headingPath": [
+        "Cursor review: I paid for 11 months, then cancelled",
+        "What does Cursor actually do in 2026?",
+        "What the paid tiers actually add"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4330,
+      "end": 4680,
+      "id": "b27",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[27]",
+      "headingPath": [
+        "Cursor review: I paid for 11 months, then cancelled",
+        "What does Cursor actually do in 2026?",
+        "What the paid tiers actually add"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4682,
+      "end": 4848,
+      "id": "b28",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[28]",
+      "headingPath": [
+        "Cursor review: I paid for 11 months, then cancelled",
+        "What does Cursor actually do in 2026?",
+        "What the paid tiers actually add"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4850,
+      "end": 5215,
+      "id": "b29",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[29]",
+      "headingPath": [
+        "Cursor review: I paid for 11 months, then cancelled",
+        "What does Cursor actually do in 2026?",
+        "What the paid tiers actually add"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5217,
+      "end": 5250,
+      "id": "b30",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[30]",
+      "headingPath": [
+        "Cursor review: I paid for 11 months, then cancelled",
+        "How much does Cursor really cost?"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5252,
+      "end": 5467,
+      "id": "b31",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[31]",
+      "headingPath": [
+        "Cursor review: I paid for 11 months, then cancelled",
+        "How much does Cursor really cost?"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5469,
+      "end": 5997,
+      "id": "b32",
+      "kind": "TABLE",
+      "locator": "source DOM normalized block[32]",
+      "headingPath": [
+        "Cursor review: I paid for 11 months, then cancelled",
+        "How much does Cursor really cost?"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5999,
+      "end": 6490,
+      "id": "b33",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[33]",
+      "headingPath": [
+        "Cursor review: I paid for 11 months, then cancelled",
+        "How much does Cursor really cost?"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 6492,
+      "end": 6576,
+      "id": "b34",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[34]",
+      "headingPath": [
+        "Cursor review: I paid for 11 months, then cancelled",
+        "How much does Cursor really cost?"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 6578,
+      "end": 6882,
+      "id": "b35",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[35]",
+      "headingPath": [
+        "Cursor review: I paid for 11 months, then cancelled",
+        "How much does Cursor really cost?"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 6884,
+      "end": 7103,
+      "id": "b36",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[36]",
+      "headingPath": [
+        "Cursor review: I paid for 11 months, then cancelled",
+        "How much does Cursor really cost?"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 7105,
+      "end": 7345,
+      "id": "b37",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[37]",
+      "headingPath": [
+        "Cursor review: I paid for 11 months, then cancelled",
+        "How much does Cursor really cost?"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 7347,
+      "end": 7371,
+      "id": "b38",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[38]",
+      "headingPath": [
+        "Cursor review: I paid for 11 months, then cancelled",
+        "How much does Cursor really cost?",
+        "What you can do about it"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 7373,
+      "end": 7714,
+      "id": "b39",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[39]",
+      "headingPath": [
+        "Cursor review: I paid for 11 months, then cancelled",
+        "How much does Cursor really cost?",
+        "What you can do about it"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 7716,
+      "end": 8029,
+      "id": "b40",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[40]",
+      "headingPath": [
+        "Cursor review: I paid for 11 months, then cancelled",
+        "How much does Cursor really cost?",
+        "What you can do about it"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 8031,
+      "end": 8289,
+      "id": "b41",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[41]",
+      "headingPath": [
+        "Cursor review: I paid for 11 months, then cancelled",
+        "How much does Cursor really cost?",
+        "What you can do about it"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 8291,
+      "end": 8309,
+      "id": "b42",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[42]",
+      "headingPath": [
+        "Cursor review: I paid for 11 months, then cancelled",
+        "Who is Cursor for?"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 8311,
+      "end": 8490,
+      "id": "b43",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[43]",
+      "headingPath": [
+        "Cursor review: I paid for 11 months, then cancelled",
+        "Who is Cursor for?"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 8492,
+      "end": 8642,
+      "id": "b44",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[44]",
+      "headingPath": [
+        "Cursor review: I paid for 11 months, then cancelled",
+        "Who is Cursor for?"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 8644,
+      "end": 8785,
+      "id": "b45",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[45]",
+      "headingPath": [
+        "Cursor review: I paid for 11 months, then cancelled",
+        "Who is Cursor for?"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 8787,
+      "end": 9044,
+      "id": "b46",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[46]",
+      "headingPath": [
+        "Cursor review: I paid for 11 months, then cancelled",
+        "Who is Cursor for?"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 9046,
+      "end": 9172,
+      "id": "b47",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[47]",
+      "headingPath": [
+        "Cursor review: I paid for 11 months, then cancelled",
+        "Who is Cursor for?"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 9174,
+      "end": 9372,
+      "id": "b48",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[48]",
+      "headingPath": [
+        "Cursor review: I paid for 11 months, then cancelled",
+        "Who is Cursor for?"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 9374,
+      "end": 9680,
+      "id": "b49",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[49]",
+      "headingPath": [
+        "Cursor review: I paid for 11 months, then cancelled",
+        "Who is Cursor for?"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 9682,
+      "end": 9945,
+      "id": "b50",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[50]",
+      "headingPath": [
+        "Cursor review: I paid for 11 months, then cancelled",
+        "Who is Cursor for?"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 9947,
+      "end": 10220,
+      "id": "b51",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[51]",
+      "headingPath": [
+        "Cursor review: I paid for 11 months, then cancelled",
+        "Who is Cursor for?"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 10222,
+      "end": 10230,
+      "id": "b52",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[52]",
+      "headingPath": [
+        "Cursor review: I paid for 11 months, then cancelled",
+        "The good"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 10232,
+      "end": 10273,
+      "id": "b53",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[53]",
+      "headingPath": [
+        "Cursor review: I paid for 11 months, then cancelled",
+        "The good",
+        "It was worth $20 for five months straight"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 10275,
+      "end": 10601,
+      "id": "b54",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[54]",
+      "headingPath": [
+        "Cursor review: I paid for 11 months, then cancelled",
+        "The good",
+        "It was worth $20 for five months straight"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 10603,
+      "end": 10785,
+      "id": "b55",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[55]",
+      "headingPath": [
+        "Cursor review: I paid for 11 months, then cancelled",
+        "The good",
+        "It was worth $20 for five months straight"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 10787,
+      "end": 10836,
+      "id": "b56",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[56]",
+      "headingPath": [
+        "Cursor review: I paid for 11 months, then cancelled",
+        "The good",
+        "The VS Code foundation removes the switching cost"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 10838,
+      "end": 11168,
+      "id": "b57",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[57]",
+      "headingPath": [
+        "Cursor review: I paid for 11 months, then cancelled",
+        "The good",
+        "The VS Code foundation removes the switching cost"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 11170,
+      "end": 11347,
+      "id": "b58",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[58]",
+      "headingPath": [
+        "Cursor review: I paid for 11 months, then cancelled",
+        "The good",
+        "The VS Code foundation removes the switching cost"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 11349,
+      "end": 11401,
+      "id": "b59",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[59]",
+      "headingPath": [
+        "Cursor review: I paid for 11 months, then cancelled",
+        "The good",
+        "Model choice in one subscription is genuinely useful"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 11403,
+      "end": 11628,
+      "id": "b60",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[60]",
+      "headingPath": [
+        "Cursor review: I paid for 11 months, then cancelled",
+        "The good",
+        "Model choice in one subscription is genuinely useful"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 11630,
+      "end": 11817,
+      "id": "b61",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[61]",
+      "headingPath": [
+        "Cursor review: I paid for 11 months, then cancelled",
+        "The good",
+        "Model choice in one subscription is genuinely useful"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 11819,
+      "end": 11981,
+      "id": "b62",
+      "kind": "TABLE",
+      "locator": "source DOM normalized block[62]",
+      "headingPath": [
+        "Cursor review: I paid for 11 months, then cancelled",
+        "The good",
+        "Model choice in one subscription is genuinely useful"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 11983,
+      "end": 12212,
+      "id": "b63",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[63]",
+      "headingPath": [
+        "Cursor review: I paid for 11 months, then cancelled",
+        "The good",
+        "Model choice in one subscription is genuinely useful"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 12214,
+      "end": 12259,
+      "id": "b64",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[64]",
+      "headingPath": [
+        "Cursor review: I paid for 11 months, then cancelled",
+        "The good",
+        "The free tier lets you reach the real product"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 12261,
+      "end": 12525,
+      "id": "b65",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[65]",
+      "headingPath": [
+        "Cursor review: I paid for 11 months, then cancelled",
+        "The good",
+        "The free tier lets you reach the real product"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 12527,
+      "end": 12572,
+      "id": "b66",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[66]",
+      "headingPath": [
+        "Cursor review: I paid for 11 months, then cancelled",
+        "The good",
+        "The agent stack is deeper than its reputation"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 12574,
+      "end": 12791,
+      "id": "b67",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[67]",
+      "headingPath": [
+        "Cursor review: I paid for 11 months, then cancelled",
+        "The good",
+        "The agent stack is deeper than its reputation"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 12793,
+      "end": 13088,
+      "id": "b68",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[68]",
+      "headingPath": [
+        "Cursor review: I paid for 11 months, then cancelled",
+        "The good",
+        "The agent stack is deeper than its reputation"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 13090,
+      "end": 13140,
+      "id": "b69",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[69]",
+      "headingPath": [
+        "Cursor review: I paid for 11 months, then cancelled",
+        "The good",
+        "Team features are a real package, not a price bump"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 13142,
+      "end": 13364,
+      "id": "b70",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[70]",
+      "headingPath": [
+        "Cursor review: I paid for 11 months, then cancelled",
+        "The good",
+        "Team features are a real package, not a price bump"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 13366,
+      "end": 13373,
+      "id": "b71",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[71]",
+      "headingPath": [
+        "Cursor review: I paid for 11 months, then cancelled",
+        "The bad"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 13375,
+      "end": 13429,
+      "id": "b72",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[72]",
+      "headingPath": [
+        "Cursor review: I paid for 11 months, then cancelled",
+        "The bad",
+        "A third of what I paid Cursor was not the subscription"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 13431,
+      "end": 13777,
+      "id": "b73",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[73]",
+      "headingPath": [
+        "Cursor review: I paid for 11 months, then cancelled",
+        "The bad",
+        "A third of what I paid Cursor was not the subscription"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 13779,
+      "end": 14000,
+      "id": "b74",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[74]",
+      "headingPath": [
+        "Cursor review: I paid for 11 months, then cancelled",
+        "The bad",
+        "A third of what I paid Cursor was not the subscription"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 14002,
+      "end": 14127,
+      "id": "b75",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[75]",
+      "headingPath": [
+        "Cursor review: I paid for 11 months, then cancelled",
+        "The bad",
+        "A third of what I paid Cursor was not the subscription"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 14129,
+      "end": 14384,
+      "id": "b76",
+      "kind": "TABLE",
+      "locator": "source DOM normalized block[76]",
+      "headingPath": [
+        "Cursor review: I paid for 11 months, then cancelled",
+        "The bad",
+        "A third of what I paid Cursor was not the subscription"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 14386,
+      "end": 14561,
+      "id": "b77",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[77]",
+      "headingPath": [
+        "Cursor review: I paid for 11 months, then cancelled",
+        "The bad",
+        "A third of what I paid Cursor was not the subscription"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 14563,
+      "end": 14599,
+      "id": "b78",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[78]",
+      "headingPath": [
+        "Cursor review: I paid for 11 months, then cancelled",
+        "The bad",
+        "The $60 plan ran out in about a week"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 14601,
+      "end": 14896,
+      "id": "b79",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[79]",
+      "headingPath": [
+        "Cursor review: I paid for 11 months, then cancelled",
+        "The bad",
+        "The $60 plan ran out in about a week"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 14898,
+      "end": 15196,
+      "id": "b80",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[80]",
+      "headingPath": [
+        "Cursor review: I paid for 11 months, then cancelled",
+        "The bad",
+        "The $60 plan ran out in about a week"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 15198,
+      "end": 15244,
+      "id": "b81",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[81]",
+      "headingPath": [
+        "Cursor review: I paid for 11 months, then cancelled",
+        "The bad",
+        "Two of my last four months cost more than $100"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 15246,
+      "end": 15473,
+      "id": "b82",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[82]",
+      "headingPath": [
+        "Cursor review: I paid for 11 months, then cancelled",
+        "The bad",
+        "Two of my last four months cost more than $100"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 15475,
+      "end": 15733,
+      "id": "b83",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[83]",
+      "headingPath": [
+        "Cursor review: I paid for 11 months, then cancelled",
+        "The bad",
+        "Two of my last four months cost more than $100"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 15735,
+      "end": 15790,
+      "id": "b84",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[84]",
+      "headingPath": [
+        "Cursor review: I paid for 11 months, then cancelled",
+        "The bad",
+        "Metered API rates lose to a flat cap once you are heavy"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 15792,
+      "end": 16121,
+      "id": "b85",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[85]",
+      "headingPath": [
+        "Cursor review: I paid for 11 months, then cancelled",
+        "The bad",
+        "Metered API rates lose to a flat cap once you are heavy"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 16123,
+      "end": 16724,
+      "id": "b86",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[86]",
+      "headingPath": [
+        "Cursor review: I paid for 11 months, then cancelled",
+        "The bad",
+        "Metered API rates lose to a flat cap once you are heavy"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 16726,
+      "end": 16754,
+      "id": "b87",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[87]",
+      "headingPath": [
+        "Cursor review: I paid for 11 months, then cancelled",
+        "The bad",
+        "You carry the context burden"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 16756,
+      "end": 16976,
+      "id": "b88",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[88]",
+      "headingPath": [
+        "Cursor review: I paid for 11 months, then cancelled",
+        "The bad",
+        "You carry the context burden"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 16978,
+      "end": 17359,
+      "id": "b89",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[89]",
+      "headingPath": [
+        "Cursor review: I paid for 11 months, then cancelled",
+        "The bad",
+        "You carry the context burden"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 17361,
+      "end": 17395,
+      "id": "b90",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[90]",
+      "headingPath": [
+        "Cursor review: I paid for 11 months, then cancelled",
+        "The bad",
+        "The public rating is genuinely bad"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 17397,
+      "end": 17758,
+      "id": "b91",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[91]",
+      "headingPath": [
+        "Cursor review: I paid for 11 months, then cancelled",
+        "The bad",
+        "The public rating is genuinely bad"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 17760,
+      "end": 18098,
+      "id": "b92",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[92]",
+      "headingPath": [
+        "Cursor review: I paid for 11 months, then cancelled",
+        "The bad",
+        "The public rating is genuinely bad"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 18100,
+      "end": 18269,
+      "id": "b93",
+      "kind": "TABLE",
+      "locator": "source DOM normalized block[93]",
+      "headingPath": [
+        "Cursor review: I paid for 11 months, then cancelled",
+        "The bad",
+        "The public rating is genuinely bad"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 18271,
+      "end": 18644,
+      "id": "b94",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[94]",
+      "headingPath": [
+        "Cursor review: I paid for 11 months, then cancelled",
+        "The bad",
+        "The public rating is genuinely bad"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 18646,
+      "end": 19070,
+      "id": "b95",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[95]",
+      "headingPath": [
+        "Cursor review: I paid for 11 months, then cancelled",
+        "The bad",
+        "The public rating is genuinely bad"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 19072,
+      "end": 19116,
+      "id": "b96",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[96]",
+      "headingPath": [
+        "Cursor review: I paid for 11 months, then cancelled",
+        "The bad",
+        "What I got wrong, and what I am not claiming"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 19118,
+      "end": 19553,
+      "id": "b97",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[97]",
+      "headingPath": [
+        "Cursor review: I paid for 11 months, then cancelled",
+        "The bad",
+        "What I got wrong, and what I am not claiming"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 19555,
+      "end": 19754,
+      "id": "b98",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[98]",
+      "headingPath": [
+        "Cursor review: I paid for 11 months, then cancelled",
+        "The bad",
+        "What I got wrong, and what I am not claiming"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 19756,
+      "end": 20253,
+      "id": "b99",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[99]",
+      "headingPath": [
+        "Cursor review: I paid for 11 months, then cancelled",
+        "The bad",
+        "What I got wrong, and what I am not claiming"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 20255,
+      "end": 20293,
+      "id": "b100",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[100]",
+      "headingPath": [
+        "Cursor review: I paid for 11 months, then cancelled",
+        "What are the best Cursor alternatives?"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 20295,
+      "end": 20371,
+      "id": "b101",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[101]",
+      "headingPath": [
+        "Cursor review: I paid for 11 months, then cancelled",
+        "What are the best Cursor alternatives?"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 20373,
+      "end": 20700,
+      "id": "b102",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[102]",
+      "headingPath": [
+        "Cursor review: I paid for 11 months, then cancelled",
+        "What are the best Cursor alternatives?"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 20702,
+      "end": 20980,
+      "id": "b103",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[103]",
+      "headingPath": [
+        "Cursor review: I paid for 11 months, then cancelled",
+        "What are the best Cursor alternatives?"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 20982,
+      "end": 21227,
+      "id": "b104",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[104]",
+      "headingPath": [
+        "Cursor review: I paid for 11 months, then cancelled",
+        "What are the best Cursor alternatives?"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 21229,
+      "end": 21497,
+      "id": "b105",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[105]",
+      "headingPath": [
+        "Cursor review: I paid for 11 months, then cancelled",
+        "What are the best Cursor alternatives?"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 21499,
+      "end": 21509,
+      "id": "b106",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[106]",
+      "headingPath": [
+        "Cursor review: I paid for 11 months, then cancelled",
+        "Final word"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 21511,
+      "end": 21915,
+      "id": "b107",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[107]",
+      "headingPath": [
+        "Cursor review: I paid for 11 months, then cancelled",
+        "Final word"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 21917,
+      "end": 22133,
+      "id": "b108",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[108]",
+      "headingPath": [
+        "Cursor review: I paid for 11 months, then cancelled",
+        "Final word"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 22135,
+      "end": 22553,
+      "id": "b109",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[109]",
+      "headingPath": [
+        "Cursor review: I paid for 11 months, then cancelled",
+        "Final word"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 22555,
+      "end": 22929,
+      "id": "b110",
+      "kind": "TABLE",
+      "locator": "source DOM normalized block[110]",
+      "headingPath": [
+        "Cursor review: I paid for 11 months, then cancelled",
+        "Final word"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 22931,
+      "end": 23208,
+      "id": "b111",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[111]",
+      "headingPath": [
+        "Cursor review: I paid for 11 months, then cancelled",
+        "Final word"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 23210,
+      "end": 23225,
+      "id": "b112",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[112]",
+      "headingPath": [
+        "Cursor review: I paid for 11 months, then cancelled",
+        "Final word"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 23227,
+      "end": 23253,
+      "id": "b113",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[113]",
+      "headingPath": [
+        "Cursor review: I paid for 11 months, then cancelled",
+        "Frequently asked questions"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 23255,
+      "end": 23274,
+      "id": "b114",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[114]",
+      "headingPath": [
+        "Cursor review: I paid for 11 months, then cancelled",
+        "Frequently asked questions"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 23276,
+      "end": 23650,
+      "id": "b115",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[115]",
+      "headingPath": [
+        "Cursor review: I paid for 11 months, then cancelled",
+        "Frequently asked questions"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 23652,
+      "end": 23864,
+      "id": "b116",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[116]",
+      "headingPath": [
+        "Cursor review: I paid for 11 months, then cancelled",
+        "Frequently asked questions"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 23866,
+      "end": 24112,
+      "id": "b117",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[117]",
+      "headingPath": [
+        "Cursor review: I paid for 11 months, then cancelled",
+        "Frequently asked questions"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 24114,
+      "end": 24149,
+      "id": "b118",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[118]",
+      "headingPath": [
+        "Cursor review: I paid for 11 months, then cancelled",
+        "Frequently asked questions"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 24151,
+      "end": 24469,
+      "id": "b119",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[119]",
+      "headingPath": [
+        "Cursor review: I paid for 11 months, then cancelled",
+        "Frequently asked questions"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 24471,
+      "end": 24669,
+      "id": "b120",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[120]",
+      "headingPath": [
+        "Cursor review: I paid for 11 months, then cancelled",
+        "Frequently asked questions"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 24671,
+      "end": 24953,
+      "id": "b121",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[121]",
+      "headingPath": [
+        "Cursor review: I paid for 11 months, then cancelled",
+        "Frequently asked questions"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 24955,
+      "end": 25001,
+      "id": "b122",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[122]",
+      "headingPath": [
+        "Cursor review: I paid for 11 months, then cancelled",
+        "Frequently asked questions"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 25003,
+      "end": 25426,
+      "id": "b123",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[123]",
+      "headingPath": [
+        "Cursor review: I paid for 11 months, then cancelled",
+        "Frequently asked questions"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 25428,
+      "end": 25744,
+      "id": "b124",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[124]",
+      "headingPath": [
+        "Cursor review: I paid for 11 months, then cancelled",
+        "Frequently asked questions"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 25746,
+      "end": 25954,
+      "id": "b125",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[125]",
+      "headingPath": [
+        "Cursor review: I paid for 11 months, then cancelled",
+        "Frequently asked questions"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 25956,
+      "end": 25992,
+      "id": "b126",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[126]",
+      "headingPath": [
+        "Cursor review: I paid for 11 months, then cancelled",
+        "Frequently asked questions"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 25994,
+      "end": 26229,
+      "id": "b127",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[127]",
+      "headingPath": [
+        "Cursor review: I paid for 11 months, then cancelled",
+        "Frequently asked questions"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 26231,
+      "end": 26456,
+      "id": "b128",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[128]",
+      "headingPath": [
+        "Cursor review: I paid for 11 months, then cancelled",
+        "Frequently asked questions"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 26458,
+      "end": 26704,
+      "id": "b129",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[129]",
+      "headingPath": [
+        "Cursor review: I paid for 11 months, then cancelled",
+        "Frequently asked questions"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 26706,
+      "end": 26740,
+      "id": "b130",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[130]",
+      "headingPath": [
+        "Cursor review: I paid for 11 months, then cancelled",
+        "Frequently asked questions"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 26742,
+      "end": 27062,
+      "id": "b131",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[131]",
+      "headingPath": [
+        "Cursor review: I paid for 11 months, then cancelled",
+        "Frequently asked questions"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 27064,
+      "end": 27378,
+      "id": "b132",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[132]",
+      "headingPath": [
+        "Cursor review: I paid for 11 months, then cancelled",
+        "Frequently asked questions"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 27380,
+      "end": 27416,
+      "id": "b133",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[133]",
+      "headingPath": [
+        "Cursor review: I paid for 11 months, then cancelled",
+        "Frequently asked questions"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 27418,
+      "end": 27658,
+      "id": "b134",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[134]",
+      "headingPath": [
+        "Cursor review: I paid for 11 months, then cancelled",
+        "Frequently asked questions"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 27660,
+      "end": 27880,
+      "id": "b135",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[135]",
+      "headingPath": [
+        "Cursor review: I paid for 11 months, then cancelled",
+        "Frequently asked questions"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 27882,
+      "end": 28279,
+      "id": "b136",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[136]",
+      "headingPath": [
+        "Cursor review: I paid for 11 months, then cancelled",
+        "Frequently asked questions"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 28281,
+      "end": 28296,
+      "id": "b137",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[137]",
+      "headingPath": [
+        "Cursor review: I paid for 11 months, then cancelled",
+        "Frequently asked questions"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 28298,
+      "end": 28310,
+      "id": "b138",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[138]",
+      "headingPath": [
+        "Cursor review: I paid for 11 months, then cancelled",
+        "Keep reading"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 28312,
+      "end": 28366,
+      "id": "b139",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[139]",
+      "headingPath": [
+        "Cursor review: I paid for 11 months, then cancelled",
+        "Keep reading",
+        "Cursor AI pricing: what the plans cost and what I paid"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 28368,
+      "end": 28524,
+      "id": "b140",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[140]",
+      "headingPath": [
+        "Cursor review: I paid for 11 months, then cancelled",
+        "Keep reading",
+        "Cursor AI pricing: what the plans cost and what I paid"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 28526,
+      "end": 28548,
+      "id": "b141",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[141]",
+      "headingPath": [
+        "Cursor review: I paid for 11 months, then cancelled",
+        "Keep reading",
+        "Cursor AI pricing: what the plans cost and what I paid"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 28550,
+      "end": 28600,
+      "id": "b142",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[142]",
+      "headingPath": [
+        "Cursor review: I paid for 11 months, then cancelled",
+        "Keep reading",
+        "Cursor vs Codex: I paid for one and quit the other"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 28602,
+      "end": 28753,
+      "id": "b143",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[143]",
+      "headingPath": [
+        "Cursor review: I paid for 11 months, then cancelled",
+        "Keep reading",
+        "Cursor vs Codex: I paid for one and quit the other"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 28755,
+      "end": 28777,
+      "id": "b144",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[144]",
+      "headingPath": [
+        "Cursor review: I paid for 11 months, then cancelled",
+        "Keep reading",
+        "Cursor vs Codex: I paid for one and quit the other"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 28779,
+      "end": 28841,
+      "id": "b145",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[145]",
+      "headingPath": [
+        "Cursor review: I paid for 11 months, then cancelled",
+        "Keep reading",
+        "Cursor alternatives: I left after $510.70, here's where I went"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 28843,
+      "end": 28988,
+      "id": "b146",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[146]",
+      "headingPath": [
+        "Cursor review: I paid for 11 months, then cancelled",
+        "Keep reading",
+        "Cursor alternatives: I left after $510.70, here's where I went"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 28990,
+      "end": 29012,
+      "id": "b147",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[147]",
+      "headingPath": [
+        "Cursor review: I paid for 11 months, then cancelled",
+        "Keep reading",
+        "Cursor alternatives: I left after $510.70, here's where I went"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 29014,
+      "end": 29076,
+      "id": "b148",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[148]",
+      "headingPath": [
+        "Cursor review: I paid for 11 months, then cancelled",
+        "Keep reading",
+        "GitHub Copilot alternatives: what you are actually leaving for"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 29078,
+      "end": 29231,
+      "id": "b149",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[149]",
+      "headingPath": [
+        "Cursor review: I paid for 11 months, then cancelled",
+        "Keep reading",
+        "GitHub Copilot alternatives: what you are actually leaving for"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 29233,
+      "end": 29255,
+      "id": "b150",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[150]",
+      "headingPath": [
+        "Cursor review: I paid for 11 months, then cancelled",
+        "Keep reading",
+        "GitHub Copilot alternatives: what you are actually leaving for"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 29257,
+      "end": 29277,
+      "id": "b151",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[151]",
+      "headingPath": [
+        "Cursor review: I paid for 11 months, then cancelled",
+        "Keep reading",
+        "GitHub Copilot alternatives: what you are actually leaving for"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 29279,
+      "end": 29468,
+      "id": "b152",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[152]",
+      "headingPath": [
+        "Cursor review: I paid for 11 months, then cancelled",
+        "Keep reading",
+        "GitHub Copilot alternatives: what you are actually leaving for"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 29470,
+      "end": 29488,
+      "id": "b153",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[153]",
+      "headingPath": [
+        "Cursor review: I paid for 11 months, then cancelled",
+        "Keep reading",
+        "GitHub Copilot alternatives: what you are actually leaving for"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 29490,
+      "end": 30254,
+      "id": "b154",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[154]",
+      "headingPath": [
+        "Cursor review: I paid for 11 months, then cancelled",
+        "Keep reading",
+        "GitHub Copilot alternatives: what you are actually leaving for"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 30256,
+      "end": 30310,
+      "id": "b155",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[155]",
+      "headingPath": [
+        "Cursor review: I paid for 11 months, then cancelled",
+        "Keep reading",
+        "Liked this? Get one of these in your inbox every week."
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 30312,
+      "end": 30379,
+      "id": "b156",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[156]",
+      "headingPath": [
+        "Cursor review: I paid for 11 months, then cancelled",
+        "Keep reading",
+        "Liked this? Get one of these in your inbox every week."
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    }
+  ],
+  "links": [
+    {
+      "url": "https://aialleyway.com/cursor-review/",
+      "text": "",
+      "blockId": null,
+      "relation": "CANONICAL",
+      "locator": "source DOM link[0]"
+    },
+    {
+      "url": "https://aialleyway.com/category/build/",
+      "text": "Build",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[4]"
+    },
+    {
+      "url": "https://aialleyway.com/category/build/coding/",
+      "text": "Coding",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[5]"
+    },
+    {
+      "url": "https://aialleyway.com/author/ryan-parker/",
+      "text": "By Ryan Parker",
+      "blockId": "b4",
+      "relation": "LINK",
+      "locator": "source DOM link[6]"
+    },
+    {
+      "url": "https://aialleyway.com/best-ai-for-coding/",
+      "text": "the same brief run through seven tools",
+      "blockId": "b8",
+      "relation": "LINK",
+      "locator": "source DOM link[15]"
+    },
+    {
+      "url": "https://aialleyway.com/get-cursor/",
+      "text": "Try Cursor free",
+      "blockId": "b9",
+      "relation": "LINK",
+      "locator": "source DOM link[16]"
+    },
+    {
+      "url": "https://aialleyway.com/is-claude-code-worth-it/",
+      "text": "Claude Code",
+      "blockId": "b10",
+      "relation": "LINK",
+      "locator": "source DOM link[17]"
+    },
+    {
+      "url": "https://cursor.com/pricing",
+      "text": "pricing page",
+      "blockId": "b27",
+      "relation": "LINK",
+      "locator": "source DOM link[18]"
+    },
+    {
+      "url": "https://cursor.com/docs/account/pricing",
+      "text": "Cursor’s billing docs",
+      "blockId": "b33",
+      "relation": "LINK",
+      "locator": "source DOM link[19]"
+    },
+    {
+      "url": "https://cursor.com/pricing",
+      "text": "Cursor’s pricing page",
+      "blockId": "b33",
+      "relation": "LINK",
+      "locator": "source DOM link[20]"
+    },
+    {
+      "url": "https://cursor.com/help/account-and-billing/spend-limits",
+      "text": "spend-limit docs",
+      "blockId": "b39",
+      "relation": "LINK",
+      "locator": "source DOM link[21]"
+    },
+    {
+      "url": "https://aialleyway.com/lovable-review/",
+      "text": "Lovable",
+      "blockId": "b50",
+      "relation": "LINK",
+      "locator": "source DOM link[22]"
+    },
+    {
+      "url": "https://aialleyway.com/picks/",
+      "text": "the rest of our picks",
+      "blockId": "b51",
+      "relation": "LINK",
+      "locator": "source DOM link[23]"
+    },
+    {
+      "url": "https://cursor.com/docs/account/pricing",
+      "text": "The billing docs",
+      "blockId": "b85",
+      "relation": "LINK",
+      "locator": "source DOM link[24]"
+    },
+    {
+      "url": "https://www.trustpilot.com/review/cursor.com",
+      "text": "Trustpilot",
+      "blockId": "b91",
+      "relation": "LINK",
+      "locator": "source DOM link[25]"
+    },
+    {
+      "url": "https://www.g2.com/products/cursor/reviews",
+      "text": "G2",
+      "blockId": "b92",
+      "relation": "LINK",
+      "locator": "source DOM link[26]"
+    },
+    {
+      "url": "https://aialleyway.com/is-claude-code-worth-it/",
+      "text": "whether Claude Code is worth it",
+      "blockId": "b99",
+      "relation": "LINK",
+      "locator": "source DOM link[27]"
+    },
+    {
+      "url": "https://aialleyway.com/is-claude-code-worth-it/",
+      "text": "Claude Code",
+      "blockId": "b102",
+      "relation": "LINK",
+      "locator": "source DOM link[28]"
+    },
+    {
+      "url": "https://aialleyway.com/claude-code-vs-cursor/",
+      "text": "Claude Code vs Cursor",
+      "blockId": "b102",
+      "relation": "LINK",
+      "locator": "source DOM link[29]"
+    },
+    {
+      "url": "https://aialleyway.com/get-codex/",
+      "text": "Codex",
+      "blockId": "b103",
+      "relation": "LINK",
+      "locator": "source DOM link[30]"
+    },
+    {
+      "url": "https://aialleyway.com/get-antigravity/",
+      "text": "Antigravity",
+      "blockId": "b104",
+      "relation": "LINK",
+      "locator": "source DOM link[31]"
+    },
+    {
+      "url": "https://aialleyway.com/google-antigravity-review/",
+      "text": "Google Antigravity review",
+      "blockId": "b104",
+      "relation": "LINK",
+      "locator": "source DOM link[32]"
+    },
+    {
+      "url": "https://aialleyway.com/get-cursor/",
+      "text": "Try Cursor free",
+      "blockId": "b112",
+      "relation": "LINK",
+      "locator": "source DOM link[33]"
+    },
+    {
+      "url": "https://twitter.com/intent/tweet?text=Cursor+review%3A+I+paid+for+11+months%2C+then+cancelled&url=https%3A%2F%2Faialleyway.com%2Fcursor-review%2F",
+      "text": "",
+      "blockId": "b137",
+      "relation": "LINK",
+      "locator": "source DOM link[34]"
+    },
+    {
+      "url": "https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Faialleyway.com%2Fcursor-review%2F",
+      "text": "",
+      "blockId": "b137",
+      "relation": "LINK",
+      "locator": "source DOM link[35]"
+    },
+    {
+      "url": "https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Faialleyway.com%2Fcursor-review%2F",
+      "text": "",
+      "blockId": "b137",
+      "relation": "LINK",
+      "locator": "source DOM link[36]"
+    },
+    {
+      "url": "https://www.reddit.com/submit?title=Cursor+review%3A+I+paid+for+11+months%2C+then+cancelled&url=https%3A%2F%2Faialleyway.com%2Fcursor-review%2F",
+      "text": "",
+      "blockId": "b137",
+      "relation": "LINK",
+      "locator": "source DOM link[37]"
+    },
+    {
+      "url": "https://aialleyway.com/author/ryan-parker/",
+      "text": "Ryan Parker",
+      "blockId": "b153",
+      "relation": "LINK",
+      "locator": "source DOM link[43]"
+    }
+  ],
+  "tables": [
+    {
+      "blockId": "b20",
+      "rows": [
+        {
+          "start": 2948,
+          "end": 2981,
+          "cells": [
+            {
+              "start": 2948,
+              "end": 2969,
+              "text": "What the app surfaces",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 2969,
+              "end": 2981,
+              "text": "What it does",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 2981,
+          "end": 3036,
+          "cells": [
+            {
+              "start": 2981,
+              "end": 2987,
+              "text": "/shell",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 2987,
+              "end": 3036,
+              "text": "Runs terminal commands without leaving the window",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 3036,
+          "end": 3087,
+          "cells": [
+            {
+              "start": 3036,
+              "end": 3041,
+              "text": "/plan",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 3041,
+              "end": 3087,
+              "text": "Plan Mode, framed as improving agent execution",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 3087,
+          "end": 3146,
+          "cells": [
+            {
+              "start": 3087,
+              "end": 3100,
+              "text": "/create-skill",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 3100,
+              "end": 3146,
+              "text": "Builds a reusable skill for your own workflows",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 3146,
+          "end": 3191,
+          "cells": [
+            {
+              "start": 3146,
+              "end": 3147,
+              "text": "@",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 3147,
+              "end": 3191,
+              "text": "Pulls specific files or symbols into context",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 3191,
+          "end": 3255,
+          "cells": [
+            {
+              "start": 3191,
+              "end": 3206,
+              "text": "Shift-Tab twice",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 3206,
+              "end": 3255,
+              "text": "Debug Mode, for reproducing and solving hard bugs",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 3255,
+          "end": 3275,
+          "cells": [
+            {
+              "start": 3255,
+              "end": 3257,
+              "text": "⌘N",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 3257,
+              "end": 3275,
+              "text": "Starts a new agent",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "blockId": "b32",
+      "rows": [
+        {
+          "start": 5469,
+          "end": 5490,
+          "cells": [
+            {
+              "start": 5469,
+              "end": 5473,
+              "text": "Plan",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 5473,
+              "end": 5478,
+              "text": "Price",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 5478,
+              "end": 5490,
+              "text": "What you get",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 5490,
+          "end": 5557,
+          "cells": [
+            {
+              "start": 5490,
+              "end": 5495,
+              "text": "Hobby",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 5495,
+              "end": 5515,
+              "text": "$0, no card required",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 5515,
+              "end": 5557,
+              "text": "Limited agent requests, access to Composer",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 5557,
+          "end": 5644,
+          "cells": [
+            {
+              "start": 5557,
+              "end": 5560,
+              "text": "Pro",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 5560,
+              "end": 5571,
+              "text": "$20 / month",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 5571,
+              "end": 5644,
+              "text": "Extended agent limits, frontier models, MCPs, skills, hooks, cloud agents",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 5644,
+          "end": 5711,
+          "cells": [
+            {
+              "start": 5644,
+              "end": 5652,
+              "text": "Pro Plus",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 5652,
+              "end": 5663,
+              "text": "$60 / month",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 5663,
+              "end": 5711,
+              "text": "The tier Cursor recommends for daily agent users",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 5711,
+          "end": 5776,
+          "cells": [
+            {
+              "start": 5711,
+              "end": 5716,
+              "text": "Ultra",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 5716,
+              "end": 5728,
+              "text": "$200 / month",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 5728,
+              "end": 5776,
+              "text": "The tier Cursor recommends for agent power users",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 5776,
+          "end": 5861,
+          "cells": [
+            {
+              "start": 5776,
+              "end": 5790,
+              "text": "Teams Standard",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 5790,
+              "end": 5808,
+              "text": "$40 / user / month",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 5808,
+              "end": 5861,
+              "text": "Team billing, shared context, Bugbot code review, SSO",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 5861,
+          "end": 5930,
+          "cells": [
+            {
+              "start": 5861,
+              "end": 5874,
+              "text": "Teams Premium",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 5874,
+              "end": 5893,
+              "text": "$120 / user / month",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 5893,
+              "end": 5930,
+              "text": "Higher included usage across the team",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 5930,
+          "end": 5997,
+          "cells": [
+            {
+              "start": 5930,
+              "end": 5940,
+              "text": "Enterprise",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 5940,
+              "end": 5950,
+              "text": "On request",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 5950,
+              "end": 5997,
+              "text": "Pooled usage, SCIM, audit logs, access controls",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "blockId": "b62",
+      "rows": [
+        {
+          "start": 11819,
+          "end": 11859,
+          "cells": [
+            {
+              "start": 11819,
+              "end": 11839,
+              "text": "Model on my invoices",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 11839,
+              "end": 11844,
+              "text": "Calls",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 11844,
+              "end": 11851,
+              "text": "Charged",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 11851,
+              "end": 11859,
+              "text": "Per call",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 11859,
+          "end": 11880,
+          "cells": [
+            {
+              "start": 11859,
+              "end": 11867,
+              "text": "Sonnet 4",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 11867,
+              "end": 11869,
+              "text": "88",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 11869,
+              "end": 11874,
+              "text": "$2.34",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 11874,
+              "end": 11880,
+              "text": "$0.027",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 11880,
+          "end": 11912,
+          "cells": [
+            {
+              "start": 11880,
+              "end": 11897,
+              "text": "Sonnet 4 thinking",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 11897,
+              "end": 11900,
+              "text": "371",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 11900,
+              "end": 11906,
+              "text": "$17.16",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 11906,
+              "end": 11912,
+              "text": "$0.046",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 11912,
+          "end": 11946,
+          "cells": [
+            {
+              "start": 11912,
+              "end": 11931,
+              "text": "Sonnet 4.5 thinking",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 11931,
+              "end": 11934,
+              "text": "510",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 11934,
+              "end": 11940,
+              "text": "$40.69",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 11940,
+              "end": 11946,
+              "text": "$0.080",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 11946,
+          "end": 11981,
+          "cells": [
+            {
+              "start": 11946,
+              "end": 11968,
+              "text": "Opus 4.5 high-thinking",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 11968,
+              "end": 11970,
+              "text": "15",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 11970,
+              "end": 11975,
+              "text": "$1.27",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 11975,
+              "end": 11981,
+              "text": "$0.085",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "blockId": "b76",
+      "rows": [
+        {
+          "start": 14129,
+          "end": 14160,
+          "cells": [
+            {
+              "start": 14129,
+              "end": 14134,
+              "text": "Month",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 14134,
+              "end": 14146,
+              "text": "Subscription",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 14146,
+              "end": 14155,
+              "text": "On-demand",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 14155,
+              "end": 14160,
+              "text": "Total",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 14160,
+          "end": 14198,
+          "cells": [
+            {
+              "start": 14160,
+              "end": 14172,
+              "text": "Mar–Jul 2025",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 14172,
+              "end": 14183,
+              "text": "$20.00 each",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 14183,
+              "end": 14187,
+              "text": "none",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 14187,
+              "end": 14198,
+              "text": "$20.00 each",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 14198,
+          "end": 14224,
+          "cells": [
+            {
+              "start": 14198,
+              "end": 14206,
+              "text": "Aug 2025",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 14206,
+              "end": 14212,
+              "text": "$20.00",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 14212,
+              "end": 14218,
+              "text": "$37.16",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 14218,
+              "end": 14224,
+              "text": "$57.16",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 14224,
+          "end": 14249,
+          "cells": [
+            {
+              "start": 14224,
+              "end": 14232,
+              "text": "Sep 2025",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 14232,
+              "end": 14238,
+              "text": "$20.00",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 14238,
+              "end": 14243,
+              "text": "$2.29",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 14243,
+              "end": 14249,
+              "text": "$22.29",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 14249,
+          "end": 14276,
+          "cells": [
+            {
+              "start": 14249,
+              "end": 14257,
+              "text": "Oct 2025",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 14257,
+              "end": 14263,
+              "text": "$80.00",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 14263,
+              "end": 14269,
+              "text": "$79.22",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 14269,
+              "end": 14276,
+              "text": "$159.22",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 14276,
+          "end": 14303,
+          "cells": [
+            {
+              "start": 14276,
+              "end": 14284,
+              "text": "Nov 2025",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 14284,
+              "end": 14290,
+              "text": "$60.00",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 14290,
+              "end": 14296,
+              "text": "$50.00",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 14296,
+              "end": 14303,
+              "text": "$110.00",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 14303,
+          "end": 14328,
+          "cells": [
+            {
+              "start": 14303,
+              "end": 14311,
+              "text": "Dec 2025",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 14311,
+              "end": 14317,
+              "text": "$60.00",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 14317,
+              "end": 14322,
+              "text": "$1.27",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 14322,
+              "end": 14328,
+              "text": "$61.27",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 14328,
+          "end": 14350,
+          "cells": [
+            {
+              "start": 14328,
+              "end": 14336,
+              "text": "Jan 2026",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 14336,
+              "end": 14340,
+              "text": "none",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 14340,
+              "end": 14345,
+              "text": "$0.76",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 14345,
+              "end": 14350,
+              "text": "$0.76",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 14350,
+          "end": 14384,
+          "cells": [
+            {
+              "start": 14350,
+              "end": 14363,
+              "text": "Eleven months",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 14363,
+              "end": 14370,
+              "text": "$340.00",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 14370,
+              "end": 14377,
+              "text": "$170.70",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 14377,
+              "end": 14384,
+              "text": "$510.70",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "blockId": "b93",
+      "rows": [
+        {
+          "start": 18100,
+          "end": 18135,
+          "cells": [
+            {
+              "start": 18100,
+              "end": 18109,
+              "text": "Aggregate",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 18109,
+              "end": 18115,
+              "text": "Cursor",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 18115,
+              "end": 18135,
+              "text": "Claude / Claude Code",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 18135,
+          "end": 18179,
+          "cells": [
+            {
+              "start": 18135,
+              "end": 18145,
+              "text": "Trustpilot",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 18145,
+              "end": 18161,
+              "text": "1.6 / 5 from 278",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 18161,
+              "end": 18179,
+              "text": "1.5 / 5 from 1,720",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 18179,
+          "end": 18234,
+          "cells": [
+            {
+              "start": 18179,
+              "end": 18202,
+              "text": "G2, the coding products",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 18202,
+              "end": 18218,
+              "text": "4.7 / 5 from 307",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 18218,
+              "end": 18234,
+              "text": "4.7 / 5 from 108",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 18234,
+          "end": 18269,
+          "cells": [
+            {
+              "start": 18234,
+              "end": 18252,
+              "text": "G2, parent product",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 18252,
+              "end": 18253,
+              "text": "—",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 18253,
+              "end": 18269,
+              "text": "4.6 / 5 from 403",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "blockId": "b110",
+      "rows": [
+        {
+          "start": 22555,
+          "end": 22565,
+          "cells": [
+            {
+              "start": 22555,
+              "end": 22561,
+              "text": "If you",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 22561,
+              "end": 22565,
+              "text": "Then",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 22565,
+          "end": 22655,
+          "cells": [
+            {
+              "start": 22565,
+              "end": 22611,
+              "text": "Code moderately, inside the included allowance",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 22611,
+              "end": 22655,
+              "text": "Pro at $20 is good value. Set a limit anyway",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 22655,
+          "end": 22748,
+          "cells": [
+            {
+              "start": 22655,
+              "end": 22681,
+              "text": "Delegate heavily most days",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 22681,
+              "end": 22748,
+              "text": "Price Pro Plus at $60 or Ultra at $200 properly before assuming $20",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 22748,
+          "end": 22834,
+          "cells": [
+            {
+              "start": 22748,
+              "end": 22779,
+              "text": "Cannot tolerate a variable bill",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 22779,
+              "end": 22834,
+              "text": "Set the spend limit on day one, or buy a flat-rate tool",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 22834,
+          "end": 22929,
+          "cells": [
+            {
+              "start": 22834,
+              "end": 22874,
+              "text": "Want to keep the editor you already know",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 22874,
+              "end": 22929,
+              "text": "The VS Code base is the strongest single reason to stay",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

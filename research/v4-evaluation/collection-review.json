@@ -1,0 +1,698 @@
+[
+  {
+    "batch": "collection-20261025-1234",
+    "case": "S0",
+    "investigationId": "2cc8d944-9927-435f-9168-5bbdd3cc1936",
+    "seconds": 27.8,
+    "searches": 2,
+    "attempts": 8,
+    "readDocuments": 8,
+    "uniqueTexts": 6,
+    "characters": 28507,
+    "fragments": 64,
+    "modelCalls": 10,
+    "inputTokens": 119301,
+    "outputTokens": 3808,
+    "verificationCalls": 1,
+    "allCollectionBeforeVerification": true,
+    "integrity": "PASSED",
+    "stopReason": "达到本次模型或 token 预算，未完成项保留。",
+    "documents": [
+      {
+        "url": "https://api-docs.deepseek.com/zh-cn/quick_start/pricing/",
+        "characters": 1425,
+        "hash": "db09a343a4d633c64231991c96ddd338cb148398727a38c75cb9dc68e93e81fc"
+      },
+      {
+        "url": "https://api-docs.deepseek.com/quick_start/pricing/",
+        "characters": 2890,
+        "hash": "4d791bb7563ef270baf20c50a40e913573f6da5de3417a76b48e3beadeb05a68"
+      },
+      {
+        "url": "https://api-docs.deepseek.com/zh-cn/updates/",
+        "characters": 9930,
+        "hash": "23edc39b0a19f3cb52052a9231f32399691fcc59d253e934613057908217af85"
+      },
+      {
+        "url": "https://api-docs.deepseek.com/zh-cn/api/create-chat-completion/",
+        "characters": 8228,
+        "hash": "32e3495d52d1872f782c56bbe8eb6c0d78e28cab175138dcdf35ae88ba25a922"
+      },
+      {
+        "url": "https://api-docs.deepseek.com/zh-cn/quick_start/pricing/?ref=routinehub.co",
+        "characters": 1425,
+        "hash": "db09a343a4d633c64231991c96ddd338cb148398727a38c75cb9dc68e93e81fc"
+      },
+      {
+        "url": "https://api-docs.deepseek.com/zh-cn/quick_start/pricing/?%2F=",
+        "characters": 1425,
+        "hash": "db09a343a4d633c64231991c96ddd338cb148398727a38c75cb9dc68e93e81fc"
+      },
+      {
+        "url": "https://api-docs.deepseek.com/zh-cn/news/news250325/",
+        "characters": 1066,
+        "hash": "f170e1243a61d15adc8be415959098d1525808f8f110ba20305d249485f4c02c"
+      },
+      {
+        "url": "https://api-docs.deepseek.com/zh-cn/news/news250528/",
+        "characters": 2118,
+        "hash": "fb0ef132697af2bea66ddc543fedf30ed4fa6af4406ea68e5dfcc26c8cbceb54"
+      }
+    ],
+    "path": "research/v4-runs/collection-20261025-1234/v4/S0/2cc8d944-9927-435f-9168-5bbdd3cc1936/snapshot-response.json"
+  },
+  {
+    "batch": "collection-20261025-1234",
+    "case": "S1",
+    "investigationId": "a677801d-17f5-447a-8285-64ede5279be8",
+    "seconds": 46.3,
+    "searches": 4,
+    "attempts": 10,
+    "readDocuments": 9,
+    "uniqueTexts": 8,
+    "characters": 42290,
+    "fragments": 52,
+    "modelCalls": 12,
+    "inputTokens": 152386,
+    "outputTokens": 7794,
+    "verificationCalls": 1,
+    "allCollectionBeforeVerification": true,
+    "integrity": "PASSED",
+    "stopReason": "达到本次模型或 token 预算，未完成项保留。",
+    "documents": [
+      {
+        "url": "https://api-docs.deepseek.com/quick_start/pricing/",
+        "characters": 2890,
+        "hash": "4d791bb7563ef270baf20c50a40e913573f6da5de3417a76b48e3beadeb05a68"
+      },
+      {
+        "url": "https://api-docs.deepseek.com/zh-cn/quick_start/pricing/",
+        "characters": 1425,
+        "hash": "db09a343a4d633c64231991c96ddd338cb148398727a38c75cb9dc68e93e81fc"
+      },
+      {
+        "url": "https://api-docs.deepseek.com/zh-cn/api/create-chat-completion/",
+        "characters": 8228,
+        "hash": "32e3495d52d1872f782c56bbe8eb6c0d78e28cab175138dcdf35ae88ba25a922"
+      },
+      {
+        "url": "https://api-docs.deepseek.com/zh-cn/updates/",
+        "characters": 9930,
+        "hash": "23edc39b0a19f3cb52052a9231f32399691fcc59d253e934613057908217af85"
+      },
+      {
+        "url": "https://api-docs.deepseek.com/zh-cn/updates/?ref=codersera.com",
+        "characters": 9930,
+        "hash": "23edc39b0a19f3cb52052a9231f32399691fcc59d253e934613057908217af85"
+      },
+      {
+        "url": "https://api-docs.deepseek.com/zh-cn/news/news260424/",
+        "characters": 2246,
+        "hash": "d3ff4e9e0fc001bba4951a5d875542f0842c2e855d9e8b5caf33916a45c6785d"
+      },
+      {
+        "url": "https://st.mydeepseekapi.com/pricing",
+        "characters": 569,
+        "hash": "7cce5ccca39294b531b86e93ffd818fd9cce63c1c3624f5cf4e1f44615b74dbd"
+      },
+      {
+        "url": "https://api-docs.deepseek.com/zh-cn/guides/search/",
+        "characters": 5136,
+        "hash": "1fbe7a43a11bb97853871dbe3c9711d7899c86a22c137b7f766bc68b179d7bfd"
+      },
+      {
+        "url": "https://api-docs.deepseek.com/zh-cn/quick_start/rate_limit/",
+        "characters": 1936,
+        "hash": "ca97092f0cc2d49795cbf8628bbde52866ef440370c1f1547905441fe820c812"
+      }
+    ],
+    "path": "research/v4-runs/collection-20261025-1234/v4/S1/a677801d-17f5-447a-8285-64ede5279be8/snapshot-response.json"
+  },
+  {
+    "batch": "collection-20261025-1234",
+    "case": "S2",
+    "investigationId": "737f002b-e06e-4d0e-b1af-652db0899914",
+    "seconds": 58.9,
+    "searches": 6,
+    "attempts": 10,
+    "readDocuments": 10,
+    "uniqueTexts": 8,
+    "characters": 31809,
+    "fragments": 83,
+    "modelCalls": 10,
+    "inputTokens": 125681,
+    "outputTokens": 6944,
+    "verificationCalls": 1,
+    "allCollectionBeforeVerification": true,
+    "integrity": "PASSED",
+    "stopReason": "达到本次模型或 token 预算，未完成项保留。",
+    "documents": [
+      {
+        "url": "https://githubdocs.cn/en/copilot/how-tos/copilot-on-github/set-up-copilot/enable-copilot/set-up-for-self",
+        "characters": 662,
+        "hash": "c8b04ed5394989507ea1baa5663304a87c7154aa2463e144644b80da0e2471a9"
+      },
+      {
+        "url": "https://githubdocs.cn/en/copilot/how-tos/manage-your-account/get-started-with-a-copilot-plan",
+        "characters": 1886,
+        "hash": "c0e90e3577f042a3dd580d950101c1406a3045721dc0020167737f695d543ac9"
+      },
+      {
+        "url": "https://docs.github.com/zh/copilot/concepts/billing-and-usage/individuals/billing",
+        "characters": 3835,
+        "hash": "3f22c7f4e471fd5d52ed173eb6e0ceb6ce71bb9a5e0fdec2e6db12540271e659"
+      },
+      {
+        "url": "https://docs.github.com/zh/copilot/get-started/plans",
+        "characters": 6028,
+        "hash": "66af636d210c37241628b4c95415254c5183f95bd3cb7654b40c8e7003f3877c"
+      },
+      {
+        "url": "https://docs.github.com/zh/copilot/get-started/plans",
+        "characters": 6028,
+        "hash": "66af636d210c37241628b4c95415254c5183f95bd3cb7654b40c8e7003f3877c"
+      },
+      {
+        "url": "https://docs.github.com/zh/copilot/reference/copilot-billing/request-based-billing-legacy/copilot-requests",
+        "characters": 2336,
+        "hash": "38f52adaec385dcf1a39b7e14179faa4a894a32d4aa79cb5afc351d1b1b3034d"
+      },
+      {
+        "url": "http://gitdocs.cn/en/copilot/how-tos/manage-your-account/get-started-with-a-copilot-plan",
+        "characters": 1886,
+        "hash": "c0e90e3577f042a3dd580d950101c1406a3045721dc0020167737f695d543ac9"
+      },
+      {
+        "url": "https://docs.github.com/zh/copilot/how-tos/manage-your-account/view-and-change-your-copilot-plan",
+        "characters": 1886,
+        "hash": "e0eb2c75fc835255118e2dfae07911b3e955a015a8c94160d2f5ccec0bab7405"
+      },
+      {
+        "url": "https://githubdocs.cn/en/copilot/concepts/billing/individual-plans",
+        "characters": 1610,
+        "hash": "da567fcbfa45292487c24e15b69ab7d93a288e63ce629cba76b8f11876b7b20c"
+      },
+      {
+        "url": "https://docs.github.com/zh/copilot/reference/copilot-billing/models-and-pricing",
+        "characters": 5652,
+        "hash": "b1ba4a3779f710d82dda9561ad681d3ea64ffb958db4b556344667ee9abcb5e8"
+      }
+    ],
+    "path": "research/v4-runs/collection-20261025-1234/v4/S2/737f002b-e06e-4d0e-b1af-652db0899914/snapshot-response.json"
+  },
+  {
+    "batch": "collection-20261025-1234",
+    "case": "S3",
+    "investigationId": "2f854f35-1c32-4a2e-b7a6-1599e6db213f",
+    "seconds": 56.1,
+    "searches": 5,
+    "attempts": 10,
+    "readDocuments": 9,
+    "uniqueTexts": 9,
+    "characters": 310788,
+    "fragments": 38,
+    "modelCalls": 15,
+    "inputTokens": 130552,
+    "outputTokens": 8014,
+    "verificationCalls": 1,
+    "allCollectionBeforeVerification": true,
+    "integrity": "PASSED",
+    "stopReason": "达到本次模型或 token 预算，未完成项保留。",
+    "documents": [
+      {
+        "url": "https://cognition.com/blog/introducing-devin",
+        "characters": 4285,
+        "hash": "688d7cc66feaedf4bd1c3d442594c771263f19052eecbbd9be88ed9a355dbd55"
+      },
+      {
+        "url": "https://cognition.com/about",
+        "characters": 2272,
+        "hash": "eda9e6c305053dd9dd322b249f09e9211c49c303c963d9e0deeccc07fcc06c52"
+      },
+      {
+        "url": "https://docs.devin.ai/zh/get-started/devin-intro",
+        "characters": 2151,
+        "hash": "a535feaacf3a5a26b06eb6aa1d4e2aa7c885840b75ce9e7cc1d9f2d473bdedc4"
+      },
+      {
+        "url": "https://news.ycombinator.com/item?id=39679787",
+        "characters": 226809,
+        "hash": "a84da59406bf5044b90d6ea4fcd87ef17e970ddc871ed6267fdeb6a2fd80ee38"
+      },
+      {
+        "url": "https://news.ycombinator.com/item?id=36987454",
+        "characters": 38683,
+        "hash": "b111ea4d03e7fc533aa3a3451844b71130457c656cecb5900be92a5ecfba605c"
+      },
+      {
+        "url": "https://plainai.tech/articles/honest-devin-review-spring-2026-pricing-pros-cons-alternatives",
+        "characters": 8883,
+        "hash": "ada995e983893a098e7497c57605fc79f0c5aae0e65f97300bc8c496bec9213f"
+      },
+      {
+        "url": "https://murmure.nanocorp.app/blog/what-reddit-thinks-about-devin-ai",
+        "characters": 16127,
+        "hash": "b9c2ce0049335627f69cda9dbcb413a8c0dd3a4877b13ec62212588bd2b6bcc9"
+      },
+      {
+        "url": "https://news.ycombinator.com/item?id=36953720",
+        "characters": 460,
+        "hash": "24ac6316b185917061a37e52776b7ee461dfa53bd56a918952259623a265e6e6"
+      },
+      {
+        "url": "https://news.ycombinator.com/item?id=36948403",
+        "characters": 11118,
+        "hash": "dbe871156d8b2d327f9250a57a1248c29938219f87a3b604f2d170140918d1a2"
+      }
+    ],
+    "path": "research/v4-runs/collection-20261025-1234/v4/S3/2f854f35-1c32-4a2e-b7a6-1599e6db213f/snapshot-response.json"
+  },
+  {
+    "batch": "collection-20261025-1234",
+    "case": "S4",
+    "investigationId": "5125286b-a44b-48b5-a8c9-2edc3734fa8b",
+    "seconds": 50.2,
+    "searches": 5,
+    "attempts": 10,
+    "readDocuments": 9,
+    "uniqueTexts": 9,
+    "characters": 67030,
+    "fragments": 51,
+    "modelCalls": 10,
+    "inputTokens": 126629,
+    "outputTokens": 7935,
+    "verificationCalls": 1,
+    "allCollectionBeforeVerification": true,
+    "integrity": "PASSED",
+    "stopReason": "达到本次模型或 token 预算，未完成项保留。",
+    "documents": [
+      {
+        "url": "https://github.blog/news-insights/product-news/github-copilot-in-vscode-free/?_bhlid=1c96dda4366d8070d06e00abf1c4746e80a06fe2",
+        "characters": 3772,
+        "hash": "80e8912356f685afe95bca6293bbd2abf67593dc012605077eec910b0f40d8fc"
+      },
+      {
+        "url": "https://devblogs.microsoft.com/commandline/terminal-chat-now-included-in-github-copilot-free/",
+        "characters": 7562,
+        "hash": "6b8028917879de2ed85bd1ede3c2e6f148371af0a22958988194feed0ec70e0e"
+      },
+      {
+        "url": "https://docs.github.com/en/copilot/get-started/plans",
+        "characters": 10183,
+        "hash": "1c12bfa30c4586f523eb93435e168b8c579ba98fafe068e06022a7bb005f227c"
+      },
+      {
+        "url": "https://github.com/features/copilot/plans",
+        "characters": 25199,
+        "hash": "4b1852a65753282163ff33466a98fb88cb3ece109206cb2f47e84f734f2ded57"
+      },
+      {
+        "url": "https://github.blog/changelog/2025-02-26-github-copilot-now-available-for-free-in-windows-terminal-canary/",
+        "characters": 1959,
+        "hash": "8f018d2f3a27c159f6c20c1f819a9b650c22a6f8829a666f6873c6242e9c8684"
+      },
+      {
+        "url": "https://devblogs.microsoft.com/visualstudio/announcing-a-free-github-copilot-for-visual-studio/",
+        "characters": 5541,
+        "hash": "bc57ab64a5d7228966add881e69d7b728045f88654044e65b2294cd1b783e667"
+      },
+      {
+        "url": "https://monoist.itmedia.co.jp/mn/spv/2412/27/news100.html",
+        "characters": 3056,
+        "hash": "b1f307681714bb080f4f2c9bd385aaba89c34f39992d0957af1bde5a0c3711e9"
+      },
+      {
+        "url": "https://www.infoworld.com/article/3627788/github-launches-free-tier-of-copilot-ai-coding-assistant.html",
+        "characters": 3730,
+        "hash": "208e314a472656bd38cba769286b7684a9e6fd01cd4a03d58a64e4bb1e3e0950"
+      },
+      {
+        "url": "https://docs.github.com/zh/copilot/get-started/plans",
+        "characters": 6028,
+        "hash": "66af636d210c37241628b4c95415254c5183f95bd3cb7654b40c8e7003f3877c"
+      }
+    ],
+    "path": "research/v4-runs/collection-20261025-1234/v4/S4/5125286b-a44b-48b5-a8c9-2edc3734fa8b/snapshot-response.json"
+  },
+  {
+    "batch": "collection-20261025-1234",
+    "case": "S5",
+    "investigationId": "d369248d-0424-4ce6-8100-5af7be6a2f87",
+    "seconds": 66.6,
+    "searches": 5,
+    "attempts": 8,
+    "readDocuments": 5,
+    "uniqueTexts": 5,
+    "characters": 30526,
+    "fragments": 30,
+    "modelCalls": 11,
+    "inputTokens": 113478,
+    "outputTokens": 9060,
+    "verificationCalls": 1,
+    "allCollectionBeforeVerification": true,
+    "integrity": "PASSED",
+    "stopReason": "研究受执行或服务失败限制：MODEL: v4-next-research-action failed (output-schema; candidateIds.0:invalid_format)",
+    "documents": [
+      {
+        "url": "http://www.lpqz.cn/news/187560",
+        "characters": 5373,
+        "hash": "efc006c1b248ec30c667b96356a4d1f02cddc1e799265cbdcf233e98df9e1dde"
+      },
+      {
+        "url": "https://spin.atomicobject.com/blender-scripting-with-ai/",
+        "characters": 9205,
+        "hash": "ffaf7c8113e8f7c3d772ffff9807fafe4c0abdd9f6ee0396f930dc0b620b3d15"
+      },
+      {
+        "url": "https://agihunt.info/en/e/19f5609be2748217799dea52292",
+        "characters": 2458,
+        "hash": "ac5f506525669198724f6c2696d069d8fa5ec36d74ece7b34cb874482b4c2d40"
+      },
+      {
+        "url": "https://cursor.com/cn/blog/agent-best-practices",
+        "characters": 8957,
+        "hash": "823a8c64839dcdbccccb77f073eb084e802d60c8ebf9b388457b55c7b8b6778e"
+      },
+      {
+        "url": "https://github.com/ahujasid/mcp-for-blender/issues/251",
+        "characters": 4533,
+        "hash": "058d42468c43dd242afb48e334654f6ee63d0a0f29457ebaa88979c64884015d"
+      }
+    ],
+    "path": "research/v4-runs/collection-20261025-1234/v4/S5/d369248d-0424-4ce6-8100-5af7be6a2f87/snapshot-response.json"
+  },
+  {
+    "batch": "collection-20261025-1234",
+    "case": "S6",
+    "investigationId": "04b6afb7-bd20-47a6-bd67-ae3d4cd2e610",
+    "seconds": 45.5,
+    "searches": 5,
+    "attempts": 10,
+    "readDocuments": 8,
+    "uniqueTexts": 8,
+    "characters": 65313,
+    "fragments": 69,
+    "modelCalls": 10,
+    "inputTokens": 121576,
+    "outputTokens": 3994,
+    "verificationCalls": 1,
+    "allCollectionBeforeVerification": true,
+    "integrity": "PASSED",
+    "stopReason": "达到本次模型或 token 预算，未完成项保留。",
+    "documents": [
+      {
+        "url": "https://github.blog/news-insights/product-news/github-copilot-in-vscode-free/",
+        "characters": 3772,
+        "hash": "80e8912356f685afe95bca6293bbd2abf67593dc012605077eec910b0f40d8fc"
+      },
+      {
+        "url": "https://githubdocs.cn/en/copilot/how-tos/copilot-on-github/set-up-copilot/enable-copilot/set-up-for-self",
+        "characters": 662,
+        "hash": "c8b04ed5394989507ea1baa5663304a87c7154aa2463e144644b80da0e2471a9"
+      },
+      {
+        "url": "https://github.blog/changelog/2025-02-26-github-copilot-now-available-for-free-in-windows-terminal-canary/",
+        "characters": 1959,
+        "hash": "8f018d2f3a27c159f6c20c1f819a9b650c22a6f8829a666f6873c6242e9c8684"
+      },
+      {
+        "url": "https://github.com/orgs/community/discussions/144674",
+        "characters": 9443,
+        "hash": "bc708d39d9079da0b01de7999b00b6b2dd4e7fc15bd7483a947073454e821791"
+      },
+      {
+        "url": "https://www.microsoft.com/en-us/copilot/pricing/individuals?market=en?market=en",
+        "characters": 15646,
+        "hash": "a8c0a35cbe2ba79e3176f5fa5a2e7f3a1f35937ebff6ccf16bf7fb38e91f1688"
+      },
+      {
+        "url": "https://www.microsoft.com/en-nz/copilot/pricing/individuals",
+        "characters": 17935,
+        "hash": "7441983f988ac9d271399904d6203146ea1223b0811dcd986efe8a6b7488f589"
+      },
+      {
+        "url": "https://githubdocs.cn/en/copilot/how-tos/manage-your-account/get-started-with-a-copilot-plan",
+        "characters": 1886,
+        "hash": "c0e90e3577f042a3dd580d950101c1406a3045721dc0020167737f695d543ac9"
+      },
+      {
+        "url": "https://code.visualstudio.com/docs/chat/chat-overview",
+        "characters": 14010,
+        "hash": "abb44508da1b9802c0dc4da2aba709d49c1380315b373b9be9a419142bb3a7fe"
+      }
+    ],
+    "path": "research/v4-runs/collection-20261025-1234/v4/S6/04b6afb7-bd20-47a6-bd67-ae3d4cd2e610/snapshot-response.json"
+  },
+  {
+    "batch": "collection-20261025-1234",
+    "case": "S7",
+    "investigationId": "99bd40b0-0e40-40f6-ba53-6b819aa05ac4",
+    "seconds": 53.9,
+    "searches": 6,
+    "attempts": 4,
+    "readDocuments": 4,
+    "uniqueTexts": 4,
+    "characters": 25903,
+    "fragments": 24,
+    "modelCalls": 13,
+    "inputTokens": 137598,
+    "outputTokens": 9243,
+    "verificationCalls": 1,
+    "allCollectionBeforeVerification": true,
+    "integrity": "PASSED",
+    "stopReason": "达到本次模型或 token 预算，未完成项保留。",
+    "documents": [
+      {
+        "url": "https://dev.to/alanwest/i-gave-devin-10-real-tasks-it-completed-3-3063",
+        "characters": 8005,
+        "hash": "9dccdd1da0e723a9bf2578544793bf20bb47385eb8e8f8e4495b91e5c1e46342"
+      },
+      {
+        "url": "https://vibecoding.app/blog/zh/devin-pingce-2026",
+        "characters": 2999,
+        "hash": "ad5150d4e3fd49658d6f9a14bf1f728bded613a9c4052fad15725119f2b52dc3"
+      },
+      {
+        "url": "https://dev.to/builderio/devin-review-is-it-a-better-ai-coding-agent-than-cursor-d6p",
+        "characters": 12748,
+        "hash": "7e323a6d20876fbcf115184b31d1d86b58020dc9b1e2e85f9374116798b71c36"
+      },
+      {
+        "url": "https://docs.devin.ai/zh/get-started/devin-intro",
+        "characters": 2151,
+        "hash": "a535feaacf3a5a26b06eb6aa1d4e2aa7c885840b75ce9e7cc1d9f2d473bdedc4"
+      }
+    ],
+    "path": "research/v4-runs/collection-20261025-1234/v4/S7/99bd40b0-0e40-40f6-ba53-6b819aa05ac4/snapshot-response.json"
+  },
+  {
+    "batch": "collection-20261025-1234",
+    "case": "S8",
+    "investigationId": "66a83cfb-7f9f-4f66-a53c-1afc344452be",
+    "seconds": 0.6,
+    "searches": 0,
+    "attempts": 0,
+    "readDocuments": 0,
+    "uniqueTexts": 0,
+    "characters": 0,
+    "fragments": 0,
+    "modelCalls": 1,
+    "inputTokens": 675,
+    "outputTokens": 53,
+    "verificationCalls": 0,
+    "allCollectionBeforeVerification": true,
+    "integrity": "PASSED",
+    "stopReason": "该请求不属于AI产品事实调查或用途评测。",
+    "documents": [],
+    "path": "research/v4-runs/collection-20261025-1234/v4/S8/66a83cfb-7f9f-4f66-a53c-1afc344452be/snapshot-response.json"
+  },
+  {
+    "batch": "collection-final-20261025",
+    "case": "S5-standard",
+    "investigationId": "1b770812-831e-444b-9bd6-f858f030b627",
+    "seconds": 129.3,
+    "searches": 18,
+    "attempts": 23,
+    "readDocuments": 23,
+    "uniqueTexts": 23,
+    "characters": 169958,
+    "fragments": 118,
+    "modelCalls": 24,
+    "inputTokens": 305211,
+    "outputTokens": 19662,
+    "verificationCalls": 1,
+    "allCollectionBeforeVerification": true,
+    "integrity": "PASSED",
+    "stopReason": "达到本次模型或 token 预算，未完成项保留。",
+    "documents": [
+      {
+        "url": "https://spin.atomicobject.com/blender-scripting-with-ai/",
+        "characters": 9205,
+        "hash": "ffaf7c8113e8f7c3d772ffff9807fafe4c0abdd9f6ee0396f930dc0b620b3d15"
+      },
+      {
+        "url": "https://blog.csdn.net/weixin_42534103/article/details/160016741",
+        "characters": 7055,
+        "hash": "64ca2011cc33be2be0e94f53bd92aa179cb735672f5def385114bc214b3b22de"
+      },
+      {
+        "url": "https://agihunt.info/en/e/19f5609be2748217799dea52292",
+        "characters": 2458,
+        "hash": "ac5f506525669198724f6c2696d069d8fa5ec36d74ece7b34cb874482b4c2d40"
+      },
+      {
+        "url": "https://andrew.ooo/posts/text-to-cad-review-agent-cad-plugin/",
+        "characters": 19391,
+        "hash": "e63f1ee907d5c0dcaf8e42b1066344199322a5b3a049d2fcc6072c0fe7f459c6"
+      },
+      {
+        "url": "https://news.ycombinator.com/submitlink?t=What+Happened+When+I+Tried+Blender+Scripting+with+AI&u=https%3A%2F%2Fspin.atomicobject.com%2Fblender-scripting-with-ai%2F%23.VNUdMcs6UCk.hackernews",
+        "characters": 81,
+        "hash": "0e8d698217bc688d1b71e58d85e97602900f3411ca926b42739cdff09c2c1bc3"
+      },
+      {
+        "url": "https://usevulcan.app/blog/modelling-brockley-home-with-vulcan",
+        "characters": 7709,
+        "hash": "39ae49163a5c0ee6f5b7e8c98e5e0f858c2a409db599371fd7376140c17bd5a3"
+      },
+      {
+        "url": "https://x.com/prasenx/status/2076661090663182708",
+        "characters": 690,
+        "hash": "adfbbcdf17048e7373d63e82cdd8970ef4204030189e0b51bbaf78ca54afc320"
+      },
+      {
+        "url": "https://x.com/prasenx/status/2076631428926972177",
+        "characters": 772,
+        "hash": "4c9b4fba1cf429a758ba8d1eff1fb9cf045d4d04027721f9d8191ebe51fe226d"
+      },
+      {
+        "url": "https://aialleyway.com/cursor-review/",
+        "characters": 30379,
+        "hash": "78dd5c1c86642283d87775af749f5b647b65a2842e59f5ba114ca630af554052"
+      },
+      {
+        "url": "https://github.com/earthtojake/text-to-cad",
+        "characters": 15494,
+        "hash": "783168f21bf5afbdec2fec0801f9e7fb775551efc780febfea5c05714900dcba"
+      },
+      {
+        "url": "https://vibingtalk.com/index.php?threads%2Fhow-useful-is-claude-for-cad-drawings.621001%2F=",
+        "characters": 7677,
+        "hash": "45cb2fb6dee003dc8c4bdddbe889d1c3cdcee8da63f775e7533394947aee3c2a"
+      },
+      {
+        "url": "https://www.digitalapplied.com/blog/cursor-3-deep-dive-agents-composer-review-2026",
+        "characters": 28423,
+        "hash": "ce64e3d7502f07a3b4c65c0a7426f1cc34af44d09a57542ac96a9918bda44f77"
+      },
+      {
+        "url": "https://blog.csdn.net/fenglingguitar/article/details/146746000",
+        "characters": 3817,
+        "hash": "f25ba9ab1635340f4bfe7294c37ff5d9af24adacb40cb59eb3645d9c72f94db1"
+      },
+      {
+        "url": "https://aicoderscope.com/blog/cursor-3-review-2026/",
+        "characters": 18690,
+        "hash": "9c5a25ac2823c3c89643b3cd930ad0cab37c3a6e0d6b8a806c6b2beb1ef2619c"
+      },
+      {
+        "url": "https://agihunt.info/e/19f5609be2748217799dea52292",
+        "characters": 1222,
+        "hash": "787a602020f04cd645a6af31654e8beeeee4d562093c811e5c54f54ea3641adf"
+      },
+      {
+        "url": "https://agihunt.info/en/p/19f5604bcdb8d33ed0c0185caf6",
+        "characters": 1359,
+        "hash": "f6bf9144bf5de774c6bc73ecae58790a2e485fbbb6bc7e8a41be3c9c3c6822a4"
+      },
+      {
+        "url": "https://blog.csdn.net/qq_35704550/article/details/149077506",
+        "characters": 4805,
+        "hash": "0f9049c3e6a418b7af22a1885448110f67db442420998a9d376e1c3e08b10fa4"
+      },
+      {
+        "url": "https://x.com/prasenx/status/2076686166422884646",
+        "characters": 826,
+        "hash": "9cbd64e0e4d9f8c635e6dc04d0b95ab49f228c252e10823127d1dff76f7dfbdf"
+      },
+      {
+        "url": "https://opentools.ai/tools/text-to-cad",
+        "characters": 4535,
+        "hash": "8b5a4d0b7365de4ecb50fc9cf6d63d87c95f9e5b2b74512109b2a3315554032e"
+      },
+      {
+        "url": "https://agihunt.info/en/p/19f5b5704f1cab1a021f556e48b",
+        "characters": 1280,
+        "hash": "a577240a63c85dc0fa0e5f077d0b7ec50fe5c79759827202165a6d3656b750dc"
+      },
+      {
+        "url": "https://agihunt.info/en/p/19f5bb24c254e93ae16748a2d08",
+        "characters": 1323,
+        "hash": "40e2ae9dd46b837540241b1b422bb84ed058a0145577fa4aa549c83031323c74"
+      },
+      {
+        "url": "https://agihunt.info/en/p/19f5c11b0eb6be63d24582e20e1",
+        "characters": 1405,
+        "hash": "716e81f054ab9ab8cf99dcd2051aa60b3c0d7f7b08cbd55f742747034db06a64"
+      },
+      {
+        "url": "https://agihunt.info/en/p/19f5bca0f83d687484bf5e7db4d",
+        "characters": 1362,
+        "hash": "54471046868d7675ab1fc6cba923e6db6fd8469fc5218315b92225aecc7b3f67"
+      }
+    ],
+    "path": "research/v4-runs/collection-final-20261025/S5-standard/1b770812-831e-444b-9bd6-f858f030b627/snapshot-response.json"
+  },
+  {
+    "batch": "collection-final-20261025",
+    "case": "blind",
+    "investigationId": "0390ddcb-a1eb-46eb-a9a6-c3ca2937cf61",
+    "seconds": 39.2,
+    "searches": 4,
+    "attempts": 8,
+    "readDocuments": 6,
+    "uniqueTexts": 6,
+    "characters": 143884,
+    "fragments": 48,
+    "modelCalls": 10,
+    "inputTokens": 73773,
+    "outputTokens": 5683,
+    "verificationCalls": 1,
+    "allCollectionBeforeVerification": true,
+    "integrity": "PASSED",
+    "stopReason": "已达到本次文档抓取上限；结束搜集，已保存全文交给后续处理。",
+    "documents": [
+      {
+        "url": "https://raw.githubusercontent.com/ollama/ollama/0b6c6c9092222c850250d8408e7b29056f040bf3/docs/faq.md",
+        "characters": 7372,
+        "hash": "74908f3c3fda426732c12d8f20934b495e8f3259d3a9ac117fb474983e0f6f93"
+      },
+      {
+        "url": "https://raw.githubusercontent.com/sabver/ai-infra-book/refs/heads/main/references/framework-history/2026-09-08/cache-routing/ollama-current-faq.md",
+        "characters": 101651,
+        "hash": "4a9025a713ddab984a50eac8f00758a7f851634e699d23b637a2ff72ad51b910"
+      },
+      {
+        "url": "https://filepathgeek.com/posts/ollama-models-location/",
+        "characters": 2388,
+        "hash": "0efe20a4e20795fd1c0dbd9d64dd9e2232e5344f93a10fc9dc21e97b59bc9486"
+      },
+      {
+        "url": "https://pcnmobile.com/how-to-change-ollamas-model-storage-location/",
+        "characters": 5689,
+        "hash": "13b4932058f2ce6468850f7750f8a3442fef9db0ab30c4ec9f362aa6b9a64c3d"
+      },
+      {
+        "url": "https://openclawdc.com/blog/move-ollama-models-another-drive/",
+        "characters": 10202,
+        "hash": "6901bc978ebee2fea9d3e424cbc794cb25e9ec7709d20cfd3f5853524c83f323"
+      },
+      {
+        "url": "https://docs.ollama.com/faq",
+        "characters": 16582,
+        "hash": "5948c8cf8a5a00a19b2cc17978c29960d353ecfbaf108ef717be1d575e6919be"
+      }
+    ],
+    "path": "research/v4-runs/collection-final-20261025/blind/0390ddcb-a1eb-46eb-a9a6-c3ca2937cf61/snapshot-response.json"
+  }
+]

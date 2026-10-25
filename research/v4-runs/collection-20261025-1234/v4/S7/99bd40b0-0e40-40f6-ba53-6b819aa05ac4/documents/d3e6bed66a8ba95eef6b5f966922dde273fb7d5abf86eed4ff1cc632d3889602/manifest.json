@@ -1,0 +1,2216 @@
+{
+  "schemaVersion": "source-document/v1",
+  "id": "d3e6bed66a8ba95eef6b5f966922dde273fb7d5abf86eed4ff1cc632d3889602",
+  "version": "a610a22dde23cca711e4176263b2e2862de53dac79122dff3c118a794124cc5e",
+  "requestedUrl": "https://dev.to/builderio/devin-review-is-it-a-better-ai-coding-agent-than-cursor-d6p",
+  "finalUrl": "https://dev.to/builderio/devin-review-is-it-a-better-ai-coding-agent-than-cursor-d6p",
+  "retrievedAt": "2026-10-25T04:40:07.146Z",
+  "contentType": "text/html; charset=utf-8",
+  "status": "READ",
+  "readError": null,
+  "rawHash": "e27b2085bdb324641dcb0764e6119931ae9e92d21bdcf883e6552c0c36f1b5be",
+  "textHash": "7e323a6d20876fbcf115184b31d1d86b58020dc9b1e2e85f9374116798b71c36",
+  "text": "Add reaction Like Unicorn Exploding Head Raised Hands Fire Jump to Comments Save Boost Pick as gem Copy link Share to X Share to LinkedIn Share to Facebook Share to Mastodon Report Abuse\n\nSteve Sewell\n\nfor\n\nBuilder.io\n\nPosted on Dec 11, 2024 Originally published at builder.io\n\nDevin review: is it a better AI coding agent than Cursor?\n\n#cursor #ai #productivity #webdev\n\nI paid the $500 a month to use Devin, the AI coding agent, so you don't have to. Let's compare it to Cursor agents and see if it's worth the $2 billion valuation of their company.\n\nWhat is Devin?\n\nThe main thing to know about Devin is it's primarily a Slack-based workflow — it's not an IDE.\n\nYou tag Devin in Slack and ask Devin to update something, fix something, et cetera. Devin includes:\n\nA remote server\n\nBrowser interface\n\nVS Code editing interface\n\nA planner\n\nA chat interface\n\nYou can follow along step-by-step to see what Devin did and what it's doing.\n\nTesting Devin with an image generation model\n\nI heard about this new image generation model that's supposed to be small enough to run on consumer-grade hardware.\n\nI was hoping for a basic web UI, but then I found all of this and realized I don't code in Python. I didn't know what to do with this, so I asked Devin.\n\nDevin went to work and in the course of about 12 minutes it:\n\nCloned the repo\n\nGot it spun up\n\nGenerated an image of a cat for me\n\nAttached the image back to me\n\nI then asked for four more images of a dog riding in a hot air balloon. And I got my images in full, terrifying quality.\n\nNow that's not Devin's fault, of course; that's the model we're using.\n\nAsking Devin to create a web UI\n\nI saw one of the todos on this repo is to create a local, real-time interactive app.\n\nSo I asked Devin if he could clone this repo and add a web-based UI to type prompts and see images. Devin began spinning things up and sending me updates.\n\nOne really interesting thing Devin does is it takes notes and stores them in a notes.txt file to refer back to and use in subsequent prompts.\n\nThis seems like an interesting technique to summarize information that's important and carry it across subsequent steps.\n\nDevin will also sometimes create knowledge entries, which are like bits of information that could be useful to refer back to in totally subsequent runs.\n\nIt'll store these and look them up when needed, which is supposed to emulate the tribal knowledge that exists within a team.\n\nDevin was in fact able to add the web UI I asked for, but we hit other issues. More on that in a moment.\n\nDevin's capabilities and limitations\n\nOverall, Devin's pretty impressive. It:\n\nCreates plans\n\nWrites code\n\nFinds bugs in the code\n\nCorrects the code\n\nRuns its own end-to-end tests to verify it works\n\nResponds to your feedback if you find issues and attempts to address them\n\nAnything you reply in Slack, Devin will start working on a reply to. In this case, it was able to verify we're hitting deployment issues.\n\nI kept working on debugging it, but unfortunately, after a lot of back and forth, it still never was able to solve it. Eventually, I gave up because I was sick of trying.\n\nPersonally, slack thread hell is not my favorite method of developing/debugging:\n\nI prefer not to be demoted to the “any updates?” guy.\n\nFinally, I asked if I could just pull this code down locally and run it locally. It gave me instructions, but they weren't valid because it didn't actually send this code in a pull request.\n\nDevin's pull request capabilities\n\nThat's not to say that Devin can't do a pull request. One of my very first runs of Devin was to add a feature to a weather app.\n\nIt was able to add the feature I wanted as well as respond to my feedback that I wanted it to look more like iOS styling.\n\nThe final pull request was not bad. It added two packages, and the code was pretty good, but there was a console log in the code.\n\nIt also forgot to uninstall a package that it no longer needed after my feedback. But we can go in and just leave comments, like a normal person, to remove this log and that this package is no longer needed.\n\nOne cool thing Devin did when we were going back and forth on what the UI of this weather app update should be is it actually generated a deployment with a preview URL without me asking.\n\nSo when I type in a city, I can see that the feature I wanted has an iOS style like I asked. Even though I actually don't have a deploy preview set up on this repo, it deployed a version for me to see anyway.\n\nWhen it learned I want an iOS style for this app, it proposed this to save in the knowledge. I can review and approve it, and it'll remember that during subsequent runs.\n\nFor some reason though, I couldn't get Devin to reply to my feedback this time, even though I've seen it do it before. I don't know what went wrong.\n\nIn general, I hit a few bugs along the way while using Devin, but nothing super crazy that I couldn't usually work around.\n\nFixing bugs with Devin\n\nA separate task I asked of Devin was to fix a bug in our existing website. After about 12 minutes, it spun up a PR with a fix, finding the necessary boolean and updating it from true to false.\n\nBut then it updated some other stuff I didn't expect:\n\nAdded a fallback: true in getStaticPaths, even though getBuilderStaticPaths already sets fallback to 'blocking'\n\nRemoved a check, even though we already turned that value to false\n\nAdded a type declaration that I know firsthand isn't needed\n\nThe cool part is I asked in the PR why it did this, and Devin added the eyes emoji to tell me it sees this. Then it explained itself.\n\nI'll be honest, I was kind of hoping it would fix those things. But it did provide a thorough explanation. It just wasn't a good one. Most of this information is not actually true.\n\nFallback true does not enable client-side navigation or enable Builder.io's preview system. Fallback blocking, which was already used, is our preference. Also, the tabler icons react type definition is just not needed. It's included in the package.\n\nIt made some weird comment that these components are part of the client-side navigation system, whatever that means. But the nice part is I can talk to Devin like a human, leave a comment, and it can make updates accordingly.\n\nAdding a backend feature\n\nThe last thing I asked Devin to do is implement a backend feature. I said to add to our GraphQL admin API the ability to read and write from the comments collection.\n\nDevin created a PR that was decent. It added this reflect metadata package that I don't think is needed (we haven't needed it to date).\n\nBut most importantly, it did recognize we use this resolver structure. It created a comments resolver and added it.\n\nThis code actually looks pretty typical of how we've written this on the backend. Now it did make up a couple of fields that would have been nice to ask me what the schema is. But otherwise, I'd say this is decent code.\n\nWorkflow issues with Devin\n\nOverall, I'd say the biggest problem I have with Devin is this is just not my preferred workflow. I don't want to make an ask and wait 15 minutes for a pull request, and then have this back and forth on the pull request and/or Slack.\n\nI much prefer Cursor's workflow where I have all of this right in my local environment and IDE. I can see the updates in real-time and can commit and debug locally, without jumping to some remote server and other set of tools I don't know, and having all these long waits and delays that are just unfamiliar and unproductive.\n\nI get that the idea of Devin is to set some asynchronous agent coworkers off at a task and let them do lots of things in parallel and just come to you with results.\n\nBut that really isn't a great workflow until Devins are a lot better. I don't want the AI to just go off and do its thing and come back only when it's done, unless I have high confidence it's going to be really, really reliable at that.\n\nOtherwise, I'd prefer my IDE just do it.\n\nComparing with Cursor agents\n\nLet's compare some of the same tasks with Cursor's new agent features.\n\nContext handling\n\nThe big difference between Cursor agents and the standard Cursor composer view is you don't have to manually add files to the context. Cursor will scan your codebase and find the relevant files and add them for you.\n\nCursor was able to find this no client-side routing variable and flip it to false. If I accept the updates, we can see it did exactly what we wanted. One basic minimal diff.\n\nUser control and feedback\n\nCursor's not always perfect, but the part I like most is I'm in control and in the driver's seat. If I want something different, I could also say, just delete that variable and all references altogether. And I could see the update immediately. There's less waiting and more action.\n\nWhile I'm more closely in the loop, I have more trust with this process. Because I know what I want, and if it can scan my code, update multiple files and not make me have to worry about the details, I can provide real-time feedback and hand modifications and send the pull request my way.\n\nThat's a much easier to adopt workflow for me and my team.\n\nOwnership clarity\n\nWith Cursor it's also more clear who owns the pull request: it's me. I find this process faster, easier, and nicer. We don't have weird bots creating pull requests where it's unclear who actually owns that and is responsible for making sure the code is good.\n\nNobody has to clone down that bot's PR and push updates to it. And every update happens pretty quickly.\n\nGraphQL example\n\nI also tried the GraphQL prompt with our very large internal repo in Cursor agent mode as well. And I got very similar results. It:\n\nAdded the comments resolver\n\nIntegrated it into the API\n\nAdded the types as well\n\nSo pretty similar results to what you'd expect with Cursor's composer view. But again, because of the agent mode, I didn't have to specify files. I just typed my prompt and it happened. That was nice.\n\nImage generator repo clone\n\nNow let's try a more agentic workflow where we have it clone this image generator model repo. You'll see the main difference between Cursor agents and Devin is it asked me before it runs commands.\n\nCursor is generally more cautious than Devin, which is nice because it's running on my local machine. But also sometimes I wish it would just run this stuff for me.\n\nI've noticed if it catches an error, it'll automatically try to fix it, which I've seen it be successful at, which is great. Now it's written the code, which I'll accept. It found an error and it's rewriting the command accordingly.\n\nUnfortunately, my computer froze before I could show you if Cursor was able to finish that task. It looked to me like it was generating the image fine, but it turns out that model is meant for having a real GPU and not burning through my laptop CPU like I was trying to do.\n\nThe results\n\nOverall, I don't think Devin will take off like Cursor. And it's not just because of the $500 a month starting point. Cursor is so much easier to adopt and I like their incremental approach.\n\nDevin, I fear, is trying to jump too far. They've raised all this money saying there's this all-new way to build software with agents, but it just wasn't my preferred workflow.\n\nMaybe one day when LLMs are even better and agents are extremely reliable. But I'm not sure the rate of progress will get us there really soon. And I personally believe more in Cursor's incremental approach than Devin's \"let's change everything\" approach.\n\nMy preferred AI stack\n\nMy preferred workflow looks more like this:\n\nA developer works iteratively with Cursor\n\nOther teammates like designers iterate with their tools\n\nProducts like builder.io can convert designs to code and also patch in design updates as they're needed\n\nUltimately your workflow doesn't change much. You're still coding and debugging locally. You're pushing changes as needed.\n\nBut I will say that I'm excited to have a new player in the agent coding space to push Cursor even further. And I can't wait to see what comes out from the result of this.\n\nBut that's my quick take. From everything you saw, what do you think? Let me know in the comments. And if you made it to the end and you want to see more videos like this, be sure to like and subscribe.\n\nTop comments (0)\n\nSubscribe\n\nFor further actions, you may consider blocking this person and/or reporting abuse\n\nBuilder.io\n\nFollow\n\nGo from idea to production with unprecedented efficiency\n\nDrag and drop to build visually with your components!\n\nTry Builder.io free\n\nWhat is an LLM (For Web Developers) #ai #webdev #productivity #programming How I use Cursor (+ my best tips) #webdev #cursor #tooling #programming\n\nWe're a place where coders share, stay up-to-date and grow their careers.\n\nLog in Create account",
+  "rawSources": [
+    {
+      "mode": "STATIC",
+      "hash": "e27b2085bdb324641dcb0764e6119931ae9e92d21bdcf883e6552c0c36f1b5be",
+      "path": "C:\\Users\\qianchen\\Documents\\waytoagi-1024-detective-a2-v4\\.cache\\source-documents-v4\\99bd40b0-0e40-40f6-ba53-6b819aa05ac4\\d3e6bed66a8ba95eef6b5f966922dde273fb7d5abf86eed4ff1cc632d3889602\\raw.bin"
+    }
+  ],
+  "storage": {
+    "rawPath": "C:\\Users\\qianchen\\Documents\\waytoagi-1024-detective-a2-v4\\.cache\\source-documents-v4\\99bd40b0-0e40-40f6-ba53-6b819aa05ac4\\d3e6bed66a8ba95eef6b5f966922dde273fb7d5abf86eed4ff1cc632d3889602\\raw.bin",
+    "textPath": "C:\\Users\\qianchen\\Documents\\waytoagi-1024-detective-a2-v4\\.cache\\source-documents-v4\\99bd40b0-0e40-40f6-ba53-6b819aa05ac4\\d3e6bed66a8ba95eef6b5f966922dde273fb7d5abf86eed4ff1cc632d3889602\\source.txt",
+    "manifestPath": "C:\\Users\\qianchen\\Documents\\waytoagi-1024-detective-a2-v4\\.cache\\source-documents-v4\\99bd40b0-0e40-40f6-ba53-6b819aa05ac4\\d3e6bed66a8ba95eef6b5f966922dde273fb7d5abf86eed4ff1cc632d3889602\\manifest.json"
+  },
+  "parser": {
+    "name": "readability+source-dom",
+    "version": "readability-0.6.0+jsdom-30.1.3+source-dom-2",
+    "normalization": "source-text/v1",
+    "mode": "STATIC"
+  },
+  "metadata": {
+    "title": "Devin review: is it a better AI coding agent than Cursor? - DEV Community",
+    "author": "Steve Sewell",
+    "publishedAt": "2024-12-11T20:42:26.000Z",
+    "language": "en"
+  },
+  "completeness": "COMPLETE",
+  "warnings": [],
+  "blocks": [
+    {
+      "start": 0,
+      "end": 186,
+      "id": "b0",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[0]",
+      "headingPath": [],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 188,
+      "end": 200,
+      "id": "b1",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[1]",
+      "headingPath": [],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 202,
+      "end": 205,
+      "id": "b2",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[2]",
+      "headingPath": [],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 207,
+      "end": 217,
+      "id": "b3",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[3]",
+      "headingPath": [],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 219,
+      "end": 276,
+      "id": "b4",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[4]",
+      "headingPath": [],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 278,
+      "end": 335,
+      "id": "b5",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[5]",
+      "headingPath": [
+        "Devin review: is it a better AI coding agent than Cursor?"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 337,
+      "end": 370,
+      "id": "b6",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[6]",
+      "headingPath": [
+        "Devin review: is it a better AI coding agent than Cursor?"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 372,
+      "end": 551,
+      "id": "b7",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[7]",
+      "headingPath": [
+        "Devin review: is it a better AI coding agent than Cursor?"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 553,
+      "end": 567,
+      "id": "b8",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[8]",
+      "headingPath": [
+        "Devin review: is it a better AI coding agent than Cursor?",
+        "What is Devin?"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 569,
+      "end": 663,
+      "id": "b9",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[9]",
+      "headingPath": [
+        "Devin review: is it a better AI coding agent than Cursor?",
+        "What is Devin?"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 665,
+      "end": 764,
+      "id": "b10",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[10]",
+      "headingPath": [
+        "Devin review: is it a better AI coding agent than Cursor?",
+        "What is Devin?"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 766,
+      "end": 781,
+      "id": "b11",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[11]",
+      "headingPath": [
+        "Devin review: is it a better AI coding agent than Cursor?",
+        "What is Devin?"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 783,
+      "end": 800,
+      "id": "b12",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[12]",
+      "headingPath": [
+        "Devin review: is it a better AI coding agent than Cursor?",
+        "What is Devin?"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 802,
+      "end": 827,
+      "id": "b13",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[13]",
+      "headingPath": [
+        "Devin review: is it a better AI coding agent than Cursor?",
+        "What is Devin?"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 829,
+      "end": 838,
+      "id": "b14",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[14]",
+      "headingPath": [
+        "Devin review: is it a better AI coding agent than Cursor?",
+        "What is Devin?"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 840,
+      "end": 856,
+      "id": "b15",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[15]",
+      "headingPath": [
+        "Devin review: is it a better AI coding agent than Cursor?",
+        "What is Devin?"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 858,
+      "end": 934,
+      "id": "b16",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[16]",
+      "headingPath": [
+        "Devin review: is it a better AI coding agent than Cursor?",
+        "What is Devin?"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 936,
+      "end": 980,
+      "id": "b17",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[17]",
+      "headingPath": [
+        "Devin review: is it a better AI coding agent than Cursor?",
+        "Testing Devin with an image generation model"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 982,
+      "end": 1097,
+      "id": "b18",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[18]",
+      "headingPath": [
+        "Devin review: is it a better AI coding agent than Cursor?",
+        "Testing Devin with an image generation model"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1099,
+      "end": 1251,
+      "id": "b19",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[19]",
+      "headingPath": [
+        "Devin review: is it a better AI coding agent than Cursor?",
+        "Testing Devin with an image generation model"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1253,
+      "end": 1313,
+      "id": "b20",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[20]",
+      "headingPath": [
+        "Devin review: is it a better AI coding agent than Cursor?",
+        "Testing Devin with an image generation model"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1315,
+      "end": 1330,
+      "id": "b21",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[21]",
+      "headingPath": [
+        "Devin review: is it a better AI coding agent than Cursor?",
+        "Testing Devin with an image generation model"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1332,
+      "end": 1346,
+      "id": "b22",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[22]",
+      "headingPath": [
+        "Devin review: is it a better AI coding agent than Cursor?",
+        "Testing Devin with an image generation model"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1348,
+      "end": 1382,
+      "id": "b23",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[23]",
+      "headingPath": [
+        "Devin review: is it a better AI coding agent than Cursor?",
+        "Testing Devin with an image generation model"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1384,
+      "end": 1413,
+      "id": "b24",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[24]",
+      "headingPath": [
+        "Devin review: is it a better AI coding agent than Cursor?",
+        "Testing Devin with an image generation model"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1415,
+      "end": 1535,
+      "id": "b25",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[25]",
+      "headingPath": [
+        "Devin review: is it a better AI coding agent than Cursor?",
+        "Testing Devin with an image generation model"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1537,
+      "end": 1607,
+      "id": "b26",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[26]",
+      "headingPath": [
+        "Devin review: is it a better AI coding agent than Cursor?",
+        "Testing Devin with an image generation model"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1609,
+      "end": 1640,
+      "id": "b27",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[27]",
+      "headingPath": [
+        "Devin review: is it a better AI coding agent than Cursor?",
+        "Asking Devin to create a web UI"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1642,
+      "end": 1726,
+      "id": "b28",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[28]",
+      "headingPath": [
+        "Devin review: is it a better AI coding agent than Cursor?",
+        "Asking Devin to create a web UI"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1728,
+      "end": 1882,
+      "id": "b29",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[29]",
+      "headingPath": [
+        "Devin review: is it a better AI coding agent than Cursor?",
+        "Asking Devin to create a web UI"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1884,
+      "end": 2025,
+      "id": "b30",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[30]",
+      "headingPath": [
+        "Devin review: is it a better AI coding agent than Cursor?",
+        "Asking Devin to create a web UI"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2027,
+      "end": 2147,
+      "id": "b31",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[31]",
+      "headingPath": [
+        "Devin review: is it a better AI coding agent than Cursor?",
+        "Asking Devin to create a web UI"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2149,
+      "end": 2301,
+      "id": "b32",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[32]",
+      "headingPath": [
+        "Devin review: is it a better AI coding agent than Cursor?",
+        "Asking Devin to create a web UI"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2303,
+      "end": 2427,
+      "id": "b33",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[33]",
+      "headingPath": [
+        "Devin review: is it a better AI coding agent than Cursor?",
+        "Asking Devin to create a web UI"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2429,
+      "end": 2533,
+      "id": "b34",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[34]",
+      "headingPath": [
+        "Devin review: is it a better AI coding agent than Cursor?",
+        "Asking Devin to create a web UI"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2535,
+      "end": 2571,
+      "id": "b35",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[35]",
+      "headingPath": [
+        "Devin review: is it a better AI coding agent than Cursor?",
+        "Devin's capabilities and limitations"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2573,
+      "end": 2612,
+      "id": "b36",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[36]",
+      "headingPath": [
+        "Devin review: is it a better AI coding agent than Cursor?",
+        "Devin's capabilities and limitations"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2614,
+      "end": 2627,
+      "id": "b37",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[37]",
+      "headingPath": [
+        "Devin review: is it a better AI coding agent than Cursor?",
+        "Devin's capabilities and limitations"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2629,
+      "end": 2640,
+      "id": "b38",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[38]",
+      "headingPath": [
+        "Devin review: is it a better AI coding agent than Cursor?",
+        "Devin's capabilities and limitations"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2642,
+      "end": 2664,
+      "id": "b39",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[39]",
+      "headingPath": [
+        "Devin review: is it a better AI coding agent than Cursor?",
+        "Devin's capabilities and limitations"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2666,
+      "end": 2683,
+      "id": "b40",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[40]",
+      "headingPath": [
+        "Devin review: is it a better AI coding agent than Cursor?",
+        "Devin's capabilities and limitations"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2685,
+      "end": 2733,
+      "id": "b41",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[41]",
+      "headingPath": [
+        "Devin review: is it a better AI coding agent than Cursor?",
+        "Devin's capabilities and limitations"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2735,
+      "end": 2808,
+      "id": "b42",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[42]",
+      "headingPath": [
+        "Devin review: is it a better AI coding agent than Cursor?",
+        "Devin's capabilities and limitations"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2810,
+      "end": 2947,
+      "id": "b43",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[43]",
+      "headingPath": [
+        "Devin review: is it a better AI coding agent than Cursor?",
+        "Devin's capabilities and limitations"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2949,
+      "end": 3119,
+      "id": "b44",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[44]",
+      "headingPath": [
+        "Devin review: is it a better AI coding agent than Cursor?",
+        "Devin's capabilities and limitations"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3121,
+      "end": 3201,
+      "id": "b45",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[45]",
+      "headingPath": [
+        "Devin review: is it a better AI coding agent than Cursor?",
+        "Devin's capabilities and limitations"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3203,
+      "end": 3256,
+      "id": "b46",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[46]",
+      "headingPath": [
+        "Devin review: is it a better AI coding agent than Cursor?",
+        "Devin's capabilities and limitations"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3258,
+      "end": 3447,
+      "id": "b47",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[47]",
+      "headingPath": [
+        "Devin review: is it a better AI coding agent than Cursor?",
+        "Devin's capabilities and limitations"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3449,
+      "end": 3482,
+      "id": "b48",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[48]",
+      "headingPath": [
+        "Devin review: is it a better AI coding agent than Cursor?",
+        "Devin's pull request capabilities"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3484,
+      "end": 3611,
+      "id": "b49",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[49]",
+      "headingPath": [
+        "Devin review: is it a better AI coding agent than Cursor?",
+        "Devin's pull request capabilities"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3613,
+      "end": 3734,
+      "id": "b50",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[50]",
+      "headingPath": [
+        "Devin review: is it a better AI coding agent than Cursor?",
+        "Devin's pull request capabilities"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3736,
+      "end": 3865,
+      "id": "b51",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[51]",
+      "headingPath": [
+        "Devin review: is it a better AI coding agent than Cursor?",
+        "Devin's pull request capabilities"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3867,
+      "end": 4074,
+      "id": "b52",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[52]",
+      "headingPath": [
+        "Devin review: is it a better AI coding agent than Cursor?",
+        "Devin's pull request capabilities"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4076,
+      "end": 4262,
+      "id": "b53",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[53]",
+      "headingPath": [
+        "Devin review: is it a better AI coding agent than Cursor?",
+        "Devin's pull request capabilities"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4264,
+      "end": 4472,
+      "id": "b54",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[54]",
+      "headingPath": [
+        "Devin review: is it a better AI coding agent than Cursor?",
+        "Devin's pull request capabilities"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4474,
+      "end": 4643,
+      "id": "b55",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[55]",
+      "headingPath": [
+        "Devin review: is it a better AI coding agent than Cursor?",
+        "Devin's pull request capabilities"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4645,
+      "end": 4793,
+      "id": "b56",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[56]",
+      "headingPath": [
+        "Devin review: is it a better AI coding agent than Cursor?",
+        "Devin's pull request capabilities"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4795,
+      "end": 4917,
+      "id": "b57",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[57]",
+      "headingPath": [
+        "Devin review: is it a better AI coding agent than Cursor?",
+        "Devin's pull request capabilities"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4919,
+      "end": 4941,
+      "id": "b58",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[58]",
+      "headingPath": [
+        "Devin review: is it a better AI coding agent than Cursor?",
+        "Fixing bugs with Devin"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4943,
+      "end": 5135,
+      "id": "b59",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[59]",
+      "headingPath": [
+        "Devin review: is it a better AI coding agent than Cursor?",
+        "Fixing bugs with Devin"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5137,
+      "end": 5190,
+      "id": "b60",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[60]",
+      "headingPath": [
+        "Devin review: is it a better AI coding agent than Cursor?",
+        "Fixing bugs with Devin"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5192,
+      "end": 5303,
+      "id": "b61",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[61]",
+      "headingPath": [
+        "Devin review: is it a better AI coding agent than Cursor?",
+        "Fixing bugs with Devin"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5305,
+      "end": 5371,
+      "id": "b62",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[62]",
+      "headingPath": [
+        "Devin review: is it a better AI coding agent than Cursor?",
+        "Fixing bugs with Devin"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5373,
+      "end": 5432,
+      "id": "b63",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[63]",
+      "headingPath": [
+        "Devin review: is it a better AI coding agent than Cursor?",
+        "Fixing bugs with Devin"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5434,
+      "end": 5567,
+      "id": "b64",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[64]",
+      "headingPath": [
+        "Devin review: is it a better AI coding agent than Cursor?",
+        "Fixing bugs with Devin"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5569,
+      "end": 5749,
+      "id": "b65",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[65]",
+      "headingPath": [
+        "Devin review: is it a better AI coding agent than Cursor?",
+        "Fixing bugs with Devin"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5751,
+      "end": 5999,
+      "id": "b66",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[66]",
+      "headingPath": [
+        "Devin review: is it a better AI coding agent than Cursor?",
+        "Fixing bugs with Devin"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 6001,
+      "end": 6226,
+      "id": "b67",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[67]",
+      "headingPath": [
+        "Devin review: is it a better AI coding agent than Cursor?",
+        "Fixing bugs with Devin"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 6228,
+      "end": 6252,
+      "id": "b68",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[68]",
+      "headingPath": [
+        "Devin review: is it a better AI coding agent than Cursor?",
+        "Adding a backend feature"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 6254,
+      "end": 6419,
+      "id": "b69",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[69]",
+      "headingPath": [
+        "Devin review: is it a better AI coding agent than Cursor?",
+        "Adding a backend feature"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 6421,
+      "end": 6556,
+      "id": "b70",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[70]",
+      "headingPath": [
+        "Devin review: is it a better AI coding agent than Cursor?",
+        "Adding a backend feature"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 6558,
+      "end": 6673,
+      "id": "b71",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[71]",
+      "headingPath": [
+        "Devin review: is it a better AI coding agent than Cursor?",
+        "Adding a backend feature"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 6675,
+      "end": 6894,
+      "id": "b72",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[72]",
+      "headingPath": [
+        "Devin review: is it a better AI coding agent than Cursor?",
+        "Adding a backend feature"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 6896,
+      "end": 6922,
+      "id": "b73",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[73]",
+      "headingPath": [
+        "Devin review: is it a better AI coding agent than Cursor?",
+        "Workflow issues with Devin"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 6924,
+      "end": 7157,
+      "id": "b74",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[74]",
+      "headingPath": [
+        "Devin review: is it a better AI coding agent than Cursor?",
+        "Workflow issues with Devin"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 7159,
+      "end": 7484,
+      "id": "b75",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[75]",
+      "headingPath": [
+        "Devin review: is it a better AI coding agent than Cursor?",
+        "Workflow issues with Devin"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 7486,
+      "end": 7650,
+      "id": "b76",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[76]",
+      "headingPath": [
+        "Devin review: is it a better AI coding agent than Cursor?",
+        "Workflow issues with Devin"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 7652,
+      "end": 7888,
+      "id": "b77",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[77]",
+      "headingPath": [
+        "Devin review: is it a better AI coding agent than Cursor?",
+        "Workflow issues with Devin"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 7890,
+      "end": 7930,
+      "id": "b78",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[78]",
+      "headingPath": [
+        "Devin review: is it a better AI coding agent than Cursor?",
+        "Workflow issues with Devin"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 7932,
+      "end": 7960,
+      "id": "b79",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[79]",
+      "headingPath": [
+        "Devin review: is it a better AI coding agent than Cursor?",
+        "Comparing with Cursor agents"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 7962,
+      "end": 8032,
+      "id": "b80",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[80]",
+      "headingPath": [
+        "Devin review: is it a better AI coding agent than Cursor?",
+        "Comparing with Cursor agents"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 8034,
+      "end": 8050,
+      "id": "b81",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[81]",
+      "headingPath": [
+        "Devin review: is it a better AI coding agent than Cursor?",
+        "Comparing with Cursor agents",
+        "Context handling"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 8052,
+      "end": 8267,
+      "id": "b82",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[82]",
+      "headingPath": [
+        "Devin review: is it a better AI coding agent than Cursor?",
+        "Comparing with Cursor agents",
+        "Context handling"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 8269,
+      "end": 8442,
+      "id": "b83",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[83]",
+      "headingPath": [
+        "Devin review: is it a better AI coding agent than Cursor?",
+        "Comparing with Cursor agents",
+        "Context handling"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 8444,
+      "end": 8469,
+      "id": "b84",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[84]",
+      "headingPath": [
+        "Devin review: is it a better AI coding agent than Cursor?",
+        "Comparing with Cursor agents",
+        "User control and feedback"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 8471,
+      "end": 8752,
+      "id": "b85",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[85]",
+      "headingPath": [
+        "Devin review: is it a better AI coding agent than Cursor?",
+        "Comparing with Cursor agents",
+        "User control and feedback"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 8754,
+      "end": 9043,
+      "id": "b86",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[86]",
+      "headingPath": [
+        "Devin review: is it a better AI coding agent than Cursor?",
+        "Comparing with Cursor agents",
+        "User control and feedback"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 9045,
+      "end": 9103,
+      "id": "b87",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[87]",
+      "headingPath": [
+        "Devin review: is it a better AI coding agent than Cursor?",
+        "Comparing with Cursor agents",
+        "User control and feedback"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 9105,
+      "end": 9122,
+      "id": "b88",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[88]",
+      "headingPath": [
+        "Devin review: is it a better AI coding agent than Cursor?",
+        "Comparing with Cursor agents",
+        "Ownership clarity"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 9124,
+      "end": 9382,
+      "id": "b89",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[89]",
+      "headingPath": [
+        "Devin review: is it a better AI coding agent than Cursor?",
+        "Comparing with Cursor agents",
+        "Ownership clarity"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 9384,
+      "end": 9487,
+      "id": "b90",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[90]",
+      "headingPath": [
+        "Devin review: is it a better AI coding agent than Cursor?",
+        "Comparing with Cursor agents",
+        "Ownership clarity"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 9489,
+      "end": 9504,
+      "id": "b91",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[91]",
+      "headingPath": [
+        "Devin review: is it a better AI coding agent than Cursor?",
+        "Comparing with Cursor agents",
+        "GraphQL example"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 9506,
+      "end": 9637,
+      "id": "b92",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[92]",
+      "headingPath": [
+        "Devin review: is it a better AI coding agent than Cursor?",
+        "Comparing with Cursor agents",
+        "GraphQL example"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 9639,
+      "end": 9666,
+      "id": "b93",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[93]",
+      "headingPath": [
+        "Devin review: is it a better AI coding agent than Cursor?",
+        "Comparing with Cursor agents",
+        "GraphQL example"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 9668,
+      "end": 9694,
+      "id": "b94",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[94]",
+      "headingPath": [
+        "Devin review: is it a better AI coding agent than Cursor?",
+        "Comparing with Cursor agents",
+        "GraphQL example"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 9696,
+      "end": 9719,
+      "id": "b95",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[95]",
+      "headingPath": [
+        "Devin review: is it a better AI coding agent than Cursor?",
+        "Comparing with Cursor agents",
+        "GraphQL example"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 9721,
+      "end": 9921,
+      "id": "b96",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[96]",
+      "headingPath": [
+        "Devin review: is it a better AI coding agent than Cursor?",
+        "Comparing with Cursor agents",
+        "GraphQL example"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 9923,
+      "end": 9949,
+      "id": "b97",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[97]",
+      "headingPath": [
+        "Devin review: is it a better AI coding agent than Cursor?",
+        "Comparing with Cursor agents",
+        "Image generator repo clone"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 9951,
+      "end": 10147,
+      "id": "b98",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[98]",
+      "headingPath": [
+        "Devin review: is it a better AI coding agent than Cursor?",
+        "Comparing with Cursor agents",
+        "Image generator repo clone"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 10149,
+      "end": 10313,
+      "id": "b99",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[99]",
+      "headingPath": [
+        "Devin review: is it a better AI coding agent than Cursor?",
+        "Comparing with Cursor agents",
+        "Image generator repo clone"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 10315,
+      "end": 10547,
+      "id": "b100",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[100]",
+      "headingPath": [
+        "Devin review: is it a better AI coding agent than Cursor?",
+        "Comparing with Cursor agents",
+        "Image generator repo clone"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 10549,
+      "end": 10822,
+      "id": "b101",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[101]",
+      "headingPath": [
+        "Devin review: is it a better AI coding agent than Cursor?",
+        "Comparing with Cursor agents",
+        "Image generator repo clone"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 10824,
+      "end": 10835,
+      "id": "b102",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[102]",
+      "headingPath": [
+        "Devin review: is it a better AI coding agent than Cursor?",
+        "The results"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 10837,
+      "end": 11027,
+      "id": "b103",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[103]",
+      "headingPath": [
+        "Devin review: is it a better AI coding agent than Cursor?",
+        "The results"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 11029,
+      "end": 11205,
+      "id": "b104",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[104]",
+      "headingPath": [
+        "Devin review: is it a better AI coding agent than Cursor?",
+        "The results"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 11207,
+      "end": 11462,
+      "id": "b105",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[105]",
+      "headingPath": [
+        "Devin review: is it a better AI coding agent than Cursor?",
+        "The results"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 11464,
+      "end": 11485,
+      "id": "b106",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[106]",
+      "headingPath": [
+        "Devin review: is it a better AI coding agent than Cursor?",
+        "My preferred AI stack"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 11487,
+      "end": 11530,
+      "id": "b107",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[107]",
+      "headingPath": [
+        "Devin review: is it a better AI coding agent than Cursor?",
+        "My preferred AI stack"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 11532,
+      "end": 11573,
+      "id": "b108",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[108]",
+      "headingPath": [
+        "Devin review: is it a better AI coding agent than Cursor?",
+        "My preferred AI stack"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 11575,
+      "end": 11630,
+      "id": "b109",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[109]",
+      "headingPath": [
+        "Devin review: is it a better AI coding agent than Cursor?",
+        "My preferred AI stack"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 11632,
+      "end": 11735,
+      "id": "b110",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[110]",
+      "headingPath": [
+        "Devin review: is it a better AI coding agent than Cursor?",
+        "My preferred AI stack"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 11737,
+      "end": 11859,
+      "id": "b111",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[111]",
+      "headingPath": [
+        "Devin review: is it a better AI coding agent than Cursor?",
+        "My preferred AI stack"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 11861,
+      "end": 12032,
+      "id": "b112",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[112]",
+      "headingPath": [
+        "Devin review: is it a better AI coding agent than Cursor?",
+        "My preferred AI stack"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 12034,
+      "end": 12236,
+      "id": "b113",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[113]",
+      "headingPath": [
+        "Devin review: is it a better AI coding agent than Cursor?",
+        "My preferred AI stack"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 12238,
+      "end": 12254,
+      "id": "b114",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[114]",
+      "headingPath": [
+        "Devin review: is it a better AI coding agent than Cursor?",
+        "Top comments (0)"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 12256,
+      "end": 12265,
+      "id": "b115",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[115]",
+      "headingPath": [
+        "Devin review: is it a better AI coding agent than Cursor?",
+        "Top comments (0)"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 12267,
+      "end": 12348,
+      "id": "b116",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[116]",
+      "headingPath": [
+        "Devin review: is it a better AI coding agent than Cursor?",
+        "Top comments (0)"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 12350,
+      "end": 12360,
+      "id": "b117",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[117]",
+      "headingPath": [
+        "Devin review: is it a better AI coding agent than Cursor?",
+        "Top comments (0)"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 12362,
+      "end": 12368,
+      "id": "b118",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[118]",
+      "headingPath": [
+        "Devin review: is it a better AI coding agent than Cursor?",
+        "Top comments (0)"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 12370,
+      "end": 12426,
+      "id": "b119",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[119]",
+      "headingPath": [
+        "Devin review: is it a better AI coding agent than Cursor?",
+        "Top comments (0)"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 12428,
+      "end": 12481,
+      "id": "b120",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[120]",
+      "headingPath": [
+        "Devin review: is it a better AI coding agent than Cursor?",
+        "Top comments (0)"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 12483,
+      "end": 12502,
+      "id": "b121",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[121]",
+      "headingPath": [
+        "Devin review: is it a better AI coding agent than Cursor?",
+        "Top comments (0)"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 12504,
+      "end": 12650,
+      "id": "b122",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[122]",
+      "headingPath": [
+        "Devin review: is it a better AI coding agent than Cursor?",
+        "Top comments (0)"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 12652,
+      "end": 12725,
+      "id": "b123",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[123]",
+      "headingPath": [
+        "Devin review: is it a better AI coding agent than Cursor?",
+        "Top comments (0)"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 12727,
+      "end": 12748,
+      "id": "b124",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[124]",
+      "headingPath": [
+        "Devin review: is it a better AI coding agent than Cursor?",
+        "Top comments (0)"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    }
+  ],
+  "links": [
+    {
+      "url": "https://www.builder.io/blog/devin-vs-cursor",
+      "text": "",
+      "blockId": null,
+      "relation": "CANONICAL",
+      "locator": "source DOM link[0]"
+    },
+    {
+      "url": "https://twitter.com/intent/tweet?text=%22Devin+review%3A+is+it+a+better+AI+coding+agent+than+Cursor%3F%22+by+%40Steve8708+%23DEVCommunity+https%3A%2F%2Fdev.to%2Fbuilderio%2Fdevin-review-is-it-a-better-ai-coding-agent-than-cursor-d6p",
+      "text": "Share to X",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[6]"
+    },
+    {
+      "url": "https://www.linkedin.com/shareArticle?mini=true&source=DEV+Community&summary=I+paid+the+%24500+a+month+to+use+Devin%2C+the+AI+coding+agent%2C+so+you+don%27t+have+to.+Let%27s+compare+it+to...&title=Devin+review%3A+is+it+a+better+AI+coding+agent+than+Cursor%3F&url=https%3A%2F%2Fdev.to%2Fbuilderio%2Fdevin-review-is-it-a-better-ai-coding-agent-than-cursor-d6p",
+      "text": "Share to LinkedIn",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[7]"
+    },
+    {
+      "url": "https://www.facebook.com/sharer.php?u=https%3A%2F%2Fdev.to%2Fbuilderio%2Fdevin-review-is-it-a-better-ai-coding-agent-than-cursor-d6p",
+      "text": "Share to Facebook",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[8]"
+    },
+    {
+      "url": "https://s2f.kytta.dev/?text=https%3A%2F%2Fdev.to%2Fbuilderio%2Fdevin-review-is-it-a-better-ai-coding-agent-than-cursor-d6p",
+      "text": "Share to Mastodon",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[9]"
+    },
+    {
+      "url": "https://dev.to/report-abuse",
+      "text": "Report Abuse",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[11]"
+    },
+    {
+      "url": "https://dev.to/steve8708",
+      "text": "Steve Sewell",
+      "blockId": "b1",
+      "relation": "LINK",
+      "locator": "source DOM link[15]"
+    },
+    {
+      "url": "https://dev.to/builderio",
+      "text": "Builder.io",
+      "blockId": "b3",
+      "relation": "LINK",
+      "locator": "source DOM link[16]"
+    },
+    {
+      "url": "https://www.builder.io/blog/devin-vs-cursor",
+      "text": "builder.io",
+      "blockId": "b4",
+      "relation": "LINK",
+      "locator": "source DOM link[17]"
+    },
+    {
+      "url": "https://dev.to/t/cursor",
+      "text": "#cursor",
+      "blockId": "b6",
+      "relation": "LINK",
+      "locator": "source DOM link[18]"
+    },
+    {
+      "url": "https://dev.to/t/ai",
+      "text": "#ai",
+      "blockId": "b6",
+      "relation": "LINK",
+      "locator": "source DOM link[19]"
+    },
+    {
+      "url": "https://dev.to/t/productivity",
+      "text": "#productivity",
+      "blockId": "b6",
+      "relation": "LINK",
+      "locator": "source DOM link[20]"
+    },
+    {
+      "url": "https://dev.to/t/webdev",
+      "text": "#webdev",
+      "blockId": "b6",
+      "relation": "LINK",
+      "locator": "source DOM link[21]"
+    },
+    {
+      "url": "https://devin.ai/",
+      "text": "Devin",
+      "blockId": "b7",
+      "relation": "LINK",
+      "locator": "source DOM link[22]"
+    },
+    {
+      "url": "https://github.com/ChenDarYen/NitroFusion",
+      "text": "image generation model",
+      "blockId": "b18",
+      "relation": "LINK",
+      "locator": "source DOM link[26]"
+    },
+    {
+      "url": "https://www.builder.io/",
+      "text": "Builder.io",
+      "blockId": "b66",
+      "relation": "LINK",
+      "locator": "source DOM link[33]"
+    },
+    {
+      "url": "https://www.builder.io/",
+      "text": "builder.io",
+      "blockId": "b110",
+      "relation": "LINK",
+      "locator": "source DOM link[46]"
+    },
+    {
+      "url": "https://dev.to/report-abuse",
+      "text": "reporting abuse",
+      "blockId": "b116",
+      "relation": "LINK",
+      "locator": "source DOM link[53]"
+    },
+    {
+      "url": "https://dev.to/builderio",
+      "text": "Builder.io",
+      "blockId": "b117",
+      "relation": "LINK",
+      "locator": "source DOM link[54]"
+    },
+    {
+      "url": "https://www.builder.io/signup",
+      "text": "Try Builder.io free",
+      "blockId": "b121",
+      "relation": "LINK",
+      "locator": "source DOM link[55]"
+    },
+    {
+      "url": "https://dev.to/builderio/what-is-an-llm-for-web-developers-2064",
+      "text": "What is an LLM (For Web Developers) #ai #webdev #productivity #programming",
+      "blockId": "b122",
+      "relation": "LINK",
+      "locator": "source DOM link[57]"
+    },
+    {
+      "url": "https://dev.to/builderio/how-i-use-cursor-my-best-tips-4918",
+      "text": "How I use Cursor (+ my best tips) #webdev #cursor #tooling #programming",
+      "blockId": "b122",
+      "relation": "LINK",
+      "locator": "source DOM link[58]"
+    },
+    {
+      "url": "https://dev.to/enter?signup_subforem=1",
+      "text": "Log in",
+      "blockId": "b124",
+      "relation": "LINK",
+      "locator": "source DOM link[81]"
+    },
+    {
+      "url": "https://dev.to/enter?signup_subforem=1&state=new-user",
+      "text": "Create account",
+      "blockId": "b124",
+      "relation": "LINK",
+      "locator": "source DOM link[82]"
+    }
+  ],
+  "tables": []
+}

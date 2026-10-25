@@ -1,0 +1,1622 @@
+{
+  "snapshot": {
+    "id": "bdaefcb0-edad-428e-ac4a-5f72a6801808",
+    "investigationId": "447756db-7a2f-457c-a77c-0ab05b734f0a",
+    "version": 1,
+    "parentSnapshotId": null,
+    "productIdentity": {
+      "name": "DeepSeek",
+      "officialWebsite": "https://api-docs.deepseek.com",
+      "version": null,
+      "plan": null,
+      "confirmationStatus": "CONFIRMED",
+      "confirmationBasis": [
+        {
+          "url": "https://api-docs.deepseek.com/quick_start/pricing",
+          "excerpt": "Model prices are listed in units of per 1M tokens. A token, the smallest unit of text that the model recognizes, can be a word, a number, or even a punctuation mark. We bill model usage based on the total number of input and output tokens by the model.",
+          "retrievedAt": "2026-10-25T04:09:42.475Z",
+          "reason": "Explicit question name matches publisher domain label and freshly read page title; readable original text retained. Website self-identification, not verified legal ownership; version/plan unknown"
+        },
+        {
+          "url": "https://api-docs.deepseek.com/zh-cn/quick_start/pricing",
+          "excerpt": "模型deepseek-flash(1)deepseek-v4-proBASE URL (OpenAI 格式)https://api.deepseek.comBASE URL (Anthropic 格式)https://api.deepseek.com/anthropic模型版本DeepSeek-V4.1-Flash-1017DeepSeek-V4-Pro-0813思考模式支持非思考与思考模式（默认）切换方式详见思考模式上下文长度1M输出长度最大 384K功能Json Output支持支持Tool Calls支持支持Responses API支持支持Anthropic API支持支持对话前缀续写",
+          "retrievedAt": "2026-10-25T04:09:42.486Z",
+          "reason": "Explicit question name matches publisher domain label and freshly read page title; readable original text retained. Website self-identification, not verified legal ownership; version/plan unknown"
+        },
+        {
+          "url": "https://api-docs.deepseek.com/zh-cn/quick_start/pricing",
+          "excerpt": "下表所列模型价格以“百万 tokens”为单位。Token 是模型用来表示自然语言文本的的最小单位，可以是一个词、一个数字或一个标点符号等。我们将根据模型输入和输出的总 token 数进行计量计费。",
+          "retrievedAt": "2026-10-25T04:09:44.668Z",
+          "reason": "Explicit question name matches publisher domain label and freshly read page title; readable original text retained. Website self-identification, not verified legal ownership; version/plan unknown"
+        },
+        {
+          "url": "https://api-docs.deepseek.com/zh-cn/quick_start/pricing",
+          "excerpt": "下表所列模型价格以“百万 tokens”为单位。Token 是模型用来表示自然语言文本的的最小单位，可以是一个词、一个数字或一个标点符号等。我们将根据模型输入和输出的总 token 数进行计量计费。",
+          "retrievedAt": "2026-10-25T04:09:52.341Z",
+          "reason": "Explicit question name matches publisher domain label and freshly read page title; readable original text retained. Website self-identification, not verified legal ownership; version/plan unknown"
+        },
+        {
+          "url": "https://api-docs.deepseek.com/zh-cn/updates",
+          "excerpt": "旧有的 API 接口的两个模型名 deepseek-chat 与 deepseek-reasoner 将于三个月后（2026-07-24）停止使用。当前阶段内，这两个模型名分别指向 deepseek-v4-flash 的非思考模式与思考模式。",
+          "retrievedAt": "2026-10-25T04:09:52.360Z",
+          "reason": "Explicit question name matches publisher domain label and freshly read page title; readable original text retained. Website self-identification, not verified legal ownership; version/plan unknown"
+        },
+        {
+          "url": "https://api-docs.deepseek.com/zh-cn/quick_start/pricing",
+          "excerpt": "模型deepseek-flash(1)deepseek-v4-proBASE URL (OpenAI 格式)https://api.deepseek.comBASE URL (Anthropic 格式)https://api.deepseek.com/anthropic模型版本DeepSeek-V4.1-Flash-1017DeepSeek-V4-Pro-0813思考模式支持非思考与思考模式（默认）切换方式详见思考模式上下文长度1M输出长度最大 384K功能Json Output支持支持Tool Calls支持支持Responses API支持支持Anthropic API支持支持对话前缀续写",
+          "retrievedAt": "2026-10-25T04:10:17.940Z",
+          "reason": "Explicit question name matches publisher domain label and freshly read page title; readable original text retained. Website self-identification, not verified legal ownership; version/plan unknown"
+        }
+      ]
+    },
+    "evidence": [
+      {
+        "id": "5d39d865-7c5e-4fb7-8947-e7d8bf1f85bc",
+        "sourceUrl": "https://api-docs.deepseek.com/quick_start/pricing",
+        "originalExcerpt": "Model prices are listed in units of per 1M tokens. A token, the smallest unit of text that the model recognizes, can be a word, a number, or even a punctuation mark. We bill model usage based on the total number of input and output tokens by the model.",
+        "translation": null,
+        "originalLocation": {
+          "kind": "TEXT",
+          "locator": "https://api-docs.deepseek.com/quick_start/pricing/ :: article:first :: blocks(p,li,pre,tr,h1,h2,h3)[1]; normalized UTF-16 [0,252)",
+          "context": "Model prices are listed in units of per 1M tokens. A token, the smallest unit of text that the model recognizes, can be a word, a number, or even a punctuation mark. We bill model usage based on the total number of input and output tokens by the model."
+        },
+        "metadata": {
+          "title": "Models & Pricing | DeepSeek API Docs",
+          "siteName": "api-docs.deepseek.com",
+          "author": null,
+          "publishedAt": null,
+          "language": "en",
+          "sourceType": "OFFICIAL",
+          "contentKind": "OFFICIAL_CLAIM",
+          "productVersion": null,
+          "plan": null,
+          "upstreamUrl": null,
+          "independence": "SHARED_ORIGIN",
+          "originGroupId": "origin:2e31713d-7008-4888-b358-09d301d01e9f",
+          "independenceReason": "保存的相同原文/重定向URL、明确upstreamUrl、采集来源组，或同路径且同hash的www别名相连；重复读取/转载不增加独立证据数量。"
+        },
+        "retrievedAt": "2026-10-25T04:09:42.475Z",
+        "readStatus": "READ",
+        "readError": null,
+        "contentHash": "9ff3737e17de4b203d565dd6b1ef01d2ea213e3af7d6a2a2c177cdda52232313"
+      },
+      {
+        "id": "afc900e1-b5df-4c67-bd0f-5a91538bff19",
+        "sourceUrl": "https://api-docs.deepseek.com/zh-cn/quick_start/pricing",
+        "originalExcerpt": "模型deepseek-flash(1)deepseek-v4-proBASE URL (OpenAI 格式)https://api.deepseek.comBASE URL (Anthropic 格式)https://api.deepseek.com/anthropic模型版本DeepSeek-V4.1-Flash-1017DeepSeek-V4-Pro-0813思考模式支持非思考与思考模式（默认）切换方式详见思考模式上下文长度1M输出长度最大 384K功能Json Output支持支持Tool Calls支持支持Responses API支持支持Anthropic API支持支持对话前缀续写",
+        "translation": null,
+        "originalLocation": {
+          "kind": "TEXT",
+          "locator": "https://api-docs.deepseek.com/zh-cn/quick_start/pricing/ :: article:first :: tables[0]; normalized UTF-16 [0,300)",
+          "context": "模型deepseek-flash(1)deepseek-v4-proBASE URL (OpenAI 格式)https://api.deepseek.comBASE URL (Anthropic 格式)https://api.deepseek.com/anthropic模型版本DeepSeek-V4.1-Flash-1017DeepSeek-V4-Pro-0813思考模式支持非思考与思考模式（默认）切换方式详见思考模式上下文长度1M输出长度最大 384K功能Json Output支持支持Tool Calls支持支持Responses API支持支持Anthropic API支持支持对话前缀续写（Beta）支持支持FIM 补全（Beta）仅非思考模式支持仅非思考模式支持图像理解支持不支持价格(2)百万tokens输入（缓存命中）空闲时段0.02元0.15元高峰时段0.04元0.30元百万tokens输入（缓存未命中）空闲时段1元4.5元高峰时段2元9.0元百万tokens输出空闲时段4元13.5元高峰时段8元27.0元并发限制(3)2500500"
+        },
+        "metadata": {
+          "title": "模型 & 价格 | DeepSeek API Docs",
+          "siteName": "api-docs.deepseek.com",
+          "author": null,
+          "publishedAt": null,
+          "language": "zh-cn",
+          "sourceType": "OFFICIAL",
+          "contentKind": "OFFICIAL_CLAIM",
+          "productVersion": null,
+          "plan": null,
+          "upstreamUrl": null,
+          "independence": "SHARED_ORIGIN",
+          "originGroupId": "origin:2e31713d-7008-4888-b358-09d301d01e9f",
+          "independenceReason": "保存的相同原文/重定向URL、明确upstreamUrl、采集来源组，或同路径且同hash的www别名相连；重复读取/转载不增加独立证据数量。"
+        },
+        "retrievedAt": "2026-10-25T04:09:42.486Z",
+        "readStatus": "READ",
+        "readError": null,
+        "contentHash": "d2c3af3caa59bdbfe5fe4bc247f89120d8d3b56243eded92d0db54ef0f857471"
+      },
+      {
+        "id": "9f8d41c7-9571-48ce-8b3c-fcfc2078d383",
+        "sourceUrl": "https://api-docs.deepseek.com/zh-cn/quick_start/pricing",
+        "originalExcerpt": "下表所列模型价格以“百万 tokens”为单位。Token 是模型用来表示自然语言文本的的最小单位，可以是一个词、一个数字或一个标点符号等。我们将根据模型输入和输出的总 token 数进行计量计费。",
+        "translation": null,
+        "originalLocation": {
+          "kind": "TEXT",
+          "locator": "https://api-docs.deepseek.com/zh-cn/quick_start/pricing/ :: article:first :: blocks(p,li,pre,tr,h1,h2,h3)[1]; normalized UTF-16 [0,99)",
+          "context": "下表所列模型价格以“百万 tokens”为单位。Token 是模型用来表示自然语言文本的的最小单位，可以是一个词、一个数字或一个标点符号等。我们将根据模型输入和输出的总 token 数进行计量计费。"
+        },
+        "metadata": {
+          "title": "模型 & 价格 | DeepSeek API Docs",
+          "siteName": "api-docs.deepseek.com",
+          "author": null,
+          "publishedAt": null,
+          "language": "zh-cn",
+          "sourceType": "OFFICIAL",
+          "contentKind": "OFFICIAL_CLAIM",
+          "productVersion": null,
+          "plan": null,
+          "upstreamUrl": null,
+          "independence": "SHARED_ORIGIN",
+          "originGroupId": "origin:2e31713d-7008-4888-b358-09d301d01e9f",
+          "independenceReason": "保存的相同原文/重定向URL、明确upstreamUrl、采集来源组，或同路径且同hash的www别名相连；重复读取/转载不增加独立证据数量。"
+        },
+        "retrievedAt": "2026-10-25T04:09:44.668Z",
+        "readStatus": "READ",
+        "readError": null,
+        "contentHash": "dbb5c446bb688bb21057f0dd9c8b7defa1e3bfa7ed3b411542152cda8a35fa01"
+      },
+      {
+        "id": "2e31713d-7008-4888-b358-09d301d01e9f",
+        "sourceUrl": "https://api-docs.deepseek.com/zh-cn/quick_start/pricing",
+        "originalExcerpt": "下表所列模型价格以“百万 tokens”为单位。Token 是模型用来表示自然语言文本的的最小单位，可以是一个词、一个数字或一个标点符号等。我们将根据模型输入和输出的总 token 数进行计量计费。",
+        "translation": null,
+        "originalLocation": {
+          "kind": "TEXT",
+          "locator": "https://api-docs.deepseek.com/zh-cn/quick_start/pricing/ :: article:first :: blocks(p,li,pre,tr,h1,h2,h3)[1]; normalized UTF-16 [0,99)",
+          "context": "下表所列模型价格以“百万 tokens”为单位。Token 是模型用来表示自然语言文本的的最小单位，可以是一个词、一个数字或一个标点符号等。我们将根据模型输入和输出的总 token 数进行计量计费。"
+        },
+        "metadata": {
+          "title": "模型 & 价格 | DeepSeek API Docs",
+          "siteName": "api-docs.deepseek.com",
+          "author": null,
+          "publishedAt": null,
+          "language": "zh-cn",
+          "sourceType": "OFFICIAL",
+          "contentKind": "OFFICIAL_CLAIM",
+          "productVersion": null,
+          "plan": null,
+          "upstreamUrl": null,
+          "independence": "SHARED_ORIGIN",
+          "originGroupId": "origin:2e31713d-7008-4888-b358-09d301d01e9f",
+          "independenceReason": "保存的相同原文/重定向URL、明确upstreamUrl、采集来源组，或同路径且同hash的www别名相连；重复读取/转载不增加独立证据数量。"
+        },
+        "retrievedAt": "2026-10-25T04:09:52.341Z",
+        "readStatus": "READ",
+        "readError": null,
+        "contentHash": "dbb5c446bb688bb21057f0dd9c8b7defa1e3bfa7ed3b411542152cda8a35fa01"
+      },
+      {
+        "id": "d7e8a41f-835e-46e3-b949-e597fd5c27db",
+        "sourceUrl": "https://api-docs.deepseek.com/zh-cn/updates",
+        "originalExcerpt": "旧有的 API 接口的两个模型名 deepseek-chat 与 deepseek-reasoner 将于三个月后（2026-07-24）停止使用。当前阶段内，这两个模型名分别指向 deepseek-v4-flash 的非思考模式与思考模式。",
+        "translation": null,
+        "originalLocation": {
+          "kind": "TEXT",
+          "locator": "https://api-docs.deepseek.com/zh-cn/updates/ :: article:first :: blocks(p,li,pre,tr,h1,h2,h3)[97]; normalized UTF-16 [0,121)",
+          "context": "旧有的 API 接口的两个模型名 deepseek-chat 与 deepseek-reasoner 将于三个月后（2026-07-24）停止使用。当前阶段内，这两个模型名分别指向 deepseek-v4-flash 的非思考模式与思考模式。"
+        },
+        "metadata": {
+          "title": "更新日志 | DeepSeek API Docs",
+          "siteName": "api-docs.deepseek.com",
+          "author": null,
+          "publishedAt": null,
+          "language": "zh-cn",
+          "sourceType": "OFFICIAL",
+          "contentKind": "OFFICIAL_CLAIM",
+          "productVersion": null,
+          "plan": null,
+          "upstreamUrl": null,
+          "independence": "SHARED_ORIGIN",
+          "originGroupId": "origin:2e31713d-7008-4888-b358-09d301d01e9f",
+          "independenceReason": "保存的相同原文/重定向URL、明确upstreamUrl、采集来源组，或同路径且同hash的www别名相连；重复读取/转载不增加独立证据数量。"
+        },
+        "retrievedAt": "2026-10-25T04:09:52.360Z",
+        "readStatus": "READ",
+        "readError": null,
+        "contentHash": "0f2011fee0ae2b2de815ae79b96ee4d54dde0dd7db6ef550485b5c95030a38ff"
+      },
+      {
+        "id": "48e4ad5d-6e73-47de-9d18-ba6753b41901",
+        "sourceUrl": "https://api-docs.deepseek.com/zh-cn/quick_start/pricing",
+        "originalExcerpt": "模型deepseek-flash(1)deepseek-v4-proBASE URL (OpenAI 格式)https://api.deepseek.comBASE URL (Anthropic 格式)https://api.deepseek.com/anthropic模型版本DeepSeek-V4.1-Flash-1017DeepSeek-V4-Pro-0813思考模式支持非思考与思考模式（默认）切换方式详见思考模式上下文长度1M输出长度最大 384K功能Json Output支持支持Tool Calls支持支持Responses API支持支持Anthropic API支持支持对话前缀续写",
+        "translation": null,
+        "originalLocation": {
+          "kind": "TEXT",
+          "locator": "https://api-docs.deepseek.com/zh-cn/quick_start/pricing/ :: article:first :: tables[0]; normalized UTF-16 [0,300)",
+          "context": "模型deepseek-flash(1)deepseek-v4-proBASE URL (OpenAI 格式)https://api.deepseek.comBASE URL (Anthropic 格式)https://api.deepseek.com/anthropic模型版本DeepSeek-V4.1-Flash-1017DeepSeek-V4-Pro-0813思考模式支持非思考与思考模式（默认）切换方式详见思考模式上下文长度1M输出长度最大 384K功能Json Output支持支持Tool Calls支持支持Responses API支持支持Anthropic API支持支持对话前缀续写（Beta）支持支持FIM 补全（Beta）仅非思考模式支持仅非思考模式支持图像理解支持不支持价格(2)百万tokens输入（缓存命中）空闲时段0.02元0.15元高峰时段0.04元0.30元百万tokens输入（缓存未命中）空闲时段1元4.5元高峰时段2元9.0元百万tokens输出空闲时段4元13.5元高峰时段8元27.0元并发限制(3)2500500"
+        },
+        "metadata": {
+          "title": "模型 & 价格 | DeepSeek API Docs",
+          "siteName": "api-docs.deepseek.com",
+          "author": null,
+          "publishedAt": null,
+          "language": "zh-cn",
+          "sourceType": "OFFICIAL",
+          "contentKind": "OFFICIAL_CLAIM",
+          "productVersion": null,
+          "plan": null,
+          "upstreamUrl": null,
+          "independence": "SHARED_ORIGIN",
+          "originGroupId": "origin:2e31713d-7008-4888-b358-09d301d01e9f",
+          "independenceReason": "保存的相同原文/重定向URL、明确upstreamUrl、采集来源组，或同路径且同hash的www别名相连；重复读取/转载不增加独立证据数量。"
+        },
+        "retrievedAt": "2026-10-25T04:10:17.940Z",
+        "readStatus": "READ",
+        "readError": null,
+        "contentHash": "d2c3af3caa59bdbfe5fe4bc247f89120d8d3b56243eded92d0db54ef0f857471"
+      }
+    ],
+    "claims": [
+      {
+        "id": "56fcfb95-9ab5-41f6-bbde-8fd5c380e7d4",
+        "statement": "根据 DeepSeek 官方更新日志，deepseek-chat 与 deepseek-reasoner 这两个旧模型名将于2026-07-24停止使用。",
+        "kind": "OFFICIAL_CLAIM",
+        "verificationStatus": "SUPPORTED",
+        "verificationReason": "更新日志原句明确写两个旧模型名将于2026-07-24停止使用；仅证明官方如此宣称。",
+        "scope": "DeepSeek API，更新日志所述当前阶段"
+      },
+      {
+        "id": "839021d7-9872-4c80-a2e4-251a8b614080",
+        "statement": "根据 DeepSeek 官方更新日志，当前阶段 deepseek-chat 模型名指向 deepseek-v4-flash 的非思考模式。",
+        "kind": "OFFICIAL_CLAIM",
+        "verificationStatus": "SUPPORTED",
+        "verificationReason": "更新日志原句写明当前阶段两模型名分别指向 deepseek-v4-flash 的非思考与思考模式。",
+        "scope": "DeepSeek API，2026-07-24之前的当前阶段"
+      },
+      {
+        "id": "9a07b275-4b4b-49fb-b37d-ecb6026cd1f9",
+        "statement": "DeepSeek 官方定价页显示的模型表中为 deepseek-flash 与 deepseek-v4-pro，未直接列出 deepseek-chat 的上下文长度、最大输出与价格。",
+        "kind": "FACT",
+        "verificationStatus": "SUPPORTED",
+        "verificationReason": "所读价格页表格仅列 deepseek-flash 与 deepseek-v4-pro 两列的上下文/输出，未见 deepseek-chat 行。",
+        "scope": "https://api-docs.deepseek.com/zh-cn/quick_start/pricing 所读表格摘录"
+      },
+      {
+        "id": "6f26437c-e411-4e74-a655-af871f8149f3",
+        "statement": "DeepSeek 官方说明模型价格以“百万 tokens”为单位，并按模型输入和输出的总 token 数计量计费。",
+        "kind": "OFFICIAL_CLAIM",
+        "verificationStatus": "SUPPORTED",
+        "verificationReason": "定价页原句明确以百万 tokens 为单位，按输入和输出总 token 数计费。",
+        "scope": "DeepSeek API 定价页所述计费规则"
+      }
+    ],
+    "relations": [
+      {
+        "claimId": "56fcfb95-9ab5-41f6-bbde-8fd5c380e7d4",
+        "evidenceId": "d7e8a41f-835e-46e3-b949-e597fd5c27db",
+        "relation": "SUPPORTS",
+        "reason": "原句明确两旧模型名将于2026-07-24停止使用，与statement一致。"
+      },
+      {
+        "claimId": "839021d7-9872-4c80-a2e4-251a8b614080",
+        "evidenceId": "d7e8a41f-835e-46e3-b949-e597fd5c27db",
+        "relation": "SUPPORTS",
+        "reason": "原句写明当前阶段deepseek-chat指向deepseek-v4-flash非思考模式。"
+      },
+      {
+        "claimId": "9a07b275-4b4b-49fb-b37d-ecb6026cd1f9",
+        "evidenceId": "afc900e1-b5df-4c67-bd0f-5a91538bff19",
+        "relation": "SUPPORTS",
+        "reason": "表格仅列deepseek-flash与deepseek-v4-pro的上下文/输出，无deepseek-chat行。"
+      },
+      {
+        "claimId": "6f26437c-e411-4e74-a655-af871f8149f3",
+        "evidenceId": "9f8d41c7-9571-48ce-8b3c-fcfc2078d383",
+        "relation": "SUPPORTS",
+        "reason": "原句明确以百万tokens为单位并按输入输出总token计费。"
+      },
+      {
+        "claimId": "9a07b275-4b4b-49fb-b37d-ecb6026cd1f9",
+        "evidenceId": "d7e8a41f-835e-46e3-b949-e597fd5c27db",
+        "relation": "CONTEXT",
+        "reason": "更新日志说明deepseek-chat当前别名指向v4-flash，解释价格表未单列该名的原因。"
+      }
+    ],
+    "conflicts": [],
+    "gaps": [],
+    "retrievalRecords": [
+      {
+        "id": "68ca3b96-de5c-48bd-90dc-c8282ac6c3fc",
+        "provider": "tencent-yuanbao-search-api",
+        "query": "DeepSeek API deepseek-chat 模型 上下文长度 最大输出 价格 官方文档",
+        "calledAt": "2026-10-25T04:09:39.048Z",
+        "status": "SUCCEEDED",
+        "error": null,
+        "returnedSources": [
+          {
+            "url": "https://api-docs.deepseek.com/zh-cn/quick_start/pricing",
+            "title": "模型 & 价格 DeepSeek API Docs",
+            "snippet": "模型 & 价格 | DeepSeek API Docs DeepSeek API文档。模型 & 价格 下表所列模型价格以“百万 tokens”为单位。Token 是模型用来表示自然语言文本的的最小单位,可以是一个词、一个数字或一个标点符号等。我们将根据模型输入和输出的总 token 数进行计量计费。 模型细节​ 注意:deepseek-chat 和 deepseek-reasoner 对应模型版本不变,为 DeepSeek-V3.2 (128K 上下文长度),与 APP/WEB 版不同。 模型 deepseek-chat deepseek-reasoner BASE URL https://api.deepseek.com 模型版本 DeepSeek-V3.2 (非思考模式) DeepSeek-V3.2 (思考模式) 上下文长度 128K 输出长度 默认 4K,最大 8K 默认 32K,最大 64K 功能 Json Output 支持 Tool Calls 支持 支持 对话前缀续写(Beta) 支持 支持 FIM 补全(Beta) 支持 不支持 价格 百万tokens输入(缓存命中) 0.2元 百万tokens输入(缓存未命中) 2元 百万tokens输出 3元 扣费规则​ 扣减费用 = token 消耗量 × 模型单价,对应的费用将直接从充值余额或赠送余额中进行扣减。 当充值余额与赠送余额同时存在时,优先扣减赠送余额。 产品价格可能发生变动,DeepSeek 保留修改价格的权利。请您依据实际用量按需充值,定期查看此页面以获知最新价格信息。...",
+            "adoption": "ADOPTED",
+            "adoptionReason": "保存原句；是否支持问题由逐主张核查决定。",
+            "evidenceId": "48e4ad5d-6e73-47de-9d18-ba6753b41901"
+          },
+          {
+            "url": "https://deepseek.apidog.io/models-pricing-835236m0",
+            "title": "Models & Pricing",
+            "snippet": "Models & Pricing DeepSeek API。Models & Pricing The prices listed below are in unites of per 1M tokens. A token, the smallest unit of text that the model recognizes, can be a word, a number, or even a punctuation mark. We will bill based on the total number of input and output tokens by the model. Pricing Details# USD# CNY# (1) The deepseek-chat model has been upgraded to DeepSeek-V3. deepseek-reasoner points to the new model DeepSeek-R1. (2) CoT (Chain of Thought) is the reasoning content deepseek-reasoner gives before output the final answer. For details, please refer to Reasoning Model。 (3) If max_tokens is not specified, the default maximum output length is 4K. Please adjust max_tokens to support longer outputs. (4) Please check DeepSeek Context Caching for the details of Context Cachin...",
+            "adoption": "REJECTED",
+            "adoptionReason": "本轮未读取；搜索摘要不是原文证据。",
+            "evidenceId": null
+          },
+          {
+            "url": "https://api-docs.deepseek.com/zh-cn/updates?ref=codersera.com",
+            "title": "更新日志 DeepSeek API Docs",
+            "snippet": "更新日志 | DeepSeek API Docs DeepSeek API文档。 详细更新内容请参阅文档 时间: 2025-12-01​ DeepSeek-V3.2​ deepseek-chat 和 deepseek-reasoner 都已升级为 DeepSeek-V3.2. deepseek-chat 对应 DeepSeek-V3.2 的非思考模式 deepseek-reasoner 对应 DeepSeek-V3.2 的思考模式 DeepSeek-V3.2-Speciale​ 我们非正式部署了 DeepSeek-V3.2-Speciale 的 API 服务,API 用户可以通过设置 base_url=\"https://api.deepseek.com/v3.2_speciale_expires_on_20251215\" 访问该模型。该模型 API 价格不变,只支持思考模式下的对话功能,不支持工具调用等功能,最大输出长度默认为 128K,支持时间截止至北京时间 2025-12-15 23:59。 详细更新内容请参阅文档 时间: 2025-09-29​ DeepSeek-V3.2-Exp​ deepseek-chat 和 deepseek-reasoner 都已经升级为 DeepSeek-V3.2-Exp。 deepseek-chat 对应 DeepSeek-V3.2-Exp 的非思考模式 deepseek-reasoner 对应 DeepSeek-V3.2-Exp 的思考模式 详细更新内容请参阅文档 时间: 2025-09-22​ DeepSeek-V3.1-Terminus​ deepseek-chat 和 deepseek-reasoner 都已经升级为 DeepSeek-V3.1-Terminus。deepseek-chat 对应 DeepSeek-V3.1-Term...",
+            "adoption": "REJECTED",
+            "adoptionReason": "本轮未读取；搜索摘要不是原文证据。",
+            "evidenceId": null
+          },
+          {
+            "url": "https://api-docs.deepseek.com/quick_start/pricing",
+            "title": "Models & Pricing DeepSeek API Docs",
+            "snippet": "Models & Pricing | DeepSeek API Docs DeepSeek API文档。Models & Pricing The prices listed below are in units of per 1M tokens. A token, the smallest unit of text that the model recognizes, can be a word, a number, or even a punctuation mark. We will bill based on the total number of input and output tokens by the model. Model Details​ MODEL deepseek-chat deepseek-reasoner BASE URL https://api.deepseek.com MODEL VERSION DeepSeek-V3.2 (Non-thinking Mode) DeepSeek-V3.2 (Thinking Mode) CONTEXT LENGTH 128K MAX OUTPUT DEFAULT: 4K MAXIMUM: 8K DEFAULT: 32K MAXIMUM: 64K FEATURES Json Output ✓ Tool Calls ✓ ✓ Chat Prefix Completion(Beta) ✓ ✓ FIM Completion(Beta) ✓ ✗ PRICING 1M INPUT TOKENS (CACHE HIT) $0.028 1M INPUT TOKENS (CACHE MISS) $0.28 1M OUTPUT TOKENS $0.42 Deduction Rules​ The expense = number ...",
+            "adoption": "ADOPTED",
+            "adoptionReason": "保存原句；是否支持问题由逐主张核查决定。",
+            "evidenceId": "5d39d865-7c5e-4fb7-8947-e7d8bf1f85bc"
+          },
+          {
+            "url": "https://cowsultants.com/en/api/models",
+            "title": "Available Models",
+            "snippet": "Available Models​ DeepSeek。message.content) Mathematical Formatting ​ The model supports various mathematical notation formats: LaTeX : $\\int_0^1 x^2 dx = \\frac{1}{3}$ Plain text : integral from 0 to 1 of x^2 dx = 1/3 Step-by-step : Detailed solution processes Model Selection Guide ​ Choose DeepSeek Chat When: ​ Building conversational applications Need general-purpose AI assistance Working with diverse content types Require multilingual support Need creative or analytical thinking Choose DeepSeek Coder When: ​ Generating or reviewing code Building developer tools Need programming assistance Working on software projects Require code explanation or documentation Choose DeepSeek Math When: ​ Solving mathematical problems Building educational applications Need mathematical reasoning Working w...",
+            "adoption": "REJECTED",
+            "adoptionReason": "本轮未读取；搜索摘要不是原文证据。",
+            "evidenceId": null
+          },
+          {
+            "url": "https://api-docs.deepseek.com/zh-cn/updates",
+            "title": "更新日志",
+            "snippet": "更新日志 DeepSeek API文档。 详细更新内容请参阅文档 时间: 2025-12-01​ DeepSeek-V3.2​ deepseek-chat 和 deepseek-reasoner 都已升级为 DeepSeek-V3.2. deepseek-chat 对应 DeepSeek-V3.2 的非思考模式 deepseek-reasoner 对应 DeepSeek-V3.2 的思考模式 DeepSeek-V3.2-Speciale​ 我们非正式部署了 DeepSeek-V3.2-Speciale 的 API 服务,API 用户可以通过设置 base_url=\"https://api.deepseek.com/v3.2_speciale_expires_on_20251215\" 访问该模型。该模型 API 价格不变,只支持思考模式下的对话功能,不支持工具调用等功能,最大输出长度默认为 128K,支持时间截止至北京时间 2025-12-15 23:59。 详细更新内容请参阅文档 时间: 2025-09-29​ DeepSeek-V3.2-Exp​ deepseek-chat 和 deepseek-reasoner 都已经升级为 DeepSeek-V3.2-Exp。 deepseek-chat 对应 DeepSeek-V3.2-Exp 的非思考模式 deepseek-reasoner 对应 DeepSeek-V3.2-Exp 的思考模式 详细更新内容请参阅文档 时间: 2025-09-22​ DeepSeek-V3.1-Terminus​ deepseek-chat 和 deepseek-reasoner 都已经升级为 DeepSeek-V3.1-Terminus。deepseek-chat 对应 DeepSeek-V3.1-Terminus 的非思考模式,deepseek...",
+            "adoption": "ADOPTED",
+            "adoptionReason": "保存原句；是否支持问题由逐主张核查决定。",
+            "evidenceId": "d7e8a41f-835e-46e3-b949-e597fd5c27db"
+          }
+        ]
+      },
+      {
+        "id": "fda8064b-d601-4d88-aa37-1317c33327b6",
+        "provider": "tavily-search-api:keyless-capped",
+        "query": "DeepSeek API deepseek-chat 模型 上下文长度 最大输出 价格 官方文档",
+        "calledAt": "2026-10-25T04:09:39.048Z",
+        "status": "SUCCEEDED",
+        "error": null,
+        "returnedSources": [
+          {
+            "url": "https://api-docs.deepseek.com/zh-cn/updates",
+            "title": "更新日志 | DeepSeek API Docs",
+            "snippet": "我们非正式部署了 DeepSeek-V3.2-Speciale 的 API 服务，API 用户可以通过设置 `base_url=\" 访问该模型。该模型 API 价格不变，只支持思考模式下的对话功能，不支持工具调用等功能，最大输出长度默认为 128K，支持时间截止至北京时间 2025-12-15 23:59。 `base_url=\" 详细更新内容请参阅文档 ## 时间: 2025-09-29​ ### DeepSeek-V3.2-Exp​ `deepseek-chat` 和 `deepseek-reasoner` 都已经升级为 DeepSeek-V3.2-Exp。 `deepseek-chat` `deepseek-reasoner` `deepseek-chat` `deepseek-reasoner` 详细更新内容请参阅文档 ## 时间: 2025-09-22​ ### DeepSeek-V3.1-Terminus​ [...] 随着 DeepSeek V4 全系列模型正式版上线，我们将对 API 价格进行更新调整。为了更加合理地调配资源，我们将采用峰谷定价，闲时价格为高峰时段价格的一半，鼓励用户根据实际使用情况调整任务时间。新价格将于北京时间 2026 年 8 月 17 日 0 时开始生效。 详细更新内容请参阅文档 ## 时间: 2026-07-31​ ### DeepSeek-V4-Flash 更新​ DeepSeek-V4-Flash 正式版 API 上线公测，API 调用方式不变，模型名设置为 `deepseek-v4-flash` 即可使用最新版本。 `deepseek-v4-flash` [...] ### deepseek-chat​ `deepseek-chat` 模型升级为 DeepSeek-V2-0517，模型在指令跟随方面的性能得到了显著提升，IFEval Benchmark Prompt-Level 准确率从 63.9% 跃升至 77.6%。此外，我们对API端的“system”区域指令跟随能力进行了优化，显著增强了沉浸式翻译、RAG 等任务的用户体验。 `deepseek-chat` 模型对于 JSON 格式输出的准确性得到了提升。在内部测试集中，JSON 解析率从 78% 提高到了85%。通过引入恰当的正则表达式，JSON 解析率进一步提高至 97%。 `deepseek-coder` `deepseek-chat` WeChat QRcode",
+            "adoption": "ADOPTED",
+            "adoptionReason": "保存原句；是否支持问题由逐主张核查决定。",
+            "evidenceId": "d7e8a41f-835e-46e3-b949-e597fd5c27db"
+          },
+          {
+            "url": "https://api-docs.deepseek.com/zh-cn/quick_start/pricing",
+            "title": "模型 & 价格 | DeepSeek API Docs",
+            "snippet": "| | | | | | --- --- | 模型 | | | deepseek-flash(1) | deepseek-v4-pro | | BASE URL (OpenAI 格式) | | | | | | BASE URL (Anthropic 格式) | | | | | | 模型版本 | | | DeepSeek-V4.1-Flash | DeepSeek-V4-Pro-0813 | | 思考模式 | | | 支持非思考与思考模式（默认） 切换方式详见思考模式 | | | 上下文长度 | | | 1M | | | 输出长度 | | | 最大 384K | | | 功能 | Json Output | | 支持 | 支持 | | Tool Calls | | 支持 | 支持 | | Responses API | | 支持 | 支持 | | Anthropic API | | 支持 | 支持 | | 对话前缀续写（Beta） | | 支持 | 支持 | | FIM 补全（Beta） | | 仅非思考模式支持 | 仅非思考模式支持 | [...] | 图像理解 | | 支持 | 不支持 | | 价格(2) | 百万tokens输入 （缓存命中） | 空闲时段 | 0.02元 | 0.15元 | | 高峰时段 | 0.04元 | 0.30元 | | 百万tokens输入 （缓存未命中） | 空闲时段 | 1元 | 4.5元 | | 高峰时段 | 2元 | 9.0元 | | 百万tokens输出 | 空闲时段 | 4元 | 13.5元 | | 高峰时段 | 8元 | 27.0元 | | 并发限制(3) | | | 2500 | 500 | [...] DeepSeek API 文档 Logo DeepSeek API 文档 Logo # 模型 & 价格 下表所列模型价格以“百万 tokens”为单位。Token 是模型用来表示自然语言文本的的最小单位，可以是一个词、一个数字或一个标点符号等。我们将根据模型输入和输出的总 token 数进行计量计费。 ## 模型细节​",
+            "adoption": "ADOPTED",
+            "adoptionReason": "保存原句；是否支持问题由逐主张核查决定。",
+            "evidenceId": "48e4ad5d-6e73-47de-9d18-ba6753b41901"
+          },
+          {
+            "url": "https://hk.finance.yahoo.com/news/deepseek%E6%A8%A1%E5%9E%8B%E5%8D%87%E7%B4%9A-%E7%89%88%E6%9C%AC%E8%99%9F%E7%A8%B1deepseek-v3-1-terminus-234813320.html",
+            "title": "DeepSeek模型升級 版本號稱DeepSeek-V3.1-Terminus",
+            "snippet": "AASTOCKS # DeepSeek模型升級 版本號稱DeepSeek-V3.1-Terminus AASTOCKS DeepSeek宣布線上模型已升級，當前版本號為DeepSeek-V3.1-Terminus，包含思考模型和非思考模式兩個版本，上下文長度均為128k，已支持用戶在線體驗。DeepSeek表示，此次更新在保持模型原有能力的基礎上，針對用戶反饋的問題進行改進。在語言一致性上，緩解中英文混雜及偶發異常字符等情況；在Agent能力上，進一步優化CodeAgent與SearchAgent的表現。其中，非思考模型輸出長度默認4K，最大8K，思考模型輸出長度默認32K，最大64K。使用價格方面，該模型百萬tokens輸入0.5元人民幣(下同)，緩存未命中則為4元，百萬tokens輸出12元。(ta/w)~阿思達克財經新聞網址: www.aastocks.com 條款 及 私隱政策",
+            "adoption": "REJECTED",
+            "adoptionReason": "本轮未读取；搜索摘要不是原文证据。",
+            "evidenceId": null
+          },
+          {
+            "url": "https://api-docs.deepseek.com/quick_start/pricing",
+            "title": "Models & Pricing | DeepSeek API Docs",
+            "snippet": "| Responses API | | ✓ | ✓ | | Anthropic API | | ✓ | ✓ | | Chat Prefix Completion（Beta） | | ✓ | ✓ | | FIM Completion（Beta） | | Non-thinking mode only | Non-thinking mode only | | Vision | | ✓ | Not supported | | PRICING(2) | 1M INPUT TOKENS (CACHE HIT) | OFF-PEAK | $0.003 | $0.022 | | PEAK | $0.006 | $0.044 | | 1M INPUT TOKENS (CACHE MISS) | OFF-PEAK | $0.15 | $0.66 | | PEAK | $0.3 | $1.32 | | 1M OUTPUT TOKENS | OFF-PEAK | $0.6 | $1.98 | | PEAK | $1.2 | $3.96 | [...] | | | | | | --- --- | MODEL | | | deepseek-flash(1) | deepseek-v4-pro | | BASE URL (OpenAI Format) | | | | | | BASE URL (Anthropic Format) | | | | | | MODEL VERSION | | | DeepSeek-V4.1-Flash | DeepSeek-V4-Pro-0813 | | THINKING MODE | | | Supports both non-thinking and thinking (default) modes See Thinking Mode for how to switch | | | CONTEXT LENGTH | | | 1M | | | MAX OUTPUT | | | MAXIMUM: 384K | | | FEATURES | Json Output | | ✓ | ✓ | | Tool Calls | | ✓ | ✓ | [...] | Concurrency Limit(3) | | | 2500 | 500 |",
+            "adoption": "ADOPTED",
+            "adoptionReason": "保存原句；是否支持问题由逐主张核查决定。",
+            "evidenceId": "5d39d865-7c5e-4fb7-8947-e7d8bf1f85bc"
+          },
+          {
+            "url": "https://api-docs.deepseek.com/zh-cn/api/create-chat-completion",
+            "title": "Chat Completions API | DeepSeek API Docs",
+            "snippet": "如果设为 `enabled`，则使用思考模式。如果设为 `disabled`，则使用非思考模式 reasoning\\_effort string Possible values: [`none`, `low`, `high`, `max`] 控制思考模式开关与思考强度。`none` 关闭思考模式；`low` / `high` / `max` 开启思考模式。默认强度为 `high`。出于兼容考虑，`minimal` 映射为 `low`，`medium` / `xhigh` 映射为 `high`。 max\\_tokens integernullable 限制一次请求中模型生成 completion 的最大 token 数。取值范围为 1 到 384K（393216）。未设置时，非思考模式默认 8K，思考模式默认 64K（`reasoning_effort` 为 `max` 时为 128K）。输入 token 和输出 token 的总长度受模型的上下文长度的限制。详见模型 & 价格。 response\\_format object nullable [...] 一个介于 0 到 20 之间的整数 N，指定每个输出位置返回输出概率 top N 的 token，且返回这些 token 的对数概率。指定此参数时，logprobs 必须为 true。 user\\_id nullable 您自定义的 user\\_id，可选字符集为 [a-zA-Z0-9\\-\\_]，最大长度为 512。请不要在 user\\_id 中包含用户隐私信息。 + user\\_id 可用于区分您业务侧的用户身份，以帮助我们进行内容安全处理。 + user\\_id 可用于 KVCache 缓存隔离，以进行隐私管理。 + user\\_id 可用于我们对您业务侧用户进行调度隔离。 + 关于 user\\_id 参数更详细的描述，请参考限速与隔离 frequency\\_penalty deprecated 该参数已不再支持。传入该参数将不会产生任何效果。 presence\\_penalty deprecated 该参数已不再支持。传入该参数将不会产生任何效果。 ## Responses​ 200 (No streaming) 200 (Streaming) [...] description string function 的功能描述，供模型理解何时以及如何调用该 function。 name stringrequired 要调用的 function 名称。必须由 a-z、A-Z、0-9 字符组成，或包含下划线和连字符，最大长度为 128 个字符。 parameters object function 的输入参数，以 JSON Schema 对象描述。请参阅Tool Calls 指南获取示例，并参阅JSON Schema 参考了解有关格式的文档。省略 `parameters` 会定义一个参数列表为空的 function。 property name\\ any function 的输入参数，以 JSON Schema 对象描述。请参阅Tool Calls 指南获取示例，并参阅JSON Schema 参考了解有关格式的文档。省略 `parameters` 会定义一个参数列表为空的 function。 strict boolean Default value: `false`",
+            "adoption": "REJECTED",
+            "adoptionReason": "本轮未读取；搜索摘要不是原文证据。",
+            "evidenceId": null
+          },
+          {
+            "url": "https://www.tradingkey.com/zh-hans/news/stocks/251148691-deepseek-v3-2-exp-model-tradingkey",
+            "title": "DeepSeek-V3.2-Exp新模型上线 价格直降75% 华为云、寒武纪已适配",
+            "snippet": "DeepSeek评测结果显示，V3.2-Exp与V3.1-Terminus的表现基本持平，前者在几乎不影响模型输出效果的前提下，实现了长文本训练和推理效率的大幅提升。 DeepSeek表示，V3.2-Exp模型目前已在Huggingface与魔搭开源。对于DeepSeek的V4和R2版本，外界猜测近期可能不会发布。 目前，华为云、寒武纪均已完成对DeepSeek-V3.2-Exp模型的适配工作，华为云最大可支持160K长序列上下文长度。 审核人Jane Zhang 免责声明：本网站提供的信息仅供教育和参考之用，不应视为财务或投资建议。 点赞 注册后参与点赞 ## 推荐文章 ### 苹果股价预测：AAPL创新高后持续回落，今年会再下探300美元关口？ 从技术分析的角度看，若短线大盘持续震荡回调，苹果股价第一防线在320–330美元，这是最近三个月高位震荡的中轨线，而且也是长线机构资金与量化基金在秋季发布会前夕的集中建仓成本区。 TradingKey5 小时前 ### 美股收盘：道指跌超600点，部分科技股反弹，CrowdStrike升超8% [...] tradingkey.logo 搜索  一键诊股 让投资更聪明 TradingKey 作者Jane Zhang 2025年9月29日 13:15 facebooktwitterlinkedin TradingKey - 9月29日，DeepSeek正式发布 DeepSeek-V3.2-Exp模型，且官方API价格下调，新价格已即刻生效。 输入价格方面，DeepSeek-V3.2-Exp降低50%以上，输出价格下降75%，这主要得益于新模型服务成本的降低。业界人士表示，这一价格使得其他企业的类似服务很难与其竞争。 另外，这一版本模型实现了核心技术突破，DeepSeek Sparse Attention（DSA）首次实现了细粒度稀疏注意力机制。 DeepSeek表示，V3.2-Exp是实验版本，作为迈向下一代架构的过渡模型，它在V3.1-Terminus的基础上引入了DSA机制，这种架构旨在降低计算资源消耗的同时提升模型推理效率。 [...] 热门新闻 link 美股收盘：道指跌超600点，部分科技股反弹，CrowdStrike升超8% 尽管美光与台中工会达成协议，桃园工会仍如期启动24小时罢工 存储概念股盘前普涨！SK海力士涨超6%，股价能否突破145美元压力位？ 日韩股市收盘分化：KOSPI探底回升涨0.30%，SK海力士反弹逾4%，三星、铠侠由跌转涨 金价连续下挫失守4000美元，美联储决议前黄金承压",
+            "adoption": "REJECTED",
+            "adoptionReason": "本轮未读取；搜索摘要不是原文证据。",
+            "evidenceId": null
+          }
+        ]
+      },
+      {
+        "id": "5e05cfa7-99f1-4671-8027-0ce856881dc1",
+        "provider": "tencent-yuanbao-search-api",
+        "query": "site:api-docs.deepseek.com deepseek-chat 上下文长度 128K 输出长度 价格",
+        "calledAt": "2026-10-25T04:09:47.307Z",
+        "status": "SUCCEEDED",
+        "error": null,
+        "returnedSources": [
+          {
+            "url": "https://api-docs.deepseek.com/zh-cn/quick_start/pricing",
+            "title": "模型 & 价格 DeepSeek API Docs",
+            "snippet": "模型 & 价格 | DeepSeek API Docs DeepSeek API文档。模型 & 价格 下表所列模型价格以“百万 tokens”为单位。Token 是模型用来表示自然语言文本的的最小单位,可以是一个词、一个数字或一个标点符号等。我们将根据模型输入和输出的总 token 数进行计量计费。 模型细节​ 注意:deepseek-chat 和 deepseek-reasoner 对应模型版本不变,为 DeepSeek-V3.2 (128K 上下文长度),与 APP/WEB 版不同。 模型 deepseek-chat deepseek-reasoner BASE URL https://api.deepseek.com 模型版本 DeepSeek-V3.2 (非思考模式) DeepSeek-V3.2 (思考模式) 上下文长度 128K 输出长度 默认 4K,最大 8K 默认 32K,最大 64K 功能 Json Output 支持 Tool Calls 支持 支持 对话前缀续写(Beta) 支持 支持 FIM 补全(Beta) 支持 不支持 价格 百万tokens输入(缓存命中) 0.2元 百万tokens输入(缓存未命中) 2元 百万tokens输出 3元 扣费规则​ 扣减费用 = token 消耗量 × 模型单价,对应的费用将直接从充值余额或赠送余额中进行扣减。 当充值余额与赠送余额同时存在时,优先扣减赠送余额。 产品价格可能发生变动,DeepSeek 保留修改价格的权利。请您依据实际用量按需充值,定期查看此页面以获知最新价格信息。...",
+            "adoption": "ADOPTED",
+            "adoptionReason": "保存原句；是否支持问题由逐主张核查决定。",
+            "evidenceId": "48e4ad5d-6e73-47de-9d18-ba6753b41901"
+          },
+          {
+            "url": "https://api-docs.deepseek.com/zh-cn/updates?ref=codersera.com",
+            "title": "更新日志 DeepSeek API Docs",
+            "snippet": "更新日志 | DeepSeek API Docs DeepSeek API文档。 详细更新内容请参阅文档 时间: 2025-12-01​ DeepSeek-V3.2​ deepseek-chat 和 deepseek-reasoner 都已升级为 DeepSeek-V3.2. deepseek-chat 对应 DeepSeek-V3.2 的非思考模式 deepseek-reasoner 对应 DeepSeek-V3.2 的思考模式 DeepSeek-V3.2-Speciale​ 我们非正式部署了 DeepSeek-V3.2-Speciale 的 API 服务,API 用户可以通过设置 base_url=\"https://api.deepseek.com/v3.2_speciale_expires_on_20251215\" 访问该模型。该模型 API 价格不变,只支持思考模式下的对话功能,不支持工具调用等功能,最大输出长度默认为 128K,支持时间截止至北京时间 2025-12-15 23:59。 详细更新内容请参阅文档 时间: 2025-09-29​ DeepSeek-V3.2-Exp​ deepseek-chat 和 deepseek-reasoner 都已经升级为 DeepSeek-V3.2-Exp。 deepseek-chat 对应 DeepSeek-V3.2-Exp 的非思考模式 deepseek-reasoner 对应 DeepSeek-V3.2-Exp 的思考模式 详细更新内容请参阅文档 时间: 2025-09-22​ DeepSeek-V3.1-Terminus​ deepseek-chat 和 deepseek-reasoner 都已经升级为 DeepSeek-V3.1-Terminus。deepseek-chat 对应 DeepSeek-V3.1-Term...",
+            "adoption": "REJECTED",
+            "adoptionReason": "本轮未读取；搜索摘要不是原文证据。",
+            "evidenceId": null
+          },
+          {
+            "url": "https://api-docs.deepseek.com/zh-cn/updates/",
+            "title": "更新日志",
+            "snippet": "更新日志 DeepSeek API文档。 详细更新内容请参阅文档 时间: 2025-12-01​ DeepSeek-V3.2​ deepseek-chat 和 deepseek-reasoner 都已升级为 DeepSeek-V3.2. deepseek-chat 对应 DeepSeek-V3.2 的非思考模式 deepseek-reasoner 对应 DeepSeek-V3.2 的思考模式 DeepSeek-V3.2-Speciale​ 我们非正式部署了 DeepSeek-V3.2-Speciale 的 API 服务,API 用户可以通过设置 base_url=\"https://api.deepseek.com/v3.2_speciale_expires_on_20251215\" 访问该模型。该模型 API 价格不变,只支持思考模式下的对话功能,不支持工具调用等功能,最大输出长度默认为 128K,支持时间截止至北京时间 2025-12-15 23:59。 详细更新内容请参阅文档 时间: 2025-09-29​ DeepSeek-V3.2-Exp​ deepseek-chat 和 deepseek-reasoner 都已经升级为 DeepSeek-V3.2-Exp。 deepseek-chat 对应 DeepSeek-V3.2-Exp 的非思考模式 deepseek-reasoner 对应 DeepSeek-V3.2-Exp 的思考模式 详细更新内容请参阅文档 时间: 2025-09-22​ DeepSeek-V3.1-Terminus​ deepseek-chat 和 deepseek-reasoner 都已经升级为 DeepSeek-V3.1-Terminus。deepseek-chat 对应 DeepSeek-V3.1-Terminus 的非思考模式,deepseek...",
+            "adoption": "REJECTED",
+            "adoptionReason": "本轮未读取；搜索摘要不是原文证据。",
+            "evidenceId": null
+          },
+          {
+            "url": "https://deepseek-chat-app.com/api",
+            "title": "DeepSeek API: Powerful Models for Developers and Teams",
+            "snippet": "DeepSeek API: Powerful Models for Developers and Teams DeepSeek。 The flagship DeepSeek V3 costs $0.27 per 1M input tokens and $1.10 per 1M output tokens, positioning it significantly below comparable frontier models. Free credits totaling $5 are provided to new accounts, sufficient for approximately 4.5M input tokens or 900K output tokens on the standard chat model. Cost per token calculations make DeepSeek particularly competitive for high-volume applications. A typical chatbot exchange consuming 500 input tokens and 200 output tokens costs approximately $0.00036, enabling millions of interactions within modest budgets. Rate limits scale with account tier, starting at 500K tokens daily for free accounts and extending to 50M tokens daily for enterprise subscriptions. Model Input (per 1M to...",
+            "adoption": "REJECTED",
+            "adoptionReason": "本轮未读取；搜索摘要不是原文证据。",
+            "evidenceId": null
+          },
+          {
+            "url": "http://howmanytokens.io/deepseek-v3",
+            "title": "DeepSeek V3: token counter & pricing",
+            "snippet": "DeepSeek V3: token counter & pricing How Many Tokens。DeepSeek V3: token counter & pricing DeepSeek · approximate, within ±3% of reference · pricing as of 2026-10-19. Provider DeepSeek API model ID deepseek-chat Context window 128,000 tokens Input price $0.27 per 1M tokens Output price $1.10 per 1M tokens Tokenizer accuracy approximate, within ±3% of reference Pricing as of 2026-10-19 Open the counter to count tokens for DeepSeek V3 in real time. What is DeepSeek V3? DeepSeek V3 is the flagship model from Chinese AI lab DeepSeek, a 671-billion-parameter mixture-of-experts model that competes with frontier closed models on benchmarks at a fraction of the price. Open weights under a permissive license. Strongly priced API access from DeepSeek directly. How tokens are counted here DeepSeek's t...",
+            "adoption": "REJECTED",
+            "adoptionReason": "本轮未读取；搜索摘要不是原文证据。",
+            "evidenceId": null
+          },
+          {
+            "url": "https://apiyihe.org/de/price/deepseek-chat",
+            "title": "DeepSeek Chat API Cost — Pricing Breakdown (2026)",
+            "snippet": "DeepSeek Chat API Cost — Pricing Breakdown (2026) AI API Hub。DeepSeek Chat Pricing DeepSeek · DeepSeek's free conversational model. Optimized for chat and dialogue applicatio TL;DR Price: $0.27/1M input · $1.10/1M output Context: 128K · max 32,768 output Cost advantage: Up to 70% cheaper than official API Access: OpenAI-compatible · No credit card · Instant API key Save up to 70% on DeepSeek Chat API cost Same model, same quality — pay less per token than the official API. Pay-as-you-go, no credit card required. From $0.27/1M input token price INPUT $0.27 /1M tokens OUTPUT $1.10 /1M tokens CONTEXT 128K DeepSeek Chat Pricing Context Pricing position within DeepSeek DeepSeek Chat sits in the middle of DeepSeek's pricing at $0.27/1M input — 26% below the lineup average ($0.14 cheapest, $0.70 ...",
+            "adoption": "REJECTED",
+            "adoptionReason": "本轮未读取；搜索摘要不是原文证据。",
+            "evidenceId": null
+          }
+        ]
+      },
+      {
+        "id": "c428cb06-9553-48ae-b9af-588d9928e35f",
+        "provider": "tavily-search-api:keyless-capped",
+        "query": "site:api-docs.deepseek.com deepseek-chat 上下文长度 128K 输出长度 价格",
+        "calledAt": "2026-10-25T04:09:47.307Z",
+        "status": "SUCCEEDED",
+        "error": null,
+        "returnedSources": [
+          {
+            "url": "https://api-docs.deepseek.com/zh-cn/api/create-chat-completion",
+            "title": "Chat Completions API | DeepSeek API Docs",
+            "snippet": "如果设为 `enabled`，则使用思考模式。如果设为 `disabled`，则使用非思考模式 reasoning\\_effort string Possible values: [`none`, `low`, `high`, `max`] 控制思考模式开关与思考强度。`none` 关闭思考模式；`low` / `high` / `max` 开启思考模式。默认强度为 `high`。出于兼容考虑，`minimal` 映射为 `low`，`medium` / `xhigh` 映射为 `high`。 max\\_tokens integernullable 限制一次请求中模型生成 completion 的最大 token 数。取值范围为 1 到 384K（393216）。未设置时，非思考模式默认 8K，思考模式默认 64K（`reasoning_effort` 为 `max` 时为 128K）。输入 token 和输出 token 的总长度受模型的上下文长度的限制。详见模型 & 价格。 response\\_format object nullable [...] description string function 的功能描述，供模型理解何时以及如何调用该 function。 name stringrequired 要调用的 function 名称。必须由 a-z、A-Z、0-9 字符组成，或包含下划线和连字符，最大长度为 128 个字符。 parameters object function 的输入参数，以 JSON Schema 对象描述。请参阅Tool Calls 指南获取示例，并参阅JSON Schema 参考了解有关格式的文档。省略 `parameters` 会定义一个参数列表为空的 function。 property name\\ any function 的输入参数，以 JSON Schema 对象描述。请参阅Tool Calls 指南获取示例，并参阅JSON Schema 参考了解有关格式的文档。省略 `parameters` 会定义一个参数列表为空的 function。 strict boolean Default value: `false` [...] 一个介于 0 到 20 之间的整数 N，指定每个输出位置返回输出概率 top N 的 token，且返回这些 token 的对数概率。指定此参数时，logprobs 必须为 true。 user\\_id nullable 您自定义的 user\\_id，可选字符集为 [a-zA-Z0-9\\-\\_]，最大长度为 512。请不要在 user\\_id 中包含用户隐私信息。 + user\\_id 可用于区分您业务侧的用户身份，以帮助我们进行内容安全处理。 + user\\_id 可用于 KVCache 缓存隔离，以进行隐私管理。 + user\\_id 可用于我们对您业务侧用户进行调度隔离。 + 关于 user\\_id 参数更详细的描述，请参考限速与隔离 frequency\\_penalty deprecated 该参数已不再支持。传入该参数将不会产生任何效果。 presence\\_penalty deprecated 该参数已不再支持。传入该参数将不会产生任何效果。 ## Responses​ 200 (No streaming) 200 (Streaming)",
+            "adoption": "REJECTED",
+            "adoptionReason": "本轮未读取；搜索摘要不是原文证据。",
+            "evidenceId": null
+          },
+          {
+            "url": "https://api-docs.deepseek.com/zh-cn/quick_start/pricing?tool=deepseek",
+            "title": "模型 & 价格 | DeepSeek API Docs",
+            "snippet": "| 图像理解 | | 支持 | 不支持 | | 价格(2) | 百万tokens输入 （缓存命中） | 空闲时段 | 0.02元 | 0.15元 | | 高峰时段 | 0.04元 | 0.30元 | | 百万tokens输入 （缓存未命中） | 空闲时段 | 1元 | 4.5元 | | 高峰时段 | 2元 | 9.0元 | | 百万tokens输出 | 空闲时段 | 4元 | 13.5元 | | 高峰时段 | 8元 | 27.0元 | | 并发限制(3) | | | 2500 | 500 | [...] | | | | | | --- --- | 模型 | | | deepseek-flash(1) | deepseek-v4-pro | | BASE URL (OpenAI 格式) | | | | | | BASE URL (Anthropic 格式) | | | | | | 模型版本 | | | DeepSeek-V4.1-Flash-1017 | DeepSeek-V4-Pro-0813 | | 思考模式 | | | 支持非思考与思考模式（默认） 切换方式详见思考模式 | | | 上下文长度 | | | 1M | | | 输出长度 | | | 最大 384K | | | 功能 | Json Output | | 支持 | 支持 | | Tool Calls | | 支持 | 支持 | | Responses API | | 支持 | 支持 | | Anthropic API | | 支持 | 支持 | | 对话前缀续写（Beta） | | 支持 | 支持 | | FIM 补全（Beta） | | 仅非思考模式支持 | 仅非思考模式支持 | [...] DeepSeek API 文档 Logo DeepSeek API 文档 Logo # 模型 & 价格 下表所列模型价格以“百万 tokens”为单位。Token 是模型用来表示自然语言文本的的最小单位，可以是一个词、一个数字或一个标点符号等。我们将根据模型输入和输出的总 token 数进行计量计费。 ## 模型细节​",
+            "adoption": "REJECTED",
+            "adoptionReason": "本轮未读取；搜索摘要不是原文证据。",
+            "evidenceId": null
+          },
+          {
+            "url": "https://api-docs.deepseek.com/quick_start/pricing?tool=deepseek",
+            "title": "Models & Pricing | DeepSeek API Docs",
+            "snippet": "| Responses API | | ✓ | ✓ | | Anthropic API | | ✓ | ✓ | | Chat Prefix Completion（Beta） | | ✓ | ✓ | | FIM Completion（Beta） | | Non-thinking mode only | Non-thinking mode only | | Vision | | ✓ | Not supported | | PRICING(2) | 1M INPUT TOKENS (CACHE HIT) | OFF-PEAK | $0.003 | $0.022 | | PEAK | $0.006 | $0.044 | | 1M INPUT TOKENS (CACHE MISS) | OFF-PEAK | $0.15 | $0.66 | | PEAK | $0.3 | $1.32 | | 1M OUTPUT TOKENS | OFF-PEAK | $0.6 | $1.98 | | PEAK | $1.2 | $3.96 | [...] | | | | | | --- --- | MODEL | | | deepseek-flash(1) | deepseek-v4-pro | | BASE URL (OpenAI Format) | | | | | | BASE URL (Anthropic Format) | | | | | | MODEL VERSION | | | DeepSeek-V4.1-Flash-1017 | DeepSeek-V4-Pro-0813 | | THINKING MODE | | | Supports both non-thinking and thinking (default) modes See Thinking Mode for how to switch | | | CONTEXT LENGTH | | | 1M | | | MAX OUTPUT | | | MAXIMUM: 384K | | | FEATURES | Json Output | | ✓ | ✓ | | Tool Calls | | ✓ | ✓ | [...] | API | Unit | Price | --- | Search | Per 1,000 successful requests | $0.75 | | Fetch | Per 1,000 successful requests | $0.75 | Note: when you use the DeepSeek API through DeepSeek Harness, Claude Code, or Codex, server-side tool calls already hit the Search and Fetch APIs. These calls are currently free of charge; per-request billing starts at 00:00 Beijing time on November 1, 2026. See the Search & Fetch guide for API usage and complete billing rules. ## Deduction Rules​",
+            "adoption": "REJECTED",
+            "adoptionReason": "本轮未读取；搜索摘要不是原文证据。",
+            "evidenceId": null
+          },
+          {
+            "url": "https://api-docs.deepseek.com/api/list-models",
+            "title": "Lists Models | DeepSeek API Docs",
+            "snippet": "} } }, { \"id\": \"deepseek-v4-pro\", \"object\": \"model\", \"owned_by\": \"deepseek\", \"name\": \"DeepSeek-V4-Pro\", \"context_window\": 1048576, \"max_output_tokens\": 393216, \"input_modalities\": [\"text\"], \"output_modalities\": [\"text\"], \"effort\": { \"supported_levels\": [\"low\", \"high\", \"max\"], \"default_level\": \"high\" }, \"api_capabilities\": { \"anthropic_messages\": { \"system_prompt_update\": \"leading-only\" } } } ] }` WeChat QRcode [...] } ] }` `{ \"object\": \"list\", \"data\": [ { \"id\": \"deepseek-flash\", \"object\": \"model\", \"owned_by\": \"deepseek\", \"name\": \"DeepSeek-V4.1-Flash\", \"context_window\": 1048576, \"max_output_tokens\": 393216, \"input_modalities\": [\"text\", \"image\"], \"output_modalities\": [\"text\"], \"effort\": { \"supported_levels\": [\"low\", \"high\", \"max\"], \"default_level\": \"high\" }, \"api_capabilities\": { \"anthropic_messages\": { \"system_prompt_update\": \"in-history\" } [...] DeepSeek API Docs Logo DeepSeek API Docs Logo # Lists Models ## /models Lists the currently available models, and provides metadata about each one, such as its display name, context window, output limit, supported input/output modalities, supported effort levels, and per-protocol API capabilities. Check Models & Pricing for our currently supported models. ## Responses​ OK, returns A list of models Schema Possible values: [`list`] `list` The object type, which is always `list`. `list`",
+            "adoption": "REJECTED",
+            "adoptionReason": "本轮未读取；搜索摘要不是原文证据。",
+            "evidenceId": null
+          },
+          {
+            "url": "https://api-docs.deepseek.com/zh-cn/index.html",
+            "title": "首次调用 API | DeepSeek API Docs",
+            "snippet": "(1) 模型名请使用 `deepseek-flash`。该模型现已升级为 DeepSeek-V4.1-Flash-1017，调用方式保持不变。旧模型名 `deepseek-v4-flash`、`deepseek-v4-flash-vision-exp` 仍可调用，但对应模型已下线，请求由 DeepSeek-V4.1-Flash-1017 模型提供服务，并按 Flash 价格计费。 ## 接入 Agent 工具​ DeepSeek Harness 开发者预览版面向全球 Harness 开发者开放测试。详见 DeepSeek Harness 入门。 DeepSeek API 已接入多种主流 AI Agent 与编程助手工具。如果你使用 Claude Code、GitHub Copilot、OpenCode 等工具，可以直接将 DeepSeek 作为后端模型，无需编写代码即可开始使用。 详见 Agent 工具接入指南。 ## 调用对话 API​ [...] ## 调用对话 API​ 在创建 API key 之后，你可以使用以下样例脚本，通过 OpenAI API 格式来访问 DeepSeek 模型。样例为非流式输出，您可以将 stream 设置为 true 来使用流式输出。 Anthropic API 格式的访问样例，请参考Anthropic API。 curl python nodejs [...] 接入 Agent 工具 调用对话 API",
+            "adoption": "REJECTED",
+            "adoptionReason": "本轮未读取；搜索摘要不是原文证据。",
+            "evidenceId": null
+          },
+          {
+            "url": "https://api-docs.deepseek.com/zh-cn/quick_start/token_usage",
+            "title": "Token 用量计算 | DeepSeek API Docs",
+            "snippet": "#### 图片 Token 计算器 WeChat QRcode [...] DeepSeek API 文档 Logo DeepSeek API 文档 Logo # Token 用量计算 token 是模型用来表示自然语言文本的基本单位，也是我们的计费单元，可以直观的理解为“字”或“词”；通常 1 个中文词语、1 个英文单词、1 个数字或 1 个符号计为 1 个 token。 一般情况下模型中 token 和字数的换算比例大致如下： 但因为不同模型的分词不同，所以换算比例也存在差异，每一次实际处理 token 数量以模型返回为准，您可以从返回结果的 `usage` 中查看。 `usage` ## 离线计算 Token 用量​ 您可以通过如下压缩包中的代码来运行 tokenizer，以离线计算一段文本的 Token 用量。 deepseek\\_tokenizer.zip ## 计算图片 Token 用量​ 您可以通过图片尺寸估算图片所占用的 token 数量。图片在进入模型前会被自动缩放，每张图片消耗的 token 数存在上限，详见图像理解。 此处为估算值，实际处理时转换得到的 token 数量可能存在一定误差，请以接口返回的用量为准。",
+            "adoption": "REJECTED",
+            "adoptionReason": "本轮未读取；搜索摘要不是原文证据。",
+            "evidenceId": null
+          }
+        ]
+      },
+      {
+        "id": "8eb8b99c-a394-454b-b4cc-4f21554a23db",
+        "provider": "tencent-yuanbao-search-api",
+        "query": "DeepSeek API 模型 deepseek-v4-flash 上下文长度 最大输出 价格 峰谷 官方",
+        "calledAt": "2026-10-25T04:10:11.275Z",
+        "status": "SUCCEEDED",
+        "error": null,
+        "returnedSources": [
+          {
+            "url": "https://api-docs.deepseek.com/quick_start/pricing",
+            "title": "Models & Pricing DeepSeek API Docs",
+            "snippet": "Models & Pricing | DeepSeek API Docs DeepSeek API Docs。Models & Pricing The prices listed below are in units of per 1M tokens. A token, the smallest unit of text that the model recognizes, can be a word, a number, or even a punctuation mark. We will bill based on the total number of input and output tokens by the model. Model Details​ MODEL deepseek-v4-flash deepseek-v4-pro deepseek-v4-flash-vision-exp BASE URL (OpenAI Format) https://api.deepseek.com BASE URL (Anthropic Format) https://api.deepseek.com/anthropic MODEL VERSION DeepSeek-V4-Flash-0731 DeepSeek-V4-Pro-0813 DeepSeek-V4-Flash-Vision-Exp THINKING MODE Supports both non-thinking and thinking (default) modes See Thinking Mode for how to switch CONTEXT LENGTH 1M MAX OUTPUT MAXIMUM: 384K FEATURES Json Output ✓ ✓ Tool Calls ✓ ✓ ✓ Res...",
+            "adoption": "ADOPTED",
+            "adoptionReason": "保存原句；是否支持问题由逐主张核查决定。",
+            "evidenceId": "5d39d865-7c5e-4fb7-8947-e7d8bf1f85bc"
+          },
+          {
+            "url": "https://api-docs.deepseek.com/zh-cn/quick_start/pricing?ref=wheresyoured.at",
+            "title": "模型 & 价格 DeepSeek API Docs",
+            "snippet": "模型 & 价格 | DeepSeek API Docs DeepSeek API Docs。模型 & 价格 下表所列模型价格以“百万 tokens”为单位。Token 是模型用来表示自然语言文本的的最小单位,可以是一个词、一个数字或一个标点符号等。我们将根据模型输入和输出的总 token 数进行计量计费。 模型细节​ 模型 deepseek-v4-flash deepseek-v4-pro BASE URL (OpenAI 格式) https://api.deepseek.com BASE URL (Anthropic 格式) https://api.deepseek.com/anthropic 模型版本 DeepSeek-V4-Flash-0731 DeepSeek-V4-Pro-0813 思考模式 支持非思考与思考模式(默认) 切换方式详见 思考模式 上下文长度 1M 输出长度 最大 384K 功能 Json Output 支持 Tool Calls 支持 支持 Responses API 支持 支持 Anthropic API 支持 支持 对话前缀续写(Beta) 支持 支持 FIM 补全(Beta) 仅非思考模式支持 仅非思考模式支持 价格 (1) 百万tokens输入(缓存命中) 0.02元 百万tokens输入(缓存未命中) 1元 3元 百万tokens输出 2元 6元 并发限制 (2) 2500 500 (1) 我们将对 DeepSeek API 价格进行更新调整,采用峰谷定价,空闲时段价格为高峰时段价格的一半。高峰时段为北京时间 9:00 - 12:00、14:00 - 18:00(其余为空闲时段)。新价格将于北京时间 2026 年 8 月 17 日 00:00 开始生效,具体如下: 模型 百万tokens输入(缓存命中) 百万tokens输入(缓存未命中)...",
+            "adoption": "REJECTED",
+            "adoptionReason": "本轮未读取；搜索摘要不是原文证据。",
+            "evidenceId": null
+          },
+          {
+            "url": "https://mydeepseekapi.com/deepseek-v4-flash",
+            "title": "DeepSeek V4 Flash, decoded for production",
+            "snippet": "DeepSeek V4 Flash, decoded for production My DeepSeek API。DeepSeek V4 Flash, decoded for production DeepSeek V4 Flash is the fast, economical V4 model: a 284B-total, 13B-active MoE with a 1M-token context window, thinking and non-thinking modes, tool use, and current regular pricing from $0.0028 per 1M cache-hit input tokens. Context 1M tokens Max output 384K tokens Cache hit $0.0028 per 1M input Output $0.28 per 1M tokens Operational brief From signal to shipping 01 / MODEL Large capacity, sparse activation V4 Flash has 284B total parameters while activating 13B per token. DeepSeek positions it as the speed-and-economy member of V4, with reasoning close to Pro and comparable results on simple agent tasks. Current published version: DeepSeek-V4-Flash-0731 Thinking and non-thinking modes in...",
+            "adoption": "REJECTED",
+            "adoptionReason": "本轮未读取；搜索摘要不是原文证据。",
+            "evidenceId": null
+          },
+          {
+            "url": "https://api-docs.deepseek.com/quick_start/pricing",
+            "title": "Models & Pricing DeepSeek API Docs",
+            "snippet": "Models & Pricing | DeepSeek API Docs DeepSeek API Docs。Models & Pricing The prices listed below are in units of per 1M tokens. A token, the smallest unit of text that the model recognizes, can be a word, a number, or even a punctuation mark. We will bill based on the total number of input and output tokens by the model. Model Details​ MODEL deepseek-v4-flash deepseek-v4-pro BASE URL (OpenAI Format) https://api.deepseek.com BASE URL (Anthropic Format) https://api.deepseek.com/anthropic MODEL VERSION DeepSeek-V4-Flash-0731 DeepSeek-V4-Pro THINKING MODE Supports both non-thinking and thinking (default) modes See Thinking Mode for how to switch CONTEXT LENGTH 1M MAX OUTPUT MAXIMUM: 384K FEATURES Json Output ✓ Tool Calls ✓ ✓ Responses API (1) ✓ ✗ Anthropic API ✓ ✓ Chat Prefix Completion(Beta) ✓...",
+            "adoption": "ADOPTED",
+            "adoptionReason": "保存原句；是否支持问题由逐主张核查决定。",
+            "evidenceId": "5d39d865-7c5e-4fb7-8947-e7d8bf1f85bc"
+          },
+          {
+            "url": "https://deepseekai.guide/?p=103%2F",
+            "title": "DeepSeek Cost Estimator: Forecast Your V4 API Spend",
+            "snippet": "DeepSeek Cost Estimator: Forecast Your V4 API Spend DeepSeek AI Guide。 skip one and the forecast is wrong. Cache-hit input tokens — the part of your prompt that matches a prefix already in DeepSeek’s context cache. Cheapest of the three. Cache-miss input tokens — input processed from scratch, including new user messages even when the system prompt is cached. Output tokens — everything the model generates, including reasoning_content from thinking mode, which is on by default. The models you can call today are deepseek-flash (DeepSeek-V4.1-Flash-1017) and deepseek-v4-pro (DeepSeek-V4-Pro-0813). Both have a 1M-token context window and a 384K-token maximum output; image input is available only on deepseek-flash. The rate depends on the model and on whether a request runs in a peak or an off-p...",
+            "adoption": "REJECTED",
+            "adoptionReason": "本轮未读取；搜索摘要不是原文证据。",
+            "evidenceId": null
+          },
+          {
+            "url": "https://api-docs.deepseek.com/zh-cn/quick_start/pricing",
+            "title": "模型 & 价格 DeepSeek API Docs",
+            "snippet": "下表所列模型价格以“百万 tokens”为单位。Token 是模型用来表示自然语言文本的的最小单位,可以是一个词、一个数字或一个标点符号等。我们将根据模型输入和输出的总 token 数进行计量计费。 模型细节​注意: deepseek-chat 和 deepseek-reasoner 对应模型版本不变,为DeepSeek-V3.2 (128K 上下文长度),与APP/WEB 版不同。 模型 deepseek-chat deepseek-reasoner BASE URL https://api.deepseek.com 模型版本 DeepSeek-V3.2 (非思考模式) DeepSeek-V3.2 (思考模式) 上下文长度 128K 输出长度 默认 4K,最大 8K 默认 32K,最大 64K 功能 Json Output 支持 支持 Tool Calls 支持 支持 对话前缀续写(Beta) 支持 支持 FIM 补全(Beta) 支持 不支持 价格 百万tokens输入(缓存命中) 0.2元 百万tokens输入(缓存未命中) 2元 百万tokens输出 3元 扣费规则​扣减费用 = token 消耗量 × 模型单价,对应的费用将直接从充值余额或赠送余额中进行扣减。当充值余额与赠送余额同时存在时,优先扣减赠送余额。 产品价格可能发生变动,DeepSeek 保留修改价格的权利。请您依据实际用量按需充值,定期查看此页面以获知最新价格信息。...",
+            "adoption": "ADOPTED",
+            "adoptionReason": "保存原句；是否支持问题由逐主张核查决定。",
+            "evidenceId": "48e4ad5d-6e73-47de-9d18-ba6753b41901"
+          }
+        ]
+      },
+      {
+        "id": "7baf0781-7b7a-4660-9fa4-8f11767f7174",
+        "provider": "tavily-search-api:keyless-capped",
+        "query": "DeepSeek API 模型 deepseek-v4-flash 上下文长度 最大输出 价格 峰谷 官方",
+        "calledAt": "2026-10-25T04:10:11.275Z",
+        "status": "SUCCEEDED",
+        "error": null,
+        "returnedSources": [
+          {
+            "url": "https://api-docs.deepseek.com/zh-cn/quick_start/pricing",
+            "title": "模型 & 价格 | DeepSeek API Docs",
+            "snippet": "| | | | | | --- --- | 模型 | | | deepseek-flash(1) | deepseek-v4-pro | | BASE URL (OpenAI 格式) | | | | | | BASE URL (Anthropic 格式) | | | | | | 模型版本 | | | DeepSeek-V4.1-Flash | DeepSeek-V4-Pro-0813 | | 思考模式 | | | 支持非思考与思考模式（默认） 切换方式详见思考模式 | | | 上下文长度 | | | 1M | | | 输出长度 | | | 最大 384K | | | 功能 | Json Output | | 支持 | 支持 | | Tool Calls | | 支持 | 支持 | | Responses API | | 支持 | 支持 | | Anthropic API | | 支持 | 支持 | | 对话前缀续写（Beta） | | 支持 | 支持 | | FIM 补全（Beta） | | 仅非思考模式支持 | 仅非思考模式支持 | [...] | 图像理解 | | 支持 | 不支持 | | 价格(2) | 百万tokens输入 （缓存命中） | 空闲时段 | 0.02元 | 0.15元 | | 高峰时段 | 0.04元 | 0.30元 | | 百万tokens输入 （缓存未命中） | 空闲时段 | 1元 | 4.5元 | | 高峰时段 | 2元 | 9.0元 | | 百万tokens输出 | 空闲时段 | 4元 | 13.5元 | | 高峰时段 | 8元 | 27.0元 | | 并发限制(3) | | | 2500 | 500 | [...] (1) 模型名请使用 `deepseek-flash`。旧模型名 `deepseek-v4-flash`、`deepseek-v4-flash-vision-exp` 仍可调用，但对应模型已下线，请求将由 DeepSeek-V4.1-Flash 模型提供服务，并按 Flash 价格计费。 `deepseek-flash` `deepseek-v4-flash` `deepseek-v4-flash-vision-exp` (2) 空闲时段价格为高峰时段价格的一半。北京时间周一至周五（不含中国法定节假日）9:00 - 12:00、14:00 - 18:00 为高峰时段；其余时段，包括周末及中国法定节假日全天均为空闲时段。 (3) 更多并发限制细节，请参考限速与隔离。 ## 扣费规则​ 扣减费用 = token 消耗量 × 模型单价，对应的费用将直接从充值余额或赠送余额中进行扣减。 当充值余额与赠送余额同时存在时，优先扣减赠送余额。 产品价格可能发生变动，DeepSeek 保留修改价格的权利。请您依据实际用量按需充值，定期查看此页面以获知最新价格信息。",
+            "adoption": "ADOPTED",
+            "adoptionReason": "保存原句；是否支持问题由逐主张核查决定。",
+            "evidenceId": "48e4ad5d-6e73-47de-9d18-ba6753b41901"
+          },
+          {
+            "url": "https://m.36kr.com/p/3977300285174021",
+            "title": "DeepSeek V4.1 Flash发布，用pro的能力收flash的钱-36氪",
+            "snippet": "在基础规格上，V4.1 Flash支持100万Token上下文、最大384K输出，以及JSON Output、工具调用、Responses API等功能。模型同时提供思考与非思考模式，默认开启思考，思考强度支持low、high、max三档，开发者可以根据任务复杂度配置。 ## 03、缓存输入降价60%，连续工作更便宜 V4.1 Flash的新价格于北京时间9月10日12时生效，继续采用峰谷定价。按每百万Token计算，空闲时段的缓存命中输入价格为0.02元、缓存未命中输入为1元、输出为4元；高峰时段分别为0.04元、2元和8元。 高峰时段为北京时间周一至周五9:00—12:00、14:00—18:00，其余为空闲时段。 与此前V4 Flash同一时段的价格相比，缓存命中输入降价60%，未命中输入降价约33.3%，输出降价约11.1%。 需要反复读取大量上下文的任务，受益更加明显。Agent连续工作时，往往多次输入历史对话、工具说明和代码，缓存价格下降可以降低这部分重复开销。对于以生成新内容为主的任务，节省幅度则相对有限。 [...] 以固定用量测算，一次任务若消耗100万缓存命中输入Token、10万未命中输入Token和1万输出Token，空闲时段费用将从0.245元降至0.16元，下降约34.7%。实际账单还取决于模型的思考长度、工具调用轮次和失败重试次数。 deepseek-v4-pro将在9月14日12时后转向新Flash，并按Flash价格计费，直至未来V4.1 Pro上线。 ## 04、模型与Harness一起训练，强化连续工作能力 与V4.1 Flash同步更新的，还有DeepSeek Harness v0.1.5。此次升级进一步将模型训练与Agent运行框架结合：V4.1 Flash针对Harness的标准模式、程序化工具调用（PTC）模式和极简模式，都进行了专项训练与优化。 这意味着，训练开始覆盖模型实际工作的不同环境。Agent完成任务时，需要在工具调用、结果读取和下一步决策之间持续循环。针对不同运行模式训练，有助于模型适应工具组织和调用方式，减少执行中的衔接问题。 [...] 图片由AI生成 9月10日，DeepSeek正式发布V4.1 Flash，同步下调API价格，并宣布将于北京时间9月14日12时下线V4 Pro服务，相关请求随后转由新模型处理。 按照DeepSeek官方的说法，V4.1 Flash在性能、费用、速度和任务总用时等指标上已全面超越V4 Pro。这款采用新架构、原生支持视觉理解的模型，开始接过上一代Pro的位置。 此次更新的重点，也由此落在了三个相互关联的变化上：新架构提升能力与效率，视觉理解并入主力模型，更低的价格让开发者有机会把更多工作交给Flash。 ## 01、5520亿参数，输入与输出采用不同计算规模 V4.1 Flash的升级深入到了模型结构。 此前7月31日发布的V4 Flash正式版，保持了预览版的模型结构和尺寸，主要重新进行了后训练。此次，V4.1 Flash采用全新的Causal-Encoder-Decoder（因果编码器—解码器）结构，是一个总参数量为552B的混合专家模型（MoE）。",
+            "adoption": "REJECTED",
+            "adoptionReason": "本轮未读取；搜索摘要不是原文证据。",
+            "evidenceId": null
+          },
+          {
+            "url": "https://zhuanlan.zhihu.com/p/2075713930928853030",
+            "title": "DeepSeek V4 Flash Vision 图像理解成本解析：单图上限仅 384 token - 知乎",
+            "snippet": "``` 模型： deepseek/deepseek-v4-flash-vision-exp 价格： 峰时每百万 $0.44 输入 / $1.32 输出 谷时 $0.22 / $0.66（峰时为 01:00-04:00、06:00-10:00 UTC） 缓存命中： 峰时 $0.014 / 谷时 $0.007 每百万 上下文： 输入 1M / 输出 384K 图片： 每张最多 384 token，单次请求最多 600 张 Thinking： 默认开启、effort 为 high，用 thinking.type 关掉 实测： 800×800 与 3000×3000 同为 348 个输入 token 计测日： 2026-08-21，每种配置跑 5 次 ``` 最后更新 2026-08-21。模型 ID 带 `-exp` 后缀，可用性按实验性对待，做长期依赖前请重新确认。 [...] ## DeepSeek V4 Flash Vision Exp 是什么 就是能吃图的 V4 Flash，价格完全没动。 DeepSeek 定价页把三个模型并排列出，视觉版这一列和 flash 那一列逐格相同。 | | deepseek-v4-flash | deepseek-v4-flash-vision-exp | deepseek-v4-pro | --- --- | | 输入·缓存未命中（峰时） | $0.44 | $0.44 | $1.32 | | 输入·缓存命中（峰时） | $0.014 | $0.014 | $0.044 | | 输出（峰时） | $1.32 | $1.32 | $3.96 | | 上下文 | 1M | 1M | 1M | | 输出上限 | 384K | 384K | 384K | | 并发限制 | 2500 | 2500 | 500 | 谷时价全线是峰时价的一半。峰时为 01:00 到 04:00 与 06:00 到 10:00 UTC，三小时加四小时，剩下十七小时都按低价计。这个峰谷机制刚出来时，我们写过它对真实账单的影响。 [...] ## 有哪些限制 | 限制项 | 数值 | --- | | 格式 | JPEG、PNG、GIF、WebP（按文件内容判定，不看扩展名） | | 单次请求图片数 | 600 | | 请求体 | 48 MiB | | 单张图·base64 或外链 | 32 MiB | | 单张图·Files API file\\_id | 64 MiB | | 单次请求图片总量 | 不含 file\\_id 时 64 MiB，含则最多 200 MiB | | 边长上限 | 每边 8192 像素，请求含 15 张及以上图片时降为 4096 像素 | | 外链 URL 长度 | 8192 字符 | 边长那条是生产环境里最容易咬人的。一个批处理任务发十四张 6000 像素的截图没问题，第十五张会悄悄把整个请求的上限改掉。 ## 该从 V4 Flash 换过来吗 只要你会传图，就换，因为换过来不要钱。 单价相同、上下文与输出上限相同、并发限制也相同。唯一失去的是 FIM 补全，那只对行内代码补全有意义。",
+            "adoption": "REJECTED",
+            "adoptionReason": "本轮未读取；搜索摘要不是原文证据。",
+            "evidenceId": null
+          },
+          {
+            "url": "https://api-docs.deepseek.com/zh-cn/news/news260910",
+            "title": "DeepSeek V4.1 Flash：更强、更快、更普惠 | DeepSeek API Docs",
+            "snippet": "同时，经多方测试，V4.1 Flash 在性能、费用、速度、总用时等各项指标上已全面超越 V4 Pro，因此我们计划有序下线 V4 Pro 模型。北京时间 2026 年 9 月 14 日 12:00 之后，至未来 V4.1 Pro 上线之前，用户访问 `deepseek-v4-pro` 的请求将全部路由到 V4.1 Flash，并按 V4.1 Flash 单价计费。 `deepseek-v4-pro` 腾讯（WorkBuddy、CodeBuddy）和 OpenCode 作为官方合作伙伴，现已全量接入 DeepSeek V4.1 Flash，欢迎使用！ ## API 定价调整​ 得益于模型架构的创新，DeepSeek V4.1 Flash 能够以更低的成本服务更多的用户，因此我们相应下调了 V4.1 Flash 的定价。同时，为了更合理地调配资源，我们仍然采用峰谷定价，闲时价格为高峰时段价格的一半，鼓励用户根据实际使用情况调整任务时间。新价格于 2026 年 9 月 10 日 12:00 开始生效。 ## 模型开源​ [...] DeepSeek API 文档 Logo DeepSeek API 文档 Logo # DeepSeek V4.1 Flash：更强、更快、更普惠 今天，我们正式发布 DeepSeek V4.1 Flash 模型。这是我们全新模型结构系列中的最小尺寸的模型，具备原生多模态视觉理解能力。新模型结构的设计初衷是：能力上限更高、推理速度更快、吞吐更大、可扩展到更大参数模型。 ## 非对称模型结构，小成本大智能​ DeepSeek V4.1 Flash 为 552B 参数的 MoE 模型，采用了全新的 Causal-Encoder-Decoder 结构，输入和输出不对称，输入激活只有 8B，输出激活 16B，成本显著低于已知的同尺寸模型。同时，V4.1 Flash 还采用了新的预训练方式、经过了更大规模的强化学习后训练，在基准测试中，成功超越了包括 DeepSeek V4 Pro 在内的一众旗舰模型的智能水平。 ## 更少缓存，更省成本​ [...] ## 更少缓存，更省成本​ 新一代模型大幅减少了 KV Cache 缓存的大小，与上一代模型相比，对 HBM 的需求减少到 1/4，对 SSD 的需求减少到 1/8。在 Agent 使用场景中，缓存命中的费用往往占比较高，对 KV Cache 的压缩大幅降低了 Agent 类任务的使用成本。 ## API 支持​ DeepSeek V4.1 Flash 已同步上线 DeepSeek API，原生支持多模态，将模型名称更改为 `deepseek-flash` 即可调用最新的 V4.1 Flash 模型。旧版本模型 V4 Flash 与 V4 Flash Vision Exp 现已下线，出于兼容考虑，模型名 `deepseek-v4-flash`、`deepseek-v4-flash-vision-exp` 将被暂时路由到 V4.1 Flash。 `deepseek-flash` `deepseek-v4-flash` `deepseek-v4-flash-vision-exp`",
+            "adoption": "REJECTED",
+            "adoptionReason": "本轮未读取；搜索摘要不是原文证据。",
+            "evidenceId": null
+          },
+          {
+            "url": "https://api-docs.deepseek.com/zh-cn/news/news260813",
+            "title": "DeepSeek-V4-Pro 正式版上线 | DeepSeek API Docs",
+            "snippet": "### 更灵活的思考强度控制​ V4-Pro 和 V4-Flash 思考模式现支持 low / high / max 三档思考强度，用户在实际使用中可以根据任务复杂度灵活选择：简单任务使用 low，日常 Agent 任务使用 high，高度复杂的任务场景使用 max。设置方法请参考官方 API 文档：API 指南 - 思考模式。 ## API 定价调整​ 随着 DeepSeek V4 全系列模型正式版上线，我们将对 API 价格进行更新调整。为了更加合理地调配资源，我们将采用峰谷定价，闲时价格为高峰时段价格的一半，鼓励用户根据实际使用情况调整任务时间。新价格将于北京时间 2026 年 8 月 17 日 0 时开始生效。 WeChat QRcode",
+            "adoption": "REJECTED",
+            "adoptionReason": "本轮未读取；搜索摘要不是原文证据。",
+            "evidenceId": null
+          },
+          {
+            "url": "https://hk.finance.yahoo.com/news/deepseek%E6%8E%A8%E6%96%B0-%E4%BB%A3%E6%97%97%E8%89%A6%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E5%AF%A6%E7%8F%BE%E5%9C%8B%E7%94%A2%E8%8A%AF%E7%89%87%E6%B7%B1%E5%BA%A6%E9%81%A9%E9%85%8D-030116242.html",
+            "title": "DeepSeek推新一代旗艦大模型 實現國產芯片深度適配",
+            "snippet": "AASTOCKS # DeepSeek推新一代旗艦大模型 實現國產芯片深度適配 AASTOCKS DeepSeek全新系列模型DeepSeek-V4預覽版本正式推出並同步開源。DeepSeek-V4擁有百萬字超長上下文窗口，在Agent 能力、世界知識和推理性能上均實現國內與開源領域的領先。即日起登錄DeepSeek官網或官方App，便可與最新的DeepSeek-V4對話，探索1M超長上下文記憶的全新體驗。API服務已同步更新，通過修改model\\_name為deepseek-v4-pro或 deepseek-v4-flash即可調用。據早前市場消息，DeepSeek V4首次實現與華為昇騰等國產芯片的深度適配，標誌著中國AI產業在「去CUDA化」道路上邁出的關鍵一步。(ha/u)~阿思達克財經新聞網址: www.aastocks.com 條款 及 私隱政策",
+            "adoption": "REJECTED",
+            "adoptionReason": "本轮未读取；搜索摘要不是原文证据。",
+            "evidenceId": null
+          }
+        ]
+      }
+    ],
+    "verificationAudit": {
+      "modelCalls": [
+        {
+          "provider": "api.deepseek.com",
+          "model": "deepseek-flash",
+          "promptVersion": "a2-evidence-v4",
+          "temperature": null,
+          "thinkingMode": "DISABLED",
+          "generatedAt": "2026-10-25T04:09:39.042Z",
+          "id": "10960bb9-7e79-4907-ac97-687b8aa64403",
+          "purpose": "investigation-initial-decision",
+          "startedAt": "2026-10-25T04:09:37.729Z",
+          "durationMs": 1313,
+          "outcome": "SUCCEEDED",
+          "inputTokens": 1400,
+          "outputTokens": 150
+        },
+        {
+          "provider": "api.deepseek.com",
+          "model": "deepseek-flash",
+          "promptVersion": "a2-evidence-v4",
+          "temperature": null,
+          "thinkingMode": "DISABLED",
+          "generatedAt": "2026-10-25T04:09:42.291Z",
+          "id": "bd8f9559-9383-4e13-ae73-385a06194c71",
+          "purpose": "investigation-evidence-decision",
+          "startedAt": "2026-10-25T04:09:40.413Z",
+          "durationMs": 1878,
+          "outcome": "SUCCEEDED",
+          "inputTokens": 7132,
+          "outputTokens": 274
+        },
+        {
+          "provider": "api.deepseek.com",
+          "model": "deepseek-flash",
+          "promptVersion": "a2-evidence-v4",
+          "temperature": null,
+          "thinkingMode": "DISABLED",
+          "generatedAt": "2026-10-25T04:09:44.492Z",
+          "id": "cbb1fbe2-24a2-47a6-a8d3-69b472c7c8b3",
+          "purpose": "investigation-evidence-decision",
+          "startedAt": "2026-10-25T04:09:42.499Z",
+          "durationMs": 1993,
+          "outcome": "SUCCEEDED",
+          "inputTokens": 8615,
+          "outputTokens": 329
+        },
+        {
+          "provider": "api.deepseek.com",
+          "model": "deepseek-flash",
+          "promptVersion": "a2-evidence-v4",
+          "temperature": null,
+          "thinkingMode": "DISABLED",
+          "generatedAt": "2026-10-25T04:09:47.297Z",
+          "id": "a1270f89-9a80-4dcd-9c65-06bc3b286fb8",
+          "purpose": "investigation-evidence-decision",
+          "startedAt": "2026-10-25T04:09:44.677Z",
+          "durationMs": 2621,
+          "outcome": "SUCCEEDED",
+          "inputTokens": 9498,
+          "outputTokens": 375
+        },
+        {
+          "provider": "api.deepseek.com",
+          "model": "deepseek-flash",
+          "promptVersion": "a2-evidence-v4",
+          "temperature": null,
+          "thinkingMode": "DISABLED",
+          "generatedAt": "2026-10-25T04:09:52.128Z",
+          "id": "ab68a051-eb47-4087-b066-c6e82f097c5f",
+          "purpose": "investigation-evidence-decision",
+          "startedAt": "2026-10-25T04:09:49.698Z",
+          "durationMs": 2430,
+          "outcome": "SUCCEEDED",
+          "inputTokens": 15114,
+          "outputTokens": 368
+        },
+        {
+          "provider": "api.deepseek.com",
+          "model": "deepseek-flash",
+          "promptVersion": "a2-evidence-v4",
+          "temperature": null,
+          "thinkingMode": "DISABLED",
+          "generatedAt": "2026-10-25T04:09:54.406Z",
+          "id": "b3db8dba-24d7-46f7-bc1e-023c6cad4e66",
+          "purpose": "investigation-evidence-decision",
+          "startedAt": "2026-10-25T04:09:52.390Z",
+          "durationMs": 2016,
+          "outcome": "SUCCEEDED",
+          "inputTokens": 16599,
+          "outputTokens": 367
+        },
+        {
+          "provider": "api.deepseek.com",
+          "model": "deepseek-flash",
+          "promptVersion": "a2-evidence-v4",
+          "temperature": null,
+          "thinkingMode": "DISABLED",
+          "generatedAt": "2026-10-25T04:09:57.516Z",
+          "id": "74c18a60-1165-488e-94ff-84d05ecd8c01",
+          "purpose": "claim-extraction",
+          "startedAt": "2026-10-25T04:09:54.411Z",
+          "durationMs": 1391,
+          "outcome": "FAILED",
+          "inputTokens": 3444,
+          "outputTokens": 270,
+          "failureCategory": "output-schema"
+        },
+        {
+          "provider": "api.deepseek.com",
+          "model": "deepseek-flash",
+          "promptVersion": "a2-evidence-v4",
+          "temperature": null,
+          "thinkingMode": "DISABLED",
+          "generatedAt": "2026-10-25T04:09:57.516Z",
+          "id": "7fcdd908-ca8c-4c1b-b025-44e9241b394e",
+          "purpose": "claim-extraction:format-repair",
+          "startedAt": "2026-10-25T04:09:55.803Z",
+          "durationMs": 1713,
+          "outcome": "SUCCEEDED",
+          "inputTokens": 3504,
+          "outputTokens": 338
+        },
+        {
+          "provider": "api.deepseek.com",
+          "model": "deepseek-flash",
+          "promptVersion": "a2-evidence-v4",
+          "temperature": null,
+          "thinkingMode": "DISABLED",
+          "generatedAt": "2026-10-25T04:10:03.094Z",
+          "id": "e3326ede-0d3f-46a9-bc5b-de80aa54e2e2",
+          "purpose": "claim-evidence-verification",
+          "startedAt": "2026-10-25T04:09:57.517Z",
+          "durationMs": 5576,
+          "outcome": "SUCCEEDED",
+          "inputTokens": 5417,
+          "outputTokens": 1327
+        },
+        {
+          "provider": "api.deepseek.com",
+          "model": "deepseek-flash",
+          "promptVersion": "a2-evidence-v4",
+          "temperature": null,
+          "thinkingMode": "DISABLED",
+          "generatedAt": "2026-10-25T04:10:08.616Z",
+          "id": "77aa2943-eb1b-496a-90d5-f7125066943c",
+          "purpose": "claim-evidence-verification:validation-repair",
+          "startedAt": "2026-10-25T04:10:03.097Z",
+          "durationMs": 5519,
+          "outcome": "SUCCEEDED",
+          "inputTokens": 5490,
+          "outputTokens": 1429
+        },
+        {
+          "provider": "api.deepseek.com",
+          "model": "deepseek-flash",
+          "promptVersion": "a2-evidence-v4",
+          "temperature": null,
+          "thinkingMode": "DISABLED",
+          "generatedAt": "2026-10-25T04:10:11.265Z",
+          "id": "544830d1-ca61-4e48-820c-0fc1d16f56c2",
+          "purpose": "investigation-evidence-decision",
+          "startedAt": "2026-10-25T04:10:08.627Z",
+          "durationMs": 2638,
+          "outcome": "SUCCEEDED",
+          "inputTokens": 17898,
+          "outputTokens": 325
+        },
+        {
+          "provider": "api.deepseek.com",
+          "model": "deepseek-flash",
+          "promptVersion": "a2-evidence-v4",
+          "temperature": null,
+          "thinkingMode": "DISABLED",
+          "generatedAt": "2026-10-25T04:10:17.749Z",
+          "id": "9be686dd-c529-49f8-b869-c452eee94c0d",
+          "purpose": "investigation-evidence-decision",
+          "startedAt": "2026-10-25T04:10:14.961Z",
+          "durationMs": 2787,
+          "outcome": "SUCCEEDED",
+          "inputTokens": 24290,
+          "outputTokens": 369
+        },
+        {
+          "provider": "api.deepseek.com",
+          "model": "deepseek-flash",
+          "promptVersion": "a2-evidence-v4",
+          "temperature": null,
+          "thinkingMode": "DISABLED",
+          "generatedAt": "2026-10-25T04:10:20.752Z",
+          "id": "bf8b511c-00a9-453a-b7ad-a487a3bdfe59",
+          "purpose": "investigation-evidence-decision",
+          "startedAt": "2026-10-25T04:10:17.950Z",
+          "durationMs": 2802,
+          "outcome": "SUCCEEDED",
+          "inputTokens": 25338,
+          "outputTokens": 440
+        },
+        {
+          "provider": "api.deepseek.com",
+          "model": "deepseek-flash",
+          "promptVersion": "a2-evidence-v4",
+          "temperature": null,
+          "thinkingMode": "DISABLED",
+          "generatedAt": "2026-10-25T04:10:22.426Z",
+          "id": "2be27668-9c56-4f2d-9ad4-bcd9d2bc873f",
+          "purpose": "claim-extraction",
+          "startedAt": "2026-10-25T04:10:20.759Z",
+          "durationMs": 1667,
+          "outcome": "SUCCEEDED",
+          "inputTokens": 4071,
+          "outputTokens": 256
+        },
+        {
+          "provider": "api.deepseek.com",
+          "model": "deepseek-flash",
+          "promptVersion": "a2-evidence-v4",
+          "temperature": null,
+          "thinkingMode": "DISABLED",
+          "generatedAt": "2026-10-25T04:10:26.112Z",
+          "id": "ffbfe6ad-efa9-4097-b5a8-f07cddfd6648",
+          "purpose": "claim-evidence-verification",
+          "startedAt": "2026-10-25T04:10:22.427Z",
+          "durationMs": 3685,
+          "outcome": "SUCCEEDED",
+          "inputTokens": 5945,
+          "outputTokens": 961
+        },
+        {
+          "provider": "api.deepseek.com",
+          "model": "deepseek-flash",
+          "promptVersion": "a2-evidence-v4",
+          "temperature": null,
+          "thinkingMode": "DISABLED",
+          "generatedAt": "2026-10-25T04:10:27.097Z",
+          "id": "9a8edb64-22dd-43c1-9722-971ade10eaec",
+          "purpose": "cited-answer-selection",
+          "startedAt": "2026-10-25T04:10:26.126Z",
+          "durationMs": 971,
+          "outcome": "SUCCEEDED",
+          "inputTokens": 1370,
+          "outputTokens": 55
+        },
+        {
+          "provider": "api.deepseek.com",
+          "model": "deepseek-flash",
+          "promptVersion": "a2-evidence-v4",
+          "temperature": null,
+          "thinkingMode": "DISABLED",
+          "generatedAt": "2026-10-25T04:10:28.208Z",
+          "id": "73369b25-e2f1-447c-aa1c-03b040776aa5",
+          "purpose": "citation-semantic-support-check",
+          "startedAt": "2026-10-25T04:10:27.098Z",
+          "durationMs": 1111,
+          "outcome": "SUCCEEDED",
+          "inputTokens": 1744,
+          "outputTokens": 159
+        }
+      ],
+      "review": {
+        "status": "NOT_CONFIGURED",
+        "reason": "未配置第二模型；不声称完成独立模型复核或精度提高。",
+        "independentAssessment": null,
+        "findings": []
+      },
+      "citationChecks": [
+        {
+          "marker": "[1]",
+          "supported": true,
+          "reason": "原句明确写明：旧有两个模型名将于2026-07-24停止使用，且“当前阶段内，这两个模型名分别指向 deepseek-v4-flash 的非思考模式与思考模式”，即 deepseek-chat 对应 deepseek-v4-flash 的非思考模式，与主张一致；来源为官方更新日志，官方声称仅证明官方如此规定。"
+        },
+        {
+          "marker": "[2]",
+          "supported": true,
+          "reason": "原句表格模型列为 deepseek-flash 与 deepseek-v4-pro，未出现 deepseek-chat，也未给出 deepseek-chat 的上下文长度、最大输出或价格，主张限于该表格摘录范围，与原句相符。"
+        }
+      ],
+      "followup": {
+        "queriesUsed": 2,
+        "maxQueries": 2,
+        "stopReason": "模型选择结束，已执行3轮搜索、6次读取；具体决策理由保留在记录中，事实与未解决项以最终原句核查为准。"
+      },
+      "investigationLoop": {
+        "startedAt": "2026-10-25T04:09:37.720Z",
+        "durationMs": 50491,
+        "totalBudgetMs": 180000,
+        "answerReserveMs": 45000,
+        "maxSearchRounds": 3,
+        "searchRounds": 3,
+        "maxReads": 10,
+        "readsUsed": 6,
+        "stopReason": "模型选择结束，已执行3轮搜索、6次读取；具体决策理由保留在记录中，事实与未解决项以最终原句核查为准。",
+        "httpAttempts": [
+          {
+            "url": "https://api.wsa.cloud.tencent.com/SearchPro",
+            "method": "POST",
+            "startedAt": "2026-10-25T04:09:39.049Z",
+            "finishedAt": "2026-10-25T04:09:39.180Z",
+            "requestSent": true,
+            "status": 200,
+            "error": null,
+            "ownerId": "68ca3b96-de5c-48bd-90dc-c8282ac6c3fc"
+          },
+          {
+            "url": "https://api.tavily.com/search",
+            "method": "POST",
+            "startedAt": "2026-10-25T04:09:39.048Z",
+            "finishedAt": "2026-10-25T04:09:40.411Z",
+            "requestSent": true,
+            "status": 200,
+            "error": null,
+            "ownerId": "fda8064b-d601-4d88-aa37-1317c33327b6"
+          },
+          {
+            "url": "https://api-docs.deepseek.com/zh-cn/quick_start/pricing",
+            "method": "GET",
+            "startedAt": "2026-10-25T04:09:42.296Z",
+            "finishedAt": "2026-10-25T04:09:42.486Z",
+            "requestSent": true,
+            "status": 302,
+            "error": null,
+            "ownerId": "afc900e1-b5df-4c67-bd0f-5a91538bff19"
+          },
+          {
+            "url": "https://api-docs.deepseek.com/zh-cn/quick_start/pricing/",
+            "method": "GET",
+            "startedAt": "2026-10-25T04:09:42.468Z",
+            "finishedAt": "2026-10-25T04:09:42.486Z",
+            "requestSent": true,
+            "status": 200,
+            "error": null,
+            "ownerId": "afc900e1-b5df-4c67-bd0f-5a91538bff19"
+          },
+          {
+            "url": "https://api-docs.deepseek.com/quick_start/pricing",
+            "method": "GET",
+            "startedAt": "2026-10-25T04:09:42.296Z",
+            "finishedAt": "2026-10-25T04:09:42.475Z",
+            "requestSent": true,
+            "status": 302,
+            "error": null,
+            "ownerId": "5d39d865-7c5e-4fb7-8947-e7d8bf1f85bc"
+          },
+          {
+            "url": "https://api-docs.deepseek.com/quick_start/pricing/",
+            "method": "GET",
+            "startedAt": "2026-10-25T04:09:42.459Z",
+            "finishedAt": "2026-10-25T04:09:42.475Z",
+            "requestSent": true,
+            "status": 200,
+            "error": null,
+            "ownerId": "5d39d865-7c5e-4fb7-8947-e7d8bf1f85bc"
+          },
+          {
+            "url": "https://api-docs.deepseek.com/zh-cn/quick_start/pricing",
+            "method": "GET",
+            "startedAt": "2026-10-25T04:09:44.498Z",
+            "finishedAt": "2026-10-25T04:09:44.668Z",
+            "requestSent": true,
+            "status": 302,
+            "error": null,
+            "ownerId": "9f8d41c7-9571-48ce-8b3c-fcfc2078d383"
+          },
+          {
+            "url": "https://api-docs.deepseek.com/zh-cn/quick_start/pricing/",
+            "method": "GET",
+            "startedAt": "2026-10-25T04:09:44.652Z",
+            "finishedAt": "2026-10-25T04:09:44.668Z",
+            "requestSent": true,
+            "status": 200,
+            "error": null,
+            "ownerId": "9f8d41c7-9571-48ce-8b3c-fcfc2078d383"
+          },
+          {
+            "url": "https://api.wsa.cloud.tencent.com/SearchPro",
+            "method": "POST",
+            "startedAt": "2026-10-25T04:09:47.308Z",
+            "finishedAt": "2026-10-25T04:09:47.644Z",
+            "requestSent": true,
+            "status": 200,
+            "error": null,
+            "ownerId": "5e05cfa7-99f1-4671-8027-0ce856881dc1"
+          },
+          {
+            "url": "https://api.tavily.com/search",
+            "method": "POST",
+            "startedAt": "2026-10-25T04:09:47.307Z",
+            "finishedAt": "2026-10-25T04:09:49.695Z",
+            "requestSent": true,
+            "status": 200,
+            "error": null,
+            "ownerId": "c428cb06-9553-48ae-b9af-588d9928e35f"
+          },
+          {
+            "url": "https://api-docs.deepseek.com/zh-cn/quick_start/pricing",
+            "method": "GET",
+            "startedAt": "2026-10-25T04:09:52.133Z",
+            "finishedAt": "2026-10-25T04:09:52.341Z",
+            "requestSent": true,
+            "status": 302,
+            "error": null,
+            "ownerId": "2e31713d-7008-4888-b358-09d301d01e9f"
+          },
+          {
+            "url": "https://api-docs.deepseek.com/zh-cn/quick_start/pricing/",
+            "method": "GET",
+            "startedAt": "2026-10-25T04:09:52.326Z",
+            "finishedAt": "2026-10-25T04:09:52.341Z",
+            "requestSent": true,
+            "status": 200,
+            "error": null,
+            "ownerId": "2e31713d-7008-4888-b358-09d301d01e9f"
+          },
+          {
+            "url": "https://api-docs.deepseek.com/zh-cn/updates",
+            "method": "GET",
+            "startedAt": "2026-10-25T04:09:52.133Z",
+            "finishedAt": "2026-10-25T04:09:52.360Z",
+            "requestSent": true,
+            "status": 302,
+            "error": null,
+            "ownerId": "d7e8a41f-835e-46e3-b949-e597fd5c27db"
+          },
+          {
+            "url": "https://api-docs.deepseek.com/zh-cn/updates/",
+            "method": "GET",
+            "startedAt": "2026-10-25T04:09:52.316Z",
+            "finishedAt": "2026-10-25T04:09:52.360Z",
+            "requestSent": true,
+            "status": 200,
+            "error": null,
+            "ownerId": "d7e8a41f-835e-46e3-b949-e597fd5c27db"
+          },
+          {
+            "url": "https://api.wsa.cloud.tencent.com/SearchPro",
+            "method": "POST",
+            "startedAt": "2026-10-25T04:10:11.276Z",
+            "finishedAt": "2026-10-25T04:10:11.775Z",
+            "requestSent": true,
+            "status": 200,
+            "error": null,
+            "ownerId": "8eb8b99c-a394-454b-b4cc-4f21554a23db"
+          },
+          {
+            "url": "https://api.tavily.com/search",
+            "method": "POST",
+            "startedAt": "2026-10-25T04:10:11.275Z",
+            "finishedAt": "2026-10-25T04:10:14.959Z",
+            "requestSent": true,
+            "status": 200,
+            "error": null,
+            "ownerId": "7baf0781-7b7a-4660-9fa4-8f11767f7174"
+          },
+          {
+            "url": "https://api-docs.deepseek.com/zh-cn/quick_start/pricing",
+            "method": "GET",
+            "startedAt": "2026-10-25T04:10:17.755Z",
+            "finishedAt": "2026-10-25T04:10:17.940Z",
+            "requestSent": true,
+            "status": 302,
+            "error": null,
+            "ownerId": "48e4ad5d-6e73-47de-9d18-ba6753b41901"
+          },
+          {
+            "url": "https://api-docs.deepseek.com/zh-cn/quick_start/pricing/",
+            "method": "GET",
+            "startedAt": "2026-10-25T04:10:17.914Z",
+            "finishedAt": "2026-10-25T04:10:17.940Z",
+            "requestSent": true,
+            "status": 200,
+            "error": null,
+            "ownerId": "48e4ad5d-6e73-47de-9d18-ba6753b41901"
+          }
+        ],
+        "collectionDiagnostics": [],
+        "decisions": [
+          {
+            "step": 1,
+            "decidedAt": "2026-10-25T04:09:39.042Z",
+            "remainingMs": 178677,
+            "decision": {
+              "action": "SEARCH",
+              "query": "DeepSeek API deepseek-chat 模型 上下文长度 最大输出 价格 官方文档",
+              "entries": [
+                "yuanbao",
+                "tavily"
+              ],
+              "readUrls": [],
+              "reason": "尚无任何证据，需要先检索 DeepSeek 官方 API 文档中 deepseek-chat 的上下文长度、最大输出与价格信息。首轮按规则使用元宝，并同时用 tavily 检索官方资料入口。",
+              "observedGap": "全部关键字段（上下文长度、最大输出、价格）均未知，且无已返回来源可读。",
+              "basisEvidenceIds": [],
+              "basisRecordIds": [],
+              "clarification": null,
+              "discoveredIdentity": null
+            },
+            "availableEvidenceIds": [],
+            "availableRecordIds": [],
+            "outcome": "EXECUTED",
+            "detail": "实际入口：yuanbao,tavily；返回记录：68ca3b96-de5c-48bd-90dc-c8282ac6c3fc:SUCCEEDED,fda8064b-d601-4d88-aa37-1317c33327b6:SUCCEEDED。"
+          },
+          {
+            "step": 2,
+            "decidedAt": "2026-10-25T04:09:42.291Z",
+            "remainingMs": 175428,
+            "decision": {
+              "action": "READ",
+              "query": "deepseek-chat 上下文长度 最大输出 价格",
+              "entries": [],
+              "readUrls": [
+                "https://api-docs.deepseek.com/zh-cn/quick_start/pricing",
+                "https://api-docs.deepseek.com/quick_start/pricing"
+              ],
+              "reason": "搜索已返回 DeepSeek 官方 API 文档的“模型 & 价格”页，摘要中似乎直接包含 deepseek-chat 的上下文长度、最大输出和价格，但摘要不能作为证据，需要读取原文确认。中英文两页互为对照，用于核对当前版本与价格口径。",
+              "observedGap": "尚无任何已读原句证据；需确认当前定价页中 deepseek-chat 对应的模型版本、上下文长度、最大输出长度及输入/输出价格。Tavily 摘要还显示页面可能已更新为 V4 系列模型与峰谷定价，需以原文核实 deepseek-chat 是否仍在当前表中。",
+              "basisEvidenceIds": [],
+              "basisRecordIds": [
+                "68ca3b96-de5c-48bd-90dc-c8282ac6c3fc",
+                "fda8064b-d601-4d88-aa37-1317c33327b6"
+              ],
+              "clarification": null,
+              "discoveredIdentity": null
+            },
+            "availableEvidenceIds": [],
+            "availableRecordIds": [
+              "68ca3b96-de5c-48bd-90dc-c8282ac6c3fc",
+              "fda8064b-d601-4d88-aa37-1317c33327b6"
+            ],
+            "outcome": "EXECUTED",
+            "detail": "已尝试读取：https://api-docs.deepseek.com/zh-cn/quick_start/pricing,https://api-docs.deepseek.com/quick_start/pricing；累计保存2份原文状态。"
+          },
+          {
+            "step": 3,
+            "decidedAt": "2026-10-25T04:09:44.492Z",
+            "remainingMs": 173227,
+            "decision": {
+              "action": "READ",
+              "query": "deepseek-chat 128K 价格",
+              "entries": [],
+              "readUrls": [
+                "https://api-docs.deepseek.com/zh-cn/quick_start/pricing"
+              ],
+              "reason": "当前官方定价页已读原句显示表格首列已是 deepseek-flash/deepseek-v4-pro（上下文1M、输出384K、峰谷价），未见 deepseek-chat 行；但搜索摘要中曾出现 deepseek-chat 128K/4K-8K/0.2-2-3元 的旧表内容。需对同一官方定价页做定向重读，用“deepseek-chat”定位是否仍存在旧模型行或迁移说明，避免把 V4 现价误当 deepseek-chat 现价。",
+              "observedGap": "已读两份官方定价页均只覆盖 deepseek-flash / deepseek-v4-pro 的上下文1M、输出384K与峰谷价格；deepseek-chat 的当前上下文长度、最大输出与价格尚未有已读原句确认。",
+              "basisEvidenceIds": [
+                "afc900e1-b5df-4c67-bd0f-5a91538bff19",
+                "5d39d865-7c5e-4fb7-8947-e7d8bf1f85bc"
+              ],
+              "basisRecordIds": [
+                "68ca3b96-de5c-48bd-90dc-c8282ac6c3fc"
+              ],
+              "clarification": null,
+              "discoveredIdentity": null
+            },
+            "availableEvidenceIds": [
+              "5d39d865-7c5e-4fb7-8947-e7d8bf1f85bc",
+              "afc900e1-b5df-4c67-bd0f-5a91538bff19"
+            ],
+            "availableRecordIds": [
+              "68ca3b96-de5c-48bd-90dc-c8282ac6c3fc",
+              "fda8064b-d601-4d88-aa37-1317c33327b6"
+            ],
+            "outcome": "EXECUTED",
+            "detail": "已尝试读取：https://api-docs.deepseek.com/zh-cn/quick_start/pricing；累计保存3份原文状态。"
+          },
+          {
+            "step": 4,
+            "decidedAt": "2026-10-25T04:09:47.297Z",
+            "remainingMs": 170422,
+            "decision": {
+              "action": "SEARCH",
+              "query": "site:api-docs.deepseek.com deepseek-chat 上下文长度 128K 输出长度 价格",
+              "entries": [
+                "yuanbao",
+                "tavily"
+              ],
+              "readUrls": [],
+              "reason": "已读官方现价页只列 deepseek-flash / deepseek-v4-pro（1M 上下文、384K 输出、峰谷价），未见 deepseek-chat 行。定向重读同页仍未定位到 deepseek-chat 条款。搜索摘要提示存在明确说明 deepseek-chat 对应 DeepSeek-V3.2（128K 上下文，输出默认4K/最大8K，输入2元/输出3元）的官方文档段落，需找到仍含该模型行的官方页面或迁移/下架说明原文。",
+              "observedGap": "缺 deepseek-chat 当前（历史归档或仍有效）上下文长度、最大输出长度与价格的官方原句；现价页只覆盖 V4 系列模型，且可能已把 deepseek-chat 移出表格或改名。",
+              "basisEvidenceIds": [
+                "afc900e1-b5df-4c67-bd0f-5a91538bff19",
+                "5d39d865-7c5e-4fb7-8947-e7d8bf1f85bc",
+                "9f8d41c7-9571-48ce-8b3c-fcfc2078d383"
+              ],
+              "basisRecordIds": [
+                "68ca3b96-de5c-48bd-90dc-c8282ac6c3fc",
+                "fda8064b-d601-4d88-aa37-1317c33327b6"
+              ],
+              "clarification": null,
+              "discoveredIdentity": null
+            },
+            "availableEvidenceIds": [
+              "5d39d865-7c5e-4fb7-8947-e7d8bf1f85bc",
+              "afc900e1-b5df-4c67-bd0f-5a91538bff19",
+              "9f8d41c7-9571-48ce-8b3c-fcfc2078d383"
+            ],
+            "availableRecordIds": [
+              "68ca3b96-de5c-48bd-90dc-c8282ac6c3fc",
+              "fda8064b-d601-4d88-aa37-1317c33327b6"
+            ],
+            "outcome": "EXECUTED",
+            "detail": "实际入口：yuanbao,tavily；返回记录：5e05cfa7-99f1-4671-8027-0ce856881dc1:SUCCEEDED,c428cb06-9553-48ae-b9af-588d9928e35f:SUCCEEDED。"
+          },
+          {
+            "step": 5,
+            "decidedAt": "2026-10-25T04:09:52.128Z",
+            "remainingMs": 165591,
+            "decision": {
+              "action": "READ",
+              "query": "deepseek-chat",
+              "entries": [],
+              "readUrls": [
+                "https://api-docs.deepseek.com/zh-cn/quick_start/pricing",
+                "https://api-docs.deepseek.com/zh-cn/updates"
+              ],
+              "reason": "第二份元宝记录的原句明确写出 deepseek-chat 对应 DeepSeek-V3.2、上下文128K、输出默认4K最大8K、输入2元输出3元，但现有已读证据只为该页保存了表格表头段，未保存模型行原文；更新日志页则需要确认当前是否已把 deepseek-chat 迁移至 V4 系列（若是，则旧参数只属历史版本）。定向重读这两页以取得可核查原句。",
+              "observedGap": "缺 deepseek-chat 行的已读原句（上下文长度、默认/最大输出、输入与输出单价），以及该模型名当前是否仍对应 V3.2 还是已随 V4 上线改名/迁移的原文说明。",
+              "basisEvidenceIds": [
+                "9f8d41c7-9571-48ce-8b3c-fcfc2078d383",
+                "afc900e1-b5df-4c67-bd0f-5a91538bff19",
+                "5d39d865-7c5e-4fb7-8947-e7d8bf1f85bc"
+              ],
+              "basisRecordIds": [
+                "5e05cfa7-99f1-4671-8027-0ce856881dc1",
+                "c428cb06-9553-48ae-b9af-588d9928e35f"
+              ],
+              "clarification": null,
+              "discoveredIdentity": null
+            },
+            "availableEvidenceIds": [
+              "5d39d865-7c5e-4fb7-8947-e7d8bf1f85bc",
+              "afc900e1-b5df-4c67-bd0f-5a91538bff19",
+              "9f8d41c7-9571-48ce-8b3c-fcfc2078d383"
+            ],
+            "availableRecordIds": [
+              "68ca3b96-de5c-48bd-90dc-c8282ac6c3fc",
+              "fda8064b-d601-4d88-aa37-1317c33327b6",
+              "5e05cfa7-99f1-4671-8027-0ce856881dc1",
+              "c428cb06-9553-48ae-b9af-588d9928e35f"
+            ],
+            "outcome": "EXECUTED",
+            "detail": "已尝试读取：https://api-docs.deepseek.com/zh-cn/quick_start/pricing,https://api-docs.deepseek.com/zh-cn/updates；累计保存5份原文状态。"
+          },
+          {
+            "step": 6,
+            "decidedAt": "2026-10-25T04:09:54.406Z",
+            "remainingMs": 163314,
+            "decision": {
+              "action": "FINISH",
+              "query": null,
+              "entries": [],
+              "readUrls": [],
+              "reason": "已读官方原文证据：更新日志明确 deepseek-chat 当前阶段指向 deepseek-v4-flash 的非思考模式（该模型名为旧 API 模型名，将于 2026-07-24 停用）；模型&价格官方页显示 deepseek-flash 上下文长度1M、最大输出384K，价格（百万tokens）缓存命中空闲0.02元/高峰0.04元、未命中空闲1元/高峰2元、输出空闲4元/高峰8元。搜索摘要另见 deepseek-chat 曾对应 DeepSeek-V3.2（128K、默认4K/最大8K、输入2元/输出3元）的旧表段落，但该表已不在现行读取到的价格表中，只能作为历史版本说明，不能冒充当前规格。已覆盖问题所需的上下文、最大输出与价格，并区分当前映射与历史版本。",
+              "observedGap": null,
+              "basisEvidenceIds": [
+                "d7e8a41f-835e-46e3-b949-e597fd5c27db",
+                "afc900e1-b5df-4c67-bd0f-5a91538bff19",
+                "5d39d865-7c5e-4fb7-8947-e7d8bf1f85bc"
+              ],
+              "basisRecordIds": [
+                "5e05cfa7-99f1-4671-8027-0ce856881dc1",
+                "68ca3b96-de5c-48bd-90dc-c8282ac6c3fc"
+              ],
+              "clarification": null,
+              "discoveredIdentity": null
+            },
+            "availableEvidenceIds": [
+              "5d39d865-7c5e-4fb7-8947-e7d8bf1f85bc",
+              "afc900e1-b5df-4c67-bd0f-5a91538bff19",
+              "9f8d41c7-9571-48ce-8b3c-fcfc2078d383",
+              "2e31713d-7008-4888-b358-09d301d01e9f",
+              "d7e8a41f-835e-46e3-b949-e597fd5c27db"
+            ],
+            "availableRecordIds": [
+              "68ca3b96-de5c-48bd-90dc-c8282ac6c3fc",
+              "fda8064b-d601-4d88-aa37-1317c33327b6",
+              "5e05cfa7-99f1-4671-8027-0ce856881dc1",
+              "c428cb06-9553-48ae-b9af-588d9928e35f"
+            ],
+            "outcome": "REJECTED",
+            "detail": "逐主张核查发现缺口或未决项，已将核查结果交回下一轮决策；由模型决定定向补查或如实结束。"
+          },
+          {
+            "step": 7,
+            "decidedAt": "2026-10-25T04:10:11.265Z",
+            "remainingMs": 146455,
+            "decision": {
+              "action": "SEARCH",
+              "query": "DeepSeek API 模型 deepseek-v4-flash 上下文长度 最大输出 价格 峰谷 官方",
+              "entries": [
+                "yuanbao",
+                "tavily"
+              ],
+              "readUrls": [],
+              "reason": "已读原句显示 deepseek-chat 现阶段指向 deepseek-v4-flash 的非思考模式，但已保存的价格页摘录只覆盖 deepseek-flash / deepseek-v4-pro，未给出 deepseek-v4-flash 的上下文、最大输出与价格数值。需按该具体模型名补查官方页面中 deepseek-v4-flash 行，才能把上下文长度、最大输出与价格对应到 deepseek-chat 当前映射。",
+              "observedGap": "缺 deepseek-v4-flash（deepseek-chat 当前所指向模型）的官方上下文长度、最大输出与价格原句；现有价格页摘录仅覆盖 deepseek-flash 与 deepseek-v4-pro。",
+              "basisEvidenceIds": [
+                "d7e8a41f-835e-46e3-b949-e597fd5c27db",
+                "afc900e1-b5df-4c67-bd0f-5a91538bff19"
+              ],
+              "basisRecordIds": [
+                "c428cb06-9553-48ae-b9af-588d9928e35f",
+                "5e05cfa7-99f1-4671-8027-0ce856881dc1"
+              ],
+              "clarification": null,
+              "discoveredIdentity": null
+            },
+            "availableEvidenceIds": [
+              "5d39d865-7c5e-4fb7-8947-e7d8bf1f85bc",
+              "afc900e1-b5df-4c67-bd0f-5a91538bff19",
+              "9f8d41c7-9571-48ce-8b3c-fcfc2078d383",
+              "2e31713d-7008-4888-b358-09d301d01e9f",
+              "d7e8a41f-835e-46e3-b949-e597fd5c27db"
+            ],
+            "availableRecordIds": [
+              "68ca3b96-de5c-48bd-90dc-c8282ac6c3fc",
+              "fda8064b-d601-4d88-aa37-1317c33327b6",
+              "5e05cfa7-99f1-4671-8027-0ce856881dc1",
+              "c428cb06-9553-48ae-b9af-588d9928e35f"
+            ],
+            "outcome": "EXECUTED",
+            "detail": "实际入口：yuanbao,tavily；返回记录：8eb8b99c-a394-454b-b4cc-4f21554a23db:SUCCEEDED,7baf0781-7b7a-4660-9fa4-8f11767f7174:SUCCEEDED。"
+          },
+          {
+            "step": 8,
+            "decidedAt": "2026-10-25T04:10:17.749Z",
+            "remainingMs": 139970,
+            "decision": {
+              "action": "READ",
+              "query": "deepseek-chat 128K 默认4K 最大8K",
+              "entries": [],
+              "readUrls": [
+                "https://api-docs.deepseek.com/zh-cn/quick_start/pricing"
+              ],
+              "reason": "最新一轮元宝记录的原句已直接给出 deepseek-chat 行：对应 DeepSeek-V3.2（128K 上下文）、输出默认 4K/最大 8K、输入缓存命中 0.2 元/未命中 2 元、输出 3 元。已读证据只保存了该页表头段，需对该官方页定向重读 deepseek-chat 行取得可核查原句，并确认它与现行 deepseek-flash 表格的并存关系。",
+              "observedGap": "缺 deepseek-chat 模型行的已读原句（128K 上下文、默认4K/最大8K 输出、0.2/2/3 元每百万 tokens 价格），以及它相对现行 deepseek-flash 表格是否仍为有效条目。",
+              "basisEvidenceIds": [
+                "2e31713d-7008-4888-b358-09d301d01e9f",
+                "afc900e1-b5df-4c67-bd0f-5a91538bff19",
+                "d7e8a41f-835e-46e3-b949-e597fd5c27db"
+              ],
+              "basisRecordIds": [
+                "8eb8b99c-a394-454b-b4cc-4f21554a23db",
+                "5e05cfa7-99f1-4671-8027-0ce856881dc1"
+              ],
+              "clarification": null,
+              "discoveredIdentity": null
+            },
+            "availableEvidenceIds": [
+              "5d39d865-7c5e-4fb7-8947-e7d8bf1f85bc",
+              "afc900e1-b5df-4c67-bd0f-5a91538bff19",
+              "9f8d41c7-9571-48ce-8b3c-fcfc2078d383",
+              "2e31713d-7008-4888-b358-09d301d01e9f",
+              "d7e8a41f-835e-46e3-b949-e597fd5c27db"
+            ],
+            "availableRecordIds": [
+              "68ca3b96-de5c-48bd-90dc-c8282ac6c3fc",
+              "fda8064b-d601-4d88-aa37-1317c33327b6",
+              "5e05cfa7-99f1-4671-8027-0ce856881dc1",
+              "c428cb06-9553-48ae-b9af-588d9928e35f",
+              "8eb8b99c-a394-454b-b4cc-4f21554a23db",
+              "7baf0781-7b7a-4660-9fa4-8f11767f7174"
+            ],
+            "outcome": "EXECUTED",
+            "detail": "已尝试读取：https://api-docs.deepseek.com/zh-cn/quick_start/pricing；累计保存6份原文状态。"
+          },
+          {
+            "step": 9,
+            "decidedAt": "2026-10-25T04:10:20.752Z",
+            "remainingMs": 136967,
+            "decision": {
+              "action": "FINISH",
+              "query": null,
+              "entries": [],
+              "readUrls": [],
+              "reason": "已读官方原文显示：更新日志明确 deepseek-chat 当前阶段指向 deepseek-v4-flash 的非思考模式，且该旧模型名将于 2026-07-24 停用；现行官方模型&价格页列出 deepseek-flash 上下文长度 1M、最大输出 384K，价格（每百万 tokens）缓存命中空闲 0.02 元/高峰 0.04 元、未命中空闲 1 元/高峰 2 元、输出空闲 4 元/高峰 8 元。deepseek-chat 行（DeepSeek-V3.2，128K，默认4K/最大8K，0.2/2/3 元）在搜索摘要中出现，但已读原句中未取到该行，故仅作历史版本说明，不冒充当前规格。上下文、最大输出与价格三项均已覆盖并区分当前映射与历史版本。",
+              "observedGap": "已读原句未直接保存 deepseek-chat 历史行（V3.2 128K、4K/8K、0.2/2/3 元）的原文，该数值仅见于搜索摘要，不作事实性引用；当前映射下的价格与规格已由官方页面原句覆盖。",
+              "basisEvidenceIds": [
+                "d7e8a41f-835e-46e3-b949-e597fd5c27db",
+                "afc900e1-b5df-4c67-bd0f-5a91538bff19",
+                "48e4ad5d-6e73-47de-9d18-ba6753b41901"
+              ],
+              "basisRecordIds": [
+                "8eb8b99c-a394-454b-b4cc-4f21554a23db",
+                "5e05cfa7-99f1-4671-8027-0ce856881dc1"
+              ],
+              "clarification": null,
+              "discoveredIdentity": null
+            },
+            "availableEvidenceIds": [
+              "5d39d865-7c5e-4fb7-8947-e7d8bf1f85bc",
+              "afc900e1-b5df-4c67-bd0f-5a91538bff19",
+              "9f8d41c7-9571-48ce-8b3c-fcfc2078d383",
+              "2e31713d-7008-4888-b358-09d301d01e9f",
+              "d7e8a41f-835e-46e3-b949-e597fd5c27db",
+              "48e4ad5d-6e73-47de-9d18-ba6753b41901"
+            ],
+            "availableRecordIds": [
+              "68ca3b96-de5c-48bd-90dc-c8282ac6c3fc",
+              "fda8064b-d601-4d88-aa37-1317c33327b6",
+              "5e05cfa7-99f1-4671-8027-0ce856881dc1",
+              "c428cb06-9553-48ae-b9af-588d9928e35f",
+              "8eb8b99c-a394-454b-b4cc-4f21554a23db",
+              "7baf0781-7b7a-4660-9fa4-8f11767f7174"
+            ],
+            "outcome": "STOPPED",
+            "detail": "已读官方原文显示：更新日志明确 deepseek-chat 当前阶段指向 deepseek-v4-flash 的非思考模式，且该旧模型名将于 2026-07-24 停用；现行官方模型&价格页列出 deepseek-flash 上下文长度 1M、最大输出 384K，价格（每百万 tokens）缓存命中空闲 0.02 元/高峰 0.04 元、未命中空闲 1 元/高峰 2 元、输出空闲 4 元/高峰 8 元。deepseek-chat 行（DeepSeek-V3.2，128K，默认4K/最大8K，0.2/2/3 元）在搜索摘要中出现，但已读原句中未取到该行，故仅作历史版本说明，不冒充当前规格。上下文、最大输出与价格三项均已覆盖并区分当前映射与历史版本。"
+          }
+        ],
+        "collectionCalls": [
+          {
+            "operation": "search:yuanbao",
+            "target": "DeepSeek API deepseek-chat 模型 上下文长度 最大输出 价格 官方文档",
+            "startedAt": "2026-10-25T04:09:39.047Z",
+            "durationMs": 135,
+            "outcome": "SUCCEEDED",
+            "resultId": "68ca3b96-de5c-48bd-90dc-c8282ac6c3fc",
+            "error": null
+          },
+          {
+            "operation": "search:tavily",
+            "target": "DeepSeek API deepseek-chat 模型 上下文长度 最大输出 价格 官方文档",
+            "startedAt": "2026-10-25T04:09:39.047Z",
+            "durationMs": 1365,
+            "outcome": "SUCCEEDED",
+            "resultId": "fda8064b-d601-4d88-aa37-1317c33327b6",
+            "error": null
+          },
+          {
+            "operation": "read",
+            "target": "https://api-docs.deepseek.com/quick_start/pricing",
+            "startedAt": "2026-10-25T04:09:42.296Z",
+            "durationMs": 189,
+            "outcome": "SUCCEEDED",
+            "resultId": "5d39d865-7c5e-4fb7-8947-e7d8bf1f85bc",
+            "error": null
+          },
+          {
+            "operation": "read",
+            "target": "https://api-docs.deepseek.com/zh-cn/quick_start/pricing",
+            "startedAt": "2026-10-25T04:09:42.296Z",
+            "durationMs": 202,
+            "outcome": "SUCCEEDED",
+            "resultId": "afc900e1-b5df-4c67-bd0f-5a91538bff19",
+            "error": null
+          },
+          {
+            "operation": "read",
+            "target": "https://api-docs.deepseek.com/zh-cn/quick_start/pricing",
+            "startedAt": "2026-10-25T04:09:44.498Z",
+            "durationMs": 178,
+            "outcome": "SUCCEEDED",
+            "resultId": "9f8d41c7-9571-48ce-8b3c-fcfc2078d383",
+            "error": null
+          },
+          {
+            "operation": "search:yuanbao",
+            "target": "site:api-docs.deepseek.com deepseek-chat 上下文长度 128K 输出长度 价格",
+            "startedAt": "2026-10-25T04:09:47.306Z",
+            "durationMs": 339,
+            "outcome": "SUCCEEDED",
+            "resultId": "5e05cfa7-99f1-4671-8027-0ce856881dc1",
+            "error": null
+          },
+          {
+            "operation": "search:tavily",
+            "target": "site:api-docs.deepseek.com deepseek-chat 上下文长度 128K 输出长度 价格",
+            "startedAt": "2026-10-25T04:09:47.307Z",
+            "durationMs": 2390,
+            "outcome": "SUCCEEDED",
+            "resultId": "c428cb06-9553-48ae-b9af-588d9928e35f",
+            "error": null
+          },
+          {
+            "operation": "read",
+            "target": "https://api-docs.deepseek.com/zh-cn/quick_start/pricing",
+            "startedAt": "2026-10-25T04:09:52.133Z",
+            "durationMs": 215,
+            "outcome": "SUCCEEDED",
+            "resultId": "2e31713d-7008-4888-b358-09d301d01e9f",
+            "error": null
+          },
+          {
+            "operation": "read",
+            "target": "https://api-docs.deepseek.com/zh-cn/updates",
+            "startedAt": "2026-10-25T04:09:52.133Z",
+            "durationMs": 255,
+            "outcome": "SUCCEEDED",
+            "resultId": "d7e8a41f-835e-46e3-b949-e597fd5c27db",
+            "error": null
+          },
+          {
+            "operation": "search:yuanbao",
+            "target": "DeepSeek API 模型 deepseek-v4-flash 上下文长度 最大输出 价格 峰谷 官方",
+            "startedAt": "2026-10-25T04:10:11.275Z",
+            "durationMs": 502,
+            "outcome": "SUCCEEDED",
+            "resultId": "8eb8b99c-a394-454b-b4cc-4f21554a23db",
+            "error": null
+          },
+          {
+            "operation": "search:tavily",
+            "target": "DeepSeek API 模型 deepseek-v4-flash 上下文长度 最大输出 价格 峰谷 官方",
+            "startedAt": "2026-10-25T04:10:11.275Z",
+            "durationMs": 3686,
+            "outcome": "SUCCEEDED",
+            "resultId": "7baf0781-7b7a-4660-9fa4-8f11767f7174",
+            "error": null
+          },
+          {
+            "operation": "read",
+            "target": "https://api-docs.deepseek.com/zh-cn/quick_start/pricing",
+            "startedAt": "2026-10-25T04:10:17.754Z",
+            "durationMs": 195,
+            "outcome": "SUCCEEDED",
+            "resultId": "48e4ad5d-6e73-47de-9d18-ba6753b41901",
+            "error": null
+          }
+        ]
+      }
+    },
+    "generatedAt": "2026-10-25T04:10:28.210Z",
+    "contractVersion": "1.0.0"
+  },
+  "answers": [
+    {
+      "id": "47b7f4b4-f937-4351-b280-2e364d77d4b3",
+      "snapshotId": "bdaefcb0-edad-428e-ac4a-5f72a6801808",
+      "body": "根据 DeepSeek 官方更新日志，当前阶段 deepseek-chat 模型名指向 deepseek-v4-flash 的非思考模式。\n适用范围：DeepSeek API，2026-07-24之前的当前阶段 [1]\n\nDeepSeek 官方定价页显示的模型表中为 deepseek-flash 与 deepseek-v4-pro，未直接列出 deepseek-chat 的上下文长度、最大输出与价格。\n适用范围：https://api-docs.deepseek.com/zh-cn/quick_start/pricing 所读表格摘录 [2]",
+      "citations": [
+        {
+          "marker": "[1]",
+          "claimIds": [
+            "839021d7-9872-4c80-a2e4-251a8b614080"
+          ],
+          "evidenceIds": [
+            "d7e8a41f-835e-46e3-b949-e597fd5c27db"
+          ],
+          "quotes": [
+            {
+              "evidenceId": "d7e8a41f-835e-46e3-b949-e597fd5c27db",
+              "originalExcerpt": "旧有的 API 接口的两个模型名 deepseek-chat 与 deepseek-reasoner 将于三个月后（2026-07-24）停止使用。当前阶段内，这两个模型名分别指向 deepseek-v4-flash 的非思考模式与思考模式。"
+            }
+          ]
+        },
+        {
+          "marker": "[2]",
+          "claimIds": [
+            "9a07b275-4b4b-49fb-b37d-ecb6026cd1f9"
+          ],
+          "evidenceIds": [
+            "afc900e1-b5df-4c67-bd0f-5a91538bff19"
+          ],
+          "quotes": [
+            {
+              "evidenceId": "afc900e1-b5df-4c67-bd0f-5a91538bff19",
+              "originalExcerpt": "模型deepseek-flash(1)deepseek-v4-proBASE URL (OpenAI 格式)https://api.deepseek.comBASE URL (Anthropic 格式)https://api.deepseek.com/anthropic模型版本DeepSeek-V4.1-Flash-1017DeepSeek-V4-Pro-0813思考模式支持非思考与思考模式（默认）切换方式详见思考模式上下文长度1M输出长度最大 384K功能Json Output支持支持Tool Calls支持支持Responses API支持支持Anthropic API支持支持对话前缀续写"
+            }
+          ]
+        }
+      ],
+      "generationConfig": {
+        "provider": "api.deepseek.com",
+        "model": "deepseek-flash",
+        "promptVersion": "a2-evidence-v4",
+        "temperature": null,
+        "thinkingMode": "DISABLED",
+        "generatedAt": "2026-10-25T04:10:28.208Z"
+      }
+    }
+  ]
+}

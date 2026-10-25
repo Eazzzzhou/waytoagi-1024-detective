@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <script>
+      // AI 味尺(/aismell、/en/aismell)防闪白:同步读三态主题,在任何 CSS 前给 <html> 打 data-theme + color-scheme。
+      // 主站其他页面保持浅色,这里不碰。React 端(sections/aismell/index.tsx)读同一个 key 并保持同步。
+      (function () {
+        try {
+          if (!/^\/(en\/)?aismell(\/|$)/.test(location.pathname)) return;
+          var t = localStorage.getItem("aismell:theme");
+          if (t === "light" || t === "dark") document.documentElement.dataset.theme = t;
+          var d = t === "dark" || ((!t || t === "system") && matchMedia("(prefers-color-scheme: dark)").matches);
+          document.documentElement.style.colorScheme = d ? "dark" : "light";
+          if (d) document.documentElement.style.backgroundColor = "#0d0e11";
+        } catch (e) {}
+      })();
+    </script>
+    <script>
+      // 主站深浅色防闪白:同步读偏好(src/lib/theme.ts 同一 key),首帧前给 <html> 打 data-mode。AI 味尺页由上面那段接管。
+      (function () {
+        try {
+          if (/^\/(en\/)?aismell(\/|$)/.test(location.pathname)) return;
+          var t = localStorage.getItem("agihunt:theme");
+          var d = t === "dark" || (t !== "light" && matchMedia("(prefers-color-scheme: dark)").matches);
+          document.documentElement.dataset.mode = d ? "dark" : "light";
+          document.documentElement.style.colorScheme = d ? "dark" : "light";
+        } catch (e) {}
+      })();
+    </script>
+    <link rel="icon" type="image/svg+xml" href="/mark.svg" />
+    <link rel="alternate icon" type="image/jpeg" href="/logo.jpg" />
+    <link rel="apple-touch-icon" href="/logo.jpg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <script>
+      // iOS Safari 聚焦 <16px 输入框会自动放大整页;maximum-scale=1 只禁这个行为
+      // (iOS 10+ 用户双指缩放不受 maximum-scale 限制,可访问性不受影响)。
+      // 只对 iOS 加:安卓会因此真的禁掉手动缩放。
+      if (/iPhone|iPad|iPod/.test(navigator.userAgent) || (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1)) {
+        document
+          .querySelector("meta[name=viewport]")
+          .setAttribute("content", "width=device-width, initial-scale=1.0, maximum-scale=1.0, viewport-fit=cover");
+      }
+    </script>
+    <title>GPT Directly Controls Blender Inside Cursor · AGI Hunt</title>
+    <meta name="description" content="A reply shares a hands-on test: the author prompted GPT-5.6-Sol directly within Cursor to set up Blender MCP, successfully creating and rendering a &#34;realistic…" />
+    <!-- 这个壳不写 canonical:nginx 把它直发给 /access /jobs,并在后端 502 时兜底所有 SSR
+         内容路径,写死首页 canonical 会让那些页面自称首页副本。/index.html 的重复副本问题
+         由 nginx 301 到 / 解决,不靠壳里的标签。 -->
+    <meta name="theme-color" content="#f4f1ea" />
+    <!-- OG/Twitter 静态兜底:不执行 JS 的爬虫可见;执行 JS 后由 src/lib/seo.ts 按页面内容覆盖 -->
+    <meta property="og:site_name" content="AGI Hunt" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="GPT Directly Controls Blender Inside Cursor · AGI Hunt" />
+    <meta property="og:description" content="A reply shares a hands-on test: the author prompted GPT-5.6-Sol directly within Cursor to set up Blender MCP, successfully creating and rendering a &#34;realistic…" />
+    <meta property="og:image" content="https://agihunt.info/og.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@agi_hunt" />
+    <meta name="twitter:image" content="https://agihunt.info/og.jpg" />
+    <script type="module" crossorigin src="/assets/index-WoqkBoD3.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-Dj5gGugL.css">
+  
+    <link rel="canonical" href="https://agihunt.info/en/p/19f5bca0f83d687484bf5e7db4d" data-ssr-path="/en/p/19f5bca0f83d687484bf5e7db4d" />
+    <meta property="og:url" content="https://agihunt.info/en/p/19f5bca0f83d687484bf5e7db4d" />
+    <link rel="alternate" type="application/rss+xml" title="AGI Hunt RSS" href="https://agihunt.info/feed.xml" />
+    <link rel="alternate" hreflang="zh" href="https://agihunt.info/p/19f5bca0f83d687484bf5e7db4d" data-ssr-path="/en/p/19f5bca0f83d687484bf5e7db4d" />
+    <link rel="alternate" hreflang="en" href="https://agihunt.info/en/p/19f5bca0f83d687484bf5e7db4d" data-ssr-path="/en/p/19f5bca0f83d687484bf5e7db4d" />
+    <link rel="alternate" hreflang="x-default" href="https://agihunt.info/en/p/19f5bca0f83d687484bf5e7db4d" data-ssr-path="/en/p/19f5bca0f83d687484bf5e7db4d" />
+    <script type="application/ld+json" data-ssr-path="/en/p/19f5bca0f83d687484bf5e7db4d">[{"@context":"https://schema.org","@type":"NewsArticle","headline":"GPT Directly Controls Blender Inside Cursor","description":"A reply shares a hands-on test: the author prompted GPT-5.6-Sol directly within Cursor to set up Blender MCP, successfully creating and rendering a \"realistic…","image":["https://agihunt.info/og.jpg"],"inLanguage":"en","datePublished":"2026-07-13T13:54:14Z","dateModified":"2026-07-13T13:54:14Z","author":{"@type":"Person","name":"Star_Knight12"},"mainEntityOfPage":"https://agihunt.info/en/p/19f5bca0f83d687484bf5e7db4d","publisher":{"@type":"Organization","name":"AGI Hunt","url":"https://agihunt.info","logo":{"@type":"ImageObject","url":"https://agihunt.info/logo.jpg"}}},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"AGI Hunt","item":"https://agihunt.info/en/"},{"@type":"ListItem","position":2,"name":"coding \u0026 agent","item":"https://agihunt.info/en/c/coding-agents"},{"@type":"ListItem","position":3,"name":"GPT Directly Controls Blender Inside Cursor","item":"https://agihunt.info/en/p/19f5bca0f83d687484bf5e7db4d"}]}]</script>
+  </head>
+  <body>
+    <div id="root"></div>
+  <div id="ssr"><article><h1>GPT Directly Controls Blender Inside Cursor</h1><p>Star_Knight12 · x · 2026-07-13</p><p>A reply shares a hands-on test: the author prompted GPT-5.6-Sol directly within Cursor to set up Blender MCP, successfully creating and rendering a &#34;realistic floating MacBook.&#34;</p><p>The author emphasizes having never opened Blender before, but with these tools, you can essentially &#34;grab the docs, pick an IDE, and start building.&#34; The key highlight is that the combination of MCP + IDE + models is already capable of running a 3D toolchain.</p><p><a href="/en/e/19f5609be2748217799dea52292">Related event: Beginner Runs Blender Rendering via Cursor and MCP(9 posts)→</a></p><p><a href="https://x.com/Star_Knight12/status/2076666515806634322" rel="noopener">Original post →</a></p><h2>More from coding &amp; agent</h2><ul><li><a href="/en/p/1a1715fef5f28e6936b91bcff4c">AI-built bbtree claims fastest concurrent btree; researcher calls for ambitious academic systems</a> — tianyin_xu · 2026-10-25</li><li><a href="/en/p/1a17156a9b7f021c722263639e4">Octopus OS: a 45k-line Rust kernel where agents rewrite their own harness mid-task</a> — _AustinCalvert_ · 2026-10-25</li><li><a href="/en/p/1a17153aa248061a74cff5314a9">Dev argues Rust would be better if modules, not crates, were the compilation unit</a> — zetalyrae · 2026-10-25</li><li><a href="/en/p/1a17155142c9ab63dd3f4a373e2">Dev open-sources BizAgent framework where one AI lead agent manages a dozen AI employees</a> — Low-Start2333 · 2026-10-25</li><li><a href="/en/p/1a1714f4a0e3e005ce5f4d3c285">Formal Verification Yields to Static Analysis, Which Yields to Better Language Design</a> — xennygrimmato_ · 2026-10-25</li><li><a href="/en/p/1a171551795cf3c3b4e08890e58">Scanning 115,798 agent ledger rows: zero capability revocations, none with expiry</a> — Affectionate-Sun265 · 2026-10-25</li></ul><p><a href="/en/c/coding-agents">coding &amp; agent channel →</a></p></article></div><script>document.getElementById("ssr").remove()</script>
+  <script>(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a4fe912b9cd8fdaa',t:'MTc5MjkwMzQ3Nw=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092" integrity="sha512-UKNk8GbxkABxKcXYuLkO16EleLGUkcvJWtpSNmExE0Too3ZaFAxTscNWEc1OdAv5/BikHawapSCaiD2XCmp+Bw==" data-cf-beacon='{"version":"2024.11.0","token":"a6fc5b74a3e4478bbde8f54a008b0af5","r":1,"spa":2}' crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,250 @@
+{
+  "investigationId": "d369248d-0424-4ce6-8100-5af7be6a2f87",
+  "snapshotId": "fdb94b2c-b35a-488b-9ac0-571b5a65a40f",
+  "status": "SUCCEEDED",
+  "url": "http://127.0.0.1:3104/investigations/d369248d-0424-4ce6-8100-5af7be6a2f87",
+  "citations": 5,
+  "exactQuoteChecks": "PASSED",
+  "excerptHashChecks": "PASSED",
+  "semanticChecks": [
+    {
+      "marker": "v4:0",
+      "supported": true,
+      "reason": "该段属于基于现有材料的总体评价：已核验材料只有Blender脚本用户自述(Meghan Harris)和mcp-for-blender issue #251(BlenderMCP无头模式问题)，缺少跨站点独立真实使用报告和CAD参数化建模使用记录，故无法给出总体推荐或评级。所引quote(想检验Cursor Agent能多大程度帮助编写Blender脚本)与issue #251(目标是无头/CI与任意MCP客户端驱动Blender)支持材料覆盖面有限这一判断。虽“一篇关于通过Blender MCP配置的报道”表述与实际issue略有措辞差异，但整体结论(证据不足以支撑总体推荐)由材料直接支持，未见越界断言。"
+    },
+    {
+      "marker": "v4:1",
+      "supported": true,
+      "reason": "quote直接支持：作者Meghan Harris(metadata 2025-07-07)、Atomic Object博客，自述想检验Cursor Agent能多大程度帮助编写一组生成3D模型的Blender脚本，并测试遵循简单指令、与Blender API交互及Blender脚本局限。段末“非CAD工作流实测”由quote聚焦Blender脚本这一事实合理限定，未见引入未保存事实。"
+    },
+    {
+      "marker": "v4:2",
+      "supported": true,
+      "reason": "各分句均有对应quote：球弹跳动画/Blender 4.3.2/“又遇到了一些麻烦”但最终得到动画；智能体能写创建球体、动画和相机的代码并在该例与房屋例中“知道”设置灯光；setup_render_settings的TypeError枚举\"BLENDER_EEVEE\"不在('BLENDER_EEVEE_NEXT','BLENDER_WORKBENCH','CYCLES')。同一url/作者/日期，标明不能拆成两个独立用户评价，符合来源一致性要求。"
+    },
+    {
+      "marker": "v4:3",
+      "supported": true,
+      "reason": "quote支持：issue #251发布时间2026-05-19、headless模式(blender -b --python)下每个MCP请求挂起并超时、原因是通过bpy.app.timers.register派发而定时器在后台不触发；提出者目标是让BlenderMCP作为长期后台socket服务器在无头工作站/CI上运行，使任意Claude Code/Cursor会话或任意MCP客户端无需GUI驱动Blender，而仓库假设用户在N面板点击\"Connect to Claude\"。段末限定该记录为插件/定时器行为问题而非Cursor模型能力评测，符合材料范围。"
+    },
+    {
+      "marker": "v4:4",
+      "supported": true,
+      "reason": "原句直接支持：AGI Hunt 2026-07-12 报道称一名几乎无经验的用户用 GPT-5.6 Sol 在 Cursor 中配置 Blender MCP，生成并渲染逼真悬浮 MacBook；并称该实践证明即使不熟悉底层专业软件，普通用户也能借助 AI 形成可用智能体工作流；还有人建议不要随意改代码、操作前咨询常用 LLM 或看教程。主张中的限定仅为报道性质与不可外推，符合来源层级。"
+    },
+    {
+      "marker": "v4:5",
+      "supported": false,
+      "reason": "主张称 Atomic Object 博客作者在 Blender 4.3.2 脚本生成中“有成功也有报错的自述”，但所给证据仅有该文关于测试 Cursor Agent 写 Blender 脚本的引言，未保存版本 4.3.2、成功与报错的具体内容；其余两项报道/报告有证据支持，但该分句无支持，故整条不足。"
+    }
+  ],
+  "documentReferenceChecks": 30,
+  "documentIntegrityChecks": "PASSED",
+  "review": {
+    "status": "NOT_CONFIGURED",
+    "reason": "本轮未完成第二模型独立原文复核；不同搜索入口不等于独立模型。",
+    "independentAssessment": null,
+    "findings": []
+  },
+  "retrieval": [
+    {
+      "provider": "tencent-yuanbao-search-api",
+      "status": "SUCCEEDED",
+      "returnedSources": 8,
+      "adopted": 1
+    },
+    {
+      "provider": "tavily-search-api:keyless-capped",
+      "status": "SUCCEEDED",
+      "returnedSources": 8,
+      "adopted": 1
+    },
+    {
+      "provider": "tencent-yuanbao-search-api",
+      "status": "SUCCEEDED",
+      "returnedSources": 8,
+      "adopted": 3
+    },
+    {
+      "provider": "tencent-yuanbao-search-api",
+      "status": "SUCCEEDED",
+      "returnedSources": 8,
+      "adopted": 0
+    },
+    {
+      "provider": "tencent-yuanbao-search-api",
+      "status": "SUCCEEDED",
+      "returnedSources": 7,
+      "adopted": 0
+    }
+  ],
+  "modelCalls": [
+    {
+      "provider": "api.deepseek.com",
+      "model": "deepseek-flash",
+      "promptVersion": "a2-evidence-v4",
+      "temperature": null,
+      "thinkingMode": "DISABLED",
+      "generatedAt": "2026-10-25T04:38:06.553Z",
+      "id": "d2a407bd-f18b-4ebb-9c4e-bc957e47b996",
+      "purpose": "v4-research-plan",
+      "startedAt": "2026-10-25T04:38:04.290Z",
+      "durationMs": 2263,
+      "outcome": "SUCCEEDED",
+      "inputTokens": 695,
+      "outputTokens": 333
+    },
+    {
+      "provider": "api.deepseek.com",
+      "model": "deepseek-flash",
+      "promptVersion": "a2-evidence-v4",
+      "temperature": null,
+      "thinkingMode": "DISABLED",
+      "generatedAt": "2026-10-25T04:38:13.063Z",
+      "id": "6c0a073c-aa31-489a-b0b6-62a299c49db3",
+      "purpose": "v4-next-research-action",
+      "startedAt": "2026-10-25T04:38:10.357Z",
+      "durationMs": 2707,
+      "outcome": "SUCCEEDED",
+      "inputTokens": 11560,
+      "outputTokens": 369
+    },
+    {
+      "provider": "api.deepseek.com",
+      "model": "deepseek-flash",
+      "promptVersion": "a2-evidence-v4",
+      "temperature": null,
+      "thinkingMode": "DISABLED",
+      "generatedAt": "2026-10-25T04:38:29.161Z",
+      "id": "2c2e29e6-754e-4a0f-b729-51d2073b793f",
+      "purpose": "v4-next-research-action",
+      "startedAt": "2026-10-25T04:38:26.616Z",
+      "durationMs": 2545,
+      "outcome": "SUCCEEDED",
+      "inputTokens": 17460,
+      "outputTokens": 408
+    },
+    {
+      "provider": "api.deepseek.com",
+      "model": "deepseek-flash",
+      "promptVersion": "a2-evidence-v4",
+      "temperature": null,
+      "thinkingMode": "DISABLED",
+      "generatedAt": "2026-10-25T04:38:34.725Z",
+      "id": "5cf1abd5-37ed-4d1f-8642-191edf72eead",
+      "purpose": "v4-next-research-action",
+      "startedAt": "2026-10-25T04:38:31.567Z",
+      "durationMs": 3158,
+      "outcome": "SUCCEEDED",
+      "inputTokens": 23766,
+      "outputTokens": 515
+    },
+    {
+      "provider": "api.deepseek.com",
+      "model": "deepseek-flash",
+      "promptVersion": "a2-evidence-v4",
+      "temperature": null,
+      "thinkingMode": "DISABLED",
+      "generatedAt": "2026-10-25T04:38:37.426Z",
+      "id": "e6c4dd62-8a4f-4378-969d-8944aa3280a6",
+      "purpose": "v4-next-research-action",
+      "startedAt": "2026-10-25T04:38:34.725Z",
+      "durationMs": 2701,
+      "outcome": "FAILED",
+      "inputTokens": 23498,
+      "outputTokens": 439,
+      "failureCategory": "output-schema"
+    },
+    {
+      "provider": "api.deepseek.com",
+      "model": "deepseek-flash",
+      "promptVersion": "a2-evidence-v4",
+      "temperature": null,
+      "thinkingMode": "DISABLED",
+      "generatedAt": "2026-10-25T04:38:46.129Z",
+      "id": "104fde28-1f2a-4684-b6f2-d1d0ab7e1571",
+      "purpose": "v4-claim-extraction",
+      "startedAt": "2026-10-25T04:38:37.436Z",
+      "durationMs": 8696,
+      "outcome": "SUCCEEDED",
+      "inputTokens": 8879,
+      "outputTokens": 1994
+    },
+    {
+      "provider": "api.deepseek.com",
+      "model": "deepseek-flash",
+      "promptVersion": "a2-evidence-v4",
+      "temperature": null,
+      "thinkingMode": "DISABLED",
+      "generatedAt": "2026-10-25T04:38:53.311Z",
+      "id": "bdeea979-1650-4f5a-beb4-26397826b4e6",
+      "purpose": "v4-claim-verification-batch",
+      "startedAt": "2026-10-25T04:38:46.133Z",
+      "durationMs": 7178,
+      "outcome": "SUCCEEDED",
+      "inputTokens": 8234,
+      "outputTokens": 1572
+    },
+    {
+      "provider": "api.deepseek.com",
+      "model": "deepseek-flash",
+      "promptVersion": "a2-evidence-v4",
+      "temperature": null,
+      "thinkingMode": "DISABLED",
+      "generatedAt": "2026-10-25T04:38:59.493Z",
+      "id": "35d500c1-3cbe-4aca-bef6-2d21ce3cbb94",
+      "purpose": "v4-claim-verification-batch",
+      "startedAt": "2026-10-25T04:38:53.319Z",
+      "durationMs": 6173,
+      "outcome": "SUCCEEDED",
+      "inputTokens": 8265,
+      "outputTokens": 1265
+    },
+    {
+      "provider": "api.deepseek.com",
+      "model": "deepseek-flash",
+      "promptVersion": "a2-evidence-v4",
+      "temperature": null,
+      "thinkingMode": "DISABLED",
+      "generatedAt": "2026-10-25T04:39:05.670Z",
+      "id": "e25eb5da-d7ae-411d-9c07-44d04259cec2",
+      "purpose": "v4-direct-answer-and-analysis",
+      "startedAt": "2026-10-25T04:38:59.505Z",
+      "durationMs": 6166,
+      "outcome": "SUCCEEDED",
+      "inputTokens": 4908,
+      "outputTokens": 1408
+    },
+    {
+      "provider": "api.deepseek.com",
+      "model": "deepseek-flash",
+      "promptVersion": "a2-evidence-v4",
+      "temperature": null,
+      "thinkingMode": "DISABLED",
+      "generatedAt": "2026-10-25T04:39:09.050Z",
+      "id": "97f57486-3d6d-4c8c-86b9-f027924289cd",
+      "purpose": "v4-synthesis-semantic-check",
+      "startedAt": "2026-10-25T04:39:05.671Z",
+      "durationMs": 3379,
+      "outcome": "SUCCEEDED",
+      "inputTokens": 3505,
+      "outputTokens": 534
+    },
+    {
+      "provider": "api.deepseek.com",
+      "model": "deepseek-flash",
+      "promptVersion": "a2-evidence-v4",
+      "temperature": null,
+      "thinkingMode": "DISABLED",
+      "generatedAt": "2026-10-25T04:39:10.877Z",
+      "id": "8a53d2ed-460c-4c12-8bdc-168e86ab9559",
+      "purpose": "v4-synthesis-semantic-check",
+      "startedAt": "2026-10-25T04:39:09.050Z",
+      "durationMs": 1827,
+      "outcome": "SUCCEEDED",
+      "inputTokens": 2708,
+      "outputTokens": 223
+    }
+  ],
+  "directory": "C:\\Users\\qianchen\\Documents\\waytoagi-1024-detective-a2-v4\\research\\v4-runs\\collection-20261025-1234\\v4\\S5\\d369248d-0424-4ce6-8100-5af7be6a2f87"
+}

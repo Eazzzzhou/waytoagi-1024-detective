@@ -1,0 +1,303 @@
+{
+  "investigationId": "299b5433-9e33-4b79-ae35-0a3c32b5455e",
+  "snapshotId": "e287287a-5b50-416d-82ce-ddb2cc5ef668",
+  "status": "SUCCEEDED",
+  "url": "http://127.0.0.1:3104/investigations/299b5433-9e33-4b79-ae35-0a3c32b5455e",
+  "citations": 6,
+  "exactQuoteChecks": "PASSED",
+  "excerptHashChecks": "PASSED",
+  "semanticChecks": [
+    {
+      "marker": "v4:0",
+      "supported": true,
+      "reason": "该说法仅断言引文中未把上下文长度、最大输出、价格三项与deepseek-chat对应，属对证据缺口的描述；文引确无deepseek-chat字样，支持成立。"
+    },
+    {
+      "marker": "v4:1",
+      "supported": true,
+      "reason": "英文引文含MODEL VERSION、CONTEXT LENGTH 1M、MAX OUTPUT 384K；中文引文含上下文长度1M、输出长度最大384K；且两引文均未出现deepseek-chat，故不能归属，各分句均有支持。"
+    },
+    {
+      "marker": "v4:2",
+      "supported": true,
+      "reason": "英文引文列出$0.003/$0.006、$0.15/$0.3、$0.6/$1.2及$0.022/$0.044、$0.66/$1.32、$1.98/$3.96；中文引文列出0.02/0.04、1/2、4/8及0.15/0.30、4.5/9.0、13.5/27.0元；引文均未显示对应模型列名，故无法确定归属deepseek-chat。"
+    },
+    {
+      "marker": "v4:3",
+      "supported": true,
+      "reason": "引文明确：空闲时段价格为高峰时段价格的一半；高峰为北京时间周一至周五（不含中国法定节假日）9:00-12:00、14:00-18:00；其余含周末及节假日全天为空闲。均直接支持。"
+    },
+    {
+      "marker": "v4:4",
+      "supported": true,
+      "reason": "证据c1d24c24明确列出st.mydeepseekapi.com页面的deepseek-chat：Context Length 64K、Max Output Tokens 8K，以及1M Tokens Input (Cache Hit)$0.07、Input (Cache Miss)$0.27、Output$1.10，与主张数值一致；主张仅称该第三方页面“如此列出”，并区分第三方来源与官方1M/384K属于不同来源条件，这一定位也得到来源类型UNKNOWN与该页面内容的直接支持。"
+    },
+    {
+      "marker": "v4:5",
+      "supported": true,
+      "reason": "证据670286c1原文明确称deepseek-chat与deepseek-reasoner均已升级为DeepSeek-V3.1-Terminus，deepseek-chat对应其非思考模式，与主张的模型对应关系一致；证据中第三方页面为64K/8K、官方定价页为1M/384K，主张仅说明三者属于不同时间与不同页面条件、不能据此判断现行规格，属对给定条件的谨慎表述，未超出证据。"
+    }
+  ],
+  "documentReferenceChecks": 34,
+  "documentIntegrityChecks": "PASSED",
+  "review": {
+    "status": "NOT_CONFIGURED",
+    "reason": "本轮未完成第二模型独立原文复核；不同搜索入口不等于独立模型。",
+    "independentAssessment": null,
+    "findings": []
+  },
+  "retrieval": [
+    {
+      "provider": "tencent-yuanbao-search-api",
+      "status": "SUCCEEDED",
+      "returnedSources": 8,
+      "adopted": 3
+    },
+    {
+      "provider": "tavily-search-api:keyless-capped",
+      "status": "SUCCEEDED",
+      "returnedSources": 8,
+      "adopted": 2
+    },
+    {
+      "provider": "tencent-yuanbao-search-api",
+      "status": "SUCCEEDED",
+      "returnedSources": 8,
+      "adopted": 3
+    },
+    {
+      "provider": "tencent-yuanbao-search-api",
+      "status": "SUCCEEDED",
+      "returnedSources": 8,
+      "adopted": 3
+    }
+  ],
+  "modelCalls": [
+    {
+      "provider": "api.deepseek.com",
+      "model": "deepseek-flash",
+      "promptVersion": "a2-evidence-v4",
+      "temperature": null,
+      "thinkingMode": "DISABLED",
+      "generatedAt": "2026-10-25T04:21:07.332Z",
+      "id": "4a0cb473-24d2-4ee0-8344-c78a031477f2",
+      "purpose": "v4-research-plan",
+      "startedAt": "2026-10-25T04:21:05.911Z",
+      "durationMs": 1421,
+      "outcome": "SUCCEEDED",
+      "inputTokens": 642,
+      "outputTokens": 213
+    },
+    {
+      "provider": "api.deepseek.com",
+      "model": "deepseek-flash",
+      "promptVersion": "a2-evidence-v4",
+      "temperature": null,
+      "thinkingMode": "DISABLED",
+      "generatedAt": "2026-10-25T04:21:13.931Z",
+      "id": "e0b8a270-c6e9-47f5-9879-28177a75cfe6",
+      "purpose": "v4-next-research-action",
+      "startedAt": "2026-10-25T04:21:10.635Z",
+      "durationMs": 3295,
+      "outcome": "SUCCEEDED",
+      "inputTokens": 12294,
+      "outputTokens": 529
+    },
+    {
+      "provider": "api.deepseek.com",
+      "model": "deepseek-flash",
+      "promptVersion": "a2-evidence-v4",
+      "temperature": null,
+      "thinkingMode": "DISABLED",
+      "generatedAt": "2026-10-25T04:21:16.350Z",
+      "id": "bb9e8c96-1b7d-4fd9-be8b-a7eb6988a528",
+      "purpose": "v4-document-reading",
+      "startedAt": "2026-10-25T04:21:14.501Z",
+      "durationMs": 1848,
+      "outcome": "SUCCEEDED",
+      "inputTokens": 1804,
+      "outputTokens": 218
+    },
+    {
+      "provider": "api.deepseek.com",
+      "model": "deepseek-flash",
+      "promptVersion": "a2-evidence-v4",
+      "temperature": null,
+      "thinkingMode": "DISABLED",
+      "generatedAt": "2026-10-25T04:21:16.420Z",
+      "id": "2048bd33-98f3-4a66-b2f3-fb02dc3ad9f3",
+      "purpose": "v4-document-reading",
+      "startedAt": "2026-10-25T04:21:14.630Z",
+      "durationMs": 1789,
+      "outcome": "SUCCEEDED",
+      "inputTokens": 1800,
+      "outputTokens": 267
+    },
+    {
+      "provider": "api.deepseek.com",
+      "model": "deepseek-flash",
+      "promptVersion": "a2-evidence-v4",
+      "temperature": null,
+      "thinkingMode": "DISABLED",
+      "generatedAt": "2026-10-25T04:21:20.243Z",
+      "id": "01867fcd-d22d-41ab-9472-6f74b87a87bd",
+      "purpose": "v4-document-reading",
+      "startedAt": "2026-10-25T04:21:18.746Z",
+      "durationMs": 1496,
+      "outcome": "SUCCEEDED",
+      "inputTokens": 884,
+      "outputTokens": 152
+    },
+    {
+      "provider": "api.deepseek.com",
+      "model": "deepseek-flash",
+      "promptVersion": "a2-evidence-v4",
+      "temperature": null,
+      "thinkingMode": "DISABLED",
+      "generatedAt": "2026-10-25T04:21:24.395Z",
+      "id": "7990b79f-8398-4a43-bc37-7aa51adc9a05",
+      "purpose": "v4-claim-extraction",
+      "startedAt": "2026-10-25T04:21:20.269Z",
+      "durationMs": 4126,
+      "outcome": "SUCCEEDED",
+      "inputTokens": 4227,
+      "outputTokens": 1059
+    },
+    {
+      "provider": "api.deepseek.com",
+      "model": "deepseek-flash",
+      "promptVersion": "a2-evidence-v4",
+      "temperature": null,
+      "thinkingMode": "DISABLED",
+      "generatedAt": "2026-10-25T04:21:27.595Z",
+      "id": "5b171ef3-090f-4d69-984d-d3f31dabc58d",
+      "purpose": "v4-claim-verification-batch",
+      "startedAt": "2026-10-25T04:21:24.403Z",
+      "durationMs": 3192,
+      "outcome": "SUCCEEDED",
+      "inputTokens": 4801,
+      "outputTokens": 781
+    },
+    {
+      "provider": "api.deepseek.com",
+      "model": "deepseek-flash",
+      "promptVersion": "a2-evidence-v4",
+      "temperature": null,
+      "thinkingMode": "DISABLED",
+      "generatedAt": "2026-10-25T04:21:29.750Z",
+      "id": "0d6f8081-1598-494b-8d03-5e01b13187bf",
+      "purpose": "v4-single-claim-repair",
+      "startedAt": "2026-10-25T04:21:27.597Z",
+      "durationMs": 2153,
+      "outcome": "SUCCEEDED",
+      "inputTokens": 4297,
+      "outputTokens": 374
+    },
+    {
+      "provider": "api.deepseek.com",
+      "model": "deepseek-flash",
+      "promptVersion": "a2-evidence-v4",
+      "temperature": null,
+      "thinkingMode": "DISABLED",
+      "generatedAt": "2026-10-25T04:21:32.712Z",
+      "id": "ddee6df3-d47a-43e5-ab52-be99ff6cf604",
+      "purpose": "v4-claim-verification-batch",
+      "startedAt": "2026-10-25T04:21:29.751Z",
+      "durationMs": 2965,
+      "outcome": "SUCCEEDED",
+      "inputTokens": 4836,
+      "outputTokens": 535
+    },
+    {
+      "provider": "api.deepseek.com",
+      "model": "deepseek-flash",
+      "promptVersion": "a2-evidence-v4",
+      "temperature": null,
+      "thinkingMode": "DISABLED",
+      "generatedAt": "2026-10-25T04:21:36.313Z",
+      "id": "1ba3ef73-58b0-4459-971a-9fe48ba37ee4",
+      "purpose": "v4-next-research-action",
+      "startedAt": "2026-10-25T04:21:32.719Z",
+      "durationMs": 3594,
+      "outcome": "SUCCEEDED",
+      "inputTokens": 20217,
+      "outputTokens": 684
+    },
+    {
+      "provider": "api.deepseek.com",
+      "model": "deepseek-flash",
+      "promptVersion": "a2-evidence-v4",
+      "temperature": null,
+      "thinkingMode": "DISABLED",
+      "generatedAt": "2026-10-25T04:21:43.919Z",
+      "id": "9a8feca7-a7cc-49fd-951f-9ab76e91739a",
+      "purpose": "v4-claim-extraction",
+      "startedAt": "2026-10-25T04:21:37.400Z",
+      "durationMs": 6519,
+      "outcome": "SUCCEEDED",
+      "inputTokens": 6061,
+      "outputTokens": 1793
+    },
+    {
+      "provider": "api.deepseek.com",
+      "model": "deepseek-flash",
+      "promptVersion": "a2-evidence-v4",
+      "temperature": null,
+      "thinkingMode": "DISABLED",
+      "generatedAt": "2026-10-25T04:21:47.151Z",
+      "id": "7798eb62-ff76-4019-afb9-8707aa19b5ef",
+      "purpose": "v4-single-claim-repair",
+      "startedAt": "2026-10-25T04:21:43.922Z",
+      "durationMs": 3229,
+      "outcome": "SUCCEEDED",
+      "inputTokens": 4125,
+      "outputTokens": 591
+    },
+    {
+      "provider": "api.deepseek.com",
+      "model": "deepseek-flash",
+      "promptVersion": "a2-evidence-v4",
+      "temperature": null,
+      "thinkingMode": "DISABLED",
+      "generatedAt": "2026-10-25T04:21:51.725Z",
+      "id": "3e522048-1526-48aa-948a-190f1d723886",
+      "purpose": "v4-direct-answer-and-analysis",
+      "startedAt": "2026-10-25T04:21:47.174Z",
+      "durationMs": 4551,
+      "outcome": "SUCCEEDED",
+      "inputTokens": 5887,
+      "outputTokens": 1036
+    },
+    {
+      "provider": "api.deepseek.com",
+      "model": "deepseek-flash",
+      "promptVersion": "a2-evidence-v4",
+      "temperature": null,
+      "thinkingMode": "DISABLED",
+      "generatedAt": "2026-10-25T04:21:53.665Z",
+      "id": "5c4123c5-3b16-4bed-a232-4cb5355db79f",
+      "purpose": "v4-synthesis-semantic-check",
+      "startedAt": "2026-10-25T04:21:51.729Z",
+      "durationMs": 1936,
+      "outcome": "SUCCEEDED",
+      "inputTokens": 2774,
+      "outputTokens": 327
+    },
+    {
+      "provider": "api.deepseek.com",
+      "model": "deepseek-flash",
+      "promptVersion": "a2-evidence-v4",
+      "temperature": null,
+      "thinkingMode": "DISABLED",
+      "generatedAt": "2026-10-25T04:21:55.342Z",
+      "id": "bd02c629-e5e7-484a-b638-139f0fda2456",
+      "purpose": "v4-synthesis-semantic-check",
+      "startedAt": "2026-10-25T04:21:53.667Z",
+      "durationMs": 1674,
+      "outcome": "SUCCEEDED",
+      "inputTokens": 1413,
+      "outputTokens": 237
+    }
+  ],
+  "directory": "C:\\Users\\qianchen\\Documents\\waytoagi-1024-detective-a2-v4\\research\\v4-runs\\comparison-20261025-1209\\v4\\S1\\299b5433-9e33-4b79-ae35-0a3c32b5455e"
+}

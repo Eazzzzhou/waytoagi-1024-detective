@@ -1,0 +1,384 @@
+<!DOCTYPE html><html lang="en" data-astro-cid-bvzihdzo> <head><!-- 主题：必须在首次绘制前跑，否则暗色用户会先闪一下白屏 --><script>
+  (function () {
+    try {
+      var t = localStorage.getItem('theme');
+      if (t === 'dark' || t === 'light') {
+        document.documentElement.setAttribute('data-theme', t);
+      }
+    } catch (e) {}
+  })();
+</script> <!-- Global Metadata --><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#1D4ED8"><meta name="author" content="AICoderScope"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><link rel="icon" href="/favicon.ico"><link rel="sitemap" href="/sitemap-index.xml"><link rel="alternate" type="application/rss+xml" title="AICoderScope" href="https://aicoderscope.com/rss.xml"><meta name="generator" content="Astro v6.2.1"><meta name="impact-site-verification" value="dee0d8f8-5b30-43e5-b3cf-ae43f9185c0c"><meta name="google-adsense-account" content="ca-pub-1998892668558000"><style>@font-face{font-family:Atkinson-c7f4c4e8b285552f;src:url("/_astro/fonts/c8e1359011974766.woff") format("woff");font-display:swap;font-weight:400;font-style:normal;}@font-face{font-family:Atkinson-c7f4c4e8b285552f;src:url("/_astro/fonts/6b82a9ea24a905e9.woff") format("woff");font-display:swap;font-weight:700;font-style:normal;}@font-face{font-family:"Atkinson-c7f4c4e8b285552f fallback: Arial";src:local("Arial");font-display:swap;font-weight:400;font-style:normal;size-adjust:99.3717%;ascent-override:80.1033%;descent-override:25.2587%;line-gap-override:0%;}@font-face{font-family:"Atkinson-c7f4c4e8b285552f fallback: Arial";src:local("Arial");font-display:swap;font-weight:700;font-style:normal;size-adjust:99.3717%;ascent-override:80.1033%;descent-override:25.2587%;line-gap-override:0%;}:root{--font-atkinson:Atkinson-c7f4c4e8b285552f,"Atkinson-c7f4c4e8b285552f fallback: Arial",sans-serif;}</style><link rel="preload" href="/_astro/fonts/c8e1359011974766.woff" as="font" type="font/woff" crossorigin><link rel="preload" href="/_astro/fonts/6b82a9ea24a905e9.woff" as="font" type="font/woff" crossorigin><!-- Canonical URL --><link rel="canonical" href="https://aicoderscope.com/blog/cursor-3-review-2026/"><!-- Primary Meta Tags --><title>Cursor 3 review 2026: agent-first interface, parallel coding agents, and whether it&#39;s worth switching</title><meta name="title" content="Cursor 3 review 2026: agent-first interface, parallel coding agents, and whether it's worth switching"><meta name="description" content="Cursor 3 launched April 2, 2026 with a rebuilt agent-first interface, parallel agents, and Cloud VMs. Full review: features, pricing, limitations, and who should actually upgrade."><!-- Open Graph / Facebook --><meta property="og:type" content="article"><meta property="og:site_name" content="AICoderScope"><meta property="og:locale" content="en_US"><meta property="og:url" content="https://aicoderscope.com/blog/cursor-3-review-2026/"><meta property="og:title" content="Cursor 3 review 2026: agent-first interface, parallel coding agents, and whether it's worth switching"><meta property="og:description" content="Cursor 3 launched April 2, 2026 with a rebuilt agent-first interface, parallel agents, and Cloud VMs. Full review: features, pricing, limitations, and who should actually upgrade."><meta property="og:image" content="https://aicoderscope.com/_astro/cursor-3-review-2026.DIlQOOuN.jpg"><!-- Twitter --><meta property="twitter:card" content="summary_large_image"><meta property="twitter:url" content="https://aicoderscope.com/blog/cursor-3-review-2026/"><meta property="twitter:title" content="Cursor 3 review 2026: agent-first interface, parallel coding agents, and whether it's worth switching"><meta property="twitter:description" content="Cursor 3 launched April 2, 2026 with a rebuilt agent-first interface, parallel agents, and Cloud VMs. Full review: features, pricing, limitations, and who should actually upgrade."><meta property="twitter:image" content="https://aicoderscope.com/_astro/cursor-3-review-2026.DIlQOOuN.jpg"><!-- Structured Data: WebSite + Organization --><script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://aicoderscope.com/#website","url":"https://aicoderscope.com/","name":"AICoderScope","description":"In-depth reviews and comparisons of AI coding tools. Cursor, Windsurf, GitHub Copilot, Cline, Aider, and more — tested by working developers, with verified data and honest verdicts.","inLanguage":"en-US","publisher":{"@id":"https://aicoderscope.com/#org"}},{"@type":"Organization","@id":"https://aicoderscope.com/#org","name":"AICoderScope","url":"https://aicoderscope.com/","description":"Independent reviews and comparisons of AI coding tools, including local-LLM coding setups, with pricing verified against official sources.","knowsAbout":["AI coding tools","AI code assistants","local LLM coding","developer tools"],"logo":{"@type":"ImageObject","url":"https://aicoderscope.com/favicon.svg"}}]}</script><!-- Google Analytics 4 --><script async src="https://www.googletagmanager.com/gtag/js?id=G-PJLKERLSNF"></script><script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-PJLKERLSNF');
+</script><!-- GA4: Affiliate outbound click tracking --><script>
+  document.addEventListener('click', function(e) {
+    var a = e.target.closest('a[href]');
+    if (!a) return;
+    var href = a.href || '';
+    var domains = ['amazon.com', 'amzn.to', 'runpod.io', 'newegg.com', 'bhphotovideo.com', 'gumroad.com', 'nowpayments.io', 'alphaletgo.gumroad.com'];
+    for (var i = 0; i < domains.length; i++) {
+      if (href.indexOf(domains[i]) !== -1) {
+        if (typeof gtag === 'function') {
+          gtag('event', 'outbound_click', {
+            link_url: href,
+            link_domain: domains[i],
+            link_text: (a.innerText || '').trim().slice(0, 100)
+          });
+        }
+        break;
+      }
+    }
+  });
+</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"Cursor 3 review 2026: agent-first interface, parallel coding agents, and whether it's worth switching","description":"Cursor 3 launched April 2, 2026 with a rebuilt agent-first interface, parallel agents, and Cloud VMs. Full review: features, pricing, limitations, and who should actually upgrade.","datePublished":"2026-05-30T00:00:00.000Z","dateModified":"2026-05-30T00:00:00.000Z","author":{"@type":"Person","name":"AICoderScope Team"},"publisher":{"@id":"https://aicoderscope.com/#org"},"mainEntityOfPage":"https://aicoderscope.com/blog/cursor-3-review-2026/","image":"https://aicoderscope.com/_astro/cursor-3-review-2026.DIlQOOuN.jpg","wordCount":2983,"keywords":"cursor, review, pricing, agents, comparison, workflow, 2026"}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://aicoderscope.com/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://aicoderscope.com/blog/"},{"@type":"ListItem","position":3,"name":"Cursor 3 review 2026: agent-first interface, parallel coding agents, and whether it's worth switching"}]}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Does Cursor 3 cost more than Cursor 2?","acceptedAnswer":{"@type":"Answer","text":"The base subscription price has not changed — Pro is still $20/month. What changed is that parallel agents consume 3–5× more credits per task. Heavy agent users will exhaust the $20 monthly credit pool faster and face higher effective costs. Consider Pro+ ($60/month) if you run agents daily on multiple parallel tasks."}},{"@type":"Question","name":"Can I still use Cursor 3 like the old Cursor — just typing and occasional completions?","acceptedAnswer":{"@type":"Answer","text":"Yes. Tab completion still works the same way, and the classic editor view is accessible. The Agents Window is an additional surface, not a forced replacement. Light users won't lose anything; they just won't gain much from the Cursor 3 changes either."}},{"@type":"Question","name":"What is the /worktree command and why does it matter?","acceptedAnswer":{"@type":"Answer","text":"The /worktree command creates an isolated Git worktree — a separate filesystem checkout of your repository — before running an agent task. This means the agent's changes stay sandboxed until you choose to merge them. Without worktrees, parallel agents risk overwriting each other's edits; with worktrees, each agent operates in its own safe sandbox."}},{"@type":"Question","name":"How does Cloud Agents billing work?","acceptedAnswer":{"@type":"Answer","text":"Cloud Agents require MAX mode and bill separately from your subscription's monthly credit pool on a per-minute VM basis. Cursor has not published the exact per-minute rate on its pricing page. Monitor your usage dashboard closely during initial Cloud Agent sessions before scaling up."}},{"@type":"Question","name":"Should I switch from Windsurf to Cursor 3?","acceptedAnswer":{"@type":"Answer","text":"If you value developer-controlled checkpoints and granular permission prompts, Cursor 3 is the stronger choice. If you prefer agents that act autonomously with minimal interruption — especially for unattended long-running tasks — Windsurf 2.0 with Cascade and Devin Cloud is more comfortable for that workflow. Both are $20/month."}},{"@type":"Question","name":"Is there a Cursor 4 yet?","acceptedAnswer":{"@type":"Answer","text":"No. As of September 2026, Anysphere is still iterating on the 3.x line — the release train reached 3.11 in July 2026. The post-3.5 releases have focused on team management (multi-team support, Team MCPs, organization groups), customization (the 3.9 Customize page), and workflow depth (/automate triggers, side chats, transcript search) rather than another interface rebuild."}},{"@type":"Question","name":"What does the /automate command do?","acceptedAnswer":{"@type":"Answer","text":"Added in Cursor 3.8 (June 18, 2026), /automate creates agent automations that run on triggers instead of manual prompts — a GitHub event or a Slack message can start an agent task, and automations can use computer use to operate applications. It's the piece that makes unattended, event-driven agent workflows possible without leaving Cursor, though the same credit-burn caveats from parallel agents apply."}}]}</script><link rel="stylesheet" href="/_astro/Header.idkNhOdt.css">
+<link rel="stylesheet" href="/_astro/BlogPost.AsCjqOwL.css"></head> <body data-astro-cid-bvzihdzo> <header data-astro-cid-3ef6ksr2> <nav data-astro-cid-3ef6ksr2> <a href="/" class="brand" data-astro-cid-3ef6ksr2> <span class="brand-mark" data-astro-cid-3ef6ksr2>⚡</span> <span class="brand-text" data-astro-cid-3ef6ksr2>AICoderScope</span> </a> <div class="right" data-astro-cid-3ef6ksr2> <div class="internal-links" data-astro-cid-3ef6ksr2> <a href="/" data-astro-cid-3ef6ksr2="true" data-astro-cid-eimmu3lg> Home </a> <a href="/blog" class="active" data-astro-cid-3ef6ksr2="true" data-astro-cid-eimmu3lg> Guides </a> <a href="/tools" data-astro-cid-3ef6ksr2="true" data-astro-cid-eimmu3lg> Tools </a> <a href="/about" data-astro-cid-3ef6ksr2="true" data-astro-cid-eimmu3lg> About </a> </div> <button id="theme-toggle" type="button" class="theme-toggle" aria-label="Switch between light and dark theme" title="Switch theme" data-astro-cid-3ef6ksr2> <svg class="sun" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" data-astro-cid-3ef6ksr2> <circle cx="12" cy="12" r="4" data-astro-cid-3ef6ksr2></circle> <path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4" data-astro-cid-3ef6ksr2></path> </svg> <svg class="moon" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" data-astro-cid-3ef6ksr2> <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z" data-astro-cid-3ef6ksr2></path> </svg> </button> </div> </nav> </header> <script>
+	(function () {
+		var btn = document.getElementById('theme-toggle');
+		if (!btn) return;
+		btn.addEventListener('click', function () {
+			var root = document.documentElement;
+			var cur = root.getAttribute('data-theme');
+			if (!cur) {
+				// 还没手动选过，先读系统偏好，然后切到相反的
+				cur = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+			}
+			var next = cur === 'dark' ? 'light' : 'dark';
+			root.setAttribute('data-theme', next);
+			try {
+				localStorage.setItem('theme', next);
+			} catch (e) {}
+		});
+	})();
+</script> <main data-astro-cid-bvzihdzo> <article data-astro-cid-bvzihdzo> <div class="hero-image" data-astro-cid-bvzihdzo> <img src="/_astro/cursor-3-review-2026.DIlQOOuN_I58jy.jpg" alt data-astro-cid-bvzihdzo="true" loading="lazy" decoding="async" width="1020" height="510"> </div> <div class="prose" data-astro-cid-bvzihdzo> <div class="title" data-astro-cid-bvzihdzo> <div class="date" data-astro-cid-bvzihdzo> <time datetime="2026-05-30T00:00:00.000Z"> May 30, 2026 </time>  </div> <h1 data-astro-cid-bvzihdzo>Cursor 3 review 2026: agent-first interface, parallel coding agents, and whether it&#39;s worth switching</h1> <div class="byline" data-astro-cid-bvzihdzo> <span data-astro-cid-bvzihdzo>By AICoderScope Team</span> <span data-astro-cid-bvzihdzo>· 15 min read</span> </div> <div class="tags" data-astro-cid-bvzihdzo> <span class="tag" data-astro-cid-bvzihdzo>cursor</span><span class="tag" data-astro-cid-bvzihdzo>review</span><span class="tag" data-astro-cid-bvzihdzo>pricing</span><span class="tag" data-astro-cid-bvzihdzo>agents</span><span class="tag" data-astro-cid-bvzihdzo>comparison</span><span class="tag" data-astro-cid-bvzihdzo>workflow</span><span class="tag" data-astro-cid-bvzihdzo>2026</span> </div> <hr data-astro-cid-bvzihdzo> </div>  <p><strong>TL;DR</strong>: Cursor 3, released April 2, 2026, replaces the classic IDE pane layout with an Agents Window built for running multiple AI agents in parallel — up to 8 simultaneously across isolated Git worktrees, cloud VMs, or remote SSH. The price hasn’t changed ($20/month Pro), but parallel agents burn 3–5× more credits than Cursor 2, and Cloud Agents add separate VM billing that the pricing page doesn’t clearly explain. For solo developers already deep in agent-mode workflows, this is the most capable version of Cursor yet. Tab-completion-first users won’t notice much difference.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th></th><th>Cursor 3 Pro</th><th>Windsurf 2.0 Pro</th><th>GitHub Copilot Pro</th></tr></thead><tbody><tr><td><strong>Best for</strong></td><td>Agent orchestration, parallel builds</td><td>Autonomous multi-task agents</td><td>Inline completion + PR review</td></tr><tr><td><strong>Price</strong></td><td>$20/month ($16 annual)</td><td>$20/month</td><td>$10/month</td></tr><tr><td><strong>Parallel agents</strong></td><td>Up to 8, worktree-isolated</td><td>Multiple Cascade sessions + Devin Cloud</td><td>1 agent session (Premium)</td></tr><tr><td><strong>The catch</strong></td><td>Credit burn, opaque cloud-VM billing</td><td>Less granular control, Devin required for cloud</td><td>Weaker multi-file rewrites</td></tr></tbody></table>
+<blockquote>
+<p><strong>Honest take</strong>: If you’re already paying for Cursor Pro and you run Agent mode daily, upgrade — the parallel agents and Design Mode are real productivity gains. If you’re on GitHub Copilot and tab-completion is 90% of your use, the $10 price gap still doesn’t close.</p>
+</blockquote>
+<hr>
+<h2 id="what-cursor-3-actually-changed">What Cursor 3 actually changed</h2>
+<p>Cursor 3 is not a feature release. Anysphere rebuilt the interface from scratch around the insight that their usage data revealed: by early 2026, twice as many users were running autonomous agents than were using tab completion. When the ratio inverts that completely, the tool should reflect it.</p>
+<p>The old layout — editor front and center, Composer pane on the side — was designed for a developer who writes most of the code and occasionally delegates a task. Cursor 3 flips that. The Agents Window is now the primary workspace. Multiple agents run simultaneously, each in its own isolated environment, with the developer reviewing and steering rather than typing.</p>
+<p>Co-founders Michael Truell and Sualeh Asif describe the vision as “a unified workspace for building software with agents” — what Truell calls the third era of software development, where fleets of agents handle the mechanical work and the developer’s judgment is the scarce input.</p>
+<p>Whether that framing ages well depends on whether AI agents can actually hold that much context reliably. For now, Cursor 3 is the most polished implementation of the idea at the $20/month price point.</p>
+<hr>
+<h2 id="the-agents-window-what-it-replaces-and-what-it-adds">The Agents Window: what it replaces and what it adds</h2>
+<p>Cursor 3 retires the Composer pane and replaces it with the Agents Window — a full-screen workspace for managing multiple AI agents running simultaneously. You can run agents locally, inside isolated Git worktrees, in the cloud, or on remote machines via SSH. Each session is tracked independently, with its own file diff, terminal output, and audit trail.</p>
+<p>Access it with <strong>Cmd+Shift+P → Agents Window</strong> after updating.</p>
+<p>The most useful new capabilities:</p>
+<p><strong>Parallel agent execution.</strong> Up to 8 agents run simultaneously on a single prompt. Each operates inside a separate Git worktree — a distinct filesystem checkout of your repository — so Agent B editing <code>src/api/auth.ts</code> cannot conflict with Agent A working on <code>src/db/schema.ts</code>. When both finish, you merge the worktrees manually, review the diffs, and commit what you want.</p>
+<p><strong>Git integration.</strong> Staging, committing, and pull request creation now live inside the Agents Window. You no longer need to context-switch to the terminal or a Git client to ship the agents’ output.</p>
+<p><strong>Multi-surface launch.</strong> Agents can be triggered from the desktop app, mobile, web, Slack, GitHub, and Linear. This matters for async workflows where you fire off a task from your phone and review the result later at your desk.</p>
+<p><strong>/best-of-n.</strong> A command that runs the same prompt against multiple models and shows results side by side. Useful when you’re not sure whether Claude Sonnet or GPT-4o handles a specific refactor better — you run both blind and pick the winner.</p>
+<hr>
+<h2 id="design-mode-precise-ui-feedback-without-screenshots">Design Mode: precise UI feedback without screenshots</h2>
+<p>Design Mode (toggle with <strong>⌘+Shift+D</strong>) embeds a browser inspector overlay into the agent workflow. When an agent is making frontend changes, you switch to Design Mode, Shift+drag to select a specific element, and the agent receives visual context including layout, element identification, and interaction state.</p>
+<p>The practical effect: instead of describing “the button in the top-right corner of the nav,” you point at it. The agent sees the rendered DOM context, not just your description. For teams iterating on design systems or component libraries, this cuts back-and-forth significantly. For backend developers, it’s irrelevant. Design Mode has kept improving since this review — the 3.7 release added canvas support, multi-element selection, and a mid-run voice mic, covered in our <a href="/blog/cursor-37-canvas-design-mode-2026/">Cursor 3.7 Canvas Design Mode breakdown</a>.</p>
+<hr>
+<h2 id="worktree-and-task-isolation">/worktree and task isolation</h2>
+<p>The <strong>/worktree command</strong> creates an isolated Git worktree before executing a task. Each worktree is a distinct checkout of the repository at its own filesystem path. Changes stay sandboxed until you explicitly merge them back.</p>
+<p>This matters because the risk of parallel agents isn’t compute — it’s conflicting writes. Without worktrees, two agents editing the same file simultaneously produce chaos. With worktrees, they can’t touch each other’s paths.</p>
+<p>The <strong>/multitask command</strong> (added in the 3.2 update, April 2026) extends this further with async subagents — you launch a task, detach from it, and return when it completes. Useful for long-running codegen jobs where you don’t want to babysit a terminal.</p>
+<hr>
+<h2 id="cloud-agents-cursor-35-may-20-2026-the-big-upgrade-and-the-credit-risk">Cloud Agents (Cursor 3.5, May 20, 2026): the big upgrade and the credit risk</h2>
+<p>Cursor 3.5, released May 20, 2026, added <strong>Cloud Agents</strong> — agents running in isolated cloud VMs with full terminal, browser, and desktop access. The agent works asynchronously, reports results back to your IDE, and can span multiple repositories simultaneously.</p>
+<p>The capability is real. A Cloud Agent can clone a repo, install dependencies, run tests, make changes, and open a pull request without your machine running at all. For overnight builds or tasks that take 20+ minutes, this is meaningful.</p>
+<p>The cost structure is not clearly documented. Cloud Agents require MAX mode (which adds a 20% surcharge on every run) and bill separately from your subscription’s credit pool on a per-minute VM basis. The pricing page omits the per-minute rate. Early adopters reported spending over $2,000 in two days of heavy Cloud Agent usage. Before enabling Cloud Agents on a real project, treat them like cloud function invocations — check your usage dashboard after every session.</p>
+<p>The March 2026 Cursor Security Review feature (beta for Teams and Enterprise) is a related addition: always-on Security Reviewer and Vulnerability Scanner agents that check every PR for auth regressions, injection attacks, and data-handling risks. That’s currently Teams ($40/user/month) and above only.</p>
+<hr>
+<h2 id="pricing-all-six-tiers-the-credit-system-and-what-it-actually-costs">Pricing: all six tiers, the credit system, and what it actually costs</h2>
+<p>Cursor switched to a credit-based billing model in June 2025. The current structure as of May 2026:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Plan</th><th>Price</th><th>What’s in the pool</th><th>Parallel agents</th></tr></thead><tbody><tr><td><strong>Hobby</strong></td><td>Free</td><td>Limited completions</td><td>1</td></tr><tr><td><strong>Pro</strong></td><td>$20/month ($16 annual)</td><td>$20 monthly credit pool + unlimited Auto mode</td><td>Up to 8</td></tr><tr><td><strong>Pro+</strong></td><td>$60/month</td><td>$60 monthly credit pool (3× usage)</td><td>Up to 8</td></tr><tr><td><strong>Ultra</strong></td><td>$200/month</td><td>$200 monthly credit pool (10× usage)</td><td>Up to 8 + priority</td></tr><tr><td><strong>Teams</strong></td><td>$40/user/month</td><td>Pro-equivalent + SSO, admin controls</td><td>Up to 8</td></tr><tr><td><strong>Enterprise</strong></td><td>Custom</td><td>Pooled usage, dedicated support</td><td>Custom</td></tr></tbody></table>
+<p><strong>Auto mode is unlimited.</strong> It does not draw from the credit pool. Manually selecting a frontier model — Claude Sonnet, GPT-4o, o3 — does draw from credits based on token consumption.</p>
+<p><strong>Parallel agents multiply credit spend.</strong> Three agents running simultaneously consume roughly 3× the credits of a single session. On the $20 Pro plan, heavy parallel-agent use can exhaust the monthly pool in less than a week. If you run agents seriously, Pro+ ($60/month) is the honest minimum — or you’ll be topping up credits manually.</p>
+<hr>
+<h2 id="where-cursor-3-breaks">Where Cursor 3 breaks</h2>
+<p><strong>Credit burn is the main gotcha.</strong> Parallel agents are 3–5× more expensive per task than single-session Cursor 2 work. The $20 plan was designed before parallel execution existed. Anysphere has not raised the base price, but the effective cost for heavy users has increased.</p>
+<p><strong>Agents hang when the window isn’t in focus.</strong> A bug reported shortly after the April 2 launch: parallel agents sometimes pause when the Agents Window is not the active surface. For a tool built around long-running sessions, this is a real problem. It was not fully resolved as of early April 2026.</p>
+<p><strong>Parallelization only helps independent tasks.</strong> When Agent B’s output depends on Agent A’s result — which describes most real features — you can’t parallelize. You’re back to sequential execution. Solo developers on small projects with tightly coupled codebases often see little benefit from running 8 agents.</p>
+<p><strong>Extended sessions get heavy.</strong> Users report significant RAM usage on parallel sessions longer than two hours. Cursor’s own guidance suggests keeping sessions under two hours to avoid performance degradation.</p>
+<p><strong>Cloud agent costs are opaque.</strong> As noted above, per-minute VM billing exists but isn’t documented on the pricing page. Until Anysphere makes this transparent, treat Cloud Agents as pay-as-you-go cloud functions, not an extension of your subscription.</p>
+<hr>
+<h2 id="cursor-3-vs-windsurf-20-vs-github-copilot">Cursor 3 vs Windsurf 2.0 vs GitHub Copilot</h2>
+<p><strong>Windsurf 2.0</strong> (April 16, 2026) is the closest direct competitor. It launched the Agent Command Center (a Kanban board for managing all agent statuses), Spaces (bundling agent sessions, PRs, files, and context into task units), and Devin Cloud for one-click deployment. Windsurf raised Pro from $15 to $20/month on March 19, 2026, matching Cursor. Wave 13 added Cascade Hooks — pre- and post-action triggers for enforcing coding standards automatically.</p>
+<p>The key behavioral difference: Windsurf’s Cascade acts more autonomously, Cursor’s agents ask for more permission checkpoints. If you want the agent running while you’re asleep, Windsurf is more comfortable with that. If you want the agent to pause and confirm before making irreversible changes, Cursor’s approach is safer.</p>
+<p><strong>GitHub Copilot Pro</strong> ($10/month) still competes primarily on inline completion quality and tight IDE integration. Its agent mode (one session) trails Cursor 3’s multi-agent execution significantly. The value case for Copilot is the price and the GitHub-native PR review — if 80% of your AI usage is suggestion acceptance and PR summarization, the extra $10 buys you capabilities you may not use.</p>
+<p>For machine learning workflows, DevOps pipelines, or backend engineers dealing with complex multi-service codebases, see the <a href="/blog/ai-coding-tools-ml-engineers-jupyter-pytorch-2026/">AI coding tools for ML engineers</a> and <a href="/blog/ai-tools-devops-terraform-kubernetes-cicd-2026/">AI tools for DevOps</a> breakdowns for stack-specific comparisons.</p>
+<hr>
+<h2 id="cursor-3-update-timeline-aprilmay-2026">Cursor 3 update timeline (April–May 2026)</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Version</th><th>Date</th><th>Headline feature</th></tr></thead><tbody><tr><td>3.0</td><td>April 2, 2026</td><td>Agents Window, Design Mode, /worktree, /best-of-n</td></tr><tr><td>3.2</td><td>April (mid)</td><td>/multitask async subagents, multi-root workspaces</td></tr><tr><td>3.3</td><td>May 7, 2026</td><td>Build in Parallel subagents, Composer 2.5, Jira integration</td></tr><tr><td>3.4</td><td>May 13, 2026</td><td>Agents Window UX improvements, full-screen panel mode</td></tr><tr><td>3.5</td><td>May 20, 2026</td><td>Cloud Agents — isolated cloud VMs, async multi-repo</td></tr><tr><td>3.6</td><td>May 29, 2026</td><td>Auto-review for Shell, MCP, and Fetch tool calls; multi-team support</td></tr><tr><td>3.7</td><td>June 4, 2026</td><td>Shared canvases open full-screen in browser; agents embed prompt buttons</td></tr><tr><td>3.8</td><td>June 18, 2026</td><td>/automate command, GitHub and Slack triggers, computer use for automations</td></tr><tr><td>3.9</td><td>June 22, 2026</td><td>Customize page — plugins, skills, MCPs, subagents, rules, and hooks in one place</td></tr><tr><td>3.10</td><td>June 30, 2026</td><td>Team MCPs and organization groups for admins</td></tr><tr><td>3.11</td><td>July 2026</td><td>Side chats (/side, /btw), agent transcript search, cloud agent hook events</td></tr></tbody></table>
+<p>Cursor shipped five significant updates in the first two months alone, and the cadence held through summer — six more releases by mid-July. The velocity is real. So is the rough-edge count.</p>
+<p>Three of the post-launch releases matter most for the buying decision. <strong>3.8’s /automate</strong> turned agents into scheduled and event-triggered workers: a GitHub push or a Slack message can now kick off an agent run, with computer use available inside automations — this is the feature that moves Cursor from “IDE with agents” toward “agent platform.” <strong>3.9’s Customize page</strong> consolidated plugins, skills, MCP servers, subagents, rules, and hooks into a single management surface with a team leaderboard of popular add-ons, which addresses one of the original 3.0 complaints: configuration sprawl across scattered settings files. And <strong>3.11’s side chats</strong> (/side or /btw mid-session) let you branch a secondary conversation off a running agent thread without derailing it — plus a local search index over all agent transcripts, so past sessions stop being write-only history. None of these change the review’s verdict, but they compound the case for agent-heavy users: the gap between Cursor 3 and “old Cursor with a chat pane” keeps widening. Design Mode’s evolution is covered separately in the <a href="/blog/cursor-37-canvas-design-mode-2026/">Cursor 3.7 Canvas breakdown</a>.</p>
+<hr>
+<h2 id="verdict-who-should-upgrade-who-should-wait">Verdict: who should upgrade, who should wait</h2>
+<p><strong>Upgrade if:</strong></p>
+<ul>
+<li>You’re on Cursor Pro already and you run Agent mode on most tasks. The Agents Window is a direct upgrade to Composer with no learning curve.</li>
+<li>You manage parallel workstreams — frontend refactor while backend tests run, documentation while migration executes. The worktree isolation alone is worth it.</li>
+<li>You’re on a team (Teams plan) and want the security review agents on every PR.</li>
+</ul>
+<p><strong>Wait or hold off if:</strong></p>
+<ul>
+<li>You primarily use tab completion. The interface change adds complexity without matching benefit.</li>
+<li>You’re on the $20 Pro plan and running agents heavily. You’ll hit the credit ceiling. Either move to Pro+ or you’ll see unexpected top-up costs.</li>
+<li>You were considering Cloud Agents for production-volume work. Wait until Anysphere publishes the per-minute VM rate transparently.</li>
+</ul>
+<p><strong>Windsurf instead if:</strong></p>
+<ul>
+<li>You want more autonomous agents with less permission prompting, especially for overnight or unattended runs.</li>
+<li>The bundled Devin integration matters to your workflow — Windsurf’s Spaces + Devin is the tightest agent-orchestration stack at $20/month right now.</li>
+</ul>
+<p>For hardware requirements when running local inference alongside Cursor 3 (e.g., pairing local Llama with the IDE), the <a href="https://runaihome.com/blog/best-local-ai-models-by-vram/">Cursor + local Llama hardware tiers breakdown</a> at runaihome.com covers VRAM requirements by model family.</p>
+<hr>
+<h2 id="frequently-asked-questions">Frequently Asked Questions</h2>
+<p><strong>Does Cursor 3 cost more than Cursor 2?</strong>
+The base subscription price has not changed — Pro is still $20/month. What changed is that parallel agents consume 3–5× more credits per task. Heavy agent users will exhaust the $20 monthly credit pool faster and face higher effective costs. Consider Pro+ ($60/month) if you run agents daily on multiple parallel tasks.</p>
+<p><strong>Can I still use Cursor 3 like the old Cursor — just typing and occasional completions?</strong>
+Yes. Tab completion still works the same way, and the classic editor view is accessible. The Agents Window is an additional surface, not a forced replacement. Light users won’t lose anything; they just won’t gain much from the Cursor 3 changes either.</p>
+<p><strong>What is the /worktree command and why does it matter?</strong>
+The /worktree command creates an isolated Git worktree — a separate filesystem checkout of your repository — before running an agent task. This means the agent’s changes stay sandboxed until you choose to merge them. Without worktrees, parallel agents risk overwriting each other’s edits; with worktrees, each agent operates in its own safe sandbox.</p>
+<p><strong>How does Cloud Agents billing work?</strong>
+Cloud Agents require MAX mode and bill separately from your subscription’s monthly credit pool on a per-minute VM basis. Cursor has not published the exact per-minute rate on its pricing page. Monitor your usage dashboard closely during initial Cloud Agent sessions before scaling up.</p>
+<p><strong>Should I switch from Windsurf to Cursor 3?</strong>
+If you value developer-controlled checkpoints and granular permission prompts, Cursor 3 is the stronger choice. If you prefer agents that act autonomously with minimal interruption — especially for unattended long-running tasks — Windsurf 2.0 with Cascade and Devin Cloud is more comfortable for that workflow. Both are $20/month.</p>
+<p><strong>Is there a Cursor 4 yet?</strong>
+No. As of September 2026, Anysphere is still iterating on the 3.x line — the release train reached 3.11 in July 2026. The post-3.5 releases have focused on team management (multi-team support, Team MCPs, organization groups), customization (the 3.9 Customize page), and workflow depth (/automate triggers, side chats, transcript search) rather than another interface rebuild.</p>
+<p><strong>What does the /automate command do?</strong>
+Added in Cursor 3.8 (June 18, 2026), /automate creates agent automations that run on triggers instead of manual prompts — a GitHub event or a Slack message can start an agent task, and automations can use computer use to operate applications. It’s the piece that makes unattended, event-driven agent workflows possible without leaving Cursor, though the same credit-burn caveats from parallel agents apply.</p>
+<hr>
+<h2 id="sources">Sources</h2>
+<ul>
+<li><a href="https://cursor.com/changelog/3-0">Cursor 3 changelog 3-0 — cursor.com/changelog/3-0</a></li>
+<li><a href="https://www.infoq.com/news/2026/04/cursor-3-agent-first-interface/">Cursor 3 Introduces Agent-First Interface — InfoQ, April 2026</a></li>
+<li><a href="https://the-decoder.com/new-cursor-3-ditches-the-classic-ide-layout-for-an-agent-first-interface-built-around-parallel-ai-fleets/">Cursor 3 — Agents Window, Design Mode — The Decoder</a></li>
+<li><a href="https://chatforest.com/builders-log/cursor-3-3-3-5-parallel-agents-pr-review-automations/">Cursor 3.3 and 3.5 updates — ChatForest</a></li>
+<li><a href="https://authorityaitools.com/blog/cursor-3-2-april-2026-update">Cursor 3.2 update — AuthorityAITools</a></li>
+<li><a href="https://dev.to/rahulxsingh/cursor-pricing-in-2026-hobby-pro-pro-ultra-teams-and-enterprise-plans-explained-4b89">Cursor pricing 2026 — DEV Community</a></li>
+<li><a href="https://www.vantage.sh/blog/cursor-pricing-explained">Cursor pricing explained 2026 — Vantage</a></li>
+<li><a href="https://www.cloudzero.com/blog/cursor-ai-pricing/">Cursor AI pricing in 2026 — CloudZero</a></li>
+<li><a href="https://forum.cursor.com/t/what-is-the-pricing-structure-for-using-cloud-agents/156843">Cloud agent pricing question — Cursor Community Forum</a></li>
+<li><a href="https://www.verdent.ai/guides/windsurf-vs-cursor-2026">Windsurf 2.0 vs Cursor 3 comparison — Verdent Guides</a></li>
+<li><a href="https://www.codecademy.com/article/agentic-ide-comparison-cursor-vs-windsurf-vs-antigravity">Agentic IDE comparison: Cursor vs Windsurf vs Antigravity — Codecademy</a></li>
+<li><a href="https://www.gradually.ai/en/changelogs/cursor/">Cursor changelog summary through July 2026 — gradually.ai</a></li>
+<li><a href="https://www.digitalapplied.com/blog/cursor-3-11-side-chats-agent-transcript-search-2026">Cursor 3.11: side chats and agent transcript search — Digital Applied</a></li>
+<li><a href="https://www.havoptic.com/tools/cursor">Cursor release history, every version summarized — Havoptic</a></li>
+</ul>
+<p><em>Last updated September 9, 2026 (release timeline and FAQ). Pricing figures last verified May 30, 2026 — check <a href="https://cursor.com/pricing">cursor.com/pricing</a> for current rates before purchasing.</em></p>  <nav class="related" aria-labelledby="related-title" data-astro-cid-dpgbfi7r><h2 id="related-title" data-astro-cid-dpgbfi7r>Related guides</h2><ul data-astro-cid-dpgbfi7r><li data-astro-cid-dpgbfi7r><a href="/blog/cursor-vs-claude-code-2026/" data-astro-cid-dpgbfi7r>Cursor vs Claude Code 2026: Full Comparison — Speed, Cost, and Winner by Use Case</a></li><li data-astro-cid-dpgbfi7r><a href="/blog/kiro-ide-review-2026/" data-astro-cid-dpgbfi7r>AWS Kiro IDE review 2026: spec-driven development, the credit model, and when it beats Cursor</a></li><li data-astro-cid-dpgbfi7r><a href="/blog/claude-code-review-2026/" data-astro-cid-dpgbfi7r>Claude Code Review 2026: Is Anthropic&#39;s CLI Coding Agent Worth $20 to $200 a Month?</a></li><li data-astro-cid-dpgbfi7r><a href="/blog/two-tool-ai-coding-stack-2026/" data-astro-cid-dpgbfi7r>The Two-Tool AI Coding Stack in 2026: What Cursor + Claude Code Actually Costs, and When One Tool Is Enough</a></li><li data-astro-cid-dpgbfi7r><a href="/blog/managing-multiple-ai-coding-tools-2026/" data-astro-cid-dpgbfi7r>Running Multiple AI Coding Tools in 2026: What a Two- or Three-Tool Stack Really Costs, and Which Combos Don&#39;t Fight</a></li><li data-astro-cid-dpgbfi7r><a href="/blog/github-copilot-max-tier-review-2026/" data-astro-cid-dpgbfi7r>GitHub Copilot Max $100/Month: Is the New Heavy-Use Tier Worth It vs Cursor Pro and Claude Code?</a></li></ul></nav> <div class="article-feedback" data-worker="https://feedback-collector.alphaletsgo123.workers.dev" data-astro-cid-6eb3m7cw> <!-- Feedback prompt --> <div class="fb-prompt" data-astro-cid-6eb3m7cw> <p class="fb-question" data-astro-cid-6eb3m7cw>Was this article helpful?</p> <div class="fb-buttons" data-astro-cid-6eb3m7cw> <button class="fb-btn fb-yes" data-type="helpful" data-astro-cid-6eb3m7cw>👍 Yes, helpful</button> <button class="fb-btn fb-no" data-type="unhelpful" data-astro-cid-6eb3m7cw>👎 Not really</button> </div> </div> <!-- Follow-up form (shown after clicking) --> <div class="fb-form" hidden data-astro-cid-6eb3m7cw> <textarea class="fb-textarea" placeholder="What could be better? (optional — takes 10 seconds)" maxlength="500" data-astro-cid-6eb3m7cw></textarea> <button class="fb-submit" data-astro-cid-6eb3m7cw>Send feedback</button> </div> <!-- Thank you state --> <p class="fb-thanks" hidden data-astro-cid-6eb3m7cw>Thanks for the feedback — it helps improve future articles.</p> <!-- Consulting CTA (shown after unhelpful click) --> <div class="fb-cta" hidden data-astro-cid-6eb3m7cw> <p class="fb-cta-title" data-astro-cid-6eb3m7cw>Need hands-on help?</p> <p class="fb-cta-body" data-astro-cid-6eb3m7cw>
+I offer 1-on-1 technical consulting for local AI setup, GPU selection, and AI coding tool
+      configuration — same topics covered on this site.
+</p> <a href="mailto:alphaletsgo123@gmail.com?subject=Consulting%20Request" class="fb-cta-link" data-astro-cid-6eb3m7cw>
+Book a session — $49 / hour →
+</a> </div> </div> <script type="module">(()=>{const e=document.querySelector(".article-feedback");if(!e)return;const n=e.dataset.worker||"",c=Date.now();let a=0;window.addEventListener("scroll",()=>{const t=document.documentElement.scrollHeight-window.innerHeight;t>0&&(a=Math.round(window.scrollY/t*100))},{passive:!0});const l=e.querySelector(".fb-prompt"),r=e.querySelector(".fb-form"),s=e.querySelector(".fb-thanks"),p=e.querySelector(".fb-cta"),f=e.querySelector(".fb-textarea"),i=e.querySelector(".fb-submit");let o="";function u(t,h){if(!n)return;const w={url:window.location.pathname,title:document.title,site:window.location.hostname,type:o,stage:t,comment:h,readDepth:a,timeSpent:Math.round((Date.now()-c)/1e3),timestamp:new Date().toISOString()},d=JSON.stringify(w);try{if(navigator.sendBeacon){navigator.sendBeacon(`${n}/api/feedback`,new Blob([d],{type:"application/json"}));return}}catch{}fetch(`${n}/api/feedback`,{method:"POST",headers:{"Content-Type":"application/json"},body:d,keepalive:!0}).catch(()=>{})}e.querySelectorAll(".fb-btn").forEach(t=>{t.addEventListener("click",()=>{o=t.dataset.type||"",l.hidden=!0,r.hidden=!1,o==="unhelpful"&&(p.hidden=!1),u("vote",""),typeof window.gtag=="function"&&window.gtag("event","article_feedback",{feedback_type:o,page_path:window.location.pathname,read_depth:a})})}),i.addEventListener("click",async()=>{i.disabled=!0,i.textContent="Sending…";const t={url:window.location.pathname,title:document.title,site:window.location.hostname,type:o,comment:f.value.trim(),readDepth:a,timeSpent:Math.round((Date.now()-c)/1e3),timestamp:new Date().toISOString()};if(n)try{await fetch(`${n}/api/feedback`,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(t)})}catch{}r.hidden=!0,s.hidden=!1})})();</script> <section class="nl" aria-labelledby="nl-title" data-astro-cid-cztuaoj5> <div class="nl-copy" data-astro-cid-cztuaoj5> <h2 id="nl-title" data-astro-cid-cztuaoj5>Know which coding tool is worth paying for</h2> <p data-astro-cid-cztuaoj5>
+Hands-on comparisons of AI coding assistants and what each one costs to run —
+			including the local-model path. Sent only when something changes. Unsubscribe anytime.
+</p> </div> <form id="nl-form" class="nl-form" novalidate data-astro-cid-cztuaoj5> <label class="sr-only" for="nl-email" data-astro-cid-cztuaoj5>Email address</label> <input id="nl-email" name="email" type="email" inputmode="email" autocomplete="email" placeholder="you@example.com" required data-astro-cid-cztuaoj5> <!-- 蜜罐：机器人会填，真人看不见 --> <input class="nl-hp" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" data-astro-cid-cztuaoj5> <button type="submit" data-astro-cid-cztuaoj5>Subscribe</button> </form> <p class="nl-msg" id="nl-msg" role="status" aria-live="polite" data-astro-cid-cztuaoj5></p> </section> <script>(function(){const ENDPOINT = "https://feedback-collector.alphaletsgo123.workers.dev/api/subscribe";
+const SITE = "aicoderscope";
+
+	(function () {
+		var form = document.getElementById('nl-form');
+		if (!form) return;
+		var msg = document.getElementById('nl-msg');
+		var input = document.getElementById('nl-email');
+		var btn = form.querySelector('button');
+
+		form.addEventListener('submit', function (e) {
+			e.preventDefault();
+			var email = (input.value || '').trim();
+			if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)) {
+				msg.textContent = 'That email address does not look right.';
+				msg.className = 'nl-msg err';
+				return;
+			}
+			btn.disabled = true;
+			btn.textContent = 'Sending…';
+			fetch(ENDPOINT, {
+				method: 'POST',
+				headers: { 'Content-Type': 'application/json' },
+				body: JSON.stringify({
+					email: email,
+					site: SITE,
+					page: location.pathname,
+					website: form.website.value,
+				}),
+			})
+				.then(function (r) {
+					return r.json().catch(function () {
+						return {};
+					});
+				})
+				.then(function (d) {
+					if (d && d.success) {
+						form.style.display = 'none';
+						msg.textContent = d.already
+							? "You're already on the list."
+							: "You're in. Check your inbox when the next one goes out.";
+						msg.className = 'nl-msg ok';
+						if (typeof gtag === 'function') {
+							gtag('event', 'newsletter_signup', { site: SITE });
+						}
+					} else {
+						throw new Error('failed');
+					}
+				})
+				.catch(function () {
+					msg.textContent = 'Something went wrong. Try again in a moment.';
+					msg.className = 'nl-msg err';
+					btn.disabled = false;
+					btn.textContent = 'Subscribe';
+				});
+		});
+	})();
+})();</script> <aside class="support" data-astro-cid-fet3hwtt><p data-astro-cid-fet3hwtt><strong data-astro-cid-fet3hwtt>Was this useful?</strong> This site has no paywall, no popups, and no sponsored
+      reviews — it runs on affiliate links and the occasional coffee. If a guide here
+      saved you money on hardware, you can
+<a href="https://ko-fi.com/runaihome" rel="nofollow noopener" target="_blank" data-astro-cid-fet3hwtt> buy me a coffee</a>.
+      Either way, thanks for reading.
+</p></aside> </div> </article> </main> <footer data-astro-cid-sz7xmlte> <div class="footer-inner" data-astro-cid-sz7xmlte> <p class="tag" data-astro-cid-sz7xmlte>&copy; 2026 AICoderScope. Honest reviews. Verified data. No vendor BS.</p> <p class="links" data-astro-cid-sz7xmlte> <a href="/about" data-astro-cid-sz7xmlte>About</a> <a href="/blog" data-astro-cid-sz7xmlte>Reviews</a> <a href="/privacy" data-astro-cid-sz7xmlte>Privacy</a> <a href="/terms" data-astro-cid-sz7xmlte>Terms</a> <a href="/contact" data-astro-cid-sz7xmlte>Contact</a> <a href="/rss.xml" data-astro-cid-sz7xmlte>RSS</a> </p> <p class="sisters" data-astro-cid-sz7xmlte>Our sister sites: <a href="https://runaihome.com/blog/" data-astro-cid-sz7xmlte>Local AI Hardware</a> · <a href="https://aifoss.dev/blog/" data-astro-cid-sz7xmlte>Open-Source AI</a></p> </div> </footer> <script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092" integrity="sha512-UKNk8GbxkABxKcXYuLkO16EleLGUkcvJWtpSNmExE0Too3ZaFAxTscNWEc1OdAv5/BikHawapSCaiD2XCmp+Bw==" data-cf-beacon='{"version":"2024.11.0","token":"8b6560b151dd4b32a3d94f19201f4168","r":1,"spa":2}' crossorigin="anonymous"></script>
+</body></html>

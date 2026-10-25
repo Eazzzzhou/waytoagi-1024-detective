@@ -1,0 +1,158 @@
+{
+  "investigationId": "0b578ad1-9e1a-419b-a88c-8252c8ec6ef0",
+  "snapshotId": "6e4680a4-cdbd-41ab-8e29-1acca6649f26",
+  "status": "SUCCEEDED",
+  "url": "http://127.0.0.1:3104/investigations/0b578ad1-9e1a-419b-a88c-8252c8ec6ef0",
+  "citations": 0,
+  "exactQuoteChecks": "PASSED",
+  "excerptHashChecks": "PASSED",
+  "semanticChecks": [],
+  "documentReferenceChecks": 24,
+  "documentIntegrityChecks": "PASSED",
+  "review": {
+    "status": "NOT_CONFIGURED",
+    "reason": "本轮未完成第二模型独立原文复核；不同搜索入口不等于独立模型。",
+    "independentAssessment": null,
+    "findings": []
+  },
+  "retrieval": [
+    {
+      "provider": "tencent-yuanbao-search-api",
+      "status": "SUCCEEDED",
+      "returnedSources": 8,
+      "adopted": 1
+    },
+    {
+      "provider": "tavily-search-api:keyless-capped",
+      "status": "SUCCEEDED",
+      "returnedSources": 8,
+      "adopted": 0
+    },
+    {
+      "provider": "tencent-yuanbao-search-api",
+      "status": "SUCCEEDED",
+      "returnedSources": 8,
+      "adopted": 1
+    },
+    {
+      "provider": "tencent-yuanbao-search-api",
+      "status": "SUCCEEDED",
+      "returnedSources": 8,
+      "adopted": 2
+    },
+    {
+      "provider": "tencent-yuanbao-search-api",
+      "status": "SUCCEEDED",
+      "returnedSources": 8,
+      "adopted": 0
+    }
+  ],
+  "modelCalls": [
+    {
+      "provider": "api.deepseek.com",
+      "model": "deepseek-flash",
+      "promptVersion": "a2-evidence-v4",
+      "temperature": null,
+      "thinkingMode": "DISABLED",
+      "generatedAt": "2026-10-25T04:23:12.643Z",
+      "id": "30d85edc-ee49-4b1e-9bfe-425dd72c9239",
+      "purpose": "v4-research-plan",
+      "startedAt": "2026-10-25T04:23:11.046Z",
+      "durationMs": 1597,
+      "outcome": "SUCCEEDED",
+      "inputTokens": 657,
+      "outputTokens": 276
+    },
+    {
+      "provider": "api.deepseek.com",
+      "model": "deepseek-flash",
+      "promptVersion": "a2-evidence-v4",
+      "temperature": null,
+      "thinkingMode": "DISABLED",
+      "generatedAt": "2026-10-25T04:23:18.534Z",
+      "id": "88c835f8-99c7-4c99-b5a9-84d635acb7c3",
+      "purpose": "v4-next-research-action",
+      "startedAt": "2026-10-25T04:23:16.145Z",
+      "durationMs": 2389,
+      "outcome": "SUCCEEDED",
+      "inputTokens": 9947,
+      "outputTokens": 401
+    },
+    {
+      "provider": "api.deepseek.com",
+      "model": "deepseek-flash",
+      "promptVersion": "a2-evidence-v4",
+      "temperature": null,
+      "thinkingMode": "DISABLED",
+      "generatedAt": "2026-10-25T04:23:21.652Z",
+      "id": "b7e49307-1812-4909-a8a0-e29995baef1a",
+      "purpose": "v4-document-reading",
+      "startedAt": "2026-10-25T04:23:19.795Z",
+      "durationMs": 1857,
+      "outcome": "SUCCEEDED",
+      "inputTokens": 4977,
+      "outputTokens": 240
+    },
+    {
+      "provider": "api.deepseek.com",
+      "model": "deepseek-flash",
+      "promptVersion": "a2-evidence-v4",
+      "temperature": null,
+      "thinkingMode": "DISABLED",
+      "generatedAt": "2026-10-25T04:23:22.200Z",
+      "id": "7a6a33ef-d601-41b8-bcd1-5e17cf9d5f16",
+      "purpose": "v4-document-reading",
+      "startedAt": "2026-10-25T04:23:20.203Z",
+      "durationMs": 1996,
+      "outcome": "SUCCEEDED",
+      "inputTokens": 3386,
+      "outputTokens": 224
+    },
+    {
+      "provider": "api.deepseek.com",
+      "model": "deepseek-flash",
+      "promptVersion": "a2-evidence-v4",
+      "temperature": null,
+      "thinkingMode": "DISABLED",
+      "generatedAt": "2026-10-25T04:23:22.873Z",
+      "id": "9af98b76-0e32-4aa9-b5b2-373455e57f46",
+      "purpose": "v4-document-reading",
+      "startedAt": "2026-10-25T04:23:20.207Z",
+      "durationMs": 2667,
+      "outcome": "SUCCEEDED",
+      "inputTokens": 6192,
+      "outputTokens": 333
+    },
+    {
+      "provider": "api.deepseek.com",
+      "model": "deepseek-flash",
+      "promptVersion": "a2-evidence-v4",
+      "temperature": null,
+      "thinkingMode": "DISABLED",
+      "generatedAt": "2026-10-25T04:23:24.179Z",
+      "id": "8092a50d-3d41-4f6d-aa25-6c0f76f98d7e",
+      "purpose": "v4-document-reading",
+      "startedAt": "2026-10-25T04:23:20.877Z",
+      "durationMs": 3302,
+      "outcome": "SUCCEEDED",
+      "inputTokens": 25538,
+      "outputTokens": 310
+    },
+    {
+      "provider": "api.deepseek.com",
+      "model": "deepseek-flash",
+      "promptVersion": "a2-evidence-v4",
+      "temperature": null,
+      "thinkingMode": "DISABLED",
+      "generatedAt": "2026-10-25T04:23:29.765Z",
+      "id": "620cb7b4-f614-45d7-bea9-2b1905e8985c",
+      "purpose": "v4-claim-extraction",
+      "startedAt": "2026-10-25T04:23:24.242Z",
+      "durationMs": 5524,
+      "outcome": "SUCCEEDED",
+      "inputTokens": 5441,
+      "outputTokens": 1344
+    }
+  ],
+  "directory": "C:\\Users\\qianchen\\Documents\\waytoagi-1024-detective-a2-v4\\research\\v4-runs\\comparison-20261025-1209\\v4\\S3\\0b578ad1-9e1a-419b-a88c-8252c8ec6ef0"
+}

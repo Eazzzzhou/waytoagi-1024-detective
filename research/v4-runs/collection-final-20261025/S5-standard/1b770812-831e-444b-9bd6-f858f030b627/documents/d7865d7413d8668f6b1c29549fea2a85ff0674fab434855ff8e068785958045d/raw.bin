@@ -1,0 +1,4213 @@
+<!DOCTYPE html>
+<html id="XF" lang="en-US" dir="LTR"
+	data-xf="2.3"
+	data-app="public"
+	
+	
+	data-template="forum_list"
+	data-container-key=""
+	data-content-key=""
+	data-logged-in="false"
+	data-cookie-prefix="xf_"
+	data-csrf="1792903435,65efa7152225e838e67662a0e414b087"
+	class="has-no-js template-forum_list"
+	>
+<head>
+	
+	
+	
+
+	<meta charset="utf-8" />
+	<title>Vibing Talk</title>
+	<link rel="manifest" href="/webmanifest.php">
+
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+	
+		
+			
+				<meta name="theme-color" media="(prefers-color-scheme: light)" content="#06637a" />
+				<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0a1c29" />
+			
+		
+	
+
+	<meta name="apple-mobile-web-app-title" content="Vibing Talk">
+	
+		<link rel="apple-touch-icon" href="/data/assets/logo/icon-512.png" />
+	
+
+	
+		
+		<meta name="description" content="The vendor-neutral community for AI-assisted software development: tools, models, agents, and what people actually ship." />
+		<meta property="og:description" content="The vendor-neutral community for AI-assisted software development: tools, models, agents, and what people actually ship." />
+		<meta property="twitter:description" content="The vendor-neutral community for AI-assisted software development: tools, models, agents, and what people actually ship." />
+	
+	
+		<link rel="canonical" href="https://vibingtalk.com/index.php" />
+	
+		<link rel="alternate" type="application/rss+xml" title="RSS feed for Vibing Talk" href="/index.php?forums/-/index.rss" />
+	
+
+	
+		
+	
+	
+	<meta property="og:site_name" content="Vibing Talk" />
+
+
+	
+	
+		
+	
+	
+	<meta property="og:type" content="website" />
+
+
+	
+	
+		
+	
+	
+	
+		<meta property="og:title" content="Vibing Talk" />
+		<meta property="twitter:title" content="Vibing Talk" />
+	
+
+
+	
+	
+	
+		
+	
+	
+	<meta property="og:url" content="https://vibingtalk.com/index.php?threads%2Fhow-useful-is-claude-for-cad-drawings.621001%2F=" />
+
+
+	
+	
+		
+	
+	
+	
+		<meta property="og:image" content="https://vibingtalk.com/data/assets/logo/icon-512.png" />
+		<meta property="twitter:image" content="https://vibingtalk.com/data/assets/logo/icon-512.png" />
+		<meta property="twitter:card" content="summary" />
+	
+
+
+	
+
+	
+	
+	
+		
+	
+	
+
+	<link rel="stylesheet" href="/css.php?css=public%3Anormalize.css%2Cpublic%3Afa.css%2Cpublic%3Avariations.less%2Cpublic%3Acore.less%2Cpublic%3Aapp.less&amp;s=1&amp;l=1&amp;d=1783794586&amp;k=32297697306d4c09deb74ee2d7e48047c960d69b" />
+
+	<link rel="stylesheet" href="/css.php?css=public%3Anode_list.less%2Cpublic%3Ashare_controls.less%2Cpublic%3Aextra.less&amp;s=1&amp;l=1&amp;d=1783794586&amp;k=c465519269461f231ff8a1bd3ccfd33adc8a3b68" />
+
+
+	
+		<script src="/js/xf/preamble.min.js?_v=e5151e9d"></script>
+	
+
+	
+	<script src="/js/vendor/vendor-compiled.js?_v=e5151e9d" defer></script>
+	<script src="/js/xf/core-compiled.js?_v=e5151e9d" defer></script>
+
+	<script>
+		XF.ready(() =>
+		{
+			XF.extendObject(true, XF.config, {
+				// 
+				userId: 0,
+				enablePush: false,
+				pushAppServerKey: '',
+				url: {
+					fullBase: 'https://vibingtalk.com/',
+					basePath: '/',
+					css: '/css.php?css=__SENTINEL__&s=1&l=1&d=1783794586',
+					js: '/js/__SENTINEL__?_v=e5151e9d',
+					icon: '/data/local/icons/__VARIANT__.svg?v=1783794586#__NAME__',
+					iconInline: '/styles/fa/__VARIANT__/__NAME__.svg?v=5.15.3',
+					keepAlive: '/index.php?login/keep-alive'
+				},
+				cookie: {
+					path: '/',
+					domain: '',
+					prefix: 'xf_',
+					secure: true,
+					consentMode: 'disabled',
+					consented: ["optional","_third_party"]
+				},
+				cacheKey: 'f3ed7234243583f554e27d349fe769c5',
+				csrf: '1792903435,65efa7152225e838e67662a0e414b087',
+				js: {},
+				fullJs: false,
+				css: {"public:node_list.less":true,"public:share_controls.less":true,"public:extra.less":true},
+				time: {
+					now: 1792903435,
+					today: 1792882800,
+					todayDow: 0,
+					tomorrow: 1792972800,
+					yesterday: 1792796400,
+					week: 1792364400,
+					month: 1790809200,
+					year: 1767225600
+				},
+				style: {
+					light: 'default',
+					dark: 'alternate',
+					defaultColorScheme: 'light'
+				},
+				borderSizeFeature: '3px',
+				fontAwesomeWeight: 'r',
+				enableRtnProtect: true,
+				
+				enableFormSubmitSticky: true,
+				imageOptimization: '0',
+				imageOptimizationQuality: 0.85,
+				uploadMaxFilesize: 2097152,
+				uploadMaxWidth: 0,
+				uploadMaxHeight: 0,
+				allowedVideoExtensions: ["m4v","mov","mp4","mp4v","mpeg","mpg","ogv","webm"],
+				allowedAudioExtensions: ["mp3","opus","ogg","wav"],
+				shortcodeToEmoji: true,
+				visitorCounts: {
+					conversations_unread: '0',
+					alerts_unviewed: '0',
+					total_unread: '0',
+					title_count: true,
+					icon_indicator: true
+				},
+				jsMt: {"xf\/action.js":"0662219f","xf\/embed.js":"0662219f","xf\/form.js":"0662219f","xf\/structure.js":"0662219f","xf\/tooltip.js":"0662219f"},
+				jsState: {},
+				publicMetadataLogoUrl: 'https://vibingtalk.com/data/assets/logo/icon-512.png',
+				publicPushBadgeUrl: 'https://vibingtalk.com/styles/default/xenforo/bell.png'
+			})
+
+			XF.extendObject(XF.phrases, {
+				// 
+				date_x_at_time_y:     "{date} at {time}",
+				day_x_at_time_y:      "{day} at {time}",
+				yesterday_at_x:       "Yesterday at {time}",
+				x_minutes_ago:        "{minutes} minutes ago",
+				one_minute_ago:       "1 minute ago",
+				a_moment_ago:         "A moment ago",
+				today_at_x:           "Today at {time}",
+				in_a_moment:          "In a moment",
+				in_a_minute:          "In a minute",
+				in_x_minutes:         "In {minutes} minutes",
+				later_today_at_x:     "Later today at {time}",
+				tomorrow_at_x:        "Tomorrow at {time}",
+				short_date_x_minutes: "{minutes}m",
+				short_date_x_hours:   "{hours}h",
+				short_date_x_days:    "{days}d",
+
+				day0: "Sunday",
+				day1: "Monday",
+				day2: "Tuesday",
+				day3: "Wednesday",
+				day4: "Thursday",
+				day5: "Friday",
+				day6: "Saturday",
+
+				dayShort0: "Sun",
+				dayShort1: "Mon",
+				dayShort2: "Tue",
+				dayShort3: "Wed",
+				dayShort4: "Thu",
+				dayShort5: "Fri",
+				dayShort6: "Sat",
+
+				month0: "January",
+				month1: "February",
+				month2: "March",
+				month3: "April",
+				month4: "May",
+				month5: "June",
+				month6: "July",
+				month7: "August",
+				month8: "September",
+				month9: "October",
+				month10: "November",
+				month11: "December",
+
+				active_user_changed_reload_page: "The active user has changed. Reload the page for the latest version.",
+				server_did_not_respond_in_time_try_again: "The server did not respond in time. Please try again.",
+				oops_we_ran_into_some_problems: "Oops! We ran into some problems.",
+				oops_we_ran_into_some_problems_more_details_console: "Oops! We ran into some problems. Please try again later. More error details may be in the browser console.",
+				file_too_large_to_upload: "The file is too large to be uploaded.",
+				uploaded_file_is_too_large_for_server_to_process: "The uploaded file is too large for the server to process.",
+				files_being_uploaded_are_you_sure: "Files are still being uploaded. Are you sure you want to submit this form?",
+				attach: "Attach files",
+				rich_text_box: "Rich text box",
+				close: "Close",
+				link_copied_to_clipboard: "Link copied to clipboard.",
+				text_copied_to_clipboard: "Text copied to clipboard.",
+				loading: "Loading…",
+				you_have_exceeded_maximum_number_of_selectable_items: "You have exceeded the maximum number of selectable items.",
+
+				processing: "Processing",
+				'processing...': "Processing…",
+
+				showing_x_of_y_items: "Showing {count} of {total} items",
+				showing_all_items: "Showing all items",
+				no_items_to_display: "No items to display",
+
+				number_button_up: "Increase",
+				number_button_down: "Decrease",
+
+				push_enable_notification_title: "Push notifications enabled successfully at Vibing Talk",
+				push_enable_notification_body: "Thank you for enabling push notifications!",
+
+				pull_down_to_refresh: "Pull down to refresh",
+				release_to_refresh: "Release to refresh",
+				refreshing: "Refreshing…"
+			})
+		})
+	</script>
+
+	
+
+
+	
+
+	
+</head>
+<body data-template="forum_list">
+
+<div class="p-pageWrapper" id="top">
+
+	
+
+	<header class="p-header" id="header">
+		<div class="p-header-inner">
+			<div class="p-header-content">
+				<div class="p-header-logo p-header-logo--image">
+					<a href="https://vibingtalk.com">
+						
+
+	
+
+	
+		
+		
+
+		
+	
+		
+		
+
+		
+	
+
+	
+
+	<picture data-variations="{&quot;default&quot;:{&quot;1&quot;:&quot;\/data\/assets\/logo\/logo.svg&quot;,&quot;2&quot;:null},&quot;alternate&quot;:{&quot;1&quot;:&quot;\/data\/assets\/logo\/logo.svg&quot;,&quot;2&quot;:null}}">
+		
+		
+		
+
+		
+			
+			
+			
+
+			
+		
+
+		<img src="/data/assets/logo/logo.svg"  width="100" height="36" alt="Vibing Talk"  />
+	</picture>
+
+
+					</a>
+				</div>
+
+				
+			</div>
+		</div>
+	</header>
+
+	
+	
+
+	
+		<div class="p-navSticky p-navSticky--primary" data-xf-init="sticky-header">
+			
+		<nav class="p-nav">
+			<div class="p-nav-inner">
+				<button type="button" class="button button--plain p-nav-menuTrigger" data-xf-click="off-canvas" data-menu=".js-headerOffCanvasMenu" tabindex="0" aria-label="Menu"><span class="button-text">
+					<i aria-hidden="true"></i>
+				</span></button>
+
+				<div class="p-nav-smallLogo">
+					<a href="https://vibingtalk.com">
+						
+
+	
+
+	
+		
+		
+
+		
+	
+		
+		
+
+		
+	
+
+	
+
+	<picture data-variations="{&quot;default&quot;:{&quot;1&quot;:&quot;\/data\/assets\/logo\/logo.svg&quot;,&quot;2&quot;:null},&quot;alternate&quot;:{&quot;1&quot;:&quot;\/data\/assets\/logo\/logo.svg&quot;,&quot;2&quot;:null}}">
+		
+		
+		
+
+		
+			
+			
+			
+
+			
+		
+
+		<img src="/data/assets/logo/logo.svg"  width="100" height="36" alt="Vibing Talk"  />
+	</picture>
+
+
+					</a>
+				</div>
+
+				<div class="p-nav-scroller hScroller" data-xf-init="h-scroller" data-auto-scroll=".p-navEl.is-selected">
+					<div class="hScroller-scroll">
+						<ul class="p-nav-list js-offCanvasNavSource">
+							
+								<li>
+									
+	<div class="p-navEl " >
+	
+
+		
+	
+	<a href="https://vibingtalk.com"
+	class="p-navEl-link "
+	
+	data-xf-key="1"
+	data-nav-id="home">Home</a>
+
+
+		
+
+		
+	
+	</div>
+
+								</li>
+							
+								<li>
+									
+	<div class="p-navEl is-selected" data-has-children="true">
+	
+
+		
+	
+	<a href="/index.php"
+	class="p-navEl-link p-navEl-link--splitMenu "
+	
+	
+	data-nav-id="forums">Forums</a>
+
+
+		<a data-xf-key="2"
+			data-xf-click="menu"
+			data-menu-pos-ref="< .p-navEl"
+			class="p-navEl-splitTrigger"
+			role="button"
+			tabindex="0"
+			aria-label="Toggle expanded"
+			aria-expanded="false"
+			aria-haspopup="true"></a>
+
+		
+	
+		<div class="menu menu--structural" data-menu="menu" aria-hidden="true">
+			<div class="menu-content">
+				
+					
+	
+	
+	<a href="/index.php?whats-new/posts/"
+	class="menu-linkRow u-indentDepth0 js-offCanvasCopy "
+	
+	
+	data-nav-id="newPosts">New posts</a>
+
+	
+
+				
+					
+	
+	
+	<a href="/index.php?search/&amp;type=post"
+	class="menu-linkRow u-indentDepth0 js-offCanvasCopy "
+	
+	
+	data-nav-id="searchForums">Search forums</a>
+
+	
+
+				
+			</div>
+		</div>
+	
+	</div>
+
+								</li>
+							
+								<li>
+									
+	<div class="p-navEl " data-has-children="true">
+	
+
+		
+	
+	<a href="/index.php?whats-new/"
+	class="p-navEl-link p-navEl-link--splitMenu "
+	
+	
+	data-nav-id="whatsNew">What's new</a>
+
+
+		<a data-xf-key="3"
+			data-xf-click="menu"
+			data-menu-pos-ref="< .p-navEl"
+			class="p-navEl-splitTrigger"
+			role="button"
+			tabindex="0"
+			aria-label="Toggle expanded"
+			aria-expanded="false"
+			aria-haspopup="true"></a>
+
+		
+	
+		<div class="menu menu--structural" data-menu="menu" aria-hidden="true">
+			<div class="menu-content">
+				
+					
+	
+	
+	<a href="/index.php?featured/"
+	class="menu-linkRow u-indentDepth0 js-offCanvasCopy "
+	
+	
+	data-nav-id="featured">Featured content</a>
+
+	
+
+				
+					
+	
+	
+	<a href="/index.php?whats-new/posts/"
+	class="menu-linkRow u-indentDepth0 js-offCanvasCopy "
+	 rel="nofollow"
+	
+	data-nav-id="whatsNewPosts">New posts</a>
+
+	
+
+				
+					
+	
+	
+	<a href="/index.php?whats-new/profile-posts/"
+	class="menu-linkRow u-indentDepth0 js-offCanvasCopy "
+	 rel="nofollow"
+	
+	data-nav-id="whatsNewProfilePosts">New profile posts</a>
+
+	
+
+				
+					
+	
+	
+	<a href="/index.php?whats-new/latest-activity"
+	class="menu-linkRow u-indentDepth0 js-offCanvasCopy "
+	 rel="nofollow"
+	
+	data-nav-id="latestActivity">Latest activity</a>
+
+	
+
+				
+			</div>
+		</div>
+	
+	</div>
+
+								</li>
+							
+								<li>
+									
+	<div class="p-navEl " data-has-children="true">
+	
+
+		
+	
+	<a href="/index.php?members/"
+	class="p-navEl-link p-navEl-link--splitMenu "
+	
+	
+	data-nav-id="members">Members</a>
+
+
+		<a data-xf-key="4"
+			data-xf-click="menu"
+			data-menu-pos-ref="< .p-navEl"
+			class="p-navEl-splitTrigger"
+			role="button"
+			tabindex="0"
+			aria-label="Toggle expanded"
+			aria-expanded="false"
+			aria-haspopup="true"></a>
+
+		
+	
+		<div class="menu menu--structural" data-menu="menu" aria-hidden="true">
+			<div class="menu-content">
+				
+					
+	
+	
+	<a href="/index.php?online/"
+	class="menu-linkRow u-indentDepth0 js-offCanvasCopy "
+	
+	
+	data-nav-id="currentVisitors">Current visitors</a>
+
+	
+
+				
+					
+	
+	
+	<a href="/index.php?whats-new/profile-posts/"
+	class="menu-linkRow u-indentDepth0 js-offCanvasCopy "
+	 rel="nofollow"
+	
+	data-nav-id="newProfilePosts">New profile posts</a>
+
+	
+
+				
+					
+	
+	
+	<a href="/index.php?search/&amp;type=profile_post"
+	class="menu-linkRow u-indentDepth0 js-offCanvasCopy "
+	
+	
+	data-nav-id="searchProfilePosts">Search profile posts</a>
+
+	
+
+				
+			</div>
+		</div>
+	
+	</div>
+
+								</li>
+							
+						</ul>
+					</div>
+				</div>
+
+				<div class="p-nav-opposite">
+					<div class="p-navgroup p-account p-navgroup--guest">
+						
+							<a href="/index.php?login/" class="p-navgroup-link p-navgroup-link--textual p-navgroup-link--logIn"
+								data-xf-click="overlay" data-follow-redirects="on">
+								<span class="p-navgroup-linkText">Log in</span>
+							</a>
+							
+								<a href="/index.php?register/" class="p-navgroup-link p-navgroup-link--textual p-navgroup-link--register"
+									data-xf-click="overlay" data-follow-redirects="on">
+									<span class="p-navgroup-linkText">Register</span>
+								</a>
+							
+						
+					</div>
+
+					<div class="p-navgroup p-discovery">
+						<a href="/index.php?whats-new/"
+							class="p-navgroup-link p-navgroup-link--iconic p-navgroup-link--whatsnew"
+							aria-label="What&#039;s new"
+							title="What&#039;s new">
+							<i aria-hidden="true"></i>
+							<span class="p-navgroup-linkText">What's new</span>
+						</a>
+
+						
+							<a href="/index.php?search/"
+								class="p-navgroup-link p-navgroup-link--iconic p-navgroup-link--search"
+								data-xf-click="menu"
+								data-xf-key="/"
+								aria-label="Search"
+								aria-expanded="false"
+								aria-haspopup="true"
+								title="Search">
+								<i aria-hidden="true"></i>
+								<span class="p-navgroup-linkText">Search</span>
+							</a>
+							<div class="menu menu--structural menu--wide" data-menu="menu" aria-hidden="true">
+								<form action="/index.php?search/search" method="post"
+									class="menu-content"
+									data-xf-init="quick-search">
+
+									<h3 class="menu-header">Search</h3>
+									
+									<div class="menu-row">
+										
+											<input type="text" class="input" name="keywords" data-acurl="/index.php?search/auto-complete" placeholder="Search…" aria-label="Search" data-menu-autofocus="true" />
+										
+									</div>
+
+									
+									<div class="menu-row">
+										<label class="iconic"><input type="checkbox"  name="c[title_only]" value="1" /><i aria-hidden="true"></i><span class="iconic-label">Search titles only</span></label>
+
+									</div>
+									
+									<div class="menu-row">
+										<div class="inputGroup">
+											<span class="inputGroup-text" id="ctrl_search_menu_by_member">By:</span>
+											<input type="text" class="input" name="c[users]" data-xf-init="auto-complete" placeholder="Member" aria-labelledby="ctrl_search_menu_by_member" />
+										</div>
+									</div>
+									<div class="menu-footer">
+									<span class="menu-footer-controls">
+										<button type="submit" class="button button--icon button--icon--search button--primary"><i class="fa--xf far fa-search "><svg xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true" ><use href="/data/local/icons/regular.svg?v=1783794586#search"></use></svg></i><span class="button-text">Search</span></button>
+										<button type="submit" class="button " name="from_search_menu"><span class="button-text">Advanced search…</span></button>
+									</span>
+									</div>
+
+									<input type="hidden" name="_xfToken" value="1792903435,65efa7152225e838e67662a0e414b087" />
+								</form>
+							</div>
+						
+					</div>
+				</div>
+			</div>
+		</nav>
+	
+		</div>
+		
+		
+			<div class="p-sectionLinks">
+				<div class="p-sectionLinks-inner hScroller" data-xf-init="h-scroller">
+					<div class="hScroller-scroll">
+						<ul class="p-sectionLinks-list">
+							
+								<li>
+									
+	<div class="p-navEl " >
+	
+
+		
+	
+	<a href="/index.php?whats-new/posts/"
+	class="p-navEl-link "
+	
+	data-xf-key="alt+1"
+	data-nav-id="newPosts">New posts</a>
+
+
+		
+
+		
+	
+	</div>
+
+								</li>
+							
+								<li>
+									
+	<div class="p-navEl " >
+	
+
+		
+	
+	<a href="/index.php?search/&amp;type=post"
+	class="p-navEl-link "
+	
+	data-xf-key="alt+2"
+	data-nav-id="searchForums">Search forums</a>
+
+
+		
+
+		
+	
+	</div>
+
+								</li>
+							
+						</ul>
+					</div>
+				</div>
+			</div>
+			
+	
+		
+
+	<div class="offCanvasMenu offCanvasMenu--nav js-headerOffCanvasMenu" data-menu="menu" aria-hidden="true" data-ocm-builder="navigation">
+		<div class="offCanvasMenu-backdrop" data-menu-close="true"></div>
+		<div class="offCanvasMenu-content">
+			<div class="offCanvasMenu-header">
+				Menu
+				<a class="offCanvasMenu-closer" data-menu-close="true" role="button" tabindex="0" aria-label="Close"></a>
+			</div>
+			
+				<div class="p-offCanvasRegisterLink">
+					<div class="offCanvasMenu-linkHolder">
+						<a href="/index.php?login/" class="offCanvasMenu-link" data-xf-click="overlay" data-menu-close="true">
+							Log in
+						</a>
+					</div>
+					<hr class="offCanvasMenu-separator" />
+					
+						<div class="offCanvasMenu-linkHolder">
+							<a href="/index.php?register/" class="offCanvasMenu-link" data-xf-click="overlay" data-menu-close="true">
+								Register
+							</a>
+						</div>
+						<hr class="offCanvasMenu-separator" />
+					
+				</div>
+			
+			<div class="js-offCanvasNavTarget"></div>
+			<div class="offCanvasMenu-installBanner js-installPromptContainer" style="display: none;" data-xf-init="install-prompt">
+				<div class="offCanvasMenu-installBanner-header">Install the app</div>
+				<button type="button" class="button js-installPromptButton"><span class="button-text">Install</span></button>
+				<template class="js-installTemplateIOS">
+					<div class="js-installTemplateContent">
+						<div class="overlay-title">How to install the app on iOS</div>
+						<div class="block-body">
+							<div class="block-row">
+								<p>
+									Follow along with the video below to see how to install our site as a web app on your home screen.
+								</p>
+								<p style="text-align: center">
+									<video src="/styles/default/xenforo/add_to_home.mp4"
+										width="280" height="480" autoplay loop muted playsinline></video>
+								</p>
+								<p>
+									<small><strong>Note:</strong> This feature may not be available in some browsers.</small>
+								</p>
+							</div>
+						</div>
+					</div>
+				</template>
+			</div>
+		</div>
+	</div>
+
+	<div class="p-body">
+		<div class="p-body-inner">
+			<!--XF:EXTRA_OUTPUT-->
+
+			
+
+			
+
+			
+			
+	
+		<ul class="p-breadcrumbs "
+			itemscope itemtype="https://schema.org/BreadcrumbList">
+			
+				
+
+				
+				
+
+				
+					
+					
+	<li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+		<a href="https://vibingtalk.com" itemprop="item">
+			<span itemprop="name">Home</span>
+		</a>
+		<meta itemprop="position" content="1" />
+	</li>
+
+				
+
+				
+					
+					
+	<li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+		<a href="/index.php" itemprop="item">
+			<span itemprop="name">Forums</span>
+		</a>
+		<meta itemprop="position" content="2" />
+	</li>
+
+				
+				
+			
+		</ul>
+	
+
+			
+
+			
+	<noscript class="js-jsWarning"><div class="blockMessage blockMessage--important blockMessage--iconic u-noJsOnly">JavaScript is disabled. For a better experience, please enable JavaScript in your browser before proceeding.</div></noscript>
+
+			
+	<div class="blockMessage blockMessage--important blockMessage--iconic js-browserWarning" style="display: none">You are using an out of date browser. It  may not display this or other websites correctly.<br />You should upgrade or use an <a href="https://www.google.com/chrome/" target="_blank" rel="noopener">alternative browser</a>.</div>
+
+
+			
+				<div class="p-body-header">
+					
+						
+							<div class="p-title ">
+								
+									
+										<h1 class="p-title-value">Vibing Talk</h1>
+									
+									
+										<div class="p-title-pageAction">
+	
+		<a href="/index.php?whats-new/posts/" class="button button--icon button--icon--bolt "><i class="fa--xf far fa-bolt "><svg xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true" ><use href="/data/local/icons/regular.svg?v=1783794586#bolt"></use></svg></i><span class="button-text">
+			New posts
+		</span></a>
+	
+	
+</div>
+									
+								
+							</div>
+						
+
+						
+					
+				</div>
+			
+
+			<div class="p-body-main p-body-main--withSidebar ">
+				
+				<div class="p-body-contentCol"></div>
+				
+					<div class="p-body-sidebarCol"></div>
+				
+
+				
+
+				<div class="p-body-content">
+					
+					<div class="p-body-pageContent">
+
+
+
+
+
+	
+
+
+
+
+	
+	
+	
+		
+	
+	
+	
+
+
+	
+	
+	
+	
+		
+	
+	
+	
+
+
+	
+	
+
+
+
+
+
+
+
+
+
+	
+	
+		
+	
+	
+	
+		
+	<div class="block block--category block--category115">
+		<span class="u-anchorTarget" id="rules.115"></span>
+		<div class="block-container">
+			<h2 class="block-header">
+				<a href="/index.php#rules.115">Rules</a>
+				<span class="block-desc">Read before posting</span>
+			</h2>
+			<div class="block-body">
+				
+	
+	
+		
+	
+	
+	
+		
+	
+
+	<div class="node node--id116 node--depth2 node--forum node--read">
+		<div class="node-body">
+			<span class="node-icon" aria-hidden="true">
+				<i class="fa--xf far fa-comments "><svg xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true" ><use href="/data/local/icons/regular.svg?v=1783794586#comments"></use></svg></i>
+			</span>
+			<div class="node-main js-nodeMain">
+				
+
+				
+				<h3 class="node-title">
+					<a href="/index.php?forums/rules-community-guidelines.116/" data-xf-init="element-tooltip" data-shortcut="node-description">Rules &amp; Community Guidelines</a>
+				</h3>
+				
+					<div class="node-description node-description--tooltip js-nodeDescTooltip">Pinned: site-wide rules. No general discussion here.</div>
+				
+
+				<div class="node-meta">
+					
+						<div class="node-statsMeta">
+							<dl class="pairs pairs--inline">
+								<dt>Threads</dt>
+								<dd>1</dd>
+							</dl>
+							<dl class="pairs pairs--inline">
+								<dt>Messages</dt>
+								<dd>1</dd>
+							</dl>
+						</div>
+					
+
+					
+						
+	
+	
+
+					
+				</div>
+
+				
+
+				
+			</div>
+
+			
+				<div class="node-stats">
+					<dl class="pairs pairs--rows">
+						<dt>Threads</dt>
+						<dd>1</dd>
+					</dl>
+					<dl class="pairs pairs--rows">
+						<dt>Messages</dt>
+						<dd>1</dd>
+					</dl>
+				</div>
+			
+
+			<div class="node-extra">
+				
+					<div class="node-extra-icon">
+						
+							<a href="/index.php?members/god.1/" class="avatar avatar--xs avatar--default avatar--default--dynamic" data-user-id="1" data-xf-init="member-tooltip" style="background-color: #996666; color: #e0d1d1">
+			<span class="avatar-u1-s" role="img" aria-label="god">G</span> 
+		</a>
+						
+					</div>
+					<div class="node-extra-row">
+						
+							<a href="/index.php?threads/vibing-talk-community-guidelines.686435/post-4082280" class="node-extra-title" title="Vibing Talk Community Guidelines">Vibing Talk Community Guidelines</a>
+						
+					</div>
+					<div class="node-extra-row">
+						<ul class="listInline listInline--bullet">
+							<li><time  class="node-extra-date u-dt" dir="auto" datetime="2026-07-11T19:05:46+0100" data-timestamp="1783793146" data-date="Jul 11, 2026" data-time="7:05 PM" data-short="Jul 11" title="Jul 11, 2026 at 7:05 PM">Jul 11, 2026</time></li>
+							
+								<li class="node-extra-user"><a href="/index.php?members/god.1/" class="username " dir="auto" data-user-id="1" data-xf-init="member-tooltip"><span class="username--staff username--moderator username--admin">god</span></a></li>
+							
+						</ul>
+					</div>
+				
+			</div>
+		</div>
+	</div>
+
+	
+
+
+	
+
+	
+
+			</div>
+		</div>
+	</div>
+
+	
+
+	
+		
+	
+	
+	
+		
+	<div class="block block--category block--category117">
+		<span class="u-anchorTarget" id="announcements.117"></span>
+		<div class="block-container">
+			<h2 class="block-header">
+				<a href="/index.php#announcements.117">Announcements</a>
+				<span class="block-desc">News and intros</span>
+			</h2>
+			<div class="block-body">
+				
+	
+	
+		
+	
+	
+	
+		
+	
+
+	<div class="node node--id118 node--depth2 node--forum node--read">
+		<div class="node-body">
+			<span class="node-icon" aria-hidden="true">
+				<i class="fa--xf far fa-comments "><svg xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true" ><use href="/data/local/icons/regular.svg?v=1783794586#comments"></use></svg></i>
+			</span>
+			<div class="node-main js-nodeMain">
+				
+
+				
+				<h3 class="node-title">
+					<a href="/index.php?forums/site-news.118/" data-xf-init="element-tooltip" data-shortcut="node-description">Site News</a>
+				</h3>
+				
+					<div class="node-description node-description--tooltip js-nodeDescTooltip">Updates from the team</div>
+				
+
+				<div class="node-meta">
+					
+						<div class="node-statsMeta">
+							<dl class="pairs pairs--inline">
+								<dt>Threads</dt>
+								<dd>2</dd>
+							</dl>
+							<dl class="pairs pairs--inline">
+								<dt>Messages</dt>
+								<dd>2</dd>
+							</dl>
+						</div>
+					
+
+					
+						
+	
+	
+
+					
+				</div>
+
+				
+
+				
+			</div>
+
+			
+				<div class="node-stats">
+					<dl class="pairs pairs--rows">
+						<dt>Threads</dt>
+						<dd>2</dd>
+					</dl>
+					<dl class="pairs pairs--rows">
+						<dt>Messages</dt>
+						<dd>2</dd>
+					</dl>
+				</div>
+			
+
+			<div class="node-extra">
+				
+					<div class="node-extra-icon">
+						
+							<a href="/index.php?members/arcgiga165.2815827/" class="avatar avatar--xs avatar--default avatar--default--dynamic" data-user-id="2815827" data-xf-init="member-tooltip" style="background-color: #999966; color: #2e2e1f">
+			<span class="avatar-u2815827-s" role="img" aria-label="arcGiga165">A</span> 
+		</a>
+						
+					</div>
+					<div class="node-extra-row">
+						
+							<a href="/index.php?threads/ah-bloom-county.6909/post-13344" class="node-extra-title" title="ah, bloom county">ah, bloom county</a>
+						
+					</div>
+					<div class="node-extra-row">
+						<ul class="listInline listInline--bullet">
+							<li><time  class="node-extra-date u-dt" dir="auto" datetime="2026-05-02T04:15:39+0100" data-timestamp="1777691739" data-date="May 2, 2026" data-time="4:15 AM" data-short="May 2" title="May 2, 2026 at 4:15 AM">May 2, 2026</time></li>
+							
+								<li class="node-extra-user"><a href="/index.php?members/arcgiga165.2815827/" class="username " dir="auto" data-user-id="2815827" data-xf-init="member-tooltip">arcGiga165</a></li>
+							
+						</ul>
+					</div>
+				
+			</div>
+		</div>
+	</div>
+
+	
+
+
+	
+
+	
+		
+	
+	
+	
+		
+	
+
+	<div class="node node--id119 node--depth2 node--forum node--read">
+		<div class="node-body">
+			<span class="node-icon" aria-hidden="true">
+				<i class="fa--xf far fa-comments "><svg xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true" ><use href="/data/local/icons/regular.svg?v=1783794586#comments"></use></svg></i>
+			</span>
+			<div class="node-main js-nodeMain">
+				
+
+				
+				<h3 class="node-title">
+					<a href="/index.php?forums/introductions.119/" data-xf-init="element-tooltip" data-shortcut="node-description">Introductions</a>
+				</h3>
+				
+					<div class="node-description node-description--tooltip js-nodeDescTooltip">New to vibecoding? Start here</div>
+				
+
+				<div class="node-meta">
+					
+						<div class="node-statsMeta">
+							<dl class="pairs pairs--inline">
+								<dt>Threads</dt>
+								<dd>1.2K</dd>
+							</dl>
+							<dl class="pairs pairs--inline">
+								<dt>Messages</dt>
+								<dd>1.2K</dd>
+							</dl>
+						</div>
+					
+
+					
+						
+	
+	
+
+					
+				</div>
+
+				
+
+				
+			</div>
+
+			
+				<div class="node-stats">
+					<dl class="pairs pairs--rows">
+						<dt>Threads</dt>
+						<dd>1.2K</dd>
+					</dl>
+					<dl class="pairs pairs--rows">
+						<dt>Messages</dt>
+						<dd>1.2K</dd>
+					</dl>
+				</div>
+			
+
+			<div class="node-extra">
+				
+					<div class="node-extra-icon">
+						
+							<a href="/index.php?members/peaknull100.1594998/" class="avatar avatar--xs avatar--default avatar--default--dynamic" data-user-id="1594998" data-xf-init="member-tooltip" style="background-color: #c2e085; color: #6b8f24">
+			<span class="avatar-u1594998-s" role="img" aria-label="peakNull100">P</span> 
+		</a>
+						
+					</div>
+					<div class="node-extra-row">
+						
+							<a href="/index.php?threads/lol-have-you-actually-tried-that-like-what-you-think-the-user-is-just-gonna-st.13939/post-20374" class="node-extra-title" title="lol have you actually tried that? like what, you think the user is just gonna st">lol have you actually tried that? like what, you think the user is just gonna st</a>
+						
+					</div>
+					<div class="node-extra-row">
+						<ul class="listInline listInline--bullet">
+							<li><time  class="node-extra-date u-dt" dir="auto" datetime="2026-05-02T20:21:50+0100" data-timestamp="1777749710" data-date="May 2, 2026" data-time="8:21 PM" data-short="May 2" title="May 2, 2026 at 8:21 PM">May 2, 2026</time></li>
+							
+								<li class="node-extra-user"><a href="/index.php?members/peaknull100.1594998/" class="username " dir="auto" data-user-id="1594998" data-xf-init="member-tooltip">peakNull100</a></li>
+							
+						</ul>
+					</div>
+				
+			</div>
+		</div>
+	</div>
+
+	
+
+
+	
+
+	
+
+			</div>
+		</div>
+	</div>
+
+	
+
+	
+		
+	
+	
+	
+		
+	<div class="block block--category block--category120">
+		<span class="u-anchorTarget" id="tools-editors.120"></span>
+		<div class="block-container">
+			<h2 class="block-header">
+				<a href="/index.php#tools-editors.120">Tools &amp; Editors</a>
+				<span class="block-desc">The IDE / agent you're vibing with</span>
+			</h2>
+			<div class="block-body">
+				
+	
+	
+		
+	
+	
+	
+		
+	
+
+	<div class="node node--id121 node--depth2 node--forum node--unread">
+		<div class="node-body">
+			<span class="node-icon" aria-hidden="true">
+				<i class="fa--xf far fa-comments "><svg xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true" ><use href="/data/local/icons/regular.svg?v=1783794586#comments"></use></svg></i>
+			</span>
+			<div class="node-main js-nodeMain">
+				
+
+				
+				<h3 class="node-title">
+					<a href="/index.php?forums/cursor.121/" data-xf-init="element-tooltip" data-shortcut="node-description">Cursor</a>
+				</h3>
+				
+					<div class="node-description node-description--tooltip js-nodeDescTooltip">Cursor tips, rules, bugs, and workflows</div>
+				
+
+				<div class="node-meta">
+					
+						<div class="node-statsMeta">
+							<dl class="pairs pairs--inline">
+								<dt>Threads</dt>
+								<dd>26.2K</dd>
+							</dl>
+							<dl class="pairs pairs--inline">
+								<dt>Messages</dt>
+								<dd>139.8K</dd>
+							</dl>
+						</div>
+					
+
+					
+						
+	
+	
+
+					
+				</div>
+
+				
+
+				
+			</div>
+
+			
+				<div class="node-stats">
+					<dl class="pairs pairs--rows">
+						<dt>Threads</dt>
+						<dd>26.2K</dd>
+					</dl>
+					<dl class="pairs pairs--rows">
+						<dt>Messages</dt>
+						<dd>139.8K</dd>
+					</dl>
+				</div>
+			
+
+			<div class="node-extra">
+				
+					<div class="node-extra-icon">
+						
+							<a href="/index.php?members/persona_028.6942965/" class="avatar avatar--xs avatar--default avatar--default--dynamic" data-user-id="6942965" data-xf-init="member-tooltip" style="background-color: #a88a8a; color: #493636">
+			<span class="avatar-u6942965-s" role="img" aria-label="persona_028">P</span> 
+		</a>
+						
+					</div>
+					<div class="node-extra-row">
+						
+							<a href="/index.php?threads/intellij-ideas-java-kotlin-extension-for-vs-code-and-cursor-is-now-1-0.1894077/post-12269784" class="node-extra-title" title="IntelliJ IDEA&#039;s Java &amp; Kotlin extension for VS Code and Cursor is now 1.0">IntelliJ IDEA&#039;s Java &amp; Kotlin extension for VS Code and Cursor is now 1.0</a>
+						
+					</div>
+					<div class="node-extra-row">
+						<ul class="listInline listInline--bullet">
+							<li><time  class="node-extra-date u-dt" dir="auto" datetime="2026-10-23T00:38:46+0100" data-timestamp="1792712326" data-date="Oct 23, 2026" data-time="12:38 AM" data-short="2d" title="Oct 23, 2026 at 12:38 AM">Friday at 12:38 AM</time></li>
+							
+								<li class="node-extra-user"><a href="/index.php?members/persona_028.6942965/" class="username " dir="auto" data-user-id="6942965" data-xf-init="member-tooltip">persona_028</a></li>
+							
+						</ul>
+					</div>
+				
+			</div>
+		</div>
+	</div>
+
+	
+
+
+	
+
+	
+		
+	
+	
+	
+		
+	
+
+	<div class="node node--id122 node--depth2 node--forum node--unread">
+		<div class="node-body">
+			<span class="node-icon" aria-hidden="true">
+				<i class="fa--xf far fa-comments "><svg xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true" ><use href="/data/local/icons/regular.svg?v=1783794586#comments"></use></svg></i>
+			</span>
+			<div class="node-main js-nodeMain">
+				
+
+				
+				<h3 class="node-title">
+					<a href="/index.php?forums/claude-code.122/" data-xf-init="element-tooltip" data-shortcut="node-description">Claude Code</a>
+				</h3>
+				
+					<div class="node-description node-description--tooltip js-nodeDescTooltip">CLI + IDE extension for Claude's coding agent</div>
+				
+
+				<div class="node-meta">
+					
+						<div class="node-statsMeta">
+							<dl class="pairs pairs--inline">
+								<dt>Threads</dt>
+								<dd>93.5K</dd>
+							</dl>
+							<dl class="pairs pairs--inline">
+								<dt>Messages</dt>
+								<dd>922.1K</dd>
+							</dl>
+						</div>
+					
+
+					
+						
+	
+	
+
+					
+				</div>
+
+				
+
+				
+			</div>
+
+			
+				<div class="node-stats">
+					<dl class="pairs pairs--rows">
+						<dt>Threads</dt>
+						<dd>93.5K</dd>
+					</dl>
+					<dl class="pairs pairs--rows">
+						<dt>Messages</dt>
+						<dd>922.1K</dd>
+					</dl>
+				</div>
+			
+
+			<div class="node-extra">
+				
+					<div class="node-extra-icon">
+						
+							<a href="/index.php?members/liam_proxmox_addict.6942950/" class="avatar avatar--xs avatar--default avatar--default--dynamic" data-user-id="6942950" data-xf-init="member-tooltip" style="background-color: #6633cc; color: #d1c2f0">
+			<span class="avatar-u6942950-s" role="img" aria-label="liam_proxmox_addict">L</span> 
+		</a>
+						
+					</div>
+					<div class="node-extra-row">
+						
+							<a href="/index.php?threads/anthropic-says-mythos-kept-hacking-even-when-it-knew-real-people-could-get-hurt.1898046/post-12271507" class="node-extra-title" title="Anthropic says Mythos kept hacking even when it knew real people could get hurt">Anthropic says Mythos kept hacking even when it knew real people could get hurt</a>
+						
+					</div>
+					<div class="node-extra-row">
+						<ul class="listInline listInline--bullet">
+							<li><time  class="node-extra-date u-dt" dir="auto" datetime="2026-10-25T00:41:42+0100" data-timestamp="1792885302" data-date="Oct 25, 2026" data-time="12:41 AM" data-short="5h" title="Oct 25, 2026 at 12:41 AM">Today at 12:41 AM</time></li>
+							
+								<li class="node-extra-user"><a href="/index.php?members/liam_proxmox_addict.6942950/" class="username " dir="auto" data-user-id="6942950" data-xf-init="member-tooltip">liam_proxmox_addict</a></li>
+							
+						</ul>
+					</div>
+				
+			</div>
+		</div>
+	</div>
+
+	
+
+
+	
+
+	
+		
+	
+	
+	
+		
+	
+
+	<div class="node node--id124 node--depth2 node--forum node--unread">
+		<div class="node-body">
+			<span class="node-icon" aria-hidden="true">
+				<i class="fa--xf far fa-comments "><svg xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true" ><use href="/data/local/icons/regular.svg?v=1783794586#comments"></use></svg></i>
+			</span>
+			<div class="node-main js-nodeMain">
+				
+
+				
+				<h3 class="node-title">
+					<a href="/index.php?forums/github-copilot.124/" data-xf-init="element-tooltip" data-shortcut="node-description">GitHub Copilot</a>
+				</h3>
+				
+					<div class="node-description node-description--tooltip js-nodeDescTooltip">Copilot + Copilot Workspace</div>
+				
+
+				<div class="node-meta">
+					
+						<div class="node-statsMeta">
+							<dl class="pairs pairs--inline">
+								<dt>Threads</dt>
+								<dd>696</dd>
+							</dl>
+							<dl class="pairs pairs--inline">
+								<dt>Messages</dt>
+								<dd>5.6K</dd>
+							</dl>
+						</div>
+					
+
+					
+						
+	
+	
+
+					
+				</div>
+
+				
+
+				
+			</div>
+
+			
+				<div class="node-stats">
+					<dl class="pairs pairs--rows">
+						<dt>Threads</dt>
+						<dd>696</dd>
+					</dl>
+					<dl class="pairs pairs--rows">
+						<dt>Messages</dt>
+						<dd>5.6K</dd>
+					</dl>
+				</div>
+			
+
+			<div class="node-extra">
+				
+					<div class="node-extra-icon">
+						
+							<a href="/index.php?members/std_0615.6922591/" class="avatar avatar--xs avatar--default avatar--default--dynamic" data-user-id="6922591" data-xf-init="member-tooltip" style="background-color: #d65cb8; color: #661a53">
+			<span class="avatar-u6922591-s" role="img" aria-label="std_0615">S</span> 
+		</a>
+						
+					</div>
+					<div class="node-extra-row">
+						
+							<a href="/index.php?threads/github-copilot-student-code-review-says-quota-exceeded-despite-0-200-ai-credits-used.1894730/post-12251326" class="node-extra-title" title="GitHub Copilot Student: Code Review says quota exceeded despite 0/200 AI credits used">GitHub Copilot Student: Code Review says quota exceeded despite 0/200 AI credits used</a>
+						
+					</div>
+					<div class="node-extra-row">
+						<ul class="listInline listInline--bullet">
+							<li><time  class="node-extra-date u-dt" dir="auto" datetime="2026-10-20T08:05:41+0100" data-timestamp="1792479941" data-date="Oct 20, 2026" data-time="8:05 AM" data-short="4d" title="Oct 20, 2026 at 8:05 AM">Tuesday at 8:05 AM</time></li>
+							
+								<li class="node-extra-user"><a href="/index.php?members/std_0615.6922591/" class="username " dir="auto" data-user-id="6922591" data-xf-init="member-tooltip">std_0615</a></li>
+							
+						</ul>
+					</div>
+				
+			</div>
+		</div>
+	</div>
+
+	
+
+
+	
+
+	
+		
+	
+	
+	
+		
+	
+
+	<div class="node node--id125 node--depth2 node--forum node--unread">
+		<div class="node-body">
+			<span class="node-icon" aria-hidden="true">
+				<i class="fa--xf far fa-comments "><svg xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true" ><use href="/data/local/icons/regular.svg?v=1783794586#comments"></use></svg></i>
+			</span>
+			<div class="node-main js-nodeMain">
+				
+
+				
+				<h3 class="node-title">
+					<a href="/index.php?forums/aider-cline-roo-code.125/" data-xf-init="element-tooltip" data-shortcut="node-description">Aider / Cline / Roo Code</a>
+				</h3>
+				
+					<div class="node-description node-description--tooltip js-nodeDescTooltip">Terminal + in-editor agentic coding</div>
+				
+
+				<div class="node-meta">
+					
+						<div class="node-statsMeta">
+							<dl class="pairs pairs--inline">
+								<dt>Threads</dt>
+								<dd>2.3K</dd>
+							</dl>
+							<dl class="pairs pairs--inline">
+								<dt>Messages</dt>
+								<dd>26.3K</dd>
+							</dl>
+						</div>
+					
+
+					
+						
+	
+	
+
+					
+				</div>
+
+				
+
+				
+			</div>
+
+			
+				<div class="node-stats">
+					<dl class="pairs pairs--rows">
+						<dt>Threads</dt>
+						<dd>2.3K</dd>
+					</dl>
+					<dl class="pairs pairs--rows">
+						<dt>Messages</dt>
+						<dd>26.3K</dd>
+					</dl>
+				</div>
+			
+
+			<div class="node-extra">
+				
+					<div class="node-extra-icon">
+						
+							<a href="/index.php?members/std_1793.6944304/" class="avatar avatar--xs avatar--default avatar--default--dynamic" data-user-id="6944304" data-xf-init="member-tooltip" style="background-color: #9933cc; color: #e0c2f0">
+			<span class="avatar-u6944304-s" role="img" aria-label="std_1793">S</span> 
+		</a>
+						
+					</div>
+					<div class="node-extra-row">
+						
+							<a href="/index.php?threads/as-promised-here-are-the-first-cortex-benchmarks-against-aider-and-opencode.1896232/post-12260242" class="node-extra-title" title="As promised, here are the first Cortex benchmarks against Aider and OpenCode">As promised, here are the first Cortex benchmarks against Aider and OpenCode</a>
+						
+					</div>
+					<div class="node-extra-row">
+						<ul class="listInline listInline--bullet">
+							<li><time  class="node-extra-date u-dt" dir="auto" datetime="2026-10-22T08:54:47+0100" data-timestamp="1792655687" data-date="Oct 22, 2026" data-time="8:54 AM" data-short="2d" title="Oct 22, 2026 at 8:54 AM">Thursday at 8:54 AM</time></li>
+							
+								<li class="node-extra-user"><a href="/index.php?members/std_1793.6944304/" class="username " dir="auto" data-user-id="6944304" data-xf-init="member-tooltip">std_1793</a></li>
+							
+						</ul>
+					</div>
+				
+			</div>
+		</div>
+	</div>
+
+	
+
+
+	
+
+	
+		
+	
+	
+	
+		
+	
+
+	<div class="node node--id126 node--depth2 node--forum node--unread">
+		<div class="node-body">
+			<span class="node-icon" aria-hidden="true">
+				<i class="fa--xf far fa-comments "><svg xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true" ><use href="/data/local/icons/regular.svg?v=1783794586#comments"></use></svg></i>
+			</span>
+			<div class="node-main js-nodeMain">
+				
+
+				
+				<h3 class="node-title">
+					<a href="/index.php?forums/replit-bolt-v0-lovable.126/" data-xf-init="element-tooltip" data-shortcut="node-description">Replit, Bolt, v0, Lovable</a>
+				</h3>
+				
+					<div class="node-description node-description--tooltip js-nodeDescTooltip">Browser-first AI-build tools</div>
+				
+
+				<div class="node-meta">
+					
+						<div class="node-statsMeta">
+							<dl class="pairs pairs--inline">
+								<dt>Threads</dt>
+								<dd>15.6K</dd>
+							</dl>
+							<dl class="pairs pairs--inline">
+								<dt>Messages</dt>
+								<dd>152.1K</dd>
+							</dl>
+						</div>
+					
+
+					
+						
+	
+	
+
+					
+				</div>
+
+				
+
+				
+			</div>
+
+			
+				<div class="node-stats">
+					<dl class="pairs pairs--rows">
+						<dt>Threads</dt>
+						<dd>15.6K</dd>
+					</dl>
+					<dl class="pairs pairs--rows">
+						<dt>Messages</dt>
+						<dd>152.1K</dd>
+					</dl>
+				</div>
+			
+
+			<div class="node-extra">
+				
+					<div class="node-extra-icon">
+						
+							<a href="/index.php?members/std_1313.6921901/" class="avatar avatar--xs avatar--default avatar--default--dynamic" data-user-id="6921901" data-xf-init="member-tooltip" style="background-color: #99cccc; color: #3c7777">
+			<span class="avatar-u6921901-s" role="img" aria-label="std_1313">S</span> 
+		</a>
+						
+					</div>
+					<div class="node-extra-row">
+						
+							<a href="/index.php?threads/_sasa-tech-lab-ltd-mirfad-sovereign-digital-global-project-system-sasa-tech-biogensis-ai-tech-labs-mirfad-marie-sasa-tech-lab-sovereign-check-ou.1897726/post-12269743" class="node-extra-title" title="##_SASA TECH LAB LTD. MIRFAD SOVEREIGN DIGITAL GLOBAL PROJECT SYSTEM. SASA TECH BIOGENSIS AI TECH LABS. MIRFAD MARIE SASA TECH LAB SOVEREIGN. Check ou">##_SASA TECH LAB LTD. MIRFAD SOVEREIGN DIGITAL GLOBAL PROJECT SYSTEM. SASA TECH BIOGENSIS AI TECH LABS. MIRFAD MARIE SASA TECH LAB SOVEREIGN. Check ou</a>
+						
+					</div>
+					<div class="node-extra-row">
+						<ul class="listInline listInline--bullet">
+							<li><time  class="node-extra-date u-dt" dir="auto" datetime="2026-10-24T13:10:36+0100" data-timestamp="1792843836" data-date="Oct 24, 2026" data-time="1:10 PM" data-short="16h" title="Oct 24, 2026 at 1:10 PM">Yesterday at 1:10 PM</time></li>
+							
+								<li class="node-extra-user"><a href="/index.php?members/std_1313.6921901/" class="username " dir="auto" data-user-id="6921901" data-xf-init="member-tooltip">std_1313</a></li>
+							
+						</ul>
+					</div>
+				
+			</div>
+		</div>
+	</div>
+
+	
+
+
+	
+
+	
+
+			</div>
+		</div>
+	</div>
+
+	
+
+	
+		
+	
+	
+	
+		
+	<div class="block block--category block--category128">
+		<span class="u-anchorTarget" id="models-prompting.128"></span>
+		<div class="block-container">
+			<h2 class="block-header">
+				<a href="/index.php#models-prompting.128">Models &amp; Prompting</a>
+				<span class="block-desc">The model picking it up and the prompts driving it</span>
+			</h2>
+			<div class="block-body">
+				
+	
+	
+		
+	
+	
+	
+		
+	
+
+	<div class="node node--id129 node--depth2 node--forum node--unread">
+		<div class="node-body">
+			<span class="node-icon" aria-hidden="true">
+				<i class="fa--xf far fa-comments "><svg xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true" ><use href="/data/local/icons/regular.svg?v=1783794586#comments"></use></svg></i>
+			</span>
+			<div class="node-main js-nodeMain">
+				
+
+				
+				<h3 class="node-title">
+					<a href="/index.php?forums/model-comparisons.129/" data-xf-init="element-tooltip" data-shortcut="node-description">Model Comparisons</a>
+				</h3>
+				
+					<div class="node-description node-description--tooltip js-nodeDescTooltip">Sonnet vs GPT vs Gemini vs Qwen — for coding tasks</div>
+				
+
+				<div class="node-meta">
+					
+						<div class="node-statsMeta">
+							<dl class="pairs pairs--inline">
+								<dt>Threads</dt>
+								<dd>84.7K</dd>
+							</dl>
+							<dl class="pairs pairs--inline">
+								<dt>Messages</dt>
+								<dd>1.2M</dd>
+							</dl>
+						</div>
+					
+
+					
+						
+	
+	
+
+					
+				</div>
+
+				
+
+				
+			</div>
+
+			
+				<div class="node-stats">
+					<dl class="pairs pairs--rows">
+						<dt>Threads</dt>
+						<dd>84.7K</dd>
+					</dl>
+					<dl class="pairs pairs--rows">
+						<dt>Messages</dt>
+						<dd>1.2M</dd>
+					</dl>
+				</div>
+			
+
+			<div class="node-extra">
+				
+					<div class="node-extra-icon">
+						
+							<a href="/index.php?members/std_4058.6922671/" class="avatar avatar--xs avatar--default avatar--default--dynamic" data-user-id="6922671" data-xf-init="member-tooltip" style="background-color: #adebad; color: #2eb82e">
+			<span class="avatar-u6922671-s" role="img" aria-label="std_4058">S</span> 
+		</a>
+						
+					</div>
+					<div class="node-extra-row">
+						
+							<a href="/index.php?threads/if-openai-had-given-its-model-12-hours-per-problem-instead-of-3-how-many-of-the-4-000-math-problems-might-it-have-solved.1898047/post-12271512" class="node-extra-title" title="If OpenAI had given its model 12 hours per problem instead of 3, how many of the ~4,000 math problems might it have solved?">If OpenAI had given its model 12 hours per problem instead of 3, how many of the ~4,000 math problems might it have solved?</a>
+						
+					</div>
+					<div class="node-extra-row">
+						<ul class="listInline listInline--bullet">
+							<li><time  class="node-extra-date u-dt" dir="auto" datetime="2026-10-25T00:48:24+0100" data-timestamp="1792885704" data-date="Oct 25, 2026" data-time="12:48 AM" data-short="4h" title="Oct 25, 2026 at 12:48 AM">Today at 12:48 AM</time></li>
+							
+								<li class="node-extra-user"><a href="/index.php?members/std_4058.6922671/" class="username " dir="auto" data-user-id="6922671" data-xf-init="member-tooltip">std_4058</a></li>
+							
+						</ul>
+					</div>
+				
+			</div>
+		</div>
+	</div>
+
+	
+
+
+	
+
+	
+		
+	
+	
+	
+		
+	
+
+	<div class="node node--id130 node--depth2 node--forum node--unread">
+		<div class="node-body">
+			<span class="node-icon" aria-hidden="true">
+				<i class="fa--xf far fa-comments "><svg xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true" ><use href="/data/local/icons/regular.svg?v=1783794586#comments"></use></svg></i>
+			</span>
+			<div class="node-main js-nodeMain">
+				
+
+				
+				<h3 class="node-title">
+					<a href="/index.php?forums/rules-files-system-prompts.130/" data-xf-init="element-tooltip" data-shortcut="node-description">Rules Files &amp; System Prompts</a>
+				</h3>
+				
+					<div class="node-description node-description--tooltip js-nodeDescTooltip">CLAUDE.md, .cursorrules, .windsurfrules, AGENTS.md</div>
+				
+
+				<div class="node-meta">
+					
+						<div class="node-statsMeta">
+							<dl class="pairs pairs--inline">
+								<dt>Threads</dt>
+								<dd>858</dd>
+							</dl>
+							<dl class="pairs pairs--inline">
+								<dt>Messages</dt>
+								<dd>4.1K</dd>
+							</dl>
+						</div>
+					
+
+					
+						
+	
+	
+
+					
+				</div>
+
+				
+
+				
+			</div>
+
+			
+				<div class="node-stats">
+					<dl class="pairs pairs--rows">
+						<dt>Threads</dt>
+						<dd>858</dd>
+					</dl>
+					<dl class="pairs pairs--rows">
+						<dt>Messages</dt>
+						<dd>4.1K</dd>
+					</dl>
+				</div>
+			
+
+			<div class="node-extra">
+				
+					<div class="node-extra-icon">
+						
+							<a href="/index.php?members/std_3641.6945609/" class="avatar avatar--xs avatar--default avatar--default--dynamic" data-user-id="6945609" data-xf-init="member-tooltip" style="background-color: #9933cc; color: #e0c2f0">
+			<span class="avatar-u6945609-s" role="img" aria-label="std_3641">S</span> 
+		</a>
+						
+					</div>
+					<div class="node-extra-row">
+						
+							<a href="/index.php?threads/people-who-rely-on-a-claude-md-does-it-actually-get-you-better-work.621210/post-12266160" class="node-extra-title" title="People who rely on a CLAUDE.md — does it actually get you better work?">People who rely on a CLAUDE.md — does it actually get you better work?</a>
+						
+					</div>
+					<div class="node-extra-row">
+						<ul class="listInline listInline--bullet">
+							<li><time  class="node-extra-date u-dt" dir="auto" datetime="2026-10-22T20:02:37+0100" data-timestamp="1792695757" data-date="Oct 22, 2026" data-time="8:02 PM" data-short="2d" title="Oct 22, 2026 at 8:02 PM">Thursday at 8:02 PM</time></li>
+							
+								<li class="node-extra-user"><a href="/index.php?members/std_3641.6945609/" class="username " dir="auto" data-user-id="6945609" data-xf-init="member-tooltip">std_3641</a></li>
+							
+						</ul>
+					</div>
+				
+			</div>
+		</div>
+	</div>
+
+	
+
+
+	
+
+	
+		
+	
+	
+	
+		
+	
+
+	<div class="node node--id131 node--depth2 node--forum node--unread">
+		<div class="node-body">
+			<span class="node-icon" aria-hidden="true">
+				<i class="fa--xf far fa-comments "><svg xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true" ><use href="/data/local/icons/regular.svg?v=1783794586#comments"></use></svg></i>
+			</span>
+			<div class="node-main js-nodeMain">
+				
+
+				
+				<h3 class="node-title">
+					<a href="/index.php?forums/context-management.131/" data-xf-init="element-tooltip" data-shortcut="node-description">Context Management</a>
+				</h3>
+				
+					<div class="node-description node-description--tooltip js-nodeDescTooltip">What to feed the model, what to hide, how to chunk</div>
+				
+
+				<div class="node-meta">
+					
+						<div class="node-statsMeta">
+							<dl class="pairs pairs--inline">
+								<dt>Threads</dt>
+								<dd>1.6K</dd>
+							</dl>
+							<dl class="pairs pairs--inline">
+								<dt>Messages</dt>
+								<dd>16.2K</dd>
+							</dl>
+						</div>
+					
+
+					
+						
+	
+	
+
+					
+				</div>
+
+				
+
+				
+			</div>
+
+			
+				<div class="node-stats">
+					<dl class="pairs pairs--rows">
+						<dt>Threads</dt>
+						<dd>1.6K</dd>
+					</dl>
+					<dl class="pairs pairs--rows">
+						<dt>Messages</dt>
+						<dd>16.2K</dd>
+					</dl>
+				</div>
+			
+
+			<div class="node-extra">
+				
+					<div class="node-extra-icon">
+						
+							<a href="/index.php?members/std_1175.6943868/" class="avatar avatar--xs avatar--default avatar--default--dynamic" data-user-id="6943868" data-xf-init="member-tooltip" style="background-color: #521433; color: #d1478c">
+			<span class="avatar-u6943868-s" role="img" aria-label="std_1175">S</span> 
+		</a>
+						
+					</div>
+					<div class="node-extra-row">
+						
+							<a href="/index.php?threads/six-api-terms-that-get-mixed-up-context-window-max-output-temperature-vs-top_p-reasoning-tokens.1897297/post-12267989" class="node-extra-title" title="Six API terms that get mixed up: context window, max output, temperature vs top_p, reasoning tokens">Six API terms that get mixed up: context window, max output, temperature vs top_p, reasoning tokens</a>
+						
+					</div>
+					<div class="node-extra-row">
+						<ul class="listInline listInline--bullet">
+							<li><time  class="node-extra-date u-dt" dir="auto" datetime="2026-10-23T20:19:20+0100" data-timestamp="1792783160" data-date="Oct 23, 2026" data-time="8:19 PM" data-short="1d" title="Oct 23, 2026 at 8:19 PM">Friday at 8:19 PM</time></li>
+							
+								<li class="node-extra-user"><a href="/index.php?members/std_1175.6943868/" class="username " dir="auto" data-user-id="6943868" data-xf-init="member-tooltip">std_1175</a></li>
+							
+						</ul>
+					</div>
+				
+			</div>
+		</div>
+	</div>
+
+	
+
+
+	
+
+	
+		
+	
+	
+	
+		
+	
+
+	<div class="node node--id132 node--depth2 node--forum node--unread">
+		<div class="node-body">
+			<span class="node-icon" aria-hidden="true">
+				<i class="fa--xf far fa-comments "><svg xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true" ><use href="/data/local/icons/regular.svg?v=1783794586#comments"></use></svg></i>
+			</span>
+			<div class="node-main js-nodeMain">
+				
+
+				
+				<h3 class="node-title">
+					<a href="/index.php?forums/local-models-for-coding.132/" data-xf-init="element-tooltip" data-shortcut="node-description">Local Models for Coding</a>
+				</h3>
+				
+					<div class="node-description node-description--tooltip js-nodeDescTooltip">Qwen Coder, DeepSeek, Codestral, running on your own box</div>
+				
+
+				<div class="node-meta">
+					
+						<div class="node-statsMeta">
+							<dl class="pairs pairs--inline">
+								<dt>Threads</dt>
+								<dd>102.7K</dd>
+							</dl>
+							<dl class="pairs pairs--inline">
+								<dt>Messages</dt>
+								<dd>1.7M</dd>
+							</dl>
+						</div>
+					
+
+					
+						
+	
+	
+
+					
+				</div>
+
+				
+
+				
+			</div>
+
+			
+				<div class="node-stats">
+					<dl class="pairs pairs--rows">
+						<dt>Threads</dt>
+						<dd>102.7K</dd>
+					</dl>
+					<dl class="pairs pairs--rows">
+						<dt>Messages</dt>
+						<dd>1.7M</dd>
+					</dl>
+				</div>
+			
+
+			<div class="node-extra">
+				
+					<div class="node-extra-icon">
+						
+							<a href="/index.php?members/std_4564.6946254/" class="avatar avatar--xs avatar--default avatar--default--dynamic" data-user-id="6946254" data-xf-init="member-tooltip" style="background-color: #143352; color: #478cd1">
+			<span class="avatar-u6946254-s" role="img" aria-label="std_4564">S</span> 
+		</a>
+						
+					</div>
+					<div class="node-extra-row">
+						
+							<a href="/index.php?threads/qwen-3-8-flash-next-on-9060-xt-16gb.1898048/post-12271527" class="node-extra-title" title="Qwen 3.8 Flash Next on 9060 XT 16GB">Qwen 3.8 Flash Next on 9060 XT 16GB</a>
+						
+					</div>
+					<div class="node-extra-row">
+						<ul class="listInline listInline--bullet">
+							<li><time  class="node-extra-date u-dt" dir="auto" datetime="2026-10-25T00:53:26+0100" data-timestamp="1792886006" data-date="Oct 25, 2026" data-time="12:53 AM" data-short="4h" title="Oct 25, 2026 at 12:53 AM">Today at 12:53 AM</time></li>
+							
+								<li class="node-extra-user"><a href="/index.php?members/std_4564.6946254/" class="username " dir="auto" data-user-id="6946254" data-xf-init="member-tooltip">std_4564</a></li>
+							
+						</ul>
+					</div>
+				
+			</div>
+		</div>
+	</div>
+
+	
+
+
+	
+
+	
+
+			</div>
+		</div>
+	</div>
+
+	
+
+	
+		
+	
+	
+	
+		
+	<div class="block block--category block--category133">
+		<span class="u-anchorTarget" id="agents-mcp-tool-use.133"></span>
+		<div class="block-container">
+			<h2 class="block-header">
+				<a href="/index.php#agents-mcp-tool-use.133">Agents, MCP &amp; Tool Use</a>
+				<span class="block-desc">When the code writes itself — and the tools it uses</span>
+			</h2>
+			<div class="block-body">
+				
+	
+	
+		
+	
+	
+	
+		
+	
+
+	<div class="node node--id134 node--depth2 node--forum node--unread">
+		<div class="node-body">
+			<span class="node-icon" aria-hidden="true">
+				<i class="fa--xf far fa-comments "><svg xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true" ><use href="/data/local/icons/regular.svg?v=1783794586#comments"></use></svg></i>
+			</span>
+			<div class="node-main js-nodeMain">
+				
+
+				
+				<h3 class="node-title">
+					<a href="/index.php?forums/mcp-servers.134/" data-xf-init="element-tooltip" data-shortcut="node-description">MCP Servers</a>
+				</h3>
+				
+					<div class="node-description node-description--tooltip js-nodeDescTooltip">Anthropic's Model Context Protocol — building and using servers</div>
+				
+
+				<div class="node-meta">
+					
+						<div class="node-statsMeta">
+							<dl class="pairs pairs--inline">
+								<dt>Threads</dt>
+								<dd>4.8K</dd>
+							</dl>
+							<dl class="pairs pairs--inline">
+								<dt>Messages</dt>
+								<dd>12.9K</dd>
+							</dl>
+						</div>
+					
+
+					
+						
+	
+	
+
+					
+				</div>
+
+				
+
+				
+			</div>
+
+			
+				<div class="node-stats">
+					<dl class="pairs pairs--rows">
+						<dt>Threads</dt>
+						<dd>4.8K</dd>
+					</dl>
+					<dl class="pairs pairs--rows">
+						<dt>Messages</dt>
+						<dd>12.9K</dd>
+					</dl>
+				</div>
+			
+
+			<div class="node-extra">
+				
+					<div class="node-extra-icon">
+						
+							<a href="/index.php?members/std_1012.6923276/" class="avatar avatar--xs avatar--default avatar--default--dynamic" data-user-id="6923276" data-xf-init="member-tooltip" style="background-color: #993333; color: #df9f9f">
+			<span class="avatar-u6923276-s" role="img" aria-label="std_1012">S</span> 
+		</a>
+						
+					</div>
+					<div class="node-extra-row">
+						
+							<a href="/index.php?threads/how-i-gave-openai-codex-cli-long-term-local-memory-using-mcp-zero-dependency.1897945/post-12270739" class="node-extra-title" title="How I gave OpenAI Codex CLI long-term local memory using MCP (zero-dependency)">How I gave OpenAI Codex CLI long-term local memory using MCP (zero-dependency)</a>
+						
+					</div>
+					<div class="node-extra-row">
+						<ul class="listInline listInline--bullet">
+							<li><time  class="node-extra-date u-dt" dir="auto" datetime="2026-10-24T20:32:08+0100" data-timestamp="1792870328" data-date="Oct 24, 2026" data-time="8:32 PM" data-short="9h" title="Oct 24, 2026 at 8:32 PM">Yesterday at 8:32 PM</time></li>
+							
+								<li class="node-extra-user"><a href="/index.php?members/std_1012.6923276/" class="username " dir="auto" data-user-id="6923276" data-xf-init="member-tooltip">std_1012</a></li>
+							
+						</ul>
+					</div>
+				
+			</div>
+		</div>
+	</div>
+
+	
+
+
+	
+
+	
+		
+	
+	
+	
+		
+	
+
+	<div class="node node--id135 node--depth2 node--forum node--unread">
+		<div class="node-body">
+			<span class="node-icon" aria-hidden="true">
+				<i class="fa--xf far fa-comments "><svg xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true" ><use href="/data/local/icons/regular.svg?v=1783794586#comments"></use></svg></i>
+			</span>
+			<div class="node-main js-nodeMain">
+				
+
+				
+				<h3 class="node-title">
+					<a href="/index.php?forums/agent-frameworks.135/" data-xf-init="element-tooltip" data-shortcut="node-description">Agent Frameworks</a>
+				</h3>
+				
+					<div class="node-description node-description--tooltip js-nodeDescTooltip">LangGraph, Autogen, CrewAI, Devin, custom loops</div>
+				
+
+				<div class="node-meta">
+					
+						<div class="node-statsMeta">
+							<dl class="pairs pairs--inline">
+								<dt>Threads</dt>
+								<dd>1.2K</dd>
+							</dl>
+							<dl class="pairs pairs--inline">
+								<dt>Messages</dt>
+								<dd>10.7K</dd>
+							</dl>
+						</div>
+					
+
+					
+						
+	
+	
+
+					
+				</div>
+
+				
+
+				
+			</div>
+
+			
+				<div class="node-stats">
+					<dl class="pairs pairs--rows">
+						<dt>Threads</dt>
+						<dd>1.2K</dd>
+					</dl>
+					<dl class="pairs pairs--rows">
+						<dt>Messages</dt>
+						<dd>10.7K</dd>
+					</dl>
+				</div>
+			
+
+			<div class="node-extra">
+				
+					<div class="node-extra-icon">
+						
+							<a href="/index.php?members/std_2633.6944883/" class="avatar avatar--xs avatar--default avatar--default--dynamic" data-user-id="6944883" data-xf-init="member-tooltip" style="background-color: #3366cc; color: #c2d1f0">
+			<span class="avatar-u6944883-s" role="img" aria-label="std_2633">S</span> 
+		</a>
+						
+					</div>
+					<div class="node-extra-row">
+						
+							<a href="/index.php?threads/benchmarking-crewai-tool-execution-security-how-are-you-protecting-agents-against-prompt-injection-and-rogue-os-commands.1896996/post-12267487" class="node-extra-title" title="Benchmarking CrewAI tool execution security: How are you protecting agents against prompt injection and rogue OS commands?">Benchmarking CrewAI tool execution security: How are you protecting agents against prompt injection and rogue OS commands?</a>
+						
+					</div>
+					<div class="node-extra-row">
+						<ul class="listInline listInline--bullet">
+							<li><time  class="node-extra-date u-dt" dir="auto" datetime="2026-10-23T11:51:37+0100" data-timestamp="1792752697" data-date="Oct 23, 2026" data-time="11:51 AM" data-short="1d" title="Oct 23, 2026 at 11:51 AM">Friday at 11:51 AM</time></li>
+							
+								<li class="node-extra-user"><a href="/index.php?members/std_2633.6944883/" class="username " dir="auto" data-user-id="6944883" data-xf-init="member-tooltip">std_2633</a></li>
+							
+						</ul>
+					</div>
+				
+			</div>
+		</div>
+	</div>
+
+	
+
+
+	
+
+	
+
+			</div>
+		</div>
+	</div>
+
+	
+
+	
+		
+	
+	
+	
+		
+	<div class="block block--category block--category138">
+		<span class="u-anchorTarget" id="show-your-build.138"></span>
+		<div class="block-container">
+			<h2 class="block-header">
+				<a href="/index.php#show-your-build.138">Show Your Build</a>
+				<span class="block-desc">What you shipped</span>
+			</h2>
+			<div class="block-body">
+				
+	
+	
+		
+	
+	
+	
+		
+	
+
+	<div class="node node--id139 node--depth2 node--forum node--unread">
+		<div class="node-body">
+			<span class="node-icon" aria-hidden="true">
+				<i class="fa--xf far fa-comments "><svg xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true" ><use href="/data/local/icons/regular.svg?v=1783794586#comments"></use></svg></i>
+			</span>
+			<div class="node-main js-nodeMain">
+				
+
+				
+				<h3 class="node-title">
+					<a href="/index.php?forums/weekly-build-thread.139/" data-xf-init="element-tooltip" data-shortcut="node-description">Weekly Build Thread</a>
+				</h3>
+				
+					<div class="node-description node-description--tooltip js-nodeDescTooltip">Rotating: post what you're building this week</div>
+				
+
+				<div class="node-meta">
+					
+						<div class="node-statsMeta">
+							<dl class="pairs pairs--inline">
+								<dt>Threads</dt>
+								<dd>59.9K</dd>
+							</dl>
+							<dl class="pairs pairs--inline">
+								<dt>Messages</dt>
+								<dd>682.3K</dd>
+							</dl>
+						</div>
+					
+
+					
+						
+	
+	
+
+					
+				</div>
+
+				
+
+				
+			</div>
+
+			
+				<div class="node-stats">
+					<dl class="pairs pairs--rows">
+						<dt>Threads</dt>
+						<dd>59.9K</dd>
+					</dl>
+					<dl class="pairs pairs--rows">
+						<dt>Messages</dt>
+						<dd>682.3K</dd>
+					</dl>
+				</div>
+			
+
+			<div class="node-extra">
+				
+					<div class="node-extra-icon">
+						
+							<a href="/index.php?members/std_3961.6945825/" class="avatar avatar--xs avatar--default avatar--default--dynamic" data-user-id="6945825" data-xf-init="member-tooltip" style="background-color: #663333; color: #c38888">
+			<span class="avatar-u6945825-s" role="img" aria-label="std_3961">S</span> 
+		</a>
+						
+					</div>
+					<div class="node-extra-row">
+						
+							<a href="/index.php?threads/airsend-open-source-windows-homepod-airplay-2-sender-in-rust-tauri.657329/post-12253058" class="node-extra-title" title="AirSend - open source Windows -&gt; HomePod AirPlay 2 sender in Rust + Tauri">AirSend - open source Windows -&gt; HomePod AirPlay 2 sender in Rust + Tauri</a>
+						
+					</div>
+					<div class="node-extra-row">
+						<ul class="listInline listInline--bullet">
+							<li><time  class="node-extra-date u-dt" dir="auto" datetime="2026-10-20T14:35:42+0100" data-timestamp="1792503342" data-date="Oct 20, 2026" data-time="2:35 PM" data-short="4d" title="Oct 20, 2026 at 2:35 PM">Tuesday at 2:35 PM</time></li>
+							
+								<li class="node-extra-user"><a href="/index.php?members/std_3961.6945825/" class="username " dir="auto" data-user-id="6945825" data-xf-init="member-tooltip">std_3961</a></li>
+							
+						</ul>
+					</div>
+				
+			</div>
+		</div>
+	</div>
+
+	
+
+
+	
+
+	
+
+			</div>
+		</div>
+	</div>
+
+	
+
+	
+		
+	
+	
+	
+		
+	<div class="block block--category block--category143">
+		<span class="u-anchorTarget" id="indie-builder.143"></span>
+		<div class="block-container">
+			<h2 class="block-header">
+				<a href="/index.php#indie-builder.143">Indie Builder</a>
+				<span class="block-desc">Ship it. Sell it. Grow it.</span>
+			</h2>
+			<div class="block-body">
+				
+	
+	
+		
+	
+	
+	
+		
+	
+
+	<div class="node node--id145 node--depth2 node--forum node--unread">
+		<div class="node-body">
+			<span class="node-icon" aria-hidden="true">
+				<i class="fa--xf far fa-comments "><svg xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true" ><use href="/data/local/icons/regular.svg?v=1783794586#comments"></use></svg></i>
+			</span>
+			<div class="node-main js-nodeMain">
+				
+
+				
+				<h3 class="node-title">
+					<a href="/index.php?forums/pricing-revenue.145/" data-xf-init="element-tooltip" data-shortcut="node-description">Pricing &amp; Revenue</a>
+				</h3>
+				
+					<div class="node-description node-description--tooltip js-nodeDescTooltip">Monetization, stripe, paywalls, retention</div>
+				
+
+				<div class="node-meta">
+					
+						<div class="node-statsMeta">
+							<dl class="pairs pairs--inline">
+								<dt>Threads</dt>
+								<dd>2.8K</dd>
+							</dl>
+							<dl class="pairs pairs--inline">
+								<dt>Messages</dt>
+								<dd>19.5K</dd>
+							</dl>
+						</div>
+					
+
+					
+						
+	
+	
+
+					
+				</div>
+
+				
+
+				
+			</div>
+
+			
+				<div class="node-stats">
+					<dl class="pairs pairs--rows">
+						<dt>Threads</dt>
+						<dd>2.8K</dd>
+					</dl>
+					<dl class="pairs pairs--rows">
+						<dt>Messages</dt>
+						<dd>19.5K</dd>
+					</dl>
+				</div>
+			
+
+			<div class="node-extra">
+				
+					<div class="node-extra-icon">
+						
+							<a href="/index.php?members/std_3576.6945570/" class="avatar avatar--xs avatar--default avatar--default--dynamic" data-user-id="6945570" data-xf-init="member-tooltip" style="background-color: #c2e085; color: #6b8f24">
+			<span class="avatar-u6945570-s" role="img" aria-label="std_3576">S</span> 
+		</a>
+						
+					</div>
+					<div class="node-extra-row">
+						
+							<a href="/index.php?threads/i-built-a-site-to-compare-llm-benchmarks-token-pricing-and-vram-requirements-in-one-place.1897981/post-12270996" class="node-extra-title" title="I built a site to compare LLM benchmarks, token pricing, and VRAM requirements in one place">I built a site to compare LLM benchmarks, token pricing, and VRAM requirements in one place</a>
+						
+					</div>
+					<div class="node-extra-row">
+						<ul class="listInline listInline--bullet">
+							<li><time  class="node-extra-date u-dt" dir="auto" datetime="2026-10-24T22:01:52+0100" data-timestamp="1792875712" data-date="Oct 24, 2026" data-time="10:01 PM" data-short="7h" title="Oct 24, 2026 at 10:01 PM">Yesterday at 10:01 PM</time></li>
+							
+								<li class="node-extra-user"><a href="/index.php?members/std_3576.6945570/" class="username " dir="auto" data-user-id="6945570" data-xf-init="member-tooltip">std_3576</a></li>
+							
+						</ul>
+					</div>
+				
+			</div>
+		</div>
+	</div>
+
+	
+
+
+	
+
+	
+
+			</div>
+		</div>
+	</div>
+
+	
+
+	
+		
+	
+	
+	
+		
+	<div class="block block--category block--category148">
+		<span class="u-anchorTarget" id="deep-dives.148"></span>
+		<div class="block-container">
+			<h2 class="block-header">
+				<a href="/index.php#deep-dives.148">Deep Dives</a>
+				<span class="block-desc">Longer reads</span>
+			</h2>
+			<div class="block-body">
+				
+	
+	
+		
+	
+	
+	
+		
+	
+
+	<div class="node node--id149 node--depth2 node--forum node--unread">
+		<div class="node-body">
+			<span class="node-icon" aria-hidden="true">
+				<i class="fa--xf far fa-comments "><svg xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true" ><use href="/data/local/icons/regular.svg?v=1783794586#comments"></use></svg></i>
+			</span>
+			<div class="node-main js-nodeMain">
+				
+
+				
+				<h3 class="node-title">
+					<a href="/index.php?forums/guides-tutorials.149/" data-xf-init="element-tooltip" data-shortcut="node-description">Guides &amp; Tutorials</a>
+				</h3>
+				
+					<div class="node-description node-description--tooltip js-nodeDescTooltip">How to actually vibe code well</div>
+				
+
+				<div class="node-meta">
+					
+						<div class="node-statsMeta">
+							<dl class="pairs pairs--inline">
+								<dt>Threads</dt>
+								<dd>232.1K</dd>
+							</dl>
+							<dl class="pairs pairs--inline">
+								<dt>Messages</dt>
+								<dd>1.1M</dd>
+							</dl>
+						</div>
+					
+
+					
+						
+	
+	
+
+					
+				</div>
+
+				
+
+				
+			</div>
+
+			
+				<div class="node-stats">
+					<dl class="pairs pairs--rows">
+						<dt>Threads</dt>
+						<dd>232.1K</dd>
+					</dl>
+					<dl class="pairs pairs--rows">
+						<dt>Messages</dt>
+						<dd>1.1M</dd>
+					</dl>
+				</div>
+			
+
+			<div class="node-extra">
+				
+					<div class="node-extra-icon">
+						
+							<a href="/index.php?members/std_0802.6943599/" class="avatar avatar--xs avatar--default avatar--default--dynamic" data-user-id="6943599" data-xf-init="member-tooltip" style="background-color: #ebadad; color: #b82e2e">
+			<span class="avatar-u6943599-s" role="img" aria-label="std_0802">S</span> 
+		</a>
+						
+					</div>
+					<div class="node-extra-row">
+						
+							<a href="/index.php?threads/reverse-vowels-in-a-string.396552/post-12259940" class="node-extra-title" title="Reverse vowels in a string">Reverse vowels in a string</a>
+						
+					</div>
+					<div class="node-extra-row">
+						<ul class="listInline listInline--bullet">
+							<li><time  class="node-extra-date u-dt" dir="auto" datetime="2026-10-22T03:58:55+0100" data-timestamp="1792637935" data-date="Oct 22, 2026" data-time="3:58 AM" data-short="3d" title="Oct 22, 2026 at 3:58 AM">Thursday at 3:58 AM</time></li>
+							
+								<li class="node-extra-user"><a href="/index.php?members/std_0802.6943599/" class="username " dir="auto" data-user-id="6943599" data-xf-init="member-tooltip">std_0802</a></li>
+							
+						</ul>
+					</div>
+				
+			</div>
+		</div>
+	</div>
+
+	
+
+
+	
+
+	
+		
+	
+	
+	
+		
+	
+
+	<div class="node node--id150 node--depth2 node--forum node--unread">
+		<div class="node-body">
+			<span class="node-icon" aria-hidden="true">
+				<i class="fa--xf far fa-comments "><svg xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true" ><use href="/data/local/icons/regular.svg?v=1783794586#comments"></use></svg></i>
+			</span>
+			<div class="node-main js-nodeMain">
+				
+
+				
+				<h3 class="node-title">
+					<a href="/index.php?forums/benchmarks-evaluations.150/" data-xf-init="element-tooltip" data-shortcut="node-description">Benchmarks &amp; Evaluations</a>
+				</h3>
+				
+					<div class="node-description node-description--tooltip js-nodeDescTooltip">SWE-bench, HumanEval, private evals</div>
+				
+
+				<div class="node-meta">
+					
+						<div class="node-statsMeta">
+							<dl class="pairs pairs--inline">
+								<dt>Threads</dt>
+								<dd>396</dd>
+							</dl>
+							<dl class="pairs pairs--inline">
+								<dt>Messages</dt>
+								<dd>3.4K</dd>
+							</dl>
+						</div>
+					
+
+					
+						
+	
+	
+
+					
+				</div>
+
+				
+
+				
+			</div>
+
+			
+				<div class="node-stats">
+					<dl class="pairs pairs--rows">
+						<dt>Threads</dt>
+						<dd>396</dd>
+					</dl>
+					<dl class="pairs pairs--rows">
+						<dt>Messages</dt>
+						<dd>3.4K</dd>
+					</dl>
+				</div>
+			
+
+			<div class="node-extra">
+				
+					<div class="node-extra-icon">
+						
+							<a href="/index.php?members/std_1323.6943978/" class="avatar avatar--xs avatar--default avatar--default--dynamic" data-user-id="6943978" data-xf-init="member-tooltip" style="background-color: #669966; color: #1f2e1f">
+			<span class="avatar-u6943978-s" role="img" aria-label="std_1323">S</span> 
+		</a>
+						
+					</div>
+					<div class="node-extra-row">
+						
+							<a href="/index.php?threads/tts-benchmark-comparison-all-known-tts-up-until-may-2026.655578/post-10449373" class="node-extra-title" title="TTS Benchmark Comparison (all known TTS up until May 2026)">TTS Benchmark Comparison (all known TTS up until May 2026)</a>
+						
+					</div>
+					<div class="node-extra-row">
+						<ul class="listInline listInline--bullet">
+							<li><time  class="node-extra-date u-dt" dir="auto" datetime="2026-10-04T03:40:51+0100" data-timestamp="1791081651" data-date="Oct 4, 2026" data-time="3:40 AM" data-short="21d" title="Oct 4, 2026 at 3:40 AM">Oct 4, 2026</time></li>
+							
+								<li class="node-extra-user"><a href="/index.php?members/std_1323.6943978/" class="username " dir="auto" data-user-id="6943978" data-xf-init="member-tooltip">std_1323</a></li>
+							
+						</ul>
+					</div>
+				
+			</div>
+		</div>
+	</div>
+
+	
+
+
+	
+
+	
+		
+	
+	
+	
+		
+	
+
+	<div class="node node--id151 node--depth2 node--forum node--unread">
+		<div class="node-body">
+			<span class="node-icon" aria-hidden="true">
+				<i class="fa--xf far fa-comments "><svg xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true" ><use href="/data/local/icons/regular.svg?v=1783794586#comments"></use></svg></i>
+			</span>
+			<div class="node-main js-nodeMain">
+				
+
+				
+				<h3 class="node-title">
+					<a href="/index.php?forums/post-mortems.151/" data-xf-init="element-tooltip" data-shortcut="node-description">Post-Mortems</a>
+				</h3>
+				
+					<div class="node-description node-description--tooltip js-nodeDescTooltip">When the vibes went wrong — what broke, what we learned</div>
+				
+
+				<div class="node-meta">
+					
+						<div class="node-statsMeta">
+							<dl class="pairs pairs--inline">
+								<dt>Threads</dt>
+								<dd>780</dd>
+							</dl>
+							<dl class="pairs pairs--inline">
+								<dt>Messages</dt>
+								<dd>8.7K</dd>
+							</dl>
+						</div>
+					
+
+					
+						
+	
+	
+
+					
+				</div>
+
+				
+
+				
+			</div>
+
+			
+				<div class="node-stats">
+					<dl class="pairs pairs--rows">
+						<dt>Threads</dt>
+						<dd>780</dd>
+					</dl>
+					<dl class="pairs pairs--rows">
+						<dt>Messages</dt>
+						<dd>8.7K</dd>
+					</dl>
+				</div>
+			
+
+			<div class="node-extra">
+				
+					<div class="node-extra-icon">
+						
+							<a href="/index.php?members/std_1828.6944326/" class="avatar avatar--xs avatar--default avatar--default--dynamic" data-user-id="6944326" data-xf-init="member-tooltip" style="background-color: #3d3d0f; color: #cccc33">
+			<span class="avatar-u6944326-s" role="img" aria-label="std_1828">S</span> 
+		</a>
+						
+					</div>
+					<div class="node-extra-row">
+						
+							<a href="/index.php?threads/discussion-hub-for-new-claude-incident-elevated-errors-for-other-claude-models-on-oct-24-2026.1897537/post-12268857" class="node-extra-title" title="Discussion Hub for new Claude incident: Elevated errors for other Claude models on Oct 24, 2026">Discussion Hub for new Claude incident: Elevated errors for other Claude models on Oct 24, 2026</a>
+						
+					</div>
+					<div class="node-extra-row">
+						<ul class="listInline listInline--bullet">
+							<li><time  class="node-extra-date u-dt" dir="auto" datetime="2026-10-24T06:18:03+0100" data-timestamp="1792819083" data-date="Oct 24, 2026" data-time="6:18 AM" data-short="23h" title="Oct 24, 2026 at 6:18 AM">Yesterday at 6:18 AM</time></li>
+							
+								<li class="node-extra-user"><a href="/index.php?members/std_1828.6944326/" class="username " dir="auto" data-user-id="6944326" data-xf-init="member-tooltip">std_1828</a></li>
+							
+						</ul>
+					</div>
+				
+			</div>
+		</div>
+	</div>
+
+	
+
+
+	
+
+	
+
+			</div>
+		</div>
+	</div>
+
+	
+
+	
+		
+	
+	
+	
+		
+	<div class="block block--category block--category152">
+		<span class="u-anchorTarget" id="off-topic.152"></span>
+		<div class="block-container">
+			<h2 class="block-header">
+				<a href="/index.php#off-topic.152">Off-Topic</a>
+				<span class="block-desc">Everything else</span>
+			</h2>
+			<div class="block-body">
+				
+	
+	
+		
+	
+	
+	
+		
+	
+
+	<div class="node node--id153 node--depth2 node--forum node--unread">
+		<div class="node-body">
+			<span class="node-icon" aria-hidden="true">
+				<i class="fa--xf far fa-comments "><svg xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true" ><use href="/data/local/icons/regular.svg?v=1783794586#comments"></use></svg></i>
+			</span>
+			<div class="node-main js-nodeMain">
+				
+
+				
+				<h3 class="node-title">
+					<a href="/index.php?forums/lounge.153/" data-xf-init="element-tooltip" data-shortcut="node-description">Lounge</a>
+				</h3>
+				
+					<div class="node-description node-description--tooltip js-nodeDescTooltip">General chat about the industry, memes, news</div>
+				
+
+				<div class="node-meta">
+					
+						<div class="node-statsMeta">
+							<dl class="pairs pairs--inline">
+								<dt>Threads</dt>
+								<dd>1M</dd>
+							</dl>
+							<dl class="pairs pairs--inline">
+								<dt>Messages</dt>
+								<dd>5.2M</dd>
+							</dl>
+						</div>
+					
+
+					
+						
+	
+	
+
+					
+				</div>
+
+				
+
+				
+			</div>
+
+			
+				<div class="node-stats">
+					<dl class="pairs pairs--rows">
+						<dt>Threads</dt>
+						<dd>1M</dd>
+					</dl>
+					<dl class="pairs pairs--rows">
+						<dt>Messages</dt>
+						<dd>5.2M</dd>
+					</dl>
+				</div>
+			
+
+			<div class="node-extra">
+				
+					<div class="node-extra-icon">
+						
+							<a href="/index.php?members/std_2697.6944925/" class="avatar avatar--xs avatar--default avatar--default--dynamic" data-user-id="6944925" data-xf-init="member-tooltip" style="background-color: #cc66cc; color: #602060">
+			<span class="avatar-u6944925-s" role="img" aria-label="std_2697">S</span> 
+		</a>
+						
+					</div>
+					<div class="node-extra-row">
+						
+							<a href="/index.php?threads/psa-google-is-forcibly-refunding-cancelling-student-ai-pro-plans-after-prorated-ai-plus-ai-pro-upgrades-please-share-your-case.1898059/post-12272009" class="node-extra-title" title="PSA: Google is forcibly refunding/cancelling student AI Pro plans after prorated AI Plus → AI Pro upgrades — please share your case">PSA: Google is forcibly refunding/cancelling student AI Pro plans after prorated AI Plus → AI Pro upgrades — please share your case</a>
+						
+					</div>
+					<div class="node-extra-row">
+						<ul class="listInline listInline--bullet">
+							<li><time  class="node-extra-date u-dt" dir="auto" datetime="2026-10-25T01:42:47+0100" data-timestamp="1792888967" data-date="Oct 25, 2026" data-time="1:42 AM" data-short="4h" title="Oct 25, 2026 at 1:42 AM">Today at 1:42 AM</time></li>
+							
+								<li class="node-extra-user"><a href="/index.php?members/std_2697.6944925/" class="username " dir="auto" data-user-id="6944925" data-xf-init="member-tooltip">std_2697</a></li>
+							
+						</ul>
+					</div>
+				
+			</div>
+		</div>
+	</div>
+
+	
+
+
+	
+
+	
+		
+	
+	
+	
+		
+	
+
+	<div class="node node--id154 node--depth2 node--forum node--unread">
+		<div class="node-body">
+			<span class="node-icon" aria-hidden="true">
+				<i class="fa--xf far fa-comments "><svg xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true" ><use href="/data/local/icons/regular.svg?v=1783794586#comments"></use></svg></i>
+			</span>
+			<div class="node-main js-nodeMain">
+				
+
+				
+				<h3 class="node-title">
+					<a href="/index.php?forums/career-hiring.154/" data-xf-init="element-tooltip" data-shortcut="node-description">Career &amp; Hiring</a>
+				</h3>
+				
+					<div class="node-description node-description--tooltip js-nodeDescTooltip">AI-native dev jobs, contract work</div>
+				
+
+				<div class="node-meta">
+					
+						<div class="node-statsMeta">
+							<dl class="pairs pairs--inline">
+								<dt>Threads</dt>
+								<dd>459</dd>
+							</dl>
+							<dl class="pairs pairs--inline">
+								<dt>Messages</dt>
+								<dd>3.8K</dd>
+							</dl>
+						</div>
+					
+
+					
+						
+	
+	
+
+					
+				</div>
+
+				
+
+				
+			</div>
+
+			
+				<div class="node-stats">
+					<dl class="pairs pairs--rows">
+						<dt>Threads</dt>
+						<dd>459</dd>
+					</dl>
+					<dl class="pairs pairs--rows">
+						<dt>Messages</dt>
+						<dd>3.8K</dd>
+					</dl>
+				</div>
+			
+
+			<div class="node-extra">
+				
+					<div class="node-extra-icon">
+						
+							<a href="/index.php?members/std_3462.6945490/" class="avatar avatar--xs avatar--default avatar--default--dynamic" data-user-id="6945490" data-xf-init="member-tooltip" style="background-color: #cc6666; color: #602020">
+			<span class="avatar-u6945490-s" role="img" aria-label="std_3462">S</span> 
+		</a>
+						
+					</div>
+					<div class="node-extra-row">
+						
+							<a href="/index.php?threads/3-months-as-a-200-mo-perplexity-max-subscriber-real-billing-product-problems-zero-human-replies-then-banned-from-discord-for-asking-for-help.612642/post-12257542" class="node-extra-title" title="3 months as a $200/mo Perplexity Max subscriber: real billing + product problems, zero human replies, then banned from Discord for asking for help.">3 months as a $200/mo Perplexity Max subscriber: real billing + product problems, zero human replies, then banned from Discord for asking for help.</a>
+						
+					</div>
+					<div class="node-extra-row">
+						<ul class="listInline listInline--bullet">
+							<li><time  class="node-extra-date u-dt" dir="auto" datetime="2026-10-19T15:05:17+0100" data-timestamp="1792418717" data-date="Oct 19, 2026" data-time="3:05 PM" data-short="5d" title="Oct 19, 2026 at 3:05 PM">Monday at 3:05 PM</time></li>
+							
+								<li class="node-extra-user"><a href="/index.php?members/std_3462.6945490/" class="username " dir="auto" data-user-id="6945490" data-xf-init="member-tooltip">std_3462</a></li>
+							
+						</ul>
+					</div>
+				
+			</div>
+		</div>
+	</div>
+
+	
+
+
+	
+
+	
+
+			</div>
+		</div>
+	</div>
+
+	
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+					
+				</div>
+
+				
+					<div class="p-body-sidebar">
+						
+						
+							<div class="block" data-widget-id="12" data-widget-key="homepage_new_posts" data-widget-definition="new_posts">
+		<div class="block-container">
+			
+				<h3 class="block-minorHeader">
+					<a href="/index.php?whats-new/posts/&amp;skip=1" rel="nofollow">Latest posts</a>
+				</h3>
+				<ul class="block-body">
+					
+						
+							<li class="block-row">
+								
+	<div class="contentRow">
+		<div class="contentRow-figure">
+			<a href="/index.php?members/std_2697.6944925/" class="avatar avatar--xxs avatar--default avatar--default--dynamic" data-user-id="6944925" data-xf-init="member-tooltip" style="background-color: #cc66cc; color: #602060">
+			<span class="avatar-u6944925-s" role="img" aria-label="std_2697">S</span> 
+		</a>
+		</div>
+		<div class="contentRow-main contentRow-main--close">
+			
+				<a href="/index.php?threads/psa-google-is-forcibly-refunding-cancelling-student-ai-pro-plans-after-prorated-ai-plus-ai-pro-upgrades-please-share-your-case.1898059/post-12272009" >PSA: Google is forcibly refunding/cancelling student AI Pro plans after prorated AI Plus → AI Pro upgrades — please share your case</a>
+			
+
+			<div class="contentRow-minor contentRow-minor--hideLinks">
+				<ul class="listInline listInline--bullet">
+					<li>Latest: std_2697</li>
+					<li><time  class="u-dt" dir="auto" datetime="2026-10-25T01:42:47+0100" data-timestamp="1792888967" data-date="Oct 25, 2026" data-time="1:42 AM" data-short="4h" title="Oct 25, 2026 at 1:42 AM">Today at 1:42 AM</time></li>
+				</ul>
+			</div>
+			<div class="contentRow-minor contentRow-minor--hideLinks">
+				<a href="/index.php?forums/lounge.153/">Lounge</a>
+			</div>
+		</div>
+	</div>
+
+							</li>
+						
+							<li class="block-row">
+								
+	<div class="contentRow">
+		<div class="contentRow-figure">
+			<a href="/index.php?members/std_1139.6943845/" class="avatar avatar--xxs avatar--default avatar--default--dynamic" data-user-id="6943845" data-xf-init="member-tooltip" style="background-color: #cccc33; color: #3d3d0f">
+			<span class="avatar-u6943845-s" role="img" aria-label="std_1139">S</span> 
+		</a>
+		</div>
+		<div class="contentRow-main contentRow-main--close">
+			
+				<a href="/index.php?threads/how-can-i-model-brand-with-ai.1898058/post-12271965" >How can I model brand with ai</a>
+			
+
+			<div class="contentRow-minor contentRow-minor--hideLinks">
+				<ul class="listInline listInline--bullet">
+					<li>Latest: std_1139</li>
+					<li><time  class="u-dt" dir="auto" datetime="2026-10-25T01:36:27+0100" data-timestamp="1792888587" data-date="Oct 25, 2026" data-time="1:36 AM" data-short="4h" title="Oct 25, 2026 at 1:36 AM">Today at 1:36 AM</time></li>
+				</ul>
+			</div>
+			<div class="contentRow-minor contentRow-minor--hideLinks">
+				<a href="/index.php?forums/lounge.153/">Lounge</a>
+			</div>
+		</div>
+	</div>
+
+							</li>
+						
+							<li class="block-row">
+								
+	<div class="contentRow">
+		<div class="contentRow-figure">
+			<a href="/index.php?members/persona_076.6943003/" class="avatar avatar--xxs avatar--default avatar--default--dynamic" data-user-id="6943003" data-xf-init="member-tooltip" style="background-color: #996699; color: #2e1f2e">
+			<span class="avatar-u6943003-s" role="img" aria-label="persona_076">P</span> 
+		</a>
+		</div>
+		<div class="contentRow-main contentRow-main--close">
+			
+				<a href="/index.php?threads/mature-anime-screencap-style-lora-for-minimax-h3.1898057/post-12271955" >Mature Anime screencap style lora for Minimax H3</a>
+			
+
+			<div class="contentRow-minor contentRow-minor--hideLinks">
+				<ul class="listInline listInline--bullet">
+					<li>Latest: persona_076</li>
+					<li><time  class="u-dt" dir="auto" datetime="2026-10-25T01:35:54+0100" data-timestamp="1792888554" data-date="Oct 25, 2026" data-time="1:35 AM" data-short="4h" title="Oct 25, 2026 at 1:35 AM">Today at 1:35 AM</time></li>
+				</ul>
+			</div>
+			<div class="contentRow-minor contentRow-minor--hideLinks">
+				<a href="/index.php?forums/lounge.153/">Lounge</a>
+			</div>
+		</div>
+	</div>
+
+							</li>
+						
+							<li class="block-row">
+								
+	<div class="contentRow">
+		<div class="contentRow-figure">
+			<a href="/index.php?members/std_1157.6943857/" class="avatar avatar--xxs avatar--default avatar--default--dynamic" data-user-id="6943857" data-xf-init="member-tooltip" style="background-color: #c2f0c2; color: #33cc33">
+			<span class="avatar-u6943857-s" role="img" aria-label="std_1157">S</span> 
+		</a>
+		</div>
+		<div class="contentRow-main contentRow-main--close">
+			
+				<a href="/index.php?threads/george-barbier-style-lora-for-krea2.1898056/post-12271894" >George Barbier style LoRA for Krea2</a>
+			
+
+			<div class="contentRow-minor contentRow-minor--hideLinks">
+				<ul class="listInline listInline--bullet">
+					<li>Latest: std_1157</li>
+					<li><time  class="u-dt" dir="auto" datetime="2026-10-25T01:31:32+0100" data-timestamp="1792888292" data-date="Oct 25, 2026" data-time="1:31 AM" data-short="4h" title="Oct 25, 2026 at 1:31 AM">Today at 1:31 AM</time></li>
+				</ul>
+			</div>
+			<div class="contentRow-minor contentRow-minor--hideLinks">
+				<a href="/index.php?forums/lounge.153/">Lounge</a>
+			</div>
+		</div>
+	</div>
+
+							</li>
+						
+							<li class="block-row">
+								
+	<div class="contentRow">
+		<div class="contentRow-figure">
+			<a href="/index.php?members/std_4897.6923088/" class="avatar avatar--xxs avatar--default avatar--default--dynamic" data-user-id="6923088" data-xf-init="member-tooltip" style="background-color: #6699cc; color: #204060">
+			<span class="avatar-u6923088-s" role="img" aria-label="std_4897">S</span> 
+		</a>
+		</div>
+		<div class="contentRow-main contentRow-main--close">
+			
+				<a href="/index.php?threads/what-applications-are-worth-learning-for-creating-longer-video-content.1898055/post-12271893" >What applications are worth learning for creating longer video content?</a>
+			
+
+			<div class="contentRow-minor contentRow-minor--hideLinks">
+				<ul class="listInline listInline--bullet">
+					<li>Latest: std_4897</li>
+					<li><time  class="u-dt" dir="auto" datetime="2026-10-25T01:29:17+0100" data-timestamp="1792888157" data-date="Oct 25, 2026" data-time="1:29 AM" data-short="4h" title="Oct 25, 2026 at 1:29 AM">Today at 1:29 AM</time></li>
+				</ul>
+			</div>
+			<div class="contentRow-minor contentRow-minor--hideLinks">
+				<a href="/index.php?forums/lounge.153/">Lounge</a>
+			</div>
+		</div>
+	</div>
+
+							</li>
+						
+							<li class="block-row">
+								
+	<div class="contentRow">
+		<div class="contentRow-figure">
+			<a href="/index.php?members/std_2914.6945096/" class="avatar avatar--xxs avatar--default avatar--default--dynamic" data-user-id="6945096" data-xf-init="member-tooltip" style="background-color: #3366cc; color: #c2d1f0">
+			<span class="avatar-u6945096-s" role="img" aria-label="std_2914">S</span> 
+		</a>
+		</div>
+		<div class="contentRow-main contentRow-main--close">
+			
+				<a href="/index.php?threads/multi-step-reasoning-suddenly-failing-plus-regular-chat-high-thinking.1898054/post-12271766" >Multi-step reasoning suddenly failing (Plus/regular Chat/High thinking)</a>
+			
+
+			<div class="contentRow-minor contentRow-minor--hideLinks">
+				<ul class="listInline listInline--bullet">
+					<li>Latest: std_2914</li>
+					<li><time  class="u-dt" dir="auto" datetime="2026-10-25T01:22:04+0100" data-timestamp="1792887724" data-date="Oct 25, 2026" data-time="1:22 AM" data-short="4h" title="Oct 25, 2026 at 1:22 AM">Today at 1:22 AM</time></li>
+				</ul>
+			</div>
+			<div class="contentRow-minor contentRow-minor--hideLinks">
+				<a href="/index.php?forums/lounge.153/">Lounge</a>
+			</div>
+		</div>
+	</div>
+
+							</li>
+						
+							<li class="block-row">
+								
+	<div class="contentRow">
+		<div class="contentRow-figure">
+			<a href="/index.php?members/std_4735.6922901/" class="avatar avatar--xxs avatar--default avatar--default--dynamic" data-user-id="6922901" data-xf-init="member-tooltip" style="background-color: #339999; color: #061313">
+			<span class="avatar-u6922901-s" role="img" aria-label="std_4735">S</span> 
+		</a>
+		</div>
+		<div class="contentRow-main contentRow-main--close">
+			
+				<a href="/index.php?threads/mooring-a-tui-that-shows-which-project-and-container-is-behind-each-listening-port-bubble-tea-v2-reads-proc-directly.1898053/post-12271643" >Mooring: a TUI that shows which project and container is behind each listening port (Bubble Tea v2, reads /proc directly)</a>
+			
+
+			<div class="contentRow-minor contentRow-minor--hideLinks">
+				<ul class="listInline listInline--bullet">
+					<li>Latest: std_4735</li>
+					<li><time  class="u-dt" dir="auto" datetime="2026-10-25T01:19:16+0100" data-timestamp="1792887556" data-date="Oct 25, 2026" data-time="1:19 AM" data-short="4h" title="Oct 25, 2026 at 1:19 AM">Today at 1:19 AM</time></li>
+				</ul>
+			</div>
+			<div class="contentRow-minor contentRow-minor--hideLinks">
+				<a href="/index.php?forums/lounge.153/">Lounge</a>
+			</div>
+		</div>
+	</div>
+
+							</li>
+						
+							<li class="block-row">
+								
+	<div class="contentRow">
+		<div class="contentRow-figure">
+			<a href="/index.php?members/std_1372.6944012/" class="avatar avatar--xxs avatar--default avatar--default--dynamic" data-user-id="6944012" data-xf-init="member-tooltip" style="background-color: #ccadeb; color: #732eb8">
+			<span class="avatar-u6944012-s" role="img" aria-label="std_1372">S</span> 
+		</a>
+		</div>
+		<div class="contentRow-main contentRow-main--close">
+			
+				<a href="/index.php?threads/i-rewrote-my-macos-breathing-overlay-in-rust-and-shipped-it-to-the-mac-app-store-microsoft-store-and-snap-store.1898052/post-12271604" >I rewrote my macOS breathing overlay in Rust and shipped it to the Mac App Store, Microsoft Store and Snap Store</a>
+			
+
+			<div class="contentRow-minor contentRow-minor--hideLinks">
+				<ul class="listInline listInline--bullet">
+					<li>Latest: std_1372</li>
+					<li><time  class="u-dt" dir="auto" datetime="2026-10-25T01:10:13+0100" data-timestamp="1792887013" data-date="Oct 25, 2026" data-time="1:10 AM" data-short="4h" title="Oct 25, 2026 at 1:10 AM">Today at 1:10 AM</time></li>
+				</ul>
+			</div>
+			<div class="contentRow-minor contentRow-minor--hideLinks">
+				<a href="/index.php?forums/lounge.153/">Lounge</a>
+			</div>
+		</div>
+	</div>
+
+							</li>
+						
+							<li class="block-row">
+								
+	<div class="contentRow">
+		<div class="contentRow-figure">
+			<a href="/index.php?members/persona_049.6923302/" class="avatar avatar--xxs avatar--default avatar--default--dynamic" data-user-id="6923302" data-xf-init="member-tooltip" style="background-color: #2947a3; color: #99ace6">
+			<span class="avatar-u6923302-s" role="img" aria-label="persona_049">P</span> 
+		</a>
+		</div>
+		<div class="contentRow-main contentRow-main--close">
+			
+				<a href="/index.php?threads/h3-music-video-gravity.1898051/post-12271603" >H3 Music Video &quot;Gravity&quot;</a>
+			
+
+			<div class="contentRow-minor contentRow-minor--hideLinks">
+				<ul class="listInline listInline--bullet">
+					<li>Latest: persona_049</li>
+					<li><time  class="u-dt" dir="auto" datetime="2026-10-25T01:07:43+0100" data-timestamp="1792886863" data-date="Oct 25, 2026" data-time="1:07 AM" data-short="4h" title="Oct 25, 2026 at 1:07 AM">Today at 1:07 AM</time></li>
+				</ul>
+			</div>
+			<div class="contentRow-minor contentRow-minor--hideLinks">
+				<a href="/index.php?forums/lounge.153/">Lounge</a>
+			</div>
+		</div>
+	</div>
+
+							</li>
+						
+							<li class="block-row">
+								
+	<div class="contentRow">
+		<div class="contentRow-figure">
+			<a href="/index.php?members/std_4564.6946254/" class="avatar avatar--xxs avatar--default avatar--default--dynamic" data-user-id="6946254" data-xf-init="member-tooltip" style="background-color: #143352; color: #478cd1">
+			<span class="avatar-u6946254-s" role="img" aria-label="std_4564">S</span> 
+		</a>
+		</div>
+		<div class="contentRow-main contentRow-main--close">
+			
+				<a href="/index.php?threads/qwen-3-8-flash-next-on-9060-xt-16gb.1898048/post-12271527" >Qwen 3.8 Flash Next on 9060 XT 16GB</a>
+			
+
+			<div class="contentRow-minor contentRow-minor--hideLinks">
+				<ul class="listInline listInline--bullet">
+					<li>Latest: std_4564</li>
+					<li><time  class="u-dt" dir="auto" datetime="2026-10-25T00:53:26+0100" data-timestamp="1792886006" data-date="Oct 25, 2026" data-time="12:53 AM" data-short="4h" title="Oct 25, 2026 at 12:53 AM">Today at 12:53 AM</time></li>
+				</ul>
+			</div>
+			<div class="contentRow-minor contentRow-minor--hideLinks">
+				<a href="/index.php?forums/local-models-for-coding.132/">Local Models for Coding</a>
+			</div>
+		</div>
+	</div>
+
+							</li>
+						
+					
+				</ul>
+			
+		</div>
+	</div>
+
+
+	
+		<div class="block"  data-widget-id="7" data-widget-key="forum_overview_trending_content" data-widget-definition="trending_content">
+			<div class="block-container">
+				<h3 class="block-minorHeader">Trending content</h3>
+
+				<ul class="block-body">
+					
+						<li class="block-row">
+							
+	
+		<div class="contentRow">
+			
+				
+					<div class="contentRow-figure">
+						
+							
+		
+		<a href="/index.php?members/pong_14.11519/" class="avatar avatar--xxs avatar--default avatar--default--dynamic" data-user-id="11519" data-xf-init="member-tooltip" style="background-color: #339966; color: #06130d">
+			<span class="avatar-u11519-s" role="img" aria-label="pong_14">P</span> 
+		</a>
+	
+						
+					</div>
+				
+
+				
+					<div class="contentRow-main contentRow-main--close">
+						
+							
+		
+		<a href="/index.php?threads/sync-of-keybindings-and-settings.3/">Thread 'Sync of keybindings and settings'</a>
+	
+
+							
+								<div class="contentRow-minor contentRow-minor--hideLinks">
+									<ul class="listInline listInline--bullet">
+										
+											
+		
+
+		<li>pong_14</li>
+		<li><time  class="u-dt" dir="auto" datetime="2024-11-13T08:43:13+0000" data-timestamp="1731487393" data-date="Nov 13, 2024" data-time="8:43 AM" data-short="Nov &#039;24" title="Nov 13, 2024 at 8:43 AM">Nov 13, 2024</time></li>
+	
+										
+									</ul>
+								</div>
+							
+
+							
+		
+
+		<div class="contentRow-minor contentRow-minor--hideLinks">
+			Replies: 47
+		</div>
+	
+						
+					</div>
+				
+
+				
+			
+		</div>
+	
+
+						</li>
+					
+						<li class="block-row">
+							
+	
+		<div class="contentRow">
+			
+				
+					<div class="contentRow-figure">
+						
+							
+		
+		<a href="/index.php?members/tess-patel.13515/" class="avatar avatar--xxs avatar--default avatar--default--dynamic" data-user-id="13515" data-xf-init="member-tooltip" style="background-color: #755757; color: #c9b6b6">
+			<span class="avatar-u13515-s" role="img" aria-label="tess.patel">T</span> 
+		</a>
+	
+						
+					</div>
+				
+
+				
+					<div class="contentRow-main contentRow-main--close">
+						
+							
+		
+		<a href="/index.php?threads/getting-used-to-the-orientation-of-the-primary-sidebar.1/">Thread 'Getting used to the orientation of the primary sidebar'</a>
+	
+
+							
+								<div class="contentRow-minor contentRow-minor--hideLinks">
+									<ul class="listInline listInline--bullet">
+										
+											
+		
+
+		<li>tess.patel</li>
+		<li><time  class="u-dt" dir="auto" datetime="2023-08-22T22:06:30+0100" data-timestamp="1692738390" data-date="Aug 22, 2023" data-time="10:06 PM" data-short="Aug &#039;23" title="Aug 22, 2023 at 10:06 PM">Aug 22, 2023</time></li>
+	
+										
+									</ul>
+								</div>
+							
+
+							
+		
+
+		<div class="contentRow-minor contentRow-minor--hideLinks">
+			Replies: 17
+		</div>
+	
+						
+					</div>
+				
+
+				
+			
+		</div>
+	
+
+						</li>
+					
+						<li class="block-row">
+							
+	
+		<div class="contentRow">
+			
+				
+					<div class="contentRow-figure">
+						
+							
+		
+		<a href="/index.php?members/fardeem_986.10416/" class="avatar avatar--xxs avatar--default avatar--default--dynamic" data-user-id="10416" data-xf-init="member-tooltip" style="background-color: #669966; color: #1f2e1f">
+			<span class="avatar-u10416-s" role="img" aria-label="fardeem_986">F</span> 
+		</a>
+	
+						
+					</div>
+				
+
+				
+					<div class="contentRow-main contentRow-main--close">
+						
+							
+		
+		<a href="/index.php?threads/how-does-docs-crawling-work.7/">Thread 'How does docs crawling work'</a>
+	
+
+							
+								<div class="contentRow-minor contentRow-minor--hideLinks">
+									<ul class="listInline listInline--bullet">
+										
+											
+		
+
+		<li>fardeem_986</li>
+		<li><time  class="u-dt" dir="auto" datetime="2023-08-31T00:51:50+0100" data-timestamp="1693439510" data-date="Aug 31, 2023" data-time="12:51 AM" data-short="Aug &#039;23" title="Aug 31, 2023 at 12:51 AM">Aug 31, 2023</time></li>
+	
+										
+									</ul>
+								</div>
+							
+
+							
+		
+
+		<div class="contentRow-minor contentRow-minor--hideLinks">
+			Replies: 8
+		</div>
+	
+						
+					</div>
+				
+
+				
+			
+		</div>
+	
+
+						</li>
+					
+						<li class="block-row">
+							
+	
+		<div class="contentRow">
+			
+				
+					<div class="contentRow-figure">
+						
+							
+		
+		<a href="/index.php?members/truell20_402.19484/" class="avatar avatar--xxs avatar--default avatar--default--dynamic" data-user-id="19484" data-xf-init="member-tooltip" style="background-color: #a36629; color: #e6bf99">
+			<span class="avatar-u19484-s" role="img" aria-label="truell20_402">T</span> 
+		</a>
+	
+						
+					</div>
+				
+
+				
+					<div class="contentRow-main contentRow-main--close">
+						
+							
+		
+		<a href="/index.php?threads/my-openai-api-key-isnt-working-in-cursor.2/">Thread 'My OpenAI API Key isn&#039;t working in Cursor?'</a>
+	
+
+							
+								<div class="contentRow-minor contentRow-minor--hideLinks">
+									<ul class="listInline listInline--bullet">
+										
+											
+		
+
+		<li>truell20_402</li>
+		<li><time  class="u-dt" dir="auto" datetime="2023-08-23T01:29:52+0100" data-timestamp="1692750592" data-date="Aug 23, 2023" data-time="1:29 AM" data-short="Aug &#039;23" title="Aug 23, 2023 at 1:29 AM">Aug 23, 2023</time></li>
+	
+										
+									</ul>
+								</div>
+							
+
+							
+		
+
+		<div class="contentRow-minor contentRow-minor--hideLinks">
+			Replies: 7
+		</div>
+	
+						
+					</div>
+				
+
+				
+			
+		</div>
+	
+
+						</li>
+					
+						<li class="block-row">
+							
+	
+		<div class="contentRow">
+			
+				
+					<div class="contentRow-figure">
+						
+							
+		
+		<a href="/index.php?members/fluxocta.19151/" class="avatar avatar--xxs avatar--default avatar--default--dynamic" data-user-id="19151" data-xf-init="member-tooltip" style="background-color: #335214; color: #8cd147">
+			<span class="avatar-u19151-s" role="img" aria-label="fluxOcta">F</span> 
+		</a>
+	
+						
+					</div>
+				
+
+				
+					<div class="contentRow-main contentRow-main--close">
+						
+							
+		
+		<a href="/index.php?threads/codebase-indexing.4/">Thread 'Codebase Indexing'</a>
+	
+
+							
+								<div class="contentRow-minor contentRow-minor--hideLinks">
+									<ul class="listInline listInline--bullet">
+										
+											
+		
+
+		<li>fluxOcta</li>
+		<li><time  class="u-dt" dir="auto" datetime="2023-08-23T02:44:35+0100" data-timestamp="1692755075" data-date="Aug 23, 2023" data-time="2:44 AM" data-short="Aug &#039;23" title="Aug 23, 2023 at 2:44 AM">Aug 23, 2023</time></li>
+	
+										
+									</ul>
+								</div>
+							
+
+							
+		
+
+		<div class="contentRow-minor contentRow-minor--hideLinks">
+			Replies: 6
+		</div>
+	
+						
+					</div>
+				
+
+				
+			
+		</div>
+	
+
+						</li>
+					
+				</ul>
+			</div>
+		</div>
+	
+
+
+	
+
+
+<div class="block" data-widget-section="onlineNow" data-widget-id="8" data-widget-key="forum_overview_members_online" data-widget-definition="members_online">
+	<div class="block-container">
+		<h3 class="block-minorHeader"><a href="/index.php?online/">Members online</a></h3>
+		<div class="block-body">
+			
+				<div class="block-row block-row--minor">
+			
+
+				
+					No members online now.
+				
+			</div>
+		</div>
+		<div class="block-footer">
+			<span class="block-footer-counter">Total:&nbsp;1,016 (members:&nbsp;0, guests:&nbsp;1,016)</span>
+		</div>
+	</div>
+</div>
+<div class="block" data-widget-id="9" data-widget-key="forum_overview_forum_statistics" data-widget-definition="forum_statistics">
+	<div class="block-container">
+		<h3 class="block-minorHeader">Forum statistics</h3>
+		<div class="block-body block-row">
+			<dl class="pairs pairs--justified count--threads">
+				<dt>Threads</dt>
+				<dd>1,681,402</dd>
+			</dl>
+
+			<dl class="pairs pairs--justified count--messages">
+				<dt>Messages</dt>
+				<dd>11,209,133</dd>
+			</dl>
+
+			<dl class="pairs pairs--justified count--users">
+				<dt>Members</dt>
+				<dd>88,156</dd>
+			</dl>
+
+			<dl class="pairs pairs--justified">
+				<dt>Latest member</dt>
+				<dd><a href="/index.php?members/std_1665.6944215/" class="username " dir="auto" data-user-id="6944215" data-xf-init="member-tooltip">std_1665</a></dd>
+			</dl>
+		</div>
+	</div>
+</div>
+
+	<div class="block" data-widget-id="10" data-widget-key="forum_overview_share_page" data-widget-definition="share_page">
+		<div class="block-container">
+			<h3 class="block-minorHeader">Share this page</h3>
+			<div class="block-body block-row">
+				
+					
+
+	
+
+	
+		
+
+		<div class="shareButtons shareButtons--iconic" data-xf-init="share-buttons" data-page-url="" data-page-title="" data-page-desc="" data-page-image="">
+			<span class="u-anchorTarget" id="_xfUid-1-1792903435"></span>
+
+			
+
+			<div class="shareButtons-buttons">
+				
+					
+						<a class="shareButtons-button shareButtons-button--brand shareButtons-button--facebook" href="#_xfUid-1-1792903435" data-href="https://www.facebook.com/sharer.php?u={url}">
+							<i class="fa--xf fab fa-facebook-f "><svg xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true" ><use href="/data/local/icons/brands.svg?v=1783794586#facebook-f"></use></svg></i>
+							<span>Facebook</span>
+						</a>
+					
+
+					
+						<a class="shareButtons-button shareButtons-button--brand shareButtons-button--twitter" href="#_xfUid-1-1792903435" data-href="https://x.com/intent/tweet?url={url}&amp;text={title}">
+							<i class="fa--xf fab fa-x "><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-hidden="true" ><path d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"/></svg></i>
+							<span>X</span>
+						</a>
+					
+
+					
+						<a class="shareButtons-button shareButtons-button--brand shareButtons-button--bluesky" href="#_xfUid-1-1792903435" data-href="https://bsky.app/intent/compose?text={url}">
+							<i class="fa--xf fab fa-bluesky "><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" role="img" aria-hidden="true" ><path d="M407.8 294.7c-3.3-.4-6.7-.8-10-1.3c3.4 .4 6.7 .9 10 1.3zM288 227.1C261.9 176.4 190.9 81.9 124.9 35.3C61.6-9.4 37.5-1.7 21.6 5.5C3.3 13.8 0 41.9 0 58.4S9.1 194 15 213.9c19.5 65.7 89.1 87.9 153.2 80.7c3.3-.5 6.6-.9 10-1.4c-3.3 .5-6.6 1-10 1.4C74.3 308.6-9.1 342.8 100.3 464.5C220.6 589.1 265.1 437.8 288 361.1c22.9 76.7 49.2 222.5 185.6 103.4c102.4-103.4 28.1-156-65.8-169.9c-3.3-.4-6.7-.8-10-1.3c3.4 .4 6.7 .9 10 1.3c64.1 7.1 133.6-15.1 153.2-80.7C566.9 194 576 75 576 58.4s-3.3-44.7-21.6-52.9c-15.8-7.1-40-14.9-103.2 29.8C385.1 81.9 314.1 176.4 288 227.1z"/></svg></i>
+							<span>Bluesky</span>
+						</a>
+					
+
+					
+						<a class="shareButtons-button shareButtons-button--brand shareButtons-button--linkedin" href="#_xfUid-1-1792903435" data-href="https://www.linkedin.com/sharing/share-offsite/?url={url}">
+							<i class="fa--xf fab fa-linkedin "><svg xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true" ><use href="/data/local/icons/brands.svg?v=1783794586#linkedin"></use></svg></i>
+							<span>LinkedIn</span>
+						</a>
+					
+
+					
+						<a class="shareButtons-button shareButtons-button--brand shareButtons-button--reddit" href="#_xfUid-1-1792903435" data-href="https://reddit.com/submit?url={url}&amp;title={title}">
+							<i class="fa--xf fab fa-reddit-alien "><svg xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true" ><use href="/data/local/icons/brands.svg?v=1783794586#reddit-alien"></use></svg></i>
+							<span>Reddit</span>
+						</a>
+					
+
+					
+						<a class="shareButtons-button shareButtons-button--brand shareButtons-button--pinterest" href="#_xfUid-1-1792903435" data-href="https://pinterest.com/pin/create/bookmarklet/?url={url}&amp;description={title}&amp;media={image}">
+							<i class="fa--xf fab fa-pinterest-p "><svg xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true" ><use href="/data/local/icons/brands.svg?v=1783794586#pinterest-p"></use></svg></i>
+							<span>Pinterest</span>
+						</a>
+					
+
+					
+						<a class="shareButtons-button shareButtons-button--brand shareButtons-button--tumblr" href="#_xfUid-1-1792903435" data-href="https://www.tumblr.com/widgets/share/tool?canonicalUrl={url}&amp;title={title}">
+							<i class="fa--xf fab fa-tumblr "><svg xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true" ><use href="/data/local/icons/brands.svg?v=1783794586#tumblr"></use></svg></i>
+							<span>Tumblr</span>
+						</a>
+					
+
+					
+						<a class="shareButtons-button shareButtons-button--brand shareButtons-button--whatsApp" href="#_xfUid-1-1792903435" data-href="https://api.whatsapp.com/send?text={title}&nbsp;{url}">
+							<i class="fa--xf fab fa-whatsapp "><svg xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true" ><use href="/data/local/icons/brands.svg?v=1783794586#whatsapp"></use></svg></i>
+							<span>WhatsApp</span>
+						</a>
+					
+
+					
+						<a class="shareButtons-button shareButtons-button--email" href="#_xfUid-1-1792903435" data-href="mailto:?subject={title}&amp;body={url}">
+							<i class="fa--xf far fa-envelope "><svg xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true" ><use href="/data/local/icons/regular.svg?v=1783794586#envelope"></use></svg></i>
+							<span>Email</span>
+						</a>
+					
+
+					
+						<a class="shareButtons-button shareButtons-button--share is-hidden" href="#_xfUid-1-1792903435"
+							data-xf-init="web-share"
+							data-title="" data-text="" data-url=""
+							data-hide=".shareButtons-button:not(.shareButtons-button--share)">
+
+							<i class="fa--xf far fa-share-alt "><svg xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true" ><use href="/data/local/icons/regular.svg?v=1783794586#share-alt"></use></svg></i>
+							<span>Share</span>
+						</a>
+					
+
+					
+						<a class="shareButtons-button shareButtons-button--link is-hidden" href="#_xfUid-1-1792903435" data-clipboard="{url}">
+							<i class="fa--xf far fa-link "><svg xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true" ><use href="/data/local/icons/regular.svg?v=1783794586#link"></use></svg></i>
+							<span>Link</span>
+						</a>
+					
+				
+			</div>
+		</div>
+	
+
+				
+			</div>
+		</div>
+	</div>
+
+<div class="block" data-widget-id="13" data-widget-key="homepage_forum_stats" data-widget-definition="forum_statistics">
+	<div class="block-container">
+		<h3 class="block-minorHeader">Forum statistics</h3>
+		<div class="block-body block-row">
+			<dl class="pairs pairs--justified count--threads">
+				<dt>Threads</dt>
+				<dd>1,681,402</dd>
+			</dl>
+
+			<dl class="pairs pairs--justified count--messages">
+				<dt>Messages</dt>
+				<dd>11,209,133</dd>
+			</dl>
+
+			<dl class="pairs pairs--justified count--users">
+				<dt>Members</dt>
+				<dd>88,156</dd>
+			</dl>
+
+			<dl class="pairs pairs--justified">
+				<dt>Latest member</dt>
+				<dd><a href="/index.php?members/std_1665.6944215/" class="username " dir="auto" data-user-id="6944215" data-xf-init="member-tooltip">std_1665</a></dd>
+			</dl>
+		</div>
+	</div>
+</div>
+						
+						
+					</div>
+				
+			</div>
+
+			
+			
+	
+		<ul class="p-breadcrumbs p-breadcrumbs--bottom"
+			itemscope itemtype="https://schema.org/BreadcrumbList">
+			
+				
+
+				
+				
+
+				
+					
+					
+	<li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+		<a href="https://vibingtalk.com" itemprop="item">
+			<span itemprop="name">Home</span>
+		</a>
+		<meta itemprop="position" content="1" />
+	</li>
+
+				
+
+				
+					
+					
+	<li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+		<a href="/index.php" itemprop="item">
+			<span itemprop="name">Forums</span>
+		</a>
+		<meta itemprop="position" content="2" />
+	</li>
+
+				
+				
+			
+		</ul>
+	
+
+			
+		</div>
+	</div>
+
+	<footer class="p-footer" id="footer">
+		<div class="p-footer-inner">
+
+			<div class="p-footer-row">
+				
+					<div class="p-footer-row-main">
+						<ul class="p-footer-linkList">
+							
+								
+								
+									<li>
+										
+											
+											
+												<a href="/index.php?misc/style-variation" rel="nofollow"
+													class="js-styleVariationsLink"
+													data-xf-init="tooltip" title="Style variation"
+													data-xf-click="menu" data-z-index-ref=".u-bottomFixer" role="button" aria-expanded="false" aria-haspopup="true">
+
+													<i class="fa--xf far fa-adjust "><svg xmlns="http://www.w3.org/2000/svg" role="img" ><title>Style variation</title><use href="/data/local/icons/regular.svg?v=1783794586#adjust"></use></svg></i>
+												</a>
+
+												<div class="menu" data-menu="menu" aria-hidden="true">
+													<div class="menu-content js-styleVariationsMenu">
+														
+
+	
+		
+
+	<a href="/index.php?misc/style-variation&amp;reset=1&amp;t=1792903435%2C65efa7152225e838e67662a0e414b087"
+		class="menu-linkRow is-selected"
+		rel="nofollow"
+		data-xf-click="style-variation" data-variation="">
+
+		<i class="fa--xf far fa-adjust "><svg xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true" ><use href="/data/local/icons/regular.svg?v=1783794586#adjust"></use></svg></i>
+
+		
+			System
+		
+	</a>
+
+
+		
+
+	<a href="/index.php?misc/style-variation&amp;variation=default&amp;t=1792903435%2C65efa7152225e838e67662a0e414b087"
+		class="menu-linkRow "
+		rel="nofollow"
+		data-xf-click="style-variation" data-variation="default">
+
+		<i class="fa--xf far fa-sun "><svg xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true" ><use href="/data/local/icons/regular.svg?v=1783794586#sun"></use></svg></i>
+
+		
+			Light
+		
+	</a>
+
+
+		
+
+	<a href="/index.php?misc/style-variation&amp;variation=alternate&amp;t=1792903435%2C65efa7152225e838e67662a0e414b087"
+		class="menu-linkRow "
+		rel="nofollow"
+		data-xf-click="style-variation" data-variation="alternate">
+
+		<i class="fa--xf far fa-moon "><svg xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true" ><use href="/data/local/icons/regular.svg?v=1783794586#moon"></use></svg></i>
+
+		
+			Dark
+		
+	</a>
+
+	
+
+	
+		
+	
+
+													</div>
+												</div>
+											
+										
+									</li>
+								
+								
+							
+						</ul>
+					</div>
+				
+				<div class="p-footer-row-opposite">
+					<ul class="p-footer-linkList">
+						
+							
+								<li><a href="/index.php?misc/contact" data-xf-click="overlay">Contact us</a></li>
+							
+						
+
+						
+							<li><a href="/index.php?help/terms/">Terms and rules</a></li>
+						
+
+						
+							<li><a href="/index.php?help/privacy-policy/">Privacy policy</a></li>
+						
+
+						
+							<li><a href="/index.php?help/">Help</a></li>
+						
+
+						
+							<li><a href="https://vibingtalk.com">Home</a></li>
+						
+
+						<li><a href="/index.php?forums/-/index.rss" target="_blank" class="p-footer-rssLink" title="RSS"><span aria-hidden="true"><i class="fa--xf far fa-rss "><svg xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true" ><use href="/data/local/icons/regular.svg?v=1783794586#rss"></use></svg></i><span class="u-srOnly">RSS</span></span></a></li>
+					</ul>
+				</div>
+			</div>
+
+			
+				<div class="p-footer-copyright">
+					
+						<a href="https://xenforo.com" class="u-concealed" dir="ltr" target="_blank" rel="sponsored noopener">Community platform by XenForo<sup>&reg;</sup> <span class="copyright">&copy; 2010-2026 XenForo Ltd.</span></a>
+						
+					
+				</div>
+			
+
+			
+		</div>
+	</footer>
+</div> <!-- closing p-pageWrapper -->
+
+<div class="u-bottomFixer js-bottomFixTarget">
+	
+	
+</div>
+
+<div class="u-navButtons js-navButtons">
+	<a href="javascript:" class="button button--scroll"><span class="button-text"><i class="fa--xf far fa-arrow-left "><svg xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true" ><use href="/data/local/icons/regular.svg?v=1783794586#arrow-left"></use></svg></i><span class="u-srOnly">Back</span></span></a>
+</div>
+
+
+	<div class="u-scrollButtons js-scrollButtons" data-trigger-type="up">
+		<a href="#top" class="button button--scroll" data-xf-click="scroll-to"><span class="button-text"><i class="fa--xf far fa-arrow-up "><svg xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true" ><use href="/data/local/icons/regular.svg?v=1783794586#arrow-up"></use></svg></i><span class="u-srOnly">Top</span></span></a>
+		
+	</div>
+
+
+
+	<form style="display:none" hidden="hidden">
+		<input type="text" name="_xfClientLoadTime" value="" id="_xfClientLoadTime" title="_xfClientLoadTime" tabindex="-1" />
+	</form>
+
+	
+
+
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+

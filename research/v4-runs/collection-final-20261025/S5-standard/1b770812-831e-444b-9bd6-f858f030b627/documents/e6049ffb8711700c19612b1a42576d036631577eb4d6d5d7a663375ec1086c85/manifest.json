@@ -1,0 +1,776 @@
+{
+  "schemaVersion": "source-document/v1",
+  "id": "e6049ffb8711700c19612b1a42576d036631577eb4d6d5d7a663375ec1086c85",
+  "version": "021fed570e5b3f47b8414ee52f7a33df5f3bd55e3ba002ad6523c8d14a4cc07d",
+  "requestedUrl": "https://opentools.ai/tools/text-to-cad",
+  "finalUrl": "https://opentools.ai/tools/text-to-cad",
+  "retrievedAt": "2026-10-25T04:44:10.715Z",
+  "contentType": "text/html; charset=utf-8",
+  "status": "READ",
+  "readError": null,
+  "rawHash": "0b1313d17041ff2c85337fe5e54e10e8c198d61ccceef06b9d8356bbf3f629c1",
+  "textHash": "8b5a4d0b7365de4ecb50fc9cf6d63d87c95f9e5b2b74512109b2a3315554032e",
+  "text": "text-to-cad\n\n0Developer ToolsFree\n\ntext-to-cad turns agent prompts into CAD model files\n\nListing updated Oct 6, 2026\n\nGet This ToolCopy CodeClaim Tool\n\nWhat is text-to-cad?\n\ntext-to-cad is an open-source CAD plugin for AI coding agents. It gives Claude Code, Codex, Cursor, Gemini, Grok, OpenCode, Windsurf, Zed, VS Code, and other compatible assistants a practical way to create CAD artifacts from natural-language instructions. The project README says it can generate STEP, GLB, STL, and 3MF files, run design-for-manufacturing checks, create engineering drawings, and connect work to 3D printing, sheet metal, and CNC fabrication services. The setup paths are concrete. Claude Code users can add the earthtojake marketplace and install the plugin. Codex users can add the same marketplace after upgrading to a recent Codex release. Claude Desktop users can run the cadgen MCP server through uvx, which gives the assistant a local CAD process and viewer flow. The repository also documents Cursor and other clients, so teams can use the tool in the editor or terminal agent they already use instead of moving the whole task to a separate CAD environment. The value is speed during early hardware and product exploration. A builder can describe a bracket, enclosure, fixture, adapter, or visual mockup, then inspect the generated model before asking the agent for another pass. That does not replace mechanical engineering review, tolerance checks, material selection, regulatory review, or safety validation. It does make the first sketch and handoff faster, especially for software-heavy teams that already live in AI-assisted development workflows. text-to-cad is strongest when the problem can be described clearly in words and the expected output is a prototype, example, or starting geometry file. It is weaker when the work depends on precise manufacturing tolerances that have not been specified. The README also notes that CAD runtime components may download on first launch, so setup needs a working network connection. Pricing is simple: the project is MIT licensed and open source. Users still need their chosen agent, uv or uvx, and any paid model or fabrication services they decide to connect. For OpenTools readers, the important point is that text-to-cad turns agent chat into inspectable CAD files instead of leaving hardware ideas as loose text. It is a focused bridge between coding-agent workflows and physical-product prototyping, with enough documented setup detail to test quickly. The current repository also shows active attention to agent-specific installation notes, which matters because CAD generation only becomes useful when the surrounding assistant can install, call, view, and revise the generated artifacts without a brittle manual handoff during early design reviews.\n\nRead more\n\ntext-to-cad's Top Features\n\nKey capabilities that make text-to-cad stand out.\n\nGenerates STEP, GLB, STL, and 3MF model files\n\nSupports Claude Code, Codex, Cursor, Gemini, Grok, OpenCode, Windsurf, Zed, VS Code, and other clients\n\nRuns CAD workflows locally through cadgen and uv or uvx\n\nIncludes design-for-manufacturing checks and engineering drawing generation\n\nShows generated models through viewer cards or browser links where supported\n\nUse Cases\n\nWho benefits most from this tool.\n\nBuilders prototyping physical products\n\nGenerate quick printable models, housings, brackets, fixtures, or mockups from an AI agent conversation.\n\nCoding-agent power users\n\nAdd a CAD workflow to Claude Code, Codex, Cursor, and similar clients without switching tools.\n\nHardware teams validating early ideas\n\nCreate model files and drawings before a specialist CAD review.\n\nExplore Top AI Use Cases\n\nTags\n\ncad3d-modelingagent-toolsclaude-codecodexmcp3d-printingdeveloper-toolsopen-sourcefabrication\n\ntext-to-cad's Pricing\n\nFree plan available\n\nOpen source\n\nFree\n\nFree\n\nOpen-source repository\n\nSelf-hosted or local setup\n\nBring your own AI runtime\n\nGet started\n\nUser Reviews\n\nShare your thoughts\n\nIf you've used this product, share your thoughts with other builders\n\nRecent reviews\n\nFrequently Asked Questions\n\nWhat does text-to-cad generate?The README says it can generate STEP, GLB, STL, and 3MF files, plus manufacturing checks and drawings.Which agent clients can use it?The project documents Claude Code, Claude Desktop, Codex, Cursor, Gemini, Grok, OpenCode, Windsurf, Zed, VS Code, and other clients.Is text-to-cad free?The repository is MIT licensed. Users still need their agent, uv/uvx, and any paid services they connect.",
+  "rawSources": [
+    {
+      "mode": "STATIC",
+      "hash": "9459c8d9d1178077f87a6e31cb68b7c701c6cd56e7adea036871b265a06a2a31",
+      "path": "C:\\Users\\qianchen\\Documents\\waytoagi-1024-detective-a2-v4\\.cache\\source-documents-v4\\1b770812-831e-444b-9bd6-f858f030b627\\e6049ffb8711700c19612b1a42576d036631577eb4d6d5d7a663375ec1086c85\\static.bin"
+    },
+    {
+      "mode": "RENDERED",
+      "hash": "0b1313d17041ff2c85337fe5e54e10e8c198d61ccceef06b9d8356bbf3f629c1",
+      "path": "C:\\Users\\qianchen\\Documents\\waytoagi-1024-detective-a2-v4\\.cache\\source-documents-v4\\1b770812-831e-444b-9bd6-f858f030b627\\e6049ffb8711700c19612b1a42576d036631577eb4d6d5d7a663375ec1086c85\\raw.bin"
+    }
+  ],
+  "storage": {
+    "rawPath": "C:\\Users\\qianchen\\Documents\\waytoagi-1024-detective-a2-v4\\.cache\\source-documents-v4\\1b770812-831e-444b-9bd6-f858f030b627\\e6049ffb8711700c19612b1a42576d036631577eb4d6d5d7a663375ec1086c85\\raw.bin",
+    "textPath": "C:\\Users\\qianchen\\Documents\\waytoagi-1024-detective-a2-v4\\.cache\\source-documents-v4\\1b770812-831e-444b-9bd6-f858f030b627\\e6049ffb8711700c19612b1a42576d036631577eb4d6d5d7a663375ec1086c85\\source.txt",
+    "manifestPath": "C:\\Users\\qianchen\\Documents\\waytoagi-1024-detective-a2-v4\\.cache\\source-documents-v4\\1b770812-831e-444b-9bd6-f858f030b627\\e6049ffb8711700c19612b1a42576d036631577eb4d6d5d7a663375ec1086c85\\manifest.json"
+  },
+  "parser": {
+    "name": "readability+source-dom",
+    "version": "readability-0.6.0+jsdom-30.1.3+source-dom-2+playwright-core-1.64.1/chromium-156.0.8078.47",
+    "normalization": "source-text/v1",
+    "mode": "RENDERED"
+  },
+  "metadata": {
+    "title": "text-to-cad Review, Pricing & Alternatives",
+    "author": null,
+    "publishedAt": null,
+    "language": "en"
+  },
+  "completeness": "COMPLETE",
+  "warnings": [],
+  "blocks": [
+    {
+      "start": 0,
+      "end": 11,
+      "id": "b0",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[0]",
+      "headingPath": [
+        "text-to-cad"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 13,
+      "end": 33,
+      "id": "b1",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[1]",
+      "headingPath": [
+        "text-to-cad"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 35,
+      "end": 87,
+      "id": "b2",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[2]",
+      "headingPath": [
+        "text-to-cad"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 89,
+      "end": 116,
+      "id": "b3",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[3]",
+      "headingPath": [
+        "text-to-cad"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 118,
+      "end": 150,
+      "id": "b4",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[4]",
+      "headingPath": [
+        "text-to-cad"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 152,
+      "end": 172,
+      "id": "b5",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[5]",
+      "headingPath": [
+        "text-to-cad",
+        "What is text-to-cad?"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 174,
+      "end": 2805,
+      "id": "b6",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[6]",
+      "headingPath": [
+        "text-to-cad",
+        "What is text-to-cad?"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2807,
+      "end": 2816,
+      "id": "b7",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[7]",
+      "headingPath": [
+        "text-to-cad",
+        "What is text-to-cad?"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2818,
+      "end": 2844,
+      "id": "b8",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[8]",
+      "headingPath": [
+        "text-to-cad",
+        "text-to-cad's Top Features"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2846,
+      "end": 2895,
+      "id": "b9",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[9]",
+      "headingPath": [
+        "text-to-cad",
+        "text-to-cad's Top Features"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2897,
+      "end": 2942,
+      "id": "b10",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[10]",
+      "headingPath": [
+        "text-to-cad",
+        "text-to-cad's Top Features"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2944,
+      "end": 3046,
+      "id": "b11",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[11]",
+      "headingPath": [
+        "text-to-cad",
+        "text-to-cad's Top Features"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3048,
+      "end": 3103,
+      "id": "b12",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[12]",
+      "headingPath": [
+        "text-to-cad",
+        "text-to-cad's Top Features"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3105,
+      "end": 3180,
+      "id": "b13",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[13]",
+      "headingPath": [
+        "text-to-cad",
+        "text-to-cad's Top Features"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3182,
+      "end": 3258,
+      "id": "b14",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[14]",
+      "headingPath": [
+        "text-to-cad",
+        "text-to-cad's Top Features"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3260,
+      "end": 3269,
+      "id": "b15",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[15]",
+      "headingPath": [
+        "text-to-cad",
+        "Use Cases"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3271,
+      "end": 3304,
+      "id": "b16",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[16]",
+      "headingPath": [
+        "text-to-cad",
+        "Use Cases"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3306,
+      "end": 3344,
+      "id": "b17",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[17]",
+      "headingPath": [
+        "text-to-cad",
+        "Use Cases",
+        "Builders prototyping physical products"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3346,
+      "end": 3450,
+      "id": "b18",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[18]",
+      "headingPath": [
+        "text-to-cad",
+        "Use Cases",
+        "Builders prototyping physical products"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3452,
+      "end": 3476,
+      "id": "b19",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[19]",
+      "headingPath": [
+        "text-to-cad",
+        "Use Cases",
+        "Coding-agent power users"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3478,
+      "end": 3572,
+      "id": "b20",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[20]",
+      "headingPath": [
+        "text-to-cad",
+        "Use Cases",
+        "Coding-agent power users"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3574,
+      "end": 3611,
+      "id": "b21",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[21]",
+      "headingPath": [
+        "text-to-cad",
+        "Use Cases",
+        "Hardware teams validating early ideas"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3613,
+      "end": 3676,
+      "id": "b22",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[22]",
+      "headingPath": [
+        "text-to-cad",
+        "Use Cases",
+        "Hardware teams validating early ideas"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3678,
+      "end": 3702,
+      "id": "b23",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[23]",
+      "headingPath": [
+        "text-to-cad",
+        "Use Cases",
+        "Hardware teams validating early ideas"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3704,
+      "end": 3708,
+      "id": "b24",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[24]",
+      "headingPath": [
+        "text-to-cad",
+        "Use Cases",
+        "Tags"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3710,
+      "end": 3802,
+      "id": "b25",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[25]",
+      "headingPath": [
+        "text-to-cad",
+        "Use Cases",
+        "Tags"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3804,
+      "end": 3825,
+      "id": "b26",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[26]",
+      "headingPath": [
+        "text-to-cad",
+        "text-to-cad's Pricing"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3827,
+      "end": 3846,
+      "id": "b27",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[27]",
+      "headingPath": [
+        "text-to-cad",
+        "text-to-cad's Pricing"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3848,
+      "end": 3859,
+      "id": "b28",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[28]",
+      "headingPath": [
+        "text-to-cad",
+        "text-to-cad's Pricing",
+        "Open source"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3861,
+      "end": 3865,
+      "id": "b29",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[29]",
+      "headingPath": [
+        "text-to-cad",
+        "text-to-cad's Pricing",
+        "Open source"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3867,
+      "end": 3871,
+      "id": "b30",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[30]",
+      "headingPath": [
+        "text-to-cad",
+        "text-to-cad's Pricing",
+        "Open source"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3873,
+      "end": 3895,
+      "id": "b31",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[31]",
+      "headingPath": [
+        "text-to-cad",
+        "text-to-cad's Pricing",
+        "Open source"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3897,
+      "end": 3923,
+      "id": "b32",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[32]",
+      "headingPath": [
+        "text-to-cad",
+        "text-to-cad's Pricing",
+        "Open source"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3925,
+      "end": 3950,
+      "id": "b33",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[33]",
+      "headingPath": [
+        "text-to-cad",
+        "text-to-cad's Pricing",
+        "Open source"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3952,
+      "end": 3963,
+      "id": "b34",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[34]",
+      "headingPath": [
+        "text-to-cad",
+        "text-to-cad's Pricing",
+        "Open source"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3965,
+      "end": 3977,
+      "id": "b35",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[35]",
+      "headingPath": [
+        "text-to-cad",
+        "User Reviews"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3979,
+      "end": 3998,
+      "id": "b36",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[36]",
+      "headingPath": [
+        "text-to-cad",
+        "User Reviews",
+        "Share your thoughts"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4000,
+      "end": 4068,
+      "id": "b37",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[37]",
+      "headingPath": [
+        "text-to-cad",
+        "User Reviews",
+        "Share your thoughts"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4070,
+      "end": 4084,
+      "id": "b38",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[38]",
+      "headingPath": [
+        "text-to-cad",
+        "User Reviews",
+        "Recent reviews"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4086,
+      "end": 4112,
+      "id": "b39",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[39]",
+      "headingPath": [
+        "text-to-cad",
+        "Frequently Asked Questions"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4114,
+      "end": 4535,
+      "id": "b40",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[40]",
+      "headingPath": [
+        "text-to-cad",
+        "Frequently Asked Questions"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    }
+  ],
+  "links": [
+    {
+      "url": "https://opentools.ai/tools/text-to-cad",
+      "text": "",
+      "blockId": null,
+      "relation": "CANONICAL",
+      "locator": "source DOM link[0]"
+    },
+    {
+      "url": "https://github.com/earthtojake/text-to-cad",
+      "text": "text-to-cad",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[10]"
+    },
+    {
+      "url": "https://github.com/earthtojake/text-to-cad",
+      "text": "Get This Tool",
+      "blockId": "b4",
+      "relation": "LINK",
+      "locator": "source DOM link[11]"
+    },
+    {
+      "url": "https://opentools.ai/use-cases/builders-prototyping-physical-products",
+      "text": "Builders prototyping physical products",
+      "blockId": "b17",
+      "relation": "LINK",
+      "locator": "source DOM link[13]"
+    },
+    {
+      "url": "https://opentools.ai/use-cases/coding-agent-power-users",
+      "text": "Coding-agent power users",
+      "blockId": "b19",
+      "relation": "LINK",
+      "locator": "source DOM link[14]"
+    },
+    {
+      "url": "https://opentools.ai/use-cases/hardware-teams-validating-early-ideas",
+      "text": "Hardware teams validating early ideas",
+      "blockId": "b21",
+      "relation": "LINK",
+      "locator": "source DOM link[15]"
+    },
+    {
+      "url": "https://opentools.ai/use-cases",
+      "text": "Explore Top AI Use Cases",
+      "blockId": "b23",
+      "relation": "LINK",
+      "locator": "source DOM link[16]"
+    },
+    {
+      "url": "https://github.com/earthtojake/text-to-cad",
+      "text": "Get started",
+      "blockId": "b34",
+      "relation": "LINK",
+      "locator": "source DOM link[17]"
+    }
+  ],
+  "tables": []
+}

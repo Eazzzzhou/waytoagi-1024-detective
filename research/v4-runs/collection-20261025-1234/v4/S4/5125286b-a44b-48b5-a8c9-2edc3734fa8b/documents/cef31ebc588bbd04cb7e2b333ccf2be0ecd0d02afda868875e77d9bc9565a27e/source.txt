@@ -1,0 +1,127 @@
+Skip to main content Dev Blogs AI All .NET posts .NET MAUI ASP.NET Core Blazor Entity Framework C++ C# F# TypeScript NuGet Servicing .NET Blog in Chinese Microsoft for Developers Agent Framework Develop from the cloud Xcode ISE Developer TypeScript PowerShell Python Java Java Blog in Chinese Go Microsoft Edge Dev Microsoft 365 Developer Microsoft Entra Identity Developer Microsoft Entra PowerShell Visual Studio Visual Studio Code Aspire All things Azure Azure SDK Azure VM Runtime Team Microsoft Azure Azure Cosmos DB Azure DocumentDB Azure Data Studio Azure SQL DevOps DirectX Microsoft Foundry Power Platform OData Unified Data Model (IDEAs) Windows Command Line #ifdef Windows Inside MSIX MIDI and music React Native The Old New Thing Foundry on Windows Windows Developer
+
+February 26th, 2025 0 reactions
+
+Terminal Chat now included in GitHub Copilot Free
+
+Christopher Nguyen Product Manager II, Windows Terminal
+
+Windows Terminal Canary users can now use Terminal Chat with the GitHub Copilot Free plan! 🚀
+
+GitHub Copilot Free is limited to 50 chat messages per month. This includes the usage of Copilot in the CLI, VS Code, and Visual Studio. If you reach your quota, you can upgrade on the web.
+
+You can sign up for GitHub Copilot Free through the Copilot setting in your GitHub account. No subscription needed! 😀
+
+What is GitHub Copilot?
+
+GitHub Copilot is an AI coding assistant that helps you write code faster and with less effort, allowing you to focus more energy on problem solving and collaboration.
+
+GitHub Copilot has been proven to increase developer productivity and accelerate the pace of software development. For more information, see “Research: quantifying GitHub Copilot’s impact on developer productivity and happiness” in the GitHub blog.
+
+What is GitHub Copilot Free?
+
+GitHub Copilot Free provides limited access to select features of Copilot, allowing you to experience AI-powered coding assistance without a subscription. For more information on the features and limitations, see “About GitHub Copilot Free.”
+
+What is Terminal Chat?
+
+Terminal Chat is a feature in Windows Terminal Canary that allows the user to chat with an AI service (like GitHub Copilot 😉) to get intelligent suggestions in their terminal.
+
+This feature does not ship with its own large-language model and can also be managed by Group Policy. See “Group Policy for Windows Terminal” for more information.
+
+Use GitHub Copilot Free in Terminal Chat
+
+Connecting GitHub Copilot in Terminal Chat allows you to get command suggestions and explanations without leaving the terminal. This is available for all GitHub Copilot customers using Windows Terminal Canary.
+
+GitHub Copilot Free is limited to 50 chat messages per month. This includes the usage of Copilot in the CLI, VS Code, and Visual Studio. If you reach your quota, you can upgrade on the web.
+
+Prerequisites
+
+Access to GitHub Copilot. If you don’t already have access to GitHub Copilot, you can sign up for GitHub Copilot Free without a subscription
+
+Windows Terminal Canary. You can download the latest build of Windows Terminal Canary from the Windows Terminal GitHub repository
+
+Setup
+
+Open the dropdown menu and select Settings
+
+Go to the Terminal Chat (Experimental) setting
+
+Under Service Providers, select GitHub Copilot and Authenticate via GitHub to sign in to your GitHub account
+
+After successfully authenticating, ensure that Set as active provider is checked and click Save
+
+After this, you will be able to use GitHub Copilot in Terminal Chat!
+
+In the GIF above, you will see an end-to-end demo of the authorization flow and how to use Terminal Chat.
+
+Clicking on Terminal Chat’s suggestion will copy it to the input line of your terminal. Terminal Chat will not run the suggestion automatically– This way, you will have time to reason over the command before executing it 🙂
+
+For those that haven’t used Terminal Chat in a while, you’ll also notice that chat content can now be copied to the clipboard. We also changed the way we render commands in the chat (with horizontal scrolling too!)
+
+If you used Terminal Chat with another GitHub Copilot plan in the past and have issues authenticating with your new GitHub Copilot Free plan, we recommend you selecting Clear stored auth tokens in the Terminal Chat (Experimental) setting and restarting Windows Terminal Canary.
+
+Terminal Chat only communicates to GitHub Copilot when the user sends a message. The chat history and name of the user’s active shell is also appended to the message sent to GitHub Copilot. For more information on how to use GitHub Copilot responsibly with Windows Terminal, see “Responsible use of GitHub Copilot in Windows Terminal“.
+
+Let’s Build Together
+
+For now, Terminal Chat is only available in Windows Terminal Canary. We are committed to transparency and listening to user feedback. We strongly believe that the inclusion of the open-source community will help us define the roadmap for our core product, Windows Terminal.
+
+If you are interested in the AI experiences that we are building, then check out the feature/llm branch of the Windows Terminal repository or download the latest build of Windows Terminal Canary.
+
+If you have a feature request or found a bug, then please submit a new Issue on our GitHub repository. Send us feedback! Help us grow! And let’s build together!
+
+If you need to set Group Policies for Terminal Chat, see our Group Policy documentation.
+
+Lastly, if you want to explore the other features you get with GitHub Copilot (which includes GitHub Copilot in Visual Studio Code and Visual Studio) then check out the GitHub Copilot website!
+
+Thank you!
+
+Category
+
+Command Line
+
+Open-Source
+
+Windows
+
+Windows Terminal
+
+Share
+
+Author
+
+Christopher NguyenProduct Manager II, Windows Terminal
+
+1 comment
+
+Discussion is closed. Login to edit/delete existing comments.
+
+Sort by : Newest Newest Popular Oldest
+
+Shubham Sahay April 22, 2025 0 Copy link to comment by Shubham Sahay Collapse comment by Shubham Sahay Great update! I’m particularly curious about the distinction between using GitHub Copilot in Windows Terminal versus Using GitHub Copilot in the command line. Could you outline the key differences? Understanding when to use each would be really helpful for optimizing workflow efficiency.
+
+Read next
+
+May 6, 2025
+
+Fedora Linux is now an official WSL distro
+
+Jeremy Cline
+
+May 19, 2025
+
+Edit is now open source
+
+Christopher Nguyen
+
+Stay informed
+
+Get notified when new posts are published.
+
+Follow this blog
+
+Sign in
+
+Theme
+
+Surface Laptop Ultra Surface Pro Surface Laptop Surface RTX Spark Dev Box Explore Copilot Explore Microsoft products Windows 11 apps Account profile Download Center Microsoft Store support Returns Order tracking Certified Refurbished Why buy from Microsoft Store Flexible Payments Microsoft in education Devices for education Microsoft Teams for Education Microsoft 365 Education How to buy for your school Educator training and development Deals for students and parents AI for education Microsoft AI Microsoft Security Dynamics 365 Microsoft 365 Microsoft Power Platform Microsoft Teams Microsoft Copilot Small Business Azure Microsoft Developer Microsoft Learn Support for AI marketplace apps Microsoft Tech Community Microsoft Marketplace Software companies Visual Studio Careers About Microsoft Company news Privacy at Microsoft Investors Diversity and inclusion Accessibility Sustainability Your Privacy Choices Consumer Health Privacy Sitemap Contact Microsoft Privacy Manage cookies Terms of use Trademarks Safety & eco Recycling About our ads

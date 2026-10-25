@@ -1,0 +1,2045 @@
+{
+  "schemaVersion": "source-document/v1",
+  "id": "ac61d7d1edaf056d7fa0ad0f6439b30b88a69a87445478cc58004fae45d4a990",
+  "version": "edcfb5bdd01a47f00135ea6cea84d8fa831df36e68f2bcfe9448cb8ca55fe120",
+  "requestedUrl": "https://stackbrief.dev/article/github-copilot-free-tier-review",
+  "finalUrl": "https://stackbrief.dev/article/github-copilot-free-tier-review",
+  "retrievedAt": "2026-10-25T04:24:02.877Z",
+  "contentType": "text/html; charset=utf-8",
+  "status": "READ",
+  "readError": null,
+  "rawHash": "bc3dc00a8b5ae1379f82d10a3e81a6f8ef60dc5b45e869dbde6d08403d72c6a7",
+  "textHash": "d020efebf11b13423c7cf4781fbe858367aeda99266eba441615f6b5969b3736",
+  "text": "review\n\nGitHub Copilot Free Tier: Is It Worth It for Beginners?\n\nGitHub Copilot's free plan gives you 2,000 completions and 50 chat requests a month. Here's what beginners actually get — and when to upgrade or switch.\n\nBy Theo Nakamura · The free-tier maximalist\n\n2.5/5\n\nMay 10, 2026\n\nVerified June 2026\n\nTheo Nakamura is a fictional AI persona, not a real person. This article was written by AI and reviewed by a human editor before publishing. How we work →\n\nSome links may be affiliate links. We may earn a commission at no extra cost to you.\n\nMost GitHub Copilot reviews are aimed at professional developers asking whether it's worth $10 a month. That's the wrong question for beginners. The real question is: can you learn to vibe-code with the free tier, or will you hit a wall before you've even built anything?\n\nThe short answer is: you'll hit the wall. But how fast depends on how you work — and whether Copilot is even the right starting point.\n\nWhat Is GitHub Copilot Free?\n\nGitHub launched a permanent free tier for Copilot in late 2024, available to any GitHub account holder. No credit card required. No trial period.\n\nWhat the free plan actually includes (as of 2026)\n\nThe free plan gives you:\n\n2,000 code completions per month — the inline ghost-text suggestions as you type\n\n50 chat and agent-mode requests per month — for questions, explanations, and multi-step tasks\n\nAccess to Claude Haiku 4.5 and GPT-5 mini as the base free-tier models, with a selection of other models available to switch to\n\nIntegration with GitHub.com features like PR summaries and code reviews\n\nNote: GitHub moved to usage-based billing (AI Credits) on June 1, 2026, and every plan now includes a monthly allotment of AI Credits. Code completions remain free and unlimited on the free plan and consume zero credits. Chat and agent requests are now metered against your credit allotment rather than a flat 50-request cap. Check github.com/features/copilot/plans for the current free-tier limits.\n\nThat's a generous-sounding package until you realize how fast 50 chat requests disappear when you're learning.\n\nWhich editors support the free tier\n\nThe free tier works in VS Code, JetBrains IDEs, Visual Studio, Neovim, Eclipse, Xcode, and on GitHub.com itself. Editor support is not a limiting factor on the free plan — you get the same editor access as paid subscribers.\n\nHow the credit limits work in practice\n\nCompletions and chat requests are tracked separately. A completion fires every time Copilot suggests code while you type and you accept it — or sometimes even when it just appears. Chat requests are consumed one-for-one: each message you send to the Copilot sidebar counts as one request.\n\nThe limits reset on a calendar-month basis. When you run out of chat requests, Copilot doesn't error out dramatically — it just silently stops responding until next month. That's easy to miss if you're new.\n\nWhat It's Like to Use It as a Beginner\n\nInline completions: how good are they really?\n\nCopilot's autocomplete is genuinely impressive for boilerplate-heavy work. Writing a React component, setting up a Next.js API route, or scaffolding a TypeScript interface — Copilot nails these fast. It understands context from files open in your editor and adapts its suggestions accordingly.\n\nFor a beginner writing their first real project, this is legitimately helpful. You're not just copying StackOverflow answers — you're seeing idiomatic code appear as you think through a problem. That's a meaningful learning tool.\n\nWhere it struggles is with anything project-specific or multi-file. It doesn't have a deep understanding of your whole codebase, so suggestions sometimes contradict your existing patterns. You'll learn to vet its output quickly, which is actually a good skill to develop early.\n\nChat and agent mode on the free plan\n\nThe Copilot chat sidebar is where most of the learning value lives — asking why code works, getting explanations in plain English, debugging error messages. This is the feature beginners will reach for constantly.\n\nAgent mode takes it further: you describe what you want to build and Copilot plans and executes the changes across multiple files. It's impressive when it works. But each multi-step agent task burns several of your 50 monthly requests in one go. Run two or three agent sessions and you're halfway through your month's allowance.\n\nWhat happens when you hit the limits\n\nWhen completions run dry, VS Code falls back to IntelliSense — standard autocomplete, no AI. It's jarring once you've gotten used to the quality gap. When chat runs out, the sidebar stops responding entirely.\n\nThere's no graceful warning before you hit zero — just silence. GitHub does show your usage in account settings, but you have to go looking for it. For a beginner mid-project, discovering you're locked out for two weeks is a real momentum killer.\n\nGitHub Copilot Free vs the Real Alternatives\n\nIf you're evaluating free AI coding tools, Copilot isn't the only option. The free AI coding tools landscape is more competitive than most reviews acknowledge.\n\nvs Continue (free, open-source, no monthly cap)\n\nContinue is a free, open-source VS Code and JetBrains extension. The key difference: it's BYOK (bring your own key). You connect it to Claude, GPT-4, Gemini, or even a local model — and your usage is billed directly by the API provider, not capped by Continue itself.\n\nFor someone who wants unlimited completions and chat, Continue with a low-cost model (like Gemini Flash or a local Ollama setup) can be effectively free with no monthly ceiling. The setup is more involved than installing Copilot, but the payoff is real. Continue also works in JetBrains alongside VS Code.\n\nvs Cline (free, VS Code, more agentic)\n\nCline is a VS Code extension that takes the agentic angle further than Copilot does. It can read files, write code, run terminal commands, and browse the web — all autonomously, within a loop you approve. Like Continue, it's BYOK: you connect your own Claude or OpenAI API key.\n\nThe \"free\" caveat: Cline itself costs nothing, but the API calls add up fast in agentic mode. A typical multi-step feature session can run $0.50–$2.00 with Claude Sonnet, and a complex debugging loop can cost more. For a beginner, that unpredictability is harder to manage than Copilot's hard monthly cap.\n\nvs Trae (free IDE with AI built in)\n\nTrae is ByteDance's AI IDE — a full VS Code fork with Builder mode and AI chat built directly in. It ran fully free through late 2025, but moved to token-based paid tiers in early 2026.\n\nTrae now offers a free tier with limited monthly tokens and paid plans starting around $3/month. If you're starting fresh and don't have VS Code muscle memory yet, Trae's integrated experience is smoother than layering Copilot on top of a vanilla editor. But the pricing shift makes it less of a clear \"free\" recommendation than it was six months ago.\n\nWho Should Use the Free Tier?\n\nThe right fit: casual learners and existing GitHub users\n\nIf you're already on GitHub, already use VS Code, and want to experiment with AI-assisted coding without committing to a paid plan — Copilot Free is the lowest-friction starting point. No new accounts, no API keys, no configuration. Install the extension, sign in, and it works.\n\nIt's also well-suited for people doing light, occasional coding: a side project you touch a few times a month, some scripting, homework. Under those conditions, 2,000 completions and 50 chat requests might actually last you the month.\n\nThe wrong fit: vibe coders building full apps with AI chat\n\nIf your goal is to build full apps with AI assistance — using chat to debug errors, generate components, and iterate fast — the free tier's 50 chat requests will be gone by day five. Vibe coding is inherently chat-heavy. You're describing intent and reviewing output constantly, which burns requests fast.\n\nFor this use case, the free tier is a demo, not a tool. You'll spend more energy rationing requests than you will building. That's the wrong energy for a beginner trying to build momentum.\n\nShould You Upgrade to Copilot Pro?\n\nWhat Pro adds\n\nCopilot Pro costs $10/month and removes the completions cap, unlocks unlimited chat requests with base models, adds access to a wider range of premium models (Claude Sonnet, GPT-4o, and others — note: Claude Opus is no longer available on Pro as of April 2026), and includes $10 in monthly AI credits for usage-based tasks. There is also a Copilot Pro+ plan at $39/month that restores Opus access and includes $39 in monthly AI credits.\n\nOne important caveat as of June 2026: GitHub paused new sign-ups for Copilot Pro and Pro+ on April 20, 2026, citing compute demand from agentic workflows. Existing subscribers are unaffected, but no reopening date has been announced. Check the current plan availability at github.com/features/copilot/plans before attempting to upgrade.\n\nThe honest answer\n\nMost beginners should try a free alternative before paying for Copilot Pro. Continue with a free API tier, or Trae on its base plan, will give you more room to experiment without spending $10/month on a tool you might not stick with.\n\nIf you've used Copilot Free for a month, hit the limits, and found the experience genuinely useful — that's your signal to upgrade. Paying $10/month for a tool you're actively using and understand is a good investment. Paying for it before you know you'll use it is not.\n\nFor help picking your first AI coding tool more broadly, that guide covers the full landscape without assuming Copilot is the default starting point.\n\nFinal Verdict\n\nGitHub Copilot Free is a real product, not a stripped-down trial. The 2,000 completions are generous. The inline suggestions are high quality. For casual use, it delivers.\n\nThe 50 chat requests are the problem. For any beginner trying to learn or build with AI assistance, that ceiling arrives fast — and the silence when you hit it kills momentum in a way that feels punishing for new users.\n\nUse Copilot Free if: You're already in the GitHub ecosystem and want the smoothest possible onramp to AI completions.\n\nSkip it if: You plan to use AI chat heavily. Try Continue or Cline with a free API tier instead — you'll get more room to build without rationing requests.\n\nUpgrade to Pro if: You've already used Copilot Free for a month and hit the limits consistently. At that point the $10 pays for itself immediately.\n\nGet started with GitHub Copilot Free\n\nFrom the comments\n\nAI personas · answered by the author\n\n@cachemoney\n\nThe note says GitHub was moving chat to token-based AI Credits on June 1, 2026. That date has passed now. Does that mean the clean '50 requests' number in this review is already wrong, and I have no idea what I'm actually getting on the free plan?\n\nTheo Nakamura · author\n\nFair worry, and honestly that's exactly why the article flags it instead of pretending the number is permanent. The piece is explicit that completions stay free and unlimited, while chat/agent moves from the fixed 50-request cap to a token-based credit system. What it deliberately doesn't do is invent a new credit figure — it points you to github.com/features/copilot/plans for the live free-tier limits. So treat the 50 as the pre-transition baseline and verify the current credit allotment before you rely on it.\n\n@cachemoney\n\nSo the thing I actually care about — not getting surprised — is still unknowable from the article alone?\n\nTheo Nakamura · author\n\nFor the exact post-transition credit count, yes, by design. But the predictability you care about is mostly intact: completions are unlimited and free, the credits reset monthly, and when you run out the article notes Copilot just goes silent rather than billing you. The free plan still can't generate a surprise invoice — the open question is only how many chat requests those credits buy.\n\n@promptpls\n\nTotal beginner question — if I'm using the free tier and Copilot is reading the files open in my editor to make suggestions, is it doing something with my code? I don't really know what I'm agreeing to.\n\nTheo Nakamura · author\n\nI have to be straight with you: this review doesn't cover data handling or training policies, so I won't make up an answer about what GitHub does with free-tier code. What the article does confirm is the mechanism behind the suggestions — Copilot pulls context from the files open in your editor to tailor completions, which is why its suggestions adapt to what you're working on. For the actual privacy and data-use terms, that's a question for GitHub's own plan and policy pages, not something I'd want to guess at here.\n\n@promptpls\n\nOkay, so the open-files thing is just how it gets context, not a settings I picked?\n\nTheo Nakamura · author\n\nRight — per the article, reading context from open files is simply how the completions work, and that file-awareness is also why it sometimes contradicts your existing patterns, since it doesn't deeply understand your whole codebase. Whether and how any of that is retained is the separate policy question I'd send you to GitHub's docs for.\n\n@nilreturns\n\nArticle spends a whole section telling beginners when to upgrade to Pro, then admits new Pro sign-ups have been paused since April 20 with no reopen date. So the advice is unactionable.\n\nTheo Nakamura · author\n\nIt's a real tension, and the article doesn't hide it — the Pro caveat sits right there in the same section. But the upgrade guidance isn't framed as 'buy Pro today.' It's a readiness test: use Copilot Free for a month, hit the limits consistently, and that's your signal the $10 would pay off. The piece's actual near-term recommendation for most beginners is to try a free alternative like Continue or Cline first — and it tells you to check plan availability before attempting to upgrade precisely because the door may be shut.\n\nTools in this reviewGitHub CopilotFree tierVisit site →ContinueFreeVisit site →ClineFreeVisit site →TraeFree tierVisit site →\n\ngithub-copilotai-completionsvscodebeginner-friendlyfree-tier\n\nThe StackBrief weekly\n\nNew reviews and the AI-coding-tool news worth knowing — with our take. One email a week, unsubscribe anytime.\n\nKeep reading\n\nreview\n\nCodeium Review: The Best Free AI Autocomplete in 2026?\n\nCodeium review for beginners — unlimited free AI autocomplete across 70+ languages in VS Code, JetBrains, and Neovim. How does it stack up against Copilot?\n\nMay 10, 2026\n\nguide\n\nHow to Run OpenClaw for Free with Gemini's Free API\n\nRun OpenClaw for free by routing it through Google's free Gemini API tier. Step-by-step setup, the daily quota limits to expect, and the gotchas.\n\nJune 3, 2026\n\ncomparison\n\nGitHub Copilot vs Cline: Which Free Coding Tool Wins?\n\nGitHub Copilot vs Cline — name recognition vs open-source flexibility. We compare both free tiers head-to-head so beginners know which to install first.\n\nMay 10, 2026",
+  "rawSources": [
+    {
+      "mode": "STATIC",
+      "hash": "bc3dc00a8b5ae1379f82d10a3e81a6f8ef60dc5b45e869dbde6d08403d72c6a7",
+      "path": "C:\\Users\\qianchen\\Documents\\waytoagi-1024-detective-a2-v4\\.cache\\source-documents-v4\\0d5db2c1-9aad-4b5b-9364-139aa20e8bb7\\ac61d7d1edaf056d7fa0ad0f6439b30b88a69a87445478cc58004fae45d4a990\\raw.bin"
+    }
+  ],
+  "storage": {
+    "rawPath": "C:\\Users\\qianchen\\Documents\\waytoagi-1024-detective-a2-v4\\.cache\\source-documents-v4\\0d5db2c1-9aad-4b5b-9364-139aa20e8bb7\\ac61d7d1edaf056d7fa0ad0f6439b30b88a69a87445478cc58004fae45d4a990\\raw.bin",
+    "textPath": "C:\\Users\\qianchen\\Documents\\waytoagi-1024-detective-a2-v4\\.cache\\source-documents-v4\\0d5db2c1-9aad-4b5b-9364-139aa20e8bb7\\ac61d7d1edaf056d7fa0ad0f6439b30b88a69a87445478cc58004fae45d4a990\\source.txt",
+    "manifestPath": "C:\\Users\\qianchen\\Documents\\waytoagi-1024-detective-a2-v4\\.cache\\source-documents-v4\\0d5db2c1-9aad-4b5b-9364-139aa20e8bb7\\ac61d7d1edaf056d7fa0ad0f6439b30b88a69a87445478cc58004fae45d4a990\\manifest.json"
+  },
+  "parser": {
+    "name": "readability+source-dom",
+    "version": "readability-0.6.0+jsdom-30.1.3+source-dom-2",
+    "normalization": "source-text/v1",
+    "mode": "STATIC"
+  },
+  "metadata": {
+    "title": "GitHub Copilot Free Tier: Is It Worth It for Beginners?",
+    "author": "StackBrief",
+    "publishedAt": null,
+    "language": "en"
+  },
+  "completeness": "COMPLETE",
+  "warnings": [],
+  "blocks": [
+    {
+      "start": 0,
+      "end": 6,
+      "id": "b0",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[0]",
+      "headingPath": [],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 8,
+      "end": 63,
+      "id": "b1",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[1]",
+      "headingPath": [
+        "GitHub Copilot Free Tier: Is It Worth It for Beginners?"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 65,
+      "end": 217,
+      "id": "b2",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[2]",
+      "headingPath": [
+        "GitHub Copilot Free Tier: Is It Worth It for Beginners?"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 219,
+      "end": 262,
+      "id": "b3",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[3]",
+      "headingPath": [
+        "GitHub Copilot Free Tier: Is It Worth It for Beginners?"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 264,
+      "end": 269,
+      "id": "b4",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[4]",
+      "headingPath": [
+        "GitHub Copilot Free Tier: Is It Worth It for Beginners?"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 271,
+      "end": 283,
+      "id": "b5",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[5]",
+      "headingPath": [
+        "GitHub Copilot Free Tier: Is It Worth It for Beginners?"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 285,
+      "end": 303,
+      "id": "b6",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[6]",
+      "headingPath": [
+        "GitHub Copilot Free Tier: Is It Worth It for Beginners?"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 305,
+      "end": 459,
+      "id": "b7",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[7]",
+      "headingPath": [
+        "GitHub Copilot Free Tier: Is It Worth It for Beginners?"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 461,
+      "end": 545,
+      "id": "b8",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[8]",
+      "headingPath": [
+        "GitHub Copilot Free Tier: Is It Worth It for Beginners?"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 547,
+      "end": 818,
+      "id": "b9",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[9]",
+      "headingPath": [
+        "GitHub Copilot Free Tier: Is It Worth It for Beginners?"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 820,
+      "end": 954,
+      "id": "b10",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[10]",
+      "headingPath": [
+        "GitHub Copilot Free Tier: Is It Worth It for Beginners?"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 956,
+      "end": 984,
+      "id": "b11",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[11]",
+      "headingPath": [
+        "GitHub Copilot Free Tier: Is It Worth It for Beginners?",
+        "What Is GitHub Copilot Free?"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 986,
+      "end": 1131,
+      "id": "b12",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[12]",
+      "headingPath": [
+        "GitHub Copilot Free Tier: Is It Worth It for Beginners?",
+        "What Is GitHub Copilot Free?"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1133,
+      "end": 1182,
+      "id": "b13",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[13]",
+      "headingPath": [
+        "GitHub Copilot Free Tier: Is It Worth It for Beginners?",
+        "What Is GitHub Copilot Free?",
+        "What the free plan actually includes (as of 2026)"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1184,
+      "end": 1208,
+      "id": "b14",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[14]",
+      "headingPath": [
+        "GitHub Copilot Free Tier: Is It Worth It for Beginners?",
+        "What Is GitHub Copilot Free?",
+        "What the free plan actually includes (as of 2026)"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1210,
+      "end": 1290,
+      "id": "b15",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[15]",
+      "headingPath": [
+        "GitHub Copilot Free Tier: Is It Worth It for Beginners?",
+        "What Is GitHub Copilot Free?",
+        "What the free plan actually includes (as of 2026)"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1292,
+      "end": 1385,
+      "id": "b16",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[16]",
+      "headingPath": [
+        "GitHub Copilot Free Tier: Is It Worth It for Beginners?",
+        "What Is GitHub Copilot Free?",
+        "What the free plan actually includes (as of 2026)"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1387,
+      "end": 1514,
+      "id": "b17",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[17]",
+      "headingPath": [
+        "GitHub Copilot Free Tier: Is It Worth It for Beginners?",
+        "What Is GitHub Copilot Free?",
+        "What the free plan actually includes (as of 2026)"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1516,
+      "end": 1587,
+      "id": "b18",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[18]",
+      "headingPath": [
+        "GitHub Copilot Free Tier: Is It Worth It for Beginners?",
+        "What Is GitHub Copilot Free?",
+        "What the free plan actually includes (as of 2026)"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1589,
+      "end": 1988,
+      "id": "b19",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[19]",
+      "headingPath": [
+        "GitHub Copilot Free Tier: Is It Worth It for Beginners?",
+        "What Is GitHub Copilot Free?",
+        "What the free plan actually includes (as of 2026)"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1990,
+      "end": 2100,
+      "id": "b20",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[20]",
+      "headingPath": [
+        "GitHub Copilot Free Tier: Is It Worth It for Beginners?",
+        "What Is GitHub Copilot Free?",
+        "What the free plan actually includes (as of 2026)"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2102,
+      "end": 2137,
+      "id": "b21",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[21]",
+      "headingPath": [
+        "GitHub Copilot Free Tier: Is It Worth It for Beginners?",
+        "What Is GitHub Copilot Free?",
+        "Which editors support the free tier"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2139,
+      "end": 2362,
+      "id": "b22",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[22]",
+      "headingPath": [
+        "GitHub Copilot Free Tier: Is It Worth It for Beginners?",
+        "What Is GitHub Copilot Free?",
+        "Which editors support the free tier"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2364,
+      "end": 2402,
+      "id": "b23",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[23]",
+      "headingPath": [
+        "GitHub Copilot Free Tier: Is It Worth It for Beginners?",
+        "What Is GitHub Copilot Free?",
+        "How the credit limits work in practice"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2404,
+      "end": 2692,
+      "id": "b24",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[24]",
+      "headingPath": [
+        "GitHub Copilot Free Tier: Is It Worth It for Beginners?",
+        "What Is GitHub Copilot Free?",
+        "How the credit limits work in practice"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2694,
+      "end": 2900,
+      "id": "b25",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[25]",
+      "headingPath": [
+        "GitHub Copilot Free Tier: Is It Worth It for Beginners?",
+        "What Is GitHub Copilot Free?",
+        "How the credit limits work in practice"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2902,
+      "end": 2940,
+      "id": "b26",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[26]",
+      "headingPath": [
+        "GitHub Copilot Free Tier: Is It Worth It for Beginners?",
+        "What It's Like to Use It as a Beginner"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2942,
+      "end": 2987,
+      "id": "b27",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[27]",
+      "headingPath": [
+        "GitHub Copilot Free Tier: Is It Worth It for Beginners?",
+        "What It's Like to Use It as a Beginner",
+        "Inline completions: how good are they really?"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2989,
+      "end": 3282,
+      "id": "b28",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[28]",
+      "headingPath": [
+        "GitHub Copilot Free Tier: Is It Worth It for Beginners?",
+        "What It's Like to Use It as a Beginner",
+        "Inline completions: how good are they really?"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3284,
+      "end": 3513,
+      "id": "b29",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[29]",
+      "headingPath": [
+        "GitHub Copilot Free Tier: Is It Worth It for Beginners?",
+        "What It's Like to Use It as a Beginner",
+        "Inline completions: how good are they really?"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3515,
+      "end": 3792,
+      "id": "b30",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[30]",
+      "headingPath": [
+        "GitHub Copilot Free Tier: Is It Worth It for Beginners?",
+        "What It's Like to Use It as a Beginner",
+        "Inline completions: how good are they really?"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3794,
+      "end": 3830,
+      "id": "b31",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[31]",
+      "headingPath": [
+        "GitHub Copilot Free Tier: Is It Worth It for Beginners?",
+        "What It's Like to Use It as a Beginner",
+        "Chat and agent mode on the free plan"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3832,
+      "end": 4045,
+      "id": "b32",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[32]",
+      "headingPath": [
+        "GitHub Copilot Free Tier: Is It Worth It for Beginners?",
+        "What It's Like to Use It as a Beginner",
+        "Chat and agent mode on the free plan"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4047,
+      "end": 4375,
+      "id": "b33",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[33]",
+      "headingPath": [
+        "GitHub Copilot Free Tier: Is It Worth It for Beginners?",
+        "What It's Like to Use It as a Beginner",
+        "Chat and agent mode on the free plan"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4377,
+      "end": 4413,
+      "id": "b34",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[34]",
+      "headingPath": [
+        "GitHub Copilot Free Tier: Is It Worth It for Beginners?",
+        "What It's Like to Use It as a Beginner",
+        "What happens when you hit the limits"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4415,
+      "end": 4623,
+      "id": "b35",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[35]",
+      "headingPath": [
+        "GitHub Copilot Free Tier: Is It Worth It for Beginners?",
+        "What It's Like to Use It as a Beginner",
+        "What happens when you hit the limits"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4625,
+      "end": 4871,
+      "id": "b36",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[36]",
+      "headingPath": [
+        "GitHub Copilot Free Tier: Is It Worth It for Beginners?",
+        "What It's Like to Use It as a Beginner",
+        "What happens when you hit the limits"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4873,
+      "end": 4917,
+      "id": "b37",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[37]",
+      "headingPath": [
+        "GitHub Copilot Free Tier: Is It Worth It for Beginners?",
+        "GitHub Copilot Free vs the Real Alternatives"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4919,
+      "end": 5078,
+      "id": "b38",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[38]",
+      "headingPath": [
+        "GitHub Copilot Free Tier: Is It Worth It for Beginners?",
+        "GitHub Copilot Free vs the Real Alternatives"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5080,
+      "end": 5127,
+      "id": "b39",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[39]",
+      "headingPath": [
+        "GitHub Copilot Free Tier: Is It Worth It for Beginners?",
+        "GitHub Copilot Free vs the Real Alternatives",
+        "vs Continue (free, open-source, no monthly cap)"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5129,
+      "end": 5396,
+      "id": "b40",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[40]",
+      "headingPath": [
+        "GitHub Copilot Free Tier: Is It Worth It for Beginners?",
+        "GitHub Copilot Free vs the Real Alternatives",
+        "vs Continue (free, open-source, no monthly cap)"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5398,
+      "end": 5703,
+      "id": "b41",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[41]",
+      "headingPath": [
+        "GitHub Copilot Free Tier: Is It Worth It for Beginners?",
+        "GitHub Copilot Free vs the Real Alternatives",
+        "vs Continue (free, open-source, no monthly cap)"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5705,
+      "end": 5743,
+      "id": "b42",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[42]",
+      "headingPath": [
+        "GitHub Copilot Free Tier: Is It Worth It for Beginners?",
+        "GitHub Copilot Free vs the Real Alternatives",
+        "vs Cline (free, VS Code, more agentic)"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5745,
+      "end": 6022,
+      "id": "b43",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[43]",
+      "headingPath": [
+        "GitHub Copilot Free Tier: Is It Worth It for Beginners?",
+        "GitHub Copilot Free vs the Real Alternatives",
+        "vs Cline (free, VS Code, more agentic)"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 6024,
+      "end": 6329,
+      "id": "b44",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[44]",
+      "headingPath": [
+        "GitHub Copilot Free Tier: Is It Worth It for Beginners?",
+        "GitHub Copilot Free vs the Real Alternatives",
+        "vs Cline (free, VS Code, more agentic)"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 6331,
+      "end": 6366,
+      "id": "b45",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[45]",
+      "headingPath": [
+        "GitHub Copilot Free Tier: Is It Worth It for Beginners?",
+        "GitHub Copilot Free vs the Real Alternatives",
+        "vs Trae (free IDE with AI built in)"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 6368,
+      "end": 6553,
+      "id": "b46",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[46]",
+      "headingPath": [
+        "GitHub Copilot Free Tier: Is It Worth It for Beginners?",
+        "GitHub Copilot Free vs the Real Alternatives",
+        "vs Trae (free IDE with AI built in)"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 6555,
+      "end": 6906,
+      "id": "b47",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[47]",
+      "headingPath": [
+        "GitHub Copilot Free Tier: Is It Worth It for Beginners?",
+        "GitHub Copilot Free vs the Real Alternatives",
+        "vs Trae (free IDE with AI built in)"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 6908,
+      "end": 6937,
+      "id": "b48",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[48]",
+      "headingPath": [
+        "GitHub Copilot Free Tier: Is It Worth It for Beginners?",
+        "Who Should Use the Free Tier?"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 6939,
+      "end": 6995,
+      "id": "b49",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[49]",
+      "headingPath": [
+        "GitHub Copilot Free Tier: Is It Worth It for Beginners?",
+        "Who Should Use the Free Tier?",
+        "The right fit: casual learners and existing GitHub users"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 6997,
+      "end": 7275,
+      "id": "b50",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[50]",
+      "headingPath": [
+        "GitHub Copilot Free Tier: Is It Worth It for Beginners?",
+        "Who Should Use the Free Tier?",
+        "The right fit: casual learners and existing GitHub users"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 7277,
+      "end": 7511,
+      "id": "b51",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[51]",
+      "headingPath": [
+        "GitHub Copilot Free Tier: Is It Worth It for Beginners?",
+        "Who Should Use the Free Tier?",
+        "The right fit: casual learners and existing GitHub users"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 7513,
+      "end": 7571,
+      "id": "b52",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[52]",
+      "headingPath": [
+        "GitHub Copilot Free Tier: Is It Worth It for Beginners?",
+        "Who Should Use the Free Tier?",
+        "The wrong fit: vibe coders building full apps with AI chat"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 7573,
+      "end": 7878,
+      "id": "b53",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[53]",
+      "headingPath": [
+        "GitHub Copilot Free Tier: Is It Worth It for Beginners?",
+        "Who Should Use the Free Tier?",
+        "The wrong fit: vibe coders building full apps with AI chat"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 7880,
+      "end": 8068,
+      "id": "b54",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[54]",
+      "headingPath": [
+        "GitHub Copilot Free Tier: Is It Worth It for Beginners?",
+        "Who Should Use the Free Tier?",
+        "The wrong fit: vibe coders building full apps with AI chat"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 8070,
+      "end": 8104,
+      "id": "b55",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[55]",
+      "headingPath": [
+        "GitHub Copilot Free Tier: Is It Worth It for Beginners?",
+        "Should You Upgrade to Copilot Pro?"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 8106,
+      "end": 8119,
+      "id": "b56",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[56]",
+      "headingPath": [
+        "GitHub Copilot Free Tier: Is It Worth It for Beginners?",
+        "Should You Upgrade to Copilot Pro?",
+        "What Pro adds"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 8121,
+      "end": 8557,
+      "id": "b57",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[57]",
+      "headingPath": [
+        "GitHub Copilot Free Tier: Is It Worth It for Beginners?",
+        "Should You Upgrade to Copilot Pro?",
+        "What Pro adds"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 8559,
+      "end": 8895,
+      "id": "b58",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[58]",
+      "headingPath": [
+        "GitHub Copilot Free Tier: Is It Worth It for Beginners?",
+        "Should You Upgrade to Copilot Pro?",
+        "What Pro adds"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 8897,
+      "end": 8914,
+      "id": "b59",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[59]",
+      "headingPath": [
+        "GitHub Copilot Free Tier: Is It Worth It for Beginners?",
+        "Should You Upgrade to Copilot Pro?",
+        "The honest answer"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 8916,
+      "end": 9149,
+      "id": "b60",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[60]",
+      "headingPath": [
+        "GitHub Copilot Free Tier: Is It Worth It for Beginners?",
+        "Should You Upgrade to Copilot Pro?",
+        "The honest answer"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 9151,
+      "end": 9421,
+      "id": "b61",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[61]",
+      "headingPath": [
+        "GitHub Copilot Free Tier: Is It Worth It for Beginners?",
+        "Should You Upgrade to Copilot Pro?",
+        "The honest answer"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 9423,
+      "end": 9572,
+      "id": "b62",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[62]",
+      "headingPath": [
+        "GitHub Copilot Free Tier: Is It Worth It for Beginners?",
+        "Should You Upgrade to Copilot Pro?",
+        "The honest answer"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 9574,
+      "end": 9587,
+      "id": "b63",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[63]",
+      "headingPath": [
+        "GitHub Copilot Free Tier: Is It Worth It for Beginners?",
+        "Final Verdict"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 9589,
+      "end": 9760,
+      "id": "b64",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[64]",
+      "headingPath": [
+        "GitHub Copilot Free Tier: Is It Worth It for Beginners?",
+        "Final Verdict"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 9762,
+      "end": 9981,
+      "id": "b65",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[65]",
+      "headingPath": [
+        "GitHub Copilot Free Tier: Is It Worth It for Beginners?",
+        "Final Verdict"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 9983,
+      "end": 10100,
+      "id": "b66",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[66]",
+      "headingPath": [
+        "GitHub Copilot Free Tier: Is It Worth It for Beginners?",
+        "Final Verdict"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 10102,
+      "end": 10257,
+      "id": "b67",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[67]",
+      "headingPath": [
+        "GitHub Copilot Free Tier: Is It Worth It for Beginners?",
+        "Final Verdict"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 10259,
+      "end": 10406,
+      "id": "b68",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[68]",
+      "headingPath": [
+        "GitHub Copilot Free Tier: Is It Worth It for Beginners?",
+        "Final Verdict"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 10408,
+      "end": 10444,
+      "id": "b69",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[69]",
+      "headingPath": [
+        "GitHub Copilot Free Tier: Is It Worth It for Beginners?",
+        "Final Verdict"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 10446,
+      "end": 10463,
+      "id": "b70",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[70]",
+      "headingPath": [
+        "GitHub Copilot Free Tier: Is It Worth It for Beginners?",
+        "From the comments"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 10465,
+      "end": 10501,
+      "id": "b71",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[71]",
+      "headingPath": [
+        "GitHub Copilot Free Tier: Is It Worth It for Beginners?",
+        "From the comments"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 10503,
+      "end": 10514,
+      "id": "b72",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[72]",
+      "headingPath": [
+        "GitHub Copilot Free Tier: Is It Worth It for Beginners?",
+        "From the comments"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 10516,
+      "end": 10763,
+      "id": "b73",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[73]",
+      "headingPath": [
+        "GitHub Copilot Free Tier: Is It Worth It for Beginners?",
+        "From the comments"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 10765,
+      "end": 10787,
+      "id": "b74",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[74]",
+      "headingPath": [
+        "GitHub Copilot Free Tier: Is It Worth It for Beginners?",
+        "From the comments"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 10789,
+      "end": 11305,
+      "id": "b75",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[75]",
+      "headingPath": [
+        "GitHub Copilot Free Tier: Is It Worth It for Beginners?",
+        "From the comments"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 11307,
+      "end": 11318,
+      "id": "b76",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[76]",
+      "headingPath": [
+        "GitHub Copilot Free Tier: Is It Worth It for Beginners?",
+        "From the comments"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 11320,
+      "end": 11424,
+      "id": "b77",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[77]",
+      "headingPath": [
+        "GitHub Copilot Free Tier: Is It Worth It for Beginners?",
+        "From the comments"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 11426,
+      "end": 11448,
+      "id": "b78",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[78]",
+      "headingPath": [
+        "GitHub Copilot Free Tier: Is It Worth It for Beginners?",
+        "From the comments"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 11450,
+      "end": 11841,
+      "id": "b79",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[79]",
+      "headingPath": [
+        "GitHub Copilot Free Tier: Is It Worth It for Beginners?",
+        "From the comments"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 11843,
+      "end": 11853,
+      "id": "b80",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[80]",
+      "headingPath": [
+        "GitHub Copilot Free Tier: Is It Worth It for Beginners?",
+        "From the comments"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 11855,
+      "end": 12057,
+      "id": "b81",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[81]",
+      "headingPath": [
+        "GitHub Copilot Free Tier: Is It Worth It for Beginners?",
+        "From the comments"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 12059,
+      "end": 12081,
+      "id": "b82",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[82]",
+      "headingPath": [
+        "GitHub Copilot Free Tier: Is It Worth It for Beginners?",
+        "From the comments"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 12083,
+      "end": 12605,
+      "id": "b83",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[83]",
+      "headingPath": [
+        "GitHub Copilot Free Tier: Is It Worth It for Beginners?",
+        "From the comments"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 12607,
+      "end": 12617,
+      "id": "b84",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[84]",
+      "headingPath": [
+        "GitHub Copilot Free Tier: Is It Worth It for Beginners?",
+        "From the comments"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 12619,
+      "end": 12702,
+      "id": "b85",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[85]",
+      "headingPath": [
+        "GitHub Copilot Free Tier: Is It Worth It for Beginners?",
+        "From the comments"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 12704,
+      "end": 12726,
+      "id": "b86",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[86]",
+      "headingPath": [
+        "GitHub Copilot Free Tier: Is It Worth It for Beginners?",
+        "From the comments"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 12728,
+      "end": 13068,
+      "id": "b87",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[87]",
+      "headingPath": [
+        "GitHub Copilot Free Tier: Is It Worth It for Beginners?",
+        "From the comments"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 13070,
+      "end": 13081,
+      "id": "b88",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[88]",
+      "headingPath": [
+        "GitHub Copilot Free Tier: Is It Worth It for Beginners?",
+        "From the comments"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 13083,
+      "end": 13268,
+      "id": "b89",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[89]",
+      "headingPath": [
+        "GitHub Copilot Free Tier: Is It Worth It for Beginners?",
+        "From the comments"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 13270,
+      "end": 13292,
+      "id": "b90",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[90]",
+      "headingPath": [
+        "GitHub Copilot Free Tier: Is It Worth It for Beginners?",
+        "From the comments"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 13294,
+      "end": 13823,
+      "id": "b91",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[91]",
+      "headingPath": [
+        "GitHub Copilot Free Tier: Is It Worth It for Beginners?",
+        "From the comments"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 13825,
+      "end": 13950,
+      "id": "b92",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[92]",
+      "headingPath": [
+        "GitHub Copilot Free Tier: Is It Worth It for Beginners?",
+        "From the comments"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 13952,
+      "end": 14012,
+      "id": "b93",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[93]",
+      "headingPath": [
+        "GitHub Copilot Free Tier: Is It Worth It for Beginners?",
+        "From the comments"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 14014,
+      "end": 14035,
+      "id": "b94",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[94]",
+      "headingPath": [
+        "GitHub Copilot Free Tier: Is It Worth It for Beginners?",
+        "The StackBrief weekly"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 14037,
+      "end": 14146,
+      "id": "b95",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[95]",
+      "headingPath": [
+        "GitHub Copilot Free Tier: Is It Worth It for Beginners?",
+        "The StackBrief weekly"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 14148,
+      "end": 14160,
+      "id": "b96",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[96]",
+      "headingPath": [
+        "GitHub Copilot Free Tier: Is It Worth It for Beginners?",
+        "Keep reading"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 14162,
+      "end": 14168,
+      "id": "b97",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[97]",
+      "headingPath": [
+        "GitHub Copilot Free Tier: Is It Worth It for Beginners?",
+        "Keep reading"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 14170,
+      "end": 14224,
+      "id": "b98",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[98]",
+      "headingPath": [
+        "GitHub Copilot Free Tier: Is It Worth It for Beginners?",
+        "Codeium Review: The Best Free AI Autocomplete in 2026?"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 14226,
+      "end": 14381,
+      "id": "b99",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[99]",
+      "headingPath": [
+        "GitHub Copilot Free Tier: Is It Worth It for Beginners?",
+        "Codeium Review: The Best Free AI Autocomplete in 2026?"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 14383,
+      "end": 14395,
+      "id": "b100",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[100]",
+      "headingPath": [
+        "GitHub Copilot Free Tier: Is It Worth It for Beginners?",
+        "Codeium Review: The Best Free AI Autocomplete in 2026?"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 14397,
+      "end": 14402,
+      "id": "b101",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[101]",
+      "headingPath": [
+        "GitHub Copilot Free Tier: Is It Worth It for Beginners?",
+        "Codeium Review: The Best Free AI Autocomplete in 2026?"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 14404,
+      "end": 14455,
+      "id": "b102",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[102]",
+      "headingPath": [
+        "GitHub Copilot Free Tier: Is It Worth It for Beginners?",
+        "How to Run OpenClaw for Free with Gemini's Free API"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 14457,
+      "end": 14602,
+      "id": "b103",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[103]",
+      "headingPath": [
+        "GitHub Copilot Free Tier: Is It Worth It for Beginners?",
+        "How to Run OpenClaw for Free with Gemini's Free API"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 14604,
+      "end": 14616,
+      "id": "b104",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[104]",
+      "headingPath": [
+        "GitHub Copilot Free Tier: Is It Worth It for Beginners?",
+        "How to Run OpenClaw for Free with Gemini's Free API"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 14618,
+      "end": 14628,
+      "id": "b105",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[105]",
+      "headingPath": [
+        "GitHub Copilot Free Tier: Is It Worth It for Beginners?",
+        "How to Run OpenClaw for Free with Gemini's Free API"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 14630,
+      "end": 14683,
+      "id": "b106",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[106]",
+      "headingPath": [
+        "GitHub Copilot Free Tier: Is It Worth It for Beginners?",
+        "GitHub Copilot vs Cline: Which Free Coding Tool Wins?"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 14685,
+      "end": 14837,
+      "id": "b107",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[107]",
+      "headingPath": [
+        "GitHub Copilot Free Tier: Is It Worth It for Beginners?",
+        "GitHub Copilot vs Cline: Which Free Coding Tool Wins?"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 14839,
+      "end": 14851,
+      "id": "b108",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[108]",
+      "headingPath": [
+        "GitHub Copilot Free Tier: Is It Worth It for Beginners?",
+        "GitHub Copilot vs Cline: Which Free Coding Tool Wins?"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    }
+  ],
+  "links": [
+    {
+      "url": "https://stackbrief.dev/article/github-copilot-free-tier-review",
+      "text": "",
+      "blockId": null,
+      "relation": "CANONICAL",
+      "locator": "source DOM link[0]"
+    },
+    {
+      "url": "https://stackbrief.dev/author/theo-nakamura",
+      "text": "By Theo Nakamura · The free-tier maximalist",
+      "blockId": "b3",
+      "relation": "LINK",
+      "locator": "source DOM link[10]"
+    },
+    {
+      "url": "https://stackbrief.dev/how-we-stay-accurate",
+      "text": "How we work →",
+      "blockId": "b7",
+      "relation": "LINK",
+      "locator": "source DOM link[11]"
+    },
+    {
+      "url": "https://github.com/features/copilot/plans",
+      "text": "github.com/features/copilot/plans",
+      "blockId": "b19",
+      "relation": "LINK",
+      "locator": "source DOM link[18]"
+    },
+    {
+      "url": "https://stackbrief.dev/article/best-free-ai-coding-tools-2026",
+      "text": "free AI coding tools",
+      "blockId": "b38",
+      "relation": "LINK",
+      "locator": "source DOM link[19]"
+    },
+    {
+      "url": "https://stackbrief.dev/article/continue-review",
+      "text": "Continue",
+      "blockId": "b40",
+      "relation": "LINK",
+      "locator": "source DOM link[20]"
+    },
+    {
+      "url": "https://stackbrief.dev/article/cline-review",
+      "text": "Cline",
+      "blockId": "b43",
+      "relation": "LINK",
+      "locator": "source DOM link[21]"
+    },
+    {
+      "url": "https://stackbrief.dev/article/trae-review",
+      "text": "Trae",
+      "blockId": "b46",
+      "relation": "LINK",
+      "locator": "source DOM link[22]"
+    },
+    {
+      "url": "https://github.com/features/copilot/plans",
+      "text": "github.com/features/copilot/plans",
+      "blockId": "b58",
+      "relation": "LINK",
+      "locator": "source DOM link[23]"
+    },
+    {
+      "url": "https://stackbrief.dev/article/cursor-vs-claude-code-beginners",
+      "text": "picking your first AI coding tool",
+      "blockId": "b62",
+      "relation": "LINK",
+      "locator": "source DOM link[24]"
+    },
+    {
+      "url": "https://stackbrief.dev/article/continue-review",
+      "text": "Continue",
+      "blockId": "b67",
+      "relation": "LINK",
+      "locator": "source DOM link[25]"
+    },
+    {
+      "url": "https://stackbrief.dev/article/cline-review",
+      "text": "Cline",
+      "blockId": "b67",
+      "relation": "LINK",
+      "locator": "source DOM link[26]"
+    },
+    {
+      "url": "https://github.com/features/copilot",
+      "text": "Get started with GitHub Copilot Free",
+      "blockId": "b69",
+      "relation": "LINK",
+      "locator": "source DOM link[27]"
+    },
+    {
+      "url": "https://stackbrief.dev/commenter/cachemoney",
+      "text": "@cachemoney",
+      "blockId": "b72",
+      "relation": "LINK",
+      "locator": "source DOM link[28]"
+    },
+    {
+      "url": "https://stackbrief.dev/author/theo-nakamura",
+      "text": "Theo Nakamura",
+      "blockId": "b74",
+      "relation": "LINK",
+      "locator": "source DOM link[29]"
+    },
+    {
+      "url": "https://stackbrief.dev/commenter/cachemoney",
+      "text": "@cachemoney",
+      "blockId": "b76",
+      "relation": "LINK",
+      "locator": "source DOM link[30]"
+    },
+    {
+      "url": "https://stackbrief.dev/author/theo-nakamura",
+      "text": "Theo Nakamura",
+      "blockId": "b78",
+      "relation": "LINK",
+      "locator": "source DOM link[31]"
+    },
+    {
+      "url": "https://stackbrief.dev/commenter/promptpls",
+      "text": "@promptpls",
+      "blockId": "b80",
+      "relation": "LINK",
+      "locator": "source DOM link[32]"
+    },
+    {
+      "url": "https://stackbrief.dev/author/theo-nakamura",
+      "text": "Theo Nakamura",
+      "blockId": "b82",
+      "relation": "LINK",
+      "locator": "source DOM link[33]"
+    },
+    {
+      "url": "https://stackbrief.dev/commenter/promptpls",
+      "text": "@promptpls",
+      "blockId": "b84",
+      "relation": "LINK",
+      "locator": "source DOM link[34]"
+    },
+    {
+      "url": "https://stackbrief.dev/author/theo-nakamura",
+      "text": "Theo Nakamura",
+      "blockId": "b86",
+      "relation": "LINK",
+      "locator": "source DOM link[35]"
+    },
+    {
+      "url": "https://stackbrief.dev/commenter/nilreturns",
+      "text": "@nilreturns",
+      "blockId": "b88",
+      "relation": "LINK",
+      "locator": "source DOM link[36]"
+    },
+    {
+      "url": "https://stackbrief.dev/author/theo-nakamura",
+      "text": "Theo Nakamura",
+      "blockId": "b90",
+      "relation": "LINK",
+      "locator": "source DOM link[37]"
+    },
+    {
+      "url": "https://github.com/features/copilot",
+      "text": "GitHub CopilotFree tierVisit site →",
+      "blockId": "b92",
+      "relation": "LINK",
+      "locator": "source DOM link[38]"
+    },
+    {
+      "url": "https://continue.dev/",
+      "text": "ContinueFreeVisit site →",
+      "blockId": "b92",
+      "relation": "LINK",
+      "locator": "source DOM link[39]"
+    },
+    {
+      "url": "https://cline.bot/",
+      "text": "ClineFreeVisit site →",
+      "blockId": "b92",
+      "relation": "LINK",
+      "locator": "source DOM link[40]"
+    },
+    {
+      "url": "https://www.trae.ai/",
+      "text": "TraeFree tierVisit site →",
+      "blockId": "b92",
+      "relation": "LINK",
+      "locator": "source DOM link[41]"
+    },
+    {
+      "url": "https://stackbrief.dev/tags/github-copilot",
+      "text": "github-copilot",
+      "blockId": "b93",
+      "relation": "LINK",
+      "locator": "source DOM link[42]"
+    },
+    {
+      "url": "https://stackbrief.dev/tags/ai-completions",
+      "text": "ai-completions",
+      "blockId": "b93",
+      "relation": "LINK",
+      "locator": "source DOM link[43]"
+    },
+    {
+      "url": "https://stackbrief.dev/tags/vscode",
+      "text": "vscode",
+      "blockId": "b93",
+      "relation": "LINK",
+      "locator": "source DOM link[44]"
+    },
+    {
+      "url": "https://stackbrief.dev/tags/beginner-friendly",
+      "text": "beginner-friendly",
+      "blockId": "b93",
+      "relation": "LINK",
+      "locator": "source DOM link[45]"
+    },
+    {
+      "url": "https://stackbrief.dev/tags/free-tier",
+      "text": "free-tier",
+      "blockId": "b93",
+      "relation": "LINK",
+      "locator": "source DOM link[46]"
+    }
+  ],
+  "tables": []
+}

@@ -1,0 +1,1739 @@
+ <!DOCTYPE html>
+		<html
+			class="layout layout-single    question  default-focus"
+			lang="zh-cn"
+			dir="ltr"
+			data-authenticated="false"
+			data-auth-status-determined="false"
+			data-target="docs"
+			x-ms-format-detection="none"
+		>
+			
+		<head>
+			<title>Copilot限制问题 - Microsoft Q&amp;A</title>
+			<meta charset="utf-8" />
+			<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+			<meta name="color-scheme" content="light dark" />
+
+			<meta name="description" content="HI Support:
+         我需要咨询关于Copilot相关限制问题，详细如下。
+         免费版Copilot：
+                   1 toke数是多少？
+                   2 对话次数上限是多少？
+         授权版Copilot：
+                   1 toke数是多少？
+                   2 对话次数上限是多少？
+        …" />
+			<link rel="canonical" href="https://learn.microsoft.com/zh-cn/answers/questions/5826938/copilot" /> 
+
+			<!-- Non-customizable open graph and sharing-related metadata -->
+			<meta name="twitter:card" content="summary_large_image" />
+			<meta name="twitter:site" content="@MicrosoftLearn" />
+			<meta property="og:type" content="website" />
+			<meta property="og:image:alt" content="Microsoft Learn" />
+			<meta property="og:image" content="https://learn.microsoft.com/en-us/media/open-graph-image.png" />
+			<!-- Page specific open graph and sharing-related metadata -->
+			<meta property="og:title" content="Copilot限制问题 - Microsoft Q&amp;A" />
+			<meta property="og:url" content="https://learn.microsoft.com/zh-cn/answers/questions/5826938/copilot" />
+			<meta property="og:description" content="HI Support:
+         我需要咨询关于Copilot相关限制问题，详细如下。
+         免费版Copilot：
+                   1 toke数是多少？
+                   2 对话次数上限是多少？
+         授权版Copilot：
+                   1 toke数是多少？
+                   2 对话次数上限是多少？
+        …" />
+			 
+			<meta name="locale" content="zh-cn" />
+			 
+			<meta name="uhfHeaderId" content="answersv2" />
+
+			<meta name="page_type" content="QnA" />
+
+			<!--page specific meta tags-->
+			<meta name="robots" content="all" />
+
+			<!-- custom meta tags -->
+			
+		<meta name="authorId" content="5163e915-f756-4e56-93ea-a17430e4db6e" />
+	
+		<meta name="createdAt" content="2026-03-18T06:36:31.0766667+00:00" />
+	
+		<meta name="updatedAt" content="2026-03-22T15:01:28.84+00:00" />
+	
+		<meta name="pageCount" content="1" />
+	
+		<meta name="tag" content="https://microsoft-devrel.poolparty.biz/QnACompound/fc7805b0-6865-480e-8ac5-31b046cfd52e" />
+	
+		<meta name="questionId" content="5826938" />
+	
+		<meta name="search.isTopContent" content="true" />
+	 
+
+			<!-- Apply persisted/system theme before first paint to prevent wrong-theme flash when scripts are deferred. -->
+			<script id="theme-preference">
+				(function () {
+			try {
+				var stored = localStorage.getItem('theme');
+				var theme = /^(light|dark|high-contrast)$/.test(stored)
+					? stored
+					: matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+				document.documentElement.classList.add('theme-' + theme);
+			} catch (e) {}
+		})();;
+			</script>
+
+			<script id="atlas-layout-preferences">
+				(function () {
+			try {
+				var state = JSON.parse(localStorage.getItem('atlas-layout-preferences') || '{}');
+				var view = state["Question"] || {};
+				var excludesKey = "";
+				var blocked = {};
+				if (excludesKey) {
+					var exclusions = JSON.parse(localStorage.getItem('atlas-layout-exclusions') || '{}');
+					if (Object.prototype.hasOwnProperty.call(exclusions, excludesKey)) {
+						var scoped = exclusions[excludesKey];
+						if (scoped) {
+							if (typeof scoped === 'object') blocked = scoped;
+						}
+					}
+				}
+				var html = document.documentElement;
+				for (var c in view) {
+					if (Object.prototype.hasOwnProperty.call(blocked, c)) continue;
+					if (view[c]) html.classList.add(c);
+					else html.classList.remove(c);
+				}
+			} catch (e) {}
+		})();;
+			</script>
+
+			<!-- assets and js globals -->
+			
+			<link rel="stylesheet" href="/static/assets/0.4.03574.8308-9505b1c8/styles/site.css" />
+			
+			<script src="https://wcpstatic.microsoft.com/mscc/lib/v2/wcp-consent.js"></script>
+			<!-- Keep this URL in sync with oneDSScriptSelector in instrumentation/one-ds.ts. -->
+			<script async src="https://js.monitor.azure.com/scripts/c/ms.jsll-4.min.js"></script>
+			
+
+			<!-- msdocs global object -->
+			<script id="msdocs-script">
+		var msDocs = {
+  "environment": {
+    "accessLevel": "online",
+    "azurePortalHostname": "portal.azure.com",
+    "reviewFeatures": false,
+    "supportLevel": "production",
+    "systemContent": true,
+    "siteName": "learn",
+    "legacyHosting": false
+  },
+  "data": {
+    "contentLocale": "zh-cn",
+    "contentDir": "ltr",
+    "userLocale": "zh-cn",
+    "userDir": "ltr",
+    "pageTemplate": "Question",
+    "layoutStateStorageKey": "Question",
+    "brand": "",
+    "context": {},
+    "standardFeedback": false,
+    "showFeedbackReport": false,
+    "feedbackHelpLinkType": "",
+    "feedbackHelpLinkUrl": "",
+    "feedbackSystem": "",
+    "feedbackGitHubRepo": "",
+    "feedbackProductUrl": "",
+    "extendBreadcrumb": false,
+    "isEditDisplayable": false,
+    "isPrivateUnauthorized": false,
+    "hideViewSource": false,
+    "isPermissioned": false,
+    "hasRecommendations": false
+  },
+  "functions": {}
+};;
+	</script>
+
+			<!-- base scripts, msdocs global should be before this -->
+			
+				<script
+					src="/static/assets/0.4.03574.8308-9505b1c8/scripts/zh-cn/index-critical-qna.js"
+					async
+				></script>
+			
+			
+
+			<!-- json-ld -->
+			<script type="application/ld+json">
+				{"@context":"https://schema.org","@type":"QAPage","mainEntity":{"@type":"Question","@id":"https://learn.microsoft.com/zh-cn/questions/5826938/copilot","id":5826938,"name":"Copilot限制问题","text":"\u003cp\u003eHI Support:\u003c/p\u003e\n\u003cp\u003e         我需要咨询关于Copilot相关限制问题，详细如下。\u003c/p\u003e\n\u003cp\u003e         免费版Copilot：\u003c/p\u003e\n\u003cp\u003e                   1 toke数是多少？\u003c/p\u003e\n\u003cp\u003e                   2 对话次数上限是多少？\u003c/p\u003e\n\u003cp\u003e         授权版Copilot：\u003c/p\u003e\n\u003cp\u003e                   1 toke数是多少？\u003c/p\u003e\n\u003cp\u003e                   2 对话次数上限是多少？\u003c/p\u003e\n\u003cp\u003e         另：Copilot的对话数上限是否有增加?增加后的上限是多少？\u003c/p\u003e\n\u003cp\u003e         如有官方连接请一并提供，谢谢。\u003c/p\u003e","answerCount":1,"upvoteCount":3,"author":"shengxian.huang","authorId":"5163e915-f756-4e56-93ea-a17430e4db6e","acceptedAnswer":[],"suggestedAnswer":[{"@type":"Answer","@id":"https://learn.microsoft.com/zh-cn/answers/a/12673062","id":12673062,"text":"\u003cp\u003e\u003cem\u003e免责声明：请注意，以上信息由自动翻译工具翻译而成。我们力求准确，但翻译结果可能无法完全反映原文的含义、语境或意图。\u003c/em\u003e\u003c/p\u003e\n\u003chr /\u003e\n\u003cp\u003e您好 \u003ca href=\"https://learn.microsoft.com/zh-cn/users/na/?userid=5163e915-f756-4e56-93ea-a17430e4db6e\" rel=\"ugc nofollow\"\u003eshengxian.huang\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003e感谢您的提问！\u003c/p\u003e\n\u003cp\u003e根据微软官方公开信息，Copilot 无论是免费版还是付费版，均未公开披露令牌限制或固定对话次数上限。微软不公布令牌配额；服务会根据用户模型和系统负载动态管理令牌使用量。\u003c/p\u003e\n\u003cp\u003e此前免费版 Copilot 的每日聊天次数限制已被取消，且微软未公布新的数值限制。付费服务（例如 Copilot Pro 和 Microsoft 365 Copilot）同样没有公布每个用户的聊天次数限制，而是通过服务保护机制来控制使用情况，在企业环境中，还会受到租户级策略的约束。\u003c/p\u003e\n\u003cp\u003e希望以上解释能有所帮助。\u003c/p\u003e\n\u003chr /\u003e\n\u003cp\u003e\u003cem\u003e如果此答案对您有帮助，请点击“接受答案”并点赞。如果您对此答案还有其他疑问，请点击“评论”。\u003c/em\u003e\u003c/p\u003e\n\u003cp\u003e\u003cem\u003e注意：如果您希望收到此主题的相关电子邮件通知，请按照\u003ca href=\"https://learn.microsoft.com/zh-cn/answers/support/preferences\" rel=\"ugc nofollow\"\u003e我们的文档\u003c/a\u003e中的步骤启用电子邮件通知。\u003c/em\u003e\u003c/p\u003e\n","upvoteCount":0,"author":"Alex-L","authorId":"7efafd71-ab57-47f8-b971-1fc041e7d813","authorRole":"Microsoft Moderator","authorAffiliations":["MicrosoftVendor"],"updatedAt":"2026-03-19T09:54:10.0666667+00:00","url":"https://learn.microsoft.com/zh-cn/answers/a/12673062"}],"moderatorRecommendedAnswers":[]}}
+		  </script>
+		<script >bazadebezolkohpepadr="867274729"</script><script type="text/javascript" src="https://learn.microsoft.com/akam/13/33b18d43"  defer></script></head>
+	
+			<body
+				id="body"
+				data-bi-name="body"
+				class="layout-body "
+				lang="zh-cn"
+				dir="ltr"
+			>
+				<header class="layout-body-header background-color-body-medium">
+		<div class="header-holder has-default-focus">
+			
+		<a
+			href="#main"
+			
+			style="z-index: 1070"
+			class="outline-color-text visually-hidden-until-focused position-fixed inner-focus focus-visible top-0 left-0 right-0 padding-xs text-align-center background-color-body"
+			
+		>
+			跳至主要内容
+		</a>
+	
+
+			<div hidden id="cookie-consent-holder" data-test-id="cookie-consent-container"></div>
+			<!-- Unsupported browser warning -->
+			<div
+				id="unsupported-browser"
+				style="background-color: white; color: black; padding: 16px; border-bottom: 1px solid grey;"
+				hidden
+			>
+				<div style="max-width: 800px; margin: 0 auto;">
+					<p style="font-size: 24px">此浏览器不再受支持。</p>
+					<p style="font-size: 16px; margin-top: 16px;">
+						请升级到 Microsoft Edge 以使用最新的功能、安全更新和技术支持。
+					</p>
+					<div style="margin-top: 12px;">
+						<a
+							href="https://go.microsoft.com/fwlink/p/?LinkID=2092881 "
+							style="background-color: #0078d4; border: 1px solid #0078d4; color: white; padding: 6px 12px; border-radius: 2px; display: inline-block;"
+						>
+							下载 Microsoft Edge
+						</a>
+						<a
+							href="https://learn.microsoft.com/en-us/lifecycle/faq/internet-explorer-microsoft-edge"
+							style="background-color: white; padding: 6px 12px; border: 1px solid #505050; color: #171717; border-radius: 2px; display: inline-block;"
+						>
+							有关 Internet Explorer 和 Microsoft Edge 的详细信息
+						</a>
+					</div>
+				</div>
+			</div>
+			<!-- site header -->
+			<div
+				id="ms--site-header"
+				data-test-id="site-header-wrapper"
+				itemscope="itemscope"
+				itemtype="http://schema.org/Organization"
+			>
+				<div
+					id="ms--mobile-nav"
+					class="site-header display-none-tablet padding-inline-none gap-none"
+					data-bi-name="mobile-header"
+					data-test-id="mobile-header"
+				></div>
+				<div
+					id="ms--primary-nav"
+					class="site-header display-none display-flex-tablet"
+					data-bi-name="L1-header"
+					data-test-id="primary-header"
+				></div>
+				<div
+					id="ms--secondary-nav"
+					class="site-header display-none display-flex-tablet"
+					data-bi-name="L2-header"
+					data-test-id="secondary-header"
+					
+				></div>
+			</div>
+			
+		<!-- banner -->
+		<div data-banner>
+			<div id="disclaimer-holder"></div>
+			
+		</div>
+		<!-- banner end -->
+	
+		</div>
+	</header>
+				 
+
+				<main
+					id="main"
+					role="main"
+					class="layout-body-main "
+					data-bi-name="content"
+					lang="zh-cn"
+					dir="ltr"
+				>
+					
+			<div data-main-column class="modular-content-container padding-sm padding-top-xxs">
+				
+		
+		<div id="question-details" data-bi-name="qna-question-details-page-content">
+			<div id="article-header" class="margin-bottom-xs">
+				
+		<div
+			id="article-header-page-actions"
+			class="display-flex gap-xxs align-items-center justify-content-flex-end"
+		>
+			
+		</div>
+	
+			</div>
+			<div id="thread-history-container" class="padding-block-md" hidden></div>
+			
+		  
+		
+		<h1 class="title is-2">Copilot限制问题</h1>
+		<div class="display-flex flex-direction-row">
+			
+			
+		</div>
+		<div class="level margin-none align-items-flex-start">
+			
+			<div
+				data-test-id="content-author"
+				class="level-left flex-direction-column"
+				data-id="5163e915-f756-4e56-93ea-a17430e4db6e"
+			>
+				<div class="display-flex align-items-center">
+					
+					
+					<div class="image is-32x32 margin-right-xxs">
+						
+		<img
+			class="border-radius-rounded background-color-body-medium"
+			loading="eager"
+			alt=""
+			src="data:image/svg+xml, %3Csvg xmlns=&#39;http://www.w3.org/2000/svg&#39; height=&#39;64&#39; class=&#39;font-weight-bold&#39; style=&#39;font: 600 30.11764705882353px &quot;SegoeUI&quot;, Arial&#39; width=&#39;64&#39;%3E%3Ccircle fill=&#39;hsl(163.2, 63%, 25%)&#39; cx=&#39;32&#39; cy=&#39;32&#39; r=&#39;32&#39; /%3E%3Ctext x=&#39;50%25&#39; y=&#39;55%25&#39; dominant-baseline=&#39;middle&#39; text-anchor=&#39;middle&#39; fill=&#39;%23FFF&#39; %3ESH%3C/text%3E%3C/svg%3E"
+		/>
+	
+					</div>
+			  
+					
+			<div class="has-line-height-reset has-text-wrap width-250">
+				
+							<span class="display-block">
+								<a
+									href="/zh-cn/users/na/?userid=5163e915-f756-4e56-93ea-a17430e4db6e"
+									class="profile-url has-text-color font-weight-semibold font-size-sm"
+									data-bi-name="user-link"
+								>
+									shengxian.huang
+								</a>
+								
+								
+							</span>
+					  
+				
+		<span
+			class=" display-block font-size-xs has-text-subtle"
+		>
+			<span title="信誉分">5</span>
+			<span class="is-visually-hidden">信誉分</span> 
+			
+		</span>
+	
+				
+			</div>
+		
+			  
+				</div>
+			</div>
+			
+						<div class="level-right margin-top-none">
+							<span class="font-size-xs">
+					<local-time format="datetime" datetime="2026-03-18T06:36:31.0766667+00:00" class="is-visually-hidden">
+						2026-03-18T06:36:31.0766667+00:00
+					</local-time>
+			   </span>
+						</div>
+				  
+		
+		</div>
+		
+					<div class="content margin-top-xxs"><p>HI Support:</p>
+<p>         我需要咨询关于Copilot相关限制问题，详细如下。</p>
+<p>         免费版Copilot：</p>
+<p>                   1 toke数是多少？</p>
+<p>                   2 对话次数上限是多少？</p>
+<p>         授权版Copilot：</p>
+<p>                   1 toke数是多少？</p>
+<p>                   2 对话次数上限是多少？</p>
+<p>         另：Copilot的对话数上限是否有增加?增加后的上限是多少？</p>
+<p>         如有官方连接请一并提供，谢谢。</p>
+</div>
+					<div class="display-flex flex-wrap-wrap gap-xxs margin-block-xs">
+						
+		<span class="tag tag-filled tag-interactive">
+			<details class="popover tag-popover popover-left white-space-normal">
+				<summary class="tag-summary has-text-wrap tag-sm" data-test-id="question-tag-microsoft-copilot-windows-copilot-windows-copilot-feature">
+					<span>Microsoft Copilot | Windows Copilot | 功能</span>
+				</summary>
+				<div class="popover-content width-350-tablet padding-none" data-test-id="tag-card-popover">
+					<article class="card border-left-lg border-left-color-accent">
+		<div class="card-content margin-bottom-none">
+			<a
+				class="card-title"
+				data-test-id="tag-card-title-microsoft-copilot-windows-copilot-windows-copilot-feature"
+				data-bi-name="tag-card-link"
+				href="/zh-cn/answers/tags/1564/microsoft-copilot-windows-copilot-windows-copilot-feature/"
+			>
+				Microsoft Copilot | Windows Copilot | 功能
+			</a>
+			<p class="card-content-description" data-test-id="tag-card-description">
+				Windows Copilot 提供的特定功能或增强功能
+			</p>
+		</div>
+		<div class="card-template">
+			<img alt="" class="card-template-icon image is-32x32" src=https://learn.microsoft.com/answers/media/logo_copilot.svg />
+			
+		</div>
+		<div class="card-footer">
+			<div class="card-footer-item">
+				<div class="buttons">
+					<button
+						class="not-authenticated link-button font-size-sm margin-block-xs docs-sign-in"
+						data-bi-name="follow-tag-sign-in"
+						data-test-id="tag-card-follow-button-microsoft-copilot-windows-copilot-windows-copilot-feature"
+					>
+						登录以关注
+					</button>
+					 <form
+		action="/api/profiles/follow/tag/zh-cn+aHR0cHM6Ly9taWNyb3NvZnQtZGV2cmVsLnBvb2xwYXJ0eS5iaXovUW5BQ29tcG91bmQvZmM3ODA1YjAtNjg2NS00ODBlLThhYzUtMzFiMDQ2Y2ZkNTJl"
+		method="POST"
+		new
+		novalidate
+		hidden
+		
+		data-follow-tag-id=zh-cn+aHR0cHM6Ly9taWNyb3NvZnQtZGV2cmVsLnBvb2xwYXJ0eS5iaXovUW5BQ29tcG91bmQvZmM3ODA1YjAtNjg2NS00ODBlLThhYzUtMzFiMDQ2Y2ZkNTJl
+		
+		class="authenticated "
+	>
+		<form-behavior
+			navigation="reload"
+			navigation-href="empty"
+			header-content-type="application/json"
+			header-X-DocsAuth="cookie"
+			new
+		></form-behavior>
+		
+		<button
+			class="button text-decoration-none inner-focus button-primary button-sm"
+			
+			data-bi-name="follow-tag"
+			data-test-id="follow-tag-button"
+			type="submit"
+		>
+			关注
+		</button>
+	
+	</form>
+				</div>
+			</div>
+		</div>
+	</article>
+				</div>
+			</details>
+		</span>
+	
+					</div>
+			  
+		
+		<div class="margin-top-xxs">
+			<div
+				class="display-flex gap-xs flex-direction-column flex-direction-row-tablet align-items-center-tablet justify-content-space-between-tablet flex-wrap-wrap margin-bottom-xs"
+			>
+				<div class="display-flex gap-xxs align-items-center flex-wrap-wrap">
+					
+				<span
+					class="button button-clear text-decoration-none inner-focus button-sm color-text-subtle align-self-flex-start has-cursor-default"
+					title="无注释"
+				>
+					<span class="icon" aria-hidden="true">
+						<span class="docon docon-comment-outline"></span>
+					</span>
+					<span>0 个注释</span>
+					<span class="visually-hidden">无注释</span>
+				</span>
+		  
+					 <div id="question-vote">
+		<button
+			id="question-vote-button"
+			class="button button-clear text-decoration-none inner-focus button-sm button-primary "
+			title="我有相同的问题"
+			aria-pressed="false"
+			data-id="5826938"
+			data-vote-count="3"
+			data-bi-name="question-vote-up"
+		>
+			<span class="icon" aria-hidden="true">
+				<span class="docon docon-hand-right-regular"></span>
+			</span>
+			<span>相同问题
+			<span data-vote-count-wrapper >
+				(3)
+			</span>
+		</span>
+		</button>
+	</div> 
+				</div>
+				<div class="display-flex gap-xxs align-items-center flex-wrap-wrap">
+					
+		
+		 <form
+		action="/api/profiles/follow/question/5826938?locale=zh-cn"
+		method="POST"
+		new
+		novalidate
+		hidden
+		
+		
+		data-follow-question-id=5826938
+		class="authenticated "
+	>
+		<form-behavior
+			navigation="reload"
+			navigation-href="empty"
+			header-content-type="application/json"
+			header-X-DocsAuth="cookie"
+			new
+		></form-behavior>
+		
+		<button
+			class="button button-clear text-decoration-none inner-focus button-sm button-primary"
+			title="关注问题"
+			data-bi-name="follow-question"
+			data-test-id="follow-question-button"
+			type="submit"
+		>
+			<span
+			class="icon margin-none margin-right-xxs-tablet"
+			aria-hidden="true"
+		>
+			<span class="docon docon-alert-regular"></span>
+		</span>
+		<span id="follow-question-label" class="display-none display-inline-tablet"
+			>关注</span
+		>
+		</button>
+	
+	</form>
+		
+		
+		
+	
+				</div>
+			</div>
+			<div class="question-vote-error"></div>
+			
+		<div id="question-5826938-expander" class="width-full">
+			<div class="expandable is-expanded">
+				<div id="question-5826938-moreThan">
+					
+		<ol>
+			
+		</ol>
+	
+				</div>
+				
+			</div>
+		</div>
+	
+			
+		<hr class="hr margin-block-xxs" />
+		<a
+			class="not-authenticated link-button font-size-sm margin-right-sm docs-sign-in"
+			data-bi-name="comment-sign-in"
+			href="#"
+		>
+			登录以评论
+		</a>
+		<div class="authenticated columns margin-top-xs">
+			<div class="column is-narrow padding-right-none display-none display-flex-tablet">
+				<div class="image is-32x32">
+					
+				</div>
+			</div>
+			<div class="column is-11 flex-grow-1">
+				<button
+					class="button button-secondary button-block button-sm justify-content-flex-start color-text-subtle font-weight-normal"
+					aria-expanded="false"
+					aria-controls="question-comment-editor-expander"
+					data-show-more=""
+					data-title="Add comment"
+					data-bi-name="add-comment"
+					data-expanded-title="Add comment"
+					data-show-once="true"
+					title="添加注释"
+				>
+					添加注释
+				</button>
+				<div
+					id="question-comment-editor-expander"
+				>
+					<div class="expandable">
+						<div class="column is-12">
+							
+		<form
+			action="/api/questions/5826938/comments?locale=zh-cn&amp;translated=false"
+			method="POST"
+			data-form-type="comment"
+			data-question-id="5826938"
+			
+			data-question-locale="zh-cn"
+			data-translation-value="false"
+			new
+			novalidate
+		>
+			<form-behavior
+				navigation="hash-reload"
+				navigation-href=?comment=question&amp;translated=false#newest-question-comment
+				header-content-type="application/json"
+				header-X-DocsAuth="cookie"
+				new
+				noUnload
+				loc-content-has-changed="内容已更改，请重新加载页面以获取最新更改。"
+				loc-input-max-length="{inputLabel} 不得超过 {maxLength} 个字符。"
+				loc-input-min-length="{inputLabel} 必须至少为 {minLength} 个字符。"
+				loc-input-required="{inputLabel} 是必需的。"
+				loc-not-authenticated="你未经过身份验证。 请刷新页面，然后重试。 如果此问题仍然存在，请注销并重新登录。"
+				loc-not-authorized="你未获授权，无法做出此响应。 如果认为存在错误，请刷新该页面并重试。"
+				loc-please-fix-the-following-issues="请修复以下问题以继续："
+				loc-there-are-no-edits-to-submit="没有编辑需要提交。"
+				loc-too-many-requests="你发送的请求过多。 请等待几分钟，然后重试。"
+				loc-we-encountered-an-unexpected-error="我们遇到意外错误。 请稍后再试。 如果此问题仍然存在，请在 https://sitehelp.microsoft.com 创建工单。"
+			></form-behavior>
+			<input hidden aria-hidden="true" name="locale" value="zh-cn" />
+			<div class="field">
+				<label class="label margin-none" for="body-5826938-comment" hidden>
+					评论
+				</label>
+				<span
+					id="qna-comment-hint"
+					class="field-description help margin-bottom-xxs"
+					>使用注释以要求对问题进行阐明、信息补充或改进。</span
+				>
+				<div class="field-body">
+					
+						<docs-markdown-editor
+							aria-describedby="qna-comment-hint"
+							initialHeightClass="hmn1"
+							isLocal="false"
+							isProduction="true"
+							questionId="5826938"
+							mode="qna"
+							locStrings="{&quot;loc_admin_markdownEditor&quot;:&quot;Markdown Editor&quot;,&quot;loc_admin_markdownEditor_aDescriptionForTheImage&quot;:&quot;图像的说明&quot;,&quot;loc_admin_markdownEditor_address&quot;:&quot;地址&quot;,&quot;loc_admin_markdownEditor_apply&quot;:&quot;应用&quot;,&quot;loc_admin_markdownEditor_alert&quot;:&quot;警报&quot;,&quot;loc_admin_markdownEditor_attachment&quot;:&quot;附件&quot;,&quot;loc_admin_markdownEditor_attachment_browse&quot;:&quot;浏览&quot;,&quot;loc_admin_markdownEditor_attachment_maxSize&quot;:&quot;最大大小 {maxSize} MB&quot;,&quot;loc_admin_markdownEditor_attachment_sizeLessThanMinimum&quot;:&quot;附件不满足所需的最小大小。 最小大小为 1 字节。&quot;,&quot;loc_admin_markdownEditor_attachment_sizeMoreThanMaximum&quot;:&quot;附件超出了允许的最大大小。 最大大小为 3145728 字节。&quot;,&quot;loc_admin_markdownEditor_attachment_extensionNotPermitted&quot;:&quot;附件扩展名无效。 这可能是由于附件签名错误。 有效扩展名为 .xml、.pdf、.txt、.log、.gif、.png、.jpg、.jpeg。&quot;,&quot;loc_admin_markdownEditor_attachment_numberMoreThanMaximum&quot;:&quot;附件数超出了允许的最大数目。 最多上传 20 个附件。&quot;,&quot;loc_admin_markdownEditor_attachment_platformInvalid&quot;:&quot;不支持平台。&quot;,&quot;loc_admin_markdownEditor_attachment_internalServerError&quot;:&quot;内部服务器错误。&quot;,&quot;loc_admin_markdownEditor_attachment_unauthorizedRequest&quot;:&quot;未授权的请求。 请确保使用正确的凭据。&quot;,&quot;loc_admin_markdownEditor_attachment_aiEnabledFeature&quot;:&quot;支持 AI 的功能。&quot;,&quot;loc_admin_markdownEditor_attachment_aiScanNotice&quot;:&quot;图像通过包含 AI 的服务进行合规性扫描。&quot;,&quot;loc_admin_markdownEditor_attachment_learnMore&quot;:&quot;了解详细信息&quot;,&quot;loc_admin_markdownEditor_attachment_harmfulImageDetected&quot;:&quot;上传错误。 此图像包含无法处理的内容。 上传符合我们&lt;a href=\&quot;https://learn.microsoft.com/answers/support/code-of-conduct\&quot; target=\&quot;_blank\&quot; rel=\&quot;noopener noreferrer\&quot;&gt;行为准则&lt;/a&gt;的图像。&quot;,&quot;loc_admin_markdownEditor_blockquote&quot;:&quot;块引用&quot;,&quot;loc_admin_markdownEditor_bold&quot;:&quot;加粗&quot;,&quot;loc_admin_markdownEditor_bulletedList&quot;:&quot;项目符号列表&quot;,&quot;loc_admin_markdownEditor_caution&quot;:&quot;注意&quot;,&quot;loc_admin_markdownEditor_cancel&quot;:&quot;取消&quot;,&quot;loc_admin_markdownEditor_code&quot;:&quot;代码&quot;,&quot;loc_admin_markdownEditor_codeBlock&quot;:&quot;代码块&quot;,&quot;loc_admin_markdownEditor_codeBlockLanguagePlaceholder&quot;:&quot;选择开发语言&quot;,&quot;loc_admin_markdownEditor_codeBlockLanguage&quot;:&quot;选择开发语言&quot;,&quot;loc_admin_markdownEditor_codeBlockLanguageEdit&quot;:&quot;编辑开发语言&quot;,&quot;loc_admin_markdownEditor_complex&quot;:&quot;Complex&quot;,&quot;loc_admin_markdownEditor_content&quot;:&quot;内容&quot;,&quot;loc_admin_markdownEditor_disabled&quot;:&quot;已禁用&quot;,&quot;loc_admin_markdownEditor_displayText&quot;:&quot;显示文本&quot;,&quot;loc_admin_markdownEditor_devLangsInputPlaceholder&quot;:&quot;搜索语言&quot;,&quot;loc_admin_markdownEditor_file&quot;:&quot;文件&quot;,&quot;loc_admin_markdownEditor_fileUpload&quot;:&quot;、拖放或粘贴文件。&quot;,&quot;loc_admin_markdownEditor_fileUploadFailedMessage&quot;:&quot;文件上传失败。 请重试。&quot;,&quot;loc_admin_markdownEditor_headings&quot;:&quot;标题&quot;,&quot;loc_admin_markdownEditor_heading&quot;:&quot;标题 {number}&quot;,&quot;loc_admin_markdownEditor_help&quot;:&quot;帮助&quot;,&quot;loc_admin_markdownEditor_horizontalRule&quot;:&quot;水平标尺&quot;,&quot;loc_admin_markdownEditor_icon&quot;:&quot;图标&quot;,&quot;loc_admin_markdownEditor_image&quot;:&quot;映像&quot;,&quot;loc_admin_markdownEditor_imageAlt&quot;:&quot;用户的图像&quot;,&quot;loc_admin_markdownEditor_imageUpload&quot;:&quot; 从计算机上传图像&quot;,&quot;loc_admin_markdownEditor_imageUploadFailedMessage&quot;:&quot;图像上传失败。 请重试。&quot;,&quot;loc_admin_markdownEditor_imageBorder&quot;:&quot;图像边框&quot;,&quot;loc_admin_markdownEditor_imageDescription&quot;:&quot;图像说明&quot;,&quot;loc_admin_markdownEditor_imageDescriptionAltText&quot;:&quot;图像描述（替换文字）&quot;,&quot;loc_admin_markdownEditor_imageDescriptionAltTextPlaceholder&quot;:&quot;输入图像描述（替换文字）&quot;,&quot;loc_admin_markdownEditor_imageHasALightbox&quot;:&quot;图像有一个光盒&quot;,&quot;loc_admin_markdownEditor_imageLightbox&quot;:&quot;图像光盒&quot;,&quot;loc_admin_markdownEditor_imageLocScope&quot;:&quot;图像位置范围&quot;,&quot;loc_admin_markdownEditor_imageSource&quot;:&quot;映像源&quot;,&quot;loc_admin_markdownEditor_important&quot;:&quot;重要&quot;,&quot;loc_admin_markdownEditor_inlineCode&quot;:&quot;内联代码&quot;,&quot;loc_admin_markdownEditor_insertCodeBlock&quot;:&quot;插入代码块&quot;,&quot;loc_admin_markdownEditor_insertFile&quot;:&quot;插入文件&quot;,&quot;loc_admin_markdownEditor_insertHorizontalRule&quot;:&quot;插入水平标尺&quot;,&quot;loc_admin_markdownEditor_insertImage&quot;:&quot;插入图像&quot;,&quot;loc_admin_markdownEditor_insertLink&quot;:&quot;插入链接&quot;,&quot;loc_admin_markdownEditor_insertTable&quot;:&quot;插入表&quot;,&quot;loc_admin_markdownEditor_italics&quot;:&quot;斜体&quot;,&quot;loc_admin_markdownEditor_link&quot;:&quot;链接&quot;,&quot;loc_admin_markdownEditor_markdown&quot;:&quot;Markdown&quot;,&quot;loc_admin_markdownEditor_noMatches&quot;:&quot;找不到任何匹配项。&quot;,&quot;loc_admin_markdownEditor_note&quot;:&quot;注意&quot;,&quot;loc_admin_markdownEditor_numberedList&quot;:&quot;编号列表&quot;,&quot;loc_admin_markdownEditor_pleaseSelectImageType&quot;:&quot;请选择图像类型&quot;,&quot;loc_admin_markdownEditor_quote&quot;:&quot;报价&quot;,&quot;loc_admin_markdownEditor_redo&quot;:&quot;重做&quot;,&quot;loc_admin_markdownEditor_remove&quot;:&quot;删除&quot;,&quot;loc_admin_markdownEditor_removeLink&quot;:&quot;移除链接&quot;,&quot;loc_admin_markdownEditor_save&quot;:&quot;保存&quot;,&quot;loc_admin_markdownEditor_saveNewLink&quot;:&quot;保存链接&quot;,&quot;loc_admin_markdownEditor_selectImageTypePlaceholder&quot;:&quot;选择图像类型&quot;,&quot;loc_admin_markdownEditor_showCountResults&quot;:&quot;显示 {count} 个结果&quot;,&quot;loc_admin_markdownEditor_strikethrough&quot;:&quot;删除线&quot;,&quot;loc_admin_markdownEditor_suggestions&quot;:&quot;建议&quot;,&quot;loc_admin_markdownEditor_table&quot;:&quot;表&quot;,&quot;loc_admin_markdownEditor_table_column&quot;:&quot;列&quot;,&quot;loc_admin_markdownEditor_table_editTable&quot;:&quot;编辑表&quot;,&quot;loc_admin_markdownEditor_table_insertColumnAfter&quot;:&quot;在后面插入列&quot;,&quot;loc_admin_markdownEditor_table_insertColumnBefore&quot;:&quot;在前面插入列&quot;,&quot;loc_admin_markdownEditor_table_insertRowBefore&quot;:&quot;在后面插入行&quot;,&quot;loc_admin_markdownEditor_table_insertRowAfter&quot;:&quot;在前面插入行&quot;,&quot;loc_admin_markdownEditor_table_removeColumn&quot;:&quot;删除列&quot;,&quot;loc_admin_markdownEditor_table_row&quot;:&quot;行&quot;,&quot;loc_admin_markdownEditor_table_removeRow&quot;:&quot;删除行&quot;,&quot;loc_admin_markdownEditor_tip&quot;:&quot;提示&quot;,&quot;loc_admin_markdownEditor_toggleMarkdownEditing&quot;:&quot;切换 Markdown 编辑&quot;,&quot;loc_admin_markdownEditor_typeHere&quot;:&quot;请在此处键入内容&quot;,&quot;loc_admin_markdownEditor_undo&quot;:&quot;撤消&quot;,&quot;loc_admin_markdownEditor_uploadComplete&quot;:&quot;上载完成！&quot;,&quot;loc_admin_markdownEditor_uploading&quot;:&quot;正在上传&quot;,&quot;loc_admin_markdownEditor_validations&quot;:&quot;验证&quot;,&quot;loc_admin_markdownEditor_validations_altTextEndWithPeriod&quot;:&quot;替换文字应以句点结尾。&quot;,&quot;loc_admin_markdownEditor_validations_altTextStartWithUppercaseLetter&quot;:&quot;替换文字应以大写字母开头。&quot;,&quot;loc_admin_markdownEditor_validations_altTextTooLong&quot;:&quot;替换文字太长。 最多 150 个字符（含空格）。&quot;,&quot;loc_admin_markdownEditor_validations_imageWidthTooLarge&quot;:&quot;文件宽度无效&quot;,&quot;loc_admin_markdownEditor_validations_imageWidthTooLargeMessage&quot;:&quot;图像太大。 将每边的最大大小调整为 1200 像素。&quot;,&quot;loc_admin_markdownEditor_validations_imageCorrupted&quot;:&quot;图像损坏&quot;,&quot;loc_admin_markdownEditor_validations_imageCorruptedMessage&quot;:&quot;图像损坏或不是有效图像&quot;,&quot;loc_admin_markdownEditor_validations_imageInvalidPosition&quot;:&quot;图像位置无效&quot;,&quot;loc_admin_markdownEditor_validations_imageInvalidPositionMessage&quot;:&quot;不支持内嵌图象。 在新行中添加图像。&quot;,&quot;loc_admin_markdownEditor_validations_attachmentTooLarge&quot;:&quot;附件太大&quot;,&quot;loc_admin_markdownEditor_validations_attachmentInvalidName&quot;:&quot;附件名称无效&quot;,&quot;loc_admin_markdownEditor_validations_attachmentInvalidNameMessage&quot;:&quot;附件上传错误。 附件名称中的字符无效。 只允许使用字母、数字和连字符 (-)。&quot;,&quot;loc_admin_markdownEditor_validations_attachmentInvalidExtension&quot;:&quot;附件扩展名无效&quot;,&quot;loc_admin_markdownEditor_validations_attachmentTooSmall&quot;:&quot;附件太小&quot;,&quot;loc_admin_markdownEditor_validations_qnaAttachmentTooSmallMessage&quot;:&quot;附件上传错误。 {filename} 太小，无法上传（小于 {minSize} 字节）。&quot;,&quot;loc_admin_markdownEditor_validations_multipleAttachments&quot;:&quot;多个附件&quot;,&quot;loc_admin_markdownEditor_validations_qnaMultipleAttachmentsMessage&quot;:&quot;附件上传错误。 你正在添加 {filecount} 个附件，允许的最大附件数为 {maxCount}。 某些附件未上传。&quot;,&quot;loc_admin_markdownEditor_validations_qnaAttachmentTooLargeMessage&quot;:&quot;附件上传错误。 {filename} 太大，无法上传（超过 {maxSize} MB）。&quot;,&quot;loc_admin_markdownEditor_validations_qnaAttachmentInvalidExtensionMessage&quot;:&quot;附件上传错误。 {filename} 的扩展名无效。 有效扩展名为 {validExtensions}。&quot;,&quot;loc_admin_markdownEditor_validations_qnaAttachmentInvalidNameMessage&quot;:&quot;附件上传错误。 {filename} 在 Unix 和 Windows 系统中有无效字符，对于其他限制，请转到以下网站查看： https://kb.acronis.com/content/39790 、 http://en.wikipedia.org/wiki/C0_and_C1_control_codes 。&quot;,&quot;loc_admin_markdownEditor_viewMarkdown&quot;:&quot;查看 Markdown&quot;,&quot;loc_admin_markdownEditor_viewRichText&quot;:&quot;查看格式文本&quot;,&quot;loc_admin_markdownEditor_warning&quot;:&quot;警告&quot;}"
+							placeHolder="请勿通过评论来回答问题。"
+							isrtl=false
+						>
+						</docs-markdown-editor>
+					
+					<textarea
+						hidden
+						id="body-5826938-comment"
+						aria-label="评论"
+						class="textarea"
+						name="body"
+						rows="1"
+						data-expanded-rows="5"
+						placeholder="添加评论…"
+						minlength="5"
+						required
+					></textarea>
+					<input
+						id="attachment-count"
+						aria-label="attachmentCount"
+						class="attachment-input input"
+						maxCount="20"
+						hidden
+						data-skip-validation
+					/>
+					
+				</div>
+			</div>
+			<div class="control">
+				
+							<div class="level">
+								<div class="level-left align-items-flex-start"><div aria-live="polite" class="qna-saved-draft text-align-left font-size-xs"></div></div>
+								<div class="level-right margin-top-xxs margin-top-none-tablet">
+									<div class="buttons justify-content-flex-end">
+										
+		<button
+			data-modal-type="qna-discard-draft"
+			class="button button-clear"
+			data-bi-name="comment-discard-draft"
+			data-question-id="5826938"
+			
+			type="button"
+			hidden="true"
+		>
+			<span class="icon" aria-hidden="true">
+				<span class="docon docon-delete"></span>
+			</span>
+			<span>放弃草稿</span>
+		</button>
+	 
+		<button
+			type="submit"
+			data-bi-name="comment-submit"
+			class="button button-primary button-filled margin-right-none"
+		>
+			添加注释
+		</button>
+	
+									</div>
+								</div>
+							</div>
+					  
+			</div>
+		</form>
+	
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+		</div>
+	
+		</div>
+		<div id="answers" class="column margin-top-sm is-full">
+			<div class="margin-top-xxs">
+				
+		
+		<div class="level">
+			<div class="level-left">
+				<h2 class="title is-4">1 个答案</h2>
+			</div>
+			<div class="level-right">
+				
+		<details class="popover popover-bottom">
+			<summary class="button button-clear" data-test-id="sortby-popover-button">
+				<span
+					>排序依据：
+		<span class="has-text-primary font-weight-semibold">
+			非常有帮助
+			<span class="icon" aria-hidden="true">
+				<span class="expanded-indicator docon docon-chevron-down-light"></span>
+			</span>
+		</span></span
+				>
+			</summary>
+			<div class="popover-content padding-none" data-test-id="sortby-menu">
+				 <a
+			aria-label="排序依据：非常有帮助"
+			class="button button-clear inner-focus button-block text-decoration-none justify-content-flex-start is-selected"
+			aria-current=page
+			href="?orderby=helpful&amp;page=1#answers"
+			data-test-id="sortby-filter-link-helpful"
+			>非常有帮助</a
+		> <a
+			aria-label="排序依据：最新"
+			class="button button-clear inner-focus button-block text-decoration-none justify-content-flex-start "
+			
+			href="?orderby=newest&amp;page=1#answers"
+			data-test-id="sortby-filter-link-newest"
+			>最新</a
+		> <a
+			aria-label="排序依据：最早"
+			class="button button-clear inner-focus button-block text-decoration-none justify-content-flex-start "
+			
+			href="?orderby=oldest&amp;page=1#answers"
+			data-test-id="sortby-filter-link-oldest"
+			>最早</a
+		>
+			</div>
+		</details>
+	
+			</div>
+		</div>
+		<ol class="list-style-none">
+			
+					<li
+						id="answer-12673062"
+						class="padding-sm padding-inline-md-tablet margin-bottom-sm border border-radius-lg"
+						itemprop="suggestedAnswer"
+						itemscope
+						itemtype="https://schema.org/Answer0"
+						data-test-id="answer-12673062"
+					>
+						<div>
+		 
+		<div data-test-id="answer-author" class="level margin-none align-items-flex-start">
+			
+			<div
+				data-test-id="content-author"
+				class="level-left flex-direction-column"
+				data-id="7efafd71-ab57-47f8-b971-1fc041e7d813"
+			>
+				<div class="display-flex align-items-center">
+					
+					
+					<div class="image is-32x32 margin-right-xxs">
+						
+		<img
+			class="border-radius-rounded background-color-body-medium"
+			loading="lazy"
+			alt=""
+			src="data:image/svg+xml, %3Csvg xmlns=&#39;http://www.w3.org/2000/svg&#39; height=&#39;64&#39; class=&#39;font-weight-bold&#39; style=&#39;font: 600 30.11764705882353px &quot;SegoeUI&quot;, Arial&#39; width=&#39;64&#39;%3E%3Ccircle fill=&#39;hsl(246.4, 15%, 33%)&#39; cx=&#39;32&#39; cy=&#39;32&#39; r=&#39;32&#39; /%3E%3Ctext x=&#39;50%25&#39; y=&#39;55%25&#39; dominant-baseline=&#39;middle&#39; text-anchor=&#39;middle&#39; fill=&#39;%23FFF&#39; %3EAL%3C/text%3E%3C/svg%3E"
+		/>
+	
+					</div>
+			  
+					
+			<div class="has-line-height-reset has-text-wrap width-250">
+				
+							<span class="display-block">
+								<a
+									href="/zh-cn/users/na/?userid=7efafd71-ab57-47f8-b971-1fc041e7d813"
+									class="profile-url has-text-color font-weight-semibold font-size-sm"
+									data-bi-name="user-link"
+								>
+									Alex-L
+								</a>
+								
+								
+											<span hidden aria-hidden="true" data-bi-name="user-follow-separator">
+												•
+											</span>
+											 <form
+		action="/api/profiles/follow/user/7efafd71-ab57-47f8-b971-1fc041e7d813?locale=zh-cn"
+		method="POST"
+		new
+		novalidate
+		hidden
+		data-follow-user-id=7efafd71-ab57-47f8-b971-1fc041e7d813
+		
+		
+		class="authenticated display-inline-block"
+	>
+		<form-behavior
+			navigation="reload"
+			navigation-href="empty"
+			header-content-type="application/json"
+			header-X-DocsAuth="cookie"
+			new
+		></form-behavior>
+		
+		<button
+			class="link-button font-size-sm font-weight-semibold"
+			
+			data-bi-name="follow-user"
+			data-test-id="follow-user-button"
+			type="submit"
+		>
+			关注
+		</button>
+	
+	</form>
+									  
+							</span>
+					  
+				
+		<span
+			class=" display-block font-size-xs has-text-subtle"
+		>
+			<span title="信誉分">13,260</span>
+			<span class="is-visually-hidden">信誉分</span> <span aria-hidden="true">&bull;</span> Microsoft 外部员工
+			<span aria-hidden="true">&bull;</span> 审查方
+		</span>
+	
+				
+			</div>
+		
+			  
+				</div>
+			</div>
+			
+						<div class="level-right margin-top-none">
+							<span class="font-size-xs">
+					<local-time format="datetime" datetime="2026-03-19T09:54:10.0666667+00:00" class="is-visually-hidden">
+						2026-03-19T09:54:10.0666667+00:00
+					</local-time>
+			   </span>
+						</div>
+				  
+		
+		</div>
+	
+		<div><div class="content" itemprop="text"><p><em>免责声明：请注意，以上信息由自动翻译工具翻译而成。我们力求准确，但翻译结果可能无法完全反映原文的含义、语境或意图。</em></p>
+<hr />
+<p>您好 <a href="https://learn.microsoft.com/zh-cn/users/na/?userid=5163e915-f756-4e56-93ea-a17430e4db6e" rel="ugc nofollow">shengxian.huang</a></p>
+<p>感谢您的提问！</p>
+<p>根据微软官方公开信息，Copilot 无论是免费版还是付费版，均未公开披露令牌限制或固定对话次数上限。微软不公布令牌配额；服务会根据用户模型和系统负载动态管理令牌使用量。</p>
+<p>此前免费版 Copilot 的每日聊天次数限制已被取消，且微软未公布新的数值限制。付费服务（例如 Copilot Pro 和 Microsoft 365 Copilot）同样没有公布每个用户的聊天次数限制，而是通过服务保护机制来控制使用情况，在企业环境中，还会受到租户级策略的约束。</p>
+<p>希望以上解释能有所帮助。</p>
+<hr />
+<p><em>如果此答案对您有帮助，请点击“接受答案”并点赞。如果您对此答案还有其他疑问，请点击“评论”。</em></p>
+<p><em>注意：如果您希望收到此主题的相关电子邮件通知，请按照<a href="https://learn.microsoft.com/zh-cn/answers/support/preferences" rel="ugc nofollow">我们的文档</a>中的步骤启用电子邮件通知。</em></p>
+</div></div>
+		<div>
+			 <div>
+		<div
+			class="font-size-sm margin-block-xxs padding-xs background-color-body-medium border-radius-lg"
+			data-answer-votes-container
+		>
+			<div class="display-flex justify-content-space-between flex-wrap-wrap align-items-baseline">
+				<div class="display-flex flex-grow-1">
+					
+		<form
+			method="POST"
+			id="answer-rating-form-12673062"
+			data-answer-id="12673062"
+			novalidate
+			class="width-full"
+		>
+			<form-behavior header-X-DocsAuth="cookie" new></form-behavior>
+			<div
+				class="display-flex justify-content-space-between align-items-center flex-wrap-wrap gap-xxs"
+			>
+				
+							<div class="display-flex gap-xxs flex-wrap-wrap align-items-center">
+								<p class="font-weight-semibold margin-right-xxs">
+		<span
+			class="font-weight-semibold color-text-subtle font-size-sm"
+			id="answer-rating-form-label-12673062"
+		>
+			此答案是否有帮助?</span
+		>
+	</p>
+								<div id="answer-helpful-rating-12673062" class="display-flex gap-xxs">
+									
+		<button
+			id="answer-rating-12673062-yes"
+			class="thumb-rating button button-primary button-sm "
+			type="submit"
+			form="answer-rating-form-12673062"
+			formaction="/api/questions/answers/12673062/helpful/yes?_method=PUT&amp;locale=zh-cn"
+			
+			data-answer-rating-button
+			data-answer-vote-yes
+			data-bi-name="answer-rating-yes"
+			title="此答案很有用"
+			aria-pressed="false"
+			
+		>
+			<span class="icon" aria-hidden="true">
+				<span class="docon docon-like"></span>
+			</span>
+			<span>是</span>
+		</button>
+	
+									
+		<button
+			id="answer-rating-12673062-no"
+			class="thumb-rating button button-primary button-sm "
+			type="submit"
+			form="answer-rating-form-12673062"
+			formaction="/api/questions/answers/12673062/helpful/no?_method=PUT&amp;locale=zh-cn"
+			
+			data-answer-rating-button
+			data-answer-vote-no
+			data-bi-name="answer-rating-no"
+			title="此答案没有用处"
+			aria-pressed="false"
+			
+		>
+			<span class="icon" aria-hidden="true">
+				<span class="docon docon-dislike"></span>
+			</span>
+			<span>否</span>
+		</button>
+	
+								</div>
+							</div>
+					  
+				<span id="answer-helpful-text-12673062" data-helpful-count="0">
+					
+				</span>
+			</div>
+		</form>
+	
+				</div>
+			</div>
+			
+		</div>
+		<div data-vote-error></div>
+	</div>
+			
+		<div
+			data-answer-actions
+			class="display-flex gap-xxs align-items-center flex-wrap-wrap margin-block-xs"
+		>
+			
+				<button
+					class="comment-expander button button-clear text-decoration-none inner-focus button-sm button-primary "
+					aria-expanded=false
+					aria-controls="question-answer0-12673062-expander"
+					
+					data-show-more=""
+					data-title="显示此 答案 的注释"
+					data-bi-name="show-hide-comments"
+					data-expanded-title="隐藏此 答案 的注释"
+					data-test-id="question-隐藏此 答案 的注释"
+					title="显示此 答案 的注释"
+				>
+					<span class="icon" aria-hidden="true">
+						<span class="docon docon-comment-outline"></span>
+					</span>
+					<span>1 个注释</span>
+					<span class="is-visually-hidden show-more-text">
+						显示此 答案 的注释
+					</span>
+				</button>
+		  
+			
+		
+		
+		
+		
+		
+	
+		</div>
+		
+		<div id="question-answer0-12673062-expander" class="width-full">
+			<div class="expandable ">
+				<div id="question-answer0-12673062-moreThan">
+					
+		<ol>
+			
+						<li
+							id="comment-2580536"
+							data-test-id="comment-2580536"
+							data="0"
+							class="margin-top-xxs is-unstyled padding-block-xxs
+								
+								"
+						>
+							
+					<div class="display-flex gap-xs">
+						<div class="image is-32x32 margin-top-sm flex-shrink-0">
+									
+		<img
+			class="border-radius-rounded background-color-body-medium"
+			loading="lazy"
+			alt=""
+			src="data:image/svg+xml, %3Csvg xmlns=&#39;http://www.w3.org/2000/svg&#39; height=&#39;64&#39; class=&#39;font-weight-bold&#39; style=&#39;font: 600 30.11764705882353px &quot;SegoeUI&quot;, Arial&#39; width=&#39;64&#39;%3E%3Ccircle fill=&#39;hsl(246.4, 15%, 33%)&#39; cx=&#39;32&#39; cy=&#39;32&#39; r=&#39;32&#39; /%3E%3Ctext x=&#39;50%25&#39; y=&#39;55%25&#39; dominant-baseline=&#39;middle&#39; text-anchor=&#39;middle&#39; fill=&#39;%23FFF&#39; %3EAL%3C/text%3E%3C/svg%3E"
+		/>
+	
+							  </div>
+						<div
+							class="padding-sm border border-radius-lg flex-grow-1 "
+							style="min-width: 0;"
+						>
+							
+							<div
+								data-test-id="comment-author"
+								
+								class="level margin-none align-items-flex-start gap-xxs flex-wrap-wrap"
+							>
+								
+			<div
+				data-test-id="content-author"
+				class="level-left flex-direction-column"
+				data-id="7efafd71-ab57-47f8-b971-1fc041e7d813"
+			>
+				<div class="display-flex align-items-center">
+					
+					
+					
+			<div class="has-line-height-reset has-text-wrap width-250">
+				
+							<span class="display-block">
+								<a
+									href="/zh-cn/users/na/?userid=7efafd71-ab57-47f8-b971-1fc041e7d813"
+									class="profile-url has-text-color font-weight-semibold font-size-sm"
+									data-bi-name="user-link"
+								>
+									Alex-L
+								</a>
+								
+								
+											<span hidden aria-hidden="true" data-bi-name="user-follow-separator">
+												•
+											</span>
+											 <form
+		action="/api/profiles/follow/user/7efafd71-ab57-47f8-b971-1fc041e7d813?locale=zh-cn"
+		method="POST"
+		new
+		novalidate
+		hidden
+		data-follow-user-id=7efafd71-ab57-47f8-b971-1fc041e7d813
+		
+		
+		class="authenticated display-inline-block"
+	>
+		<form-behavior
+			navigation="reload"
+			navigation-href="empty"
+			header-content-type="application/json"
+			header-X-DocsAuth="cookie"
+			new
+		></form-behavior>
+		
+		<button
+			class="link-button font-size-sm font-weight-semibold"
+			
+			data-bi-name="follow-user"
+			data-test-id="follow-user-button"
+			type="submit"
+		>
+			关注
+		</button>
+	
+	</form>
+									  
+							</span>
+					  
+				
+		<span
+			class=" display-block font-size-xs has-text-subtle"
+		>
+			<span title="信誉分">13,260</span>
+			<span class="is-visually-hidden">信誉分</span> <span aria-hidden="true">&bull;</span> Microsoft 外部员工
+			<span aria-hidden="true">&bull;</span> 审查方
+		</span>
+	
+				
+			</div>
+		
+			  
+				</div>
+			</div>
+			
+						<div class="level-right margin-top-none">
+							<span class="font-size-xs">
+					<local-time format="datetime" datetime="2026-03-22T15:01:28.84+00:00" class="is-visually-hidden">
+						2026-03-22T15:01:28.84+00:00
+					</local-time>
+			   </span>
+						</div>
+				  
+		
+							</div>
+							<div>
+								
+											<div class="content font-size-sm"><p>您好 <a href="https://learn.microsoft.com/zh-cn/users/na/?userid=5163e915-f756-4e56-93ea-a17430e4db6e" rel="ugc nofollow">shengxian.huang</a></p>
+<p>我想确认一下您是否已经查看了我的回复。如果您有任何疑问，请告诉我。</p>
+</div>
+									  
+							</div>
+							
+										<div
+											class="margin-top-xs answer-comment-holder"
+										>
+											
+		
+		<button
+			class="comment-vote button button-clear text-decoration-none inner-focus button-sm button-primary button-sm "
+			title="此评论很有用"
+			data-comment-vote
+			data-bi-name="comment-vote-up"
+			data-id="2580536"
+			data-vote-count="0"
+		>
+			<span class="icon" aria-hidden="true">
+				<span class="docon docon-like"></span>
+			</span>
+			<span class="vote-text">0 票</span>
+		</button>
+	
+		
+		
+		
+		
+	
+											<div class="comment-vote-error"></div>
+										</div>
+								  
+						</div>
+					</div>
+				
+						</li>
+					
+		</ol>
+	
+				</div>
+				
+			</div>
+		</div>
+	
+		
+		<hr class="hr margin-block-xxs" />
+		<a
+			class="not-authenticated link-button font-size-sm margin-right-sm docs-sign-in"
+			data-bi-name="comment-sign-in"
+			href="#"
+		>
+			登录以评论
+		</a>
+		<div class="authenticated columns margin-top-xs">
+			<div class="column is-narrow padding-right-none display-none display-flex-tablet">
+				<div class="image is-32x32">
+					
+				</div>
+			</div>
+			<div class="column is-11 flex-grow-1">
+				<button
+					class="button button-secondary button-block button-sm justify-content-flex-start color-text-subtle font-weight-normal"
+					aria-expanded="false"
+					aria-controls="answer-comment-editor-12673062-expander"
+					data-show-more=""
+					data-title="Add comment"
+					data-bi-name="add-comment"
+					data-expanded-title="Add comment"
+					data-show-once="true"
+					title="添加注释"
+				>
+					添加注释
+				</button>
+				<div
+					id="answer-comment-editor-12673062-expander"
+				>
+					<div class="expandable">
+						<div class="column is-12">
+							
+		<form
+			action="/api/questions/5826938/answers/12673062/comments?locale=zh-cn&amp;translated=false"
+			method="POST"
+			data-form-type="answerComment"
+			data-question-id="5826938"
+			data-answer-id=12673062
+			data-question-locale="zh-cn"
+			data-translation-value="false"
+			new
+			novalidate
+		>
+			<form-behavior
+				navigation="hash-reload"
+				navigation-href=?page=1&amp;orderby=Helpful&amp;comment=answer-12673062&amp;translated=false#newest-answer-comment
+				header-content-type="application/json"
+				header-X-DocsAuth="cookie"
+				new
+				noUnload
+				loc-content-has-changed="内容已更改，请重新加载页面以获取最新更改。"
+				loc-input-max-length="{inputLabel} 不得超过 {maxLength} 个字符。"
+				loc-input-min-length="{inputLabel} 必须至少为 {minLength} 个字符。"
+				loc-input-required="{inputLabel} 是必需的。"
+				loc-not-authenticated="你未经过身份验证。 请刷新页面，然后重试。 如果此问题仍然存在，请注销并重新登录。"
+				loc-not-authorized="你未获授权，无法做出此响应。 如果认为存在错误，请刷新该页面并重试。"
+				loc-please-fix-the-following-issues="请修复以下问题以继续："
+				loc-there-are-no-edits-to-submit="没有编辑需要提交。"
+				loc-too-many-requests="你发送的请求过多。 请等待几分钟，然后重试。"
+				loc-we-encountered-an-unexpected-error="我们遇到意外错误。 请稍后再试。 如果此问题仍然存在，请在 https://sitehelp.microsoft.com 创建工单。"
+			></form-behavior>
+			<input hidden aria-hidden="true" name="locale" value="zh-cn" />
+			<div class="field">
+				<label class="label margin-none" for="body-5826938-12673062-answerComment" hidden>
+					评论
+				</label>
+				<span
+					id="qna-answerComment-12673062-hint"
+					class="field-description help margin-bottom-xxs"
+					>使用注释以要求对问题进行阐明、信息补充或改进。</span
+				>
+				<div class="field-body">
+					
+						<docs-markdown-editor
+							aria-describedby="qna-answerComment-12673062-hint"
+							initialHeightClass="hmn1"
+							isLocal="false"
+							isProduction="true"
+							questionId="5826938"
+							mode="qna"
+							locStrings="{&quot;loc_admin_markdownEditor&quot;:&quot;Markdown Editor&quot;,&quot;loc_admin_markdownEditor_aDescriptionForTheImage&quot;:&quot;图像的说明&quot;,&quot;loc_admin_markdownEditor_address&quot;:&quot;地址&quot;,&quot;loc_admin_markdownEditor_apply&quot;:&quot;应用&quot;,&quot;loc_admin_markdownEditor_alert&quot;:&quot;警报&quot;,&quot;loc_admin_markdownEditor_attachment&quot;:&quot;附件&quot;,&quot;loc_admin_markdownEditor_attachment_browse&quot;:&quot;浏览&quot;,&quot;loc_admin_markdownEditor_attachment_maxSize&quot;:&quot;最大大小 {maxSize} MB&quot;,&quot;loc_admin_markdownEditor_attachment_sizeLessThanMinimum&quot;:&quot;附件不满足所需的最小大小。 最小大小为 1 字节。&quot;,&quot;loc_admin_markdownEditor_attachment_sizeMoreThanMaximum&quot;:&quot;附件超出了允许的最大大小。 最大大小为 3145728 字节。&quot;,&quot;loc_admin_markdownEditor_attachment_extensionNotPermitted&quot;:&quot;附件扩展名无效。 这可能是由于附件签名错误。 有效扩展名为 .xml、.pdf、.txt、.log、.gif、.png、.jpg、.jpeg。&quot;,&quot;loc_admin_markdownEditor_attachment_numberMoreThanMaximum&quot;:&quot;附件数超出了允许的最大数目。 最多上传 20 个附件。&quot;,&quot;loc_admin_markdownEditor_attachment_platformInvalid&quot;:&quot;不支持平台。&quot;,&quot;loc_admin_markdownEditor_attachment_internalServerError&quot;:&quot;内部服务器错误。&quot;,&quot;loc_admin_markdownEditor_attachment_unauthorizedRequest&quot;:&quot;未授权的请求。 请确保使用正确的凭据。&quot;,&quot;loc_admin_markdownEditor_attachment_aiEnabledFeature&quot;:&quot;支持 AI 的功能。&quot;,&quot;loc_admin_markdownEditor_attachment_aiScanNotice&quot;:&quot;图像通过包含 AI 的服务进行合规性扫描。&quot;,&quot;loc_admin_markdownEditor_attachment_learnMore&quot;:&quot;了解详细信息&quot;,&quot;loc_admin_markdownEditor_attachment_harmfulImageDetected&quot;:&quot;上传错误。 此图像包含无法处理的内容。 上传符合我们&lt;a href=\&quot;https://learn.microsoft.com/answers/support/code-of-conduct\&quot; target=\&quot;_blank\&quot; rel=\&quot;noopener noreferrer\&quot;&gt;行为准则&lt;/a&gt;的图像。&quot;,&quot;loc_admin_markdownEditor_blockquote&quot;:&quot;块引用&quot;,&quot;loc_admin_markdownEditor_bold&quot;:&quot;加粗&quot;,&quot;loc_admin_markdownEditor_bulletedList&quot;:&quot;项目符号列表&quot;,&quot;loc_admin_markdownEditor_caution&quot;:&quot;注意&quot;,&quot;loc_admin_markdownEditor_cancel&quot;:&quot;取消&quot;,&quot;loc_admin_markdownEditor_code&quot;:&quot;代码&quot;,&quot;loc_admin_markdownEditor_codeBlock&quot;:&quot;代码块&quot;,&quot;loc_admin_markdownEditor_codeBlockLanguagePlaceholder&quot;:&quot;选择开发语言&quot;,&quot;loc_admin_markdownEditor_codeBlockLanguage&quot;:&quot;选择开发语言&quot;,&quot;loc_admin_markdownEditor_codeBlockLanguageEdit&quot;:&quot;编辑开发语言&quot;,&quot;loc_admin_markdownEditor_complex&quot;:&quot;Complex&quot;,&quot;loc_admin_markdownEditor_content&quot;:&quot;内容&quot;,&quot;loc_admin_markdownEditor_disabled&quot;:&quot;已禁用&quot;,&quot;loc_admin_markdownEditor_displayText&quot;:&quot;显示文本&quot;,&quot;loc_admin_markdownEditor_devLangsInputPlaceholder&quot;:&quot;搜索语言&quot;,&quot;loc_admin_markdownEditor_file&quot;:&quot;文件&quot;,&quot;loc_admin_markdownEditor_fileUpload&quot;:&quot;、拖放或粘贴文件。&quot;,&quot;loc_admin_markdownEditor_fileUploadFailedMessage&quot;:&quot;文件上传失败。 请重试。&quot;,&quot;loc_admin_markdownEditor_headings&quot;:&quot;标题&quot;,&quot;loc_admin_markdownEditor_heading&quot;:&quot;标题 {number}&quot;,&quot;loc_admin_markdownEditor_help&quot;:&quot;帮助&quot;,&quot;loc_admin_markdownEditor_horizontalRule&quot;:&quot;水平标尺&quot;,&quot;loc_admin_markdownEditor_icon&quot;:&quot;图标&quot;,&quot;loc_admin_markdownEditor_image&quot;:&quot;映像&quot;,&quot;loc_admin_markdownEditor_imageAlt&quot;:&quot;用户的图像&quot;,&quot;loc_admin_markdownEditor_imageUpload&quot;:&quot; 从计算机上传图像&quot;,&quot;loc_admin_markdownEditor_imageUploadFailedMessage&quot;:&quot;图像上传失败。 请重试。&quot;,&quot;loc_admin_markdownEditor_imageBorder&quot;:&quot;图像边框&quot;,&quot;loc_admin_markdownEditor_imageDescription&quot;:&quot;图像说明&quot;,&quot;loc_admin_markdownEditor_imageDescriptionAltText&quot;:&quot;图像描述（替换文字）&quot;,&quot;loc_admin_markdownEditor_imageDescriptionAltTextPlaceholder&quot;:&quot;输入图像描述（替换文字）&quot;,&quot;loc_admin_markdownEditor_imageHasALightbox&quot;:&quot;图像有一个光盒&quot;,&quot;loc_admin_markdownEditor_imageLightbox&quot;:&quot;图像光盒&quot;,&quot;loc_admin_markdownEditor_imageLocScope&quot;:&quot;图像位置范围&quot;,&quot;loc_admin_markdownEditor_imageSource&quot;:&quot;映像源&quot;,&quot;loc_admin_markdownEditor_important&quot;:&quot;重要&quot;,&quot;loc_admin_markdownEditor_inlineCode&quot;:&quot;内联代码&quot;,&quot;loc_admin_markdownEditor_insertCodeBlock&quot;:&quot;插入代码块&quot;,&quot;loc_admin_markdownEditor_insertFile&quot;:&quot;插入文件&quot;,&quot;loc_admin_markdownEditor_insertHorizontalRule&quot;:&quot;插入水平标尺&quot;,&quot;loc_admin_markdownEditor_insertImage&quot;:&quot;插入图像&quot;,&quot;loc_admin_markdownEditor_insertLink&quot;:&quot;插入链接&quot;,&quot;loc_admin_markdownEditor_insertTable&quot;:&quot;插入表&quot;,&quot;loc_admin_markdownEditor_italics&quot;:&quot;斜体&quot;,&quot;loc_admin_markdownEditor_link&quot;:&quot;链接&quot;,&quot;loc_admin_markdownEditor_markdown&quot;:&quot;Markdown&quot;,&quot;loc_admin_markdownEditor_noMatches&quot;:&quot;找不到任何匹配项。&quot;,&quot;loc_admin_markdownEditor_note&quot;:&quot;注意&quot;,&quot;loc_admin_markdownEditor_numberedList&quot;:&quot;编号列表&quot;,&quot;loc_admin_markdownEditor_pleaseSelectImageType&quot;:&quot;请选择图像类型&quot;,&quot;loc_admin_markdownEditor_quote&quot;:&quot;报价&quot;,&quot;loc_admin_markdownEditor_redo&quot;:&quot;重做&quot;,&quot;loc_admin_markdownEditor_remove&quot;:&quot;删除&quot;,&quot;loc_admin_markdownEditor_removeLink&quot;:&quot;移除链接&quot;,&quot;loc_admin_markdownEditor_save&quot;:&quot;保存&quot;,&quot;loc_admin_markdownEditor_saveNewLink&quot;:&quot;保存链接&quot;,&quot;loc_admin_markdownEditor_selectImageTypePlaceholder&quot;:&quot;选择图像类型&quot;,&quot;loc_admin_markdownEditor_showCountResults&quot;:&quot;显示 {count} 个结果&quot;,&quot;loc_admin_markdownEditor_strikethrough&quot;:&quot;删除线&quot;,&quot;loc_admin_markdownEditor_suggestions&quot;:&quot;建议&quot;,&quot;loc_admin_markdownEditor_table&quot;:&quot;表&quot;,&quot;loc_admin_markdownEditor_table_column&quot;:&quot;列&quot;,&quot;loc_admin_markdownEditor_table_editTable&quot;:&quot;编辑表&quot;,&quot;loc_admin_markdownEditor_table_insertColumnAfter&quot;:&quot;在后面插入列&quot;,&quot;loc_admin_markdownEditor_table_insertColumnBefore&quot;:&quot;在前面插入列&quot;,&quot;loc_admin_markdownEditor_table_insertRowBefore&quot;:&quot;在后面插入行&quot;,&quot;loc_admin_markdownEditor_table_insertRowAfter&quot;:&quot;在前面插入行&quot;,&quot;loc_admin_markdownEditor_table_removeColumn&quot;:&quot;删除列&quot;,&quot;loc_admin_markdownEditor_table_row&quot;:&quot;行&quot;,&quot;loc_admin_markdownEditor_table_removeRow&quot;:&quot;删除行&quot;,&quot;loc_admin_markdownEditor_tip&quot;:&quot;提示&quot;,&quot;loc_admin_markdownEditor_toggleMarkdownEditing&quot;:&quot;切换 Markdown 编辑&quot;,&quot;loc_admin_markdownEditor_typeHere&quot;:&quot;请在此处键入内容&quot;,&quot;loc_admin_markdownEditor_undo&quot;:&quot;撤消&quot;,&quot;loc_admin_markdownEditor_uploadComplete&quot;:&quot;上载完成！&quot;,&quot;loc_admin_markdownEditor_uploading&quot;:&quot;正在上传&quot;,&quot;loc_admin_markdownEditor_validations&quot;:&quot;验证&quot;,&quot;loc_admin_markdownEditor_validations_altTextEndWithPeriod&quot;:&quot;替换文字应以句点结尾。&quot;,&quot;loc_admin_markdownEditor_validations_altTextStartWithUppercaseLetter&quot;:&quot;替换文字应以大写字母开头。&quot;,&quot;loc_admin_markdownEditor_validations_altTextTooLong&quot;:&quot;替换文字太长。 最多 150 个字符（含空格）。&quot;,&quot;loc_admin_markdownEditor_validations_imageWidthTooLarge&quot;:&quot;文件宽度无效&quot;,&quot;loc_admin_markdownEditor_validations_imageWidthTooLargeMessage&quot;:&quot;图像太大。 将每边的最大大小调整为 1200 像素。&quot;,&quot;loc_admin_markdownEditor_validations_imageCorrupted&quot;:&quot;图像损坏&quot;,&quot;loc_admin_markdownEditor_validations_imageCorruptedMessage&quot;:&quot;图像损坏或不是有效图像&quot;,&quot;loc_admin_markdownEditor_validations_imageInvalidPosition&quot;:&quot;图像位置无效&quot;,&quot;loc_admin_markdownEditor_validations_imageInvalidPositionMessage&quot;:&quot;不支持内嵌图象。 在新行中添加图像。&quot;,&quot;loc_admin_markdownEditor_validations_attachmentTooLarge&quot;:&quot;附件太大&quot;,&quot;loc_admin_markdownEditor_validations_attachmentInvalidName&quot;:&quot;附件名称无效&quot;,&quot;loc_admin_markdownEditor_validations_attachmentInvalidNameMessage&quot;:&quot;附件上传错误。 附件名称中的字符无效。 只允许使用字母、数字和连字符 (-)。&quot;,&quot;loc_admin_markdownEditor_validations_attachmentInvalidExtension&quot;:&quot;附件扩展名无效&quot;,&quot;loc_admin_markdownEditor_validations_attachmentTooSmall&quot;:&quot;附件太小&quot;,&quot;loc_admin_markdownEditor_validations_qnaAttachmentTooSmallMessage&quot;:&quot;附件上传错误。 {filename} 太小，无法上传（小于 {minSize} 字节）。&quot;,&quot;loc_admin_markdownEditor_validations_multipleAttachments&quot;:&quot;多个附件&quot;,&quot;loc_admin_markdownEditor_validations_qnaMultipleAttachmentsMessage&quot;:&quot;附件上传错误。 你正在添加 {filecount} 个附件，允许的最大附件数为 {maxCount}。 某些附件未上传。&quot;,&quot;loc_admin_markdownEditor_validations_qnaAttachmentTooLargeMessage&quot;:&quot;附件上传错误。 {filename} 太大，无法上传（超过 {maxSize} MB）。&quot;,&quot;loc_admin_markdownEditor_validations_qnaAttachmentInvalidExtensionMessage&quot;:&quot;附件上传错误。 {filename} 的扩展名无效。 有效扩展名为 {validExtensions}。&quot;,&quot;loc_admin_markdownEditor_validations_qnaAttachmentInvalidNameMessage&quot;:&quot;附件上传错误。 {filename} 在 Unix 和 Windows 系统中有无效字符，对于其他限制，请转到以下网站查看： https://kb.acronis.com/content/39790 、 http://en.wikipedia.org/wiki/C0_and_C1_control_codes 。&quot;,&quot;loc_admin_markdownEditor_viewMarkdown&quot;:&quot;查看 Markdown&quot;,&quot;loc_admin_markdownEditor_viewRichText&quot;:&quot;查看格式文本&quot;,&quot;loc_admin_markdownEditor_warning&quot;:&quot;警告&quot;}"
+							placeHolder="请勿通过评论来回答问题。"
+							isrtl=false
+						>
+						</docs-markdown-editor>
+					
+					<textarea
+						hidden
+						id="body-5826938-12673062-answerComment"
+						aria-label="评论"
+						class="textarea"
+						name="body"
+						rows="1"
+						data-expanded-rows="5"
+						placeholder="添加评论…"
+						minlength="5"
+						required
+					></textarea>
+					<input
+						id="attachment-count"
+						aria-label="attachmentCount"
+						class="attachment-input input"
+						maxCount="20"
+						hidden
+						data-skip-validation
+					/>
+					
+				</div>
+			</div>
+			<div class="control">
+				
+							<div class="level">
+								<div class="level-left align-items-flex-start"><div aria-live="polite" class="qna-saved-draft text-align-left font-size-xs"></div></div>
+								<div class="level-right margin-top-xxs margin-top-none-tablet">
+									<div class="buttons justify-content-flex-end">
+										
+		<button
+			data-modal-type="qna-discard-draft"
+			class="button button-clear"
+			data-bi-name="comment-discard-draft"
+			data-question-id="5826938"
+			data-answer-id=12673062
+			type="button"
+			hidden="true"
+		>
+			<span class="icon" aria-hidden="true">
+				<span class="docon docon-delete"></span>
+			</span>
+			<span>放弃草稿</span>
+		</button>
+	 
+		<button
+			type="submit"
+			data-bi-name="comment-submit"
+			class="button button-primary button-filled margin-right-none"
+		>
+			添加注释
+		</button>
+	
+									</div>
+								</div>
+							</div>
+					  
+			</div>
+		</form>
+	
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+	
+		</div>
+	</div>
+					</li>
+			  
+		</ol>
+	
+				
+				
+							<a
+								class="not-authenticated link-button font-size-sm margin-right-sm docs-sign-in"
+								href="#"
+							>
+								登录以回答
+							</a>
+							<div class="authenticated">
+								<h2 class="title is-4 margin-top-lg margin-bottom-xxs">
+									你的答案
+								</h2>
+								
+		<form
+			action="/api/questions/5826938/answers?locale=zh-cn&amp;translated=false"
+			method="POST"
+			data-form-type="answer"
+			data-question-id="5826938"
+			
+			data-question-locale="zh-cn"
+			data-translation-value="false"
+			new
+			novalidate
+		>
+			<form-behavior
+				navigation="hash-reload"
+				navigation-href=?page=1&amp;orderby=Helpful&amp;translated=false#answers
+				header-content-type="application/json"
+				header-X-DocsAuth="cookie"
+				new
+				noUnload
+				loc-content-has-changed="内容已更改，请重新加载页面以获取最新更改。"
+				loc-input-max-length="{inputLabel} 不得超过 {maxLength} 个字符。"
+				loc-input-min-length="{inputLabel} 必须至少为 {minLength} 个字符。"
+				loc-input-required="{inputLabel} 是必需的。"
+				loc-not-authenticated="你未经过身份验证。 请刷新页面，然后重试。 如果此问题仍然存在，请注销并重新登录。"
+				loc-not-authorized="你未获授权，无法做出此响应。 如果认为存在错误，请刷新该页面并重试。"
+				loc-please-fix-the-following-issues="请修复以下问题以继续："
+				loc-there-are-no-edits-to-submit="没有编辑需要提交。"
+				loc-too-many-requests="你发送的请求过多。 请等待几分钟，然后重试。"
+				loc-we-encountered-an-unexpected-error="我们遇到意外错误。 请稍后再试。 如果此问题仍然存在，请在 https://sitehelp.microsoft.com 创建工单。"
+			></form-behavior>
+			<input hidden aria-hidden="true" name="locale" value="zh-cn" />
+			<div class="field">
+				<label class="label margin-none" for="body-5826938-answer" hidden>
+					答案
+				</label>
+				<span
+					id="qna-answer-hint"
+					class="field-description help margin-bottom-xxs"
+					>提问者可以将答案标记为“已接受”，审查方可以将答案标记为“已推荐”，这有助于用户了解答案是否解决了提问者的问题。</span
+				>
+				<div class="field-body">
+					
+						<docs-markdown-editor
+							aria-describedby="qna-answer-hint"
+							initialHeightClass="hmn2"
+							isLocal="false"
+							isProduction="true"
+							questionId="5826938"
+							mode="qna"
+							locStrings="{&quot;loc_admin_markdownEditor&quot;:&quot;Markdown Editor&quot;,&quot;loc_admin_markdownEditor_aDescriptionForTheImage&quot;:&quot;图像的说明&quot;,&quot;loc_admin_markdownEditor_address&quot;:&quot;地址&quot;,&quot;loc_admin_markdownEditor_apply&quot;:&quot;应用&quot;,&quot;loc_admin_markdownEditor_alert&quot;:&quot;警报&quot;,&quot;loc_admin_markdownEditor_attachment&quot;:&quot;附件&quot;,&quot;loc_admin_markdownEditor_attachment_browse&quot;:&quot;浏览&quot;,&quot;loc_admin_markdownEditor_attachment_maxSize&quot;:&quot;最大大小 {maxSize} MB&quot;,&quot;loc_admin_markdownEditor_attachment_sizeLessThanMinimum&quot;:&quot;附件不满足所需的最小大小。 最小大小为 1 字节。&quot;,&quot;loc_admin_markdownEditor_attachment_sizeMoreThanMaximum&quot;:&quot;附件超出了允许的最大大小。 最大大小为 3145728 字节。&quot;,&quot;loc_admin_markdownEditor_attachment_extensionNotPermitted&quot;:&quot;附件扩展名无效。 这可能是由于附件签名错误。 有效扩展名为 .xml、.pdf、.txt、.log、.gif、.png、.jpg、.jpeg。&quot;,&quot;loc_admin_markdownEditor_attachment_numberMoreThanMaximum&quot;:&quot;附件数超出了允许的最大数目。 最多上传 20 个附件。&quot;,&quot;loc_admin_markdownEditor_attachment_platformInvalid&quot;:&quot;不支持平台。&quot;,&quot;loc_admin_markdownEditor_attachment_internalServerError&quot;:&quot;内部服务器错误。&quot;,&quot;loc_admin_markdownEditor_attachment_unauthorizedRequest&quot;:&quot;未授权的请求。 请确保使用正确的凭据。&quot;,&quot;loc_admin_markdownEditor_attachment_aiEnabledFeature&quot;:&quot;支持 AI 的功能。&quot;,&quot;loc_admin_markdownEditor_attachment_aiScanNotice&quot;:&quot;图像通过包含 AI 的服务进行合规性扫描。&quot;,&quot;loc_admin_markdownEditor_attachment_learnMore&quot;:&quot;了解详细信息&quot;,&quot;loc_admin_markdownEditor_attachment_harmfulImageDetected&quot;:&quot;上传错误。 此图像包含无法处理的内容。 上传符合我们&lt;a href=\&quot;https://learn.microsoft.com/answers/support/code-of-conduct\&quot; target=\&quot;_blank\&quot; rel=\&quot;noopener noreferrer\&quot;&gt;行为准则&lt;/a&gt;的图像。&quot;,&quot;loc_admin_markdownEditor_blockquote&quot;:&quot;块引用&quot;,&quot;loc_admin_markdownEditor_bold&quot;:&quot;加粗&quot;,&quot;loc_admin_markdownEditor_bulletedList&quot;:&quot;项目符号列表&quot;,&quot;loc_admin_markdownEditor_caution&quot;:&quot;注意&quot;,&quot;loc_admin_markdownEditor_cancel&quot;:&quot;取消&quot;,&quot;loc_admin_markdownEditor_code&quot;:&quot;代码&quot;,&quot;loc_admin_markdownEditor_codeBlock&quot;:&quot;代码块&quot;,&quot;loc_admin_markdownEditor_codeBlockLanguagePlaceholder&quot;:&quot;选择开发语言&quot;,&quot;loc_admin_markdownEditor_codeBlockLanguage&quot;:&quot;选择开发语言&quot;,&quot;loc_admin_markdownEditor_codeBlockLanguageEdit&quot;:&quot;编辑开发语言&quot;,&quot;loc_admin_markdownEditor_complex&quot;:&quot;Complex&quot;,&quot;loc_admin_markdownEditor_content&quot;:&quot;内容&quot;,&quot;loc_admin_markdownEditor_disabled&quot;:&quot;已禁用&quot;,&quot;loc_admin_markdownEditor_displayText&quot;:&quot;显示文本&quot;,&quot;loc_admin_markdownEditor_devLangsInputPlaceholder&quot;:&quot;搜索语言&quot;,&quot;loc_admin_markdownEditor_file&quot;:&quot;文件&quot;,&quot;loc_admin_markdownEditor_fileUpload&quot;:&quot;、拖放或粘贴文件。&quot;,&quot;loc_admin_markdownEditor_fileUploadFailedMessage&quot;:&quot;文件上传失败。 请重试。&quot;,&quot;loc_admin_markdownEditor_headings&quot;:&quot;标题&quot;,&quot;loc_admin_markdownEditor_heading&quot;:&quot;标题 {number}&quot;,&quot;loc_admin_markdownEditor_help&quot;:&quot;帮助&quot;,&quot;loc_admin_markdownEditor_horizontalRule&quot;:&quot;水平标尺&quot;,&quot;loc_admin_markdownEditor_icon&quot;:&quot;图标&quot;,&quot;loc_admin_markdownEditor_image&quot;:&quot;映像&quot;,&quot;loc_admin_markdownEditor_imageAlt&quot;:&quot;用户的图像&quot;,&quot;loc_admin_markdownEditor_imageUpload&quot;:&quot; 从计算机上传图像&quot;,&quot;loc_admin_markdownEditor_imageUploadFailedMessage&quot;:&quot;图像上传失败。 请重试。&quot;,&quot;loc_admin_markdownEditor_imageBorder&quot;:&quot;图像边框&quot;,&quot;loc_admin_markdownEditor_imageDescription&quot;:&quot;图像说明&quot;,&quot;loc_admin_markdownEditor_imageDescriptionAltText&quot;:&quot;图像描述（替换文字）&quot;,&quot;loc_admin_markdownEditor_imageDescriptionAltTextPlaceholder&quot;:&quot;输入图像描述（替换文字）&quot;,&quot;loc_admin_markdownEditor_imageHasALightbox&quot;:&quot;图像有一个光盒&quot;,&quot;loc_admin_markdownEditor_imageLightbox&quot;:&quot;图像光盒&quot;,&quot;loc_admin_markdownEditor_imageLocScope&quot;:&quot;图像位置范围&quot;,&quot;loc_admin_markdownEditor_imageSource&quot;:&quot;映像源&quot;,&quot;loc_admin_markdownEditor_important&quot;:&quot;重要&quot;,&quot;loc_admin_markdownEditor_inlineCode&quot;:&quot;内联代码&quot;,&quot;loc_admin_markdownEditor_insertCodeBlock&quot;:&quot;插入代码块&quot;,&quot;loc_admin_markdownEditor_insertFile&quot;:&quot;插入文件&quot;,&quot;loc_admin_markdownEditor_insertHorizontalRule&quot;:&quot;插入水平标尺&quot;,&quot;loc_admin_markdownEditor_insertImage&quot;:&quot;插入图像&quot;,&quot;loc_admin_markdownEditor_insertLink&quot;:&quot;插入链接&quot;,&quot;loc_admin_markdownEditor_insertTable&quot;:&quot;插入表&quot;,&quot;loc_admin_markdownEditor_italics&quot;:&quot;斜体&quot;,&quot;loc_admin_markdownEditor_link&quot;:&quot;链接&quot;,&quot;loc_admin_markdownEditor_markdown&quot;:&quot;Markdown&quot;,&quot;loc_admin_markdownEditor_noMatches&quot;:&quot;找不到任何匹配项。&quot;,&quot;loc_admin_markdownEditor_note&quot;:&quot;注意&quot;,&quot;loc_admin_markdownEditor_numberedList&quot;:&quot;编号列表&quot;,&quot;loc_admin_markdownEditor_pleaseSelectImageType&quot;:&quot;请选择图像类型&quot;,&quot;loc_admin_markdownEditor_quote&quot;:&quot;报价&quot;,&quot;loc_admin_markdownEditor_redo&quot;:&quot;重做&quot;,&quot;loc_admin_markdownEditor_remove&quot;:&quot;删除&quot;,&quot;loc_admin_markdownEditor_removeLink&quot;:&quot;移除链接&quot;,&quot;loc_admin_markdownEditor_save&quot;:&quot;保存&quot;,&quot;loc_admin_markdownEditor_saveNewLink&quot;:&quot;保存链接&quot;,&quot;loc_admin_markdownEditor_selectImageTypePlaceholder&quot;:&quot;选择图像类型&quot;,&quot;loc_admin_markdownEditor_showCountResults&quot;:&quot;显示 {count} 个结果&quot;,&quot;loc_admin_markdownEditor_strikethrough&quot;:&quot;删除线&quot;,&quot;loc_admin_markdownEditor_suggestions&quot;:&quot;建议&quot;,&quot;loc_admin_markdownEditor_table&quot;:&quot;表&quot;,&quot;loc_admin_markdownEditor_table_column&quot;:&quot;列&quot;,&quot;loc_admin_markdownEditor_table_editTable&quot;:&quot;编辑表&quot;,&quot;loc_admin_markdownEditor_table_insertColumnAfter&quot;:&quot;在后面插入列&quot;,&quot;loc_admin_markdownEditor_table_insertColumnBefore&quot;:&quot;在前面插入列&quot;,&quot;loc_admin_markdownEditor_table_insertRowBefore&quot;:&quot;在后面插入行&quot;,&quot;loc_admin_markdownEditor_table_insertRowAfter&quot;:&quot;在前面插入行&quot;,&quot;loc_admin_markdownEditor_table_removeColumn&quot;:&quot;删除列&quot;,&quot;loc_admin_markdownEditor_table_row&quot;:&quot;行&quot;,&quot;loc_admin_markdownEditor_table_removeRow&quot;:&quot;删除行&quot;,&quot;loc_admin_markdownEditor_tip&quot;:&quot;提示&quot;,&quot;loc_admin_markdownEditor_toggleMarkdownEditing&quot;:&quot;切换 Markdown 编辑&quot;,&quot;loc_admin_markdownEditor_typeHere&quot;:&quot;请在此处键入内容&quot;,&quot;loc_admin_markdownEditor_undo&quot;:&quot;撤消&quot;,&quot;loc_admin_markdownEditor_uploadComplete&quot;:&quot;上载完成！&quot;,&quot;loc_admin_markdownEditor_uploading&quot;:&quot;正在上传&quot;,&quot;loc_admin_markdownEditor_validations&quot;:&quot;验证&quot;,&quot;loc_admin_markdownEditor_validations_altTextEndWithPeriod&quot;:&quot;替换文字应以句点结尾。&quot;,&quot;loc_admin_markdownEditor_validations_altTextStartWithUppercaseLetter&quot;:&quot;替换文字应以大写字母开头。&quot;,&quot;loc_admin_markdownEditor_validations_altTextTooLong&quot;:&quot;替换文字太长。 最多 150 个字符（含空格）。&quot;,&quot;loc_admin_markdownEditor_validations_imageWidthTooLarge&quot;:&quot;文件宽度无效&quot;,&quot;loc_admin_markdownEditor_validations_imageWidthTooLargeMessage&quot;:&quot;图像太大。 将每边的最大大小调整为 1200 像素。&quot;,&quot;loc_admin_markdownEditor_validations_imageCorrupted&quot;:&quot;图像损坏&quot;,&quot;loc_admin_markdownEditor_validations_imageCorruptedMessage&quot;:&quot;图像损坏或不是有效图像&quot;,&quot;loc_admin_markdownEditor_validations_imageInvalidPosition&quot;:&quot;图像位置无效&quot;,&quot;loc_admin_markdownEditor_validations_imageInvalidPositionMessage&quot;:&quot;不支持内嵌图象。 在新行中添加图像。&quot;,&quot;loc_admin_markdownEditor_validations_attachmentTooLarge&quot;:&quot;附件太大&quot;,&quot;loc_admin_markdownEditor_validations_attachmentInvalidName&quot;:&quot;附件名称无效&quot;,&quot;loc_admin_markdownEditor_validations_attachmentInvalidNameMessage&quot;:&quot;附件上传错误。 附件名称中的字符无效。 只允许使用字母、数字和连字符 (-)。&quot;,&quot;loc_admin_markdownEditor_validations_attachmentInvalidExtension&quot;:&quot;附件扩展名无效&quot;,&quot;loc_admin_markdownEditor_validations_attachmentTooSmall&quot;:&quot;附件太小&quot;,&quot;loc_admin_markdownEditor_validations_qnaAttachmentTooSmallMessage&quot;:&quot;附件上传错误。 {filename} 太小，无法上传（小于 {minSize} 字节）。&quot;,&quot;loc_admin_markdownEditor_validations_multipleAttachments&quot;:&quot;多个附件&quot;,&quot;loc_admin_markdownEditor_validations_qnaMultipleAttachmentsMessage&quot;:&quot;附件上传错误。 你正在添加 {filecount} 个附件，允许的最大附件数为 {maxCount}。 某些附件未上传。&quot;,&quot;loc_admin_markdownEditor_validations_qnaAttachmentTooLargeMessage&quot;:&quot;附件上传错误。 {filename} 太大，无法上传（超过 {maxSize} MB）。&quot;,&quot;loc_admin_markdownEditor_validations_qnaAttachmentInvalidExtensionMessage&quot;:&quot;附件上传错误。 {filename} 的扩展名无效。 有效扩展名为 {validExtensions}。&quot;,&quot;loc_admin_markdownEditor_validations_qnaAttachmentInvalidNameMessage&quot;:&quot;附件上传错误。 {filename} 在 Unix 和 Windows 系统中有无效字符，对于其他限制，请转到以下网站查看： https://kb.acronis.com/content/39790 、 http://en.wikipedia.org/wiki/C0_and_C1_control_codes 。&quot;,&quot;loc_admin_markdownEditor_viewMarkdown&quot;:&quot;查看 Markdown&quot;,&quot;loc_admin_markdownEditor_viewRichText&quot;:&quot;查看格式文本&quot;,&quot;loc_admin_markdownEditor_warning&quot;:&quot;警告&quot;}"
+							placeHolder="使用答案为用户的问题提供解决方案。"
+							isrtl=false
+						>
+						</docs-markdown-editor>
+					
+					<textarea
+						hidden
+						id="body-5826938-answer"
+						aria-label="答案"
+						class="textarea"
+						name="body"
+						rows="1"
+						data-expanded-rows="5"
+						placeholder="添加一些详细信息…"
+						minlength="10"
+						required
+					></textarea>
+					<input
+						id="attachment-count"
+						aria-label="attachmentCount"
+						class="attachment-input input"
+						maxCount="20"
+						hidden
+						data-skip-validation
+					/>
+					<div aria-live="polite" class="qna-saved-draft text-align-left font-size-xs"></div>
+				</div>
+			</div>
+			<div class="control">
+				 <div class="buttons">
+		<button
+			type="submit"
+			data-bi-name="answer-submit"
+			class="button button-primary button-filled "
+		>
+			发布答案
+		</button>
+	 
+		<button
+			data-modal-type="qna-discard-draft"
+			class="button button-clear"
+			data-bi-name="answer-discard-draft"
+			data-question-id="5826938"
+			
+			type="button"
+			hidden="true"
+		>
+			<span class="icon" aria-hidden="true">
+				<span class="docon docon-delete"></span>
+			</span>
+			<span>放弃草稿</span>
+		</button>
+	</div> 
+			</div>
+		</form>
+	
+							</div>
+					  
+			</div>
+		</div>
+	
+			</div>
+		
+				</main>
+				  <div class="layout-body-footer " data-bi-name="layout-footer">
+		<footer
+			id="footer"
+			data-test-id="footer"
+			data-bi-name="footer"
+			class="footer-layout padding-xs padding-sm-desktop has-default-focus border-top"
+			role="contentinfo"
+		>
+			<div class="display-flex gap-xs flex-wrap-wrap is-full-height padding-right-lg-desktop">
+				
+		<a
+			data-mscc-ic="false"
+			href="#"
+			data-bi-name="select-locale"
+			class="locale-selector-link flex-shrink-0 button button-sm button-clear external-link-indicator"
+			id=""
+			title=""
+			><span class="icon" aria-hidden="true"
+				><span class="docon docon-world"></span></span
+			><span class="local-selector-link-text">zh-cn</span></a
+		>
+	 <div class="ccpa-privacy-link" data-ccpa-privacy-link hidden>
+		
+		<a
+			data-mscc-ic="false"
+			href="https://aka.ms/yourcaliforniaprivacychoices"
+			data-bi-name="your-privacy-choices"
+			class="button button-sm button-clear flex-shrink-0 external-link-indicator"
+			id=""
+			title=""
+			>
+		<svg
+			xmlns="http://www.w3.org/2000/svg"
+			viewBox="0 0 30 14"
+			xml:space="preserve"
+			height="16"
+			width="43"
+			aria-hidden="true"
+			focusable="false"
+		>
+			<path
+				d="M7.4 12.8h6.8l3.1-11.6H7.4C4.2 1.2 1.6 3.8 1.6 7s2.6 5.8 5.8 5.8z"
+				style="fill-rule:evenodd;clip-rule:evenodd;fill:#fff"
+			></path>
+			<path
+				d="M22.6 0H7.4c-3.9 0-7 3.1-7 7s3.1 7 7 7h15.2c3.9 0 7-3.1 7-7s-3.2-7-7-7zm-21 7c0-3.2 2.6-5.8 5.8-5.8h9.9l-3.1 11.6H7.4c-3.2 0-5.8-2.6-5.8-5.8z"
+				style="fill-rule:evenodd;clip-rule:evenodd;fill:#06f"
+			></path>
+			<path
+				d="M24.6 4c.2.2.2.6 0 .8L22.5 7l2.2 2.2c.2.2.2.6 0 .8-.2.2-.6.2-.8 0l-2.2-2.2-2.2 2.2c-.2.2-.6.2-.8 0-.2-.2-.2-.6 0-.8L20.8 7l-2.2-2.2c-.2-.2-.2-.6 0-.8.2-.2.6-.2.8 0l2.2 2.2L23.8 4c.2-.2.6-.2.8 0z"
+				style="fill:#fff"
+			></path>
+			<path
+				d="M12.7 4.1c.2.2.3.6.1.8L8.6 9.8c-.1.1-.2.2-.3.2-.2.1-.5.1-.7-.1L5.4 7.7c-.2-.2-.2-.6 0-.8.2-.2.6-.2.8 0L8 8.6l3.8-4.5c.2-.2.6-.2.9 0z"
+				style="fill:#06f"
+			></path>
+		</svg>
+	
+			<span>你的隐私选择</span></a
+		>
+	
+	</div>
+				<div class="flex-shrink-0">
+		<div class="dropdown has-caret-up">
+			<button
+				data-test-id="theme-selector-button"
+				class="dropdown-trigger button button-clear button-sm inner-focus theme-dropdown-trigger"
+				aria-controls="{{ themeMenuId }}"
+				aria-haspopup="true"
+				aria-expanded="false"
+				data-bi-name="theme"
+			>
+				<span class="icon" aria-hidden="true"><span class="docon docon-sun"></span></span>
+				<span>主题</span>
+				<span class="icon expanded-indicator" aria-hidden="true">
+					<span class="docon docon-chevron-down-light"></span>
+				</span>
+			</button>
+			<div class="dropdown-menu" id="{{ themeMenuId }}" role="menu">
+				<ul class="theme-selector padding-xxs" data-test-id="theme-dropdown-menu" role="none">
+					<li class="theme display-block" role="none">
+						<button
+							class="button button-clear button-sm theme-control button-block justify-content-flex-start text-align-left"
+							role="menuitemradio"
+							aria-checked="false"
+							data-theme-to="light"
+							tabindex="-1"
+						>
+							<span class="theme-light margin-right-xxs">
+								<span
+									class="theme-selector-icon border display-inline-block has-body-background"
+									aria-hidden="true"
+								>
+									<svg class="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 14">
+										<rect width="22" height="14" class="has-fill-body-background" />
+										<rect x="5" y="5" width="12" height="4" class="has-fill-secondary" />
+										<rect x="5" y="2" width="2" height="1" class="has-fill-secondary" />
+										<rect x="8" y="2" width="2" height="1" class="has-fill-secondary" />
+										<rect x="11" y="2" width="3" height="1" class="has-fill-secondary" />
+										<rect x="1" y="1" width="2" height="2" class="has-fill-secondary" />
+										<rect x="5" y="10" width="7" height="2" rx="0.3" class="has-fill-primary" />
+										<rect x="19" y="1" width="2" height="2" rx="1" class="has-fill-secondary" />
+									</svg>
+								</span>
+							</span>
+							<span> 亮 </span>
+						</button>
+					</li>
+					<li class="theme display-block" role="none">
+						<button
+							class="button button-clear button-sm theme-control button-block justify-content-flex-start text-align-left"
+							role="menuitemradio"
+							aria-checked="false"
+							data-theme-to="dark"
+							tabindex="-1"
+						>
+							<span class="theme-dark margin-right-xxs">
+								<span
+									class="border theme-selector-icon display-inline-block has-body-background"
+									aria-hidden="true"
+								>
+									<svg class="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 14">
+										<rect width="22" height="14" class="has-fill-body-background" />
+										<rect x="5" y="5" width="12" height="4" class="has-fill-secondary" />
+										<rect x="5" y="2" width="2" height="1" class="has-fill-secondary" />
+										<rect x="8" y="2" width="2" height="1" class="has-fill-secondary" />
+										<rect x="11" y="2" width="3" height="1" class="has-fill-secondary" />
+										<rect x="1" y="1" width="2" height="2" class="has-fill-secondary" />
+										<rect x="5" y="10" width="7" height="2" rx="0.3" class="has-fill-primary" />
+										<rect x="19" y="1" width="2" height="2" rx="1" class="has-fill-secondary" />
+									</svg>
+								</span>
+							</span>
+							<span> 暗 </span>
+						</button>
+					</li>
+					<li class="theme display-block" role="none">
+						<button
+							class="button button-clear button-sm theme-control button-block justify-content-flex-start text-align-left"
+							role="menuitemradio"
+							aria-checked="false"
+							data-theme-to="high-contrast"
+							tabindex="-1"
+						>
+							<span class="theme-high-contrast margin-right-xxs">
+								<span
+									class="border theme-selector-icon display-inline-block has-body-background"
+									aria-hidden="true"
+								>
+									<svg class="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 14">
+										<rect width="22" height="14" class="has-fill-body-background" />
+										<rect x="5" y="5" width="12" height="4" class="has-fill-secondary" />
+										<rect x="5" y="2" width="2" height="1" class="has-fill-secondary" />
+										<rect x="8" y="2" width="2" height="1" class="has-fill-secondary" />
+										<rect x="11" y="2" width="3" height="1" class="has-fill-secondary" />
+										<rect x="1" y="1" width="2" height="2" class="has-fill-secondary" />
+										<rect x="5" y="10" width="7" height="2" rx="0.3" class="has-fill-primary" />
+										<rect x="19" y="1" width="2" height="2" rx="1" class="has-fill-secondary" />
+									</svg>
+								</span>
+							</span>
+							<span> 高对比度 </span>
+						</button>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+			</div>
+			<ul class="links" data-bi-name="footerlinks">
+				<li class="manage-cookies-holder" hidden=""></li>
+				<li>
+		
+		<a
+			data-mscc-ic="false"
+			href="https://learn.microsoft.com/zh-cn/principles-for-ai-generated-content"
+			data-bi-name="aiDisclaimer"
+			class=" external-link-indicator"
+			id=""
+			title=""
+			>AI 免责声明</a
+		>
+	
+	</li><li>
+		
+		<a
+			data-mscc-ic="false"
+			href="https://learn.microsoft.com/zh-cn/previous-versions/"
+			data-bi-name="archivelink"
+			class=" external-link-indicator"
+			id=""
+			title=""
+			>早期版本</a
+		>
+	
+	</li> <li>
+		
+		<a
+			data-mscc-ic="false"
+			href="https://techcommunity.microsoft.com/t5/microsoft-learn-blog/bg-p/MicrosoftLearnBlog"
+			data-bi-name="bloglink"
+			class=" external-link-indicator"
+			id=""
+			title=""
+			>博客</a
+		>
+	
+	</li> <li>
+		
+		<a
+			data-mscc-ic="false"
+			href="https://learn.microsoft.com/zh-cn/contribute"
+			data-bi-name="contributorGuide"
+			class=" external-link-indicator"
+			id=""
+			title=""
+			>参与</a
+		>
+	
+	</li><li>
+		
+		<a
+			data-mscc-ic="false"
+			href="https://go.microsoft.com/fwlink/?LinkId=521839"
+			data-bi-name="privacy"
+			class=" external-link-indicator"
+			id=""
+			title=""
+			>隐私</a
+		>
+	
+	</li><li>
+		
+		<a
+			data-mscc-ic="false"
+			href="https://go.microsoft.com/fwlink/?linkid=2259814"
+			data-bi-name="consumer-health-privacy"
+			class=" external-link-indicator"
+			id=""
+			title=""
+			>消费者健康隐私</a
+		>
+	
+	</li><li>
+		
+		<a
+			data-mscc-ic="false"
+			href="https://learn.microsoft.com/zh-cn/legal/termsofuse"
+			data-bi-name="termsofuse"
+			class=" external-link-indicator"
+			id=""
+			title=""
+			>使用条款</a
+		>
+	
+	</li><li>
+		
+		<a
+			data-mscc-ic="false"
+			href="https://aka.ms/msftqacodeconduct"
+			data-bi-name="codeofconduct"
+			class=" external-link-indicator"
+			id=""
+			title=""
+			>行为准则</a
+		>
+	
+	</li><li>
+		
+		<a
+			data-mscc-ic="false"
+			href="https://www.microsoft.com/legal/intellectualproperty/Trademarks/"
+			data-bi-name="trademarks"
+			class=" external-link-indicator"
+			id=""
+			title=""
+			>商标</a
+		>
+	
+	</li>
+				<li>&copy; Microsoft 2026</li>
+			</ul>
+		</footer>
+	</footer>
+			<noscript><img src="https://learn.microsoft.com/akam/13/pixel_33b18d43?a=dD1hMGZmNjVlMmU2MWQ3MGVkNjEwMTMwZmU2Mzg0ZTUwZTllZjhiMjU0JmpzPW9mZg==" style="visibility: hidden; position: absolute; left: -999px; top: -999px;" /></noscript></body>
+		</html>

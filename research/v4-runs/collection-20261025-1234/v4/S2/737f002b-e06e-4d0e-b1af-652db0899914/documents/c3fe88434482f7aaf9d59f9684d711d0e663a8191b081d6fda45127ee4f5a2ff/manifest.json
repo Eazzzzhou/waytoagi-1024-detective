@@ -1,0 +1,6370 @@
+{
+  "schemaVersion": "source-document/v1",
+  "id": "c3fe88434482f7aaf9d59f9684d711d0e663a8191b081d6fda45127ee4f5a2ff",
+  "version": "a98db3c72a7beb7c03665a87d94db8d1b204a2b439f6773f38c0cee1ad1b10f6",
+  "requestedUrl": "https://docs.github.com/zh/copilot/about-github-copilot/plans-for-github-copilot",
+  "finalUrl": "https://docs.github.com/zh/copilot/get-started/plans",
+  "retrievedAt": "2026-10-25T04:35:30.367Z",
+  "contentType": "text/html; charset=utf-8",
+  "status": "READ",
+  "readError": null,
+  "rawHash": "78276423ad93381ec0149e3041dab04b456d1d84626ca0c460ffe0e660177e4f",
+  "textHash": "66af636d210c37241628b4c95415254c5183f95bd3cb7654b40c8e7003f3877c",
+  "text": "Skip to main content\n\nSkip to content\n\n在本文中\n\nGitHub Copilot计划\n\n了解适用于 Copilot 的可用方案。\n\n复制 markdown\n\n在本文中\n\nGitHub Copilot 计划\n\nGitHub 提供适用于 Copilot 的多种方案。 根据你的需求，以及你是以个人身份使用 Copilot，还是作为组织或企业的一员使用 Copilot，选择其中之一。\n\n** Copilot Free **： 开始使用 Copilot Free。\n\n此计划包含对部分 Copilot 功能的有限使用权限，让你可以免费试用 AI 编码辅助功能。\n\n** Copilot Student **：获取对 Copilot Student. 的访问权限。\n\n仅向已验证身份的学生提供。 免费使用 Copilot 的各项功能。\n\n** GitHub Copilot Pro **： 订阅 Copilot Pro。\n\n专为希望更灵活地使用多种模型并享有每月 AI credits 额度的个人用户而设计。\n\n** GitHub Copilot Pro+ **： 订阅 Copilot Pro+。\n\n非常适合希望获得最先进功能的 AI 高级用户。 此付费计划包含 GitHub Copilot Pro 中的全部内容，并提供更高的每月额度 AI credits。\n\n** GitHub Copilot Max **： 升级到 Copilot Max.\n\n非常适合持续高频率使用 AI 的重度用户，此类用户希望获取最高可用的 AI 额度。 这个付费计划包括 Copilot Pro+ 中的所有内容，以及我们最高的个人每月额度 AI credits。\n\n** GitHub Copilot Business **： 订阅 Copilot Business。\n\n此计划面向组织和企业，为组织成员提供集中管理和 Copilot 策略控制。\n\n** GitHub Copilot Enterprise **： 订阅 Copilot Enterprise。\n\n专为使用 GitHub Enterprise Cloud 的企业打造。 此计划包含 Copilot Business 的全部功能，提供更大的每月 AI credits 额度，以及额外的企业级功能。\n\n注意\n\nCopilot 当前对 GitHub Enterprise Server 不可用。\n\nCopilot 计划概述\n\n下表概述了计划之间的差异。 所有计划包括 Copilot CLI 和 Copilot app 对应的内容。\n\nPlanPricingGitHub AI CreditsAgents模型Copilot Free免费GitHub AI Credits 允许量受限仅自动模型选择Copilot Student免费GitHub AI Credits 允许量排除第三方代理仅自动模型选择Copilot Pro$10 USD 每月（对某些用户免费）基座：1,000所选模型Copilot Pro+每月 $39 USD。基座：3,900访问高级模型Copilot Max$100 USD 每月基座：10,000优先访问高级模型Copilot Business每月每个分配的席位 $19 USD每个用户每月总计：1,900访问高级模型Copilot Enterprise每月每个分配的席位 $39 USD每个用户每月总计：3,900优先访问高级模型\n\n每个套餐均包含 GitHub AI Credits 的额度。 有关详细信息，包括工作原理 GitHub AI Credits ，请参阅 个人基于使用情况的计费 和 组织和企业的基于使用情况的计费。\n\n有关每个计划中唯一可用的内容的详细信息，请参阅以下部分：\n\n单个计划\n\n组织和企业计划\n\n单个计划\n\n可用的单个计划包括：\n\n免费计划包括 Copilot Free 和 Copilot Student。\n\n付费计划，包括Copilot Pro、Copilot Pro+和Copilot Max。\n\n通过这些计划，你将获得对以下特性和功能的访问权限。\n\n注意\n\n* Copilot Free 计划仅适用于无权通过组织或企业访问 Copilot 的个人开发人员。\n\n已验证的教师以及热门开源项目的维护者可能有资格免费使用 Copilot Pro。\n\n按计划划分的 GitHub AI Credits 配额\n\n下表显示了每个付费计划中包含的内容。\n\n计划每月价格基础积分Flex 分配每月总数 AI creditsCopilot Pro$10 USD1,0005001,500Copilot Pro+$39 USD3,9003,1007,000Copilot Max$100 USD10,00010,00020,000\n\nCopilot Free 和 Copilot Student 的津贴额度均为 AI credits。\n\n有关 GitHub AI Credits 如何工作的详细信息，请参阅 个人基于使用情况的计费\n\n内联建议和 Copilot Chat\n\n内联建议是 IDE 和 Next edit suggestions 中包含模型的实时代码建议。\n\n在 Copilot Free 上每月最多可进行 2000 次补全。\n\n** Copilot Chat ** 可用的功能包括：\n\nIDE 中的 Copilot Chat\n\n内联聊天\n\n/ 命令\n\nCopilot Chat in GitHub Mobile\n\nCopilot Chat in GitHub\n\nCopilot Chat 在 Windows Terminal 中\n\nCopilot ChatIDE 中的技能功能。1（在 Copilot Free 中不可用）。\n\n模型\n\n在 Copilot Student 和 Copilot Free 计划中，仅可通过 auto model selection 访问模型。\n\n可用模型Copilot ProCopilot Pro+Copilot MaxClaude Haiku 4.5Claude Haiku 5.5Claude Opus 4.8Claude Opus 4.8 (fast mode) (preview)Claude Opus 5Claude Opus 5.5Claude Fable 5[^claude-fable-5]Claude Fable 5.1[^claude-fable-5]Claude Sonnet 4.6Claude Sonnet 5Claude Sonnet 5.5Gemini 3.8 FlashGemini 4 ArgonGPT-5.3-CodexGPT-5.4 nano[^gpt54nano]GPT-5.6 LunaGPT-5.6 SolGPT-5.6 TerraGPT-6 AstraGPT-6 LunaGPT-6 SolGPT-6.1 SolGrok 4.5Grok 4.6Grok 4.7Kimi K3MAI-Code-1.1-Flash\n\nAgents\n\nAgentsCopilot FreeCopilot StudentCopilot ProCopilot Pro+Copilot MaxCopilot cloud agent代理模式Copilot代码审核仅 VS Code 中的“查看选择”模型上下文协议 （MCP）第三方代理 （公开预览）\n\nCustomization\n\nCustomizationCopilot FreeCopilot StudentCopilot ProCopilot Pro+Copilot Max仓库和个人自定义说明组织自定义说明提示文件模型上下文协议 （MCP）阻止与公开代码匹配的建议将指定文件从Copilot中排除组织范围的策略管理\n\n其他功能\n\nCopilot FreeCopilot StudentCopilot ProCopilot Pro+Copilot MaxCopilot pull request summaries审核日志内容排除Copilot CLICopilot appGitHub Spark（公开预览）\n\n组织和企业计划\n\n面向组织和企业提供的 Copilot 计划包括：\n\nCopilot Business\n\nCopilot Enterprise\n\n通过这些计划，你将获得对以下特性和功能的访问权限。\n\n注意\n\n借助 GitHub Enterprise Cloud，企业所有者可以为企业中的每个组织选择套餐。 有关选择计划的指导，请参阅 选择您的企业的 GitHub Copilot 计划。\n\n按计划划分的 GitHub AI Credits 配额\n\nPlan每个授予席位每月价格每用户每月 GitHub AI CreditsCopilot Business$19 USD1,900Copilot Enterprise$39 USD3,900\n\n在基于使用量的计费模式下，Copilot 的使用量以 AI credits 计量。 每份许可证向企业共用资源池划入 AI credits 额度，超出资源池的使用量按 $0.01 USD/AI credit 标准收费。 代码补全和 next edit suggestions 功能不计入 AI credits 费用，且所有付费套餐均不限次数。\n\n有关 AI credits 的工作原理的完整说明，包括池化、其他用法以及额度用完时会发生什么，请参阅 组织和企业的基于使用情况的计费。\n\n内联建议和 Copilot Chat\n\n内联建议：内联建议功能在所有计划中均可用：\n\n包含模型的实时代码建议\n\nNext edit suggestions\n\n** Copilot Chat ** 以下功能适用于所有套餐：\n\nIDE 中的 Copilot Chat\n\n内联聊天\n\n/ 命令\n\nCopilot Chat in GitHub Mobile\n\nCopilot Chat in GitHub\n\nCopilot Chat 在 Windows Terminal 中\n\nCopilot ChatIDE 中的技能1\n\n模型\n\n可用模型Copilot BusinessCopilot EnterpriseClaude Haiku 4.5Claude Haiku 5.5Claude Opus 4.8Claude Opus 4.8 (fast mode) (preview)Claude Opus 5Claude Opus 5.5Claude Fable 5[^claude-fable-5]Claude Fable 5.1[^claude-fable-5]Claude Sonnet 4.6Claude Sonnet 5Claude Sonnet 5.5Gemini 3.8 FlashGemini 4 ArgonGPT-5.3-CodexGPT-5.4 nano[^gpt54nano]GPT-5.6 LunaGPT-5.6 SolGPT-5.6 TerraGPT-6 AstraGPT-6 LunaGPT-6 SolGPT-6.1 SolGrok 4.5Grok 4.6Grok 4.7Kimi K3MAI-Code-1.1-Flash\n\n[^gpt54nano]：GPT-5.4 nano 目前仅在 Codex Visual Studio Code 扩展（Copilot Pro+ 仅）中可用，在 Copilot Chat 中不可用。\n\nAgents\n\nAgentsCopilot BusinessCopilot EnterpriseCopilot cloud agent代理模式Copilot代码审核模型上下文协议 （MCP）第三方代理 （公开预览）\n\nCustomization\n\nCustomizationCopilot BusinessCopilot Enterprise仓库和个人自定义说明组织自定义说明提示文件模型上下文协议 （MCP）阻止与公开代码匹配的建议将指定文件从Copilot中排除组织范围的策略管理\n\n其他功能\n\nCopilot BusinessCopilot EnterpriseCopilot pull request summaries审核日志内容排除Copilot CLICopilot appGitHub Spark（公开预览）\n\n延伸阅读\n\n若要比较跨 IDE 的功能支持，请参阅 Copilot特征矩阵。\n\n若要比较跨计划、功能和 IDE 支持的模型，请参阅 GitHub Copilot中支持的 AI 模型。\n\nFootnotes\n\nCopilot Chat skills in IDEs is available in Visual Studio Code and Visual Studio. [^claude-fable-5]：当使用 Claude Fable 5.1 或 Claude Fable 5 时，Anthropic 默认会保留数据，包括提示和输出，以运行可检测有害使用行为的安全分类器。 客户可根据一项有时限的豁免，在零数据保留（ZDR）条件下申请使用 Claude Fable 5 或 Claude Fable 5.1，该豁免有效期截至 2026 年底；与此同时，Anthropic 正在逐步推出企业前沿保障措施（EFS）。 此后，继续使用这些模型需要 EFS，这将使符合条件的客户能够自行控制其数据，同时启用自动化安全监视。 对于已获批并已配置为可使用此类访问权限的企业，在这些模型启用后，Claude Fable 5 和 Claude Fable 5.1 请求将一直使用 ZDR 端点，直到 2026 年年底。 若要了解企业是否符合条件并请求访问权限，请联系 GitHub 你的帐户团队。 批准访问不会自动启用 Claude Fable 5 或 Claude Fable 5.1。 企业或组织管理员仍必须启用每个模型，然后用户才能访问该模型。 除 Claude Fable 5.1 和 Claude Fable 5 外，其他 Claude 模型将继续在 ZDR 下运行。 使用 ZDR 启用 Fable 模型的客户同意仅将此模型用于内部操作，包括为自己的客户开发和评估产品。 它们可能无法使模型终结点或输出在外部可用。 若要启用这些模型，请参阅 在 GitHub Copilot 中配置对 AI 模型的访问。 ↩ ↩2",
+  "rawSources": [
+    {
+      "mode": "STATIC",
+      "hash": "78276423ad93381ec0149e3041dab04b456d1d84626ca0c460ffe0e660177e4f",
+      "path": "C:\\Users\\qianchen\\Documents\\waytoagi-1024-detective-a2-v4\\.cache\\source-documents-v4\\737f002b-e06e-4d0e-b1af-652db0899914\\c3fe88434482f7aaf9d59f9684d711d0e663a8191b081d6fda45127ee4f5a2ff\\raw.bin"
+    }
+  ],
+  "storage": {
+    "rawPath": "C:\\Users\\qianchen\\Documents\\waytoagi-1024-detective-a2-v4\\.cache\\source-documents-v4\\737f002b-e06e-4d0e-b1af-652db0899914\\c3fe88434482f7aaf9d59f9684d711d0e663a8191b081d6fda45127ee4f5a2ff\\raw.bin",
+    "textPath": "C:\\Users\\qianchen\\Documents\\waytoagi-1024-detective-a2-v4\\.cache\\source-documents-v4\\737f002b-e06e-4d0e-b1af-652db0899914\\c3fe88434482f7aaf9d59f9684d711d0e663a8191b081d6fda45127ee4f5a2ff\\source.txt",
+    "manifestPath": "C:\\Users\\qianchen\\Documents\\waytoagi-1024-detective-a2-v4\\.cache\\source-documents-v4\\737f002b-e06e-4d0e-b1af-652db0899914\\c3fe88434482f7aaf9d59f9684d711d0e663a8191b081d6fda45127ee4f5a2ff\\manifest.json"
+  },
+  "parser": {
+    "name": "readability+source-dom",
+    "version": "readability-0.6.0+jsdom-30.1.3+source-dom-2",
+    "normalization": "source-text/v1",
+    "mode": "STATIC"
+  },
+  "metadata": {
+    "title": "GitHub Copilot计划 - GitHub 文档",
+    "author": null,
+    "publishedAt": null,
+    "language": "zh"
+  },
+  "completeness": "COMPLETE",
+  "warnings": [],
+  "blocks": [
+    {
+      "start": 0,
+      "end": 20,
+      "id": "b0",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[0]",
+      "headingPath": [],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 22,
+      "end": 37,
+      "id": "b1",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[1]",
+      "headingPath": [],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 39,
+      "end": 43,
+      "id": "b2",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[2]",
+      "headingPath": [],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 45,
+      "end": 61,
+      "id": "b3",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[3]",
+      "headingPath": [
+        "GitHub Copilot计划"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 63,
+      "end": 83,
+      "id": "b4",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[4]",
+      "headingPath": [
+        "GitHub Copilot计划"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 85,
+      "end": 96,
+      "id": "b5",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[5]",
+      "headingPath": [
+        "GitHub Copilot计划"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 98,
+      "end": 102,
+      "id": "b6",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[6]",
+      "headingPath": [
+        "GitHub Copilot计划",
+        "在本文中"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 104,
+      "end": 121,
+      "id": "b7",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[7]",
+      "headingPath": [
+        "GitHub Copilot计划",
+        "GitHub Copilot 计划"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 123,
+      "end": 208,
+      "id": "b8",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[8]",
+      "headingPath": [
+        "GitHub Copilot计划",
+        "GitHub Copilot 计划"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 210,
+      "end": 248,
+      "id": "b9",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[9]",
+      "headingPath": [
+        "GitHub Copilot计划",
+        "GitHub Copilot 计划"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 250,
+      "end": 296,
+      "id": "b10",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[10]",
+      "headingPath": [
+        "GitHub Copilot计划",
+        "GitHub Copilot 计划"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 298,
+      "end": 347,
+      "id": "b11",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[11]",
+      "headingPath": [
+        "GitHub Copilot计划",
+        "GitHub Copilot 计划"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 349,
+      "end": 382,
+      "id": "b12",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[12]",
+      "headingPath": [
+        "GitHub Copilot计划",
+        "GitHub Copilot 计划"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 384,
+      "end": 425,
+      "id": "b13",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[13]",
+      "headingPath": [
+        "GitHub Copilot计划",
+        "GitHub Copilot 计划"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 427,
+      "end": 469,
+      "id": "b14",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[14]",
+      "headingPath": [
+        "GitHub Copilot计划",
+        "GitHub Copilot 计划"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 471,
+      "end": 514,
+      "id": "b15",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[15]",
+      "headingPath": [
+        "GitHub Copilot计划",
+        "GitHub Copilot 计划"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 516,
+      "end": 596,
+      "id": "b16",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[16]",
+      "headingPath": [
+        "GitHub Copilot计划",
+        "GitHub Copilot 计划"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 598,
+      "end": 640,
+      "id": "b17",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[17]",
+      "headingPath": [
+        "GitHub Copilot计划",
+        "GitHub Copilot 计划"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 642,
+      "end": 738,
+      "id": "b18",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[18]",
+      "headingPath": [
+        "GitHub Copilot计划",
+        "GitHub Copilot 计划"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 740,
+      "end": 791,
+      "id": "b19",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[19]",
+      "headingPath": [
+        "GitHub Copilot计划",
+        "GitHub Copilot 计划"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 793,
+      "end": 830,
+      "id": "b20",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[20]",
+      "headingPath": [
+        "GitHub Copilot计划",
+        "GitHub Copilot 计划"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 832,
+      "end": 887,
+      "id": "b21",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[21]",
+      "headingPath": [
+        "GitHub Copilot计划",
+        "GitHub Copilot 计划"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 889,
+      "end": 987,
+      "id": "b22",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[22]",
+      "headingPath": [
+        "GitHub Copilot计划",
+        "GitHub Copilot 计划"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 989,
+      "end": 991,
+      "id": "b23",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[23]",
+      "headingPath": [
+        "GitHub Copilot计划",
+        "GitHub Copilot 计划"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 993,
+      "end": 1034,
+      "id": "b24",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[24]",
+      "headingPath": [
+        "GitHub Copilot计划",
+        "GitHub Copilot 计划"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1036,
+      "end": 1048,
+      "id": "b25",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[25]",
+      "headingPath": [
+        "GitHub Copilot计划",
+        "Copilot 计划概述"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1050,
+      "end": 1103,
+      "id": "b26",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[26]",
+      "headingPath": [
+        "GitHub Copilot计划",
+        "Copilot 计划概述"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1105,
+      "end": 1465,
+      "id": "b27",
+      "kind": "TABLE",
+      "locator": "source DOM normalized block[27]",
+      "headingPath": [
+        "GitHub Copilot计划",
+        "Copilot 计划概述"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1467,
+      "end": 1565,
+      "id": "b28",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[28]",
+      "headingPath": [
+        "GitHub Copilot计划",
+        "Copilot 计划概述"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1567,
+      "end": 1595,
+      "id": "b29",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[29]",
+      "headingPath": [
+        "GitHub Copilot计划",
+        "Copilot 计划概述"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1597,
+      "end": 1601,
+      "id": "b30",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[30]",
+      "headingPath": [
+        "GitHub Copilot计划",
+        "Copilot 计划概述"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1603,
+      "end": 1610,
+      "id": "b31",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[31]",
+      "headingPath": [
+        "GitHub Copilot计划",
+        "Copilot 计划概述"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1612,
+      "end": 1616,
+      "id": "b32",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[32]",
+      "headingPath": [
+        "GitHub Copilot计划",
+        "单个计划"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1618,
+      "end": 1628,
+      "id": "b33",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[33]",
+      "headingPath": [
+        "GitHub Copilot计划",
+        "单个计划"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1630,
+      "end": 1668,
+      "id": "b34",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[34]",
+      "headingPath": [
+        "GitHub Copilot计划",
+        "单个计划"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1670,
+      "end": 1714,
+      "id": "b35",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[35]",
+      "headingPath": [
+        "GitHub Copilot计划",
+        "单个计划"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1716,
+      "end": 1741,
+      "id": "b36",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[36]",
+      "headingPath": [
+        "GitHub Copilot计划",
+        "单个计划"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1743,
+      "end": 1745,
+      "id": "b37",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[37]",
+      "headingPath": [
+        "GitHub Copilot计划",
+        "单个计划"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1747,
+      "end": 1796,
+      "id": "b38",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[38]",
+      "headingPath": [
+        "GitHub Copilot计划",
+        "单个计划"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1798,
+      "end": 1838,
+      "id": "b39",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[39]",
+      "headingPath": [
+        "GitHub Copilot计划",
+        "单个计划"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1840,
+      "end": 1867,
+      "id": "b40",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[40]",
+      "headingPath": [
+        "GitHub Copilot计划",
+        "单个计划",
+        "按计划划分的 GitHub AI Credits 配额"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1869,
+      "end": 1887,
+      "id": "b41",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[41]",
+      "headingPath": [
+        "GitHub Copilot计划",
+        "单个计划",
+        "按计划划分的 GitHub AI Credits 配额"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1889,
+      "end": 2023,
+      "id": "b42",
+      "kind": "TABLE",
+      "locator": "source DOM normalized block[42]",
+      "headingPath": [
+        "GitHub Copilot计划",
+        "单个计划",
+        "按计划划分的 GitHub AI Credits 配额"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2025,
+      "end": 2075,
+      "id": "b43",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[43]",
+      "headingPath": [
+        "GitHub Copilot计划",
+        "单个计划",
+        "按计划划分的 GitHub AI Credits 配额"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2077,
+      "end": 2123,
+      "id": "b44",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[44]",
+      "headingPath": [
+        "GitHub Copilot计划",
+        "单个计划",
+        "按计划划分的 GitHub AI Credits 配额"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2125,
+      "end": 2143,
+      "id": "b45",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[45]",
+      "headingPath": [
+        "GitHub Copilot计划",
+        "单个计划",
+        "内联建议和 Copilot Chat"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2145,
+      "end": 2192,
+      "id": "b46",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[46]",
+      "headingPath": [
+        "GitHub Copilot计划",
+        "单个计划",
+        "内联建议和 Copilot Chat"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2194,
+      "end": 2227,
+      "id": "b47",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[47]",
+      "headingPath": [
+        "GitHub Copilot计划",
+        "单个计划",
+        "内联建议和 Copilot Chat"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2229,
+      "end": 2256,
+      "id": "b48",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[48]",
+      "headingPath": [
+        "GitHub Copilot计划",
+        "单个计划",
+        "内联建议和 Copilot Chat"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2258,
+      "end": 2277,
+      "id": "b49",
+      "kind": "CODE",
+      "locator": "source DOM normalized block[49]",
+      "headingPath": [
+        "GitHub Copilot计划",
+        "单个计划",
+        "内联建议和 Copilot Chat"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2279,
+      "end": 2283,
+      "id": "b50",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[50]",
+      "headingPath": [
+        "GitHub Copilot计划",
+        "单个计划",
+        "内联建议和 Copilot Chat"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2285,
+      "end": 2289,
+      "id": "b51",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[51]",
+      "headingPath": [
+        "GitHub Copilot计划",
+        "单个计划",
+        "内联建议和 Copilot Chat"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2291,
+      "end": 2320,
+      "id": "b52",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[52]",
+      "headingPath": [
+        "GitHub Copilot计划",
+        "单个计划",
+        "内联建议和 Copilot Chat"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2322,
+      "end": 2344,
+      "id": "b53",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[53]",
+      "headingPath": [
+        "GitHub Copilot计划",
+        "单个计划",
+        "内联建议和 Copilot Chat"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2346,
+      "end": 2379,
+      "id": "b54",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[54]",
+      "headingPath": [
+        "GitHub Copilot计划",
+        "单个计划",
+        "内联建议和 Copilot Chat"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2381,
+      "end": 2427,
+      "id": "b55",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[55]",
+      "headingPath": [
+        "GitHub Copilot计划",
+        "单个计划",
+        "内联建议和 Copilot Chat"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2429,
+      "end": 2431,
+      "id": "b56",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[56]",
+      "headingPath": [
+        "GitHub Copilot计划",
+        "单个计划",
+        "模型"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2433,
+      "end": 2501,
+      "id": "b57",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[57]",
+      "headingPath": [
+        "GitHub Copilot计划",
+        "单个计划",
+        "模型"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2503,
+      "end": 2959,
+      "id": "b58",
+      "kind": "TABLE",
+      "locator": "source DOM normalized block[58]",
+      "headingPath": [
+        "GitHub Copilot计划",
+        "单个计划",
+        "模型"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2961,
+      "end": 2967,
+      "id": "b59",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[59]",
+      "headingPath": [
+        "GitHub Copilot计划",
+        "单个计划",
+        "Agents"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2969,
+      "end": 3113,
+      "id": "b60",
+      "kind": "TABLE",
+      "locator": "source DOM normalized block[60]",
+      "headingPath": [
+        "GitHub Copilot计划",
+        "单个计划",
+        "Agents"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3115,
+      "end": 3128,
+      "id": "b61",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[61]",
+      "headingPath": [
+        "GitHub Copilot计划",
+        "单个计划",
+        "Customization"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3130,
+      "end": 3275,
+      "id": "b62",
+      "kind": "TABLE",
+      "locator": "source DOM normalized block[62]",
+      "headingPath": [
+        "GitHub Copilot计划",
+        "单个计划",
+        "Customization"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3277,
+      "end": 3281,
+      "id": "b63",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[63]",
+      "headingPath": [
+        "GitHub Copilot计划",
+        "单个计划",
+        "其他功能"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3283,
+      "end": 3422,
+      "id": "b64",
+      "kind": "TABLE",
+      "locator": "source DOM normalized block[64]",
+      "headingPath": [
+        "GitHub Copilot计划",
+        "单个计划",
+        "其他功能"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3424,
+      "end": 3431,
+      "id": "b65",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[65]",
+      "headingPath": [
+        "GitHub Copilot计划",
+        "组织和企业计划"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3433,
+      "end": 3457,
+      "id": "b66",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[66]",
+      "headingPath": [
+        "GitHub Copilot计划",
+        "组织和企业计划"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3459,
+      "end": 3475,
+      "id": "b67",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[67]",
+      "headingPath": [
+        "GitHub Copilot计划",
+        "组织和企业计划"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3477,
+      "end": 3495,
+      "id": "b68",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[68]",
+      "headingPath": [
+        "GitHub Copilot计划",
+        "组织和企业计划"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3497,
+      "end": 3522,
+      "id": "b69",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[69]",
+      "headingPath": [
+        "GitHub Copilot计划",
+        "组织和企业计划"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3524,
+      "end": 3526,
+      "id": "b70",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[70]",
+      "headingPath": [
+        "GitHub Copilot计划",
+        "组织和企业计划"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3528,
+      "end": 3617,
+      "id": "b71",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[71]",
+      "headingPath": [
+        "GitHub Copilot计划",
+        "组织和企业计划"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3619,
+      "end": 3646,
+      "id": "b72",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[72]",
+      "headingPath": [
+        "GitHub Copilot计划",
+        "组织和企业计划",
+        "按计划划分的 GitHub AI Credits 配额"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3648,
+      "end": 3743,
+      "id": "b73",
+      "kind": "TABLE",
+      "locator": "source DOM normalized block[73]",
+      "headingPath": [
+        "GitHub Copilot计划",
+        "组织和企业计划",
+        "按计划划分的 GitHub AI Credits 配额"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3745,
+      "end": 3915,
+      "id": "b74",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[74]",
+      "headingPath": [
+        "GitHub Copilot计划",
+        "组织和企业计划",
+        "按计划划分的 GitHub AI Credits 配额"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3917,
+      "end": 3984,
+      "id": "b75",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[75]",
+      "headingPath": [
+        "GitHub Copilot计划",
+        "组织和企业计划",
+        "按计划划分的 GitHub AI Credits 配额"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3986,
+      "end": 4004,
+      "id": "b76",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[76]",
+      "headingPath": [
+        "GitHub Copilot计划",
+        "组织和企业计划",
+        "内联建议和 Copilot Chat"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4006,
+      "end": 4027,
+      "id": "b77",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[77]",
+      "headingPath": [
+        "GitHub Copilot计划",
+        "组织和企业计划",
+        "内联建议和 Copilot Chat"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4029,
+      "end": 4040,
+      "id": "b78",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[78]",
+      "headingPath": [
+        "GitHub Copilot计划",
+        "组织和企业计划",
+        "内联建议和 Copilot Chat"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4042,
+      "end": 4063,
+      "id": "b79",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[79]",
+      "headingPath": [
+        "GitHub Copilot计划",
+        "组织和企业计划",
+        "内联建议和 Copilot Chat"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4065,
+      "end": 4096,
+      "id": "b80",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[80]",
+      "headingPath": [
+        "GitHub Copilot计划",
+        "组织和企业计划",
+        "内联建议和 Copilot Chat"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4098,
+      "end": 4117,
+      "id": "b81",
+      "kind": "CODE",
+      "locator": "source DOM normalized block[81]",
+      "headingPath": [
+        "GitHub Copilot计划",
+        "组织和企业计划",
+        "内联建议和 Copilot Chat"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4119,
+      "end": 4123,
+      "id": "b82",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[82]",
+      "headingPath": [
+        "GitHub Copilot计划",
+        "组织和企业计划",
+        "内联建议和 Copilot Chat"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4125,
+      "end": 4129,
+      "id": "b83",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[83]",
+      "headingPath": [
+        "GitHub Copilot计划",
+        "组织和企业计划",
+        "内联建议和 Copilot Chat"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4131,
+      "end": 4160,
+      "id": "b84",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[84]",
+      "headingPath": [
+        "GitHub Copilot计划",
+        "组织和企业计划",
+        "内联建议和 Copilot Chat"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4162,
+      "end": 4184,
+      "id": "b85",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[85]",
+      "headingPath": [
+        "GitHub Copilot计划",
+        "组织和企业计划",
+        "内联建议和 Copilot Chat"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4186,
+      "end": 4219,
+      "id": "b86",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[86]",
+      "headingPath": [
+        "GitHub Copilot计划",
+        "组织和企业计划",
+        "内联建议和 Copilot Chat"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4221,
+      "end": 4242,
+      "id": "b87",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[87]",
+      "headingPath": [
+        "GitHub Copilot计划",
+        "组织和企业计划",
+        "内联建议和 Copilot Chat"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4244,
+      "end": 4246,
+      "id": "b88",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[88]",
+      "headingPath": [
+        "GitHub Copilot计划",
+        "组织和企业计划",
+        "模型"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4248,
+      "end": 4704,
+      "id": "b89",
+      "kind": "TABLE",
+      "locator": "source DOM normalized block[89]",
+      "headingPath": [
+        "GitHub Copilot计划",
+        "组织和企业计划",
+        "模型"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4706,
+      "end": 4804,
+      "id": "b90",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[90]",
+      "headingPath": [
+        "GitHub Copilot计划",
+        "组织和企业计划",
+        "模型"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4806,
+      "end": 4812,
+      "id": "b91",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[91]",
+      "headingPath": [
+        "GitHub Copilot计划",
+        "组织和企业计划",
+        "Agents"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4814,
+      "end": 4913,
+      "id": "b92",
+      "kind": "TABLE",
+      "locator": "source DOM normalized block[92]",
+      "headingPath": [
+        "GitHub Copilot计划",
+        "组织和企业计划",
+        "Agents"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4915,
+      "end": 4928,
+      "id": "b93",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[93]",
+      "headingPath": [
+        "GitHub Copilot计划",
+        "组织和企业计划",
+        "Customization"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4930,
+      "end": 5048,
+      "id": "b94",
+      "kind": "TABLE",
+      "locator": "source DOM normalized block[94]",
+      "headingPath": [
+        "GitHub Copilot计划",
+        "组织和企业计划",
+        "Customization"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5050,
+      "end": 5054,
+      "id": "b95",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[95]",
+      "headingPath": [
+        "GitHub Copilot计划",
+        "组织和企业计划",
+        "其他功能"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5056,
+      "end": 5168,
+      "id": "b96",
+      "kind": "TABLE",
+      "locator": "source DOM normalized block[96]",
+      "headingPath": [
+        "GitHub Copilot计划",
+        "组织和企业计划",
+        "其他功能"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5170,
+      "end": 5174,
+      "id": "b97",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[97]",
+      "headingPath": [
+        "GitHub Copilot计划",
+        "延伸阅读"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5176,
+      "end": 5208,
+      "id": "b98",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[98]",
+      "headingPath": [
+        "GitHub Copilot计划",
+        "延伸阅读"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5210,
+      "end": 5261,
+      "id": "b99",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[99]",
+      "headingPath": [
+        "GitHub Copilot计划",
+        "延伸阅读"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5263,
+      "end": 5272,
+      "id": "b100",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[100]",
+      "headingPath": [
+        "GitHub Copilot计划",
+        "Footnotes"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5274,
+      "end": 6028,
+      "id": "b101",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[101]",
+      "headingPath": [
+        "GitHub Copilot计划",
+        "Footnotes"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    }
+  ],
+  "links": [
+    {
+      "url": "https://github.com/copilot?ref_plan=free&ref_product=copilot&ref_style=text&ref_type=engagement",
+      "text": "开始使用 Copilot Free",
+      "blockId": "b9",
+      "relation": "LINK",
+      "locator": "source DOM link[467]"
+    },
+    {
+      "url": "https://docs.github.com/zh/copilot/how-tos/copilot-on-github/set-up-copilot/enable-copilot/set-up-for-students",
+      "text": "获取对 Copilot Student. 的访问权限",
+      "blockId": "b11",
+      "relation": "LINK",
+      "locator": "source DOM link[468]"
+    },
+    {
+      "url": "https://github.com/github-copilot/signup?ref_plan=pro&ref_product=copilot&ref_style=text&ref_type=purchase",
+      "text": "订阅 Copilot Pro",
+      "blockId": "b13",
+      "relation": "LINK",
+      "locator": "source DOM link[469]"
+    },
+    {
+      "url": "https://github.com/github-copilot/signup?ref_plan=pro-plus&ref_product=copilot&ref_style=text&ref_type=purchase",
+      "text": "订阅 Copilot Pro+",
+      "blockId": "b15",
+      "relation": "LINK",
+      "locator": "source DOM link[470]"
+    },
+    {
+      "url": "https://github.com/settings/billing/licensing?ref_plan=max&ref_product=copilot&ref_style=text&ref_type=purchase",
+      "text": "升级到 Copilot Max",
+      "blockId": "b17",
+      "relation": "LINK",
+      "locator": "source DOM link[471]"
+    },
+    {
+      "url": "https://github.com/github-copilot/purchase?ref_plan=business&ref_product=copilot&ref_style=button&ref_type=purchase",
+      "text": "订阅 Copilot Business",
+      "blockId": "b19",
+      "relation": "LINK",
+      "locator": "source DOM link[472]"
+    },
+    {
+      "url": "https://github.com/github-copilot/purchase?ref_plan=enterprise&ref_product=copilot&ref_style=button&ref_type=purchase",
+      "text": "订阅 Copilot Enterprise",
+      "blockId": "b21",
+      "relation": "LINK",
+      "locator": "source DOM link[473]"
+    },
+    {
+      "url": "https://docs.github.com/zh/copilot/concepts/billing-and-usage/individuals/billing",
+      "text": "个人基于使用情况的计费",
+      "blockId": "b28",
+      "relation": "LINK",
+      "locator": "source DOM link[475]"
+    },
+    {
+      "url": "https://docs.github.com/zh/copilot/concepts/billing-and-usage/organizations-and-enterprises/billing",
+      "text": "组织和企业的基于使用情况的计费",
+      "blockId": "b28",
+      "relation": "LINK",
+      "locator": "source DOM link[476]"
+    },
+    {
+      "url": "https://docs.github.com/zh/copilot/concepts/billing-and-usage/individuals/billing",
+      "text": "个人基于使用情况的计费",
+      "blockId": "b44",
+      "relation": "LINK",
+      "locator": "source DOM link[481]"
+    },
+    {
+      "url": "https://docs.github.com/zh/copilot/tutorials/roll-out-at-scale/assign-licenses/choose-enterprise-plan",
+      "text": "选择您的企业的 GitHub Copilot 计划",
+      "blockId": "b71",
+      "relation": "LINK",
+      "locator": "source DOM link[489]"
+    },
+    {
+      "url": "https://docs.github.com/zh/copilot/concepts/billing-and-usage/organizations-and-enterprises/billing",
+      "text": "组织和企业的基于使用情况的计费",
+      "blockId": "b75",
+      "relation": "LINK",
+      "locator": "source DOM link[491]"
+    },
+    {
+      "url": "https://docs.github.com/zh/copilot/reference/copilot-feature-matrix",
+      "text": "Copilot特征矩阵",
+      "blockId": "b98",
+      "relation": "LINK",
+      "locator": "source DOM link[499]"
+    },
+    {
+      "url": "https://docs.github.com/zh/copilot/reference/ai-models/supported-models",
+      "text": "GitHub Copilot中支持的 AI 模型",
+      "blockId": "b99",
+      "relation": "LINK",
+      "locator": "source DOM link[500]"
+    },
+    {
+      "url": "https://docs.github.com/zh/copilot/how-tos/copilot-on-github/set-up-copilot/configure-access-to-ai-models",
+      "text": "在 GitHub Copilot 中配置对 AI 模型的访问",
+      "blockId": "b101",
+      "relation": "LINK",
+      "locator": "source DOM link[502]"
+    }
+  ],
+  "tables": [
+    {
+      "blockId": "b27",
+      "rows": [
+        {
+          "start": 1105,
+          "end": 1141,
+          "cells": [
+            {
+              "start": 1105,
+              "end": 1109,
+              "text": "Plan",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1109,
+              "end": 1116,
+              "text": "Pricing",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1116,
+              "end": 1133,
+              "text": "GitHub AI Credits",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1133,
+              "end": 1139,
+              "text": "Agents",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1139,
+              "end": 1141,
+              "text": "模型",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 1141,
+          "end": 1155,
+          "cells": [
+            {
+              "start": 1141,
+              "end": 1153,
+              "text": "Copilot Free",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1153,
+              "end": 1155,
+              "text": "免费",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1155,
+              "end": 1155,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1155,
+              "end": 1155,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1155,
+              "end": 1155,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 1155,
+          "end": 1185,
+          "cells": [
+            {
+              "start": 1155,
+              "end": 1176,
+              "text": "GitHub AI Credits 允许量",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1176,
+              "end": 1178,
+              "text": "受限",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1178,
+              "end": 1185,
+              "text": "仅自动模型选择",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1185,
+              "end": 1185,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1185,
+              "end": 1185,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 1185,
+          "end": 1202,
+          "cells": [
+            {
+              "start": 1185,
+              "end": 1200,
+              "text": "Copilot Student",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1200,
+              "end": 1202,
+              "text": "免费",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1202,
+              "end": 1202,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1202,
+              "end": 1202,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1202,
+              "end": 1202,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 1202,
+          "end": 1237,
+          "cells": [
+            {
+              "start": 1202,
+              "end": 1223,
+              "text": "GitHub AI Credits 允许量",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1223,
+              "end": 1230,
+              "text": "排除第三方代理",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1230,
+              "end": 1237,
+              "text": "仅自动模型选择",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1237,
+              "end": 1237,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1237,
+              "end": 1237,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 1237,
+          "end": 1248,
+          "cells": [
+            {
+              "start": 1237,
+              "end": 1248,
+              "text": "Copilot Pro",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1248,
+              "end": 1248,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1248,
+              "end": 1248,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1248,
+              "end": 1248,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1248,
+              "end": 1248,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 1248,
+          "end": 1279,
+          "cells": [
+            {
+              "start": 1248,
+              "end": 1267,
+              "text": "$10 USD 每月（对某些用户免费）",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1267,
+              "end": 1275,
+              "text": "基座：1,000",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1275,
+              "end": 1275,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1275,
+              "end": 1279,
+              "text": "所选模型",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1279,
+              "end": 1279,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 1279,
+          "end": 1316,
+          "cells": [
+            {
+              "start": 1279,
+              "end": 1291,
+              "text": "Copilot Pro+",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1291,
+              "end": 1302,
+              "text": "每月 $39 USD。",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1302,
+              "end": 1310,
+              "text": "基座：3,900",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1310,
+              "end": 1310,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1310,
+              "end": 1316,
+              "text": "访问高级模型",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 1316,
+          "end": 1327,
+          "cells": [
+            {
+              "start": 1316,
+              "end": 1327,
+              "text": "Copilot Max",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1327,
+              "end": 1327,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1327,
+              "end": 1327,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1327,
+              "end": 1327,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1327,
+              "end": 1327,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 1327,
+          "end": 1355,
+          "cells": [
+            {
+              "start": 1327,
+              "end": 1338,
+              "text": "$100 USD 每月",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1338,
+              "end": 1347,
+              "text": "基座：10,000",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1347,
+              "end": 1347,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1347,
+              "end": 1355,
+              "text": "优先访问高级模型",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1355,
+              "end": 1355,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 1355,
+          "end": 1408,
+          "cells": [
+            {
+              "start": 1355,
+              "end": 1371,
+              "text": "Copilot Business",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1371,
+              "end": 1388,
+              "text": "每月每个分配的席位 $19 USD",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1388,
+              "end": 1402,
+              "text": "每个用户每月总计：1,900",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1402,
+              "end": 1402,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1402,
+              "end": 1408,
+              "text": "访问高级模型",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 1408,
+          "end": 1465,
+          "cells": [
+            {
+              "start": 1408,
+              "end": 1426,
+              "text": "Copilot Enterprise",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1426,
+              "end": 1443,
+              "text": "每月每个分配的席位 $39 USD",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1443,
+              "end": 1457,
+              "text": "每个用户每月总计：3,900",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1457,
+              "end": 1457,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1457,
+              "end": 1465,
+              "text": "优先访问高级模型",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "blockId": "b42",
+      "rows": [
+        {
+          "start": 1889,
+          "end": 1921,
+          "cells": [
+            {
+              "start": 1889,
+              "end": 1891,
+              "text": "计划",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1891,
+              "end": 1895,
+              "text": "每月价格",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1895,
+              "end": 1899,
+              "text": "基础积分",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1899,
+              "end": 1906,
+              "text": "Flex 分配",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1906,
+              "end": 1921,
+              "text": "每月总数 AI credits",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 1921,
+          "end": 1952,
+          "cells": [
+            {
+              "start": 1921,
+              "end": 1932,
+              "text": "Copilot Pro",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1932,
+              "end": 1939,
+              "text": "$10 USD",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1939,
+              "end": 1944,
+              "text": "1,000",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1944,
+              "end": 1947,
+              "text": "500",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1947,
+              "end": 1952,
+              "text": "1,500",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 1952,
+          "end": 1986,
+          "cells": [
+            {
+              "start": 1952,
+              "end": 1964,
+              "text": "Copilot Pro+",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1964,
+              "end": 1971,
+              "text": "$39 USD",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1971,
+              "end": 1976,
+              "text": "3,900",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1976,
+              "end": 1981,
+              "text": "3,100",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1981,
+              "end": 1986,
+              "text": "7,000",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 1986,
+          "end": 2023,
+          "cells": [
+            {
+              "start": 1986,
+              "end": 1997,
+              "text": "Copilot Max",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1997,
+              "end": 2005,
+              "text": "$100 USD",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 2005,
+              "end": 2011,
+              "text": "10,000",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 2011,
+              "end": 2017,
+              "text": "10,000",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 2017,
+              "end": 2023,
+              "text": "20,000",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "blockId": "b58",
+      "rows": [
+        {
+          "start": 2503,
+          "end": 2541,
+          "cells": [
+            {
+              "start": 2503,
+              "end": 2507,
+              "text": "可用模型",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 2507,
+              "end": 2518,
+              "text": "Copilot Pro",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 2518,
+              "end": 2530,
+              "text": "Copilot Pro+",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 2530,
+              "end": 2541,
+              "text": "Copilot Max",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 2541,
+          "end": 2557,
+          "cells": [
+            {
+              "start": 2541,
+              "end": 2557,
+              "text": "Claude Haiku 4.5",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 2557,
+              "end": 2557,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 2557,
+              "end": 2557,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 2557,
+              "end": 2557,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 2557,
+          "end": 2573,
+          "cells": [
+            {
+              "start": 2557,
+              "end": 2573,
+              "text": "Claude Haiku 5.5",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 2573,
+              "end": 2573,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 2573,
+              "end": 2573,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 2573,
+              "end": 2573,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 2573,
+          "end": 2588,
+          "cells": [
+            {
+              "start": 2573,
+              "end": 2588,
+              "text": "Claude Opus 4.8",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 2588,
+              "end": 2588,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 2588,
+              "end": 2588,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 2588,
+              "end": 2588,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 2588,
+          "end": 2625,
+          "cells": [
+            {
+              "start": 2588,
+              "end": 2625,
+              "text": "Claude Opus 4.8 (fast mode) (preview)",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 2625,
+              "end": 2625,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 2625,
+              "end": 2625,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 2625,
+              "end": 2625,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 2625,
+          "end": 2638,
+          "cells": [
+            {
+              "start": 2625,
+              "end": 2638,
+              "text": "Claude Opus 5",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 2638,
+              "end": 2638,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 2638,
+              "end": 2638,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 2638,
+              "end": 2638,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 2638,
+          "end": 2653,
+          "cells": [
+            {
+              "start": 2638,
+              "end": 2653,
+              "text": "Claude Opus 5.5",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 2653,
+              "end": 2653,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 2653,
+              "end": 2653,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 2653,
+              "end": 2653,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 2653,
+          "end": 2684,
+          "cells": [
+            {
+              "start": 2653,
+              "end": 2684,
+              "text": "Claude Fable 5[^claude-fable-5]",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 2684,
+              "end": 2684,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 2684,
+              "end": 2684,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 2684,
+              "end": 2684,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 2684,
+          "end": 2717,
+          "cells": [
+            {
+              "start": 2684,
+              "end": 2717,
+              "text": "Claude Fable 5.1[^claude-fable-5]",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 2717,
+              "end": 2717,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 2717,
+              "end": 2717,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 2717,
+              "end": 2717,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 2717,
+          "end": 2734,
+          "cells": [
+            {
+              "start": 2717,
+              "end": 2734,
+              "text": "Claude Sonnet 4.6",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 2734,
+              "end": 2734,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 2734,
+              "end": 2734,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 2734,
+              "end": 2734,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 2734,
+          "end": 2749,
+          "cells": [
+            {
+              "start": 2734,
+              "end": 2749,
+              "text": "Claude Sonnet 5",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 2749,
+              "end": 2749,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 2749,
+              "end": 2749,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 2749,
+              "end": 2749,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 2749,
+          "end": 2766,
+          "cells": [
+            {
+              "start": 2749,
+              "end": 2766,
+              "text": "Claude Sonnet 5.5",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 2766,
+              "end": 2766,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 2766,
+              "end": 2766,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 2766,
+              "end": 2766,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 2766,
+          "end": 2782,
+          "cells": [
+            {
+              "start": 2766,
+              "end": 2782,
+              "text": "Gemini 3.8 Flash",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 2782,
+              "end": 2782,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 2782,
+              "end": 2782,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 2782,
+              "end": 2782,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 2782,
+          "end": 2796,
+          "cells": [
+            {
+              "start": 2782,
+              "end": 2796,
+              "text": "Gemini 4 Argon",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 2796,
+              "end": 2796,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 2796,
+              "end": 2796,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 2796,
+              "end": 2796,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 2796,
+          "end": 2809,
+          "cells": [
+            {
+              "start": 2796,
+              "end": 2809,
+              "text": "GPT-5.3-Codex",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 2809,
+              "end": 2809,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 2809,
+              "end": 2809,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 2809,
+              "end": 2809,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 2809,
+          "end": 2833,
+          "cells": [
+            {
+              "start": 2809,
+              "end": 2833,
+              "text": "GPT-5.4 nano[^gpt54nano]",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 2833,
+              "end": 2833,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 2833,
+              "end": 2833,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 2833,
+              "end": 2833,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 2833,
+          "end": 2845,
+          "cells": [
+            {
+              "start": 2833,
+              "end": 2845,
+              "text": "GPT-5.6 Luna",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 2845,
+              "end": 2845,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 2845,
+              "end": 2845,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 2845,
+              "end": 2845,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 2845,
+          "end": 2856,
+          "cells": [
+            {
+              "start": 2845,
+              "end": 2856,
+              "text": "GPT-5.6 Sol",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 2856,
+              "end": 2856,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 2856,
+              "end": 2856,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 2856,
+              "end": 2856,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 2856,
+          "end": 2869,
+          "cells": [
+            {
+              "start": 2856,
+              "end": 2869,
+              "text": "GPT-5.6 Terra",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 2869,
+              "end": 2869,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 2869,
+              "end": 2869,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 2869,
+              "end": 2869,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 2869,
+          "end": 2880,
+          "cells": [
+            {
+              "start": 2869,
+              "end": 2880,
+              "text": "GPT-6 Astra",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 2880,
+              "end": 2880,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 2880,
+              "end": 2880,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 2880,
+              "end": 2880,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 2880,
+          "end": 2890,
+          "cells": [
+            {
+              "start": 2880,
+              "end": 2890,
+              "text": "GPT-6 Luna",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 2890,
+              "end": 2890,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 2890,
+              "end": 2890,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 2890,
+              "end": 2890,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 2890,
+          "end": 2899,
+          "cells": [
+            {
+              "start": 2890,
+              "end": 2899,
+              "text": "GPT-6 Sol",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 2899,
+              "end": 2899,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 2899,
+              "end": 2899,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 2899,
+              "end": 2899,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 2899,
+          "end": 2910,
+          "cells": [
+            {
+              "start": 2899,
+              "end": 2910,
+              "text": "GPT-6.1 Sol",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 2910,
+              "end": 2910,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 2910,
+              "end": 2910,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 2910,
+              "end": 2910,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 2910,
+          "end": 2918,
+          "cells": [
+            {
+              "start": 2910,
+              "end": 2918,
+              "text": "Grok 4.5",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 2918,
+              "end": 2918,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 2918,
+              "end": 2918,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 2918,
+              "end": 2918,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 2918,
+          "end": 2926,
+          "cells": [
+            {
+              "start": 2918,
+              "end": 2926,
+              "text": "Grok 4.6",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 2926,
+              "end": 2926,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 2926,
+              "end": 2926,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 2926,
+              "end": 2926,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 2926,
+          "end": 2934,
+          "cells": [
+            {
+              "start": 2926,
+              "end": 2934,
+              "text": "Grok 4.7",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 2934,
+              "end": 2934,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 2934,
+              "end": 2934,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 2934,
+              "end": 2934,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 2934,
+          "end": 2941,
+          "cells": [
+            {
+              "start": 2934,
+              "end": 2941,
+              "text": "Kimi K3",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 2941,
+              "end": 2941,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 2941,
+              "end": 2941,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 2941,
+              "end": 2941,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 2941,
+          "end": 2959,
+          "cells": [
+            {
+              "start": 2941,
+              "end": 2959,
+              "text": "MAI-Code-1.1-Flash",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 2959,
+              "end": 2959,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 2959,
+              "end": 2959,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 2959,
+              "end": 2959,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "blockId": "b60",
+      "rows": [
+        {
+          "start": 2969,
+          "end": 3036,
+          "cells": [
+            {
+              "start": 2969,
+              "end": 2975,
+              "text": "Agents",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 2975,
+              "end": 2987,
+              "text": "Copilot Free",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 2987,
+              "end": 3002,
+              "text": "Copilot Student",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 3002,
+              "end": 3013,
+              "text": "Copilot Pro",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 3013,
+              "end": 3025,
+              "text": "Copilot Pro+",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 3025,
+              "end": 3036,
+              "text": "Copilot Max",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 3036,
+          "end": 3055,
+          "cells": [
+            {
+              "start": 3036,
+              "end": 3055,
+              "text": "Copilot cloud agent",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 3055,
+              "end": 3055,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 3055,
+              "end": 3055,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 3055,
+              "end": 3055,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 3055,
+              "end": 3055,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 3055,
+              "end": 3055,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 3055,
+          "end": 3059,
+          "cells": [
+            {
+              "start": 3055,
+              "end": 3059,
+              "text": "代理模式",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 3059,
+              "end": 3059,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 3059,
+              "end": 3059,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 3059,
+              "end": 3059,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 3059,
+              "end": 3059,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 3059,
+              "end": 3059,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 3059,
+          "end": 3088,
+          "cells": [
+            {
+              "start": 3059,
+              "end": 3070,
+              "text": "Copilot代码审核",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 3070,
+              "end": 3088,
+              "text": "仅 VS Code 中的“查看选择”",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 3088,
+              "end": 3088,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 3088,
+              "end": 3088,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 3088,
+              "end": 3088,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 3088,
+              "end": 3088,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 3088,
+          "end": 3101,
+          "cells": [
+            {
+              "start": 3088,
+              "end": 3101,
+              "text": "模型上下文协议 （MCP）",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 3101,
+              "end": 3101,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 3101,
+              "end": 3101,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 3101,
+              "end": 3101,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 3101,
+              "end": 3101,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 3101,
+              "end": 3101,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 3101,
+          "end": 3113,
+          "cells": [
+            {
+              "start": 3101,
+              "end": 3113,
+              "text": "第三方代理 （公开预览）",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 3113,
+              "end": 3113,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 3113,
+              "end": 3113,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 3113,
+              "end": 3113,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 3113,
+              "end": 3113,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 3113,
+              "end": 3113,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "blockId": "b62",
+      "rows": [
+        {
+          "start": 3130,
+          "end": 3204,
+          "cells": [
+            {
+              "start": 3130,
+              "end": 3143,
+              "text": "Customization",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 3143,
+              "end": 3155,
+              "text": "Copilot Free",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 3155,
+              "end": 3170,
+              "text": "Copilot Student",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 3170,
+              "end": 3181,
+              "text": "Copilot Pro",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 3181,
+              "end": 3193,
+              "text": "Copilot Pro+",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 3193,
+              "end": 3204,
+              "text": "Copilot Max",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 3204,
+          "end": 3214,
+          "cells": [
+            {
+              "start": 3204,
+              "end": 3214,
+              "text": "仓库和个人自定义说明",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 3214,
+              "end": 3214,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 3214,
+              "end": 3214,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 3214,
+              "end": 3214,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 3214,
+              "end": 3214,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 3214,
+              "end": 3214,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 3214,
+          "end": 3221,
+          "cells": [
+            {
+              "start": 3214,
+              "end": 3221,
+              "text": "组织自定义说明",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 3221,
+              "end": 3221,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 3221,
+              "end": 3221,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 3221,
+              "end": 3221,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 3221,
+              "end": 3221,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 3221,
+              "end": 3221,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 3221,
+          "end": 3225,
+          "cells": [
+            {
+              "start": 3221,
+              "end": 3225,
+              "text": "提示文件",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 3225,
+              "end": 3225,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 3225,
+              "end": 3225,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 3225,
+              "end": 3225,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 3225,
+              "end": 3225,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 3225,
+              "end": 3225,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 3225,
+          "end": 3238,
+          "cells": [
+            {
+              "start": 3225,
+              "end": 3238,
+              "text": "模型上下文协议 （MCP）",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 3238,
+              "end": 3238,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 3238,
+              "end": 3238,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 3238,
+              "end": 3238,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 3238,
+              "end": 3238,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 3238,
+              "end": 3238,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 3238,
+          "end": 3250,
+          "cells": [
+            {
+              "start": 3238,
+              "end": 3250,
+              "text": "阻止与公开代码匹配的建议",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 3250,
+              "end": 3250,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 3250,
+              "end": 3250,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 3250,
+              "end": 3250,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 3250,
+              "end": 3250,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 3250,
+              "end": 3250,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 3250,
+          "end": 3266,
+          "cells": [
+            {
+              "start": 3250,
+              "end": 3266,
+              "text": "将指定文件从Copilot中排除",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 3266,
+              "end": 3266,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 3266,
+              "end": 3266,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 3266,
+              "end": 3266,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 3266,
+              "end": 3266,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 3266,
+              "end": 3266,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 3266,
+          "end": 3275,
+          "cells": [
+            {
+              "start": 3266,
+              "end": 3275,
+              "text": "组织范围的策略管理",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 3275,
+              "end": 3275,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 3275,
+              "end": 3275,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 3275,
+              "end": 3275,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 3275,
+              "end": 3275,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 3275,
+              "end": 3275,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "blockId": "b64",
+      "rows": [
+        {
+          "start": 3283,
+          "end": 3344,
+          "cells": [
+            {
+              "start": 3283,
+              "end": 3283,
+              "text": "",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 3283,
+              "end": 3295,
+              "text": "Copilot Free",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 3295,
+              "end": 3310,
+              "text": "Copilot Student",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 3310,
+              "end": 3321,
+              "text": "Copilot Pro",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 3321,
+              "end": 3333,
+              "text": "Copilot Pro+",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 3333,
+              "end": 3344,
+              "text": "Copilot Max",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 3344,
+          "end": 3374,
+          "cells": [
+            {
+              "start": 3344,
+              "end": 3374,
+              "text": "Copilot pull request summaries",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 3374,
+              "end": 3374,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 3374,
+              "end": 3374,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 3374,
+              "end": 3374,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 3374,
+              "end": 3374,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 3374,
+              "end": 3374,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 3374,
+          "end": 3378,
+          "cells": [
+            {
+              "start": 3374,
+              "end": 3378,
+              "text": "审核日志",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 3378,
+              "end": 3378,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 3378,
+              "end": 3378,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 3378,
+              "end": 3378,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 3378,
+              "end": 3378,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 3378,
+              "end": 3378,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 3378,
+          "end": 3382,
+          "cells": [
+            {
+              "start": 3378,
+              "end": 3382,
+              "text": "内容排除",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 3382,
+              "end": 3382,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 3382,
+              "end": 3382,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 3382,
+              "end": 3382,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 3382,
+              "end": 3382,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 3382,
+              "end": 3382,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 3382,
+          "end": 3393,
+          "cells": [
+            {
+              "start": 3382,
+              "end": 3393,
+              "text": "Copilot CLI",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 3393,
+              "end": 3393,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 3393,
+              "end": 3393,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 3393,
+              "end": 3393,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 3393,
+              "end": 3393,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 3393,
+              "end": 3393,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 3393,
+          "end": 3404,
+          "cells": [
+            {
+              "start": 3393,
+              "end": 3404,
+              "text": "Copilot app",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 3404,
+              "end": 3404,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 3404,
+              "end": 3404,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 3404,
+              "end": 3404,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 3404,
+              "end": 3404,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 3404,
+              "end": 3404,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 3404,
+          "end": 3422,
+          "cells": [
+            {
+              "start": 3404,
+              "end": 3422,
+              "text": "GitHub Spark（公开预览）",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 3422,
+              "end": 3422,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 3422,
+              "end": 3422,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 3422,
+              "end": 3422,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 3422,
+              "end": 3422,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 3422,
+              "end": 3422,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "blockId": "b73",
+      "rows": [
+        {
+          "start": 3648,
+          "end": 3685,
+          "cells": [
+            {
+              "start": 3648,
+              "end": 3652,
+              "text": "Plan",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 3652,
+              "end": 3662,
+              "text": "每个授予席位每月价格",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 3662,
+              "end": 3685,
+              "text": "每用户每月 GitHub AI Credits",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 3685,
+          "end": 3713,
+          "cells": [
+            {
+              "start": 3685,
+              "end": 3701,
+              "text": "Copilot Business",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 3701,
+              "end": 3708,
+              "text": "$19 USD",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 3708,
+              "end": 3713,
+              "text": "1,900",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 3713,
+          "end": 3743,
+          "cells": [
+            {
+              "start": 3713,
+              "end": 3731,
+              "text": "Copilot Enterprise",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 3731,
+              "end": 3738,
+              "text": "$39 USD",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 3738,
+              "end": 3743,
+              "text": "3,900",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "blockId": "b89",
+      "rows": [
+        {
+          "start": 4248,
+          "end": 4286,
+          "cells": [
+            {
+              "start": 4248,
+              "end": 4252,
+              "text": "可用模型",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 4252,
+              "end": 4268,
+              "text": "Copilot Business",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 4268,
+              "end": 4286,
+              "text": "Copilot Enterprise",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 4286,
+          "end": 4302,
+          "cells": [
+            {
+              "start": 4286,
+              "end": 4302,
+              "text": "Claude Haiku 4.5",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 4302,
+              "end": 4302,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 4302,
+              "end": 4302,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 4302,
+          "end": 4318,
+          "cells": [
+            {
+              "start": 4302,
+              "end": 4318,
+              "text": "Claude Haiku 5.5",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 4318,
+              "end": 4318,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 4318,
+              "end": 4318,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 4318,
+          "end": 4333,
+          "cells": [
+            {
+              "start": 4318,
+              "end": 4333,
+              "text": "Claude Opus 4.8",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 4333,
+              "end": 4333,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 4333,
+              "end": 4333,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 4333,
+          "end": 4370,
+          "cells": [
+            {
+              "start": 4333,
+              "end": 4370,
+              "text": "Claude Opus 4.8 (fast mode) (preview)",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 4370,
+              "end": 4370,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 4370,
+              "end": 4370,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 4370,
+          "end": 4383,
+          "cells": [
+            {
+              "start": 4370,
+              "end": 4383,
+              "text": "Claude Opus 5",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 4383,
+              "end": 4383,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 4383,
+              "end": 4383,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 4383,
+          "end": 4398,
+          "cells": [
+            {
+              "start": 4383,
+              "end": 4398,
+              "text": "Claude Opus 5.5",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 4398,
+              "end": 4398,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 4398,
+              "end": 4398,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 4398,
+          "end": 4429,
+          "cells": [
+            {
+              "start": 4398,
+              "end": 4429,
+              "text": "Claude Fable 5[^claude-fable-5]",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 4429,
+              "end": 4429,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 4429,
+              "end": 4429,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 4429,
+          "end": 4462,
+          "cells": [
+            {
+              "start": 4429,
+              "end": 4462,
+              "text": "Claude Fable 5.1[^claude-fable-5]",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 4462,
+              "end": 4462,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 4462,
+              "end": 4462,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 4462,
+          "end": 4479,
+          "cells": [
+            {
+              "start": 4462,
+              "end": 4479,
+              "text": "Claude Sonnet 4.6",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 4479,
+              "end": 4479,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 4479,
+              "end": 4479,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 4479,
+          "end": 4494,
+          "cells": [
+            {
+              "start": 4479,
+              "end": 4494,
+              "text": "Claude Sonnet 5",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 4494,
+              "end": 4494,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 4494,
+              "end": 4494,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 4494,
+          "end": 4511,
+          "cells": [
+            {
+              "start": 4494,
+              "end": 4511,
+              "text": "Claude Sonnet 5.5",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 4511,
+              "end": 4511,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 4511,
+              "end": 4511,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 4511,
+          "end": 4527,
+          "cells": [
+            {
+              "start": 4511,
+              "end": 4527,
+              "text": "Gemini 3.8 Flash",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 4527,
+              "end": 4527,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 4527,
+              "end": 4527,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 4527,
+          "end": 4541,
+          "cells": [
+            {
+              "start": 4527,
+              "end": 4541,
+              "text": "Gemini 4 Argon",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 4541,
+              "end": 4541,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 4541,
+              "end": 4541,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 4541,
+          "end": 4554,
+          "cells": [
+            {
+              "start": 4541,
+              "end": 4554,
+              "text": "GPT-5.3-Codex",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 4554,
+              "end": 4554,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 4554,
+              "end": 4554,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 4554,
+          "end": 4578,
+          "cells": [
+            {
+              "start": 4554,
+              "end": 4578,
+              "text": "GPT-5.4 nano[^gpt54nano]",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 4578,
+              "end": 4578,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 4578,
+              "end": 4578,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 4578,
+          "end": 4590,
+          "cells": [
+            {
+              "start": 4578,
+              "end": 4590,
+              "text": "GPT-5.6 Luna",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 4590,
+              "end": 4590,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 4590,
+              "end": 4590,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 4590,
+          "end": 4601,
+          "cells": [
+            {
+              "start": 4590,
+              "end": 4601,
+              "text": "GPT-5.6 Sol",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 4601,
+              "end": 4601,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 4601,
+              "end": 4601,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 4601,
+          "end": 4614,
+          "cells": [
+            {
+              "start": 4601,
+              "end": 4614,
+              "text": "GPT-5.6 Terra",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 4614,
+              "end": 4614,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 4614,
+              "end": 4614,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 4614,
+          "end": 4625,
+          "cells": [
+            {
+              "start": 4614,
+              "end": 4625,
+              "text": "GPT-6 Astra",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 4625,
+              "end": 4625,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 4625,
+              "end": 4625,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 4625,
+          "end": 4635,
+          "cells": [
+            {
+              "start": 4625,
+              "end": 4635,
+              "text": "GPT-6 Luna",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 4635,
+              "end": 4635,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 4635,
+              "end": 4635,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 4635,
+          "end": 4644,
+          "cells": [
+            {
+              "start": 4635,
+              "end": 4644,
+              "text": "GPT-6 Sol",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 4644,
+              "end": 4644,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 4644,
+              "end": 4644,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 4644,
+          "end": 4655,
+          "cells": [
+            {
+              "start": 4644,
+              "end": 4655,
+              "text": "GPT-6.1 Sol",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 4655,
+              "end": 4655,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 4655,
+              "end": 4655,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 4655,
+          "end": 4663,
+          "cells": [
+            {
+              "start": 4655,
+              "end": 4663,
+              "text": "Grok 4.5",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 4663,
+              "end": 4663,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 4663,
+              "end": 4663,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 4663,
+          "end": 4671,
+          "cells": [
+            {
+              "start": 4663,
+              "end": 4671,
+              "text": "Grok 4.6",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 4671,
+              "end": 4671,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 4671,
+              "end": 4671,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 4671,
+          "end": 4679,
+          "cells": [
+            {
+              "start": 4671,
+              "end": 4679,
+              "text": "Grok 4.7",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 4679,
+              "end": 4679,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 4679,
+              "end": 4679,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 4679,
+          "end": 4686,
+          "cells": [
+            {
+              "start": 4679,
+              "end": 4686,
+              "text": "Kimi K3",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 4686,
+              "end": 4686,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 4686,
+              "end": 4686,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 4686,
+          "end": 4704,
+          "cells": [
+            {
+              "start": 4686,
+              "end": 4704,
+              "text": "MAI-Code-1.1-Flash",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 4704,
+              "end": 4704,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 4704,
+              "end": 4704,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "blockId": "b92",
+      "rows": [
+        {
+          "start": 4814,
+          "end": 4854,
+          "cells": [
+            {
+              "start": 4814,
+              "end": 4820,
+              "text": "Agents",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 4820,
+              "end": 4836,
+              "text": "Copilot Business",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 4836,
+              "end": 4854,
+              "text": "Copilot Enterprise",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 4854,
+          "end": 4873,
+          "cells": [
+            {
+              "start": 4854,
+              "end": 4873,
+              "text": "Copilot cloud agent",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 4873,
+              "end": 4873,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 4873,
+              "end": 4873,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 4873,
+          "end": 4877,
+          "cells": [
+            {
+              "start": 4873,
+              "end": 4877,
+              "text": "代理模式",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 4877,
+              "end": 4877,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 4877,
+              "end": 4877,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 4877,
+          "end": 4888,
+          "cells": [
+            {
+              "start": 4877,
+              "end": 4888,
+              "text": "Copilot代码审核",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 4888,
+              "end": 4888,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 4888,
+              "end": 4888,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 4888,
+          "end": 4901,
+          "cells": [
+            {
+              "start": 4888,
+              "end": 4901,
+              "text": "模型上下文协议 （MCP）",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 4901,
+              "end": 4901,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 4901,
+              "end": 4901,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 4901,
+          "end": 4913,
+          "cells": [
+            {
+              "start": 4901,
+              "end": 4913,
+              "text": "第三方代理 （公开预览）",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 4913,
+              "end": 4913,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 4913,
+              "end": 4913,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "blockId": "b94",
+      "rows": [
+        {
+          "start": 4930,
+          "end": 4977,
+          "cells": [
+            {
+              "start": 4930,
+              "end": 4943,
+              "text": "Customization",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 4943,
+              "end": 4959,
+              "text": "Copilot Business",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 4959,
+              "end": 4977,
+              "text": "Copilot Enterprise",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 4977,
+          "end": 4987,
+          "cells": [
+            {
+              "start": 4977,
+              "end": 4987,
+              "text": "仓库和个人自定义说明",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 4987,
+              "end": 4987,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 4987,
+              "end": 4987,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 4987,
+          "end": 4994,
+          "cells": [
+            {
+              "start": 4987,
+              "end": 4994,
+              "text": "组织自定义说明",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 4994,
+              "end": 4994,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 4994,
+              "end": 4994,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 4994,
+          "end": 4998,
+          "cells": [
+            {
+              "start": 4994,
+              "end": 4998,
+              "text": "提示文件",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 4998,
+              "end": 4998,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 4998,
+              "end": 4998,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 4998,
+          "end": 5011,
+          "cells": [
+            {
+              "start": 4998,
+              "end": 5011,
+              "text": "模型上下文协议 （MCP）",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 5011,
+              "end": 5011,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 5011,
+              "end": 5011,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 5011,
+          "end": 5023,
+          "cells": [
+            {
+              "start": 5011,
+              "end": 5023,
+              "text": "阻止与公开代码匹配的建议",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 5023,
+              "end": 5023,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 5023,
+              "end": 5023,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 5023,
+          "end": 5039,
+          "cells": [
+            {
+              "start": 5023,
+              "end": 5039,
+              "text": "将指定文件从Copilot中排除",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 5039,
+              "end": 5039,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 5039,
+              "end": 5039,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 5039,
+          "end": 5048,
+          "cells": [
+            {
+              "start": 5039,
+              "end": 5048,
+              "text": "组织范围的策略管理",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 5048,
+              "end": 5048,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 5048,
+              "end": 5048,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "blockId": "b96",
+      "rows": [
+        {
+          "start": 5056,
+          "end": 5090,
+          "cells": [
+            {
+              "start": 5056,
+              "end": 5056,
+              "text": "",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 5056,
+              "end": 5072,
+              "text": "Copilot Business",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 5072,
+              "end": 5090,
+              "text": "Copilot Enterprise",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 5090,
+          "end": 5120,
+          "cells": [
+            {
+              "start": 5090,
+              "end": 5120,
+              "text": "Copilot pull request summaries",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 5120,
+              "end": 5120,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 5120,
+              "end": 5120,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 5120,
+          "end": 5124,
+          "cells": [
+            {
+              "start": 5120,
+              "end": 5124,
+              "text": "审核日志",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 5124,
+              "end": 5124,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 5124,
+              "end": 5124,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 5124,
+          "end": 5128,
+          "cells": [
+            {
+              "start": 5124,
+              "end": 5128,
+              "text": "内容排除",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 5128,
+              "end": 5128,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 5128,
+              "end": 5128,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 5128,
+          "end": 5139,
+          "cells": [
+            {
+              "start": 5128,
+              "end": 5139,
+              "text": "Copilot CLI",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 5139,
+              "end": 5139,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 5139,
+              "end": 5139,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 5139,
+          "end": 5150,
+          "cells": [
+            {
+              "start": 5139,
+              "end": 5150,
+              "text": "Copilot app",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 5150,
+              "end": 5150,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 5150,
+              "end": 5150,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 5150,
+          "end": 5168,
+          "cells": [
+            {
+              "start": 5150,
+              "end": 5168,
+              "text": "GitHub Spark（公开预览）",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 5168,
+              "end": 5168,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 5168,
+              "end": 5168,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

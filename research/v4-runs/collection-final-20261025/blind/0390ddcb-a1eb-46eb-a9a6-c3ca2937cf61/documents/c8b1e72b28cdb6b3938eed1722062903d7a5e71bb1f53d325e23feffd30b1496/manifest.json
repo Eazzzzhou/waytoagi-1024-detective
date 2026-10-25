@@ -1,0 +1,568 @@
+{
+  "schemaVersion": "source-document/v1",
+  "id": "c8b1e72b28cdb6b3938eed1722062903d7a5e71bb1f53d325e23feffd30b1496",
+  "version": "51ce6bf0aa6329487d0a438e464550299c018973f219bc3b307ced39bc5a04a0",
+  "requestedUrl": "https://filepathgeek.com/posts/ollama-models-location",
+  "finalUrl": "https://filepathgeek.com/posts/ollama-models-location/",
+  "retrievedAt": "2026-10-25T04:42:48.393Z",
+  "contentType": "text/html; charset=utf-8",
+  "status": "READ",
+  "readError": null,
+  "rawHash": "dc4a7d0a47ae5988235270bb72ca3586a73da259b5997ae272fb08d3c2265280",
+  "textHash": "0efe20a4e20795fd1c0dbd9d64dd9e2232e5344f93a10fc9dc21e97b59bc9486",
+  "text": "Skip to content\n\nmacOSWindowsLinux\n\nWhere Does Ollama Store Downloaded Models?\n\nOllama model storage folders on Mac, Windows and Linux, and the variable that moves them.\n\nLast updated September 26, 2026\n\nOllama splits each model into blobs (the weights) and manifests (the metadata) inside a models folder. On Mac that folder is ~/.ollama/models, on Windows it is %USERPROFILE%\\.ollama\\models, and on a Linux systemd install it is /usr/share/ollama/.ollama/models under the service account.\n\nThe Windows default fills C: fast, so most people move it. Set OLLAMA_MODELS to any folder on any OS (on Linux through a systemd drop in with a daemon reload, on Windows as a user variable with a tray Quit and relaunch). Uninstalling never deletes a custom models folder, so orphaned gigabytes are common.\n\nWhere Ollama stores this, by platform\n\nmacOS\n\n~/.ollama/models\n\nContains blobs/ (weights, the large files) and manifests/ (metadata). Override with the OLLAMA_MODELS variable (launchctl setenv, then restart). Logs alongside in ~/.ollama/logs.\n\nWindows\n\n%USERPROFILE%\\.ollama\\models\n\nUnder your user profile, so C: fills fast. Override with a user OLLAMA_MODELS variable, then Quit from the tray and relaunch. Binaries live separately in %LOCALAPPDATA%\\Programs\\Ollama.\n\nLinux\n\n/usr/share/ollama/.ollama/models\n\nHome of the ollama service user on systemd installs. Override with OLLAMA_MODELS in a systemd drop in plus daemon reload. Running ollama serve as your own user stores models in ~/.ollama/models instead.\n\nFrequently asked questions\n\nHow do I move Ollama models to another drive?\n\nSet OLLAMA_MODELS to the new folder, move the existing models directory there, then restart the service (systemd drop in plus reload on Linux, tray Quit plus relaunch on Windows). Pull one small model to confirm the new path works.\n\nDoes uninstalling Ollama delete my models?\n\nNot a custom OLLAMA_MODELS folder. The uninstaller leaves it behind, which is how people end up with mystery gigabytes. Delete or repoint that folder yourself after uninstalling.\n\nollamallmmodels locationai\n\nNotice an outdated path? Let us know.\n\nRelated locations\n\nLM Studio Where Does LM Studio Store Downloaded Models? WindowsmacOSLinux\n\nKoboldCpp Where Does KoboldCpp Store Models? WindowsLinux\n\nllama.cpp Where Does llama.cpp Store Models? LinuxWindows\n\nvLLM Where Does vLLM Store Downloaded Models? LinuxmacOSWindows",
+  "rawSources": [
+    {
+      "mode": "STATIC",
+      "hash": "dc4a7d0a47ae5988235270bb72ca3586a73da259b5997ae272fb08d3c2265280",
+      "path": "C:\\Users\\qianchen\\Documents\\waytoagi-1024-detective-a2-v4\\.cache\\source-documents-v4\\0390ddcb-a1eb-46eb-a9a6-c3ca2937cf61\\c8b1e72b28cdb6b3938eed1722062903d7a5e71bb1f53d325e23feffd30b1496\\raw.bin"
+    }
+  ],
+  "storage": {
+    "rawPath": "C:\\Users\\qianchen\\Documents\\waytoagi-1024-detective-a2-v4\\.cache\\source-documents-v4\\0390ddcb-a1eb-46eb-a9a6-c3ca2937cf61\\c8b1e72b28cdb6b3938eed1722062903d7a5e71bb1f53d325e23feffd30b1496\\raw.bin",
+    "textPath": "C:\\Users\\qianchen\\Documents\\waytoagi-1024-detective-a2-v4\\.cache\\source-documents-v4\\0390ddcb-a1eb-46eb-a9a6-c3ca2937cf61\\c8b1e72b28cdb6b3938eed1722062903d7a5e71bb1f53d325e23feffd30b1496\\source.txt",
+    "manifestPath": "C:\\Users\\qianchen\\Documents\\waytoagi-1024-detective-a2-v4\\.cache\\source-documents-v4\\0390ddcb-a1eb-46eb-a9a6-c3ca2937cf61\\c8b1e72b28cdb6b3938eed1722062903d7a5e71bb1f53d325e23feffd30b1496\\manifest.json"
+  },
+  "parser": {
+    "name": "readability+source-dom",
+    "version": "readability-0.6.0+jsdom-30.1.3+source-dom-2",
+    "normalization": "source-text/v1",
+    "mode": "STATIC"
+  },
+  "metadata": {
+    "title": "Where Does Ollama Store Downloaded Models? | File Path Geek",
+    "author": "File Path Geek",
+    "publishedAt": null,
+    "language": "en"
+  },
+  "completeness": "COMPLETE",
+  "warnings": [],
+  "blocks": [
+    {
+      "start": 0,
+      "end": 15,
+      "id": "b0",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[0]",
+      "headingPath": [],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 17,
+      "end": 34,
+      "id": "b1",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[1]",
+      "headingPath": [],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 36,
+      "end": 78,
+      "id": "b2",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[2]",
+      "headingPath": [
+        "Where Does Ollama Store Downloaded Models?"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 80,
+      "end": 169,
+      "id": "b3",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[3]",
+      "headingPath": [
+        "Where Does Ollama Store Downloaded Models?"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 171,
+      "end": 202,
+      "id": "b4",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[4]",
+      "headingPath": [
+        "Where Does Ollama Store Downloaded Models?"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 204,
+      "end": 490,
+      "id": "b5",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[5]",
+      "headingPath": [
+        "Where Does Ollama Store Downloaded Models?"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 492,
+      "end": 797,
+      "id": "b6",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[6]",
+      "headingPath": [
+        "Where Does Ollama Store Downloaded Models?"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 799,
+      "end": 836,
+      "id": "b7",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[7]",
+      "headingPath": [
+        "Where Does Ollama Store Downloaded Models?",
+        "Where Ollama stores this, by platform"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 838,
+      "end": 843,
+      "id": "b8",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[8]",
+      "headingPath": [
+        "Where Does Ollama Store Downloaded Models?",
+        "Where Ollama stores this, by platform"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 845,
+      "end": 861,
+      "id": "b9",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[9]",
+      "headingPath": [
+        "Where Does Ollama Store Downloaded Models?",
+        "Where Ollama stores this, by platform"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 863,
+      "end": 1041,
+      "id": "b10",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[10]",
+      "headingPath": [
+        "Where Does Ollama Store Downloaded Models?",
+        "Where Ollama stores this, by platform"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1043,
+      "end": 1050,
+      "id": "b11",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[11]",
+      "headingPath": [
+        "Where Does Ollama Store Downloaded Models?",
+        "Where Ollama stores this, by platform"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1052,
+      "end": 1080,
+      "id": "b12",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[12]",
+      "headingPath": [
+        "Where Does Ollama Store Downloaded Models?",
+        "Where Ollama stores this, by platform"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1082,
+      "end": 1267,
+      "id": "b13",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[13]",
+      "headingPath": [
+        "Where Does Ollama Store Downloaded Models?",
+        "Where Ollama stores this, by platform"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1269,
+      "end": 1274,
+      "id": "b14",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[14]",
+      "headingPath": [
+        "Where Does Ollama Store Downloaded Models?",
+        "Where Ollama stores this, by platform"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1276,
+      "end": 1308,
+      "id": "b15",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[15]",
+      "headingPath": [
+        "Where Does Ollama Store Downloaded Models?",
+        "Where Ollama stores this, by platform"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1310,
+      "end": 1512,
+      "id": "b16",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[16]",
+      "headingPath": [
+        "Where Does Ollama Store Downloaded Models?",
+        "Where Ollama stores this, by platform"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1514,
+      "end": 1540,
+      "id": "b17",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[17]",
+      "headingPath": [
+        "Where Does Ollama Store Downloaded Models?",
+        "Frequently asked questions"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1542,
+      "end": 1587,
+      "id": "b18",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[18]",
+      "headingPath": [
+        "Where Does Ollama Store Downloaded Models?",
+        "Frequently asked questions"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1589,
+      "end": 1820,
+      "id": "b19",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[19]",
+      "headingPath": [
+        "Where Does Ollama Store Downloaded Models?",
+        "Frequently asked questions"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1822,
+      "end": 1864,
+      "id": "b20",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[20]",
+      "headingPath": [
+        "Where Does Ollama Store Downloaded Models?",
+        "Frequently asked questions"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1866,
+      "end": 2044,
+      "id": "b21",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[21]",
+      "headingPath": [
+        "Where Does Ollama Store Downloaded Models?",
+        "Frequently asked questions"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2046,
+      "end": 2072,
+      "id": "b22",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[22]",
+      "headingPath": [
+        "Where Does Ollama Store Downloaded Models?",
+        "Frequently asked questions"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2074,
+      "end": 2111,
+      "id": "b23",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[23]",
+      "headingPath": [
+        "Where Does Ollama Store Downloaded Models?",
+        "Frequently asked questions"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2113,
+      "end": 2130,
+      "id": "b24",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[24]",
+      "headingPath": [
+        "Where Does Ollama Store Downloaded Models?",
+        "Related locations"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2132,
+      "end": 2205,
+      "id": "b25",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[25]",
+      "headingPath": [
+        "Where Does Ollama Store Downloaded Models?",
+        "Related locations"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2207,
+      "end": 2264,
+      "id": "b26",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[26]",
+      "headingPath": [
+        "Where Does Ollama Store Downloaded Models?",
+        "Related locations"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2266,
+      "end": 2323,
+      "id": "b27",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[27]",
+      "headingPath": [
+        "Where Does Ollama Store Downloaded Models?",
+        "Related locations"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2325,
+      "end": 2388,
+      "id": "b28",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[28]",
+      "headingPath": [
+        "Where Does Ollama Store Downloaded Models?",
+        "Related locations"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    }
+  ],
+  "links": [
+    {
+      "url": "https://filepathgeek.com/posts/ollama-models-location/",
+      "text": "",
+      "blockId": null,
+      "relation": "CANONICAL",
+      "locator": "source DOM link[0]"
+    },
+    {
+      "url": "https://filepathgeek.com/search/?q=ollama",
+      "text": "ollama",
+      "blockId": "b22",
+      "relation": "LINK",
+      "locator": "source DOM link[23]"
+    },
+    {
+      "url": "https://filepathgeek.com/search/?q=llm",
+      "text": "llm",
+      "blockId": "b22",
+      "relation": "LINK",
+      "locator": "source DOM link[24]"
+    },
+    {
+      "url": "https://filepathgeek.com/search/?q=models+location",
+      "text": "models location",
+      "blockId": "b22",
+      "relation": "LINK",
+      "locator": "source DOM link[25]"
+    },
+    {
+      "url": "https://filepathgeek.com/search/?q=ai",
+      "text": "ai",
+      "blockId": "b22",
+      "relation": "LINK",
+      "locator": "source DOM link[26]"
+    },
+    {
+      "url": "https://filepathgeek.com/cdn-cgi/l/email-protection",
+      "text": "Let us know",
+      "blockId": "b23",
+      "relation": "LINK",
+      "locator": "source DOM link[27]"
+    },
+    {
+      "url": "https://filepathgeek.com/posts/lm-studio-models-location/",
+      "text": "LM Studio Where Does LM Studio Store Downloaded Models? WindowsmacOSLinux",
+      "blockId": "b25",
+      "relation": "LINK",
+      "locator": "source DOM link[28]"
+    },
+    {
+      "url": "https://filepathgeek.com/posts/koboldcpp-models-location/",
+      "text": "KoboldCpp Where Does KoboldCpp Store Models? WindowsLinux",
+      "blockId": "b26",
+      "relation": "LINK",
+      "locator": "source DOM link[29]"
+    },
+    {
+      "url": "https://filepathgeek.com/posts/llamacpp-models-location/",
+      "text": "llama.cpp Where Does llama.cpp Store Models? LinuxWindows",
+      "blockId": "b27",
+      "relation": "LINK",
+      "locator": "source DOM link[30]"
+    },
+    {
+      "url": "https://filepathgeek.com/posts/vllm-models-location/",
+      "text": "vLLM Where Does vLLM Store Downloaded Models? LinuxmacOSWindows",
+      "blockId": "b28",
+      "relation": "LINK",
+      "locator": "source DOM link[31]"
+    }
+  ],
+  "tables": []
+}

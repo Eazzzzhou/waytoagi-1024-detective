@@ -1,0 +1,380 @@
+<!DOCTYPE html><html lang="en"> <head><script>
+      // Light is the default; only a saved "dark" choice flips it. Runs before
+      // first paint so there is no theme flash.
+      (function () {
+        try {
+          if (localStorage.getItem('ocdc-theme') === 'dark') {
+            document.documentElement.setAttribute('data-theme', 'dark');
+          }
+        } catch (e) {}
+      })();
+      function toggleTheme() {
+        var root = document.documentElement;
+        var next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+        if (next === 'dark') { root.setAttribute('data-theme', 'dark'); }
+        else { root.removeAttribute('data-theme'); }
+        try { localStorage.setItem('ocdc-theme', next); } catch (e) {}
+      }
+    </script><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><title>How to Move Ollama Models to Another Drive (macOS, Linux, Windows)</title><meta name="description" content="Set OLLAMA_MODELS and move your model library off a full boot drive. The official steps per operating system, the systemd drop-in written out, and the macOS gotcha the docs do not mention: launchctl setenv does not survive a reboot."><meta name="keywords" content="move ollama models to another drive, OLLAMA_MODELS, ollama models directory, change ollama storage location, ollama models external drive, ollama systemd environment, ollama disk full"><meta name="robots" content="index, follow"><link rel="canonical" href="https://openclawdc.com/blog/move-ollama-models-another-drive/"><meta property="og:title" content="How to Move Ollama Models to Another Drive (macOS, Linux, Windows)"><meta property="og:description" content="Set OLLAMA_MODELS and move your model library off a full boot drive. The official steps per operating system, the systemd drop-in written out, and the macOS gotcha the docs do not mention: launchctl setenv does not survive a reboot."><meta property="og:type" content="article"><meta property="og:url" content="https://openclawdc.com/blog/move-ollama-models-another-drive/"><meta property="og:image" content="https://openclawdc.com/images/og-image.jpg"><meta property="og:locale" content="en_US"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="How to Move Ollama Models to Another Drive (macOS, Linux, Windows)"><meta name="twitter:description" content="Set OLLAMA_MODELS and move your model library off a full boot drive. The official steps per operating system, the systemd drop-in written out, and the macOS gotcha the docs do not mention: launchctl setenv does not survive a reboot."><script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://openclawdc.com/#organization","name":"OpenClaw DC","url":"https://openclawdc.com/","logo":"https://openclawdc.com/images/og-image.jpg","email":"openclaw@saurav.io","founder":{"@type":"Person","name":"Saurav","url":"https://cloudyeti.io"},"sameAs":["https://www.youtube.com/@CloudYeti"]},{"@type":"WebSite","@id":"https://openclawdc.com/#website","name":"OpenClaw DC","url":"https://openclawdc.com/","description":"The independent guide to OpenClaw — installation, troubleshooting, model picks, cost optimization, and ecosystem comparisons.","publisher":{"@id":"https://openclawdc.com/#organization"}}]}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"How to Move Ollama Models to Another Drive","author":{"@type":"Organization","name":"OpenClaw DC","url":"https://openclawdc.com"},"datePublished":"2026-08-25","dateModified":"2026-08-25","publisher":{"@type":"Organization","name":"OpenClaw DC","url":"https://openclawdc.com"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Where does Ollama store its models?","acceptedAnswer":{"@type":"Answer","text":"The default directory depends on the operating system. On macOS it is ~/.ollama/models. On Linux, installed with the standard installer, it is /usr/share/ollama/.ollama/models. On Windows it is C:\\Users\\%username%\\.ollama\\models. Inside that directory you will find two subdirectories, blobs and manifests. The blobs hold the actual weight data and the manifests describe which blobs make up each tagged model, so both must move together."}},{"@type":"Question","name":"How do I change where Ollama stores models?","acceptedAnswer":{"@type":"Answer","text":"Set the environment variable OLLAMA_MODELS to the directory you want, then restart Ollama. On macOS run launchctl setenv OLLAMA_MODELS \"/your/path\" and restart the app. On Linux run systemctl edit ollama.service, add Environment=\"OLLAMA_MODELS=/your/path\" under the [Service] section, then run systemctl daemon-reload and systemctl restart ollama. On Windows, quit Ollama from the taskbar, open Edit environment variables for your account, create OLLAMA_MODELS with your path, and restart Ollama. Move your existing blobs and manifests directories to the new location before you restart, or Ollama will start with an empty library."}},{"@type":"Question","name":"Why did my OLLAMA_MODELS setting stop working after a reboot?","acceptedAnswer":{"@type":"Answer","text":"On macOS, because launchctl setenv is not persistent. It sets the variable for the current boot only, so the value is lost when the system restarts and Ollama returns to the default directory. To make it permanent, create a LaunchAgent plist in ~/Library/LaunchAgents that runs the same launchctl setenv command at login. On Linux the equivalent mistake is exporting the variable in a shell profile: a shell export never reaches a systemd-managed daemon, so you must use a systemd drop-in instead."}},{"@type":"Question","name":"Why can Ollama not write to my new models directory on Linux?","acceptedAnswer":{"@type":"Answer","text":"Because the standard Linux installer runs the daemon as a dedicated ollama user, and that user needs read and write access to the directory you chose. The documented fix is sudo chown -R ollama:ollama followed by the directory path. Check the parent directories as well, because the ollama user also needs execute permission on every directory in the path to traverse into it. A mount point owned by root with restrictive permissions will block the daemon even when the target directory itself is correct."}},{"@type":"Question","name":"Can I keep Ollama models on an external drive?","acceptedAnswer":{"@type":"Answer","text":"Yes, and the interface speed is what decides whether it is pleasant. USB4 and Thunderbolt run at 40 Gbps while USB 3.2 Gen 2 runs at 10 Gbps, so a USB4 NVMe enclosure loads models at close to internal speeds and a 10 Gbps enclosure is several times slower. The real risk is not speed but availability: if the drive is not mounted when the service starts, Ollama sees an empty or unwritable directory. Treat an external drive as an archive tier and keep the models you run daily on internal storage."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://openclawdc.com/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://openclawdc.com/blog/"},{"@type":"ListItem","position":3,"name":"How to Move Ollama Models to Another Drive (macOS, Linux, Windows)","item":"https://openclawdc.com/blog/move-ollama-models-another-drive/"}]}</script><!-- Google tag (gtag.js) --><script async src="https://www.googletagmanager.com/gtag/js?id=G-M0BK28XHM9"></script><script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-M0BK28XHM9');
+    </script><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..600&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"><link rel="stylesheet" href="/_astro/Base.DUrDlos7.css">
+<link rel="stylesheet" href="/_astro/DecisionWidget.D0ta8K99.css">
+<link rel="stylesheet" href="/_astro/_..DaBf-p2L.css"></head> <body> <nav id="nav"> <div class="nav-inner"> <a href="/" class="logo"><span class="logo-icon">&#x1F99E;</span><span class="logo-text">OPENCLAW<span class="logo-accent">DC</span></span></a> <div class="nav-links"> <a href="/blog/">Blog</a> <a href="/gear/">Gear</a> <a href="https://cloudyeti.io/meet" class="nav-cta" onclick="window.gtag&&gtag('event','book_call_click',{location:'nav',page:location.pathname})">Book 1:1 Help</a> </div> <div style="display:flex;align-items:center;gap:0.9rem;"> <button class="theme-toggle" type="button" aria-label="Switch between light and dark theme" onclick="toggleTheme()"> <span class="theme-sun" aria-hidden="true">&#9728;</span> <span class="theme-moon" aria-hidden="true">&#9790;</span> </button> <button class="mobile-menu" aria-label="Menu" onclick="document.querySelector('.nav-links').classList.toggle('open')"><span></span><span></span><span></span></button> </div> </div> </nav> <!-- Spacer for fixed nav --> <div style="height:64px;"></div> <aside class="buy-strip" aria-label="Site call to action" data-astro-cid-s2klq3vm> <div class="buy-strip-inner" data-astro-cid-s2klq3vm>  <span class="bs-label" data-astro-cid-s2klq3vm>Buying hardware?</span> <span class="bs-rule" aria-hidden="true" data-astro-cid-s2klq3vm></span> <span class="bs-copy" data-astro-cid-s2klq3vm>Every part we would buy today, by budget</span> <a class="bs-action" href="/gear/" onclick="window.gtag&&gtag('event','cta_bar_gear_click',{page:location.pathname})" data-astro-cid-s2klq3vm>Open the gear list</a>  </div> </aside>  <article class="blog-post" data-astro-cid-bvzihdzo> <div class="blog-layout-wrap" data-astro-cid-bvzihdzo> <div class="blog-main" data-astro-cid-bvzihdzo> <a href="/blog/" class="blog-back" data-astro-cid-bvzihdzo>&larr; All guides</a> <header class="blog-post-header" data-astro-cid-bvzihdzo> <div class="blog-post-meta" data-astro-cid-bvzihdzo> <span class="blog-tag" data-astro-cid-bvzihdzo>Guides</span> <span class="blog-date" data-astro-cid-bvzihdzo>August 25, 2026</span> </div> <h1 data-astro-cid-bvzihdzo>How to Move Ollama Models to Another Drive (macOS, Linux, Windows)</h1> <p class="blog-post-intro" data-astro-cid-bvzihdzo>Ollama writes every model to your boot drive by default, and a model library fills a boot drive faster than anything else you install. The fix is one environment variable, OLLAMA_MODELS, plus moving the files you already have. The variable has to be set where the Ollama service actually reads it, which is different on each operating system — and on macOS the documented command is lost on the next reboot.</p> </header>  <div class="blog-content" data-astro-cid-bvzihdzo>  <h2 id="bottom-line">Bottom Line</h2>
+<ul>
+<li><strong>One variable does it: <code>OLLAMA_MODELS</code>.</strong> Point it at the new directory and restart Ollama.</li>
+<li><strong>Move the files yourself.</strong> Setting the variable does not migrate anything. Move both <code>blobs/</code> and <code>manifests/</code>, or your library disappears.</li>
+<li><strong>Set it where the service reads it.</strong> A shell <code>export</code> never reaches a systemd daemon or a macOS app. This is the single most common failure.</li>
+<li><strong>macOS gotcha the docs skip: <code>launchctl setenv</code> is lost on reboot.</strong> Use a LaunchAgent if you want it to stick.</li>
+<li><strong>Linux gotcha: ownership.</strong> The standard installer runs the daemon as the <code>ollama</code> user, which needs <code>chown -R ollama:ollama</code> on the target.</li>
+<li><strong>Defaults:</strong> <code>~/.ollama/models</code> on macOS, <code>/usr/share/ollama/.ollama/models</code> on Linux, <code>C:\Users\%username%\.ollama\models</code> on Windows.</li>
+<li><strong>External drives work, with a caveat.</strong> If the drive is not mounted at service start, Ollama behaves as though your models are gone.</li>
+</ul>
+<h2 id="what-you-are-actually-moving">What You Are Actually Moving</h2>
+<p>Open the models directory and you will find exactly two things:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>models/</span></span>
+<span class="line"><span>├── blobs/       # the weight data — this is the tens of gigabytes</span></span>
+<span class="line"><span>└── manifests/   # which blobs make up each tagged model</span></span></code></pre>
+<p><strong>Both must move together.</strong> The manifests are small and easy to forget. Move only the blobs and Ollama sees no models at all, even though the data is right there. Move only the manifests and every model reports missing layers.</p>
+<p>This also explains why you should move rather than re-pull. The blobs are content-addressed, so moving them keeps every tag you already have without re-downloading anything.</p>
+<h2 id="macos">macOS</h2>
+<p>The documented steps:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6A737D"># 1. Create the target directory on the new drive</span></span>
+<span class="line"><span style="color:#B392F0">mkdir</span><span style="color:#79B8FF"> -p</span><span style="color:#9ECBFF"> /Volumes/BigDrive/ollama-models</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># 2. Move your existing library</span></span>
+<span class="line"><span style="color:#B392F0">mv</span><span style="color:#9ECBFF"> ~/.ollama/models/blobs</span><span style="color:#9ECBFF"> ~/.ollama/models/manifests</span><span style="color:#9ECBFF"> /Volumes/BigDrive/ollama-models/</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># 3. Set the variable</span></span>
+<span class="line"><span style="color:#B392F0">launchctl</span><span style="color:#9ECBFF"> setenv</span><span style="color:#9ECBFF"> OLLAMA_MODELS</span><span style="color:#9ECBFF"> "/Volumes/BigDrive/ollama-models"</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># 4. Restart the Ollama application</span></span></code></pre>
+<p><strong>Now the part the FAQ does not tell you.</strong> <code>launchctl setenv</code> sets the variable for the current boot only. It is not persistent. Restart the Mac and the value is gone, Ollama falls back to <code>~/.ollama/models</code>, and your library appears to have vanished. Nothing is lost — the daemon is simply reading the old path again.</p>
+<p>To make it permanent, run the same command from a LaunchAgent at login. Create <code>~/Library/LaunchAgents/com.user.ollama-models.plist</code>:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="xml"><code><span class="line"><span style="color:#E1E4E8">&#x3C;?</span><span style="color:#85E89D">xml</span><span style="color:#B392F0"> version</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"1.0"</span><span style="color:#B392F0"> encoding</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"UTF-8"</span><span style="color:#E1E4E8">?></span></span>
+<span class="line"><span style="color:#E1E4E8">&#x3C;!</span><span style="color:#F97583">DOCTYPE</span><span style="color:#79B8FF"> plist</span><span style="color:#E1E4E8"> PUBLIC "-//Apple//DTD PLIST 1.0//EN"</span></span>
+<span class="line"><span style="color:#E1E4E8">  "http://www.apple.com/DTDs/PropertyList-1.0.dtd"></span></span>
+<span class="line"><span style="color:#E1E4E8">&#x3C;</span><span style="color:#85E89D">plist</span><span style="color:#B392F0"> version</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"1.0"</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">&#x3C;</span><span style="color:#85E89D">dict</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">  &#x3C;</span><span style="color:#85E89D">key</span><span style="color:#E1E4E8">>Label&#x3C;/</span><span style="color:#85E89D">key</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">  &#x3C;</span><span style="color:#85E89D">string</span><span style="color:#E1E4E8">>com.user.ollama-models&#x3C;/</span><span style="color:#85E89D">string</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">  &#x3C;</span><span style="color:#85E89D">key</span><span style="color:#E1E4E8">>ProgramArguments&#x3C;/</span><span style="color:#85E89D">key</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">  &#x3C;</span><span style="color:#85E89D">array</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">    &#x3C;</span><span style="color:#85E89D">string</span><span style="color:#E1E4E8">>/bin/launchctl&#x3C;/</span><span style="color:#85E89D">string</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">    &#x3C;</span><span style="color:#85E89D">string</span><span style="color:#E1E4E8">>setenv&#x3C;/</span><span style="color:#85E89D">string</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">    &#x3C;</span><span style="color:#85E89D">string</span><span style="color:#E1E4E8">>OLLAMA_MODELS&#x3C;/</span><span style="color:#85E89D">string</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">    &#x3C;</span><span style="color:#85E89D">string</span><span style="color:#E1E4E8">>/Volumes/BigDrive/ollama-models&#x3C;/</span><span style="color:#85E89D">string</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">  &#x3C;/</span><span style="color:#85E89D">array</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">  &#x3C;</span><span style="color:#85E89D">key</span><span style="color:#E1E4E8">>RunAtLoad&#x3C;/</span><span style="color:#85E89D">key</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">  &#x3C;</span><span style="color:#85E89D">true</span><span style="color:#E1E4E8">/></span></span>
+<span class="line"><span style="color:#E1E4E8">&#x3C;/</span><span style="color:#85E89D">dict</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">&#x3C;/</span><span style="color:#85E89D">plist</span><span style="color:#E1E4E8">></span></span></code></pre>
+<p>Then load it with <code>launchctl load ~/Library/LaunchAgents/com.user.ollama-models.plist</code>. The LaunchAgent approach is the standard replacement for the withdrawn <code>/etc/launchd.conf</code>, and it is not specific to Ollama.</p>
+<h2 id="linux">Linux</h2>
+<p>The daemon runs under systemd, so the variable belongs in the unit.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6A737D"># 1. Create the target and give the daemon ownership</span></span>
+<span class="line"><span style="color:#B392F0">sudo</span><span style="color:#9ECBFF"> mkdir</span><span style="color:#79B8FF"> -p</span><span style="color:#9ECBFF"> /mnt/bigdrive/ollama-models</span></span>
+<span class="line"><span style="color:#B392F0">sudo</span><span style="color:#9ECBFF"> chown</span><span style="color:#79B8FF"> -R</span><span style="color:#9ECBFF"> ollama:ollama</span><span style="color:#9ECBFF"> /mnt/bigdrive/ollama-models</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># 2. Move the existing library</span></span>
+<span class="line"><span style="color:#B392F0">sudo</span><span style="color:#9ECBFF"> mv</span><span style="color:#9ECBFF"> /usr/share/ollama/.ollama/models/blobs</span><span style="color:#79B8FF"> \</span></span>
+<span class="line"><span style="color:#9ECBFF">        /usr/share/ollama/.ollama/models/manifests</span><span style="color:#79B8FF"> \</span></span>
+<span class="line"><span style="color:#9ECBFF">        /mnt/bigdrive/ollama-models/</span></span>
+<span class="line"><span style="color:#B392F0">sudo</span><span style="color:#9ECBFF"> chown</span><span style="color:#79B8FF"> -R</span><span style="color:#9ECBFF"> ollama:ollama</span><span style="color:#9ECBFF"> /mnt/bigdrive/ollama-models</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># 3. Edit the unit</span></span>
+<span class="line"><span style="color:#B392F0">sudo</span><span style="color:#9ECBFF"> systemctl</span><span style="color:#9ECBFF"> edit</span><span style="color:#9ECBFF"> ollama.service</span></span></code></pre>
+<p>Add this under <code>[Service]</code>:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="ini"><code><span class="line"><span style="color:#B392F0">[Service]</span></span>
+<span class="line"><span style="color:#F97583">Environment</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"OLLAMA_MODELS=/mnt/bigdrive/ollama-models"</span></span></code></pre>
+<p>Then reload and restart:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#B392F0">sudo</span><span style="color:#9ECBFF"> systemctl</span><span style="color:#9ECBFF"> daemon-reload</span></span>
+<span class="line"><span style="color:#B392F0">sudo</span><span style="color:#9ECBFF"> systemctl</span><span style="color:#9ECBFF"> restart</span><span style="color:#9ECBFF"> ollama</span></span></code></pre>
+<p><strong>Two things break this reliably.</strong></p>
+<p>First, <strong>ownership</strong>. The standard installer creates a dedicated <code>ollama</code> user, and that user needs read and write access to the directory. <code>sudo chown -R ollama:ollama &#x3C;directory></code> is the documented fix. Run it again after you move files in, because <code>mv</code> across filesystems can carry the old ownership.</p>
+<p>Second, <strong>traversal</strong>. The <code>ollama</code> user needs execute permission on <em>every</em> directory in the path, not just the last one. A mount point at <code>/mnt/bigdrive</code> owned by root with mode 700 will block the daemon even when the final directory is owned correctly. Check with <code>sudo -u ollama ls /mnt/bigdrive/ollama-models</code> — if that fails, the daemon will fail the same way.</p>
+<h2 id="windows">Windows</h2>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>1. Quit Ollama from the taskbar. Do not just close the window.</span></span>
+<span class="line"><span>2. Open Settings and search for environment variables.</span></span>
+<span class="line"><span>3. Click "Edit environment variables for your account".</span></span>
+<span class="line"><span>4. Create OLLAMA_MODELS with the new path, for example D:\ollama-models</span></span>
+<span class="line"><span>5. Click OK, then restart Ollama.</span></span></code></pre>
+<p>Move <code>blobs</code> and <code>manifests</code> out of <code>C:\Users\%username%\.ollama\models</code> into the new directory before you restart.</p>
+<p>Quitting from the taskbar matters. Closing the window leaves the background service running with the old environment, and it will keep writing to the old path while you conclude the setting is broken.</p>
+<h2 id="symlinks-and-bind-mounts-when-to-use-them-instead">Symlinks and Bind Mounts: When to Use Them Instead</h2>
+<p>The environment variable is the supported route. Two alternatives exist and each has a right moment.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Method</th><th>Use it when</th><th>Watch out for</th></tr></thead><tbody><tr><td><strong><code>OLLAMA_MODELS</code></strong></td><td>Almost always. It is the documented mechanism.</td><td>Must be set where the service reads it, not in your shell.</td></tr><tr><td><strong>Symlink</strong> the models directory</td><td>Other tools also expect the default path</td><td>The daemon needs permission on the <em>target</em>, not the link. A broken link looks like an empty library.</td></tr><tr><td><strong>Bind mount</strong> (<code>mount --bind</code>, Linux)</td><td>The path must stay identical for other software</td><td>Add it to <code>/etc/fstab</code> or it disappears on reboot, silently.</td></tr></tbody></table>
+<p>Neither symlinks nor bind mounts are documented by Ollama. They work because they operate below the application, not because they are supported. If you file a bug report, mention that you are using one.</p>
+<h2 id="when-it-does-not-work">When It Does Not Work</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Symptom</th><th>Cause</th><th>Fix</th></tr></thead><tbody><tr><td><code>ollama list</code> is empty after the move</td><td>Manifests were left behind</td><td>Move <code>manifests/</code> as well as <code>blobs/</code></td></tr><tr><td>Setting worked, then stopped after reboot (macOS)</td><td><code>launchctl setenv</code> is not persistent</td><td>Add the LaunchAgent above</td></tr><tr><td>Setting has no effect (Linux)</td><td>Variable exported in a shell profile</td><td>Use a systemd drop-in via <code>systemctl edit ollama.service</code></td></tr><tr><td>Permission denied writing models (Linux)</td><td>Daemon runs as the <code>ollama</code> user</td><td><code>sudo chown -R ollama:ollama &#x3C;dir></code>, then check parent-directory traversal</td></tr><tr><td>Works, then breaks at random (external drive)</td><td>Drive was not mounted at service start</td><td>Mount at boot, or keep daily models internal</td></tr><tr><td>Windows setting ignored</td><td>Window closed, service still running</td><td>Quit from the taskbar, then restart</td></tr></tbody></table>
+<h2 id="do-you-need-a-bigger-drive-instead">Do You Need a Bigger Drive Instead?</h2>
+<p>Moving models buys you the capacity of the drive you moved to. If that drive is also small, you are solving the problem twice. Our <a href="/blog/how-much-storage-for-local-models/">model storage sizing guide</a> has the arithmetic: <strong>1TB is the floor, 2TB is the right default for a single-GPU box, and 4TB once you are past 48GB of VRAM.</strong> The multiplier that catches people out is not model count. It is keeping Q4, Q6 and Q8 of the same model while you decide which one to use.</p>
+<h2 id="see-also">See Also</h2>
+<ul>
+<li><a href="/blog/how-much-storage-for-local-models/">How Much Storage Do You Need for Local Models?</a> — drive sizing, load-time arithmetic, and what to buy</li>
+<li><a href="/blog/ollama-vs-llama-cpp/">Ollama vs llama.cpp</a> — llama.cpp takes a path argument and has no equivalent variable</li>
+<li><a href="/blog/move-huggingface-cache-another-drive/">How to Move the Hugging Face Cache to Another Drive</a> — the <code>HF_HOME</code> version of this job, and why <code>rsync -r</code> breaks it</li>
+<li><a href="/blog/ollama-hugging-face-models/">Using Hugging Face Models With Ollama</a> — the other download cache that fills your boot drive, controlled by <code>HF_HOME</code></li>
+<li><a href="/blog/ollama-crash-course-local-agents/">Ollama Crash Course for Local Agents</a> — the rest of the operational basics</li>
+<li><a href="/blog/ollama-vs-lm-studio/">Ollama vs LM Studio</a> — how the other popular runtime handles model storage</li>
+</ul>
+<h2 id="sources">Sources</h2>
+<ul>
+<li><a href="https://docs.ollama.com/faq">Ollama FAQ (docs.ollama.com)</a> — default directories per operating system, <code>OLLAMA_MODELS</code>, the <code>launchctl setenv</code> and <code>systemctl edit</code> procedures, and the <code>chown -R ollama:ollama</code> permission requirement; read 2026-08-25</li>
+<li>The <code>blobs/</code> and <code>manifests/</code> layout was confirmed on a macOS install on 2026-08-25</li>
+<li><code>launchctl setenv</code> is not persistent across reboots; the LaunchAgent pattern is the standard replacement for the <code>/etc/launchd.conf</code> support withdrawn in OS X 10.10</li>
+<li>Symlink and bind-mount behaviour is general operating-system behaviour, not documented Ollama support</li>
+</ul>  </div> <!-- Renders only on hardware buying pages (matchBuy). See the component
+             header: one booked call outweighs a month of affiliate clicks here. -->    <aside class="oc-signup" aria-labelledby="oc-signup-title" data-astro-cid-bvzihdzo> <div class="oc-signup-label" data-astro-cid-bvzihdzo>The Dispatch &nbsp;/&nbsp; Weekly</div> <h3 class="oc-signup-title" id="oc-signup-title" data-astro-cid-bvzihdzo>Still deciding on hardware?</h3> <p class="oc-signup-sub" data-astro-cid-bvzihdzo>One email every Wednesday: what actually runs well on which machine, real cost-per-token numbers, and the setups worth copying. Written for people mid-build.</p> <form class="oc-signup-form" id="oc-signup-form" novalidate data-astro-cid-bvzihdzo> <label class="oc-signup-sr" for="oc-signup-email" data-astro-cid-bvzihdzo>Email address</label> <input type="email" id="oc-signup-email" name="email" required autocomplete="email" placeholder="you@example.com" class="oc-signup-input" data-astro-cid-bvzihdzo> <input type="text" name="website" class="oc-signup-hp" tabindex="-1" autocomplete="off" aria-hidden="true" data-astro-cid-bvzihdzo> <button type="submit" class="oc-signup-btn" data-astro-cid-bvzihdzo>Subscribe</button> </form> <p class="oc-signup-msg" id="oc-signup-msg" role="status" aria-live="polite" data-astro-cid-bvzihdzo></p> <p class="oc-signup-note" data-astro-cid-bvzihdzo>No spam. Unsubscribe whenever.</p> </aside> <div class="blog-cta" data-astro-cid-bvzihdzo> <h3 data-astro-cid-bvzihdzo>Need OpenClaw fixed live?</h3> <p data-astro-cid-bvzihdzo>Remote rescue sessions for gateway, auth, tunnel, VPS, and model access problems.</p> <a href="/openclaw-troubleshooting-help/" class="btn btn-primary" onclick="window.gtag&&gtag('event','rescue_cta_click',{location:'blog_bottom',page:location.pathname})" data-astro-cid-bvzihdzo>See Rescue Session</a> </div> <div style="margin-top:3rem;padding-top:2rem;border-top:1px solid var(--border);" data-astro-cid-bvzihdzo> <h2 style="font-size:1.1rem;margin-bottom:0.75rem;" data-astro-cid-bvzihdzo>Read next</h2> <div style="display:flex;flex-direction:column;gap:0.75rem;" data-astro-cid-bvzihdzo> <a href="/blog/move-huggingface-cache-another-drive/" onclick="window.gtag&#38;&#38;gtag('event','read_next_click',{target:'move-huggingface-cache-another-drive',position:1,page:location.pathname})" style="display:block;padding:0.75rem 1rem;border-radius:8px;background:var(--bg-card);border:1px solid var(--border);text-decoration:none;transition:border-color 0.15s;" onmouseover="this.style.borderColor='var(--accent)'" onmouseout="this.style.borderColor='var(--border)'" data-astro-cid-bvzihdzo> <div style="font-size:0.9rem;font-weight:600;color:var(--text-primary);" data-astro-cid-bvzihdzo>How to Move the Hugging Face Cache to Another Drive</div> <div style="font-size:0.8rem;color:var(--text-muted);margin-top:0.25rem;" data-astro-cid-bvzihdzo>Set HF_HOME, then copy the hub cache with a tool that keeps symlinks. We tested five copy methods: rsync -r silently drops model files and Python copytree tripled the size of a two-revision cache.</div> </a><a href="/blog/how-much-storage-for-local-models/" onclick="window.gtag&#38;&#38;gtag('event','read_next_click',{target:'how-much-storage-for-local-models',position:2,page:location.pathname})" style="display:block;padding:0.75rem 1rem;border-radius:8px;background:var(--bg-card);border:1px solid var(--border);text-decoration:none;transition:border-color 0.15s;" onmouseover="this.style.borderColor='var(--accent)'" onmouseout="this.style.borderColor='var(--border)'" data-astro-cid-bvzihdzo> <div style="font-size:0.9rem;font-weight:600;color:var(--text-primary);" data-astro-cid-bvzihdzo>How Much SSD Do You Need for a Local Model Library?</div> <div style="font-size:0.8rem;color:var(--text-muted);margin-top:0.25rem;" data-astro-cid-bvzihdzo>Every local-LLM build guide sizes the GPU and forgets the disk. Real footprints, the hoarding multiplier nobody warns you about, load-time arithmetic per drive class, and the honest answer to whether a faster SSD makes your tokens faster. It does not.</div> </a><a href="/blog/openclaw-macos-gateway-launchd/" onclick="window.gtag&#38;&#38;gtag('event','read_next_click',{target:'openclaw-macos-gateway-launchd',position:3,page:location.pathname})" style="display:block;padding:0.75rem 1rem;border-radius:8px;background:var(--bg-card);border:1px solid var(--border);text-decoration:none;transition:border-color 0.15s;" onmouseover="this.style.borderColor='var(--accent)'" onmouseout="this.style.borderColor='var(--border)'" data-astro-cid-bvzihdzo> <div style="font-size:0.9rem;font-weight:600;color:var(--text-primary);" data-astro-cid-bvzihdzo>Fix OpenClaw macOS: Gateway Won&#39;t Stay Running / Telegram Bot Silent</div> <div style="font-size:0.8rem;color:var(--text-muted);margin-top:0.25rem;" data-astro-cid-bvzihdzo>Fix OpenClaw on macOS: gateway dies when you close the terminal, and the Telegram bot stops responding. Install the launchd service and fix binding + permissions.</div> </a><a href="/blog/local-llm-windows-nvidia-setup/" onclick="window.gtag&#38;&#38;gtag('event','read_next_click',{target:'local-llm-windows-nvidia-setup',position:4,page:location.pathname})" style="display:block;padding:0.75rem 1rem;border-radius:8px;background:var(--bg-card);border:1px solid var(--border);text-decoration:none;transition:border-color 0.15s;" onmouseover="this.style.borderColor='var(--accent)'" onmouseout="this.style.borderColor='var(--border)'" data-astro-cid-bvzihdzo> <div style="font-size:0.9rem;font-weight:600;color:var(--text-primary);" data-astro-cid-bvzihdzo>Local LLM Coding Setup on Windows + NVIDIA: The Guide Mac Tutorials Skip (2026)</div> <div style="font-size:0.8rem;color:var(--text-muted);margin-top:0.25rem;" data-astro-cid-bvzihdzo>A Windows-native path to a local coding agent on an NVIDIA GPU. No WSL, no Docker required. Runtime choice, verifying GPU offload actually engaged, MoE offload for 12-16GB cards, and wiring a coding agent to a local endpoint.</div> </a> </div> </div> </div><!-- end .blog-main --> </div><!-- end .blog-layout-wrap --> </article>   <script>
+  (function () {
+    var form = document.getElementById('oc-signup-form');
+    if (!form) return;
+    var msg = document.getElementById('oc-signup-msg');
+    var input = document.getElementById('oc-signup-email');
+    var btn = form.querySelector('button[type="submit"]');
+
+    function say(text, state) {
+      msg.textContent = text;
+      if (state) { msg.setAttribute('data-state', state); }
+      else { msg.removeAttribute('data-state'); }
+    }
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var email = input.value.trim();
+      if (!email || !input.checkValidity()) {
+        say('Enter a valid email address.', 'error');
+        input.focus();
+        return;
+      }
+      btn.disabled = true;
+      var original = btn.textContent;
+      btn.textContent = 'Subscribing...';
+      say('');
+
+      fetch('https://gjufxkpcv0.execute-api.us-east-1.amazonaws.com/subscribe', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          email: email,
+          tag: 'openclawdc-newsletter',
+          source: 'openclawdc',
+          page: window.location.pathname,
+          website: form.querySelector('input[name="website"]').value
+        })
+      })
+        .then(function (res) {
+          if (!res.ok) throw new Error('Signup failed');
+          return res.json().catch(function () { return {}; });
+        })
+        .then(function (data) {
+          say((data && data.message) || "You're in. See you Wednesday.");
+          input.value = '';
+          if (typeof gtag !== 'undefined') {
+            gtag('event', 'newsletter_signup', {
+              page: window.location.pathname,
+              position: 'blog_inline',
+              source: 'openclawdc',
+              tag: 'openclawdc-newsletter',
+              list_tag: 'openclawdc-newsletter'
+            });
+          }
+        })
+        .catch(function () {
+          say('Something went wrong. Please try again.', 'error');
+        })
+        .finally(function () {
+          btn.disabled = false;
+          btn.textContent = original;
+        });
+    });
+  })();
+  </script>  <script>
+  document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('pre').forEach(function(pre) {
+      var btn = document.createElement('button');
+      btn.textContent = 'Copy';
+      btn.style.cssText = 'position:absolute;top:0.5rem;right:0.5rem;padding:0.25rem 0.6rem;font-size:0.7rem;background:rgba(255,255,255,0.1);color:var(--text-muted);border:1px solid rgba(255,255,255,0.15);border-radius:4px;cursor:pointer;z-index:1;';
+      btn.addEventListener('click', function() {
+        var code = pre.querySelector('code') || pre;
+        navigator.clipboard.writeText(code.textContent).then(function() {
+          btn.textContent = 'Copied!';
+          btn.style.color = 'var(--accent)';
+          btn.style.borderColor = 'var(--accent)';
+          setTimeout(function() { btn.textContent = 'Copy'; btn.style.color = 'var(--text-muted)'; btn.style.borderColor = 'rgba(255,255,255,0.15)'; }, 2000);
+        });
+      });
+      pre.style.position = 'relative';
+      pre.appendChild(btn);
+    });
+  });
+  </script>  <footer id="footer"> <div class="container"> <form id="footer-nl-form" class="email-capture" style="max-width:440px;margin:0 auto;display:flex;flex-wrap:wrap;gap:0.5rem;align-items:center;justify-content:center;"> <label for="footer-nl-email" style="width:100%;text-align:center;font-weight:600;font-size:0.9rem;margin-bottom:0.1rem;">Get weekly OpenClaw tips</label> <input type="email" id="footer-nl-email" name="email" required autocomplete="email" placeholder="you@example.com" style="flex:1;min-width:180px;padding:0.55rem 0.85rem;border-radius:8px;border:1px solid var(--border);background:var(--bg-card);color:var(--text);font-size:0.9rem;outline:none;"> <button type="submit" style="padding:0.55rem 1.25rem;border-radius:8px;border:none;background:var(--accent);color:#fff;font-weight:700;font-size:0.9rem;cursor:pointer;white-space:nowrap;">Subscribe</button> <span id="footer-nl-msg" role="status" aria-live="polite" style="width:100%;text-align:center;font-size:0.8rem;margin-top:0.3rem;display:none;"></span> </form> <div class="footer-sitemap" style="margin:1.5rem 0;padding:1.5rem 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:1.25rem;font-size:0.85rem;"> <div> <p style="margin:0 0 0.5rem;color:var(--text-secondary);font-weight:700;font-size:0.75rem;letter-spacing:0.08em;text-transform:uppercase;">Start Here</p> <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:0.35rem;"> <li><a href="/blog/what-is-openclaw/">What is OpenClaw</a></li> <li><a href="/blog/install-openclaw/">Install guide</a></li> <li><a href="/blog/how-to-use-openclaw/">First 30 minutes</a></li> <li><a href="/course/">Free crash course</a></li> </ul> </div> <div> <p style="margin:0 0 0.5rem;color:var(--text-secondary);font-weight:700;font-size:0.75rem;letter-spacing:0.08em;text-transform:uppercase;">Hardware Guides</p> <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:0.35rem;"> <li><a href="/gear/">Recommended gear</a></li> <li><a href="/blog/best-local-llm-by-ram/">Best LLM by RAM</a></li> <li><a href="/blog/best-local-llm-by-gpu/">Best LLM by GPU</a></li> <li><a href="/blog/mac-studio-vs-rtx-workstation-local-llm/">Mac vs RTX workstation</a></li> </ul> </div> <div> <p style="margin:0 0 0.5rem;color:var(--text-secondary);font-weight:700;font-size:0.75rem;letter-spacing:0.08em;text-transform:uppercase;">Free Tools</p> <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:0.35rem;"> <li><a href="/calculator/">Model fit calculator</a></li> <li><a href="/local-llm-estimator/">Fit + speed estimator</a></li> <li><a href="/can-my-computer-run-local-llm/">Can my PC run it?</a></li> <li><a href="/quiz/">OpenClaw quiz</a></li> <li><a href="/configs/">Ready-to-use config packs</a></li> <li><a href="/tools/">Tools and hardware picks</a></li> </ul> </div> <div> <p style="margin:0 0 0.5rem;color:var(--text-secondary);font-weight:700;font-size:0.75rem;letter-spacing:0.08em;text-transform:uppercase;">Fix &amp; Compare</p> <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:0.35rem;"> <li><a href="/blog/openclaw-troubleshooting/">Troubleshooting hub</a></li> <li><a href="/blog/openclaw-costs-guide/">Cut your API bill</a></li> <li><a href="/ecosystem/">Ecosystem comparisons</a></li> <li><a href="/blog/openclaw-security-checklist/">Security checklist</a></li> </ul> </div> <div> <p style="margin:0 0 0.5rem;color:var(--text-secondary);font-weight:700;font-size:0.75rem;letter-spacing:0.08em;text-transform:uppercase;">Resources</p> <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:0.35rem;"> <li><a href="/blog/">All guides</a></li> <li><a href="/videos/">Video tutorials</a></li> <li><a href="/ai-training/">Team training</a></li> <li><a href="/newsletter/">Newsletter</a></li> <li><a href="https://www.youtube.com/@CloudYeti" target="_blank" rel="noopener" onclick="window.gtag&&gtag('event','youtube_channel_click',{location:'footer_sitemap'})">YouTube</a></li> <li><a href="/llms.txt">llms.txt</a></li> </ul> </div> <div> <p style="margin:0 0 0.5rem;color:var(--text-secondary);font-weight:700;font-size:0.75rem;letter-spacing:0.08em;text-transform:uppercase;">More from Saurav</p> <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:0.35rem;"> <li><a href="https://learn.cloudyeti.io?utm_source=openclawdc&utm_campaign=portfolio_flywheel" target="_blank" rel="noopener">CloudYeti Cert Prep</a></li> <li><a href="https://aijobprep.app?utm_source=openclawdc&utm_campaign=portfolio_flywheel" target="_blank" rel="noopener">AIJobPrep</a></li> <li><a href="https://markdownme.com?utm_source=openclawdc&utm_campaign=portfolio_flywheel" target="_blank" rel="noopener">MarkdownMe</a></li> <li><a href="https://cloudyeti.io?utm_source=openclawdc&utm_campaign=portfolio_flywheel" target="_blank" rel="noopener">CloudYeti</a></li> <li><a href="https://earnyeti.com?utm_source=openclawdc&utm_campaign=portfolio_flywheel" target="_blank" rel="noopener">EarnYeti</a></li> </ul> </div> </div> <div id="fb-widget" style="margin:0 0 1.5rem;text-align:center;font-size:0.9rem;"> <span id="fb-ask" style="display:inline-flex;align-items:center;gap:0.6rem;flex-wrap:wrap;justify-content:center;"> <span style="color:var(--text-secondary);font-weight:600;">Was this page helpful?</span> <button type="button" data-fb="up" aria-label="Yes, helpful" style="padding:0.35rem 0.7rem;border-radius:8px;border:1px solid var(--border);background:var(--bg-card);color:var(--text);cursor:pointer;">&#128077;</button> <button type="button" data-fb="down" aria-label="Not helpful" style="padding:0.35rem 0.7rem;border-radius:8px;border:1px solid var(--border);background:var(--bg-card);color:var(--text);cursor:pointer;">&#128078;</button> </span> <form id="fb-form" hidden style="max-width:440px;margin:0.75rem auto 0;display:flex;flex-direction:column;gap:0.5rem;"> <textarea id="fb-msg" maxlength="2000" rows="3" placeholder="Optional — tell us more" style="padding:0.55rem 0.85rem;border-radius:8px;border:1px solid var(--border);background:var(--bg-card);color:var(--text);font-size:0.9rem;outline:none;resize:vertical;"></textarea> <input type="text" name="website" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;" aria-hidden="true"> <span style="display:flex;gap:0.5rem;justify-content:center;"> <button type="submit" style="padding:0.45rem 1.1rem;border-radius:8px;border:none;background:var(--accent);color:#fff;font-weight:700;font-size:0.9rem;cursor:pointer;">Send</button> <button type="button" id="fb-skip" style="padding:0.45rem 0.8rem;border-radius:8px;border:none;background:none;color:var(--text-secondary);cursor:pointer;">Skip</button> </span> </form> <span id="fb-thanks" hidden style="color:var(--text-secondary);">Thanks for the feedback!</span> </div> <div class="footer-bottom"> <p style="margin-bottom:0.5rem;"> <a href="https://cloudyeti.io/meet" onclick="window.gtag&&gtag('event','book_call_click',{location:'footer',page:location.pathname})">Book a 1:1 session</a>
+&nbsp;·&nbsp;
+<a href="https://www.youtube.com/@CloudYeti" target="_blank" rel="noopener" onclick="window.gtag&&gtag('event','youtube_channel_click',{location:'footer'})">YouTube: @CloudYeti</a> </p> <p>&copy; 2026 OpenClaw DC.</p> </div> </div> </footer> <!-- Cross-site feedback widget — shared endpoint on the markdownme-ai stack. --> <script>
+      (function () {
+        var widget = document.getElementById('fb-widget');
+        if (!widget) return;
+        var ask = document.getElementById('fb-ask');
+        var form = document.getElementById('fb-form');
+        var thanks = document.getElementById('fb-thanks');
+        var rating = '';
+        function post(payload) {
+          payload.site = 'openclawdc.com';
+          payload.page = location.pathname;
+          return fetch('https://n2ipbuesqk.execute-api.us-east-1.amazonaws.com/feedback', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload)
+          });
+        }
+        widget.querySelectorAll('[data-fb]').forEach(function (btn) {
+          btn.addEventListener('click', function () {
+            rating = btn.getAttribute('data-fb');
+            post({ rating: rating }).catch(function () {});
+            if (window.gtag) gtag('event', 'feedback_rating', { rating: rating, page: location.pathname });
+            ask.hidden = true;
+            ask.style.display = 'none';
+            form.hidden = false;
+          });
+        });
+        form.addEventListener('submit', function (e) {
+          e.preventDefault();
+          var msg = document.getElementById('fb-msg').value.trim();
+          var hp = form.querySelector('input[name="website"]').value;
+          if (msg) post({ rating: rating, message: msg, website: hp }).catch(function () {});
+          form.hidden = true;
+          thanks.hidden = false;
+        });
+        document.getElementById('fb-skip').addEventListener('click', function () {
+          form.hidden = true;
+          thanks.hidden = false;
+        });
+      })();
+    </script> <!-- Footer newsletter capture — posts to the same endpoint as /newsletter. --> <script>
+      (function () {
+        var form = document.getElementById('footer-nl-form');
+        if (!form) return;
+        form.addEventListener('submit', function (e) {
+          e.preventDefault();
+          var emailEl = document.getElementById('footer-nl-email');
+          var msg = document.getElementById('footer-nl-msg');
+          var btn = form.querySelector('button[type="submit"]');
+          btn.disabled = true;
+          btn.textContent = 'Subscribing...';
+          fetch('https://gjufxkpcv0.execute-api.us-east-1.amazonaws.com/subscribe', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              email: emailEl.value,
+              source: 'openclawdc',
+              tag: 'openclawdc-newsletter',
+              page: location.pathname
+            })
+          }).then(function (res) {
+            if (!res.ok) throw new Error('failed');
+            msg.style.display = 'block';
+            msg.style.color = '#2e7d43';
+            msg.textContent = "You're in! Check your inbox Wednesday.";
+            emailEl.value = '';
+            if (window.gtag) gtag('event', 'newsletter_signup', {
+              location: 'footer',
+              source: 'openclawdc',
+              tag: 'openclawdc-newsletter',
+              list_tag: 'openclawdc-newsletter',
+              page: location.pathname
+            });
+          }).catch(function () {
+            msg.style.display = 'block';
+            msg.style.color = '#ef4444';
+            msg.textContent = 'Something went wrong. Please try again.';
+          }).finally(function () {
+            btn.disabled = false;
+            btn.textContent = 'Subscribe';
+          });
+        });
+      })();
+    </script> <!-- Safety-net outbound/affiliate click tracking. Most CTAs fire their own
+         inline gtag event; this only covers links that do NOT already have one,
+         so nothing is double-counted. --> <script>
+      document.addEventListener('click', function (e) {
+        var a = e.target && e.target.closest ? e.target.closest('a[href]') : null;
+        if (!a || !window.gtag || a.hasAttribute('data-ga-manual')) return;
+        var inline = a.getAttribute('onclick');
+        if (inline && inline.indexOf('gtag') !== -1) return; // already tracked
+        var href = a.getAttribute('href') || '';
+        if (/amzn\.to|amazon\./i.test(href)) {
+          gtag('event', 'affiliate_click', { location: 'auto', url: href, page: location.pathname });
+        } else if (/\/ai-training\/?|cloudyeti\.io\/meet/i.test(href)) {
+          gtag('event', 'training_page_cta_click', { location: 'auto', url: href, page: location.pathname });
+        }
+      }, true);
+    </script> </body> </html>

@@ -1,0 +1,1199 @@
+{
+  "schemaVersion": "source-document/v1",
+  "id": "9876bfcf0fdbea3d80149fe2a54c14d63cfa498caedafda9aa66c6f834be189b",
+  "version": "6eb4ae54b763eba6aa33ace2521995b48d2a91a089236310877eb4480fdc81f2",
+  "requestedUrl": "https://api-docs.deepseek.com/quick_start/pricing",
+  "finalUrl": "https://api-docs.deepseek.com/quick_start/pricing/",
+  "retrievedAt": "2026-10-25T04:34:52.221Z",
+  "contentType": "text/html",
+  "status": "READ",
+  "readError": null,
+  "rawHash": "b856a6e93fa4793ecc8f3fd03a01bb7d8f7572f78a4739da8ce6dbdb09328d66",
+  "textHash": "4d791bb7563ef270baf20c50a40e913573f6da5de3417a76b48e3beadeb05a68",
+  "text": "Skip to main content\n\nSearch / Fetch API is now available, powered by our in-house search engine and supporting web search and fetch. Click here to view the guide.\n\nOn this page\n\nModels & Pricing\n\nModel prices are listed in units of per 1M tokens. A token, the smallest unit of text that the model recognizes, can be a word, a number, or even a punctuation mark. We bill model usage based on the total number of input and output tokens by the model.\n\nModel Details​\n\nMODELdeepseek-flash(1)deepseek-v4-proBASE URL (OpenAI Format)https://api.deepseek.comBASE URL (Anthropic Format)https://api.deepseek.com/anthropicMODEL VERSIONDeepSeek-V4.1-Flash-1017DeepSeek-V4-Pro-0813THINKING MODESupports both non-thinking and thinking (default) modesSee Thinking Mode for how to switchCONTEXT LENGTH1MMAX OUTPUTMAXIMUM: 384KFEATURESJson Output✓✓Tool Calls✓✓Responses API✓✓Anthropic API✓✓Chat Prefix Completion（Beta）✓✓FIM Completion（Beta）Non-thinking mode onlyNon-thinking mode onlyVision✓Not supportedPRICING(2)1M INPUT TOKENS(CACHE HIT)OFF-PEAK$0.003$0.022PEAK$0.006$0.0441M INPUT TOKENS(CACHE MISS)OFF-PEAK$0.15$0.66PEAK$0.3$1.321M OUTPUT TOKENSOFF-PEAK$0.6$1.98PEAK$1.2$3.96Concurrency Limit(3)2500500\n\n(1) Use deepseek-flash as the model name. The legacy names deepseek-v4-flash and deepseek-v4-flash-vision-exp are still accepted, but the corresponding models have been retired, their requests are served by the DeepSeek-V4.1-Flash-1017 model and billed at the Flash price.\n\n(2) Off-peak rates are half of the peak rates. Peak hours are 01:00 - 04:00 and 06:00 - 10:00 UTC, Monday through Friday, excluding Chinese public holidays. All other hours are off-peak, including weekends and Chinese public holidays in full.\n\n(3) For more details on concurrency limits, please refer to Rate Limit & Isolation.\n\nSearch & Fetch Pricing​\n\nSearch and Fetch are standalone APIs billed per request.\n\nAPIUnitPriceSearchPer 1,000 successful requests$0.75FetchPer 1,000 successful requests$0.75\n\nNote: when you use the DeepSeek API through DeepSeek Harness, Claude Code, or Codex, server-side tool calls already hit the Search and Fetch APIs. These calls are currently free of charge; per-request billing starts at 00:00 Beijing time on November 1, 2026.\n\nSee the Search & Fetch guide for API usage and complete billing rules.\n\nDeduction Rules​\n\nFor model usage, the expense = number of tokens × price. Search and Fetch are charged per successful request at the rates above. The corresponding fees will be directly deducted from your topped-up balance or granted balance, with a preference for using the granted balance first when both balances are available.\n\nProduct prices may vary and DeepSeek reserves the right to adjust them. We recommend topping up based on your actual usage and regularly checking this page for the most recent pricing information.\n\nModel Details\n\nSearch & Fetch Pricing\n\nDeduction Rules",
+  "rawSources": [
+    {
+      "mode": "STATIC",
+      "hash": "b856a6e93fa4793ecc8f3fd03a01bb7d8f7572f78a4739da8ce6dbdb09328d66",
+      "path": "C:\\Users\\qianchen\\Documents\\waytoagi-1024-detective-a2-v4\\.cache\\source-documents-v4\\2cc8d944-9927-435f-9168-5bbdd3cc1936\\9876bfcf0fdbea3d80149fe2a54c14d63cfa498caedafda9aa66c6f834be189b\\raw.bin"
+    }
+  ],
+  "storage": {
+    "rawPath": "C:\\Users\\qianchen\\Documents\\waytoagi-1024-detective-a2-v4\\.cache\\source-documents-v4\\2cc8d944-9927-435f-9168-5bbdd3cc1936\\9876bfcf0fdbea3d80149fe2a54c14d63cfa498caedafda9aa66c6f834be189b\\raw.bin",
+    "textPath": "C:\\Users\\qianchen\\Documents\\waytoagi-1024-detective-a2-v4\\.cache\\source-documents-v4\\2cc8d944-9927-435f-9168-5bbdd3cc1936\\9876bfcf0fdbea3d80149fe2a54c14d63cfa498caedafda9aa66c6f834be189b\\source.txt",
+    "manifestPath": "C:\\Users\\qianchen\\Documents\\waytoagi-1024-detective-a2-v4\\.cache\\source-documents-v4\\2cc8d944-9927-435f-9168-5bbdd3cc1936\\9876bfcf0fdbea3d80149fe2a54c14d63cfa498caedafda9aa66c6f834be189b\\manifest.json"
+  },
+  "parser": {
+    "name": "readability+source-dom",
+    "version": "readability-0.6.0+jsdom-30.1.3+source-dom-2",
+    "normalization": "source-text/v1",
+    "mode": "STATIC"
+  },
+  "metadata": {
+    "title": "Models & Pricing | DeepSeek API Docs",
+    "author": null,
+    "publishedAt": null,
+    "language": "en"
+  },
+  "completeness": "COMPLETE",
+  "warnings": [],
+  "blocks": [
+    {
+      "start": 0,
+      "end": 20,
+      "id": "b0",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[0]",
+      "headingPath": [],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 22,
+      "end": 163,
+      "id": "b1",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[1]",
+      "headingPath": [],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 165,
+      "end": 177,
+      "id": "b2",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[2]",
+      "headingPath": [],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 179,
+      "end": 195,
+      "id": "b3",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[3]",
+      "headingPath": [
+        "Models & Pricing"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 197,
+      "end": 449,
+      "id": "b4",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[4]",
+      "headingPath": [
+        "Models & Pricing"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 451,
+      "end": 465,
+      "id": "b5",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[5]",
+      "headingPath": [
+        "Models & Pricing",
+        "Model Details​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 467,
+      "end": 1192,
+      "id": "b6",
+      "kind": "TABLE",
+      "locator": "source DOM normalized block[6]",
+      "headingPath": [
+        "Models & Pricing",
+        "Model Details​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1194,
+      "end": 1466,
+      "id": "b7",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[7]",
+      "headingPath": [
+        "Models & Pricing",
+        "Model Details​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1468,
+      "end": 1710,
+      "id": "b8",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[8]",
+      "headingPath": [
+        "Models & Pricing",
+        "Model Details​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1712,
+      "end": 1795,
+      "id": "b9",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[9]",
+      "headingPath": [
+        "Models & Pricing",
+        "Model Details​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1797,
+      "end": 1820,
+      "id": "b10",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[10]",
+      "headingPath": [
+        "Models & Pricing",
+        "Search & Fetch Pricing​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1822,
+      "end": 1878,
+      "id": "b11",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[11]",
+      "headingPath": [
+        "Models & Pricing",
+        "Search & Fetch Pricing​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1880,
+      "end": 1971,
+      "id": "b12",
+      "kind": "TABLE",
+      "locator": "source DOM normalized block[12]",
+      "headingPath": [
+        "Models & Pricing",
+        "Search & Fetch Pricing​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1973,
+      "end": 2231,
+      "id": "b13",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[13]",
+      "headingPath": [
+        "Models & Pricing",
+        "Search & Fetch Pricing​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2233,
+      "end": 2303,
+      "id": "b14",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[14]",
+      "headingPath": [
+        "Models & Pricing",
+        "Search & Fetch Pricing​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2305,
+      "end": 2321,
+      "id": "b15",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[15]",
+      "headingPath": [
+        "Models & Pricing",
+        "Deduction Rules​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2323,
+      "end": 2636,
+      "id": "b16",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[16]",
+      "headingPath": [
+        "Models & Pricing",
+        "Deduction Rules​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2638,
+      "end": 2834,
+      "id": "b17",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[17]",
+      "headingPath": [
+        "Models & Pricing",
+        "Deduction Rules​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2836,
+      "end": 2849,
+      "id": "b18",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[18]",
+      "headingPath": [
+        "Models & Pricing",
+        "Deduction Rules​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2851,
+      "end": 2873,
+      "id": "b19",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[19]",
+      "headingPath": [
+        "Models & Pricing",
+        "Deduction Rules​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2875,
+      "end": 2890,
+      "id": "b20",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[20]",
+      "headingPath": [
+        "Models & Pricing",
+        "Deduction Rules​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    }
+  ],
+  "links": [
+    {
+      "url": "https://api-docs.deepseek.com/quick_start/pricing",
+      "text": "",
+      "blockId": null,
+      "relation": "CANONICAL",
+      "locator": "source DOM link[0]"
+    },
+    {
+      "url": "https://api-docs.deepseek.com/guides/search",
+      "text": "Click here to view the guide.",
+      "blockId": "b1",
+      "relation": "LINK",
+      "locator": "source DOM link[2]"
+    },
+    {
+      "url": "https://api.deepseek.com/",
+      "text": "https://api.deepseek.com",
+      "blockId": "b6",
+      "relation": "LINK",
+      "locator": "source DOM link[35]"
+    },
+    {
+      "url": "https://api.deepseek.com/anthropic",
+      "text": "https://api.deepseek.com/anthropic",
+      "blockId": "b6",
+      "relation": "LINK",
+      "locator": "source DOM link[36]"
+    },
+    {
+      "url": "https://api-docs.deepseek.com/guides/thinking_mode",
+      "text": "Thinking Mode",
+      "blockId": "b6",
+      "relation": "LINK",
+      "locator": "source DOM link[37]"
+    },
+    {
+      "url": "https://api-docs.deepseek.com/guides/json_mode",
+      "text": "Json Output",
+      "blockId": "b6",
+      "relation": "LINK",
+      "locator": "source DOM link[38]"
+    },
+    {
+      "url": "https://api-docs.deepseek.com/guides/tool_calls",
+      "text": "Tool Calls",
+      "blockId": "b6",
+      "relation": "LINK",
+      "locator": "source DOM link[39]"
+    },
+    {
+      "url": "https://api-docs.deepseek.com/guides/responses_api",
+      "text": "Responses API",
+      "blockId": "b6",
+      "relation": "LINK",
+      "locator": "source DOM link[40]"
+    },
+    {
+      "url": "https://api-docs.deepseek.com/guides/anthropic_api",
+      "text": "Anthropic API",
+      "blockId": "b6",
+      "relation": "LINK",
+      "locator": "source DOM link[41]"
+    },
+    {
+      "url": "https://api-docs.deepseek.com/guides/chat_prefix_completion",
+      "text": "Chat Prefix Completion（Beta）",
+      "blockId": "b6",
+      "relation": "LINK",
+      "locator": "source DOM link[42]"
+    },
+    {
+      "url": "https://api-docs.deepseek.com/guides/fim_completion",
+      "text": "FIM Completion（Beta）",
+      "blockId": "b6",
+      "relation": "LINK",
+      "locator": "source DOM link[43]"
+    },
+    {
+      "url": "https://api-docs.deepseek.com/guides/vision",
+      "text": "Vision",
+      "blockId": "b6",
+      "relation": "LINK",
+      "locator": "source DOM link[44]"
+    },
+    {
+      "url": "https://api-docs.deepseek.com/quick_start/rate_limit",
+      "text": "Rate Limit & Isolation",
+      "blockId": "b9",
+      "relation": "LINK",
+      "locator": "source DOM link[45]"
+    },
+    {
+      "url": "https://api-docs.deepseek.com/guides/search",
+      "text": "Search & Fetch guide",
+      "blockId": "b14",
+      "relation": "LINK",
+      "locator": "source DOM link[47]"
+    }
+  ],
+  "tables": [
+    {
+      "blockId": "b6",
+      "rows": [
+        {
+          "start": 467,
+          "end": 504,
+          "cells": [
+            {
+              "start": 467,
+              "end": 472,
+              "text": "MODEL",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 3
+            },
+            {
+              "start": 472,
+              "end": 489,
+              "text": "deepseek-flash(1)",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 489,
+              "end": 504,
+              "text": "deepseek-v4-pro",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 504,
+          "end": 552,
+          "cells": [
+            {
+              "start": 504,
+              "end": 528,
+              "text": "BASE URL (OpenAI Format)",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 3
+            },
+            {
+              "start": 528,
+              "end": 552,
+              "text": "https://api.deepseek.com",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 2
+            }
+          ]
+        },
+        {
+          "start": 552,
+          "end": 613,
+          "cells": [
+            {
+              "start": 552,
+              "end": 579,
+              "text": "BASE URL (Anthropic Format)",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 3
+            },
+            {
+              "start": 579,
+              "end": 613,
+              "text": "https://api.deepseek.com/anthropic",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 2
+            }
+          ]
+        },
+        {
+          "start": 613,
+          "end": 670,
+          "cells": [
+            {
+              "start": 613,
+              "end": 626,
+              "text": "MODEL VERSION",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 3
+            },
+            {
+              "start": 626,
+              "end": 650,
+              "text": "DeepSeek-V4.1-Flash-1017",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 650,
+              "end": 670,
+              "text": "DeepSeek-V4-Pro-0813",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 670,
+          "end": 773,
+          "cells": [
+            {
+              "start": 670,
+              "end": 683,
+              "text": "THINKING MODE",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 3
+            },
+            {
+              "start": 683,
+              "end": 773,
+              "text": "Supports both non-thinking and thinking (default) modesSee Thinking Mode for how to switch",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 2
+            }
+          ]
+        },
+        {
+          "start": 773,
+          "end": 789,
+          "cells": [
+            {
+              "start": 773,
+              "end": 787,
+              "text": "CONTEXT LENGTH",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 3
+            },
+            {
+              "start": 787,
+              "end": 789,
+              "text": "1M",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 2
+            }
+          ]
+        },
+        {
+          "start": 789,
+          "end": 812,
+          "cells": [
+            {
+              "start": 789,
+              "end": 799,
+              "text": "MAX OUTPUT",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 3
+            },
+            {
+              "start": 799,
+              "end": 812,
+              "text": "MAXIMUM: 384K",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 2
+            }
+          ]
+        },
+        {
+          "start": 812,
+          "end": 833,
+          "cells": [
+            {
+              "start": 812,
+              "end": 820,
+              "text": "FEATURES",
+              "header": false,
+              "rowSpan": 7,
+              "colSpan": 1
+            },
+            {
+              "start": 820,
+              "end": 831,
+              "text": "Json Output",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 2
+            },
+            {
+              "start": 831,
+              "end": 832,
+              "text": "✓",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 832,
+              "end": 833,
+              "text": "✓",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 833,
+          "end": 845,
+          "cells": [
+            {
+              "start": 833,
+              "end": 843,
+              "text": "Tool Calls",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 2
+            },
+            {
+              "start": 843,
+              "end": 844,
+              "text": "✓",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 844,
+              "end": 845,
+              "text": "✓",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 845,
+          "end": 860,
+          "cells": [
+            {
+              "start": 845,
+              "end": 858,
+              "text": "Responses API",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 2
+            },
+            {
+              "start": 858,
+              "end": 859,
+              "text": "✓",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 859,
+              "end": 860,
+              "text": "✓",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 860,
+          "end": 875,
+          "cells": [
+            {
+              "start": 860,
+              "end": 873,
+              "text": "Anthropic API",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 2
+            },
+            {
+              "start": 873,
+              "end": 874,
+              "text": "✓",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 874,
+              "end": 875,
+              "text": "✓",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 875,
+          "end": 905,
+          "cells": [
+            {
+              "start": 875,
+              "end": 903,
+              "text": "Chat Prefix Completion（Beta）",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 2
+            },
+            {
+              "start": 903,
+              "end": 904,
+              "text": "✓",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 904,
+              "end": 905,
+              "text": "✓",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 905,
+          "end": 969,
+          "cells": [
+            {
+              "start": 905,
+              "end": 925,
+              "text": "FIM Completion（Beta）",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 2
+            },
+            {
+              "start": 925,
+              "end": 947,
+              "text": "Non-thinking mode only",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 947,
+              "end": 969,
+              "text": "Non-thinking mode only",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 969,
+          "end": 989,
+          "cells": [
+            {
+              "start": 969,
+              "end": 975,
+              "text": "Vision",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 2
+            },
+            {
+              "start": 975,
+              "end": 976,
+              "text": "✓",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 976,
+              "end": 989,
+              "text": "Not supported",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 989,
+          "end": 1045,
+          "cells": [
+            {
+              "start": 989,
+              "end": 999,
+              "text": "PRICING(2)",
+              "header": false,
+              "rowSpan": 6,
+              "colSpan": 1
+            },
+            {
+              "start": 999,
+              "end": 1025,
+              "text": "1M INPUT TOKENS(CACHE HIT)",
+              "header": false,
+              "rowSpan": 2,
+              "colSpan": 1
+            },
+            {
+              "start": 1025,
+              "end": 1033,
+              "text": "OFF-PEAK",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1033,
+              "end": 1039,
+              "text": "$0.003",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1039,
+              "end": 1045,
+              "text": "$0.022",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 1045,
+          "end": 1061,
+          "cells": [
+            {
+              "start": 1045,
+              "end": 1049,
+              "text": "PEAK",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1049,
+              "end": 1055,
+              "text": "$0.006",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1055,
+              "end": 1061,
+              "text": "$0.044",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 1061,
+          "end": 1106,
+          "cells": [
+            {
+              "start": 1061,
+              "end": 1088,
+              "text": "1M INPUT TOKENS(CACHE MISS)",
+              "header": false,
+              "rowSpan": 2,
+              "colSpan": 1
+            },
+            {
+              "start": 1088,
+              "end": 1096,
+              "text": "OFF-PEAK",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1096,
+              "end": 1101,
+              "text": "$0.15",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1101,
+              "end": 1106,
+              "text": "$0.66",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 1106,
+          "end": 1119,
+          "cells": [
+            {
+              "start": 1106,
+              "end": 1110,
+              "text": "PEAK",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1110,
+              "end": 1114,
+              "text": "$0.3",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1114,
+              "end": 1119,
+              "text": "$1.32",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 1119,
+          "end": 1152,
+          "cells": [
+            {
+              "start": 1119,
+              "end": 1135,
+              "text": "1M OUTPUT TOKENS",
+              "header": false,
+              "rowSpan": 2,
+              "colSpan": 1
+            },
+            {
+              "start": 1135,
+              "end": 1143,
+              "text": "OFF-PEAK",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1143,
+              "end": 1147,
+              "text": "$0.6",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1147,
+              "end": 1152,
+              "text": "$1.98",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 1152,
+          "end": 1165,
+          "cells": [
+            {
+              "start": 1152,
+              "end": 1156,
+              "text": "PEAK",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1156,
+              "end": 1160,
+              "text": "$1.2",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1160,
+              "end": 1165,
+              "text": "$3.96",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 1165,
+          "end": 1192,
+          "cells": [
+            {
+              "start": 1165,
+              "end": 1185,
+              "text": "Concurrency Limit(3)",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 3
+            },
+            {
+              "start": 1185,
+              "end": 1189,
+              "text": "2500",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1189,
+              "end": 1192,
+              "text": "500",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "blockId": "b12",
+      "rows": [
+        {
+          "start": 1880,
+          "end": 1892,
+          "cells": [
+            {
+              "start": 1880,
+              "end": 1883,
+              "text": "API",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1883,
+              "end": 1887,
+              "text": "Unit",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1887,
+              "end": 1892,
+              "text": "Price",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 1892,
+          "end": 1932,
+          "cells": [
+            {
+              "start": 1892,
+              "end": 1898,
+              "text": "Search",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1898,
+              "end": 1927,
+              "text": "Per 1,000 successful requests",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1927,
+              "end": 1932,
+              "text": "$0.75",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 1932,
+          "end": 1971,
+          "cells": [
+            {
+              "start": 1932,
+              "end": 1937,
+              "text": "Fetch",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1937,
+              "end": 1966,
+              "text": "Per 1,000 successful requests",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1966,
+              "end": 1971,
+              "text": "$0.75",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,403 @@
+DevelopmentDeep Dive13 min readPublished May 10, 2026
+
+Multi-agent workflows, design-driven component scaffolding, Composer evolution — what shipped in Cursor 3 and where it wins versus Claude Code.
+
+Cursor 3 Deep Dive: Agents + Composer Review 2026
+
+Cursor 3 ships a unified agent-first workspace — parallel Agents with per-task scope, design-driven workflows that turn references into component code via Composer, and Composer with reviewable multi-file diffs. The question isn't whether it's capable. The question is which workloads it actually wins.
+
+DADigital Applied TeamSenior strategists · Published May 10, 2026PublishedMay 10, 2026Read time13 minSourcesCursor changelog + hands-on review
+
+New surfaces3Agents · Design · ComposerWorkloads compared3vs Claude Code head-to-headModel picksMultiClaude · GPT · GeminiRecommended startComposer + 1+ single agent
+
+Table of contents
+
+00Key takeaways
+
+01What's new
+
+02Agents panel
+
+03Design-to-code
+
+04Composer
+
+05MCP + routing
+
+06vs Claude Code
+
+07Pitfalls
+
+08FAQ
+
+Cursor 3 is the first version of the AI IDE that genuinely earns the "agentic" label. Three working surfaces — the parallel Agents panel, a design-driven Composer workflow, and a meaningfully evolved multi-file Composer — move Cursor from a smart code editor into a multi-agent orchestration environment, and the head-to-head against Claude Code finally becomes a workload-specific choice rather than a brand preference.
+
+The headline change is structural rather than cosmetic. Cursor 2 was already agent-centered (see Cursor's own 2.0 announcement), but Cursor 3 hardens parallel agents, design-driven scaffolding and explicit approval gates as first-class workflows. Each of those addresses a real gap that teams hit when trying to scale AI-assisted development beyond solo experimentation. This guide walks through what shipped per Cursor's changelog, how those surfaces compose in day-to-day work, and how Cursor 3 stacks up against Claude Code on three representative workloads.
+
+Note on terminology: Cursor brands the multi-agent panel and the design-driven workflow as Agents and Composer rather than as separate products. The goal here is a clear workload-to-tool mapping you can defend in a procurement conversation, not a feature checklist.
+
+Key takeaways
+
+01The parallel Agents panel is the killer feature.Cursor's Agents surface (built out across 2.0 and 3.x) lets you run several agents in parallel on different tasks in one project — each with its own working set, model, and approval policy. It changes how mid-sized refactors feel.
+
+02Design-driven Composer workflows genuinely lift design-to-code work.Feeding a reference image into Composer and iterating against the rendered output closes a real loop that Figma plugins and ad-hoc screenshot prompts never did. Best for component scaffolding, not pixel-perfect production work.
+
+03Composer's explicit approval gates are the right default.Multi-file edits stage as a reviewable diff with explicit accept-per-file controls before anything writes. This is the single biggest reduction in AI-induced regression risk Cursor has shipped — and it should be on by default.
+
+04MCP integration is now competitive, not differentiated.Cursor 3 supports MCP servers across all surfaces, with per-agent server scoping. It matches Claude Code's MCP story; it doesn't surpass it. Model routing across Claude / GPT-5.5 / Gemini stays Cursor's edge.
+
+05Cursor 3 wins for some workloads, loses for others — pick by workload.Cursor wins for design-driven UI work, mixed-model parallel sprints, and visual debugging. Claude Code wins for terminal-first agentic work, deep filesystem operations, and headless CI integration. The right answer is often both.
+
+01 — What's NewCursor 3 ships three major surfaces.
+
+The Cursor 3 changelog reads like three product launches stapled together. That isn't framing — it's accurate. The parallel Agents panel, the design-driven Composer workflow, and Composer's evolved multi-file diff each represent a distinct interaction model, with distinct affordances and distinct best-fit workloads. Reading the changelog as a single "version bump" misses the architectural intent.
+
+The unifying theme is that Cursor is no longer trying to be an assistant that lives in your editor. It's trying to be a workspace in which multiple AI agents and one human collaborate on the same project — with surfaces tuned to the different kinds of tasks that workspace needs to support. Code generation, visual design implementation, multi-file refactoring, and ambient background work all get their own room.
+
+Surface 01
+
+Parallel Agents panel
+
+Agents
+
+Run multiple Agents in parallel on different tasks within one project — each with its own working set, model selection, and approval policy. Cloud Agents extend the same primitive to remote machines.
+
+Agents · Cloud Agents
+
+Surface 02
+
+Design-driven Composer workflow
+
+Design
+
+Feed a reference image (Figma export, screenshot, sketch) into Composer, scaffold component code, and iterate against the rendered output. Not a separately branded product — it's Composer wired for design-to-code work.
+
+Composer workflow
+
+Surface 03
+
+Explicit approval gates
+
+Composer
+
+Multi-file edits stage as a single reviewable diff with per-file accept / reject. No more silent writes across the project. Reads naturally on top of git, integrates with branch workflows.
+
+Composer · Cursor 3
+
+Two smaller changes are easy to miss but worth flagging. First, Cursor 3's model picker exposes per-surface defaults — you can route Composer to Claude Sonnet 4.6 while keeping the Agents panel on a mix of Sonnet plus GPT-5.5, with Gemini reserved for long-context retrieval. Second, MCP server scoping can be configured per-agent rather than per-workspace, which lets you give a single agent access to your Linear MCP without exposing it to every other surface.
+
+Neither of those is headline material on its own. Together with the three big surfaces, they're what makes Cursor 3 feel like a workspace rather than a chat box. The rest of this guide walks each of those surfaces and the workflows they unlock.
+
+Release framingCursor 3 is best read as three working surfaces shipped in one version: the parallel Agents panel, design-driven Composer scaffolding, and evolved multi-file Composer review. Each addresses a different gap in AI-assisted development, and each wins or loses on different workloads. The right rollout strategy is to introduce them one surface at a time, not all at once.
+
+02 — Agents PanelMulti-agent parallel workflows in one IDE.
+
+The parallel Agents panel is the single biggest reason to upgrade. It opens as a sidebar that lists every active agent in the workspace, with status (idle, running, awaiting approval), the file or task scope, and the model selected. Spawning a new agent takes two clicks; the new agent inherits the workspace context but maintains its own conversation, file working set, and tool permissions. Cloud Agents extend the same primitive to remote compute when the work outgrows your local machine.
+
+What changes in practice is the cadence of work. Instead of one agent doing one task at a time, you can spawn a research agent to audit the codebase while a build agent writes tests against the existing implementation and a review agent watches the diff for regressions. The human role shifts from typing into a single chat to ferrying context between agents and approving the diffs each one produces.
+
+Archetype 01
+
+Research Agent
+
+Read-only · long-context model
+
+Audits the codebase, summarizes architecture, finds reuse opportunities, and writes a plan into a docs/ markdown file. No writes outside docs/. Gemini or Claude Sonnet long-context is the natural pick.
+
+Read-only · Gemini / Sonnet
+
+Archetype 02
+
+Build Agent
+
+Composer-backed · explicit gates
+
+Implements the plan the research agent produced. Stages every multi-file edit as a Composer diff with per-file approval. Claude Sonnet 4.6 is the strong default for this loop.
+
+Writes · Claude Sonnet
+
+Archetype 03
+
+Test Agent
+
+Test-only scope · GPT-5.5 fast loop
+
+Writes unit and integration tests against the build agent's output. Scoped to spec/test directories. GPT-5.5 fast mode is well-suited to the tight read/run/refactor loop tests typically need.
+
+Tests · GPT-5.5
+
+Archetype 04
+
+Review Agent
+
+Read-only · Claude Sonnet review mode
+
+Watches each diff before it lands. Reviews for regression risk, style drift, missing tests, and security smells. Read-only — its output is review comments, not code.
+
+Review · Claude Sonnet
+
+The four-archetype split above is the pattern that earns its keep in our own work — and it generalizes well. Most teams won't need all four agents running simultaneously, but having the vocabulary to spawn a read-only research or review agent alongside the active build agent is what makes the panel feel different from a chat sidebar. The agents stay live; you switch between them with keyboard shortcuts as fluidly as switching between editor tabs.
+
+There's a real cost discipline question hiding inside this. Running four parallel agents at once can burn through token budget quickly, especially if the research and review agents are on long-context models. Cursor 3 surfaces per-agent context usage (see the Context Usage Breakdown changelog), which is the right primitive — but teams need an explicit rule of thumb. Our working default: never more than two writing agents at once, read-only research and review agents on cheaper models, hard ceilings per agent set in the workspace settings.
+
+"The Agents panel changes the unit of work from 'one message' to 'one workspace of parallel collaborators'. It's the first AI IDE feature that genuinely reshapes the rhythm of a coding session."— Cursor 3 hands-on, May 2026
+
+03 — Design-driven ComposerImage-to-code via Composer with a tight review loop.
+
+Cursor does not ship a separately branded design-to-code product on cursor.com/features — the real surface is the design-driven workflow that Composer unlocks when you point it at a reference image. The workflow: drop a reference image into Composer (Figma export, production screenshot, hand sketch), describe the target framework and component library, and Cursor scaffolds the component code. You then iterate prompt by prompt, comparing the rendered output to the reference and pushing back through Composer's diff review surface.
+
+The honest framing is that this is excellent for component scaffolding — getting a Tailwind / Radix / shadcn version of a Figma component from 0% to 70% complete in two minutes, with reasonable layout, semantic markup, and approximate spacing. It is not a replacement for design system discipline or for the last 30% of polish work, which still requires a designer-developer pair conversation.
+
+Design-driven Composer quality by task class · 5-min scaffolding pass
+
+Source: Hands-on review across 20 representative components
+
+Component scaffolding (Figma → shadcn)First-pass markup + Tailwind classes, layout structure85%Layout + responsive structureGrid, flex, breakpoints, container queries78%Token usage (colors, spacing, radii)Maps to existing design tokens when given context64%Pixel-perfect production polishAnimation, focus states, edge-case interaction polish32%Accessibility (semantic, ARIA, keyboard)Decent defaults; still requires manual review48%
+
+What makes the workflow earn its keep is Composer's tight iteration loop. You prompt, Composer stages a diff, you accept or reject per file, you eyeball the rendered output against the reference, you prompt again. It collapses a feedback loop that previously involved screenshotting, prompting again, eyeballing the difference, and re-prompting across separate tools. That loop now happens in-place inside Composer.
+
+The right way to use this design-driven Composer workflow in production is as a starting point that a developer-designer pair refines together, not as an autocomplete for entire pages. Teams that try to scaffold full pages end up with output that is structurally reasonable but token-inconsistent, semantically thin, and missing the interaction polish that distinguishes shipped UI from a wireframe. Used right, it removes maybe two-thirds of the keystrokes from component-implementation work and leaves the actual design decisions where they belong.
+
+Design-to-code reality checkBest for component scaffolding, not pixel-perfect production work. The first 70% of a component arrives in two minutes; the last 30% — animation, focus states, accessibility, token consistency — still needs a human pass. Treating Composer as a full design-to-production pipeline produces UI that ships looking AI-generated.
+
+04 — ComposerMulti-file edits with explicit approval gates.
+
+Composer has been in Cursor since version 1, but Cursor 3's evolution is the version where it becomes a tool you can trust at scale. The behavior change: multi-file edits stage as a single reviewable diff with per-file accept / reject before anything writes to disk. The default is now "preview, then approve" rather than "edit, then review". That ordering matters more than it sounds.
+
+In the old model, a 12-file Composer run wrote 12 files and asked you to undo any you didn't like. That works for short sessions; it breaks down across longer ones because you lose track of which writes were intentional and which slipped in. The new model stages the entire change set as one preview, you accept or reject each file, and only accepted files write. The cognitive load drops by an order of magnitude on anything larger than three files.
+
+Default Composer flow
+
+Preview-then-approve
+
+Composer stages all edits as a single diff with per-file accept / reject. Nothing writes until you approve. The right default for any team working on a codebase that needs review discipline.
+
+Recommended default
+
+Auto-apply (legacy)
+
+Edits write immediately
+
+Cursor 2 behavior, still selectable in settings. Faster for solo experimentation on scratch projects, but loses the per-file review gate. Don't use this on shared codebases — too easy to lose track of writes.
+
+Solo experimentation only
+
+Per-agent approval policy
+
+Mixed per agent
+
+Each agent in the Agents panel can have its own approval policy. Research agents auto-write to docs/, build agents require approval on src/, test agents auto-write to spec/. Granular, defensible.
+
+Production teams
+
+Branch-scoped Composer
+
+Auto-create feature branch
+
+Composer can auto-create a feature branch before staging edits, with the branch name templated from the prompt. Combines well with PR-driven review workflows. Currently behind a feature flag.
+
+Worth turning on
+
+The combination of evolved Composer with the Agents panel unlocks a workflow that wasn't practical earlier: a research agent writes a plan into a markdown file, you read the plan, you spawn a build agent and point it at the plan, the build agent stages a Composer diff, you review, you accept what works and reject what doesn't, the test agent picks up from there. Each step is explicit, each diff is reviewable, the human remains in the loop at every meaningful decision point.
+
+That's recognizable as a software engineering process — planning, implementation, review, testing — with AI doing most of the typing and humans doing most of the judgment. The interesting shift is that none of those steps is uniquely Cursor 3's; what Cursor 3 contributes is the surface design that makes the steps feel native rather than improvised.
+
+05 — MCP + RoutingServer integration and model picks.
+
+MCP support in Cursor 3 is competent and per-agent scoped. You can install MCP servers at the workspace level and selectively expose them to specific agents — the build agent gets your filesystem MCP but not your Linear MCP, the planning agent gets Linear and Notion, the review agent gets read-only GitHub. That scoping is the right primitive for team-scale deployments where blanket access to every server creates real audit risk.
+
+Where Cursor 3 stays differentiated is model routing. The model picker is per-agent and per-surface, with the practical set of production-grade options below. Most teams settle on a routing policy within the first week of use; the policy below is a reasonable starting point that can be adjusted as you measure actual cost and quality on your own workloads.
+
+Default
+
+Claude Sonnet 4.6
+
+Composer + build agents
+
+Reliable diffs, strong tool-use discipline, conservative refactors. Our default for any agent that writes production code. Pairs well with prompt caching across long sessions.
+
+Production default
+
+Fast loop
+
+GPT-5.5
+
+Test agents · quick iterations
+
+Lower latency than Sonnet in fast mode, good at tight read/run/refactor loops. Strong choice for test writing and small-scope iteration where speed matters more than the most-thorough explanation.
+
+Fast iteration
+
+Long context
+
+Gemini 3.1 Pro
+
+Research agents · retrieval
+
+Strong long-context retrieval and reading at price-per-token that makes large research passes economical. Pick for research and review agents working over big codebases or document corpora.
+
+Cost-effective long context
+
+The routing question becomes operational the moment you have more than one agent live. A four-agent setup using Sonnet 4.6 for every agent burns token budget fast; the same setup with research on Gemini, build on Sonnet, test on GPT-5.5, and review on Sonnet cuts spend meaningfully without compromising the quality of the paths that matter most. That kind of routing is where Cursor 3 still has an edge on more-opinionated competitors.
+
+Routing principleDon't put every agent on the most-expensive model. Match the model to the agent's job: a research agent on a long-context bargain model, a build agent on the best-available coding model, a test agent on a fast-loop model, a review agent on a reasoning-strong model. Cursor 3's per-agent routing is what makes the policy defensible.
+
+06 — vs Claude CodeHead-to-head on three workloads.
+
+The fairest way to compare Cursor 3 with Claude Code is by workload, not by feature checklist. Both tools are capable across most coding tasks; the differences show up at the extremes — what each tool is optimized for, where the friction shows, where the ceiling on output quality sits. Three workloads cleanly separate them.
+
+Below is the head-to-head as we've seen it in our own engagements through May 2026. The numbers are illustrative of the shape of the difference, not lab-grade benchmarks; treat them as a starting point for your own evaluation. The takeaway across all three is consistent: neither tool dominates, and the right answer for most teams is to use both, with explicit workload routing.
+
+Cursor 3 vs Claude Code · workload-by-workload
+
+Source: Digital Applied hands-on review · May 2026 · directional, not lab-grade
+
+Design-driven UI workFigma / image-to-component with iteration loopCursor 3Composer + imageMixed-model parallel sprintsMultiple agents, per-agent routing, visual workspaceCursor 3Agents panelVisual / interactive debuggingSide-by-side diffs, live preview, hover-driven inspectionCursor 3Editor surfaceTerminal-first agentic workLong-running CLI sessions, shell-native workflowsClaude CodeCLI-nativeDeep filesystem operationsBulk reads, custom skills, hooks, subagent orchestrationClaude CodeSkills + hooksHeadless / CI integrationScriptable, hookable, no GUI dependencyClaude CodeHeadless
+
+Cursor 3 leadsClaude Code leads
+
+The pattern is consistent: Cursor 3 wins where the editor surface is part of the work — visual design, multi-agent orchestration in one UI, side-by-side rendering and diffing. Claude Code wins where the terminal is the primary surface — long-running headless sessions, deep filesystem orchestration, hooks and skills, CI integration. Neither of those is a value judgment; they're different design centers for different kinds of work. For a deeper look at the Claude Code side of that comparison, our Claude Code 1.3 deep dive covers the configuration model, hook system, skills, and team rollout patterns.
+
+For teams that want the broader landscape — Cursor 3, Claude Code, Codex CLI, Windsurf, Replit and the rest — we maintain a working comparison in our AI coding agents review. The short version: the right answer for most teams is two tools, not one. Cursor 3 for editor-centric work, Claude Code for terminal-centric work, with shared MCP servers and a shared model routing policy across both. If you're weighing a third editor-centric option, our hands-on look at Windsurf 2 walks through how its Cascade agents and Workflows compare to Cursor's surfaces.
+
+"Cursor 3 and Claude Code aren't competitors. They're two surfaces on the same underlying work — pick by workload, run both, share the MCP servers and the routing policy across them."— Digital Applied review, May 2026
+
+07 — PitfallsFour ways the rollout trips.
+
+We've watched four predictable failure modes in the first two weeks of team rollouts of Cursor 3. None of them are bugs; they're the natural friction of introducing multi-agent workflows into a team that previously used single-assistant tooling. Each one has a simple mitigation, but the mitigations need to be in place before the rollout, not after.
+
+Pitfall 01
+
+Spawning too many agents
+
+Teams discover the Agents panel and immediately try to run five agents in parallel. Token burn spikes, context gets confused between agents, the human can't keep up with the approval queue. Mitigation: a working rule of no more than two writing agents at once, read-only agents on cheaper models.
+
+Cap writing agents at 2
+
+Pitfall 02
+
+Treating design-driven Composer as a page generator
+
+Composer's design-driven workflow is for component scaffolding, not full-page production output. Teams that point it at a full page get UI that ships looking AI-generated — token-inconsistent, semantically thin, missing animation polish. Mitigation: scope it to one component at a time, with a designer-developer review pass.
+
+One component at a time
+
+Pitfall 03
+
+Leaving Composer on auto-apply
+
+The legacy auto-apply flow still exists in settings. Teams that don't switch to preview-then-approve lose track of multi-file edits, miss regressions, and end up reverting work in batches. Mitigation: make preview-then-approve the team standard in the shared workspace settings.
+
+Preview-then-approve as default
+
+Pitfall 04
+
+Putting every agent on the same model
+
+It's tempting to default every agent to Claude Sonnet 4.6 for consistency. Token spend balloons because research and review agents don't need a top-tier coding model for their job. Mitigation: explicit routing policy from week one — Sonnet for build, GPT-5.5 for tests, Gemini for research.
+
+Route by agent role
+
+The underlying pattern across all four pitfalls is the same: a multi-agent workspace surfaces choices that a single-assistant workspace never had to make. How many agents? Which model per agent? How aggressive should the auto-write behavior be? How scoped should the design-driven Composer workflow be? Teams that treat these as workspace-level governance decisions — written down, reviewed, applied as team defaults — get a meaningfully smoother rollout than teams that let each developer figure it out individually. The same pattern shows up in our broader AI digital transformation engagements: the tooling is rarely the limiting factor; the operating disciplines around the tooling are.
+
+The shape of AI IDEs, May 2026
+
+Cursor 3 is a multi-agent IDE — pick by workload, not by brand.
+
+Cursor 3 is the first AI IDE that genuinely changes the rhythm of a coding session. The parallel Agents panel, the design-driven Composer workflow, and Composer's evolved multi-file diff aren't feature increments — they're three different interaction models bundled into one workspace, each tuned to a different kind of work. Used in combination, they make AI-assisted development feel like a workspace rather than a chat box.
+
+The honest comparison with Claude Code is workload-specific. Cursor 3 wins for editor-centric work — visual design, mixed-model parallel sprints, side-by-side debugging. Claude Code wins for terminal-centric work — headless sessions, deep filesystem orchestration, CI integration. Neither dominates; the right answer for most teams is both, with explicit workload routing and shared MCP servers across the two.
+
+The broader signal is clearer than any single feature. AI IDEs are beginning to look like real workspaces — with multiple parallel agents, distinct surfaces for distinct tasks, and explicit approval gates around the writes that matter. The next twelve months of releases will sort the teams that treat that as a governance challenge (workspace defaults, routing policies, rollout disciplines) from the teams that treat it as a procurement question. The former will compound; the latter will stall.
+
+AI Insights
+
+Deep dives on AI marketing and development.
+
+Agentic development, frontier AI models, and data-driven strategies. No recycled AI takes.
+
+Release window
+
+Cursor 3 · May 2026
+
+Agents · Design · Composer
+
+AI IDE surfaces move quickly. Verify the current changelog, pricing, and model availability on cursor.com before standardizing a team rollout.
+
+Pick the right AI IDE
+
+AI IDE choice is workload-dependent — Cursor 3 wins some workloads, not all.
+
+Our team runs head-to-head AI IDE assessments — Cursor, Claude Code, Codex CLI, Windsurf — calibrated to your team's workloads, with measurable productivity outcomes.
+
+Get startedExplore AI & digital transformation
+
+Free consultationExpert guidanceTailored solutions
+
+What we work on
+
+AI IDE engagements
+
+→Head-to-head workload comparison
+
+→Cursor 3 rollout playbook with Composer + Agents
+
+→MCP-server integration design
+
+→Model-routing strategy across Claude / GPT / Gemini
+
+→Team training and adoption cadence
+
+FAQ · Cursor 3
+
+The questions teams ask before the IDE switch.
+
+How is the Cursor 3 multi-agent panel different from the single-agent flow in earlier Cursor?Earlier Cursor was, in practice, one assistant living inside the editor — you typed into a single chat, the assistant edited the codebase, and switching tasks meant switching context inside that one conversation. Cursor's Agents surface (built out across 2.0 and hardened in 3.x) introduces multiple parallel agents in the same workspace, each with its own working set, model selection, approval policy, and conversation history. You can spawn a research agent reading the codebase while a build agent is implementing features and a review agent is watching the diff for regressions. The unit of work shifts from 'one chat message' to 'one workspace of parallel collaborators'. In practice the human role becomes more about ferrying context between agents and approving diffs, less about typing prompts into a single conversation.Is Cursor's design-to-code workflow actually useful for real designers, or is it just a demo?What do Composer's approval gates change in day-to-day work?Which MCP servers should I wire up first in Cursor 3, and how should I scope them?How does Cursor 3 compare on pricing with Claude Code?What's the safest path to migrate a team from Cursor 2 to Cursor 3?
+
+Digital Applied newsletter
+
+Deep dives on AI, marketing and development.
+
+Practical guides and fresh insights by email. No recycled takes.
+
+Related dispatches
+
+Continue exploring AI IDEs.
+
+Development
+
+Zed AI Coding Deep Dive: Parallel Agents Guide 2026
+
+Hands-on deep dive into Zed's AI coding — Parallel Agents, channels, threads, performance-first editor, model routing, and the workflows enabled.
+
+May 10, 2026 · 10 minRead
+
+Development
+
+Windsurf 2 Deep Dive: Cascade Agents + Workflows 2026
+
+Hands-on deep dive into Windsurf 2 — Cascade, Workflows, multi-file edits, memory, MCP integration, and what distinguishes it from Cursor and Claude Code.
+
+May 10, 2026 · 9 minRead
+
+Development
+
+Continue.dev Deep Dive: Open-Source AI Coding 2026
+
+Hands-on deep dive into Continue.dev — the open-source AI coding assistant, model routing, context providers, slash commands, IDE integrations.
+
+May 10, 2026 · 10 minRead
+
+Development
+
+Codex CLI Deep Dive: Config, Profiles, Sandbox 2026
+
+Hands-on deep dive into OpenAI Codex CLI — config.toml schema, profiles, sandbox modes, MCP integration, agent loops, and the workflows that ship.
+
+May 10, 2026 · 13 minRead
+
+Google Search
+
+See more Digital Applied analysis in your Google results by adding us as a preferred source.
+
+Add as a preferred source

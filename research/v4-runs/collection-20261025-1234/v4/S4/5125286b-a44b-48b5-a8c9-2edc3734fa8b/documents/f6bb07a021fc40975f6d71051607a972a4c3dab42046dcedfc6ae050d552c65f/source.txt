@@ -1,0 +1,203 @@
+Skip to main content
+
+Skip to content
+
+在本文中
+
+GitHub Copilot计划
+
+了解适用于 Copilot 的可用方案。
+
+复制 markdown
+
+在本文中
+
+GitHub Copilot 计划
+
+GitHub 提供适用于 Copilot 的多种方案。 根据你的需求，以及你是以个人身份使用 Copilot，还是作为组织或企业的一员使用 Copilot，选择其中之一。
+
+** Copilot Free **： 开始使用 Copilot Free。
+
+此计划包含对部分 Copilot 功能的有限使用权限，让你可以免费试用 AI 编码辅助功能。
+
+** Copilot Student **：获取对 Copilot Student. 的访问权限。
+
+仅向已验证身份的学生提供。 免费使用 Copilot 的各项功能。
+
+** GitHub Copilot Pro **： 订阅 Copilot Pro。
+
+专为希望更灵活地使用多种模型并享有每月 AI credits 额度的个人用户而设计。
+
+** GitHub Copilot Pro+ **： 订阅 Copilot Pro+。
+
+非常适合希望获得最先进功能的 AI 高级用户。 此付费计划包含 GitHub Copilot Pro 中的全部内容，并提供更高的每月额度 AI credits。
+
+** GitHub Copilot Max **： 升级到 Copilot Max.
+
+非常适合持续高频率使用 AI 的重度用户，此类用户希望获取最高可用的 AI 额度。 这个付费计划包括 Copilot Pro+ 中的所有内容，以及我们最高的个人每月额度 AI credits。
+
+** GitHub Copilot Business **： 订阅 Copilot Business。
+
+此计划面向组织和企业，为组织成员提供集中管理和 Copilot 策略控制。
+
+** GitHub Copilot Enterprise **： 订阅 Copilot Enterprise。
+
+专为使用 GitHub Enterprise Cloud 的企业打造。 此计划包含 Copilot Business 的全部功能，提供更大的每月 AI credits 额度，以及额外的企业级功能。
+
+注意
+
+Copilot 当前对 GitHub Enterprise Server 不可用。
+
+Copilot 计划概述
+
+下表概述了计划之间的差异。 所有计划包括 Copilot CLI 和 Copilot app 对应的内容。
+
+PlanPricingGitHub AI CreditsAgents模型Copilot Free免费GitHub AI Credits 允许量受限仅自动模型选择Copilot Student免费GitHub AI Credits 允许量排除第三方代理仅自动模型选择Copilot Pro$10 USD 每月（对某些用户免费）基座：1,000所选模型Copilot Pro+每月 $39 USD。基座：3,900访问高级模型Copilot Max$100 USD 每月基座：10,000优先访问高级模型Copilot Business每月每个分配的席位 $19 USD每个用户每月总计：1,900访问高级模型Copilot Enterprise每月每个分配的席位 $39 USD每个用户每月总计：3,900优先访问高级模型
+
+每个套餐均包含 GitHub AI Credits 的额度。 有关详细信息，包括工作原理 GitHub AI Credits ，请参阅 个人基于使用情况的计费 和 组织和企业的基于使用情况的计费。
+
+有关每个计划中唯一可用的内容的详细信息，请参阅以下部分：
+
+单个计划
+
+组织和企业计划
+
+单个计划
+
+可用的单个计划包括：
+
+免费计划包括 Copilot Free 和 Copilot Student。
+
+付费计划，包括Copilot Pro、Copilot Pro+和Copilot Max。
+
+通过这些计划，你将获得对以下特性和功能的访问权限。
+
+注意
+
+* Copilot Free 计划仅适用于无权通过组织或企业访问 Copilot 的个人开发人员。
+
+已验证的教师以及热门开源项目的维护者可能有资格免费使用 Copilot Pro。
+
+按计划划分的 GitHub AI Credits 配额
+
+下表显示了每个付费计划中包含的内容。
+
+计划每月价格基础积分Flex 分配每月总数 AI creditsCopilot Pro$10 USD1,0005001,500Copilot Pro+$39 USD3,9003,1007,000Copilot Max$100 USD10,00010,00020,000
+
+Copilot Free 和 Copilot Student 的津贴额度均为 AI credits。
+
+有关 GitHub AI Credits 如何工作的详细信息，请参阅 个人基于使用情况的计费
+
+内联建议和 Copilot Chat
+
+内联建议是 IDE 和 Next edit suggestions 中包含模型的实时代码建议。
+
+在 Copilot Free 上每月最多可进行 2000 次补全。
+
+** Copilot Chat ** 可用的功能包括：
+
+IDE 中的 Copilot Chat
+
+内联聊天
+
+/ 命令
+
+Copilot Chat in GitHub Mobile
+
+Copilot Chat in GitHub
+
+Copilot Chat 在 Windows Terminal 中
+
+Copilot ChatIDE 中的技能功能。1（在 Copilot Free 中不可用）。
+
+模型
+
+在 Copilot Student 和 Copilot Free 计划中，仅可通过 auto model selection 访问模型。
+
+可用模型Copilot ProCopilot Pro+Copilot MaxClaude Haiku 4.5Claude Haiku 5.5Claude Opus 4.8Claude Opus 4.8 (fast mode) (preview)Claude Opus 5Claude Opus 5.5Claude Fable 5[^claude-fable-5]Claude Fable 5.1[^claude-fable-5]Claude Sonnet 4.6Claude Sonnet 5Claude Sonnet 5.5Gemini 3.8 FlashGemini 4 ArgonGPT-5.3-CodexGPT-5.4 nano[^gpt54nano]GPT-5.6 LunaGPT-5.6 SolGPT-5.6 TerraGPT-6 AstraGPT-6 LunaGPT-6 SolGPT-6.1 SolGrok 4.5Grok 4.6Grok 4.7Kimi K3MAI-Code-1.1-Flash
+
+Agents
+
+AgentsCopilot FreeCopilot StudentCopilot ProCopilot Pro+Copilot MaxCopilot cloud agent代理模式Copilot代码审核仅 VS Code 中的“查看选择”模型上下文协议 （MCP）第三方代理 （公开预览）
+
+Customization
+
+CustomizationCopilot FreeCopilot StudentCopilot ProCopilot Pro+Copilot Max仓库和个人自定义说明组织自定义说明提示文件模型上下文协议 （MCP）阻止与公开代码匹配的建议将指定文件从Copilot中排除组织范围的策略管理
+
+其他功能
+
+Copilot FreeCopilot StudentCopilot ProCopilot Pro+Copilot MaxCopilot pull request summaries审核日志内容排除Copilot CLICopilot appGitHub Spark（公开预览）
+
+组织和企业计划
+
+面向组织和企业提供的 Copilot 计划包括：
+
+Copilot Business
+
+Copilot Enterprise
+
+通过这些计划，你将获得对以下特性和功能的访问权限。
+
+注意
+
+借助 GitHub Enterprise Cloud，企业所有者可以为企业中的每个组织选择套餐。 有关选择计划的指导，请参阅 选择您的企业的 GitHub Copilot 计划。
+
+按计划划分的 GitHub AI Credits 配额
+
+Plan每个授予席位每月价格每用户每月 GitHub AI CreditsCopilot Business$19 USD1,900Copilot Enterprise$39 USD3,900
+
+在基于使用量的计费模式下，Copilot 的使用量以 AI credits 计量。 每份许可证向企业共用资源池划入 AI credits 额度，超出资源池的使用量按 $0.01 USD/AI credit 标准收费。 代码补全和 next edit suggestions 功能不计入 AI credits 费用，且所有付费套餐均不限次数。
+
+有关 AI credits 的工作原理的完整说明，包括池化、其他用法以及额度用完时会发生什么，请参阅 组织和企业的基于使用情况的计费。
+
+内联建议和 Copilot Chat
+
+内联建议：内联建议功能在所有计划中均可用：
+
+包含模型的实时代码建议
+
+Next edit suggestions
+
+** Copilot Chat ** 以下功能适用于所有套餐：
+
+IDE 中的 Copilot Chat
+
+内联聊天
+
+/ 命令
+
+Copilot Chat in GitHub Mobile
+
+Copilot Chat in GitHub
+
+Copilot Chat 在 Windows Terminal 中
+
+Copilot ChatIDE 中的技能1
+
+模型
+
+可用模型Copilot BusinessCopilot EnterpriseClaude Haiku 4.5Claude Haiku 5.5Claude Opus 4.8Claude Opus 4.8 (fast mode) (preview)Claude Opus 5Claude Opus 5.5Claude Fable 5[^claude-fable-5]Claude Fable 5.1[^claude-fable-5]Claude Sonnet 4.6Claude Sonnet 5Claude Sonnet 5.5Gemini 3.8 FlashGemini 4 ArgonGPT-5.3-CodexGPT-5.4 nano[^gpt54nano]GPT-5.6 LunaGPT-5.6 SolGPT-5.6 TerraGPT-6 AstraGPT-6 LunaGPT-6 SolGPT-6.1 SolGrok 4.5Grok 4.6Grok 4.7Kimi K3MAI-Code-1.1-Flash
+
+[^gpt54nano]：GPT-5.4 nano 目前仅在 Codex Visual Studio Code 扩展（Copilot Pro+ 仅）中可用，在 Copilot Chat 中不可用。
+
+Agents
+
+AgentsCopilot BusinessCopilot EnterpriseCopilot cloud agent代理模式Copilot代码审核模型上下文协议 （MCP）第三方代理 （公开预览）
+
+Customization
+
+CustomizationCopilot BusinessCopilot Enterprise仓库和个人自定义说明组织自定义说明提示文件模型上下文协议 （MCP）阻止与公开代码匹配的建议将指定文件从Copilot中排除组织范围的策略管理
+
+其他功能
+
+Copilot BusinessCopilot EnterpriseCopilot pull request summaries审核日志内容排除Copilot CLICopilot appGitHub Spark（公开预览）
+
+延伸阅读
+
+若要比较跨 IDE 的功能支持，请参阅 Copilot特征矩阵。
+
+若要比较跨计划、功能和 IDE 支持的模型，请参阅 GitHub Copilot中支持的 AI 模型。
+
+Footnotes
+
+Copilot Chat skills in IDEs is available in Visual Studio Code and Visual Studio. [^claude-fable-5]：当使用 Claude Fable 5.1 或 Claude Fable 5 时，Anthropic 默认会保留数据，包括提示和输出，以运行可检测有害使用行为的安全分类器。 客户可根据一项有时限的豁免，在零数据保留（ZDR）条件下申请使用 Claude Fable 5 或 Claude Fable 5.1，该豁免有效期截至 2026 年底；与此同时，Anthropic 正在逐步推出企业前沿保障措施（EFS）。 此后，继续使用这些模型需要 EFS，这将使符合条件的客户能够自行控制其数据，同时启用自动化安全监视。 对于已获批并已配置为可使用此类访问权限的企业，在这些模型启用后，Claude Fable 5 和 Claude Fable 5.1 请求将一直使用 ZDR 端点，直到 2026 年年底。 若要了解企业是否符合条件并请求访问权限，请联系 GitHub 你的帐户团队。 批准访问不会自动启用 Claude Fable 5 或 Claude Fable 5.1。 企业或组织管理员仍必须启用每个模型，然后用户才能访问该模型。 除 Claude Fable 5.1 和 Claude Fable 5 外，其他 Claude 模型将继续在 ZDR 下运行。 使用 ZDR 启用 Fable 模型的客户同意仅将此模型用于内部操作，包括为自己的客户开发和评估产品。 它们可能无法使模型终结点或输出在外部可用。 若要启用这些模型，请参阅 在 GitHub Copilot 中配置对 AI 模型的访问。 ↩ ↩2

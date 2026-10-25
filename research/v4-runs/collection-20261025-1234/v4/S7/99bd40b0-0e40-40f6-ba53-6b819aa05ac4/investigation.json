@@ -1,0 +1,63 @@
+{
+  "capturedAt": "2026-10-25T04:40:52.660Z",
+  "url": "http://127.0.0.1:3104/investigations/99bd40b0-0e40-40f6-ba53-6b819aa05ac4",
+  "detail": {
+    "investigation": {
+      "id": "99bd40b0-0e40-40f6-ba53-6b819aa05ac4",
+      "question": "知乎上开发者怎么评价 Devin 的实际能力？",
+      "researchDepth": "AUTO",
+      "status": "SUCCEEDED",
+      "stage": "COMPLETED",
+      "error": null,
+      "createdAt": "2026-10-25T04:39:58.039Z",
+      "updatedAt": "2026-10-25T04:40:52.447Z",
+      "startedAt": "2026-10-25T04:39:58.537Z",
+      "completedAt": "2026-10-25T04:40:52.447Z",
+      "resultSnapshotId": "ed116914-6cc1-4b3c-a2bd-b1bc6b8fec0a"
+    },
+    "identityConfirmation": null,
+    "retry": {
+      "allowed": false,
+      "reason": "仅失败的调查可以手动重试。",
+      "remaining": 2,
+      "expectedAttemptCount": 1
+    }
+  },
+  "observedStates": [
+    {
+      "status": "RUNNING",
+      "stage": "IDENTITY",
+      "observedAt": "2026-10-25T04:39:59.918Z"
+    },
+    {
+      "status": "RUNNING",
+      "stage": "RETRIEVAL",
+      "observedAt": "2026-10-25T04:40:00.944Z"
+    },
+    {
+      "status": "RUNNING",
+      "stage": "SOURCE_FETCH",
+      "observedAt": "2026-10-25T04:40:06.026Z"
+    },
+    {
+      "status": "RUNNING",
+      "stage": "RETRIEVAL",
+      "observedAt": "2026-10-25T04:40:12.101Z"
+    },
+    {
+      "status": "RUNNING",
+      "stage": "VERIFICATION",
+      "observedAt": "2026-10-25T04:40:25.294Z"
+    },
+    {
+      "status": "RUNNING",
+      "stage": "ANSWER",
+      "observedAt": "2026-10-25T04:40:47.599Z"
+    },
+    {
+      "status": "SUCCEEDED",
+      "stage": "COMPLETED",
+      "observedAt": "2026-10-25T04:40:52.657Z"
+    }
+  ]
+}

@@ -1,0 +1,1034 @@
+{
+  "schemaVersion": "source-document/v1",
+  "id": "39a83f903627507cfc4fcf16643c2072e5d3c85dfdd710d7090917c02cc2268a",
+  "version": "cc0d6ef8851c7d8bf9a993ac8bb0f6710f15d7d08dd0e54b47c7cdc7e7f8be95",
+  "requestedUrl": "https://github.com/ahujasid/mcp-for-blender/issues/251",
+  "finalUrl": "https://github.com/ahujasid/mcp-for-blender/issues/251",
+  "retrievedAt": "2026-10-25T04:38:31.348Z",
+  "contentType": "text/html; charset=utf-8",
+  "status": "READ",
+  "readError": null,
+  "rawHash": "53f33b2a7c921eff50f8071364fa067a458be6b69743e93a010ecd45870cc241",
+  "textHash": "058d42468c43dd242afb48e334654f6ee63d0a0f29457ebaa88979c64884015d",
+  "text": "Skip to content\n\nRepository navigation\n\nHeadless blender -b mode: bpy.app.timers never fires, every MCP command hangs #251\n\nNew issue\n\nNew issue\n\nClosed#272\n\nClosedHeadless blender -b mode: bpy.app.timers never fires, every MCP command hangs#251#272\n\nDescription\n\nshrimpwagonopened on May 19, 2026\n\nSummary\n\nIn headless blender -b --python <startup_script>.py mode, every MCP request from a connected client hangs and eventually times out, because the addon dispatches each command via bpy.app.timers.register(execute_wrapper, first_interval=0.0) (addon.py:170) — and those timers don't fire when Blender's event loop isn't running, which is the case in -b mode whenever the --python script blocks the main thread (e.g. to keep the process alive as a long-running server).\n\nBlender itself stays at ~0% CPU. The socket layer is fine — the request is received and parsed — but the scheduled execute_wrapper never runs, so no response is ever sent.\n\nUse case\n\nRunning BlenderMCP as a long-running background socket server on a headless workstation/CI box, so that any Claude Code / Cursor session (or any MCP client) can drive Blender without a GUI ever opening. The repo currently assumes the user clicks \"Connect to Claude\" in the N-panel; for headless server scenarios the addon needs to dispatch commands without depending on the GUI event loop.\n\nMinimal reproduction\n\nSave as repro.py:\n\nimport bpy, time, threading\n\nfired = [0]\ndef cb():\n    fired[0] += 1\n    return None  # one-shot\n\ndef from_thread():\n    time.sleep(0.5)\n    bpy.app.timers.register(cb, first_interval=0.0)\n\nthreading.Thread(target=from_thread, daemon=True).start()\ntime.sleep(3.0)\nprint(f\"timer fired? {fired[0]}\")  # prints 0\n\nRun:\n\n$ blender -b --python repro.py\n[...]\ntimer fired? 0\n\nIn GUI mode the timer fires immediately. In -b mode with the main thread blocked, it never fires.\n\nThis is exactly the situation _handle_client ends up in once a real headless server script is keeping Blender alive (e.g. while True: time.sleep(...)): the socket worker thread accepts the command and schedules execute_wrapper, but it sits in bpy.app.timers's queue forever.\n\nProposed fix\n\nWhen bpy.app.background is True, run the command synchronously in the socket worker thread (which is already where _handle_client is executing) instead of going through bpy.app.timers. GUI behavior is preserved unchanged.\n\nDiff:\n\n-                        # Schedule execution in main thread\n-                        bpy.app.timers.register(execute_wrapper, first_interval=0.0)\n+                        # Schedule execution in main thread.\n+                        # In `blender -b` (background) mode, bpy.app.timers\n+                        # never fire because there's no event loop, so we\n+                        # execute synchronously in this worker thread instead.\n+                        if bpy.app.background:\n+                            execute_wrapper()\n+                        else:\n+                            bpy.app.timers.register(execute_wrapper, first_interval=0.0)\n\nBranch on my fork: https://github.com/shrimpwagon/blender-mcp/tree/headless-bg-mode-timer-fix\n\nSingle commit: shrimpwagon@headless-bg-mode-timer-fix\n\nThread-safety note\n\nThe reason the codebase routes everything through bpy.app.timers is to keep bpy.ops/data calls on the main thread, away from the GUI's depsgraph/draw threads. In -b mode that concern is moot — there is no GUI thread to race with, only the addon's socket loop thread and the script's blocked main thread. Executing the command in the socket worker thread is safe in this mode.\n\nVerified on\n\nBlender 5.1.2 (Linux x64, official tarball)\n\nUbuntu/Linux Mint, AMD64\n\nBlenderMCP addon.py from main (current version: 1.5.5)\n\nTested via uvx blender-mcp MCP client from Claude Code: with the patch, get_scene_info returns immediately and a full Cycles render (32 samples, 960×540) completes in ~3.6s end-to-end through the MCP layer.\n\nHappy to send a PR if you'd find it useful — wanted to file the issue first in case you have a preferred shape for this (e.g. an opt-in flag, or a different approach entirely). Thanks for the project.\n\nActivity\n\nahujasidclosed this as completedin #272on Jun 11, 2026\n\nSign up for free to join this conversation on GitHub. Already have an account? Sign in to comment\n\nMetadata\n\nMetadata\n\nAssignees\n\nNo one assigned\n\nLabels\n\nNo labels\n\nNo labels\n\nProjects\n\nNo projects\n\nMilestone\n\nNo milestone\n\nRelationships\n\nNone yet\n\nDevelopment\n\nNo branches or pull requests\n\nIssue actions\n\nOpen in GitHub Copilot app",
+  "rawSources": [
+    {
+      "mode": "STATIC",
+      "hash": "53f33b2a7c921eff50f8071364fa067a458be6b69743e93a010ecd45870cc241",
+      "path": "C:\\Users\\qianchen\\Documents\\waytoagi-1024-detective-a2-v4\\.cache\\source-documents-v4\\d369248d-0424-4ce6-8100-5af7be6a2f87\\39a83f903627507cfc4fcf16643c2072e5d3c85dfdd710d7090917c02cc2268a\\raw.bin"
+    }
+  ],
+  "storage": {
+    "rawPath": "C:\\Users\\qianchen\\Documents\\waytoagi-1024-detective-a2-v4\\.cache\\source-documents-v4\\d369248d-0424-4ce6-8100-5af7be6a2f87\\39a83f903627507cfc4fcf16643c2072e5d3c85dfdd710d7090917c02cc2268a\\raw.bin",
+    "textPath": "C:\\Users\\qianchen\\Documents\\waytoagi-1024-detective-a2-v4\\.cache\\source-documents-v4\\d369248d-0424-4ce6-8100-5af7be6a2f87\\39a83f903627507cfc4fcf16643c2072e5d3c85dfdd710d7090917c02cc2268a\\source.txt",
+    "manifestPath": "C:\\Users\\qianchen\\Documents\\waytoagi-1024-detective-a2-v4\\.cache\\source-documents-v4\\d369248d-0424-4ce6-8100-5af7be6a2f87\\39a83f903627507cfc4fcf16643c2072e5d3c85dfdd710d7090917c02cc2268a\\manifest.json"
+  },
+  "parser": {
+    "name": "readability+source-dom",
+    "version": "readability-0.6.0+jsdom-30.1.3+source-dom-2",
+    "normalization": "source-text/v1",
+    "mode": "STATIC"
+  },
+  "metadata": {
+    "title": "Headless `blender -b` mode: bpy.app.timers never fires, every MCP command hangs · Issue #251 · ahujasid/mcp-for-blender · GitHub",
+    "author": "shrimpwagon",
+    "publishedAt": "2026-05-19T22:50:58.000Z",
+    "language": "en"
+  },
+  "completeness": "COMPLETE",
+  "warnings": [],
+  "blocks": [
+    {
+      "start": 0,
+      "end": 15,
+      "id": "b0",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[0]",
+      "headingPath": [],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 17,
+      "end": 38,
+      "id": "b1",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[1]",
+      "headingPath": [
+        "Repository navigation"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 40,
+      "end": 122,
+      "id": "b2",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[2]",
+      "headingPath": [
+        "Headless blender -b mode: bpy.app.timers never fires, every MCP command hangs #251"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 124,
+      "end": 133,
+      "id": "b3",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[3]",
+      "headingPath": [
+        "Headless blender -b mode: bpy.app.timers never fires, every MCP command hangs #251"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 135,
+      "end": 144,
+      "id": "b4",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[4]",
+      "headingPath": [
+        "Headless blender -b mode: bpy.app.timers never fires, every MCP command hangs #251"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 146,
+      "end": 156,
+      "id": "b5",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[5]",
+      "headingPath": [
+        "Headless blender -b mode: bpy.app.timers never fires, every MCP command hangs #251"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 158,
+      "end": 249,
+      "id": "b6",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[6]",
+      "headingPath": [
+        "Headless blender -b mode: bpy.app.timers never fires, every MCP command hangs #251"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 251,
+      "end": 262,
+      "id": "b7",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[7]",
+      "headingPath": [
+        "Headless blender -b mode: bpy.app.timers never fires, every MCP command hangs #251",
+        "Description"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 264,
+      "end": 297,
+      "id": "b8",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[8]",
+      "headingPath": [
+        "Headless blender -b mode: bpy.app.timers never fires, every MCP command hangs #251",
+        "Description"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 299,
+      "end": 306,
+      "id": "b9",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[9]",
+      "headingPath": [
+        "Headless blender -b mode: bpy.app.timers never fires, every MCP command hangs #251",
+        "Summary"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 308,
+      "end": 772,
+      "id": "b10",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[10]",
+      "headingPath": [
+        "Headless blender -b mode: bpy.app.timers never fires, every MCP command hangs #251",
+        "Summary"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 774,
+      "end": 945,
+      "id": "b11",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[11]",
+      "headingPath": [
+        "Headless blender -b mode: bpy.app.timers never fires, every MCP command hangs #251",
+        "Summary"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 947,
+      "end": 955,
+      "id": "b12",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[12]",
+      "headingPath": [
+        "Headless blender -b mode: bpy.app.timers never fires, every MCP command hangs #251",
+        "Use case"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 957,
+      "end": 1346,
+      "id": "b13",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[13]",
+      "headingPath": [
+        "Headless blender -b mode: bpy.app.timers never fires, every MCP command hangs #251",
+        "Use case"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1348,
+      "end": 1368,
+      "id": "b14",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[14]",
+      "headingPath": [
+        "Headless blender -b mode: bpy.app.timers never fires, every MCP command hangs #251",
+        "Minimal reproduction"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1370,
+      "end": 1387,
+      "id": "b15",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[15]",
+      "headingPath": [
+        "Headless blender -b mode: bpy.app.timers never fires, every MCP command hangs #251",
+        "Minimal reproduction"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1389,
+      "end": 1698,
+      "id": "b16",
+      "kind": "CODE",
+      "locator": "source DOM normalized block[16]",
+      "headingPath": [
+        "Headless blender -b mode: bpy.app.timers never fires, every MCP command hangs #251",
+        "Minimal reproduction"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1700,
+      "end": 1704,
+      "id": "b17",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[17]",
+      "headingPath": [
+        "Headless blender -b mode: bpy.app.timers never fires, every MCP command hangs #251",
+        "Minimal reproduction"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1706,
+      "end": 1757,
+      "id": "b18",
+      "kind": "CODE",
+      "locator": "source DOM normalized block[18]",
+      "headingPath": [
+        "Headless blender -b mode: bpy.app.timers never fires, every MCP command hangs #251",
+        "Minimal reproduction"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1759,
+      "end": 1856,
+      "id": "b19",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[19]",
+      "headingPath": [
+        "Headless blender -b mode: bpy.app.timers never fires, every MCP command hangs #251",
+        "Minimal reproduction"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1858,
+      "end": 2132,
+      "id": "b20",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[20]",
+      "headingPath": [
+        "Headless blender -b mode: bpy.app.timers never fires, every MCP command hangs #251",
+        "Minimal reproduction"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2134,
+      "end": 2146,
+      "id": "b21",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[21]",
+      "headingPath": [
+        "Headless blender -b mode: bpy.app.timers never fires, every MCP command hangs #251",
+        "Proposed fix"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2148,
+      "end": 2369,
+      "id": "b22",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[22]",
+      "headingPath": [
+        "Headless blender -b mode: bpy.app.timers never fires, every MCP command hangs #251",
+        "Proposed fix"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2371,
+      "end": 2376,
+      "id": "b23",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[23]",
+      "headingPath": [
+        "Headless blender -b mode: bpy.app.timers never fires, every MCP command hangs #251",
+        "Proposed fix"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2378,
+      "end": 3034,
+      "id": "b24",
+      "kind": "CODE",
+      "locator": "source DOM normalized block[24]",
+      "headingPath": [
+        "Headless blender -b mode: bpy.app.timers never fires, every MCP command hangs #251",
+        "Proposed fix"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3036,
+      "end": 3129,
+      "id": "b25",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[25]",
+      "headingPath": [
+        "Headless blender -b mode: bpy.app.timers never fires, every MCP command hangs #251",
+        "Proposed fix"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3131,
+      "end": 3184,
+      "id": "b26",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[26]",
+      "headingPath": [
+        "Headless blender -b mode: bpy.app.timers never fires, every MCP command hangs #251",
+        "Proposed fix"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3186,
+      "end": 3204,
+      "id": "b27",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[27]",
+      "headingPath": [
+        "Headless blender -b mode: bpy.app.timers never fires, every MCP command hangs #251",
+        "Thread-safety note"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3206,
+      "end": 3581,
+      "id": "b28",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[28]",
+      "headingPath": [
+        "Headless blender -b mode: bpy.app.timers never fires, every MCP command hangs #251",
+        "Thread-safety note"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3583,
+      "end": 3594,
+      "id": "b29",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[29]",
+      "headingPath": [
+        "Headless blender -b mode: bpy.app.timers never fires, every MCP command hangs #251",
+        "Verified on"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3596,
+      "end": 3639,
+      "id": "b30",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[30]",
+      "headingPath": [
+        "Headless blender -b mode: bpy.app.timers never fires, every MCP command hangs #251",
+        "Verified on"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3641,
+      "end": 3665,
+      "id": "b31",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[31]",
+      "headingPath": [
+        "Headless blender -b mode: bpy.app.timers never fires, every MCP command hangs #251",
+        "Verified on"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3667,
+      "end": 3721,
+      "id": "b32",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[32]",
+      "headingPath": [
+        "Headless blender -b mode: bpy.app.timers never fires, every MCP command hangs #251",
+        "Verified on"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3723,
+      "end": 3929,
+      "id": "b33",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[33]",
+      "headingPath": [
+        "Headless blender -b mode: bpy.app.timers never fires, every MCP command hangs #251",
+        "Verified on"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3931,
+      "end": 4131,
+      "id": "b34",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[34]",
+      "headingPath": [
+        "Headless blender -b mode: bpy.app.timers never fires, every MCP command hangs #251",
+        "Verified on"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4133,
+      "end": 4141,
+      "id": "b35",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[35]",
+      "headingPath": [
+        "Headless blender -b mode: bpy.app.timers never fires, every MCP command hangs #251",
+        "Activity"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4143,
+      "end": 4197,
+      "id": "b36",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[36]",
+      "headingPath": [
+        "Headless blender -b mode: bpy.app.timers never fires, every MCP command hangs #251",
+        "Activity"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4199,
+      "end": 4296,
+      "id": "b37",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[37]",
+      "headingPath": [
+        "Headless blender -b mode: bpy.app.timers never fires, every MCP command hangs #251",
+        "Activity"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4298,
+      "end": 4306,
+      "id": "b38",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[38]",
+      "headingPath": [
+        "Headless blender -b mode: bpy.app.timers never fires, every MCP command hangs #251",
+        "Metadata"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4308,
+      "end": 4316,
+      "id": "b39",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[39]",
+      "headingPath": [
+        "Headless blender -b mode: bpy.app.timers never fires, every MCP command hangs #251",
+        "Metadata"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4318,
+      "end": 4327,
+      "id": "b40",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[40]",
+      "headingPath": [
+        "Headless blender -b mode: bpy.app.timers never fires, every MCP command hangs #251",
+        "Metadata",
+        "Assignees"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4329,
+      "end": 4344,
+      "id": "b41",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[41]",
+      "headingPath": [
+        "Headless blender -b mode: bpy.app.timers never fires, every MCP command hangs #251",
+        "Metadata",
+        "Assignees"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4346,
+      "end": 4352,
+      "id": "b42",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[42]",
+      "headingPath": [
+        "Headless blender -b mode: bpy.app.timers never fires, every MCP command hangs #251",
+        "Metadata",
+        "Labels"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4354,
+      "end": 4363,
+      "id": "b43",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[43]",
+      "headingPath": [
+        "Headless blender -b mode: bpy.app.timers never fires, every MCP command hangs #251",
+        "Metadata",
+        "Labels"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4365,
+      "end": 4374,
+      "id": "b44",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[44]",
+      "headingPath": [
+        "Headless blender -b mode: bpy.app.timers never fires, every MCP command hangs #251",
+        "Metadata",
+        "Labels"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4376,
+      "end": 4384,
+      "id": "b45",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[45]",
+      "headingPath": [
+        "Headless blender -b mode: bpy.app.timers never fires, every MCP command hangs #251",
+        "Metadata",
+        "Projects"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4386,
+      "end": 4397,
+      "id": "b46",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[46]",
+      "headingPath": [
+        "Headless blender -b mode: bpy.app.timers never fires, every MCP command hangs #251",
+        "Metadata",
+        "Projects"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4399,
+      "end": 4408,
+      "id": "b47",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[47]",
+      "headingPath": [
+        "Headless blender -b mode: bpy.app.timers never fires, every MCP command hangs #251",
+        "Metadata",
+        "Milestone"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4410,
+      "end": 4422,
+      "id": "b48",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[48]",
+      "headingPath": [
+        "Headless blender -b mode: bpy.app.timers never fires, every MCP command hangs #251",
+        "Metadata",
+        "Milestone"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4424,
+      "end": 4437,
+      "id": "b49",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[49]",
+      "headingPath": [
+        "Headless blender -b mode: bpy.app.timers never fires, every MCP command hangs #251",
+        "Metadata",
+        "Relationships"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4439,
+      "end": 4447,
+      "id": "b50",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[50]",
+      "headingPath": [
+        "Headless blender -b mode: bpy.app.timers never fires, every MCP command hangs #251",
+        "Metadata",
+        "Relationships"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4449,
+      "end": 4460,
+      "id": "b51",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[51]",
+      "headingPath": [
+        "Headless blender -b mode: bpy.app.timers never fires, every MCP command hangs #251",
+        "Metadata",
+        "Development"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4462,
+      "end": 4490,
+      "id": "b52",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[52]",
+      "headingPath": [
+        "Headless blender -b mode: bpy.app.timers never fires, every MCP command hangs #251",
+        "Metadata",
+        "Development"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4492,
+      "end": 4505,
+      "id": "b53",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[53]",
+      "headingPath": [
+        "Headless blender -b mode: bpy.app.timers never fires, every MCP command hangs #251",
+        "Issue actions"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4507,
+      "end": 4533,
+      "id": "b54",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[54]",
+      "headingPath": [
+        "Headless blender -b mode: bpy.app.timers never fires, every MCP command hangs #251",
+        "Issue actions"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    }
+  ],
+  "links": [
+    {
+      "url": "https://github.com/ahujasid/mcp-for-blender/issues/251",
+      "text": "",
+      "blockId": null,
+      "relation": "CANONICAL",
+      "locator": "source DOM link[0]"
+    },
+    {
+      "url": "https://github.com/ahujasid/mcp-for-blender/pull/272",
+      "text": "#272",
+      "blockId": "b5",
+      "relation": "LINK",
+      "locator": "source DOM link[81]"
+    },
+    {
+      "url": "https://github.com/ahujasid/mcp-for-blender/issues/251",
+      "text": "Headless blender -b mode: bpy.app.timers never fires, every MCP command hangs",
+      "blockId": "b6",
+      "relation": "LINK",
+      "locator": "source DOM link[82]"
+    },
+    {
+      "url": "https://github.com/ahujasid/mcp-for-blender/pull/272",
+      "text": "#272",
+      "blockId": "b6",
+      "relation": "LINK",
+      "locator": "source DOM link[83]"
+    },
+    {
+      "url": "https://github.com/shrimpwagon",
+      "text": "",
+      "blockId": "b8",
+      "relation": "LINK",
+      "locator": "source DOM link[84]"
+    },
+    {
+      "url": "https://github.com/ahujasid/mcp-for-blender/issues/251",
+      "text": "on May 19, 2026",
+      "blockId": "b8",
+      "relation": "LINK",
+      "locator": "source DOM link[86]"
+    },
+    {
+      "url": "https://github.com/ahujasid/blender-mcp/blob/main/addon.py",
+      "text": "addon.py:170",
+      "blockId": "b10",
+      "relation": "LINK",
+      "locator": "source DOM link[87]"
+    },
+    {
+      "url": "https://github.com/shrimpwagon/blender-mcp/tree/headless-bg-mode-timer-fix",
+      "text": "https://github.com/shrimpwagon/blender-mcp/tree/headless-bg-mode-timer-fix",
+      "blockId": "b25",
+      "relation": "LINK",
+      "locator": "source DOM link[88]"
+    },
+    {
+      "url": "https://github.com/shrimpwagon/blender-mcp/commit/headless-bg-mode-timer-fix",
+      "text": "shrimpwagon@headless-bg-mode-timer-fix",
+      "blockId": "b26",
+      "relation": "LINK",
+      "locator": "source DOM link[89]"
+    },
+    {
+      "url": "https://github.com/ahujasid",
+      "text": "ahujasid",
+      "blockId": "b36",
+      "relation": "LINK",
+      "locator": "source DOM link[90]"
+    },
+    {
+      "url": "https://github.com/ahujasid/mcp-for-blender/issues?q=is%3Aissue+state%3Aclosed+archived%3Afalse+reason%3Acompleted",
+      "text": "completed",
+      "blockId": "b36",
+      "relation": "LINK",
+      "locator": "source DOM link[91]"
+    },
+    {
+      "url": "https://github.com/ahujasid/mcp-for-blender/pull/272",
+      "text": "#272",
+      "blockId": "b36",
+      "relation": "LINK",
+      "locator": "source DOM link[92]"
+    },
+    {
+      "url": "https://github.com/ahujasid/mcp-for-blender/issues/251",
+      "text": "on Jun 11, 2026",
+      "blockId": "b36",
+      "relation": "LINK",
+      "locator": "source DOM link[93]"
+    },
+    {
+      "url": "https://github.com/signup?return_to=https%3A%2F%2Fgithub.com%2Fahujasid%2Fmcp-for-blender%2Fissues%2F251",
+      "text": "Sign up for free",
+      "blockId": "b37",
+      "relation": "LINK",
+      "locator": "source DOM link[94]"
+    },
+    {
+      "url": "https://github.com/login?return_to=https%3A%2F%2Fgithub.com%2Fahujasid%2Fmcp-for-blender%2Fissues%2F251",
+      "text": "Sign in to comment",
+      "blockId": "b37",
+      "relation": "LINK",
+      "locator": "source DOM link[95]"
+    }
+  ],
+  "tables": []
+}

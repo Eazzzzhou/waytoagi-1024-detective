@@ -1,0 +1,68 @@
+{
+  "capturedAt": "2026-10-25T04:24:25.656Z",
+  "url": "http://127.0.0.1:3104/investigations/0d5db2c1-9aad-4b5b-9364-139aa20e8bb7",
+  "detail": {
+    "investigation": {
+      "id": "0d5db2c1-9aad-4b5b-9364-139aa20e8bb7",
+      "question": "关于 GitHub Copilot Free 每月 50 次 chat 的说法，哪些来源是独立的，哪些只是同一篇文章的转载？",
+      "researchDepth": "AUTO",
+      "status": "SUCCEEDED",
+      "stage": "COMPLETED",
+      "error": null,
+      "createdAt": "2026-10-25T04:23:30.175Z",
+      "updatedAt": "2026-10-25T04:24:24.820Z",
+      "startedAt": "2026-10-25T04:23:30.890Z",
+      "completedAt": "2026-10-25T04:24:24.820Z",
+      "resultSnapshotId": "dd6c00c3-0ffd-49ef-aea2-455ca6ed273e"
+    },
+    "identityConfirmation": null,
+    "retry": {
+      "allowed": false,
+      "reason": "仅失败的调查可以手动重试。",
+      "remaining": 2,
+      "expectedAttemptCount": 1
+    }
+  },
+  "observedStates": [
+    {
+      "status": "RUNNING",
+      "stage": "IDENTITY",
+      "observedAt": "2026-10-25T04:23:31.877Z"
+    },
+    {
+      "status": "RUNNING",
+      "stage": "RETRIEVAL",
+      "observedAt": "2026-10-25T04:23:32.898Z"
+    },
+    {
+      "status": "RUNNING",
+      "stage": "SOURCE_FETCH",
+      "observedAt": "2026-10-25T04:23:40.007Z"
+    },
+    {
+      "status": "RUNNING",
+      "stage": "VERIFICATION",
+      "observedAt": "2026-10-25T04:23:44.052Z"
+    },
+    {
+      "status": "RUNNING",
+      "stage": "SOURCE_FETCH",
+      "observedAt": "2026-10-25T04:24:00.284Z"
+    },
+    {
+      "status": "RUNNING",
+      "stage": "VERIFICATION",
+      "observedAt": "2026-10-25T04:24:03.317Z"
+    },
+    {
+      "status": "RUNNING",
+      "stage": "ANSWER",
+      "observedAt": "2026-10-25T04:24:16.533Z"
+    },
+    {
+      "status": "SUCCEEDED",
+      "stage": "COMPLETED",
+      "observedAt": "2026-10-25T04:24:25.655Z"
+    }
+  ]
+}

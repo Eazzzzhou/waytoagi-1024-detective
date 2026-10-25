@@ -1,0 +1,249 @@
+Add reaction Like Unicorn Exploding Head Raised Hands Fire Jump to Comments Save Boost Pick as gem Copy link Share to X Share to LinkedIn Share to Facebook Share to Mastodon Report Abuse
+
+Steve Sewell
+
+for
+
+Builder.io
+
+Posted on Dec 11, 2024 Originally published at builder.io
+
+Devin review: is it a better AI coding agent than Cursor?
+
+#cursor #ai #productivity #webdev
+
+I paid the $500 a month to use Devin, the AI coding agent, so you don't have to. Let's compare it to Cursor agents and see if it's worth the $2 billion valuation of their company.
+
+What is Devin?
+
+The main thing to know about Devin is it's primarily a Slack-based workflow — it's not an IDE.
+
+You tag Devin in Slack and ask Devin to update something, fix something, et cetera. Devin includes:
+
+A remote server
+
+Browser interface
+
+VS Code editing interface
+
+A planner
+
+A chat interface
+
+You can follow along step-by-step to see what Devin did and what it's doing.
+
+Testing Devin with an image generation model
+
+I heard about this new image generation model that's supposed to be small enough to run on consumer-grade hardware.
+
+I was hoping for a basic web UI, but then I found all of this and realized I don't code in Python. I didn't know what to do with this, so I asked Devin.
+
+Devin went to work and in the course of about 12 minutes it:
+
+Cloned the repo
+
+Got it spun up
+
+Generated an image of a cat for me
+
+Attached the image back to me
+
+I then asked for four more images of a dog riding in a hot air balloon. And I got my images in full, terrifying quality.
+
+Now that's not Devin's fault, of course; that's the model we're using.
+
+Asking Devin to create a web UI
+
+I saw one of the todos on this repo is to create a local, real-time interactive app.
+
+So I asked Devin if he could clone this repo and add a web-based UI to type prompts and see images. Devin began spinning things up and sending me updates.
+
+One really interesting thing Devin does is it takes notes and stores them in a notes.txt file to refer back to and use in subsequent prompts.
+
+This seems like an interesting technique to summarize information that's important and carry it across subsequent steps.
+
+Devin will also sometimes create knowledge entries, which are like bits of information that could be useful to refer back to in totally subsequent runs.
+
+It'll store these and look them up when needed, which is supposed to emulate the tribal knowledge that exists within a team.
+
+Devin was in fact able to add the web UI I asked for, but we hit other issues. More on that in a moment.
+
+Devin's capabilities and limitations
+
+Overall, Devin's pretty impressive. It:
+
+Creates plans
+
+Writes code
+
+Finds bugs in the code
+
+Corrects the code
+
+Runs its own end-to-end tests to verify it works
+
+Responds to your feedback if you find issues and attempts to address them
+
+Anything you reply in Slack, Devin will start working on a reply to. In this case, it was able to verify we're hitting deployment issues.
+
+I kept working on debugging it, but unfortunately, after a lot of back and forth, it still never was able to solve it. Eventually, I gave up because I was sick of trying.
+
+Personally, slack thread hell is not my favorite method of developing/debugging:
+
+I prefer not to be demoted to the “any updates?” guy.
+
+Finally, I asked if I could just pull this code down locally and run it locally. It gave me instructions, but they weren't valid because it didn't actually send this code in a pull request.
+
+Devin's pull request capabilities
+
+That's not to say that Devin can't do a pull request. One of my very first runs of Devin was to add a feature to a weather app.
+
+It was able to add the feature I wanted as well as respond to my feedback that I wanted it to look more like iOS styling.
+
+The final pull request was not bad. It added two packages, and the code was pretty good, but there was a console log in the code.
+
+It also forgot to uninstall a package that it no longer needed after my feedback. But we can go in and just leave comments, like a normal person, to remove this log and that this package is no longer needed.
+
+One cool thing Devin did when we were going back and forth on what the UI of this weather app update should be is it actually generated a deployment with a preview URL without me asking.
+
+So when I type in a city, I can see that the feature I wanted has an iOS style like I asked. Even though I actually don't have a deploy preview set up on this repo, it deployed a version for me to see anyway.
+
+When it learned I want an iOS style for this app, it proposed this to save in the knowledge. I can review and approve it, and it'll remember that during subsequent runs.
+
+For some reason though, I couldn't get Devin to reply to my feedback this time, even though I've seen it do it before. I don't know what went wrong.
+
+In general, I hit a few bugs along the way while using Devin, but nothing super crazy that I couldn't usually work around.
+
+Fixing bugs with Devin
+
+A separate task I asked of Devin was to fix a bug in our existing website. After about 12 minutes, it spun up a PR with a fix, finding the necessary boolean and updating it from true to false.
+
+But then it updated some other stuff I didn't expect:
+
+Added a fallback: true in getStaticPaths, even though getBuilderStaticPaths already sets fallback to 'blocking'
+
+Removed a check, even though we already turned that value to false
+
+Added a type declaration that I know firsthand isn't needed
+
+The cool part is I asked in the PR why it did this, and Devin added the eyes emoji to tell me it sees this. Then it explained itself.
+
+I'll be honest, I was kind of hoping it would fix those things. But it did provide a thorough explanation. It just wasn't a good one. Most of this information is not actually true.
+
+Fallback true does not enable client-side navigation or enable Builder.io's preview system. Fallback blocking, which was already used, is our preference. Also, the tabler icons react type definition is just not needed. It's included in the package.
+
+It made some weird comment that these components are part of the client-side navigation system, whatever that means. But the nice part is I can talk to Devin like a human, leave a comment, and it can make updates accordingly.
+
+Adding a backend feature
+
+The last thing I asked Devin to do is implement a backend feature. I said to add to our GraphQL admin API the ability to read and write from the comments collection.
+
+Devin created a PR that was decent. It added this reflect metadata package that I don't think is needed (we haven't needed it to date).
+
+But most importantly, it did recognize we use this resolver structure. It created a comments resolver and added it.
+
+This code actually looks pretty typical of how we've written this on the backend. Now it did make up a couple of fields that would have been nice to ask me what the schema is. But otherwise, I'd say this is decent code.
+
+Workflow issues with Devin
+
+Overall, I'd say the biggest problem I have with Devin is this is just not my preferred workflow. I don't want to make an ask and wait 15 minutes for a pull request, and then have this back and forth on the pull request and/or Slack.
+
+I much prefer Cursor's workflow where I have all of this right in my local environment and IDE. I can see the updates in real-time and can commit and debug locally, without jumping to some remote server and other set of tools I don't know, and having all these long waits and delays that are just unfamiliar and unproductive.
+
+I get that the idea of Devin is to set some asynchronous agent coworkers off at a task and let them do lots of things in parallel and just come to you with results.
+
+But that really isn't a great workflow until Devins are a lot better. I don't want the AI to just go off and do its thing and come back only when it's done, unless I have high confidence it's going to be really, really reliable at that.
+
+Otherwise, I'd prefer my IDE just do it.
+
+Comparing with Cursor agents
+
+Let's compare some of the same tasks with Cursor's new agent features.
+
+Context handling
+
+The big difference between Cursor agents and the standard Cursor composer view is you don't have to manually add files to the context. Cursor will scan your codebase and find the relevant files and add them for you.
+
+Cursor was able to find this no client-side routing variable and flip it to false. If I accept the updates, we can see it did exactly what we wanted. One basic minimal diff.
+
+User control and feedback
+
+Cursor's not always perfect, but the part I like most is I'm in control and in the driver's seat. If I want something different, I could also say, just delete that variable and all references altogether. And I could see the update immediately. There's less waiting and more action.
+
+While I'm more closely in the loop, I have more trust with this process. Because I know what I want, and if it can scan my code, update multiple files and not make me have to worry about the details, I can provide real-time feedback and hand modifications and send the pull request my way.
+
+That's a much easier to adopt workflow for me and my team.
+
+Ownership clarity
+
+With Cursor it's also more clear who owns the pull request: it's me. I find this process faster, easier, and nicer. We don't have weird bots creating pull requests where it's unclear who actually owns that and is responsible for making sure the code is good.
+
+Nobody has to clone down that bot's PR and push updates to it. And every update happens pretty quickly.
+
+GraphQL example
+
+I also tried the GraphQL prompt with our very large internal repo in Cursor agent mode as well. And I got very similar results. It:
+
+Added the comments resolver
+
+Integrated it into the API
+
+Added the types as well
+
+So pretty similar results to what you'd expect with Cursor's composer view. But again, because of the agent mode, I didn't have to specify files. I just typed my prompt and it happened. That was nice.
+
+Image generator repo clone
+
+Now let's try a more agentic workflow where we have it clone this image generator model repo. You'll see the main difference between Cursor agents and Devin is it asked me before it runs commands.
+
+Cursor is generally more cautious than Devin, which is nice because it's running on my local machine. But also sometimes I wish it would just run this stuff for me.
+
+I've noticed if it catches an error, it'll automatically try to fix it, which I've seen it be successful at, which is great. Now it's written the code, which I'll accept. It found an error and it's rewriting the command accordingly.
+
+Unfortunately, my computer froze before I could show you if Cursor was able to finish that task. It looked to me like it was generating the image fine, but it turns out that model is meant for having a real GPU and not burning through my laptop CPU like I was trying to do.
+
+The results
+
+Overall, I don't think Devin will take off like Cursor. And it's not just because of the $500 a month starting point. Cursor is so much easier to adopt and I like their incremental approach.
+
+Devin, I fear, is trying to jump too far. They've raised all this money saying there's this all-new way to build software with agents, but it just wasn't my preferred workflow.
+
+Maybe one day when LLMs are even better and agents are extremely reliable. But I'm not sure the rate of progress will get us there really soon. And I personally believe more in Cursor's incremental approach than Devin's "let's change everything" approach.
+
+My preferred AI stack
+
+My preferred workflow looks more like this:
+
+A developer works iteratively with Cursor
+
+Other teammates like designers iterate with their tools
+
+Products like builder.io can convert designs to code and also patch in design updates as they're needed
+
+Ultimately your workflow doesn't change much. You're still coding and debugging locally. You're pushing changes as needed.
+
+But I will say that I'm excited to have a new player in the agent coding space to push Cursor even further. And I can't wait to see what comes out from the result of this.
+
+But that's my quick take. From everything you saw, what do you think? Let me know in the comments. And if you made it to the end and you want to see more videos like this, be sure to like and subscribe.
+
+Top comments (0)
+
+Subscribe
+
+For further actions, you may consider blocking this person and/or reporting abuse
+
+Builder.io
+
+Follow
+
+Go from idea to production with unprecedented efficiency
+
+Drag and drop to build visually with your components!
+
+Try Builder.io free
+
+What is an LLM (For Web Developers) #ai #webdev #productivity #programming How I use Cursor (+ my best tips) #webdev #cursor #tooling #programming
+
+We're a place where coders share, stay up-to-date and grow their careers.
+
+Log in Create account

@@ -1,0 +1,777 @@
+{
+  "snapshot": {
+    "id": "53e0a112-9ecf-45e9-9058-627cf087cb85",
+    "investigationId": "9f762a76-b151-4cc3-b5cc-4e5187e52995",
+    "version": 1,
+    "parentSnapshotId": null,
+    "productIdentity": {
+      "name": "GitHub",
+      "officialWebsite": "https://github.com",
+      "version": null,
+      "plan": null,
+      "confirmationStatus": "CONFIRMED",
+      "confirmationBasis": [
+        {
+          "url": "https://github.com/features/copilot/plans",
+          "excerpt": "You use credits when you chat with Copilot and work with agents. Code completions and next edit suggestions don't use credits. They remain unlimited with every paid plan.",
+          "retrievedAt": "2026-10-25T04:10:35.263Z",
+          "reason": "模型依据保存原句识别的候选身份；未据此认定官网或独立验证。"
+        }
+      ]
+    },
+    "evidence": [
+      {
+        "id": "090dd69a-a578-4570-9b38-7074b1c24a45",
+        "sourceUrl": "https://github.com/features/copilot/plans",
+        "originalExcerpt": "You use credits when you chat with Copilot and work with agents. Code completions and next edit suggestions don't use credits. They remain unlimited with every paid plan.",
+        "translation": null,
+        "originalLocation": {
+          "kind": "TEXT",
+          "locator": "https://github.com/features/copilot/plans :: main:first :: blocks(p,li,pre,tr,h1,h2,h3)[209]; normalized UTF-16 [0,170)",
+          "context": "You use credits when you chat with Copilot and work with agents. Code completions and next edit suggestions don't use credits. They remain unlimited with every paid plan."
+        },
+        "metadata": {
+          "title": "GitHub Copilot · Plans & pricing · GitHub",
+          "siteName": "github.com",
+          "author": null,
+          "publishedAt": null,
+          "language": "en",
+          "sourceType": "OFFICIAL",
+          "contentKind": "OFFICIAL_CLAIM",
+          "productVersion": null,
+          "plan": null,
+          "upstreamUrl": null,
+          "independence": "SHARED_ORIGIN",
+          "originGroupId": "origin:090dd69a-a578-4570-9b38-7074b1c24a45",
+          "independenceReason": "保存的相同原文/重定向URL、明确upstreamUrl、采集来源组，或同路径且同hash的www别名相连；重复读取/转载不增加独立证据数量。"
+        },
+        "retrievedAt": "2026-10-25T04:10:35.263Z",
+        "readStatus": "READ",
+        "readError": null,
+        "contentHash": "9aabaafa0a97f22bf910d505e20474f460331318c0736201f30e36413c4c3f2d"
+      },
+      {
+        "id": "6ed7e1fc-5e4f-4555-9d9f-de5d8432dc27",
+        "sourceUrl": "https://docs.github.com/en/copilot/get-started/plans",
+        "originalExcerpt": "Limited to 2000 completions per month on Copilot Free.",
+        "translation": null,
+        "originalLocation": {
+          "kind": "TEXT",
+          "locator": "https://docs.github.com/en/copilot/get-started/plans :: main:first :: blocks(p,li,pre,tr,h1,h2,h3)[54]; normalized UTF-16 [0,54)",
+          "context": "Limited to 2000 completions per month on Copilot Free."
+        },
+        "metadata": {
+          "title": "Plans for GitHub Copilot - GitHub Docs",
+          "siteName": "docs.github.com",
+          "author": null,
+          "publishedAt": null,
+          "language": "en",
+          "sourceType": "OFFICIAL",
+          "contentKind": "OFFICIAL_CLAIM",
+          "productVersion": null,
+          "plan": null,
+          "upstreamUrl": null,
+          "independence": "SHARED_ORIGIN",
+          "originGroupId": "origin:090dd69a-a578-4570-9b38-7074b1c24a45",
+          "independenceReason": "保存的相同原文/重定向URL、明确upstreamUrl、采集来源组，或同路径且同hash的www别名相连；重复读取/转载不增加独立证据数量。"
+        },
+        "retrievedAt": "2026-10-25T04:10:36.792Z",
+        "readStatus": "READ",
+        "readError": null,
+        "contentHash": "a89836342ee34183821897fa73a20049a19b1fbc069e406119195ea2ff1e9ffc"
+      },
+      {
+        "id": "d5798d57-fc1d-40c4-93f8-3782c99f2fad",
+        "sourceUrl": "https://docs.github.com/en/copilot/get-started/plans",
+        "originalExcerpt": "PlanPricingGitHub AI CreditsAgentsModelsCopilot FreeFreeAn allowance of GitHub AI CreditsLimitedAuto model selection onlyCopilot StudentFreeAn allowance of GitHub AI CreditsExcludes third-party agentsAuto model selection onlyCopilot Pro$10 USD per month(free for some users)Base: 1,000A selection of",
+        "translation": null,
+        "originalLocation": {
+          "kind": "TEXT",
+          "locator": "https://docs.github.com/en/copilot/get-started/plans :: main:first :: tables[0]; normalized UTF-16 [0,299)",
+          "context": "PlanPricingGitHub AI CreditsAgentsModelsCopilot FreeFreeAn allowance of GitHub AI CreditsLimitedAuto model selection onlyCopilot StudentFreeAn allowance of GitHub AI CreditsExcludes third-party agentsAuto model selection onlyCopilot Pro$10 USD per month(free for some users)Base: 1,000A selection of modelsCopilot Pro+$39 USD per month.Base: 3,900Access to premium modelsCopilot Max$100 USD per monthBase: 10,000Priority access to premium modelsCopilot Business$19 USD per granted seat per monthTotal per user per month: 1,900Access to premium modelsCopilot Enterprise$39 USD per granted seat per monthTotal per user per month: 3,900Priority access to premium models"
+        },
+        "metadata": {
+          "title": "Plans for GitHub Copilot - GitHub Docs",
+          "siteName": "docs.github.com",
+          "author": null,
+          "publishedAt": null,
+          "language": "en",
+          "sourceType": "OFFICIAL",
+          "contentKind": "OFFICIAL_CLAIM",
+          "productVersion": null,
+          "plan": null,
+          "upstreamUrl": null,
+          "independence": "SHARED_ORIGIN",
+          "originGroupId": "origin:090dd69a-a578-4570-9b38-7074b1c24a45",
+          "independenceReason": "保存的相同原文/重定向URL、明确upstreamUrl、采集来源组，或同路径且同hash的www别名相连；重复读取/转载不增加独立证据数量。"
+        },
+        "retrievedAt": "2026-10-25T04:10:39.816Z",
+        "readStatus": "READ",
+        "readError": null,
+        "contentHash": "b0b99a6e270c07dd8dd61dda8242a8dae99298b9420bc0720758e5b37c7f5fed"
+      }
+    ],
+    "claims": [
+      {
+        "id": "09b2c714-1e5f-4c21-8199-c9cb2ddc0240",
+        "statement": "GitHub 官方文档称 Copilot Free 每月最多 2000 次代码补全。",
+        "kind": "OFFICIAL_CLAIM",
+        "verificationStatus": "SUPPORTED",
+        "verificationReason": "docs.github.com 套餐文档原句为 “Limited to 2000 completions per month on Copilot Free.”，直接蕴含每月 2000 次补全上限；仅证明官方如此规定，不含版本日期。",
+        "scope": "Copilot Free 套餐，按月计；原文未给出文档版本或生效日期"
+      },
+      {
+        "id": "fa51fa36-05f1-4b16-a750-5b077c183ab0",
+        "statement": "GitHub 官方文档的套餐表中，Copilot Free 一栏在 chat 相关额度处仅写为每月有一定量的 GitHub AI Credits（allowance of GitHub AI Credits），未给出具体次数。",
+        "kind": "OFFICIAL_CLAIM",
+        "verificationStatus": "SUPPORTED",
+        "verificationReason": "表格摘录 Free 行写 “An allowance of GitHub AI Credits”，未出现具体 chat 次数；但摘录被截断，只能支持此片段所述。",
+        "scope": "Copilot Free 套餐；表格摘录被截断，未包含完整数值"
+      },
+      {
+        "id": "46501dc0-0735-4edc-8125-def2f044c69c",
+        "statement": "GitHub 官方计划页称与 Copilot 对话及使用 agents 会消耗 credits，代码补全和 next edit suggestions 不消耗 credits，且在所有付费计划中保持无限。",
+        "kind": "OFFICIAL_CLAIM",
+        "verificationStatus": "SUPPORTED",
+        "verificationReason": "plans 页原句逐句对应：chat/agents 用 credits，补全与 next edit suggestions 不用，且付费计划无限；仅证明官方声称。",
+        "scope": "所有付费计划；原文未说明 Free 套餐的代码补全是否无限"
+      },
+      {
+        "id": "b81ffe93-8ffa-4c36-94c3-2dd176fd6652",
+        "statement": "Copilot Free 用户每月 2000 次代码补全用完后如何处理（是否停用、降级或需升级），所提供的原句未说明。",
+        "kind": "FACT",
+        "verificationStatus": "INSUFFICIENT",
+        "verificationReason": "三份原句均未涉及超出 Free 补全额度后的处理方式，无证据可判断。",
+        "scope": "超出 Copilot Free 代码补全额度后的情形，无证据"
+      }
+    ],
+    "relations": [
+      {
+        "claimId": "09b2c714-1e5f-4c21-8199-c9cb2ddc0240",
+        "evidenceId": "6ed7e1fc-5e4f-4555-9d9f-de5d8432dc27",
+        "relation": "SUPPORTS",
+        "reason": "原句明确 “2000 completions per month on Copilot Free”，与 statement 数值和套餐一致。"
+      },
+      {
+        "claimId": "fa51fa36-05f1-4b16-a750-5b077c183ab0",
+        "evidenceId": "d5798d57-fc1d-40c4-93f8-3782c99f2fad",
+        "relation": "SUPPORTS",
+        "reason": "Free 行仅写 “An allowance of GitHub AI Credits”，未列具体 chat 次数；摘录截断，支持范围限于该片段。"
+      },
+      {
+        "claimId": "46501dc0-0735-4edc-8125-def2f044c69c",
+        "evidenceId": "090dd69a-a578-4570-9b38-7074b1c24a45",
+        "relation": "SUPPORTS",
+        "reason": "原句称 chat/agents 用 credits、补全与 next edit suggestions 不用且付费计划无限，逐分句对应。"
+      },
+      {
+        "claimId": "b81ffe93-8ffa-4c36-94c3-2dd176fd6652",
+        "evidenceId": "6ed7e1fc-5e4f-4555-9d9f-de5d8432dc27",
+        "relation": "CONTEXT",
+        "reason": "仅给出 2000 次/月上限，未涉及超出后的处理，故不能支持或反驳该主张。"
+      }
+    ],
+    "conflicts": [],
+    "gaps": [
+      {
+        "id": "6f01c7f5-3fc5-4e6c-ae57-f3c3367f94ae",
+        "claimIds": [],
+        "kind": "INSUFFICIENT_EVIDENCE",
+        "description": "阶段核查未完成：MODEL: claim-extraction:format-repair failed (output-schema; claims.4.kind:invalid_value)；保留原句并在最终预算内核查。",
+        "searchScope": null
+      },
+      {
+        "id": "3b1f2a44-8c9d-4e5a-9f61-2d7c8b0a1e35",
+        "claimIds": [
+          "09b2c714-1e5f-4c21-8199-c9cb2ddc0240",
+          "fa51fa36-05f1-4b16-a750-5b077c183ab0",
+          "b81ffe93-8ffa-4c36-94c3-2dd176fd6652"
+        ],
+        "kind": "INSUFFICIENT_EVIDENCE",
+        "description": "缺少 Copilot Free 每月 chat 具体次数及超出额度后处理方式的保存原句；现有摘录未覆盖。",
+        "searchScope": "GitHub Copilot 官方 plans 与 docs 计划页"
+      }
+    ],
+    "retrievalRecords": [
+      {
+        "id": "f4b87487-1a39-43d0-8bd4-3a4d35d15979",
+        "provider": "tencent-yuanbao-search-api",
+        "query": "GitHub Copilot Free plan limits code completions chat per month",
+        "calledAt": "2026-10-25T04:10:30.342Z",
+        "status": "SUCCEEDED",
+        "error": null,
+        "returnedSources": [
+          {
+            "url": "https://github.blog/news-insights/company-news/github-copilot-individual-plans-introducing-flex-allotments-in-pro-and-pro-and-a-new-max-plan",
+            "title": "GitHub Copilot individual plans: Introducing flex allotments in Pro and Pro, and a new Max plan",
+            "snippet": "GitHub Copilot individual plans: Introducing flex allotments in Pro and Pro+, and a new Max plan GitHub Blog。Starting June 1, our lineup of individual plans will update based on your feedback. We’ve heard your questions about whether the included usage in each GitHub Copilot plan will go far enough when we transition to usage-based billing on June 1st. Longer agent runs, multi-step work, and more capable models will all put pressure on the usage amounts detailed in our original announcement. We’re updating the individual lineup based on that feedback. Pro and Pro+ will include more total usage at the same price through a new flex allotment, and we’re introducing Max, a new plan for sustained, high-volume Copilot work. What’s included The individual Copilot lineup will span Free, Pro, Pro+,...",
+            "adoption": "REJECTED",
+            "adoptionReason": "本轮未读取；搜索摘要不是原文证据。",
+            "evidenceId": null
+          },
+          {
+            "url": "https://github.blog/news-insights/product-news/github-copilot-in-vscode-free/?_bhlid=1c96dda4366d8070d06e00abf1c4746e80a06fe2",
+            "title": "Announcing 150M developers and a new free tier for GitHub Copilot in VS Code",
+            "snippet": "Announcing 150M developers and a new free tier for GitHub Copilot in VS Code The GitHub Blog。Come and join 150M developers on GitHub that can now code with Copilot for free in VS Code. GitHub has a long history of offering free products and services to developers. Starting with free open source and public collaboration, we added free private repos, free minutes for GitHub Actions and GitHub Codespaces, and free package and release storage. Today, we are adding GitHub Copilot to the mix by launching GitHub Copilot Free. Now automatically integrated into VS Code, all of you have access to 2,000 code completions and 50 chat messages per month, simply by signing in with your personal GitHub account. Or by creating a new one. And just last week, we passed the mark of 150M developers on GitHub. ...",
+            "adoption": "REJECTED",
+            "adoptionReason": "本轮未读取；搜索摘要不是原文证据。",
+            "evidenceId": null
+          },
+          {
+            "url": "http://git.mafyuh.dev/features/copilot/plans?cft=copilot_lo.features_copilot",
+            "title": "GitHub Copilot · Plans & pricing",
+            "snippet": "GitHub Copilot · Plans & pricing GitHub。Take flight with GitHub Copilot Pricing plans For individualsFor businesses Free A fast way to get started with GitHub Copilot. $0USD Get startedOpen in VS Code What's included: 50 agent mode or chat requests per month 2,000 completions per month Access to Haiku 4.5, GPT-4.1, and more Pro Most popular Accelerate workflows with GitHub Copilot. $10USDper month or $100 per year Try for 30 days free Everything in Free and: Coding agent Unlimited agent mode and chats with GPT-5 mini1 Unlimited code completions Access to code review, Claude Sonnet 4/4.5, GPT-5, Gemini 2.5 Pro, and more 300 premium requests to use latest models, with the option to buy more2 Free for verified students, teachers, and maintainers of popular open source projects. Learn more Pro...",
+            "adoption": "REJECTED",
+            "adoptionReason": "本轮未读取；搜索摘要不是原文证据。",
+            "evidenceId": null
+          },
+          {
+            "url": "https://githubdocs.cn/en/copilot/how-tos/copilot-on-github/set-up-copilot/enable-copilot/set-up-for-self",
+            "title": "为个人设置 GitHub Copilot",
+            "snippet": "为个人设置 GitHub Copilot GitHub 文档。为个人设置 GitHub Copilot 开始使用 GitHub Copilot 在 GitHub 上更快编写代码。 本文内容 获取 GitHub Copilot 访问权限 Copilot 免费版每月提供最多 2,000 次代码补全和 50 条聊天消息,完全免费。 开始使用 Copilot 免费版。 如需更高配额和所有可用模型的访问权限,请订阅 Copilot Pro 或 Copilot Pro+。请参阅 GitHub Copilot 计划入门指南,了解所有计划的详情,包括面向学生、教师和开源维护者的免费选项。 配置设置(可选) 如果您拥有自己的 Copilot 计划,可在 Copilot 设置 中管理您的策略和功能访问权限。您还可以启用 Copilot 记忆,让 Copilot 记住有关您仓库的有用上下文。 设置个人自定义指令(可选) 个人自定义指令告诉 Copilot Chat 您的偏好——例如您偏好的语言、编码风格或响应格式。要添加这些指令,请在 GitHub 上打开任意 Copilot Chat 对话,点击您的头像,然后选择 个人指令。更多信息,请参阅 为 GitHub Copilot 添加个人自定义指令。 下一步 在 GitHub 上与 Copilot 聊天,获取有关您的代码、仓库和开发问题的答案。...",
+            "adoption": "REJECTED",
+            "adoptionReason": "本轮未读取；搜索摘要不是原文证据。",
+            "evidenceId": null
+          }
+        ]
+      },
+      {
+        "id": "2831084f-179e-42ed-81de-96bf4e2d75b5",
+        "provider": "tavily-search-api:keyless-capped",
+        "query": "GitHub Copilot Free plan limits code completions chat per month",
+        "calledAt": "2026-10-25T04:10:30.342Z",
+        "status": "SUCCEEDED",
+        "error": null,
+        "returnedSources": [
+          {
+            "url": "https://github.com/orgs/community/discussions/147524",
+            "title": "viewing usage for copilot free · community · Discussion #147524 · GitHub",
+            "snippet": "| | | Hi @dragoncoder047 , With GitHub Copilot Free you get 2000 code completions/month. That's about 80 per working day. You also get 50 chat requests/month, as well as access to both GPT-4o and Claude 3.5 Sonnet models. If you hit these limits, ideally it's because Copilot is doing its job well, which is to help you do yours! If you find you need more Copilot, the paid Pro plan is unlimited and provides access to additional models like o1 and Gemini (coming in the new year). Thanks! | [...] | Select Topic Area Product Feedback Body I just started using the free Copilot that Github gave everyone a couple of days ago. Very nice tool! It says free users are limited to 2000 completions and 50 chat messages per month. I understand why it's rate-limited for free users -- that's not my complaint. For other features such as Codespaces and Actions where free users are limited, there is a section in my user settings \"Access\">\"Billing and plans\">\"Plans and usage\" that lists the free usage",
+            "adoption": "REJECTED",
+            "adoptionReason": "本轮未读取；搜索摘要不是原文证据。",
+            "evidenceId": null
+          },
+          {
+            "url": "https://docs.github.com/en/copilot/get-started/plans",
+            "title": "Plans for GitHub Copilot - GitHub Docs",
+            "snippet": "For more information on how GitHub AI Credits work, see Usage-based billing for individuals ### Inline suggestions and Copilot Chat Inline suggestions are real-time code suggestions with included models in IDEs and Next edit suggestions. Limited to 2000 completions per month on Copilot Free. Copilot Chat features available include: [...] | Plan | Pricing | GitHub AI Credits | Agents | Models | --- --- | Copilot Free | Free | An allowance of GitHub AI Credits | Limited | Auto model selection only | | Copilot Student | Free | An allowance of GitHub AI Credits | Excludes third-party agents | Auto model selection only | | Copilot Pro | $10 USD per month (free for some users) | Base: 1,000 | A selection of models | | Copilot Pro+ | $39 USD per month. | Base: 3,900 | Access to premium models | [...] ### GitHub AI Credits allowance by plan The following table shows what's included with each paid plan. | Plan | Price per month | Base credits | Flex allotment | Total monthly AI credits | --- --- | Copilot Pro | $10 USD | 1,000 | 500 | 1,500 | | Copilot Pro+ | $39 USD | 3,900 | 3,100 | 7,000 | | Copilot Max | $100 USD | 10,000 | 10,000 | 20,000 | Copilot Free and Copilot Student both have an allowance of AI credits.",
+            "adoption": "ADOPTED",
+            "adoptionReason": "保存原句；是否支持问题由逐主张核查决定。",
+            "evidenceId": "d5798d57-fc1d-40c4-93f8-3782c99f2fad"
+          },
+          {
+            "url": "https://www.finout.io/blog/github-copilot-pricing-plans-hidden-costs-and-5-ways-to-control-them",
+            "title": "GitHub Copilot Pricing Plans, Hidden Costs, and 5 Ways to Control Them",
+            "snippet": "GitHub Copilot offers four individual plans. Free ($0/month) includes 2,000 monthly code completions and limited AI models. Pro ($10/user/month) adds unlimited completions, chat, cloud agent access, and $15 in monthly AI credits. Pro+ ($39/user/month) adds premium models, audit logs, and $70 in monthly AI credits. Max ($100/user/month) is built for heavy AI users, with the highest usage limits and $200 in monthly AI credits. What are the GitHub Copilot pricing plans for businesses? [...] GitHub Copilot pricing ranges from $0 to $100 per user per month depending on the plan. Individual plans include Free ($0), Pro ($10), Pro+ ($39), and Max ($100). Business plans include Business ($19/user/month) and Enterprise ($39/user/month). Paid plans also include a monthly allowance of GitHub AI Credits for chat, agents, and cloud features, since code completions remain unlimited on all paid tiers. What are the GitHub Copilot pricing plans for individuals? [...] Free plan ($0/month): Includes 2,000 monthly code completions, limited AI models, and Copilot CLI at no cost. Pro plan ($10/user/month): Adds unlimited completions, chat, cloud agent, model selection, and $15 in monthly AI credits. Pro+ plan ($39/user/month): Includes premium AI models, audit logs, higher usage limits, and $70 in monthly AI credits. Max plan ($100/user/month): Designed for heavy AI users with the highest usage limits, priority access, and $200 in monthly AI credits.",
+            "adoption": "REJECTED",
+            "adoptionReason": "本轮未读取；搜索摘要不是原文证据。",
+            "evidenceId": null
+          },
+          {
+            "url": "https://finance.yahoo.com/news/github-launches-free-version-copilot-180000093.html",
+            "title": "GitHub launches a free version of its Copilot",
+            "snippet": "Developers on the free plan will get access to 2,000 code completions per month, for example, and as a GitHub spokesperson told me, each Copilot code suggestion will count against this limit — not just accepted suggestions. And while GitHub recently added the ability to switch between different foundation models, users on the free plan are limited to Anthropic's Claude 3.5 Sonnet and OpenAI's GPT-4o. (The paid plans also include Google's Gemini 1.5 Pro and OpenAI's o1-preview and -mini.) [...] innovation conference.Image Credits:Matthias Balk/picture alliance via Getty Images / Getty Images For Copilot Chat, the number of chat messages is limited to 50, but otherwise, there aren't any major limitations to the free service. Developers still get access to all Copilot Extensions and skills. As Dohmke told me, the team looked at the Copilot usage data from the last few years to figure out the threshold between occasional users and professional developers. [...] TechCrunch # GitHub launches a free version of its Copilot Frederic Lardinois 4 min read MSFT +2.38% Microsoft-owned GitHub announced on Wednesday a free version of its popular Copilot code completion/AI pair programming tool, which will also now ship by default with Microsoft's popular VS Code editor. Until now, most developers had to pay a monthly fee, starting at $10 per month, with only verified students, teachers, and open source maintainers getting free access.",
+            "adoption": "REJECTED",
+            "adoptionReason": "本轮未读取；搜索摘要不是原文证据。",
+            "evidenceId": null
+          },
+          {
+            "url": "https://github.com/features/copilot/plans",
+            "title": "GitHub Copilot · Plans & pricing · GitHub",
+            "snippet": "Max plan $200 per month Base credits Free plan Limited chat and agent usage Pro plan $10 per month Pro+ plan $39 per month Max plan $100 per month Flex allotment Variable additional usage on top of your base. Flex allotments may change over time. Free plan Not included Pro plan $5 per month Pro+ plan $31 per month Max plan $100 per month Pooled usage Included AI credits are shared org-wide with admin controls for spending. Free plan Not included Pro plan Not included [...] Compare features Pricing plans Get started $10 per month Get started $39 per month Get started Max $100 per month Get started GitHub AI Credits Total GitHub AI Credits Credits used when interacting with Copilot features. Chat, agent mode, code review, Copilot cloud agent, Copilot CLI, and Copilot Apps consume GitHub AI Credits. Free plan supports CLI and agent mode. Learn more Free plan Limited chat and agent usage Pro plan $15 per month Pro+ plan $70 per month Max plan [...] If you're on the Free plan, you can upgrade to Pro through your Copilot settings page or directly on the Copilot marketing page. #### What is included in GitHub Copilot Free? GitHub Copilot Free users are limited to 2000 completions and 50 chat requests (including Copilot Edits). #### Which plan includes GitHub Copilot Autofix?",
+            "adoption": "ADOPTED",
+            "adoptionReason": "保存原句；是否支持问题由逐主张核查决定。",
+            "evidenceId": "090dd69a-a578-4570-9b38-7074b1c24a45"
+          },
+          {
+            "url": "https://www.cloudzero.com/blog/github-copilot-cost",
+            "title": "GitHub Copilot cost: what teams actually pay in 2026",
+            "snippet": "| | | | | --- --- | | Plan | Price | Built for | What the price includes | | Free | $0 | Trying it, hobby and light use | Limited monthly usage, a small AI Credit allowance, code completions | | Pro | $10/month ($100/year) | Individual professional developers | Unlimited code completions plus a monthly AI Credit allowance | | Pro+ | $39/month | Heavy individual and agent power users | Unlimited code completions plus a monthly AI Credit allowance | [...] ## Is GitHub Copilot free? Sort of Yes, there is a useful GitHub Copilot free tier at $0, aimed at individual developers without organization access. It includes a limited monthly slice of features plus code completions, which is plenty to kick the tires before anyone signs a purchase order. So, is Copilot free? Partly. The Free tier costs nothing, but it caps your monthly usage, and the moment you need heavy agent work or premium models you are into a paid plan or usage credits. [...] For most teams, yes, on cost grounds: at $10/month for Pro or $19/user/month for Business, Copilot is about half the price of Cursor and code completions are unlimited and free. The value question is really a usage question, since the variable credit cost on top of the seat is what determines your true return. Lyne Carolyne Author Spotlight Lyne Carolyne",
+            "adoption": "REJECTED",
+            "adoptionReason": "本轮未读取；搜索摘要不是原文证据。",
+            "evidenceId": null
+          }
+        ]
+      }
+    ],
+    "verificationAudit": {
+      "modelCalls": [
+        {
+          "provider": "api.deepseek.com",
+          "model": "deepseek-flash",
+          "promptVersion": "a2-evidence-v4",
+          "temperature": null,
+          "thinkingMode": "DISABLED",
+          "generatedAt": "2026-10-25T04:10:30.336Z",
+          "id": "38771a68-0eec-48e5-9cd9-af6f58762783",
+          "purpose": "investigation-initial-decision",
+          "startedAt": "2026-10-25T04:10:29.284Z",
+          "durationMs": 1056,
+          "outcome": "SUCCEEDED",
+          "inputTokens": 1396,
+          "outputTokens": 108
+        },
+        {
+          "provider": "api.deepseek.com",
+          "model": "deepseek-flash",
+          "promptVersion": "a2-evidence-v4",
+          "temperature": null,
+          "thinkingMode": "DISABLED",
+          "generatedAt": "2026-10-25T04:10:33.928Z",
+          "id": "b359a713-b8b8-4bf2-8b61-e1af1e61ac25",
+          "purpose": "investigation-evidence-decision",
+          "startedAt": "2026-10-25T04:10:32.475Z",
+          "durationMs": 1453,
+          "outcome": "SUCCEEDED",
+          "inputTokens": 5087,
+          "outputTokens": 223
+        },
+        {
+          "provider": "api.deepseek.com",
+          "model": "deepseek-flash",
+          "promptVersion": "a2-evidence-v4",
+          "temperature": null,
+          "thinkingMode": "DISABLED",
+          "generatedAt": "2026-10-25T04:10:38.573Z",
+          "id": "8cdf3786-8620-4d3a-abdb-f24a66d5a1fe",
+          "purpose": "investigation-evidence-decision",
+          "startedAt": "2026-10-25T04:10:36.891Z",
+          "durationMs": 1681,
+          "outcome": "SUCCEEDED",
+          "inputTokens": 6183,
+          "outputTokens": 227
+        },
+        {
+          "provider": "api.deepseek.com",
+          "model": "deepseek-flash",
+          "promptVersion": "a2-evidence-v4",
+          "temperature": null,
+          "thinkingMode": "DISABLED",
+          "generatedAt": "2026-10-25T04:10:42.063Z",
+          "id": "b9bfb74a-42de-4191-9639-38aab73f4b9e",
+          "purpose": "investigation-evidence-decision",
+          "startedAt": "2026-10-25T04:10:39.880Z",
+          "durationMs": 2182,
+          "outcome": "SUCCEEDED",
+          "inputTokens": 6962,
+          "outputTokens": 299
+        },
+        {
+          "provider": "api.deepseek.com",
+          "model": "deepseek-flash",
+          "promptVersion": "a2-evidence-v4",
+          "temperature": null,
+          "thinkingMode": "DISABLED",
+          "generatedAt": "2026-10-25T04:10:45.582Z",
+          "id": "bed2599f-fbb0-46b9-883e-2dd0e6e46804",
+          "purpose": "claim-extraction",
+          "startedAt": "2026-10-25T04:10:42.069Z",
+          "durationMs": 1703,
+          "outcome": "FAILED",
+          "inputTokens": 1896,
+          "outputTokens": 221,
+          "failureCategory": "output-schema"
+        },
+        {
+          "provider": "api.deepseek.com",
+          "model": "deepseek-flash",
+          "promptVersion": "a2-evidence-v4",
+          "temperature": null,
+          "thinkingMode": "DISABLED",
+          "generatedAt": "2026-10-25T04:10:45.582Z",
+          "id": "7e1f1b60-6b1f-490c-87f6-c6158e9228a1",
+          "purpose": "claim-extraction:format-repair",
+          "startedAt": "2026-10-25T04:10:43.772Z",
+          "durationMs": 1809,
+          "outcome": "FAILED",
+          "inputTokens": 1956,
+          "outputTokens": 256,
+          "failureCategory": "output-schema"
+        },
+        {
+          "provider": "api.deepseek.com",
+          "model": "deepseek-flash",
+          "promptVersion": "a2-evidence-v4",
+          "temperature": null,
+          "thinkingMode": "DISABLED",
+          "generatedAt": "2026-10-25T04:10:47.430Z",
+          "id": "7de2f8cc-32c2-4e60-b795-3b6ab7841130",
+          "purpose": "claim-extraction",
+          "startedAt": "2026-10-25T04:10:45.591Z",
+          "durationMs": 1839,
+          "outcome": "SUCCEEDED",
+          "inputTokens": 2072,
+          "outputTokens": 267
+        },
+        {
+          "provider": "api.deepseek.com",
+          "model": "deepseek-flash",
+          "promptVersion": "a2-evidence-v4",
+          "temperature": null,
+          "thinkingMode": "DISABLED",
+          "generatedAt": "2026-10-25T04:10:52.405Z",
+          "id": "a0fdbc60-cd97-43ec-a695-3f95c076426b",
+          "purpose": "claim-evidence-verification",
+          "startedAt": "2026-10-25T04:10:47.431Z",
+          "durationMs": 4974,
+          "outcome": "SUCCEEDED",
+          "inputTokens": 3859,
+          "outputTokens": 1207
+        },
+        {
+          "provider": "api.deepseek.com",
+          "model": "deepseek-flash",
+          "promptVersion": "a2-evidence-v4",
+          "temperature": null,
+          "thinkingMode": "DISABLED",
+          "generatedAt": "2026-10-25T04:10:53.305Z",
+          "id": "f93bd023-a5f4-403b-8eee-725c641e04fc",
+          "purpose": "cited-answer-selection",
+          "startedAt": "2026-10-25T04:10:52.411Z",
+          "durationMs": 895,
+          "outcome": "SUCCEEDED",
+          "inputTokens": 1289,
+          "outputTokens": 55
+        },
+        {
+          "provider": "api.deepseek.com",
+          "model": "deepseek-flash",
+          "promptVersion": "a2-evidence-v4",
+          "temperature": null,
+          "thinkingMode": "DISABLED",
+          "generatedAt": "2026-10-25T04:10:54.561Z",
+          "id": "fb4c4f5b-63f9-4bea-83d5-269066f7f15f",
+          "purpose": "citation-semantic-support-check",
+          "startedAt": "2026-10-25T04:10:53.306Z",
+          "durationMs": 1255,
+          "outcome": "SUCCEEDED",
+          "inputTokens": 1627,
+          "outputTokens": 148
+        }
+      ],
+      "review": {
+        "status": "NOT_CONFIGURED",
+        "reason": "未配置第二模型；不声称完成独立模型复核或精度提高。",
+        "independentAssessment": null,
+        "findings": []
+      },
+      "citationChecks": [
+        {
+          "marker": "[1]",
+          "supported": true,
+          "reason": "原句明确写“Limited to 2000 completions per month on Copilot Free”，与主张的“Copilot Free 每月最多 2000 次补全”一致；来源为 docs.github.com 官方文档；原句未给出文档版本或生效日期，主张已如实标注。"
+        },
+        {
+          "marker": "[2]",
+          "supported": true,
+          "reason": "摘录中 Copilot Free 一栏的 GitHub AI Credits 处仅写“An allowance of GitHub AI Credits”，未给出具体次数；摘录在 Copilot Pro 行处截断，未包含完整数值，主张已如实注明表格摘录被截断。"
+        }
+      ],
+      "followup": {
+        "queriesUsed": 0,
+        "maxQueries": 2,
+        "stopReason": "模型选择结束，已执行1轮搜索、3次读取；具体决策理由保留在记录中，事实与未解决项以最终原句核查为准。"
+      },
+      "investigationLoop": {
+        "startedAt": "2026-10-25T04:10:29.277Z",
+        "durationMs": 25288,
+        "totalBudgetMs": 180000,
+        "answerReserveMs": 45000,
+        "maxSearchRounds": 3,
+        "searchRounds": 1,
+        "maxReads": 10,
+        "readsUsed": 3,
+        "stopReason": "模型选择结束，已执行1轮搜索、3次读取；具体决策理由保留在记录中，事实与未解决项以最终原句核查为准。",
+        "httpAttempts": [
+          {
+            "url": "https://api.wsa.cloud.tencent.com/SearchPro",
+            "method": "POST",
+            "startedAt": "2026-10-25T04:10:30.343Z",
+            "finishedAt": "2026-10-25T04:10:30.739Z",
+            "requestSent": true,
+            "status": 200,
+            "error": null,
+            "ownerId": "f4b87487-1a39-43d0-8bd4-3a4d35d15979"
+          },
+          {
+            "url": "https://api.tavily.com/search",
+            "method": "POST",
+            "startedAt": "2026-10-25T04:10:30.342Z",
+            "finishedAt": "2026-10-25T04:10:32.470Z",
+            "requestSent": true,
+            "status": 200,
+            "error": null,
+            "ownerId": "2831084f-179e-42ed-81de-96bf4e2d75b5"
+          },
+          {
+            "url": "https://docs.github.com/en/copilot/get-started/plans",
+            "method": "GET",
+            "startedAt": "2026-10-25T04:10:33.938Z",
+            "finishedAt": "2026-10-25T04:10:36.792Z",
+            "requestSent": true,
+            "status": 200,
+            "error": null,
+            "ownerId": "6ed7e1fc-5e4f-4555-9d9f-de5d8432dc27"
+          },
+          {
+            "url": "https://github.com/features/copilot/plans",
+            "method": "GET",
+            "startedAt": "2026-10-25T04:10:33.938Z",
+            "finishedAt": "2026-10-25T04:10:35.263Z",
+            "requestSent": true,
+            "status": 200,
+            "error": null,
+            "ownerId": "090dd69a-a578-4570-9b38-7074b1c24a45"
+          },
+          {
+            "url": "https://docs.github.com/en/copilot/get-started/plans",
+            "method": "GET",
+            "startedAt": "2026-10-25T04:10:38.578Z",
+            "finishedAt": "2026-10-25T04:10:39.816Z",
+            "requestSent": true,
+            "status": 200,
+            "error": null,
+            "ownerId": "d5798d57-fc1d-40c4-93f8-3782c99f2fad"
+          }
+        ],
+        "collectionDiagnostics": [
+          {
+            "retrievalRecordId": "f4b87487-1a39-43d0-8bd4-3a4d35d15979",
+            "stage": "SEARCH_RESULT",
+            "index": 0,
+            "error": "Error: Malformed or unsafe search result rejected"
+          },
+          {
+            "retrievalRecordId": "f4b87487-1a39-43d0-8bd4-3a4d35d15979",
+            "stage": "SEARCH_RESULT",
+            "index": 3,
+            "error": "Error: Malformed or unsafe search result rejected"
+          }
+        ],
+        "decisions": [
+          {
+            "step": 1,
+            "decidedAt": "2026-10-25T04:10:30.336Z",
+            "remainingMs": 178936,
+            "decision": {
+              "action": "SEARCH",
+              "query": "GitHub Copilot Free plan limits code completions chat per month",
+              "entries": [
+                "yuanbao",
+                "tavily"
+              ],
+              "readUrls": [],
+              "reason": "尚无任何材料，先检索 GitHub Copilot Free 官方配额与超出后的处理方式。",
+              "observedGap": "缺少 Copilot Free 每月补全次数、chat 次数及超额限制的官方说明。",
+              "basisEvidenceIds": [],
+              "basisRecordIds": [],
+              "clarification": null,
+              "discoveredIdentity": null
+            },
+            "availableEvidenceIds": [],
+            "availableRecordIds": [],
+            "outcome": "EXECUTED",
+            "detail": "实际入口：yuanbao,tavily；返回记录：f4b87487-1a39-43d0-8bd4-3a4d35d15979:SUCCEEDED,2831084f-179e-42ed-81de-96bf4e2d75b5:SUCCEEDED。"
+          },
+          {
+            "step": 2,
+            "decidedAt": "2026-10-25T04:10:33.928Z",
+            "remainingMs": 175345,
+            "decision": {
+              "action": "READ",
+              "query": "Copilot Free 2000 completions 50 chat",
+              "entries": [],
+              "readUrls": [
+                "https://docs.github.com/en/copilot/get-started/plans",
+                "https://github.com/features/copilot/plans",
+                "https://github.blog/news-insights/product-news/github-copilot-in-vscode-free/"
+              ],
+              "reason": "搜索摘要显示 Free 计划配额为每月2000次补全和50条chat，但需原文确认，并确认超出后处理方式。优先读官方文档与定价页。",
+              "observedGap": "缺少官方原文对 Free 配额及超额后行为（降级/暂停/升级）的明确说明。",
+              "basisEvidenceIds": [],
+              "basisRecordIds": [
+                "f4b87487-1a39-43d0-8bd4-3a4d35d15979",
+                "2831084f-179e-42ed-81de-96bf4e2d75b5"
+              ],
+              "clarification": null,
+              "discoveredIdentity": null
+            },
+            "availableEvidenceIds": [],
+            "availableRecordIds": [
+              "f4b87487-1a39-43d0-8bd4-3a4d35d15979",
+              "2831084f-179e-42ed-81de-96bf4e2d75b5"
+            ],
+            "outcome": "EXECUTED",
+            "detail": "已尝试读取：https://docs.github.com/en/copilot/get-started/plans,https://github.com/features/copilot/plans；累计保存2份原文状态。"
+          },
+          {
+            "step": 3,
+            "decidedAt": "2026-10-25T04:10:38.573Z",
+            "remainingMs": 170700,
+            "decision": {
+              "action": "READ",
+              "query": "Copilot Free chat requests limit 50",
+              "entries": [],
+              "readUrls": [
+                "https://docs.github.com/en/copilot/get-started/plans"
+              ],
+              "reason": "官方文档已有“2000 completions per month on Copilot Free”原句，但同一页显示 Free 的 chat 为“An allowance of GitHub AI Credits / Auto model selection only”，与搜索摘要中“50 chat”说法存在差异。需在同页定向重读 chat 配额及达到上限后的处理说明，避免以摘要充当原句。",
+              "observedGap": "缺少官方原文明确 Copilot Free 每月 chat 次数（50 条还是 AI Credits 额度）以及超出配额后会发生什么。",
+              "basisEvidenceIds": [
+                "6ed7e1fc-5e4f-4555-9d9f-de5d8432dc27",
+                "090dd69a-a578-4570-9b38-7074b1c24a45"
+              ],
+              "basisRecordIds": [],
+              "clarification": null,
+              "discoveredIdentity": null
+            },
+            "availableEvidenceIds": [
+              "090dd69a-a578-4570-9b38-7074b1c24a45",
+              "6ed7e1fc-5e4f-4555-9d9f-de5d8432dc27"
+            ],
+            "availableRecordIds": [
+              "f4b87487-1a39-43d0-8bd4-3a4d35d15979",
+              "2831084f-179e-42ed-81de-96bf4e2d75b5"
+            ],
+            "outcome": "EXECUTED",
+            "detail": "已尝试读取：https://docs.github.com/en/copilot/get-started/plans；累计保存3份原文状态。"
+          },
+          {
+            "step": 4,
+            "decidedAt": "2026-10-25T04:10:42.063Z",
+            "remainingMs": 167210,
+            "decision": {
+              "action": "FINISH",
+              "query": null,
+              "entries": [],
+              "readUrls": [],
+              "reason": "官方原文已确认 Copilot Free 每月 2000 次代码补全和 50 条 chat 请求；超出后 chat 与 agent 由 GitHub AI Credits 额度控制，额度用尽则无法继续使用相关功能，可升级 Pro（补全无限）。",
+              "observedGap": "官方未逐字说明达到 50 条 chat 上限那一刻的界面行为，仅说明按 AI Credits 额度计量，属可接受缺口。",
+              "basisEvidenceIds": [
+                "6ed7e1fc-5e4f-4555-9d9f-de5d8432dc27",
+                "090dd69a-a578-4570-9b38-7074b1c24a45",
+                "d5798d57-fc1d-40c4-93f8-3782c99f2fad"
+              ],
+              "basisRecordIds": [
+                "f4b87487-1a39-43d0-8bd4-3a4d35d15979",
+                "2831084f-179e-42ed-81de-96bf4e2d75b5"
+              ],
+              "clarification": null,
+              "discoveredIdentity": {
+                "name": "GitHub",
+                "evidenceId": "090dd69a-a578-4570-9b38-7074b1c24a45"
+              }
+            },
+            "availableEvidenceIds": [
+              "090dd69a-a578-4570-9b38-7074b1c24a45",
+              "6ed7e1fc-5e4f-4555-9d9f-de5d8432dc27",
+              "d5798d57-fc1d-40c4-93f8-3782c99f2fad"
+            ],
+            "availableRecordIds": [
+              "f4b87487-1a39-43d0-8bd4-3a4d35d15979",
+              "2831084f-179e-42ed-81de-96bf4e2d75b5"
+            ],
+            "outcome": "STOPPED",
+            "detail": "官方原文已确认 Copilot Free 每月 2000 次代码补全和 50 条 chat 请求；超出后 chat 与 agent 由 GitHub AI Credits 额度控制，额度用尽则无法继续使用相关功能，可升级 Pro（补全无限）。"
+          }
+        ],
+        "collectionCalls": [
+          {
+            "operation": "search:yuanbao",
+            "target": "GitHub Copilot Free plan limits code completions chat per month",
+            "startedAt": "2026-10-25T04:10:30.342Z",
+            "durationMs": 400,
+            "outcome": "SUCCEEDED",
+            "resultId": "f4b87487-1a39-43d0-8bd4-3a4d35d15979",
+            "error": null
+          },
+          {
+            "operation": "search:tavily",
+            "target": "GitHub Copilot Free plan limits code completions chat per month",
+            "startedAt": "2026-10-25T04:10:30.342Z",
+            "durationMs": 2132,
+            "outcome": "SUCCEEDED",
+            "resultId": "2831084f-179e-42ed-81de-96bf4e2d75b5",
+            "error": null
+          },
+          {
+            "operation": "read",
+            "target": "https://github.com/features/copilot/plans",
+            "startedAt": "2026-10-25T04:10:33.938Z",
+            "durationMs": 1509,
+            "outcome": "SUCCEEDED",
+            "resultId": "090dd69a-a578-4570-9b38-7074b1c24a45",
+            "error": null
+          },
+          {
+            "operation": "read",
+            "target": "https://docs.github.com/en/copilot/get-started/plans",
+            "startedAt": "2026-10-25T04:10:33.938Z",
+            "durationMs": 2937,
+            "outcome": "SUCCEEDED",
+            "resultId": "6ed7e1fc-5e4f-4555-9d9f-de5d8432dc27",
+            "error": null
+          },
+          {
+            "operation": "read",
+            "target": "https://docs.github.com/en/copilot/get-started/plans",
+            "startedAt": "2026-10-25T04:10:38.578Z",
+            "durationMs": 1302,
+            "outcome": "SUCCEEDED",
+            "resultId": "d5798d57-fc1d-40c4-93f8-3782c99f2fad",
+            "error": null
+          }
+        ]
+      }
+    },
+    "generatedAt": "2026-10-25T04:10:54.561Z",
+    "contractVersion": "1.0.0"
+  },
+  "answers": [
+    {
+      "id": "a9fdcde2-135a-4c03-aef2-a72a5c38caa0",
+      "snapshotId": "53e0a112-9ecf-45e9-9058-627cf087cb85",
+      "body": "GitHub 官方文档称 Copilot Free 每月最多 2000 次代码补全。\n适用范围：Copilot Free 套餐，按月计；原文未给出文档版本或生效日期 [1]\n\nGitHub 官方文档的套餐表中，Copilot Free 一栏在 chat 相关额度处仅写为每月有一定量的 GitHub AI Credits（allowance of GitHub AI Credits），未给出具体次数。\n适用范围：Copilot Free 套餐；表格摘录被截断，未包含完整数值 [2]\n\n尚不能确定：Copilot Free 用户每月 2000 次代码补全用完后如何处理（是否停用、降级或需升级），所提供的原句未说明。\n三份原句均未涉及超出 Free 补全额度后的处理方式，无证据可判断。（条件：超出 Copilot Free 代码补全额度后的情形，无证据）\n\n核查缺口：\n• 阶段核查未完成：MODEL: claim-extraction:format-repair failed (output-schema; claims.4.kind:invalid_value)；保留原句并在最终预算内核查。\n• 缺少 Copilot Free 每月 chat 具体次数及超出额度后处理方式的保存原句；现有摘录未覆盖。",
+      "citations": [
+        {
+          "marker": "[1]",
+          "claimIds": [
+            "09b2c714-1e5f-4c21-8199-c9cb2ddc0240"
+          ],
+          "evidenceIds": [
+            "6ed7e1fc-5e4f-4555-9d9f-de5d8432dc27"
+          ],
+          "quotes": [
+            {
+              "evidenceId": "6ed7e1fc-5e4f-4555-9d9f-de5d8432dc27",
+              "originalExcerpt": "Limited to 2000 completions per month on Copilot Free."
+            }
+          ]
+        },
+        {
+          "marker": "[2]",
+          "claimIds": [
+            "fa51fa36-05f1-4b16-a750-5b077c183ab0"
+          ],
+          "evidenceIds": [
+            "d5798d57-fc1d-40c4-93f8-3782c99f2fad"
+          ],
+          "quotes": [
+            {
+              "evidenceId": "d5798d57-fc1d-40c4-93f8-3782c99f2fad",
+              "originalExcerpt": "PlanPricingGitHub AI CreditsAgentsModelsCopilot FreeFreeAn allowance of GitHub AI CreditsLimitedAuto model selection onlyCopilot StudentFreeAn allowance of GitHub AI CreditsExcludes third-party agentsAuto model selection onlyCopilot Pro$10 USD per month(free for some users)Base: 1,000A selection of"
+            }
+          ]
+        }
+      ],
+      "generationConfig": {
+        "provider": "api.deepseek.com",
+        "model": "deepseek-flash",
+        "promptVersion": "a2-evidence-v4",
+        "temperature": null,
+        "thinkingMode": "DISABLED",
+        "generatedAt": "2026-10-25T04:10:54.561Z"
+      }
+    }
+  ]
+}

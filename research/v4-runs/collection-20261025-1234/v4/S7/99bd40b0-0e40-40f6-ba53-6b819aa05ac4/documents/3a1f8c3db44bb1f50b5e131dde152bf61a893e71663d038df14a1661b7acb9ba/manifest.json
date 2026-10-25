@@ -1,0 +1,1113 @@
+{
+  "schemaVersion": "source-document/v1",
+  "id": "3a1f8c3db44bb1f50b5e131dde152bf61a893e71663d038df14a1661b7acb9ba",
+  "version": "30a8b0bf35a9ce01af1d37d2300c2c6764ad5c96e15a20999b110fa191676b43",
+  "requestedUrl": "https://dev.to/alanwest/i-gave-devin-10-real-tasks-it-completed-3-3063",
+  "finalUrl": "https://dev.to/alanwest/i-gave-devin-10-real-tasks-it-completed-3-3063",
+  "retrievedAt": "2026-10-25T04:40:06.501Z",
+  "contentType": "text/html; charset=utf-8",
+  "status": "READ",
+  "readError": null,
+  "rawHash": "904bfe202520351ace9d8cfb6335d994b745b17129894fb85256a980a5a4d81c",
+  "textHash": "9dccdd1da0e723a9bf2578544793bf20bb47385eb8e8f8e4495b91e5c1e46342",
+  "text": "Add reaction Like Unicorn Exploding Head Raised Hands Fire Jump to Comments Save Boost Pick as gem Copy link Share to X Share to LinkedIn Share to Facebook Share to Mastodon Report Abuse\n\nAlan West\n\nPosted on Apr 1\n\nI Gave Devin 10 Real Tasks. It Completed 3.\n\n#aicoding #devin #developertools #productivity\n\nThe $500-to-$20 AI Developer That Still Can't Ship\n\nLast year, Cognition launched Devin at $500/month and called it the world's first AI software engineer. The internet lost its mind. Engineers panicked. Twitter predicted mass layoffs. Fast forward to 2026, and Devin costs $20/month -- the same price as a Claude Code or Cursor Pro subscription. That price drop tells you everything you need to know about how reality met the hype.\n\nI spent two weeks giving Devin real tasks from my actual backlog. Not toy problems. Not \"build me a calculator.\" Real tickets that a junior developer on my team would handle. Here's what happened.\n\nThe Test Setup\n\nI picked 10 tasks spanning different categories:\n\n2 bug fixes (a date parsing issue, a broken API response)\n\n2 migrations (database schema change, dependency upgrade)\n\n2 new features (a webhook handler, a user settings page)\n\n2 test suites (unit tests for an auth module, integration tests for a payment flow)\n\n1 refactoring task (extract shared logic into a utility module)\n\n1 architectural task (design a caching layer for a multi-tenant API)\n\nEach task had a clear description, acceptance criteria, and access to the relevant codebase.\n\nWhat Devin Actually Completed\n\nThree tasks. The two bug fixes and one of the test suites.\n\nThe date parsing bug was genuinely impressive. Devin identified the root cause, found the edge case in timezone handling, and submitted a clean fix:\n\n# Devin's fix -- correctly handles DST transitions\nfrom zoneinfo import ZoneInfo\n\ndef parse_user_date(date_str: str, user_tz: str) -> datetime:\n    local_tz = ZoneInfo(user_tz)\n    naive = datetime.strptime(date_str, \"%Y-%m-%d %H:%M\")\n    local_dt = naive.replace(tzinfo=local_tz)\n    return local_dt.astimezone(ZoneInfo(\"UTC\"))\n\nThe broken API response fix was similarly clean. Devin traced through the serialization chain, found a missing field in the response schema, and patched it correctly on the first attempt.\n\nFor the auth module unit tests, Devin produced a reasonable test suite covering the core paths. It missed some edge cases around token expiration, but the foundation was solid and saved maybe two hours of work.\n\nWhere It Fell Apart\n\nThe remaining seven tasks ranged from \"close but unusable\" to \"completely off the rails.\"\n\nThe database migration task was a disaster. Devin generated migration files that would have caused data loss on the user_preferences table. It created a new column, attempted to copy data, then dropped the old column -- but the copy step silently truncated values exceeding the new column's length. In production, this would have corrupted thousands of records.\n\nThe webhook handler feature started fine but went sideways when Devin needed to make architectural decisions. It couldn't decide between a queue-based approach and synchronous processing, so it implemented both -- leaving dead code paths and conflicting error handling:\n\n// What Devin produced -- two competing patterns in the same file\nexport async function handleWebhook(payload: WebhookPayload) {\n  // Synchronous path\n  const result = await processEvent(payload);\n  await saveResult(result);\n\n  // Also queued path (never cleaned up)\n  await webhookQueue.add(\"process\", {\n    payload,\n    retries: 3,\n    backoff: { type: \"exponential\", delay: 1000 },\n  });\n\n  return { processed: true, queued: true }; // which is it?\n}\n\nThe caching layer task? Devin produced a single-tenant in-memory cache and called it done. The words \"multi-tenant\" were in the task title.\n\nThe Numbers Don't Lie\n\nDevin's SWE-bench score sits at 13.86%. That benchmark measures the ability to resolve real GitHub issues from popular open-source projects. For context, a strong human developer typically resolves these at 50-70% depending on the project.\n\nOn Trustpilot, Devin holds a 3.0 out of 5.0 rating. The reviews paint a consistent picture: great for simple tasks, frustrating for anything that requires judgment.\n\nMy own results -- 3 out of 10 completed, or 30% -- align with what other teams report. Independent testing tends to show 15-30% success rates on tasks that require more than pattern matching.\n\nWhere Devin Actually Works\n\nAfter this experiment, I've landed on a narrow set of tasks where Devin genuinely saves time:\n\nBounded bug fixes. When the problem is clearly defined and the fix is localized, Devin performs well. It's good at tracing through code and finding the specific line that's wrong.\n\nWriting test suites for existing code. Give Devin a module and tell it to write tests. It'll produce reasonable coverage. You'll need to review and add edge cases, but it handles the boilerplate.\n\nDependency upgrades and migrations -- but only mechanical ones. Bumping a library version and fixing the resulting type errors? Fine. Redesigning your data model? Absolutely not.\n\nBoilerplate generation. CRUD endpoints, form components, configuration files. Anything where the pattern is well-established and the decisions are minimal.\n\nThe Comparison Everyone Wants\n\nAt $20/month, Devin competes directly with Claude Code, Cursor, and GitHub Copilot. The fundamental difference is autonomy versus control.\n\nDevin tries to work independently. You give it a task, it spins up an environment, and it attempts the work without your input. This sounds great until it makes a wrong turn at step 3 and spends 40 minutes going deeper into a bad approach.\n\nClaude Code, at the same $20/month price point, takes the opposite approach. You're in the loop. You see what it's doing. You can redirect it. The tradeoff is that you're spending your time, but the success rate on complex tasks is dramatically higher because a human is making the architectural decisions.\n\n# Claude Code workflow -- you stay in control\nclaude \"Fix the date parsing bug in src/utils/dates.ts\"\n# Review the proposed changes inline\n# Accept, modify, or redirect\n\nFor my workflow, the Claude Code model wins. I'd rather spend 15 minutes collaborating with an AI that I can steer than spend 5 minutes dispatching Devin and then 45 minutes cleaning up its output.\n\nThe Honest Verdict\n\nDevin is not a replacement for developers. It's not even close. It's more like a junior developer that works 24/7, never complains, and costs $20/month -- but requires heavy supervision and can only handle the simplest 20-30% of your backlog.\n\nThe Cognition team has made real improvements since Devin 2.0 launched in April 2025. The agent is faster, the IDE is better, and the Slack integration is genuinely useful for quick tasks. But the core limitation remains: Devin cannot make good judgment calls, and most real engineering work is judgment calls.\n\nIf you're a solo developer drowning in boilerplate, Devin might save you a few hours a week. If you're a team lead hoping to multiply your team's output by 2x, look elsewhere. The gap between \"AI software engineer\" and \"AI code assistant\" is still enormous, and for now, the assistants that keep humans in the loop are delivering more value than the agents trying to replace them.\n\nThe price dropped from $500 to $20 for a reason. Calibrate your expectations accordingly.\n\nTop comments (0)\n\nSubscribe\n\nFor further actions, you may consider blocking this person and/or reporting abuse\n\nAlan West\n\nFollow\n\nFull-stack developer working with TypeScript, React, and blockchain. Interested in AI-powered dev workflows and open-source tooling.\n\nJoined Mar 19, 2026\n\nOpenAI CLI vs Codex CLI vs Claude Code: The New One Isn't a Coding Agent #ai #openai #cli #developertools How to Run Multiple Claude Code Sessions in tmux (and Why 3 Beats 5) #claudecode #ai #productivity #linux\n\nWe're a place where coders share, stay up-to-date and grow their careers.\n\nLog in Create account",
+  "rawSources": [
+    {
+      "mode": "STATIC",
+      "hash": "904bfe202520351ace9d8cfb6335d994b745b17129894fb85256a980a5a4d81c",
+      "path": "C:\\Users\\qianchen\\Documents\\waytoagi-1024-detective-a2-v4\\.cache\\source-documents-v4\\99bd40b0-0e40-40f6-ba53-6b819aa05ac4\\3a1f8c3db44bb1f50b5e131dde152bf61a893e71663d038df14a1661b7acb9ba\\raw.bin"
+    }
+  ],
+  "storage": {
+    "rawPath": "C:\\Users\\qianchen\\Documents\\waytoagi-1024-detective-a2-v4\\.cache\\source-documents-v4\\99bd40b0-0e40-40f6-ba53-6b819aa05ac4\\3a1f8c3db44bb1f50b5e131dde152bf61a893e71663d038df14a1661b7acb9ba\\raw.bin",
+    "textPath": "C:\\Users\\qianchen\\Documents\\waytoagi-1024-detective-a2-v4\\.cache\\source-documents-v4\\99bd40b0-0e40-40f6-ba53-6b819aa05ac4\\3a1f8c3db44bb1f50b5e131dde152bf61a893e71663d038df14a1661b7acb9ba\\source.txt",
+    "manifestPath": "C:\\Users\\qianchen\\Documents\\waytoagi-1024-detective-a2-v4\\.cache\\source-documents-v4\\99bd40b0-0e40-40f6-ba53-6b819aa05ac4\\3a1f8c3db44bb1f50b5e131dde152bf61a893e71663d038df14a1661b7acb9ba\\manifest.json"
+  },
+  "parser": {
+    "name": "readability+source-dom",
+    "version": "readability-0.6.0+jsdom-30.1.3+source-dom-2",
+    "normalization": "source-text/v1",
+    "mode": "STATIC"
+  },
+  "metadata": {
+    "title": "I Gave Devin 10 Real Tasks. It Completed 3. - DEV Community",
+    "author": "Alan West",
+    "publishedAt": "2026-04-01T07:22:40.000Z",
+    "language": "en"
+  },
+  "completeness": "COMPLETE",
+  "warnings": [],
+  "blocks": [
+    {
+      "start": 0,
+      "end": 186,
+      "id": "b0",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[0]",
+      "headingPath": [],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 188,
+      "end": 197,
+      "id": "b1",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[1]",
+      "headingPath": [],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 199,
+      "end": 214,
+      "id": "b2",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[2]",
+      "headingPath": [],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 216,
+      "end": 259,
+      "id": "b3",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[3]",
+      "headingPath": [
+        "I Gave Devin 10 Real Tasks. It Completed 3."
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 261,
+      "end": 307,
+      "id": "b4",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[4]",
+      "headingPath": [
+        "I Gave Devin 10 Real Tasks. It Completed 3."
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 309,
+      "end": 359,
+      "id": "b5",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[5]",
+      "headingPath": [
+        "I Gave Devin 10 Real Tasks. It Completed 3.",
+        "The $500-to-$20 AI Developer That Still Can't Ship"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 361,
+      "end": 741,
+      "id": "b6",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[6]",
+      "headingPath": [
+        "I Gave Devin 10 Real Tasks. It Completed 3.",
+        "The $500-to-$20 AI Developer That Still Can't Ship"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 743,
+      "end": 939,
+      "id": "b7",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[7]",
+      "headingPath": [
+        "I Gave Devin 10 Real Tasks. It Completed 3.",
+        "The $500-to-$20 AI Developer That Still Can't Ship"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 941,
+      "end": 955,
+      "id": "b8",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[8]",
+      "headingPath": [
+        "I Gave Devin 10 Real Tasks. It Completed 3.",
+        "The Test Setup"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 957,
+      "end": 1005,
+      "id": "b9",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[9]",
+      "headingPath": [
+        "I Gave Devin 10 Real Tasks. It Completed 3.",
+        "The Test Setup"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1007,
+      "end": 1064,
+      "id": "b10",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[10]",
+      "headingPath": [
+        "I Gave Devin 10 Real Tasks. It Completed 3.",
+        "The Test Setup"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1066,
+      "end": 1123,
+      "id": "b11",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[11]",
+      "headingPath": [
+        "I Gave Devin 10 Real Tasks. It Completed 3.",
+        "The Test Setup"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1125,
+      "end": 1181,
+      "id": "b12",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[12]",
+      "headingPath": [
+        "I Gave Devin 10 Real Tasks. It Completed 3.",
+        "The Test Setup"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1183,
+      "end": 1266,
+      "id": "b13",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[13]",
+      "headingPath": [
+        "I Gave Devin 10 Real Tasks. It Completed 3.",
+        "The Test Setup"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1268,
+      "end": 1331,
+      "id": "b14",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[14]",
+      "headingPath": [
+        "I Gave Devin 10 Real Tasks. It Completed 3.",
+        "The Test Setup"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1333,
+      "end": 1401,
+      "id": "b15",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[15]",
+      "headingPath": [
+        "I Gave Devin 10 Real Tasks. It Completed 3.",
+        "The Test Setup"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1403,
+      "end": 1495,
+      "id": "b16",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[16]",
+      "headingPath": [
+        "I Gave Devin 10 Real Tasks. It Completed 3.",
+        "The Test Setup"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1497,
+      "end": 1526,
+      "id": "b17",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[17]",
+      "headingPath": [
+        "I Gave Devin 10 Real Tasks. It Completed 3.",
+        "What Devin Actually Completed"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1528,
+      "end": 1586,
+      "id": "b18",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[18]",
+      "headingPath": [
+        "I Gave Devin 10 Real Tasks. It Completed 3.",
+        "What Devin Actually Completed"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1588,
+      "end": 1736,
+      "id": "b19",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[19]",
+      "headingPath": [
+        "I Gave Devin 10 Real Tasks. It Completed 3.",
+        "What Devin Actually Completed"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1738,
+      "end": 2066,
+      "id": "b20",
+      "kind": "CODE",
+      "locator": "source DOM normalized block[20]",
+      "headingPath": [
+        "I Gave Devin 10 Real Tasks. It Completed 3.",
+        "What Devin Actually Completed"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2068,
+      "end": 2255,
+      "id": "b21",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[21]",
+      "headingPath": [
+        "I Gave Devin 10 Real Tasks. It Completed 3.",
+        "What Devin Actually Completed"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2257,
+      "end": 2467,
+      "id": "b22",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[22]",
+      "headingPath": [
+        "I Gave Devin 10 Real Tasks. It Completed 3.",
+        "What Devin Actually Completed"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2469,
+      "end": 2488,
+      "id": "b23",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[23]",
+      "headingPath": [
+        "I Gave Devin 10 Real Tasks. It Completed 3.",
+        "Where It Fell Apart"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2490,
+      "end": 2579,
+      "id": "b24",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[24]",
+      "headingPath": [
+        "I Gave Devin 10 Real Tasks. It Completed 3.",
+        "Where It Fell Apart"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2581,
+      "end": 2942,
+      "id": "b25",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[25]",
+      "headingPath": [
+        "I Gave Devin 10 Real Tasks. It Completed 3.",
+        "Where It Fell Apart"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2944,
+      "end": 3213,
+      "id": "b26",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[26]",
+      "headingPath": [
+        "I Gave Devin 10 Real Tasks. It Completed 3.",
+        "Where It Fell Apart"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3215,
+      "end": 3668,
+      "id": "b27",
+      "kind": "CODE",
+      "locator": "source DOM normalized block[27]",
+      "headingPath": [
+        "I Gave Devin 10 Real Tasks. It Completed 3.",
+        "Where It Fell Apart"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3670,
+      "end": 3809,
+      "id": "b28",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[28]",
+      "headingPath": [
+        "I Gave Devin 10 Real Tasks. It Completed 3.",
+        "Where It Fell Apart"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3811,
+      "end": 3832,
+      "id": "b29",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[29]",
+      "headingPath": [
+        "I Gave Devin 10 Real Tasks. It Completed 3.",
+        "The Numbers Don't Lie"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3834,
+      "end": 4073,
+      "id": "b30",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[30]",
+      "headingPath": [
+        "I Gave Devin 10 Real Tasks. It Completed 3.",
+        "The Numbers Don't Lie"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4075,
+      "end": 4239,
+      "id": "b31",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[31]",
+      "headingPath": [
+        "I Gave Devin 10 Real Tasks. It Completed 3.",
+        "The Numbers Don't Lie"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4241,
+      "end": 4432,
+      "id": "b32",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[32]",
+      "headingPath": [
+        "I Gave Devin 10 Real Tasks. It Completed 3.",
+        "The Numbers Don't Lie"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4434,
+      "end": 4460,
+      "id": "b33",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[33]",
+      "headingPath": [
+        "I Gave Devin 10 Real Tasks. It Completed 3.",
+        "Where Devin Actually Works"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4462,
+      "end": 4555,
+      "id": "b34",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[34]",
+      "headingPath": [
+        "I Gave Devin 10 Real Tasks. It Completed 3.",
+        "Where Devin Actually Works"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4557,
+      "end": 4736,
+      "id": "b35",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[35]",
+      "headingPath": [
+        "I Gave Devin 10 Real Tasks. It Completed 3.",
+        "Where Devin Actually Works"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4738,
+      "end": 4933,
+      "id": "b36",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[36]",
+      "headingPath": [
+        "I Gave Devin 10 Real Tasks. It Completed 3.",
+        "Where Devin Actually Works"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4935,
+      "end": 5113,
+      "id": "b37",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[37]",
+      "headingPath": [
+        "I Gave Devin 10 Real Tasks. It Completed 3.",
+        "Where Devin Actually Works"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5115,
+      "end": 5270,
+      "id": "b38",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[38]",
+      "headingPath": [
+        "I Gave Devin 10 Real Tasks. It Completed 3.",
+        "Where Devin Actually Works"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5272,
+      "end": 5301,
+      "id": "b39",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[39]",
+      "headingPath": [
+        "I Gave Devin 10 Real Tasks. It Completed 3.",
+        "The Comparison Everyone Wants"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5303,
+      "end": 5441,
+      "id": "b40",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[40]",
+      "headingPath": [
+        "I Gave Devin 10 Real Tasks. It Completed 3.",
+        "The Comparison Everyone Wants"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5443,
+      "end": 5682,
+      "id": "b41",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[41]",
+      "headingPath": [
+        "I Gave Devin 10 Real Tasks. It Completed 3.",
+        "The Comparison Everyone Wants"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5684,
+      "end": 5990,
+      "id": "b42",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[42]",
+      "headingPath": [
+        "I Gave Devin 10 Real Tasks. It Completed 3.",
+        "The Comparison Everyone Wants"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5992,
+      "end": 6160,
+      "id": "b43",
+      "kind": "CODE",
+      "locator": "source DOM normalized block[43]",
+      "headingPath": [
+        "I Gave Devin 10 Real Tasks. It Completed 3.",
+        "The Comparison Everyone Wants"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 6162,
+      "end": 6359,
+      "id": "b44",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[44]",
+      "headingPath": [
+        "I Gave Devin 10 Real Tasks. It Completed 3.",
+        "The Comparison Everyone Wants"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 6361,
+      "end": 6379,
+      "id": "b45",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[45]",
+      "headingPath": [
+        "I Gave Devin 10 Real Tasks. It Completed 3.",
+        "The Honest Verdict"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 6381,
+      "end": 6623,
+      "id": "b46",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[46]",
+      "headingPath": [
+        "I Gave Devin 10 Real Tasks. It Completed 3.",
+        "The Honest Verdict"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 6625,
+      "end": 6935,
+      "id": "b47",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[47]",
+      "headingPath": [
+        "I Gave Devin 10 Real Tasks. It Completed 3.",
+        "The Honest Verdict"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 6937,
+      "end": 7317,
+      "id": "b48",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[48]",
+      "headingPath": [
+        "I Gave Devin 10 Real Tasks. It Completed 3.",
+        "The Honest Verdict"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 7319,
+      "end": 7408,
+      "id": "b49",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[49]",
+      "headingPath": [
+        "I Gave Devin 10 Real Tasks. It Completed 3.",
+        "The Honest Verdict"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 7410,
+      "end": 7426,
+      "id": "b50",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[50]",
+      "headingPath": [
+        "I Gave Devin 10 Real Tasks. It Completed 3.",
+        "Top comments (0)"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 7428,
+      "end": 7437,
+      "id": "b51",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[51]",
+      "headingPath": [
+        "I Gave Devin 10 Real Tasks. It Completed 3.",
+        "Top comments (0)"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 7439,
+      "end": 7520,
+      "id": "b52",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[52]",
+      "headingPath": [
+        "I Gave Devin 10 Real Tasks. It Completed 3.",
+        "Top comments (0)"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 7522,
+      "end": 7531,
+      "id": "b53",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[53]",
+      "headingPath": [
+        "I Gave Devin 10 Real Tasks. It Completed 3.",
+        "Top comments (0)"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 7533,
+      "end": 7539,
+      "id": "b54",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[54]",
+      "headingPath": [
+        "I Gave Devin 10 Real Tasks. It Completed 3.",
+        "Top comments (0)"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 7541,
+      "end": 7673,
+      "id": "b55",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[55]",
+      "headingPath": [
+        "I Gave Devin 10 Real Tasks. It Completed 3.",
+        "Top comments (0)"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 7675,
+      "end": 7694,
+      "id": "b56",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[56]",
+      "headingPath": [
+        "I Gave Devin 10 Real Tasks. It Completed 3.",
+        "Top comments (0)"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 7696,
+      "end": 7907,
+      "id": "b57",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[57]",
+      "headingPath": [
+        "I Gave Devin 10 Real Tasks. It Completed 3.",
+        "Top comments (0)"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 7909,
+      "end": 7982,
+      "id": "b58",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[58]",
+      "headingPath": [
+        "I Gave Devin 10 Real Tasks. It Completed 3.",
+        "Top comments (0)"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 7984,
+      "end": 8005,
+      "id": "b59",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[59]",
+      "headingPath": [
+        "I Gave Devin 10 Real Tasks. It Completed 3.",
+        "Top comments (0)"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    }
+  ],
+  "links": [
+    {
+      "url": "https://dev.to/alanwest/i-gave-devin-10-real-tasks-it-completed-3-3063",
+      "text": "",
+      "blockId": null,
+      "relation": "CANONICAL",
+      "locator": "source DOM link[0]"
+    },
+    {
+      "url": "https://twitter.com/intent/tweet?text=%22I+Gave+Devin+10+Real+Tasks.+It+Completed+3.%22+by+Alan+West+%23DEVCommunity+https%3A%2F%2Fdev.to%2Falanwest%2Fi-gave-devin-10-real-tasks-it-completed-3-3063",
+      "text": "Share to X",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[6]"
+    },
+    {
+      "url": "https://www.linkedin.com/shareArticle?mini=true&source=DEV+Community&summary=%23%23+The+%24500-to-%2420+AI+Developer+That+Still+Can%27t+Ship++Last+year%2C+Cognition+launched+Devin+at+%24500%2Fmonth+and+called+it+the+world%27s+first+AI+software+e&title=I+Gave+Devin+10+Real+Tasks.+It+Completed+3.&url=https%3A%2F%2Fdev.to%2Falanwest%2Fi-gave-devin-10-real-tasks-it-completed-3-3063",
+      "text": "Share to LinkedIn",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[7]"
+    },
+    {
+      "url": "https://www.facebook.com/sharer.php?u=https%3A%2F%2Fdev.to%2Falanwest%2Fi-gave-devin-10-real-tasks-it-completed-3-3063",
+      "text": "Share to Facebook",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[8]"
+    },
+    {
+      "url": "https://s2f.kytta.dev/?text=https%3A%2F%2Fdev.to%2Falanwest%2Fi-gave-devin-10-real-tasks-it-completed-3-3063",
+      "text": "Share to Mastodon",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[9]"
+    },
+    {
+      "url": "https://dev.to/report-abuse",
+      "text": "Report Abuse",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[11]"
+    },
+    {
+      "url": "https://dev.to/alanwest",
+      "text": "Alan West",
+      "blockId": "b1",
+      "relation": "LINK",
+      "locator": "source DOM link[14]"
+    },
+    {
+      "url": "https://dev.to/t/aicoding",
+      "text": "#aicoding",
+      "blockId": "b4",
+      "relation": "LINK",
+      "locator": "source DOM link[15]"
+    },
+    {
+      "url": "https://dev.to/t/devin",
+      "text": "#devin",
+      "blockId": "b4",
+      "relation": "LINK",
+      "locator": "source DOM link[16]"
+    },
+    {
+      "url": "https://dev.to/t/developertools",
+      "text": "#developertools",
+      "blockId": "b4",
+      "relation": "LINK",
+      "locator": "source DOM link[17]"
+    },
+    {
+      "url": "https://dev.to/t/productivity",
+      "text": "#productivity",
+      "blockId": "b4",
+      "relation": "LINK",
+      "locator": "source DOM link[18]"
+    },
+    {
+      "url": "https://dev.to/report-abuse",
+      "text": "reporting abuse",
+      "blockId": "b52",
+      "relation": "LINK",
+      "locator": "source DOM link[32]"
+    },
+    {
+      "url": "https://dev.to/alanwest",
+      "text": "Alan West",
+      "blockId": "b53",
+      "relation": "LINK",
+      "locator": "source DOM link[33]"
+    },
+    {
+      "url": "https://dev.to/alanwest/openai-cli-vs-codex-cli-vs-claude-code-the-new-one-isnt-a-coding-agent-34fj",
+      "text": "OpenAI CLI vs Codex CLI vs Claude Code: The New One Isn't a Coding Agent #ai #openai #cli #developertools",
+      "blockId": "b57",
+      "relation": "LINK",
+      "locator": "source DOM link[35]"
+    },
+    {
+      "url": "https://dev.to/alanwest/how-to-run-multiple-claude-code-sessions-in-tmux-and-why-3-beats-5-4nob",
+      "text": "How to Run Multiple Claude Code Sessions in tmux (and Why 3 Beats 5) #claudecode #ai #productivity #linux",
+      "blockId": "b57",
+      "relation": "LINK",
+      "locator": "source DOM link[36]"
+    },
+    {
+      "url": "https://dev.to/enter?signup_subforem=1",
+      "text": "Log in",
+      "blockId": "b59",
+      "relation": "LINK",
+      "locator": "source DOM link[59]"
+    },
+    {
+      "url": "https://dev.to/enter?signup_subforem=1&state=new-user",
+      "text": "Create account",
+      "blockId": "b59",
+      "relation": "LINK",
+      "locator": "source DOM link[60]"
+    }
+  ],
+  "tables": []
+}

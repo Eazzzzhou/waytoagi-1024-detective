@@ -1,0 +1,1374 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+
+    <!-- Google Tag Manager -->
+    <script>
+        (function(w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({
+                'gtm.start': new Date().getTime(),
+                event: 'gtm.js'
+            });
+            var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s),
+                dl = l != 'dataLayer' ? '&l=' + l : '';
+            j.async = true;
+            j.src =
+                'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-KT4K2FF');
+    </script>
+    <!-- End Google Tag Manager -->
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1">
+    <meta name="git_revision" content="">
+    <meta name="ecs_revision" content="">
+    <title>Trying Blender Scripting with AI</title>
+<link data-rocket-prefetch href="https://www.googletagmanager.com" rel="dns-prefetch">
+<link data-rocket-prefetch href="https://fonts.googleapis.com" rel="dns-prefetch"><link rel="preload" data-rocket-preload as="image" href="https://spin.atomicobject.com/wp-content/uploads/blender-example.jpg" imagesrcset="https://spin.atomicobject.com/wp-content/uploads/blender-example.jpg 1720w, https://spin.atomicobject.com/wp-content/uploads/blender-example-590x447.jpg 590w, https://spin.atomicobject.com/wp-content/uploads/blender-example-1024x775.jpg 1024w, https://spin.atomicobject.com/wp-content/uploads/blender-example-150x114.jpg 150w, https://spin.atomicobject.com/wp-content/uploads/blender-example-768x581.jpg 768w, https://spin.atomicobject.com/wp-content/uploads/blender-example-1536x1163.jpg 1536w, https://spin.atomicobject.com/wp-content/uploads/blender-example-600x454.jpg 600w, https://spin.atomicobject.com/wp-content/uploads/blender-example-1200x908.jpg 1200w" imagesizes="(max-width: 1720px) 100vw, 1720px" fetchpriority="high">
+    <link rel="profile" href="http://gmpg.org/xfn/11">
+    <link rel="pingback" href="https://spin.atomicobject.com/xmlrpc.php">
+    <link rel="icon" type="image/x-icon" href="https://spin.atomicobject.com/wp-content/themes/spin/images/favicon.ico" />
+
+    <!-- Styles -->
+    <link data-minify="1" rel="stylesheet" href="https://spin.atomicobject.com/wp-content/cache/min/1/yhb2hqk.css?ver=1790609877">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
+    
+    <!-- WP Head -->
+    <meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
+
+	<!-- This site is optimized with the Yoast SEO plugin v28.7 - https://yoast.com/product/yoast-seo-wordpress/ -->
+	<meta name="description" content="I wanted to know how well a Cursor Agent could help me write a set of Blender scripts. Let&#039;s see how I tested the limits of Blender scripting." />
+	<link rel="canonical" href="https://spin.atomicobject.com/blender-scripting-with-ai/" />
+	<meta property="og:locale" content="en_US" />
+	<meta property="og:type" content="article" />
+	<meta property="og:title" content="Trying Blender Scripting with AI" />
+	<meta property="og:description" content="I wanted to know how well a Cursor Agent could help me write a set of Blender scripts. Let&#039;s see how I tested the limits of Blender scripting." />
+	<meta property="og:url" content="https://spin.atomicobject.com/blender-scripting-with-ai/" />
+	<meta property="og:site_name" content="Atomic Spin" />
+	<meta property="article:publisher" content="https://www.facebook.com/atomicobject" />
+	<meta property="article:published_time" content="2025-07-07T12:00:03+00:00" />
+	<meta property="og:image" content="https://spin.atomicobject.com/wp-content/uploads/blender-example.jpg" />
+	<meta property="og:image:width" content="1720" />
+	<meta property="og:image:height" content="1302" />
+	<meta property="og:image:type" content="image/jpeg" />
+	<meta name="author" content="Meghan Harris" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:creator" content="@atomicobject" />
+	<meta name="twitter:site" content="@atomicobject" />
+	<meta name="twitter:label1" content="Written by" />
+	<meta name="twitter:data1" content="Meghan Harris" />
+	<meta name="twitter:label2" content="Est. reading time" />
+	<meta name="twitter:data2" content="8 minutes" />
+	<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https:\/\/schema.org","@graph":[{"@type":"Article","@id":"https:\/\/spin.atomicobject.com\/blender-scripting-with-ai\/#article","isPartOf":{"@id":"https:\/\/spin.atomicobject.com\/blender-scripting-with-ai\/"},"author":{"name":"Meghan Harris","@id":"https:\/\/spin.atomicobject.com\/#\/schema\/person\/60b15874972a3892f3642ce4b853fe3c"},"headline":"What Happened When I Tried Blender Scripting with AI","datePublished":"2025-07-07T12:00:03+00:00","mainEntityOfPage":{"@id":"https:\/\/spin.atomicobject.com\/blender-scripting-with-ai\/"},"wordCount":1237,"commentCount":0,"publisher":{"@id":"https:\/\/atomicobject.com\/"},"image":{"@id":"https:\/\/spin.atomicobject.com\/blender-scripting-with-ai\/#primaryimage"},"thumbnailUrl":"https:\/\/spin.atomicobject.com\/wp-content\/uploads\/blender-example.jpg","keywords":["artificial intelligence","blender"],"articleSection":["AI for Developers"],"inLanguage":"en-US","potentialAction":[{"@type":"CommentAction","name":"Comment","target":["https:\/\/spin.atomicobject.com\/blender-scripting-with-ai\/#respond"]}]},{"@type":"WebPage","@id":"https:\/\/spin.atomicobject.com\/blender-scripting-with-ai\/","url":"https:\/\/spin.atomicobject.com\/blender-scripting-with-ai\/","name":"Trying Blender Scripting with AI","isPartOf":{"@id":"https:\/\/spin.atomicobject.com\/#website"},"primaryImageOfPage":{"@id":"https:\/\/spin.atomicobject.com\/blender-scripting-with-ai\/#primaryimage"},"image":{"@id":"https:\/\/spin.atomicobject.com\/blender-scripting-with-ai\/#primaryimage"},"thumbnailUrl":"https:\/\/spin.atomicobject.com\/wp-content\/uploads\/blender-example.jpg","datePublished":"2025-07-07T12:00:03+00:00","description":"I wanted to know how well a Cursor Agent could help me write a set of Blender scripts. Let's see how I tested the limits of Blender scripting.","inLanguage":"en-US","potentialAction":[{"@type":"ReadAction","target":["https:\/\/spin.atomicobject.com\/blender-scripting-with-ai\/"]}]},{"@type":"ImageObject","inLanguage":"en-US","@id":"https:\/\/spin.atomicobject.com\/blender-scripting-with-ai\/#primaryimage","url":"https:\/\/spin.atomicobject.com\/wp-content\/uploads\/blender-example.jpg","contentUrl":"https:\/\/spin.atomicobject.com\/wp-content\/uploads\/blender-example.jpg","width":1720,"height":1302,"caption":"Graphic from an experiment called: What Happened When I Tried Blender Scripting with AI"},{"@type":"WebSite","@id":"https:\/\/spin.atomicobject.com\/#website","url":"https:\/\/spin.atomicobject.com\/","name":"Atomic Spin","description":"Atomic Object’s blog on everything we find fascinating.","publisher":{"@id":"https:\/\/atomicobject.com\/"},"potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https:\/\/spin.atomicobject.com\/?s={search_term_string}"},"query-input":{"@type":"PropertyValueSpecification","valueRequired":true,"valueName":"search_term_string"}}],"inLanguage":"en-US"},{"@type":"Organization","@id":"https:\/\/spin.atomicobject.com\/#organization","name":"Atomic Object","url":"https:\/\/spin.atomicobject.com\/","logo":{"@type":"ImageObject","inLanguage":"en-US","@id":"https:\/\/spin.atomicobject.com\/#\/schema\/logo\/image\/","url":"https:\/\/spin.atomicobject.com\/wp-content\/uploads\/AO-Logo-Emblem-Color.png","contentUrl":"https:\/\/spin.atomicobject.com\/wp-content\/uploads\/AO-Logo-Emblem-Color.png","width":258,"height":244,"caption":"Atomic Object"},"image":{"@id":"https:\/\/spin.atomicobject.com\/#\/schema\/logo\/image\/"},"sameAs":["https:\/\/www.facebook.com\/atomicobject","https:\/\/x.com\/atomicobject"]},{"@type":"Person","@id":"https:\/\/spin.atomicobject.com\/#\/schema\/person\/60b15874972a3892f3642ce4b853fe3c","name":"Meghan Harris","image":{"@type":"ImageObject","inLanguage":"en-US","@id":"https:\/\/secure.gravatar.com\/avatar\/fde3e718e4ede30582ccda4da3bd12b51670d43f03f27b7b524e6a54b5b46550?s=96&d=blank&r=pg","url":"https:\/\/secure.gravatar.com\/avatar\/fde3e718e4ede30582ccda4da3bd12b51670d43f03f27b7b524e6a54b5b46550?s=96&d=blank&r=pg","contentUrl":"https:\/\/secure.gravatar.com\/avatar\/fde3e718e4ede30582ccda4da3bd12b51670d43f03f27b7b524e6a54b5b46550?s=96&d=blank&r=pg","caption":"Meghan Harris"},"description":"Software Consultant &amp; Developer at Atomic Object. Determined maker, dedicated hiker, devoted human and kitty mom.","sameAs":["https:\/\/atomicobject.com"],"url":"https:\/\/spin.atomicobject.com\/author\/meghan-harris\/"}]}</script>
+	<!-- / Yoast SEO plugin. -->
+
+
+<link rel='dns-prefetch' href='//use.typekit.net' />
+<link rel='dns-prefetch' href='//cdnjs.cloudflare.com' />
+<link rel="alternate" type="application/rss+xml" title="Atomic Spin &raquo; Feed" href="https://spin.atomicobject.com/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Atomic Spin &raquo; Comments Feed" href="https://spin.atomicobject.com/comments/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Atomic Spin &raquo; What Happened When I Tried Blender Scripting with AI Comments Feed" href="https://spin.atomicobject.com/blender-scripting-with-ai/feed/" />
+<link rel="alternate" title="oEmbed (JSON)" type="application/json+oembed" href="https://spin.atomicobject.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fspin.atomicobject.com%2Fblender-scripting-with-ai%2F" />
+<link rel="alternate" title="oEmbed (XML)" type="text/xml+oembed" href="https://spin.atomicobject.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fspin.atomicobject.com%2Fblender-scripting-with-ai%2F&#038;format=xml" />
+<style id="wp-img-auto-sizes-contain-inline-css">
+img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
+/*# sourceURL=wp-img-auto-sizes-contain-inline-css */
+</style>
+<link rel='stylesheet' id='mci-footnotes-jquery-tooltips-pagelayout-none-css' href='https://spin.atomicobject.com/wp-content/plugins/footnotes/css/footnotes-jqttbrpl0.min.css?ver=2.7.3' media='all' />
+<style id="wp-emoji-styles-inline-css">
+
+	img.wp-smiley, img.emoji {
+		display: inline !important;
+		border: none !important;
+		box-shadow: none !important;
+		height: 1em !important;
+		width: 1em !important;
+		margin: 0 0.07em !important;
+		vertical-align: -0.1em !important;
+		background: none !important;
+		padding: 0 !important;
+	}
+/*# sourceURL=wp-emoji-styles-inline-css */
+</style>
+<style id="wp-block-library-inline-css">
+:root{--wp-block-synced-color:#7a00df;--wp-block-synced-color--rgb:122,0,223;--wp-bound-block-color:var(--wp-block-synced-color);--wp-editor-canvas-background:#ddd;--wp-admin-theme-color:#007cba;--wp-admin-theme-color--rgb:0,124,186;--wp-admin-theme-color-darker-10:#006ba1;--wp-admin-theme-color-darker-10--rgb:0,107,160.5;--wp-admin-theme-color-darker-20:#005a87;--wp-admin-theme-color-darker-20--rgb:0,90,135;--wp-admin-border-width-focus:2px}@media (min-resolution:192dpi){:root{--wp-admin-border-width-focus:1.5px}}.wp-element-button{cursor:pointer}:root .has-very-light-gray-background-color{background-color:#eee}:root .has-very-dark-gray-background-color{background-color:#313131}:root .has-very-light-gray-color{color:#eee}:root .has-very-dark-gray-color{color:#313131}:root .has-vivid-green-cyan-to-vivid-cyan-blue-gradient-background{background:linear-gradient(135deg,#00d084,#0693e3)}:root .has-purple-crush-gradient-background{background:linear-gradient(135deg,#34e2e4,#4721fb 50%,#ab1dfe)}:root .has-hazy-dawn-gradient-background{background:linear-gradient(135deg,#faaca8,#dad0ec)}:root .has-subdued-olive-gradient-background{background:linear-gradient(135deg,#fafae1,#67a671)}:root .has-atomic-cream-gradient-background{background:linear-gradient(135deg,#fdd79a,#004a59)}:root .has-nightshade-gradient-background{background:linear-gradient(135deg,#330968,#31cdcf)}:root .has-midnight-gradient-background{background:linear-gradient(135deg,#020381,#2874fc)}:root{--wp--preset--font-size--normal:16px;--wp--preset--font-size--huge:42px}.has-regular-font-size{font-size:1em}.has-larger-font-size{font-size:2.625em}.has-normal-font-size{font-size:var(--wp--preset--font-size--normal)}.has-huge-font-size{font-size:var(--wp--preset--font-size--huge)}:root .has-text-align-center{text-align:center}:root .has-text-align-left{text-align:left}:root .has-text-align-right{text-align:right}.has-fit-text{white-space:nowrap!important}#end-resizable-editor-section{display:none}.aligncenter{clear:both}.items-justified-left{justify-content:flex-start}.items-justified-center{justify-content:center}.items-justified-right{justify-content:flex-end}.items-justified-space-between{justify-content:space-between}.screen-reader-text{word-wrap:normal!important;border:0;clip-path:inset(50%);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px;word-break:normal!important}.screen-reader-text:focus{background-color:#ddd;clip-path:none;color:#444;display:block;font-size:1em;height:auto;left:5px;line-height:normal;padding:15px 23px 14px;text-decoration:none;top:5px;width:auto;z-index:100000}html :where(.has-border-color){border-style:solid}html :where([style^=border-color],[style*=";border-color"],[style*="; border-color"]){border-style:solid}html :where([style^=border-top-color],[style*=";border-top-color"],[style*="; border-top-color"]){border-top-style:solid}html :where([style^=border-right-color],[style*=";border-right-color"],[style*="; border-right-color"]){border-right-style:solid}html :where([style^=border-bottom-color],[style*=";border-bottom-color"],[style*="; border-bottom-color"]){border-bottom-style:solid}html :where([style^=border-left-color],[style*=";border-left-color"],[style*="; border-left-color"]){border-left-style:solid}html :where([style^=border-width],[style*=";border-width"],[style*="; border-width"]){border-style:solid}html :where([style^=border-top-width],[style*=";border-top-width"],[style*="; border-top-width"]){border-top-style:solid}html :where([style^=border-right-width],[style*=";border-right-width"],[style*="; border-right-width"]){border-right-style:solid}html :where([style^=border-bottom-width],[style*=";border-bottom-width"],[style*="; border-bottom-width"]){border-bottom-style:solid}html :where([style^=border-left-width],[style*=";border-left-width"],[style*="; border-left-width"]){border-left-style:solid}html :where(img[class*=wp-image-]){height:auto;max-width:100%}:where(figure){margin:0 0 1em}html :where(.is-position-sticky){--wp-admin--admin-bar--position-offset:var(--wp-admin--admin-bar--height,0px)}@media screen and (max-width:600px){html :where(.is-position-sticky){--wp-admin--admin-bar--position-offset:0px}}
+
+/*# sourceURL=/wp-includes/css/dist/block-library/common.min.css */
+</style>
+<style id="classic-theme-styles-inline-css">
+/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}
+/*# sourceURL=/wp-includes/css/classic-themes.min.css */
+</style>
+
+<style id="global-styles-inline-css">
+:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgb(6,147,227) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgb(252,185,0) 0%,rgb(255,105,0) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgb(255,105,0) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgb(255, 255, 255), 6px 6px rgb(0, 0, 0);--wp--preset--shadow--crisp: 6px 6px 0px rgb(0, 0, 0);}.wp-block-button{--wp--preset--dimension--25: 25%;--wp--preset--dimension--50: 50%;--wp--preset--dimension--75: 75%;--wp--preset--dimension--100: 100%;}:where(body) { margin: 0; }:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}body{padding-top: 0px;padding-right: 0px;padding-bottom: 0px;padding-left: 0px;}:root :where(.wp-element-button, .wp-block-button__link){background-color: #32373c;border-width: 0;color: #fff;font-family: inherit;font-size: inherit;font-style: inherit;font-weight: inherit;letter-spacing: inherit;line-height: inherit;padding-top: calc(0.667em + 2px);padding-right: calc(1.333em + 2px);padding-bottom: calc(0.667em + 2px);padding-left: calc(1.333em + 2px);text-decoration: none;text-transform: inherit;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+/*# sourceURL=global-styles-inline-css */
+</style>
+
+<link data-minify="1" rel='stylesheet' id='custom-typekit-css-css' href='https://spin.atomicobject.com/wp-content/cache/min/1/yhb2hqk.css?ver=1790609877' media='all' />
+<link data-minify="1" rel='stylesheet' id='wpa-css-css' href='https://spin.atomicobject.com/wp-content/cache/min/1/wp-content/plugins/honeypot/includes/css/wpa.css?ver=1790609877' media='all' />
+<link data-minify="1" rel='stylesheet' id='spin_styles-css' href='https://spin.atomicobject.com/wp-content/cache/min/1/wp-content/themes/spin/style.css?ver=1790609877' media='all' />
+<link data-minify="1" rel='stylesheet' id='fontawesome-theme-css' href='https://spin.atomicobject.com/wp-content/cache/min/1/ajax/libs/font-awesome/6.1.1/css/all.min.css?ver=1790609878' media='all' />
+<link data-minify="1" rel='stylesheet' id='allmedia-css' href='https://spin.atomicobject.com/wp-content/cache/min/1/wp-content/themes/spin/css/allmedia.css?ver=1790609878' media='all' />
+<link data-minify="1" rel='stylesheet' id='custom-css' href='https://spin.atomicobject.com/wp-content/cache/min/1/wp-content/themes/spin/css/custom.css?ver=1790609878' media='all' />
+<style id="rocket-lazyload-inline-css">
+.rll-youtube-player{position:relative;padding-bottom:56.23%;height:0;overflow:hidden;max-width:100%;}.rll-youtube-player:focus-within{outline: 2px solid currentColor;outline-offset: 5px;}.rll-youtube-player iframe{position:absolute;top:0;left:0;width:100%;height:100%;z-index:100;background:0 0}.rll-youtube-player img{bottom:0;display:block;left:0;margin:auto;max-width:100%;width:100%;position:absolute;right:0;top:0;border:none;height:auto;-webkit-transition:.4s all;-moz-transition:.4s all;transition:.4s all}.rll-youtube-player img:hover{-webkit-filter:brightness(75%)}.rll-youtube-player .play{height:100%;width:100%;left:0;top:0;position:absolute;background:url(https://spin.atomicobject.com/wp-content/plugins/rocket-lazy-load/assets/img/youtube.png) no-repeat center;background-color: transparent !important;cursor:pointer;border:none;}
+/*# sourceURL=rocket-lazyload-inline-css */
+</style>
+<script id="jquery-core-js" src="https://spin.atomicobject.com/wp-includes/js/jquery/jquery.min.js?ver=3.7.1" data-rocket-defer defer></script>
+<script id="jquery-migrate-js" src="https://spin.atomicobject.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1" data-rocket-defer defer></script>
+<script id="mci-footnotes-jquery-tools-js" src="https://spin.atomicobject.com/wp-content/plugins/footnotes/js/jquery.tools.min.js?ver=1.2.7.redacted.2" data-rocket-defer defer></script>
+<script data-minify="1" id="spin_prism-js" src="https://spin.atomicobject.com/wp-content/cache/min/1/wp-content/themes/spin/js/prism.js?ver=1790609878" data-rocket-defer defer></script>
+<script data-minify="1" id="spin_scripts-js" src="https://spin.atomicobject.com/wp-content/cache/min/1/wp-content/themes/spin/scripts.js?ver=1790609878" data-rocket-defer defer></script>
+<link rel="https://api.w.org/" href="https://spin.atomicobject.com/wp-json/" /><link rel="alternate" title="JSON" type="application/json" href="https://spin.atomicobject.com/wp-json/wp/v2/posts/3668445" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://spin.atomicobject.com/xmlrpc.php?rsd" />
+<link rel='shortlink' href='https://spin.atomicobject.com/?p=3668445' />
+<link rel="icon" href="https://spin.atomicobject.com/wp-content/uploads/cropped-AO-Favicon-512-32x32.png" sizes="32x32" />
+<link rel="icon" href="https://spin.atomicobject.com/wp-content/uploads/cropped-AO-Favicon-512-192x192.png" sizes="192x192" />
+<link rel="apple-touch-icon" href="https://spin.atomicobject.com/wp-content/uploads/cropped-AO-Favicon-512-180x180.png" />
+<meta name="msapplication-TileImage" content="https://spin.atomicobject.com/wp-content/uploads/cropped-AO-Favicon-512-270x270.png" />
+<style id="wp-custom-css">
+.nav-link-holder.hiring {
+	opacity: 0;
+	visibility: hidden;
+}
+li.ai-design-color a::before {
+	background-color: #A5488B;
+}
+.subscribe-section {
+    display: none;
+}
+/* Mobile blog grid/links */
+@media only screen and (max-width: 767px) {
+  .category .category-archive-grid .content-part {
+    order: 1;
+  }
+	.category .category-archive-grid .category-list-side {
+		order: 2;
+		margin-top: 60px;
+	}
+}
+</style>
+
+<style type="text/css" media="all">
+.footnotes_reference_container {margin-top: 24px !important; margin-bottom: 0px !important;}
+.footnote_container_prepare > p {border-bottom: 1px solid #aaaaaa !important;}
+.footnote_tooltip { font-size: 13px !important; background-color: #ffffff !important; border-width: 1px !important; border-style: solid !important; border-color: #ffffff !important; -webkit-box-shadow: 2px 2px 11px #dbdbdb; -moz-box-shadow: 2px 2px 11px #dbdbdb; box-shadow: 2px 2px 11px #dbdbdb;}
+.footnote_plugin_tooltip_text {
+    top: 0.4em !important;
+}
+
+</style>
+<noscript><style id="rocket-lazyload-nojs-css">.rll-youtube-player, [data-lazy-src]{display:none !important;}</style></noscript>
+    <style>
+           @media screen and (min-width: 960px) and (max-width: 1390px) {
+            #main-nav #top-nav > .main-nav-inner {
+                width: 94% !important;
+            }
+        }
+        @media screen and (min-width: 960px) and (max-width: 1621px) {
+            #main-nav #top-nav > .main-nav-inner {
+                width: 84%;
+            }
+            #top-nav > .main-nav-inner .nav-link-holder {
+                width: auto;
+                min-width: 80px;
+                padding-left: 16px;
+                padding-right: 16px;
+            }
+            #top-nav > .main-nav-inner .nav-link-holder.blog {
+                width: 12.5%;
+                padding-left: 10px;
+                padding-right: 10px;
+            }
+        }
+        @media screen and (min-width: 960px) {
+            body #fixed-nav .blog--secondary,
+            body #main-nav .blog--secondary {
+                margin-left: 5px !important;
+                padding-left: 7px;
+                padding-right: 7px;
+                width: auto;
+                min-width: 90px;
+            }
+            body #fixed-nav .blog,
+            body #main-nav .blog {
+                padding-left: 7px;
+                padding-right: 7px;
+            }
+        }
+        .nav-link-w-subnav {
+            position: relative;
+        }
+        .nav-link-w-subnav .nav-link-w-subnav-wrap {
+            position: relative;
+            padding-right: 20px;
+        }
+        .nav-link-w-subnav .sub-nav {
+            background-color: #ffffff;
+            box-shadow: 0 2px 5px #59595963;
+            position: absolute;
+            left: -10rem;
+            top: 47px;
+            display: none;
+            width: 533px;
+        }
+        .nav-link-w-subnav.active .sub-nav {
+            display: block;
+        }
+        .nav-link-w-subnav:hover .sub-nav {
+            display: block;
+        }
+        .nav-link-w-subnav #spin-services-dropdown-btn {
+            background-color: transparent;
+            border: 0;
+            padding: 0;
+            position: absolute;
+            top: 4px;
+            right: 0;
+        }
+        .nav-link-w-subnav .sub-nav li {
+            text-align: left;
+        }
+        .nav-link-w-subnav .sub-nav__wrap {
+            grid-column-gap: 2.5rem;
+            grid-row-gap: .5rem;
+            grid-template-rows: auto;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-auto-columns: 1fr;
+            padding: 1.6rem;
+            display: grid;
+        }
+        .nav-link-w-subnav .sub-nav__wrap ul {
+            min-width: auto;
+            margin: 0;
+        }
+        .nav-link-w-subnav .sub-nav__wrap ul:first-child {
+            min-width: 200px;
+        }
+        .nav-link-w-subnav .sub-nav__wrap span { 
+            padding: 8px 16px 8px 0;
+        }
+        .nav-link-w-subnav .sub-nav__wrap a {
+            padding: 8px 16px 8px 0;
+            font-weight: 400;
+            line-height: 1;
+        }
+        .nav-link-w-subnav .sub-nav__wrap a:focus {
+            color: #f0595c !important;
+            text-decoration: underline;
+        }
+        .nav-link-w-subnav > a svg {
+            padding-top: 4px;
+            margin-left: 3px;
+        }
+        .nav-link-w-subnav .sub-nav__wrap li {
+            margin-bottom: 8px;
+            padding: 0;
+        }
+        .nav-link-w-subnav .sub-nav__wrap li:first-child a {
+            text-decoration: underline;
+        }
+        .nav-link-w-subnav .sub-nav__wrap a:after {
+            content: none !important;
+        }
+
+        /* mobile nav */ 
+        #mobile-nav .nav-link-holder--dropdown ul {
+            padding: 0;
+            margin: 0 auto 10px auto;
+            max-width: 500px;
+        }
+        #mobile-nav .nav-link-holder--dropdown ul li {
+            text-align: center;
+            font-weight: 400;
+            padding-left: 0;
+        }
+        #mobile-nav .nav-link-holder--dropdown ul li a {
+            display: inline-block;
+        }
+        #mobile-nav button.nav-link-holder--dropdown-button {
+            background-color: transparent;
+            box-shadow: none;
+            border: 0;
+            color: #ffffff;
+            display: block;
+            font-size: 17px;
+            font-weight: bold;
+            height: 80px;
+            vertical-align: middle;
+            width: 100%;
+        }
+        .nav-link-holder--dropdown ul {
+            display: none;
+        }
+        .nav-link-holder--dropdown.active ul {
+            display: block;
+        }
+    </style>
+
+<link rel='stylesheet' id='mediaelement-css' href='https://spin.atomicobject.com/wp-includes/js/mediaelement/mediaelementplayer-legacy.min.css?ver=4.2.17' media='all' />
+<link rel='stylesheet' id='wp-mediaelement-css' href='https://spin.atomicobject.com/wp-includes/js/mediaelement/wp-mediaelement.min.css?ver=7.1.3' media='all' />
+
+<style id="rocket-lazyrender-inline-css">[data-wpr-lazyrender] {content-visibility: auto;}</style><meta name="generator" content="WP Rocket 3.23.5.1" data-wpr-features="wpr_defer_js wpr_minify_js wpr_preconnect_external_domains wpr_automatic_lazy_rendering wpr_oci wpr_minify_css wpr_cdn wpr_preload_links wpr_desktop" /></head>
+
+
+<body class="wp-singular post-template-default single single-post postid-3668445 single-format-standard wp-theme-spin group-blog category-slug-artificial-intelligence category-child-slug-ai-developers" data-has-drawer="true">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KT4K2FF" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <div  id="border-top" class="borders border-h"></div>
+    <div  id="border-left" class="borders border-v"></div>
+    <div  id="border-right" class="borders border-v"></div>
+    <div  id="border-bottom" class="borders border-h"></div>
+
+
+    <div  id="mobile-header">
+        <a href="https://atomicobject.com/">
+            <img src="https://spin.atomicobject.com/wp-content/themes/spin/images/ao-wordmark-logo.svg" alt="Atomic Object" class="mobile-wordmark-logo" width="235" height="71" />
+        </a>
+        <a href="#mobile-nav" id="mobile-nav-trigger" data-toggle="#mobile-nav">
+            <img src="https://spin.atomicobject.com/wp-content/themes/spin/images/icon-mobile-menu.svg" alt="Show Nav" width="20" height="15" />
+        </a>
+    </div>
+
+    <nav id="mobile-nav">
+        <div class="mobile-nav-close-wrap">
+            <img src="https://spin.atomicobject.com/wp-content/themes/spin/images/icon-mobile-close.svg" alt="Close Menu" id="icon-mobile-close" class="mobile-nav-close" data-toggle="#mobile-nav" width="15" height="15" />
+        </div>
+
+        <div class='nav-link-holder'>
+            <a href="/" class="backlink">
+                &lt; Blog Home
+            </a>
+        </div>
+        <div class="nav-link-holder">
+            <a href="https://atomicobject.com/">
+                Atomic Object
+            </a>
+        </div>
+        <div class="nav-link-holder">
+            <a href="https://atomicobject.com/agentic-engineering">
+                Build with AI
+            </a>
+        </div>
+
+        <div class="nav-link-holder nav-link-holder--dropdown">
+            <button type="button" class="nav-link-holder--dropdown-button" id="mobile-dropdown-btn--offerings" aria-expanded="false" aria-controls="mobile-dropdown--offerings">
+                Offerings <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M2.55806 6.29544C2.46043 6.19781 2.46043 6.03952 2.55806 5.94189L3.44195 5.058C3.53958 4.96037 3.69787 4.96037 3.7955 5.058L8.00001 9.26251L12.2045 5.058C12.3021 4.96037 12.4604 4.96037 12.5581 5.058L13.4419 5.94189C13.5396 6.03952 13.5396 6.19781 13.4419 6.29544L8.17678 11.5606C8.07915 11.6582 7.92086 11.6582 7.82323 11.5606L2.55806 6.29544Z" fill="currentColor"></path></svg>
+            </button>
+            <ul class="mobile-dropdown" id="mobile-dropdown--offerings" aria-labelledby="mobile-dropdown-btn--offerings">
+                <li>
+                    <a href="https://atomicobject.com/offerings/ai-software-development">
+                        AI Software Development
+                    </a>
+                </li>
+                <li>
+                    <a href="https://atomicobject.com/offerings/new-product-development">
+                        New Product Development
+                    </a>
+                </li>
+                <li>
+                    <a href="https://atomicobject.com/offerings/product-enhancement">
+                        Product Enhancement
+                    </a>
+                </li>
+                <li>
+                    <a href="https://atomicobject.com/offerings/product-modernization">
+                        Product Modernization
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="nav-link-holder nav-link-holder--dropdown"> 
+            <button type="button" class="nav-link-holder--dropdown-button" id="mobile-dropdown-btn--platforms" aria-expanded="false" aria-controls="mobile-dropdown--platforms">
+                Platforms <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M2.55806 6.29544C2.46043 6.19781 2.46043 6.03952 2.55806 5.94189L3.44195 5.058C3.53958 4.96037 3.69787 4.96037 3.7955 5.058L8.00001 9.26251L12.2045 5.058C12.3021 4.96037 12.4604 4.96037 12.5581 5.058L13.4419 5.94189C13.5396 6.03952 13.5396 6.19781 13.4419 6.29544L8.17678 11.5606C8.07915 11.6582 7.92086 11.6582 7.82323 11.5606L2.55806 6.29544Z" fill="currentColor"></path></svg>
+            </button>
+            <ul class="mobile-dropdown" id="mobile-dropdown--platforms" aria-labelledby="mobile-dropdown-btn--platforms">
+                <li>
+                    <a href="https://atomicobject.com/platforms/web-app-development">
+                        Web App
+                    </a>
+                </li>
+                <li>
+                    <a href="https://atomicobject.com/platforms/mobile-app-development">
+                        Mobile App
+                    </a>
+                </li>
+                <li>
+                    <a href="https://atomicobject.com/platforms/iot-software-development">
+                        IoT Software
+                    </a>
+                </li>
+                <li>
+                    <a href="https://atomicobject.com/platforms/desktop-app-development">
+                        Desktop App
+                    </a>
+                </li>
+                <li>
+                    <a href="https://atomicobject.com/platforms/cloud-powered-software">
+                        Cloud
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="nav-link-holder nav-link-holder--dropdown">
+            <button type="button" class="nav-link-holder--dropdown-button" id="mobile-dropdown-btn--industries" aria-expanded="false" aria-controls="mobile-dropdown--industries">
+                Industries <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M2.55806 6.29544C2.46043 6.19781 2.46043 6.03952 2.55806 5.94189L3.44195 5.058C3.53958 4.96037 3.69787 4.96037 3.7955 5.058L8.00001 9.26251L12.2045 5.058C12.3021 4.96037 12.4604 4.96037 12.5581 5.058L13.4419 5.94189C13.5396 6.03952 13.5396 6.19781 13.4419 6.29544L8.17678 11.5606C8.07915 11.6582 7.92086 11.6582 7.82323 11.5606L2.55806 6.29544Z" fill="currentColor"></path></svg>
+            </button>
+            <ul class="mobile-dropdown" id="mobile-dropdown--industries" aria-labelledby="mobile-dropdown-btn--industries">
+                <li>
+                    <a href="https://atomicobject.com/industries/custom-healthcare-software">
+                        Healthcare
+                    </a>
+                </li>
+                <li>
+                    <a href="https://atomicobject.com/industries/custom-financial-services-software">
+                        Financial Services
+                    </a>
+                </li>
+                <li>
+                    <a href="https://atomicobject.com/industries/custom-edtech-software">
+                        Education
+                    </a>
+                </li>
+                <li>
+                    <a href="https://atomicobject.com/industries/custom-insurance-software">
+                        Insurance
+                    </a>
+                </li>
+                <li>
+                    <a href="https://atomicobject.com/industries">
+                        <em>See more...</em>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+                    <div class="nav-link-holder">
+                <a href="https://atomicobject.com/portfolio">
+                    Portfolio                </a>
+            </div>
+                    <div class="nav-link-holder">
+                <a href="https://atomicobject.com/team">
+                    Team                </a>
+            </div>
+                    <div class="nav-link-holder">
+                <a href="https://atomicobject.com/culture">
+                    Culture                </a>
+            </div>
+                    <div class="nav-link-holder">
+                <a href="https://atomicobject.com/contact">
+                    Contact                </a>
+            </div>
+                
+        <!-- <div class="nav-link-holder hiring">
+            <a href="https://atomicobject.com/careers">
+                We're Hiring
+            </a>
+        </div> -->
+    </nav>
+
+    <nav id="main-nav" class="main-nav">
+        <div id="top-nav">
+            <div class="main-nav-inner">
+                <a href="https://atomicobject.com/" class="logo wordmark">
+                    <img src="https://spin.atomicobject.com/wp-content/themes/spin/images/ao-wordmark-white.svg" alt="Atomic Object" class="white" width="300" height="91" />
+                    <img src="https://spin.atomicobject.com/wp-content/themes/spin/images/ao-wordmark-logo.svg" alt="Atomic Object" class="color" width="150" height="45" />
+                </a>
+
+                                <div class="nav-link-holder nav-link-w-subnav">
+                    <div class="nav-link-w-subnav-wrap">
+                        <a class="nav-link-w-subnav__link" href="https://atomicobject.com/services">
+                            Services
+                        </a>
+                        <button type="button" id="spin-services-dropdown-btn" aria-expanded="false" aria-controls="spin-services-dropdown">
+                            <span class="screen-reader-text">Services links</span> 
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M2.55806 6.29544C2.46043 6.19781 2.46043 6.03952 2.55806 5.94189L3.44195 5.058C3.53958 4.96037 3.69787 4.96037 3.7955 5.058L8.00001 9.26251L12.2045 5.058C12.3021 4.96037 12.4604 4.96037 12.5581 5.058L13.4419 5.94189C13.5396 6.03952 13.5396 6.19781 13.4419 6.29544L8.17678 11.5606C8.07915 11.6582 7.92086 11.6582 7.82323 11.5606L2.55806 6.29544Z" fill="currentColor"></path></svg>
+                        </button>
+                    </div>
+                    <div class="sub-nav" aria-labelledby="spin-services-dropdown-btn" id="spin-services-dropdown">
+                        <div class="sub-nav__wrap">
+                            <ul class="navbar_dropdown-wrapper">
+                                <li>
+                                    <span><strong>Offerings</strong></span>
+                                </li>
+                                <li>
+                                    <a href="https://atomicobject.com/offerings/ai-software-development">
+                                        AI Software Development
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://atomicobject.com/offerings/new-product-development">
+                                        New Product Development
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://atomicobject.com/offerings/product-enhancement">
+                                        Product Enhancement
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://atomicobject.com/offerings/product-modernization">
+                                        Product Modernization
+                                    </a>
+                                </li>
+                            </ul>
+                            <ul class="navbar_dropdown-wrapper">
+                                <li>
+                                    <a href="https://atomicobject.com/platforms">
+                                        <strong>Platforms</strong>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://atomicobject.com/platforms/web-app-development">
+                                        Web App
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://atomicobject.com/platforms/mobile-app-development">
+                                        Mobile App
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://atomicobject.com/platforms/iot-software-development">
+                                        IoT Software
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://atomicobject.com/platforms/desktop-app-development">
+                                        Desktop App
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://atomicobject.com/platforms/cloud-powered-software">
+                                        Cloud
+                                    </a>
+                                </li>
+                            </ul>
+                            <ul class="navbar_dropdown-wrapper">
+                                <li>
+                                    <a href="https://atomicobject.com/industries">
+                                        <strong>Industries</strong>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://atomicobject.com/industries/custom-healthcare-software">
+                                        Healthcare
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://atomicobject.com/industries/custom-financial-services-software">
+                                        Financial Services
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://atomicobject.com/industries/custom-edtech-software">
+                                        Education
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://atomicobject.com/industries/custom-insurance-software">
+                                        Insurance
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://atomicobject.com/industries">
+                                        <em>See more...</em>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="nav-link-holder">
+                    <a href="https://atomicobject.com/portfolio">
+                        Portfolio
+                    </a>
+                </div>
+                <div class="nav-link-holder">
+                    <a href="https://atomicobject.com/team">
+                        Team
+                    </a>
+                </div>
+                <div class="nav-link-holder">
+                    <a href="https://atomicobject.com/culture">
+                        Culture
+                    </a>
+                </div>
+
+                <div class="nav-link-holder blog">
+                    <a href="https://atomicobject.com/agentic-engineering">
+                        Build with AI
+                    </a>
+                </div>
+
+                <div class="nav-link-holder blog blog--secondary">
+                    <a href="https://atomicobject.com/careers">
+                        We're Hiring
+                    </a>
+                </div>
+
+                <div class="nav-link-holder blog blog--secondary">
+                    <a href="/" class="current">
+                        Blog
+                    </a>
+                </div>
+
+                <div class="nav-link-holder contact">
+                    <a href="https://atomicobject.com/contact" class="button">
+                        Contact
+                    </a>
+                </div>
+            </div>
+        </div><!-- /#top-nav -->
+
+       <div id="fixed-nav" class="animated">
+            <div class="main-nav-inner">
+                <a href="https://atomicobject.com/" class="logo symbol">
+                    <img src="https://spin.atomicobject.com/wp-content/themes/spin/images/ao-symbol-red.svg" alt="Atomic Object" width="60" height="60" />
+                </a>
+
+                                    <div class="nav-link-holder">
+                        <a href="https://atomicobject.com/services">
+                            Services                        </a>
+                    </div>
+                                    <div class="nav-link-holder">
+                        <a href="https://atomicobject.com/portfolio">
+                            Portfolio                        </a>
+                    </div>
+                                    <div class="nav-link-holder">
+                        <a href="https://atomicobject.com/team">
+                            Team                        </a>
+                    </div>
+                                    <div class="nav-link-holder">
+                        <a href="https://atomicobject.com/culture">
+                            Culture                        </a>
+                    </div>
+                
+                <div class="nav-link-holder blog">
+                    <a href="https://atomicobject.com/careers">
+                        We're Hiring
+                    </a>
+                </div>
+
+                <div class="nav-link-holder blog blog--secondary">
+                    <a href="https://atomicobject.com/agentic-engineering">
+                        Build with AI
+                    </a>
+                </div>
+
+                <div class="nav-link-holder blog blog--secondary">
+                    <a href="/" class="current">
+                        Blog
+                    </a>
+                </div>
+
+                <div class="nav-link-holder contact">
+                    <a href="https://atomicobject.com/contact" class="button">
+                        Contact
+                    </a>
+                </div>
+            </div>
+        </div><!-- /#fixed-nav -->
+    </nav><!-- /#main-nav --> 
+
+
+    <div  id="page" class="hfeed site">
+        
+
+        <div  id="content" class="site-content">
+
+        <script>
+            window.addEventListener('load', function () {
+                if(document.querySelector('.nav-link-holder--dropdown-button')) {
+                    const mobileDropdownBtns = document.querySelectorAll('.nav-link-holder--dropdown-button');
+
+                    mobileDropdownBtns.forEach((btn) => {
+                        btn.addEventListener('click', function() {
+                            const parent = this.parentElement;
+                            const isActive = parent.classList.contains('active');
+                            if(isActive) {
+                                btn.querySelector('svg').style.transform = 'rotate(0deg)';
+                                parent.classList.remove('active');
+                                btn.setAttribute('aria-expanded', false);
+                            } else {
+                                parent.classList.add('active');
+                                btn.querySelector('svg').style.transform = 'rotate(180deg)';
+                                btn.setAttribute('aria-expanded', true);
+                            }
+                        });
+                    });
+                }
+                if(document.getElementById('spin-services-dropdown-btn')) {
+                    const desktopDropdownBtn = document.getElementById('spin-services-dropdown-btn');
+
+                    function handleEvent(e) {
+                        if(desktopDropdownBtn.classList.contains('active')) {
+                            desktopDropdownBtn.parentElement.parentElement.classList.remove('active');
+                            desktopDropdownBtn.classList.remove('active');
+                            desktopDropdownBtn.setAttribute('aria-expanded', false);
+                        } else {
+                            desktopDropdownBtn.parentElement.parentElement.classList.add('active');
+                            desktopDropdownBtn.classList.add('active');
+                            desktopDropdownBtn.setAttribute('aria-expanded', true);
+                        }
+                    }
+
+                    desktopDropdownBtn.addEventListener('click', handleEvent);
+
+                    if(document.querySelector('.nav-link-w-subnav__link')) {
+                        document.querySelector('.nav-link-w-subnav__link').addEventListener('focus', handleEvent);
+                        document.querySelector('.nav-link-w-subnav__link').addEventListener('blur', () => handleEvent);
+                    }   
+                }
+            });
+        </script>
+
+	
+<div  id="primary" class="primary content-area">
+
+	
+	<main id="main" class="site-main" role="main">
+
+
+		<article id="post-3668445" class="entry single-article post-3668445 post type-post status-publish format-standard has-post-thumbnail hentry category-ai-developers tag-artificial-intelligence tag-blender">
+
+			<header class="entry-header">
+
+				<div class="back-link-container">
+					<a href="/">← Back to Blog Home</a>
+				</div>
+
+				<h1 itemprop="name headline" class="entry-title">
+					What Happened When I Tried Blender Scripting with AI				</h1>
+
+				<div class="entry-top-bar">
+
+					<div class="entry-top-bar-left">
+						<div itemprop="category" content="" class="post-date"><span class="category-meta category-slug-artificial-intelligence"><a href="https://spin.atomicobject.com/artificial-intelligence/ai-developers/" rel="category tag">AI for Developers</a></span></div>
+
+						<div class="authors">
+							
+		<div class="post-author">
+			by: <a href="/author/meghan-harris/"><span><span>Meghan Harris</span></span></a>
+		</div>
+																						<div itemprop="datePublished" content="2025-07-07" class="post-date">July 7, 2025</div>
+						</div>
+
+
+					</div>
+					<div class="entry-top-bar-right">
+						<div class="top-entry-share"><ul class="social-icon-list entry-share-links"><li class="social-icon-list-item entry-share-link twitter"><a href="//twitter.com/intent/tweet?text=What Happened When I Tried Blender Scripting with AI&url=https://spin.atomicobject.com/blender-scripting-with-ai/%23.VNUemPABEaM.twitter&related=" data-popup="social-share">Twitter</a></li><li class="social-icon-list-item entry-share-link facebook"><a href="//www.facebook.com/sharer/sharer.php?u=https://spin.atomicobject.com/blender-scripting-with-ai/%23.VNUemgHMI00.facebook" data-popup="social-share">Facebook</a></li><li class="social-icon-list-item entry-share-link linkedin"><a href="//www.linkedin.com/shareArticle?mini=true&url=https://spin.atomicobject.com/blender-scripting-with-ai/%23.VNUeuSKf2A4.linkedin&title=What Happened When I Tried Blender Scripting with AI&ro=false&summary=&source=" data-popup="social-share">Linkedin</a></li><li class="social-icon-list-item entry-share-link hackernews"><a href="//news.ycombinator.com/submitlink?u=https://spin.atomicobject.com/blender-scripting-with-ai/%23.VNUdMcs6UCk.hackernews&t=What Happened When I Tried Blender Scripting with AI" data-popup="social-share">Hackernews</a></li></ul></div>					</div>
+				</div>
+				<!-- .entry-meta -->
+
+			</header>
+			<!-- .entry-header -->
+
+							<div class="single-featured-image">
+					<img width="1720" height="1302" src="https://spin.atomicobject.com/wp-content/uploads/blender-example.jpg" class="attachment-full size-full wp-post-image" alt="Graphic from an experiment called: What Happened When I Tried Blender Scripting with AI" decoding="async" fetchpriority="high" srcset="https://spin.atomicobject.com/wp-content/uploads/blender-example.jpg 1720w, https://spin.atomicobject.com/wp-content/uploads/blender-example-590x447.jpg 590w, https://spin.atomicobject.com/wp-content/uploads/blender-example-1024x775.jpg 1024w, https://spin.atomicobject.com/wp-content/uploads/blender-example-150x114.jpg 150w, https://spin.atomicobject.com/wp-content/uploads/blender-example-768x581.jpg 768w, https://spin.atomicobject.com/wp-content/uploads/blender-example-1536x1163.jpg 1536w, https://spin.atomicobject.com/wp-content/uploads/blender-example-600x454.jpg 600w, https://spin.atomicobject.com/wp-content/uploads/blender-example-1200x908.jpg 1200w" sizes="(max-width: 1720px) 100vw, 1720px" />				</div>
+			
+
+			<div itemprop="articleBody" class="entry-content">
+
+				
+				<div class="single-article-summary">
+
+					<div class="as-summary-list">
+													<h3>Article summary</h3>
+						
+						<ul>
+															<li><a href="#summary-0">Brief Intro to Cursor and Blender Scripting</a></li>
+																							<li><a href="#summary-1">Basic Example: a simple 3D house</a></li>
+																							<li><a href="#summary-2">Intermediate Examples: an animation, and the Blender Donut</a></li>
+																							<li><a href="#summary-3">Advanced Examples: a diamond pyramid, and geometry nodes</a></li>
+																							<li><a href="#summary-4">Future Considerations and Unanswered Questions</a></li>
+																					</ul>
+					</div>
+
+									</div>
+
+				<div class="inner-content">
+
+					<p>Since I began working with AI tools, I&#8217;ve looked for their boundaries—what can I use them for, and when do I abandon them for another tool instead? Another question I’ve been asking myself: how would AI tooling fare in generating 3D models?</p>
+<p>Specifically, I wanted to know how well a Cursor Agent could help me write a set of Blender scripts to generate 3D models. Doing so would test both the agent’s ability to follow simple instructions, interact with the Blender API, and find the limits of Blender scripting itself.</p>
+<h2>Brief Intro to Cursor and Blender Scripting</h2>
+<p>Cursor is an AI-powered IDE that I currently use as a software developer. Scripting in Blender is accomplished through Python and the built-in scripting editor in Blender.</p>
+<p>The code is very specific because Blender is a stateful, context-based system. For instance, many operations rely on what&#8217;s currently &#8220;active&#8221; or selected:</p>
+<pre><code># This depends on what object is currently active
+bpy.context.active_object.name = "Door_Cutter"</code></pre>
+<pre><code># This requires setting the active object first
+bpy.context.view_layer.objects.active = front_wall
+bpy.ops.object.modifier_apply(modifier="Door_Boolean")</code></pre>
+<p>Also, objects must exist before you can modify them:</p>
+<pre><code># Must create material first
+wall_material = create_material("Wall_Material", (0.8, 0.7, 0.6))
+# Then create object
+front_wall = create_cube("Front_Wall", (0, -4, 1.5), (6, 0.2, 3))
+# Then apply material
+front_wall.data.materials.append(wall_material)</code></pre>
+<h2>Basic Example: a simple 3D house</h2>
+<p><span style="font-weight: 400;">For starters, I asked Cursor to make a script for Blender that would render a house without any other prompting. Simple, right? </span><span style="font-weight: 400;">💥 Let the Runtime Errors Ensue 💥:</span></p>
+<pre><code>Python: Traceback (most recent call last):
+File "/Text", line 251, in
+File "/Text", line 232, in main
+File "/Text", line 217, in setup_render_settings
+TypeError: bpy_struct: item.attr = val: enum "BLENDER_EEVEE" not found in ('BLENDER_EEVEE_NEXT', 'BLENDER_WORKBENCH', 'CYCLES')</code></pre>
+<p>After lots of attempts to access attributes that didn&#8217;t exist or passing the wrong datatype to a function, I realized one key issue: I hadn&#8217;t told the agent what Blender version I was using. From that point on, we did run into issues, but they were less.</p>
+<p>The generated code specified a foundation, walls, roof, door, windows, chimney, porch, and ground (with green grass). Behold the house:</p>
+<p><a href="https://spin.atomicobject.com/wp-content/uploads/Blender_House-Medium.jpeg"><img decoding="async" class="size-medium wp-image-3668459 aligncenter" src="https://spin.atomicobject.com/wp-content/uploads/Blender_House-Medium-590x346.jpeg" alt="" width="590" height="346" srcset="https://spin.atomicobject.com/wp-content/uploads/Blender_House-Medium-590x346.jpeg 590w, https://spin.atomicobject.com/wp-content/uploads/Blender_House-Medium-150x88.jpeg 150w, https://spin.atomicobject.com/wp-content/uploads/Blender_House-Medium-600x352.jpeg 600w, https://spin.atomicobject.com/wp-content/uploads/Blender_House-Medium.jpeg 640w" sizes="(max-width: 590px) 100vw, 590px" /></a></p>
+<p>Nice roof, right? I relayed that the roof looked a bit cockeyed and the agent said something about a pitched roof, and I responded, &#8220;Well, the point of a roof is to not let the elements inside, so&#8230;,&#8221; and eventually we had a flat roof.</p>
+<p>That&#8217;s a lot of cycles just for a house that I&#8217;m not super impressed with. Also, note, there were indeed doors and windows, but the doors and windows were only internally visible, which is cool. I asked it to make them visible from the outside, and it did (kind of):</p>
+<p><a href="https://spin.atomicobject.com/wp-content/uploads/Blender_House_Doors-Small.jpeg"><img decoding="async" class="size-full wp-image-3668458 aligncenter" src="https://spin.atomicobject.com/wp-content/uploads/Blender_House_Doors-Small.jpeg" alt="" width="320" height="242" srcset="https://spin.atomicobject.com/wp-content/uploads/Blender_House_Doors-Small.jpeg 320w, https://spin.atomicobject.com/wp-content/uploads/Blender_House_Doors-Small-150x113.jpeg 150w" sizes="(max-width: 320px) 100vw, 320px" /></a></p>
+<p>Wut? Really, the cutting out of windows and a door in Blender take very little time once you are in Edit Mode in Blender’s UI. So, this isn&#8217;t necessarily an AI shortcoming—sometimes the manual tool is easier and more precise.</p>
+<p>One more thing, where did the grass go? Oh, that’s where:</p>
+<p><a href="https://spin.atomicobject.com/wp-content/uploads/Blender_lawn-Medium.jpeg"><img loading="lazy" decoding="async" class="size-medium wp-image-3668460 aligncenter" src="https://spin.atomicobject.com/wp-content/uploads/Blender_lawn-Medium-590x443.jpeg" alt="" width="590" height="443" srcset="https://spin.atomicobject.com/wp-content/uploads/Blender_lawn-Medium-590x443.jpeg 590w, https://spin.atomicobject.com/wp-content/uploads/Blender_lawn-Medium-150x113.jpeg 150w, https://spin.atomicobject.com/wp-content/uploads/Blender_lawn-Medium-600x451.jpeg 600w, https://spin.atomicobject.com/wp-content/uploads/Blender_lawn-Medium.jpeg 640w" sizes="auto, (max-width: 590px) 100vw, 590px" /></a></p>
+<p>Yikes 😑. Let&#8217;s move on.</p>
+<h2>Intermediate Examples: an animation, and the Blender Donut</h2>
+<h3> A Bouncy Ball</h3>
+<p><span style="font-weight: 400;">My prompt again was simple: create an animation of a ball bouncing with a Python script for Blender with version 4.3.2. I&#8217;ll spare you and say that the Cursor agent again had some more trouble with the Blender version, but we finally got an animation:</span></p>
+<p><div style="width: 640px;" class="wp-video"><video class="wp-video-shortcode" id="video-3668445-1" width="640" height="376" preload="metadata" controls="controls"><source type="video/mp4" src="https://spin.atomicobject.com/wp-content/uploads/Blender_Bouncing_Ball.mp4?_=1" /><a href="https://spin.atomicobject.com/wp-content/uploads/Blender_Bouncing_Ball.mp4">https://spin.atomicobject.com/wp-content/uploads/Blender_Bouncing_Ball.mp4</a></video></div></p>
+<p><span style="font-weight: 400;">The cool thing is that the agent was able to write the code to create the ball, the animation, and the camera.  Another aspect of this scripting is that the agent &#8220;knew&#8221; to set up the lighting in both this example and the house. I appreciate that whatever dataset it was trained on, the agent utilized one of the most common components of setting a scene.</span></p>
+<h3>The Blender Donut</h3>
+<p>If you&#8217;ve spent anytime looking for Blender anything, especially a tutorial, you&#8217;ve run into the Blender Donut.</p>
+<p><a href="https://spin.atomicobject.com/wp-content/uploads/Blender_Donut-Small.jpeg"><img loading="lazy" decoding="async" class="size-full wp-image-3668462 aligncenter" src="https://spin.atomicobject.com/wp-content/uploads/Blender_Donut-Small.jpeg" alt="" width="320" height="220" srcset="https://spin.atomicobject.com/wp-content/uploads/Blender_Donut-Small.jpeg 320w, https://spin.atomicobject.com/wp-content/uploads/Blender_Donut-Small-150x103.jpeg 150w" sizes="auto, (max-width: 320px) 100vw, 320px" /></a></p>
+<p><span style="font-weight: 400;">I thought if ever there was a measure of how well an AI tool can follow instructions, to really test its dataset, it would be the Blender Donut, since its creation is well-documented, and tutorials abound.</span></p>
+<p><span style="font-weight: 400;">Surely, then, it should be able to create the Blender Donut. This is the result after I gave the AI agent the above picture:</span></p>
+<p><a href="https://spin.atomicobject.com/wp-content/uploads/Sprinkle_Gravity-Medium.jpeg"><img loading="lazy" decoding="async" class="size-medium wp-image-3668463 aligncenter" src="https://spin.atomicobject.com/wp-content/uploads/Sprinkle_Gravity-Medium-590x347.jpeg" alt="" width="590" height="347" srcset="https://spin.atomicobject.com/wp-content/uploads/Sprinkle_Gravity-Medium-590x347.jpeg 590w, https://spin.atomicobject.com/wp-content/uploads/Sprinkle_Gravity-Medium-150x88.jpeg 150w, https://spin.atomicobject.com/wp-content/uploads/Sprinkle_Gravity-Medium-600x353.jpeg 600w, https://spin.atomicobject.com/wp-content/uploads/Sprinkle_Gravity-Medium.jpeg 640w" sizes="auto, (max-width: 590px) 100vw, 590px" /></a></p>
+<p><span style="font-weight: 400;">So, where is the frosting? And, why do the sprinkles look like they&#8217;re in some weird, inner gravitational field in the donut&#8217;s hole? </span></p>
+<p><span style="font-weight: 400;">We gave it another try:</span></p>
+<p><a href="https://spin.atomicobject.com/wp-content/uploads/Light_on_sprinkles_and_frosting-Medium.jpeg"><img loading="lazy" decoding="async" class="size-medium wp-image-3668464 aligncenter" src="https://spin.atomicobject.com/wp-content/uploads/Light_on_sprinkles_and_frosting-Medium-590x407.jpeg" alt="" width="590" height="407" srcset="https://spin.atomicobject.com/wp-content/uploads/Light_on_sprinkles_and_frosting-Medium-590x407.jpeg 590w, https://spin.atomicobject.com/wp-content/uploads/Light_on_sprinkles_and_frosting-Medium-150x103.jpeg 150w, https://spin.atomicobject.com/wp-content/uploads/Light_on_sprinkles_and_frosting-Medium-600x413.jpeg 600w, https://spin.atomicobject.com/wp-content/uploads/Light_on_sprinkles_and_frosting-Medium.jpeg 640w" sizes="auto, (max-width: 590px) 100vw, 590px" /></a></p>
+<p><span style="font-weight: 400;">The frosting is still missing, but now the sprinkles are where we&#8217;d expect them. </span></p>
+<p><span style="font-weight: 400;">I asked the agent one more time to add the frosting. Behold:</span></p>
+<p><a href="https://spin.atomicobject.com/wp-content/uploads/Not_quite-Medium.jpeg"><img loading="lazy" decoding="async" class="size-medium wp-image-3668465 aligncenter" src="https://spin.atomicobject.com/wp-content/uploads/Not_quite-Medium-590x420.jpeg" alt="" width="590" height="420" srcset="https://spin.atomicobject.com/wp-content/uploads/Not_quite-Medium-590x420.jpeg 590w, https://spin.atomicobject.com/wp-content/uploads/Not_quite-Medium-150x107.jpeg 150w, https://spin.atomicobject.com/wp-content/uploads/Not_quite-Medium-600x428.jpeg 600w, https://spin.atomicobject.com/wp-content/uploads/Not_quite-Medium.jpeg 640w" sizes="auto, (max-width: 590px) 100vw, 590px" /></a></p>
+<p>Sweet! Frosting, but also orbiting sprinkles? 🙃</p>
+<p><b>Takeaway: </b>the agent did a fairly good job rendering the donut, and frosting (extra points for shininess), but with lots of coaching. Plus, if you’ve ever done the donut tutorial you know that a realistic donut isn’t perfectly symmetrical, and, during that tutorial, you learned how to make it look more realistic. This is certainly reminiscent of a donut, but those final touches seem much more achievable with the Blender UI than with AI-led scripting.</p>
+<h2>Advanced Examples: a diamond pyramid, and geometry nodes</h2>
+<h3>A Diamond Pyramid</h3>
+<p>I asked the agent to create a diamond pyramid. The material considerations and the lighting techniques to simulate that type of sparkle would mean both the agent and the Blender API could be used to achieve something significant. My prompt was simple: create a diamond pyramid with a Python script for Blender with version 4.3.2.</p>
+<p>I was imagining a multi-faceted prism. This is what it created:</p>
+<p><a href="https://spin.atomicobject.com/wp-content/uploads/Diamond_pyramid-Medium.jpeg"><img loading="lazy" decoding="async" class="size-medium wp-image-3668466 aligncenter" src="https://spin.atomicobject.com/wp-content/uploads/Diamond_pyramid-Medium-590x344.jpeg" alt="" width="590" height="344" srcset="https://spin.atomicobject.com/wp-content/uploads/Diamond_pyramid-Medium-590x344.jpeg 590w, https://spin.atomicobject.com/wp-content/uploads/Diamond_pyramid-Medium-150x87.jpeg 150w, https://spin.atomicobject.com/wp-content/uploads/Diamond_pyramid-Medium-600x350.jpeg 600w, https://spin.atomicobject.com/wp-content/uploads/Diamond_pyramid-Medium.jpeg 640w" sizes="auto, (max-width: 590px) 100vw, 590px" /></a></p>
+<p>This mirrored pyramid is what was rendered, though I’m doubtful how close scripting would get me to a realistic diamond pyramid.</p>
+<h3>Geometry Nodes</h3>
+<p>For another advanced example, I asked the agent to show me what it could do with geometry nodes. Geometry nodes are great for creating customizable, and non-destructive (the original geometry is preserved while operations on that geometry can be reordered or removed) models and scenes through procedural workflows.</p>
+<p>This is what the agent was able to create:</p>
+<p><a href="https://spin.atomicobject.com/wp-content/uploads/Geometry_Nodes-Medium.jpeg"><img loading="lazy" decoding="async" class="size-medium wp-image-3668467 aligncenter" src="https://spin.atomicobject.com/wp-content/uploads/Geometry_Nodes-Medium-590x344.jpeg" alt="" width="590" height="344" srcset="https://spin.atomicobject.com/wp-content/uploads/Geometry_Nodes-Medium-590x344.jpeg 590w, https://spin.atomicobject.com/wp-content/uploads/Geometry_Nodes-Medium-150x87.jpeg 150w, https://spin.atomicobject.com/wp-content/uploads/Geometry_Nodes-Medium-600x350.jpeg 600w, https://spin.atomicobject.com/wp-content/uploads/Geometry_Nodes-Medium.jpeg 640w" sizes="auto, (max-width: 590px) 100vw, 590px" /></a></p>
+<p>Note the different positions, and sizes, but also the patterns:</p>
+<p><a href="https://spin.atomicobject.com/wp-content/uploads/More_Geometry_Nodes-Medium.jpeg"><img loading="lazy" decoding="async" class="size-medium wp-image-3668468 aligncenter" src="https://spin.atomicobject.com/wp-content/uploads/More_Geometry_Nodes-Medium-590x371.jpeg" alt="" width="590" height="371" srcset="https://spin.atomicobject.com/wp-content/uploads/More_Geometry_Nodes-Medium-590x371.jpeg 590w, https://spin.atomicobject.com/wp-content/uploads/More_Geometry_Nodes-Medium-150x94.jpeg 150w, https://spin.atomicobject.com/wp-content/uploads/More_Geometry_Nodes-Medium-600x377.jpeg 600w, https://spin.atomicobject.com/wp-content/uploads/More_Geometry_Nodes-Medium.jpeg 640w" sizes="auto, (max-width: 590px) 100vw, 590px" /></a></p>
+<p>Now from above:</p>
+<p><a href="https://spin.atomicobject.com/wp-content/uploads/And_More_Geometry_Nodes-Medium.jpeg"><img loading="lazy" decoding="async" class="size-medium wp-image-3668469 aligncenter" src="https://spin.atomicobject.com/wp-content/uploads/And_More_Geometry_Nodes-Medium-590x377.jpeg" alt="" width="590" height="377" srcset="https://spin.atomicobject.com/wp-content/uploads/And_More_Geometry_Nodes-Medium-590x377.jpeg 590w, https://spin.atomicobject.com/wp-content/uploads/And_More_Geometry_Nodes-Medium-150x96.jpeg 150w, https://spin.atomicobject.com/wp-content/uploads/And_More_Geometry_Nodes-Medium-600x383.jpeg 600w, https://spin.atomicobject.com/wp-content/uploads/And_More_Geometry_Nodes-Medium.jpeg 640w" sizes="auto, (max-width: 590px) 100vw, 590px" /></a></p>
+<p>What excites me about this is that I see potential for reducing the amount of time it takes me to set up a surface or structure with lots of repeating features. I imagine using this to create a scene in a video game, a procedural landscape, or a set piece in a movie. Again, geometry nodes are reproducible and non-destructive. Combine those with scripting, and I can set up similar landscapes with some of the same code, reducing the amount of time it takes to create each scene.</p>
+<h2>Future Considerations and Unanswered Questions</h2>
+<p>Overall, the AI agent wasn’t so hot at creating the realistic touches I was looking for, but I also don’t know that scripting can accomplish something so inherently visual. Cursor paired with scripting can, however, help me iterate on scene setup. Here I can see scripting help me set up scenes with large landscapes much more quickly, while I use the UI to add the more complex features.</p>
+<p>I think there’s a lot of promise in the combination of tools for geometry nodes. Scripting naturally aligns with geometry nodes because both create systems and rules rather than direct manual manipulation. They’re more procedural. Add in AI that’s well-trained on how to script with the Blender API, and you have a tool mash-up that actually delivers.</p>
+<p>I still have lots of unanswered and unexplored questions like:</p>
+<p>Could it stand up to a high level of animation that requires joint movement?<br />
+How might I advance my prompting to get better results? Would there be better results?<br />
+Where does the Blender API really struggle?<br />
+How could I make some of the scripting more reusable?</p>
+
+					
+
+<footer class="single-post-footer">
+
+	<div class="single-post-footer-tags"><a href="https://spin.atomicobject.com/tag/artificial-intelligence/" rel="tag">artificial intelligence</a><a href="https://spin.atomicobject.com/tag/blender/" rel="tag">blender</a></div> 
+
+
+	
+	<div class="post-author">
+		<div class="author-box">
+			<div class="author-box-left">
+			<div class="author-avatar">
+				<a href="https://spin.atomicobject.com/author/meghan-harris/">
+					<img src="https://spin.atomicobject.com/wp-content/authors/meghan.harris-294.jpg" class="avatar photo" alt="Meghan Harris" width="60" height="60" />				</a>
+			</div>
+			</div>
+
+			<div class="author-box-right">
+				<div class="author-content">
+					<a href="https://spin.atomicobject.com/author/meghan-harris/">
+						Meghan Harris					</a>
+					<span>Software Consultant &amp; Developer at Atomic Object.   Determined maker, dedicated hiker, devoted human and kitty mom.</span>
+				</div>
+				<div class="auther-url" >
+					<a href="https://spin.atomicobject.com/author/meghan-harris/">
+						<span>All Posts  →</span>
+					</a>
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+		
+</footer>
+
+				</div>
+
+				<div class="single-category-list">
+					<h3>Related Posts</h3>
+					<ul>
+															<li>
+										<span class="category-meta"><a href="https://spin.atomicobject.com/artificial-intelligence/ai-developers/" rel="category tag">AI for Developers</a></span>
+										<h2><a href="https://spin.atomicobject.com/sql-server-outside-sandboxes/">How to Run SQL Server Outside Docker Sandboxes</a></h2>
+									</li>
+																		<li>
+										<span class="category-meta"><a href="https://spin.atomicobject.com/artificial-intelligence/ai-developers/" rel="category tag">AI for Developers</a></span>
+										<h2><a href="https://spin.atomicobject.com/ai-decision-fatigue-game-design/">Reduce AI Decision Fatigue: Lessons from Game Design</a></h2>
+									</li>
+																		<li>
+										<span class="category-meta"><a href="https://spin.atomicobject.com/artificial-intelligence/ai-developers/" rel="category tag">AI for Developers</a></span>
+										<h2><a href="https://spin.atomicobject.com/coding-agents-remote-server/">My Coding Agents Moved Off My Laptop and Onto a Remote Server</a></h2>
+									</li>
+									
+					</ul>
+
+				</div>
+				</div>
+
+
+				<div class="subscribe-section">
+    <div class="subscribe-row">
+                <div class="subscribe-col-one">
+                        <h2 class="h2">Keep up with our latest posts.</h2>
+                    </div>
+        <div class="subscribe-col-two">
+                        <p>We’ll send our latest tips, learnings, and case studies from the Atomic braintrust on a monthly basis.</p>
+                    </div>
+                <div class="subscribe-col-three subscribe-form">
+                        [mailpoet_form id="1"]                    </div>
+    </div>
+
+</div>
+				<div class="comment-section">
+					<div class="comment-section-inner">
+						
+<div class="section-hr">
+	<span class="section-hr-title">Conversation</span>
+	<hr>
+</div>
+
+
+	<div id="comments" class="comments-area">
+
+		
+			
+										
+
+													<div id="respond" class="comment-respond">
+		<h3 id="reply-title" class="comment-reply-title">Join the conversation <small><a rel="nofollow" id="cancel-comment-reply-link" href="/blender-scripting-with-ai/#respond" style="display:none;">Cancel reply</a></small></h3><form action="https://spin.atomicobject.com/wp-comments-post.php?wpe-comment-post=atomicspin" method="post" id="commentform" class="comment-form"><p class="comment-notes"><span id="email-notes">Your email address will not be published.</span> <span class="required-field-message">Required fields are marked <span class="required">*</span></span></p><p class="comment-form-comment"><label for="comment">Comment <span class="required">*</span></label> <textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" required></textarea></p><p class="comment-form-author"><label for="author">Name <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" autocomplete="name" required /></p>
+<p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" autocomplete="email" required /></p>
+<p class="comment-form-cookies-consent"><input id="wp-comment-cookies-consent" name="wp-comment-cookies-consent" type="checkbox" value="yes" /> <label for="wp-comment-cookies-consent">Save my name, email, and website in this browser for the next time I comment.</label></p>
+<p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Submit Comment" /> <input type='hidden' name='comment_post_ID' value='3668445' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+</p><p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="32d1d16d0c" /></p><p style="display: none !important;" class="akismet-fields-container" data-prefix="ak_"><label>&#916;<textarea name="ak_hp_textarea" cols="45" rows="8" maxlength="100"></textarea></label><input type="hidden" id="ak_js_1" name="ak_js" value="118"/><script>
+document.getElementById( "ak_js_1" ).setAttribute( "value", ( new Date() ).getTime() );
+</script>
+</p></form>	</div><!-- #respond -->
+	
+	</div>
+	<!-- #comments -->
+					</div>
+
+
+
+				
+			</div>
+			<!-- .entry-content -->
+
+
+
+			<aside class="suggested-posts">
+				<div class="suggested-posts-inner">
+
+									<div class="suggested-posts-left">
+						<div class="bottom-topic-list">
+							<h3>
+							Artificial Intelligence							Category </h3>
+
+						<ul>
+																	<li>
+											<a href="https://spin.atomicobject.com/artificial-intelligence/ai-designers/">AI for Designers</a>
+										</li>
+																				<li>
+											<a href="https://spin.atomicobject.com/artificial-intelligence/ai-developers/">AI for Developers</a>
+										</li>
+																</ul>
+					</div>
+
+				</div>
+
+				<div class="suggested-posts-right">
+					<div class="section-hr">
+						<span class="section-hr-title">Related Posts</span>
+						<hr>
+					</div>
+
+					<div class="suggested-posts-container">
+
+						
+	<article class='suggested-posts-article'>
+				<a href='https://spin.atomicobject.com/sql-server-outside-sandboxes/'>
+			<div class='suggested-posts-article-image' style="background-image: url('https://spin.atomicobject.com/wp-content/uploads/contentful-cycles-JillDeVriesPhotography-AtomicNov18-218-2048x1365-1.jpg')"></div>
+		</a>
+
+		<div class='suggested-posts-article-body'>
+
+			<span class="category-meta category-slug-artificial-intelligence">
+				<a href="https://spin.atomicobject.com/artificial-intelligence/ai-developers/" rel="category tag">AI for Developers</a>			</span>
+
+			<p class='suggested-posts-article-title'>
+				<a href="https://spin.atomicobject.com/sql-server-outside-sandboxes/">
+					How to Run SQL Server Outside Docker Sandboxes				</a>
+			</p>
+
+		</div>
+	</article>
+
+		
+	<article class='suggested-posts-article'>
+				<a href='https://spin.atomicobject.com/ai-decision-fatigue-game-design/'>
+			<div class='suggested-posts-article-image' style="background-image: url('https://spin.atomicobject.com/wp-content/uploads/JDP-AO2023-134-2048x1365-1.jpg')"></div>
+		</a>
+
+		<div class='suggested-posts-article-body'>
+
+			<span class="category-meta category-slug-artificial-intelligence">
+				<a href="https://spin.atomicobject.com/artificial-intelligence/ai-developers/" rel="category tag">AI for Developers</a>			</span>
+
+			<p class='suggested-posts-article-title'>
+				<a href="https://spin.atomicobject.com/ai-decision-fatigue-game-design/">
+					Reduce AI Decision Fatigue: Lessons from Game Design				</a>
+			</p>
+
+		</div>
+	</article>
+
+		
+	<article class='suggested-posts-article'>
+				<a href='https://spin.atomicobject.com/coding-agents-remote-server/'>
+			<div class='suggested-posts-article-image' style="background-image: url('https://spin.atomicobject.com/wp-content/uploads/JDP-AO2023-404-2048x1365-1.jpg')"></div>
+		</a>
+
+		<div class='suggested-posts-article-body'>
+
+			<span class="category-meta category-slug-artificial-intelligence">
+				<a href="https://spin.atomicobject.com/artificial-intelligence/ai-developers/" rel="category tag">AI for Developers</a>			</span>
+
+			<p class='suggested-posts-article-title'>
+				<a href="https://spin.atomicobject.com/coding-agents-remote-server/">
+					My Coding Agents Moved Off My Laptop and Onto a Remote Server				</a>
+			</p>
+
+		</div>
+	</article>
+
+							</div>
+				</div>
+
+				</div>
+
+			</aside>
+
+		</article>
+		<!-- #post-## -->
+
+	</main>
+
+</div>
+	<div data-wpr-lazyrender="1" class="ao-post-cta">
+      <div class="ao-post-cta-col1">
+                    <h3>Tell Us About Your Project</h3>
+            </div>
+    <div class="ao-post-cta-col2">
+        <p>We’d love to talk with you about your next great software project. Fill out this form and we’ll get back to you within two business days.</p>
+    </div>
+    <div class="ao-post-cta-action">
+<!--        <button data-micromodal-trigger="modal-primary">< ?php // echo get_field('contact_form_cta_button_text', 'option'); ?></button>-->
+        <a class="cta--button" href="https://atomicobject.com/contact">Share Your Project</a>
+    </div>
+</div>
+
+
+
+	</div>
+
+	
+		</div>
+		<!-- closing #page -->
+		
+		<footer data-wpr-lazyrender="1" class="footer-margin" id="main-footer">
+			<div  id="footer-container">
+
+				<p class="atomic-slug">
+					<img src="https://spin.atomicobject.com/wp-content/themes/spin/images/ao-wordmark-white.svg" width="160" height="48" /> Atomic is a software design + development consultancy.
+					<br/>
+				</p>
+
+				<small class="copyright">&copy; 2026 Atomic Object LLC</small>
+
+				<div  class="footer-links" id="footer-explore">
+					<h5>Explore</h5>
+					<ul>
+						<li><a href="https://atomicobject.com/client-resources">Insights</a></li>
+						<li><a href="https://atomicobject.com/careers">Careers</a></li>
+						<li><a href="https://atomicobject.com/diversity">Diversity</a></li>
+						<li><a href="https://atomicobject.com/resources">Resources</a></li>
+						<li><a href="https://spin.atomicobject.com">Atomic Blog</a></li>
+						<li><a href="https://atomicobject.com/resources">Developer Resources</a></li>
+					</ul>
+				</div>
+
+				<div  class="footer-links" id="footer-offices">
+					<h5>Offices</h5>
+					<ul>
+						<li><a href="https://atomicobject.com/offices/custom-software-development-ann-arbor">Ann Arbor</a></li>
+						<li><a href="https://atomicobject.com/offices/custom-software-development-chicago">Chicago</a></li>
+						<li><a href="https://atomicobject.com/offices/custom-software-development-grand-rapids">Grand Rapids</a></li>
+						<li><a href="https://atomicobject.com/offices/custom-software-raleigh-durham">Raleigh-Durham</a></li>
+					</ul>
+				</div>
+
+				<div  class="footer-links" id="footer-details">
+					<h5>Details</h5>
+					<ul>
+						<li><a href="https://atomicobject.com/contact">Contact</a></li>
+						<li><a href="https://atomicobject.com/media">Media</a></li>
+						<li><a href="https://atomicobject.com/privacy-policy">Privacy Policy</a></li>
+					</ul>
+				</div>
+
+				<div  class="social footer-links">
+					<ul>
+						<li>
+							<a href="https://twitter.com/atomicobject" target="_blank">
+						<img src="https://spin.atomicobject.com/wp-content/themes/spin/images/circle-twitter.svg" width="20" height="20" />
+					</a>
+						</li>
+						<li>
+							<a href="https://www.facebook.com/atomicobject" target="_blank">
+						<img src="https://spin.atomicobject.com/wp-content/themes/spin/images/circle-facebook.svg" width="20" height="20" />
+					</a>
+						</li>
+						<li>
+							<a href="https://github.com/atomicobject" target="_blank">
+						<img src="https://spin.atomicobject.com/wp-content/themes/spin/images/circle-github.svg" width="20" height="20" />
+					</a>
+						</li>
+						<li>
+							<a href="https://www.linkedin.com/company/atomic-object" target="_blank">
+						<img src="https://spin.atomicobject.com/wp-content/themes/spin/images/circle-linkedin.svg" width="20" height="20" />
+					</a>
+						</li>
+						<li>
+							<a href="https://www.instagram.com/atomicobject/" target="_blank">
+						<img src="https://spin.atomicobject.com/wp-content/themes/spin/images/circle-instagram.svg" width="20" height="20" />
+					</a>
+						</li>
+					</ul>
+
+				</div>
+
+			</div>
+
+		</footer>
+
+		                <script type='text/javascript'><!--
+            var seriesdropdown = document.getElementById("orgseries_dropdown");
+            if (seriesdropdown) {
+             function onSeriesChange() {
+                    if ( seriesdropdown.options[seriesdropdown.selectedIndex].value != ( 0 || -1 ) ) {
+                        location.href = "https://spin.atomicobject.com/series/"+seriesdropdown.options[seriesdropdown.selectedIndex].value;
+                    }
+                }
+                seriesdropdown.onchange = onSeriesChange;
+            }
+            --></script>
+                <script type="speculationrules">
+{"prefetch":[{"source":"document","where":{"and":[{"href_matches":"/*"},{"not":{"href_matches":["/wp-*.php","/wp-admin/*","/wp-content/uploads/*","/wp-content/*","/wp-content/plugins/*","/wp-content/themes/spin/*","/*\\?(.+)"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prefetch, .no-prefetch a"}}]},"eagerness":"conservative"}]}
+</script>
+<script id="jquery-ui-core-js-before">window.addEventListener('DOMContentLoaded', function() {
+jQuery.uiBackCompat = true;
+//# sourceURL=jquery-ui-core-js-before
+});</script>
+<script id="jquery-ui-core-js" src="https://spin.atomicobject.com/wp-includes/js/jquery/ui/core.min.js?ver=1.14.2" data-rocket-defer defer></script>
+<script id="jquery-ui-tooltip-js" src="https://spin.atomicobject.com/wp-includes/js/jquery/ui/tooltip.min.js?ver=1.14.2" data-rocket-defer defer></script>
+<script data-minify="1" id="wpascript-js" src="https://spin.atomicobject.com/wp-content/cache/min/1/wp-content/plugins/honeypot/includes/js/wpa.js?ver=1790609878" data-rocket-defer defer></script>
+<script id="wpascript-js-after">
+wpa_field_info = JSON.parse(atob("eyJ3cGFfZmllbGRfbmFtZSI6ImZ6a3hvazE0MTUiLCJ3cGFfZmllbGRfdmFsdWUiOjk3MDU4OSwid3BhX2FkZF90ZXN0Ijoibm8ifQ=="));
+//# sourceURL=wpascript-js-after
+</script>
+<script id="rocket-browser-checker-js-after">
+"use strict";var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||!1,descriptor.configurable=!0,"value"in descriptor&&(descriptor.writable=!0),Object.defineProperty(target,descriptor.key,descriptor)}}return function(Constructor,protoProps,staticProps){return protoProps&&defineProperties(Constructor.prototype,protoProps),staticProps&&defineProperties(Constructor,staticProps),Constructor}}();function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor))throw new TypeError("Cannot call a class as a function")}var RocketBrowserCompatibilityChecker=function(){function RocketBrowserCompatibilityChecker(options){_classCallCheck(this,RocketBrowserCompatibilityChecker),this.passiveSupported=!1,this._checkPassiveOption(this),this.options=!!this.passiveSupported&&options}return _createClass(RocketBrowserCompatibilityChecker,[{key:"_checkPassiveOption",value:function(self){try{var options={get passive(){return!(self.passiveSupported=!0)}};window.addEventListener("test",null,options),window.removeEventListener("test",null,options)}catch(err){self.passiveSupported=!1}}},{key:"initRequestIdleCallback",value:function(){!1 in window&&(window.requestIdleCallback=function(cb){var start=Date.now();return setTimeout(function(){cb({didTimeout:!1,timeRemaining:function(){return Math.max(0,50-(Date.now()-start))}})},1)}),!1 in window&&(window.cancelIdleCallback=function(id){return clearTimeout(id)})}},{key:"isDataSaverModeOn",value:function(){return"connection"in navigator&&!0===navigator.connection.saveData}},{key:"supportsLinkPrefetch",value:function(){var elem=document.createElement("link");return elem.relList&&elem.relList.supports&&elem.relList.supports("prefetch")&&window.IntersectionObserver&&"isIntersecting"in IntersectionObserverEntry.prototype}},{key:"isSlowConnection",value:function(){return"connection"in navigator&&"effectiveType"in navigator.connection&&("2g"===navigator.connection.effectiveType||"slow-2g"===navigator.connection.effectiveType)}}]),RocketBrowserCompatibilityChecker}();
+//# sourceURL=rocket-browser-checker-js-after
+</script>
+<script id="rocket-preload-links-js-extra">
+var RocketPreloadLinksConfig = {"excludeUris":"/(?:.+/)?feed(?:/(?:.+/?)?)?$|/(?:.+/)?embed/|/(index.php/)?(.*)wp-json(/.*|$)|/refer/|/go/|/recommend/|/recommends/","usesTrailingSlash":"1","imageExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|pdf|doc|docx|xls|xlsx|php","fileExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|pdf|doc|docx|xls|xlsx|php|html|htm","siteUrl":"https://spin.atomicobject.com","onHoverDelay":"100","rateThrottle":"3"};
+//# sourceURL=rocket-preload-links-js-extra
+</script>
+<script id="rocket-preload-links-js-after">
+(function() {
+"use strict";var r="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},e=function(){function i(e,t){for(var n=0;n<t.length;n++){var i=t[n];i.enumerable=i.enumerable||!1,i.configurable=!0,"value"in i&&(i.writable=!0),Object.defineProperty(e,i.key,i)}}return function(e,t,n){return t&&i(e.prototype,t),n&&i(e,n),e}}();function i(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}var t=function(){function n(e,t){i(this,n),this.browser=e,this.config=t,this.options=this.browser.options,this.prefetched=new Set,this.eventTime=null,this.threshold=1111,this.numOnHover=0}return e(n,[{key:"init",value:function(){!this.browser.supportsLinkPrefetch()||this.browser.isDataSaverModeOn()||this.browser.isSlowConnection()||(this.regex={excludeUris:RegExp(this.config.excludeUris,"i"),images:RegExp(".("+this.config.imageExt+")$","i"),fileExt:RegExp(".("+this.config.fileExt+")$","i")},this._initListeners(this))}},{key:"_initListeners",value:function(e){-1<this.config.onHoverDelay&&document.addEventListener("mouseover",e.listener.bind(e),e.listenerOptions),document.addEventListener("mousedown",e.listener.bind(e),e.listenerOptions),document.addEventListener("touchstart",e.listener.bind(e),e.listenerOptions)}},{key:"listener",value:function(e){var t=e.target.closest("a"),n=this._prepareUrl(t);if(null!==n)switch(e.type){case"mousedown":case"touchstart":this._addPrefetchLink(n);break;case"mouseover":this._earlyPrefetch(t,n,"mouseout")}}},{key:"_earlyPrefetch",value:function(t,e,n){var i=this,r=setTimeout(function(){if(r=null,0===i.numOnHover)setTimeout(function(){return i.numOnHover=0},1e3);else if(i.numOnHover>i.config.rateThrottle)return;i.numOnHover++,i._addPrefetchLink(e)},this.config.onHoverDelay);t.addEventListener(n,function e(){t.removeEventListener(n,e,{passive:!0}),null!==r&&(clearTimeout(r),r=null)},{passive:!0})}},{key:"_addPrefetchLink",value:function(i){return this.prefetched.add(i.href),new Promise(function(e,t){var n=document.createElement("link");n.rel="prefetch",n.href=i.href,n.onload=e,n.onerror=t,document.head.appendChild(n)}).catch(function(){})}},{key:"_prepareUrl",value:function(e){if(null===e||"object"!==(void 0===e?"undefined":r(e))||!1 in e||-1===["http:","https:"].indexOf(e.protocol))return null;var t=e.href.substring(0,this.config.siteUrl.length),n=this._getPathname(e.href,t),i={original:e.href,protocol:e.protocol,origin:t,pathname:n,href:t+n};return this._isLinkOk(i)?i:null}},{key:"_getPathname",value:function(e,t){var n=t?e.substring(this.config.siteUrl.length):e;return n.startsWith("/")||(n="/"+n),this._shouldAddTrailingSlash(n)?n+"/":n}},{key:"_shouldAddTrailingSlash",value:function(e){return this.config.usesTrailingSlash&&!e.endsWith("/")&&!this.regex.fileExt.test(e)}},{key:"_isLinkOk",value:function(e){return null!==e&&"object"===(void 0===e?"undefined":r(e))&&(!this.prefetched.has(e.href)&&e.origin===this.config.siteUrl&&-1===e.href.indexOf("?")&&-1===e.href.indexOf("#")&&!this.regex.excludeUris.test(e.href)&&!this.regex.images.test(e.href))}}],[{key:"run",value:function(){"undefined"!=typeof RocketPreloadLinksConfig&&new n(new RocketBrowserCompatibilityChecker({capture:!0,passive:!0}),RocketPreloadLinksConfig).init()}}]),n}();t.run();
+}());
+
+//# sourceURL=rocket-preload-links-js-after
+</script>
+<script async data-wp-strategy="async" fetchpriority="low" id="comment-reply-js" src="https://spin.atomicobject.com/wp-includes/js/comment-reply.min.js?ver=7.1.3"></script>
+<script id="mediaelement-core-js-before">
+var mejsL10n = {"language":"en","strings":{"mejs.download-file":"Download File","mejs.install-flash":"You are using a browser that does not have Flash player enabled or installed. Please turn on your Flash player plugin or download the latest version from https://get.adobe.com/flashplayer/","mejs.fullscreen":"Fullscreen","mejs.play":"Play","mejs.pause":"Pause","mejs.time-slider":"Time Slider","mejs.time-help-text":"Use Left/Right Arrow keys to advance one second, Up/Down arrows to advance ten seconds.","mejs.live-broadcast":"Live Broadcast","mejs.volume-help-text":"Use Up/Down Arrow keys to increase or decrease volume.","mejs.unmute":"Unmute","mejs.mute":"Mute","mejs.volume-slider":"Volume Slider","mejs.video-player":"Video Player","mejs.audio-player":"Audio Player","mejs.captions-subtitles":"Captions/Subtitles","mejs.captions-chapters":"Chapters","mejs.none":"None","mejs.afrikaans":"Afrikaans","mejs.albanian":"Albanian","mejs.arabic":"Arabic","mejs.belarusian":"Belarusian","mejs.bulgarian":"Bulgarian","mejs.catalan":"Catalan","mejs.chinese":"Chinese","mejs.chinese-simplified":"Chinese (Simplified)","mejs.chinese-traditional":"Chinese (Traditional)","mejs.croatian":"Croatian","mejs.czech":"Czech","mejs.danish":"Danish","mejs.dutch":"Dutch","mejs.english":"English","mejs.estonian":"Estonian","mejs.filipino":"Filipino","mejs.finnish":"Finnish","mejs.french":"French","mejs.galician":"Galician","mejs.german":"German","mejs.greek":"Greek","mejs.haitian-creole":"Haitian Creole","mejs.hebrew":"Hebrew","mejs.hindi":"Hindi","mejs.hungarian":"Hungarian","mejs.icelandic":"Icelandic","mejs.indonesian":"Indonesian","mejs.irish":"Irish","mejs.italian":"Italian","mejs.japanese":"Japanese","mejs.korean":"Korean","mejs.latvian":"Latvian","mejs.lithuanian":"Lithuanian","mejs.macedonian":"Macedonian","mejs.malay":"Malay","mejs.maltese":"Maltese","mejs.norwegian":"Norwegian","mejs.persian":"Persian","mejs.polish":"Polish","mejs.portuguese":"Portuguese","mejs.romanian":"Romanian","mejs.russian":"Russian","mejs.serbian":"Serbian","mejs.slovak":"Slovak","mejs.slovenian":"Slovenian","mejs.spanish":"Spanish","mejs.swahili":"Swahili","mejs.swedish":"Swedish","mejs.tagalog":"Tagalog","mejs.thai":"Thai","mejs.turkish":"Turkish","mejs.ukrainian":"Ukrainian","mejs.vietnamese":"Vietnamese","mejs.welsh":"Welsh","mejs.yiddish":"Yiddish"}};
+//# sourceURL=mediaelement-core-js-before
+</script>
+<script id="mediaelement-core-js" src="https://spin.atomicobject.com/wp-includes/js/mediaelement/mediaelement-and-player.min.js?ver=4.2.17" data-rocket-defer defer></script>
+<script id="mediaelement-migrate-js" src="https://spin.atomicobject.com/wp-includes/js/mediaelement/mediaelement-migrate.min.js?ver=7.1.3" data-rocket-defer defer></script>
+<script id="mediaelement-js-extra">
+var _wpmejsSettings = {"pluginPath":"/wp-includes/js/mediaelement/","classPrefix":"mejs-","stretching":"responsive","audioShortcodeLibrary":"mediaelement","videoShortcodeLibrary":"mediaelement"};
+//# sourceURL=mediaelement-js-extra
+</script>
+<script id="wp-mediaelement-js" src="https://spin.atomicobject.com/wp-includes/js/mediaelement/wp-mediaelement.min.js?ver=7.1.3" data-rocket-defer defer></script>
+<script id="mediaelement-vimeo-js" src="https://spin.atomicobject.com/wp-includes/js/mediaelement/renderers/vimeo.min.js?ver=4.2.17" data-rocket-defer defer></script>
+<script data-minify="1" defer id="akismet-frontend-js" src="https://spin.atomicobject.com/wp-content/cache/min/1/wp-content/plugins/akismet/_inc/akismet-frontend.js?ver=1790609884"></script>
+<script>window.lazyLoadOptions = {
+                elements_selector: "iframe[data-lazy-src]",
+                data_src: "lazy-src",
+                data_srcset: "lazy-srcset",
+                data_sizes: "lazy-sizes",
+                class_loading: "lazyloading",
+                class_loaded: "lazyloaded",
+                threshold: 300,
+                callback_loaded: function(element) {
+                    if ( element.tagName === "IFRAME" && element.dataset.rocketLazyload == "fitvidscompatible" ) {
+                        if (element.classList.contains("lazyloaded") ) {
+                            if (typeof window.jQuery != "undefined") {
+                                if (jQuery.fn.fitVids) {
+                                    jQuery(element).parent().fitVids();
+                                }
+                            }
+                        }
+                    }
+                }};
+        window.addEventListener('LazyLoad::Initialized', function (e) {
+            var lazyLoadInstance = e.detail.instance;
+
+            if (window.MutationObserver) {
+                var observer = new MutationObserver(function(mutations) {
+                    var image_count = 0;
+                    var iframe_count = 0;
+                    var rocketlazy_count = 0;
+
+                    mutations.forEach(function(mutation) {
+                        for (var i = 0; i < mutation.addedNodes.length; i++) {
+                            if (typeof mutation.addedNodes[i].getElementsByTagName !== 'function') {
+                                continue;
+                            }
+
+                            if (typeof mutation.addedNodes[i].getElementsByClassName !== 'function') {
+                                continue;
+                            }
+
+                            images = mutation.addedNodes[i].getElementsByTagName('img');
+                            is_image = mutation.addedNodes[i].tagName == "IMG";
+                            iframes = mutation.addedNodes[i].getElementsByTagName('iframe');
+                            is_iframe = mutation.addedNodes[i].tagName == "IFRAME";
+                            rocket_lazy = mutation.addedNodes[i].getElementsByClassName('rocket-lazyload');
+
+                            image_count += images.length;
+			                iframe_count += iframes.length;
+			                rocketlazy_count += rocket_lazy.length;
+
+                            if(is_image){
+                                image_count += 1;
+                            }
+
+                            if(is_iframe){
+                                iframe_count += 1;
+                            }
+                        }
+                    } );
+
+                    if(image_count > 0 || iframe_count > 0 || rocketlazy_count > 0){
+                        lazyLoadInstance.update();
+                    }
+                } );
+
+                var b      = document.getElementsByTagName("body")[0];
+                var config = { childList: true, subtree: true };
+
+                observer.observe(b, config);
+            }
+        }, false);</script><script data-no-minify="1" async src="https://spin.atomicobject.com/wp-content/plugins/rocket-lazy-load/assets/js/19.1.2/lazyload.min.js"></script><script>function lazyLoadImg(id,l){var s='https://i.ytimg.com/vi/ID/hqdefault.jpg'.replace("ID",id),img=document.createElement("img");if(false&&!l&&true){img.setAttribute("loading","lazy");img.setAttribute("src",s);}else if(false&&!l&&!true){img.setAttribute("data-lazy-src",s);}else{img.setAttribute("src",s);}img.setAttribute("width","480");img.setAttribute("height","360");return img;}function lazyLoadThumb(id,alt,l){if(!/^[A-Za-z0-9_-]{11}$/.test(id)){return null;}var frag=document.createDocumentFragment(),img=lazyLoadImg(id,l);img.setAttribute("alt",alt);frag.appendChild(img);var btn=document.createElement("button");btn.setAttribute("class","play");btn.setAttribute("aria-label","play Youtube video");frag.appendChild(btn);return frag;}function lazyLoadYoutubeIframe(){var src=this.parentNode.dataset.src,url;try{url=new URL(src,"https://www.youtube.com");}catch(err){return;}if("https:"!==url.protocol&&"http:"!==url.protocol){return;}if(["youtube.com","www.youtube.com","youtube-nocookie.com","www.youtube-nocookie.com"].indexOf(url.hostname)===-1){return;}if(url.username||url.password||url.port){return;}if(!/^\/embed\/[A-Za-z0-9_-]{11}\/?$/.test(url.pathname)){return;}url=new URL("https://"+url.hostname+url.pathname.replace(/\/$/,""));var query=this.parentNode.dataset.query||"";new URLSearchParams(query).forEach(function(v,k){url.searchParams.set(k,v);});url.searchParams.set("autoplay","1");var e=document.createElement("iframe");e.setAttribute("src",url.href);e.setAttribute("frameborder","0");e.setAttribute("allowfullscreen","1");e.setAttribute("allow","accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture");this.parentNode.parentNode.replaceChild(e,this.parentNode);}document.addEventListener("DOMContentLoaded",function(){var exclusions=[];var e,t,frag,u,l,a=document.getElementsByClassName("rll-youtube-player");for(t=0;t<a.length;t++){u='https://i.ytimg.com/vi/ID/hqdefault.jpg'.replace("ID",a[t].dataset.id);l=exclusions.some(function(exclusion){return u.indexOf(exclusion)!==-1;});e=document.createElement("div");e.setAttribute("data-id",a[t].dataset.id);e.setAttribute("data-query",a[t].dataset.query);e.setAttribute("data-src",a[t].dataset.src);frag=lazyLoadThumb(a[t].dataset.id,a[t].dataset.alt,l);if(!frag){continue;}e.appendChild(frag);a[t].appendChild(e);e.querySelector(".play").onclick=lazyLoadYoutubeIframe;}});</script>			<!--
+			Polyfill to make sure that old code samples get properly highlighted with Prism instead
+			of the old WP syntax highlighting plugin
+			-->
+			<script>window.addEventListener('DOMContentLoaded', function() {
+				var codeBlocks = jQuery('pre[lang]');
+				if (codeBlocks.length) {
+					for (var i = 0; i < codeBlocks.length; i++) {
+						jQuery(codeBlocks[i]).wrapInner('<code></code>');
+						jQuery(codeBlocks[i]).addClass('line-numbers');
+						jQuery(codeBlocks[i]).children('code').addClass('language-' + jQuery(codeBlocks[i]).prop('lang'));
+					}
+					Prism.highlight();
+				}
+				// var singleLiners = jQuery('code:not([class])');
+				// if (singleLiners.length) {
+				// 	for (var i = 0; i < singleLiners.length; i++) {
+				// 		jQuery(singleLiners[i]).parent().addClass('lang-none');
+				// 		jQuery(singleLiners[i]).parent().addClass('line-numbers');
+				// 		// jQuery(singleLiners[i]).children('code').addClass('language-' + jQuery(singleLiners[i]).prop('lang'));
+				// 	}
+				// 	Prism.highlight();
+				// }
+			});</script>
+			</body>
+
+			</html>
+<script>window.addEventListener('DOMContentLoaded', function() {
+( function( $ ) {
+
+	var headings = $(".inner-content").find("h2");
+	headings.attr('id', function(i, id){
+		return id || 'summary-' + i
+	})
+	/*$('.inner-content').find('h2').each(function () {
+	  var id_text = $(this).text().toLowerCase().replace(/([~!@#$%^&*()_+=`{}\[\]\|\\:;'<>,.\/? ])+/g, '-').replace(/^(-)+|(-)+$/g,'').replace(['’','“','”'], '') ;
+	  $(this).attr('id', id_text); 
+	});*/	
+
+	$(document).ready(function() {
+			$('.as-summary-list ul li a').bind('click', function(e) {
+					e.preventDefault(); 
+
+					var target = $(this).attr("href"); 
+                	$('html, body').stop().animate({
+							scrollTop: $(target).offset().top  - 82
+					}, 600);
+					//$(this).addClass('active').siblings().removeClass('active');
+					return false;
+					
+			});
+	});
+
+	$(window).scroll(function() {
+			var scrollDistance = $(window).scrollTop();
+		    var i = 0;
+			$('.inner-content').find('h2').each(function(i) {
+				//alert(i);
+					if ($(this).position().top - 100  <= scrollDistance) {
+							$('.as-summary-list ul li a.active').removeClass('active');
+							$('.as-summary-list ul li a').eq(i).addClass('active');
+					}
+					});
+	}).scroll();
+	
+} )( jQuery );
+});</script>
+<!-- This website is like a Rocket, isn't it? Performance optimized by WP Rocket. Learn more: https://wp-rocket.me -->

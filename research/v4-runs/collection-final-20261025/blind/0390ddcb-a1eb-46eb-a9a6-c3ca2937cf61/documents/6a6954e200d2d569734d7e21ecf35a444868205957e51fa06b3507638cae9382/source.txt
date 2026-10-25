@@ -1,0 +1,91 @@
+Skip to the article
+
+Article
+
+How to Change Ollama’s Model Storage Location
+
+By PCNMobile Team 4 Oct 2026 3 min read
+
+Set the OLLAMA_MODELS environment variable to the full path of the directory where you want Ollama to store models. The variable must be available to the Ollama server process—not just an unrelated terminal—and changing it does not, by itself, move models already downloaded.
+
+Where Ollama stores models by default
+
+Ollama uses OLLAMA_MODELS when it is set. Otherwise, it falls back to a models directory beneath the running process user’s .ollama directory. The documented standard paths are:
+
+Platform Documented default model directory macOS ~/.ollama/models Linux /usr/share/ollama/.ollama/models for the standard installation described in the FAQ Windows C:Users%username%.ollamamodels
+
+The effective fallback depends on the account running Ollama. On Linux, a system service can run as the ollama account, whose home directory may differ from the administrator’s. Ollama’s environment configuration describes the general fallback as the process user’s $HOME/.ollama/models.
+
+Choose a destination with enough space
+
+Choose a full path on a volume with sufficient free space. Ollama’s Windows installation guide says model storage can require “tens to hundreds of GB.” A larger existing drive can be used as the destination; an external drive is not inherently required.
+
+Change the model location on Windows
+
+Open the Windows account’s Environment Variables settings. Create a user variable named OLLAMA_MODELS, or edit it if it already exists.
+
+Set its value to the complete destination path, for example D:Ollamamodels. Create the destination folder if needed.
+
+Click Apply and OK to save the change.
+
+Quit Ollama from the tray, then launch it again from Start. If you start Ollama from a terminal, open a new terminal after saving the variable.
+
+Ollama inherits environment variables when it starts, so an already-running app will not pick up a change made afterward. The restart guidance is in the project’s Windows documentation.
+
+Change the location on Linux with systemd
+
+For the standard Linux installation, set the variable in the service environment. Setting it only in your interactive shell will not configure a separately running system service.
+
+Run sudo systemctl edit ollama to open a service drop-in editor.
+
+Add this configuration, replacing the example path with your destination:[Service]Environment="OLLAMA_MODELS=/mnt/storage/ollama/models"
+
+Save and close the editor, then reload systemd and restart Ollama:sudo systemctl daemon-reloadsudo systemctl restart ollama
+
+Ensure the destination exists and that the ollama service account can read and write to it. Without the required access, model downloads may fail.
+
+Ollama’s FAQ covers service environment configuration and access requirements; its Linux guide describes systemd customization. If you run ollama serve manually instead, set OLLAMA_MODELS in the environment used to start that server process.
+
+Independent reader supportYour contribution helps us test, update, and keep practical guides available for everyone.Support on Ko-Fi
+
+Change the location on macOS
+
+Set OLLAMA_MODELS in the environment visible to the Ollama application or server, then restart the application. The official FAQ points macOS users to its environment-variable guidance, which uses launchctl setenv followed by an application restart. Confirm that the variable is available to the process that serves Ollama; a value set only in a separate shell may not reach an app launched independently.
+
+What happens to models already downloaded?
+
+Setting a new directory chooses where Ollama will look for model storage under the new configuration; the official instructions cited here do not say that changing the variable automatically moves existing files. Do not delete the old model directory on the assumption that it has been migrated. Keep it until Ollama can see the models at the new location, and consult current platform-specific migration guidance if you need exact file-transfer steps.
+
+Check the setting if it does not take effect
+
+Confirm the server can see the variable. Restart Ollama after changing the environment. A service or app launched separately does not necessarily inherit variables set in your current shell.
+
+Check the path. Make sure the destination exists and the configured value is the intended full path.
+
+Check permissions on Linux. The ollama service account needs read and write access to the destination.
+
+Check available space. Model files can take substantial room; confirm the chosen volume has enough free capacity.
+
+For container deployments, set OLLAMA_MODELS in the environment of the container running the server, and ensure the chosen directory is mounted there and writable. The cited Ollama pages do not provide a complete container-specific volume migration procedure, so use the instructions for your deployment before changing mounts or moving existing data.
+
+PCnMobile newsletterMore Windows guides like this, every weekOne short e-mail a week. Free, no spam — unsubscribe in one click.Your address stays with us — privacy.
+
+AI ModelsLinuxmacOSOllamaStorageWindows
+
+Sponsor this article
+
+Show your tool to the people reading this: a link inside the article, a place in one of PCNMobile's lists, or an article of your own.
+
+See the prices
+
+Leave a comment Cancel reply
+
+More articles
+
+Unlocking the Mystery of Multiple HDMI Ports on Your TV: A Comprehensive Guide9 Oct 2026 · 6 min
+
+How to Secure Your Accounts After Sharing Personal Information With a Scammer9 Oct 2026 · 5 min
+
+Creating a PKGBUILD to Make Packages for Arch Linux12 Mar 2026 · 38 min
+
+Latest Posts

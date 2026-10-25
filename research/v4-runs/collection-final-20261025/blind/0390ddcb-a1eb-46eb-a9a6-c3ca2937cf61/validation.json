@@ -1,0 +1,213 @@
+{
+  "investigationId": "0390ddcb-a1eb-46eb-a9a6-c3ca2937cf61",
+  "snapshotId": "32806f4a-e7a0-44b7-b591-ed543cd4cf29",
+  "status": "SUCCEEDED",
+  "url": "http://127.0.0.1:3104/investigations/0390ddcb-a1eb-46eb-a9a6-c3ca2937cf61",
+  "citations": 3,
+  "exactQuoteChecks": "PASSED",
+  "excerptHashChecks": "PASSED",
+  "semanticChecks": [
+    {
+      "marker": "v4:0",
+      "supported": true,
+      "reason": "官方FAQ(提交0b6c6c9)原文列出macOS `~/.ollama/models`、Linux `/usr/share/ollama/.ollama/models`、Windows `C:\\Users\\<username>\\.ollama\\models`；OpenClaw DC原文亦列三平台默认目录，Windows写作`C:\\Users\\%username%\\.ollama\\models`，与主张一致。"
+    },
+    {
+      "marker": "v4:1",
+      "supported": true,
+      "reason": "官方FAQ原文称不同目录需设置环境变量`OLLAMA_MODELS`；PCNMobile原文支持“设为完整路径”“须对Ollama服务器进程可见而非无关终端”“仅改变变量不移动已下载模型”及Windows创建/编辑用户变量`OLLAMA_MODELS`，各断言均有对应原文。"
+    },
+    {
+      "marker": "v4:2",
+      "supported": true,
+      "reason": "OpenClaw DC原文表格含“Variable exported in a shell profile → Use a systemd drop-in via systemctl edit ollama.service（Linux无效果）”与“launchctl setenv is not persistent → Add the LaunchAgent（macOS）”，主张将其标明为博客经验性说明、未获官方步骤佐证，符合材料。"
+    }
+  ],
+  "documentReferenceChecks": 48,
+  "documentIntegrityChecks": "PASSED",
+  "review": {
+    "status": "NOT_CONFIGURED",
+    "reason": "本轮未完成第二模型独立原文复核；不同搜索入口不等于独立模型。",
+    "independentAssessment": null,
+    "findings": []
+  },
+  "retrieval": [
+    {
+      "provider": "tencent-yuanbao-search-api",
+      "status": "SUCCEEDED",
+      "returnedSources": 8,
+      "adopted": 2
+    },
+    {
+      "provider": "tavily-search-api:keyless-capped",
+      "status": "FAILED",
+      "returnedSources": 0,
+      "adopted": 0
+    },
+    {
+      "provider": "tencent-yuanbao-search-api",
+      "status": "SUCCEEDED",
+      "returnedSources": 8,
+      "adopted": 1
+    },
+    {
+      "provider": "tencent-yuanbao-search-api",
+      "status": "SUCCEEDED",
+      "returnedSources": 8,
+      "adopted": 2
+    }
+  ],
+  "modelCalls": [
+    {
+      "provider": "api.deepseek.com",
+      "model": "deepseek-flash",
+      "promptVersion": "a2-evidence-v4",
+      "temperature": null,
+      "thinkingMode": "DISABLED",
+      "generatedAt": "2026-10-25T04:42:37.495Z",
+      "id": "69fc00d2-13f3-4b66-bf1d-8fd01c7003e7",
+      "purpose": "v4-research-plan",
+      "startedAt": "2026-10-25T04:42:36.151Z",
+      "durationMs": 1344,
+      "outcome": "SUCCEEDED",
+      "inputTokens": 683,
+      "outputTokens": 180
+    },
+    {
+      "provider": "api.deepseek.com",
+      "model": "deepseek-flash",
+      "promptVersion": "a2-evidence-v4",
+      "temperature": null,
+      "thinkingMode": "DISABLED",
+      "generatedAt": "2026-10-25T04:42:41.193Z",
+      "id": "ec156f67-8754-404b-8eef-2e450005055a",
+      "purpose": "v4-next-research-action",
+      "startedAt": "2026-10-25T04:42:39.358Z",
+      "durationMs": 1835,
+      "outcome": "SUCCEEDED",
+      "inputTokens": 6327,
+      "outputTokens": 360
+    },
+    {
+      "provider": "api.deepseek.com",
+      "model": "deepseek-flash",
+      "promptVersion": "a2-evidence-v4",
+      "temperature": null,
+      "thinkingMode": "DISABLED",
+      "generatedAt": "2026-10-25T04:42:46.519Z",
+      "id": "c11d01de-ddd5-4c53-bdfe-64fd93a1aaa6",
+      "purpose": "v4-next-research-action",
+      "startedAt": "2026-10-25T04:42:44.443Z",
+      "durationMs": 2076,
+      "outcome": "SUCCEEDED",
+      "inputTokens": 7687,
+      "outputTokens": 348
+    },
+    {
+      "provider": "api.deepseek.com",
+      "model": "deepseek-flash",
+      "promptVersion": "a2-evidence-v4",
+      "temperature": null,
+      "thinkingMode": "DISABLED",
+      "generatedAt": "2026-10-25T04:42:51.573Z",
+      "id": "1f70ab13-827c-4dec-9b01-ec70080fdee6",
+      "purpose": "v4-next-research-action",
+      "startedAt": "2026-10-25T04:42:49.293Z",
+      "durationMs": 2280,
+      "outcome": "SUCCEEDED",
+      "inputTokens": 10463,
+      "outputTokens": 477
+    },
+    {
+      "provider": "api.deepseek.com",
+      "model": "deepseek-flash",
+      "promptVersion": "a2-evidence-v4",
+      "temperature": null,
+      "thinkingMode": "DISABLED",
+      "generatedAt": "2026-10-25T04:42:58.797Z",
+      "id": "5b87977f-025b-4ffc-a0cb-46e515a7683a",
+      "purpose": "v4-claim-extraction",
+      "startedAt": "2026-10-25T04:42:53.882Z",
+      "durationMs": 4915,
+      "outcome": "SUCCEEDED",
+      "inputTokens": 10368,
+      "outputTokens": 1229
+    },
+    {
+      "provider": "api.deepseek.com",
+      "model": "deepseek-flash",
+      "promptVersion": "a2-evidence-v4",
+      "temperature": null,
+      "thinkingMode": "DISABLED",
+      "generatedAt": "2026-10-25T04:43:03.505Z",
+      "id": "ec26b3d1-b83e-42b3-94ea-05850f278f36",
+      "purpose": "v4-claim-verification-batch",
+      "startedAt": "2026-10-25T04:42:58.799Z",
+      "durationMs": 4709,
+      "outcome": "SUCCEEDED",
+      "inputTokens": 11358,
+      "outputTokens": 953
+    },
+    {
+      "provider": "api.deepseek.com",
+      "model": "deepseek-flash",
+      "promptVersion": "a2-evidence-v4",
+      "temperature": null,
+      "thinkingMode": "DISABLED",
+      "generatedAt": "2026-10-25T04:43:06.546Z",
+      "id": "46cd356f-d5e9-4545-99fa-48e42c54c346",
+      "purpose": "v4-claim-verification-batch",
+      "startedAt": "2026-10-25T04:43:03.507Z",
+      "durationMs": 3039,
+      "outcome": "SUCCEEDED",
+      "inputTokens": 11332,
+      "outputTokens": 629
+    },
+    {
+      "provider": "api.deepseek.com",
+      "model": "deepseek-flash",
+      "promptVersion": "a2-evidence-v4",
+      "temperature": null,
+      "thinkingMode": "DISABLED",
+      "generatedAt": "2026-10-25T04:43:09.575Z",
+      "id": "20027565-9259-4a41-93ab-fdb690c56b48",
+      "purpose": "v4-claim-verification-batch",
+      "startedAt": "2026-10-25T04:43:06.551Z",
+      "durationMs": 3023,
+      "outcome": "SUCCEEDED",
+      "inputTokens": 8368,
+      "outputTokens": 560
+    },
+    {
+      "provider": "api.deepseek.com",
+      "model": "deepseek-flash",
+      "promptVersion": "a2-evidence-v4",
+      "temperature": null,
+      "thinkingMode": "DISABLED",
+      "generatedAt": "2026-10-25T04:43:13.463Z",
+      "id": "ce855e36-f375-4ba0-a6b2-ae716081877a",
+      "purpose": "v4-direct-answer-and-analysis",
+      "startedAt": "2026-10-25T04:43:09.605Z",
+      "durationMs": 3858,
+      "outcome": "SUCCEEDED",
+      "inputTokens": 3879,
+      "outputTokens": 681
+    },
+    {
+      "provider": "api.deepseek.com",
+      "model": "deepseek-flash",
+      "promptVersion": "a2-evidence-v4",
+      "temperature": null,
+      "thinkingMode": "DISABLED",
+      "generatedAt": "2026-10-25T04:43:15.320Z",
+      "id": "192dd800-6cfe-49e1-bb22-a0fd92401b9d",
+      "purpose": "v4-synthesis-semantic-check",
+      "startedAt": "2026-10-25T04:43:13.465Z",
+      "durationMs": 1856,
+      "outcome": "SUCCEEDED",
+      "inputTokens": 3308,
+      "outputTokens": 266
+    }
+  ],
+  "directory": "C:\\Users\\qianchen\\Documents\\waytoagi-1024-detective-a2-v4\\research\\v4-runs\\collection-final-20261025\\blind\\0390ddcb-a1eb-46eb-a9a6-c3ca2937cf61"
+}

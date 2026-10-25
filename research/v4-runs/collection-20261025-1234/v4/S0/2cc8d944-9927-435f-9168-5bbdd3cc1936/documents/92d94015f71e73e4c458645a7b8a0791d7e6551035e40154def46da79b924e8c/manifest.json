@@ -1,0 +1,4673 @@
+{
+  "schemaVersion": "source-document/v1",
+  "id": "92d94015f71e73e4c458645a7b8a0791d7e6551035e40154def46da79b924e8c",
+  "version": "d4378fe4994dcf42ca0f4fbf43d734ef00a0bf672312d2bbb4f4ffc8149d5590",
+  "requestedUrl": "https://api-docs.deepseek.com/zh-cn/api/create-chat-completion",
+  "finalUrl": "https://api-docs.deepseek.com/zh-cn/api/create-chat-completion/",
+  "retrievedAt": "2026-10-25T04:34:55.374Z",
+  "contentType": "text/html",
+  "status": "READ",
+  "readError": null,
+  "rawHash": "a57733fd2622f7fe5b4a5864e91b1048761972795b875db99b8871c9bb2dfedc",
+  "textHash": "32e3495d52d1872f782c56bbe8eb6c0d78e28cab175138dcdf35ae88ba25a922",
+  "text": "跳到主要内容\n\nSearch / Fetch API 已上线，使用自研搜索引擎，支持网页搜索与抓取，点此查看使用指南。\n\nChat Completions API\n\nPOST /chat/completions\n\n根据输入的上下文，来让模型补全对话内容。\n\nRequest​\n\napplication/json\n\nBody\n\nrequired\n\nmessages\n\nobject[]\n\nrequired\n\nPossible values: >= 1\n\n对话的消息列表。\n\nArray [\n\noneOf\n\nSystem message\n\nUser message\n\nAssistant message\n\nTool message\n\ncontent stringrequired\n\nsystem 消息的内容。\n\nrole stringrequired\n\nPossible values: [system]\n\n该消息的发起角色，其值为 system。\n\nname string\n\n可以选填的参与者的名称，为模型提供信息以区分相同角色的参与者。\n\n]\n\nmodel stringrequired\n\nPossible values: [deepseek-flash, deepseek-v4-pro]\n\n使用的模型的 ID。请使用 deepseek-flash 或 deepseek-v4-pro。\n\nthinking\n\nobject\n\nnullable\n\n控制思考模式与非思考模式的转换\n\ntype string\n\nPossible values: [enabled, disabled]\n\nDefault value: enabled\n\n如果设为 enabled，则使用思考模式。如果设为 disabled，则使用非思考模式\n\nreasoning_effort string\n\nPossible values: [none, low, high, max]\n\n控制思考模式开关与思考强度。none 关闭思考模式；low / high / max 开启思考模式。默认强度为 high。出于兼容考虑，minimal 映射为 low，medium / xhigh 映射为 high。\n\nmax_tokens integernullable\n\n限制一次请求中模型生成 completion 的最大 token 数。取值范围为 1 到 384K（393216）。未设置时，非思考模式默认 8K，思考模式默认 64K（reasoning_effort 为 max 时为 128K）。输入 token 和输出 token 的总长度受模型的上下文长度的限制。详见模型 & 价格。\n\nresponse_format\n\nobject\n\nnullable\n\n一个 object，指定模型必须输出的格式。\n\n设置为 { \"type\": \"json_object\" } 以启用 JSON 模式，该模式保证模型生成的消息是有效的 JSON。\n\n注意: 使用 JSON 模式时，你还必须通过系统或用户消息指示模型生成 JSON。否则，模型可能会生成不断的空白字符，直到生成达到 token 限制，从而导致请求长时间运行并显得“卡住”。此外，如果 finish_reason=\"length\"，这表示生成超过了 max_tokens 或对话超过了最大上下文长度，消息内容可能会被部分截断。\n\ntype string\n\nPossible values: [text, json_object]\n\nDefault value: text\n\nMust be one of text or json_object.\n\nstop\n\nstring | string[]\n\nnullable\n\n一个 string 或最多包含 16 个 string 的 list，在遇到这些词时，API 将停止生成更多的 token。\n\noneOf\n\nSingle stop sequence\n\nStop sequence list\n\nstring\n\nstream booleannullable\n\n如果设置为 True，将会以 SSE（server-sent events）的形式以流式发送消息增量。消息流以 data: [DONE] 结尾。\n\nstream_options\n\nobject\n\nnullable\n\n流式输出相关选项。必须与 stream: true 一起使用；如果 stream 未设置为 true，API 会返回 400 错误。\n\ninclude_usage boolean\n\n如果设置为 true，流式返回的所有块都会包含 usage 字段，其中除最后一个块外，该字段的值均为 null。如果不设置或设置为 false，则除最后一个块外，其余块都不含 usage 字段。\n\n无论是否设置，data: [DONE] 之前的最后一个块都会在其 usage 字段中给出整个请求的 token 使用统计信息。请注意，这里不会单独下发一个只含 usage 的块：统计信息附加在最后一个内容块上，该块的 choices 数组始终只包含一个元素，其中不含新增内容且 finish_reason 非 null。\n\ntemperature numbernullable\n\nPossible values: <= 2\n\nDefault value: 1\n\n采样温度，介于 0 和 2 之间。更高的值，如 0.8，会使输出更随机，而更低的值，如 0.2，会使其更加集中和确定。 我们通常建议可以更改这个值或者更改 top_p，但不建议同时对两者进行修改。思考模式下不生效。\n\ntop_p numbernullable\n\nPossible values: <= 1\n\nDefault value: 1\n\n作为调节采样温度的替代方案，模型会考虑前 top_p 概率的 token 的结果。所以 0.1 就意味着只有包括在最高 10% 概率中的 token 会被考虑。 取值必须大于 0 且不超过 1。我们通常建议修改这个值或者更改 temperature，但不建议同时对两者进行修改。该参数仅在思考模式下生效，有效取值范围为 0.95–1.0，低于 0.95 的取值会按 0.95 处理；在非思考模式下恒为 1.0，传入的值会被忽略。\n\ntools\n\nobject[]\n\nnullable\n\n模型可能会调用的 tool 的列表。目前，仅支持 function 作为工具。使用此参数来提供以 JSON 作为输入参数的 function 列表。tool 名称必须唯一。\n\nArray [\n\ntype stringrequired\n\nPossible values: [function]\n\ntool 的类型。目前仅支持 function。\n\nfunction\n\nobject\n\nrequired\n\ndescription string\n\nfunction 的功能描述，供模型理解何时以及如何调用该 function。\n\nname stringrequired\n\n要调用的 function 名称。必须由 a-z、A-Z、0-9 字符组成，或包含下划线和连字符，最大长度为 128 个字符。\n\nparameters\n\nobject\n\nfunction 的输入参数，以 JSON Schema 对象描述。请参阅Tool Calls 指南获取示例，并参阅JSON Schema 参考了解有关格式的文档。省略 parameters 会定义一个参数列表为空的 function。\n\nproperty name* any\n\nfunction 的输入参数，以 JSON Schema 对象描述。请参阅Tool Calls 指南获取示例，并参阅JSON Schema 参考了解有关格式的文档。省略 parameters 会定义一个参数列表为空的 function。\n\nstrict boolean\n\nDefault value: false\n\n如果设置为 true，API 将在函数调用中使用 strict 模式，以确保输出始终符合函数的 JSON schema 定义。该功能为 Beta 功能，详细使用方式请参阅Tool Calls 指南\n\n]\n\ntool_choice\n\nstring | object\n\nnullable\n\n控制模型调用 tool 的行为。\n\nnone 意味着模型不会调用任何 tool，而是生成一条消息。\n\nauto 意味着模型可以选择生成一条消息或调用一个或多个 tool。\n\nrequired 意味着模型必须调用一个或多个 tool。\n\n通过 {\"type\": \"function\", \"function\": {\"name\": \"my_function\"}} 指定特定 tool，会强制模型调用该 tool。\n\n当没有 tool 时，默认值为 none。如果有 tool 存在，默认值为 auto。\n\n思考模式下不支持 required 和指定具体 tool 的用法，API 会返回 400 错误。请先关闭思考模式。\n\noneOf\n\nChatCompletionToolChoice\n\nChatCompletionNamedToolChoice\n\nstring\n\nPossible values: [none, auto, required]\n\nlogprobs booleannullable\n\n是否返回所输出 token 的对数概率。如果为 true，则在 message 的 content 中返回每个输出 token 的对数概率。\n\ntop_logprobs integernullable\n\nPossible values: <= 20\n\n一个介于 0 到 20 之间的整数 N，指定每个输出位置返回输出概率 top N 的 token，且返回这些 token 的对数概率。指定此参数时，logprobs 必须为 true。\n\nuser_id nullable\n\n您自定义的 user_id，可选字符集为 [a-zA-Z0-9\\-_]，最大长度为 512。请不要在 user_id 中包含用户隐私信息。\n\nuser_id 可用于区分您业务侧的用户身份，以帮助我们进行内容安全处理。\n\nuser_id 可用于 KVCache 缓存隔离，以进行隐私管理。\n\nuser_id 可用于我们对您业务侧用户进行调度隔离。\n\n关于 user_id 参数更详细的描述，请参考限速与隔离\n\nfrequency_penalty deprecated\n\n该参数已不再支持。传入该参数将不会产生任何效果。\n\npresence_penalty deprecated\n\n该参数已不再支持。传入该参数将不会产生任何效果。\n\nResponses​\n\n200 (No streaming)\n\n200 (Streaming)\n\nOK, 返回一个 chat completion 对象。\n\napplication/json\n\nSchema\n\nExample (from schema)\n\nExample\n\nSchema\n\nid stringrequired\n\n该对话的唯一标识符。\n\nchoices\n\nobject[]\n\nrequired\n\n模型生成的 completion 的选择列表。\n\nArray [\n\nfinish_reason stringrequired\n\nPossible values: [stop, length, content_filter, tool_calls, insufficient_system_resource, aborted]\n\n模型停止生成 token 的原因。\n\nstop：模型自然停止生成，或遇到 stop 序列中列出的字符串。\n\nlength ：输出长度达到了模型上下文长度限制，或达到了 max_tokens 的限制。\n\ncontent_filter：输出内容因触发过滤策略而被过滤。\n\ntool_calls：模型进行了工具调用。\n\ninsufficient_system_resource：系统推理资源不足，生成被打断。\n\naborted：生成过程被中断。\n\nindex integerrequired\n\n该 completion 在模型生成的 completion 的选择列表中的索引。\n\nmessage\n\nobject\n\nrequired\n\n模型生成的 completion 消息。\n\ncontent stringnullablerequired\n\n该 completion 的内容。\n\nreasoning_content stringnullable\n\n仅适用于思考模式。内容为 assistant 消息中在最终答案之前的推理内容。\n\ntool_calls\n\nobject[]\n\n模型生成的 tool 调用，例如 function 调用。\n\nArray [\n\nid stringrequired\n\ntool 调用的 ID。\n\ntype stringrequired\n\nPossible values: [function]\n\ntool 的类型。目前仅支持 function。\n\nfunction\n\nobject\n\nrequired\n\n模型调用的 function。\n\nname stringrequired\n\n模型调用的 function 名。\n\narguments stringrequired\n\n要调用的 function 的参数，由模型生成，格式为 JSON。请注意，模型并不总是生成有效的 JSON，并且可能会臆造出你函数模式中未定义的参数。在调用函数之前，请在代码中验证这些参数。\n\n]\n\nrole stringrequired\n\nPossible values: [assistant]\n\n生成这条消息的角色。\n\nlogprobs\n\nobject\n\nnullable\n\nrequired\n\n该 choice 的对数概率信息。\n\ncontent\n\nobject[]\n\nnullable\n\nrequired\n\n一个包含输出 token 对数概率信息的列表。\n\nArray [\n\ntoken stringrequired\n\n输出的 token。\n\nlogprob numberrequired\n\n该 token 的对数概率。-9999.0 代表该 token 的输出概率极小，不在 top 20 最可能输出的 token 中。\n\nbytes integer[]nullablerequired\n\n一个包含该 token UTF-8 字节表示的整数列表。一般在一个 UTF-8 字符被拆分成多个 token 来表示时有用。如果 token 没有对应的字节表示，则该值为 null。\n\ntop_logprobs\n\nobject[]\n\nrequired\n\n一个包含在该输出位置上，输出概率 top N 的 token 的列表，以及它们的对数概率。在罕见情况下，返回的 token 数量可能少于请求参数中指定的 top_logprobs 值。\n\nArray [\n\ntoken stringrequired\n\n输出的 token。\n\nlogprob numberrequired\n\n该 token 的对数概率。-9999.0 代表该 token 的输出概率极小，不在 top 20 最可能输出的 token 中。\n\nbytes integer[]nullablerequired\n\n一个包含该 token UTF-8 字节表示的整数列表。一般在一个 UTF-8 字符被拆分成多个 token 来表示时有用。如果 token 没有对应的字节表示，则该值为 null。\n\n]\n\n]\n\nreasoning_content\n\nobject[]\n\nnullable\n\n一个包含输出 token 对数概率信息的列表。\n\nArray [\n\ntoken stringrequired\n\n输出的 token。\n\nlogprob numberrequired\n\n该 token 的对数概率。-9999.0 代表该 token 的输出概率极小，不在 top 20 最可能输出的 token 中。\n\nbytes integer[]nullablerequired\n\n一个包含该 token UTF-8 字节表示的整数列表。一般在一个 UTF-8 字符被拆分成多个 token 来表示时有用。如果 token 没有对应的字节表示，则该值为 null。\n\ntop_logprobs\n\nobject[]\n\nrequired\n\n一个包含在该输出位置上，输出概率 top N 的 token 的列表，以及它们的对数概率。在罕见情况下，返回的 token 数量可能少于请求参数中指定的 top_logprobs 值。\n\nArray [\n\ntoken stringrequired\n\n输出的 token。\n\nlogprob numberrequired\n\n该 token 的对数概率。-9999.0 代表该 token 的输出概率极小，不在 top 20 最可能输出的 token 中。\n\nbytes integer[]nullablerequired\n\n一个包含该 token UTF-8 字节表示的整数列表。一般在一个 UTF-8 字符被拆分成多个 token 来表示时有用。如果 token 没有对应的字节表示，则该值为 null。\n\n]\n\n]\n\n]\n\ncreated integerrequired\n\n创建聊天完成时的 Unix 时间戳（以秒为单位）。\n\nmodel stringrequired\n\n生成该 completion 的模型名。\n\nsystem_fingerprint stringrequired\n\nThis fingerprint represents the backend configuration that the model runs with.\n\nobject stringrequired\n\nPossible values: [chat.completion]\n\n对象的类型, 其值为 chat.completion。\n\nusage\n\nobject\n\n该对话补全请求的用量信息。\n\ncompletion_tokens integerrequired\n\n模型 completion 产生的 token 数。\n\nprompt_tokens integerrequired\n\n用户 prompt 所包含的 token 数。该值等于 prompt_cache_hit_tokens + prompt_cache_miss_tokens\n\nprompt_tokens_details\n\nobject\n\nrequired\n\nprompt tokens 的详细信息。\n\ncached_tokens integer\n\n用户 prompt 中，命中上下文缓存的 token 数。与 prompt_cache_hit_tokens 相同。\n\nprompt_cache_hit_tokens integerrequired\n\n用户 prompt 中，命中上下文缓存的 token 数。\n\nprompt_cache_miss_tokens integerrequired\n\n用户 prompt 中，未命中上下文缓存的 token 数。\n\ntotal_tokens integerrequired\n\n该请求中，所有 token 的数量（prompt + completion）。\n\ncompletion_tokens_details\n\nobject\n\ncompletion tokens 的详细信息。\n\nreasoning_tokens integer\n\n推理模型所产生的思维链 token 数量\n\nLoading...",
+  "rawSources": [
+    {
+      "mode": "STATIC",
+      "hash": "a57733fd2622f7fe5b4a5864e91b1048761972795b875db99b8871c9bb2dfedc",
+      "path": "C:\\Users\\qianchen\\Documents\\waytoagi-1024-detective-a2-v4\\.cache\\source-documents-v4\\2cc8d944-9927-435f-9168-5bbdd3cc1936\\92d94015f71e73e4c458645a7b8a0791d7e6551035e40154def46da79b924e8c\\raw.bin"
+    }
+  ],
+  "storage": {
+    "rawPath": "C:\\Users\\qianchen\\Documents\\waytoagi-1024-detective-a2-v4\\.cache\\source-documents-v4\\2cc8d944-9927-435f-9168-5bbdd3cc1936\\92d94015f71e73e4c458645a7b8a0791d7e6551035e40154def46da79b924e8c\\raw.bin",
+    "textPath": "C:\\Users\\qianchen\\Documents\\waytoagi-1024-detective-a2-v4\\.cache\\source-documents-v4\\2cc8d944-9927-435f-9168-5bbdd3cc1936\\92d94015f71e73e4c458645a7b8a0791d7e6551035e40154def46da79b924e8c\\source.txt",
+    "manifestPath": "C:\\Users\\qianchen\\Documents\\waytoagi-1024-detective-a2-v4\\.cache\\source-documents-v4\\2cc8d944-9927-435f-9168-5bbdd3cc1936\\92d94015f71e73e4c458645a7b8a0791d7e6551035e40154def46da79b924e8c\\manifest.json"
+  },
+  "parser": {
+    "name": "readability+source-dom",
+    "version": "readability-0.6.0+jsdom-30.1.3+source-dom-2",
+    "normalization": "source-text/v1",
+    "mode": "STATIC"
+  },
+  "metadata": {
+    "title": "Chat Completions API | DeepSeek API Docs",
+    "author": null,
+    "publishedAt": null,
+    "language": "zh-cn"
+  },
+  "completeness": "COMPLETE",
+  "warnings": [],
+  "blocks": [
+    {
+      "start": 0,
+      "end": 6,
+      "id": "b0",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[0]",
+      "headingPath": [],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 8,
+      "end": 59,
+      "id": "b1",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[1]",
+      "headingPath": [],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 61,
+      "end": 81,
+      "id": "b2",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[2]",
+      "headingPath": [
+        "Chat Completions API"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 83,
+      "end": 105,
+      "id": "b3",
+      "kind": "CODE",
+      "locator": "source DOM normalized block[3]",
+      "headingPath": [
+        "Chat Completions API"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 107,
+      "end": 127,
+      "id": "b4",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[4]",
+      "headingPath": [
+        "Chat Completions API"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 129,
+      "end": 137,
+      "id": "b5",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[5]",
+      "headingPath": [
+        "Chat Completions API",
+        "Request​"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 139,
+      "end": 155,
+      "id": "b6",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[6]",
+      "headingPath": [
+        "Chat Completions API",
+        "Request​"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 157,
+      "end": 161,
+      "id": "b7",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[7]",
+      "headingPath": [
+        "Chat Completions API",
+        "Request​",
+        "Body"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 163,
+      "end": 171,
+      "id": "b8",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[8]",
+      "headingPath": [
+        "Chat Completions API",
+        "Request​",
+        "Body"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 173,
+      "end": 181,
+      "id": "b9",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[9]",
+      "headingPath": [
+        "Chat Completions API",
+        "Request​",
+        "Body"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 183,
+      "end": 191,
+      "id": "b10",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[10]",
+      "headingPath": [
+        "Chat Completions API",
+        "Request​",
+        "Body"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 193,
+      "end": 201,
+      "id": "b11",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[11]",
+      "headingPath": [
+        "Chat Completions API",
+        "Request​",
+        "Body"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 203,
+      "end": 224,
+      "id": "b12",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[12]",
+      "headingPath": [
+        "Chat Completions API",
+        "Request​",
+        "Body"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 226,
+      "end": 234,
+      "id": "b13",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[13]",
+      "headingPath": [
+        "Chat Completions API",
+        "Request​",
+        "Body"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 236,
+      "end": 243,
+      "id": "b14",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[14]",
+      "headingPath": [
+        "Chat Completions API",
+        "Request​",
+        "Body"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 245,
+      "end": 250,
+      "id": "b15",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[15]",
+      "headingPath": [
+        "Chat Completions API",
+        "Request​",
+        "Body"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 252,
+      "end": 266,
+      "id": "b16",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[16]",
+      "headingPath": [
+        "Chat Completions API",
+        "Request​",
+        "Body"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 268,
+      "end": 280,
+      "id": "b17",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[17]",
+      "headingPath": [
+        "Chat Completions API",
+        "Request​",
+        "Body"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 282,
+      "end": 299,
+      "id": "b18",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[18]",
+      "headingPath": [
+        "Chat Completions API",
+        "Request​",
+        "Body"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 301,
+      "end": 313,
+      "id": "b19",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[19]",
+      "headingPath": [
+        "Chat Completions API",
+        "Request​",
+        "Body"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 315,
+      "end": 337,
+      "id": "b20",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[20]",
+      "headingPath": [
+        "Chat Completions API",
+        "Request​",
+        "Body"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 339,
+      "end": 352,
+      "id": "b21",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[21]",
+      "headingPath": [
+        "Chat Completions API",
+        "Request​",
+        "Body"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 354,
+      "end": 373,
+      "id": "b22",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[22]",
+      "headingPath": [
+        "Chat Completions API",
+        "Request​",
+        "Body"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 375,
+      "end": 400,
+      "id": "b23",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[23]",
+      "headingPath": [
+        "Chat Completions API",
+        "Request​",
+        "Body"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 402,
+      "end": 422,
+      "id": "b24",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[24]",
+      "headingPath": [
+        "Chat Completions API",
+        "Request​",
+        "Body"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 424,
+      "end": 435,
+      "id": "b25",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[25]",
+      "headingPath": [
+        "Chat Completions API",
+        "Request​",
+        "Body"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 437,
+      "end": 468,
+      "id": "b26",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[26]",
+      "headingPath": [
+        "Chat Completions API",
+        "Request​",
+        "Body"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 470,
+      "end": 471,
+      "id": "b27",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[27]",
+      "headingPath": [
+        "Chat Completions API",
+        "Request​",
+        "Body"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 473,
+      "end": 493,
+      "id": "b28",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[28]",
+      "headingPath": [
+        "Chat Completions API",
+        "Request​",
+        "Body"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 495,
+      "end": 545,
+      "id": "b29",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[29]",
+      "headingPath": [
+        "Chat Completions API",
+        "Request​",
+        "Body"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 547,
+      "end": 594,
+      "id": "b30",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[30]",
+      "headingPath": [
+        "Chat Completions API",
+        "Request​",
+        "Body"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 596,
+      "end": 604,
+      "id": "b31",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[31]",
+      "headingPath": [
+        "Chat Completions API",
+        "Request​",
+        "Body"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 606,
+      "end": 612,
+      "id": "b32",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[32]",
+      "headingPath": [
+        "Chat Completions API",
+        "Request​",
+        "Body"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 614,
+      "end": 622,
+      "id": "b33",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[33]",
+      "headingPath": [
+        "Chat Completions API",
+        "Request​",
+        "Body"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 624,
+      "end": 639,
+      "id": "b34",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[34]",
+      "headingPath": [
+        "Chat Completions API",
+        "Request​",
+        "Body"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 641,
+      "end": 652,
+      "id": "b35",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[35]",
+      "headingPath": [
+        "Chat Completions API",
+        "Request​",
+        "Body"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 654,
+      "end": 690,
+      "id": "b36",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[36]",
+      "headingPath": [
+        "Chat Completions API",
+        "Request​",
+        "Body"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 692,
+      "end": 714,
+      "id": "b37",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[37]",
+      "headingPath": [
+        "Chat Completions API",
+        "Request​",
+        "Body"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 716,
+      "end": 759,
+      "id": "b38",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[38]",
+      "headingPath": [
+        "Chat Completions API",
+        "Request​",
+        "Body"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 761,
+      "end": 784,
+      "id": "b39",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[39]",
+      "headingPath": [
+        "Chat Completions API",
+        "Request​",
+        "Body"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 786,
+      "end": 825,
+      "id": "b40",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[40]",
+      "headingPath": [
+        "Chat Completions API",
+        "Request​",
+        "Body"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 827,
+      "end": 935,
+      "id": "b41",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[41]",
+      "headingPath": [
+        "Chat Completions API",
+        "Request​",
+        "Body"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 937,
+      "end": 963,
+      "id": "b42",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[42]",
+      "headingPath": [
+        "Chat Completions API",
+        "Request​",
+        "Body"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 965,
+      "end": 1128,
+      "id": "b43",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[43]",
+      "headingPath": [
+        "Chat Completions API",
+        "Request​",
+        "Body"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1130,
+      "end": 1145,
+      "id": "b44",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[44]",
+      "headingPath": [
+        "Chat Completions API",
+        "Request​",
+        "Body"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1147,
+      "end": 1153,
+      "id": "b45",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[45]",
+      "headingPath": [
+        "Chat Completions API",
+        "Request​",
+        "Body"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1155,
+      "end": 1163,
+      "id": "b46",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[46]",
+      "headingPath": [
+        "Chat Completions API",
+        "Request​",
+        "Body"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1165,
+      "end": 1187,
+      "id": "b47",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[47]",
+      "headingPath": [
+        "Chat Completions API",
+        "Request​",
+        "Body"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1189,
+      "end": 1253,
+      "id": "b48",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[48]",
+      "headingPath": [
+        "Chat Completions API",
+        "Request​",
+        "Body"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1255,
+      "end": 1425,
+      "id": "b49",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[49]",
+      "headingPath": [
+        "Chat Completions API",
+        "Request​",
+        "Body"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1427,
+      "end": 1438,
+      "id": "b50",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[50]",
+      "headingPath": [
+        "Chat Completions API",
+        "Request​",
+        "Body"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1440,
+      "end": 1476,
+      "id": "b51",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[51]",
+      "headingPath": [
+        "Chat Completions API",
+        "Request​",
+        "Body"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1478,
+      "end": 1497,
+      "id": "b52",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[52]",
+      "headingPath": [
+        "Chat Completions API",
+        "Request​",
+        "Body"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1499,
+      "end": 1534,
+      "id": "b53",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[53]",
+      "headingPath": [
+        "Chat Completions API",
+        "Request​",
+        "Body"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1536,
+      "end": 1540,
+      "id": "b54",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[54]",
+      "headingPath": [
+        "Chat Completions API",
+        "Request​",
+        "Body"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1542,
+      "end": 1559,
+      "id": "b55",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[55]",
+      "headingPath": [
+        "Chat Completions API",
+        "Request​",
+        "Body"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1561,
+      "end": 1569,
+      "id": "b56",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[56]",
+      "headingPath": [
+        "Chat Completions API",
+        "Request​",
+        "Body"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1571,
+      "end": 1633,
+      "id": "b57",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[57]",
+      "headingPath": [
+        "Chat Completions API",
+        "Request​",
+        "Body"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1635,
+      "end": 1640,
+      "id": "b58",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[58]",
+      "headingPath": [
+        "Chat Completions API",
+        "Request​",
+        "Body"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1642,
+      "end": 1662,
+      "id": "b59",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[59]",
+      "headingPath": [
+        "Chat Completions API",
+        "Request​",
+        "Body"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1664,
+      "end": 1682,
+      "id": "b60",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[60]",
+      "headingPath": [
+        "Chat Completions API",
+        "Request​",
+        "Body"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1684,
+      "end": 1690,
+      "id": "b61",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[61]",
+      "headingPath": [
+        "Chat Completions API",
+        "Request​",
+        "Body"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1692,
+      "end": 1714,
+      "id": "b62",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[62]",
+      "headingPath": [
+        "Chat Completions API",
+        "Request​",
+        "Body"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1716,
+      "end": 1788,
+      "id": "b63",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[63]",
+      "headingPath": [
+        "Chat Completions API",
+        "Request​",
+        "Body"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1790,
+      "end": 1804,
+      "id": "b64",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[64]",
+      "headingPath": [
+        "Chat Completions API",
+        "Request​",
+        "Body"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1806,
+      "end": 1812,
+      "id": "b65",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[65]",
+      "headingPath": [
+        "Chat Completions API",
+        "Request​",
+        "Body"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1814,
+      "end": 1822,
+      "id": "b66",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[66]",
+      "headingPath": [
+        "Chat Completions API",
+        "Request​",
+        "Body"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1824,
+      "end": 1890,
+      "id": "b67",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[67]",
+      "headingPath": [
+        "Chat Completions API",
+        "Request​",
+        "Body"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1892,
+      "end": 1913,
+      "id": "b68",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[68]",
+      "headingPath": [
+        "Chat Completions API",
+        "Request​",
+        "Body"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1915,
+      "end": 2012,
+      "id": "b69",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[69]",
+      "headingPath": [
+        "Chat Completions API",
+        "Request​",
+        "Body"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2014,
+      "end": 2174,
+      "id": "b70",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[70]",
+      "headingPath": [
+        "Chat Completions API",
+        "Request​",
+        "Body"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2176,
+      "end": 2202,
+      "id": "b71",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[71]",
+      "headingPath": [
+        "Chat Completions API",
+        "Request​",
+        "Body"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2204,
+      "end": 2225,
+      "id": "b72",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[72]",
+      "headingPath": [
+        "Chat Completions API",
+        "Request​",
+        "Body"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2227,
+      "end": 2243,
+      "id": "b73",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[73]",
+      "headingPath": [
+        "Chat Completions API",
+        "Request​",
+        "Body"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2245,
+      "end": 2352,
+      "id": "b74",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[74]",
+      "headingPath": [
+        "Chat Completions API",
+        "Request​",
+        "Body"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2354,
+      "end": 2374,
+      "id": "b75",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[75]",
+      "headingPath": [
+        "Chat Completions API",
+        "Request​",
+        "Body"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2376,
+      "end": 2397,
+      "id": "b76",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[76]",
+      "headingPath": [
+        "Chat Completions API",
+        "Request​",
+        "Body"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2399,
+      "end": 2415,
+      "id": "b77",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[77]",
+      "headingPath": [
+        "Chat Completions API",
+        "Request​",
+        "Body"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2417,
+      "end": 2631,
+      "id": "b78",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[78]",
+      "headingPath": [
+        "Chat Completions API",
+        "Request​",
+        "Body"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2633,
+      "end": 2638,
+      "id": "b79",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[79]",
+      "headingPath": [
+        "Chat Completions API",
+        "Request​",
+        "Body"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2640,
+      "end": 2648,
+      "id": "b80",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[80]",
+      "headingPath": [
+        "Chat Completions API",
+        "Request​",
+        "Body"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2650,
+      "end": 2658,
+      "id": "b81",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[81]",
+      "headingPath": [
+        "Chat Completions API",
+        "Request​",
+        "Body"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2660,
+      "end": 2746,
+      "id": "b82",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[82]",
+      "headingPath": [
+        "Chat Completions API",
+        "Request​",
+        "Body"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2748,
+      "end": 2755,
+      "id": "b83",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[83]",
+      "headingPath": [
+        "Chat Completions API",
+        "Request​",
+        "Body"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2757,
+      "end": 2776,
+      "id": "b84",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[84]",
+      "headingPath": [
+        "Chat Completions API",
+        "Request​",
+        "Body"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2778,
+      "end": 2805,
+      "id": "b85",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[85]",
+      "headingPath": [
+        "Chat Completions API",
+        "Request​",
+        "Body"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2807,
+      "end": 2831,
+      "id": "b86",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[86]",
+      "headingPath": [
+        "Chat Completions API",
+        "Request​",
+        "Body"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2833,
+      "end": 2841,
+      "id": "b87",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[87]",
+      "headingPath": [
+        "Chat Completions API",
+        "Request​",
+        "Body"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2843,
+      "end": 2849,
+      "id": "b88",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[88]",
+      "headingPath": [
+        "Chat Completions API",
+        "Request​",
+        "Body"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2851,
+      "end": 2859,
+      "id": "b89",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[89]",
+      "headingPath": [
+        "Chat Completions API",
+        "Request​",
+        "Body"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2861,
+      "end": 2879,
+      "id": "b90",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[90]",
+      "headingPath": [
+        "Chat Completions API",
+        "Request​",
+        "Body"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2881,
+      "end": 2920,
+      "id": "b91",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[91]",
+      "headingPath": [
+        "Chat Completions API",
+        "Request​",
+        "Body"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2922,
+      "end": 2941,
+      "id": "b92",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[92]",
+      "headingPath": [
+        "Chat Completions API",
+        "Request​",
+        "Body"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2943,
+      "end": 3006,
+      "id": "b93",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[93]",
+      "headingPath": [
+        "Chat Completions API",
+        "Request​",
+        "Body"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3008,
+      "end": 3018,
+      "id": "b94",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[94]",
+      "headingPath": [
+        "Chat Completions API",
+        "Request​",
+        "Body"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3020,
+      "end": 3026,
+      "id": "b95",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[95]",
+      "headingPath": [
+        "Chat Completions API",
+        "Request​",
+        "Body"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3028,
+      "end": 3146,
+      "id": "b96",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[96]",
+      "headingPath": [
+        "Chat Completions API",
+        "Request​",
+        "Body"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3148,
+      "end": 3166,
+      "id": "b97",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[97]",
+      "headingPath": [
+        "Chat Completions API",
+        "Request​",
+        "Body"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3168,
+      "end": 3286,
+      "id": "b98",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[98]",
+      "headingPath": [
+        "Chat Completions API",
+        "Request​",
+        "Body"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3288,
+      "end": 3302,
+      "id": "b99",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[99]",
+      "headingPath": [
+        "Chat Completions API",
+        "Request​",
+        "Body"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3304,
+      "end": 3324,
+      "id": "b100",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[100]",
+      "headingPath": [
+        "Chat Completions API",
+        "Request​",
+        "Body"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3326,
+      "end": 3424,
+      "id": "b101",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[101]",
+      "headingPath": [
+        "Chat Completions API",
+        "Request​",
+        "Body"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3426,
+      "end": 3427,
+      "id": "b102",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[102]",
+      "headingPath": [
+        "Chat Completions API",
+        "Request​",
+        "Body"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3429,
+      "end": 3440,
+      "id": "b103",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[103]",
+      "headingPath": [
+        "Chat Completions API",
+        "Request​",
+        "Body"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3442,
+      "end": 3457,
+      "id": "b104",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[104]",
+      "headingPath": [
+        "Chat Completions API",
+        "Request​",
+        "Body"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3459,
+      "end": 3467,
+      "id": "b105",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[105]",
+      "headingPath": [
+        "Chat Completions API",
+        "Request​",
+        "Body"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3469,
+      "end": 3485,
+      "id": "b106",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[106]",
+      "headingPath": [
+        "Chat Completions API",
+        "Request​",
+        "Body"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3487,
+      "end": 3518,
+      "id": "b107",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[107]",
+      "headingPath": [
+        "Chat Completions API",
+        "Request​",
+        "Body"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3520,
+      "end": 3554,
+      "id": "b108",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[108]",
+      "headingPath": [
+        "Chat Completions API",
+        "Request​",
+        "Body"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3556,
+      "end": 3585,
+      "id": "b109",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[109]",
+      "headingPath": [
+        "Chat Completions API",
+        "Request​",
+        "Body"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3587,
+      "end": 3672,
+      "id": "b110",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[110]",
+      "headingPath": [
+        "Chat Completions API",
+        "Request​",
+        "Body"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3674,
+      "end": 3717,
+      "id": "b111",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[111]",
+      "headingPath": [
+        "Chat Completions API",
+        "Request​",
+        "Body"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3719,
+      "end": 3776,
+      "id": "b112",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[112]",
+      "headingPath": [
+        "Chat Completions API",
+        "Request​",
+        "Body"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3778,
+      "end": 3783,
+      "id": "b113",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[113]",
+      "headingPath": [
+        "Chat Completions API",
+        "Request​",
+        "Body"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3785,
+      "end": 3809,
+      "id": "b114",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[114]",
+      "headingPath": [
+        "Chat Completions API",
+        "Request​",
+        "Body"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3811,
+      "end": 3840,
+      "id": "b115",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[115]",
+      "headingPath": [
+        "Chat Completions API",
+        "Request​",
+        "Body"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3842,
+      "end": 3848,
+      "id": "b116",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[116]",
+      "headingPath": [
+        "Chat Completions API",
+        "Request​",
+        "Body"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3850,
+      "end": 3889,
+      "id": "b117",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[117]",
+      "headingPath": [
+        "Chat Completions API",
+        "Request​",
+        "Body"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3891,
+      "end": 3915,
+      "id": "b118",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[118]",
+      "headingPath": [
+        "Chat Completions API",
+        "Request​",
+        "Body"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3917,
+      "end": 3987,
+      "id": "b119",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[119]",
+      "headingPath": [
+        "Chat Completions API",
+        "Request​",
+        "Body"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3989,
+      "end": 4017,
+      "id": "b120",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[120]",
+      "headingPath": [
+        "Chat Completions API",
+        "Request​",
+        "Body"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4019,
+      "end": 4041,
+      "id": "b121",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[121]",
+      "headingPath": [
+        "Chat Completions API",
+        "Request​",
+        "Body"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4043,
+      "end": 4135,
+      "id": "b122",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[122]",
+      "headingPath": [
+        "Chat Completions API",
+        "Request​",
+        "Body"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4137,
+      "end": 4153,
+      "id": "b123",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[123]",
+      "headingPath": [
+        "Chat Completions API",
+        "Request​",
+        "Body"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4155,
+      "end": 4224,
+      "id": "b124",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[124]",
+      "headingPath": [
+        "Chat Completions API",
+        "Request​",
+        "Body"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4226,
+      "end": 4263,
+      "id": "b125",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[125]",
+      "headingPath": [
+        "Chat Completions API",
+        "Request​",
+        "Body"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4265,
+      "end": 4298,
+      "id": "b126",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[126]",
+      "headingPath": [
+        "Chat Completions API",
+        "Request​",
+        "Body"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4300,
+      "end": 4327,
+      "id": "b127",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[127]",
+      "headingPath": [
+        "Chat Completions API",
+        "Request​",
+        "Body"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4329,
+      "end": 4357,
+      "id": "b128",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[128]",
+      "headingPath": [
+        "Chat Completions API",
+        "Request​",
+        "Body"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4359,
+      "end": 4387,
+      "id": "b129",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[129]",
+      "headingPath": [
+        "Chat Completions API",
+        "Request​",
+        "Body"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4389,
+      "end": 4413,
+      "id": "b130",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[130]",
+      "headingPath": [
+        "Chat Completions API",
+        "Request​",
+        "Body"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4415,
+      "end": 4442,
+      "id": "b131",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[131]",
+      "headingPath": [
+        "Chat Completions API",
+        "Request​",
+        "Body"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4444,
+      "end": 4468,
+      "id": "b132",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[132]",
+      "headingPath": [
+        "Chat Completions API",
+        "Request​",
+        "Body"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4470,
+      "end": 4480,
+      "id": "b133",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[133]",
+      "headingPath": [
+        "Chat Completions API",
+        "Responses​"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4482,
+      "end": 4500,
+      "id": "b134",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[134]",
+      "headingPath": [
+        "Chat Completions API",
+        "Responses​"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4502,
+      "end": 4517,
+      "id": "b135",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[135]",
+      "headingPath": [
+        "Chat Completions API",
+        "Responses​"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4519,
+      "end": 4547,
+      "id": "b136",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[136]",
+      "headingPath": [
+        "Chat Completions API",
+        "Responses​"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4549,
+      "end": 4565,
+      "id": "b137",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[137]",
+      "headingPath": [
+        "Chat Completions API",
+        "Responses​"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4567,
+      "end": 4573,
+      "id": "b138",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[138]",
+      "headingPath": [
+        "Chat Completions API",
+        "Responses​"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4575,
+      "end": 4596,
+      "id": "b139",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[139]",
+      "headingPath": [
+        "Chat Completions API",
+        "Responses​"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4598,
+      "end": 4605,
+      "id": "b140",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[140]",
+      "headingPath": [
+        "Chat Completions API",
+        "Responses​"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4607,
+      "end": 4613,
+      "id": "b141",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[141]",
+      "headingPath": [
+        "Chat Completions API",
+        "Responses​"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4615,
+      "end": 4632,
+      "id": "b142",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[142]",
+      "headingPath": [
+        "Chat Completions API",
+        "Responses​"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4634,
+      "end": 4644,
+      "id": "b143",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[143]",
+      "headingPath": [
+        "Chat Completions API",
+        "Responses​"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4646,
+      "end": 4653,
+      "id": "b144",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[144]",
+      "headingPath": [
+        "Chat Completions API",
+        "Responses​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4655,
+      "end": 4663,
+      "id": "b145",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[145]",
+      "headingPath": [
+        "Chat Completions API",
+        "Responses​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4665,
+      "end": 4673,
+      "id": "b146",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[146]",
+      "headingPath": [
+        "Chat Completions API",
+        "Responses​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4675,
+      "end": 4698,
+      "id": "b147",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[147]",
+      "headingPath": [
+        "Chat Completions API",
+        "Responses​"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4700,
+      "end": 4707,
+      "id": "b148",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[148]",
+      "headingPath": [
+        "Chat Completions API",
+        "Responses​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4709,
+      "end": 4737,
+      "id": "b149",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[149]",
+      "headingPath": [
+        "Chat Completions API",
+        "Responses​"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4739,
+      "end": 4837,
+      "id": "b150",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[150]",
+      "headingPath": [
+        "Chat Completions API",
+        "Responses​"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4839,
+      "end": 4856,
+      "id": "b151",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[151]",
+      "headingPath": [
+        "Chat Completions API",
+        "Responses​"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4858,
+      "end": 4891,
+      "id": "b152",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[152]",
+      "headingPath": [
+        "Chat Completions API",
+        "Responses​"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4893,
+      "end": 4938,
+      "id": "b153",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[153]",
+      "headingPath": [
+        "Chat Completions API",
+        "Responses​"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4940,
+      "end": 4971,
+      "id": "b154",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[154]",
+      "headingPath": [
+        "Chat Completions API",
+        "Responses​"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4973,
+      "end": 4994,
+      "id": "b155",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[155]",
+      "headingPath": [
+        "Chat Completions API",
+        "Responses​"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4996,
+      "end": 5040,
+      "id": "b156",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[156]",
+      "headingPath": [
+        "Chat Completions API",
+        "Responses​"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5042,
+      "end": 5058,
+      "id": "b157",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[157]",
+      "headingPath": [
+        "Chat Completions API",
+        "Responses​"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5060,
+      "end": 5081,
+      "id": "b158",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[158]",
+      "headingPath": [
+        "Chat Completions API",
+        "Responses​"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5083,
+      "end": 5124,
+      "id": "b159",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[159]",
+      "headingPath": [
+        "Chat Completions API",
+        "Responses​"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5126,
+      "end": 5133,
+      "id": "b160",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[160]",
+      "headingPath": [
+        "Chat Completions API",
+        "Responses​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5135,
+      "end": 5141,
+      "id": "b161",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[161]",
+      "headingPath": [
+        "Chat Completions API",
+        "Responses​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5143,
+      "end": 5151,
+      "id": "b162",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[162]",
+      "headingPath": [
+        "Chat Completions API",
+        "Responses​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5153,
+      "end": 5173,
+      "id": "b163",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[163]",
+      "headingPath": [
+        "Chat Completions API",
+        "Responses​"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5175,
+      "end": 5205,
+      "id": "b164",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[164]",
+      "headingPath": [
+        "Chat Completions API",
+        "Responses​"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5207,
+      "end": 5224,
+      "id": "b165",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[165]",
+      "headingPath": [
+        "Chat Completions API",
+        "Responses​"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5226,
+      "end": 5258,
+      "id": "b166",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[166]",
+      "headingPath": [
+        "Chat Completions API",
+        "Responses​"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5260,
+      "end": 5299,
+      "id": "b167",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[167]",
+      "headingPath": [
+        "Chat Completions API",
+        "Responses​"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5301,
+      "end": 5311,
+      "id": "b168",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[168]",
+      "headingPath": [
+        "Chat Completions API",
+        "Responses​"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5313,
+      "end": 5321,
+      "id": "b169",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[169]",
+      "headingPath": [
+        "Chat Completions API",
+        "Responses​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5323,
+      "end": 5352,
+      "id": "b170",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[170]",
+      "headingPath": [
+        "Chat Completions API",
+        "Responses​"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5354,
+      "end": 5361,
+      "id": "b171",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[171]",
+      "headingPath": [
+        "Chat Completions API",
+        "Responses​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5363,
+      "end": 5380,
+      "id": "b172",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[172]",
+      "headingPath": [
+        "Chat Completions API",
+        "Responses​"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5382,
+      "end": 5394,
+      "id": "b173",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[173]",
+      "headingPath": [
+        "Chat Completions API",
+        "Responses​"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5396,
+      "end": 5415,
+      "id": "b174",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[174]",
+      "headingPath": [
+        "Chat Completions API",
+        "Responses​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5417,
+      "end": 5444,
+      "id": "b175",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[175]",
+      "headingPath": [
+        "Chat Completions API",
+        "Responses​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5446,
+      "end": 5470,
+      "id": "b176",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[176]",
+      "headingPath": [
+        "Chat Completions API",
+        "Responses​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5472,
+      "end": 5480,
+      "id": "b177",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[177]",
+      "headingPath": [
+        "Chat Completions API",
+        "Responses​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5482,
+      "end": 5488,
+      "id": "b178",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[178]",
+      "headingPath": [
+        "Chat Completions API",
+        "Responses​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5490,
+      "end": 5498,
+      "id": "b179",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[179]",
+      "headingPath": [
+        "Chat Completions API",
+        "Responses​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5500,
+      "end": 5515,
+      "id": "b180",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[180]",
+      "headingPath": [
+        "Chat Completions API",
+        "Responses​"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5517,
+      "end": 5536,
+      "id": "b181",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[181]",
+      "headingPath": [
+        "Chat Completions API",
+        "Responses​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5538,
+      "end": 5555,
+      "id": "b182",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[182]",
+      "headingPath": [
+        "Chat Completions API",
+        "Responses​"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5557,
+      "end": 5581,
+      "id": "b183",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[183]",
+      "headingPath": [
+        "Chat Completions API",
+        "Responses​"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5583,
+      "end": 5678,
+      "id": "b184",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[184]",
+      "headingPath": [
+        "Chat Completions API",
+        "Responses​"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5680,
+      "end": 5681,
+      "id": "b185",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[185]",
+      "headingPath": [
+        "Chat Completions API",
+        "Responses​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5683,
+      "end": 5702,
+      "id": "b186",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[186]",
+      "headingPath": [
+        "Chat Completions API",
+        "Responses​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5704,
+      "end": 5732,
+      "id": "b187",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[187]",
+      "headingPath": [
+        "Chat Completions API",
+        "Responses​"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5734,
+      "end": 5744,
+      "id": "b188",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[188]",
+      "headingPath": [
+        "Chat Completions API",
+        "Responses​"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5746,
+      "end": 5754,
+      "id": "b189",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[189]",
+      "headingPath": [
+        "Chat Completions API",
+        "Responses​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5756,
+      "end": 5762,
+      "id": "b190",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[190]",
+      "headingPath": [
+        "Chat Completions API",
+        "Responses​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5764,
+      "end": 5772,
+      "id": "b191",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[191]",
+      "headingPath": [
+        "Chat Completions API",
+        "Responses​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5774,
+      "end": 5782,
+      "id": "b192",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[192]",
+      "headingPath": [
+        "Chat Completions API",
+        "Responses​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5784,
+      "end": 5801,
+      "id": "b193",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[193]",
+      "headingPath": [
+        "Chat Completions API",
+        "Responses​"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5803,
+      "end": 5810,
+      "id": "b194",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[194]",
+      "headingPath": [
+        "Chat Completions API",
+        "Responses​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5812,
+      "end": 5820,
+      "id": "b195",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[195]",
+      "headingPath": [
+        "Chat Completions API",
+        "Responses​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5822,
+      "end": 5830,
+      "id": "b196",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[196]",
+      "headingPath": [
+        "Chat Completions API",
+        "Responses​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5832,
+      "end": 5840,
+      "id": "b197",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[197]",
+      "headingPath": [
+        "Chat Completions API",
+        "Responses​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5842,
+      "end": 5865,
+      "id": "b198",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[198]",
+      "headingPath": [
+        "Chat Completions API",
+        "Responses​"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5867,
+      "end": 5874,
+      "id": "b199",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[199]",
+      "headingPath": [
+        "Chat Completions API",
+        "Responses​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5876,
+      "end": 5896,
+      "id": "b200",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[200]",
+      "headingPath": [
+        "Chat Completions API",
+        "Responses​"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5898,
+      "end": 5908,
+      "id": "b201",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[201]",
+      "headingPath": [
+        "Chat Completions API",
+        "Responses​"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5910,
+      "end": 5932,
+      "id": "b202",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[202]",
+      "headingPath": [
+        "Chat Completions API",
+        "Responses​"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5934,
+      "end": 5999,
+      "id": "b203",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[203]",
+      "headingPath": [
+        "Chat Completions API",
+        "Responses​"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 6001,
+      "end": 6032,
+      "id": "b204",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[204]",
+      "headingPath": [
+        "Chat Completions API",
+        "Responses​"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 6034,
+      "end": 6125,
+      "id": "b205",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[205]",
+      "headingPath": [
+        "Chat Completions API",
+        "Responses​"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 6127,
+      "end": 6139,
+      "id": "b206",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[206]",
+      "headingPath": [
+        "Chat Completions API",
+        "Responses​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 6141,
+      "end": 6149,
+      "id": "b207",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[207]",
+      "headingPath": [
+        "Chat Completions API",
+        "Responses​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 6151,
+      "end": 6159,
+      "id": "b208",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[208]",
+      "headingPath": [
+        "Chat Completions API",
+        "Responses​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 6161,
+      "end": 6253,
+      "id": "b209",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[209]",
+      "headingPath": [
+        "Chat Completions API",
+        "Responses​"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 6255,
+      "end": 6262,
+      "id": "b210",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[210]",
+      "headingPath": [
+        "Chat Completions API",
+        "Responses​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 6264,
+      "end": 6284,
+      "id": "b211",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[211]",
+      "headingPath": [
+        "Chat Completions API",
+        "Responses​"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 6286,
+      "end": 6296,
+      "id": "b212",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[212]",
+      "headingPath": [
+        "Chat Completions API",
+        "Responses​"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 6298,
+      "end": 6320,
+      "id": "b213",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[213]",
+      "headingPath": [
+        "Chat Completions API",
+        "Responses​"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 6322,
+      "end": 6387,
+      "id": "b214",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[214]",
+      "headingPath": [
+        "Chat Completions API",
+        "Responses​"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 6389,
+      "end": 6420,
+      "id": "b215",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[215]",
+      "headingPath": [
+        "Chat Completions API",
+        "Responses​"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 6422,
+      "end": 6513,
+      "id": "b216",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[216]",
+      "headingPath": [
+        "Chat Completions API",
+        "Responses​"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 6515,
+      "end": 6516,
+      "id": "b217",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[217]",
+      "headingPath": [
+        "Chat Completions API",
+        "Responses​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 6518,
+      "end": 6519,
+      "id": "b218",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[218]",
+      "headingPath": [
+        "Chat Completions API",
+        "Responses​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 6521,
+      "end": 6538,
+      "id": "b219",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[219]",
+      "headingPath": [
+        "Chat Completions API",
+        "Responses​"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 6540,
+      "end": 6548,
+      "id": "b220",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[220]",
+      "headingPath": [
+        "Chat Completions API",
+        "Responses​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 6550,
+      "end": 6558,
+      "id": "b221",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[221]",
+      "headingPath": [
+        "Chat Completions API",
+        "Responses​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 6560,
+      "end": 6583,
+      "id": "b222",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[222]",
+      "headingPath": [
+        "Chat Completions API",
+        "Responses​"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 6585,
+      "end": 6592,
+      "id": "b223",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[223]",
+      "headingPath": [
+        "Chat Completions API",
+        "Responses​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 6594,
+      "end": 6614,
+      "id": "b224",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[224]",
+      "headingPath": [
+        "Chat Completions API",
+        "Responses​"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 6616,
+      "end": 6626,
+      "id": "b225",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[225]",
+      "headingPath": [
+        "Chat Completions API",
+        "Responses​"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 6628,
+      "end": 6650,
+      "id": "b226",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[226]",
+      "headingPath": [
+        "Chat Completions API",
+        "Responses​"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 6652,
+      "end": 6717,
+      "id": "b227",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[227]",
+      "headingPath": [
+        "Chat Completions API",
+        "Responses​"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 6719,
+      "end": 6750,
+      "id": "b228",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[228]",
+      "headingPath": [
+        "Chat Completions API",
+        "Responses​"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 6752,
+      "end": 6843,
+      "id": "b229",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[229]",
+      "headingPath": [
+        "Chat Completions API",
+        "Responses​"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 6845,
+      "end": 6857,
+      "id": "b230",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[230]",
+      "headingPath": [
+        "Chat Completions API",
+        "Responses​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 6859,
+      "end": 6867,
+      "id": "b231",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[231]",
+      "headingPath": [
+        "Chat Completions API",
+        "Responses​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 6869,
+      "end": 6877,
+      "id": "b232",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[232]",
+      "headingPath": [
+        "Chat Completions API",
+        "Responses​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 6879,
+      "end": 6971,
+      "id": "b233",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[233]",
+      "headingPath": [
+        "Chat Completions API",
+        "Responses​"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 6973,
+      "end": 6980,
+      "id": "b234",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[234]",
+      "headingPath": [
+        "Chat Completions API",
+        "Responses​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 6982,
+      "end": 7002,
+      "id": "b235",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[235]",
+      "headingPath": [
+        "Chat Completions API",
+        "Responses​"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 7004,
+      "end": 7014,
+      "id": "b236",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[236]",
+      "headingPath": [
+        "Chat Completions API",
+        "Responses​"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 7016,
+      "end": 7038,
+      "id": "b237",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[237]",
+      "headingPath": [
+        "Chat Completions API",
+        "Responses​"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 7040,
+      "end": 7105,
+      "id": "b238",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[238]",
+      "headingPath": [
+        "Chat Completions API",
+        "Responses​"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 7107,
+      "end": 7138,
+      "id": "b239",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[239]",
+      "headingPath": [
+        "Chat Completions API",
+        "Responses​"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 7140,
+      "end": 7231,
+      "id": "b240",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[240]",
+      "headingPath": [
+        "Chat Completions API",
+        "Responses​"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 7233,
+      "end": 7234,
+      "id": "b241",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[241]",
+      "headingPath": [
+        "Chat Completions API",
+        "Responses​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 7236,
+      "end": 7237,
+      "id": "b242",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[242]",
+      "headingPath": [
+        "Chat Completions API",
+        "Responses​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 7239,
+      "end": 7240,
+      "id": "b243",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[243]",
+      "headingPath": [
+        "Chat Completions API",
+        "Responses​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 7242,
+      "end": 7265,
+      "id": "b244",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[244]",
+      "headingPath": [
+        "Chat Completions API",
+        "Responses​"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 7267,
+      "end": 7292,
+      "id": "b245",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[245]",
+      "headingPath": [
+        "Chat Completions API",
+        "Responses​"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 7294,
+      "end": 7314,
+      "id": "b246",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[246]",
+      "headingPath": [
+        "Chat Completions API",
+        "Responses​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 7316,
+      "end": 7336,
+      "id": "b247",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[247]",
+      "headingPath": [
+        "Chat Completions API",
+        "Responses​"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 7338,
+      "end": 7371,
+      "id": "b248",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[248]",
+      "headingPath": [
+        "Chat Completions API",
+        "Responses​"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 7373,
+      "end": 7452,
+      "id": "b249",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[249]",
+      "headingPath": [
+        "Chat Completions API",
+        "Responses​"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 7454,
+      "end": 7475,
+      "id": "b250",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[250]",
+      "headingPath": [
+        "Chat Completions API",
+        "Responses​"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 7477,
+      "end": 7511,
+      "id": "b251",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[251]",
+      "headingPath": [
+        "Chat Completions API",
+        "Responses​"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 7513,
+      "end": 7540,
+      "id": "b252",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[252]",
+      "headingPath": [
+        "Chat Completions API",
+        "Responses​"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 7542,
+      "end": 7547,
+      "id": "b253",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[253]",
+      "headingPath": [
+        "Chat Completions API",
+        "Responses​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 7549,
+      "end": 7555,
+      "id": "b254",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[254]",
+      "headingPath": [
+        "Chat Completions API",
+        "Responses​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 7557,
+      "end": 7570,
+      "id": "b255",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[255]",
+      "headingPath": [
+        "Chat Completions API",
+        "Responses​"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 7572,
+      "end": 7605,
+      "id": "b256",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[256]",
+      "headingPath": [
+        "Chat Completions API",
+        "Responses​"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 7607,
+      "end": 7633,
+      "id": "b257",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[257]",
+      "headingPath": [
+        "Chat Completions API",
+        "Responses​"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 7635,
+      "end": 7664,
+      "id": "b258",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[258]",
+      "headingPath": [
+        "Chat Completions API",
+        "Responses​"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 7666,
+      "end": 7744,
+      "id": "b259",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[259]",
+      "headingPath": [
+        "Chat Completions API",
+        "Responses​"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 7746,
+      "end": 7767,
+      "id": "b260",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[260]",
+      "headingPath": [
+        "Chat Completions API",
+        "Responses​"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 7769,
+      "end": 7775,
+      "id": "b261",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[261]",
+      "headingPath": [
+        "Chat Completions API",
+        "Responses​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 7777,
+      "end": 7785,
+      "id": "b262",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[262]",
+      "headingPath": [
+        "Chat Completions API",
+        "Responses​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 7787,
+      "end": 7807,
+      "id": "b263",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[263]",
+      "headingPath": [
+        "Chat Completions API",
+        "Responses​"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 7809,
+      "end": 7830,
+      "id": "b264",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[264]",
+      "headingPath": [
+        "Chat Completions API",
+        "Responses​"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 7832,
+      "end": 7890,
+      "id": "b265",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[265]",
+      "headingPath": [
+        "Chat Completions API",
+        "Responses​"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 7892,
+      "end": 7931,
+      "id": "b266",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[266]",
+      "headingPath": [
+        "Chat Completions API",
+        "Responses​"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 7933,
+      "end": 7962,
+      "id": "b267",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[267]",
+      "headingPath": [
+        "Chat Completions API",
+        "Responses​"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 7964,
+      "end": 8004,
+      "id": "b268",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[268]",
+      "headingPath": [
+        "Chat Completions API",
+        "Responses​"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 8006,
+      "end": 8036,
+      "id": "b269",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[269]",
+      "headingPath": [
+        "Chat Completions API",
+        "Responses​"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 8038,
+      "end": 8066,
+      "id": "b270",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[270]",
+      "headingPath": [
+        "Chat Completions API",
+        "Responses​"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 8068,
+      "end": 8107,
+      "id": "b271",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[271]",
+      "headingPath": [
+        "Chat Completions API",
+        "Responses​"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 8109,
+      "end": 8134,
+      "id": "b272",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[272]",
+      "headingPath": [
+        "Chat Completions API",
+        "Responses​"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 8136,
+      "end": 8142,
+      "id": "b273",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[273]",
+      "headingPath": [
+        "Chat Completions API",
+        "Responses​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 8144,
+      "end": 8168,
+      "id": "b274",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[274]",
+      "headingPath": [
+        "Chat Completions API",
+        "Responses​"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 8170,
+      "end": 8194,
+      "id": "b275",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[275]",
+      "headingPath": [
+        "Chat Completions API",
+        "Responses​"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 8196,
+      "end": 8216,
+      "id": "b276",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[276]",
+      "headingPath": [
+        "Chat Completions API",
+        "Responses​"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 8218,
+      "end": 8228,
+      "id": "b277",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[277]",
+      "headingPath": [
+        "Chat Completions API",
+        "Responses​"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    }
+  ],
+  "links": [
+    {
+      "url": "https://api-docs.deepseek.com/zh-cn/api/create-chat-completion",
+      "text": "",
+      "blockId": null,
+      "relation": "CANONICAL",
+      "locator": "source DOM link[0]"
+    },
+    {
+      "url": "https://api-docs.deepseek.com/zh-cn/guides/search",
+      "text": "点此查看使用指南。",
+      "blockId": "b1",
+      "relation": "LINK",
+      "locator": "source DOM link[2]"
+    },
+    {
+      "url": "https://api-docs.deepseek.com/zh-cn/quick_start/pricing",
+      "text": "模型 & 价格",
+      "blockId": "b43",
+      "relation": "LINK",
+      "locator": "source DOM link[36]"
+    },
+    {
+      "url": "https://api-docs.deepseek.com/zh-cn/guides/tool_calls",
+      "text": "Tool Calls 指南",
+      "blockId": "b96",
+      "relation": "LINK",
+      "locator": "source DOM link[37]"
+    },
+    {
+      "url": "https://json-schema.org/understanding-json-schema/",
+      "text": "JSON Schema 参考",
+      "blockId": "b96",
+      "relation": "LINK",
+      "locator": "source DOM link[38]"
+    },
+    {
+      "url": "https://api-docs.deepseek.com/zh-cn/guides/tool_calls",
+      "text": "Tool Calls 指南",
+      "blockId": "b98",
+      "relation": "LINK",
+      "locator": "source DOM link[39]"
+    },
+    {
+      "url": "https://json-schema.org/understanding-json-schema/",
+      "text": "JSON Schema 参考",
+      "blockId": "b98",
+      "relation": "LINK",
+      "locator": "source DOM link[40]"
+    },
+    {
+      "url": "https://api-docs.deepseek.com/zh-cn/guides/tool_calls",
+      "text": "Tool Calls 指南",
+      "blockId": "b101",
+      "relation": "LINK",
+      "locator": "source DOM link[41]"
+    },
+    {
+      "url": "https://api-docs.deepseek.com/zh-cn/quick_start/rate_limit",
+      "text": "限速与隔离",
+      "blockId": "b128",
+      "relation": "LINK",
+      "locator": "source DOM link[42]"
+    }
+  ],
+  "tables": []
+}

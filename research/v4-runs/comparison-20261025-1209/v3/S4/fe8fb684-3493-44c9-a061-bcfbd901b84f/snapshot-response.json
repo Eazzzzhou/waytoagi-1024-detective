@@ -1,0 +1,995 @@
+{
+  "snapshot": {
+    "id": "9c4afb5f-6e40-41cc-a991-b76ce98c7b31",
+    "investigationId": "fe8fb684-3493-44c9-a061-bcfbd901b84f",
+    "version": 1,
+    "parentSnapshotId": null,
+    "productIdentity": {
+      "name": "GitHub",
+      "officialWebsite": "https://github.blog",
+      "version": null,
+      "plan": null,
+      "confirmationStatus": "CONFIRMED",
+      "confirmationBasis": [
+        {
+          "url": "https://github.blog/news-insights/product-news/github-copilot-in-vscode-free",
+          "excerpt": "rate developer happiness. Previously, Thomas was the Chief Executive Officer of GitHub (2021-2025) where he oversaw the rise of the world’s most widely adopted AI developer tools—including the launches of GitHub Copilot, Copilot Workspace, and GitHub Models. Thomas has also been a celebrated TED spe",
+          "retrievedAt": "2026-10-25T04:11:47.166Z",
+          "reason": "Explicit question name matches publisher domain label and freshly read page title; readable original text retained. Website self-identification, not verified legal ownership; version/plan unknown"
+        },
+        {
+          "url": "https://docs.github.com/en/copilot/get-started/plans",
+          "excerpt": "PlanPricingGitHub AI CreditsAgentsModelsCopilot FreeFreeAn allowance of GitHub AI CreditsLimitedAuto model selection onlyCopilot StudentFreeAn allowance of GitHub AI CreditsExcludes third-party agentsAuto model selection onlyCopilot Pro$10 USD per month(free for some users)Base: 1,000A selection of",
+          "retrievedAt": "2026-10-25T04:11:47.683Z",
+          "reason": "Explicit question name matches publisher domain label and freshly read page title; readable original text retained. Website self-identification, not verified legal ownership; version/plan unknown"
+        }
+      ]
+    },
+    "evidence": [
+      {
+        "id": "f4c9fcdd-16e2-4079-a877-b59b32cb7a25",
+        "sourceUrl": "https://devblogs.microsoft.com/commandline/terminal-chat-now-included-in-github-copilot-free/",
+        "originalExcerpt": "GitHub Copilot Free is limited to 50 chat messages per month. This includes the usage of Copilot in the CLI, VS Code, and Visual Studio. If you reach your quota, you can upgrade on the web.",
+        "translation": null,
+        "originalLocation": {
+          "kind": "TEXT",
+          "locator": "https://devblogs.microsoft.com/commandline/terminal-chat-now-included-in-github-copilot-free/ :: article:first :: blocks(p,li,pre,tr,h1,h2,h3)[1]; normalized UTF-16 [0,189)",
+          "context": "GitHub Copilot Free is limited to 50 chat messages per month. This includes the usage of Copilot in the CLI, VS Code, and Visual Studio. If you reach your quota, you can upgrade on the web."
+        },
+        "metadata": {
+          "title": "Terminal Chat now included in GitHub Copilot Free - Windows Command Line",
+          "siteName": "devblogs.microsoft.com",
+          "author": "Christopher Nguyen",
+          "publishedAt": "2025-02-26T17:32:27.000Z",
+          "language": "en-US",
+          "sourceType": "UNKNOWN",
+          "contentKind": "UNKNOWN",
+          "productVersion": null,
+          "plan": null,
+          "upstreamUrl": null,
+          "independence": "UNKNOWN",
+          "originGroupId": null,
+          "independenceReason": null
+        },
+        "retrievedAt": "2026-10-25T04:11:46.894Z",
+        "readStatus": "READ",
+        "readError": null,
+        "contentHash": "a694b53ba6061242db1299dbfeddfd74dc004da834d6e7a78408ba67fb74aaf2"
+      },
+      {
+        "id": "19991776-0485-4a4e-9dae-5c2559885b25",
+        "sourceUrl": "https://github.blog/news-insights/product-news/github-copilot-in-vscode-free",
+        "originalExcerpt": "rate developer happiness. Previously, Thomas was the Chief Executive Officer of GitHub (2021-2025) where he oversaw the rise of the world’s most widely adopted AI developer tools—including the launches of GitHub Copilot, Copilot Workspace, and GitHub Models. Thomas has also been a celebrated TED spe",
+        "translation": null,
+        "originalLocation": {
+          "kind": "TEXT",
+          "locator": "https://github.blog/news-insights/product-news/github-copilot-in-vscode-free/ :: article:first :: blocks(p,li,pre,tr,h1,h2,h3)[0]; normalized UTF-16 [124,424)",
+          "context": "evelopment since his childhood in Germany, Thomas Dohmke has built a career building tools to accelerate developer happiness. Previously, Thomas was the Chief Executive Officer of GitHub (2021-2025) where he oversaw the rise of the world’s most widely adopted AI developer tools—including the launches of GitHub Copilot, Copilot Workspace, and GitHub Models. Thomas has also been a celebrated TED speaker and holds a PhD in mechanical engineering from University of Glasgow, UK."
+        },
+        "metadata": {
+          "title": "Announcing 150M developers and a new free tier for GitHub Copilot in VS Code - The GitHub Blog",
+          "siteName": "github.blog",
+          "author": "Thomas Dohmke",
+          "publishedAt": "2024-12-18T18:11:48.000Z",
+          "language": "en-US",
+          "sourceType": "OFFICIAL",
+          "contentKind": "OFFICIAL_CLAIM",
+          "productVersion": null,
+          "plan": null,
+          "upstreamUrl": null,
+          "independence": "UNKNOWN",
+          "originGroupId": "official-publisher:github.blog",
+          "independenceReason": "本轮读取后发现的同一出版方，语言/子域版本不视为独立实验；不推断未知上游。"
+        },
+        "retrievedAt": "2026-10-25T04:11:47.166Z",
+        "readStatus": "READ",
+        "readError": null,
+        "contentHash": "f559d93f77470c1ce05d95cfe43c961b64f4869a05803ea907f0446937d5743f"
+      },
+      {
+        "id": "af875ccd-e8a2-4067-abf9-843e179ca072",
+        "sourceUrl": "https://docs.github.com/en/copilot/get-started/plans",
+        "originalExcerpt": "PlanPricingGitHub AI CreditsAgentsModelsCopilot FreeFreeAn allowance of GitHub AI CreditsLimitedAuto model selection onlyCopilot StudentFreeAn allowance of GitHub AI CreditsExcludes third-party agentsAuto model selection onlyCopilot Pro$10 USD per month(free for some users)Base: 1,000A selection of",
+        "translation": null,
+        "originalLocation": {
+          "kind": "TEXT",
+          "locator": "https://docs.github.com/en/copilot/get-started/plans :: main:first :: tables[0]; normalized UTF-16 [0,299)",
+          "context": "PlanPricingGitHub AI CreditsAgentsModelsCopilot FreeFreeAn allowance of GitHub AI CreditsLimitedAuto model selection onlyCopilot StudentFreeAn allowance of GitHub AI CreditsExcludes third-party agentsAuto model selection onlyCopilot Pro$10 USD per month(free for some users)Base: 1,000A selection of modelsCopilot Pro+$39 USD per month.Base: 3,900Access to premium modelsCopilot Max$100 USD per monthBase: 10,000Priority access to premium modelsCopilot Business$19 USD per granted seat per monthTotal per user per month: 1,900Access to premium modelsCopilot Enterprise$39 USD per granted seat per monthTotal per user per month: 3,900Priority access to premium models"
+        },
+        "metadata": {
+          "title": "Plans for GitHub Copilot - GitHub Docs",
+          "siteName": "docs.github.com",
+          "author": null,
+          "publishedAt": null,
+          "language": "en",
+          "sourceType": "UNKNOWN",
+          "contentKind": "UNKNOWN",
+          "productVersion": null,
+          "plan": null,
+          "upstreamUrl": null,
+          "independence": "UNKNOWN",
+          "originGroupId": null,
+          "independenceReason": null
+        },
+        "retrievedAt": "2026-10-25T04:11:47.683Z",
+        "readStatus": "READ",
+        "readError": null,
+        "contentHash": "b0b99a6e270c07dd8dd61dda8242a8dae99298b9420bc0720758e5b37c7f5fed"
+      },
+      {
+        "id": "2b29f7b5-0c0b-42ee-9881-141c7853f895",
+        "sourceUrl": "https://visualstudio.microsoft.com/zh-hans/github-copilot",
+        "originalExcerpt": "体验 AI 支持的编码帮助以分析问题原因、协调后续步骤、应用更改并对错误进行迭代优化。",
+        "translation": null,
+        "originalLocation": {
+          "kind": "TEXT",
+          "locator": "https://visualstudio.microsoft.com/zh-hans/github-copilot/ :: main:first :: blocks(p,li,pre,tr,h1,h2,h3)[3]; normalized UTF-16 [0,43)",
+          "context": "体验 AI 支持的编码帮助以分析问题原因、协调后续步骤、应用更改并对错误进行迭代优化。"
+        },
+        "metadata": {
+          "title": "使用 GitHub Copilot Visual Studio - AI 结对编程",
+          "siteName": "visualstudio.microsoft.com",
+          "author": null,
+          "publishedAt": null,
+          "language": "zh-CN",
+          "sourceType": "UNKNOWN",
+          "contentKind": "UNKNOWN",
+          "productVersion": null,
+          "plan": null,
+          "upstreamUrl": null,
+          "independence": "UNKNOWN",
+          "originGroupId": null,
+          "independenceReason": null
+        },
+        "retrievedAt": "2026-10-25T04:11:52.272Z",
+        "readStatus": "READ",
+        "readError": null,
+        "contentHash": "9e6eb2ba976326e916e3cb3624ab72be843f862766c5a55bd23b335f8e252d96"
+      }
+    ],
+    "claims": [
+      {
+        "id": "660aac3e-7333-4149-b163-9dc7d0fa773e",
+        "statement": "来源报告（未独立复现）：微软命令行开发者博客的一篇文章称，GitHub Copilot Free 每月限制 50 条聊天消息，涵盖 CLI、VS Code 和 Visual Studio 中的 Copilot 使用。",
+        "kind": "USER_REPORT",
+        "verificationStatus": "SUPPORTED",
+        "verificationReason": "原句明确写限量50条/月并涵盖CLI、VS Code、Visual Studio；仅为该文转述，非官方文档原文。",
+        "scope": "devblogs.microsoft.com 的 Terminal Chat 文章，2025-02-26；属该文转述，非官方文档原文"
+      },
+      {
+        "id": "a622107b-2659-4a46-8915-0f0442394885",
+        "statement": "所保存的 GitHub 官方博客摘录未提及每月 50 次 chat 这一数值。",
+        "kind": "FACT",
+        "verificationStatus": "SUPPORTED",
+        "verificationReason": "保存摘录仅为作者履历段落，无50次/月表述；仅限该摘录范围。",
+        "scope": "github.blog 的 Copilot Free 发布文章摘录范围内（仅覆盖一段作者简介文字）"
+      },
+      {
+        "id": "10b6fd70-fee1-4c2e-bfae-83aa3b4ae686",
+        "statement": "所保存的 GitHub Docs 计划对比表摘录将 Copilot Free 列为免费且含一定额度，但未出现“每月 50 次 chat”的表述。",
+        "kind": "FACT",
+        "verificationStatus": "SUPPORTED",
+        "verificationReason": "摘录含Copilot Free、Free、额度字样，无50次chat表述；仅限该表格摘录。",
+        "scope": "docs.github.com 的 Plans 表格摘录范围内"
+      },
+      {
+        "id": "61cb705c-a920-451f-a10a-f764f6e004a5",
+        "statement": "所保存的 Visual Studio 中文页面摘录未提及 Copilot Free 的每月 chat 次数。",
+        "kind": "FACT",
+        "verificationStatus": "SUPPORTED",
+        "verificationReason": "保存摘录仅为AI编码帮助描述，无chat次数；仅限该段摘录。",
+        "scope": "visualstudio.microsoft.com 页面该段摘录范围内"
+      },
+      {
+        "id": "911e85f9-0a7c-4a04-afad-e38d4c25f48b",
+        "statement": "已知来源中没有足以判定各来源独立或同文转载的元数据，因此独立性与转载关系无法确定。",
+        "kind": "FACT",
+        "verificationStatus": "INSUFFICIENT",
+        "verificationReason": "摘录未含转载/上游信息，无同一来源家族的可比证据，无法判定独立性。",
+        "scope": "本次提供的四个 READ 摘录及其元数据"
+      }
+    ],
+    "relations": [
+      {
+        "claimId": "660aac3e-7333-4149-b163-9dc7d0fa773e",
+        "evidenceId": "f4c9fcdd-16e2-4079-a877-b59b32cb7a25",
+        "relation": "SUPPORTS",
+        "reason": "原句直接写明50条/月并列举CLI、VS Code、Visual Studio，与报告转述一致。"
+      },
+      {
+        "claimId": "911e85f9-0a7c-4a04-afad-e38d4c25f48b",
+        "evidenceId": "f4c9fcdd-16e2-4079-a877-b59b32cb7a25",
+        "relation": "CONTEXT",
+        "reason": "该文元数据upstreamUrl为空、independence为UNKNOWN，无转载或独立来源说明。"
+      },
+      {
+        "claimId": "911e85f9-0a7c-4a04-afad-e38d4c25f48b",
+        "evidenceId": "19991776-0485-4a4e-9dae-5c2559885b25",
+        "relation": "CONTEXT",
+        "reason": "github.blog标记为官方出版方家族，但与微软博客是否同源无元数据说明。"
+      },
+      {
+        "claimId": "a622107b-2659-4a46-8915-0f0442394885",
+        "evidenceId": "19991776-0485-4a4e-9dae-5c2559885b25",
+        "relation": "SUPPORTS",
+        "reason": "保存摘录为作者简介，无50次chat表述，支持“摘录未提及”。"
+      },
+      {
+        "claimId": "10b6fd70-fee1-4c2e-bfae-83aa3b4ae686",
+        "evidenceId": "af875ccd-e8a2-4067-abf9-843e179ca072",
+        "relation": "SUPPORTS",
+        "reason": "摘录列Copilot Free为Free并有额度，未出现50次chat，支持该陈述。"
+      },
+      {
+        "claimId": "61cb705c-a920-451f-a10a-f764f6e004a5",
+        "evidenceId": "2b29f7b5-0c0b-42ee-9881-141c7853f895",
+        "relation": "SUPPORTS",
+        "reason": "保存摘录无chat次数内容，支持该段摘录未提及。"
+      },
+      {
+        "claimId": "911e85f9-0a7c-4a04-afad-e38d4c25f48b",
+        "evidenceId": "2b29f7b5-0c0b-42ee-9881-141c7853f895",
+        "relation": "CONTEXT",
+        "reason": "视觉中文页无上游/来源说明，属不同域名但无转载或独立依据。"
+      }
+    ],
+    "conflicts": [],
+    "gaps": [
+      {
+        "id": "087ba0cc-33f2-4dac-a072-c606b19e843f",
+        "claimIds": [
+          "911e85f9-0a7c-4a04-afad-e38d4c25f48b"
+        ],
+        "kind": "INSUFFICIENT_EVIDENCE",
+        "description": "阶段核查未完成：Evidence validation: supported claim has no support or unresolved refutation；保留原句并在最终预算内核查。",
+        "searchScope": null
+      },
+      {
+        "id": "b3d1f0a2-7c64-4f2e-9b8a-1d5e6c7a8f90",
+        "claimIds": [
+          "660aac3e-7333-4149-b163-9dc7d0fa773e",
+          "911e85f9-0a7c-4a04-afad-e38d4c25f48b"
+        ],
+        "kind": "NOT_FOUND_IN_SCOPE",
+        "description": "所读摘录均未提供转载关系、上游URL或独立实验证据，无法判定各来源独立或同文转载。",
+        "searchScope": "本次提供的四个 READ 摘录"
+      }
+    ],
+    "retrievalRecords": [
+      {
+        "id": "11a9b4f5-07d6-4783-b398-3c27073695bd",
+        "provider": "tencent-yuanbao-search-api",
+        "query": "GitHub Copilot Free 每月 50 次 chat 声明 独立来源 转载",
+        "calledAt": "2026-10-25T04:11:40.313Z",
+        "status": "SUCCEEDED",
+        "error": null,
+        "returnedSources": [
+          {
+            "url": "https://www.positioniseverything.net/is-github-copilot-free-in-vs-code-2026-limits-and-alternatives",
+            "title": "Is GitHub Copilot Free in VS Code? 2026 Limits and Alternatives",
+            "snippet": "Is GitHub Copilot Free in VS Code? 2026 Limits and Alternatives Position Is Everything。Is GitHub Copilot Free in VS Code? 2026 Limits and Alternatives Yes. Eligible personal accounts can use GitHub Copilot Free in VS Code at no charge. As listed in GitHub’s individual-plan comparison accessed October 5, 2026, Free includes up to 2,000 inline suggestions, 50 chat interactions, and 50 premium requests per month. Those are separate allowances, not three names for the same quota. If you need more flexibility—or want to avoid a Copilot plan—VS Code also supports other agent tools, provider connections, and local models, though they do not all provide the same features. What Copilot Free includes in 2026 GitHub’s current individual-plan comparison lists these monthly limits for Copilot Free, whi...",
+            "adoption": "REJECTED",
+            "adoptionReason": "本轮未读取；搜索摘要不是原文证据。",
+            "evidenceId": null
+          },
+          {
+            "url": "https://github.blog/news-insights/product-news/github-copilot-in-vscode-free/?_bhlid=1c96dda4366d8070d06e00abf1c4746e80a06fe2",
+            "title": "Announcing 150M developers and a new free tier for GitHub Copilot in VS Code",
+            "snippet": "Announcing 150M developers and a new free tier for GitHub Copilot in VS Code The GitHub Blog。Come and join 150M developers on GitHub that can now code with Copilot for free in VS Code. GitHub has a long history of offering free products and services to developers. Starting with free open source and public collaboration, we added free private repos, free minutes for GitHub Actions and GitHub Codespaces, and free package and release storage. Today, we are adding GitHub Copilot to the mix by launching GitHub Copilot Free. Now automatically integrated into VS Code, all of you have access to 2,000 code completions and 50 chat messages per month, simply by signing in with your personal GitHub account. Or by creating a new one. And just last week, we passed the mark of 150M developers on GitHub. ...",
+            "adoption": "REJECTED",
+            "adoptionReason": "本轮未读取；搜索摘要不是原文证据。",
+            "evidenceId": null
+          },
+          {
+            "url": "https://baike.baidu.com/item/GitHub%20Copilot%20Free/67549067",
+            "title": "GitHub Copilot Free",
+            "snippet": "GitHub Copilot Free 百度百科。 发展历程 播报 编辑 2024年12月19日,GitHub正式宣布推出 GitHub Copilot Free免费订阅,开发者可以在 Visual Studio Code 代码编辑器中免费使用GitHub Copilot AI服务,初始提供每月2000次代码补全和50次聊天请求 。 该免费计划的功能随后被集成到Visual Studio 2022版本17.14.17及更高版本中,并从Visual Studio 2026版本18.1开始成为该工具所需的订阅之一 。 2026年4月21日,由于人工智能计算资源面临巨大压力,GitHub宣布停止接受新的 Copilot 个人订阅注册,以维持现有用户的服务稳定性。 核心技术 播报 编辑 GitHub Copilot Free对核心功能的使用设有月度限额,在集成开发环境中每月提供最高52,000次代码补全和1,250条聊天消息,此外每月还提供50次高级请求 。用户可访问先进的AI模型以获取代码建议和对话帮助,包括OpenAI的GPT-4o和Anthropic的Claude 3.5 Sonnet模型 。 该免费版本提供一定程度的个性化设置与代码安全控制,支持在仓库级别和个人级别设置自定义指令 。具备公共代码筛选器,可阻止与公开代码匹配的建议,并支持排除指定文件不被Copilot分析 。 GitHub Copilot Free提供基础的Copilot编码代理,但其智能体模式功能受限,例如在Visual Studio Code中仅支持‘Review selection’模式 。相较于付费版本,免费版不包含多项面向团队与企业的管理及高级功能,例如不提供组织级别的策略管理、审计日志、内容排除、第三方智能体以及用于自定义的模型上下文协议支持 。此外,Copilot聊天功能在GitHub Mobi...",
+            "adoption": "REJECTED",
+            "adoptionReason": "本轮未读取；搜索摘要不是原文证据。",
+            "evidenceId": null
+          },
+          {
+            "url": "https://monoist.itmedia.co.jp/mn/spv/2412/27/news100.html",
+            "title": "AI支援型ｺｰド補完ﾂｰﾙの無料プﾗﾝを提供:組み込み開発ﾆｭｰｽ",
+            "snippet": "AI支援型コード補完ツールの無料プランを提供:組み込み開発ニュース。AI支援型コード補完ツールの無料プランを提供*:組み込み開発ニュース* GitHubは、AI支援型コード補完ツールの無料プラン「GitHub Copilot Free」の提供を開始した。1カ月当たり2000回のコード補完と50回のチャットメッセージをVisual Studio Code上で利用できる。 GitHubは2024年12月18日(現地時間)、AI(人工知能)支援型コード補完ツールの無料プラン「GitHub Copilot Free」の提供を開始した。また、GitHubのユーザー数が1億5000万人を突破したと発表した。 GitHub Copilotが無料に[クリックで拡大] 出所:GitHub GitHub Copilot Freeは、Visual Studio Code上で、個人用のGitHubアカウントから1カ月当たり2000回のコード補完と50回のチャットメッセージを利用できる。 AnthropicのClaude 3.5 SonnetまたはOpenAIのGPT-4oのモデルから選択して、コーディングに関する問い合わせや既存コードの説明、バグ検出に利用できる。また、マルチファイル編集やサードパーティー製エージェントの活用、個人のGitHub Copilot Extensionsの構築も可能だ。さらに、GitHub Copilot Chatをダッシュボード上で利用できる。 学生や教育関係者、オープンソースメンテナーには、これまで通り無制限で「GitHub Copilot Pro」への無料アクセスを提供する。...",
+            "adoption": "REJECTED",
+            "adoptionReason": "本轮未读取；搜索摘要不是原文证据。",
+            "evidenceId": null
+          },
+          {
+            "url": "https://devblogs.microsoft.com/commandline/terminal-chat-now-included-in-github-copilot-free/",
+            "title": "Terminal Chat now included in GitHub Copilot Free",
+            "snippet": "Terminal Chat now included in GitHub Copilot Free 微软开发者博客。Terminal Chat now included in GitHub Copilot Free Windows Terminal Canary users can now use Terminal Chat with the GitHub Copilot Free plan! 🚀 GitHub Copilot Free is limited to 50 chat messages per month. This includes the usage of Copilot in the CLI, VS Code, and Visual Studio. If you reach your quota, you can upgrade on the web. You can sign up for GitHub Copilot Free through the Copilot setting in your GitHub account. No subscription needed! 😀 What is GitHub Copilot? GitHub Copilot is an AI coding assistant that helps you write code faster and with less effort, allowing you to focus more energy on problem solving and collaboration. GitHub Copilot has been proven to increase developer productivity and accelerate the pace of softwa...",
+            "adoption": "ADOPTED",
+            "adoptionReason": "保存原句；是否支持问题由逐主张核查决定。",
+            "evidenceId": "f4c9fcdd-16e2-4079-a877-b59b32cb7a25"
+          },
+          {
+            "url": "https://github.blog/changelog/2025-02-26-github-copilot-now-available-for-free-in-windows-terminal-canary/",
+            "title": "GitHub Copilot now available for free in Windows Terminal Canary",
+            "snippet": "GitHub Copilot now available for free in Windows Terminal Canary The GitHub Blog。GitHub Copilot on Windows Terminal Canary is now available for free! GitHub Copilot Free allows you to access 50 chat messages per month. If you reach your quota, you can upgrade on the web. GitHub Copilot in Windows Terminal You can access the power of GitHub Copilot to get command suggestions and explanations without leaving the terminal with Terminal Chat in Windows Terminal Canary. This is available for all Copilot customers. Get started today GitHub Copilot is available in Windows Terminal Canary. Consult the Terminal Chat documentation to learn how to connect Copilot and get started. Share your feedback We are dedicated to continuous improvement and innovation. Your feedback remains a crucial part of our...",
+            "adoption": "REJECTED",
+            "adoptionReason": "本轮未读取；搜索摘要不是原文证据。",
+            "evidenceId": null
+          }
+        ]
+      },
+      {
+        "id": "a82d8dcd-e5fb-4319-a1e5-ae196bb98889",
+        "provider": "tavily-search-api:keyless-capped",
+        "query": "GitHub Copilot Free 每月 50 次 chat 声明 独立来源 转载",
+        "calledAt": "2026-10-25T04:11:40.313Z",
+        "status": "SUCCEEDED",
+        "error": null,
+        "returnedSources": [
+          {
+            "url": "https://visualstudio.microsoft.com/zh-hans/github-copilot",
+            "title": "使用 GitHub Copilot Visual Studio - AI 结对编程",
+            "snippet": "### 05 聊天窗口 询问有关解决方案或文件的问题。 通过 Copilot 徽章或按 Ctrl + , C 打开。 提示: 使用 #solution 在 Visual Studio 中引用活动解决方案(仅适用于 C#) Visual Studio 中的 GitHub Copilot 聊天窗口 提示 5 屏幕截图 tips 5 animation) ## 不要单打独斗 世界各地的开发人员使用 Copilot 更快地编写代码，并执行最重要的操作: 构建出色的软件。 ### Free GitHub Copilot 的快速入门方法。 $0每用户/月 开始在 VS Code 中打开 所含内容 每月 50 个智能体模式或聊天请求 每月 2,000 次补全 可访问 Haiku 4.5 和 GPT-5 Mini 等模型 Copilot CLI 不要求使用信用卡。 已验证的学生有权访问 GitHub Copilot 学生计划。 了解详细信息 最热门 ### 专业版 使用 GitHub Copilot 加速工作流。 $10每用户/月 [...] 否，GitHub Copilot 是单独的订阅，不包括在 Visual Studio Professional 或 Enterprise 许可证中。 详细了解GitHub Copilot 的计费。 如何在组织中管理对 GitHub Copilot 的访问权限? 对于具有 Copilot 商业版订阅的组织所有者，可以向组织成员授予 GitHub Copilot 访问权限并进行管理。 全部展开 全部折叠 什么是 GitHub Copilot? GitHub Copilot 改变了开发人员体验。 在 AI 领导者的支持下，Copilot 在整个软件开发生命周期中提供考虑了上下文的帮助，从 IDE 中的代码补全和聊天辅助，到 GitHub 中的代码说明和文档解答，等等。 借助 Copilot 提升其工作流，开发人员可以专注于其他方面: 价值、创新和幸福感。 [...] $10每用户/月 暂时不可用 – 阅读详细信息 所含内容 免费版中的所有内容，以及: Copilot 云智能体 Copilot 代码评审 GitHub 和 VS Code 上的 Claude 和 Codex 300 个高级请求，可以选择购买更多2 无限制的智能体模式和与 GPT-5 mini 聊天1 无限制内联建议 访问来自 Anthropic、Google、OpenAI 等的模型 ### Pro+ 通过智能体和更多模型进行缩放。 $39每用户/月 暂时不可用 – 阅读详细信息 所含内容 Pro 中的所有内容，以及: 可访问所有模型，包括 Claude Opus 4.7 等 使用最新模型时，高级请求量是 Pro 的 5 倍，并可选择购买更多2 对 GitHub Spark 的访问权限 ### 商业版 使用 GitHub Copilot 加速工作流。 $19每用户/月 联系销售人员 所含内容",
+            "adoption": "ADOPTED",
+            "adoptionReason": "保存原句；是否支持问题由逐主张核查决定。",
+            "evidenceId": "2b29f7b5-0c0b-42ee-9881-141c7853f895"
+          },
+          {
+            "url": "https://code.visualstudio.com/blogs/2024/12/18/free-github-copilot?wt.mc_id=developermscom",
+            "title": "Announcing a free GitHub Copilot for VS Code",
+            "snippet": "You can click on the link above or just enable GitHub Copilot right from within VS Code like so... With GitHub Copilot Free you get 2000 code completions/month. That's about 80 per working day - which is a lot. You also get 50 chat requests/month, as well as access to both GPT-4o and Claude 3.5 Sonnet models. [...] We are open sourcing the GitHub Copilot Chat extension. It’s the first milestone in making VS Code an open source AI editor. 2 min read [...] If you hit these limits, ideally it's because Copilot is doing its job well, which is to help you do yours! If you find you need more Copilot, the paid Pro plan is unlimited and provides access to additional models like o1 and Gemini (coming in the new year).",
+            "adoption": "REJECTED",
+            "adoptionReason": "本轮未读取；搜索摘要不是原文证据。",
+            "evidenceId": null
+          },
+          {
+            "url": "https://github.blog/news-insights/product-news/github-copilot-in-vscode-free",
+            "title": "Announcing 150M developers and a new free tier for GitHub Copilot in VS Code - The GitHub Blog",
+            "snippet": "Now automatically integrated into VS Code, all of you have access to 2,000 code completions and 50 chat messages per month, simply by signing in with your personal GitHub account. Or by creating a new one. And just last week, we passed the mark of 150M developers on GitHub. 🎉 [...] Did you know that Copilot Chat is now directly available from the GitHub dashboard and it works with Copilot Free, so you can start using it today? We couldn’t be more excited to make Copilot available to the 150M developers on GitHub. Happy coding! P.S. Students, educators, and open source maintainers: your free access to unlimited Copilot Pro accounts continues, unaffected! 😉 ## Tags: GitHub Copilot VS Code ## Written by Thomas Dohmke ### Thomas Dohmke @ashtom [...] Copilot Free gives you the choice between Anthropic’s Claude 3.5 Sonnet or OpenAI’s GPT-4o model. You can ask a coding question, explain existing code, or have it find a bug. You can execute edits across multiple files. And you can access Copilot’s third-party agents or build your own extension.",
+            "adoption": "ADOPTED",
+            "adoptionReason": "保存原句；是否支持问题由逐主张核查决定。",
+            "evidenceId": "19991776-0485-4a4e-9dae-5c2559885b25"
+          },
+          {
+            "url": "https://www.youtube.com/watch?v=NJFgKzRQj1Y",
+            "title": "Walkthrough for everyone on using the GitHub Copilot Free offer",
+            "snippet": "[0:26] doesn't have a GitHub currently so you can see every single step now in terms of what you're actually [0:32] getting when you go and get the co-pilot free what it's giving you basically is this ability to have you can see it [0:42] right here 2,000 code completions per month and then 50 chat messages per month now [0:51] if you are a hardcore developer you're going to go through that really really quickly but if you're just experimenting [...] [5:55] into the GPT 40 base you can change the model you want to use but I could now [6:02] start interacting and chatting away also it would have sent me a nice little email giving me some things to get [6:10] started it's confirming hey those free details so the 2,000 code completions the 50 co-pilot chat messages the [6:18] ability to change the model so it's given me information on how to get started with that but I now have GitHub [...] [2:03] completions for the chat capability there's different ways we can interact with this you see at the top I see the [2:11] little chat option right here and I can say and hey I want to open up the chat and then I'll get a window and I [2:20] can just start interacting asking it questions just by typing right here down [2:28] in the corner so that would just be a chat interaction it would also be a chat interaction if I select a bunch of",
+            "adoption": "REJECTED",
+            "adoptionReason": "本轮未读取；搜索摘要不是原文证据。",
+            "evidenceId": null
+          },
+          {
+            "url": "https://docs.github.com/zh/copilot/get-started/plans",
+            "title": "GitHub Copilot计划 - GitHub 文档",
+            "snippet": "| 计划 | 每月价格 | 基础积分 | Flex 分配 | 每月总数 AI credits | --- --- | Copilot Pro | $10 USD | 1,000 | 500 | 1,500 | | Copilot Pro+ | $39 USD | 3,900 | 3,100 | 7,000 | | Copilot Max | $100 USD | 10,000 | 10,000 | 20,000 | Copilot Free 和 Copilot Student 的津贴额度均为 AI credits。 有关 GitHub AI Credits 如何工作的详细信息，请参阅 个人基于使用情况的计费 ### 内联建议和 Copilot Chat 内联建议是 IDE 和 Next edit suggestions 中包含模型的实时代码建议。 在 Copilot Free 上每月最多可进行 2000 次补全。 \\\\ Copilot Chat \\\\ 可用的功能包括： [...] | Plan | Pricing | GitHub AI Credits | Agents | 模型 | --- --- | Copilot Free | 免费 | | GitHub AI Credits 允许量 | 受限 | 仅自动模型选择 | | Copilot Student | 免费 | | GitHub AI Credits 允许量 | 排除第三方代理 | 仅自动模型选择 | | Copilot Pro | | $10 USD 每月 （对某些用户免费） | 基座：1,000 | 所选模型 | | Copilot Pro+ | 每月 $39 USD。 | 基座：3,900 | 访问高级模型 | | Copilot Max | | $100 USD 每月 | 基座：10,000 | 优先访问高级模型 | | Copilot Business | 每月每个分配的席位 $19 USD | 每个用户每月总计：1,900 | 访问高级模型 | [...] Skip to content # GitHub Copilot计划 了解适用于 Copilot 的可用方案。 ## 在本文中 GitHub Copilot 计划 Copilot 计划概述 ## GitHub Copilot 计划 GitHub 提供适用于 Copilot 的多种方案。 根据你的需求，以及你是以个人身份使用 Copilot，还是作为组织或企业的一员使用 Copilot，选择其中之一。 \\\\ Copilot Free \\\\： 开始使用 Copilot Free。 此计划包含对部分 Copilot 功能的有限使用权限，让你可以免费试用 AI 编码辅助功能。 \\\\ Copilot Student \\\\：获取对 Copilot Student. 的访问权限。 仅向已验证身份的学生提供。 免费使用 Copilot 的各项功能。 \\\\ GitHub Copilot Pro \\\\： 订阅 Copilot Pro。 专为希望更灵活地使用多种模型并享有每月 AI credits 额度的个人用户而设计。",
+            "adoption": "REJECTED",
+            "adoptionReason": "本轮未读取；搜索摘要不是原文证据。",
+            "evidenceId": null
+          },
+          {
+            "url": "https://docs.github.com/en/copilot/get-started/plans",
+            "title": "Plans for GitHub Copilot - GitHub Docs",
+            "snippet": "For more information on how GitHub AI Credits work, see Usage-based billing for individuals ### Inline suggestions and Copilot Chat Inline suggestions are real-time code suggestions with included models in IDEs and Next edit suggestions. Limited to 2000 completions per month on Copilot Free. Copilot Chat features available include: [...] | Plan | Pricing | GitHub AI Credits | Agents | Models | --- --- | Copilot Free | Free | An allowance of GitHub AI Credits | Limited | Auto model selection only | | Copilot Student | Free | An allowance of GitHub AI Credits | Excludes third-party agents | Auto model selection only | | Copilot Pro | $10 USD per month (free for some users) | Base: 1,000 | A selection of models | | Copilot Pro+ | $39 USD per month. | Base: 3,900 | Access to premium models | [...] Copilot Free: Start using Copilot Free. This plan includes limited access to a selection of Copilot features allowing you to try AI-powered coding assistance at no cost. Copilot Student: Get access to Copilot Student. Available to verified students. Get access to Copilot's features for free. GitHub Copilot Pro: Subscribe to Copilot Pro. Designed for individuals who want more flexibility with access to a selection of models and a monthly allowance of AI credits.",
+            "adoption": "ADOPTED",
+            "adoptionReason": "保存原句；是否支持问题由逐主张核查决定。",
+            "evidenceId": "af875ccd-e8a2-4067-abf9-843e179ca072"
+          }
+        ]
+      }
+    ],
+    "verificationAudit": {
+      "modelCalls": [
+        {
+          "provider": "api.deepseek.com",
+          "model": "deepseek-flash",
+          "promptVersion": "a2-evidence-v4",
+          "temperature": null,
+          "thinkingMode": "DISABLED",
+          "generatedAt": "2026-10-25T04:11:40.294Z",
+          "id": "b2976008-3501-4619-9a33-0185f58b76f2",
+          "purpose": "investigation-initial-decision",
+          "startedAt": "2026-10-25T04:11:39.300Z",
+          "durationMs": 994,
+          "outcome": "SUCCEEDED",
+          "inputTokens": 1410,
+          "outputTokens": 108
+        },
+        {
+          "provider": "api.deepseek.com",
+          "model": "deepseek-flash",
+          "promptVersion": "a2-evidence-v4",
+          "temperature": null,
+          "thinkingMode": "DISABLED",
+          "generatedAt": "2026-10-25T04:11:45.432Z",
+          "id": "b3d49b36-ef09-4635-8511-ed11873738d9",
+          "purpose": "investigation-evidence-decision",
+          "startedAt": "2026-10-25T04:11:42.985Z",
+          "durationMs": 2447,
+          "outcome": "SUCCEEDED",
+          "inputTokens": 6301,
+          "outputTokens": 274
+        },
+        {
+          "provider": "api.deepseek.com",
+          "model": "deepseek-flash",
+          "promptVersion": "a2-evidence-v4",
+          "temperature": null,
+          "thinkingMode": "DISABLED",
+          "generatedAt": "2026-10-25T04:11:50.451Z",
+          "id": "11b0fe48-6f9e-4190-8847-debc625c93e6",
+          "purpose": "investigation-evidence-decision",
+          "startedAt": "2026-10-25T04:11:47.761Z",
+          "durationMs": 2690,
+          "outcome": "SUCCEEDED",
+          "inputTokens": 8062,
+          "outputTokens": 400
+        },
+        {
+          "provider": "api.deepseek.com",
+          "model": "deepseek-flash",
+          "promptVersion": "a2-evidence-v4",
+          "temperature": null,
+          "thinkingMode": "DISABLED",
+          "generatedAt": "2026-10-25T04:11:54.222Z",
+          "id": "eb675d2c-b006-4199-8b16-b3221f53c8e7",
+          "purpose": "investigation-evidence-decision",
+          "startedAt": "2026-10-25T04:11:52.313Z",
+          "durationMs": 1909,
+          "outcome": "SUCCEEDED",
+          "inputTokens": 8830,
+          "outputTokens": 343
+        },
+        {
+          "provider": "api.deepseek.com",
+          "model": "deepseek-flash",
+          "promptVersion": "a2-evidence-v4",
+          "temperature": null,
+          "thinkingMode": "DISABLED",
+          "generatedAt": "2026-10-25T04:11:57.010Z",
+          "id": "a25cbe9d-c9eb-482c-b3dd-84c53634941d",
+          "purpose": "investigation-evidence-decision",
+          "startedAt": "2026-10-25T04:11:54.222Z",
+          "durationMs": 2788,
+          "outcome": "SUCCEEDED",
+          "inputTokens": 9199,
+          "outputTokens": 432
+        },
+        {
+          "provider": "api.deepseek.com",
+          "model": "deepseek-flash",
+          "promptVersion": "a2-evidence-v4",
+          "temperature": null,
+          "thinkingMode": "DISABLED",
+          "generatedAt": "2026-10-25T04:11:58.829Z",
+          "id": "88d83030-ca24-4cfe-812c-4a92c3f4103a",
+          "purpose": "claim-extraction",
+          "startedAt": "2026-10-25T04:11:57.024Z",
+          "durationMs": 1804,
+          "outcome": "SUCCEEDED",
+          "inputTokens": 2512,
+          "outputTokens": 269
+        },
+        {
+          "provider": "api.deepseek.com",
+          "model": "deepseek-flash",
+          "promptVersion": "a2-evidence-v4",
+          "temperature": null,
+          "thinkingMode": "DISABLED",
+          "generatedAt": "2026-10-25T04:12:04.229Z",
+          "id": "26ed6a6f-3f82-405e-8cd5-ca772ef084bd",
+          "purpose": "claim-evidence-verification",
+          "startedAt": "2026-10-25T04:11:58.830Z",
+          "durationMs": 5398,
+          "outcome": "SUCCEEDED",
+          "inputTokens": 4253,
+          "outputTokens": 1257
+        },
+        {
+          "provider": "api.deepseek.com",
+          "model": "deepseek-flash",
+          "promptVersion": "a2-evidence-v4",
+          "temperature": null,
+          "thinkingMode": "DISABLED",
+          "generatedAt": "2026-10-25T04:12:10.326Z",
+          "id": "de8fe254-130e-4404-8fdb-6fb479e63d78",
+          "purpose": "claim-evidence-verification:validation-repair",
+          "startedAt": "2026-10-25T04:12:04.230Z",
+          "durationMs": 6096,
+          "outcome": "SUCCEEDED",
+          "inputTokens": 4326,
+          "outputTokens": 1407
+        },
+        {
+          "provider": "api.deepseek.com",
+          "model": "deepseek-flash",
+          "promptVersion": "a2-evidence-v4",
+          "temperature": null,
+          "thinkingMode": "DISABLED",
+          "generatedAt": "2026-10-25T04:12:12.337Z",
+          "id": "2ba8427a-4494-4be7-b383-9ac01d669207",
+          "purpose": "claim-extraction",
+          "startedAt": "2026-10-25T04:12:10.336Z",
+          "durationMs": 2002,
+          "outcome": "SUCCEEDED",
+          "inputTokens": 2544,
+          "outputTokens": 290
+        },
+        {
+          "provider": "api.deepseek.com",
+          "model": "deepseek-flash",
+          "promptVersion": "a2-evidence-v4",
+          "temperature": null,
+          "thinkingMode": "DISABLED",
+          "generatedAt": "2026-10-25T04:12:18.707Z",
+          "id": "55a5968f-c075-4d1e-a19e-094cf3255a70",
+          "purpose": "claim-evidence-verification",
+          "startedAt": "2026-10-25T04:12:12.338Z",
+          "durationMs": 6369,
+          "outcome": "SUCCEEDED",
+          "inputTokens": 4390,
+          "outputTokens": 1461
+        },
+        {
+          "provider": "api.deepseek.com",
+          "model": "deepseek-flash",
+          "promptVersion": "a2-evidence-v4",
+          "temperature": null,
+          "thinkingMode": "DISABLED",
+          "generatedAt": "2026-10-25T04:12:19.511Z",
+          "id": "a465c0bf-faef-4dd4-90d6-94d611706414",
+          "purpose": "cited-answer-selection",
+          "startedAt": "2026-10-25T04:12:18.718Z",
+          "durationMs": 793,
+          "outcome": "SUCCEEDED",
+          "inputTokens": 1357,
+          "outputTokens": 97
+        },
+        {
+          "provider": "api.deepseek.com",
+          "model": "deepseek-flash",
+          "promptVersion": "a2-evidence-v4",
+          "temperature": null,
+          "thinkingMode": "DISABLED",
+          "generatedAt": "2026-10-25T04:12:21.517Z",
+          "id": "650409f8-df29-4fef-8f54-e058966a4d6b",
+          "purpose": "citation-semantic-support-check",
+          "startedAt": "2026-10-25T04:12:19.511Z",
+          "durationMs": 2005,
+          "outcome": "SUCCEEDED",
+          "inputTokens": 2389,
+          "outputTokens": 266
+        }
+      ],
+      "review": {
+        "status": "NOT_CONFIGURED",
+        "reason": "未配置第二模型；不声称完成独立模型复核或精度提高。",
+        "independentAssessment": null,
+        "findings": []
+      },
+      "citationChecks": [
+        {
+          "marker": "[1]",
+          "supported": true,
+          "reason": "保存原句明确写出 GitHub Copilot Free 每月限 50 条 chat 消息，且涵盖 CLI、VS Code 和 Visual Studio，并写明配额用尽可升级；主张将其定性为来源报告（转述）而非官方文档原文、并标注站点与日期，均与原句及元数据一致。"
+        },
+        {
+          "marker": "[2]",
+          "supported": true,
+          "reason": "保存原句仅为作者简介片段，未出现每月 50 次 chat 或任何额度数字；主张限定在 github.blog 该文摘录范围并注明仅覆盖一段作者简介文字，与原句一致。"
+        },
+        {
+          "marker": "[3]",
+          "supported": true,
+          "reason": "保存原句的计划表把 Copilot Free 标为 Free 并给出 GitHub AI Credits 额度、有限 Agents、仅自动模型选择，但确实没有“每月 50 次 chat”的表述；主张已限定在该表格摘录范围内，且“含一定额度”对应原句的 allowance 与 Limited 描述。"
+        },
+        {
+          "marker": "[4]",
+          "supported": true,
+          "reason": "保存原句仅为一句中文功能描述，未提及 Copilot Free 或每月 chat 次数；主张限定在该段摘录范围内，与原句一致。"
+        }
+      ],
+      "followup": {
+        "queriesUsed": 0,
+        "maxQueries": 2,
+        "stopReason": "模型选择结束，已执行1轮搜索、4次读取；具体决策理由保留在记录中，事实与未解决项以最终原句核查为准。"
+      },
+      "investigationLoop": {
+        "startedAt": "2026-10-25T04:11:39.292Z",
+        "durationMs": 42225,
+        "totalBudgetMs": 180000,
+        "answerReserveMs": 45000,
+        "maxSearchRounds": 3,
+        "searchRounds": 1,
+        "maxReads": 10,
+        "readsUsed": 4,
+        "stopReason": "模型选择结束，已执行1轮搜索、4次读取；具体决策理由保留在记录中，事实与未解决项以最终原句核查为准。",
+        "httpAttempts": [
+          {
+            "url": "https://api.wsa.cloud.tencent.com/SearchPro",
+            "method": "POST",
+            "startedAt": "2026-10-25T04:11:40.315Z",
+            "finishedAt": "2026-10-25T04:11:41.057Z",
+            "requestSent": true,
+            "status": 200,
+            "error": null,
+            "ownerId": "11a9b4f5-07d6-4783-b398-3c27073695bd"
+          },
+          {
+            "url": "https://api.tavily.com/search",
+            "method": "POST",
+            "startedAt": "2026-10-25T04:11:40.313Z",
+            "finishedAt": "2026-10-25T04:11:42.982Z",
+            "requestSent": true,
+            "status": 200,
+            "error": null,
+            "ownerId": "a82d8dcd-e5fb-4319-a1e5-ae196bb98889"
+          },
+          {
+            "url": "https://github.blog/news-insights/product-news/github-copilot-in-vscode-free",
+            "method": "GET",
+            "startedAt": "2026-10-25T04:11:45.437Z",
+            "finishedAt": "2026-10-25T04:11:47.166Z",
+            "requestSent": true,
+            "status": 301,
+            "error": null,
+            "ownerId": "19991776-0485-4a4e-9dae-5c2559885b25"
+          },
+          {
+            "url": "https://github.blog/news-insights/product-news/github-copilot-in-vscode-free/",
+            "method": "GET",
+            "startedAt": "2026-10-25T04:11:46.462Z",
+            "finishedAt": "2026-10-25T04:11:47.166Z",
+            "requestSent": true,
+            "status": 200,
+            "error": null,
+            "ownerId": "19991776-0485-4a4e-9dae-5c2559885b25"
+          },
+          {
+            "url": "https://devblogs.microsoft.com/commandline/terminal-chat-now-included-in-github-copilot-free/",
+            "method": "GET",
+            "startedAt": "2026-10-25T04:11:45.437Z",
+            "finishedAt": "2026-10-25T04:11:46.894Z",
+            "requestSent": true,
+            "status": 200,
+            "error": null,
+            "ownerId": "f4c9fcdd-16e2-4079-a877-b59b32cb7a25"
+          },
+          {
+            "url": "https://docs.github.com/en/copilot/get-started/plans",
+            "method": "GET",
+            "startedAt": "2026-10-25T04:11:45.437Z",
+            "finishedAt": "2026-10-25T04:11:47.683Z",
+            "requestSent": true,
+            "status": 200,
+            "error": null,
+            "ownerId": "af875ccd-e8a2-4067-abf9-843e179ca072"
+          },
+          {
+            "url": "https://visualstudio.microsoft.com/zh-hans/github-copilot",
+            "method": "GET",
+            "startedAt": "2026-10-25T04:11:50.458Z",
+            "finishedAt": "2026-10-25T04:11:52.272Z",
+            "requestSent": true,
+            "status": 301,
+            "error": null,
+            "ownerId": "2b29f7b5-0c0b-42ee-9881-141c7853f895"
+          },
+          {
+            "url": "https://visualstudio.microsoft.com/zh-hans/github-copilot/",
+            "method": "GET",
+            "startedAt": "2026-10-25T04:11:51.046Z",
+            "finishedAt": "2026-10-25T04:11:52.272Z",
+            "requestSent": true,
+            "status": 200,
+            "error": null,
+            "ownerId": "2b29f7b5-0c0b-42ee-9881-141c7853f895"
+          }
+        ],
+        "collectionDiagnostics": [],
+        "decisions": [
+          {
+            "step": 1,
+            "decidedAt": "2026-10-25T04:11:40.294Z",
+            "remainingMs": 178998,
+            "decision": {
+              "action": "SEARCH",
+              "query": "GitHub Copilot Free 每月 50 次 chat 声明 独立来源 转载",
+              "entries": [
+                "yuanbao",
+                "tavily"
+              ],
+              "readUrls": [],
+              "reason": "尚无证据，需先检索该说法的来源分布，判断哪些页面独立、哪些为转载。",
+              "observedGap": "缺少任何来源记录，无法评估独立性或转载关系。",
+              "basisEvidenceIds": [],
+              "basisRecordIds": [],
+              "clarification": null,
+              "discoveredIdentity": null
+            },
+            "availableEvidenceIds": [],
+            "availableRecordIds": [],
+            "outcome": "EXECUTED",
+            "detail": "实际入口：yuanbao,tavily；返回记录：11a9b4f5-07d6-4783-b398-3c27073695bd:SUCCEEDED,a82d8dcd-e5fb-4319-a1e5-ae196bb98889:SUCCEEDED。"
+          },
+          {
+            "step": 2,
+            "decidedAt": "2026-10-25T04:11:45.432Z",
+            "remainingMs": 173860,
+            "decision": {
+              "action": "READ",
+              "query": "GitHub Copilot Free 50 chat messages",
+              "entries": [],
+              "readUrls": [
+                "https://github.blog/news-insights/product-news/github-copilot-in-vscode-free",
+                "https://code.visualstudio.com/blogs/2024/12/18/free-github-copilot",
+                "https://devblogs.microsoft.com/commandline/terminal-chat-now-included-in-github-copilot-free/",
+                "https://docs.github.com/en/copilot/get-started/plans"
+              ],
+              "reason": "需要原句判断来源关系：GitHub官方博客、VS Code官方博客、微软开发者博客、GitHub文档分别代表不同发布主体；读取可核对它们是否各自独立表述50次chat，还是互相引用同一公告。",
+              "observedGap": "目前只有搜索摘要，未读取任何原文；无法确认各页面是独立原始发布还是同一文章转载，也无法确认50次限额的确切措辞与归属。",
+              "basisEvidenceIds": [],
+              "basisRecordIds": [
+                "11a9b4f5-07d6-4783-b398-3c27073695bd",
+                "a82d8dcd-e5fb-4319-a1e5-ae196bb98889"
+              ],
+              "clarification": null,
+              "discoveredIdentity": null
+            },
+            "availableEvidenceIds": [],
+            "availableRecordIds": [
+              "11a9b4f5-07d6-4783-b398-3c27073695bd",
+              "a82d8dcd-e5fb-4319-a1e5-ae196bb98889"
+            ],
+            "outcome": "EXECUTED",
+            "detail": "已尝试读取：https://github.blog/news-insights/product-news/github-copilot-in-vscode-free,https://devblogs.microsoft.com/commandline/terminal-chat-now-included-in-github-copilot-free/,https://docs.github.com/en/copilot/get-started/plans；累计保存3份原文状态。"
+          },
+          {
+            "step": 3,
+            "decidedAt": "2026-10-25T04:11:50.451Z",
+            "remainingMs": 168841,
+            "decision": {
+              "action": "READ",
+              "query": "50 chat messages per month",
+              "entries": [],
+              "readUrls": [
+                "https://code.visualstudio.com/blogs/2024/12/18/free-github-copilot",
+                "https://github.blog/changelog/2025-02-26-github-copilot-now-available-for-free-in-windows-terminal-canary",
+                "https://visualstudio.microsoft.com/zh-hans/github-copilot"
+              ],
+              "reason": "已读三页分别为 GitHub 官方博客、微软开发者博客与 GitHub Docs，来源主体不同但前者与 VS Code 博客可能同属一次发布。需读 VS Code 官方博客原句判断是否为独立表述，读 GitHub changelog 与 Visual Studio 官方定价页核对是否只是复述同一限额，从而区分独立来源与转载/同源。",
+              "observedGap": "已读材料中仅微软开发者博客含明确“50 chat messages per month”原句；GitHub 博客已读段落未包含该限额句，Docs 当前页已改为 AI Credits 表述。VS Code 博客和 GitHub changelog 仅有摘要，未核对原文措辞与引用关系；Visual Studio 官方页的 Free 条目也未读原句。",
+              "basisEvidenceIds": [
+                "f4c9fcdd-16e2-4079-a877-b59b32cb7a25",
+                "19991776-0485-4a4e-9dae-5c2559885b25",
+                "af875ccd-e8a2-4067-abf9-843e179ca072"
+              ],
+              "basisRecordIds": [
+                "11a9b4f5-07d6-4783-b398-3c27073695bd",
+                "a82d8dcd-e5fb-4319-a1e5-ae196bb98889"
+              ],
+              "clarification": null,
+              "discoveredIdentity": null
+            },
+            "availableEvidenceIds": [
+              "f4c9fcdd-16e2-4079-a877-b59b32cb7a25",
+              "19991776-0485-4a4e-9dae-5c2559885b25",
+              "af875ccd-e8a2-4067-abf9-843e179ca072"
+            ],
+            "availableRecordIds": [
+              "11a9b4f5-07d6-4783-b398-3c27073695bd",
+              "a82d8dcd-e5fb-4319-a1e5-ae196bb98889"
+            ],
+            "outcome": "EXECUTED",
+            "detail": "已尝试读取：https://visualstudio.microsoft.com/zh-hans/github-copilot；累计保存4份原文状态。"
+          },
+          {
+            "step": 4,
+            "decidedAt": "2026-10-25T04:11:54.222Z",
+            "remainingMs": 165070,
+            "decision": {
+              "action": "READ",
+              "query": "50 chat messages per month",
+              "entries": [],
+              "readUrls": [
+                "https://code.visualstudio.com/blogs/2024/12/18/free-github-copilot",
+                "https://github.blog/changelog/2025-02-26-github-copilot-now-available-for-free-in-windows-terminal-canary"
+              ],
+              "reason": "VS Code 官方博客与 GitHub changelog 均已有摘要且都声称50次chat，但尚未读原句；读取可判断它们是各自表述还是转述同一公告，从而区分独立来源与同源转载。已读的微软开发者博客为此限额的独立原句来源，GitHub 主博客与 Docs 属同一发布方/已变更表述。",
+              "observedGap": "VS Code 博客和 GitHub changelog 只有摘要，未核对原文措辞、发布主体与是否引用同一公告；缺少这两份来最终区分独立来源与转载。",
+              "basisEvidenceIds": [
+                "f4c9fcdd-16e2-4079-a877-b59b32cb7a25",
+                "19991776-0485-4a4e-9dae-5c2559885b25",
+                "af875ccd-e8a2-4067-abf9-843e179ca072"
+              ],
+              "basisRecordIds": [
+                "11a9b4f5-07d6-4783-b398-3c27073695bd",
+                "a82d8dcd-e5fb-4319-a1e5-ae196bb98889"
+              ],
+              "clarification": null,
+              "discoveredIdentity": null
+            },
+            "availableEvidenceIds": [
+              "f4c9fcdd-16e2-4079-a877-b59b32cb7a25",
+              "19991776-0485-4a4e-9dae-5c2559885b25",
+              "af875ccd-e8a2-4067-abf9-843e179ca072",
+              "2b29f7b5-0c0b-42ee-9881-141c7853f895"
+            ],
+            "availableRecordIds": [
+              "11a9b4f5-07d6-4783-b398-3c27073695bd",
+              "a82d8dcd-e5fb-4319-a1e5-ae196bb98889"
+            ],
+            "outcome": "REJECTED",
+            "detail": "没有未读取的已发现URL，或读取预算耗尽。"
+          },
+          {
+            "step": 5,
+            "decidedAt": "2026-10-25T04:11:57.010Z",
+            "remainingMs": 162282,
+            "decision": {
+              "action": "FINISH",
+              "query": null,
+              "entries": [],
+              "readUrls": [],
+              "reason": "已读原句足以区分来源关系：微软开发者博客（devblogs.microsoft.com）明确写出“GitHub Copilot Free is limited to 50 chat messages per month”，属微软侧的独立表述；GitHub 主博客（github.blog）原句“2,000 code completions and 50 chat messages per month”是发布方原始公告；GitHub Docs 已读段落已改为 AI Credits 表述，不再含50次chat，属同期官方文档但非该说法的转载。VS Code 博客与 GitHub changelog 仅见摘要、未读原句，按规则不作为原句证据，其独立性保留未知。此前读取这两页的决策因无可读URL/预算被拒，故不能再据其摘要断言转载关系。其余条目（positioniseverything、百度百科、itmedia、YouTube）仅搜索摘要，未读原文，不能判定独立或转载，均不纳入结论。",
+              "observedGap": "VS Code 官方博客（code.visualstudio.com）与 GitHub changelog 中50次chat措辞未取得原句，二者与 GitHub 主公告是否同源转载仍未知；positioniseverything、百度百科、itmedia、YouTube 等第三方页未读原文，无法判定其为独立报道还是转载。",
+              "basisEvidenceIds": [
+                "f4c9fcdd-16e2-4079-a877-b59b32cb7a25",
+                "19991776-0485-4a4e-9dae-5c2559885b25",
+                "af875ccd-e8a2-4067-abf9-843e179ca072"
+              ],
+              "basisRecordIds": [
+                "11a9b4f5-07d6-4783-b398-3c27073695bd",
+                "a82d8dcd-e5fb-4319-a1e5-ae196bb98889"
+              ],
+              "clarification": null,
+              "discoveredIdentity": null
+            },
+            "availableEvidenceIds": [
+              "f4c9fcdd-16e2-4079-a877-b59b32cb7a25",
+              "19991776-0485-4a4e-9dae-5c2559885b25",
+              "af875ccd-e8a2-4067-abf9-843e179ca072",
+              "2b29f7b5-0c0b-42ee-9881-141c7853f895"
+            ],
+            "availableRecordIds": [
+              "11a9b4f5-07d6-4783-b398-3c27073695bd",
+              "a82d8dcd-e5fb-4319-a1e5-ae196bb98889"
+            ],
+            "outcome": "STOPPED",
+            "detail": "已读原句足以区分来源关系：微软开发者博客（devblogs.microsoft.com）明确写出“GitHub Copilot Free is limited to 50 chat messages per month”，属微软侧的独立表述；GitHub 主博客（github.blog）原句“2,000 code completions and 50 chat messages per month”是发布方原始公告；GitHub Docs 已读段落已改为 AI Credits 表述，不再含50次chat，属同期官方文档但非该说法的转载。VS Code 博客与 GitHub changelog 仅见摘要、未读原句，按规则不作为原句证据，其独立性保留未知。此前读取这两页的决策因无可读URL/预算被拒，故不能再据其摘要断言转载关系。其余条目（positioniseverything、百度百科、itmedia、YouTube）仅搜索摘要，未读原文，不能判定独立或转载，均不纳入结论。"
+          }
+        ],
+        "collectionCalls": [
+          {
+            "operation": "search:yuanbao",
+            "target": "GitHub Copilot Free 每月 50 次 chat 声明 独立来源 转载",
+            "startedAt": "2026-10-25T04:11:40.312Z",
+            "durationMs": 751,
+            "outcome": "SUCCEEDED",
+            "resultId": "11a9b4f5-07d6-4783-b398-3c27073695bd",
+            "error": null
+          },
+          {
+            "operation": "search:tavily",
+            "target": "GitHub Copilot Free 每月 50 次 chat 声明 独立来源 转载",
+            "startedAt": "2026-10-25T04:11:40.312Z",
+            "durationMs": 2673,
+            "outcome": "SUCCEEDED",
+            "resultId": "a82d8dcd-e5fb-4319-a1e5-ae196bb98889",
+            "error": null
+          },
+          {
+            "operation": "read",
+            "target": "https://devblogs.microsoft.com/commandline/terminal-chat-now-included-in-github-copilot-free/",
+            "startedAt": "2026-10-25T04:11:45.437Z",
+            "durationMs": 1479,
+            "outcome": "SUCCEEDED",
+            "resultId": "f4c9fcdd-16e2-4079-a877-b59b32cb7a25",
+            "error": null
+          },
+          {
+            "operation": "read",
+            "target": "https://github.blog/news-insights/product-news/github-copilot-in-vscode-free",
+            "startedAt": "2026-10-25T04:11:45.437Z",
+            "durationMs": 1740,
+            "outcome": "SUCCEEDED",
+            "resultId": "19991776-0485-4a4e-9dae-5c2559885b25",
+            "error": null
+          },
+          {
+            "operation": "read",
+            "target": "https://docs.github.com/en/copilot/get-started/plans",
+            "startedAt": "2026-10-25T04:11:45.437Z",
+            "durationMs": 2324,
+            "outcome": "SUCCEEDED",
+            "resultId": "af875ccd-e8a2-4067-abf9-843e179ca072",
+            "error": null
+          },
+          {
+            "operation": "read",
+            "target": "https://visualstudio.microsoft.com/zh-hans/github-copilot",
+            "startedAt": "2026-10-25T04:11:50.458Z",
+            "durationMs": 1854,
+            "outcome": "SUCCEEDED",
+            "resultId": "2b29f7b5-0c0b-42ee-9881-141c7853f895",
+            "error": null
+          }
+        ]
+      }
+    },
+    "generatedAt": "2026-10-25T04:12:21.517Z",
+    "contractVersion": "1.0.0"
+  },
+  "answers": [
+    {
+      "id": "d76628ef-2b6e-4511-b842-0c2e3c5d63ee",
+      "snapshotId": "9c4afb5f-6e40-41cc-a991-b76ce98c7b31",
+      "body": "来源报告（未独立复现）：微软命令行开发者博客的一篇文章称，GitHub Copilot Free 每月限制 50 条聊天消息，涵盖 CLI、VS Code 和 Visual Studio 中的 Copilot 使用。\n适用范围：devblogs.microsoft.com 的 Terminal Chat 文章，2025-02-26；属该文转述，非官方文档原文 [1]\n\n所保存的 GitHub 官方博客摘录未提及每月 50 次 chat 这一数值。\n适用范围：github.blog 的 Copilot Free 发布文章摘录范围内（仅覆盖一段作者简介文字） [2]\n\n所保存的 GitHub Docs 计划对比表摘录将 Copilot Free 列为免费且含一定额度，但未出现“每月 50 次 chat”的表述。\n适用范围：docs.github.com 的 Plans 表格摘录范围内 [3]\n\n所保存的 Visual Studio 中文页面摘录未提及 Copilot Free 的每月 chat 次数。\n适用范围：visualstudio.microsoft.com 页面该段摘录范围内 [4]\n\n尚不能确定：已知来源中没有足以判定各来源独立或同文转载的元数据，因此独立性与转载关系无法确定。\n摘录未含转载/上游信息，无同一来源家族的可比证据，无法判定独立性。（条件：本次提供的四个 READ 摘录及其元数据）\n\n核查缺口：\n• 阶段核查未完成：Evidence validation: supported claim has no support or unresolved refutation；保留原句并在最终预算内核查。\n• 所读摘录均未提供转载关系、上游URL或独立实验证据，无法判定各来源独立或同文转载。",
+      "citations": [
+        {
+          "marker": "[1]",
+          "claimIds": [
+            "660aac3e-7333-4149-b163-9dc7d0fa773e"
+          ],
+          "evidenceIds": [
+            "f4c9fcdd-16e2-4079-a877-b59b32cb7a25"
+          ],
+          "quotes": [
+            {
+              "evidenceId": "f4c9fcdd-16e2-4079-a877-b59b32cb7a25",
+              "originalExcerpt": "GitHub Copilot Free is limited to 50 chat messages per month. This includes the usage of Copilot in the CLI, VS Code, and Visual Studio. If you reach your quota, you can upgrade on the web."
+            }
+          ]
+        },
+        {
+          "marker": "[2]",
+          "claimIds": [
+            "a622107b-2659-4a46-8915-0f0442394885"
+          ],
+          "evidenceIds": [
+            "19991776-0485-4a4e-9dae-5c2559885b25"
+          ],
+          "quotes": [
+            {
+              "evidenceId": "19991776-0485-4a4e-9dae-5c2559885b25",
+              "originalExcerpt": "rate developer happiness. Previously, Thomas was the Chief Executive Officer of GitHub (2021-2025) where he oversaw the rise of the world’s most widely adopted AI developer tools—including the launches of GitHub Copilot, Copilot Workspace, and GitHub Models. Thomas has also been a celebrated TED spe"
+            }
+          ]
+        },
+        {
+          "marker": "[3]",
+          "claimIds": [
+            "10b6fd70-fee1-4c2e-bfae-83aa3b4ae686"
+          ],
+          "evidenceIds": [
+            "af875ccd-e8a2-4067-abf9-843e179ca072"
+          ],
+          "quotes": [
+            {
+              "evidenceId": "af875ccd-e8a2-4067-abf9-843e179ca072",
+              "originalExcerpt": "PlanPricingGitHub AI CreditsAgentsModelsCopilot FreeFreeAn allowance of GitHub AI CreditsLimitedAuto model selection onlyCopilot StudentFreeAn allowance of GitHub AI CreditsExcludes third-party agentsAuto model selection onlyCopilot Pro$10 USD per month(free for some users)Base: 1,000A selection of"
+            }
+          ]
+        },
+        {
+          "marker": "[4]",
+          "claimIds": [
+            "61cb705c-a920-451f-a10a-f764f6e004a5"
+          ],
+          "evidenceIds": [
+            "2b29f7b5-0c0b-42ee-9881-141c7853f895"
+          ],
+          "quotes": [
+            {
+              "evidenceId": "2b29f7b5-0c0b-42ee-9881-141c7853f895",
+              "originalExcerpt": "体验 AI 支持的编码帮助以分析问题原因、协调后续步骤、应用更改并对错误进行迭代优化。"
+            }
+          ]
+        }
+      ],
+      "generationConfig": {
+        "provider": "api.deepseek.com",
+        "model": "deepseek-flash",
+        "promptVersion": "a2-evidence-v4",
+        "temperature": null,
+        "thinkingMode": "DISABLED",
+        "generatedAt": "2026-10-25T04:12:21.517Z"
+      }
+    }
+  ]
+}

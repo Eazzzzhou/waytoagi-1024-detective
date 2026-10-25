@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#07080b" />
+
+  <title>DeepSeek API Documentation — Authentication, Endpoints & Examples | deepseekapi.dev</title>
+  <meta name="description" content="Official documentation for the DeepSeek API proxy: authentication, chat completions, streaming, the deepseek-chat (V3) and deepseek-reasoner (R1) models, with Python, JavaScript and cURL examples." />
+  <meta name="keywords" content="DeepSeek API documentation, DeepSeek API authentication, DeepSeek API key, deepseek-chat, deepseek-reasoner, DeepSeek chat completions, DeepSeek API example" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://deepseekapi.dev/docs" />
+
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="DeepSeek API" />
+  <meta property="og:title" content="DeepSeek API Documentation — Authentication & Endpoints" />
+  <meta property="og:description" content="Authenticate, send chat completions, and stream responses from DeepSeek-V3 and DeepSeek-R1 through an OpenAI-compatible proxy." />
+  <meta property="og:url" content="https://deepseekapi.dev/docs" />
+  <meta property="og:image" content="https://deepseekapi.dev/assets/img/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="icon" href="/assets/logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;450;500;550;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/css/styles.css" />
+
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"TechArticle","headline":"DeepSeek API Documentation","description":"Authentication and endpoint reference for the DeepSeek API proxy at deepseekapi.dev.","author":{"@type":"Organization","name":"DeepSeek API"},"publisher":{"@type":"Organization","name":"DeepSeek API","logo":{"@type":"ImageObject","url":"https://deepseekapi.dev/assets/logo.png"}}}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://deepseekapi.dev/"},{"@type":"ListItem","position":2,"name":"API Documentation","item":"https://deepseekapi.dev/docs"}]}
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+
+  <header class="site-header" id="siteHeader">
+    <div class="container nav">
+      <a class="brand" href="/"><img class="brand-mark" src="/assets/logo.png" alt="DeepSeek API logo" width="34" height="26" /><span class="brand-name">DeepSeek API</span></a>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="/#features">Features</a>
+        <a href="/#models">Models</a>
+        <a href="/#pricing">Pricing</a>
+        <a href="/docs">API Docs</a>
+        <a href="/contact">Contact</a>
+      </nav>
+      <div class="nav-actions">
+        <a class="btn btn-ghost" href="/login">Sign in</a>
+        <a class="btn btn-primary" href="/signup">Get API Key</a>
+      </div>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation"><svg class="icon"><use href="/assets/img/icons.svg#i-menu"/></svg></button>
+    </div>
+  </header>
+
+  <main id="main" class="container">
+    <div class="docs-layout">
+      <aside class="docs-nav" aria-label="Docs navigation">
+        <h5>Getting started</h5>
+        <a href="#introduction">Introduction</a>
+        <a href="#base-url">Base URL</a>
+        <a href="#authentication">Authentication</a>
+        <a href="#quickstart">Quickstart</a>
+        <h5>API reference</h5>
+        <a href="#chat">Chat completions</a>
+        <a href="#streaming">Streaming</a>
+        <a href="#models">Models</a>
+        <a href="#errors">Errors</a>
+        <a href="#rate-limits">Rate limits</a>
+      </aside>
+
+      <article class="docs-content">
+        <h1>DeepSeek API Documentation</h1>
+        <p class="lead">Buy credits, generate a key, and call DeepSeek-V3 and DeepSeek-R1 through an OpenAI-compatible endpoint. If you've used the OpenAI API before, you already know this one.</p>
+
+        <div class="callout"><svg class="icon"><use href="/assets/img/icons.svg#i-alert"/></svg><p>deepseekapi.dev is an authorized reseller and proxy for the DeepSeek API. Endpoints below point at our proxy; responses originate from DeepSeek's models.</p></div>
+
+        <h2 id="introduction">Introduction</h2>
+        <p>The DeepSeek API proxy exposes a REST interface that mirrors the OpenAI Chat Completions specification. You authenticate with a bearer token, send a list of messages, and receive a model completion. Because the schema matches, the official OpenAI SDKs for Python and JavaScript work out of the box.</p>
+
+        <h2 id="base-url">Base URL</h2>
+        <p>All requests are made to:</p>
+        <div class="endpoint"><span class="method base">BASE</span><span>https://api.deepseekapi.dev/v1</span></div>
+        <p>Append the standard paths such as <code class="inline">/chat/completions</code> and <code class="inline">/models</code> to this base URL.</p>
+
+        <h2 id="authentication">Authentication</h2>
+        <p>The API uses <strong>bearer token authentication</strong>. Create a key from your dashboard after topping up credits, then pass it in the <code class="inline">Authorization</code> header on every request:</p>
+        <div class="codeblock"><button class="copy-btn"><svg class="icon"><use href="/assets/img/icons.svg#i-copy"/></svg>Copy</button><pre><code><span class="tok-com"># HTTP headers</span>
+Authorization: Bearer sk-ds-your-key
+Content-Type: application/json</code></pre></div>
+        <div class="callout"><svg class="icon"><use href="/assets/img/icons.svg#i-lock"/></svg><p><strong>Keep keys secret.</strong> Treat API keys like passwords. Never embed them in client-side code or commit them to a repository. Rotate or revoke a leaked key instantly from your dashboard.</p></div>
+
+        <h2 id="quickstart">Quickstart</h2>
+        <p>Install the OpenAI SDK and point it at the proxy. Only the <code class="inline">base_url</code> and <code class="inline">api_key</code> change.</p>
+
+        <h3>Python</h3>
+        <div class="codeblock"><button class="copy-btn"><svg class="icon"><use href="/assets/img/icons.svg#i-copy"/></svg>Copy</button><pre><code><span class="tok-kw">from</span> openai <span class="tok-kw">import</span> OpenAI
+
+client = <span class="tok-fn">OpenAI</span>(
+    api_key=<span class="tok-str">"sk-ds-your-key"</span>,
+    base_url=<span class="tok-str">"https://api.deepseekapi.dev/v1"</span>,
+)
+
+response = client.chat.completions.<span class="tok-fn">create</span>(
+    model=<span class="tok-str">"deepseek-chat"</span>,
+    messages=[
+        {<span class="tok-str">"role"</span>: <span class="tok-str">"system"</span>, <span class="tok-str">"content"</span>: <span class="tok-str">"You are a helpful assistant."</span>},
+        {<span class="tok-str">"role"</span>: <span class="tok-str">"user"</span>, <span class="tok-str">"content"</span>: <span class="tok-str">"Explain reinforcement learning in one sentence."</span>},
+    ],
+)
+<span class="tok-fn">print</span>(response.choices[<span class="tok-num">0</span>].message.content)</code></pre></div>
+
+        <h3>JavaScript / Node.js</h3>
+        <div class="codeblock"><button class="copy-btn"><svg class="icon"><use href="/assets/img/icons.svg#i-copy"/></svg>Copy</button><pre><code><span class="tok-kw">import</span> OpenAI <span class="tok-kw">from</span> <span class="tok-str">"openai"</span>;
+
+<span class="tok-kw">const</span> client = <span class="tok-kw">new</span> <span class="tok-fn">OpenAI</span>({
+  apiKey: <span class="tok-str">"sk-ds-your-key"</span>,
+  baseURL: <span class="tok-str">"https://api.deepseekapi.dev/v1"</span>,
+});
+
+<span class="tok-kw">const</span> res = <span class="tok-kw">await</span> client.chat.completions.<span class="tok-fn">create</span>({
+  model: <span class="tok-str">"deepseek-chat"</span>,
+  messages: [{ role: <span class="tok-str">"user"</span>, content: <span class="tok-str">"Hello, DeepSeek!"</span> }],
+});
+
+console.<span class="tok-fn">log</span>(res.choices[<span class="tok-num">0</span>].message.content);</code></pre></div>
+
+        <h3>cURL</h3>
+        <div class="codeblock"><button class="copy-btn"><svg class="icon"><use href="/assets/img/icons.svg#i-copy"/></svg>Copy</button><pre><code>curl https://api.deepseekapi.dev/v1/chat/completions \
+  -H <span class="tok-str">"Authorization: Bearer sk-ds-your-key"</span> \
+  -H <span class="tok-str">"Content-Type: application/json"</span> \
+  -d <span class="tok-str">'{
+    "model": "deepseek-chat",
+    "messages": [{"role": "user", "content": "Hello, DeepSeek!"}]
+  }'</span></code></pre></div>
+
+        <h2 id="chat">Chat completions</h2>
+        <div class="endpoint"><span class="method post">POST</span><span>/v1/chat/completions</span></div>
+        <p>Creates a model response for the given conversation. Core parameters:</p>
+        <ul>
+          <li><code class="inline">model</code> — <code class="inline">deepseek-chat</code> or <code class="inline">deepseek-reasoner</code>. <strong>Required.</strong></li>
+          <li><code class="inline">messages</code> — array of <code class="inline">{ role, content }</code> objects (<code class="inline">system</code>, <code class="inline">user</code>, <code class="inline">assistant</code>). <strong>Required.</strong></li>
+          <li><code class="inline">temperature</code> — sampling temperature, 0–2. Default <code class="inline">1.0</code>.</li>
+          <li><code class="inline">max_tokens</code> — maximum tokens to generate in the response.</li>
+          <li><code class="inline">stream</code> — set <code class="inline">true</code> to stream tokens as server-sent events.</li>
+        </ul>
+        <p>Example response:</p>
+        <div class="codeblock"><button class="copy-btn"><svg class="icon"><use href="/assets/img/icons.svg#i-copy"/></svg>Copy</button><pre><code>{
+  <span class="tok-str">"id"</span>: <span class="tok-str">"chatcmpl-ds-abc123"</span>,
+  <span class="tok-str">"object"</span>: <span class="tok-str">"chat.completion"</span>,
+  <span class="tok-str">"model"</span>: <span class="tok-str">"deepseek-chat"</span>,
+  <span class="tok-str">"choices"</span>: [{
+    <span class="tok-str">"index"</span>: <span class="tok-num">0</span>,
+    <span class="tok-str">"message"</span>: { <span class="tok-str">"role"</span>: <span class="tok-str">"assistant"</span>, <span class="tok-str">"content"</span>: <span class="tok-str">"Hello! How can I help?"</span> },
+    <span class="tok-str">"finish_reason"</span>: <span class="tok-str">"stop"</span>
+  }],
+  <span class="tok-str">"usage"</span>: { <span class="tok-str">"prompt_tokens"</span>: <span class="tok-num">12</span>, <span class="tok-str">"completion_tokens"</span>: <span class="tok-num">7</span>, <span class="tok-str">"total_tokens"</span>: <span class="tok-num">19</span> }
+}</code></pre></div>
+
+        <h2 id="streaming">Streaming</h2>
+        <p>Set <code class="inline">stream: true</code> to receive tokens incrementally as server-sent events (SSE). Each chunk follows the OpenAI delta format and the stream terminates with <code class="inline">data: [DONE]</code>.</p>
+        <div class="codeblock"><button class="copy-btn"><svg class="icon"><use href="/assets/img/icons.svg#i-copy"/></svg>Copy</button><pre><code>stream = client.chat.completions.<span class="tok-fn">create</span>(
+    model=<span class="tok-str">"deepseek-chat"</span>,
+    messages=[{<span class="tok-str">"role"</span>: <span class="tok-str">"user"</span>, <span class="tok-str">"content"</span>: <span class="tok-str">"Write a haiku about the sea."</span>}],
+    stream=<span class="tok-kw">True</span>,
+)
+<span class="tok-kw">for</span> chunk <span class="tok-kw">in</span> stream:
+    <span class="tok-fn">print</span>(chunk.choices[<span class="tok-num">0</span>].delta.content <span class="tok-kw">or</span> <span class="tok-str">""</span>, end=<span class="tok-str">""</span>)</code></pre></div>
+
+        <h2 id="models">Models</h2>
+        <div class="endpoint"><span class="method get">GET</span><span>/v1/models</span></div>
+        <p>Lists the models available to your account.</p>
+        <div class="table-wrap">
+          <table class="rate">
+            <thead><tr><th>Model ID</th><th>Best for</th><th>Context</th></tr></thead>
+            <tbody>
+              <tr><td>deepseek-chat</td><td>General chat, coding, RAG</td><td>Large</td></tr>
+              <tr><td>deepseek-reasoner</td><td>Math, complex reasoning</td><td>Large</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2 id="errors">Errors</h2>
+        <p>The API uses conventional HTTP status codes. Error bodies follow the OpenAI error shape: <code class="inline">{ "error": { "message", "type", "code" } }</code>.</p>
+        <div class="table-wrap">
+          <table class="rate">
+            <thead><tr><th>Code</th><th>Meaning</th></tr></thead>
+            <tbody>
+              <tr><td>400</td><td>Malformed request</td></tr>
+              <tr><td>401</td><td>Invalid or missing API key</td></tr>
+              <tr><td>402</td><td>Insufficient credits — top up your balance</td></tr>
+              <tr><td>429</td><td>Rate limit exceeded</td></tr>
+              <tr><td>500 / 503</td><td>Upstream or proxy error — retry with backoff</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2 id="rate-limits">Rate limits</h2>
+        <p>Rate limits scale with your plan and account balance. Starter offers entry-level throughput; Builder and Scale raise both requests-per-minute and tokens-per-minute ceilings. When you exceed a limit you'll receive a <code class="inline">429</code> with a <code class="inline">Retry-After</code> header — back off and retry. Need a custom limit? <a href="/contact">Contact us</a>.</p>
+
+        <div class="callout" style="margin-top:40px;"><svg class="icon"><use href="/assets/img/icons.svg#i-zap"/></svg><p><strong>Ready to build?</strong> <a href="/signup">Get your API key</a> and make your first call in minutes.</p></div>
+      </article>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <p>© <span id="year">2026</span> deepseekapi.dev. Not affiliated with the deepseek.com website.</p>
+        <p><a href="/terms">Terms</a> · <a href="/privacy">Privacy</a> · <a href="/contact">Contact</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/assets/js/main.js"></script>
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092" integrity="sha512-UKNk8GbxkABxKcXYuLkO16EleLGUkcvJWtpSNmExE0Too3ZaFAxTscNWEc1OdAv5/BikHawapSCaiD2XCmp+Bw==" data-cf-beacon='{"version":"2024.11.0","token":"077b9c53295844cf8be8ba312c41ae5e","r":1,"spa":2}' crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,2704 @@
+{
+  "schemaVersion": "source-document/v1",
+  "id": "69eb5eb7c199a8f34e7a5ce7c6dbd68f1ac30f60b5852afaf971eb0703f42d3f",
+  "version": "c1ebbed4f364fb9d26a5e00e0b0411e5d7fe38948812adc5d5342aafb56ab189",
+  "requestedUrl": "https://api-docs.deepseek.com/zh-cn/guides/search",
+  "finalUrl": "https://api-docs.deepseek.com/zh-cn/guides/search/",
+  "retrievedAt": "2026-10-25T04:34:20.018Z",
+  "contentType": "text/html",
+  "status": "READ",
+  "readError": null,
+  "rawHash": "6e6006741e34611cfaafe6fcb86555823a2bd3c435b0caf3591ddae92028672b",
+  "textHash": "1fbe7a43a11bb97853871dbe3c9711d7899c86a22c137b7f766bc68b179d7bfd",
+  "text": "跳到主要内容\n\nSearch / Fetch API 已上线，使用自研搜索引擎，支持网页搜索与抓取，点此查看使用指南。\n\n本页目录\n\n网页搜索与抓取\n\nSearch 接口和 Fetch 接口为 Agent 与 RAG 应用提供实时网页内容：\n\nSearch 接口按 query 搜索网页，返回结构化结果。该接口由 DeepSeek 自研搜索引擎提供支持。\n\nFetch 接口抓取单个网页，以 Markdown 文本返回页面内容。\n\n两者都是原始 JSON API，使用与 DeepSeek API 相同的 Bearer 鉴权。\n\nBase URL 为 https://api.deepseek.com：\n\nAPIEndpointSearchPOST https://api.deepseek.com/v1/tools/searchFetchPOST https://api.deepseek.com/v1/tools/fetch\n\n完整的请求与响应 Schema 请参考 Search API Reference 和 Fetch API Reference。\n\n鉴权​\n\n在请求头中携带 API Key 和 JSON 内容类型：\n\n请求头必填值Authorization是Bearer <DeepSeek API Key>Content-Type是application/json\n\nSearch 接口​\n\n请求​\n\ncurl https://api.deepseek.com/v1/tools/search \\  -H \"Authorization: Bearer <DeepSeek API Key>\" \\  -H \"Content-Type: application/json\" \\  -d '{    \"query\": \"DeepSeek V4 模型 发布\",    \"count\": 5,    \"need_content\": true  }'\n\nimport requestsresponse = requests.post(    \"https://api.deepseek.com/v1/tools/search\",    headers={        \"Authorization\": \"Bearer <DeepSeek API Key>\",    },    json={        \"query\": \"DeepSeek V4 模型 发布\",        \"count\": 5,        \"need_content\": True,    },)response.raise_for_status()for result in response.json()[\"results\"]:    print(result[\"title\"], result[\"url\"])    print(result[\"summary\"])\n\n请求字段：\n\n字段类型必填默认值说明querystring是-搜索词，1～128 个 Unicode 字符，不能全为空白，支持下方列出的搜索语法。countinteger否10返回条数，1～50。ori_questionstring否-触发搜索的用户原始问题，1～128 个字符，有助于更好地理解搜索意图，传 null 视为未提供。localizationstring否\"\"用于优先返回本地化搜索结果的 IP 地址。need_contentboolean否false是否在 content 中返回网页正文，为 false 时 content 恒为空字符串。\n\n请求体中的未知字段会被忽略。\n\n搜索语法​\n\nquery 中的搜索语法会原样传递给搜索服务。下表中的示例将操作符与搜索词组合使用；你可以在一个 query 中组合多个操作符。\n\n操作符示例说明site:DeepSeek site:github.com将结果限制在指定站点，指定多个时用空格分隔并通过 OR 连接，例如 DeepSeek site:github.com OR site:huggingface.co。-site:DeepSeek -site:example.com排除指定站点，指定多个时用空格分隔。-DeepSeek -广告排除包含指定关键词的网页，指定多个时用空格分隔。-\"...\"DeepSeek -\"release notes\"排除包含指定短语的网页，短语内可以包含空格，指定多个时用空格分隔。\"...\"DeepSeek \"精确短语\"精确匹配指定短语，指定多个时用空格分隔。lang:DeepSeek lang:zh,en将结果限制在指定语言，多种语言用逗号分隔，例如 lang:zh,en。after:DeepSeek after:2025 或 DeepSeek after:2025-01-01将结果限制在指定日期之后发布的网页。before:DeepSeek before:2026 或 DeepSeek before:2026-06-01将结果限制在指定日期之前发布的网页。\n\n例如：\n\n{  \"query\": \"DeepSeek 模型 site:github.com OR site:huggingface.co lang:zh after:2025\",  \"count\": 10}\n\n响应​\n\n请求成功时返回 HTTP 200 与 results 数组。搜索正常结束但没有匹配结果时，返回空数组。\n\n{  \"results\": [    {      \"rerank_score\": 2.4,      \"title\": \"DeepSeek V4 模型发布\",      \"url\": \"https://example.com/deepseek-v4\",      \"snippet\": \"DeepSeek V4 已上线，支持工具调用与长上下文。\",      \"summary\": \"DeepSeek 发布了 V4 模型。此次发布改进了工具调用与长上下文能力，适合 Agent 工作流。\",      \"content\": \"DeepSeek V4 现已正式上线……\",      \"site_name\": \"Example News\",      \"site_icon\": \"https://example.com/favicon.ico\",      \"date\": \"2026-06-01T00:00:00+00:00\",      \"authority\": 3    }  ]}\n\nresults 中每一项包含以下字段：\n\n字段类型说明rerank_scorenumber排序分数，0～3 分，综合考虑相关性、权威性、时效性等维度，大于等于 1.5 分为优质结果。titlestring标题。urlstring结果链接。snippetstring短摘要，与 query 相关，通常为 100～200 字符，适用于前端展现。summarystring长摘要，与 query 相关，通常为 600～800 字符，适用于给模型阅读。contentstring网页正文，need_content 为 false 或正文缺失时为空字符串。site_namestring 或 null站点名称，缺失时为 null。site_iconstring 或 null站点图标 URL，缺失时为 null。datestring 或 null发布时间，统一为 UTC 的 RFC 3339 格式，未知时为 null。authorityinteger网页权威性，0～4（-1 表示未知），大于等于 3 为极权威结果。\n\nFetch 接口​\n\n请求​\n\ncurl https://api.deepseek.com/v1/tools/fetch \\  -H \"Authorization: Bearer <DeepSeek API Key>\" \\  -H \"Content-Type: application/json\" \\  -d '{    \"url\": \"https://example.com/article\"  }'\n\nimport requestsresponse = requests.post(    \"https://api.deepseek.com/v1/tools/fetch\",    headers={        \"Authorization\": \"Bearer <DeepSeek API Key>\",    },    json={\"url\": \"https://example.com/article\"},)response.raise_for_status()page = response.json()print(page[\"title\"])print(page[\"content\"])\n\n请求字段：\n\n字段类型必填说明urlstring是要抓取的网页地址，长度不超过 8192，必须为含 host 的 HTTP/HTTPS URL，且不能携带用户名或密码。\n\n响应​\n\n{  \"title\": \"Example article\",  \"content\": \"# Example article\\n\\nArticle content.\"}\n\n字段类型说明titlestring页面标题，缺失时为空字符串。contentstring抓取后的 Markdown 正文。\n\nFetch 的结果受目标站点的可用性和访问策略影响。\n\n错误​\n\n错误响应使用 OpenAI 兼容的错误格式，param 字段恒为 null。\n\n{  \"error\": {    \"message\": \"'count' must be between 1 and 50\",    \"type\": \"invalid_request_error\",    \"param\": null,    \"code\": \"invalid_request_error\"  }}\n\nHTTP 状态码说明400请求头或请求体不合法，包括 JSON 格式错误或字段值无效。401API Key 缺失或无效。402账号余额不足。403Fetch 请求被安全策略拒绝。404Fetch 未能获取可用的网页内容，例如 URL 不可用、被站点策略拦截、目标站点返回错误、内容类型不受支持或页面没有可提取的 Markdown 正文。408读取请求体超时。413请求体超过大小限制。429超过 Search 或 Fetch 的 QPS 限制。500服务器内部错误。504下游请求超时。\n\nSearch 和 Fetch 都是只读请求。遇到 HTTP 408、429 或 5xx 错误时，请等待后重试。遇到 HTTP 402 时，请先充值再重试。对于其它 4xx 错误，如不修改请求，请勿重试。\n\n计费​\n\nSearch 和 Fetch 按请求次数计费，不按 token 或返回结果条数计费：\n\nAPI计费单位价格Search每 1,000 次成功请求5元Fetch每 1,000 次成功请求5元\n\n只有返回 HTTP 200 且产生结果的请求才会计费（Search 的 results 必须非空，Fetch 必须返回网页正文）。请求失败、搜索无结果或超时不计费。count 只控制返回的结果条数，不影响单次请求的价格。\n\n请注意，当前用户在 DeepSeek Harness/Claude Code/Codex 中使用 DeepSeek API 时，已经会通过 Server 端工具调用访问到 Search/Fetch 接口，这部分 Search/Fetch 接口调用目前未计费，并将于北京时间 2026 年 11 月 1 日 00:00 起按次收取调用费用。\n\n限速​\n\n对每个账号，Search 和 Fetch 分别独立限速，互不占用额度：\n\nAPIQPS 限制Search100Fetch25\n\nQPS（每秒请求数）限制按账号粒度计算，与使用哪个 API Key 无关，并与模型并发限制相互独立。超过账号级 QPS 限制的请求会收到 HTTP 429 错误码。除了账号级限制，Fetch 还针对目标域名有 QPS 限制，超过该限制也会收到 HTTP 429 错误码。\n\n鉴权\n\nSearch 接口请求搜索语法响应\n\nFetch 接口请求响应\n\n错误\n\n计费\n\n限速",
+  "rawSources": [
+    {
+      "mode": "STATIC",
+      "hash": "6e6006741e34611cfaafe6fcb86555823a2bd3c435b0caf3591ddae92028672b",
+      "path": "C:\\Users\\qianchen\\Documents\\waytoagi-1024-detective-a2-v4\\.cache\\source-documents-v4\\a677801d-17f5-447a-8285-64ede5279be8\\69eb5eb7c199a8f34e7a5ce7c6dbd68f1ac30f60b5852afaf971eb0703f42d3f\\raw.bin"
+    }
+  ],
+  "storage": {
+    "rawPath": "C:\\Users\\qianchen\\Documents\\waytoagi-1024-detective-a2-v4\\.cache\\source-documents-v4\\a677801d-17f5-447a-8285-64ede5279be8\\69eb5eb7c199a8f34e7a5ce7c6dbd68f1ac30f60b5852afaf971eb0703f42d3f\\raw.bin",
+    "textPath": "C:\\Users\\qianchen\\Documents\\waytoagi-1024-detective-a2-v4\\.cache\\source-documents-v4\\a677801d-17f5-447a-8285-64ede5279be8\\69eb5eb7c199a8f34e7a5ce7c6dbd68f1ac30f60b5852afaf971eb0703f42d3f\\source.txt",
+    "manifestPath": "C:\\Users\\qianchen\\Documents\\waytoagi-1024-detective-a2-v4\\.cache\\source-documents-v4\\a677801d-17f5-447a-8285-64ede5279be8\\69eb5eb7c199a8f34e7a5ce7c6dbd68f1ac30f60b5852afaf971eb0703f42d3f\\manifest.json"
+  },
+  "parser": {
+    "name": "readability+source-dom",
+    "version": "readability-0.6.0+jsdom-30.1.3+source-dom-2",
+    "normalization": "source-text/v1",
+    "mode": "STATIC"
+  },
+  "metadata": {
+    "title": "网页搜索与抓取 | DeepSeek API Docs",
+    "author": null,
+    "publishedAt": null,
+    "language": "zh-cn"
+  },
+  "completeness": "COMPLETE",
+  "warnings": [],
+  "blocks": [
+    {
+      "start": 0,
+      "end": 6,
+      "id": "b0",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[0]",
+      "headingPath": [],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 8,
+      "end": 59,
+      "id": "b1",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[1]",
+      "headingPath": [],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 61,
+      "end": 65,
+      "id": "b2",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[2]",
+      "headingPath": [],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 67,
+      "end": 74,
+      "id": "b3",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[3]",
+      "headingPath": [
+        "网页搜索与抓取"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 76,
+      "end": 120,
+      "id": "b4",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[4]",
+      "headingPath": [
+        "网页搜索与抓取"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 122,
+      "end": 177,
+      "id": "b5",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[5]",
+      "headingPath": [
+        "网页搜索与抓取"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 179,
+      "end": 214,
+      "id": "b6",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[6]",
+      "headingPath": [
+        "网页搜索与抓取"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 216,
+      "end": 263,
+      "id": "b7",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[7]",
+      "headingPath": [
+        "网页搜索与抓取"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 265,
+      "end": 301,
+      "id": "b8",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[8]",
+      "headingPath": [
+        "网页搜索与抓取"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 303,
+      "end": 414,
+      "id": "b9",
+      "kind": "TABLE",
+      "locator": "source DOM normalized block[9]",
+      "headingPath": [
+        "网页搜索与抓取"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 416,
+      "end": 479,
+      "id": "b10",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[10]",
+      "headingPath": [
+        "网页搜索与抓取"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 481,
+      "end": 484,
+      "id": "b11",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[11]",
+      "headingPath": [
+        "网页搜索与抓取",
+        "鉴权​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 486,
+      "end": 514,
+      "id": "b12",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[12]",
+      "headingPath": [
+        "网页搜索与抓取",
+        "鉴权​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 516,
+      "end": 590,
+      "id": "b13",
+      "kind": "TABLE",
+      "locator": "source DOM normalized block[13]",
+      "headingPath": [
+        "网页搜索与抓取",
+        "鉴权​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 592,
+      "end": 602,
+      "id": "b14",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[14]",
+      "headingPath": [
+        "网页搜索与抓取",
+        "Search 接口​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 604,
+      "end": 607,
+      "id": "b15",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[15]",
+      "headingPath": [
+        "网页搜索与抓取",
+        "Search 接口​",
+        "请求​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 609,
+      "end": 827,
+      "id": "b16",
+      "kind": "CODE",
+      "locator": "source DOM normalized block[16]",
+      "headingPath": [
+        "网页搜索与抓取",
+        "Search 接口​",
+        "请求​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 829,
+      "end": 1227,
+      "id": "b17",
+      "kind": "CODE",
+      "locator": "source DOM normalized block[17]",
+      "headingPath": [
+        "网页搜索与抓取",
+        "Search 接口​",
+        "请求​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1229,
+      "end": 1234,
+      "id": "b18",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[18]",
+      "headingPath": [
+        "网页搜索与抓取",
+        "Search 接口​",
+        "请求​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1236,
+      "end": 1507,
+      "id": "b19",
+      "kind": "TABLE",
+      "locator": "source DOM normalized block[19]",
+      "headingPath": [
+        "网页搜索与抓取",
+        "Search 接口​",
+        "请求​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1509,
+      "end": 1523,
+      "id": "b20",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[20]",
+      "headingPath": [
+        "网页搜索与抓取",
+        "Search 接口​",
+        "请求​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1525,
+      "end": 1530,
+      "id": "b21",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[21]",
+      "headingPath": [
+        "网页搜索与抓取",
+        "Search 接口​",
+        "搜索语法​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1532,
+      "end": 1596,
+      "id": "b22",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[22]",
+      "headingPath": [
+        "网页搜索与抓取",
+        "Search 接口​",
+        "搜索语法​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1598,
+      "end": 2111,
+      "id": "b23",
+      "kind": "TABLE",
+      "locator": "source DOM normalized block[23]",
+      "headingPath": [
+        "网页搜索与抓取",
+        "Search 接口​",
+        "搜索语法​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2113,
+      "end": 2116,
+      "id": "b24",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[24]",
+      "headingPath": [
+        "网页搜索与抓取",
+        "Search 接口​",
+        "搜索语法​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2118,
+      "end": 2216,
+      "id": "b25",
+      "kind": "CODE",
+      "locator": "source DOM normalized block[25]",
+      "headingPath": [
+        "网页搜索与抓取",
+        "Search 接口​",
+        "搜索语法​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2218,
+      "end": 2221,
+      "id": "b26",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[26]",
+      "headingPath": [
+        "网页搜索与抓取",
+        "Search 接口​",
+        "响应​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2223,
+      "end": 2274,
+      "id": "b27",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[27]",
+      "headingPath": [
+        "网页搜索与抓取",
+        "Search 接口​",
+        "响应​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2276,
+      "end": 2720,
+      "id": "b28",
+      "kind": "CODE",
+      "locator": "source DOM normalized block[28]",
+      "headingPath": [
+        "网页搜索与抓取",
+        "Search 接口​",
+        "响应​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2722,
+      "end": 2741,
+      "id": "b29",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[29]",
+      "headingPath": [
+        "网页搜索与抓取",
+        "Search 接口​",
+        "响应​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2743,
+      "end": 3176,
+      "id": "b30",
+      "kind": "TABLE",
+      "locator": "source DOM normalized block[30]",
+      "headingPath": [
+        "网页搜索与抓取",
+        "Search 接口​",
+        "响应​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3178,
+      "end": 3187,
+      "id": "b31",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[31]",
+      "headingPath": [
+        "网页搜索与抓取",
+        "Fetch 接口​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3189,
+      "end": 3192,
+      "id": "b32",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[32]",
+      "headingPath": [
+        "网页搜索与抓取",
+        "Fetch 接口​",
+        "请求​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3194,
+      "end": 3379,
+      "id": "b33",
+      "kind": "CODE",
+      "locator": "source DOM normalized block[33]",
+      "headingPath": [
+        "网页搜索与抓取",
+        "Fetch 接口​",
+        "请求​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3381,
+      "end": 3679,
+      "id": "b34",
+      "kind": "CODE",
+      "locator": "source DOM normalized block[34]",
+      "headingPath": [
+        "网页搜索与抓取",
+        "Fetch 接口​",
+        "请求​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3681,
+      "end": 3686,
+      "id": "b35",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[35]",
+      "headingPath": [
+        "网页搜索与抓取",
+        "Fetch 接口​",
+        "请求​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3688,
+      "end": 3765,
+      "id": "b36",
+      "kind": "TABLE",
+      "locator": "source DOM normalized block[36]",
+      "headingPath": [
+        "网页搜索与抓取",
+        "Fetch 接口​",
+        "请求​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3767,
+      "end": 3770,
+      "id": "b37",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[37]",
+      "headingPath": [
+        "网页搜索与抓取",
+        "Fetch 接口​",
+        "响应​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3772,
+      "end": 3855,
+      "id": "b38",
+      "kind": "CODE",
+      "locator": "source DOM normalized block[38]",
+      "headingPath": [
+        "网页搜索与抓取",
+        "Fetch 接口​",
+        "响应​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3857,
+      "end": 3918,
+      "id": "b39",
+      "kind": "TABLE",
+      "locator": "source DOM normalized block[39]",
+      "headingPath": [
+        "网页搜索与抓取",
+        "Fetch 接口​",
+        "响应​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3920,
+      "end": 3946,
+      "id": "b40",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[40]",
+      "headingPath": [
+        "网页搜索与抓取",
+        "Fetch 接口​",
+        "响应​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3948,
+      "end": 3951,
+      "id": "b41",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[41]",
+      "headingPath": [
+        "网页搜索与抓取",
+        "错误​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3953,
+      "end": 3991,
+      "id": "b42",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[42]",
+      "headingPath": [
+        "网页搜索与抓取",
+        "错误​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3993,
+      "end": 4149,
+      "id": "b43",
+      "kind": "CODE",
+      "locator": "source DOM normalized block[43]",
+      "headingPath": [
+        "网页搜索与抓取",
+        "错误​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4151,
+      "end": 4394,
+      "id": "b44",
+      "kind": "TABLE",
+      "locator": "source DOM normalized block[44]",
+      "headingPath": [
+        "网页搜索与抓取",
+        "错误​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4396,
+      "end": 4497,
+      "id": "b45",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[45]",
+      "headingPath": [
+        "网页搜索与抓取",
+        "错误​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4499,
+      "end": 4502,
+      "id": "b46",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[46]",
+      "headingPath": [
+        "网页搜索与抓取",
+        "计费​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4504,
+      "end": 4546,
+      "id": "b47",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[47]",
+      "headingPath": [
+        "网页搜索与抓取",
+        "计费​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4548,
+      "end": 4598,
+      "id": "b48",
+      "kind": "TABLE",
+      "locator": "source DOM normalized block[48]",
+      "headingPath": [
+        "网页搜索与抓取",
+        "计费​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4600,
+      "end": 4710,
+      "id": "b49",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[49]",
+      "headingPath": [
+        "网页搜索与抓取",
+        "计费​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4712,
+      "end": 4881,
+      "id": "b50",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[50]",
+      "headingPath": [
+        "网页搜索与抓取",
+        "计费​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4883,
+      "end": 4886,
+      "id": "b51",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[51]",
+      "headingPath": [
+        "网页搜索与抓取",
+        "限速​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4888,
+      "end": 4923,
+      "id": "b52",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[52]",
+      "headingPath": [
+        "网页搜索与抓取",
+        "限速​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4925,
+      "end": 4950,
+      "id": "b53",
+      "kind": "TABLE",
+      "locator": "source DOM normalized block[53]",
+      "headingPath": [
+        "网页搜索与抓取",
+        "限速​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4952,
+      "end": 5087,
+      "id": "b54",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[54]",
+      "headingPath": [
+        "网页搜索与抓取",
+        "限速​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5089,
+      "end": 5091,
+      "id": "b55",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[55]",
+      "headingPath": [
+        "网页搜索与抓取",
+        "限速​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5093,
+      "end": 5110,
+      "id": "b56",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[56]",
+      "headingPath": [
+        "网页搜索与抓取",
+        "限速​"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5112,
+      "end": 5124,
+      "id": "b57",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[57]",
+      "headingPath": [
+        "网页搜索与抓取",
+        "限速​"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5126,
+      "end": 5128,
+      "id": "b58",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[58]",
+      "headingPath": [
+        "网页搜索与抓取",
+        "限速​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5130,
+      "end": 5132,
+      "id": "b59",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[59]",
+      "headingPath": [
+        "网页搜索与抓取",
+        "限速​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5134,
+      "end": 5136,
+      "id": "b60",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[60]",
+      "headingPath": [
+        "网页搜索与抓取",
+        "限速​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    }
+  ],
+  "links": [
+    {
+      "url": "https://api-docs.deepseek.com/zh-cn/guides/search",
+      "text": "",
+      "blockId": null,
+      "relation": "CANONICAL",
+      "locator": "source DOM link[0]"
+    },
+    {
+      "url": "https://api-docs.deepseek.com/zh-cn/guides/search",
+      "text": "点此查看使用指南。",
+      "blockId": "b1",
+      "relation": "LINK",
+      "locator": "source DOM link[2]"
+    },
+    {
+      "url": "https://api-docs.deepseek.com/zh-cn/api/search",
+      "text": "Search API Reference",
+      "blockId": "b10",
+      "relation": "LINK",
+      "locator": "source DOM link[31]"
+    },
+    {
+      "url": "https://api-docs.deepseek.com/zh-cn/api/fetch",
+      "text": "Fetch API Reference",
+      "blockId": "b10",
+      "relation": "LINK",
+      "locator": "source DOM link[32]"
+    }
+  ],
+  "tables": [
+    {
+      "blockId": "b9",
+      "rows": [
+        {
+          "start": 303,
+          "end": 314,
+          "cells": [
+            {
+              "start": 303,
+              "end": 306,
+              "text": "API",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 306,
+              "end": 314,
+              "text": "Endpoint",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 314,
+          "end": 365,
+          "cells": [
+            {
+              "start": 314,
+              "end": 320,
+              "text": "Search",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 320,
+              "end": 365,
+              "text": "POST https://api.deepseek.com/v1/tools/search",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 365,
+          "end": 414,
+          "cells": [
+            {
+              "start": 365,
+              "end": 370,
+              "text": "Fetch",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 370,
+              "end": 414,
+              "text": "POST https://api.deepseek.com/v1/tools/fetch",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "blockId": "b13",
+      "rows": [
+        {
+          "start": 516,
+          "end": 522,
+          "cells": [
+            {
+              "start": 516,
+              "end": 519,
+              "text": "请求头",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 519,
+              "end": 521,
+              "text": "必填",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 521,
+              "end": 522,
+              "text": "值",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 522,
+          "end": 561,
+          "cells": [
+            {
+              "start": 522,
+              "end": 535,
+              "text": "Authorization",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 535,
+              "end": 536,
+              "text": "是",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 536,
+              "end": 561,
+              "text": "Bearer <DeepSeek API Key>",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 561,
+          "end": 590,
+          "cells": [
+            {
+              "start": 561,
+              "end": 573,
+              "text": "Content-Type",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 573,
+              "end": 574,
+              "text": "是",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 574,
+              "end": 590,
+              "text": "application/json",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "blockId": "b19",
+      "rows": [
+        {
+          "start": 1236,
+          "end": 1247,
+          "cells": [
+            {
+              "start": 1236,
+              "end": 1238,
+              "text": "字段",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1238,
+              "end": 1240,
+              "text": "类型",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1240,
+              "end": 1242,
+              "text": "必填",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1242,
+              "end": 1245,
+              "text": "默认值",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1245,
+              "end": 1247,
+              "text": "说明",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 1247,
+          "end": 1302,
+          "cells": [
+            {
+              "start": 1247,
+              "end": 1252,
+              "text": "query",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1252,
+              "end": 1258,
+              "text": "string",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1258,
+              "end": 1259,
+              "text": "是",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1259,
+              "end": 1260,
+              "text": "-",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1260,
+              "end": 1302,
+              "text": "搜索词，1～128 个 Unicode 字符，不能全为空白，支持下方列出的搜索语法。",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 1302,
+          "end": 1327,
+          "cells": [
+            {
+              "start": 1302,
+              "end": 1307,
+              "text": "count",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1307,
+              "end": 1314,
+              "text": "integer",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1314,
+              "end": 1315,
+              "text": "否",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1315,
+              "end": 1317,
+              "text": "10",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1317,
+              "end": 1327,
+              "text": "返回条数，1～50。",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 1327,
+          "end": 1395,
+          "cells": [
+            {
+              "start": 1327,
+              "end": 1339,
+              "text": "ori_question",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1339,
+              "end": 1345,
+              "text": "string",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1345,
+              "end": 1346,
+              "text": "否",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1346,
+              "end": 1347,
+              "text": "-",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1347,
+              "end": 1395,
+              "text": "触发搜索的用户原始问题，1～128 个字符，有助于更好地理解搜索意图，传 null 视为未提供。",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 1395,
+          "end": 1437,
+          "cells": [
+            {
+              "start": 1395,
+              "end": 1407,
+              "text": "localization",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1407,
+              "end": 1413,
+              "text": "string",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1413,
+              "end": 1414,
+              "text": "否",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1414,
+              "end": 1416,
+              "text": "\"\"",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1416,
+              "end": 1437,
+              "text": "用于优先返回本地化搜索结果的 IP 地址。",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 1437,
+          "end": 1507,
+          "cells": [
+            {
+              "start": 1437,
+              "end": 1449,
+              "text": "need_content",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1449,
+              "end": 1456,
+              "text": "boolean",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1456,
+              "end": 1457,
+              "text": "否",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1457,
+              "end": 1462,
+              "text": "false",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1462,
+              "end": 1507,
+              "text": "是否在 content 中返回网页正文，为 false 时 content 恒为空字符串。",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "blockId": "b23",
+      "rows": [
+        {
+          "start": 1598,
+          "end": 1605,
+          "cells": [
+            {
+              "start": 1598,
+              "end": 1601,
+              "text": "操作符",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1601,
+              "end": 1603,
+              "text": "示例",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1603,
+              "end": 1605,
+              "text": "说明",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 1605,
+          "end": 1716,
+          "cells": [
+            {
+              "start": 1605,
+              "end": 1610,
+              "text": "site:",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1610,
+              "end": 1634,
+              "text": "DeepSeek site:github.com",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1634,
+              "end": 1716,
+              "text": "将结果限制在指定站点，指定多个时用空格分隔并通过 OR 连接，例如 DeepSeek site:github.com OR site:huggingface.co。",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 1716,
+          "end": 1766,
+          "cells": [
+            {
+              "start": 1716,
+              "end": 1722,
+              "text": "-site:",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1722,
+              "end": 1748,
+              "text": "DeepSeek -site:example.com",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1748,
+              "end": 1766,
+              "text": "排除指定站点，指定多个时用空格分隔。",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 1766,
+          "end": 1803,
+          "cells": [
+            {
+              "start": 1766,
+              "end": 1767,
+              "text": "-",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1767,
+              "end": 1779,
+              "text": "DeepSeek -广告",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1779,
+              "end": 1803,
+              "text": "排除包含指定关键词的网页，指定多个时用空格分隔。",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 1803,
+          "end": 1867,
+          "cells": [
+            {
+              "start": 1803,
+              "end": 1809,
+              "text": "-\"...\"",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1809,
+              "end": 1834,
+              "text": "DeepSeek -\"release notes\"",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1834,
+              "end": 1867,
+              "text": "排除包含指定短语的网页，短语内可以包含空格，指定多个时用空格分隔。",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 1867,
+          "end": 1907,
+          "cells": [
+            {
+              "start": 1867,
+              "end": 1872,
+              "text": "\"...\"",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1872,
+              "end": 1887,
+              "text": "DeepSeek \"精确短语\"",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1887,
+              "end": 1907,
+              "text": "精确匹配指定短语，指定多个时用空格分隔。",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 1907,
+          "end": 1966,
+          "cells": [
+            {
+              "start": 1907,
+              "end": 1912,
+              "text": "lang:",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1912,
+              "end": 1931,
+              "text": "DeepSeek lang:zh,en",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1931,
+              "end": 1966,
+              "text": "将结果限制在指定语言，多种语言用逗号分隔，例如 lang:zh,en。",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 1966,
+          "end": 2037,
+          "cells": [
+            {
+              "start": 1966,
+              "end": 1972,
+              "text": "after:",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1972,
+              "end": 2019,
+              "text": "DeepSeek after:2025 或 DeepSeek after:2025-01-01",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 2019,
+              "end": 2037,
+              "text": "将结果限制在指定日期之后发布的网页。",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 2037,
+          "end": 2111,
+          "cells": [
+            {
+              "start": 2037,
+              "end": 2044,
+              "text": "before:",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 2044,
+              "end": 2093,
+              "text": "DeepSeek before:2026 或 DeepSeek before:2026-06-01",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 2093,
+              "end": 2111,
+              "text": "将结果限制在指定日期之前发布的网页。",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "blockId": "b30",
+      "rows": [
+        {
+          "start": 2743,
+          "end": 2749,
+          "cells": [
+            {
+              "start": 2743,
+              "end": 2745,
+              "text": "字段",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 2745,
+              "end": 2747,
+              "text": "类型",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 2747,
+              "end": 2749,
+              "text": "说明",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 2749,
+          "end": 2813,
+          "cells": [
+            {
+              "start": 2749,
+              "end": 2761,
+              "text": "rerank_score",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 2761,
+              "end": 2767,
+              "text": "number",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 2767,
+              "end": 2813,
+              "text": "排序分数，0～3 分，综合考虑相关性、权威性、时效性等维度，大于等于 1.5 分为优质结果。",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 2813,
+          "end": 2827,
+          "cells": [
+            {
+              "start": 2813,
+              "end": 2818,
+              "text": "title",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 2818,
+              "end": 2824,
+              "text": "string",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 2824,
+              "end": 2827,
+              "text": "标题。",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 2827,
+          "end": 2841,
+          "cells": [
+            {
+              "start": 2827,
+              "end": 2830,
+              "text": "url",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 2830,
+              "end": 2836,
+              "text": "string",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 2836,
+              "end": 2841,
+              "text": "结果链接。",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 2841,
+          "end": 2892,
+          "cells": [
+            {
+              "start": 2841,
+              "end": 2848,
+              "text": "snippet",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 2848,
+              "end": 2854,
+              "text": "string",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 2854,
+              "end": 2892,
+              "text": "短摘要，与 query 相关，通常为 100～200 字符，适用于前端展现。",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 2892,
+          "end": 2944,
+          "cells": [
+            {
+              "start": 2892,
+              "end": 2899,
+              "text": "summary",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 2899,
+              "end": 2905,
+              "text": "string",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 2905,
+              "end": 2944,
+              "text": "长摘要，与 query 相关，通常为 600～800 字符，适用于给模型阅读。",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 2944,
+          "end": 2995,
+          "cells": [
+            {
+              "start": 2944,
+              "end": 2951,
+              "text": "content",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 2951,
+              "end": 2957,
+              "text": "string",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 2957,
+              "end": 2995,
+              "text": "网页正文，need_content 为 false 或正文缺失时为空字符串。",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 2995,
+          "end": 3032,
+          "cells": [
+            {
+              "start": 2995,
+              "end": 3004,
+              "text": "site_name",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 3004,
+              "end": 3017,
+              "text": "string 或 null",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 3017,
+              "end": 3032,
+              "text": "站点名称，缺失时为 null。",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 3032,
+          "end": 3073,
+          "cells": [
+            {
+              "start": 3032,
+              "end": 3041,
+              "text": "site_icon",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 3041,
+              "end": 3054,
+              "text": "string 或 null",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 3054,
+              "end": 3073,
+              "text": "站点图标 URL，缺失时为 null。",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 3073,
+          "end": 3127,
+          "cells": [
+            {
+              "start": 3073,
+              "end": 3077,
+              "text": "date",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 3077,
+              "end": 3090,
+              "text": "string 或 null",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 3090,
+              "end": 3127,
+              "text": "发布时间，统一为 UTC 的 RFC 3339 格式，未知时为 null。",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 3127,
+          "end": 3176,
+          "cells": [
+            {
+              "start": 3127,
+              "end": 3136,
+              "text": "authority",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 3136,
+              "end": 3143,
+              "text": "integer",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 3143,
+              "end": 3176,
+              "text": "网页权威性，0～4（-1 表示未知），大于等于 3 为极权威结果。",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "blockId": "b36",
+      "rows": [
+        {
+          "start": 3688,
+          "end": 3696,
+          "cells": [
+            {
+              "start": 3688,
+              "end": 3690,
+              "text": "字段",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 3690,
+              "end": 3692,
+              "text": "类型",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 3692,
+              "end": 3694,
+              "text": "必填",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 3694,
+              "end": 3696,
+              "text": "说明",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 3696,
+          "end": 3765,
+          "cells": [
+            {
+              "start": 3696,
+              "end": 3699,
+              "text": "url",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 3699,
+              "end": 3705,
+              "text": "string",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 3705,
+              "end": 3706,
+              "text": "是",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 3706,
+              "end": 3765,
+              "text": "要抓取的网页地址，长度不超过 8192，必须为含 host 的 HTTP/HTTPS URL，且不能携带用户名或密码。",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "blockId": "b39",
+      "rows": [
+        {
+          "start": 3857,
+          "end": 3863,
+          "cells": [
+            {
+              "start": 3857,
+              "end": 3859,
+              "text": "字段",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 3859,
+              "end": 3861,
+              "text": "类型",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 3861,
+              "end": 3863,
+              "text": "说明",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 3863,
+          "end": 3888,
+          "cells": [
+            {
+              "start": 3863,
+              "end": 3868,
+              "text": "title",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 3868,
+              "end": 3874,
+              "text": "string",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 3874,
+              "end": 3888,
+              "text": "页面标题，缺失时为空字符串。",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 3888,
+          "end": 3918,
+          "cells": [
+            {
+              "start": 3888,
+              "end": 3895,
+              "text": "content",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 3895,
+              "end": 3901,
+              "text": "string",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 3901,
+              "end": 3918,
+              "text": "抓取后的 Markdown 正文。",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "blockId": "b44",
+      "rows": [
+        {
+          "start": 4151,
+          "end": 4161,
+          "cells": [
+            {
+              "start": 4151,
+              "end": 4159,
+              "text": "HTTP 状态码",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 4159,
+              "end": 4161,
+              "text": "说明",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 4161,
+          "end": 4194,
+          "cells": [
+            {
+              "start": 4161,
+              "end": 4164,
+              "text": "400",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 4164,
+              "end": 4194,
+              "text": "请求头或请求体不合法，包括 JSON 格式错误或字段值无效。",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 4194,
+          "end": 4211,
+          "cells": [
+            {
+              "start": 4194,
+              "end": 4197,
+              "text": "401",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 4197,
+              "end": 4211,
+              "text": "API Key 缺失或无效。",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 4211,
+          "end": 4221,
+          "cells": [
+            {
+              "start": 4211,
+              "end": 4214,
+              "text": "402",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 4214,
+              "end": 4221,
+              "text": "账号余额不足。",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 4221,
+          "end": 4240,
+          "cells": [
+            {
+              "start": 4221,
+              "end": 4224,
+              "text": "403",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 4224,
+              "end": 4240,
+              "text": "Fetch 请求被安全策略拒绝。",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 4240,
+          "end": 4319,
+          "cells": [
+            {
+              "start": 4240,
+              "end": 4243,
+              "text": "404",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 4243,
+              "end": 4319,
+              "text": "Fetch 未能获取可用的网页内容，例如 URL 不可用、被站点策略拦截、目标站点返回错误、内容类型不受支持或页面没有可提取的 Markdown 正文。",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 4319,
+          "end": 4330,
+          "cells": [
+            {
+              "start": 4319,
+              "end": 4322,
+              "text": "408",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 4322,
+              "end": 4330,
+              "text": "读取请求体超时。",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 4330,
+          "end": 4343,
+          "cells": [
+            {
+              "start": 4330,
+              "end": 4333,
+              "text": "413",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 4333,
+              "end": 4343,
+              "text": "请求体超过大小限制。",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 4343,
+          "end": 4373,
+          "cells": [
+            {
+              "start": 4343,
+              "end": 4346,
+              "text": "429",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 4346,
+              "end": 4373,
+              "text": "超过 Search 或 Fetch 的 QPS 限制。",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 4373,
+          "end": 4384,
+          "cells": [
+            {
+              "start": 4373,
+              "end": 4376,
+              "text": "500",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 4376,
+              "end": 4384,
+              "text": "服务器内部错误。",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 4384,
+          "end": 4394,
+          "cells": [
+            {
+              "start": 4384,
+              "end": 4387,
+              "text": "504",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 4387,
+              "end": 4394,
+              "text": "下游请求超时。",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "blockId": "b48",
+      "rows": [
+        {
+          "start": 4548,
+          "end": 4557,
+          "cells": [
+            {
+              "start": 4548,
+              "end": 4551,
+              "text": "API",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 4551,
+              "end": 4555,
+              "text": "计费单位",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 4555,
+              "end": 4557,
+              "text": "价格",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 4557,
+          "end": 4578,
+          "cells": [
+            {
+              "start": 4557,
+              "end": 4563,
+              "text": "Search",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 4563,
+              "end": 4576,
+              "text": "每 1,000 次成功请求",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 4576,
+              "end": 4578,
+              "text": "5元",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 4578,
+          "end": 4598,
+          "cells": [
+            {
+              "start": 4578,
+              "end": 4583,
+              "text": "Fetch",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 4583,
+              "end": 4596,
+              "text": "每 1,000 次成功请求",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 4596,
+              "end": 4598,
+              "text": "5元",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "blockId": "b53",
+      "rows": [
+        {
+          "start": 4925,
+          "end": 4934,
+          "cells": [
+            {
+              "start": 4925,
+              "end": 4928,
+              "text": "API",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 4928,
+              "end": 4934,
+              "text": "QPS 限制",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 4934,
+          "end": 4943,
+          "cells": [
+            {
+              "start": 4934,
+              "end": 4940,
+              "text": "Search",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 4940,
+              "end": 4943,
+              "text": "100",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 4943,
+          "end": 4950,
+          "cells": [
+            {
+              "start": 4943,
+              "end": 4948,
+              "text": "Fetch",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 4948,
+              "end": 4950,
+              "text": "25",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

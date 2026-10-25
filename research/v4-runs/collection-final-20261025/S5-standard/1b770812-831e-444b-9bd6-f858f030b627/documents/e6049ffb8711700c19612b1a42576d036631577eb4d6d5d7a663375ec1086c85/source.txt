@@ -1,0 +1,81 @@
+text-to-cad
+
+0Developer ToolsFree
+
+text-to-cad turns agent prompts into CAD model files
+
+Listing updated Oct 6, 2026
+
+Get This ToolCopy CodeClaim Tool
+
+What is text-to-cad?
+
+text-to-cad is an open-source CAD plugin for AI coding agents. It gives Claude Code, Codex, Cursor, Gemini, Grok, OpenCode, Windsurf, Zed, VS Code, and other compatible assistants a practical way to create CAD artifacts from natural-language instructions. The project README says it can generate STEP, GLB, STL, and 3MF files, run design-for-manufacturing checks, create engineering drawings, and connect work to 3D printing, sheet metal, and CNC fabrication services. The setup paths are concrete. Claude Code users can add the earthtojake marketplace and install the plugin. Codex users can add the same marketplace after upgrading to a recent Codex release. Claude Desktop users can run the cadgen MCP server through uvx, which gives the assistant a local CAD process and viewer flow. The repository also documents Cursor and other clients, so teams can use the tool in the editor or terminal agent they already use instead of moving the whole task to a separate CAD environment. The value is speed during early hardware and product exploration. A builder can describe a bracket, enclosure, fixture, adapter, or visual mockup, then inspect the generated model before asking the agent for another pass. That does not replace mechanical engineering review, tolerance checks, material selection, regulatory review, or safety validation. It does make the first sketch and handoff faster, especially for software-heavy teams that already live in AI-assisted development workflows. text-to-cad is strongest when the problem can be described clearly in words and the expected output is a prototype, example, or starting geometry file. It is weaker when the work depends on precise manufacturing tolerances that have not been specified. The README also notes that CAD runtime components may download on first launch, so setup needs a working network connection. Pricing is simple: the project is MIT licensed and open source. Users still need their chosen agent, uv or uvx, and any paid model or fabrication services they decide to connect. For OpenTools readers, the important point is that text-to-cad turns agent chat into inspectable CAD files instead of leaving hardware ideas as loose text. It is a focused bridge between coding-agent workflows and physical-product prototyping, with enough documented setup detail to test quickly. The current repository also shows active attention to agent-specific installation notes, which matters because CAD generation only becomes useful when the surrounding assistant can install, call, view, and revise the generated artifacts without a brittle manual handoff during early design reviews.
+
+Read more
+
+text-to-cad's Top Features
+
+Key capabilities that make text-to-cad stand out.
+
+Generates STEP, GLB, STL, and 3MF model files
+
+Supports Claude Code, Codex, Cursor, Gemini, Grok, OpenCode, Windsurf, Zed, VS Code, and other clients
+
+Runs CAD workflows locally through cadgen and uv or uvx
+
+Includes design-for-manufacturing checks and engineering drawing generation
+
+Shows generated models through viewer cards or browser links where supported
+
+Use Cases
+
+Who benefits most from this tool.
+
+Builders prototyping physical products
+
+Generate quick printable models, housings, brackets, fixtures, or mockups from an AI agent conversation.
+
+Coding-agent power users
+
+Add a CAD workflow to Claude Code, Codex, Cursor, and similar clients without switching tools.
+
+Hardware teams validating early ideas
+
+Create model files and drawings before a specialist CAD review.
+
+Explore Top AI Use Cases
+
+Tags
+
+cad3d-modelingagent-toolsclaude-codecodexmcp3d-printingdeveloper-toolsopen-sourcefabrication
+
+text-to-cad's Pricing
+
+Free plan available
+
+Open source
+
+Free
+
+Free
+
+Open-source repository
+
+Self-hosted or local setup
+
+Bring your own AI runtime
+
+Get started
+
+User Reviews
+
+Share your thoughts
+
+If you've used this product, share your thoughts with other builders
+
+Recent reviews
+
+Frequently Asked Questions
+
+What does text-to-cad generate?The README says it can generate STEP, GLB, STL, and 3MF files, plus manufacturing checks and drawings.Which agent clients can use it?The project documents Claude Code, Claude Desktop, Codex, Cursor, Gemini, Grok, OpenCode, Windsurf, Zed, VS Code, and other clients.Is text-to-cad free?The repository is MIT licensed. Users still need their agent, uv/uvx, and any paid services they connect.

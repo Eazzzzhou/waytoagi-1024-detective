@@ -1,0 +1,68 @@
+{
+  "capturedAt": "2026-10-25T04:23:10.813Z",
+  "url": "http://127.0.0.1:3104/investigations/665d6eba-270a-4eb5-9073-f7118a79ae58",
+  "detail": {
+    "investigation": {
+      "id": "665d6eba-270a-4eb5-9073-f7118a79ae58",
+      "question": "GitHub Copilot Free 每月包含多少次代码补全、多少次 chat？超出后怎么办？",
+      "researchDepth": "AUTO",
+      "status": "SUCCEEDED",
+      "stage": "COMPLETED",
+      "error": null,
+      "createdAt": "2026-10-25T04:22:18.879Z",
+      "updatedAt": "2026-10-25T04:23:10.002Z",
+      "startedAt": "2026-10-25T04:22:19.588Z",
+      "completedAt": "2026-10-25T04:23:10.002Z",
+      "resultSnapshotId": "26ce1cea-d0bd-4796-97a1-efd9bec98e63"
+    },
+    "identityConfirmation": null,
+    "retry": {
+      "allowed": false,
+      "reason": "仅失败的调查可以手动重试。",
+      "remaining": 2,
+      "expectedAttemptCount": 1
+    }
+  },
+  "observedStates": [
+    {
+      "status": "RUNNING",
+      "stage": "IDENTITY",
+      "observedAt": "2026-10-25T04:22:21.023Z"
+    },
+    {
+      "status": "RUNNING",
+      "stage": "RETRIEVAL",
+      "observedAt": "2026-10-25T04:22:22.056Z"
+    },
+    {
+      "status": "RUNNING",
+      "stage": "SOURCE_FETCH",
+      "observedAt": "2026-10-25T04:22:28.178Z"
+    },
+    {
+      "status": "RUNNING",
+      "stage": "VERIFICATION",
+      "observedAt": "2026-10-25T04:22:33.262Z"
+    },
+    {
+      "status": "RUNNING",
+      "stage": "SOURCE_FETCH",
+      "observedAt": "2026-10-25T04:22:51.559Z"
+    },
+    {
+      "status": "RUNNING",
+      "stage": "VERIFICATION",
+      "observedAt": "2026-10-25T04:22:55.631Z"
+    },
+    {
+      "status": "RUNNING",
+      "stage": "ANSWER",
+      "observedAt": "2026-10-25T04:23:06.766Z"
+    },
+    {
+      "status": "SUCCEEDED",
+      "stage": "COMPLETED",
+      "observedAt": "2026-10-25T04:23:10.812Z"
+    }
+  ]
+}

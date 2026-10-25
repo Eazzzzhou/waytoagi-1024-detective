@@ -1,0 +1,1713 @@
+{
+  "schemaVersion": "source-document/v1",
+  "id": "2ba8e584be49880cec38da9fafefbb86a62f5e5fda3de8028b15562271790a4d",
+  "version": "630d92feed8da894921578c46cf1199160b6fdba840231ede4c6e07398f7fce2",
+  "requestedUrl": "https://blog.csdn.net/qq_35704550/article/details/149077506",
+  "finalUrl": "https://blog.csdn.net/qq_35704550/article/details/149077506",
+  "retrievedAt": "2026-10-25T04:44:11.885Z",
+  "contentType": "text/html;charset=utf-8",
+  "status": "READ",
+  "readError": null,
+  "rawHash": "eb7f87dccb47109b7aa30f1cab53edfe2a46f7c911ef51049f5350842d088bb8",
+  "textHash": "0f9049c3e6a418b7af22a1885448110f67db442420998a9d376e1c3e08b10fa4",
+  "text": "首页 博客 下载 学习 社区 模型市场 AI搜索 AtomGit InsCode 技术会议 墨衍 MoGrow 收藏 历史 会员中心 创作中心\n\nAI 应用开发（二）：Blender 建模助手\n\n北桥苏 墨衍会员 · AI 创作全网分发 墨衍智能分发 本文由作者通过墨衍一键同步至各平台 1分发平台 1.3k累计阅读 1.3k平均单平台 已同步平台 CSDN 微信公众号 微博 知乎 掘金 百家号 博客园 抖音 小红书 你的文章也可以这样分发 墨衍会员 ¥399起/年，写一次发全网 我也要 码龄10年 关注 VIP免费 原创 最新推荐文章于 2026-07-15 12:49:11 发布 1.3k 阅读 AI 写同款· GEO 优化 ›\n\n从传统到智能：3D 建模流程的演进与 AI 趋势 —— 以 Blender 为例 以 Blender 为例，传统建模流程代表了高度精细、完全可控的创作方式，而 AI 驱动的建模则代表高效率与低门槛两者并非替代关系，而是互补：•AI 提供速度与灵感；•Blender 提供精度与掌控未来的 3D 建模师，既要理解 Blender 的传统技艺，也要熟悉 AI 工具，才能真正发挥 “人机协作” 的优势，成为新时代的 AI 智能3D建模师。 阅读详情\n\n一、前言\n\n上次简单介绍了一下 MCP，以及如何在 TRAR 中通过 MCP 实现一些 AI 功能，同时我也说过，以后的那些大型工具软件一定会加上自然语言驱动创作模块。\n\n比如各种 Adobe、Autodask 等等系列软件，但是今天我要讲的一个开源轻量的 3D 建模软件 ——Blender，关于实现一个智能体，完成通过自然语言来控制 Blender 建模、贴图等基本操作。\n\n二、环境清单\n\nTRAE 0.5.7\n\nBlender 4.0\n\nBlender MCP\n\nPython 3.10\n\n三、BlenderMCP 介绍\n\n要想用自然对话的方式在 Blender 中建模，就不得不提到 BlenderMCP 了，全称为 Blender Model Context Protocol，是一个旨在将 Blender 与 AI 模型无缝集成的工具。\n\n它通过模型上下文协议（MCP）实现 Blender 与 AI 之间的双向通信，让用户能够利用自然语言指令来控制 Blender，从而极大地简化了 3D 建模和场景操作的流程，它主要由两个部分组成：Blender 插件和 MCP 服务器。\n\n1. Blender 插件（addon.py）：该插件运行在 Blender 内部，负责创建 socket 服务器。它接收来自外部的命令，并在 Blender 中执行这些命令。例如\n\n最低0.47元/天 解锁文章\n\n·\n\n收录于\n\n当前文章被以下社区和专栏收录：\n\n标签 #人工智能 #blender #AI应用开发\n\nMCP - 使用 BlenderMCP 让 Claude AI 控制你的 Blender 模型创作 BlenderMCP 打通了 AI 与 3D 工具之间的壁垒，使得通过 Claude 自然语言即可进行场景构建、模型控制和素材管理等操作，大幅度简化建模流程。无论是个人创作、游戏原型设计还是团队协作，这套流程都值得你体验一番。uv。 阅读详情\n\n相关推荐\n\n换一换\n\nwindsurf配置blender-mcp和qgis-mcp\n\n建议重启一下blender，再次打开到插件页面勾选Blender MCP，而后在界面右侧会看到此插件，如果没有这个插件（但是有条目，工具这些）请查看是否勾选了Blender MCP，如果都没看到，请使用快捷键。而后，我们需要修改下端口号（因为默认都是9876），所以我们修改qgis-mcp的端口号为9880（可以不同），我们首先打开qigs插件目录下我们刚刚复制的qgis_mcp_plugin文件夹，然后打开。接下来打开windsurf，点击配置mcp，打开后是一个json，将下面代码复制过去，然后保存。\n\nqq_44897914的博客 4081\n\nblender安装开源的mcpserver 直接让claude控制 blender ai建模\n\n首先下载这个到本地。\n\n情随事迁个人博客 1481\n\nAI语音驱动Blender建模：MCP协议与Cursor实战指南\n\n3D建模领域正经历AI技术带来的范式变革，其中自然语言交互与自动化流程成为关键技术突破点。通过协议层创新（如MCP协议），开发者能够桥接AI编程助手（如Cursor）与专业建模工具（如Blender），实现语音/文本指令直接生成复杂模型。这种技术组合显著降低了3D创作门槛，其核心价值在于：1）将传统手动操作转化为声明式编程；2）通过UV包管理器解决Python环境依赖问题；3）支持建筑、动画等场景的批量建模需求。以Blender插件开发为例，合理配置MCP协议后，用户可快速实现从\"生成带纹理的UV球体\"到\"\n\nweixin_30596735的博客 371\n\n基于Blender的AI插件——2D图片生成3D模型\n\n只需5分钟即可从图片到可编辑3D模型，支持Blender全版本兼容。\n\n这里汇聚了前沿的技术分享与实用的开发技巧，带你探索从创意到企业的技术创业之路。 2550\n\nPython 静态导入与动态导入\n\npython中模块的静态导入 与 动态导入(运行时指定模块)，以及具体对应示例。\n\n慢也好，步子小也好，往前走就好~ 704\n\nChatGPT Web转API工具：原理、部署与集成实战\n\n在AI应用开发中，API（应用程序编程接口）是实现系统间通信和数据交换的核心技术，它通过标准化的请求响应机制，将复杂功能封装为可编程的服务。其工作原理基于HTTP协议，通过定义清晰的端点、方法和数据格式，使不同平台的应用能够高效集成AI能力。这一技术价值在于极大降低了开发门槛，促进了自动化流程和智能功能的快速落地，广泛应用于智能客服、内容生成和创意辅助等场景。本文聚焦于如何通过浏览器自动化技术，将ChatGPT的Web界面能力转化为标准API服务，其中涉及Playwright无头浏览器操作和会话Cookie\n\nweixin_42533910的博客 1693\n\nTemporal Fusion Transformer（TFT）与扩散模型融合：时间序列预测新范式\n\n本文探讨了Temporal Fusion Transformer（TFT）与扩散模型融合的时间序列预测新范式。该融合方案利用TFT强大的特征提取与可解释性，为扩散模型提供精准的“导航图”，从而在噪声数据中实现鲁棒预测，并原生支持不确定性量化，输出完整的概率分布与置信区间，为金融、能源等领域的风险决策提供更可靠的依据。\n\nweixin_29096377的博客 283\n\n本地大模型5：在pycharm用python调用ollama本地大模型\n\npython调用ollama本地大模型\n\nweixin_74825941的博客 8366\n\n【高等数值分析】Krylov子空间方法\n\n文章目录1. 预备理论1.1 Krylov 子空间1.2 最佳逼近1.2.1 方法一：最佳平方逼近1.2.2 方法二：假设 AAA 对称正定1.2.3 方法三：残差2范数2. 基底正交化2.1 Arnoldi 过程（CGS）2.2 改进 Arnoldi 过程（MGS）2.3 Lanczos过程3. 方程组求解3.1 全正交方法 (FOM)3.2 D-Lanczos方法3.3 广义极小残量法（GMRES）3.4 MINRES 方法 1. 预备理论 现在需要求解一个大规模稀疏方程组 Ax=bAx=bAx=b，可\n\nGlooow的博客 1万+\n\n华为CCA架构软件栈VehicleStack解析：3层服务化设计与AOS/VOS双核OS\n\n本文深入解析华为CCA架构下的VehicleStack软件平台，重点介绍其三层服务化设计（硬件抽象层、服务框架层、应用层）与AOS/VOS双核操作系统协同机制。该架构通过计算与通信的深度融合，推动汽车电子电气架构向集中式发展，为智能汽车提供灵活、高效的软件定义汽车解决方案。\n\nweixin_33491377的博客 310\n\n2026.3.28：langgraph使用mysql进行持久化会话存储（短期记忆和长期记忆）\n\n本文介绍了如何使用MySQL持久化存储LangGraph会话数据（短期和长期记忆）。首先安装必要的依赖包，然后通过Python代码实现将短期记忆写入MySQL数据库。主要步骤包括：1) 建立MySQL连接；2) 创建代理(agent)并配置检查点(checkpointer)和存储(store)；3) 实现工具函数如计算器和天气查询；4) 使用中间件跟踪工具和模型调用次数。最后展示了如何从MySQL读取短期记忆数据，完成会话的持久化存储和检索功能。代码示例包含完整的实现细节，包括状态管理、消息处理和数据库操作\n\n拥抱具身智能，昇腾Ascend C 722\n\nGaussDB本地安装手册（主备模式）\n\n如果实例状态是Normal，则安装成功。三节点集中式配置文件。\n\nSebastien23的博客 2603\n\n大中型超市收银系统(可直接运行)\n\n光步前台收银系统系统功能：商品销售、商品退货、挂单、收银员权限、会员销售、单品取消、整单取消、商品查询、脱机销售、脱机数据上传，基本资料下载，开钱箱、小票打印、收款结算，支持多币种付款方式（现金、储值卡、礼券、微信等）,支持多种促销。运行环境：.net 4.0登陆信息用户名:1001 密码:123456内置商品信息，商品编码可输入00001000 - 00010000,测试效果相关功能键F5 结算 F9挂单 F11商品查询 F8退货 Insert单品取消 Del整单取消 F12开钱箱F2 会员 Ctrl+Z退出系统 Home 锁屏 相关源码待公开\n\nSTM32F407中文手册\n\nSTM32f407中文手册 本参考手册面向应用开发人员，提供有关使用 STM32F405xx/07xx、STM32F415xx/17xx、 STM32F42xxx 和 STM32F43xxx 微控制器存储器与外设的完整信息。STM32F405xx/07xx、STM32F415xx/17xx、STM32F42xxx 和 STM32F43xxx 构成一个微 控制器系列，各产品具有不同的存储器大小、封装和外设。有关订购信息以及器件的机械与电气特性，请参见数据手册。有关 ARM Cortex™-M4F 内核的信息，请参见《Cortex™-M4F 技术参考手册》。\n\nVB摄像头监控\n\n该VB模块可对摄像头捕获的画面进行录像等，可在创建的窗口进行控制\n\n假人有限元模型\n\n假人模型，车辆碰撞假人有限元模型，适合做乘员安全的研究者利用\n\n上一篇： AI 应用开发（一）：TRAE 下自定义 MCP Server 下一篇： 如何在 Unity3D 中实现圆角效果？\n\n目录\n\n展开全部\n\n收起\n\n14\n\n0\n\n24\n\n复制链接 分享到 QQ 分享到新浪微博 扫一扫\n\n举报\n\n北桥苏 码龄10年 608粉丝 176原创 + 关注\n\n评论 条评论被折叠 查看 被折叠的 条评论 为什么被折叠? 到【灌水乐园】发言 查看更多评论 添加红包\n\n实付元\n\n使用余额支付\n\n点击重新获取 扫码支付\n\n钱包余额\n\n0\n\n抵扣说明：\n\n1.余额是钱包充值的虚拟货币，按照1:1的比例进行支付金额的抵扣。 2.余额无法直接购买下载，可以购买VIP、付费专栏及课程。\n\n余额充值",
+  "rawSources": [
+    {
+      "mode": "STATIC",
+      "hash": "eb7f87dccb47109b7aa30f1cab53edfe2a46f7c911ef51049f5350842d088bb8",
+      "path": "C:\\Users\\qianchen\\Documents\\waytoagi-1024-detective-a2-v4\\.cache\\source-documents-v4\\1b770812-831e-444b-9bd6-f858f030b627\\2ba8e584be49880cec38da9fafefbb86a62f5e5fda3de8028b15562271790a4d\\raw.bin"
+    }
+  ],
+  "storage": {
+    "rawPath": "C:\\Users\\qianchen\\Documents\\waytoagi-1024-detective-a2-v4\\.cache\\source-documents-v4\\1b770812-831e-444b-9bd6-f858f030b627\\2ba8e584be49880cec38da9fafefbb86a62f5e5fda3de8028b15562271790a4d\\raw.bin",
+    "textPath": "C:\\Users\\qianchen\\Documents\\waytoagi-1024-detective-a2-v4\\.cache\\source-documents-v4\\1b770812-831e-444b-9bd6-f858f030b627\\2ba8e584be49880cec38da9fafefbb86a62f5e5fda3de8028b15562271790a4d\\source.txt",
+    "manifestPath": "C:\\Users\\qianchen\\Documents\\waytoagi-1024-detective-a2-v4\\.cache\\source-documents-v4\\1b770812-831e-444b-9bd6-f858f030b627\\2ba8e584be49880cec38da9fafefbb86a62f5e5fda3de8028b15562271790a4d\\manifest.json"
+  },
+  "parser": {
+    "name": "readability+source-dom",
+    "version": "readability-0.6.0+jsdom-30.1.3+source-dom-2",
+    "normalization": "source-text/v1",
+    "mode": "STATIC"
+  },
+  "metadata": {
+    "title": "AI 应用开发（二）：Blender 建模助手_blender mcp-CSDN博客",
+    "author": "北桥苏",
+    "publishedAt": "2025-07-03T01:15:00.000Z",
+    "language": "zh-CN"
+  },
+  "completeness": "COMPLETE",
+  "warnings": [],
+  "blocks": [
+    {
+      "start": 0,
+      "end": 71,
+      "id": "b0",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[0]",
+      "headingPath": [],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 73,
+      "end": 96,
+      "id": "b1",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[1]",
+      "headingPath": [
+        "AI 应用开发（二）：Blender 建模助手"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 98,
+      "end": 319,
+      "id": "b2",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[2]",
+      "headingPath": [
+        "AI 应用开发（二）：Blender 建模助手"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 321,
+      "end": 543,
+      "id": "b3",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[3]",
+      "headingPath": [
+        "AI 应用开发（二）：Blender 建模助手"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 545,
+      "end": 549,
+      "id": "b4",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[4]",
+      "headingPath": [
+        "AI 应用开发（二）：Blender 建模助手",
+        "一、前言"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 551,
+      "end": 629,
+      "id": "b5",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[5]",
+      "headingPath": [
+        "AI 应用开发（二）：Blender 建模助手",
+        "一、前言"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 631,
+      "end": 733,
+      "id": "b6",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[6]",
+      "headingPath": [
+        "AI 应用开发（二）：Blender 建模助手",
+        "一、前言"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 735,
+      "end": 741,
+      "id": "b7",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[7]",
+      "headingPath": [
+        "AI 应用开发（二）：Blender 建模助手",
+        "二、环境清单"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 743,
+      "end": 753,
+      "id": "b8",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[8]",
+      "headingPath": [
+        "AI 应用开发（二）：Blender 建模助手",
+        "二、环境清单"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 755,
+      "end": 766,
+      "id": "b9",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[9]",
+      "headingPath": [
+        "AI 应用开发（二）：Blender 建模助手",
+        "二、环境清单"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 768,
+      "end": 779,
+      "id": "b10",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[10]",
+      "headingPath": [
+        "AI 应用开发（二）：Blender 建模助手",
+        "二、环境清单"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 781,
+      "end": 792,
+      "id": "b11",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[11]",
+      "headingPath": [
+        "AI 应用开发（二）：Blender 建模助手",
+        "二、环境清单"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 794,
+      "end": 809,
+      "id": "b12",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[12]",
+      "headingPath": [
+        "AI 应用开发（二）：Blender 建模助手",
+        "三、BlenderMCP 介绍"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 811,
+      "end": 920,
+      "id": "b13",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[13]",
+      "headingPath": [
+        "AI 应用开发（二）：Blender 建模助手",
+        "三、BlenderMCP 介绍"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 922,
+      "end": 1040,
+      "id": "b14",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[14]",
+      "headingPath": [
+        "AI 应用开发（二）：Blender 建模助手",
+        "三、BlenderMCP 介绍"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1042,
+      "end": 1132,
+      "id": "b15",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[15]",
+      "headingPath": [
+        "AI 应用开发（二）：Blender 建模助手",
+        "三、BlenderMCP 介绍"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1134,
+      "end": 1148,
+      "id": "b16",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[16]",
+      "headingPath": [
+        "AI 应用开发（二）：Blender 建模助手",
+        "三、BlenderMCP 介绍"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1150,
+      "end": 1151,
+      "id": "b17",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[17]",
+      "headingPath": [
+        "AI 应用开发（二）：Blender 建模助手",
+        "三、BlenderMCP 介绍"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1153,
+      "end": 1156,
+      "id": "b18",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[18]",
+      "headingPath": [
+        "AI 应用开发（二）：Blender 建模助手",
+        "三、BlenderMCP 介绍"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1158,
+      "end": 1173,
+      "id": "b19",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[19]",
+      "headingPath": [
+        "AI 应用开发（二）：Blender 建模助手",
+        "三、BlenderMCP 介绍"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1175,
+      "end": 1200,
+      "id": "b20",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[20]",
+      "headingPath": [
+        "AI 应用开发（二）：Blender 建模助手",
+        "三、BlenderMCP 介绍"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1202,
+      "end": 1373,
+      "id": "b21",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[21]",
+      "headingPath": [
+        "AI 应用开发（二）：Blender 建模助手",
+        "三、BlenderMCP 介绍"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1375,
+      "end": 1379,
+      "id": "b22",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[22]",
+      "headingPath": [
+        "AI 应用开发（二）：Blender 建模助手",
+        "三、BlenderMCP 介绍",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1381,
+      "end": 1384,
+      "id": "b23",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[23]",
+      "headingPath": [
+        "AI 应用开发（二）：Blender 建模助手",
+        "三、BlenderMCP 介绍",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1386,
+      "end": 1416,
+      "id": "b24",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[24]",
+      "headingPath": [
+        "AI 应用开发（二）：Blender 建模助手",
+        "三、BlenderMCP 介绍",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1418,
+      "end": 1673,
+      "id": "b25",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[25]",
+      "headingPath": [
+        "AI 应用开发（二）：Blender 建模助手",
+        "三、BlenderMCP 介绍",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1675,
+      "end": 1694,
+      "id": "b26",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[26]",
+      "headingPath": [
+        "AI 应用开发（二）：Blender 建模助手",
+        "三、BlenderMCP 介绍",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1696,
+      "end": 1742,
+      "id": "b27",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[27]",
+      "headingPath": [
+        "AI 应用开发（二）：Blender 建模助手",
+        "三、BlenderMCP 介绍",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1744,
+      "end": 1754,
+      "id": "b28",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[28]",
+      "headingPath": [
+        "AI 应用开发（二）：Blender 建模助手",
+        "三、BlenderMCP 介绍",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1756,
+      "end": 1769,
+      "id": "b29",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[29]",
+      "headingPath": [
+        "AI 应用开发（二）：Blender 建模助手",
+        "三、BlenderMCP 介绍",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1771,
+      "end": 1803,
+      "id": "b30",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[30]",
+      "headingPath": [
+        "AI 应用开发（二）：Blender 建模助手",
+        "三、BlenderMCP 介绍",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1805,
+      "end": 2061,
+      "id": "b31",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[31]",
+      "headingPath": [
+        "AI 应用开发（二）：Blender 建模助手",
+        "三、BlenderMCP 介绍",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2063,
+      "end": 2085,
+      "id": "b32",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[32]",
+      "headingPath": [
+        "AI 应用开发（二）：Blender 建模助手",
+        "三、BlenderMCP 介绍",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2087,
+      "end": 2113,
+      "id": "b33",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[33]",
+      "headingPath": [
+        "AI 应用开发（二）：Blender 建模助手",
+        "三、BlenderMCP 介绍",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2115,
+      "end": 2149,
+      "id": "b34",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[34]",
+      "headingPath": [
+        "AI 应用开发（二）：Blender 建模助手",
+        "三、BlenderMCP 介绍",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2151,
+      "end": 2195,
+      "id": "b35",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[35]",
+      "headingPath": [
+        "AI 应用开发（二）：Blender 建模助手",
+        "三、BlenderMCP 介绍",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2197,
+      "end": 2213,
+      "id": "b36",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[36]",
+      "headingPath": [
+        "AI 应用开发（二）：Blender 建模助手",
+        "三、BlenderMCP 介绍",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2215,
+      "end": 2255,
+      "id": "b37",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[37]",
+      "headingPath": [
+        "AI 应用开发（二）：Blender 建模助手",
+        "三、BlenderMCP 介绍",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2257,
+      "end": 2277,
+      "id": "b38",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[38]",
+      "headingPath": [
+        "AI 应用开发（二）：Blender 建模助手",
+        "三、BlenderMCP 介绍",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2279,
+      "end": 2307,
+      "id": "b39",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[39]",
+      "headingPath": [
+        "AI 应用开发（二）：Blender 建模助手",
+        "三、BlenderMCP 介绍",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2309,
+      "end": 2565,
+      "id": "b40",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[40]",
+      "headingPath": [
+        "AI 应用开发（二）：Blender 建模助手",
+        "三、BlenderMCP 介绍",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2567,
+      "end": 2590,
+      "id": "b41",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[41]",
+      "headingPath": [
+        "AI 应用开发（二）：Blender 建模助手",
+        "三、BlenderMCP 介绍",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2592,
+      "end": 2641,
+      "id": "b42",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[42]",
+      "headingPath": [
+        "AI 应用开发（二）：Blender 建模助手",
+        "三、BlenderMCP 介绍",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2643,
+      "end": 2802,
+      "id": "b43",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[43]",
+      "headingPath": [
+        "AI 应用开发（二）：Blender 建模助手",
+        "三、BlenderMCP 介绍",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2804,
+      "end": 2826,
+      "id": "b44",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[44]",
+      "headingPath": [
+        "AI 应用开发（二）：Blender 建模助手",
+        "三、BlenderMCP 介绍",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2828,
+      "end": 2863,
+      "id": "b45",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[45]",
+      "headingPath": [
+        "AI 应用开发（二）：Blender 建模助手",
+        "三、BlenderMCP 介绍",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2865,
+      "end": 2884,
+      "id": "b46",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[46]",
+      "headingPath": [
+        "AI 应用开发（二）：Blender 建模助手",
+        "三、BlenderMCP 介绍",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2886,
+      "end": 2909,
+      "id": "b47",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[47]",
+      "headingPath": [
+        "AI 应用开发（二）：Blender 建模助手",
+        "三、BlenderMCP 介绍",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2911,
+      "end": 2930,
+      "id": "b48",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[48]",
+      "headingPath": [
+        "AI 应用开发（二）：Blender 建模助手",
+        "三、BlenderMCP 介绍",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2932,
+      "end": 3188,
+      "id": "b49",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[49]",
+      "headingPath": [
+        "AI 应用开发（二）：Blender 建模助手",
+        "三、BlenderMCP 介绍",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3190,
+      "end": 3203,
+      "id": "b50",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[50]",
+      "headingPath": [
+        "AI 应用开发（二）：Blender 建模助手",
+        "三、BlenderMCP 介绍",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3205,
+      "end": 3249,
+      "id": "b51",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[51]",
+      "headingPath": [
+        "AI 应用开发（二）：Blender 建模助手",
+        "三、BlenderMCP 介绍",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3251,
+      "end": 3388,
+      "id": "b52",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[52]",
+      "headingPath": [
+        "AI 应用开发（二）：Blender 建模助手",
+        "三、BlenderMCP 介绍",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3390,
+      "end": 3412,
+      "id": "b53",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[53]",
+      "headingPath": [
+        "AI 应用开发（二）：Blender 建模助手",
+        "三、BlenderMCP 介绍",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3414,
+      "end": 3460,
+      "id": "b54",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[54]",
+      "headingPath": [
+        "AI 应用开发（二）：Blender 建模助手",
+        "三、BlenderMCP 介绍",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3462,
+      "end": 3718,
+      "id": "b55",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[55]",
+      "headingPath": [
+        "AI 应用开发（二）：Blender 建模助手",
+        "三、BlenderMCP 介绍",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3720,
+      "end": 3741,
+      "id": "b56",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[56]",
+      "headingPath": [
+        "AI 应用开发（二）：Blender 建模助手",
+        "三、BlenderMCP 介绍",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3743,
+      "end": 3762,
+      "id": "b57",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[57]",
+      "headingPath": [
+        "AI 应用开发（二）：Blender 建模助手",
+        "三、BlenderMCP 介绍",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3764,
+      "end": 3795,
+      "id": "b58",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[58]",
+      "headingPath": [
+        "AI 应用开发（二）：Blender 建模助手",
+        "三、BlenderMCP 介绍",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3797,
+      "end": 3816,
+      "id": "b59",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[59]",
+      "headingPath": [
+        "AI 应用开发（二）：Blender 建模助手",
+        "三、BlenderMCP 介绍",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3818,
+      "end": 3834,
+      "id": "b60",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[60]",
+      "headingPath": [
+        "AI 应用开发（二）：Blender 建模助手",
+        "三、BlenderMCP 介绍",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3836,
+      "end": 4112,
+      "id": "b61",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[61]",
+      "headingPath": [
+        "AI 应用开发（二）：Blender 建模助手",
+        "三、BlenderMCP 介绍",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4114,
+      "end": 4127,
+      "id": "b62",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[62]",
+      "headingPath": [
+        "AI 应用开发（二）：Blender 建模助手",
+        "三、BlenderMCP 介绍",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4129,
+      "end": 4409,
+      "id": "b63",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[63]",
+      "headingPath": [
+        "AI 应用开发（二）：Blender 建模助手",
+        "三、BlenderMCP 介绍",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4411,
+      "end": 4418,
+      "id": "b64",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[64]",
+      "headingPath": [
+        "AI 应用开发（二）：Blender 建模助手",
+        "三、BlenderMCP 介绍",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4420,
+      "end": 4452,
+      "id": "b65",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[65]",
+      "headingPath": [
+        "AI 应用开发（二）：Blender 建模助手",
+        "三、BlenderMCP 介绍",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4454,
+      "end": 4461,
+      "id": "b66",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[66]",
+      "headingPath": [
+        "AI 应用开发（二）：Blender 建模助手",
+        "三、BlenderMCP 介绍",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4463,
+      "end": 4493,
+      "id": "b67",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[67]",
+      "headingPath": [
+        "AI 应用开发（二）：Blender 建模助手",
+        "三、BlenderMCP 介绍",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4495,
+      "end": 4557,
+      "id": "b68",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[68]",
+      "headingPath": [
+        "AI 应用开发（二）：Blender 建模助手",
+        "三、BlenderMCP 介绍",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4559,
+      "end": 4561,
+      "id": "b69",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[69]",
+      "headingPath": [
+        "AI 应用开发（二）：Blender 建模助手",
+        "三、BlenderMCP 介绍",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4563,
+      "end": 4567,
+      "id": "b70",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[70]",
+      "headingPath": [
+        "AI 应用开发（二）：Blender 建模助手",
+        "三、BlenderMCP 介绍",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4569,
+      "end": 4571,
+      "id": "b71",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[71]",
+      "headingPath": [
+        "AI 应用开发（二）：Blender 建模助手",
+        "三、BlenderMCP 介绍",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4573,
+      "end": 4575,
+      "id": "b72",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[72]",
+      "headingPath": [
+        "AI 应用开发（二）：Blender 建模助手",
+        "三、BlenderMCP 介绍",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4577,
+      "end": 4578,
+      "id": "b73",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[73]",
+      "headingPath": [
+        "AI 应用开发（二）：Blender 建模助手",
+        "三、BlenderMCP 介绍",
+        "相关推荐"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4580,
+      "end": 4582,
+      "id": "b74",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[74]",
+      "headingPath": [
+        "AI 应用开发（二）：Blender 建模助手",
+        "三、BlenderMCP 介绍",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4584,
+      "end": 4607,
+      "id": "b75",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[75]",
+      "headingPath": [
+        "AI 应用开发（二）：Blender 建模助手",
+        "三、BlenderMCP 介绍",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4609,
+      "end": 4611,
+      "id": "b76",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[76]",
+      "headingPath": [
+        "AI 应用开发（二）：Blender 建模助手",
+        "三、BlenderMCP 介绍",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4613,
+      "end": 4639,
+      "id": "b77",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[77]",
+      "headingPath": [
+        "AI 应用开发（二）：Blender 建模助手",
+        "三、BlenderMCP 介绍",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4641,
+      "end": 4692,
+      "id": "b78",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[78]",
+      "headingPath": [
+        "AI 应用开发（二）：Blender 建模助手",
+        "三、BlenderMCP 介绍",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4694,
+      "end": 4697,
+      "id": "b79",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[79]",
+      "headingPath": [
+        "AI 应用开发（二）：Blender 建模助手",
+        "三、BlenderMCP 介绍",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4699,
+      "end": 4705,
+      "id": "b80",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[80]",
+      "headingPath": [
+        "AI 应用开发（二）：Blender 建模助手",
+        "三、BlenderMCP 介绍",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4707,
+      "end": 4718,
+      "id": "b81",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[81]",
+      "headingPath": [
+        "AI 应用开发（二）：Blender 建模助手",
+        "三、BlenderMCP 介绍",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4720,
+      "end": 4724,
+      "id": "b82",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[82]",
+      "headingPath": [
+        "AI 应用开发（二）：Blender 建模助手",
+        "三、BlenderMCP 介绍",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4726,
+      "end": 4727,
+      "id": "b83",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[83]",
+      "headingPath": [
+        "AI 应用开发（二）：Blender 建模助手",
+        "三、BlenderMCP 介绍",
+        "相关推荐"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4729,
+      "end": 4734,
+      "id": "b84",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[84]",
+      "headingPath": [
+        "AI 应用开发（二）：Blender 建模助手",
+        "三、BlenderMCP 介绍",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4736,
+      "end": 4799,
+      "id": "b85",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[85]",
+      "headingPath": [
+        "AI 应用开发（二）：Blender 建模助手",
+        "三、BlenderMCP 介绍",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4801,
+      "end": 4805,
+      "id": "b86",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[86]",
+      "headingPath": [
+        "AI 应用开发（二）：Blender 建模助手",
+        "三、BlenderMCP 介绍",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    }
+  ],
+  "links": [
+    {
+      "url": "https://blog.csdn.net/qq_35704550/article/details/149077506",
+      "text": "",
+      "blockId": null,
+      "relation": "CANONICAL",
+      "locator": "source DOM link[0]"
+    },
+    {
+      "url": "https://www.csdn.net/",
+      "text": "",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[1]"
+    },
+    {
+      "url": "https://blog.csdn.net/",
+      "text": "博客",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[4]"
+    },
+    {
+      "url": "https://download.csdn.net/",
+      "text": "下载",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[5]"
+    },
+    {
+      "url": "https://edu.csdn.net/",
+      "text": "学习",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[6]"
+    },
+    {
+      "url": "https://devpress.csdn.net/",
+      "text": "社区",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[7]"
+    },
+    {
+      "url": "https://ai.csdn.net/coding-plan",
+      "text": "模型市场",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[8]"
+    },
+    {
+      "url": "https://ai.csdn.net/chat",
+      "text": "AI搜索",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[9]"
+    },
+    {
+      "url": "https://link.csdn.net/?target=https%3A%2F%2Fgitcode.com%3Futm_source%3Dcsdn_toolbar",
+      "text": "AtomGit",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[10]"
+    },
+    {
+      "url": "https://agent.inscode.net/",
+      "text": "InsCode",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[11]"
+    },
+    {
+      "url": "https://summit.csdn.net/",
+      "text": "技术会议",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[12]"
+    },
+    {
+      "url": "https://mp.csdn.net/creation_overview",
+      "text": "墨衍 MoGrow",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[13]"
+    },
+    {
+      "url": "https://www.csdn.net/i/collections",
+      "text": "收藏",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[14]"
+    },
+    {
+      "url": "https://www.csdn.net/i/history",
+      "text": "历史",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[15]"
+    },
+    {
+      "url": "https://mall.csdn.net/vip",
+      "text": "会员中心",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[16]"
+    },
+    {
+      "url": "https://mp.csdn.net/",
+      "text": "创作中心",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[17]"
+    },
+    {
+      "url": "https://blog.csdn.net/qq_35704550",
+      "text": "北桥苏",
+      "blockId": "b2",
+      "relation": "LINK",
+      "locator": "source DOM link[18]"
+    },
+    {
+      "url": "https://mp.csdn.net/vip?spm=1001.2101.3001.11990",
+      "text": "墨衍会员 · AI 创作全网分发",
+      "blockId": "b2",
+      "relation": "LINK",
+      "locator": "source DOM link[19]"
+    },
+    {
+      "url": "https://mall.csdn.net/vip",
+      "text": "VIP免费",
+      "blockId": "b2",
+      "relation": "LINK",
+      "locator": "source DOM link[22]"
+    },
+    {
+      "url": "https://mp.csdn.net/creation_topic?spm=1001.2101.3001.11779",
+      "text": "AI 写同款· GEO 优化 ›",
+      "blockId": "b2",
+      "relation": "LINK",
+      "locator": "source DOM link[23]"
+    },
+    {
+      "url": "https://jianshen.blog.csdn.net/article/details/151577622",
+      "text": "从传统到智能：3D 建模流程的演进与 AI 趋势 —— 以 Blender 为例 以 Blender 为例，传统建模流程代表了高度精细、完全可控的创作方式，而 AI 驱动的建模则代表高效率与低门槛两者并非替代关系，而是互补：•AI 提供速度与灵感；•Blender 提供精度与掌控未来的 3D 建模师，既要理解 Blender 的传统技艺，也要熟悉 AI 工具，才能真正发挥 “人机协作” 的优势，成为新时代的 AI 智能3D建模师。 阅读详情",
+      "blockId": "b3",
+      "relation": "LINK",
+      "locator": "source DOM link[24]"
+    },
+    {
+      "url": "https://so.csdn.net/so/search/s.do?f=&from_code=app_blog_art&from_tracking_code=tag_word&l=&o=vip&q=%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD&s=&t=all&viparticle=",
+      "text": "#人工智能",
+      "blockId": "b20",
+      "relation": "LINK",
+      "locator": "source DOM link[25]"
+    },
+    {
+      "url": "https://so.csdn.net/so/search/s.do?f=&from_code=app_blog_art&from_tracking_code=tag_word&l=&o=vip&q=blender&s=&t=all&viparticle=",
+      "text": "#blender",
+      "blockId": "b20",
+      "relation": "LINK",
+      "locator": "source DOM link[26]"
+    },
+    {
+      "url": "https://so.csdn.net/so/search/s.do?f=&from_code=app_blog_art&from_tracking_code=tag_word&l=&o=vip&q=AI%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91&s=&t=all&viparticle=",
+      "text": "#AI应用开发",
+      "blockId": "b20",
+      "relation": "LINK",
+      "locator": "source DOM link[27]"
+    },
+    {
+      "url": "https://blog.csdn.net/fenglingguitar/article/details/146746000",
+      "text": "MCP - 使用 BlenderMCP 让 Claude AI 控制你的 Blender 模型创作 BlenderMCP 打通了 AI 与 3D 工具之间的壁垒，使得通过 Claude 自然语言即可进行场景构建、模型控制和素材管理等操作，大幅度简化建模流程。无论是个人创作、游戏原型设计还是团队协作，这套流程都值得你体验一番。uv。 阅读详情",
+      "blockId": "b21",
+      "relation": "LINK",
+      "locator": "source DOM link[28]"
+    },
+    {
+      "url": "https://blog.csdn.net/qq_35704550/article/details/148626102",
+      "text": "AI 应用开发（一）：TRAE 下自定义 MCP Server",
+      "blockId": "b68",
+      "relation": "LINK",
+      "locator": "source DOM link[45]"
+    },
+    {
+      "url": "https://blog.csdn.net/qq_35704550/article/details/151359078",
+      "text": "如何在 Unity3D 中实现圆角效果？",
+      "blockId": "b68",
+      "relation": "LINK",
+      "locator": "source DOM link[46]"
+    },
+    {
+      "url": "https://blog.csdn.net/qq_35704550",
+      "text": "",
+      "blockId": "b77",
+      "relation": "LINK",
+      "locator": "source DOM link[91]"
+    },
+    {
+      "url": "https://blogdev.blog.csdn.net/article/details/122245662",
+      "text": "为什么被折叠?",
+      "blockId": "b78",
+      "relation": "LINK",
+      "locator": "source DOM link[94]"
+    },
+    {
+      "url": "https://bbs.csdn.net/forums/FreeZone",
+      "text": "到【灌水乐园】发言",
+      "blockId": "b78",
+      "relation": "LINK",
+      "locator": "source DOM link[95]"
+    },
+    {
+      "url": "https://i.csdn.net/",
+      "text": "余额充值",
+      "blockId": "b86",
+      "relation": "LINK",
+      "locator": "source DOM link[99]"
+    }
+  ],
+  "tables": []
+}

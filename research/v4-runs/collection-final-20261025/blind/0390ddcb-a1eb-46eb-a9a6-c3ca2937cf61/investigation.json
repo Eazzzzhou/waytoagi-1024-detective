@@ -1,0 +1,58 @@
+{
+  "capturedAt": "2026-10-25T04:43:15.963Z",
+  "url": "http://127.0.0.1:3104/investigations/0390ddcb-a1eb-46eb-a9a6-c3ca2937cf61",
+  "detail": {
+    "investigation": {
+      "id": "0390ddcb-a1eb-46eb-a9a6-c3ca2937cf61",
+      "question": "Ollama 的模型默认保存在哪，如何修改保存目录？",
+      "researchDepth": "FACT",
+      "status": "SUCCEEDED",
+      "stage": "COMPLETED",
+      "error": null,
+      "createdAt": "2026-10-25T04:42:35.697Z",
+      "updatedAt": "2026-10-25T04:43:15.393Z",
+      "startedAt": "2026-10-25T04:42:36.123Z",
+      "completedAt": "2026-10-25T04:43:15.393Z",
+      "resultSnapshotId": "32806f4a-e7a0-44b7-b591-ed543cd4cf29"
+    },
+    "identityConfirmation": null,
+    "retry": {
+      "allowed": false,
+      "reason": "仅失败的调查可以手动重试。",
+      "remaining": 2,
+      "expectedAttemptCount": 1
+    }
+  },
+  "observedStates": [
+    {
+      "status": "RUNNING",
+      "stage": "IDENTITY",
+      "observedAt": "2026-10-25T04:42:37.364Z"
+    },
+    {
+      "status": "RUNNING",
+      "stage": "RETRIEVAL",
+      "observedAt": "2026-10-25T04:42:38.378Z"
+    },
+    {
+      "status": "RUNNING",
+      "stage": "SOURCE_FETCH",
+      "observedAt": "2026-10-25T04:42:41.435Z"
+    },
+    {
+      "status": "RUNNING",
+      "stage": "VERIFICATION",
+      "observedAt": "2026-10-25T04:42:54.650Z"
+    },
+    {
+      "status": "RUNNING",
+      "stage": "ANSWER",
+      "observedAt": "2026-10-25T04:43:09.858Z"
+    },
+    {
+      "status": "SUCCEEDED",
+      "stage": "COMPLETED",
+      "observedAt": "2026-10-25T04:43:15.960Z"
+    }
+  ]
+}

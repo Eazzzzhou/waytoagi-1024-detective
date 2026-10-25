@@ -1,0 +1,173 @@
+Skip to content
+
+Getting started
+
+Introduction
+
+Base URL
+
+Authentication
+
+Quickstart
+
+API reference
+
+Chat completions
+
+Streaming
+
+Models
+
+Errors
+
+Rate limits
+
+DeepSeek API Documentation
+
+Buy credits, generate a key, and call DeepSeek-V3 and DeepSeek-R1 through an OpenAI-compatible endpoint. If you've used the OpenAI API before, you already know this one.
+
+deepseekapi.dev is an authorized reseller and proxy for the DeepSeek API. Endpoints below point at our proxy; responses originate from DeepSeek's models.
+
+Introduction
+
+The DeepSeek API proxy exposes a REST interface that mirrors the OpenAI Chat Completions specification. You authenticate with a bearer token, send a list of messages, and receive a model completion. Because the schema matches, the official OpenAI SDKs for Python and JavaScript work out of the box.
+
+Base URL
+
+All requests are made to:
+
+BASEhttps://api.deepseekapi.dev/v1
+
+Append the standard paths such as /chat/completions and /models to this base URL.
+
+Authentication
+
+The API uses bearer token authentication. Create a key from your dashboard after topping up credits, then pass it in the Authorization header on every request:
+
+Copy
+
+# HTTP headers
+Authorization: Bearer sk-ds-your-key
+Content-Type: application/json
+
+Keep keys secret. Treat API keys like passwords. Never embed them in client-side code or commit them to a repository. Rotate or revoke a leaked key instantly from your dashboard.
+
+Quickstart
+
+Install the OpenAI SDK and point it at the proxy. Only the base_url and api_key change.
+
+Python
+
+Copy
+
+from openai import OpenAI
+
+client = OpenAI(
+    api_key="sk-ds-your-key",
+    base_url="https://api.deepseekapi.dev/v1",
+)
+
+response = client.chat.completions.create(
+    model="deepseek-chat",
+    messages=[
+        {"role": "system", "content": "You are a helpful assistant."},
+        {"role": "user", "content": "Explain reinforcement learning in one sentence."},
+    ],
+)
+print(response.choices[0].message.content)
+
+JavaScript / Node.js
+
+Copy
+
+import OpenAI from "openai";
+
+const client = new OpenAI({
+  apiKey: "sk-ds-your-key",
+  baseURL: "https://api.deepseekapi.dev/v1",
+});
+
+const res = await client.chat.completions.create({
+  model: "deepseek-chat",
+  messages: [{ role: "user", content: "Hello, DeepSeek!" }],
+});
+
+console.log(res.choices[0].message.content);
+
+cURL
+
+Copy
+
+curl https://api.deepseekapi.dev/v1/chat/completions \
+  -H "Authorization: Bearer sk-ds-your-key" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "model": "deepseek-chat",
+    "messages": [{"role": "user", "content": "Hello, DeepSeek!"}]
+  }'
+
+Chat completions
+
+POST/v1/chat/completions
+
+Creates a model response for the given conversation. Core parameters:
+
+model — deepseek-chat or deepseek-reasoner. Required.
+
+messages — array of { role, content } objects (system, user, assistant). Required.
+
+temperature — sampling temperature, 0–2. Default 1.0.
+
+max_tokens — maximum tokens to generate in the response.
+
+stream — set true to stream tokens as server-sent events.
+
+Example response:
+
+Copy
+
+{
+  "id": "chatcmpl-ds-abc123",
+  "object": "chat.completion",
+  "model": "deepseek-chat",
+  "choices": [{
+    "index": 0,
+    "message": { "role": "assistant", "content": "Hello! How can I help?" },
+    "finish_reason": "stop"
+  }],
+  "usage": { "prompt_tokens": 12, "completion_tokens": 7, "total_tokens": 19 }
+}
+
+Streaming
+
+Set stream: true to receive tokens incrementally as server-sent events (SSE). Each chunk follows the OpenAI delta format and the stream terminates with data: [DONE].
+
+Copy
+
+stream = client.chat.completions.create(
+    model="deepseek-chat",
+    messages=[{"role": "user", "content": "Write a haiku about the sea."}],
+    stream=True,
+)
+for chunk in stream:
+    print(chunk.choices[0].delta.content or "", end="")
+
+Models
+
+GET/v1/models
+
+Lists the models available to your account.
+
+Model IDBest forContext deepseek-chatGeneral chat, coding, RAGLarge deepseek-reasonerMath, complex reasoningLarge
+
+Errors
+
+The API uses conventional HTTP status codes. Error bodies follow the OpenAI error shape: { "error": { "message", "type", "code" } }.
+
+CodeMeaning 400Malformed request 401Invalid or missing API key 402Insufficient credits — top up your balance 429Rate limit exceeded 500 / 503Upstream or proxy error — retry with backoff
+
+Rate limits
+
+Rate limits scale with your plan and account balance. Starter offers entry-level throughput; Builder and Scale raise both requests-per-minute and tokens-per-minute ceilings. When you exceed a limit you'll receive a 429 with a Retry-After header — back off and retry. Need a custom limit? Contact us.
+
+Ready to build? Get your API key and make your first call in minutes.

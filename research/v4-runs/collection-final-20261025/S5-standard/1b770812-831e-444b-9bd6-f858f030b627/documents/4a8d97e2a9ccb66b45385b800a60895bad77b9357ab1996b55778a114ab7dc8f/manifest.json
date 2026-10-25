@@ -1,0 +1,2526 @@
+{
+  "schemaVersion": "source-document/v1",
+  "id": "4a8d97e2a9ccb66b45385b800a60895bad77b9357ab1996b55778a114ab7dc8f",
+  "version": "a723cb880f7c92d9795ee379de5cfa92a41b419b067ed1fb3c680a3ce2fb5c91",
+  "requestedUrl": "https://aicoderscope.com/blog/cursor-3-review-2026",
+  "finalUrl": "https://aicoderscope.com/blog/cursor-3-review-2026/",
+  "retrievedAt": "2026-10-25T04:44:01.245Z",
+  "contentType": "text/html",
+  "status": "READ",
+  "readError": null,
+  "rawHash": "ca6c345cacc622605e4d74229d1a32143722d3c2e37674761f385817f0b29085",
+  "textHash": "9c5a25ac2823c3c89643b3cd930ad0cab37c3a6e0d6b8a806c6b2beb1ef2619c",
+  "text": "May 30, 2026\n\nCursor 3 review 2026: agent-first interface, parallel coding agents, and whether it's worth switching\n\nBy AICoderScope Team · 15 min read\n\ncursorreviewpricingagentscomparisonworkflow2026\n\nTL;DR: Cursor 3, released April 2, 2026, replaces the classic IDE pane layout with an Agents Window built for running multiple AI agents in parallel — up to 8 simultaneously across isolated Git worktrees, cloud VMs, or remote SSH. The price hasn’t changed ($20/month Pro), but parallel agents burn 3–5× more credits than Cursor 2, and Cloud Agents add separate VM billing that the pricing page doesn’t clearly explain. For solo developers already deep in agent-mode workflows, this is the most capable version of Cursor yet. Tab-completion-first users won’t notice much difference.\n\nCursor 3 ProWindsurf 2.0 ProGitHub Copilot ProBest forAgent orchestration, parallel buildsAutonomous multi-task agentsInline completion + PR reviewPrice$20/month ($16 annual)$20/month$10/monthParallel agentsUp to 8, worktree-isolatedMultiple Cascade sessions + Devin Cloud1 agent session (Premium)The catchCredit burn, opaque cloud-VM billingLess granular control, Devin required for cloudWeaker multi-file rewrites\n\nHonest take: If you’re already paying for Cursor Pro and you run Agent mode daily, upgrade — the parallel agents and Design Mode are real productivity gains. If you’re on GitHub Copilot and tab-completion is 90% of your use, the $10 price gap still doesn’t close.\n\nWhat Cursor 3 actually changed\n\nCursor 3 is not a feature release. Anysphere rebuilt the interface from scratch around the insight that their usage data revealed: by early 2026, twice as many users were running autonomous agents than were using tab completion. When the ratio inverts that completely, the tool should reflect it.\n\nThe old layout — editor front and center, Composer pane on the side — was designed for a developer who writes most of the code and occasionally delegates a task. Cursor 3 flips that. The Agents Window is now the primary workspace. Multiple agents run simultaneously, each in its own isolated environment, with the developer reviewing and steering rather than typing.\n\nCo-founders Michael Truell and Sualeh Asif describe the vision as “a unified workspace for building software with agents” — what Truell calls the third era of software development, where fleets of agents handle the mechanical work and the developer’s judgment is the scarce input.\n\nWhether that framing ages well depends on whether AI agents can actually hold that much context reliably. For now, Cursor 3 is the most polished implementation of the idea at the $20/month price point.\n\nThe Agents Window: what it replaces and what it adds\n\nCursor 3 retires the Composer pane and replaces it with the Agents Window — a full-screen workspace for managing multiple AI agents running simultaneously. You can run agents locally, inside isolated Git worktrees, in the cloud, or on remote machines via SSH. Each session is tracked independently, with its own file diff, terminal output, and audit trail.\n\nAccess it with Cmd+Shift+P → Agents Window after updating.\n\nThe most useful new capabilities:\n\nParallel agent execution. Up to 8 agents run simultaneously on a single prompt. Each operates inside a separate Git worktree — a distinct filesystem checkout of your repository — so Agent B editing src/api/auth.ts cannot conflict with Agent A working on src/db/schema.ts. When both finish, you merge the worktrees manually, review the diffs, and commit what you want.\n\nGit integration. Staging, committing, and pull request creation now live inside the Agents Window. You no longer need to context-switch to the terminal or a Git client to ship the agents’ output.\n\nMulti-surface launch. Agents can be triggered from the desktop app, mobile, web, Slack, GitHub, and Linear. This matters for async workflows where you fire off a task from your phone and review the result later at your desk.\n\n/best-of-n. A command that runs the same prompt against multiple models and shows results side by side. Useful when you’re not sure whether Claude Sonnet or GPT-4o handles a specific refactor better — you run both blind and pick the winner.\n\nDesign Mode: precise UI feedback without screenshots\n\nDesign Mode (toggle with ⌘+Shift+D) embeds a browser inspector overlay into the agent workflow. When an agent is making frontend changes, you switch to Design Mode, Shift+drag to select a specific element, and the agent receives visual context including layout, element identification, and interaction state.\n\nThe practical effect: instead of describing “the button in the top-right corner of the nav,” you point at it. The agent sees the rendered DOM context, not just your description. For teams iterating on design systems or component libraries, this cuts back-and-forth significantly. For backend developers, it’s irrelevant. Design Mode has kept improving since this review — the 3.7 release added canvas support, multi-element selection, and a mid-run voice mic, covered in our Cursor 3.7 Canvas Design Mode breakdown.\n\n/worktree and task isolation\n\nThe /worktree command creates an isolated Git worktree before executing a task. Each worktree is a distinct checkout of the repository at its own filesystem path. Changes stay sandboxed until you explicitly merge them back.\n\nThis matters because the risk of parallel agents isn’t compute — it’s conflicting writes. Without worktrees, two agents editing the same file simultaneously produce chaos. With worktrees, they can’t touch each other’s paths.\n\nThe /multitask command (added in the 3.2 update, April 2026) extends this further with async subagents — you launch a task, detach from it, and return when it completes. Useful for long-running codegen jobs where you don’t want to babysit a terminal.\n\nCloud Agents (Cursor 3.5, May 20, 2026): the big upgrade and the credit risk\n\nCursor 3.5, released May 20, 2026, added Cloud Agents — agents running in isolated cloud VMs with full terminal, browser, and desktop access. The agent works asynchronously, reports results back to your IDE, and can span multiple repositories simultaneously.\n\nThe capability is real. A Cloud Agent can clone a repo, install dependencies, run tests, make changes, and open a pull request without your machine running at all. For overnight builds or tasks that take 20+ minutes, this is meaningful.\n\nThe cost structure is not clearly documented. Cloud Agents require MAX mode (which adds a 20% surcharge on every run) and bill separately from your subscription’s credit pool on a per-minute VM basis. The pricing page omits the per-minute rate. Early adopters reported spending over $2,000 in two days of heavy Cloud Agent usage. Before enabling Cloud Agents on a real project, treat them like cloud function invocations — check your usage dashboard after every session.\n\nThe March 2026 Cursor Security Review feature (beta for Teams and Enterprise) is a related addition: always-on Security Reviewer and Vulnerability Scanner agents that check every PR for auth regressions, injection attacks, and data-handling risks. That’s currently Teams ($40/user/month) and above only.\n\nPricing: all six tiers, the credit system, and what it actually costs\n\nCursor switched to a credit-based billing model in June 2025. The current structure as of May 2026:\n\nPlanPriceWhat’s in the poolParallel agentsHobbyFreeLimited completions1Pro$20/month ($16 annual)$20 monthly credit pool + unlimited Auto modeUp to 8Pro+$60/month$60 monthly credit pool (3× usage)Up to 8Ultra$200/month$200 monthly credit pool (10× usage)Up to 8 + priorityTeams$40/user/monthPro-equivalent + SSO, admin controlsUp to 8EnterpriseCustomPooled usage, dedicated supportCustom\n\nAuto mode is unlimited. It does not draw from the credit pool. Manually selecting a frontier model — Claude Sonnet, GPT-4o, o3 — does draw from credits based on token consumption.\n\nParallel agents multiply credit spend. Three agents running simultaneously consume roughly 3× the credits of a single session. On the $20 Pro plan, heavy parallel-agent use can exhaust the monthly pool in less than a week. If you run agents seriously, Pro+ ($60/month) is the honest minimum — or you’ll be topping up credits manually.\n\nWhere Cursor 3 breaks\n\nCredit burn is the main gotcha. Parallel agents are 3–5× more expensive per task than single-session Cursor 2 work. The $20 plan was designed before parallel execution existed. Anysphere has not raised the base price, but the effective cost for heavy users has increased.\n\nAgents hang when the window isn’t in focus. A bug reported shortly after the April 2 launch: parallel agents sometimes pause when the Agents Window is not the active surface. For a tool built around long-running sessions, this is a real problem. It was not fully resolved as of early April 2026.\n\nParallelization only helps independent tasks. When Agent B’s output depends on Agent A’s result — which describes most real features — you can’t parallelize. You’re back to sequential execution. Solo developers on small projects with tightly coupled codebases often see little benefit from running 8 agents.\n\nExtended sessions get heavy. Users report significant RAM usage on parallel sessions longer than two hours. Cursor’s own guidance suggests keeping sessions under two hours to avoid performance degradation.\n\nCloud agent costs are opaque. As noted above, per-minute VM billing exists but isn’t documented on the pricing page. Until Anysphere makes this transparent, treat Cloud Agents as pay-as-you-go cloud functions, not an extension of your subscription.\n\nCursor 3 vs Windsurf 2.0 vs GitHub Copilot\n\nWindsurf 2.0 (April 16, 2026) is the closest direct competitor. It launched the Agent Command Center (a Kanban board for managing all agent statuses), Spaces (bundling agent sessions, PRs, files, and context into task units), and Devin Cloud for one-click deployment. Windsurf raised Pro from $15 to $20/month on March 19, 2026, matching Cursor. Wave 13 added Cascade Hooks — pre- and post-action triggers for enforcing coding standards automatically.\n\nThe key behavioral difference: Windsurf’s Cascade acts more autonomously, Cursor’s agents ask for more permission checkpoints. If you want the agent running while you’re asleep, Windsurf is more comfortable with that. If you want the agent to pause and confirm before making irreversible changes, Cursor’s approach is safer.\n\nGitHub Copilot Pro ($10/month) still competes primarily on inline completion quality and tight IDE integration. Its agent mode (one session) trails Cursor 3’s multi-agent execution significantly. The value case for Copilot is the price and the GitHub-native PR review — if 80% of your AI usage is suggestion acceptance and PR summarization, the extra $10 buys you capabilities you may not use.\n\nFor machine learning workflows, DevOps pipelines, or backend engineers dealing with complex multi-service codebases, see the AI coding tools for ML engineers and AI tools for DevOps breakdowns for stack-specific comparisons.\n\nCursor 3 update timeline (April–May 2026)\n\nVersionDateHeadline feature3.0April 2, 2026Agents Window, Design Mode, /worktree, /best-of-n3.2April (mid)/multitask async subagents, multi-root workspaces3.3May 7, 2026Build in Parallel subagents, Composer 2.5, Jira integration3.4May 13, 2026Agents Window UX improvements, full-screen panel mode3.5May 20, 2026Cloud Agents — isolated cloud VMs, async multi-repo3.6May 29, 2026Auto-review for Shell, MCP, and Fetch tool calls; multi-team support3.7June 4, 2026Shared canvases open full-screen in browser; agents embed prompt buttons3.8June 18, 2026/automate command, GitHub and Slack triggers, computer use for automations3.9June 22, 2026Customize page — plugins, skills, MCPs, subagents, rules, and hooks in one place3.10June 30, 2026Team MCPs and organization groups for admins3.11July 2026Side chats (/side, /btw), agent transcript search, cloud agent hook events\n\nCursor shipped five significant updates in the first two months alone, and the cadence held through summer — six more releases by mid-July. The velocity is real. So is the rough-edge count.\n\nThree of the post-launch releases matter most for the buying decision. 3.8’s /automate turned agents into scheduled and event-triggered workers: a GitHub push or a Slack message can now kick off an agent run, with computer use available inside automations — this is the feature that moves Cursor from “IDE with agents” toward “agent platform.” 3.9’s Customize page consolidated plugins, skills, MCP servers, subagents, rules, and hooks into a single management surface with a team leaderboard of popular add-ons, which addresses one of the original 3.0 complaints: configuration sprawl across scattered settings files. And 3.11’s side chats (/side or /btw mid-session) let you branch a secondary conversation off a running agent thread without derailing it — plus a local search index over all agent transcripts, so past sessions stop being write-only history. None of these change the review’s verdict, but they compound the case for agent-heavy users: the gap between Cursor 3 and “old Cursor with a chat pane” keeps widening. Design Mode’s evolution is covered separately in the Cursor 3.7 Canvas breakdown.\n\nVerdict: who should upgrade, who should wait\n\nUpgrade if:\n\nYou’re on Cursor Pro already and you run Agent mode on most tasks. The Agents Window is a direct upgrade to Composer with no learning curve.\n\nYou manage parallel workstreams — frontend refactor while backend tests run, documentation while migration executes. The worktree isolation alone is worth it.\n\nYou’re on a team (Teams plan) and want the security review agents on every PR.\n\nWait or hold off if:\n\nYou primarily use tab completion. The interface change adds complexity without matching benefit.\n\nYou’re on the $20 Pro plan and running agents heavily. You’ll hit the credit ceiling. Either move to Pro+ or you’ll see unexpected top-up costs.\n\nYou were considering Cloud Agents for production-volume work. Wait until Anysphere publishes the per-minute VM rate transparently.\n\nWindsurf instead if:\n\nYou want more autonomous agents with less permission prompting, especially for overnight or unattended runs.\n\nThe bundled Devin integration matters to your workflow — Windsurf’s Spaces + Devin is the tightest agent-orchestration stack at $20/month right now.\n\nFor hardware requirements when running local inference alongside Cursor 3 (e.g., pairing local Llama with the IDE), the Cursor + local Llama hardware tiers breakdown at runaihome.com covers VRAM requirements by model family.\n\nFrequently Asked Questions\n\nDoes Cursor 3 cost more than Cursor 2? The base subscription price has not changed — Pro is still $20/month. What changed is that parallel agents consume 3–5× more credits per task. Heavy agent users will exhaust the $20 monthly credit pool faster and face higher effective costs. Consider Pro+ ($60/month) if you run agents daily on multiple parallel tasks.\n\nCan I still use Cursor 3 like the old Cursor — just typing and occasional completions? Yes. Tab completion still works the same way, and the classic editor view is accessible. The Agents Window is an additional surface, not a forced replacement. Light users won’t lose anything; they just won’t gain much from the Cursor 3 changes either.\n\nWhat is the /worktree command and why does it matter? The /worktree command creates an isolated Git worktree — a separate filesystem checkout of your repository — before running an agent task. This means the agent’s changes stay sandboxed until you choose to merge them. Without worktrees, parallel agents risk overwriting each other’s edits; with worktrees, each agent operates in its own safe sandbox.\n\nHow does Cloud Agents billing work? Cloud Agents require MAX mode and bill separately from your subscription’s monthly credit pool on a per-minute VM basis. Cursor has not published the exact per-minute rate on its pricing page. Monitor your usage dashboard closely during initial Cloud Agent sessions before scaling up.\n\nShould I switch from Windsurf to Cursor 3? If you value developer-controlled checkpoints and granular permission prompts, Cursor 3 is the stronger choice. If you prefer agents that act autonomously with minimal interruption — especially for unattended long-running tasks — Windsurf 2.0 with Cascade and Devin Cloud is more comfortable for that workflow. Both are $20/month.\n\nIs there a Cursor 4 yet? No. As of September 2026, Anysphere is still iterating on the 3.x line — the release train reached 3.11 in July 2026. The post-3.5 releases have focused on team management (multi-team support, Team MCPs, organization groups), customization (the 3.9 Customize page), and workflow depth (/automate triggers, side chats, transcript search) rather than another interface rebuild.\n\nWhat does the /automate command do? Added in Cursor 3.8 (June 18, 2026), /automate creates agent automations that run on triggers instead of manual prompts — a GitHub event or a Slack message can start an agent task, and automations can use computer use to operate applications. It’s the piece that makes unattended, event-driven agent workflows possible without leaving Cursor, though the same credit-burn caveats from parallel agents apply.\n\nSources\n\nCursor 3 changelog 3-0 — cursor.com/changelog/3-0\n\nCursor 3 Introduces Agent-First Interface — InfoQ, April 2026\n\nCursor 3 — Agents Window, Design Mode — The Decoder\n\nCursor 3.3 and 3.5 updates — ChatForest\n\nCursor 3.2 update — AuthorityAITools\n\nCursor pricing 2026 — DEV Community\n\nCursor pricing explained 2026 — Vantage\n\nCursor AI pricing in 2026 — CloudZero\n\nCloud agent pricing question — Cursor Community Forum\n\nWindsurf 2.0 vs Cursor 3 comparison — Verdent Guides\n\nAgentic IDE comparison: Cursor vs Windsurf vs Antigravity — Codecademy\n\nCursor changelog summary through July 2026 — gradually.ai\n\nCursor 3.11: side chats and agent transcript search — Digital Applied\n\nCursor release history, every version summarized — Havoptic\n\nLast updated September 9, 2026 (release timeline and FAQ). Pricing figures last verified May 30, 2026 — check cursor.com/pricing for current rates before purchasing.\n\nWas this article helpful?\n\n👍 Yes, helpful 👎 Not really\n\nKnow which coding tool is worth paying for\n\nHands-on comparisons of AI coding assistants and what each one costs to run — including the local-model path. Sent only when something changes. Unsubscribe anytime.\n\nWas this useful? This site has no paywall, no popups, and no sponsored reviews — it runs on affiliate links and the occasional coffee. If a guide here saved you money on hardware, you can buy me a coffee. Either way, thanks for reading.",
+  "rawSources": [
+    {
+      "mode": "STATIC",
+      "hash": "ca6c345cacc622605e4d74229d1a32143722d3c2e37674761f385817f0b29085",
+      "path": "C:\\Users\\qianchen\\Documents\\waytoagi-1024-detective-a2-v4\\.cache\\source-documents-v4\\1b770812-831e-444b-9bd6-f858f030b627\\4a8d97e2a9ccb66b45385b800a60895bad77b9357ab1996b55778a114ab7dc8f\\raw.bin"
+    }
+  ],
+  "storage": {
+    "rawPath": "C:\\Users\\qianchen\\Documents\\waytoagi-1024-detective-a2-v4\\.cache\\source-documents-v4\\1b770812-831e-444b-9bd6-f858f030b627\\4a8d97e2a9ccb66b45385b800a60895bad77b9357ab1996b55778a114ab7dc8f\\raw.bin",
+    "textPath": "C:\\Users\\qianchen\\Documents\\waytoagi-1024-detective-a2-v4\\.cache\\source-documents-v4\\1b770812-831e-444b-9bd6-f858f030b627\\4a8d97e2a9ccb66b45385b800a60895bad77b9357ab1996b55778a114ab7dc8f\\source.txt",
+    "manifestPath": "C:\\Users\\qianchen\\Documents\\waytoagi-1024-detective-a2-v4\\.cache\\source-documents-v4\\1b770812-831e-444b-9bd6-f858f030b627\\4a8d97e2a9ccb66b45385b800a60895bad77b9357ab1996b55778a114ab7dc8f\\manifest.json"
+  },
+  "parser": {
+    "name": "readability+source-dom",
+    "version": "readability-0.6.0+jsdom-30.1.3+source-dom-2",
+    "normalization": "source-text/v1",
+    "mode": "STATIC"
+  },
+  "metadata": {
+    "title": "Cursor 3 review 2026: agent-first interface, parallel coding agents, and whether it's worth switching",
+    "author": "AICoderScope",
+    "publishedAt": "2026-05-30T00:00:00.000Z",
+    "language": "en"
+  },
+  "completeness": "COMPLETE",
+  "warnings": [],
+  "blocks": [
+    {
+      "start": 0,
+      "end": 12,
+      "id": "b0",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[0]",
+      "headingPath": [],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 14,
+      "end": 115,
+      "id": "b1",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[1]",
+      "headingPath": [
+        "Cursor 3 review 2026: agent-first interface, parallel coding agents, and whether it's worth switching"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 117,
+      "end": 151,
+      "id": "b2",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[2]",
+      "headingPath": [
+        "Cursor 3 review 2026: agent-first interface, parallel coding agents, and whether it's worth switching"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 153,
+      "end": 200,
+      "id": "b3",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[3]",
+      "headingPath": [
+        "Cursor 3 review 2026: agent-first interface, parallel coding agents, and whether it's worth switching"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 202,
+      "end": 783,
+      "id": "b4",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[4]",
+      "headingPath": [
+        "Cursor 3 review 2026: agent-first interface, parallel coding agents, and whether it's worth switching"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 785,
+      "end": 1200,
+      "id": "b5",
+      "kind": "TABLE",
+      "locator": "source DOM normalized block[5]",
+      "headingPath": [
+        "Cursor 3 review 2026: agent-first interface, parallel coding agents, and whether it's worth switching"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1202,
+      "end": 1465,
+      "id": "b6",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[6]",
+      "headingPath": [
+        "Cursor 3 review 2026: agent-first interface, parallel coding agents, and whether it's worth switching"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1467,
+      "end": 1497,
+      "id": "b7",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[7]",
+      "headingPath": [
+        "Cursor 3 review 2026: agent-first interface, parallel coding agents, and whether it's worth switching",
+        "What Cursor 3 actually changed"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1499,
+      "end": 1795,
+      "id": "b8",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[8]",
+      "headingPath": [
+        "Cursor 3 review 2026: agent-first interface, parallel coding agents, and whether it's worth switching",
+        "What Cursor 3 actually changed"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1797,
+      "end": 2163,
+      "id": "b9",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[9]",
+      "headingPath": [
+        "Cursor 3 review 2026: agent-first interface, parallel coding agents, and whether it's worth switching",
+        "What Cursor 3 actually changed"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2165,
+      "end": 2445,
+      "id": "b10",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[10]",
+      "headingPath": [
+        "Cursor 3 review 2026: agent-first interface, parallel coding agents, and whether it's worth switching",
+        "What Cursor 3 actually changed"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2447,
+      "end": 2648,
+      "id": "b11",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[11]",
+      "headingPath": [
+        "Cursor 3 review 2026: agent-first interface, parallel coding agents, and whether it's worth switching",
+        "What Cursor 3 actually changed"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2650,
+      "end": 2702,
+      "id": "b12",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[12]",
+      "headingPath": [
+        "Cursor 3 review 2026: agent-first interface, parallel coding agents, and whether it's worth switching",
+        "The Agents Window: what it replaces and what it adds"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2704,
+      "end": 3060,
+      "id": "b13",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[13]",
+      "headingPath": [
+        "Cursor 3 review 2026: agent-first interface, parallel coding agents, and whether it's worth switching",
+        "The Agents Window: what it replaces and what it adds"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3062,
+      "end": 3120,
+      "id": "b14",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[14]",
+      "headingPath": [
+        "Cursor 3 review 2026: agent-first interface, parallel coding agents, and whether it's worth switching",
+        "The Agents Window: what it replaces and what it adds"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3122,
+      "end": 3155,
+      "id": "b15",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[15]",
+      "headingPath": [
+        "Cursor 3 review 2026: agent-first interface, parallel coding agents, and whether it's worth switching",
+        "The Agents Window: what it replaces and what it adds"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3157,
+      "end": 3524,
+      "id": "b16",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[16]",
+      "headingPath": [
+        "Cursor 3 review 2026: agent-first interface, parallel coding agents, and whether it's worth switching",
+        "The Agents Window: what it replaces and what it adds"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3526,
+      "end": 3721,
+      "id": "b17",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[17]",
+      "headingPath": [
+        "Cursor 3 review 2026: agent-first interface, parallel coding agents, and whether it's worth switching",
+        "The Agents Window: what it replaces and what it adds"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3723,
+      "end": 3947,
+      "id": "b18",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[18]",
+      "headingPath": [
+        "Cursor 3 review 2026: agent-first interface, parallel coding agents, and whether it's worth switching",
+        "The Agents Window: what it replaces and what it adds"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3949,
+      "end": 4189,
+      "id": "b19",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[19]",
+      "headingPath": [
+        "Cursor 3 review 2026: agent-first interface, parallel coding agents, and whether it's worth switching",
+        "The Agents Window: what it replaces and what it adds"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4191,
+      "end": 4243,
+      "id": "b20",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[20]",
+      "headingPath": [
+        "Cursor 3 review 2026: agent-first interface, parallel coding agents, and whether it's worth switching",
+        "Design Mode: precise UI feedback without screenshots"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4245,
+      "end": 4553,
+      "id": "b21",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[21]",
+      "headingPath": [
+        "Cursor 3 review 2026: agent-first interface, parallel coding agents, and whether it's worth switching",
+        "Design Mode: precise UI feedback without screenshots"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4555,
+      "end": 5070,
+      "id": "b22",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[22]",
+      "headingPath": [
+        "Cursor 3 review 2026: agent-first interface, parallel coding agents, and whether it's worth switching",
+        "Design Mode: precise UI feedback without screenshots"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5072,
+      "end": 5100,
+      "id": "b23",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[23]",
+      "headingPath": [
+        "Cursor 3 review 2026: agent-first interface, parallel coding agents, and whether it's worth switching",
+        "/worktree and task isolation"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5102,
+      "end": 5325,
+      "id": "b24",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[24]",
+      "headingPath": [
+        "Cursor 3 review 2026: agent-first interface, parallel coding agents, and whether it's worth switching",
+        "/worktree and task isolation"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5327,
+      "end": 5551,
+      "id": "b25",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[25]",
+      "headingPath": [
+        "Cursor 3 review 2026: agent-first interface, parallel coding agents, and whether it's worth switching",
+        "/worktree and task isolation"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5553,
+      "end": 5803,
+      "id": "b26",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[26]",
+      "headingPath": [
+        "Cursor 3 review 2026: agent-first interface, parallel coding agents, and whether it's worth switching",
+        "/worktree and task isolation"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5805,
+      "end": 5881,
+      "id": "b27",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[27]",
+      "headingPath": [
+        "Cursor 3 review 2026: agent-first interface, parallel coding agents, and whether it's worth switching",
+        "Cloud Agents (Cursor 3.5, May 20, 2026): the big upgrade and the credit risk"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5883,
+      "end": 6141,
+      "id": "b28",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[28]",
+      "headingPath": [
+        "Cursor 3 review 2026: agent-first interface, parallel coding agents, and whether it's worth switching",
+        "Cloud Agents (Cursor 3.5, May 20, 2026): the big upgrade and the credit risk"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 6143,
+      "end": 6379,
+      "id": "b29",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[29]",
+      "headingPath": [
+        "Cursor 3 review 2026: agent-first interface, parallel coding agents, and whether it's worth switching",
+        "Cloud Agents (Cursor 3.5, May 20, 2026): the big upgrade and the credit risk"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 6381,
+      "end": 6851,
+      "id": "b30",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[30]",
+      "headingPath": [
+        "Cursor 3 review 2026: agent-first interface, parallel coding agents, and whether it's worth switching",
+        "Cloud Agents (Cursor 3.5, May 20, 2026): the big upgrade and the credit risk"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 6853,
+      "end": 7156,
+      "id": "b31",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[31]",
+      "headingPath": [
+        "Cursor 3 review 2026: agent-first interface, parallel coding agents, and whether it's worth switching",
+        "Cloud Agents (Cursor 3.5, May 20, 2026): the big upgrade and the credit risk"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 7158,
+      "end": 7227,
+      "id": "b32",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[32]",
+      "headingPath": [
+        "Cursor 3 review 2026: agent-first interface, parallel coding agents, and whether it's worth switching",
+        "Pricing: all six tiers, the credit system, and what it actually costs"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 7229,
+      "end": 7328,
+      "id": "b33",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[33]",
+      "headingPath": [
+        "Cursor 3 review 2026: agent-first interface, parallel coding agents, and whether it's worth switching",
+        "Pricing: all six tiers, the credit system, and what it actually costs"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 7330,
+      "end": 7716,
+      "id": "b34",
+      "kind": "TABLE",
+      "locator": "source DOM normalized block[34]",
+      "headingPath": [
+        "Cursor 3 review 2026: agent-first interface, parallel coding agents, and whether it's worth switching",
+        "Pricing: all six tiers, the credit system, and what it actually costs"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 7718,
+      "end": 7897,
+      "id": "b35",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[35]",
+      "headingPath": [
+        "Cursor 3 review 2026: agent-first interface, parallel coding agents, and whether it's worth switching",
+        "Pricing: all six tiers, the credit system, and what it actually costs"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 7899,
+      "end": 8233,
+      "id": "b36",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[36]",
+      "headingPath": [
+        "Cursor 3 review 2026: agent-first interface, parallel coding agents, and whether it's worth switching",
+        "Pricing: all six tiers, the credit system, and what it actually costs"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 8235,
+      "end": 8256,
+      "id": "b37",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[37]",
+      "headingPath": [
+        "Cursor 3 review 2026: agent-first interface, parallel coding agents, and whether it's worth switching",
+        "Where Cursor 3 breaks"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 8258,
+      "end": 8529,
+      "id": "b38",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[38]",
+      "headingPath": [
+        "Cursor 3 review 2026: agent-first interface, parallel coding agents, and whether it's worth switching",
+        "Where Cursor 3 breaks"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 8531,
+      "end": 8826,
+      "id": "b39",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[39]",
+      "headingPath": [
+        "Cursor 3 review 2026: agent-first interface, parallel coding agents, and whether it's worth switching",
+        "Where Cursor 3 breaks"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 8828,
+      "end": 9135,
+      "id": "b40",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[40]",
+      "headingPath": [
+        "Cursor 3 review 2026: agent-first interface, parallel coding agents, and whether it's worth switching",
+        "Where Cursor 3 breaks"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 9137,
+      "end": 9342,
+      "id": "b41",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[41]",
+      "headingPath": [
+        "Cursor 3 review 2026: agent-first interface, parallel coding agents, and whether it's worth switching",
+        "Where Cursor 3 breaks"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 9344,
+      "end": 9592,
+      "id": "b42",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[42]",
+      "headingPath": [
+        "Cursor 3 review 2026: agent-first interface, parallel coding agents, and whether it's worth switching",
+        "Where Cursor 3 breaks"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 9594,
+      "end": 9636,
+      "id": "b43",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[43]",
+      "headingPath": [
+        "Cursor 3 review 2026: agent-first interface, parallel coding agents, and whether it's worth switching",
+        "Cursor 3 vs Windsurf 2.0 vs GitHub Copilot"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 9638,
+      "end": 10089,
+      "id": "b44",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[44]",
+      "headingPath": [
+        "Cursor 3 review 2026: agent-first interface, parallel coding agents, and whether it's worth switching",
+        "Cursor 3 vs Windsurf 2.0 vs GitHub Copilot"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 10091,
+      "end": 10415,
+      "id": "b45",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[45]",
+      "headingPath": [
+        "Cursor 3 review 2026: agent-first interface, parallel coding agents, and whether it's worth switching",
+        "Cursor 3 vs Windsurf 2.0 vs GitHub Copilot"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 10417,
+      "end": 10810,
+      "id": "b46",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[46]",
+      "headingPath": [
+        "Cursor 3 review 2026: agent-first interface, parallel coding agents, and whether it's worth switching",
+        "Cursor 3 vs Windsurf 2.0 vs GitHub Copilot"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 10812,
+      "end": 11036,
+      "id": "b47",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[47]",
+      "headingPath": [
+        "Cursor 3 review 2026: agent-first interface, parallel coding agents, and whether it's worth switching",
+        "Cursor 3 vs Windsurf 2.0 vs GitHub Copilot"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 11038,
+      "end": 11079,
+      "id": "b48",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[48]",
+      "headingPath": [
+        "Cursor 3 review 2026: agent-first interface, parallel coding agents, and whether it's worth switching",
+        "Cursor 3 update timeline (April–May 2026)"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 11081,
+      "end": 11947,
+      "id": "b49",
+      "kind": "TABLE",
+      "locator": "source DOM normalized block[49]",
+      "headingPath": [
+        "Cursor 3 review 2026: agent-first interface, parallel coding agents, and whether it's worth switching",
+        "Cursor 3 update timeline (April–May 2026)"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 11949,
+      "end": 12138,
+      "id": "b50",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[50]",
+      "headingPath": [
+        "Cursor 3 review 2026: agent-first interface, parallel coding agents, and whether it's worth switching",
+        "Cursor 3 update timeline (April–May 2026)"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 12140,
+      "end": 13250,
+      "id": "b51",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[51]",
+      "headingPath": [
+        "Cursor 3 review 2026: agent-first interface, parallel coding agents, and whether it's worth switching",
+        "Cursor 3 update timeline (April–May 2026)"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 13252,
+      "end": 13296,
+      "id": "b52",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[52]",
+      "headingPath": [
+        "Cursor 3 review 2026: agent-first interface, parallel coding agents, and whether it's worth switching",
+        "Verdict: who should upgrade, who should wait"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 13298,
+      "end": 13309,
+      "id": "b53",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[53]",
+      "headingPath": [
+        "Cursor 3 review 2026: agent-first interface, parallel coding agents, and whether it's worth switching",
+        "Verdict: who should upgrade, who should wait"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 13311,
+      "end": 13451,
+      "id": "b54",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[54]",
+      "headingPath": [
+        "Cursor 3 review 2026: agent-first interface, parallel coding agents, and whether it's worth switching",
+        "Verdict: who should upgrade, who should wait"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 13453,
+      "end": 13611,
+      "id": "b55",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[55]",
+      "headingPath": [
+        "Cursor 3 review 2026: agent-first interface, parallel coding agents, and whether it's worth switching",
+        "Verdict: who should upgrade, who should wait"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 13613,
+      "end": 13691,
+      "id": "b56",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[56]",
+      "headingPath": [
+        "Cursor 3 review 2026: agent-first interface, parallel coding agents, and whether it's worth switching",
+        "Verdict: who should upgrade, who should wait"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 13693,
+      "end": 13713,
+      "id": "b57",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[57]",
+      "headingPath": [
+        "Cursor 3 review 2026: agent-first interface, parallel coding agents, and whether it's worth switching",
+        "Verdict: who should upgrade, who should wait"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 13715,
+      "end": 13811,
+      "id": "b58",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[58]",
+      "headingPath": [
+        "Cursor 3 review 2026: agent-first interface, parallel coding agents, and whether it's worth switching",
+        "Verdict: who should upgrade, who should wait"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 13813,
+      "end": 13957,
+      "id": "b59",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[59]",
+      "headingPath": [
+        "Cursor 3 review 2026: agent-first interface, parallel coding agents, and whether it's worth switching",
+        "Verdict: who should upgrade, who should wait"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 13959,
+      "end": 14089,
+      "id": "b60",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[60]",
+      "headingPath": [
+        "Cursor 3 review 2026: agent-first interface, parallel coding agents, and whether it's worth switching",
+        "Verdict: who should upgrade, who should wait"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 14091,
+      "end": 14111,
+      "id": "b61",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[61]",
+      "headingPath": [
+        "Cursor 3 review 2026: agent-first interface, parallel coding agents, and whether it's worth switching",
+        "Verdict: who should upgrade, who should wait"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 14113,
+      "end": 14221,
+      "id": "b62",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[62]",
+      "headingPath": [
+        "Cursor 3 review 2026: agent-first interface, parallel coding agents, and whether it's worth switching",
+        "Verdict: who should upgrade, who should wait"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 14223,
+      "end": 14371,
+      "id": "b63",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[63]",
+      "headingPath": [
+        "Cursor 3 review 2026: agent-first interface, parallel coding agents, and whether it's worth switching",
+        "Verdict: who should upgrade, who should wait"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 14373,
+      "end": 14597,
+      "id": "b64",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[64]",
+      "headingPath": [
+        "Cursor 3 review 2026: agent-first interface, parallel coding agents, and whether it's worth switching",
+        "Verdict: who should upgrade, who should wait"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 14599,
+      "end": 14625,
+      "id": "b65",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[65]",
+      "headingPath": [
+        "Cursor 3 review 2026: agent-first interface, parallel coding agents, and whether it's worth switching",
+        "Frequently Asked Questions"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 14627,
+      "end": 14985,
+      "id": "b66",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[66]",
+      "headingPath": [
+        "Cursor 3 review 2026: agent-first interface, parallel coding agents, and whether it's worth switching",
+        "Frequently Asked Questions"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 14987,
+      "end": 15325,
+      "id": "b67",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[67]",
+      "headingPath": [
+        "Cursor 3 review 2026: agent-first interface, parallel coding agents, and whether it's worth switching",
+        "Frequently Asked Questions"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 15327,
+      "end": 15730,
+      "id": "b68",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[68]",
+      "headingPath": [
+        "Cursor 3 review 2026: agent-first interface, parallel coding agents, and whether it's worth switching",
+        "Frequently Asked Questions"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 15732,
+      "end": 16052,
+      "id": "b69",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[69]",
+      "headingPath": [
+        "Cursor 3 review 2026: agent-first interface, parallel coding agents, and whether it's worth switching",
+        "Frequently Asked Questions"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 16054,
+      "end": 16427,
+      "id": "b70",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[70]",
+      "headingPath": [
+        "Cursor 3 review 2026: agent-first interface, parallel coding agents, and whether it's worth switching",
+        "Frequently Asked Questions"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 16429,
+      "end": 16829,
+      "id": "b71",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[71]",
+      "headingPath": [
+        "Cursor 3 review 2026: agent-first interface, parallel coding agents, and whether it's worth switching",
+        "Frequently Asked Questions"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 16831,
+      "end": 17273,
+      "id": "b72",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[72]",
+      "headingPath": [
+        "Cursor 3 review 2026: agent-first interface, parallel coding agents, and whether it's worth switching",
+        "Frequently Asked Questions"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 17275,
+      "end": 17282,
+      "id": "b73",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[73]",
+      "headingPath": [
+        "Cursor 3 review 2026: agent-first interface, parallel coding agents, and whether it's worth switching",
+        "Sources"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 17284,
+      "end": 17333,
+      "id": "b74",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[74]",
+      "headingPath": [
+        "Cursor 3 review 2026: agent-first interface, parallel coding agents, and whether it's worth switching",
+        "Sources"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 17335,
+      "end": 17396,
+      "id": "b75",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[75]",
+      "headingPath": [
+        "Cursor 3 review 2026: agent-first interface, parallel coding agents, and whether it's worth switching",
+        "Sources"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 17398,
+      "end": 17449,
+      "id": "b76",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[76]",
+      "headingPath": [
+        "Cursor 3 review 2026: agent-first interface, parallel coding agents, and whether it's worth switching",
+        "Sources"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 17451,
+      "end": 17490,
+      "id": "b77",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[77]",
+      "headingPath": [
+        "Cursor 3 review 2026: agent-first interface, parallel coding agents, and whether it's worth switching",
+        "Sources"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 17492,
+      "end": 17528,
+      "id": "b78",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[78]",
+      "headingPath": [
+        "Cursor 3 review 2026: agent-first interface, parallel coding agents, and whether it's worth switching",
+        "Sources"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 17530,
+      "end": 17565,
+      "id": "b79",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[79]",
+      "headingPath": [
+        "Cursor 3 review 2026: agent-first interface, parallel coding agents, and whether it's worth switching",
+        "Sources"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 17567,
+      "end": 17606,
+      "id": "b80",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[80]",
+      "headingPath": [
+        "Cursor 3 review 2026: agent-first interface, parallel coding agents, and whether it's worth switching",
+        "Sources"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 17608,
+      "end": 17645,
+      "id": "b81",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[81]",
+      "headingPath": [
+        "Cursor 3 review 2026: agent-first interface, parallel coding agents, and whether it's worth switching",
+        "Sources"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 17647,
+      "end": 17700,
+      "id": "b82",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[82]",
+      "headingPath": [
+        "Cursor 3 review 2026: agent-first interface, parallel coding agents, and whether it's worth switching",
+        "Sources"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 17702,
+      "end": 17754,
+      "id": "b83",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[83]",
+      "headingPath": [
+        "Cursor 3 review 2026: agent-first interface, parallel coding agents, and whether it's worth switching",
+        "Sources"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 17756,
+      "end": 17826,
+      "id": "b84",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[84]",
+      "headingPath": [
+        "Cursor 3 review 2026: agent-first interface, parallel coding agents, and whether it's worth switching",
+        "Sources"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 17828,
+      "end": 17885,
+      "id": "b85",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[85]",
+      "headingPath": [
+        "Cursor 3 review 2026: agent-first interface, parallel coding agents, and whether it's worth switching",
+        "Sources"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 17887,
+      "end": 17956,
+      "id": "b86",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[86]",
+      "headingPath": [
+        "Cursor 3 review 2026: agent-first interface, parallel coding agents, and whether it's worth switching",
+        "Sources"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 17958,
+      "end": 18017,
+      "id": "b87",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[87]",
+      "headingPath": [
+        "Cursor 3 review 2026: agent-first interface, parallel coding agents, and whether it's worth switching",
+        "Sources"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 18019,
+      "end": 18184,
+      "id": "b88",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[88]",
+      "headingPath": [
+        "Cursor 3 review 2026: agent-first interface, parallel coding agents, and whether it's worth switching",
+        "Sources"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 18186,
+      "end": 18211,
+      "id": "b89",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[89]",
+      "headingPath": [
+        "Cursor 3 review 2026: agent-first interface, parallel coding agents, and whether it's worth switching",
+        "Sources"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 18213,
+      "end": 18242,
+      "id": "b90",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[90]",
+      "headingPath": [
+        "Cursor 3 review 2026: agent-first interface, parallel coding agents, and whether it's worth switching",
+        "Sources"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 18244,
+      "end": 18286,
+      "id": "b91",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[91]",
+      "headingPath": [
+        "Cursor 3 review 2026: agent-first interface, parallel coding agents, and whether it's worth switching",
+        "Know which coding tool is worth paying for"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 18288,
+      "end": 18452,
+      "id": "b92",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[92]",
+      "headingPath": [
+        "Cursor 3 review 2026: agent-first interface, parallel coding agents, and whether it's worth switching",
+        "Know which coding tool is worth paying for"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 18454,
+      "end": 18690,
+      "id": "b93",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[93]",
+      "headingPath": [
+        "Cursor 3 review 2026: agent-first interface, parallel coding agents, and whether it's worth switching",
+        "Know which coding tool is worth paying for"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    }
+  ],
+  "links": [
+    {
+      "url": "https://aicoderscope.com/blog/cursor-3-review-2026/",
+      "text": "",
+      "blockId": null,
+      "relation": "CANONICAL",
+      "locator": "source DOM link[0]"
+    },
+    {
+      "url": "https://aicoderscope.com/blog/cursor-37-canvas-design-mode-2026/",
+      "text": "Cursor 3.7 Canvas Design Mode breakdown",
+      "blockId": "b22",
+      "relation": "LINK",
+      "locator": "source DOM link[6]"
+    },
+    {
+      "url": "https://aicoderscope.com/blog/ai-coding-tools-ml-engineers-jupyter-pytorch-2026/",
+      "text": "AI coding tools for ML engineers",
+      "blockId": "b47",
+      "relation": "LINK",
+      "locator": "source DOM link[7]"
+    },
+    {
+      "url": "https://aicoderscope.com/blog/ai-tools-devops-terraform-kubernetes-cicd-2026/",
+      "text": "AI tools for DevOps",
+      "blockId": "b47",
+      "relation": "LINK",
+      "locator": "source DOM link[8]"
+    },
+    {
+      "url": "https://aicoderscope.com/blog/cursor-37-canvas-design-mode-2026/",
+      "text": "Cursor 3.7 Canvas breakdown",
+      "blockId": "b51",
+      "relation": "LINK",
+      "locator": "source DOM link[9]"
+    },
+    {
+      "url": "https://runaihome.com/blog/best-local-ai-models-by-vram/",
+      "text": "Cursor + local Llama hardware tiers breakdown",
+      "blockId": "b64",
+      "relation": "LINK",
+      "locator": "source DOM link[10]"
+    },
+    {
+      "url": "https://cursor.com/changelog/3-0",
+      "text": "Cursor 3 changelog 3-0 — cursor.com/changelog/3-0",
+      "blockId": "b74",
+      "relation": "LINK",
+      "locator": "source DOM link[11]"
+    },
+    {
+      "url": "https://www.infoq.com/news/2026/04/cursor-3-agent-first-interface/",
+      "text": "Cursor 3 Introduces Agent-First Interface — InfoQ, April 2026",
+      "blockId": "b75",
+      "relation": "LINK",
+      "locator": "source DOM link[12]"
+    },
+    {
+      "url": "https://the-decoder.com/new-cursor-3-ditches-the-classic-ide-layout-for-an-agent-first-interface-built-around-parallel-ai-fleets/",
+      "text": "Cursor 3 — Agents Window, Design Mode — The Decoder",
+      "blockId": "b76",
+      "relation": "LINK",
+      "locator": "source DOM link[13]"
+    },
+    {
+      "url": "https://chatforest.com/builders-log/cursor-3-3-3-5-parallel-agents-pr-review-automations/",
+      "text": "Cursor 3.3 and 3.5 updates — ChatForest",
+      "blockId": "b77",
+      "relation": "LINK",
+      "locator": "source DOM link[14]"
+    },
+    {
+      "url": "https://authorityaitools.com/blog/cursor-3-2-april-2026-update",
+      "text": "Cursor 3.2 update — AuthorityAITools",
+      "blockId": "b78",
+      "relation": "LINK",
+      "locator": "source DOM link[15]"
+    },
+    {
+      "url": "https://dev.to/rahulxsingh/cursor-pricing-in-2026-hobby-pro-pro-ultra-teams-and-enterprise-plans-explained-4b89",
+      "text": "Cursor pricing 2026 — DEV Community",
+      "blockId": "b79",
+      "relation": "LINK",
+      "locator": "source DOM link[16]"
+    },
+    {
+      "url": "https://www.vantage.sh/blog/cursor-pricing-explained",
+      "text": "Cursor pricing explained 2026 — Vantage",
+      "blockId": "b80",
+      "relation": "LINK",
+      "locator": "source DOM link[17]"
+    },
+    {
+      "url": "https://www.cloudzero.com/blog/cursor-ai-pricing/",
+      "text": "Cursor AI pricing in 2026 — CloudZero",
+      "blockId": "b81",
+      "relation": "LINK",
+      "locator": "source DOM link[18]"
+    },
+    {
+      "url": "https://forum.cursor.com/t/what-is-the-pricing-structure-for-using-cloud-agents/156843",
+      "text": "Cloud agent pricing question — Cursor Community Forum",
+      "blockId": "b82",
+      "relation": "LINK",
+      "locator": "source DOM link[19]"
+    },
+    {
+      "url": "https://www.verdent.ai/guides/windsurf-vs-cursor-2026",
+      "text": "Windsurf 2.0 vs Cursor 3 comparison — Verdent Guides",
+      "blockId": "b83",
+      "relation": "LINK",
+      "locator": "source DOM link[20]"
+    },
+    {
+      "url": "https://www.codecademy.com/article/agentic-ide-comparison-cursor-vs-windsurf-vs-antigravity",
+      "text": "Agentic IDE comparison: Cursor vs Windsurf vs Antigravity — Codecademy",
+      "blockId": "b84",
+      "relation": "LINK",
+      "locator": "source DOM link[21]"
+    },
+    {
+      "url": "https://www.gradually.ai/en/changelogs/cursor/",
+      "text": "Cursor changelog summary through July 2026 — gradually.ai",
+      "blockId": "b85",
+      "relation": "LINK",
+      "locator": "source DOM link[22]"
+    },
+    {
+      "url": "https://www.digitalapplied.com/blog/cursor-3-11-side-chats-agent-transcript-search-2026",
+      "text": "Cursor 3.11: side chats and agent transcript search — Digital Applied",
+      "blockId": "b86",
+      "relation": "LINK",
+      "locator": "source DOM link[23]"
+    },
+    {
+      "url": "https://www.havoptic.com/tools/cursor",
+      "text": "Cursor release history, every version summarized — Havoptic",
+      "blockId": "b87",
+      "relation": "LINK",
+      "locator": "source DOM link[24]"
+    },
+    {
+      "url": "https://cursor.com/pricing",
+      "text": "cursor.com/pricing",
+      "blockId": "b88",
+      "relation": "LINK",
+      "locator": "source DOM link[25]"
+    },
+    {
+      "url": "https://ko-fi.com/runaihome",
+      "text": "buy me a coffee",
+      "blockId": "b93",
+      "relation": "LINK",
+      "locator": "source DOM link[33]"
+    }
+  ],
+  "tables": [
+    {
+      "blockId": "b5",
+      "rows": [
+        {
+          "start": 785,
+          "end": 831,
+          "cells": [
+            {
+              "start": 785,
+              "end": 785,
+              "text": "",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 785,
+              "end": 797,
+              "text": "Cursor 3 Pro",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 797,
+              "end": 813,
+              "text": "Windsurf 2.0 Pro",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 813,
+              "end": 831,
+              "text": "GitHub Copilot Pro",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 831,
+          "end": 932,
+          "cells": [
+            {
+              "start": 831,
+              "end": 839,
+              "text": "Best for",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 839,
+              "end": 875,
+              "text": "Agent orchestration, parallel builds",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 875,
+              "end": 903,
+              "text": "Autonomous multi-task agents",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 903,
+              "end": 932,
+              "text": "Inline completion + PR review",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 932,
+          "end": 977,
+          "cells": [
+            {
+              "start": 932,
+              "end": 937,
+              "text": "Price",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 937,
+              "end": 959,
+              "text": "$20/month ($16 annual)",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 959,
+              "end": 968,
+              "text": "$20/month",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 968,
+              "end": 977,
+              "text": "$10/month",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 977,
+          "end": 1082,
+          "cells": [
+            {
+              "start": 977,
+              "end": 992,
+              "text": "Parallel agents",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 992,
+              "end": 1018,
+              "text": "Up to 8, worktree-isolated",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1018,
+              "end": 1057,
+              "text": "Multiple Cascade sessions + Devin Cloud",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1057,
+              "end": 1082,
+              "text": "1 agent session (Premium)",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 1082,
+          "end": 1200,
+          "cells": [
+            {
+              "start": 1082,
+              "end": 1091,
+              "text": "The catch",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1091,
+              "end": 1127,
+              "text": "Credit burn, opaque cloud-VM billing",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1127,
+              "end": 1174,
+              "text": "Less granular control, Devin required for cloud",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1174,
+              "end": 1200,
+              "text": "Weaker multi-file rewrites",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "blockId": "b34",
+      "rows": [
+        {
+          "start": 7330,
+          "end": 7372,
+          "cells": [
+            {
+              "start": 7330,
+              "end": 7334,
+              "text": "Plan",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 7334,
+              "end": 7339,
+              "text": "Price",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 7339,
+              "end": 7357,
+              "text": "What’s in the pool",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 7357,
+              "end": 7372,
+              "text": "Parallel agents",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 7372,
+          "end": 7401,
+          "cells": [
+            {
+              "start": 7372,
+              "end": 7377,
+              "text": "Hobby",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 7377,
+              "end": 7381,
+              "text": "Free",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 7381,
+              "end": 7400,
+              "text": "Limited completions",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 7400,
+              "end": 7401,
+              "text": "1",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 7401,
+          "end": 7478,
+          "cells": [
+            {
+              "start": 7401,
+              "end": 7404,
+              "text": "Pro",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 7404,
+              "end": 7426,
+              "text": "$20/month ($16 annual)",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 7426,
+              "end": 7471,
+              "text": "$20 monthly credit pool + unlimited Auto mode",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 7471,
+              "end": 7478,
+              "text": "Up to 8",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 7478,
+          "end": 7532,
+          "cells": [
+            {
+              "start": 7478,
+              "end": 7482,
+              "text": "Pro+",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 7482,
+              "end": 7491,
+              "text": "$60/month",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 7491,
+              "end": 7525,
+              "text": "$60 monthly credit pool (3× usage)",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 7525,
+              "end": 7532,
+              "text": "Up to 8",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 7532,
+          "end": 7601,
+          "cells": [
+            {
+              "start": 7532,
+              "end": 7537,
+              "text": "Ultra",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 7537,
+              "end": 7547,
+              "text": "$200/month",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 7547,
+              "end": 7583,
+              "text": "$200 monthly credit pool (10× usage)",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 7583,
+              "end": 7601,
+              "text": "Up to 8 + priority",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 7601,
+          "end": 7663,
+          "cells": [
+            {
+              "start": 7601,
+              "end": 7606,
+              "text": "Teams",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 7606,
+              "end": 7620,
+              "text": "$40/user/month",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 7620,
+              "end": 7656,
+              "text": "Pro-equivalent + SSO, admin controls",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 7656,
+              "end": 7663,
+              "text": "Up to 8",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 7663,
+          "end": 7716,
+          "cells": [
+            {
+              "start": 7663,
+              "end": 7673,
+              "text": "Enterprise",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 7673,
+              "end": 7679,
+              "text": "Custom",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 7679,
+              "end": 7710,
+              "text": "Pooled usage, dedicated support",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 7710,
+              "end": 7716,
+              "text": "Custom",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "blockId": "b49",
+      "rows": [
+        {
+          "start": 11081,
+          "end": 11108,
+          "cells": [
+            {
+              "start": 11081,
+              "end": 11088,
+              "text": "Version",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 11088,
+              "end": 11092,
+              "text": "Date",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 11092,
+              "end": 11108,
+              "text": "Headline feature",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 11108,
+          "end": 11173,
+          "cells": [
+            {
+              "start": 11108,
+              "end": 11111,
+              "text": "3.0",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 11111,
+              "end": 11124,
+              "text": "April 2, 2026",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 11124,
+              "end": 11173,
+              "text": "Agents Window, Design Mode, /worktree, /best-of-n",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 11173,
+          "end": 11236,
+          "cells": [
+            {
+              "start": 11173,
+              "end": 11176,
+              "text": "3.2",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 11176,
+              "end": 11187,
+              "text": "April (mid)",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 11187,
+              "end": 11236,
+              "text": "/multitask async subagents, multi-root workspaces",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 11236,
+          "end": 11309,
+          "cells": [
+            {
+              "start": 11236,
+              "end": 11239,
+              "text": "3.3",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 11239,
+              "end": 11250,
+              "text": "May 7, 2026",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 11250,
+              "end": 11309,
+              "text": "Build in Parallel subagents, Composer 2.5, Jira integration",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 11309,
+          "end": 11377,
+          "cells": [
+            {
+              "start": 11309,
+              "end": 11312,
+              "text": "3.4",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 11312,
+              "end": 11324,
+              "text": "May 13, 2026",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 11324,
+              "end": 11377,
+              "text": "Agents Window UX improvements, full-screen panel mode",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 11377,
+          "end": 11443,
+          "cells": [
+            {
+              "start": 11377,
+              "end": 11380,
+              "text": "3.5",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 11380,
+              "end": 11392,
+              "text": "May 20, 2026",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 11392,
+              "end": 11443,
+              "text": "Cloud Agents — isolated cloud VMs, async multi-repo",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 11443,
+          "end": 11526,
+          "cells": [
+            {
+              "start": 11443,
+              "end": 11446,
+              "text": "3.6",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 11446,
+              "end": 11458,
+              "text": "May 29, 2026",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 11458,
+              "end": 11526,
+              "text": "Auto-review for Shell, MCP, and Fetch tool calls; multi-team support",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 11526,
+          "end": 11613,
+          "cells": [
+            {
+              "start": 11526,
+              "end": 11529,
+              "text": "3.7",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 11529,
+              "end": 11541,
+              "text": "June 4, 2026",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 11541,
+              "end": 11613,
+              "text": "Shared canvases open full-screen in browser; agents embed prompt buttons",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 11613,
+          "end": 11703,
+          "cells": [
+            {
+              "start": 11613,
+              "end": 11616,
+              "text": "3.8",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 11616,
+              "end": 11629,
+              "text": "June 18, 2026",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 11629,
+              "end": 11703,
+              "text": "/automate command, GitHub and Slack triggers, computer use for automations",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 11703,
+          "end": 11799,
+          "cells": [
+            {
+              "start": 11703,
+              "end": 11706,
+              "text": "3.9",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 11706,
+              "end": 11719,
+              "text": "June 22, 2026",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 11719,
+              "end": 11799,
+              "text": "Customize page — plugins, skills, MCPs, subagents, rules, and hooks in one place",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 11799,
+          "end": 11860,
+          "cells": [
+            {
+              "start": 11799,
+              "end": 11803,
+              "text": "3.10",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 11803,
+              "end": 11816,
+              "text": "June 30, 2026",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 11816,
+              "end": 11860,
+              "text": "Team MCPs and organization groups for admins",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 11860,
+          "end": 11947,
+          "cells": [
+            {
+              "start": 11860,
+              "end": 11864,
+              "text": "3.11",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 11864,
+              "end": 11873,
+              "text": "July 2026",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 11873,
+              "end": 11947,
+              "text": "Side chats (/side, /btw), agent transcript search, cloud agent hook events",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

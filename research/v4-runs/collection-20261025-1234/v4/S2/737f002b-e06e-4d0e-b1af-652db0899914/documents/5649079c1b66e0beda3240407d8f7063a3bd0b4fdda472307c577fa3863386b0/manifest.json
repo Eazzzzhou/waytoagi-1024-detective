@@ -1,0 +1,3822 @@
+{
+  "schemaVersion": "source-document/v1",
+  "id": "5649079c1b66e0beda3240407d8f7063a3bd0b4fdda472307c577fa3863386b0",
+  "version": "ad60407aae3f295a08b94941977a864762149e5417a9bafd27f36bee9636a221",
+  "requestedUrl": "https://docs.github.com/zh/copilot/reference/copilot-billing/models-and-pricing",
+  "finalUrl": "https://docs.github.com/zh/copilot/reference/copilot-billing/models-and-pricing",
+  "retrievedAt": "2026-10-25T04:35:54.741Z",
+  "contentType": "text/html; charset=utf-8",
+  "status": "READ",
+  "readError": null,
+  "rawHash": "59aad77f45beb45c34e235ac01c7825f4d8138f3ae9949e78a426f6868d15b7f",
+  "textHash": "b1ba4a3779f710d82dda9561ad681d3ea64ffb958db4b556344667ee9abcb5e8",
+  "text": "Skip to main content\n\nSkip to content\n\n在本文中\n\nGitHub Copilot 的模型和定价\n\n查看 GitHub Copilot 中可用模型的按词元定价方式以及各种计划的超额用量的参考价格。\n\n复制 markdown\n\n在本文中\n\n模型定价的工作原理\n\n使用 Copilot时，交互使用令牌：输入令牌（发送到模型的内容）、输出令牌（模型生成的内容）和缓存令牌（模型重用或存储上下文）。 每个令牌都基于所使用的模型定价，总价格转换为 AI credits1 AI credit = $0.01 USD。\n\n交互的成本取决于两个事项：模型和使用的令牌数。\n\n如何跟踪和计费Copilot的使用情况取决于您的计划类型：\n\n个人计划（Copilot Free、Copilot Pro和Copilot Pro+Copilot Max）包括GitHub AI Credits按计划而异的津贴。 有关详细信息，请参阅 个人基于使用情况的计费。\n\nCopilot Business 与 Copilot Enterprise 包含可在计费实体层面汇总的按用户 GitHub AI Credits 额度。 有关详细信息，请参阅 组织和企业的基于使用情况的计费。\n\n当使用量超出任何Copilot计划包含的津贴时，超出的使用量将以GitHub AI Credits为单位，按照以下定价表中显示的每个令牌费率进行计费（1AI credit = $0.01 USD）。\n\n注意\n\n如果你通过 iOS 或 Android 订阅或曾订阅Copilot计划，那么购买额外AI credits的选项GitHub Mobile将不可用。\n\n定价表\n\n所有价格均为每百万词元。\n\nOpenAI\n\n注意\n\nModels with a Long context tier, offer extended capabilities and longer context windows. See GitHub Copilot中支持的 AI 模型\n\nGPT-5.6 Sol、GPT-5.6 Terra、GPT-6 Astra、GPT-5.6 Luna、GPT-6 Luna、GPT-6 Sol 和 GPT-6.1 Sol除了缓存输入成本外，还包括缓存写入成本。 早期的 OpenAI 模型没有缓存写入成本。\n\n型号版本状态类别层阈值（输入令牌）Input缓存输入缓存写入输出GPT-5.3-CodexGAPowerfulDefaultNot applicable$1.75$0.175Not applicable$14.00GPT-5.4 nanoGALightweightDefaultNot applicable$0.20$0.02Not applicable$1.25GPT-5.6 LunaGALightweightDefault≤ 200K$0.20$0.02$0.25$1.20GPT-5.6 LunaGALightweightLong context> 200K$0.40$0.04$0.50$1.80GPT-5.6 SolGAPowerfulDefault≤ 272K$4.00$0.40$5.00$20.00GPT-5.6 SolGAPowerfulLong context> 272K$8.00$0.80$10.00$30.00GPT-5.6 TerraGAVersatileDefault≤ 272K$2.00$0.20$2.50$12.00GPT-5.6 TerraGAVersatileLong context> 272K$4.00$0.40$5.00$18.00GPT-6 AstraGAPowerfulDefault≤ 272K$10.00$1.00$12.50$50.00GPT-6 AstraGAPowerfulLong context> 272K$20.00$2.00$25.00$75.00GPT-6 LunaGALightweightDefault≤ 272K$0.10$0.01$0.125$0.50GPT-6 LunaGALightweightLong context> 272K$0.20$0.02$0.25$0.75GPT-6 SolGAPowerfulDefault≤ 272K$2.00$0.20$2.50$10.00GPT-6 SolGAPowerfulLong context> 272K$4.00$0.40$5.00$15.00GPT-6.1 SolGAPowerfulDefault≤ 272K$2.00$0.10$2.50$10.00GPT-6.1 SolGAPowerfulLong context> 272K$4.00$0.20$5.00$15.00\n\nAnthropic\n\n注意\n\nModels with a Long context tier, offer extended capabilities and longer context windows. See GitHub Copilot中支持的 AI 模型\n\n除了缓存的输入之外，Anthropic模型还包括缓存写入成本。\n\n型号版本状态类别层阈值（输入令牌）Input缓存输入缓存写入输出Claude Haiku 4.5GAVersatile默认值不适用$1.00$0.10$1.25$5.00Claude Haiku 5.5GALightweight\n\nDefault |\n\n≤ 100K | $0.10 | $0.01 | $0.125 | $0.50 | | | | Claude Haiku 5.5 | GA | Lightweight |\n\nLong context |\n\n100K | $0.50 | $0.05 | $0.625 | $2.50 | | | | Claude Sonnet 4 | GA | Versatile | 默认值 | 不适用 | $3.00 | $0.30 | $3.75 | $15.00 | | | | Claude Sonnet 4.6 | GA | Versatile | 默认值 | 不适用 | $3.00 | $0.30 | $3.75 | $15.00 | | | | Claude Opus 4.8 | GA | Powerful | 默认值 | 不适用 | $5.00 | $0.50 | $6.25 | $25.00 | | | | Claude Opus 5 | GA | Powerful | 默认值 | 不适用 | $5.00 | $0.50 | $6.25 | $25.00 | | | | Claude Opus 5.5 | GA | Powerful | 默认值 | 不适用 | $4.00 | $0.20 | $5.00 | $20.00 | | | | Claude Sonnet 5 | GA | Versatile | 默认值 | 不适用 | $2.00 | $0.20 | $2.50 | $10.00 | | | | Claude Sonnet 5.5 | GA | Versatile | 默认值 | 不适用 | $2.00 | $0.10 | $2.50 | $10.00 | | | | Claude Opus 4.8 (fast mode) (preview) | GA | Powerful | 默认值 | 不适用 | $10.00 | $1.00 | $12.50 | $50.00 | | | | Claude Fable 5 | GA | Powerful | 默认值 | 不适用 | $10.00 | $1.00 | $12.50 | $50.00 | | | | Claude Fable 5.1 | GA | Powerful | 默认值 | 不适用 | $10.00 | $0.25 | $12.50 | $50.00 | | |\n\nGoogle\n\n注意\n\nModels with a Long context tier, offer extended capabilities and longer context windows. See GitHub Copilot中支持的 AI 模型\n\n型号版本状态类别层阈值（输入令牌）Input缓存输入输出Gemini 3.8 Flash1GAVersatileDefaultNot applicable$0.75$0.075$3.75Gemini 4 Argon2GAPowerfulDefaultNot applicable$2.00$0.10$10.00\n\n微调 （GitHub）\n\n型号版本状态类别Input缓存输入输出\n\nMicrosoft\n\n型号版本状态类别Input缓存输入输出MAI-Code-1.1-FlashGALightweight$0.20$0.02$1.20\n\nxAI（可解释的人工智能）\n\n注意\n\nModels with a Long context tier, offer extended capabilities and longer context windows. See GitHub Copilot中支持的 AI 模型\n\n型号版本状态类别层阈值（输入令牌）Input缓存输入输出Grok 4.5GAVersatileDefault≤ 200K$2.00$0.50$6.00Grok 4.5GAVersatileLong context> 200K$4.00$1.00$12.00Grok 4.6GAVersatileDefault≤ 200K$2.00$0.50$6.00Grok 4.6GAVersatileLong context> 200K$4.00$1.00$12.00Grok 4.7GAVersatileDefault≤ 200K$2.00$0.50$6.00Grok 4.7GAVersatileLong context> 200K$4.00$1.00$12.00\n\nMoonshot AI\n\n型号版本状态类别Input缓存输入输出Kimi K3GAPowerful$3.00$0.30$15.00\n\n代码补全\n\n代码完成和next edit suggestions不在AI credits中计费。 对于所有付费 Copilot 计划，它们仍然不受限制，并继续使用其现有的计数机制。\n\nCopilot code review 的定价方式与使用成本注意事项\n\n对于大多数 Copilot 功能，用于每个交互的模型是可见的，因此可以参考上述定价表来估算成本。 Copilot code review 是一个例外 - 模型是自动选择的，不会透露，因此每令牌成本在评审之间可能会有所不同。\n\n每次代码评审采用两项计费规则：词元消耗量按 AI credits 计费，支撑评审运行的智能体基础设施会消耗 GitHub Actions 分钟时长。\n\nGitHub Actions 分钟先归入存储库，然后在适用的情况下再归入企业或成本中心。 对于与具有付费 Copilot 许可证的组织成员关联的请求，AI credits 将按成员或组织收费，具体取决于 选择如何为具有付费 Copilot 许可证的成员计费 策略的配置方式。\n\n如果与评审关联的人员没有 Copilot 席位，则使用情况将改为向企业或成本中心计费。 对于由 Copilot cloud agent 创建的拉取请求，使用量会优先归属于与该更改关联的人类共同作者。 如果无法向共同作者计费，则使用情况将直接计费给组织。 对于由其他机器人创建的拉取请求，或者当机器人发起评审请求时，相关用量也会直接计入组织账单。 这些拉取请求可进行智能体评审。\n\n可以通过以下方式查看 GitHub Actions 当前在 Copilot code review 上的使用情况：\n\nGitHub Actions 指标：按 copilot-pull-request-reviewer 工作流进行筛选。 请参阅“查看组织的 GitHub Actions 指标”。\n\n计费使用情况报告：使用值 workflow_path，按照 dynamic/agents/copilot-pull-request-reviewer 进行筛选。 请参阅“账单报告参考资料”。\n\n年度 Copilot Pro 和 Copilot Pro+ 订阅者的模型乘数\n\n采用Copilot Pro模式的Copilot Pro+中的**** 和**** 订阅者具有不同的模型乘数。 请参阅“按请求计费的年度套餐模型乘数（旧版）”。\n\nFootnotes\n\nGemini 3.8 Flash is available at the promotional pricing of $0.75 per 1M input tokens, $0.075 per 1M cached input tokens, and $3.75 per 1M output tokens through December 31, 2026. ↩\n\nGemini 4 Argon is available at the promotional pricing of $2.00 per 1M input tokens, $0.10 per 1M cached input tokens, and $10.00 per 1M output tokens until December 1, 2026. ↩",
+  "rawSources": [
+    {
+      "mode": "STATIC",
+      "hash": "59aad77f45beb45c34e235ac01c7825f4d8138f3ae9949e78a426f6868d15b7f",
+      "path": "C:\\Users\\qianchen\\Documents\\waytoagi-1024-detective-a2-v4\\.cache\\source-documents-v4\\737f002b-e06e-4d0e-b1af-652db0899914\\5649079c1b66e0beda3240407d8f7063a3bd0b4fdda472307c577fa3863386b0\\raw.bin"
+    }
+  ],
+  "storage": {
+    "rawPath": "C:\\Users\\qianchen\\Documents\\waytoagi-1024-detective-a2-v4\\.cache\\source-documents-v4\\737f002b-e06e-4d0e-b1af-652db0899914\\5649079c1b66e0beda3240407d8f7063a3bd0b4fdda472307c577fa3863386b0\\raw.bin",
+    "textPath": "C:\\Users\\qianchen\\Documents\\waytoagi-1024-detective-a2-v4\\.cache\\source-documents-v4\\737f002b-e06e-4d0e-b1af-652db0899914\\5649079c1b66e0beda3240407d8f7063a3bd0b4fdda472307c577fa3863386b0\\source.txt",
+    "manifestPath": "C:\\Users\\qianchen\\Documents\\waytoagi-1024-detective-a2-v4\\.cache\\source-documents-v4\\737f002b-e06e-4d0e-b1af-652db0899914\\5649079c1b66e0beda3240407d8f7063a3bd0b4fdda472307c577fa3863386b0\\manifest.json"
+  },
+  "parser": {
+    "name": "readability+source-dom",
+    "version": "readability-0.6.0+jsdom-30.1.3+source-dom-2",
+    "normalization": "source-text/v1",
+    "mode": "STATIC"
+  },
+  "metadata": {
+    "title": "GitHub Copilot 的模型和定价 - GitHub 文档",
+    "author": null,
+    "publishedAt": null,
+    "language": "zh"
+  },
+  "completeness": "COMPLETE",
+  "warnings": [],
+  "blocks": [
+    {
+      "start": 0,
+      "end": 20,
+      "id": "b0",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[0]",
+      "headingPath": [],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 22,
+      "end": 37,
+      "id": "b1",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[1]",
+      "headingPath": [],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 39,
+      "end": 43,
+      "id": "b2",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[2]",
+      "headingPath": [],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 45,
+      "end": 66,
+      "id": "b3",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[3]",
+      "headingPath": [
+        "GitHub Copilot 的模型和定价"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 68,
+      "end": 116,
+      "id": "b4",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[4]",
+      "headingPath": [
+        "GitHub Copilot 的模型和定价"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 118,
+      "end": 129,
+      "id": "b5",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[5]",
+      "headingPath": [
+        "GitHub Copilot 的模型和定价"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 131,
+      "end": 135,
+      "id": "b6",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[6]",
+      "headingPath": [
+        "GitHub Copilot 的模型和定价",
+        "在本文中"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 137,
+      "end": 146,
+      "id": "b7",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[7]",
+      "headingPath": [
+        "GitHub Copilot 的模型和定价",
+        "模型定价的工作原理"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 148,
+      "end": 271,
+      "id": "b8",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[8]",
+      "headingPath": [
+        "GitHub Copilot 的模型和定价",
+        "模型定价的工作原理"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 273,
+      "end": 296,
+      "id": "b9",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[9]",
+      "headingPath": [
+        "GitHub Copilot 的模型和定价",
+        "模型定价的工作原理"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 298,
+      "end": 327,
+      "id": "b10",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[10]",
+      "headingPath": [
+        "GitHub Copilot 的模型和定价",
+        "模型定价的工作原理"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 329,
+      "end": 435,
+      "id": "b11",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[11]",
+      "headingPath": [
+        "GitHub Copilot 的模型和定价",
+        "模型定价的工作原理"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 437,
+      "end": 541,
+      "id": "b12",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[12]",
+      "headingPath": [
+        "GitHub Copilot 的模型和定价",
+        "模型定价的工作原理"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 543,
+      "end": 642,
+      "id": "b13",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[13]",
+      "headingPath": [
+        "GitHub Copilot 的模型和定价",
+        "模型定价的工作原理"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 644,
+      "end": 646,
+      "id": "b14",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[14]",
+      "headingPath": [
+        "GitHub Copilot 的模型和定价",
+        "模型定价的工作原理"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 648,
+      "end": 721,
+      "id": "b15",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[15]",
+      "headingPath": [
+        "GitHub Copilot 的模型和定价",
+        "模型定价的工作原理"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 723,
+      "end": 726,
+      "id": "b16",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[16]",
+      "headingPath": [
+        "GitHub Copilot 的模型和定价",
+        "定价表"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 728,
+      "end": 740,
+      "id": "b17",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[17]",
+      "headingPath": [
+        "GitHub Copilot 的模型和定价",
+        "定价表"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 742,
+      "end": 748,
+      "id": "b18",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[18]",
+      "headingPath": [
+        "GitHub Copilot 的模型和定价",
+        "定价表",
+        "OpenAI"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 750,
+      "end": 752,
+      "id": "b19",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[19]",
+      "headingPath": [
+        "GitHub Copilot 的模型和定价",
+        "定价表",
+        "OpenAI"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 754,
+      "end": 871,
+      "id": "b20",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[20]",
+      "headingPath": [
+        "GitHub Copilot 的模型和定价",
+        "定价表",
+        "OpenAI"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 873,
+      "end": 1001,
+      "id": "b21",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[21]",
+      "headingPath": [
+        "GitHub Copilot 的模型和定价",
+        "定价表",
+        "OpenAI"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1003,
+      "end": 2006,
+      "id": "b22",
+      "kind": "TABLE",
+      "locator": "source DOM normalized block[22]",
+      "headingPath": [
+        "GitHub Copilot 的模型和定价",
+        "定价表",
+        "OpenAI"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2008,
+      "end": 2017,
+      "id": "b23",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[23]",
+      "headingPath": [
+        "GitHub Copilot 的模型和定价",
+        "定价表",
+        "Anthropic"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2019,
+      "end": 2021,
+      "id": "b24",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[24]",
+      "headingPath": [
+        "GitHub Copilot 的模型和定价",
+        "定价表",
+        "Anthropic"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2023,
+      "end": 2140,
+      "id": "b25",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[25]",
+      "headingPath": [
+        "GitHub Copilot 的模型和定价",
+        "定价表",
+        "Anthropic"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2142,
+      "end": 2173,
+      "id": "b26",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[26]",
+      "headingPath": [
+        "GitHub Copilot 的模型和定价",
+        "定价表",
+        "Anthropic"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2175,
+      "end": 2289,
+      "id": "b27",
+      "kind": "TABLE",
+      "locator": "source DOM normalized block[27]",
+      "headingPath": [
+        "GitHub Copilot 的模型和定价",
+        "定价表",
+        "Anthropic"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2291,
+      "end": 2300,
+      "id": "b28",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[28]",
+      "headingPath": [
+        "GitHub Copilot 的模型和定价",
+        "定价表",
+        "Anthropic"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2302,
+      "end": 2387,
+      "id": "b29",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[29]",
+      "headingPath": [
+        "GitHub Copilot 的模型和定价",
+        "定价表",
+        "Anthropic"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2389,
+      "end": 2403,
+      "id": "b30",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[30]",
+      "headingPath": [
+        "GitHub Copilot 的模型和定价",
+        "定价表",
+        "Anthropic"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2405,
+      "end": 3332,
+      "id": "b31",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[31]",
+      "headingPath": [
+        "GitHub Copilot 的模型和定价",
+        "定价表",
+        "Anthropic"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3334,
+      "end": 3340,
+      "id": "b32",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[32]",
+      "headingPath": [
+        "GitHub Copilot 的模型和定价",
+        "定价表",
+        "Google"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3342,
+      "end": 3344,
+      "id": "b33",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[33]",
+      "headingPath": [
+        "GitHub Copilot 的模型和定价",
+        "定价表",
+        "Google"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3346,
+      "end": 3463,
+      "id": "b34",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[34]",
+      "headingPath": [
+        "GitHub Copilot 的模型和定价",
+        "定价表",
+        "Google"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3465,
+      "end": 3620,
+      "id": "b35",
+      "kind": "TABLE",
+      "locator": "source DOM normalized block[35]",
+      "headingPath": [
+        "GitHub Copilot 的模型和定价",
+        "定价表",
+        "Google"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3622,
+      "end": 3633,
+      "id": "b36",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[36]",
+      "headingPath": [
+        "GitHub Copilot 的模型和定价",
+        "定价表",
+        "微调 （GitHub）"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3635,
+      "end": 3654,
+      "id": "b37",
+      "kind": "TABLE",
+      "locator": "source DOM normalized block[37]",
+      "headingPath": [
+        "GitHub Copilot 的模型和定价",
+        "定价表",
+        "微调 （GitHub）"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3656,
+      "end": 3665,
+      "id": "b38",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[38]",
+      "headingPath": [
+        "GitHub Copilot 的模型和定价",
+        "定价表",
+        "Microsoft"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3667,
+      "end": 3732,
+      "id": "b39",
+      "kind": "TABLE",
+      "locator": "source DOM normalized block[39]",
+      "headingPath": [
+        "GitHub Copilot 的模型和定价",
+        "定价表",
+        "Microsoft"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3734,
+      "end": 3747,
+      "id": "b40",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[40]",
+      "headingPath": [
+        "GitHub Copilot 的模型和定价",
+        "定价表",
+        "xAI（可解释的人工智能）"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3749,
+      "end": 3751,
+      "id": "b41",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[41]",
+      "headingPath": [
+        "GitHub Copilot 的模型和定价",
+        "定价表",
+        "xAI（可解释的人工智能）"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3753,
+      "end": 3870,
+      "id": "b42",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[42]",
+      "headingPath": [
+        "GitHub Copilot 的模型和定价",
+        "定价表",
+        "xAI（可解释的人工智能）"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3872,
+      "end": 4200,
+      "id": "b43",
+      "kind": "TABLE",
+      "locator": "source DOM normalized block[43]",
+      "headingPath": [
+        "GitHub Copilot 的模型和定价",
+        "定价表",
+        "xAI（可解释的人工智能）"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4202,
+      "end": 4213,
+      "id": "b44",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[44]",
+      "headingPath": [
+        "GitHub Copilot 的模型和定价",
+        "定价表",
+        "Moonshot AI"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4215,
+      "end": 4267,
+      "id": "b45",
+      "kind": "TABLE",
+      "locator": "source DOM normalized block[45]",
+      "headingPath": [
+        "GitHub Copilot 的模型和定价",
+        "定价表",
+        "Moonshot AI"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4269,
+      "end": 4273,
+      "id": "b46",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[46]",
+      "headingPath": [
+        "GitHub Copilot 的模型和定价",
+        "代码补全"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4275,
+      "end": 4359,
+      "id": "b47",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[47]",
+      "headingPath": [
+        "GitHub Copilot 的模型和定价",
+        "代码补全"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4361,
+      "end": 4395,
+      "id": "b48",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[48]",
+      "headingPath": [
+        "GitHub Copilot 的模型和定价",
+        "Copilot code review 的定价方式与使用成本注意事项"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4397,
+      "end": 4508,
+      "id": "b49",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[49]",
+      "headingPath": [
+        "GitHub Copilot 的模型和定价",
+        "Copilot code review 的定价方式与使用成本注意事项"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4510,
+      "end": 4584,
+      "id": "b50",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[50]",
+      "headingPath": [
+        "GitHub Copilot 的模型和定价",
+        "Copilot code review 的定价方式与使用成本注意事项"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4586,
+      "end": 4723,
+      "id": "b51",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[51]",
+      "headingPath": [
+        "GitHub Copilot 的模型和定价",
+        "Copilot code review 的定价方式与使用成本注意事项"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4725,
+      "end": 4913,
+      "id": "b52",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[52]",
+      "headingPath": [
+        "GitHub Copilot 的模型和定价",
+        "Copilot code review 的定价方式与使用成本注意事项"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4915,
+      "end": 4972,
+      "id": "b53",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[53]",
+      "headingPath": [
+        "GitHub Copilot 的模型和定价",
+        "Copilot code review 的定价方式与使用成本注意事项"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4974,
+      "end": 5062,
+      "id": "b54",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[54]",
+      "headingPath": [
+        "GitHub Copilot 的模型和定价",
+        "Copilot code review 的定价方式与使用成本注意事项"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5064,
+      "end": 5159,
+      "id": "b55",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[55]",
+      "headingPath": [
+        "GitHub Copilot 的模型和定价",
+        "Copilot code review 的定价方式与使用成本注意事项"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5161,
+      "end": 5199,
+      "id": "b56",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[56]",
+      "headingPath": [
+        "GitHub Copilot 的模型和定价",
+        "年度 Copilot Pro 和 Copilot Pro+ 订阅者的模型乘数"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5201,
+      "end": 5280,
+      "id": "b57",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[57]",
+      "headingPath": [
+        "GitHub Copilot 的模型和定价",
+        "年度 Copilot Pro 和 Copilot Pro+ 订阅者的模型乘数"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5282,
+      "end": 5291,
+      "id": "b58",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[58]",
+      "headingPath": [
+        "GitHub Copilot 的模型和定价",
+        "Footnotes"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5293,
+      "end": 5474,
+      "id": "b59",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[59]",
+      "headingPath": [
+        "GitHub Copilot 的模型和定价",
+        "Footnotes"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5476,
+      "end": 5652,
+      "id": "b60",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[60]",
+      "headingPath": [
+        "GitHub Copilot 的模型和定价",
+        "Footnotes"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    }
+  ],
+  "links": [
+    {
+      "url": "https://docs.github.com/zh/copilot/concepts/billing-and-usage/individuals/billing",
+      "text": "个人基于使用情况的计费",
+      "blockId": "b11",
+      "relation": "LINK",
+      "locator": "source DOM link[468]"
+    },
+    {
+      "url": "https://docs.github.com/zh/copilot/concepts/billing-and-usage/organizations-and-enterprises/billing",
+      "text": "组织和企业的基于使用情况的计费",
+      "blockId": "b12",
+      "relation": "LINK",
+      "locator": "source DOM link[469]"
+    },
+    {
+      "url": "https://docs.github.com/zh/copilot/reference/ai-models/supported-models",
+      "text": "GitHub Copilot中支持的 AI 模型",
+      "blockId": "b20",
+      "relation": "LINK",
+      "locator": "source DOM link[472]"
+    },
+    {
+      "url": "https://docs.github.com/zh/copilot/reference/ai-models/supported-models",
+      "text": "GitHub Copilot中支持的 AI 模型",
+      "blockId": "b25",
+      "relation": "LINK",
+      "locator": "source DOM link[474]"
+    },
+    {
+      "url": "https://docs.github.com/zh/copilot/reference/ai-models/supported-models",
+      "text": "GitHub Copilot中支持的 AI 模型",
+      "blockId": "b34",
+      "relation": "LINK",
+      "locator": "source DOM link[476]"
+    },
+    {
+      "url": "https://docs.github.com/zh/copilot/reference/ai-models/supported-models",
+      "text": "GitHub Copilot中支持的 AI 模型",
+      "blockId": "b42",
+      "relation": "LINK",
+      "locator": "source DOM link[482]"
+    },
+    {
+      "url": "https://docs.github.com/zh/organizations/collaborating-with-groups-in-organizations/viewing-github-actions-metrics-for-your-organization",
+      "text": "查看组织的 GitHub Actions 指标",
+      "blockId": "b54",
+      "relation": "LINK",
+      "locator": "source DOM link[486]"
+    },
+    {
+      "url": "https://docs.github.com/zh/billing/reference/billing-reports",
+      "text": "账单报告参考资料",
+      "blockId": "b55",
+      "relation": "LINK",
+      "locator": "source DOM link[487]"
+    },
+    {
+      "url": "https://docs.github.com/zh/copilot/reference/copilot-billing/request-based-billing-legacy/model-multipliers-for-annual-plans",
+      "text": "按请求计费的年度套餐模型乘数（旧版）",
+      "blockId": "b57",
+      "relation": "LINK",
+      "locator": "source DOM link[489]"
+    }
+  ],
+  "tables": [
+    {
+      "blockId": "b22",
+      "rows": [
+        {
+          "start": 1003,
+          "end": 1035,
+          "cells": [
+            {
+              "start": 1003,
+              "end": 1005,
+              "text": "型号",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1005,
+              "end": 1009,
+              "text": "版本状态",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1009,
+              "end": 1011,
+              "text": "类别",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1011,
+              "end": 1012,
+              "text": "层",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1012,
+              "end": 1020,
+              "text": "阈值（输入令牌）",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1020,
+              "end": 1025,
+              "text": "Input",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1025,
+              "end": 1029,
+              "text": "缓存输入",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1029,
+              "end": 1033,
+              "text": "缓存写入",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1033,
+              "end": 1035,
+              "text": "输出",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 1035,
+          "end": 1110,
+          "cells": [
+            {
+              "start": 1035,
+              "end": 1048,
+              "text": "GPT-5.3-Codex",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1048,
+              "end": 1050,
+              "text": "GA",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1050,
+              "end": 1058,
+              "text": "Powerful",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1058,
+              "end": 1065,
+              "text": "Default",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1065,
+              "end": 1079,
+              "text": "Not applicable",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1079,
+              "end": 1084,
+              "text": "$1.75",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1084,
+              "end": 1090,
+              "text": "$0.175",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1090,
+              "end": 1104,
+              "text": "Not applicable",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1104,
+              "end": 1110,
+              "text": "$14.00",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 1110,
+          "end": 1185,
+          "cells": [
+            {
+              "start": 1110,
+              "end": 1122,
+              "text": "GPT-5.4 nano",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1122,
+              "end": 1124,
+              "text": "GA",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1124,
+              "end": 1135,
+              "text": "Lightweight",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1135,
+              "end": 1142,
+              "text": "Default",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1142,
+              "end": 1156,
+              "text": "Not applicable",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1156,
+              "end": 1161,
+              "text": "$0.20",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1161,
+              "end": 1166,
+              "text": "$0.02",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1166,
+              "end": 1180,
+              "text": "Not applicable",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1180,
+              "end": 1185,
+              "text": "$1.25",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 1185,
+          "end": 1243,
+          "cells": [
+            {
+              "start": 1185,
+              "end": 1197,
+              "text": "GPT-5.6 Luna",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1197,
+              "end": 1199,
+              "text": "GA",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1199,
+              "end": 1210,
+              "text": "Lightweight",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1210,
+              "end": 1217,
+              "text": "Default",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1217,
+              "end": 1223,
+              "text": "≤ 200K",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1223,
+              "end": 1228,
+              "text": "$0.20",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1228,
+              "end": 1233,
+              "text": "$0.02",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1233,
+              "end": 1238,
+              "text": "$0.25",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1238,
+              "end": 1243,
+              "text": "$1.20",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 1243,
+          "end": 1306,
+          "cells": [
+            {
+              "start": 1243,
+              "end": 1255,
+              "text": "GPT-5.6 Luna",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1255,
+              "end": 1257,
+              "text": "GA",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1257,
+              "end": 1268,
+              "text": "Lightweight",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1268,
+              "end": 1280,
+              "text": "Long context",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1280,
+              "end": 1286,
+              "text": "> 200K",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1286,
+              "end": 1291,
+              "text": "$0.40",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1291,
+              "end": 1296,
+              "text": "$0.04",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1296,
+              "end": 1301,
+              "text": "$0.50",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1301,
+              "end": 1306,
+              "text": "$1.80",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 1306,
+          "end": 1361,
+          "cells": [
+            {
+              "start": 1306,
+              "end": 1317,
+              "text": "GPT-5.6 Sol",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1317,
+              "end": 1319,
+              "text": "GA",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1319,
+              "end": 1327,
+              "text": "Powerful",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1327,
+              "end": 1334,
+              "text": "Default",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1334,
+              "end": 1340,
+              "text": "≤ 272K",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1340,
+              "end": 1345,
+              "text": "$4.00",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1345,
+              "end": 1350,
+              "text": "$0.40",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1350,
+              "end": 1355,
+              "text": "$5.00",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1355,
+              "end": 1361,
+              "text": "$20.00",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 1361,
+          "end": 1422,
+          "cells": [
+            {
+              "start": 1361,
+              "end": 1372,
+              "text": "GPT-5.6 Sol",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1372,
+              "end": 1374,
+              "text": "GA",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1374,
+              "end": 1382,
+              "text": "Powerful",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1382,
+              "end": 1394,
+              "text": "Long context",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1394,
+              "end": 1400,
+              "text": "> 272K",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1400,
+              "end": 1405,
+              "text": "$8.00",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1405,
+              "end": 1410,
+              "text": "$0.80",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1410,
+              "end": 1416,
+              "text": "$10.00",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1416,
+              "end": 1422,
+              "text": "$30.00",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 1422,
+          "end": 1480,
+          "cells": [
+            {
+              "start": 1422,
+              "end": 1435,
+              "text": "GPT-5.6 Terra",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1435,
+              "end": 1437,
+              "text": "GA",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1437,
+              "end": 1446,
+              "text": "Versatile",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1446,
+              "end": 1453,
+              "text": "Default",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1453,
+              "end": 1459,
+              "text": "≤ 272K",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1459,
+              "end": 1464,
+              "text": "$2.00",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1464,
+              "end": 1469,
+              "text": "$0.20",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1469,
+              "end": 1474,
+              "text": "$2.50",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1474,
+              "end": 1480,
+              "text": "$12.00",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 1480,
+          "end": 1543,
+          "cells": [
+            {
+              "start": 1480,
+              "end": 1493,
+              "text": "GPT-5.6 Terra",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1493,
+              "end": 1495,
+              "text": "GA",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1495,
+              "end": 1504,
+              "text": "Versatile",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1504,
+              "end": 1516,
+              "text": "Long context",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1516,
+              "end": 1522,
+              "text": "> 272K",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1522,
+              "end": 1527,
+              "text": "$4.00",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1527,
+              "end": 1532,
+              "text": "$0.40",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1532,
+              "end": 1537,
+              "text": "$5.00",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1537,
+              "end": 1543,
+              "text": "$18.00",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 1543,
+          "end": 1600,
+          "cells": [
+            {
+              "start": 1543,
+              "end": 1554,
+              "text": "GPT-6 Astra",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1554,
+              "end": 1556,
+              "text": "GA",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1556,
+              "end": 1564,
+              "text": "Powerful",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1564,
+              "end": 1571,
+              "text": "Default",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1571,
+              "end": 1577,
+              "text": "≤ 272K",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1577,
+              "end": 1583,
+              "text": "$10.00",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1583,
+              "end": 1588,
+              "text": "$1.00",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1588,
+              "end": 1594,
+              "text": "$12.50",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1594,
+              "end": 1600,
+              "text": "$50.00",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 1600,
+          "end": 1662,
+          "cells": [
+            {
+              "start": 1600,
+              "end": 1611,
+              "text": "GPT-6 Astra",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1611,
+              "end": 1613,
+              "text": "GA",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1613,
+              "end": 1621,
+              "text": "Powerful",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1621,
+              "end": 1633,
+              "text": "Long context",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1633,
+              "end": 1639,
+              "text": "> 272K",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1639,
+              "end": 1645,
+              "text": "$20.00",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1645,
+              "end": 1650,
+              "text": "$2.00",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1650,
+              "end": 1656,
+              "text": "$25.00",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1656,
+              "end": 1662,
+              "text": "$75.00",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 1662,
+          "end": 1719,
+          "cells": [
+            {
+              "start": 1662,
+              "end": 1672,
+              "text": "GPT-6 Luna",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1672,
+              "end": 1674,
+              "text": "GA",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1674,
+              "end": 1685,
+              "text": "Lightweight",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1685,
+              "end": 1692,
+              "text": "Default",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1692,
+              "end": 1698,
+              "text": "≤ 272K",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1698,
+              "end": 1703,
+              "text": "$0.10",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1703,
+              "end": 1708,
+              "text": "$0.01",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1708,
+              "end": 1714,
+              "text": "$0.125",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1714,
+              "end": 1719,
+              "text": "$0.50",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 1719,
+          "end": 1780,
+          "cells": [
+            {
+              "start": 1719,
+              "end": 1729,
+              "text": "GPT-6 Luna",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1729,
+              "end": 1731,
+              "text": "GA",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1731,
+              "end": 1742,
+              "text": "Lightweight",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1742,
+              "end": 1754,
+              "text": "Long context",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1754,
+              "end": 1760,
+              "text": "> 272K",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1760,
+              "end": 1765,
+              "text": "$0.20",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1765,
+              "end": 1770,
+              "text": "$0.02",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1770,
+              "end": 1775,
+              "text": "$0.25",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1775,
+              "end": 1780,
+              "text": "$0.75",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 1780,
+          "end": 1833,
+          "cells": [
+            {
+              "start": 1780,
+              "end": 1789,
+              "text": "GPT-6 Sol",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1789,
+              "end": 1791,
+              "text": "GA",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1791,
+              "end": 1799,
+              "text": "Powerful",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1799,
+              "end": 1806,
+              "text": "Default",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1806,
+              "end": 1812,
+              "text": "≤ 272K",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1812,
+              "end": 1817,
+              "text": "$2.00",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1817,
+              "end": 1822,
+              "text": "$0.20",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1822,
+              "end": 1827,
+              "text": "$2.50",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1827,
+              "end": 1833,
+              "text": "$10.00",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 1833,
+          "end": 1891,
+          "cells": [
+            {
+              "start": 1833,
+              "end": 1842,
+              "text": "GPT-6 Sol",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1842,
+              "end": 1844,
+              "text": "GA",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1844,
+              "end": 1852,
+              "text": "Powerful",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1852,
+              "end": 1864,
+              "text": "Long context",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1864,
+              "end": 1870,
+              "text": "> 272K",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1870,
+              "end": 1875,
+              "text": "$4.00",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1875,
+              "end": 1880,
+              "text": "$0.40",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1880,
+              "end": 1885,
+              "text": "$5.00",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1885,
+              "end": 1891,
+              "text": "$15.00",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 1891,
+          "end": 1946,
+          "cells": [
+            {
+              "start": 1891,
+              "end": 1902,
+              "text": "GPT-6.1 Sol",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1902,
+              "end": 1904,
+              "text": "GA",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1904,
+              "end": 1912,
+              "text": "Powerful",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1912,
+              "end": 1919,
+              "text": "Default",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1919,
+              "end": 1925,
+              "text": "≤ 272K",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1925,
+              "end": 1930,
+              "text": "$2.00",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1930,
+              "end": 1935,
+              "text": "$0.10",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1935,
+              "end": 1940,
+              "text": "$2.50",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1940,
+              "end": 1946,
+              "text": "$10.00",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 1946,
+          "end": 2006,
+          "cells": [
+            {
+              "start": 1946,
+              "end": 1957,
+              "text": "GPT-6.1 Sol",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1957,
+              "end": 1959,
+              "text": "GA",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1959,
+              "end": 1967,
+              "text": "Powerful",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1967,
+              "end": 1979,
+              "text": "Long context",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1979,
+              "end": 1985,
+              "text": "> 272K",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1985,
+              "end": 1990,
+              "text": "$4.00",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1990,
+              "end": 1995,
+              "text": "$0.20",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1995,
+              "end": 2000,
+              "text": "$5.00",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 2000,
+              "end": 2006,
+              "text": "$15.00",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "blockId": "b27",
+      "rows": [
+        {
+          "start": 2175,
+          "end": 2207,
+          "cells": [
+            {
+              "start": 2175,
+              "end": 2177,
+              "text": "型号",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 2177,
+              "end": 2181,
+              "text": "版本状态",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 2181,
+              "end": 2183,
+              "text": "类别",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 2183,
+              "end": 2184,
+              "text": "层",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 2184,
+              "end": 2192,
+              "text": "阈值（输入令牌）",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 2192,
+              "end": 2197,
+              "text": "Input",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 2197,
+              "end": 2201,
+              "text": "缓存输入",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 2201,
+              "end": 2205,
+              "text": "缓存写入",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 2205,
+              "end": 2207,
+              "text": "输出",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 2207,
+          "end": 2234,
+          "cells": [
+            {
+              "start": 2207,
+              "end": 2223,
+              "text": "Claude Haiku 4.5",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 2223,
+              "end": 2225,
+              "text": "GA",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 2225,
+              "end": 2234,
+              "text": "Versatile",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 2234,
+              "end": 2234,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 2234,
+              "end": 2234,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 2234,
+              "end": 2234,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 2234,
+              "end": 2234,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 2234,
+              "end": 2234,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 2234,
+              "end": 2234,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 2234,
+          "end": 2237,
+          "cells": [
+            {
+              "start": 2234,
+              "end": 2237,
+              "text": "默认值",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 2237,
+              "end": 2237,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 2237,
+              "end": 2237,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 2237,
+              "end": 2237,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 2237,
+              "end": 2237,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 2237,
+              "end": 2237,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 2237,
+              "end": 2237,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 2237,
+              "end": 2237,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 2237,
+              "end": 2237,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 2237,
+          "end": 2260,
+          "cells": [
+            {
+              "start": 2237,
+              "end": 2240,
+              "text": "不适用",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 2240,
+              "end": 2245,
+              "text": "$1.00",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 2245,
+              "end": 2250,
+              "text": "$0.10",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 2250,
+              "end": 2255,
+              "text": "$1.25",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 2255,
+              "end": 2260,
+              "text": "$5.00",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 2260,
+              "end": 2260,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 2260,
+              "end": 2260,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 2260,
+              "end": 2260,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 2260,
+              "end": 2260,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 2260,
+          "end": 2289,
+          "cells": [
+            {
+              "start": 2260,
+              "end": 2276,
+              "text": "Claude Haiku 5.5",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 2276,
+              "end": 2278,
+              "text": "GA",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 2278,
+              "end": 2289,
+              "text": "Lightweight",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 2289,
+              "end": 2289,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 2289,
+              "end": 2289,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 2289,
+              "end": 2289,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 2289,
+              "end": 2289,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 2289,
+              "end": 2289,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 2289,
+              "end": 2289,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "blockId": "b35",
+      "rows": [
+        {
+          "start": 3465,
+          "end": 3493,
+          "cells": [
+            {
+              "start": 3465,
+              "end": 3467,
+              "text": "型号",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 3467,
+              "end": 3471,
+              "text": "版本状态",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 3471,
+              "end": 3473,
+              "text": "类别",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 3473,
+              "end": 3474,
+              "text": "层",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 3474,
+              "end": 3482,
+              "text": "阈值（输入令牌）",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 3482,
+              "end": 3487,
+              "text": "Input",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 3487,
+              "end": 3491,
+              "text": "缓存输入",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 3491,
+              "end": 3493,
+              "text": "输出",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 3493,
+          "end": 3558,
+          "cells": [
+            {
+              "start": 3493,
+              "end": 3510,
+              "text": "Gemini 3.8 Flash1",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 3510,
+              "end": 3512,
+              "text": "GA",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 3512,
+              "end": 3521,
+              "text": "Versatile",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 3521,
+              "end": 3528,
+              "text": "Default",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 3528,
+              "end": 3542,
+              "text": "Not applicable",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 3542,
+              "end": 3547,
+              "text": "$0.75",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 3547,
+              "end": 3553,
+              "text": "$0.075",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 3553,
+              "end": 3558,
+              "text": "$3.75",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 3558,
+          "end": 3620,
+          "cells": [
+            {
+              "start": 3558,
+              "end": 3573,
+              "text": "Gemini 4 Argon2",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 3573,
+              "end": 3575,
+              "text": "GA",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 3575,
+              "end": 3583,
+              "text": "Powerful",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 3583,
+              "end": 3590,
+              "text": "Default",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 3590,
+              "end": 3604,
+              "text": "Not applicable",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 3604,
+              "end": 3609,
+              "text": "$2.00",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 3609,
+              "end": 3614,
+              "text": "$0.10",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 3614,
+              "end": 3620,
+              "text": "$10.00",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "blockId": "b37",
+      "rows": [
+        {
+          "start": 3635,
+          "end": 3654,
+          "cells": [
+            {
+              "start": 3635,
+              "end": 3637,
+              "text": "型号",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 3637,
+              "end": 3641,
+              "text": "版本状态",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 3641,
+              "end": 3643,
+              "text": "类别",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 3643,
+              "end": 3648,
+              "text": "Input",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 3648,
+              "end": 3652,
+              "text": "缓存输入",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 3652,
+              "end": 3654,
+              "text": "输出",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "blockId": "b39",
+      "rows": [
+        {
+          "start": 3667,
+          "end": 3686,
+          "cells": [
+            {
+              "start": 3667,
+              "end": 3669,
+              "text": "型号",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 3669,
+              "end": 3673,
+              "text": "版本状态",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 3673,
+              "end": 3675,
+              "text": "类别",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 3675,
+              "end": 3680,
+              "text": "Input",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 3680,
+              "end": 3684,
+              "text": "缓存输入",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 3684,
+              "end": 3686,
+              "text": "输出",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 3686,
+          "end": 3732,
+          "cells": [
+            {
+              "start": 3686,
+              "end": 3704,
+              "text": "MAI-Code-1.1-Flash",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 3704,
+              "end": 3706,
+              "text": "GA",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 3706,
+              "end": 3717,
+              "text": "Lightweight",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 3717,
+              "end": 3722,
+              "text": "$0.20",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 3722,
+              "end": 3727,
+              "text": "$0.02",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 3727,
+              "end": 3732,
+              "text": "$1.20",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "blockId": "b43",
+      "rows": [
+        {
+          "start": 3872,
+          "end": 3900,
+          "cells": [
+            {
+              "start": 3872,
+              "end": 3874,
+              "text": "型号",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 3874,
+              "end": 3878,
+              "text": "版本状态",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 3878,
+              "end": 3880,
+              "text": "类别",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 3880,
+              "end": 3881,
+              "text": "层",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 3881,
+              "end": 3889,
+              "text": "阈值（输入令牌）",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 3889,
+              "end": 3894,
+              "text": "Input",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 3894,
+              "end": 3898,
+              "text": "缓存输入",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 3898,
+              "end": 3900,
+              "text": "输出",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 3900,
+          "end": 3947,
+          "cells": [
+            {
+              "start": 3900,
+              "end": 3908,
+              "text": "Grok 4.5",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 3908,
+              "end": 3910,
+              "text": "GA",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 3910,
+              "end": 3919,
+              "text": "Versatile",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 3919,
+              "end": 3926,
+              "text": "Default",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 3926,
+              "end": 3932,
+              "text": "≤ 200K",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 3932,
+              "end": 3937,
+              "text": "$2.00",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 3937,
+              "end": 3942,
+              "text": "$0.50",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 3942,
+              "end": 3947,
+              "text": "$6.00",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 3947,
+          "end": 4000,
+          "cells": [
+            {
+              "start": 3947,
+              "end": 3955,
+              "text": "Grok 4.5",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 3955,
+              "end": 3957,
+              "text": "GA",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 3957,
+              "end": 3966,
+              "text": "Versatile",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 3966,
+              "end": 3978,
+              "text": "Long context",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 3978,
+              "end": 3984,
+              "text": "> 200K",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 3984,
+              "end": 3989,
+              "text": "$4.00",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 3989,
+              "end": 3994,
+              "text": "$1.00",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 3994,
+              "end": 4000,
+              "text": "$12.00",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 4000,
+          "end": 4047,
+          "cells": [
+            {
+              "start": 4000,
+              "end": 4008,
+              "text": "Grok 4.6",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 4008,
+              "end": 4010,
+              "text": "GA",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 4010,
+              "end": 4019,
+              "text": "Versatile",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 4019,
+              "end": 4026,
+              "text": "Default",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 4026,
+              "end": 4032,
+              "text": "≤ 200K",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 4032,
+              "end": 4037,
+              "text": "$2.00",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 4037,
+              "end": 4042,
+              "text": "$0.50",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 4042,
+              "end": 4047,
+              "text": "$6.00",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 4047,
+          "end": 4100,
+          "cells": [
+            {
+              "start": 4047,
+              "end": 4055,
+              "text": "Grok 4.6",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 4055,
+              "end": 4057,
+              "text": "GA",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 4057,
+              "end": 4066,
+              "text": "Versatile",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 4066,
+              "end": 4078,
+              "text": "Long context",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 4078,
+              "end": 4084,
+              "text": "> 200K",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 4084,
+              "end": 4089,
+              "text": "$4.00",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 4089,
+              "end": 4094,
+              "text": "$1.00",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 4094,
+              "end": 4100,
+              "text": "$12.00",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 4100,
+          "end": 4147,
+          "cells": [
+            {
+              "start": 4100,
+              "end": 4108,
+              "text": "Grok 4.7",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 4108,
+              "end": 4110,
+              "text": "GA",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 4110,
+              "end": 4119,
+              "text": "Versatile",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 4119,
+              "end": 4126,
+              "text": "Default",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 4126,
+              "end": 4132,
+              "text": "≤ 200K",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 4132,
+              "end": 4137,
+              "text": "$2.00",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 4137,
+              "end": 4142,
+              "text": "$0.50",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 4142,
+              "end": 4147,
+              "text": "$6.00",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 4147,
+          "end": 4200,
+          "cells": [
+            {
+              "start": 4147,
+              "end": 4155,
+              "text": "Grok 4.7",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 4155,
+              "end": 4157,
+              "text": "GA",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 4157,
+              "end": 4166,
+              "text": "Versatile",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 4166,
+              "end": 4178,
+              "text": "Long context",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 4178,
+              "end": 4184,
+              "text": "> 200K",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 4184,
+              "end": 4189,
+              "text": "$4.00",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 4189,
+              "end": 4194,
+              "text": "$1.00",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 4194,
+              "end": 4200,
+              "text": "$12.00",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "blockId": "b45",
+      "rows": [
+        {
+          "start": 4215,
+          "end": 4234,
+          "cells": [
+            {
+              "start": 4215,
+              "end": 4217,
+              "text": "型号",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 4217,
+              "end": 4221,
+              "text": "版本状态",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 4221,
+              "end": 4223,
+              "text": "类别",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 4223,
+              "end": 4228,
+              "text": "Input",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 4228,
+              "end": 4232,
+              "text": "缓存输入",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 4232,
+              "end": 4234,
+              "text": "输出",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 4234,
+          "end": 4267,
+          "cells": [
+            {
+              "start": 4234,
+              "end": 4241,
+              "text": "Kimi K3",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 4241,
+              "end": 4243,
+              "text": "GA",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 4243,
+              "end": 4251,
+              "text": "Powerful",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 4251,
+              "end": 4256,
+              "text": "$3.00",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 4256,
+              "end": 4261,
+              "text": "$0.30",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 4261,
+              "end": 4267,
+              "text": "$15.00",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "codeCommit": "5b8c5871987029b93976ff131520f96c0c40496d",
+  "startedAt": "2026-10-25T04:42:35.425Z",
+  "base": "http://127.0.0.1:3104",
+  "cases": [
+    {
+      "id": "blind",
+      "question": "Ollama 的模型默认保存在哪，如何修改保存目录？",
+      "researchDepth": "FACT"
+    },
+    {
+      "id": "S5-standard",
+      "question": "Cursor 的 Agent 模式在 3D 建模（CAD/Blender）工作流里的真实使用评价怎么样？",
+      "researchDepth": "STANDARD"
+    }
+  ],
+  "runs": [
+    {
+      "case": "blind",
+      "investigationId": "0390ddcb-a1eb-46eb-a9a6-c3ca2937cf61",
+      "captureExit": 0
+    },
+    {
+      "case": "S5-standard",
+      "investigationId": "1b770812-831e-444b-9bd6-f858f030b627",
+      "captureExit": 0
+    }
+  ]
+}

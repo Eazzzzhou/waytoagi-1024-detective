@@ -1,0 +1,229 @@
+Hi HN! We’re William and Kevin, cofounders of Sweep (https://sweep.dev/). Sweep is an open-source AI-powered junior developer. You describe a feature or bugfix in a GitHub issue and Sweep writes a pull request with code. You can see some examples here: https://docs.sweep.dev/examples.Kevin and I met while working at Roblox. We talked to our friends who were junior developers and noticed a lot of them doing grunt work. We wanted to let them focus on important work. Copilot is great, but we realized some tasks could be completely offloaded to an AI (e.g. adding a banner to your webpage https://github.com/sweepai/landing-page/issues/225).Sweep does this with a code search engine. We use code chunking, ranking, and formatting tricks to represent your codebase in a token-efficient manner for LLMs. You might have seen our blog on code chunking here: https://news.ycombinator.com/item?id=36948403.We take these fetched code snippets and come up with a plan to write the PR. We found that having the LLM provide structured information using XML tags is very robust, as it’s easy for us to parse with regex, has good support for multi-line answers and is hard for the LLM to mess up.This is because XML is common in the LLM’s training data (the internet / HTML), and the opening and closing tags rarely appear naturally in text and code, unlike the quotations, brackets, backticks and newlines used by JSON’s and markdown’s delimiters. Further, XML lets you skip the preamble (“This question has to do with xyz. Here is my answer:”) and handles multi-line answers like PR plans and code really well. For example, we ask the LLM for the new code in <new_code> tags and a final boolean answer by writing <answer>True</answer>.We use this XML format to get the LLM to create a plan, generating a list of files to create and modify from the retrieved relevant files. We iterate through the file changes and edit/create the necessary files. Finally, we push the commits to GitHub and create the PR.We’ve been using Sweep to handle small issues in Sweep’s own repo (it recently passed 100 commits). We’ve become well acquainted with its limitations. For example, Sweep sometimes leave unimplemented functions with just “# rest of code” since it runs on GPT-4, a model tuned for chatting. Other times, there’s minor syntax errors or undefined variables. This is why we spend the other half of our time building self-recovery methods for Sweep to fix and test its PRs.First, we invite the developer to review and add comments to Sweep’s pull request. This helps to a point, but Sweep’s code sometimes wouldn’t lint. This is table stakes. It’s frustrating to have to tell the bot to “add an import here” or “this variable is undefined”. To make this better, we used GitHub Actions, which automatically runs the flow of “check the code → tell sweep → sweep fixes the code → check the code again”. We like this flow because you might already have GitHub Actions, and it’s fully configurable. Check out this blog to learn more https://docs.sweep.dev/blogs/giving-dev-tools.So far, Sweep isn’t that fast, can’t handle massive problems yet, and doesn’t write hundreds of lines of code. We’re excited to work towards that. In the meantime, a lot of our users have been able to get useful results. For example, a user reported that an app was not working correctly on Windows, and Sweep wrote the PR at https://github.com/sweepai/sweep/pull/368/files, replacing all occurrences of "/tmp" with "tempfile.gettempdir()". Other examples include adding a validation function for Github branch name (https://github.com/sweepai/sweep/pull/461) and adding dynamically generated initials in the testimonials on our landing page (https://github.com/wwzeng1/landing-page/issues/28). For more examples, checkout https://docs.sweep.dev/examples.Our focus is on finding ways that an AI dev can actually help and not just be a novelty. I think of my daily capacity to write good code as a stamina bar. There’s a fixed cost to opening an IDE, finding the right lines of code, and making changes. If you’re working on a big feature and have to context switch, the cost is higher. I’ve been leaving the small changes to Sweep, and my stamina bar stays full for longer.Our repo is at https://github.com/sweepai/sweep, there’s a demo video at https://www.youtube.com/watch?v=WBVna_ow8vo, and you can install Sweep here: https://github.com/apps/sweep-ai. We currently have a freemium model, with 5 GPT-4 PRs at the free tier, 120 GPT-4 PRs at the paid tier and unlimited at the enterprise tier.We’re far from our vision of a full AI software engineer, but we’re excited to work on it with the community feedback :). Looking forward to hearing any of your thoughts!
+
+This is super cool!
+
+Thanks! We have a couple more demos at https://www.youtube.com/channel/UCUmi0YoUNHiITnYUrm5tnLQ, warning the audio is not the best :)
+
+Wait for deluge of these PR generators to increase the commit count on GitHub.
+
+Thats a good point, I really dislike when Sweep fails. That's why we're so focused on PR validation like self-review and GitHub actions, which brings it even closer to a junior dev. We wrote another blog on it here: https://docs.sweep.dev/blogs/giving-dev-toolsThere's still a long way to go on automated testing, building, and running code, but I don't see any reason it's not possible!
+
+Another buisness idea is to make repos look more active by giving Sweep different personas.
+
+Good point, we may allow open source repos to do this in order to credit contributors that wrote the original issues (those contributions are really valuable).
+
+What you just said would be a good thing(1). That would mean that more bugs are getting fixed.(1) unless the PRs that they generate are garbage.
+
++1, The PRs we made 2 months ago were really bad. That's also been the biggest barrier to getting them merged.Definitely check out what we've been able to merge now though. The ceiling for tools like Sweep is incredibly high.
+
+Interesting that your tagline is "spend less time writing, more time reviewing code" in the video. Developers already don't like reading the code, we even have a ubiquitous acronym for it. Writing is the fun part.In my experience, junior developers become mid level developers by writing code, by practicing, by building small features, by doing grunt work. If they wanted to use an AI to do those tasks for them, I would tell them no - the whole point of having junior devs do simpler tasks is that's what level they're at. They don't get to the next level magically, it's by doing the work. If a high school football quarterback asked if he could skip practice and let his AI go to practice for him, I would wonder how he plans to get good at football.I apologize that I don't have anything constructive to say here but you did ask for any of my thoughts.
+
+For sure, I completely agree. Reviewing code can be really annoying, especially if it's not well written/broken. We realized this last month, so we've moved closer to providing tested pull requests.Also as a dev, writing code is energizing and I love spending my day building a new feature. But when you get into maintenance mode, it's not that fun anymore. There's a good amount of code in the intersection of "easy to review" + "annoying to write", so Sweep is aiming to address that first.Overall, it's not so much about not writing any more code and more about writing more interesting code. Similarly for junior devs, even in the space of "grunt work", there's more and less interesting options.
+
+The value prop is to hire fewer junior devs or even replace them. They don't mean to help junior devs.Also, I'm not sure if you'd enjoy writing code for those "grunt work". I'd love PRs that I can easily check correctness for and would get some small job done.
+
+Sweep is targeted towards senior devs that can do two things. 1. review code quickly 2. articulate requirements wellAlso, here's another example of "grunt work". Sweep added a banner to our landing page, and I didn't touch my IDE at all. https://github.com/sweepai/landing-page/pull/226
+
+I would honestly just ignore that feedback. It's needlessly reductive and oxymoronic (coding is fun! But give juniors boring grunt work)
+
+His point wasn’t about whether the “grunt work” is enjoyable or not, but that it is necessary work for juniors to do in order to gain experience.I’m not sure. If these AI tools become sophisticated enough it might be better experience to learn how to use them instead of doing the underlying work. Career-wise anyway.
+
+It's necessary for sure, but we want to let junior devs choose to do the more interesting work.We're also trying to make it easy to use Sweep. One outcome is an entirely simulated teammate, which is part of what we're doing with allowing you to review Sweep's PR
+
+Tools like this will be useful for small shops that don’t have a genuine need for a junior-to-senior pipeline. It’s going to create a (an even more?) two-tiered community of developers: one tier that knows the AI tools/tricks to produce stuff, and one that knows how to do it themselves. I don’t know which tier should be considered superior yet: time will tell.
+
+Yep, small shops definitely benefit. Fewer people means each person already knows more of the codebase. For a 3 person team they might know >50% each, while for a 10 person team they might only know 10%.The previous belief here would be the 10 person gets more work done, but that will change as AI developers like Sweep become more popular. There are a lot of additional benefits for small teams, like fewer meetings + faster decisions.
+
+It remains to be seen whether that’s a benefit. This tool replaces experience junior engineers have needed to become better developers. Its future value is dependent strongly on the assumption that AI tools like this will evolve quickly enough to make using them more valuable than other experience.After all, if it doesn’t keep pace, the two-tier system I mentioned in my other comment will definitively be such that shops using these tools will not be as good as shops with a more traditional engineer skill development path.
+
+Interesting, that change would take some time to materialize. In the meantime it might be best to adopt both? I don't see it as a complete substitute.Right now you could have some junior devs picking up work that Sweep can't handle in order to grow and learn, and eventually still become senior devs. Having a small team also helps with mentorship (more focused attention).
+
+From what I've seen in this thread, that basically means junior devs still need to learn about the entire codebase before working on anything meaningful. I have to say I'm very skeptical of AI tools actually replacing developers because AI tools depend so critically on data to function.
+
+You're assuming that there is a large number of junior devs waiting for the opportunity to learn.What if you have the opposite - a large number of relatively simple bugs waiting to get fixed and not enough junior devs do the work?I think Sweep is a great idea and all of the additional developer capacity will be greedily soaked up by understaffed organisations.How well it works will depend on how good those pull requests are. If it takes too much time of senior developers to review the pull requests then that is a problem.
+
+I really agree with the second point. Even if there are enough junior devs, there's small issues where you're on the go and delegating is relatively expensive as the expected turn-around time is generally in the hours. Often times I would just do it myself, but then it burns part of the stamina. Also we're trying to make reviewing easier with webpage previews and automated testing through Github actions.
+
+I think this makes sense. I've seen many situations of large software projects where some bug is just open for months or even years and actually very easy to fix. In hindsight then, it was then a lot of missed value if the bug just lingered around for no good reason. If there was some tool that could just run in the background and randomly pop up a PR from time to time, then that would be cool.Good luck!
+
+Yep, these bugs can be trivial but that initial context switch, creating a branch, etc tends to drain your energy.Sweep can do this right now, you just have to label it yourself. We're doing this right now so you don't get flooded with PRs if you have a lot of open issues.
+
+The risk of introducing new bugs while fixing old ones should not be underestimated. Software development is a delicate process, and even seemingly minor bug fixes can have unintended consequences. Striking a balance between bug fixing and feature development is crucial to maintain a stable and reliable codebase.
+
+Great I think you made a good choice by interfacing directly to PRs. I'd like to see if I'm able to get my code coverage to 100% with this bot.
+
+Let's do it, we'll be online to help in the discord https://discord.com/invite/sweep-ai. It'll also help if you have GitHub actions to run the tests, do you have it setup?
+
+If I may ask - why?Why is increasing your code coverage to 100% matter? Would that reduce bugs or speed up development in any way?Wouldn't it just add lots more code to maintain and make refactors more time consuming?
+
+I think they meant that now that an AI can write the tests they can bring themselves to write enough to hit the 100% coverage. And I think importance of coverage just depends on if you want to build fast or have better maintenance, but I could be wrong since I usually only write e2e tests at most.
+
+I said 100% more or less as a figure of speech. I meant to say adding tests in some modules that I deem relevant. As a matter of fact, it would speed up development. Because I'm always feeling uneasy of the changes I introduce, all while learning the underlying Object-Relational Mapper. This has been the case for the past year or more in a new job position. The past developer of this code moved to new position long ago...
+
+100% code coverage doesn't guarantee there are no bugs, but less than 100% code coverage does mean that there is code that you definitely aren't testing.To put it another way, code coverage isn't a direct measure of how good your testing is, but it is still a useful metric to try and improve.In most cases 100% is too hardcore a target, but you should probably aim for at least 80%.
+
+Tom from Codecov here. This is so true, 80% is usually a much more reasonable approach. It’s better to write good tests than all the tests.(Shameless plug) I wrote a short post about this here: https://about.codecov.io/blog/the-case-against-100-code-cove...
+
+I really liked the blogpost! We're hoping to change point 2 (Engineering Time is Finite) with Sweep, so hopefully we don't have to make a tradeoff between a high quantity/quality of tests.
+
+Finally! My VP of engineering keeps saying I'm not making enough github commits, this is the solution I've been waiting for!This is sarcasm, but I did have a VP who tracked commit frequency for a while. And people heard about it if they weren't commiting enough.
+
+Haha, that's a bad way to measure output. Unfortunately the commits are attributed to Sweep ;)
+
+Tightly related to https://second.dev, also a YC company in the previous batch. Though Second is specializing its AI developers to doing code migrations.
+
+Cool! We're focused on close integration with GitHub and handling smaller, more focused tasks. We also have plans to run Sweep migrations, let me know if you'd like to see that!
+
+Sorry if I missed this, but do you plan on integrating with issues outside of github? For example, we use Linear, but it is connected to github to automatically pull PR information. It would be interesting to do basically the exact same thing as what you're doing, but do it with a Linear issue instead.
+
+Yup! We used to use https://synclinear.com/ but you can also use Zapier to automatically redirect Linear issues to GitHub. It's a nice experience since we also had a Discord to Linear hook.
+
+Just merged my first simple PR with sweep. This is going to be so useful for the kind of things that would take 5 minutes to do but get procrastinated for weeks because you just can't find the time to context switch for it.Congrats on the launch!
+
+Thanks, and I'm glad to hear! I'm Will's co-founder btw. Just wondering, what's the PR about?
+
+I just had it fix some outdated copy in a part of the UI. The nice thing is I didn't have to find the file myself, I just described what was wrong like I would a junior eng and let it find and fix it. Worked on the first try!
+
+That's exactly the use case we want. We also let you specify the file path (ex: "main.py").We noticed that Sweep's search works way better if there are comments, because the comments match up really well with the search queries (language <-> language is easier than language <-> code)
+
+Did you consider first asking LLM to explain what a code snippet does and use that instead?It'd significantly increase the costs though.
+
+I didn't mention this point, but we actually do that during the modification. We ask the LLM to extract the necessary subcontext from the main context. It doesn't increase the costs much, but it does help performance because the unnecessary context is stripped away.
+
+May be rewriting user's description might help you match code better?Similar to the prompt engineering for previous era GPT completion models.
+
+We do end up doing a GPT based rewrite. The initial description is really valuable too though, and we want to keep that throughout the workflow. It's kind of similar to a spelling correction or query intent system. If it's high confidence you can override their query, but ideally you use the original one too.
+
+Meta-issue: the purple on black text in the examples page is hard to read. https://docs.sweep.dev/examples
+
+We're on it! Perfect time to ask Sweep to give it a try.
+
+Just changed the color to royal blue via https://github.com/sweepai/sweep/pull/932
+
+What is your data privacy policy?
+
+Here it is: https://docs.sweep.dev/privacyThe logs from Sweep(which contain snippets of code) are logged for debugging purposes. We don't train on any of your code. These will only be stored for 30 days. We send this data to OpenAI to generate code. We're using the OpenAI api, and OpenAI has an agreement stating they will not train on this data and will persist it for 30 days to monitor trust and safety.We index your codebase for search, but we use a system that only reads your repo at runtime in Modal. This runs as a serverless function which is torn down after your request completes. Here's a blog we wrote about it! https://docs.sweep.dev/blogs/search-infra
+
+I think this is a huge point! Surprised no one asked it sooner. Where does all the code go which you tokenise?
+
+Our code is messy (sweep hasn't gotten around to it yet), but here's where we save the code! https://github.com/sweepai/sweep/blob/main/sweepai/core/vect...So for context, this is running in a ephemeral function from Modal https://modal.com/docs/reference/modal.Function#modalfunctio....We need a way to store the computed embeddings, because the function doesn't persist any state by default, so we use Redis. But we don't want to store the actual code as the key, so we hash the code + add some versioning. Because it's a cache, it supports concurrent writes + reads, which a lot of vector dbs do poorly.So the actual code is only accessed at runtime (using the GitHub app authentication to clone the repo), and we also build the vector db in memory at runtime. It's slow(redis call, embedding the misses, constructing the index), but 1-2s is negligible in the context of Sweep because a single openai call could be 7s+.And one nice feature is that when you have Sweep running on 10+ branches (which probably share 95%+ of the code) we just use the cache hits/misses to automatically handle diffs in the vector db. It's super easy to setup, we don't need to manage different indices (imagine a new index per branch), and it's very cost efficient.
+
+Your demo video https://www.youtube.com/watch?v=WBVna_ow8vo is ridiculously compelling. You need to make a better version of the video, and maybe a few more of them.
+
+Much appreciated! I just got a new mic so the audio won't be so bad.What kinds of videos would you like? We can make anything, the two repos we use the most are Sweep itself and our landing page
+
+The code produced in the "getInitials" function handles absolutely no corner cases whatsoever. It also didn't add any tests to the PR.All this does is making sure your website will crap all over itself 2 weeks into using this tool (death by a thousand cuts style) and you'll need to hire more people to fix whatever this thing fucks up. Just about the opposite of what automation is supposed to help with.Good luck!
+
+That's completely right, the testimonials will look really strange if the names have 3+ words in them. That's why we're targeting really strong developers to review Sweep's PRs. An experienced dev(like you) will be able to read the code, think "hey this needs tests and edge cases" and then request changes instead of merging it.
+
+Thanks for staying constructive and on topic. Super interesting tool and amazing video!Is Sweep also taking in suggestions and then incorporates them with follow-up commits to the PR?
+
+Yes Sweep does! It's through file comments and PR comments. We also handle failing GitHub actions.
+
+I think we're going to see a lot of this. I worked in self-driving and the stuff always 95% worked. Never 100.This is useful in some ways. Thinking about situations like pre-release software testing, there are exploratory test cases that are simply too numerous to ever have a human perform economically. A lot of AI is going to do this kind of very low-valued grunt work where it doesn't matter if it's 90% or 99% correct, it's the fact that it can get done at all. A lot of this work is "additive" in the sense that, it's just too expensive to do today (with a human).The work product of these systems is best seen as a "rough draft" or "suggestion". It's a first cut, not the last word.On the other hand, a lot (most?) of the meat-and-potatoes coding done today, is situations where things have to WORK. Stuff where correctness absolutely matters--billing/money/settlement (calculating tax, handling returns, moving money between accounts), a lot of OS code for things like memory management / locking / resource management, drug dosing, reservation management, etc.Granted, this stuff is a lot more complex and nuanced than the code of an average CRUD app, but then, I also don't spend my days implementing bcrypt, quicksort, or self-synchronizing Unicode parsing. We have libraries for that. The question is whether we're better off relying on agents to write a bunch of grunty code, or come up with better top-level organization / code structures, that doing it "by hand" is the better approach.I'm actually optimistic that we can do better code-wise. But I'd love to see how things develop. Maybe we wouldn't need AI if we just had better programming languages.
+
+I think for teams that want to move fast in a non-critical environment (health, finance etc.) something that works 90% of the time is fine. Getting to 95% takes twice the amount of time but does not provide twice the value. When the 5% difference becomes the difference maker we can fix it later.Further, we're adding better test systems to Sweep. For now, you can just comment to get Sweep to cover the edge cases and write tests. Happy to take any other feedback.
+
+Sorry but unless the core business is making statistical predictions, then you're wrong. Other industries (like health and finance) still need robust applications with like 99.99% uptime.
+
+Ok i get the skepticism but what i liked about their description is that it's not the overblown hysterical "AI superhuman programmer" pitch, but a more modest "junior" angle. If they keep looking for something that clicks, there are lots of "junior" niches that could be filled - for example, I can see that thing automatically working to beef up the test coverage. It's kind of difficult to screw up tests, the potential fallout is low and there is a unambiguous number (coverage) as the success criteria. If we look around our daily developer lives, there might be more cases that could be automated with this, even if it doesn't ever become good enough for any general programming.
+
+Something I'm a big fan of is making a small successful ticket (for example migrate the functions in one file) and then applying it map-reduce style across the entire codebase. This could help a lot, and by definition addresses repetitive work.We have this (to some degree) with issue templates, where you can pre-populate some text and fill in the rest. We're also thinking about good ways to offload that work to Sweep.
+
+Hence why:1. They refer to as an "AI junior developer" 2. It creates pull requests, not commitsFrom (2), your problem is with the person who commits this code without modification, not with the AI.
+
+That would be me, completely happy to take the blame here :) We manually update the content here so the code works just fine for now.
+
+Sounds like a junior developer to me :)
+
+Haha, we need good senior devs to review Sweep’s PRs :)
+
+I do think it's a pretty cool demo, but I have to say I didn't love that the PR claims Sweep did "manual testing" of the fix. Additionally, sweep reviews the PR and claims that the function is correctly implemented. A sibling points out that there's actually no testing added or done, and there's also issues with the implementation itself. This appears to be a general issue with GPT4 based products, they are extremely self-confident in their language. Presumably this stems from the overall training to work well as a chatbot.It's very cool that it inferred the right place to make the change and the steps of finding relevant code, making a plan, then doing it are things I wish all my junior developers would do! This is certainly moving in the right direction.
+
+Yup, it's a bit frustrating since it's a problem with LLM, RLHF and fine-tuning for chat. In fact, we also added in the prompt to not say that it did testing. I find that in general it seems really difficult to tell a language model (especially 3.5) to not do something.The self-review generally catches stuff like this since we tell it that this code is written by an inexperienced developer, so that Sweep becomes more critical.
+
+Love it!! The chunking stuff especially is really impressive. Hitting those token limits often is the annoying bit of working with LLMs.A weird question: How do you feel about possibly ~wasted efforts of these techniques when gpt in a year or so is probably gonna be 100k+ in context length? I've felt this a bit. E.g. I really want to create a 'massive document' conversational agent but I'm doing around 90% of work just juggling and preempting token constraints with super hueristic indexing. I just feel it's all a bit.. wasted, in terms of effort. At some point the LLM apis (openai, claude, ..) will just accept massive zips of code and use them as entire prompts without need for these creative trickeries. Thoughts?Oh! And have you tried out the function-calling APIs? I see you've found that XML is far more reliable as it's semantically enriched. I have found this to be the case as well, which is a shame because I really want the function-calling stuff to work equally well.I'm loving stuff like this that starts to pseudo-expand the token limit.
+
+That's a good question! We tried using Anthropic 100k before (Claude 1.3 was a lot worse), and I think that it's really important to figure out how to be context efficient, at least for GPT4.My stance is with models ignoring long contexts(https://arxiv.org/pdf/2307.03172.pdf), we'll have this problem for a long time. I could be wrong though.Also we did try function calling, but it doesn't allow for a chain of thought step. This made the plan/code way worse. Cool to see you found the same!
+
+Is it possible to provide feedback to a PR? One of the best parts about these AIs is their ability to adapt based on feedback.E.g. in the demo video, the code doesn't cover if splitName.length === 0. I would want to prompt it to cover that case as well
+
+Yep! You can leave a comment on the file just like you would review a PR. There's an example here: https://github.com/sweepai/landing-page/pull/226
+
+CC-NC-SA is not an open-source license. Please do not use "open source" to describe your software in your marketing materials.
+
+These AI startups need to resort to slimy measures to attract people to their useless product. What else is new?
+
+Incredible work, this is the most exciting AI dev tool I've come across!Do you have a strategy to supplement ChatGPT to handle post-2021 updates to languages and libraries? I tried it on a NextJS repo and it came up with something that looked like it would have been correct a few versions ago, but I had to make some manual changes. Certain fast-moving ecosystems might frequently have this issue.
+
+Thank you! We're working on integrating external browsing using another agent. For now we do have link processing, so if you drop a publicly accessible link in the issue, Sweep will actually gather context from that link.You can give Sweep docs about a framework and it should help a lot.
+
+Excellent, this solves the #1 problem I've had with LLM development assist -- providing context of the existing application source when making new requests. Delivering the output via a PR is a nice touch. Already created 2 PRs. Still need a tiny bit of tweaking manually before I merge these, but definitely saved at least 30 mins. Here are the 2 PRs that it generated for others curious to see its capabilities: https://github.com/3DStreet/3dstreet/pull/324 https://github.com/3DStreet/3dstreet/pull/325
+
+These are nice PRs, also github.3dstreet.org is super cool! I'm glad it's passing the GitHub actions. Do you have any workflows that would be more helpful to you?
+
+How is your experience with Modal?And I'm curious to know more about your costs of deployment and running on Modal.
+
+Modal is great, it's been able to handle us chunking 10k files/second. Most of the costs come from embedding(couple hundred to embed tens of thousands of repos a month). Our chunker was in the tens of dollars as well.The developer experience is also great, so we highly recommend it :)
+
+This is a very cool project, and definitively something we'll see more and more often for the next few years.Now, a bit off topic. I've seen a proliferation of "open source" startups that just use "open source" as a way of promotion. The repo feels more like a landing page than a README. And the Installation shows anything BUT install instructions.
+
+Are you referring to the installation.md? It's a bit of a misnomer, we intended for it to be for post-installation instructions for redirect after you install.
+
+I'm wondering what will happen if we let ChatGPT review these PRs created by ChatGPT.Yes, We made a small tool to help developer review their PR. Seems a great supplement for Sweep AI.Build your own PR review bot in 3 minutes here: https://github.com/flows-network/github-pr-summary
+
+Cool! Sweep actually already does this before the PR is shown to the user. I agree it might help to expose some of the Sweep generated reviews (which we did before)
+
+So next up, we'll be hiring people to put the bugs into the code base, so AI companies like this can stay in business, right? No bugs means no AI to fix bugs.
+
+Haha, Sweep also handles small features and writing documentation! There's a huge scope of software work besides fixing bugs, and to be fair, most of the work in bug fixing is not in the actual coding but thinking about the problem.
+
+How do you approach the problem of what files to look into to fix a bug? Just embeddings doesn't seem to cut it.
+
+We use some simple ranking heuristics detailed here: https://docs.sweep.dev/blogs/building-code-searchOne thing we also do is match any files mentioned in the issue. So if you mention sweepai/api.py, we'll find that and add it to the fetched files. There's still more work to be done here, so look out for those!Likely file name based scoring, and other rules + finetuned retrieval models (opt-in of course)
+
+What is the Privacy Policy?
+
+Here you go, https://docs.sweep.dev/privacy.There's also an interesting discussion here about how it works: https://news.ycombinator.com/reply?id=36990160
+
+Looks cool! I haven’t used it yet but this could be really helpful.What’s your strategy around oss? Why wouldn’t I just clone and use your repo if it can talk directly to GPT4/Claude?And, if I go through you, does Sweep retain my code in a DB or logs?
+
+You could do that, but we have a non-commercial license so you'd have to look out for that.We have had users in our discord set it up themselves, so it's possible. If you go through us we retain your repo in a hashed redis cache (no plaintext code stored) and store some (~50 line) snippets in our logs for debugging. We don't train on any of your code. You can find our privacy policy here: https://docs.sweep.dev/privacy
+
+> You could do that, but we have a non-commercial license so you'd have to look out for that.Your post claims this is open source, but your license says otherwise: https://www.oshwa.org/2014/05/21/cc-oshwMeanwhile you're soliciting feedback, improvements, reviews, and other free work from the community here...I'm not a die-hard advocate of open source, but advertising software under a restrictive license as open source comes off as disingenuously trying to sow good will in the community
+
+This is awesome. Somewhat echoing the other feedback here, I'm a little concerned about the "self test" side of things, and would much rather sweep wrote tests. Given my experience with ChatGPT and copilot though, I feel reassured that it would write tests for me. If it wrote tests by default (or used a heuristic on when to write tests), I would find it impossible to not use this I think.Great job.
+
+Thanks for the suggestion, we’re actually going to spend the weekend hacking at a user configurable step that handles different types of tests.I’m personally a fan of letting users insert their own instructions per repository, and Sweep can use that for each PR.
+
+Yeah, a `sweep.yml` file (or whatever you guys choose) would be ideal. I'm not put off by having to add a tag to the issue, or asking sweep directly to write a test for me.
+
+We have that! You can directly append to our system prompt here to customize Sweep https://github.com/sweepai/sweep/blob/main/sweep.yaml
+
+> Limitations of Sweep:> - Using the latest APIs that have changed past 2022Oh good, the frontend devs don't have to worry about AI taking their jobs yet.
+
+Haha yep, you can link Sweep a doc and it will read it though! This helps a lot for newer frameworks.
+
+Sweep is an open-source AI-powered junior developer. I think you should be less bullish on the "open source". As you kindly clarified for me the other day when I asked [1], only the client is open source. The back end is closed (that's Sweep back end, not the LLM which is obvious) and the product as a whole cannot be self-hosted by third parties.That's fine (though not clear what the benefit is to developers who might want to contribute), but at the moment the impression being given is that this is an open source product.Of course, if I have misunderstood I'll be happy to be corrected.I wish you the best with it as this seems like a very cool product even if its closed at core - but a lack of clarity now may undermine reception and goodwill later.[1] https://news.ycombinator.com/item?id=36953720
+
+Sounds like the backend is GPT 4?
+
+No, the backend (as I understand it, please check my linked question) is closed source Sweep-core plus GPTx.If this was open source, Sweep-core should not be closed source; the whole thing (minus GPT3+ obviously) should be self-hostable.
+
+Sorry I think you misunderstood.Sweep’s logic is fully open and it’s self hostable, but we’ve been focusing on the capabilities of Sweep(not on self hosting) so we haven’t provided docs.Because Sweep runs entirely in GitHub, it’s easy to install but annoying to self host. You’d need to setup modal and create a new github app.Definitely doable, some of our community members were able to do it.
+
+In that case, my apologies for misrepresenting the product - but I think the clarity was lacking rather than me misunderstanding, here's my question which specifically asked about self-hosting for that reason, and your answer (from the link) which seemed to imply no, only the github hook part:Q: Can you run it fully self-hosted (apart from the GPT4 engine obv), or is the repo essentially a client to a Sweep API/binary?A: The repo is just the backend that runs the GitHub webhooks. [...clip...] Now it's only the GitHub interface with creating tickets and comments.Anyway, if it is fully self-hostable (minus the LLM endpoint) that's terrific, and I will have a go at it.
+
+Definitely our fault on the part of this. We also deprecated the client recently, because we want to focus entirely on the GitHub issues.Check out our discord for help! There's a couple of people trying it now :D. Happy to answer questions when we have the time, and I'll point you to the person who set it up themselves.
+
+Update (I'm unable to edit my comment); it appears I was wrong and Sweep is fully open-source. My apologies.See the comment below:https://news.ycombinator.com/item?id=37002341
+
+Appreciate the correction, and apologies for the lack of clarity!
+
+I tried Sweep the other day and I got a weird error: [link redacted]-- "an issue has occurred around fetching the files." What files might that be?In any case, congratulations on launching, your product looks really promising!
+
+Apologies, during the launch yesterday we wrote a bug. It can be fixed by invalidating the cache (push any commit to the main branch). Sorry about that!
+
+This looks fantastic. (Demo video was what sold me: https://www.youtube.com/watch?v=WBVna_ow8vo)I will be keeping an eye on where this goes in the future.
+
+I've been building C++ applications professionally for several years now and can say that AI tools like this are just marketing hype. There are codebases with years of legacy cruft that most people have difficulty navigating; there's no chance that ChatGPT and derivatives like Sweep will solve real, nontrivial problems in them. I wish there was a solution for technical debt, but using AI to approximate solutions is a fundamentally flawed approach.

@@ -1,0 +1,245 @@
+{
+  "investigationId": "0483997e-37c1-4032-9d1d-d4bd017edd80",
+  "snapshotId": "b8943599-b051-4ec9-ba77-4938655425dd",
+  "status": "SUCCEEDED",
+  "url": "http://127.0.0.1:3104/investigations/0483997e-37c1-4032-9d1d-d4bd017edd80",
+  "citations": 3,
+  "exactQuoteChecks": "PASSED",
+  "excerptHashChecks": "PASSED",
+  "semanticChecks": [
+    {
+      "marker": "v4:0",
+      "supported": false,
+      "reason": "证据仅显示该评测作者称自己花了三周时间在实际项目中深度使用 Devin 2.0，未说明作者是知乎开发者，也未说明该评价来自知乎开发者；此外，“肯定在真实项目中能节省开发时间”与所引材料中关于节省时间及净节省的表述，需另段证据支持，且“指出自我调试能力存在边界”在本段证据中未直接出现。"
+    },
+    {
+      "marker": "v4:1",
+      "supported": true,
+      "reason": "原句直接支持节省约40-60%开发时间（取决于任务类型）、净时间节省约30-50%，以及节省的时间中有一部分需用于 code review 和调整修正。"
+    },
+    {
+      "marker": "v4:2",
+      "supported": true,
+      "reason": "原句直接支持 Devin 能阅读错误信息、分析原因、修改代码并重新运行，以及在 Level 1 和 Level 2 任务中平均每任务经历 2-4 次自我调试循环。"
+    },
+    {
+      "marker": "v4:3",
+      "supported": true,
+      "reason": "原句直接支持大多数情况下能正确修复自己的错误，但对复杂并发问题或深层次架构问题自我调试成功率明显下降；区分任务层次的概括未超出该对比范围。"
+    }
+  ],
+  "documentReferenceChecks": 6,
+  "documentIntegrityChecks": "PASSED",
+  "review": {
+    "status": "NOT_CONFIGURED",
+    "reason": "本轮未完成第二模型独立原文复核；不同搜索入口不等于独立模型。",
+    "independentAssessment": null,
+    "findings": []
+  },
+  "retrieval": [
+    {
+      "provider": "tencent-yuanbao-search-api",
+      "status": "SUCCEEDED",
+      "returnedSources": 8,
+      "adopted": 0
+    },
+    {
+      "provider": "tavily-search-api:keyless-capped",
+      "status": "SUCCEEDED",
+      "returnedSources": 8,
+      "adopted": 0
+    },
+    {
+      "provider": "tencent-yuanbao-search-api",
+      "status": "SUCCEEDED",
+      "returnedSources": 8,
+      "adopted": 0
+    },
+    {
+      "provider": "tencent-yuanbao-search-api",
+      "status": "SUCCEEDED",
+      "returnedSources": 8,
+      "adopted": 0
+    },
+    {
+      "provider": "bing-rss-public-search",
+      "status": "SUCCEEDED",
+      "returnedSources": 8,
+      "adopted": 0
+    },
+    {
+      "provider": "tencent-yuanbao-search-api",
+      "status": "SUCCEEDED",
+      "returnedSources": 8,
+      "adopted": 1
+    }
+  ],
+  "modelCalls": [
+    {
+      "provider": "api.deepseek.com",
+      "model": "deepseek-flash",
+      "promptVersion": "a2-evidence-v4",
+      "temperature": null,
+      "thinkingMode": "DISABLED",
+      "generatedAt": "2026-10-25T04:25:51.368Z",
+      "id": "66510018-89b5-40d7-a140-6063f8cc01c0",
+      "purpose": "v4-research-plan",
+      "startedAt": "2026-10-25T04:25:49.913Z",
+      "durationMs": 1455,
+      "outcome": "SUCCEEDED",
+      "inputTokens": 631,
+      "outputTokens": 213
+    },
+    {
+      "provider": "api.deepseek.com",
+      "model": "deepseek-flash",
+      "promptVersion": "a2-evidence-v4",
+      "temperature": null,
+      "thinkingMode": "DISABLED",
+      "generatedAt": "2026-10-25T04:25:56.603Z",
+      "id": "6fb1fec8-34b8-4506-8188-1681a4fe4ab1",
+      "purpose": "v4-next-research-action",
+      "startedAt": "2026-10-25T04:25:54.348Z",
+      "durationMs": 2255,
+      "outcome": "SUCCEEDED",
+      "inputTokens": 10350,
+      "outputTokens": 337
+    },
+    {
+      "provider": "api.deepseek.com",
+      "model": "deepseek-flash",
+      "promptVersion": "a2-evidence-v4",
+      "temperature": null,
+      "thinkingMode": "DISABLED",
+      "generatedAt": "2026-10-25T04:25:59.167Z",
+      "id": "c14afb1a-e9a6-402b-87b5-79b1638adcb3",
+      "purpose": "v4-next-research-action",
+      "startedAt": "2026-10-25T04:25:56.727Z",
+      "durationMs": 2440,
+      "outcome": "SUCCEEDED",
+      "inputTokens": 11369,
+      "outputTokens": 391
+    },
+    {
+      "provider": "api.deepseek.com",
+      "model": "deepseek-flash",
+      "promptVersion": "a2-evidence-v4",
+      "temperature": null,
+      "thinkingMode": "DISABLED",
+      "generatedAt": "2026-10-25T04:26:02.930Z",
+      "id": "4b7bef4c-9fe2-40e4-8dc6-79d30220f27a",
+      "purpose": "v4-next-research-action",
+      "startedAt": "2026-10-25T04:25:59.362Z",
+      "durationMs": 3568,
+      "outcome": "SUCCEEDED",
+      "inputTokens": 12533,
+      "outputTokens": 490
+    },
+    {
+      "provider": "api.deepseek.com",
+      "model": "deepseek-flash",
+      "promptVersion": "a2-evidence-v4",
+      "temperature": null,
+      "thinkingMode": "DISABLED",
+      "generatedAt": "2026-10-25T04:26:29.318Z",
+      "id": "3a67bea2-009d-41c5-a70e-b452525e10ff",
+      "purpose": "v4-next-research-action",
+      "startedAt": "2026-10-25T04:26:26.448Z",
+      "durationMs": 2870,
+      "outcome": "SUCCEEDED",
+      "inputTokens": 13132,
+      "outputTokens": 483
+    },
+    {
+      "provider": "api.deepseek.com",
+      "model": "deepseek-flash",
+      "promptVersion": "a2-evidence-v4",
+      "temperature": null,
+      "thinkingMode": "DISABLED",
+      "generatedAt": "2026-10-25T04:26:32.792Z",
+      "id": "194a19f5-2b39-499f-bfef-62e1d19478ca",
+      "purpose": "v4-next-research-action",
+      "startedAt": "2026-10-25T04:26:29.828Z",
+      "durationMs": 2964,
+      "outcome": "SUCCEEDED",
+      "inputTokens": 13429,
+      "outputTokens": 485
+    },
+    {
+      "provider": "api.deepseek.com",
+      "model": "deepseek-flash",
+      "promptVersion": "a2-evidence-v4",
+      "temperature": null,
+      "thinkingMode": "DISABLED",
+      "generatedAt": "2026-10-25T04:26:35.439Z",
+      "id": "4bf3d781-caa1-433d-badb-b53ddf6dd28c",
+      "purpose": "v4-document-reading",
+      "startedAt": "2026-10-25T04:26:33.434Z",
+      "durationMs": 2005,
+      "outcome": "SUCCEEDED",
+      "inputTokens": 9241,
+      "outputTokens": 204
+    },
+    {
+      "provider": "api.deepseek.com",
+      "model": "deepseek-flash",
+      "promptVersion": "a2-evidence-v4",
+      "temperature": null,
+      "thinkingMode": "DISABLED",
+      "generatedAt": "2026-10-25T04:26:39.703Z",
+      "id": "68547254-f0ee-4864-a9af-016358bd25c4",
+      "purpose": "v4-claim-extraction",
+      "startedAt": "2026-10-25T04:26:35.465Z",
+      "durationMs": 4242,
+      "outcome": "SUCCEEDED",
+      "inputTokens": 2457,
+      "outputTokens": 888
+    },
+    {
+      "provider": "api.deepseek.com",
+      "model": "deepseek-flash",
+      "promptVersion": "a2-evidence-v4",
+      "temperature": null,
+      "thinkingMode": "DISABLED",
+      "generatedAt": "2026-10-25T04:26:45.014Z",
+      "id": "6d839421-8e0d-4647-9cf4-81e1fbd424f6",
+      "purpose": "v4-claim-verification-batch",
+      "startedAt": "2026-10-25T04:26:39.704Z",
+      "durationMs": 5310,
+      "outcome": "SUCCEEDED",
+      "inputTokens": 3041,
+      "outputTokens": 1407
+    },
+    {
+      "provider": "api.deepseek.com",
+      "model": "deepseek-flash",
+      "promptVersion": "a2-evidence-v4",
+      "temperature": null,
+      "thinkingMode": "DISABLED",
+      "generatedAt": "2026-10-25T04:26:47.647Z",
+      "id": "6222deee-0eda-4335-8922-48355f59a025",
+      "purpose": "v4-direct-answer-and-analysis",
+      "startedAt": "2026-10-25T04:26:45.023Z",
+      "durationMs": 2623,
+      "outcome": "SUCCEEDED",
+      "inputTokens": 2296,
+      "outputTokens": 485
+    },
+    {
+      "provider": "api.deepseek.com",
+      "model": "deepseek-flash",
+      "promptVersion": "a2-evidence-v4",
+      "temperature": null,
+      "thinkingMode": "DISABLED",
+      "generatedAt": "2026-10-25T04:26:49.541Z",
+      "id": "e1cf9b59-5709-4ccf-bc52-ab9a11e5f18b",
+      "purpose": "v4-synthesis-semantic-check",
+      "startedAt": "2026-10-25T04:26:47.647Z",
+      "durationMs": 1894,
+      "outcome": "SUCCEEDED",
+      "inputTokens": 1530,
+      "outputTokens": 258
+    }
+  ],
+  "directory": "C:\\Users\\qianchen\\Documents\\waytoagi-1024-detective-a2-v4\\research\\v4-runs\\comparison-20261025-1209\\v4\\S7\\0483997e-37c1-4032-9d1d-d4bd017edd80"
+}

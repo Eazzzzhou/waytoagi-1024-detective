@@ -1,0 +1,1279 @@
+{
+  "schemaVersion": "source-document/v1",
+  "id": "2a71f9ec488cfa9323c12a774053eb807bdf6256e3c4b6d5b2454480864638cf",
+  "version": "d5f2262387a69f2dd7a340bd79b9e197e3686101b596fff5990f7aad3c7cd283",
+  "requestedUrl": "https://thereisanaitool.com/article/is-devin-worth-it",
+  "finalUrl": "https://thereisanaitool.com/article/is-devin-worth-it/",
+  "retrievedAt": "2026-10-25T04:23:19.575Z",
+  "contentType": "text/html; charset=utf-8",
+  "status": "READ",
+  "readError": null,
+  "rawHash": "e37ffc53ab6853f843613d56ff363321ac8a500bc0589b33b95e06f50ae57bda",
+  "textHash": "298c35d6405fa23b165617ac41767219605eec7c83acda617157c8c3c035c8ce",
+  "text": "Home›Tool Guides›Is Devin Worth $500/mo? An Honest Review of the AI Software Engineer\n\nTool Guides ·7 min read·May 19, 2026\n\nIs Devin Worth $500/mo? An Honest Review of the AI Software Engineer\n\nCognition's AI engineer in production for a month. Here is what worked and what did not.\n\nQuick answer\n\nSpent a month using Devin from Cognition in real engineering work. Devin succeeds at well-scoped tickets — small bug fixes, dependency upgrades, narrowly-defined features — about 65% of the time without intervention. On complex multi-file work, success drops to ~30%. Worth $500/mo Teams tier if you have a clean ticket backlog and team-wide adoption. Not worth it for solo devs or messy codebases.\n\nI have been using Devin in production for 30 days. Real PRs, real codebases, real engineers reviewing the output. This is the honest, no-marketing, what-actually-happened review.\n\nWhat is Devin again?\n\nCognition's autonomous AI software engineer. You write a ticket — in Linear, Jira, GitHub Issues, or Slack — assign it to Devin, and walk away. Devin spins up its own sandbox with a browser, terminal, and editor, plans the change, writes code, runs tests, and opens a PR. You review like any other PR.\n\nWhat worked\n\nDependency upgrades (Node 18 → 22, React 18 → 19): success rate ~80%\n\nSmall bug fixes with a reproducer: ~70%\n\nAdding logging, telemetry, error handling: ~75%\n\nWriting tests for existing code: ~65%\n\nDocumentation updates: ~85%\n\nSimple CRUD endpoints from a clear spec: ~70%\n\nWhat failed\n\nTickets with ambiguous requirements (Devin guesses, often wrong)\n\nCross-file refactors touching 5+ files: drops to ~30% success\n\nAnything involving deeply legacy code with unusual patterns\n\nTasks requiring product / design judgement\n\nPerformance optimisation work — Devin lacks intuition\n\nTickets where the bug is somewhere unexpected (Devin hunts in the wrong place)\n\nThe replay feature is genuinely game-changing\n\nEvery Devin session is replayable — you can step through exactly what it tried, what failed, what it learned. When a PR is wrong, you can see why in 30 seconds instead of guessing. This alone is worth real money and is the feature competitors will be playing catch-up on for years.\n\nMost useful workflow: write the ticket clearly, give Devin 30 minutes, then either approve the PR or use the replay to understand what went wrong and either fix it manually or rewrite the ticket. Treating Devin like a junior engineer (clear briefs, code review) works much better than treating it like magic.\n\nThe ACU pricing problem\n\nDevin runs on ACUs (Agent Compute Units). Simple tasks cost ~3 ACUs; complex ones can hit 30+. At $2.25/ACU, a single Devin run can cost $70. The $500/mo Teams plan includes 250 ACUs — sounds like a lot until you have a confused Devin burning through them looking for a bug. Budget for 2x what you expect.\n\nWho should pay $500/mo?\n\nTeams with a backlog of small, clean tickets nobody wants to do\n\nEngineering managers wanting to offload toil from senior devs\n\nStartups building MVPs with clear specs\n\nCompanies doing systematic migrations (Node version, React version, etc.)\n\nWho should not?\n\nSolo developers — Cursor at $20/mo covers 90% of the value\n\nTeams with messy, legacy codebases (Devin gets confused too often)\n\nAnyone hoping Devin will eliminate the need for engineering judgement\n\nCost-conscious teams that can use Cline + Claude API for $50-100/mo instead\n\nHonest verdict after 30 days\n\nDevin is real software engineering value, but it is not magic. About 60% of the tickets I assigned to it became merged PRs without significant intervention. That is good — comparable to a focused new hire. Whether $500/mo is worth that depends entirely on the salary cost it saves you. For an engineering team of 5+, almost certainly yes. For a solo dev, almost certainly no.\n\nRelated reading\n\nBest AI Coding Agents in 2026 — Cursor, Devin, Cline Compared AI Agent Platforms in 2026 — Lindy, Devin, Browser-Use Explained Cursor vs Windsurf vs Claude Code — Which AI Coder Wins in 2026?\n\nBottom line\n\nDevin works for the use case it was designed for: well-scoped tickets, team adoption, clean codebases. It fails on messy work where engineering judgement matters most. At $500/mo it has to displace meaningful engineering time to make sense — and for the right team, it does.\n\nShare this article Twitter LinkedIn Copy link\n\nRelated AI tools\n\nDevin\n\nAI engineer\n\nThe first AI software engineer — runs your codebase end-to-end.\n\nClaude\n\nAssistant\n\nAnthropic's AI — preferred by writers, developers, and researchers.\n\nCursor\n\nCode editor\n\nThe AI code editor most pro developers swap to.\n\nCline\n\nAI agent\n\nThe open-source autonomous coding agent that lives inside VS Code.\n\nKeep reading\n\nTools·6 min read\n\nWhat Is Sora 2 — and Is It Better Than Veo and Runway in 2026?\n\nOpenAI's newest AI video generator vs Google Veo and Runway — honest comparison with test results.\n\nApril 30, 2026 Read article\n\nCareers·7 min read\n\nAI for Small Business in 2026 — 7 Tools That Actually Save Time\n\nTested in real workflows. The 7 AI tools that genuinely save hours every week for small business.\n\nApril 29, 2026 Read article\n\nTools·6 min read\n\nAI Voice Generators in 2026 — The 5 That Actually Sound Human\n\nMost AI voices still sound robotic. Here are the 5 that genuinely sound human in 2026.\n\nApril 28, 2026 Read article",
+  "rawSources": [
+    {
+      "mode": "STATIC",
+      "hash": "e37ffc53ab6853f843613d56ff363321ac8a500bc0589b33b95e06f50ae57bda",
+      "path": "C:\\Users\\qianchen\\Documents\\waytoagi-1024-detective-a2-v4\\.cache\\source-documents-v4\\0b578ad1-9e1a-419b-a88c-8252c8ec6ef0\\2a71f9ec488cfa9323c12a774053eb807bdf6256e3c4b6d5b2454480864638cf\\raw.bin"
+    }
+  ],
+  "storage": {
+    "rawPath": "C:\\Users\\qianchen\\Documents\\waytoagi-1024-detective-a2-v4\\.cache\\source-documents-v4\\0b578ad1-9e1a-419b-a88c-8252c8ec6ef0\\2a71f9ec488cfa9323c12a774053eb807bdf6256e3c4b6d5b2454480864638cf\\raw.bin",
+    "textPath": "C:\\Users\\qianchen\\Documents\\waytoagi-1024-detective-a2-v4\\.cache\\source-documents-v4\\0b578ad1-9e1a-419b-a88c-8252c8ec6ef0\\2a71f9ec488cfa9323c12a774053eb807bdf6256e3c4b6d5b2454480864638cf\\source.txt",
+    "manifestPath": "C:\\Users\\qianchen\\Documents\\waytoagi-1024-detective-a2-v4\\.cache\\source-documents-v4\\0b578ad1-9e1a-419b-a88c-8252c8ec6ef0\\2a71f9ec488cfa9323c12a774053eb807bdf6256e3c4b6d5b2454480864638cf\\manifest.json"
+  },
+  "parser": {
+    "name": "readability+source-dom",
+    "version": "readability-0.6.0+jsdom-30.1.3+source-dom-2",
+    "normalization": "source-text/v1",
+    "mode": "STATIC"
+  },
+  "metadata": {
+    "title": "Is Devin Worth $500/mo? Honest Review of the AI Engineer | There Is An AI Tool",
+    "author": null,
+    "publishedAt": null,
+    "language": "en"
+  },
+  "completeness": "COMPLETE",
+  "warnings": [],
+  "blocks": [
+    {
+      "start": 0,
+      "end": 85,
+      "id": "b0",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[0]",
+      "headingPath": [],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 87,
+      "end": 123,
+      "id": "b1",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[1]",
+      "headingPath": [],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 125,
+      "end": 193,
+      "id": "b2",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[2]",
+      "headingPath": [
+        "Is Devin Worth $500/mo? An Honest Review of the AI Software Engineer"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 195,
+      "end": 283,
+      "id": "b3",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[3]",
+      "headingPath": [
+        "Is Devin Worth $500/mo? An Honest Review of the AI Software Engineer"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 285,
+      "end": 297,
+      "id": "b4",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[4]",
+      "headingPath": [
+        "Is Devin Worth $500/mo? An Honest Review of the AI Software Engineer"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 299,
+      "end": 697,
+      "id": "b5",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[5]",
+      "headingPath": [
+        "Is Devin Worth $500/mo? An Honest Review of the AI Software Engineer"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 699,
+      "end": 877,
+      "id": "b6",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[6]",
+      "headingPath": [
+        "Is Devin Worth $500/mo? An Honest Review of the AI Software Engineer"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 879,
+      "end": 899,
+      "id": "b7",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[7]",
+      "headingPath": [
+        "Is Devin Worth $500/mo? An Honest Review of the AI Software Engineer",
+        "What is Devin again?"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 901,
+      "end": 1202,
+      "id": "b8",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[8]",
+      "headingPath": [
+        "Is Devin Worth $500/mo? An Honest Review of the AI Software Engineer",
+        "What is Devin again?"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1204,
+      "end": 1215,
+      "id": "b9",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[9]",
+      "headingPath": [
+        "Is Devin Worth $500/mo? An Honest Review of the AI Software Engineer",
+        "What worked"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1217,
+      "end": 1285,
+      "id": "b10",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[10]",
+      "headingPath": [
+        "Is Devin Worth $500/mo? An Honest Review of the AI Software Engineer",
+        "What worked"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1287,
+      "end": 1326,
+      "id": "b11",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[11]",
+      "headingPath": [
+        "Is Devin Worth $500/mo? An Honest Review of the AI Software Engineer",
+        "What worked"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1328,
+      "end": 1375,
+      "id": "b12",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[12]",
+      "headingPath": [
+        "Is Devin Worth $500/mo? An Honest Review of the AI Software Engineer",
+        "What worked"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1377,
+      "end": 1414,
+      "id": "b13",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[13]",
+      "headingPath": [
+        "Is Devin Worth $500/mo? An Honest Review of the AI Software Engineer",
+        "What worked"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1416,
+      "end": 1443,
+      "id": "b14",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[14]",
+      "headingPath": [
+        "Is Devin Worth $500/mo? An Honest Review of the AI Software Engineer",
+        "What worked"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1445,
+      "end": 1490,
+      "id": "b15",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[15]",
+      "headingPath": [
+        "Is Devin Worth $500/mo? An Honest Review of the AI Software Engineer",
+        "What worked"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1492,
+      "end": 1503,
+      "id": "b16",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[16]",
+      "headingPath": [
+        "Is Devin Worth $500/mo? An Honest Review of the AI Software Engineer",
+        "What failed"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1505,
+      "end": 1569,
+      "id": "b17",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[17]",
+      "headingPath": [
+        "Is Devin Worth $500/mo? An Honest Review of the AI Software Engineer",
+        "What failed"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1571,
+      "end": 1632,
+      "id": "b18",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[18]",
+      "headingPath": [
+        "Is Devin Worth $500/mo? An Honest Review of the AI Software Engineer",
+        "What failed"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1634,
+      "end": 1693,
+      "id": "b19",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[19]",
+      "headingPath": [
+        "Is Devin Worth $500/mo? An Honest Review of the AI Software Engineer",
+        "What failed"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1695,
+      "end": 1737,
+      "id": "b20",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[20]",
+      "headingPath": [
+        "Is Devin Worth $500/mo? An Honest Review of the AI Software Engineer",
+        "What failed"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1739,
+      "end": 1792,
+      "id": "b21",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[21]",
+      "headingPath": [
+        "Is Devin Worth $500/mo? An Honest Review of the AI Software Engineer",
+        "What failed"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1794,
+      "end": 1872,
+      "id": "b22",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[22]",
+      "headingPath": [
+        "Is Devin Worth $500/mo? An Honest Review of the AI Software Engineer",
+        "What failed"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1874,
+      "end": 1919,
+      "id": "b23",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[23]",
+      "headingPath": [
+        "Is Devin Worth $500/mo? An Honest Review of the AI Software Engineer",
+        "The replay feature is genuinely game-changing"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1921,
+      "end": 2202,
+      "id": "b24",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[24]",
+      "headingPath": [
+        "Is Devin Worth $500/mo? An Honest Review of the AI Software Engineer",
+        "The replay feature is genuinely game-changing"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2204,
+      "end": 2512,
+      "id": "b25",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[25]",
+      "headingPath": [
+        "Is Devin Worth $500/mo? An Honest Review of the AI Software Engineer",
+        "The replay feature is genuinely game-changing"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2514,
+      "end": 2537,
+      "id": "b26",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[26]",
+      "headingPath": [
+        "Is Devin Worth $500/mo? An Honest Review of the AI Software Engineer",
+        "The ACU pricing problem"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2539,
+      "end": 2844,
+      "id": "b27",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[27]",
+      "headingPath": [
+        "Is Devin Worth $500/mo? An Honest Review of the AI Software Engineer",
+        "The ACU pricing problem"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2846,
+      "end": 2869,
+      "id": "b28",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[28]",
+      "headingPath": [
+        "Is Devin Worth $500/mo? An Honest Review of the AI Software Engineer",
+        "Who should pay $500/mo?"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2871,
+      "end": 2934,
+      "id": "b29",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[29]",
+      "headingPath": [
+        "Is Devin Worth $500/mo? An Honest Review of the AI Software Engineer",
+        "Who should pay $500/mo?"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2936,
+      "end": 2997,
+      "id": "b30",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[30]",
+      "headingPath": [
+        "Is Devin Worth $500/mo? An Honest Review of the AI Software Engineer",
+        "Who should pay $500/mo?"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2999,
+      "end": 3038,
+      "id": "b31",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[31]",
+      "headingPath": [
+        "Is Devin Worth $500/mo? An Honest Review of the AI Software Engineer",
+        "Who should pay $500/mo?"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3040,
+      "end": 3113,
+      "id": "b32",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[32]",
+      "headingPath": [
+        "Is Devin Worth $500/mo? An Honest Review of the AI Software Engineer",
+        "Who should pay $500/mo?"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3115,
+      "end": 3130,
+      "id": "b33",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[33]",
+      "headingPath": [
+        "Is Devin Worth $500/mo? An Honest Review of the AI Software Engineer",
+        "Who should not?"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3132,
+      "end": 3190,
+      "id": "b34",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[34]",
+      "headingPath": [
+        "Is Devin Worth $500/mo? An Honest Review of the AI Software Engineer",
+        "Who should not?"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3192,
+      "end": 3258,
+      "id": "b35",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[35]",
+      "headingPath": [
+        "Is Devin Worth $500/mo? An Honest Review of the AI Software Engineer",
+        "Who should not?"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3260,
+      "end": 3329,
+      "id": "b36",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[36]",
+      "headingPath": [
+        "Is Devin Worth $500/mo? An Honest Review of the AI Software Engineer",
+        "Who should not?"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3331,
+      "end": 3406,
+      "id": "b37",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[37]",
+      "headingPath": [
+        "Is Devin Worth $500/mo? An Honest Review of the AI Software Engineer",
+        "Who should not?"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3408,
+      "end": 3436,
+      "id": "b38",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[38]",
+      "headingPath": [
+        "Is Devin Worth $500/mo? An Honest Review of the AI Software Engineer",
+        "Honest verdict after 30 days"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3438,
+      "end": 3813,
+      "id": "b39",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[39]",
+      "headingPath": [
+        "Is Devin Worth $500/mo? An Honest Review of the AI Software Engineer",
+        "Honest verdict after 30 days"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3815,
+      "end": 3830,
+      "id": "b40",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[40]",
+      "headingPath": [
+        "Is Devin Worth $500/mo? An Honest Review of the AI Software Engineer",
+        "Honest verdict after 30 days"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3832,
+      "end": 4023,
+      "id": "b41",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[41]",
+      "headingPath": [
+        "Is Devin Worth $500/mo? An Honest Review of the AI Software Engineer",
+        "Honest verdict after 30 days"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4025,
+      "end": 4036,
+      "id": "b42",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[42]",
+      "headingPath": [
+        "Is Devin Worth $500/mo? An Honest Review of the AI Software Engineer",
+        "Honest verdict after 30 days",
+        "Bottom line"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4038,
+      "end": 4312,
+      "id": "b43",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[43]",
+      "headingPath": [
+        "Is Devin Worth $500/mo? An Honest Review of the AI Software Engineer",
+        "Honest verdict after 30 days",
+        "Bottom line"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4314,
+      "end": 4359,
+      "id": "b44",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[44]",
+      "headingPath": [
+        "Is Devin Worth $500/mo? An Honest Review of the AI Software Engineer",
+        "Honest verdict after 30 days",
+        "Bottom line"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4361,
+      "end": 4377,
+      "id": "b45",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[45]",
+      "headingPath": [
+        "Is Devin Worth $500/mo? An Honest Review of the AI Software Engineer",
+        "Honest verdict after 30 days",
+        "Bottom line"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4379,
+      "end": 4384,
+      "id": "b46",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[46]",
+      "headingPath": [
+        "Is Devin Worth $500/mo? An Honest Review of the AI Software Engineer",
+        "Honest verdict after 30 days",
+        "Bottom line"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4386,
+      "end": 4397,
+      "id": "b47",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[47]",
+      "headingPath": [
+        "Is Devin Worth $500/mo? An Honest Review of the AI Software Engineer",
+        "Honest verdict after 30 days",
+        "Bottom line"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4399,
+      "end": 4462,
+      "id": "b48",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[48]",
+      "headingPath": [
+        "Is Devin Worth $500/mo? An Honest Review of the AI Software Engineer",
+        "Honest verdict after 30 days",
+        "Bottom line"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4464,
+      "end": 4470,
+      "id": "b49",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[49]",
+      "headingPath": [
+        "Is Devin Worth $500/mo? An Honest Review of the AI Software Engineer",
+        "Honest verdict after 30 days",
+        "Bottom line"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4472,
+      "end": 4481,
+      "id": "b50",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[50]",
+      "headingPath": [
+        "Is Devin Worth $500/mo? An Honest Review of the AI Software Engineer",
+        "Honest verdict after 30 days",
+        "Bottom line"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4483,
+      "end": 4550,
+      "id": "b51",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[51]",
+      "headingPath": [
+        "Is Devin Worth $500/mo? An Honest Review of the AI Software Engineer",
+        "Honest verdict after 30 days",
+        "Bottom line"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4552,
+      "end": 4558,
+      "id": "b52",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[52]",
+      "headingPath": [
+        "Is Devin Worth $500/mo? An Honest Review of the AI Software Engineer",
+        "Honest verdict after 30 days",
+        "Bottom line"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4560,
+      "end": 4571,
+      "id": "b53",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[53]",
+      "headingPath": [
+        "Is Devin Worth $500/mo? An Honest Review of the AI Software Engineer",
+        "Honest verdict after 30 days",
+        "Bottom line"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4573,
+      "end": 4620,
+      "id": "b54",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[54]",
+      "headingPath": [
+        "Is Devin Worth $500/mo? An Honest Review of the AI Software Engineer",
+        "Honest verdict after 30 days",
+        "Bottom line"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4622,
+      "end": 4627,
+      "id": "b55",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[55]",
+      "headingPath": [
+        "Is Devin Worth $500/mo? An Honest Review of the AI Software Engineer",
+        "Honest verdict after 30 days",
+        "Bottom line"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4629,
+      "end": 4637,
+      "id": "b56",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[56]",
+      "headingPath": [
+        "Is Devin Worth $500/mo? An Honest Review of the AI Software Engineer",
+        "Honest verdict after 30 days",
+        "Bottom line"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4639,
+      "end": 4705,
+      "id": "b57",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[57]",
+      "headingPath": [
+        "Is Devin Worth $500/mo? An Honest Review of the AI Software Engineer",
+        "Honest verdict after 30 days",
+        "Bottom line"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4707,
+      "end": 4719,
+      "id": "b58",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[58]",
+      "headingPath": [
+        "Is Devin Worth $500/mo? An Honest Review of the AI Software Engineer",
+        "Honest verdict after 30 days",
+        "Bottom line"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4721,
+      "end": 4737,
+      "id": "b59",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[59]",
+      "headingPath": [
+        "Is Devin Worth $500/mo? An Honest Review of the AI Software Engineer",
+        "Honest verdict after 30 days",
+        "Bottom line"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4739,
+      "end": 4801,
+      "id": "b60",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[60]",
+      "headingPath": [
+        "Is Devin Worth $500/mo? An Honest Review of the AI Software Engineer",
+        "What Is Sora 2 — and Is It Better Than Veo and Runway in 2026?"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4803,
+      "end": 4901,
+      "id": "b61",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[61]",
+      "headingPath": [
+        "Is Devin Worth $500/mo? An Honest Review of the AI Software Engineer",
+        "What Is Sora 2 — and Is It Better Than Veo and Runway in 2026?"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4903,
+      "end": 4930,
+      "id": "b62",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[62]",
+      "headingPath": [
+        "Is Devin Worth $500/mo? An Honest Review of the AI Software Engineer",
+        "What Is Sora 2 — and Is It Better Than Veo and Runway in 2026?"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4932,
+      "end": 4950,
+      "id": "b63",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[63]",
+      "headingPath": [
+        "Is Devin Worth $500/mo? An Honest Review of the AI Software Engineer",
+        "What Is Sora 2 — and Is It Better Than Veo and Runway in 2026?"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4952,
+      "end": 5015,
+      "id": "b64",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[64]",
+      "headingPath": [
+        "Is Devin Worth $500/mo? An Honest Review of the AI Software Engineer",
+        "AI for Small Business in 2026 — 7 Tools That Actually Save Time"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5017,
+      "end": 5114,
+      "id": "b65",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[65]",
+      "headingPath": [
+        "Is Devin Worth $500/mo? An Honest Review of the AI Software Engineer",
+        "AI for Small Business in 2026 — 7 Tools That Actually Save Time"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5116,
+      "end": 5143,
+      "id": "b66",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[66]",
+      "headingPath": [
+        "Is Devin Worth $500/mo? An Honest Review of the AI Software Engineer",
+        "AI for Small Business in 2026 — 7 Tools That Actually Save Time"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5145,
+      "end": 5161,
+      "id": "b67",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[67]",
+      "headingPath": [
+        "Is Devin Worth $500/mo? An Honest Review of the AI Software Engineer",
+        "AI for Small Business in 2026 — 7 Tools That Actually Save Time"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5163,
+      "end": 5224,
+      "id": "b68",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[68]",
+      "headingPath": [
+        "Is Devin Worth $500/mo? An Honest Review of the AI Software Engineer",
+        "AI Voice Generators in 2026 — The 5 That Actually Sound Human"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5226,
+      "end": 5312,
+      "id": "b69",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[69]",
+      "headingPath": [
+        "Is Devin Worth $500/mo? An Honest Review of the AI Software Engineer",
+        "AI Voice Generators in 2026 — The 5 That Actually Sound Human"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5314,
+      "end": 5341,
+      "id": "b70",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[70]",
+      "headingPath": [
+        "Is Devin Worth $500/mo? An Honest Review of the AI Software Engineer",
+        "AI Voice Generators in 2026 — The 5 That Actually Sound Human"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    }
+  ],
+  "links": [
+    {
+      "url": "https://thereisanaitool.com/article/is-devin-worth-it/",
+      "text": "",
+      "blockId": null,
+      "relation": "CANONICAL",
+      "locator": "source DOM link[0]"
+    },
+    {
+      "url": "https://thereisanaitool.com/",
+      "text": "Home",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[7]"
+    },
+    {
+      "url": "https://thereisanaitool.com/category/tools/",
+      "text": "Tool Guides",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[8]"
+    },
+    {
+      "url": "https://thereisanaitool.com/category/tools/",
+      "text": "Tool Guides",
+      "blockId": "b1",
+      "relation": "LINK",
+      "locator": "source DOM link[9]"
+    },
+    {
+      "url": "https://thereisanaitool.com/article/best-ai-coding-agents-2026/",
+      "text": "Best AI Coding Agents in 2026 — Cursor, Devin, Cline Compared",
+      "blockId": "b41",
+      "relation": "LINK",
+      "locator": "source DOM link[10]"
+    },
+    {
+      "url": "https://thereisanaitool.com/article/ai-agent-platforms-2026/",
+      "text": "AI Agent Platforms in 2026 — Lindy, Devin, Browser-Use Explained",
+      "blockId": "b41",
+      "relation": "LINK",
+      "locator": "source DOM link[11]"
+    },
+    {
+      "url": "https://thereisanaitool.com/article/cursor-vs-windsurf-vs-claude-code/",
+      "text": "Cursor vs Windsurf vs Claude Code — Which AI Coder Wins in 2026?",
+      "blockId": "b41",
+      "relation": "LINK",
+      "locator": "source DOM link[12]"
+    },
+    {
+      "url": "https://thereisanaitool.com/category/tools/",
+      "text": "Tools",
+      "blockId": "b59",
+      "relation": "LINK",
+      "locator": "source DOM link[17]"
+    },
+    {
+      "url": "https://thereisanaitool.com/article/what-is-sora-2/",
+      "text": "Read article",
+      "blockId": "b62",
+      "relation": "LINK",
+      "locator": "source DOM link[19]"
+    },
+    {
+      "url": "https://thereisanaitool.com/category/careers/",
+      "text": "Careers",
+      "blockId": "b63",
+      "relation": "LINK",
+      "locator": "source DOM link[20]"
+    },
+    {
+      "url": "https://thereisanaitool.com/article/ai-for-small-business-2026/",
+      "text": "Read article",
+      "blockId": "b66",
+      "relation": "LINK",
+      "locator": "source DOM link[22]"
+    },
+    {
+      "url": "https://thereisanaitool.com/category/tools/",
+      "text": "Tools",
+      "blockId": "b67",
+      "relation": "LINK",
+      "locator": "source DOM link[23]"
+    },
+    {
+      "url": "https://thereisanaitool.com/article/best-ai-voice-generators-2026/",
+      "text": "Read article",
+      "blockId": "b70",
+      "relation": "LINK",
+      "locator": "source DOM link[25]"
+    }
+  ],
+  "tables": []
+}

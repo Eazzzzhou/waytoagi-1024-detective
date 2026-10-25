@@ -1,0 +1,1333 @@
+{
+  "snapshot": {
+    "id": "de925fa5-7ba6-410f-9e22-486a4264eb43",
+    "investigationId": "664bd687-ca61-4d92-be29-8b1fc59d569e",
+    "version": 1,
+    "parentSnapshotId": null,
+    "productIdentity": {
+      "name": "知乎上开发者怎么评价 Devin 的实际能力？",
+      "officialWebsite": null,
+      "version": null,
+      "plan": null,
+      "confirmationStatus": "UNRESOLVED",
+      "confirmationBasis": []
+    },
+    "evidence": [
+      {
+        "id": "2c2e892b-bdd5-48c7-9186-5c5c8957c0b7",
+        "sourceUrl": "https://www.zhihu.com/question/648314977/answer/3429111822",
+        "originalExcerpt": null,
+        "translation": null,
+        "originalLocation": null,
+        "metadata": {
+          "title": null,
+          "siteName": "www.zhihu.com",
+          "author": null,
+          "publishedAt": null,
+          "language": null,
+          "sourceType": "UNKNOWN",
+          "contentKind": "UNKNOWN",
+          "productVersion": null,
+          "plan": null,
+          "upstreamUrl": null,
+          "independence": "UNKNOWN",
+          "originGroupId": null,
+          "independenceReason": null
+        },
+        "retrievedAt": "2026-10-25T04:14:15.478Z",
+        "readStatus": "RESTRICTED",
+        "readError": "Source HTTP 403",
+        "contentHash": null
+      },
+      {
+        "id": "abfa8a7e-9aec-427f-833c-cca01e7064c7",
+        "sourceUrl": "https://www.zhihu.com/question/648314977",
+        "originalExcerpt": null,
+        "translation": null,
+        "originalLocation": null,
+        "metadata": {
+          "title": null,
+          "siteName": "www.zhihu.com",
+          "author": null,
+          "publishedAt": null,
+          "language": null,
+          "sourceType": "UNKNOWN",
+          "contentKind": "UNKNOWN",
+          "productVersion": null,
+          "plan": null,
+          "upstreamUrl": null,
+          "independence": "UNKNOWN",
+          "originGroupId": null,
+          "independenceReason": null
+        },
+        "retrievedAt": "2026-10-25T04:14:15.489Z",
+        "readStatus": "RESTRICTED",
+        "readError": "Source HTTP 403",
+        "contentHash": null
+      },
+      {
+        "id": "208a2d31-64b8-4df6-866e-c07269572bef",
+        "sourceUrl": "https://juejin.cn/post/7680768670986092544",
+        "originalExcerpt": null,
+        "translation": null,
+        "originalLocation": null,
+        "metadata": {
+          "title": null,
+          "siteName": "juejin.cn",
+          "author": null,
+          "publishedAt": null,
+          "language": null,
+          "sourceType": "UNKNOWN",
+          "contentKind": "UNKNOWN",
+          "productVersion": null,
+          "plan": null,
+          "upstreamUrl": null,
+          "independence": "UNKNOWN",
+          "originGroupId": null,
+          "independenceReason": null
+        },
+        "retrievedAt": "2026-10-25T04:14:17.713Z",
+        "readStatus": "RESTRICTED",
+        "readError": "Source returned access challenge",
+        "contentHash": null
+      },
+      {
+        "id": "e558546e-8729-46f9-b6d1-4ac7cf28b568",
+        "sourceUrl": "https://m.36kr.com/p/3130822110386184",
+        "originalExcerpt": "为保障您的访问安全，系统正在检测当前网络环境，该过程通常需要几秒钟，请耐心等待",
+        "translation": null,
+        "originalLocation": {
+          "kind": "TEXT",
+          "locator": "https://36kr.com/p/3130822110386184 :: main:first :: blocks(p,li,pre,tr,h1,h2,h3)[1]; normalized UTF-16 [0,39)",
+          "context": "为保障您的访问安全，系统正在检测当前网络环境，该过程通常需要几秒钟，请耐心等待"
+        },
+        "metadata": {
+          "title": null,
+          "siteName": "m.36kr.com",
+          "author": null,
+          "publishedAt": null,
+          "language": "en",
+          "sourceType": "UNKNOWN",
+          "contentKind": "UNKNOWN",
+          "productVersion": null,
+          "plan": null,
+          "upstreamUrl": null,
+          "independence": "UNKNOWN",
+          "originGroupId": null,
+          "independenceReason": null
+        },
+        "retrievedAt": "2026-10-25T04:14:17.749Z",
+        "readStatus": "READ",
+        "readError": null,
+        "contentHash": "e86a4a3296d69869cd86533312146ac6c56604d1cf2002784672dc2ac79400fa"
+      },
+      {
+        "id": "ab73359c-e0bf-4c21-a14e-16e541769d54",
+        "sourceUrl": "https://www.toutiao.com/a7697870831686484531",
+        "originalExcerpt": null,
+        "translation": null,
+        "originalLocation": null,
+        "metadata": {
+          "title": null,
+          "siteName": "www.toutiao.com",
+          "author": null,
+          "publishedAt": null,
+          "language": null,
+          "sourceType": "UNKNOWN",
+          "contentKind": "UNKNOWN",
+          "productVersion": null,
+          "plan": null,
+          "upstreamUrl": null,
+          "independence": "UNKNOWN",
+          "originGroupId": null,
+          "independenceReason": null
+        },
+        "retrievedAt": "2026-10-25T04:14:17.864Z",
+        "readStatus": "FAILED",
+        "readError": "No readable article blocks; JavaScript shell/empty page is not original material",
+        "contentHash": null
+      },
+      {
+        "id": "ad9ce115-2c24-4462-a884-9dcaa5031f7f",
+        "sourceUrl": "https://dev.to/alanwest/i-gave-devin-10-real-tasks-it-completed-3-3063",
+        "originalExcerpt": "Last year, Cognition launched Devin at $500/month and called it the world's first AI software engineer. The internet lost its mind. Engineers panicked. Twitter predicted mass layoffs. Fast forward to 2026, and Devin costs $20/month -- the same price as a Claude Code or Cursor Pro subscription. That",
+        "translation": null,
+        "originalLocation": {
+          "kind": "TEXT",
+          "locator": "https://dev.to/alanwest/i-gave-devin-10-real-tasks-it-completed-3-3063 :: article:first :: blocks(p,li,pre,tr,h1,h2,h3)[1]; normalized UTF-16 [0,299)",
+          "context": "Last year, Cognition launched Devin at $500/month and called it the world's first AI software engineer. The internet lost its mind. Engineers panicked. Twitter predicted mass layoffs. Fast forward to 2026, and Devin costs $20/month -- the same price as a Claude Code or Cursor Pro subscription. That price drop tells you everything you need to know about how reality met the hype."
+        },
+        "metadata": {
+          "title": "I Gave Devin 10 Real Tasks. It Completed 3. - DEV Community",
+          "siteName": "dev.to",
+          "author": null,
+          "publishedAt": null,
+          "language": "en",
+          "sourceType": "UNKNOWN",
+          "contentKind": "UNKNOWN",
+          "productVersion": null,
+          "plan": null,
+          "upstreamUrl": null,
+          "independence": "UNKNOWN",
+          "originGroupId": null,
+          "independenceReason": null
+        },
+        "retrievedAt": "2026-10-25T04:14:18.992Z",
+        "readStatus": "READ",
+        "readError": null,
+        "contentHash": "86cb828eddea0f71c1e8fde859730172c2082b1d4aef90f2e14c63e5246597c6"
+      },
+      {
+        "id": "41c3e0c6-11f3-427a-92bf-324c42d3786f",
+        "sourceUrl": "https://www.zhihu.com/question/648372821/answer/55448259493",
+        "originalExcerpt": null,
+        "translation": null,
+        "originalLocation": null,
+        "metadata": {
+          "title": null,
+          "siteName": "www.zhihu.com",
+          "author": null,
+          "publishedAt": null,
+          "language": null,
+          "sourceType": "UNKNOWN",
+          "contentKind": "UNKNOWN",
+          "productVersion": null,
+          "plan": null,
+          "upstreamUrl": null,
+          "independence": "UNKNOWN",
+          "originGroupId": null,
+          "independenceReason": null
+        },
+        "retrievedAt": "2026-10-25T04:14:40.843Z",
+        "readStatus": "RESTRICTED",
+        "readError": "Source HTTP 403",
+        "contentHash": null
+      },
+      {
+        "id": "eb34a2f3-aefd-4420-b6a6-03893c90e85f",
+        "sourceUrl": "https://www.zhihu.com/question/6669943244",
+        "originalExcerpt": null,
+        "translation": null,
+        "originalLocation": null,
+        "metadata": {
+          "title": null,
+          "siteName": "www.zhihu.com",
+          "author": null,
+          "publishedAt": null,
+          "language": null,
+          "sourceType": "UNKNOWN",
+          "contentKind": "UNKNOWN",
+          "productVersion": null,
+          "plan": null,
+          "upstreamUrl": null,
+          "independence": "UNKNOWN",
+          "originGroupId": null,
+          "independenceReason": null
+        },
+        "retrievedAt": "2026-10-25T04:14:40.844Z",
+        "readStatus": "RESTRICTED",
+        "readError": "Source HTTP 403",
+        "contentHash": null
+      }
+    ],
+    "claims": [
+      {
+        "id": "8dc7f5d5-ebd6-4fdb-9d0f-b544550165ee",
+        "statement": "关于知乎上开发者对 Devin 实际能力的评价，现有已读原句中没有可核验的知乎开发者评价内容。",
+        "kind": "FACT",
+        "verificationStatus": "INSUFFICIENT",
+        "verificationReason": "知乎问题页与回答均为HTTP 403，未读取任何知乎原句，无法核验开发者评价内容。",
+        "scope": null
+      },
+      {
+        "id": "6c94ed0d-3123-48fe-968e-7692af089938",
+        "statement": "来源报告（未独立复现）：一篇发布于 dev.to 的文章标题为“I Gave Devin 10 Real Tasks. It Completed 3.”，即该文作者声称为 Devin 执行了 10 个实际任务，其中完成了 3 个。",
+        "kind": "USER_REPORT",
+        "verificationStatus": "SUPPORTED",
+        "verificationReason": "已读原句含该文章标题，可支持标题所述10任务完成3个；仅为作者自述，条件未知。",
+        "scope": "dev.to 文章标题及作者自述，具体评测条件未知"
+      },
+      {
+        "id": "12ce6859-7d05-4f1f-aa5c-3b2441a8923a",
+        "statement": "来源报告（未独立复现）：该 dev.to 文章称，Cognition 去年以每月 500 美元的价格推出 Devin，并称其为世界首个 AI 软件工程师。",
+        "kind": "USER_REPORT",
+        "verificationStatus": "SUPPORTED",
+        "verificationReason": "已读原句明确写Cognition去年以500美元/月推出Devin并称世界首个AI软件工程师，属文章转述。",
+        "scope": "dev.to 文章转述，未给出确切日期"
+      },
+      {
+        "id": "11233433-5fa5-4448-800f-7372e5f6f028",
+        "statement": "来源报告（未独立复现）：该 dev.to 文章称，到 2026 年 Devin 的价格为每月 20 美元，与 Claude Code 或 Cursor Pro 订阅价格相同。",
+        "kind": "USER_REPORT",
+        "verificationStatus": "SUPPORTED",
+        "verificationReason": "已读原句称到2026年Devin为20美元/月，与Claude Code或Cursor Pro订阅同价，属文章所述。",
+        "scope": "dev.to 文章所述 2026 年价格，未给出具体套餐与验证来源"
+      }
+    ],
+    "relations": [
+      {
+        "claimId": "6c94ed0d-3123-48fe-968e-7692af089938",
+        "evidenceId": "ad9ce115-2c24-4462-a884-9dcaa5031f7f",
+        "relation": "SUPPORTS",
+        "reason": "已读原句的标题“I Gave Devin 10 Real Tasks. It Completed 3.”直接支持10任务完成3个的作者自述。"
+      },
+      {
+        "claimId": "12ce6859-7d05-4f1f-aa5c-3b2441a8923a",
+        "evidenceId": "ad9ce115-2c24-4462-a884-9dcaa5031f7f",
+        "relation": "SUPPORTS",
+        "reason": "原句写Cognition去年以500美元/月推出Devin并称世界首个AI软件工程师，与statement各分句一致。"
+      },
+      {
+        "claimId": "11233433-5fa5-4448-800f-7372e5f6f028",
+        "evidenceId": "ad9ce115-2c24-4462-a884-9dcaa5031f7f",
+        "relation": "SUPPORTS",
+        "reason": "原句写2026年Devin为20美元/月、与Claude Code或Cursor Pro订阅同价，支持该价格转述。"
+      },
+      {
+        "claimId": "8dc7f5d5-ebd6-4fdb-9d0f-b544550165ee",
+        "evidenceId": "abfa8a7e-9aec-427f-833c-cca01e7064c7",
+        "relation": "CONTEXT",
+        "reason": "知乎问题页读取遭403，属无法取得知乎评价的读取缺口，不构成对评价内容的支持或反驳。"
+      }
+    ],
+    "conflicts": [],
+    "gaps": [
+      {
+        "id": "3f1b8f5e-7c2a-4c9d-9a51-2d6e0c4b8a71",
+        "claimIds": [
+          "8dc7f5d5-ebd6-4fdb-9d0f-b544550165ee"
+        ],
+        "kind": "READ_FAILED",
+        "description": "知乎问题页及多个知乎回答页均返回HTTP 403，未能读取任何知乎开发者评价原句。",
+        "searchScope": "zhihu.com 问题648314977、648372821、6669943244"
+      },
+      {
+        "id": "a7c2d9e4-5b13-4f86-8e0a-1c9d3b6f2e58",
+        "claimIds": [
+          "8dc7f5d5-ebd6-4fdb-9d0f-b544550165ee"
+        ],
+        "kind": "INSUFFICIENT_EVIDENCE",
+        "description": "未取得任何知乎开发者对Devin实际能力的原始评价语句，无法回答该问题。",
+        "searchScope": "已检索证据集"
+      },
+      {
+        "id": "ec7b0d61-1e86-46de-899f-24991f18651a",
+        "claimIds": [],
+        "kind": "READ_FAILED",
+        "description": "https://www.zhihu.com/question/648314977/answer/3429111822：RESTRICTED；Source HTTP 403",
+        "searchScope": null
+      },
+      {
+        "id": "68947f18-bad1-4d23-85b3-9769d408828f",
+        "claimIds": [],
+        "kind": "READ_FAILED",
+        "description": "https://www.zhihu.com/question/648314977：RESTRICTED；Source HTTP 403",
+        "searchScope": null
+      },
+      {
+        "id": "078e0ddf-6b88-4d50-8323-576e06037187",
+        "claimIds": [],
+        "kind": "READ_FAILED",
+        "description": "https://juejin.cn/post/7680768670986092544：RESTRICTED；Source returned access challenge",
+        "searchScope": null
+      },
+      {
+        "id": "84be8abc-25d7-41f0-a356-b7d35f98fdac",
+        "claimIds": [],
+        "kind": "READ_FAILED",
+        "description": "https://www.toutiao.com/a7697870831686484531：FAILED；No readable article blocks; JavaScript shell/empty page is not original material",
+        "searchScope": null
+      },
+      {
+        "id": "3aa89fa1-e3a8-4f24-bc6a-d1cce2eb2125",
+        "claimIds": [],
+        "kind": "READ_FAILED",
+        "description": "https://www.zhihu.com/question/648372821/answer/55448259493：RESTRICTED；Source HTTP 403",
+        "searchScope": null
+      },
+      {
+        "id": "4be5abc3-3277-477b-b8e7-ee50d42837a6",
+        "claimIds": [],
+        "kind": "READ_FAILED",
+        "description": "https://www.zhihu.com/question/6669943244：RESTRICTED；Source HTTP 403",
+        "searchScope": null
+      }
+    ],
+    "retrievalRecords": [
+      {
+        "id": "c9bd192a-1848-45ac-96a9-0b8f2e909320",
+        "provider": "tencent-yuanbao-search-api",
+        "query": "知乎 开发者 评价 Devin 实际能力 使用体验",
+        "calledAt": "2026-10-25T04:14:11.795Z",
+        "status": "SUCCEEDED",
+        "error": null,
+        "returnedSources": [
+          {
+            "url": "https://vibecoding.app/blog/zh/devin-pingce-2026",
+            "title": "Devin 评测 2026:全自主 AI 软件工程师值得用吗",
+            "snippet": "Devin 评测 2026:全自主 AI 软件工程师值得用吗 Vibecoding。 一个简单 bug 修复可能消耗 1-2 ACU;一个复杂功能可能用掉 10+ ACU。新团队头一个月要密切关注用量。 折算下来: 一个中等任务大概 ¥30-100 Team 版包含 250 ACU,相当于每个任务平均 ¥14 才划算 月用量超过 200 ACU 才推荐升级 Team 国内团队能用吗 几个现实问题: 支付:需要海外信用卡或公司 Stripe 账户。个人开发者难度大,公司订阅相对容易。 网络:Devin 控制台需要稳定的海外网络访问,团队部署需要企业级 VPN。 代码安全:Devin 会读你的代码库,对涉及核心 IP 的项目要谨慎。Enterprise 版本支持 VPC 部署,但价格不公开。 知乎和 V2EX 上的讨论里,国内用 Devin 的团队大多是出海公司或者外资分部。纯内资团队更多选择本地化方案,比如 OpenClaw 完全安装指南 里讲的自托管智能体。 优点和缺点 优点: 真正自主、沙箱安全、可观察、Devin Wiki 自动生成代码文档、API 集成 CI/CD、无限座位。 缺点: ACU 成本不可预测、不能实时结对、需求写不清就烧 ACU、Core 计划 10 个并发上限、执行延迟从分钟到小时。 Devin vs 其他工具 vs Cursor:Cursor 是副驾驶 IDE,你写代码 + AI 辅助。Devin 是自主智能体,你派任务 + 审核结果。两者互补。 vs Claude Code CLI:Claude Code 在终端跑、需要人在回路。Devin 在沙箱跑、完全自主。 vs OpenHands:OpenHands 是 Devin 的开源替代,可自托管,代价是配置复杂。 适合谁 适合:出海团队、想并行实现任务的小团队、偏好「描述需求」的 vibe code...",
+            "adoption": "REJECTED",
+            "adoptionReason": "本轮未读取；搜索摘要不是原文证据。",
+            "evidenceId": null
+          },
+          {
+            "url": "https://dev.to/alanwest/i-gave-devin-10-real-tasks-it-completed-3-3063",
+            "title": "I Gave Devin 10 Real Tasks. It Completed 3.",
+            "snippet": "I Gave Devin 10 Real Tasks. It Completed 3. DEV Community。 Devin produced a single-tenant in-memory cache and called it done. The words \"multi-tenant\" were in the task title. The Numbers Don't Lie Devin's SWE-bench score sits at 13.86%. That benchmark measures the ability to resolve real GitHub issues from popular open-source projects. For context, a strong human developer typically resolves these at 50-70% depending on the project. On Trustpilot, Devin holds a 3.0 out of 5.0 rating. The reviews paint a consistent picture: great for simple tasks, frustrating for anything that requires judgment. My own results -- 3 out of 10 completed, or 30% -- align with what other teams report. Independent testing tends to show 15-30% success rates on tasks that require more than pattern matching. Where ...",
+            "adoption": "ADOPTED",
+            "adoptionReason": "保存原句；是否支持问题由逐主张核查决定。",
+            "evidenceId": "ad9ce115-2c24-4462-a884-9dcaa5031f7f"
+          },
+          {
+            "url": "https://aitoolpick.org/reviews/devin",
+            "title": "Devin Review 2026 — Is It Worth It?",
+            "snippet": "Devin Review 2026 — Is It Worth It? AIToolPick。Devin Review 2026 — Is It Worth It? An honest, hands-on assessment by the AIToolPick editorial team. No sponsored content, no affiliate bias in our scoring. 3.6 / 5 ★★★★☆ Editor's Rating Features 2.3 Ease of Use 4 Value for Money 3.8 Support 4.1 The Bottom Line Devin occupies a respectable middle ground. It handles truly autonomous (handles multi-step engineering tasks) competently enough for engineering teams and enterprise developers, but no free tier prevents it from breaking into the top tier. It can still be the right pick if your priorities align with its strengths, though we recommend comparing it against the leading alternatives before committing. Who is Devin for? Not every tool is right for everyone. Here's who will get the most valu...",
+            "adoption": "REJECTED",
+            "adoptionReason": "本轮未读取；搜索摘要不是原文证据。",
+            "evidenceId": null
+          },
+          {
+            "url": "https://www.toutiao.com/a7697870831686484531",
+            "title": "Devin 号称全自动程序员,我给它一个真实 bug - 今日头条",
+            "snippet": "Devin 号称全自动程序员,我给它一个真实 bug - 今日头条 今日头条。 二是可验证。它改完会跑测试,不是「我觉得修好了」,是「测试过了」。 三是能并行。你可以同时丢给它几个互不相干的 bug,各跑各的,不用排队。 弱的三件事。 一是全局意识。它会解决你描述的那个点,但未必会想「同样的写法还有没有别处」。 二是业务约定。我们代码里有几条没写进文档的规矩,它不知道,改出来的风格和周围不一致。 三是判断力。遇到需要权衡的方案,它会选一个「看起来合理」的,而不是「最适合这个项目」的。举个具体的:改时区时,它本可以只在那一个函数里加一行转换,也可以在工具层统一处理。它选了前者,快,但下次别人再写导出,还得记得加。它不会替你想「哪种改法以后更省事」。 六、所以它到底是不是「全自动程序员」 不是。 它更像一个能独立干活、但需要人带的初级工程师。你给它清晰的任务、明确的验收标准,它能交出可 review 的 PR;你给它一句「优化一下这个模块」,它大概率会跑偏。 宣传里的「全自动」,省略了中间那两个字:有人 review。 七、我现在的用法 第一,只给它边界清晰的任务。有复现步骤、有日志、有测试的 bug,是它最舒服的场景。 第二,验收标准写死。比如「所有现有测试通过,并为这个场景补一个回归测试」,别只说「修一下」。 第三,盯前几步。它的计划如果一开始就偏了,早点叫停,比等它跑完再返工便宜。 第四,PR 必须人看。尤其是跨模块的改动,它可能只改了你指的那一处。 第五,别让它碰安全相关的核心代码。权限、加密、输入校验这些地方,它改得出来,但你未必敢合。 结尾 这次实测,我的评价是:能用,但别神化。 它省掉的是「读代码、写复现、跑测试、提 PR」这几个小时的体力活;省不掉的是「判断该改哪、还有没有别处、这么改合不合规矩」这几步脑力活。 想试的话,别一上来丢一个大需求。挑一个你有复现步骤...",
+            "adoption": "REJECTED",
+            "adoptionReason": "原文不可用：FAILED；No readable article blocks; JavaScript shell/empty page is not original material",
+            "evidenceId": "ab73359c-e0bf-4c21-a14e-16e541769d54"
+          },
+          {
+            "url": "https://juejin.cn/post/7680768670986092544",
+            "title": "Devin估值470亿了,但我的AI编程踩坑史告诉你另一面",
+            "snippet": "Devin估值470亿了,但我的AI编程踩坑史告诉你另一面 稀土掘金。Devin估值470亿了,但我的AI编程踩坑史告诉你另一面 Devin估值470亿了,但我的AI编程踩坑史告诉你另一面 今天看到一条消息差点把咖啡喷屏幕上。 Cognition AI——就是做AI编程代理Devin那家公司——即将完成约10亿美元融资,估值470亿美元。 470亿什么概念?三个月前它刚融完一轮,估值260亿。三个月,翻了将近一倍。 我第一反应不是\"哇好厉害\",而是\"等一下,Devin真的好用吗?\" 因为我是真用过Devin的人。不是看Demo视频吹的,是实打实拿来干过活的人。今天就说说真实体验。 先说Devin到底是什么 如果你不了解,简单说:Devin是Cognition开发的AI编程代理。跟Cursor、Copilot这些\"辅助你写代码\"的工具不同,Devin的定位是\"自己写代码\"——你给它一个任务描述,它自己规划、写代码、跑测试、修bug,理论上你只要等结果就行。 听起来很美好是吧? Cognition靠着这个故事,拿到了近100亿美元的投资意向。营收确实也在涨。投资人的逻辑很简单:AI编程是刚需,市场够大,Devin是赛道头部。 但作为实际用户,我必须说几句实话。 我的Devin使用经历 今年早些时候,我拿到Devin的使用资格后,第一时间拿了个真实项目喂给它。 任务不复杂:给一个Go微服务加个Redis缓存层,缓存接口返回的数据,设置合理的过期策略。 这种活我手写大概半小时,我想看看Devin能多快搞定。 结果呢?Devin花了大概40分钟,产出了三版完全不同的实现方案。第一版,缓存key设计有问题,多个接口共用同一个key导致数据串了。第二版,过期策略写死了,没考虑不同接口的缓存需求不同。第三版,功能倒是实现了,但代码风格跟我现有项目完全不搭——它用了一种很奇怪的分层结构,硬塞...",
+            "adoption": "REJECTED",
+            "adoptionReason": "原文不可用：RESTRICTED；Source returned access challenge",
+            "evidenceId": "208a2d31-64b8-4df6-866e-c07269572bef"
+          },
+          {
+            "url": "https://origin.peerspot.com/products/devin-reviews",
+            "title": "Devin Reviews",
+            "snippet": "Devin Reviews Peerspot。 My main use case for Devin is that it helps me with scripting, troubleshooting, and understanding technical tasks. In an L2 support environment, I often use it to work with scripts or investigate issues I have seen before, and having an AI assistant saves a lot of time. It is also useful for explaining code and suggesting different ways to approach the problem. A specific example of when Devin helped me with a scripting or troubleshooting task is when there was a problem with code that was not working properly. My company does not allow other AIs, but Devin is integrated with Claude, and we were unable to find that bug inside our IDE, so we used Devin, and it was really helpful for us. Devin helped me pinpoint and resolve the bug in that situation with code suggesti...",
+            "adoption": "REJECTED",
+            "adoptionReason": "本轮未读取；搜索摘要不是原文证据。",
+            "evidenceId": null
+          }
+        ]
+      },
+      {
+        "id": "8cf968d7-4490-4cbd-a9c5-a21bba1d614c",
+        "provider": "tavily-search-api:keyless-capped",
+        "query": "知乎 开发者 评价 Devin 实际能力 使用体验",
+        "calledAt": "2026-10-25T04:14:11.795Z",
+        "status": "SUCCEEDED",
+        "error": null,
+        "returnedSources": [
+          {
+            "url": "https://m.36kr.com/p/3130822110386184",
+            "title": "与Devin共事一个月，开发团队吐槽：滤镜碎一地，20个任务只成功了3个-36氪",
+            "snippet": "此外，调试任务中也存在类似问题。当我们调查为什么 SSH 密钥转发在设置脚本中无法正常工作时，Devin 过分关注脚本本身，从未考虑问题可能存在于其他地方。这种“狭窄的视野”意味着它无法帮助我们找到实际的根本原因。同样，当我们要求它在用户输入和数据库值之间进行冲突检查时，一位团队成员花了几个小时试图搞明白提供 Devin 的方案，最终还是决定自己编写该功能，耗时仅约 90 分钟。 ## 团队反思 经过一个月的密集测试，我们团队聚集在一起，并总结了我们对 Devin 的使用经验。以下的几句话可能最能表达我们的感受： Johno Whitaker：“Devin 能完成的任务通常都很小且定义明确，但这种任务还不如我自己做，反而更快；对于那些我认为可能会节省时间的大型任务，它往往又会失败。所以，目前没有什么真正的应用场景让我想用它。” Isaac Flath：“最初我对 Devin 接近成功的状态很兴奋，因为我觉得只需稍作调整即可。但随着需要更改的地方越来越多，我对它越来越失望，最终发现自己不如从头开始，一步步完成。” [...] Hamel Husain：“尽管我们提供了大量的文档和示例，但 Devin 依旧难以使用AnswerAI内部工具，而这些工具对我们来说又至关重要，所以我们都不太爱用它。相比之下，Cursor 等工具就没有这个问题，我们可以逐步引导其向正确的方向发展。” 与 Devin 不同，我们发现由开发者主导工作流程的工具（如 Cursor），可以避免我们在 Devin 中遇到的大部分问题。 ## 结论 与 Devin 合作的过程，展示了自主 AI 开发所追求的理想状态。用户体验是精致的——通过 Slack 聊天、异步观察它工作、看到它设置环境并处理依赖关系。当它运行良好时，确实令人印象深刻。 然而，问题在于——它很少能成功。在我们尝试的 20 项任务中，有 14 次失败，3 次结果不确定，仅有 3 次成功。更令人担忧的是，我们无法预测哪些任务会成功。即使是类似于我们早期成功的任务，也会以复杂且耗时的方式失败。于是，最初看似有前景的自动化功能，反而变成了一种负担——Devin 会在不可能的解决方案上花费数天时间，而不是及时识别出根本性障碍。 [...] ## 初步成功 我们交给 Devin 的第一个任务简单但真实：将 Notion 数据库中的数据导入 Google Sheets。Devin 以惊人的能力完成了这一任务：它找到了 Notion API 文档，理解了所需内容，并指导我一步步设置 Google Cloud Console 中的必要凭证。不同于单纯提供 API 指令，它一步步引导我完成每个菜单的操作和按钮的点击，省去了通常繁琐的文档查找过程。整个过程持续了大约一个小时，其中只有几分钟的人工干预。最终，Devin 分享了一个链接，指向一个格式完美的 Google Sheets 文档，成功完成了数据的导入。 虽然 Devin 生成的代码略显冗长，但确实有效。这也让我们看到了未来的曙光——一个能够处理“胶水代码”任务的 AI，解放了开发者大量的时间。Johno 也成功地使用 Devin 创建了一个行星追踪器，用于反驳关于木星和土星历史位置的说法。特别令人印象深刻的是，他是完全通过手机完成的这个任务，Devin 负责了所有环境设置和代码编写等繁重工作。 ## 扩大我们的测试范围",
+            "adoption": "ADOPTED",
+            "adoptionReason": "保存原句；是否支持问题由逐主张核查决定。",
+            "evidenceId": "e558546e-8729-46f9-b6d1-4ac7cf28b568"
+          },
+          {
+            "url": "https://www.zhihu.com/question/648314977",
+            "title": "如何看待Devin AI software engineer?",
+            "snippet": "Devin具备独立执行复杂编程任务的能力，能够使用开发者工具进行高效的工作，这意味着Devin可以独立完成从端到端的软件开发任务，包括构建和部署程序，查找",
+            "adoption": "REJECTED",
+            "adoptionReason": "原文不可用：RESTRICTED；Source HTTP 403",
+            "evidenceId": "abfa8a7e-9aec-427f-833c-cca01e7064c7"
+          },
+          {
+            "url": "https://www.zhihu.com/question/648372821/answer/55448259493",
+            "title": "全球首位AI 程序员Devin 诞生了，对于程序员的影响到底多大？",
+            "snippet": "... 体验真的超级超级Nice。 WindSurf 具备超强的上下文感知能力，能够在AI 与开发者之间建立实时的协同关系，不需要开发者不断提供工作范围的上下文信息",
+            "adoption": "REJECTED",
+            "adoptionReason": "原文不可用：RESTRICTED；Source HTTP 403",
+            "evidenceId": "41c3e0c6-11f3-427a-92bf-324c42d3786f"
+          },
+          {
+            "url": "https://docs.devin.ai/zh/get-started/devin-intro",
+            "title": "Devin 简介 - Devin Docs",
+            "snippet": "在某些情况下，Devin 的实际表现可能与本文所述并不完全一致，或者文档内容可能已过时。 ## 已注册？立即开始： ## ​ Devin 的优势是什么？ 以下是 Devin 擅长处理的任务类型： 1. 并行处理大量任务，在它们进入你的 待办列表 之前完成 Linear / Jira 工单 从零开始实现完整功能 Bug 报告 应用测试 2. 代码迁移、重构和现代化改造 语言迁移 (例如：JavaScript 到 TypeScript) 框架升级 (例如：Angular 16 -> 18) 从 monorepo 转换为 submodule 移除未使用的 feature flag 将通用代码抽取为公共库 3. 常见且重复的工程任务 PR Review 代码库问答 复现并修复 bug 编写单元测试 维护文档 4. 客户工程支持 构建新集成并对接不熟悉的 API 创建自定义演示 方案原型设计 / 快速原型开发 构建内部工具 [...] ### ​ Devin 界面 Devin 被设计为一个对话式用户界面，你可以在内嵌的 IDE 中实时查看并接管 Devin 的开发过程。Devin 也可以通过 Devin API 使用。 在 Devin 的 Workspace 中，你会看到 Devin 为你完成任务时使用的开发者工具。 ## Shell Devin 的终端，你可以在这里观察命令的执行情况并查看输出日志。你也可以复制 Shell 输出用于调试。如果你想直接运行命令，请使用 IDE 的 Shell。 ## IDE Devin 内嵌的代码编辑器，配备你熟悉的所有 IDE 工具和快捷键。你可以实时跟踪 Devin 的工作，并在需要时接管来运行命令、直接修改代码或测试 Devin 的代码。 ## Browser 你可以看到 Devin 如何浏览文档、测试其构建的 Web 应用程序、下载/上传信息等更多内容。你也可以通过 Interactive Browser 随时介入，帮助 Devin 完成浏览相关任务。 你可以在侧边栏或通过点击会话中的任意进度步骤来找到 Devin 的工具 ## ​ 获取访问权限 [...] > ## Documentation Index > > Fetch the complete documentation index at:</llms.txt> > > Use this file to discover all available pages before exploring further. Devin Docs home pagelight logodark logo 云CLI桌面版企业版用例API美国联邦 开始使用 # Devin 简介 Devin 是一名 AI 软件工程师，专为帮助有雄心的工程团队高效清理积压工作而打造。 Devin 快速导览 Devin 是一名自主工作的 AI 软件工程师，能够编写、运行和测试代码。Devin 可以处理大多数任务 (极其困难的任务除外) 。一个经验法则是：如果你能在三小时内完成某件事情，Devin 大概率也能完成。可以让 Devin 处理 Linear/Jira 工单，实现全新的功能，复现并修复 bug，构建内部工具等！ 在我们的发布说明中了解 Devin 的最新动态！",
+            "adoption": "REJECTED",
+            "adoptionReason": "本轮未读取；搜索摘要不是原文证据。",
+            "evidenceId": null
+          },
+          {
+            "url": "https://www.zhihu.com/question/648314977/answer/3429111822",
+            "title": "如何看待Devin AI software engineer? - 木川AI编程的回答",
+            "snippet": "与其他编程大模型相比，Devin的能力范围和自主性使其成为下一级别的软件开发工具。 3、引领编程领域的人工智能协作体验. Devin的出现改变了人类构建软件的",
+            "adoption": "REJECTED",
+            "adoptionReason": "原文不可用：RESTRICTED；Source HTTP 403",
+            "evidenceId": "2c2e892b-bdd5-48c7-9186-5c5c8957c0b7"
+          },
+          {
+            "url": "https://www.zhihu.com/question/6669943244",
+            "title": "全球首个「AI 程序员」Devin 全面开放，月费500 美元",
+            "snippet": "全球首个“AI 程序员”Devin 于 12 月 11 日全面开放，距离其初次亮相尚不到一年。其开发商 Cognition Labs 宣布，个人开发者",
+            "adoption": "REJECTED",
+            "adoptionReason": "原文不可用：RESTRICTED；Source HTTP 403",
+            "evidenceId": "eb34a2f3-aefd-4420-b6a6-03893c90e85f"
+          }
+        ]
+      },
+      {
+        "id": "f5b44b54-f279-4e27-b16f-2defb4672734",
+        "provider": "tencent-yuanbao-search-api",
+        "query": "site:zhihu.com Devin AI 程序员 实际使用体验 评价",
+        "calledAt": "2026-10-25T04:14:37.834Z",
+        "status": "SUCCEEDED",
+        "error": null,
+        "returnedSources": [
+          {
+            "url": "https://dev.to/prpatel05/a-real-world-coding-story-devin-ai-as-my-co-pilot-548",
+            "title": "A Real-World Coding Story: Devin AI as My Co-Pilot",
+            "snippet": "A Real-World Coding Story: Devin AI as My Co-Pilot DEV Community。 it was more like delegating to a capable assistant. Yes, the calendar time was longer, but my personal time investment was much less than an hour of active coding. I probably spent only a few minutes giving instructions and about 5 minutes total reviewing and commenting. The rest of the time, Devin was on the job autonomously. It’s a trade-off: faster solo vs. parallelized teamwork. If I had 10 such small tasks in a sprint, I could theoretically assign them all to Devin and attend to bigger challenges, checking in occasionally for reviews. That ability to multitask is where a tool like this shows its value. The UI/UX: A Smooth Ride 🎨 I have to come back to Devin’s user experience, because it really enhanced the whole process...",
+            "adoption": "REJECTED",
+            "adoptionReason": "本轮未读取；搜索摘要不是原文证据。",
+            "evidenceId": null
+          },
+          {
+            "url": "https://ugliai.com/en/ai-tools/devin",
+            "title": "Devin Review, Pricing & Guide UgliAI Hub",
+            "snippet": "Devin Review, Pricing & Guide | UgliAI Hub UgliAI Hub。Devin ★★★★ 4.2/5 Pricing Paid Devin is Cognition’s software engineering agent. It is not a traditional autocomplete plugin. It can receive a task, inspect a repository, plan steps, edit files, run commands, debug failures and return a pull request or change summary. Devin represents the shift from GitHub Copilot-style completion toward task-oriented coding agents such as Claude Code, Codex and OpenCode. Its value is highest when a task is clear enough to be delegated: fix a failing test, migrate an API, update documentation, build a small prototype, or handle repetitive issues. It is not a magic senior engineer and it does not remove the need for product judgment, architecture decisions or code review. The best mental model is an asynch...",
+            "adoption": "REJECTED",
+            "adoptionReason": "本轮未读取；搜索摘要不是原文证据。",
+            "evidenceId": null
+          },
+          {
+            "url": "https://instantaitools.com/workflows/devin-ai/",
+            "title": "Devin AI",
+            "snippet": "Devin AI。 Impact on Software Engineers & Jobs The biggest question surrounding Devin AI is not just about its capabilities but its impact on the people who currently perform these tasks. Will Devin AI replace developers, or will it function more as a co-pilot? Will Devin AI Replace Developers? In the short term, the answer is no. While Devin AI is powerful, software engineering involves creativity, design decisions, and collaboration with stakeholders—areas where human judgment is still critical. Devin excels at execution but lacks the broader contextual understanding that human engineers bring. Will Devin AI Work as a Co-Pilot? Yes. Experts suggest that Devin is best viewed as a teammate that takes on repetitive or lower-level tasks. This allows human engineers to focus on higher-value ac...",
+            "adoption": "REJECTED",
+            "adoptionReason": "本轮未读取；搜索摘要不是原文证据。",
+            "evidenceId": null
+          },
+          {
+            "url": "https://dev.to/alanwest/i-gave-devin-10-real-tasks-it-completed-3-3063",
+            "title": "I Gave Devin 10 Real Tasks. It Completed 3.",
+            "snippet": "I Gave Devin 10 Real Tasks. It Completed 3. DEV Community。 Devin produced a single-tenant in-memory cache and called it done. The words \"multi-tenant\" were in the task title. The Numbers Don't Lie Devin's SWE-bench score sits at 13.86%. That benchmark measures the ability to resolve real GitHub issues from popular open-source projects. For context, a strong human developer typically resolves these at 50-70% depending on the project. On Trustpilot, Devin holds a 3.0 out of 5.0 rating. The reviews paint a consistent picture: great for simple tasks, frustrating for anything that requires judgment. My own results -- 3 out of 10 completed, or 30% -- align with what other teams report. Independent testing tends to show 15-30% success rates on tasks that require more than pattern matching. Where ...",
+            "adoption": "ADOPTED",
+            "adoptionReason": "保存原句；是否支持问题由逐主张核查决定。",
+            "evidenceId": "ad9ce115-2c24-4462-a884-9dcaa5031f7f"
+          },
+          {
+            "url": "https://www.hqwc.cn/a/1744208.html",
+            "title": "资讯详情",
+            "snippet": "资讯详情 编程知识。它们各有短板,但整体上已经符合\"工具\"的标准,而不只是\"玩具\"。 2.1 Devin:唯一敢把任务直接甩给它的Agent Devin是我在2024年下半年开始重点关注的平台。作为云端自主Agent,它有自己的工作环境,能自己执行命令、看日志、修改代码、提交PR。我第一次真正用它,是处理一个\"升级内部依赖后测试大面积失败\"的脏活。那批测试分布在六个模块里,报错信息五花八门,我自己一个个改也得花小半天。我把仓库链接交给Devin,在任务描述里写清楚失败版本、期望行为、以及几条我怀疑的出错原因,然后就去开别的会了。 差不多一小时后回来看,它已经定位到两个公共类里的兼容性问题,并且把修复提交成了PR,测试重新跑绿。这个体验确实接近\"给实习生派活\"。它不是神,遇到需求模糊、跨多个业务系统的改动时,经常需要我把任务拆得更细才能继续;而且它的执行速度偏慢,账单也不便宜。但就\"甩手程度\"而言,它是我测过的平台里最接近\"全自主\"的。适合的任务类型很明确:边界清楚、验收标准可写出来的维护型工作,比如依赖升级、单测修复、日志埋点、小范围重构。真让它从白纸开始设计一套复杂架构,还是别抱太大期望。 2.2 Claude Code:终端党绕不开的硬核选手 Claude Code是Anthropic官方出的终端Agent,主要通过命令行跟你交互。它跟IDE插件的最大区别是:你给它权限后,它可以在终端里执行命令、读文件、跑测试,甚至调用git提交代码。我在一个多模块的Python项目里试过它的Plan/Act模式做跨文件重构,它先是把所有相关引用梳理了一遍,然后逐个文件修改,最后跑测试确认,整个过程的思路相当清晰,每一步都在我预期之内。 更让我放心的是权限控制。我可以规定哪些目录它能碰、哪些命令必须经过确认,这在团队协作时很有价值。代价是token消耗非常快,如果你用的是API按量付费...",
+            "adoption": "REJECTED",
+            "adoptionReason": "本轮未读取；搜索摘要不是原文证据。",
+            "evidenceId": null
+          },
+          {
+            "url": "https://techpoint.africa/guide/devin-ai-review",
+            "title": "Devin AI review 2025: I tested it for 5 days — Here’s what I found",
+            "snippet": "Devin AI review 2025: I tested it for 5 days — Here’s what I found Techpoint Africa。 Instead, it drops you straight into what looks and feels like a full-on cloud development environment: terminal, file system, browser preview, and a live chat window where Devin hangs out, waiting to be told what to build. It felt less like a tool and more like I’d just onboarded a remote junior dev with way too much energy. There’s no installation, no API keys, no fiddling with extensions. I logged in, typed my task in plain English, and watched Devin start wiring things together. Not “suggesting” like Copilot. It got straight to doing the work: opening files, writing code, running the terminal, even catching its own bugs and reworking its approach without needing me to spell it out. It’s a shift in minds...",
+            "adoption": "REJECTED",
+            "adoptionReason": "本轮未读取；搜索摘要不是原文证据。",
+            "evidenceId": null
+          }
+        ]
+      }
+    ],
+    "verificationAudit": {
+      "modelCalls": [
+        {
+          "provider": "api.deepseek.com",
+          "model": "deepseek-flash",
+          "promptVersion": "a2-evidence-v4",
+          "temperature": null,
+          "thinkingMode": "DISABLED",
+          "generatedAt": "2026-10-25T04:14:11.791Z",
+          "id": "8edd6984-f336-41bd-b0b9-88763997f99a",
+          "purpose": "investigation-initial-decision",
+          "startedAt": "2026-10-25T04:14:10.378Z",
+          "durationMs": 1413,
+          "outcome": "SUCCEEDED",
+          "inputTokens": 1378,
+          "outputTokens": 119
+        },
+        {
+          "provider": "api.deepseek.com",
+          "model": "deepseek-flash",
+          "promptVersion": "a2-evidence-v4",
+          "temperature": null,
+          "thinkingMode": "DISABLED",
+          "generatedAt": "2026-10-25T04:14:15.354Z",
+          "id": "5447c909-de1a-4b2d-891b-4af604871bc5",
+          "purpose": "investigation-evidence-decision",
+          "startedAt": "2026-10-25T04:14:14.165Z",
+          "durationMs": 1189,
+          "outcome": "SUCCEEDED",
+          "inputTokens": 5996,
+          "outputTokens": 164
+        },
+        {
+          "provider": "api.deepseek.com",
+          "model": "deepseek-flash",
+          "promptVersion": "a2-evidence-v4",
+          "temperature": null,
+          "thinkingMode": "DISABLED",
+          "generatedAt": "2026-10-25T04:14:17.432Z",
+          "id": "266d44a9-a3d3-4724-874f-8b103b796b47",
+          "purpose": "investigation-evidence-decision",
+          "startedAt": "2026-10-25T04:14:15.490Z",
+          "durationMs": 1942,
+          "outcome": "SUCCEEDED",
+          "inputTokens": 6632,
+          "outputTokens": 336
+        },
+        {
+          "provider": "api.deepseek.com",
+          "model": "deepseek-flash",
+          "promptVersion": "a2-evidence-v4",
+          "temperature": null,
+          "thinkingMode": "DISABLED",
+          "generatedAt": "2026-10-25T04:14:22.675Z",
+          "id": "963f30d3-0bb1-4d50-bfd7-7af319e31d8c",
+          "purpose": "investigation-evidence-decision",
+          "startedAt": "2026-10-25T04:14:18.999Z",
+          "durationMs": 3676,
+          "outcome": "SUCCEEDED",
+          "inputTokens": 8176,
+          "outputTokens": 390
+        },
+        {
+          "provider": "api.deepseek.com",
+          "model": "deepseek-flash",
+          "promptVersion": "a2-evidence-v4",
+          "temperature": null,
+          "thinkingMode": "DISABLED",
+          "generatedAt": "2026-10-25T04:14:24.683Z",
+          "id": "c7e0a44d-a3c1-4308-b1e6-c18ba6e0926e",
+          "purpose": "claim-extraction",
+          "startedAt": "2026-10-25T04:14:22.681Z",
+          "durationMs": 2001,
+          "outcome": "SUCCEEDED",
+          "inputTokens": 1502,
+          "outputTokens": 208
+        },
+        {
+          "provider": "api.deepseek.com",
+          "model": "deepseek-flash",
+          "promptVersion": "a2-evidence-v4",
+          "temperature": null,
+          "thinkingMode": "DISABLED",
+          "generatedAt": "2026-10-25T04:14:29.928Z",
+          "id": "e06ca8d6-f72b-471a-b753-9a07758c1051",
+          "purpose": "claim-evidence-verification",
+          "startedAt": "2026-10-25T04:14:24.683Z",
+          "durationMs": 5245,
+          "outcome": "SUCCEEDED",
+          "inputTokens": 3857,
+          "outputTokens": 1182
+        },
+        {
+          "provider": "api.deepseek.com",
+          "model": "deepseek-flash",
+          "promptVersion": "a2-evidence-v4",
+          "temperature": null,
+          "thinkingMode": "DISABLED",
+          "generatedAt": "2026-10-25T04:14:36.224Z",
+          "id": "2d7a7693-76fc-4c1b-98bb-057abc3e7b2c",
+          "purpose": "claim-evidence-verification:validation-repair",
+          "startedAt": "2026-10-25T04:14:29.929Z",
+          "durationMs": 6298,
+          "outcome": "SUCCEEDED",
+          "inputTokens": 3930,
+          "outputTokens": 1520
+        },
+        {
+          "provider": "api.deepseek.com",
+          "model": "deepseek-flash",
+          "promptVersion": "a2-evidence-v4",
+          "temperature": null,
+          "thinkingMode": "DISABLED",
+          "generatedAt": "2026-10-25T04:14:37.829Z",
+          "id": "12622663-0709-4d45-9373-09e30304a917",
+          "purpose": "investigation-evidence-decision",
+          "startedAt": "2026-10-25T04:14:36.225Z",
+          "durationMs": 1604,
+          "outcome": "SUCCEEDED",
+          "inputTokens": 9660,
+          "outputTokens": 234
+        },
+        {
+          "provider": "api.deepseek.com",
+          "model": "deepseek-flash",
+          "promptVersion": "a2-evidence-v4",
+          "temperature": null,
+          "thinkingMode": "DISABLED",
+          "generatedAt": "2026-10-25T04:14:40.734Z",
+          "id": "1126f8ed-62b7-4dcf-b035-eaea6a5e7cb7",
+          "purpose": "investigation-evidence-decision",
+          "startedAt": "2026-10-25T04:14:38.459Z",
+          "durationMs": 2274,
+          "outcome": "SUCCEEDED",
+          "inputTokens": 11805,
+          "outputTokens": 271
+        },
+        {
+          "provider": "api.deepseek.com",
+          "model": "deepseek-flash",
+          "promptVersion": "a2-evidence-v4",
+          "temperature": null,
+          "thinkingMode": "DISABLED",
+          "generatedAt": "2026-10-25T04:14:43.730Z",
+          "id": "dabad3d3-2ae5-4bdb-8624-6fb78230eae2",
+          "purpose": "investigation-evidence-decision",
+          "startedAt": "2026-10-25T04:14:40.845Z",
+          "durationMs": 2885,
+          "outcome": "SUCCEEDED",
+          "inputTokens": 12547,
+          "outputTokens": 437
+        },
+        {
+          "provider": "api.deepseek.com",
+          "model": "deepseek-flash",
+          "promptVersion": "a2-evidence-v4",
+          "temperature": null,
+          "thinkingMode": "DISABLED",
+          "generatedAt": "2026-10-25T04:14:45.832Z",
+          "id": "83bdeeb9-a9e8-4e77-b655-72711722003a",
+          "purpose": "claim-extraction",
+          "startedAt": "2026-10-25T04:14:43.734Z",
+          "durationMs": 2098,
+          "outcome": "SUCCEEDED",
+          "inputTokens": 1502,
+          "outputTokens": 246
+        },
+        {
+          "provider": "api.deepseek.com",
+          "model": "deepseek-flash",
+          "promptVersion": "a2-evidence-v4",
+          "temperature": null,
+          "thinkingMode": "DISABLED",
+          "generatedAt": "2026-10-25T04:14:53.814Z",
+          "id": "2f8f5cd6-f54b-4f81-8f71-ce7c899404ef",
+          "purpose": "claim-evidence-verification",
+          "startedAt": "2026-10-25T04:14:45.833Z",
+          "durationMs": 7981,
+          "outcome": "SUCCEEDED",
+          "inputTokens": 4270,
+          "outputTokens": 1849
+        },
+        {
+          "provider": "api.deepseek.com",
+          "model": "deepseek-flash",
+          "promptVersion": "a2-evidence-v4",
+          "temperature": null,
+          "thinkingMode": "DISABLED",
+          "generatedAt": "2026-10-25T04:14:58.766Z",
+          "id": "c6772453-933d-49c4-ae2c-f054594d7212",
+          "purpose": "claim-evidence-verification:validation-repair",
+          "startedAt": "2026-10-25T04:14:53.817Z",
+          "durationMs": 4949,
+          "outcome": "SUCCEEDED",
+          "inputTokens": 4348,
+          "outputTokens": 1159
+        },
+        {
+          "provider": "api.deepseek.com",
+          "model": "deepseek-flash",
+          "promptVersion": "a2-evidence-v4",
+          "temperature": null,
+          "thinkingMode": "DISABLED",
+          "generatedAt": "2026-10-25T04:15:01.221Z",
+          "id": "aea17ede-78f2-4ac8-911d-e4e5796b2544",
+          "purpose": "investigation-evidence-decision",
+          "startedAt": "2026-10-25T04:14:58.768Z",
+          "durationMs": 2453,
+          "outcome": "SUCCEEDED",
+          "inputTokens": 12752,
+          "outputTokens": 431
+        },
+        {
+          "provider": "api.deepseek.com",
+          "model": "deepseek-flash",
+          "promptVersion": "a2-evidence-v4",
+          "temperature": null,
+          "thinkingMode": "DISABLED",
+          "generatedAt": "2026-10-25T04:15:01.821Z",
+          "id": "1868e925-228f-4b68-8287-f0376e0523b9",
+          "purpose": "cited-answer-selection",
+          "startedAt": "2026-10-25T04:15:01.230Z",
+          "durationMs": 591,
+          "outcome": "SUCCEEDED",
+          "inputTokens": 1276,
+          "outputTokens": 6
+        }
+      ],
+      "review": {
+        "status": "NOT_CONFIGURED",
+        "reason": "未配置第二模型；不声称完成独立模型复核或精度提高。",
+        "independentAssessment": null,
+        "findings": []
+      },
+      "citationChecks": [],
+      "followup": {
+        "queriesUsed": 1,
+        "maxQueries": 2,
+        "stopReason": "模型选择结束，已执行2轮搜索、8次读取；具体决策理由保留在记录中，事实与未解决项以最终原句核查为准。"
+      },
+      "investigationLoop": {
+        "startedAt": "2026-10-25T04:14:10.370Z",
+        "durationMs": 51455,
+        "totalBudgetMs": 180000,
+        "answerReserveMs": 45000,
+        "maxSearchRounds": 3,
+        "searchRounds": 2,
+        "maxReads": 10,
+        "readsUsed": 8,
+        "stopReason": "模型选择结束，已执行2轮搜索、8次读取；具体决策理由保留在记录中，事实与未解决项以最终原句核查为准。",
+        "httpAttempts": [
+          {
+            "url": "https://api.wsa.cloud.tencent.com/SearchPro",
+            "method": "POST",
+            "startedAt": "2026-10-25T04:14:11.796Z",
+            "finishedAt": "2026-10-25T04:14:12.399Z",
+            "requestSent": true,
+            "status": 200,
+            "error": null,
+            "ownerId": "c9bd192a-1848-45ac-96a9-0b8f2e909320"
+          },
+          {
+            "url": "https://api.tavily.com/search",
+            "method": "POST",
+            "startedAt": "2026-10-25T04:14:11.795Z",
+            "finishedAt": "2026-10-25T04:14:14.164Z",
+            "requestSent": true,
+            "status": 200,
+            "error": null,
+            "ownerId": "8cf968d7-4490-4cbd-a9c5-a21bba1d614c"
+          },
+          {
+            "url": "https://www.zhihu.com/question/648314977/answer/3429111822",
+            "method": "GET",
+            "startedAt": "2026-10-25T04:14:15.367Z",
+            "finishedAt": "2026-10-25T04:14:15.478Z",
+            "requestSent": true,
+            "status": 403,
+            "error": null,
+            "ownerId": "2c2e892b-bdd5-48c7-9186-5c5c8957c0b7"
+          },
+          {
+            "url": "https://www.zhihu.com/question/648314977",
+            "method": "GET",
+            "startedAt": "2026-10-25T04:14:15.367Z",
+            "finishedAt": "2026-10-25T04:14:15.489Z",
+            "requestSent": true,
+            "status": 403,
+            "error": null,
+            "ownerId": "abfa8a7e-9aec-427f-833c-cca01e7064c7"
+          },
+          {
+            "url": "https://m.36kr.com/p/3130822110386184",
+            "method": "GET",
+            "startedAt": "2026-10-25T04:14:17.438Z",
+            "finishedAt": "2026-10-25T04:14:17.749Z",
+            "requestSent": true,
+            "status": 301,
+            "error": null,
+            "ownerId": "e558546e-8729-46f9-b6d1-4ac7cf28b568"
+          },
+          {
+            "url": "https://36kr.com/p/3130822110386184",
+            "method": "GET",
+            "startedAt": "2026-10-25T04:14:17.624Z",
+            "finishedAt": "2026-10-25T04:14:17.749Z",
+            "requestSent": true,
+            "status": 200,
+            "error": null,
+            "ownerId": "e558546e-8729-46f9-b6d1-4ac7cf28b568"
+          },
+          {
+            "url": "https://juejin.cn/post/7680768670986092544",
+            "method": "GET",
+            "startedAt": "2026-10-25T04:14:17.438Z",
+            "finishedAt": "2026-10-25T04:14:17.713Z",
+            "requestSent": true,
+            "status": 200,
+            "error": null,
+            "ownerId": "208a2d31-64b8-4df6-866e-c07269572bef"
+          },
+          {
+            "url": "https://www.toutiao.com/a7697870831686484531",
+            "method": "GET",
+            "startedAt": "2026-10-25T04:14:17.438Z",
+            "finishedAt": "2026-10-25T04:14:17.864Z",
+            "requestSent": true,
+            "status": 301,
+            "error": null,
+            "ownerId": "ab73359c-e0bf-4c21-a14e-16e541769d54"
+          },
+          {
+            "url": "https://www.toutiao.com/article/7697870831686484531/",
+            "method": "GET",
+            "startedAt": "2026-10-25T04:14:17.662Z",
+            "finishedAt": "2026-10-25T04:14:17.864Z",
+            "requestSent": true,
+            "status": 200,
+            "error": null,
+            "ownerId": "ab73359c-e0bf-4c21-a14e-16e541769d54"
+          },
+          {
+            "url": "https://dev.to/alanwest/i-gave-devin-10-real-tasks-it-completed-3-3063",
+            "method": "GET",
+            "startedAt": "2026-10-25T04:14:17.438Z",
+            "finishedAt": "2026-10-25T04:14:18.992Z",
+            "requestSent": true,
+            "status": 200,
+            "error": null,
+            "ownerId": "ad9ce115-2c24-4462-a884-9dcaa5031f7f"
+          },
+          {
+            "url": "https://api.wsa.cloud.tencent.com/SearchPro",
+            "method": "POST",
+            "startedAt": "2026-10-25T04:14:37.834Z",
+            "finishedAt": "2026-10-25T04:14:38.458Z",
+            "requestSent": true,
+            "status": 200,
+            "error": null,
+            "ownerId": "f5b44b54-f279-4e27-b16f-2defb4672734"
+          },
+          {
+            "url": "https://www.zhihu.com/question/648372821/answer/55448259493",
+            "method": "GET",
+            "startedAt": "2026-10-25T04:14:40.740Z",
+            "finishedAt": "2026-10-25T04:14:40.843Z",
+            "requestSent": true,
+            "status": 403,
+            "error": null,
+            "ownerId": "41c3e0c6-11f3-427a-92bf-324c42d3786f"
+          },
+          {
+            "url": "https://www.zhihu.com/question/6669943244",
+            "method": "GET",
+            "startedAt": "2026-10-25T04:14:40.740Z",
+            "finishedAt": "2026-10-25T04:14:40.844Z",
+            "requestSent": true,
+            "status": 403,
+            "error": null,
+            "ownerId": "eb34a2f3-aefd-4420-b6a6-03893c90e85f"
+          }
+        ],
+        "collectionDiagnostics": [],
+        "decisions": [
+          {
+            "step": 1,
+            "decidedAt": "2026-10-25T04:14:11.791Z",
+            "remainingMs": 178579,
+            "decision": {
+              "action": "SEARCH",
+              "query": "知乎 开发者 评价 Devin 实际能力 使用体验",
+              "entries": [
+                "yuanbao",
+                "tavily"
+              ],
+              "readUrls": [],
+              "reason": "需要先获取知乎上开发者关于 Devin 实际能力的讨论与使用报告，首轮按规则使用元宝并同时使用可用的 Tavily 入口。",
+              "observedGap": "当前没有任何证据，缺少知乎开发者对 Devin 实际能力的评价内容。",
+              "basisEvidenceIds": [],
+              "basisRecordIds": [],
+              "clarification": null,
+              "discoveredIdentity": null
+            },
+            "availableEvidenceIds": [],
+            "availableRecordIds": [],
+            "outcome": "EXECUTED",
+            "detail": "实际入口：yuanbao,tavily；返回记录：c9bd192a-1848-45ac-96a9-0b8f2e909320:SUCCEEDED,8cf968d7-4490-4cbd-a9c5-a21bba1d614c:SUCCEEDED。"
+          },
+          {
+            "step": 2,
+            "decidedAt": "2026-10-25T04:14:15.354Z",
+            "remainingMs": 175016,
+            "decision": {
+              "action": "READ",
+              "query": "知乎 回答 Devin 实际能力",
+              "entries": [],
+              "readUrls": [
+                "https://www.zhihu.com/question/648314977/answer/3429111822",
+                "https://www.zhihu.com/question/648314977"
+              ],
+              "reason": "搜索已返回知乎相关问答页与一篇知乎回答。需要读取知乎原句，确认开发者对 Devin 实际能力的评价，摘要不算证据。",
+              "observedGap": "尚无已读原句；知乎开发者对 Devin 实际能力的具体评价内容缺失。",
+              "basisEvidenceIds": [],
+              "basisRecordIds": [
+                "8cf968d7-4490-4cbd-a9c5-a21bba1d614c"
+              ],
+              "clarification": null,
+              "discoveredIdentity": null
+            },
+            "availableEvidenceIds": [],
+            "availableRecordIds": [
+              "c9bd192a-1848-45ac-96a9-0b8f2e909320",
+              "8cf968d7-4490-4cbd-a9c5-a21bba1d614c"
+            ],
+            "outcome": "EXECUTED",
+            "detail": "已尝试读取：https://www.zhihu.com/question/648314977/answer/3429111822,https://www.zhihu.com/question/648314977；累计保存2份原文状态。"
+          },
+          {
+            "step": 3,
+            "decidedAt": "2026-10-25T04:14:17.432Z",
+            "remainingMs": 172937,
+            "decision": {
+              "action": "READ",
+              "query": "Devin 实际能力 开发者评价",
+              "entries": [],
+              "readUrls": [
+                "https://m.36kr.com/p/3130822110386184",
+                "https://juejin.cn/post/7680768670986092544",
+                "https://www.toutiao.com/a7697870831686484531",
+                "https://dev.to/alanwest/i-gave-devin-10-real-tasks-it-completed-3-3063"
+              ],
+              "reason": "知乎原页返回403，无法读取知乎原句。已返回的搜索结果中，36氪转述了开发团队一个月实测数据（20任务仅3成功），掘金为开发者第一人称使用体验，头条为真实bug实测，dev.to为10任务完成3个的开发者复盘，可直接提供开发者对Devin实际能力的评价原文。",
+              "observedGap": "知乎页面受403限制无法读取原句，尚缺开发者实测评价的已读原文；上述来源可部分替代知乎开发者使用报告。",
+              "basisEvidenceIds": [
+                "2c2e892b-bdd5-48c7-9186-5c5c8957c0b7",
+                "abfa8a7e-9aec-427f-833c-cca01e7064c7"
+              ],
+              "basisRecordIds": [
+                "8cf968d7-4490-4cbd-a9c5-a21bba1d614c",
+                "c9bd192a-1848-45ac-96a9-0b8f2e909320"
+              ],
+              "clarification": null,
+              "discoveredIdentity": null
+            },
+            "availableEvidenceIds": [
+              "2c2e892b-bdd5-48c7-9186-5c5c8957c0b7",
+              "abfa8a7e-9aec-427f-833c-cca01e7064c7"
+            ],
+            "availableRecordIds": [
+              "c9bd192a-1848-45ac-96a9-0b8f2e909320",
+              "8cf968d7-4490-4cbd-a9c5-a21bba1d614c"
+            ],
+            "outcome": "EXECUTED",
+            "detail": "已尝试读取：https://m.36kr.com/p/3130822110386184,https://juejin.cn/post/7680768670986092544,https://www.toutiao.com/a7697870831686484531,https://dev.to/alanwest/i-gave-devin-10-real-tasks-it-completed-3-3063；累计保存6份原文状态。"
+          },
+          {
+            "step": 4,
+            "decidedAt": "2026-10-25T04:14:22.675Z",
+            "remainingMs": 167695,
+            "decision": {
+              "action": "FINISH",
+              "query": null,
+              "entries": [],
+              "readUrls": [],
+              "reason": "知乎原页与回答页均返回 HTTP 403，无法读取知乎原句，已诚实失败；但已读材料覆盖了开发者对 Devin 实际能力的实测评价：36氪开发者团队一个月测试 20 个任务仅 3 个成功，并给出多项具体评价（Devin 能完成小而明确的任务，但大型任务常失败，无法预测成功任务）；dev.to 开发者 10 个真实任务完成 3 个，称简单任务可以、需要判断力时令人沮丧；用户问题所问的知乎讨论无法直接取证，但已有多位开发者实测报告可供作答，并需明确说明知乎来源受访问限制未被读取。",
+              "observedGap": "知乎问答页及回答页均因 HTTP 403 无法读取原句，缺少知乎平台上开发者对 Devin 实际能力的直接评价原文；36氪、dev.to 提供了开发者实测评价作为替代证据。",
+              "basisEvidenceIds": [
+                "e558546e-8729-46f9-b6d1-4ac7cf28b568",
+                "ad9ce115-2c24-4462-a884-9dcaa5031f7f",
+                "2c2e892b-bdd5-48c7-9186-5c5c8957c0b7",
+                "abfa8a7e-9aec-427f-833c-cca01e7064c7"
+              ],
+              "basisRecordIds": [
+                "8cf968d7-4490-4cbd-a9c5-a21bba1d614c",
+                "c9bd192a-1848-45ac-96a9-0b8f2e909320"
+              ],
+              "clarification": null,
+              "discoveredIdentity": null
+            },
+            "availableEvidenceIds": [
+              "2c2e892b-bdd5-48c7-9186-5c5c8957c0b7",
+              "abfa8a7e-9aec-427f-833c-cca01e7064c7",
+              "208a2d31-64b8-4df6-866e-c07269572bef",
+              "e558546e-8729-46f9-b6d1-4ac7cf28b568",
+              "ab73359c-e0bf-4c21-a14e-16e541769d54",
+              "ad9ce115-2c24-4462-a884-9dcaa5031f7f"
+            ],
+            "availableRecordIds": [
+              "c9bd192a-1848-45ac-96a9-0b8f2e909320",
+              "8cf968d7-4490-4cbd-a9c5-a21bba1d614c"
+            ],
+            "outcome": "REJECTED",
+            "detail": "逐主张核查发现缺口或未决项，已将核查结果交回下一轮决策；由模型决定定向补查或如实结束。"
+          },
+          {
+            "step": 5,
+            "decidedAt": "2026-10-25T04:14:37.829Z",
+            "remainingMs": 152537,
+            "decision": {
+              "action": "SEARCH",
+              "query": "site:zhihu.com Devin AI 程序员 实际使用体验 评价",
+              "entries": [
+                "yuanbao"
+              ],
+              "readUrls": [],
+              "reason": "知乎原问题页与回答页均HTTP 403，未取得任何知乎原句；上一轮已读的36氪和dev.to提供了同主题开发者实测，但问题明确问知乎评价，需针对知乎域名构造查询，尝试取得可读的知乎讨论或转载原句。",
+              "observedGap": "缺少知乎平台上开发者对Dev in实际能力的可直接读取原文；已有实测评价来自36氪和dev.to，非知乎。",
+              "basisEvidenceIds": [
+                "abfa8a7e-9aec-427f-833c-cca01e7064c7",
+                "2c2e892b-bdd5-48c7-9186-5c5c8957c0b7"
+              ],
+              "basisRecordIds": [
+                "8cf968d7-4490-4cbd-a9c5-a21bba1d614c"
+              ],
+              "clarification": null,
+              "discoveredIdentity": null
+            },
+            "availableEvidenceIds": [
+              "2c2e892b-bdd5-48c7-9186-5c5c8957c0b7",
+              "abfa8a7e-9aec-427f-833c-cca01e7064c7",
+              "208a2d31-64b8-4df6-866e-c07269572bef",
+              "e558546e-8729-46f9-b6d1-4ac7cf28b568",
+              "ab73359c-e0bf-4c21-a14e-16e541769d54",
+              "ad9ce115-2c24-4462-a884-9dcaa5031f7f"
+            ],
+            "availableRecordIds": [
+              "c9bd192a-1848-45ac-96a9-0b8f2e909320",
+              "8cf968d7-4490-4cbd-a9c5-a21bba1d614c"
+            ],
+            "outcome": "EXECUTED",
+            "detail": "实际入口：yuanbao；返回记录：f5b44b54-f279-4e27-b16f-2defb4672734:SUCCEEDED。"
+          },
+          {
+            "step": 6,
+            "decidedAt": "2026-10-25T04:14:40.734Z",
+            "remainingMs": 149633,
+            "decision": {
+              "action": "READ",
+              "query": "Devin 实际能力 开发者评价",
+              "entries": [],
+              "readUrls": [
+                "https://www.zhihu.com/question/648372821/answer/55448259493",
+                "https://www.zhihu.com/question/6669943244"
+              ],
+              "reason": "上一轮针对知乎域名检索返回了两条此前未被读取的知乎页面：一条知乎回答（648372821 下 55448259493）和一条知乎问题（6669943244）。问题明确问知乎开发者评价，这两条是仅存的知乎原句候选；需尝试读取，若仍 403 则诚实说明知乎不可取证。",
+              "observedGap": "知乎问题648314977及其回答均HTTP 403；本轮检索新出现的两个知乎页面尚未尝试读取，缺知乎开发者可直接读取原句。",
+              "basisEvidenceIds": [
+                "abfa8a7e-9aec-427f-833c-cca01e7064c7",
+                "2c2e892b-bdd5-48c7-9186-5c5c8957c0b7"
+              ],
+              "basisRecordIds": [
+                "f5b44b54-f279-4e27-b16f-2defb4672734"
+              ],
+              "clarification": null,
+              "discoveredIdentity": null
+            },
+            "availableEvidenceIds": [
+              "2c2e892b-bdd5-48c7-9186-5c5c8957c0b7",
+              "abfa8a7e-9aec-427f-833c-cca01e7064c7",
+              "208a2d31-64b8-4df6-866e-c07269572bef",
+              "e558546e-8729-46f9-b6d1-4ac7cf28b568",
+              "ab73359c-e0bf-4c21-a14e-16e541769d54",
+              "ad9ce115-2c24-4462-a884-9dcaa5031f7f"
+            ],
+            "availableRecordIds": [
+              "c9bd192a-1848-45ac-96a9-0b8f2e909320",
+              "8cf968d7-4490-4cbd-a9c5-a21bba1d614c",
+              "f5b44b54-f279-4e27-b16f-2defb4672734"
+            ],
+            "outcome": "EXECUTED",
+            "detail": "已尝试读取：https://www.zhihu.com/question/648372821/answer/55448259493,https://www.zhihu.com/question/6669943244；累计保存8份原文状态。"
+          },
+          {
+            "step": 7,
+            "decidedAt": "2026-10-25T04:14:43.730Z",
+            "remainingMs": 146637,
+            "decision": {
+              "action": "FINISH",
+              "query": null,
+              "entries": [],
+              "readUrls": [],
+              "reason": "知乎问题页与回答页多次尝试均返回 HTTP 403，且针对 site:zhihu.com 的补搜仍未取得任何可读的知乎原句；知乎平台评价无法直接取证。已读原句提供了开发者实测层面的替代评价：36氪转述的开发者团队一个月测试 20 项任务仅 3 项成功、3 项结果不确定、14 项失败，并引述开发者称其只能胜任小且定义明确的任务、大型任务常失败且难以预测成功；dev.to 开发者 10 项真实任务完成 3 项，称简单任务尚可、需判断力时令人沮丧。据此作答并明确说明知乎来源受访问限制、未能取得。",
+              "observedGap": "缺少知乎平台上开发者对 Devin 实际能力的可直接读取原句（所有知乎页面均 HTTP 403）；现有开发者实测评价来自 36氪转述的开发者团队报告与 dev.to 单次测试，非知乎来源，且 20 项任务的具体判定口径未在原句中保留。",
+              "basisEvidenceIds": [
+                "e558546e-8729-46f9-b6d1-4ac7cf28b568",
+                "ad9ce115-2c24-4462-a884-9dcaa5031f7f",
+                "abfa8a7e-9aec-427f-833c-cca01e7064c7",
+                "41c3e0c6-11f3-427a-92bf-324c42d3786f"
+              ],
+              "basisRecordIds": [
+                "8cf968d7-4490-4cbd-a9c5-a21bba1d614c",
+                "c9bd192a-1848-45ac-96a9-0b8f2e909320",
+                "f5b44b54-f279-4e27-b16f-2defb4672734"
+              ],
+              "clarification": null,
+              "discoveredIdentity": null
+            },
+            "availableEvidenceIds": [
+              "2c2e892b-bdd5-48c7-9186-5c5c8957c0b7",
+              "abfa8a7e-9aec-427f-833c-cca01e7064c7",
+              "208a2d31-64b8-4df6-866e-c07269572bef",
+              "e558546e-8729-46f9-b6d1-4ac7cf28b568",
+              "ab73359c-e0bf-4c21-a14e-16e541769d54",
+              "ad9ce115-2c24-4462-a884-9dcaa5031f7f",
+              "41c3e0c6-11f3-427a-92bf-324c42d3786f",
+              "eb34a2f3-aefd-4420-b6a6-03893c90e85f"
+            ],
+            "availableRecordIds": [
+              "c9bd192a-1848-45ac-96a9-0b8f2e909320",
+              "8cf968d7-4490-4cbd-a9c5-a21bba1d614c",
+              "f5b44b54-f279-4e27-b16f-2defb4672734"
+            ],
+            "outcome": "REJECTED",
+            "detail": "逐主张核查发现缺口或未决项，已将核查结果交回下一轮决策；由模型决定定向补查或如实结束。"
+          },
+          {
+            "step": 8,
+            "decidedAt": "2026-10-25T04:15:01.221Z",
+            "remainingMs": 129145,
+            "decision": {
+              "action": "FINISH",
+              "query": null,
+              "entries": [],
+              "readUrls": [],
+              "reason": "知乎问题页与回答页已多次尝试读取，均返回 HTTP 403；针对 site:zhihu.com 的定向补搜也只返回新的知乎受限页面，无任何可读知乎原句。搜索轮次已用尽，无法再通过检索取得知乎平台上的开发者评价。已读原句提供了同主题的开发者实测评价：36氪转述的开发者团队一个月测试 20 项任务仅 3 项成功、14 项失败，开发者称其只适合小而明确的任务、大型任务常失败且成功难以预测；dev.to 开发者 10 项真实任务完成 3 项，称简单任务尚可、需判断力时令人沮丧。可据此作答，并明确说明知乎来源因访问限制未能取证。",
+              "observedGap": "缺少知乎平台上开发者对 Devin 实际能力的可直接读取原句，所有知乎页面均 HTTP 403；现有评价来自 36氪转述的开发者团队报告与 dev.to 单次测试，非知乎来源。",
+              "basisEvidenceIds": [
+                "e558546e-8729-46f9-b6d1-4ac7cf28b568",
+                "ad9ce115-2c24-4462-a884-9dcaa5031f7f",
+                "abfa8a7e-9aec-427f-833c-cca01e7064c7",
+                "41c3e0c6-11f3-427a-92bf-324c42d3786f"
+              ],
+              "basisRecordIds": [
+                "8cf968d7-4490-4cbd-a9c5-a21bba1d614c",
+                "c9bd192a-1848-45ac-96a9-0b8f2e909320",
+                "f5b44b54-f279-4e27-b16f-2defb4672734"
+              ],
+              "clarification": null,
+              "discoveredIdentity": null
+            },
+            "availableEvidenceIds": [
+              "2c2e892b-bdd5-48c7-9186-5c5c8957c0b7",
+              "abfa8a7e-9aec-427f-833c-cca01e7064c7",
+              "208a2d31-64b8-4df6-866e-c07269572bef",
+              "e558546e-8729-46f9-b6d1-4ac7cf28b568",
+              "ab73359c-e0bf-4c21-a14e-16e541769d54",
+              "ad9ce115-2c24-4462-a884-9dcaa5031f7f",
+              "41c3e0c6-11f3-427a-92bf-324c42d3786f",
+              "eb34a2f3-aefd-4420-b6a6-03893c90e85f"
+            ],
+            "availableRecordIds": [
+              "c9bd192a-1848-45ac-96a9-0b8f2e909320",
+              "8cf968d7-4490-4cbd-a9c5-a21bba1d614c",
+              "f5b44b54-f279-4e27-b16f-2defb4672734"
+            ],
+            "outcome": "STOPPED",
+            "detail": "知乎问题页与回答页已多次尝试读取，均返回 HTTP 403；针对 site:zhihu.com 的定向补搜也只返回新的知乎受限页面，无任何可读知乎原句。搜索轮次已用尽，无法再通过检索取得知乎平台上的开发者评价。已读原句提供了同主题的开发者实测评价：36氪转述的开发者团队一个月测试 20 项任务仅 3 项成功、14 项失败，开发者称其只适合小而明确的任务、大型任务常失败且成功难以预测；dev.to 开发者 10 项真实任务完成 3 项，称简单任务尚可、需判断力时令人沮丧。可据此作答，并明确说明知乎来源因访问限制未能取证。"
+          }
+        ],
+        "collectionCalls": [
+          {
+            "operation": "search:yuanbao",
+            "target": "知乎 开发者 评价 Devin 实际能力 使用体验",
+            "startedAt": "2026-10-25T04:14:11.795Z",
+            "durationMs": 605,
+            "outcome": "SUCCEEDED",
+            "resultId": "c9bd192a-1848-45ac-96a9-0b8f2e909320",
+            "error": null
+          },
+          {
+            "operation": "search:tavily",
+            "target": "知乎 开发者 评价 Devin 实际能力 使用体验",
+            "startedAt": "2026-10-25T04:14:11.795Z",
+            "durationMs": 2370,
+            "outcome": "SUCCEEDED",
+            "resultId": "8cf968d7-4490-4cbd-a9c5-a21bba1d614c",
+            "error": null
+          },
+          {
+            "operation": "read",
+            "target": "https://www.zhihu.com/question/648314977/answer/3429111822",
+            "startedAt": "2026-10-25T04:14:15.367Z",
+            "durationMs": 112,
+            "outcome": "FAILED",
+            "resultId": "2c2e892b-bdd5-48c7-9186-5c5c8957c0b7",
+            "error": "Source HTTP 403"
+          },
+          {
+            "operation": "read",
+            "target": "https://www.zhihu.com/question/648314977",
+            "startedAt": "2026-10-25T04:14:15.367Z",
+            "durationMs": 122,
+            "outcome": "FAILED",
+            "resultId": "abfa8a7e-9aec-427f-833c-cca01e7064c7",
+            "error": "Source HTTP 403"
+          },
+          {
+            "operation": "read",
+            "target": "https://juejin.cn/post/7680768670986092544",
+            "startedAt": "2026-10-25T04:14:17.438Z",
+            "durationMs": 275,
+            "outcome": "FAILED",
+            "resultId": "208a2d31-64b8-4df6-866e-c07269572bef",
+            "error": "Source returned access challenge"
+          },
+          {
+            "operation": "read",
+            "target": "https://m.36kr.com/p/3130822110386184",
+            "startedAt": "2026-10-25T04:14:17.438Z",
+            "durationMs": 313,
+            "outcome": "SUCCEEDED",
+            "resultId": "e558546e-8729-46f9-b6d1-4ac7cf28b568",
+            "error": null
+          },
+          {
+            "operation": "read",
+            "target": "https://www.toutiao.com/a7697870831686484531",
+            "startedAt": "2026-10-25T04:14:17.438Z",
+            "durationMs": 429,
+            "outcome": "FAILED",
+            "resultId": "ab73359c-e0bf-4c21-a14e-16e541769d54",
+            "error": "No readable article blocks; JavaScript shell/empty page is not original material"
+          },
+          {
+            "operation": "read",
+            "target": "https://dev.to/alanwest/i-gave-devin-10-real-tasks-it-completed-3-3063",
+            "startedAt": "2026-10-25T04:14:17.438Z",
+            "durationMs": 1561,
+            "outcome": "SUCCEEDED",
+            "resultId": "ad9ce115-2c24-4462-a884-9dcaa5031f7f",
+            "error": null
+          },
+          {
+            "operation": "search:yuanbao",
+            "target": "site:zhihu.com Devin AI 程序员 实际使用体验 评价",
+            "startedAt": "2026-10-25T04:14:37.834Z",
+            "durationMs": 626,
+            "outcome": "SUCCEEDED",
+            "resultId": "f5b44b54-f279-4e27-b16f-2defb4672734",
+            "error": null
+          },
+          {
+            "operation": "read",
+            "target": "https://www.zhihu.com/question/648372821/answer/55448259493",
+            "startedAt": "2026-10-25T04:14:40.740Z",
+            "durationMs": 103,
+            "outcome": "FAILED",
+            "resultId": "41c3e0c6-11f3-427a-92bf-324c42d3786f",
+            "error": "Source HTTP 403"
+          },
+          {
+            "operation": "read",
+            "target": "https://www.zhihu.com/question/6669943244",
+            "startedAt": "2026-10-25T04:14:40.740Z",
+            "durationMs": 104,
+            "outcome": "FAILED",
+            "resultId": "eb34a2f3-aefd-4420-b6a6-03893c90e85f",
+            "error": "Source HTTP 403"
+          }
+        ]
+      }
+    },
+    "generatedAt": "2026-10-25T04:15:01.822Z",
+    "contractVersion": "1.0.0"
+  },
+  "answers": [
+    {
+      "id": "b51bafa2-5342-473e-9cf1-7f2bfe63dfcd",
+      "snapshotId": "de925fa5-7ba6-410f-9e22-486a4264eb43",
+      "body": "尚不能确定：关于知乎上开发者对 Devin 实际能力的评价，现有已读原句中没有可核验的知乎开发者评价内容。\n知乎问题页与回答均为HTTP 403，未读取任何知乎原句，无法核验开发者评价内容。\n\n核查缺口：\n• 知乎问题页及多个知乎回答页均返回HTTP 403，未能读取任何知乎开发者评价原句。\n• 未取得任何知乎开发者对Devin实际能力的原始评价语句，无法回答该问题。\n• https://www.zhihu.com/question/648314977/answer/3429111822：RESTRICTED；Source HTTP 403\n• https://www.zhihu.com/question/648314977：RESTRICTED；Source HTTP 403\n• https://juejin.cn/post/7680768670986092544：RESTRICTED；Source returned access challenge\n• https://www.toutiao.com/a7697870831686484531：FAILED；No readable article blocks; JavaScript shell/empty page is not original material\n• https://www.zhihu.com/question/648372821/answer/55448259493：RESTRICTED；Source HTTP 403\n• https://www.zhihu.com/question/6669943244：RESTRICTED；Source HTTP 403",
+      "citations": [],
+      "generationConfig": {
+        "provider": "api.deepseek.com",
+        "model": "deepseek-flash",
+        "promptVersion": "a2-evidence-v4",
+        "temperature": null,
+        "thinkingMode": "DISABLED",
+        "generatedAt": "2026-10-25T04:15:01.821Z"
+      }
+    }
+  ]
+}

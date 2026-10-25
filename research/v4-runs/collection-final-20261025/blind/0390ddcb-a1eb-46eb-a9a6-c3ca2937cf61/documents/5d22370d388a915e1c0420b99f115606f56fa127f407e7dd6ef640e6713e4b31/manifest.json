@@ -1,0 +1,1581 @@
+{
+  "schemaVersion": "source-document/v1",
+  "id": "5d22370d388a915e1c0420b99f115606f56fa127f407e7dd6ef640e6713e4b31",
+  "version": "a03d4f2cc2c638299125c07a47d8251aa027567ce9ecac990cfa82de7942adaf",
+  "requestedUrl": "https://openclawdc.com/blog/move-ollama-models-another-drive",
+  "finalUrl": "https://openclawdc.com/blog/move-ollama-models-another-drive/",
+  "retrievedAt": "2026-10-25T04:42:49.117Z",
+  "contentType": "text/html",
+  "status": "READ",
+  "readError": null,
+  "rawHash": "e5ffd98e0e5be3a33aac074a7c3aeecf75f0ee3c9a98ce0fe6afbfa665a2ea4a",
+  "textHash": "6901bc978ebee2fea9d3e424cbc794cb25e9ec7709d20cfd3f5853524c83f323",
+  "text": "Buying hardware? Every part we would buy today, by budget Open the gear list\n\n← All guides\n\nGuides August 25, 2026\n\nHow to Move Ollama Models to Another Drive (macOS, Linux, Windows)\n\nOllama writes every model to your boot drive by default, and a model library fills a boot drive faster than anything else you install. The fix is one environment variable, OLLAMA_MODELS, plus moving the files you already have. The variable has to be set where the Ollama service actually reads it, which is different on each operating system — and on macOS the documented command is lost on the next reboot.\n\nBottom Line\n\nOne variable does it: OLLAMA_MODELS. Point it at the new directory and restart Ollama.\n\nMove the files yourself. Setting the variable does not migrate anything. Move both blobs/ and manifests/, or your library disappears.\n\nSet it where the service reads it. A shell export never reaches a systemd daemon or a macOS app. This is the single most common failure.\n\nmacOS gotcha the docs skip: launchctl setenv is lost on reboot. Use a LaunchAgent if you want it to stick.\n\nLinux gotcha: ownership. The standard installer runs the daemon as the ollama user, which needs chown -R ollama:ollama on the target.\n\nDefaults: ~/.ollama/models on macOS, /usr/share/ollama/.ollama/models on Linux, C:\\Users\\%username%\\.ollama\\models on Windows.\n\nExternal drives work, with a caveat. If the drive is not mounted at service start, Ollama behaves as though your models are gone.\n\nWhat You Are Actually Moving\n\nOpen the models directory and you will find exactly two things:\n\nmodels/\n├── blobs/       # the weight data — this is the tens of gigabytes\n└── manifests/   # which blobs make up each tagged model\n\nBoth must move together. The manifests are small and easy to forget. Move only the blobs and Ollama sees no models at all, even though the data is right there. Move only the manifests and every model reports missing layers.\n\nThis also explains why you should move rather than re-pull. The blobs are content-addressed, so moving them keeps every tag you already have without re-downloading anything.\n\nmacOS\n\nThe documented steps:\n\n# 1. Create the target directory on the new drive\nmkdir -p /Volumes/BigDrive/ollama-models\n\n# 2. Move your existing library\nmv ~/.ollama/models/blobs ~/.ollama/models/manifests /Volumes/BigDrive/ollama-models/\n\n# 3. Set the variable\nlaunchctl setenv OLLAMA_MODELS \"/Volumes/BigDrive/ollama-models\"\n\n# 4. Restart the Ollama application\n\nNow the part the FAQ does not tell you. launchctl setenv sets the variable for the current boot only. It is not persistent. Restart the Mac and the value is gone, Ollama falls back to ~/.ollama/models, and your library appears to have vanished. Nothing is lost — the daemon is simply reading the old path again.\n\nTo make it permanent, run the same command from a LaunchAgent at login. Create ~/Library/LaunchAgents/com.user.ollama-models.plist:\n\n<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<!DOCTYPE plist PUBLIC \"-//Apple//DTD PLIST 1.0//EN\"\n  \"http://www.apple.com/DTDs/PropertyList-1.0.dtd\">\n<plist version=\"1.0\">\n<dict>\n  <key>Label</key>\n  <string>com.user.ollama-models</string>\n  <key>ProgramArguments</key>\n  <array>\n    <string>/bin/launchctl</string>\n    <string>setenv</string>\n    <string>OLLAMA_MODELS</string>\n    <string>/Volumes/BigDrive/ollama-models</string>\n  </array>\n  <key>RunAtLoad</key>\n  <true/>\n</dict>\n</plist>\n\nThen load it with launchctl load ~/Library/LaunchAgents/com.user.ollama-models.plist. The LaunchAgent approach is the standard replacement for the withdrawn /etc/launchd.conf, and it is not specific to Ollama.\n\nLinux\n\nThe daemon runs under systemd, so the variable belongs in the unit.\n\n# 1. Create the target and give the daemon ownership\nsudo mkdir -p /mnt/bigdrive/ollama-models\nsudo chown -R ollama:ollama /mnt/bigdrive/ollama-models\n\n# 2. Move the existing library\nsudo mv /usr/share/ollama/.ollama/models/blobs \\\n        /usr/share/ollama/.ollama/models/manifests \\\n        /mnt/bigdrive/ollama-models/\nsudo chown -R ollama:ollama /mnt/bigdrive/ollama-models\n\n# 3. Edit the unit\nsudo systemctl edit ollama.service\n\nAdd this under [Service]:\n\n[Service]\nEnvironment=\"OLLAMA_MODELS=/mnt/bigdrive/ollama-models\"\n\nThen reload and restart:\n\nsudo systemctl daemon-reload\nsudo systemctl restart ollama\n\nTwo things break this reliably.\n\nFirst, ownership. The standard installer creates a dedicated ollama user, and that user needs read and write access to the directory. sudo chown -R ollama:ollama <directory> is the documented fix. Run it again after you move files in, because mv across filesystems can carry the old ownership.\n\nSecond, traversal. The ollama user needs execute permission on every directory in the path, not just the last one. A mount point at /mnt/bigdrive owned by root with mode 700 will block the daemon even when the final directory is owned correctly. Check with sudo -u ollama ls /mnt/bigdrive/ollama-models — if that fails, the daemon will fail the same way.\n\nWindows\n\n1. Quit Ollama from the taskbar. Do not just close the window.\n2. Open Settings and search for environment variables.\n3. Click \"Edit environment variables for your account\".\n4. Create OLLAMA_MODELS with the new path, for example D:\\ollama-models\n5. Click OK, then restart Ollama.\n\nMove blobs and manifests out of C:\\Users\\%username%\\.ollama\\models into the new directory before you restart.\n\nQuitting from the taskbar matters. Closing the window leaves the background service running with the old environment, and it will keep writing to the old path while you conclude the setting is broken.\n\nSymlinks and Bind Mounts: When to Use Them Instead\n\nThe environment variable is the supported route. Two alternatives exist and each has a right moment.\n\nMethodUse it whenWatch out forOLLAMA_MODELSAlmost always. It is the documented mechanism.Must be set where the service reads it, not in your shell.Symlink the models directoryOther tools also expect the default pathThe daemon needs permission on the target, not the link. A broken link looks like an empty library.Bind mount (mount --bind, Linux)The path must stay identical for other softwareAdd it to /etc/fstab or it disappears on reboot, silently.\n\nNeither symlinks nor bind mounts are documented by Ollama. They work because they operate below the application, not because they are supported. If you file a bug report, mention that you are using one.\n\nWhen It Does Not Work\n\nSymptomCauseFixollama list is empty after the moveManifests were left behindMove manifests/ as well as blobs/Setting worked, then stopped after reboot (macOS)launchctl setenv is not persistentAdd the LaunchAgent aboveSetting has no effect (Linux)Variable exported in a shell profileUse a systemd drop-in via systemctl edit ollama.servicePermission denied writing models (Linux)Daemon runs as the ollama usersudo chown -R ollama:ollama <dir>, then check parent-directory traversalWorks, then breaks at random (external drive)Drive was not mounted at service startMount at boot, or keep daily models internalWindows setting ignoredWindow closed, service still runningQuit from the taskbar, then restart\n\nDo You Need a Bigger Drive Instead?\n\nMoving models buys you the capacity of the drive you moved to. If that drive is also small, you are solving the problem twice. Our model storage sizing guide has the arithmetic: 1TB is the floor, 2TB is the right default for a single-GPU box, and 4TB once you are past 48GB of VRAM. The multiplier that catches people out is not model count. It is keeping Q4, Q6 and Q8 of the same model while you decide which one to use.\n\nSee Also\n\nHow Much Storage Do You Need for Local Models? — drive sizing, load-time arithmetic, and what to buy\n\nOllama vs llama.cpp — llama.cpp takes a path argument and has no equivalent variable\n\nHow to Move the Hugging Face Cache to Another Drive — the HF_HOME version of this job, and why rsync -r breaks it\n\nUsing Hugging Face Models With Ollama — the other download cache that fills your boot drive, controlled by HF_HOME\n\nOllama Crash Course for Local Agents — the rest of the operational basics\n\nOllama vs LM Studio — how the other popular runtime handles model storage\n\nSources\n\nOllama FAQ (docs.ollama.com) — default directories per operating system, OLLAMA_MODELS, the launchctl setenv and systemctl edit procedures, and the chown -R ollama:ollama permission requirement; read 2026-08-25\n\nThe blobs/ and manifests/ layout was confirmed on a macOS install on 2026-08-25\n\nlaunchctl setenv is not persistent across reboots; the LaunchAgent pattern is the standard replacement for the /etc/launchd.conf support withdrawn in OS X 10.10\n\nSymlink and bind-mount behaviour is general operating-system behaviour, not documented Ollama support\n\nThe Dispatch / Weekly\n\nStill deciding on hardware?\n\nOne email every Wednesday: what actually runs well on which machine, real cost-per-token numbers, and the setups worth copying. Written for people mid-build.\n\nNo spam. Unsubscribe whenever.\n\nNeed OpenClaw fixed live?\n\nRemote rescue sessions for gateway, auth, tunnel, VPS, and model access problems.\n\nSee Rescue Session\n\nRead next\n\nHow to Move the Hugging Face Cache to Another Drive Set HF_HOME, then copy the hub cache with a tool that keeps symlinks. We tested five copy methods: rsync -r silently drops model files and Python copytree tripled the size of a two-revision cache. How Much SSD Do You Need for a Local Model Library? Every local-LLM build guide sizes the GPU and forgets the disk. Real footprints, the hoarding multiplier nobody warns you about, load-time arithmetic per drive class, and the honest answer to whether a faster SSD makes your tokens faster. It does not. Fix OpenClaw macOS: Gateway Won't Stay Running / Telegram Bot Silent Fix OpenClaw on macOS: gateway dies when you close the terminal, and the Telegram bot stops responding. Install the launchd service and fix binding + permissions. Local LLM Coding Setup on Windows + NVIDIA: The Guide Mac Tutorials Skip (2026) A Windows-native path to a local coding agent on an NVIDIA GPU. No WSL, no Docker required. Runtime choice, verifying GPU offload actually engaged, MoE offload for 12-16GB cards, and wiring a coding agent to a local endpoint.",
+  "rawSources": [
+    {
+      "mode": "STATIC",
+      "hash": "e5ffd98e0e5be3a33aac074a7c3aeecf75f0ee3c9a98ce0fe6afbfa665a2ea4a",
+      "path": "C:\\Users\\qianchen\\Documents\\waytoagi-1024-detective-a2-v4\\.cache\\source-documents-v4\\0390ddcb-a1eb-46eb-a9a6-c3ca2937cf61\\5d22370d388a915e1c0420b99f115606f56fa127f407e7dd6ef640e6713e4b31\\raw.bin"
+    }
+  ],
+  "storage": {
+    "rawPath": "C:\\Users\\qianchen\\Documents\\waytoagi-1024-detective-a2-v4\\.cache\\source-documents-v4\\0390ddcb-a1eb-46eb-a9a6-c3ca2937cf61\\5d22370d388a915e1c0420b99f115606f56fa127f407e7dd6ef640e6713e4b31\\raw.bin",
+    "textPath": "C:\\Users\\qianchen\\Documents\\waytoagi-1024-detective-a2-v4\\.cache\\source-documents-v4\\0390ddcb-a1eb-46eb-a9a6-c3ca2937cf61\\5d22370d388a915e1c0420b99f115606f56fa127f407e7dd6ef640e6713e4b31\\source.txt",
+    "manifestPath": "C:\\Users\\qianchen\\Documents\\waytoagi-1024-detective-a2-v4\\.cache\\source-documents-v4\\0390ddcb-a1eb-46eb-a9a6-c3ca2937cf61\\5d22370d388a915e1c0420b99f115606f56fa127f407e7dd6ef640e6713e4b31\\manifest.json"
+  },
+  "parser": {
+    "name": "readability+source-dom",
+    "version": "readability-0.6.0+jsdom-30.1.3+source-dom-2",
+    "normalization": "source-text/v1",
+    "mode": "STATIC"
+  },
+  "metadata": {
+    "title": "How to Move Ollama Models to Another Drive (macOS, Linux, Windows)",
+    "author": "OpenClaw DC",
+    "publishedAt": null,
+    "language": "en"
+  },
+  "completeness": "COMPLETE",
+  "warnings": [],
+  "blocks": [
+    {
+      "start": 0,
+      "end": 76,
+      "id": "b0",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[0]",
+      "headingPath": [],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 78,
+      "end": 90,
+      "id": "b1",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[1]",
+      "headingPath": [],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 92,
+      "end": 114,
+      "id": "b2",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[2]",
+      "headingPath": [],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 116,
+      "end": 182,
+      "id": "b3",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[3]",
+      "headingPath": [
+        "How to Move Ollama Models to Another Drive (macOS, Linux, Windows)"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 184,
+      "end": 591,
+      "id": "b4",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[4]",
+      "headingPath": [
+        "How to Move Ollama Models to Another Drive (macOS, Linux, Windows)"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 593,
+      "end": 604,
+      "id": "b5",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[5]",
+      "headingPath": [
+        "How to Move Ollama Models to Another Drive (macOS, Linux, Windows)",
+        "Bottom Line"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 606,
+      "end": 692,
+      "id": "b6",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[6]",
+      "headingPath": [
+        "How to Move Ollama Models to Another Drive (macOS, Linux, Windows)",
+        "Bottom Line"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 694,
+      "end": 827,
+      "id": "b7",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[7]",
+      "headingPath": [
+        "How to Move Ollama Models to Another Drive (macOS, Linux, Windows)",
+        "Bottom Line"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 829,
+      "end": 965,
+      "id": "b8",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[8]",
+      "headingPath": [
+        "How to Move Ollama Models to Another Drive (macOS, Linux, Windows)",
+        "Bottom Line"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 967,
+      "end": 1073,
+      "id": "b9",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[9]",
+      "headingPath": [
+        "How to Move Ollama Models to Another Drive (macOS, Linux, Windows)",
+        "Bottom Line"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1075,
+      "end": 1208,
+      "id": "b10",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[10]",
+      "headingPath": [
+        "How to Move Ollama Models to Another Drive (macOS, Linux, Windows)",
+        "Bottom Line"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1210,
+      "end": 1336,
+      "id": "b11",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[11]",
+      "headingPath": [
+        "How to Move Ollama Models to Another Drive (macOS, Linux, Windows)",
+        "Bottom Line"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1338,
+      "end": 1467,
+      "id": "b12",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[12]",
+      "headingPath": [
+        "How to Move Ollama Models to Another Drive (macOS, Linux, Windows)",
+        "Bottom Line"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1469,
+      "end": 1497,
+      "id": "b13",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[13]",
+      "headingPath": [
+        "How to Move Ollama Models to Another Drive (macOS, Linux, Windows)",
+        "What You Are Actually Moving"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1499,
+      "end": 1562,
+      "id": "b14",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[14]",
+      "headingPath": [
+        "How to Move Ollama Models to Another Drive (macOS, Linux, Windows)",
+        "What You Are Actually Moving"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1564,
+      "end": 1695,
+      "id": "b15",
+      "kind": "CODE",
+      "locator": "source DOM normalized block[15]",
+      "headingPath": [
+        "How to Move Ollama Models to Another Drive (macOS, Linux, Windows)",
+        "What You Are Actually Moving"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1697,
+      "end": 1920,
+      "id": "b16",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[16]",
+      "headingPath": [
+        "How to Move Ollama Models to Another Drive (macOS, Linux, Windows)",
+        "What You Are Actually Moving"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1922,
+      "end": 2095,
+      "id": "b17",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[17]",
+      "headingPath": [
+        "How to Move Ollama Models to Another Drive (macOS, Linux, Windows)",
+        "What You Are Actually Moving"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2097,
+      "end": 2102,
+      "id": "b18",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[18]",
+      "headingPath": [
+        "How to Move Ollama Models to Another Drive (macOS, Linux, Windows)",
+        "macOS"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2104,
+      "end": 2125,
+      "id": "b19",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[19]",
+      "headingPath": [
+        "How to Move Ollama Models to Another Drive (macOS, Linux, Windows)",
+        "macOS"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2127,
+      "end": 2461,
+      "id": "b20",
+      "kind": "CODE",
+      "locator": "source DOM normalized block[20]",
+      "headingPath": [
+        "How to Move Ollama Models to Another Drive (macOS, Linux, Windows)",
+        "macOS"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2463,
+      "end": 2774,
+      "id": "b21",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[21]",
+      "headingPath": [
+        "How to Move Ollama Models to Another Drive (macOS, Linux, Windows)",
+        "macOS"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2776,
+      "end": 2907,
+      "id": "b22",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[22]",
+      "headingPath": [
+        "How to Move Ollama Models to Another Drive (macOS, Linux, Windows)",
+        "macOS"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2909,
+      "end": 3395,
+      "id": "b23",
+      "kind": "CODE",
+      "locator": "source DOM normalized block[23]",
+      "headingPath": [
+        "How to Move Ollama Models to Another Drive (macOS, Linux, Windows)",
+        "macOS"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3397,
+      "end": 3606,
+      "id": "b24",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[24]",
+      "headingPath": [
+        "How to Move Ollama Models to Another Drive (macOS, Linux, Windows)",
+        "macOS"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3608,
+      "end": 3613,
+      "id": "b25",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[25]",
+      "headingPath": [
+        "How to Move Ollama Models to Another Drive (macOS, Linux, Windows)",
+        "Linux"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3615,
+      "end": 3682,
+      "id": "b26",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[26]",
+      "headingPath": [
+        "How to Move Ollama Models to Another Drive (macOS, Linux, Windows)",
+        "Linux"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3684,
+      "end": 4116,
+      "id": "b27",
+      "kind": "CODE",
+      "locator": "source DOM normalized block[27]",
+      "headingPath": [
+        "How to Move Ollama Models to Another Drive (macOS, Linux, Windows)",
+        "Linux"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4118,
+      "end": 4143,
+      "id": "b28",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[28]",
+      "headingPath": [
+        "How to Move Ollama Models to Another Drive (macOS, Linux, Windows)",
+        "Linux"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4145,
+      "end": 4210,
+      "id": "b29",
+      "kind": "CODE",
+      "locator": "source DOM normalized block[29]",
+      "headingPath": [
+        "How to Move Ollama Models to Another Drive (macOS, Linux, Windows)",
+        "Linux"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4212,
+      "end": 4236,
+      "id": "b30",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[30]",
+      "headingPath": [
+        "How to Move Ollama Models to Another Drive (macOS, Linux, Windows)",
+        "Linux"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4238,
+      "end": 4296,
+      "id": "b31",
+      "kind": "CODE",
+      "locator": "source DOM normalized block[31]",
+      "headingPath": [
+        "How to Move Ollama Models to Another Drive (macOS, Linux, Windows)",
+        "Linux"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4298,
+      "end": 4329,
+      "id": "b32",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[32]",
+      "headingPath": [
+        "How to Move Ollama Models to Another Drive (macOS, Linux, Windows)",
+        "Linux"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4331,
+      "end": 4624,
+      "id": "b33",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[33]",
+      "headingPath": [
+        "How to Move Ollama Models to Another Drive (macOS, Linux, Windows)",
+        "Linux"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4626,
+      "end": 4980,
+      "id": "b34",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[34]",
+      "headingPath": [
+        "How to Move Ollama Models to Another Drive (macOS, Linux, Windows)",
+        "Linux"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4982,
+      "end": 4989,
+      "id": "b35",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[35]",
+      "headingPath": [
+        "How to Move Ollama Models to Another Drive (macOS, Linux, Windows)",
+        "Windows"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4991,
+      "end": 5270,
+      "id": "b36",
+      "kind": "CODE",
+      "locator": "source DOM normalized block[36]",
+      "headingPath": [
+        "How to Move Ollama Models to Another Drive (macOS, Linux, Windows)",
+        "Windows"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5272,
+      "end": 5381,
+      "id": "b37",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[37]",
+      "headingPath": [
+        "How to Move Ollama Models to Another Drive (macOS, Linux, Windows)",
+        "Windows"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5383,
+      "end": 5583,
+      "id": "b38",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[38]",
+      "headingPath": [
+        "How to Move Ollama Models to Another Drive (macOS, Linux, Windows)",
+        "Windows"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5585,
+      "end": 5635,
+      "id": "b39",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[39]",
+      "headingPath": [
+        "How to Move Ollama Models to Another Drive (macOS, Linux, Windows)",
+        "Symlinks and Bind Mounts: When to Use Them Instead"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5637,
+      "end": 5737,
+      "id": "b40",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[40]",
+      "headingPath": [
+        "How to Move Ollama Models to Another Drive (macOS, Linux, Windows)",
+        "Symlinks and Bind Mounts: When to Use Them Instead"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5739,
+      "end": 6190,
+      "id": "b41",
+      "kind": "TABLE",
+      "locator": "source DOM normalized block[41]",
+      "headingPath": [
+        "How to Move Ollama Models to Another Drive (macOS, Linux, Windows)",
+        "Symlinks and Bind Mounts: When to Use Them Instead"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 6192,
+      "end": 6394,
+      "id": "b42",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[42]",
+      "headingPath": [
+        "How to Move Ollama Models to Another Drive (macOS, Linux, Windows)",
+        "Symlinks and Bind Mounts: When to Use Them Instead"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 6396,
+      "end": 6417,
+      "id": "b43",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[43]",
+      "headingPath": [
+        "How to Move Ollama Models to Another Drive (macOS, Linux, Windows)",
+        "When It Does Not Work"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 6419,
+      "end": 7119,
+      "id": "b44",
+      "kind": "TABLE",
+      "locator": "source DOM normalized block[44]",
+      "headingPath": [
+        "How to Move Ollama Models to Another Drive (macOS, Linux, Windows)",
+        "When It Does Not Work"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 7121,
+      "end": 7156,
+      "id": "b45",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[45]",
+      "headingPath": [
+        "How to Move Ollama Models to Another Drive (macOS, Linux, Windows)",
+        "Do You Need a Bigger Drive Instead?"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 7158,
+      "end": 7580,
+      "id": "b46",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[46]",
+      "headingPath": [
+        "How to Move Ollama Models to Another Drive (macOS, Linux, Windows)",
+        "Do You Need a Bigger Drive Instead?"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 7582,
+      "end": 7590,
+      "id": "b47",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[47]",
+      "headingPath": [
+        "How to Move Ollama Models to Another Drive (macOS, Linux, Windows)",
+        "See Also"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 7592,
+      "end": 7692,
+      "id": "b48",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[48]",
+      "headingPath": [
+        "How to Move Ollama Models to Another Drive (macOS, Linux, Windows)",
+        "See Also"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 7694,
+      "end": 7778,
+      "id": "b49",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[49]",
+      "headingPath": [
+        "How to Move Ollama Models to Another Drive (macOS, Linux, Windows)",
+        "See Also"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 7780,
+      "end": 7893,
+      "id": "b50",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[50]",
+      "headingPath": [
+        "How to Move Ollama Models to Another Drive (macOS, Linux, Windows)",
+        "See Also"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 7895,
+      "end": 8009,
+      "id": "b51",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[51]",
+      "headingPath": [
+        "How to Move Ollama Models to Another Drive (macOS, Linux, Windows)",
+        "See Also"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 8011,
+      "end": 8084,
+      "id": "b52",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[52]",
+      "headingPath": [
+        "How to Move Ollama Models to Another Drive (macOS, Linux, Windows)",
+        "See Also"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 8086,
+      "end": 8159,
+      "id": "b53",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[53]",
+      "headingPath": [
+        "How to Move Ollama Models to Another Drive (macOS, Linux, Windows)",
+        "See Also"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 8161,
+      "end": 8168,
+      "id": "b54",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[54]",
+      "headingPath": [
+        "How to Move Ollama Models to Another Drive (macOS, Linux, Windows)",
+        "Sources"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 8170,
+      "end": 8380,
+      "id": "b55",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[55]",
+      "headingPath": [
+        "How to Move Ollama Models to Another Drive (macOS, Linux, Windows)",
+        "Sources"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 8382,
+      "end": 8461,
+      "id": "b56",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[56]",
+      "headingPath": [
+        "How to Move Ollama Models to Another Drive (macOS, Linux, Windows)",
+        "Sources"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 8463,
+      "end": 8623,
+      "id": "b57",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[57]",
+      "headingPath": [
+        "How to Move Ollama Models to Another Drive (macOS, Linux, Windows)",
+        "Sources"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 8625,
+      "end": 8726,
+      "id": "b58",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[58]",
+      "headingPath": [
+        "How to Move Ollama Models to Another Drive (macOS, Linux, Windows)",
+        "Sources"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 8728,
+      "end": 8749,
+      "id": "b59",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[59]",
+      "headingPath": [
+        "How to Move Ollama Models to Another Drive (macOS, Linux, Windows)",
+        "Sources"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 8751,
+      "end": 8778,
+      "id": "b60",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[60]",
+      "headingPath": [
+        "How to Move Ollama Models to Another Drive (macOS, Linux, Windows)",
+        "Sources",
+        "Still deciding on hardware?"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 8780,
+      "end": 8937,
+      "id": "b61",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[61]",
+      "headingPath": [
+        "How to Move Ollama Models to Another Drive (macOS, Linux, Windows)",
+        "Sources",
+        "Still deciding on hardware?"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 8939,
+      "end": 8969,
+      "id": "b62",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[62]",
+      "headingPath": [
+        "How to Move Ollama Models to Another Drive (macOS, Linux, Windows)",
+        "Sources",
+        "Still deciding on hardware?"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 8971,
+      "end": 8996,
+      "id": "b63",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[63]",
+      "headingPath": [
+        "How to Move Ollama Models to Another Drive (macOS, Linux, Windows)",
+        "Sources",
+        "Need OpenClaw fixed live?"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 8998,
+      "end": 9079,
+      "id": "b64",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[64]",
+      "headingPath": [
+        "How to Move Ollama Models to Another Drive (macOS, Linux, Windows)",
+        "Sources",
+        "Need OpenClaw fixed live?"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 9081,
+      "end": 9099,
+      "id": "b65",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[65]",
+      "headingPath": [
+        "How to Move Ollama Models to Another Drive (macOS, Linux, Windows)",
+        "Sources",
+        "Need OpenClaw fixed live?"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 9101,
+      "end": 9110,
+      "id": "b66",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[66]",
+      "headingPath": [
+        "How to Move Ollama Models to Another Drive (macOS, Linux, Windows)",
+        "Read next"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 9112,
+      "end": 10202,
+      "id": "b67",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[67]",
+      "headingPath": [
+        "How to Move Ollama Models to Another Drive (macOS, Linux, Windows)",
+        "Read next"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    }
+  ],
+  "links": [
+    {
+      "url": "https://openclawdc.com/blog/move-ollama-models-another-drive/",
+      "text": "",
+      "blockId": null,
+      "relation": "CANONICAL",
+      "locator": "source DOM link[0]"
+    },
+    {
+      "url": "https://openclawdc.com/gear/",
+      "text": "Open the gear list",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[5]"
+    },
+    {
+      "url": "https://openclawdc.com/blog/",
+      "text": "← All guides",
+      "blockId": "b1",
+      "relation": "LINK",
+      "locator": "source DOM link[6]"
+    },
+    {
+      "url": "https://openclawdc.com/blog/how-much-storage-for-local-models/",
+      "text": "model storage sizing guide",
+      "blockId": "b46",
+      "relation": "LINK",
+      "locator": "source DOM link[7]"
+    },
+    {
+      "url": "https://openclawdc.com/blog/how-much-storage-for-local-models/",
+      "text": "How Much Storage Do You Need for Local Models?",
+      "blockId": "b48",
+      "relation": "LINK",
+      "locator": "source DOM link[8]"
+    },
+    {
+      "url": "https://openclawdc.com/blog/ollama-vs-llama-cpp/",
+      "text": "Ollama vs llama.cpp",
+      "blockId": "b49",
+      "relation": "LINK",
+      "locator": "source DOM link[9]"
+    },
+    {
+      "url": "https://openclawdc.com/blog/move-huggingface-cache-another-drive/",
+      "text": "How to Move the Hugging Face Cache to Another Drive",
+      "blockId": "b50",
+      "relation": "LINK",
+      "locator": "source DOM link[10]"
+    },
+    {
+      "url": "https://openclawdc.com/blog/ollama-hugging-face-models/",
+      "text": "Using Hugging Face Models With Ollama",
+      "blockId": "b51",
+      "relation": "LINK",
+      "locator": "source DOM link[11]"
+    },
+    {
+      "url": "https://openclawdc.com/blog/ollama-crash-course-local-agents/",
+      "text": "Ollama Crash Course for Local Agents",
+      "blockId": "b52",
+      "relation": "LINK",
+      "locator": "source DOM link[12]"
+    },
+    {
+      "url": "https://openclawdc.com/blog/ollama-vs-lm-studio/",
+      "text": "Ollama vs LM Studio",
+      "blockId": "b53",
+      "relation": "LINK",
+      "locator": "source DOM link[13]"
+    },
+    {
+      "url": "https://docs.ollama.com/faq",
+      "text": "Ollama FAQ (docs.ollama.com)",
+      "blockId": "b55",
+      "relation": "LINK",
+      "locator": "source DOM link[14]"
+    },
+    {
+      "url": "https://openclawdc.com/openclaw-troubleshooting-help/",
+      "text": "See Rescue Session",
+      "blockId": "b65",
+      "relation": "LINK",
+      "locator": "source DOM link[15]"
+    },
+    {
+      "url": "https://openclawdc.com/blog/move-huggingface-cache-another-drive/",
+      "text": "How to Move the Hugging Face Cache to Another Drive Set HF_HOME, then copy the hub cache with a tool that keeps symlinks. We tested five copy methods: rsync -r silently drops model files and Python copytree tripled the size of a two-revision cache.",
+      "blockId": "b67",
+      "relation": "LINK",
+      "locator": "source DOM link[16]"
+    },
+    {
+      "url": "https://openclawdc.com/blog/how-much-storage-for-local-models/",
+      "text": "How Much SSD Do You Need for a Local Model Library? Every local-LLM build guide sizes the GPU and forgets the disk. Real footprints, the hoarding multiplier nobody warns you about, load-time arithmetic per drive class, and the honest answer to whether a faster SSD makes your tokens faster. It does not.",
+      "blockId": "b67",
+      "relation": "LINK",
+      "locator": "source DOM link[17]"
+    },
+    {
+      "url": "https://openclawdc.com/blog/openclaw-macos-gateway-launchd/",
+      "text": "Fix OpenClaw macOS: Gateway Won't Stay Running / Telegram Bot Silent Fix OpenClaw on macOS: gateway dies when you close the terminal, and the Telegram bot stops responding. Install the launchd service and fix binding + permissions.",
+      "blockId": "b67",
+      "relation": "LINK",
+      "locator": "source DOM link[18]"
+    },
+    {
+      "url": "https://openclawdc.com/blog/local-llm-windows-nvidia-setup/",
+      "text": "Local LLM Coding Setup on Windows + NVIDIA: The Guide Mac Tutorials Skip (2026) A Windows-native path to a local coding agent on an NVIDIA GPU. No WSL, no Docker required. Runtime choice, verifying GPU offload actually engaged, MoE offload for 12-16GB cards, and wiring a coding agent to a local endpoint.",
+      "blockId": "b67",
+      "relation": "LINK",
+      "locator": "source DOM link[19]"
+    }
+  ],
+  "tables": [
+    {
+      "blockId": "b41",
+      "rows": [
+        {
+          "start": 5739,
+          "end": 5769,
+          "cells": [
+            {
+              "start": 5739,
+              "end": 5745,
+              "text": "Method",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 5745,
+              "end": 5756,
+              "text": "Use it when",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 5756,
+              "end": 5769,
+              "text": "Watch out for",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 5769,
+          "end": 5886,
+          "cells": [
+            {
+              "start": 5769,
+              "end": 5782,
+              "text": "OLLAMA_MODELS",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 5782,
+              "end": 5828,
+              "text": "Almost always. It is the documented mechanism.",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 5828,
+              "end": 5886,
+              "text": "Must be set where the service reads it, not in your shell.",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 5886,
+          "end": 6053,
+          "cells": [
+            {
+              "start": 5886,
+              "end": 5914,
+              "text": "Symlink the models directory",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 5914,
+              "end": 5954,
+              "text": "Other tools also expect the default path",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 5954,
+              "end": 6053,
+              "text": "The daemon needs permission on the target, not the link. A broken link looks like an empty library.",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 6053,
+          "end": 6190,
+          "cells": [
+            {
+              "start": 6053,
+              "end": 6085,
+              "text": "Bind mount (mount --bind, Linux)",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 6085,
+              "end": 6132,
+              "text": "The path must stay identical for other software",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 6132,
+              "end": 6190,
+              "text": "Add it to /etc/fstab or it disappears on reboot, silently.",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "blockId": "b44",
+      "rows": [
+        {
+          "start": 6419,
+          "end": 6434,
+          "cells": [
+            {
+              "start": 6419,
+              "end": 6426,
+              "text": "Symptom",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 6426,
+              "end": 6431,
+              "text": "Cause",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 6431,
+              "end": 6434,
+              "text": "Fix",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 6434,
+          "end": 6528,
+          "cells": [
+            {
+              "start": 6434,
+              "end": 6469,
+              "text": "ollama list is empty after the move",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 6469,
+              "end": 6495,
+              "text": "Manifests were left behind",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 6495,
+              "end": 6528,
+              "text": "Move manifests/ as well as blobs/",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 6528,
+          "end": 6636,
+          "cells": [
+            {
+              "start": 6528,
+              "end": 6577,
+              "text": "Setting worked, then stopped after reboot (macOS)",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 6577,
+              "end": 6611,
+              "text": "launchctl setenv is not persistent",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 6611,
+              "end": 6636,
+              "text": "Add the LaunchAgent above",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 6636,
+          "end": 6756,
+          "cells": [
+            {
+              "start": 6636,
+              "end": 6665,
+              "text": "Setting has no effect (Linux)",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 6665,
+              "end": 6701,
+              "text": "Variable exported in a shell profile",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 6701,
+              "end": 6756,
+              "text": "Use a systemd drop-in via systemctl edit ollama.service",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 6756,
+          "end": 6898,
+          "cells": [
+            {
+              "start": 6756,
+              "end": 6796,
+              "text": "Permission denied writing models (Linux)",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 6796,
+              "end": 6826,
+              "text": "Daemon runs as the ollama user",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 6826,
+              "end": 6898,
+              "text": "sudo chown -R ollama:ollama <dir>, then check parent-directory traversal",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 6898,
+          "end": 7025,
+          "cells": [
+            {
+              "start": 6898,
+              "end": 6943,
+              "text": "Works, then breaks at random (external drive)",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 6943,
+              "end": 6981,
+              "text": "Drive was not mounted at service start",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 6981,
+              "end": 7025,
+              "text": "Mount at boot, or keep daily models internal",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 7025,
+          "end": 7119,
+          "cells": [
+            {
+              "start": 7025,
+              "end": 7048,
+              "text": "Windows setting ignored",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 7048,
+              "end": 7084,
+              "text": "Window closed, service still running",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 7084,
+              "end": 7119,
+              "text": "Quit from the taskbar, then restart",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

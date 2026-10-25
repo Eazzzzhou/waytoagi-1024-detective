@@ -1,0 +1,133 @@
+Skip to content
+
+Repository navigation
+
+Headless blender -b mode: bpy.app.timers never fires, every MCP command hangs #251
+
+New issue
+
+New issue
+
+Closed#272
+
+ClosedHeadless blender -b mode: bpy.app.timers never fires, every MCP command hangs#251#272
+
+Description
+
+shrimpwagonopened on May 19, 2026
+
+Summary
+
+In headless blender -b --python <startup_script>.py mode, every MCP request from a connected client hangs and eventually times out, because the addon dispatches each command via bpy.app.timers.register(execute_wrapper, first_interval=0.0) (addon.py:170) — and those timers don't fire when Blender's event loop isn't running, which is the case in -b mode whenever the --python script blocks the main thread (e.g. to keep the process alive as a long-running server).
+
+Blender itself stays at ~0% CPU. The socket layer is fine — the request is received and parsed — but the scheduled execute_wrapper never runs, so no response is ever sent.
+
+Use case
+
+Running BlenderMCP as a long-running background socket server on a headless workstation/CI box, so that any Claude Code / Cursor session (or any MCP client) can drive Blender without a GUI ever opening. The repo currently assumes the user clicks "Connect to Claude" in the N-panel; for headless server scenarios the addon needs to dispatch commands without depending on the GUI event loop.
+
+Minimal reproduction
+
+Save as repro.py:
+
+import bpy, time, threading
+
+fired = [0]
+def cb():
+    fired[0] += 1
+    return None  # one-shot
+
+def from_thread():
+    time.sleep(0.5)
+    bpy.app.timers.register(cb, first_interval=0.0)
+
+threading.Thread(target=from_thread, daemon=True).start()
+time.sleep(3.0)
+print(f"timer fired? {fired[0]}")  # prints 0
+
+Run:
+
+$ blender -b --python repro.py
+[...]
+timer fired? 0
+
+In GUI mode the timer fires immediately. In -b mode with the main thread blocked, it never fires.
+
+This is exactly the situation _handle_client ends up in once a real headless server script is keeping Blender alive (e.g. while True: time.sleep(...)): the socket worker thread accepts the command and schedules execute_wrapper, but it sits in bpy.app.timers's queue forever.
+
+Proposed fix
+
+When bpy.app.background is True, run the command synchronously in the socket worker thread (which is already where _handle_client is executing) instead of going through bpy.app.timers. GUI behavior is preserved unchanged.
+
+Diff:
+
+-                        # Schedule execution in main thread
+-                        bpy.app.timers.register(execute_wrapper, first_interval=0.0)
++                        # Schedule execution in main thread.
++                        # In `blender -b` (background) mode, bpy.app.timers
++                        # never fire because there's no event loop, so we
++                        # execute synchronously in this worker thread instead.
++                        if bpy.app.background:
++                            execute_wrapper()
++                        else:
++                            bpy.app.timers.register(execute_wrapper, first_interval=0.0)
+
+Branch on my fork: https://github.com/shrimpwagon/blender-mcp/tree/headless-bg-mode-timer-fix
+
+Single commit: shrimpwagon@headless-bg-mode-timer-fix
+
+Thread-safety note
+
+The reason the codebase routes everything through bpy.app.timers is to keep bpy.ops/data calls on the main thread, away from the GUI's depsgraph/draw threads. In -b mode that concern is moot — there is no GUI thread to race with, only the addon's socket loop thread and the script's blocked main thread. Executing the command in the socket worker thread is safe in this mode.
+
+Verified on
+
+Blender 5.1.2 (Linux x64, official tarball)
+
+Ubuntu/Linux Mint, AMD64
+
+BlenderMCP addon.py from main (current version: 1.5.5)
+
+Tested via uvx blender-mcp MCP client from Claude Code: with the patch, get_scene_info returns immediately and a full Cycles render (32 samples, 960×540) completes in ~3.6s end-to-end through the MCP layer.
+
+Happy to send a PR if you'd find it useful — wanted to file the issue first in case you have a preferred shape for this (e.g. an opt-in flag, or a different approach entirely). Thanks for the project.
+
+Activity
+
+ahujasidclosed this as completedin #272on Jun 11, 2026
+
+Sign up for free to join this conversation on GitHub. Already have an account? Sign in to comment
+
+Metadata
+
+Metadata
+
+Assignees
+
+No one assigned
+
+Labels
+
+No labels
+
+No labels
+
+Projects
+
+No projects
+
+Milestone
+
+No milestone
+
+Relationships
+
+None yet
+
+Development
+
+No branches or pull requests
+
+Issue actions
+
+Open in GitHub Copilot app

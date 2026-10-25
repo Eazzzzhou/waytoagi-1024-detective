@@ -1,0 +1,33 @@
+{
+  "capturedAt": "2026-10-25T04:40:54.475Z",
+  "url": "http://127.0.0.1:3104/investigations/66a83cfb-7f9f-4f66-a53c-1afc344452be",
+  "detail": {
+    "investigation": {
+      "id": "66a83cfb-7f9f-4f66-a53c-1afc344452be",
+      "question": "帮我写一首关于秋天的诗",
+      "researchDepth": "AUTO",
+      "status": "SUCCEEDED",
+      "stage": "COMPLETED",
+      "error": null,
+      "createdAt": "2026-10-25T04:40:52.813Z",
+      "updatedAt": "2026-10-25T04:40:54.126Z",
+      "startedAt": "2026-10-25T04:40:53.480Z",
+      "completedAt": "2026-10-25T04:40:54.126Z",
+      "resultSnapshotId": "6c521726-79b2-4840-8791-c99a59f92394"
+    },
+    "identityConfirmation": null,
+    "retry": {
+      "allowed": false,
+      "reason": "仅失败的调查可以手动重试。",
+      "remaining": 2,
+      "expectedAttemptCount": 1
+    }
+  },
+  "observedStates": [
+    {
+      "status": "SUCCEEDED",
+      "stage": "COMPLETED",
+      "observedAt": "2026-10-25T04:40:54.470Z"
+    }
+  ]
+}

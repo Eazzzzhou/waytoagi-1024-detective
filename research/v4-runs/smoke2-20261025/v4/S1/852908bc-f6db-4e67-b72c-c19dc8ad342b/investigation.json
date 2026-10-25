@@ -1,0 +1,68 @@
+{
+  "capturedAt": "2026-10-25T04:06:38.806Z",
+  "url": "http://127.0.0.1:3104/investigations/852908bc-f6db-4e67-b72c-c19dc8ad342b",
+  "detail": {
+    "investigation": {
+      "id": "852908bc-f6db-4e67-b72c-c19dc8ad342b",
+      "question": "DeepSeek API 的 deepseek-chat 模型上下文长度、最大输出和价格分别是多少？",
+      "researchDepth": "AUTO",
+      "status": "SUCCEEDED",
+      "stage": "COMPLETED",
+      "error": null,
+      "createdAt": "2026-10-25T04:05:57.479Z",
+      "updatedAt": "2026-10-25T04:06:38.647Z",
+      "startedAt": "2026-10-25T04:05:58.487Z",
+      "completedAt": "2026-10-25T04:06:38.647Z",
+      "resultSnapshotId": "799afe12-40eb-4da3-877f-33b7f7517a46"
+    },
+    "identityConfirmation": null,
+    "retry": {
+      "allowed": false,
+      "reason": "仅失败的调查可以手动重试。",
+      "remaining": 2,
+      "expectedAttemptCount": 1
+    }
+  },
+  "observedStates": [
+    {
+      "status": "RUNNING",
+      "stage": "IDENTITY",
+      "observedAt": "2026-10-25T04:05:59.222Z"
+    },
+    {
+      "status": "RUNNING",
+      "stage": "RETRIEVAL",
+      "observedAt": "2026-10-25T04:06:00.236Z"
+    },
+    {
+      "status": "RUNNING",
+      "stage": "SOURCE_FETCH",
+      "observedAt": "2026-10-25T04:06:05.322Z"
+    },
+    {
+      "status": "RUNNING",
+      "stage": "VERIFICATION",
+      "observedAt": "2026-10-25T04:06:06.336Z"
+    },
+    {
+      "status": "RUNNING",
+      "stage": "SOURCE_FETCH",
+      "observedAt": "2026-10-25T04:06:25.615Z"
+    },
+    {
+      "status": "RUNNING",
+      "stage": "VERIFICATION",
+      "observedAt": "2026-10-25T04:06:28.656Z"
+    },
+    {
+      "status": "RUNNING",
+      "stage": "ANSWER",
+      "observedAt": "2026-10-25T04:06:31.703Z"
+    },
+    {
+      "status": "SUCCEEDED",
+      "stage": "COMPLETED",
+      "observedAt": "2026-10-25T04:06:38.804Z"
+    }
+  ]
+}

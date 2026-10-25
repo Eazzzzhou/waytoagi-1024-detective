@@ -1,0 +1,3048 @@
+{
+  "snapshot": {
+    "id": "30ab56f6-e4aa-4163-ae7c-25dc99a90b27",
+    "investigationId": "42df84a5-9bb7-40dd-8aff-a474c98d87a7",
+    "version": 1,
+    "parentSnapshotId": null,
+    "productIdentity": {
+      "name": "DeepSeek",
+      "officialWebsite": "https://api-docs.deepseek.com",
+      "version": null,
+      "plan": null,
+      "confirmationStatus": "CONFIRMED",
+      "confirmationBasis": [
+        {
+          "url": "https://api-docs.deepseek.com/quick_start/pricing/",
+          "excerpt": "MODELdeepseek-flash(1)deepseek-v4-proBASE URL (OpenAI Format)https://api.deepseek.comBASE URL (Anthropic Format)https://api.deepseek.com/anthropicMODEL VERSIONDeepSeek-V4.1-Flash-1017DeepSeek-V4-Pro-0813THINKING MODESupports both non-thinking and thinking (default) modesSee Thinking Mode for how to",
+          "retrievedAt": "2026-10-25T04:22:03.348Z",
+          "reason": "Explicit question name matches publisher domain label and freshly read page title; readable original text retained. Website self-identification, not verified legal ownership; version/plan unknown"
+        },
+        {
+          "url": "https://api-docs.deepseek.com/quick_start/pricing/",
+          "excerpt": "(1) Use deepseek-flash as the model name. The legacy names deepseek-v4-flash and deepseek-v4-flash-vision-exp are still accepted, but the corresponding models have been retired, their requests are served by the DeepSeek-V4.1-Flash-1017 model and billed at the Flash price.",
+          "retrievedAt": "2026-10-25T04:22:03.348Z",
+          "reason": "Explicit question name matches publisher domain label and freshly read page title; readable original text retained. Website self-identification, not verified legal ownership; version/plan unknown"
+        },
+        {
+          "url": "https://api-docs.deepseek.com/quick_start/pricing/",
+          "excerpt": "mpletion（Beta）✓✓FIM Completion（Beta）Non-thinking mode onlyNon-thinking mode onlyVision✓Not supportedPRICING(2)1M INPUT TOKENS(CACHE HIT)OFF-PEAK$0.003$0.022PEAK$0.006$0.0441M INPUT TOKENS(CACHE MISS)OFF-PEAK$0.15$0.66PEAK$0.3$1.321M OUTPUT TOKENSOFF-PEAK$0.6$1.98PEAK$1.2$3.96Concurrency Limit(3)2500",
+          "retrievedAt": "2026-10-25T04:22:03.348Z",
+          "reason": "Explicit question name matches publisher domain label and freshly read page title; readable original text retained. Website self-identification, not verified legal ownership; version/plan unknown"
+        },
+        {
+          "url": "https://api-docs.deepseek.com/zh-cn/quick_start/pricing/",
+          "excerpt": "模型deepseek-flash(1)deepseek-v4-proBASE URL (OpenAI 格式)https://api.deepseek.comBASE URL (Anthropic 格式)https://api.deepseek.com/anthropic模型版本DeepSeek-V4.1-Flash-1017DeepSeek-V4-Pro-0813思考模式支持非思考与思考模式（默认）切换方式详见思考模式上下文长度1M输出长度最大 384K功能Json Output支持支持Tool Calls支持支持Responses API支持支持Anthropic API支持支持对话前缀续写",
+          "retrievedAt": "2026-10-25T04:22:03.474Z",
+          "reason": "Explicit question name matches publisher domain label and freshly read page title; readable original text retained. Website self-identification, not verified legal ownership; version/plan unknown"
+        },
+        {
+          "url": "https://api-docs.deepseek.com/zh-cn/quick_start/pricing/",
+          "excerpt": "(1) 模型名请使用 deepseek-flash。旧模型名 deepseek-v4-flash、deepseek-v4-flash-vision-exp 仍可调用，但对应模型已下线，请求将由 DeepSeek-V4.1-Flash-1017 模型提供服务，并按 Flash 价格计费。",
+          "retrievedAt": "2026-10-25T04:22:03.474Z",
+          "reason": "Explicit question name matches publisher domain label and freshly read page title; readable original text retained. Website self-identification, not verified legal ownership; version/plan unknown"
+        }
+      ]
+    },
+    "evidence": [
+      {
+        "id": "1f5d3819-fa18-42ce-a217-ef678a2caea3",
+        "sourceUrl": "https://api-docs.deepseek.com/quick_start/pricing/",
+        "originalExcerpt": "MODELdeepseek-flash(1)deepseek-v4-proBASE URL (OpenAI Format)https://api.deepseek.comBASE URL (Anthropic Format)https://api.deepseek.com/anthropicMODEL VERSIONDeepSeek-V4.1-Flash-1017DeepSeek-V4-Pro-0813THINKING MODESupports both non-thinking and thinking (default) modesSee Thinking Mode for how to",
+        "translation": null,
+        "originalLocation": {
+          "kind": "TEXT",
+          "locator": "https://api-docs.deepseek.com/quick_start/pricing/ :: document:a48f06fc2a66bf26d82c738aca33f5465a18311ceb078654dbea49c7c0f2cdd4@6eb4ae54b763eba6aa33ace2521995b48d2a91a089236310877eb4480fdc81f2 block:b6; source-text/v1 UTF-16 [467,766); fragment-sha256:f32050f48ab697b96921af7c782a6d4b5253b0d5d475d0bfd1210c56e71a24f0; text-sha256:4d791bb7563ef270baf20c50a40e913573f6da5de3417a76b48e3beadeb05a68",
+          "context": "MODELdeepseek-flash(1)deepseek-v4-proBASE URL (OpenAI Format)https://api.deepseek.comBASE URL (Anthropic Format)https://api.deepseek.com/anthropicMODEL VERSIONDeepSeek-V4.1-Flash-1017DeepSeek-V4-Pro-0813THINKING MODESupports both non-thinking and thinking (default) modesSee Thinking Mode for how to switchCONTEXT LENGTH1MMAX OUTPUTMAXIMUM: 384KFEATURESJson Output✓✓Tool Calls✓✓Responses API✓✓Anthropic API✓✓Chat Prefix Completion（Beta）✓✓FIM Completion（Beta）Non-thinking mode onlyNon-thinking mode onlyVision✓Not supportedPRICING(2)1M INPUT TOKENS(C"
+        },
+        "metadata": {
+          "title": "Models & Pricing | DeepSeek API Docs",
+          "siteName": "api-docs.deepseek.com",
+          "author": null,
+          "publishedAt": null,
+          "language": "en",
+          "sourceType": "OFFICIAL",
+          "contentKind": "OFFICIAL_CLAIM",
+          "productVersion": null,
+          "plan": null,
+          "upstreamUrl": null,
+          "independence": "SHARED_ORIGIN",
+          "originGroupId": "origin:175a149d-82a9-4d2d-a631-01b49a866784",
+          "independenceReason": "保存的相同原文/重定向URL、明确upstreamUrl、采集来源组，或同路径且同hash的www别名相连；重复读取/转载不增加独立证据数量。"
+        },
+        "retrievedAt": "2026-10-25T04:22:03.348Z",
+        "readStatus": "READ",
+        "readError": null,
+        "contentHash": "f32050f48ab697b96921af7c782a6d4b5253b0d5d475d0bfd1210c56e71a24f0",
+        "documentReference": {
+          "documentId": "a48f06fc2a66bf26d82c738aca33f5465a18311ceb078654dbea49c7c0f2cdd4",
+          "version": "6eb4ae54b763eba6aa33ace2521995b48d2a91a089236310877eb4480fdc81f2",
+          "blockId": "b6",
+          "start": 467,
+          "end": 766,
+          "textHash": "4d791bb7563ef270baf20c50a40e913573f6da5de3417a76b48e3beadeb05a68",
+          "fragmentHash": "f32050f48ab697b96921af7c782a6d4b5253b0d5d475d0bfd1210c56e71a24f0"
+        }
+      },
+      {
+        "id": "175a149d-82a9-4d2d-a631-01b49a866784",
+        "sourceUrl": "https://api-docs.deepseek.com/quick_start/pricing/",
+        "originalExcerpt": "(1) Use deepseek-flash as the model name. The legacy names deepseek-v4-flash and deepseek-v4-flash-vision-exp are still accepted, but the corresponding models have been retired, their requests are served by the DeepSeek-V4.1-Flash-1017 model and billed at the Flash price.",
+        "translation": null,
+        "originalLocation": {
+          "kind": "TEXT",
+          "locator": "https://api-docs.deepseek.com/quick_start/pricing/ :: document:a48f06fc2a66bf26d82c738aca33f5465a18311ceb078654dbea49c7c0f2cdd4@6eb4ae54b763eba6aa33ace2521995b48d2a91a089236310877eb4480fdc81f2 block:b7; source-text/v1 UTF-16 [1194,1466); fragment-sha256:49556210e16d60a73777f40099a1963ba4900afd7996fd3228f1162dc6a448b5; text-sha256:4d791bb7563ef270baf20c50a40e913573f6da5de3417a76b48e3beadeb05a68",
+          "context": "(1) Use deepseek-flash as the model name. The legacy names deepseek-v4-flash and deepseek-v4-flash-vision-exp are still accepted, but the corresponding models have been retired, their requests are served by the DeepSeek-V4.1-Flash-1017 model and billed at the Flash price."
+        },
+        "metadata": {
+          "title": "Models & Pricing | DeepSeek API Docs",
+          "siteName": "api-docs.deepseek.com",
+          "author": null,
+          "publishedAt": null,
+          "language": "en",
+          "sourceType": "OFFICIAL",
+          "contentKind": "OFFICIAL_CLAIM",
+          "productVersion": null,
+          "plan": null,
+          "upstreamUrl": null,
+          "independence": "SHARED_ORIGIN",
+          "originGroupId": "origin:175a149d-82a9-4d2d-a631-01b49a866784",
+          "independenceReason": "保存的相同原文/重定向URL、明确upstreamUrl、采集来源组，或同路径且同hash的www别名相连；重复读取/转载不增加独立证据数量。"
+        },
+        "retrievedAt": "2026-10-25T04:22:03.348Z",
+        "readStatus": "READ",
+        "readError": null,
+        "contentHash": "49556210e16d60a73777f40099a1963ba4900afd7996fd3228f1162dc6a448b5",
+        "documentReference": {
+          "documentId": "a48f06fc2a66bf26d82c738aca33f5465a18311ceb078654dbea49c7c0f2cdd4",
+          "version": "6eb4ae54b763eba6aa33ace2521995b48d2a91a089236310877eb4480fdc81f2",
+          "blockId": "b7",
+          "start": 1194,
+          "end": 1466,
+          "textHash": "4d791bb7563ef270baf20c50a40e913573f6da5de3417a76b48e3beadeb05a68",
+          "fragmentHash": "49556210e16d60a73777f40099a1963ba4900afd7996fd3228f1162dc6a448b5"
+        }
+      },
+      {
+        "id": "6bff6953-9407-4a15-a476-8ee5f0c042a4",
+        "sourceUrl": "https://api-docs.deepseek.com/quick_start/pricing/",
+        "originalExcerpt": "mpletion（Beta）✓✓FIM Completion（Beta）Non-thinking mode onlyNon-thinking mode onlyVision✓Not supportedPRICING(2)1M INPUT TOKENS(CACHE HIT)OFF-PEAK$0.003$0.022PEAK$0.006$0.0441M INPUT TOKENS(CACHE MISS)OFF-PEAK$0.15$0.66PEAK$0.3$1.321M OUTPUT TOKENSOFF-PEAK$0.6$1.98PEAK$1.2$3.96Concurrency Limit(3)2500",
+        "translation": null,
+        "originalLocation": {
+          "kind": "TEXT",
+          "locator": "https://api-docs.deepseek.com/quick_start/pricing/ :: document:a48f06fc2a66bf26d82c738aca33f5465a18311ceb078654dbea49c7c0f2cdd4@6eb4ae54b763eba6aa33ace2521995b48d2a91a089236310877eb4480fdc81f2 block:b6; source-text/v1 UTF-16 [889,1189); fragment-sha256:da37d2c9f39f8d9f3fc813c04dd1a69bb4e339b8497927644b87bbdf552c0676; text-sha256:4d791bb7563ef270baf20c50a40e913573f6da5de3417a76b48e3beadeb05a68",
+          "context": "-Flash-1017DeepSeek-V4-Pro-0813THINKING MODESupports both non-thinking and thinking (default) modesSee Thinking Mode for how to switchCONTEXT LENGTH1MMAX OUTPUTMAXIMUM: 384KFEATURESJson Output✓✓Tool Calls✓✓Responses API✓✓Anthropic API✓✓Chat Prefix Completion（Beta）✓✓FIM Completion（Beta）Non-thinking mode onlyNon-thinking mode onlyVision✓Not supportedPRICING(2)1M INPUT TOKENS(CACHE HIT)OFF-PEAK$0.003$0.022PEAK$0.006$0.0441M INPUT TOKENS(CACHE MISS)OFF-PEAK$0.15$0.66PEAK$0.3$1.321M OUTPUT TOKENSOFF-PEAK$0.6$1.98PEAK$1.2$3.96Concurrency Limit(3)2500500"
+        },
+        "metadata": {
+          "title": "Models & Pricing | DeepSeek API Docs",
+          "siteName": "api-docs.deepseek.com",
+          "author": null,
+          "publishedAt": null,
+          "language": "en",
+          "sourceType": "OFFICIAL",
+          "contentKind": "OFFICIAL_CLAIM",
+          "productVersion": null,
+          "plan": null,
+          "upstreamUrl": null,
+          "independence": "SHARED_ORIGIN",
+          "originGroupId": "origin:175a149d-82a9-4d2d-a631-01b49a866784",
+          "independenceReason": "保存的相同原文/重定向URL、明确upstreamUrl、采集来源组，或同路径且同hash的www别名相连；重复读取/转载不增加独立证据数量。"
+        },
+        "retrievedAt": "2026-10-25T04:22:03.348Z",
+        "readStatus": "READ",
+        "readError": null,
+        "contentHash": "da37d2c9f39f8d9f3fc813c04dd1a69bb4e339b8497927644b87bbdf552c0676",
+        "documentReference": {
+          "documentId": "a48f06fc2a66bf26d82c738aca33f5465a18311ceb078654dbea49c7c0f2cdd4",
+          "version": "6eb4ae54b763eba6aa33ace2521995b48d2a91a089236310877eb4480fdc81f2",
+          "blockId": "b6",
+          "start": 889,
+          "end": 1189,
+          "textHash": "4d791bb7563ef270baf20c50a40e913573f6da5de3417a76b48e3beadeb05a68",
+          "fragmentHash": "da37d2c9f39f8d9f3fc813c04dd1a69bb4e339b8497927644b87bbdf552c0676"
+        }
+      },
+      {
+        "id": "d740d6ff-d359-4ec8-aa24-c04edc2cbc21",
+        "sourceUrl": "https://api-docs.deepseek.com/zh-cn/quick_start/pricing/",
+        "originalExcerpt": "模型deepseek-flash(1)deepseek-v4-proBASE URL (OpenAI 格式)https://api.deepseek.comBASE URL (Anthropic 格式)https://api.deepseek.com/anthropic模型版本DeepSeek-V4.1-Flash-1017DeepSeek-V4-Pro-0813思考模式支持非思考与思考模式（默认）切换方式详见思考模式上下文长度1M输出长度最大 384K功能Json Output支持支持Tool Calls支持支持Responses API支持支持Anthropic API支持支持对话前缀续写",
+        "translation": null,
+        "originalLocation": {
+          "kind": "TEXT",
+          "locator": "https://api-docs.deepseek.com/zh-cn/quick_start/pricing/ :: document:773be17aaf5ef707c024091f8c16c064dd6100068e0e3256dcd1a0fcec8ebaff@c78fc94ea73970193375637ec26e6b1ae901063400e7ae9683976f494763be91 block:b6; source-text/v1 UTF-16 [184,484); fragment-sha256:d2c3af3caa59bdbfe5fe4bc247f89120d8d3b56243eded92d0db54ef0f857471; text-sha256:db09a343a4d633c64231991c96ddd338cb148398727a38c75cb9dc68e93e81fc",
+          "context": "模型deepseek-flash(1)deepseek-v4-proBASE URL (OpenAI 格式)https://api.deepseek.comBASE URL (Anthropic 格式)https://api.deepseek.com/anthropic模型版本DeepSeek-V4.1-Flash-1017DeepSeek-V4-Pro-0813思考模式支持非思考与思考模式（默认）切换方式详见思考模式上下文长度1M输出长度最大 384K功能Json Output支持支持Tool Calls支持支持Responses API支持支持Anthropic API支持支持对话前缀续写（Beta）支持支持FIM 补全（Beta）仅非思考模式支持仅非思考模式支持图像理解支持不支持价格(2)百万tokens输入（缓存命中）空闲时段0.02元0.15元高峰时段0.04元0.30元百万tokens输入（缓存未命中）空闲时段1元4.5元高峰时段2元9.0元百万tokens输出空闲时段4元13.5元高峰时段8元27.0元并发限制(3)2500500"
+        },
+        "metadata": {
+          "title": "模型 & 价格 | DeepSeek API Docs",
+          "siteName": "api-docs.deepseek.com",
+          "author": null,
+          "publishedAt": null,
+          "language": "zh-cn",
+          "sourceType": "OFFICIAL",
+          "contentKind": "OFFICIAL_CLAIM",
+          "productVersion": null,
+          "plan": null,
+          "upstreamUrl": null,
+          "independence": "SHARED_ORIGIN",
+          "originGroupId": "origin:175a149d-82a9-4d2d-a631-01b49a866784",
+          "independenceReason": "保存的相同原文/重定向URL、明确upstreamUrl、采集来源组，或同路径且同hash的www别名相连；重复读取/转载不增加独立证据数量。"
+        },
+        "retrievedAt": "2026-10-25T04:22:03.474Z",
+        "readStatus": "READ",
+        "readError": null,
+        "contentHash": "d2c3af3caa59bdbfe5fe4bc247f89120d8d3b56243eded92d0db54ef0f857471",
+        "documentReference": {
+          "documentId": "773be17aaf5ef707c024091f8c16c064dd6100068e0e3256dcd1a0fcec8ebaff",
+          "version": "c78fc94ea73970193375637ec26e6b1ae901063400e7ae9683976f494763be91",
+          "blockId": "b6",
+          "start": 184,
+          "end": 484,
+          "textHash": "db09a343a4d633c64231991c96ddd338cb148398727a38c75cb9dc68e93e81fc",
+          "fragmentHash": "d2c3af3caa59bdbfe5fe4bc247f89120d8d3b56243eded92d0db54ef0f857471"
+        }
+      },
+      {
+        "id": "2b50910e-3aea-4ae7-b614-19a79ec97843",
+        "sourceUrl": "https://api-docs.deepseek.com/zh-cn/quick_start/pricing/",
+        "originalExcerpt": "(1) 模型名请使用 deepseek-flash。旧模型名 deepseek-v4-flash、deepseek-v4-flash-vision-exp 仍可调用，但对应模型已下线，请求将由 DeepSeek-V4.1-Flash-1017 模型提供服务，并按 Flash 价格计费。",
+        "translation": null,
+        "originalLocation": {
+          "kind": "TEXT",
+          "locator": "https://api-docs.deepseek.com/zh-cn/quick_start/pricing/ :: document:773be17aaf5ef707c024091f8c16c064dd6100068e0e3256dcd1a0fcec8ebaff@c78fc94ea73970193375637ec26e6b1ae901063400e7ae9683976f494763be91 block:b7; source-text/v1 UTF-16 [665,808); fragment-sha256:048d6982b6422dc577310be941dc74be191de1e8be5f9d78587b4121e642507c; text-sha256:db09a343a4d633c64231991c96ddd338cb148398727a38c75cb9dc68e93e81fc",
+          "context": "(1) 模型名请使用 deepseek-flash。旧模型名 deepseek-v4-flash、deepseek-v4-flash-vision-exp 仍可调用，但对应模型已下线，请求将由 DeepSeek-V4.1-Flash-1017 模型提供服务，并按 Flash 价格计费。"
+        },
+        "metadata": {
+          "title": "模型 & 价格 | DeepSeek API Docs",
+          "siteName": "api-docs.deepseek.com",
+          "author": null,
+          "publishedAt": null,
+          "language": "zh-cn",
+          "sourceType": "OFFICIAL",
+          "contentKind": "OFFICIAL_CLAIM",
+          "productVersion": null,
+          "plan": null,
+          "upstreamUrl": null,
+          "independence": "SHARED_ORIGIN",
+          "originGroupId": "origin:175a149d-82a9-4d2d-a631-01b49a866784",
+          "independenceReason": "保存的相同原文/重定向URL、明确upstreamUrl、采集来源组，或同路径且同hash的www别名相连；重复读取/转载不增加独立证据数量。"
+        },
+        "retrievedAt": "2026-10-25T04:22:03.474Z",
+        "readStatus": "READ",
+        "readError": null,
+        "contentHash": "048d6982b6422dc577310be941dc74be191de1e8be5f9d78587b4121e642507c",
+        "documentReference": {
+          "documentId": "773be17aaf5ef707c024091f8c16c064dd6100068e0e3256dcd1a0fcec8ebaff",
+          "version": "c78fc94ea73970193375637ec26e6b1ae901063400e7ae9683976f494763be91",
+          "blockId": "b7",
+          "start": 665,
+          "end": 808,
+          "textHash": "db09a343a4d633c64231991c96ddd338cb148398727a38c75cb9dc68e93e81fc",
+          "fragmentHash": "048d6982b6422dc577310be941dc74be191de1e8be5f9d78587b4121e642507c"
+        }
+      },
+      {
+        "id": "d20989ed-49bf-41a2-a0aa-a6a2a9c07b1c",
+        "sourceUrl": "https://hk.finance.yahoo.com/news/deepseek-%E6%AD%A3%E6%B8%AC%E8%A9%A6%E6%96%B0%E9%95%B7%E6%96%87%E6%9C%AC%E6%A8%A1%E5%9E%8B%E7%B5%90%E6%A7%8B-api%E6%9C%8D%E5%8B%99%E4%B8%8D%E8%AE%8A-233252601.html",
+        "originalExcerpt": "DeepSeek官方助手在開發者交流群中表示，DeepSeek網頁及APP正在測試新的長文本模型結構，支持1M上下文，而API服務不變，仍為V3.2，僅支持128K上下文。此次測試為2月11日啟動的灰度測試。該新模型上下文窗口較此前128K的版本提升明顯，單次可處理相當於500頁A4文檔的文本量，能覆蓋長文檔分析及跨章節推理等場景。不過，有用戶反饋新版本交互風格有所變化。業內推測該版本或為DeepSeek-V4-Lite，犧牲部分質量換取速度，為正式版本做壓力測試。(ta/u)~阿思達克財經新聞網址: www.aastocks.com",
+        "translation": null,
+        "originalLocation": {
+          "kind": "TEXT",
+          "locator": "https://hk.finance.yahoo.com/news/deepseek-%E6%AD%A3%E6%B8%AC%E8%A9%A6%E6%96%B0%E9%95%B7%E6%96%87%E6%9C%AC%E6%A8%A1%E5%9E%8B%E7%B5%90%E6%A7%8B-api%E6%9C%8D%E5%8B%99%E4%B8%8D%E8%AE%8A-233252601.html :: document:1ebd26019be10d5389d968875f55165586a334421b8376af95d9f0d3a66c2be7@466243a8c2f21f3caa76960fb931321ba8dad7786f7a929ad80cee9d1b78de65 block:b10; source-text/v1 UTF-16 [275,545); fragment-sha256:ead248a295820421424ded2a2903f11ac20f1f0d5d8dc107b5497fe9064fe994; text-sha256:559dfa3f74114ce1724c6a6b7f9a5bfcaac276597e22569fbbaa96038e1bf08a",
+          "context": "DeepSeek官方助手在開發者交流群中表示，DeepSeek網頁及APP正在測試新的長文本模型結構，支持1M上下文，而API服務不變，仍為V3.2，僅支持128K上下文。此次測試為2月11日啟動的灰度測試。該新模型上下文窗口較此前128K的版本提升明顯，單次可處理相當於500頁A4文檔的文本量，能覆蓋長文檔分析及跨章節推理等場景。不過，有用戶反饋新版本交互風格有所變化。業內推測該版本或為DeepSeek-V4-Lite，犧牲部分質量換取速度，為正式版本做壓力測試。(ta/u)~阿思達克財經新聞網址: www.aastocks.com"
+        },
+        "metadata": {
+          "title": "DeepSeek：正測試新長文本模型結構 API服務不變",
+          "siteName": "hk.finance.yahoo.com",
+          "author": "AASTOCKS",
+          "publishedAt": "2026-02-15T23:32:52.000Z",
+          "language": "zh-Hant-HK",
+          "sourceType": "UNKNOWN",
+          "contentKind": "UNKNOWN",
+          "productVersion": null,
+          "plan": null,
+          "upstreamUrl": null,
+          "independence": "SHARED_ORIGIN",
+          "originGroupId": "origin:a815ec57-13a4-4317-9063-789a17e13b35",
+          "independenceReason": "保存的相同原文/重定向URL、明确upstreamUrl、采集来源组，或同路径且同hash的www别名相连；重复读取/转载不增加独立证据数量。"
+        },
+        "retrievedAt": "2026-10-25T04:22:04.375Z",
+        "readStatus": "READ",
+        "readError": null,
+        "contentHash": "ead248a295820421424ded2a2903f11ac20f1f0d5d8dc107b5497fe9064fe994",
+        "documentReference": {
+          "documentId": "1ebd26019be10d5389d968875f55165586a334421b8376af95d9f0d3a66c2be7",
+          "version": "466243a8c2f21f3caa76960fb931321ba8dad7786f7a929ad80cee9d1b78de65",
+          "blockId": "b10",
+          "start": 275,
+          "end": 545,
+          "textHash": "559dfa3f74114ce1724c6a6b7f9a5bfcaac276597e22569fbbaa96038e1bf08a",
+          "fragmentHash": "ead248a295820421424ded2a2903f11ac20f1f0d5d8dc107b5497fe9064fe994"
+        }
+      },
+      {
+        "id": "a815ec57-13a4-4317-9063-789a17e13b35",
+        "sourceUrl": "https://hk.finance.yahoo.com/news/deepseek-%E6%AD%A3%E6%B8%AC%E8%A9%A6%E6%96%B0%E9%95%B7%E6%96%87%E6%9C%AC%E6%A8%A1%E5%9E%8B%E7%B5%90%E6%A7%8B-api%E6%9C%8D%E5%8B%99%E4%B8%8D%E8%AE%8A-233252601.html",
+        "originalExcerpt": "DeepSeek：正測試新長文本模型結構 API服務不變",
+        "translation": null,
+        "originalLocation": {
+          "kind": "TEXT",
+          "locator": "https://hk.finance.yahoo.com/news/deepseek-%E6%AD%A3%E6%B8%AC%E8%A9%A6%E6%96%B0%E9%95%B7%E6%96%87%E6%9C%AC%E6%A8%A1%E5%9E%8B%E7%B5%90%E6%A7%8B-api%E6%9C%8D%E5%8B%99%E4%B8%8D%E8%AE%8A-233252601.html :: document:1ebd26019be10d5389d968875f55165586a334421b8376af95d9f0d3a66c2be7@466243a8c2f21f3caa76960fb931321ba8dad7786f7a929ad80cee9d1b78de65 block:b8; source-text/v1 UTF-16 [215,243); fragment-sha256:ead96f2c9390f2ffacb985574e3b6bd341004b69c4a93bade312773f5f329454; text-sha256:559dfa3f74114ce1724c6a6b7f9a5bfcaac276597e22569fbbaa96038e1bf08a",
+          "context": "DeepSeek：正測試新長文本模型結構 API服務不變"
+        },
+        "metadata": {
+          "title": "DeepSeek：正測試新長文本模型結構 API服務不變",
+          "siteName": "hk.finance.yahoo.com",
+          "author": "AASTOCKS",
+          "publishedAt": "2026-02-15T23:32:52.000Z",
+          "language": "zh-Hant-HK",
+          "sourceType": "UNKNOWN",
+          "contentKind": "UNKNOWN",
+          "productVersion": null,
+          "plan": null,
+          "upstreamUrl": null,
+          "independence": "SHARED_ORIGIN",
+          "originGroupId": "origin:a815ec57-13a4-4317-9063-789a17e13b35",
+          "independenceReason": "保存的相同原文/重定向URL、明确upstreamUrl、采集来源组，或同路径且同hash的www别名相连；重复读取/转载不增加独立证据数量。"
+        },
+        "retrievedAt": "2026-10-25T04:22:04.375Z",
+        "readStatus": "READ",
+        "readError": null,
+        "contentHash": "ead96f2c9390f2ffacb985574e3b6bd341004b69c4a93bade312773f5f329454",
+        "documentReference": {
+          "documentId": "1ebd26019be10d5389d968875f55165586a334421b8376af95d9f0d3a66c2be7",
+          "version": "466243a8c2f21f3caa76960fb931321ba8dad7786f7a929ad80cee9d1b78de65",
+          "blockId": "b8",
+          "start": 215,
+          "end": 243,
+          "textHash": "559dfa3f74114ce1724c6a6b7f9a5bfcaac276597e22569fbbaa96038e1bf08a",
+          "fragmentHash": "ead96f2c9390f2ffacb985574e3b6bd341004b69c4a93bade312773f5f329454"
+        }
+      }
+    ],
+    "claims": [
+      {
+        "id": "235e834b-42b7-4b7a-9c10-595c5dd1a43f",
+        "statement": "DeepSeek 官方 API 文档“模型 & 价格”页（中文版）列出的模型 deepseek-flash（版本 DeepSeek-V4.1-Flash-1017）和 deepseek-v4-pro（版本 DeepSeek-V4-Pro-0813）的上下文长度为 1M，最大输出长度为 384K。",
+        "kind": "OFFICIAL_CLAIM",
+        "verificationStatus": "SUPPORTED",
+        "verificationReason": "中文版官方文档原文列出 deepseek-flash（DeepSeek-V4.1-Flash-1017）与 deepseek-v4-pro（DeepSeek-V4-Pro-0813），并写明“上下文长度1M”“输出长度最大 384K”，与主张一致。",
+        "scope": "DeepSeek API 官方文档“模型 & 价格”页所列 deepseek-flash 与 deepseek-v4-pro 两个模型"
+      },
+      {
+        "id": "43fc96c6-e2bd-4e4a-8953-a620f2e38921",
+        "statement": "阿思达克财经新闻报道称，DeepSeek 官方助手在开发者交流群中表示 API 服务不变，仍为 V3.2，仅支持 128K 上下文，而网页及 APP 正在测试支持 1M 上下文的新长文本模型结构。",
+        "kind": "OFFICIAL_CLAIM",
+        "verificationStatus": "SUPPORTED",
+        "verificationReason": "报道原文称“DeepSeek官方助手在開發者交流群中表示……API服務不變，仍為V3.2，僅支持128K上下文”，并称网页及APP在测试支持1M上下文的新长文本模型结构。主张准确标注为报道转述的官方助手说法。",
+        "scope": "2026-02-15 报道所述 DeepSeek 官方助手在开发者交流群中的说法，仅针对当时 API 服务保持 V3.2 的情形"
+      },
+      {
+        "id": "292f8cce-6d24-4f2c-b3a2-915059e00049",
+        "statement": "阿思达克财经新闻报道提到，有用户反馈该新版本文本的交互风格有所变化。",
+        "kind": "USER_REPORT",
+        "verificationStatus": "SUPPORTED",
+        "verificationReason": "报道原文有“有用戶反饋新版本交互風格有所變化”，属于报道转述的用户反馈，主张未扩大化。",
+        "scope": "2026-02-15 报道所述灰测新长文本模型版本的网页/APP 用户反馈"
+      }
+    ],
+    "relations": [
+      {
+        "claimId": "235e834b-42b7-4b7a-9c10-595c5dd1a43f",
+        "evidenceId": "d740d6ff-d359-4ec8-aa24-c04edc2cbc21",
+        "relation": "SUPPORTS",
+        "reason": "同一中文官方页，模型名、版本号、上下文1M与最大输出384K均直接对应。"
+      },
+      {
+        "claimId": "235e834b-42b7-4b7a-9c10-595c5dd1a43f",
+        "evidenceId": "1f5d3819-fa18-42ce-a217-ef678a2caea3",
+        "relation": "CONTEXT",
+        "reason": "同页列出模型名与版本，但不含上下文长度字段，仅佐证模型/版本。"
+      },
+      {
+        "claimId": "235e834b-42b7-4b7a-9c10-595c5dd1a43f",
+        "evidenceId": "2b50910e-3aea-4ae7-b614-19a79ec97843",
+        "relation": "CONTEXT",
+        "reason": "佐证 deepseek-flash 对应 DeepSeek-V4.1-Flash-1017 模型。"
+      },
+      {
+        "claimId": "43fc96c6-e2bd-4e4a-8953-a620f2e38921",
+        "evidenceId": "d20989ed-49bf-41a2-a0aa-a6a2a9c07b1c",
+        "relation": "SUPPORTS",
+        "reason": "原文直接包含官方助手在开发者交流群的说法及API仍为V3.2、128K上下文。"
+      },
+      {
+        "claimId": "292f8cce-6d24-4f2c-b3a2-915059e00049",
+        "evidenceId": "d20989ed-49bf-41a2-a0aa-a6a2a9c07b1c",
+        "relation": "SUPPORTS",
+        "reason": "原文直接含该用户反馈句，条件指向新版本网页/APP测试版。"
+      }
+    ],
+    "conflicts": [],
+    "gaps": [],
+    "retrievalRecords": [
+      {
+        "id": "b82b0ea7-37e0-41d9-8cf3-4ddea25bcba3",
+        "provider": "tencent-yuanbao-search-api",
+        "query": "DeepSeek API 上下文长度",
+        "calledAt": "2026-10-25T04:21:57.693Z",
+        "status": "SUCCEEDED",
+        "error": null,
+        "returnedSources": [
+          {
+            "url": "https://api-docs.deepseek.com/zh-cn/quick_start/pricing",
+            "title": "模型 & 价格 DeepSeek API Docs",
+            "snippet": "模型 & 价格 | DeepSeek API Docs DeepSeek API文档。模型 & 价格 下表所列模型价格以“百万 tokens”为单位。Token 是模型用来表示自然语言文本的的最小单位,可以是一个词、一个数字或一个标点符号等。我们将根据模型输入和输出的总 token 数进行计量计费。 模型细节​ 注意:deepseek-chat 和 deepseek-reasoner 对应模型版本不变,为 DeepSeek-V3.2 (128K 上下文长度),与 APP/WEB 版不同。 模型 deepseek-chat deepseek-reasoner BASE URL https://api.deepseek.com 模型版本 DeepSeek-V3.2 (非思考模式) DeepSeek-V3.2 (思考模式) 上下文长度 128K 输出长度 默认 4K,最大 8K 默认 32K,最大 64K 功能 Json Output 支持 Tool Calls 支持 支持 对话前缀续写(Beta) 支持 支持 FIM 补全(Beta) 支持 不支持 价格 百万tokens输入(缓存命中) 0.2元 百万tokens输入(缓存未命中) 2元 百万tokens输出 3元 扣费规则​ 扣减费用 = token 消耗量 × 模型单价,对应的费用将直接从充值余额或赠送余额中进行扣减。 当充值余额与赠送余额同时存在时,优先扣减赠送余额。 产品价格可能发生变动,DeepSeek 保留修改价格的权利。请您依据实际用量按需充值,定期查看此页面以获知最新价格信息。...",
+            "adoption": "ADOPTED",
+            "adoptionReason": "从已保存完整文档取得定位片段；支持关系另经主张核查。",
+            "evidenceId": "d740d6ff-d359-4ec8-aa24-c04edc2cbc21"
+          },
+          {
+            "url": "https://api-docs.deepseek.com/quick_start/pricing",
+            "title": "Models & Pricing DeepSeek API Docs",
+            "snippet": "Models & Pricing | DeepSeek API Docs DeepSeek API Docs。Models & Pricing The prices listed below are in units of per 1M tokens. A token, the smallest unit of text that the model recognizes, can be a word, a number, or even a punctuation mark. We will bill based on the total number of input and output tokens by the model. Model Details​ MODEL deepseek-v4-flash deepseek-v4-pro deepseek-v4-flash-vision-exp BASE URL (OpenAI Format) https://api.deepseek.com BASE URL (Anthropic Format) https://api.deepseek.com/anthropic MODEL VERSION DeepSeek-V4-Flash-0731 DeepSeek-V4-Pro-0813 DeepSeek-V4-Flash-Vision-Exp THINKING MODE Supports both non-thinking and thinking (default) modes See Thinking Mode for how to switch CONTEXT LENGTH 1M MAX OUTPUT MAXIMUM: 384K FEATURES Json Output ✓ ✓ Tool Calls ✓ ✓ ✓ Res...",
+            "adoption": "ADOPTED",
+            "adoptionReason": "从已保存完整文档取得定位片段；支持关系另经主张核查。",
+            "evidenceId": "1f5d3819-fa18-42ce-a217-ef678a2caea3"
+          },
+          {
+            "url": "https://api-docs.deepseek.com/zh-cn/news/news250528",
+            "title": "DeepSeek-R1 更新,思考更深,推理更强",
+            "snippet": "DeepSeek-R1 更新,思考更深,推理更强 DeepSeek API文档。 其他能力更新​ 幻觉改善: 新版 DeepSeek R1 针对“幻觉”问题进行了优化。与旧版相比,更新后的模型在改写润色、总结摘要、阅读理解等场景中,幻觉率降低了 45~50% 左右,能够有效地提供更为准确、可靠的结果 创意写作: 在旧版 R1 的基础上,更新后的 R1 模型针对议论文、小说、散文等文体进行了进一步优化,能够输出篇幅更长、结构内容更完整的长篇作品,同时呈现出更加贴近人类偏好的写作风格。 工具调用: DeepSeek-R1-0528 支持工具调用(不支持在 thinking 中进行工具调用)。当前模型 Tau-Bench 测评成绩为 airline 53.5% / retail 63.9%,与 OpenAI o1-high 相当,但与 o3-High 以及 Claude 4 Sonnet 仍有差距。 此外,DeepSeek-R1-0528 在前端代码生成、角色扮演等领域的能力均有更新和提升。 API 更新​ API 已同步更新,接口与调用方式保持不变。新版 R1 API 仍支持查看模型思考过程,同时还增加了 Function Calling 和 JsonOutput 的支持。 我们对新版 R1 API 中 max_tokens 参数的含义做了调整:现在 max_tokens用于限制模型单次输出的总长度(包括思考过程),默认为 32K,最大为 64K。请 API 用户及时调整 max_tokens 参数以防输出被提前截断。 R1 模型的使用方法详见 API 指南:https://api-docs.deepseek.com/zh-cn/guides/thinking_mode。 本次 R1 更新后,官方网站、小程序、App 端和 API 中的模型上下文长度仍为 64K。如果用户对更长...",
+            "adoption": "PENDING",
+            "adoptionReason": "候选尚未读取；摘要不充当原文。",
+            "evidenceId": null
+          },
+          {
+            "url": "https://api-docs.deepseek.com/zh-cn/news/news250821",
+            "title": "DeepSeek-V3.1 发布 DeepSeek API Docs",
+            "snippet": "DeepSeek-V3.1 发布 | DeepSeek API Docs DeepSeek API文档。DeepSeek-V3.1 发布 今天,我们正式发布 DeepSeek-V3.1。本次升级包含以下主要变化: 混合推理架构:一个模型同时支持思考模式与非思考模式; 更高的思考效率:相比 DeepSeek-R1-0528,DeepSeek-V3.1-Think 能在更短时间内给出答案; 更强的 Agent 能力:通过 Post-Training 优化,新模型在工具使用与智能体任务中的表现有较大提升。 官方 App 与网页端模型已同步升级为 DeepSeek-V3.1。用户可以通过“深度思考”按钮,实现思考模式与非思考模式的自由切换。 DeepSeek API 也已同步升级,deepseek-chat 对应非思考模式,deepseek-reasoner 对应思考模式,且上下文均已扩展为 128K。同时,API Beta 接口支持了 strict 模式的 Function Calling,以确保输出的 Function 满足 schema 定义。详见官方文档 另外,我们增加了对 Anthropic API 格式的支持,让大家可以轻松将 DeepSeek-V3.1 的能力接入 Claude Code 框架。详见官方文档 工具调用/智能体支持增强​ 编程智能体​ 在代码修复测评 SWE 与命令行终端环境下的复杂任务(Terminal-Bench)测试中,DeepSeek-V3.1 相比之前的 DeepSeek 系列模型有明显提高。 搜索智能体​ DeepSeek-V3.1 在多项搜索评测指标上取得了较大提升。在需要多步推理的复杂搜索测试(browsecomp)与多学科专家级难题测试(HLE)上,DeepSeek-V3.1 性能已大幅领先 R1-0528。 思考效率提升​ 我们的测试...",
+            "adoption": "PENDING",
+            "adoptionReason": "候选尚未读取；摘要不充当原文。",
+            "evidenceId": null
+          },
+          {
+            "url": "https://api-docs.deepseek.com/zh-cn/quick_start/pricing",
+            "title": "模型 & 价格 DeepSeek API Docs",
+            "snippet": "模型 & 价格 | DeepSeek API Docs DeepSeek API文档。模型 & 价格 下表所列模型价格以“百万 tokens”为单位。Token 是模型用来表示自然语言文本的的最小单位,可以是一个词、一个数字或一个标点符号等。我们将根据模型输入和输出的总 token 数进行计量计费。 模型细节​ 模型 deepseek-flash (1) deepseek-v4-pro BASE URL (OpenAI 格式) https://api.deepseek.com BASE URL (Anthropic 格式) https://api.deepseek.com/anthropic 模型版本 DeepSeek-V4.1-Flash-1017 DeepSeek-V4-Pro-0813 思考模式 支持非思考与思考模式(默认) 切换方式详见 思考模式 上下文长度 1M 输出长度 最大 384K 功能 Json Output 支持 Tool Calls 支持 支持 Responses API 支持 支持 Anthropic API 支持 支持 对话前缀续写(Beta) 支持 支持 FIM 补全(Beta) 仅非思考模式支持 仅非思考模式支持 图像理解 支持 不支持 价格 (2) 百万tokens输入 (缓存命中) 空闲时段 高峰时段 0.04元 0.30元 百万tokens输入 (缓存未命中) 空闲时段 1元 高峰时段 2元 9.0元 百万tokens输出 空闲时段 4元 高峰时段 8元 27.0元 并发限制 (3) 2500 500 (1) 模型名请使用 deepseek-flash。旧模型名 deepseek-v4-flash、deepseek-v4-flash-vision-exp 仍可调用,但对应模型已下线,请求将由 DeepSeek-V4.1-Flash-101...",
+            "adoption": "ADOPTED",
+            "adoptionReason": "从已保存完整文档取得定位片段；支持关系另经主张核查。",
+            "evidenceId": "d740d6ff-d359-4ec8-aa24-c04edc2cbc21"
+          },
+          {
+            "url": "https://deepseek-chat-app.com/api",
+            "title": "DeepSeek API: Powerful Models for Developers and Teams",
+            "snippet": "DeepSeek API: Powerful Models for Developers and Teams DeepSeek。 Production deployments commonly leverage streaming for responsive UX and function calling for external data access. Chatbot development represents the most common integration pattern, with businesses embedding conversational AI into support platforms, mobile apps, and web interfaces. The 128K context window accommodates entire support documentation or conversation histories without truncation. Function calling enables real-time data lookups, allowing bots to query databases, check inventory, or retrieve user account details mid-conversation. Content generation automation for marketing copy, blog posts, and product descriptions using temperature-controlled sampling. Code assistant tools integrating DeepSeek Coder V2 into IDEs ...",
+            "adoption": "PENDING",
+            "adoptionReason": "候选尚未读取；摘要不充当原文。",
+            "evidenceId": null
+          },
+          {
+            "url": "https://api-docs.deepseek.com/quick_start/pricing",
+            "title": "Models & Pricing DeepSeek API Docs",
+            "snippet": "Models & Pricing | DeepSeek API Docs DeepSeek API Docs。Models & Pricing The prices listed below are in units of per 1M tokens. A token, the smallest unit of text that the model recognizes, can be a word, a number, or even a punctuation mark. We will bill based on the total number of input and output tokens by the model. Model Details​ MODEL deepseek-v4-flash deepseek-v4-pro BASE URL (OpenAI Format) https://api.deepseek.com BASE URL (Anthropic Format) https://api.deepseek.com/anthropic MODEL VERSION DeepSeek-V4-Flash DeepSeek-V4-Pro THINKING MODE Supports both non-thinking and thinking (default) modes See Thinking Mode for how to switch CONTEXT LENGTH 1M MAX OUTPUT MAXIMUM: 384K FEATURES Json Output ✓ Tool Calls ✓ ✓ Chat Prefix Completion(Beta) ✓ ✓ FIM Completion(Beta) Non-thinking mode onl...",
+            "adoption": "ADOPTED",
+            "adoptionReason": "从已保存完整文档取得定位片段；支持关系另经主张核查。",
+            "evidenceId": "1f5d3819-fa18-42ce-a217-ef678a2caea3"
+          }
+        ]
+      },
+      {
+        "id": "f372c0be-f2f3-4d16-826e-2148fe81b6d7",
+        "provider": "tavily-search-api:keyless-capped",
+        "query": "DeepSeek API 上下文长度",
+        "calledAt": "2026-10-25T04:21:57.694Z",
+        "status": "SUCCEEDED",
+        "error": null,
+        "returnedSources": [
+          {
+            "url": "https://api-docs.deepseek.com/zh-cn/quick_start/pricing",
+            "title": "模型 & 价格 | DeepSeek API Docs",
+            "snippet": "| | | | | | --- --- | 模型 | | | deepseek-flash(1) | deepseek-v4-pro | | BASE URL (OpenAI 格式) | | | | | | BASE URL (Anthropic 格式) | | | | | | 模型版本 | | | DeepSeek-V4.1-Flash | DeepSeek-V4-Pro-0813 | | 思考模式 | | | 支持非思考与思考模式（默认） 切换方式详见思考模式 | | | 上下文长度 | | | 1M | | | 输出长度 | | | 最大 384K | | | 功能 | Json Output | | 支持 | 支持 | | Tool Calls | | 支持 | 支持 | | Responses API | | 支持 | 支持 | | Anthropic API | | 支持 | 支持 | | 对话前缀续写（Beta） | | 支持 | 支持 | | FIM 补全（Beta） | | 仅非思考模式支持 | 仅非思考模式支持 | [...] | 图像理解 | | 支持 | 不支持 | | 价格(2) | 百万tokens输入 （缓存命中） | 空闲时段 | 0.02元 | 0.15元 | | 高峰时段 | 0.04元 | 0.30元 | | 百万tokens输入 （缓存未命中） | 空闲时段 | 1元 | 4.5元 | | 高峰时段 | 2元 | 9.0元 | | 百万tokens输出 | 空闲时段 | 4元 | 13.5元 | | 高峰时段 | 8元 | 27.0元 | | 并发限制(3) | | | 2500 | 500 | [...] WeChat QRcode",
+            "adoption": "ADOPTED",
+            "adoptionReason": "从已保存完整文档取得定位片段；支持关系另经主张核查。",
+            "evidenceId": "d740d6ff-d359-4ec8-aa24-c04edc2cbc21"
+          },
+          {
+            "url": "https://hk.finance.yahoo.com/news/deepseek-%E6%AD%A3%E6%B8%AC%E8%A9%A6%E6%96%B0%E9%95%B7%E6%96%87%E6%9C%AC%E6%A8%A1%E5%9E%8B%E7%B5%90%E6%A7%8B-api%E6%9C%8D%E5%8B%99%E4%B8%8D%E8%AE%8A-233252601.html",
+            "title": "DeepSeek：正測試新長文本模型結構 API服務不變",
+            "snippet": "AASTOCKS # DeepSeek：正測試新長文本模型結構 API服務不變 AASTOCKS DeepSeek官方助手在開發者交流群中表示，DeepSeek網頁及APP正在測試新的長文本模型結構，支持1M上下文，而API服務不變，仍為V3.2，僅支持128K上下文。此次測試為2月11日啟動的灰度測試。該新模型上下文窗口較此前128K的版本提升明顯，單次可處理相當於500頁A4文檔的文本量，能覆蓋長文檔分析及跨章節推理等場景。不過，有用戶反饋新版本交互風格有所變化。業內推測該版本或為DeepSeek-V4-Lite，犧牲部分質量換取速度，為正式版本做壓力測試。(ta/u)~阿思達克財經新聞網址: www.aastocks.com 條款 及 私隱政策 [...] 跳至導覽 跳過主要內容 跳至右欄 [...] 3. 期貨 4. 加密貨幣 5. 基金 6. 篩選工具 9. 財經日曆 10. 地產 1. 地產首頁 2. Yahoo地產 3. Video 4. 居屋/綠置居 11. 理財 1. 理財首頁 2. 稅貸 3. 加密貨幣 4. 定期存款 5. 退休攻略 12. 專欄 1. 曾淵滄 2. 渾水 3. 高明 4. 何啟聰 5. Louise Wong 6. 唐牛 7. 青冰 8. 胡國威 9. 李聲揚 10. 泡泡龍 11. 言平 12. 黃合秀 13. 小勇哥 14. 邱古奇 15. 割柑人 16. Benny Yam 13. 媒體總覽 1. Yahoo財經 2. AASTOCKS 3. Bloomberg 4. 信報財經新聞 5. BossMind 6. now.com 財經",
+            "adoption": "ADOPTED",
+            "adoptionReason": "从已保存完整文档取得定位片段；支持关系另经主张核查。",
+            "evidenceId": "d20989ed-49bf-41a2-a0aa-a6a2a9c07b1c"
+          },
+          {
+            "url": "https://github.com/deepseek-ai/DeepSeek-V3/issues/1099",
+            "title": "claude code + deepseek api， 容易打爆上下文窗口长度 · Issue #1099 · deepseek-ai/DeepSeek-V3 · GitHub",
+            "snippet": "## Navigation Menu # claude code + deepseek api， 容易打爆上下文窗口长度 #1099 ## Description @xiguadong 大佬们，我深度使用dpsk做为主力开发的api，但是经常会遇到下面的问题： Image Image 任务比较复杂时，通常需要多轮对话，本地的上下文容易超出上限，我尝试了参照Claude的文档设置: `export CLAUDE_CODE_MAX_OUTPUT_TOKENS=32768 export MAX_THINKING_TOKENS=16384 export CLAUDE_AUTOCOMPACT_PCT_OVERRIDE=40` 对于 CLAUDE，上下文是 200k, dpsk的上下文长度是 128k，因此我设置了 自动压缩比例为 40% (200k\\40%=80k)，但是这样实际使用还是未生效，请问有没有什么办法解决？ ## Activity ## Metadata ## Metadata ### Assignees ### Labels ### Type [...] ### Type ### Projects ### Milestone ### Relationships ### Development ## Issue actions ## Footer ### Footer navigation",
+            "adoption": "PENDING",
+            "adoptionReason": "候选尚未读取；摘要不充当原文。",
+            "evidenceId": null
+          },
+          {
+            "url": "https://api-docs.deepseek.com/zh-cn/updates",
+            "title": "更新日志 | DeepSeek API Docs",
+            "snippet": "我们非正式部署了 DeepSeek-V3.2-Speciale 的 API 服务，API 用户可以通过设置 `base_url=\" 访问该模型。该模型 API 价格不变，只支持思考模式下的对话功能，不支持工具调用等功能，最大输出长度默认为 128K，支持时间截止至北京时间 2025-12-15 23:59。 `base_url=\" 详细更新内容请参阅文档 ## 时间: 2025-09-29​ ### DeepSeek-V3.2-Exp​ `deepseek-chat` 和 `deepseek-reasoner` 都已经升级为 DeepSeek-V3.2-Exp。 `deepseek-chat` `deepseek-reasoner` `deepseek-chat` `deepseek-reasoner` 详细更新内容请参阅文档 ## 时间: 2025-09-22​ ### DeepSeek-V3.1-Terminus​ [...] DeepSeek API 文档 Logo DeepSeek API 文档 Logo # 更新日志 ## 时间: 2026-10-17​ ### 开放自研搜索 API​ DeepSeek 网页端与 API 端的搜索能力均由自研 DeepSeek 搜索引擎提供底层支持，稳定处理每天来自全球各地的数亿次搜索请求。DeepSeek 搜索是 AI 原生的通用搜索引擎，索引了全球千亿级网页，支持多语言搜索，实时返回高相关、高权威、高时效的优质结果。针对 SEO 作弊、GEO 操纵和低质 AIGC，我们通过严格的识别机制进行过滤，确保向用户与 LLM 呈现权威可信的信息。使用方式请参考网页搜索与抓取指南。 ### DeepSeek-V4.1-Flash-1017 更新​ DeepSeek V4.1 Flash 已升级至 DeepSeek-V4.1-Flash-1017，官方网页端与 APP 模型也已同步更新至新版本。API 调用方式与价格保持不变，仍使用 `deepseek-flash` 即可访问最新模型。 `deepseek-flash` [...] `deepseek-flash` 相比上一版本的 DeepSeek V4.1，新模型在各基准测试中取得了显著提升： \\ 表示仅在 HLE 评测集的纯文本子集上进行了测试；Terminal-Bench 4.0 使用 Claude Code 框架测试，DeepSWE 使用 Mini-SWE-V2 框架测试；ZeroBench-main 使用 Pass@5 评测。 在提升性能的同时，我们还缩短了模型的任务运行时间与输出长度，让用户能够以更低成本、更快速度完成任务，在多个 Harness 下达到新的性能-费用帕累托最优。我们特别针对 DeepSeek Harness、腾讯 CodeBuddy、WorkBuddy 等平台框架进行了优化。请升级至 DeepSeek Harness 0.2.1-rc.1 及以上版本，以获得适配新版模型的最佳体验。 ## 时间: 2026-09-10​ ### DeepSeek-V4.1-Flash 发布​",
+            "adoption": "PENDING",
+            "adoptionReason": "候选尚未读取；摘要不充当原文。",
+            "evidenceId": null
+          },
+          {
+            "url": "https://hk.finance.yahoo.com/news/deepseek%E6%8E%A8%E6%96%B0-%E4%BB%A3%E6%97%97%E8%89%A6%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E5%AF%A6%E7%8F%BE%E5%9C%8B%E7%94%A2%E8%8A%AF%E7%89%87%E6%B7%B1%E5%BA%A6%E9%81%A9%E9%85%8D-030116242.html",
+            "title": "DeepSeek推新一代旗艦大模型 實現國產芯片深度適配",
+            "snippet": "AASTOCKS # DeepSeek推新一代旗艦大模型 實現國產芯片深度適配 AASTOCKS DeepSeek全新系列模型DeepSeek-V4預覽版本正式推出並同步開源。DeepSeek-V4擁有百萬字超長上下文窗口，在Agent 能力、世界知識和推理性能上均實現國內與開源領域的領先。即日起登錄DeepSeek官網或官方App，便可與最新的DeepSeek-V4對話，探索1M超長上下文記憶的全新體驗。API服務已同步更新，通過修改model\\_name為deepseek-v4-pro或 deepseek-v4-flash即可調用。據早前市場消息，DeepSeek V4首次實現與華為昇騰等國產芯片的深度適配，標誌著中國AI產業在「去CUDA化」道路上邁出的關鍵一步。(ha/u)~阿思達克財經新聞網址: www.aastocks.com 條款 及 私隱政策",
+            "adoption": "PENDING",
+            "adoptionReason": "候选尚未读取；摘要不充当原文。",
+            "evidenceId": null
+          },
+          {
+            "url": "https://hk.finance.yahoo.com/news/deepseek%E6%8E%A8%E6%96%B0-%E4%BB%A3%E6%97%97%E8%89%A6%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E5%AF%A6%E7%8F%BE%E5%9C%8B%E7%94%A2%E8%8A%AF%E7%89%87%E6%B7%B1%E5%BA%A6%E9%81%A9%E9%85%8D-030116242.html",
+            "title": "DeepSeek推新一代旗艦大模型 實現國產芯片深度適配",
+            "snippet": "AASTOCKS # DeepSeek推新一代旗艦大模型 實現國產芯片深度適配 AASTOCKS DeepSeek全新系列模型DeepSeek-V4預覽版本正式推出並同步開源。DeepSeek-V4擁有百萬字超長上下文窗口，在Agent 能力、世界知識和推理性能上均實現國內與開源領域的領先。即日起登錄DeepSeek官網或官方App，便可與最新的DeepSeek-V4對話，探索1M超長上下文記憶的全新體驗。API服務已同步更新，通過修改model\\_name為deepseek-v4-pro或 deepseek-v4-flash即可調用。據早前市場消息，DeepSeek V4首次實現與華為昇騰等國產芯片的深度適配，標誌著中國AI產業在「去CUDA化」道路上邁出的關鍵一步。(ha/u)~阿思達克財經新聞網址: www.aastocks.com 條款 及 私隱政策",
+            "adoption": "PENDING",
+            "adoptionReason": "候选尚未读取；摘要不充当原文。",
+            "evidenceId": null
+          },
+          {
+            "url": "https://api-docs.deepseek.com/zh-cn/news/news250821",
+            "title": "DeepSeek-V3.1 发布 | DeepSeek API Docs",
+            "snippet": "DeepSeek API 文档 Logo DeepSeek API 文档 Logo # DeepSeek-V3.1 发布 今天，我们正式发布 DeepSeek-V3.1。本次升级包含以下主要变化： 混合推理架构：一个模型同时支持思考模式与非思考模式； 更高的思考效率：相比 DeepSeek-R1-0528，DeepSeek-V3.1-Think 能在更短时间内给出答案； 更强的 Agent 能力：通过 Post-Training 优化，新模型在工具使用与智能体任务中的表现有较大提升。 官方 App 与网页端模型已同步升级为 DeepSeek-V3.1。用户可以通过“深度思考”按钮，实现思考模式与非思考模式的自由切换。 DeepSeek API 也已同步升级，deepseek-chat 对应非思考模式，deepseek-reasoner 对应思考模式，且上下文均已扩展为 128K。同时，API Beta 接口支持了 strict 模式的 Function Calling，以确保输出的 Function 满足 schema 定义。详见官方文档 [...] 另外，我们增加了对 Anthropic API 格式的支持，让大家可以轻松将 DeepSeek-V3.1 的能力接入 Claude Code 框架。详见官方文档 ## 工具调用/智能体支持增强​ ### 编程智能体​ 在代码修复测评 SWE 与命令行终端环境下的复杂任务（Terminal-Bench）测试中，DeepSeek-V3.1 相比之前的 DeepSeek 系列模型有明显提高。 ### 搜索智能体​ DeepSeek-V3.1 在多项搜索评测指标上取得了较大提升。在需要多步推理的复杂搜索测试（browsecomp）与多学科专家级难题测试（HLE）上，DeepSeek-V3.1 性能已大幅领先 R1-0528。 ## 思考效率提升​ 我们的测试结果显示，经过思维链压缩训练后，V3.1-Think 在输出 token 数减少 20%-50% 的情况下，各项任务的平均表现与 R1-0528 持平。 同时，V3.1 在非思考模式下的输出长度也得到了有效控制，相比于 DeepSeek-V3-0324 ，能够在输出长度明显减少的情况下保持相同的模型性能。 [...] ## API & 模型开源​ ### 模型开源​ V3.1的 Base 模型在 V3 的基础上重新做了外扩训练，一共增加训练了 840B tokens。Base 模型与后训练模型均已在 Huggingface 与魔搭开源。 Base 模型： Hugging Face： 魔搭： 后训练模型： Hugging Face： 魔搭： 需要注意的是，DeepSeek-V3.1 使用了 UE8M0 FP8 Scale 的参数精度。另外，V3.1 对分词器及 chat template 进行了较大调整，与 DeepSeek-V3 存在明显差异。建议有部署需求的用户仔细阅读新版说明文档。 ### 价格调整​ 我们将于北京时间 2025 年 9 月 6 日凌晨起，对 DeepSeek 开放平台 API 接口调用价格进行如下调整： 在 9 月 6 日前，所有 API 服务仍按原价格政策计费，您可继续享受当前优惠。 同时，为更好地满足用户的调用需求，我们已进一步扩容 API 服务资源，欢迎使用！ WeChat QRcode",
+            "adoption": "PENDING",
+            "adoptionReason": "候选尚未读取；摘要不充当原文。",
+            "evidenceId": null
+          },
+          {
+            "url": "https://api-docs.deepseek.com/zh-cn/api/create-chat-completion",
+            "title": "Chat Completions API | DeepSeek API Docs",
+            "snippet": "如果设为 `enabled`，则使用思考模式。如果设为 `disabled`，则使用非思考模式 reasoning\\_effort string Possible values: [`none`, `low`, `high`, `max`] 控制思考模式开关与思考强度。`none` 关闭思考模式；`low` / `high` / `max` 开启思考模式。默认强度为 `high`。出于兼容考虑，`minimal` 映射为 `low`，`medium` / `xhigh` 映射为 `high`。 max\\_tokens integernullable 限制一次请求中模型生成 completion 的最大 token 数。取值范围为 1 到 384K（393216）。未设置时，非思考模式默认 8K，思考模式默认 64K（`reasoning_effort` 为 `max` 时为 128K）。输入 token 和输出 token 的总长度受模型的上下文长度的限制。详见模型 & 价格。 response\\_format object nullable [...] description string function 的功能描述，供模型理解何时以及如何调用该 function。 name stringrequired 要调用的 function 名称。必须由 a-z、A-Z、0-9 字符组成，或包含下划线和连字符，最大长度为 128 个字符。 parameters object function 的输入参数，以 JSON Schema 对象描述。请参阅Tool Calls 指南获取示例，并参阅JSON Schema 参考了解有关格式的文档。省略 `parameters` 会定义一个参数列表为空的 function。 property name\\ any function 的输入参数，以 JSON Schema 对象描述。请参阅Tool Calls 指南获取示例，并参阅JSON Schema 参考了解有关格式的文档。省略 `parameters` 会定义一个参数列表为空的 function。 strict boolean Default value: `false` [...] 一个介于 0 到 20 之间的整数 N，指定每个输出位置返回输出概率 top N 的 token，且返回这些 token 的对数概率。指定此参数时，logprobs 必须为 true。 user\\_id nullable 您自定义的 user\\_id，可选字符集为 [a-zA-Z0-9\\-\\_]，最大长度为 512。请不要在 user\\_id 中包含用户隐私信息。 + user\\_id 可用于区分您业务侧的用户身份，以帮助我们进行内容安全处理。 + user\\_id 可用于 KVCache 缓存隔离，以进行隐私管理。 + user\\_id 可用于我们对您业务侧用户进行调度隔离。 + 关于 user\\_id 参数更详细的描述，请参考限速与隔离 frequency\\_penalty deprecated 该参数已不再支持。传入该参数将不会产生任何效果。 presence\\_penalty deprecated 该参数已不再支持。传入该参数将不会产生任何效果。 ## Responses​ 200 (No streaming) 200 (Streaming)",
+            "adoption": "PENDING",
+            "adoptionReason": "候选尚未读取；摘要不充当原文。",
+            "evidenceId": null
+          }
+        ]
+      }
+    ],
+    "verificationAudit": {
+      "modelCalls": [
+        {
+          "provider": "api.deepseek.com",
+          "model": "deepseek-flash",
+          "promptVersion": "a2-evidence-v4",
+          "temperature": null,
+          "thinkingMode": "DISABLED",
+          "generatedAt": "2026-10-25T04:21:57.681Z",
+          "id": "508aec4c-8560-4ee4-9c71-d0e1412177ba",
+          "purpose": "v4-research-plan",
+          "startedAt": "2026-10-25T04:21:56.565Z",
+          "durationMs": 1116,
+          "outcome": "SUCCEEDED",
+          "inputTokens": 630,
+          "outputTokens": 79
+        },
+        {
+          "provider": "api.deepseek.com",
+          "model": "deepseek-flash",
+          "promptVersion": "a2-evidence-v4",
+          "temperature": null,
+          "thinkingMode": "DISABLED",
+          "generatedAt": "2026-10-25T04:22:03.110Z",
+          "id": "0d58ef2c-61c7-47c8-be8a-bb90de576d91",
+          "purpose": "v4-next-research-action",
+          "startedAt": "2026-10-25T04:22:00.664Z",
+          "durationMs": 2446,
+          "outcome": "SUCCEEDED",
+          "inputTokens": 7093,
+          "outputTokens": 390
+        },
+        {
+          "provider": "api.deepseek.com",
+          "model": "deepseek-flash",
+          "promptVersion": "a2-evidence-v4",
+          "temperature": null,
+          "thinkingMode": "DISABLED",
+          "generatedAt": "2026-10-25T04:22:05.002Z",
+          "id": "c12c24dc-7226-4729-89a1-7c6ca06f3d07",
+          "purpose": "v4-document-reading",
+          "startedAt": "2026-10-25T04:22:03.588Z",
+          "durationMs": 1414,
+          "outcome": "SUCCEEDED",
+          "inputTokens": 1749,
+          "outputTokens": 145
+        },
+        {
+          "provider": "api.deepseek.com",
+          "model": "deepseek-flash",
+          "promptVersion": "a2-evidence-v4",
+          "temperature": null,
+          "thinkingMode": "DISABLED",
+          "generatedAt": "2026-10-25T04:22:05.028Z",
+          "id": "d902f091-6561-4ec5-8985-e7699bd50277",
+          "purpose": "v4-document-reading",
+          "startedAt": "2026-10-25T04:22:03.590Z",
+          "durationMs": 1438,
+          "outcome": "SUCCEEDED",
+          "inputTokens": 1745,
+          "outputTokens": 215
+        },
+        {
+          "provider": "api.deepseek.com",
+          "model": "deepseek-flash",
+          "promptVersion": "a2-evidence-v4",
+          "temperature": null,
+          "thinkingMode": "DISABLED",
+          "generatedAt": "2026-10-25T04:22:06.155Z",
+          "id": "a2b083c0-7e56-415d-91c6-a47427497446",
+          "purpose": "v4-document-reading",
+          "startedAt": "2026-10-25T04:22:05.017Z",
+          "durationMs": 1138,
+          "outcome": "SUCCEEDED",
+          "inputTokens": 2247,
+          "outputTokens": 145
+        },
+        {
+          "provider": "api.deepseek.com",
+          "model": "deepseek-flash",
+          "promptVersion": "a2-evidence-v4",
+          "temperature": null,
+          "thinkingMode": "DISABLED",
+          "generatedAt": "2026-10-25T04:22:08.894Z",
+          "id": "d8dbbe9e-7360-4761-913f-4b135f1812d7",
+          "purpose": "v4-claim-extraction",
+          "startedAt": "2026-10-25T04:22:06.174Z",
+          "durationMs": 2720,
+          "outcome": "SUCCEEDED",
+          "inputTokens": 2694,
+          "outputTokens": 524
+        },
+        {
+          "provider": "api.deepseek.com",
+          "model": "deepseek-flash",
+          "promptVersion": "a2-evidence-v4",
+          "temperature": null,
+          "thinkingMode": "DISABLED",
+          "generatedAt": "2026-10-25T04:22:12.012Z",
+          "id": "adbde3a7-a54c-49b6-9915-f1af5f64f0c8",
+          "purpose": "v4-claim-verification-batch",
+          "startedAt": "2026-10-25T04:22:08.894Z",
+          "durationMs": 3118,
+          "outcome": "SUCCEEDED",
+          "inputTokens": 3530,
+          "outputTokens": 613
+        },
+        {
+          "provider": "api.deepseek.com",
+          "model": "deepseek-flash",
+          "promptVersion": "a2-evidence-v4",
+          "temperature": null,
+          "thinkingMode": "DISABLED",
+          "generatedAt": "2026-10-25T04:22:14.942Z",
+          "id": "9cf78788-9f9d-4eda-a36c-4334e5e2e04c",
+          "purpose": "v4-next-research-action",
+          "startedAt": "2026-10-25T04:22:12.016Z",
+          "durationMs": 2926,
+          "outcome": "SUCCEEDED",
+          "inputTokens": 15886,
+          "outputTokens": 569
+        },
+        {
+          "provider": "api.deepseek.com",
+          "model": "deepseek-flash",
+          "promptVersion": "a2-evidence-v4",
+          "temperature": null,
+          "thinkingMode": "DISABLED",
+          "generatedAt": "2026-10-25T04:22:16.989Z",
+          "id": "4cdbb0e4-e30d-46f3-a4f9-bbd366379daa",
+          "purpose": "v4-direct-answer-and-analysis",
+          "startedAt": "2026-10-25T04:22:14.949Z",
+          "durationMs": 2040,
+          "outcome": "SUCCEEDED",
+          "inputTokens": 1771,
+          "outputTokens": 354
+        },
+        {
+          "provider": "api.deepseek.com",
+          "model": "deepseek-flash",
+          "promptVersion": "a2-evidence-v4",
+          "temperature": null,
+          "thinkingMode": "DISABLED",
+          "generatedAt": "2026-10-25T04:22:18.527Z",
+          "id": "b4643b75-426c-4ad9-8fea-ab7aa59786f6",
+          "purpose": "v4-synthesis-semantic-check",
+          "startedAt": "2026-10-25T04:22:16.990Z",
+          "durationMs": 1537,
+          "outcome": "SUCCEEDED",
+          "inputTokens": 1523,
+          "outputTokens": 196
+        }
+      ],
+      "review": {
+        "status": "NOT_CONFIGURED",
+        "reason": "本轮未完成第二模型独立原文复核；不同搜索入口不等于独立模型。",
+        "independentAssessment": null,
+        "findings": []
+      },
+      "citationChecks": [
+        {
+          "marker": "v4:0",
+          "supported": true,
+          "reason": "官方文档引文明确列出模型 deepseek-flash 与 deepseek-v4-pro，版本分别为 DeepSeek-V4.1-Flash-1017、DeepSeek-V4-Pro-0813，上下文长度 1M，输出长度最大 384K；主张各分句均被同一引文直接支持。官方宣称仅证明官方如此表述。"
+        },
+        {
+          "marker": "v4:1",
+          "supported": true,
+          "reason": "引文支持官方文档所列两模型为 1M；另一引文明确“API 服務不變，仍為 V3.2，僅支持 128K 上下文”且网页及 APP 在测试 1M 长文本结构，故 128K 针对报道当时 API 仍为 V3.2 的条件；主张作了条件区分而非合并为普遍结论，各分句均有对应引文支持。"
+        }
+      ],
+      "followup": {
+        "queriesUsed": 0,
+        "maxQueries": 6,
+        "stopReason": "模型基于当前覆盖与可执行动作结束：必答项与子任务均已有已核验支持证据：官方中文文档“模型 & 价格”页原文写明 deepseek-flash（DeepSeek-V4.1-Flash-1017）与 deepseek-v4-pro（DeepSeek-V4-Pro-0813）上下文长度 1M、输出长度最大 384K，并说明旧模型名 deepseek-v4-flash 等已下线、请求由新模型承接。另有阿思达克报道转述官方助手称 API 服务当时仍为 V3.2、支持 128K，而网页/APP 在灰度测试 1M 长上下文；两者差异已通过时间与对象口径解释清楚（2026-02 报道的旧 API 状态 vs 官方当前文档的 v4 系列 1M）。当前无未覆盖缺口，继续同义搜索已无增量，故如实结束。"
+      }
+    },
+    "research": {
+      "schemaVersion": "2.0.0",
+      "originalQuestion": "DeepSeek API 的上下文长度是多少？",
+      "intent": "FACT",
+      "budget": {
+        "profile": "COMPARISON",
+        "totalMs": 180000,
+        "reserveMs": 45000,
+        "searchCalls": 6,
+        "documents": 10,
+        "selections": 18,
+        "modelCalls": 44,
+        "explorationTokens": 125000,
+        "totalTokens": 180000,
+        "maxCandidates": 160,
+        "maxActions": 80
+      },
+      "startedAt": "2026-10-25T04:21:56.540Z",
+      "durationMs": 21988,
+      "stopReason": "模型基于当前覆盖与可执行动作结束：必答项与子任务均已有已核验支持证据：官方中文文档“模型 & 价格”页原文写明 deepseek-flash（DeepSeek-V4.1-Flash-1017）与 deepseek-v4-pro（DeepSeek-V4-Pro-0813）上下文长度 1M、输出长度最大 384K，并说明旧模型名 deepseek-v4-flash 等已下线、请求由新模型承接。另有阿思达克报道转述官方助手称 API 服务当时仍为 V3.2、支持 128K，而网页/APP 在灰度测试 1M 长上下文；两者差异已通过时间与对象口径解释清楚（2026-02 报道的旧 API 状态 vs 官方当前文档的 v4 系列 1M）。当前无未覆盖缺口，继续同义搜索已无增量，故如实结束。",
+      "tasks": [
+        {
+          "id": "470d5628-dd5d-4772-a630-44d306677755",
+          "label": "DeepSeek API 的上下文长度是多少？",
+          "required": true,
+          "requirementAnchor": "DeepSeek API 的上下文长度是多少？",
+          "parentId": null,
+          "evidenceNeed": "ANY",
+          "status": "SUPPORTED",
+          "claimIds": [
+            "235e834b-42b7-4b7a-9c10-595c5dd1a43f",
+            "43fc96c6-e2bd-4e4a-8953-a620f2e38921"
+          ],
+          "evidenceIds": [
+            "d740d6ff-d359-4ec8-aa24-c04edc2cbc21",
+            "d20989ed-49bf-41a2-a0aa-a6a2a9c07b1c"
+          ],
+          "attempts": 0,
+          "explanation": "用户必答项1/1有已核验支持；未答项保持在账本。"
+        },
+        {
+          "id": "8f7d49ca-693f-4e1a-89a3-0481c6575d87",
+          "label": "查明 DeepSeek API 的上下文长度",
+          "required": true,
+          "requirementAnchor": "DeepSeek API 的上下文长度是多少",
+          "parentId": "470d5628-dd5d-4772-a630-44d306677755",
+          "evidenceNeed": "OFFICIAL",
+          "status": "SUPPORTED",
+          "claimIds": [
+            "235e834b-42b7-4b7a-9c10-595c5dd1a43f",
+            "43fc96c6-e2bd-4e4a-8953-a620f2e38921"
+          ],
+          "evidenceIds": [
+            "d740d6ff-d359-4ec8-aa24-c04edc2cbc21",
+            "d20989ed-49bf-41a2-a0aa-a6a2a9c07b1c"
+          ],
+          "attempts": 5,
+          "explanation": "中文版官方文档原文列出 deepseek-flash（DeepSeek-V4.1-Flash-1017）与 deepseek-v4-pro（DeepSeek-V4-Pro-0813），并写明“上下文长度1M”“输出长度最大 384K”，与主张一致。；报道原文称“DeepSeek官方助手在開發者交流群中表示……API服務不變，仍為V3.2，僅支持128K上下文”，并称网页及APP在测试支持1M上下文的新长文本模型结构。主张准确标注为报道转述的官方助手说法。"
+        }
+      ],
+      "candidates": [
+        {
+          "id": "1c878d9c-14fe-45b8-9f03-cb9065cf43f6",
+          "url": "https://api-docs.deepseek.com/zh-cn/quick_start/pricing",
+          "canonicalUrl": "https://api-docs.deepseek.com/zh-cn/quick_start/pricing",
+          "title": "模型 & 价格 DeepSeek API Docs",
+          "snippet": "模型 & 价格 | DeepSeek API Docs DeepSeek API文档。模型 & 价格 下表所列模型价格以“百万 tokens”为单位。Token 是模型用来表示自然语言文本的的最小单位,可以是一个词、一个数字或一个标点符号等。我们将根据模型输入和输出的总 token 数进行计量计费。 模型细节​ 注意:deepseek-chat 和 deepseek-reasoner 对应模型版本不变,为 DeepSeek-V3.2 (128K 上下文长度),与 APP/WEB 版不同。 模型 deepseek-chat deepseek-reasoner BASE URL https://api.deepseek.com 模型版本 DeepSeek-V3.2 (非思考模式) DeepSeek-V3.2 (思考模式) 上下文长度 128K 输出长度 默认 4K,最大 8K 默认 32K,最大 64K 功能 Json Output 支持 Tool Calls 支持 支持 对话前缀续写(Beta) 支持 支持 FIM 补全(Beta) 支持 不支持 价格 百万tokens输入(缓存命中) 0.2元 百万tokens输入(缓存未命中) 2元 百万tokens输出 3元 扣费规则​ 扣减费用 = token 消耗量 × 模型单价,对应的费用将直接从充值余额或赠送余额中进行扣减。 当充值余额与赠送余额同时存在时,优先扣减赠送余额。 产品价格可能发生变动,DeepSeek 保留修改价格的权利。请您依据实际用量按需充值,定期查看此页面以获知最新价格信息。...",
+          "taskIds": [
+            "8f7d49ca-693f-4e1a-89a3-0481c6575d87"
+          ],
+          "discoveries": [
+            {
+              "kind": "SEARCH",
+              "recordId": "b82b0ea7-37e0-41d9-8cf3-4ddea25bcba3",
+              "documentId": null,
+              "fromUrl": null
+            },
+            {
+              "kind": "SEARCH",
+              "recordId": "f372c0be-f2f3-4d16-826e-2148fe81b6d7",
+              "documentId": null,
+              "fromUrl": null
+            },
+            {
+              "kind": "DOCUMENT_LINK",
+              "recordId": null,
+              "documentId": "773be17aaf5ef707c024091f8c16c064dd6100068e0e3256dcd1a0fcec8ebaff",
+              "fromUrl": "https://api-docs.deepseek.com/zh-cn/quick_start/pricing/"
+            }
+          ],
+          "status": "READ",
+          "documentId": "773be17aaf5ef707c024091f8c16c064dd6100068e0e3256dcd1a0fcec8ebaff",
+          "evidenceIds": [
+            "d740d6ff-d359-4ec8-aa24-c04edc2cbc21",
+            "2b50910e-3aea-4ae7-b614-19a79ec97843"
+          ],
+          "reason": null,
+          "tier": 0,
+          "priorityReason": "层0：关键方向尚未读；需要原始事实；来源类型匹配；新增站点线索，不等同独立证据。",
+          "expectedSource": "OFFICIAL"
+        },
+        {
+          "id": "5f4f4355-c8f9-483d-9005-19a7216cf28a",
+          "url": "https://api-docs.deepseek.com/quick_start/pricing",
+          "canonicalUrl": "https://api-docs.deepseek.com/quick_start/pricing",
+          "title": "Models & Pricing DeepSeek API Docs",
+          "snippet": "Models & Pricing | DeepSeek API Docs DeepSeek API Docs。Models & Pricing The prices listed below are in units of per 1M tokens. A token, the smallest unit of text that the model recognizes, can be a word, a number, or even a punctuation mark. We will bill based on the total number of input and output tokens by the model. Model Details​ MODEL deepseek-v4-flash deepseek-v4-pro deepseek-v4-flash-vision-exp BASE URL (OpenAI Format) https://api.deepseek.com BASE URL (Anthropic Format) https://api.deepseek.com/anthropic MODEL VERSION DeepSeek-V4-Flash-0731 DeepSeek-V4-Pro-0813 DeepSeek-V4-Flash-Vision-Exp THINKING MODE Supports both non-thinking and thinking (default) modes See Thinking Mode for how to switch CONTEXT LENGTH 1M MAX OUTPUT MAXIMUM: 384K FEATURES Json Output ✓ ✓ Tool Calls ✓ ✓ ✓ Res...",
+          "taskIds": [
+            "8f7d49ca-693f-4e1a-89a3-0481c6575d87"
+          ],
+          "discoveries": [
+            {
+              "kind": "SEARCH",
+              "recordId": "b82b0ea7-37e0-41d9-8cf3-4ddea25bcba3",
+              "documentId": null,
+              "fromUrl": null
+            },
+            {
+              "kind": "DOCUMENT_LINK",
+              "recordId": null,
+              "documentId": "a48f06fc2a66bf26d82c738aca33f5465a18311ceb078654dbea49c7c0f2cdd4",
+              "fromUrl": "https://api-docs.deepseek.com/quick_start/pricing/"
+            }
+          ],
+          "status": "READ",
+          "documentId": "a48f06fc2a66bf26d82c738aca33f5465a18311ceb078654dbea49c7c0f2cdd4",
+          "evidenceIds": [
+            "1f5d3819-fa18-42ce-a217-ef678a2caea3",
+            "175a149d-82a9-4d2d-a631-01b49a866784",
+            "6bff6953-9407-4a15-a476-8ee5f0c042a4"
+          ],
+          "reason": null,
+          "tier": 0,
+          "priorityReason": "层0：关键方向尚未读；需要原始事实；来源类型匹配；新增站点线索，不等同独立证据。",
+          "expectedSource": "OFFICIAL"
+        },
+        {
+          "id": "8eab25c3-772e-4792-ae87-770430ad8b02",
+          "url": "https://api-docs.deepseek.com/zh-cn/news/news250528",
+          "canonicalUrl": "https://api-docs.deepseek.com/zh-cn/news/news250528",
+          "title": "DeepSeek-R1 更新,思考更深,推理更强",
+          "snippet": "DeepSeek-R1 更新,思考更深,推理更强 DeepSeek API文档。 其他能力更新​ 幻觉改善: 新版 DeepSeek R1 针对“幻觉”问题进行了优化。与旧版相比,更新后的模型在改写润色、总结摘要、阅读理解等场景中,幻觉率降低了 45~50% 左右,能够有效地提供更为准确、可靠的结果 创意写作: 在旧版 R1 的基础上,更新后的 R1 模型针对议论文、小说、散文等文体进行了进一步优化,能够输出篇幅更长、结构内容更完整的长篇作品,同时呈现出更加贴近人类偏好的写作风格。 工具调用: DeepSeek-R1-0528 支持工具调用(不支持在 thinking 中进行工具调用)。当前模型 Tau-Bench 测评成绩为 airline 53.5% / retail 63.9%,与 OpenAI o1-high 相当,但与 o3-High 以及 Claude 4 Sonnet 仍有差距。 此外,DeepSeek-R1-0528 在前端代码生成、角色扮演等领域的能力均有更新和提升。 API 更新​ API 已同步更新,接口与调用方式保持不变。新版 R1 API 仍支持查看模型思考过程,同时还增加了 Function Calling 和 JsonOutput 的支持。 我们对新版 R1 API 中 max_tokens 参数的含义做了调整:现在 max_tokens用于限制模型单次输出的总长度(包括思考过程),默认为 32K,最大为 64K。请 API 用户及时调整 max_tokens 参数以防输出被提前截断。 R1 模型的使用方法详见 API 指南:https://api-docs.deepseek.com/zh-cn/guides/thinking_mode。 本次 R1 更新后,官方网站、小程序、App 端和 API 中的模型上下文长度仍为 64K。如果用户对更长...",
+          "taskIds": [
+            "8f7d49ca-693f-4e1a-89a3-0481c6575d87"
+          ],
+          "discoveries": [
+            {
+              "kind": "SEARCH",
+              "recordId": "b82b0ea7-37e0-41d9-8cf3-4ddea25bcba3",
+              "documentId": null,
+              "fromUrl": null
+            }
+          ],
+          "status": "UNREAD",
+          "documentId": null,
+          "evidenceIds": [],
+          "reason": null,
+          "tier": 2,
+          "priorityReason": "层2：需要原始事实；来源类型匹配；同站点，仍须检查作者/上游。",
+          "expectedSource": "OFFICIAL"
+        },
+        {
+          "id": "3cf3e86c-b0ed-4894-b50a-ef9cea2ed739",
+          "url": "https://api-docs.deepseek.com/zh-cn/news/news250821",
+          "canonicalUrl": "https://api-docs.deepseek.com/zh-cn/news/news250821",
+          "title": "DeepSeek-V3.1 发布 DeepSeek API Docs",
+          "snippet": "DeepSeek-V3.1 发布 | DeepSeek API Docs DeepSeek API文档。DeepSeek-V3.1 发布 今天,我们正式发布 DeepSeek-V3.1。本次升级包含以下主要变化: 混合推理架构:一个模型同时支持思考模式与非思考模式; 更高的思考效率:相比 DeepSeek-R1-0528,DeepSeek-V3.1-Think 能在更短时间内给出答案; 更强的 Agent 能力:通过 Post-Training 优化,新模型在工具使用与智能体任务中的表现有较大提升。 官方 App 与网页端模型已同步升级为 DeepSeek-V3.1。用户可以通过“深度思考”按钮,实现思考模式与非思考模式的自由切换。 DeepSeek API 也已同步升级,deepseek-chat 对应非思考模式,deepseek-reasoner 对应思考模式,且上下文均已扩展为 128K。同时,API Beta 接口支持了 strict 模式的 Function Calling,以确保输出的 Function 满足 schema 定义。详见官方文档 另外,我们增加了对 Anthropic API 格式的支持,让大家可以轻松将 DeepSeek-V3.1 的能力接入 Claude Code 框架。详见官方文档 工具调用/智能体支持增强​ 编程智能体​ 在代码修复测评 SWE 与命令行终端环境下的复杂任务(Terminal-Bench)测试中,DeepSeek-V3.1 相比之前的 DeepSeek 系列模型有明显提高。 搜索智能体​ DeepSeek-V3.1 在多项搜索评测指标上取得了较大提升。在需要多步推理的复杂搜索测试(browsecomp)与多学科专家级难题测试(HLE)上,DeepSeek-V3.1 性能已大幅领先 R1-0528。 思考效率提升​ 我们的测试...",
+          "taskIds": [
+            "8f7d49ca-693f-4e1a-89a3-0481c6575d87"
+          ],
+          "discoveries": [
+            {
+              "kind": "SEARCH",
+              "recordId": "b82b0ea7-37e0-41d9-8cf3-4ddea25bcba3",
+              "documentId": null,
+              "fromUrl": null
+            },
+            {
+              "kind": "SEARCH",
+              "recordId": "f372c0be-f2f3-4d16-826e-2148fe81b6d7",
+              "documentId": null,
+              "fromUrl": null
+            }
+          ],
+          "status": "UNREAD",
+          "documentId": null,
+          "evidenceIds": [],
+          "reason": null,
+          "tier": 2,
+          "priorityReason": "层2：需要原始事实；来源类型匹配；同站点，仍须检查作者/上游。",
+          "expectedSource": "OFFICIAL"
+        },
+        {
+          "id": "3e81bd7d-200a-4249-8fbb-96089790cd31",
+          "url": "https://deepseek-chat-app.com/api",
+          "canonicalUrl": "https://deepseek-chat-app.com/api",
+          "title": "DeepSeek API: Powerful Models for Developers and Teams",
+          "snippet": "DeepSeek API: Powerful Models for Developers and Teams DeepSeek。 Production deployments commonly leverage streaming for responsive UX and function calling for external data access. Chatbot development represents the most common integration pattern, with businesses embedding conversational AI into support platforms, mobile apps, and web interfaces. The 128K context window accommodates entire support documentation or conversation histories without truncation. Function calling enables real-time data lookups, allowing bots to query databases, check inventory, or retrieve user account details mid-conversation. Content generation automation for marketing copy, blog posts, and product descriptions using temperature-controlled sampling. Code assistant tools integrating DeepSeek Coder V2 into IDEs ...",
+          "taskIds": [
+            "8f7d49ca-693f-4e1a-89a3-0481c6575d87"
+          ],
+          "discoveries": [
+            {
+              "kind": "SEARCH",
+              "recordId": "b82b0ea7-37e0-41d9-8cf3-4ddea25bcba3",
+              "documentId": null,
+              "fromUrl": null
+            }
+          ],
+          "status": "UNREAD",
+          "documentId": null,
+          "evidenceIds": [],
+          "reason": null,
+          "tier": 2,
+          "priorityReason": "层2：需要原始事实；新增站点线索，不等同独立证据。",
+          "expectedSource": "UNKNOWN"
+        },
+        {
+          "id": "33ebf84b-5d1d-4c2e-af08-49e6bd9ddbd2",
+          "url": "https://hk.finance.yahoo.com/news/deepseek-%E6%AD%A3%E6%B8%AC%E8%A9%A6%E6%96%B0%E9%95%B7%E6%96%87%E6%9C%AC%E6%A8%A1%E5%9E%8B%E7%B5%90%E6%A7%8B-api%E6%9C%8D%E5%8B%99%E4%B8%8D%E8%AE%8A-233252601.html",
+          "canonicalUrl": "https://hk.finance.yahoo.com/news/deepseek-%E6%AD%A3%E6%B8%AC%E8%A9%A6%E6%96%B0%E9%95%B7%E6%96%87%E6%9C%AC%E6%A8%A1%E5%9E%8B%E7%B5%90%E6%A7%8B-api%E6%9C%8D%E5%8B%99%E4%B8%8D%E8%AE%8A-233252601.html",
+          "title": "DeepSeek：正測試新長文本模型結構 API服務不變",
+          "snippet": "AASTOCKS # DeepSeek：正測試新長文本模型結構 API服務不變 AASTOCKS DeepSeek官方助手在開發者交流群中表示，DeepSeek網頁及APP正在測試新的長文本模型結構，支持1M上下文，而API服務不變，仍為V3.2，僅支持128K上下文。此次測試為2月11日啟動的灰度測試。該新模型上下文窗口較此前128K的版本提升明顯，單次可處理相當於500頁A4文檔的文本量，能覆蓋長文檔分析及跨章節推理等場景。不過，有用戶反饋新版本交互風格有所變化。業內推測該版本或為DeepSeek-V4-Lite，犧牲部分質量換取速度，為正式版本做壓力測試。(ta/u)~阿思達克財經新聞網址: www.aastocks.com 條款 及 私隱政策 [...] 跳至導覽 跳過主要內容 跳至右欄 [...] 3. 期貨 4. 加密貨幣 5. 基金 6. 篩選工具 9. 財經日曆 10. 地產 1. 地產首頁 2. Yahoo地產 3. Video 4. 居屋/綠置居 11. 理財 1. 理財首頁 2. 稅貸 3. 加密貨幣 4. 定期存款 5. 退休攻略 12. 專欄 1. 曾淵滄 2. 渾水 3. 高明 4. 何啟聰 5. Louise Wong 6. 唐牛 7. 青冰 8. 胡國威 9. 李聲揚 10. 泡泡龍 11. 言平 12. 黃合秀 13. 小勇哥 14. 邱古奇 15. 割柑人 16. Benny Yam 13. 媒體總覽 1. Yahoo財經 2. AASTOCKS 3. Bloomberg 4. 信報財經新聞 5. BossMind 6. now.com 財經",
+          "taskIds": [
+            "8f7d49ca-693f-4e1a-89a3-0481c6575d87"
+          ],
+          "discoveries": [
+            {
+              "kind": "SEARCH",
+              "recordId": "f372c0be-f2f3-4d16-826e-2148fe81b6d7",
+              "documentId": null,
+              "fromUrl": null
+            },
+            {
+              "kind": "DOCUMENT_LINK",
+              "recordId": null,
+              "documentId": "1ebd26019be10d5389d968875f55165586a334421b8376af95d9f0d3a66c2be7",
+              "fromUrl": "https://hk.finance.yahoo.com/news/deepseek-%E6%AD%A3%E6%B8%AC%E8%A9%A6%E6%96%B0%E9%95%B7%E6%96%87%E6%9C%AC%E6%A8%A1%E5%9E%8B%E7%B5%90%E6%A7%8B-api%E6%9C%8D%E5%8B%99%E4%B8%8D%E8%AE%8A-233252601.html"
+            }
+          ],
+          "status": "READ",
+          "documentId": "1ebd26019be10d5389d968875f55165586a334421b8376af95d9f0d3a66c2be7",
+          "evidenceIds": [
+            "d20989ed-49bf-41a2-a0aa-a6a2a9c07b1c",
+            "a815ec57-13a4-4317-9063-789a17e13b35"
+          ],
+          "reason": null,
+          "tier": 0,
+          "priorityReason": "层0：关键方向尚未读；需要原始事实；新增站点线索，不等同独立证据。",
+          "expectedSource": "UNKNOWN"
+        },
+        {
+          "id": "2e48576a-9fc3-4f61-95ac-0641e0876184",
+          "url": "https://github.com/deepseek-ai/DeepSeek-V3/issues/1099",
+          "canonicalUrl": "https://github.com/deepseek-ai/DeepSeek-V3/issues/1099",
+          "title": "claude code + deepseek api， 容易打爆上下文窗口长度 · Issue #1099 · deepseek-ai/DeepSeek-V3 · GitHub",
+          "snippet": "## Navigation Menu # claude code + deepseek api， 容易打爆上下文窗口长度 #1099 ## Description @xiguadong 大佬们，我深度使用dpsk做为主力开发的api，但是经常会遇到下面的问题： Image Image 任务比较复杂时，通常需要多轮对话，本地的上下文容易超出上限，我尝试了参照Claude的文档设置: `export CLAUDE_CODE_MAX_OUTPUT_TOKENS=32768 export MAX_THINKING_TOKENS=16384 export CLAUDE_AUTOCOMPACT_PCT_OVERRIDE=40` 对于 CLAUDE，上下文是 200k, dpsk的上下文长度是 128k，因此我设置了 自动压缩比例为 40% (200k\\40%=80k)，但是这样实际使用还是未生效，请问有没有什么办法解决？ ## Activity ## Metadata ## Metadata ### Assignees ### Labels ### Type [...] ### Type ### Projects ### Milestone ### Relationships ### Development ## Issue actions ## Footer ### Footer navigation",
+          "taskIds": [
+            "8f7d49ca-693f-4e1a-89a3-0481c6575d87"
+          ],
+          "discoveries": [
+            {
+              "kind": "SEARCH",
+              "recordId": "f372c0be-f2f3-4d16-826e-2148fe81b6d7",
+              "documentId": null,
+              "fromUrl": null
+            }
+          ],
+          "status": "UNREAD",
+          "documentId": null,
+          "evidenceIds": [],
+          "reason": null,
+          "tier": 2,
+          "priorityReason": "层2：需要原始事实；新增站点线索，不等同独立证据。",
+          "expectedSource": "DISCUSSION"
+        },
+        {
+          "id": "856b20d9-4563-4b61-95ad-adaec301a4a4",
+          "url": "https://api-docs.deepseek.com/zh-cn/updates",
+          "canonicalUrl": "https://api-docs.deepseek.com/zh-cn/updates",
+          "title": "更新日志 | DeepSeek API Docs",
+          "snippet": "我们非正式部署了 DeepSeek-V3.2-Speciale 的 API 服务，API 用户可以通过设置 `base_url=\" 访问该模型。该模型 API 价格不变，只支持思考模式下的对话功能，不支持工具调用等功能，最大输出长度默认为 128K，支持时间截止至北京时间 2025-12-15 23:59。 `base_url=\" 详细更新内容请参阅文档 ## 时间: 2025-09-29​ ### DeepSeek-V3.2-Exp​ `deepseek-chat` 和 `deepseek-reasoner` 都已经升级为 DeepSeek-V3.2-Exp。 `deepseek-chat` `deepseek-reasoner` `deepseek-chat` `deepseek-reasoner` 详细更新内容请参阅文档 ## 时间: 2025-09-22​ ### DeepSeek-V3.1-Terminus​ [...] DeepSeek API 文档 Logo DeepSeek API 文档 Logo # 更新日志 ## 时间: 2026-10-17​ ### 开放自研搜索 API​ DeepSeek 网页端与 API 端的搜索能力均由自研 DeepSeek 搜索引擎提供底层支持，稳定处理每天来自全球各地的数亿次搜索请求。DeepSeek 搜索是 AI 原生的通用搜索引擎，索引了全球千亿级网页，支持多语言搜索，实时返回高相关、高权威、高时效的优质结果。针对 SEO 作弊、GEO 操纵和低质 AIGC，我们通过严格的识别机制进行过滤，确保向用户与 LLM 呈现权威可信的信息。使用方式请参考网页搜索与抓取指南。 ### DeepSeek-V4.1-Flash-1017 更新​ DeepSeek V4.1 Flash 已升级至 DeepSeek-V4.1-Flash-1017，官方网页端与 APP 模型也已同步更新至新版本。API 调用方式与价格保持不变，仍使用 `deepseek-flash` 即可访问最新模型。 `deepseek-flash` [...] `deepseek-flash` 相比上一版本的 DeepSeek V4.1，新模型在各基准测试中取得了显著提升： \\ 表示仅在 HLE 评测集的纯文本子集上进行了测试；Terminal-Bench 4.0 使用 Claude Code 框架测试，DeepSWE 使用 Mini-SWE-V2 框架测试；ZeroBench-main 使用 Pass@5 评测。 在提升性能的同时，我们还缩短了模型的任务运行时间与输出长度，让用户能够以更低成本、更快速度完成任务，在多个 Harness 下达到新的性能-费用帕累托最优。我们特别针对 DeepSeek Harness、腾讯 CodeBuddy、WorkBuddy 等平台框架进行了优化。请升级至 DeepSeek Harness 0.2.1-rc.1 及以上版本，以获得适配新版模型的最佳体验。 ## 时间: 2026-09-10​ ### DeepSeek-V4.1-Flash 发布​",
+          "taskIds": [
+            "8f7d49ca-693f-4e1a-89a3-0481c6575d87"
+          ],
+          "discoveries": [
+            {
+              "kind": "SEARCH",
+              "recordId": "f372c0be-f2f3-4d16-826e-2148fe81b6d7",
+              "documentId": null,
+              "fromUrl": null
+            }
+          ],
+          "status": "UNREAD",
+          "documentId": null,
+          "evidenceIds": [],
+          "reason": null,
+          "tier": 2,
+          "priorityReason": "层2：需要原始事实；来源类型匹配；同站点，仍须检查作者/上游。",
+          "expectedSource": "OFFICIAL"
+        },
+        {
+          "id": "ba602608-d47b-44a9-8e8a-69b95823a810",
+          "url": "https://hk.finance.yahoo.com/news/deepseek%E6%8E%A8%E6%96%B0-%E4%BB%A3%E6%97%97%E8%89%A6%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E5%AF%A6%E7%8F%BE%E5%9C%8B%E7%94%A2%E8%8A%AF%E7%89%87%E6%B7%B1%E5%BA%A6%E9%81%A9%E9%85%8D-030116242.html",
+          "canonicalUrl": "https://hk.finance.yahoo.com/news/deepseek%E6%8E%A8%E6%96%B0-%E4%BB%A3%E6%97%97%E8%89%A6%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E5%AF%A6%E7%8F%BE%E5%9C%8B%E7%94%A2%E8%8A%AF%E7%89%87%E6%B7%B1%E5%BA%A6%E9%81%A9%E9%85%8D-030116242.html",
+          "title": "DeepSeek推新一代旗艦大模型 實現國產芯片深度適配",
+          "snippet": "AASTOCKS # DeepSeek推新一代旗艦大模型 實現國產芯片深度適配 AASTOCKS DeepSeek全新系列模型DeepSeek-V4預覽版本正式推出並同步開源。DeepSeek-V4擁有百萬字超長上下文窗口，在Agent 能力、世界知識和推理性能上均實現國內與開源領域的領先。即日起登錄DeepSeek官網或官方App，便可與最新的DeepSeek-V4對話，探索1M超長上下文記憶的全新體驗。API服務已同步更新，通過修改model\\_name為deepseek-v4-pro或 deepseek-v4-flash即可調用。據早前市場消息，DeepSeek V4首次實現與華為昇騰等國產芯片的深度適配，標誌著中國AI產業在「去CUDA化」道路上邁出的關鍵一步。(ha/u)~阿思達克財經新聞網址: www.aastocks.com 條款 及 私隱政策",
+          "taskIds": [
+            "8f7d49ca-693f-4e1a-89a3-0481c6575d87"
+          ],
+          "discoveries": [
+            {
+              "kind": "SEARCH",
+              "recordId": "f372c0be-f2f3-4d16-826e-2148fe81b6d7",
+              "documentId": null,
+              "fromUrl": null
+            }
+          ],
+          "status": "UNREAD",
+          "documentId": null,
+          "evidenceIds": [],
+          "reason": null,
+          "tier": 2,
+          "priorityReason": "层2：需要原始事实；同站点，仍须检查作者/上游。",
+          "expectedSource": "UNKNOWN"
+        },
+        {
+          "id": "f4928867-f674-44d4-a939-1a4f8c6b3e8f",
+          "url": "https://api-docs.deepseek.com/zh-cn/api/create-chat-completion",
+          "canonicalUrl": "https://api-docs.deepseek.com/zh-cn/api/create-chat-completion",
+          "title": "Chat Completions API | DeepSeek API Docs",
+          "snippet": "如果设为 `enabled`，则使用思考模式。如果设为 `disabled`，则使用非思考模式 reasoning\\_effort string Possible values: [`none`, `low`, `high`, `max`] 控制思考模式开关与思考强度。`none` 关闭思考模式；`low` / `high` / `max` 开启思考模式。默认强度为 `high`。出于兼容考虑，`minimal` 映射为 `low`，`medium` / `xhigh` 映射为 `high`。 max\\_tokens integernullable 限制一次请求中模型生成 completion 的最大 token 数。取值范围为 1 到 384K（393216）。未设置时，非思考模式默认 8K，思考模式默认 64K（`reasoning_effort` 为 `max` 时为 128K）。输入 token 和输出 token 的总长度受模型的上下文长度的限制。详见模型 & 价格。 response\\_format object nullable [...] description string function 的功能描述，供模型理解何时以及如何调用该 function。 name stringrequired 要调用的 function 名称。必须由 a-z、A-Z、0-9 字符组成，或包含下划线和连字符，最大长度为 128 个字符。 parameters object function 的输入参数，以 JSON Schema 对象描述。请参阅Tool Calls 指南获取示例，并参阅JSON Schema 参考了解有关格式的文档。省略 `parameters` 会定义一个参数列表为空的 function。 property name\\ any function 的输入参数，以 JSON Schema 对象描述。请参阅Tool Calls 指南获取示例，并参阅JSON Schema 参考了解有关格式的文档。省略 `parameters` 会定义一个参数列表为空的 function。 strict boolean Default value: `false` [...] 一个介于 0 到 20 之间的整数 N，指定每个输出位置返回输出概率 top N 的 token，且返回这些 token 的对数概率。指定此参数时，logprobs 必须为 true。 user\\_id nullable 您自定义的 user\\_id，可选字符集为 [a-zA-Z0-9\\-\\_]，最大长度为 512。请不要在 user\\_id 中包含用户隐私信息。 + user\\_id 可用于区分您业务侧的用户身份，以帮助我们进行内容安全处理。 + user\\_id 可用于 KVCache 缓存隔离，以进行隐私管理。 + user\\_id 可用于我们对您业务侧用户进行调度隔离。 + 关于 user\\_id 参数更详细的描述，请参考限速与隔离 frequency\\_penalty deprecated 该参数已不再支持。传入该参数将不会产生任何效果。 presence\\_penalty deprecated 该参数已不再支持。传入该参数将不会产生任何效果。 ## Responses​ 200 (No streaming) 200 (Streaming)",
+          "taskIds": [
+            "8f7d49ca-693f-4e1a-89a3-0481c6575d87"
+          ],
+          "discoveries": [
+            {
+              "kind": "SEARCH",
+              "recordId": "f372c0be-f2f3-4d16-826e-2148fe81b6d7",
+              "documentId": null,
+              "fromUrl": null
+            }
+          ],
+          "status": "UNREAD",
+          "documentId": null,
+          "evidenceIds": [],
+          "reason": null,
+          "tier": 2,
+          "priorityReason": "层2：需要原始事实；来源类型匹配；同站点，仍须检查作者/上游。",
+          "expectedSource": "OFFICIAL"
+        },
+        {
+          "id": "2a951d26-1344-4bfa-9035-f878482bcd58",
+          "url": "https://api-docs.deepseek.com/guides/search",
+          "canonicalUrl": "https://api-docs.deepseek.com/guides/search",
+          "title": "Click here to view the guide.",
+          "snippet": null,
+          "taskIds": [
+            "8f7d49ca-693f-4e1a-89a3-0481c6575d87"
+          ],
+          "discoveries": [
+            {
+              "kind": "DOCUMENT_LINK",
+              "recordId": null,
+              "documentId": "a48f06fc2a66bf26d82c738aca33f5465a18311ceb078654dbea49c7c0f2cdd4",
+              "fromUrl": "https://api-docs.deepseek.com/quick_start/pricing/"
+            }
+          ],
+          "status": "UNREAD",
+          "documentId": null,
+          "evidenceIds": [],
+          "reason": null,
+          "tier": 2,
+          "priorityReason": "层2：需要原始事实；来源类型匹配；同站点，仍须检查作者/上游。",
+          "expectedSource": "OFFICIAL"
+        },
+        {
+          "id": "af872e99-6ec6-4102-98b0-b2065e6460ae",
+          "url": "https://api.deepseek.com/",
+          "canonicalUrl": "https://api.deepseek.com/",
+          "title": "https://api.deepseek.com",
+          "snippet": null,
+          "taskIds": [
+            "8f7d49ca-693f-4e1a-89a3-0481c6575d87"
+          ],
+          "discoveries": [
+            {
+              "kind": "DOCUMENT_LINK",
+              "recordId": null,
+              "documentId": "a48f06fc2a66bf26d82c738aca33f5465a18311ceb078654dbea49c7c0f2cdd4",
+              "fromUrl": "https://api-docs.deepseek.com/quick_start/pricing/"
+            },
+            {
+              "kind": "DOCUMENT_LINK",
+              "recordId": null,
+              "documentId": "773be17aaf5ef707c024091f8c16c064dd6100068e0e3256dcd1a0fcec8ebaff",
+              "fromUrl": "https://api-docs.deepseek.com/zh-cn/quick_start/pricing/"
+            }
+          ],
+          "status": "UNREAD",
+          "documentId": null,
+          "evidenceIds": [],
+          "reason": null,
+          "tier": 2,
+          "priorityReason": "层2：需要原始事实；新增站点线索，不等同独立证据。",
+          "expectedSource": "UNKNOWN"
+        },
+        {
+          "id": "831cadc0-c824-4056-bc07-42c509bdb7ac",
+          "url": "https://api.deepseek.com/anthropic",
+          "canonicalUrl": "https://api.deepseek.com/anthropic",
+          "title": "https://api.deepseek.com/anthropic",
+          "snippet": null,
+          "taskIds": [
+            "8f7d49ca-693f-4e1a-89a3-0481c6575d87"
+          ],
+          "discoveries": [
+            {
+              "kind": "DOCUMENT_LINK",
+              "recordId": null,
+              "documentId": "a48f06fc2a66bf26d82c738aca33f5465a18311ceb078654dbea49c7c0f2cdd4",
+              "fromUrl": "https://api-docs.deepseek.com/quick_start/pricing/"
+            },
+            {
+              "kind": "DOCUMENT_LINK",
+              "recordId": null,
+              "documentId": "773be17aaf5ef707c024091f8c16c064dd6100068e0e3256dcd1a0fcec8ebaff",
+              "fromUrl": "https://api-docs.deepseek.com/zh-cn/quick_start/pricing/"
+            }
+          ],
+          "status": "UNREAD",
+          "documentId": null,
+          "evidenceIds": [],
+          "reason": null,
+          "tier": 2,
+          "priorityReason": "层2：需要原始事实；新增站点线索，不等同独立证据。",
+          "expectedSource": "UNKNOWN"
+        },
+        {
+          "id": "11cd57f9-8a14-4905-a1bc-2ec7c3af03da",
+          "url": "https://api-docs.deepseek.com/guides/thinking_mode",
+          "canonicalUrl": "https://api-docs.deepseek.com/guides/thinking_mode",
+          "title": "Thinking Mode",
+          "snippet": null,
+          "taskIds": [
+            "8f7d49ca-693f-4e1a-89a3-0481c6575d87"
+          ],
+          "discoveries": [
+            {
+              "kind": "DOCUMENT_LINK",
+              "recordId": null,
+              "documentId": "a48f06fc2a66bf26d82c738aca33f5465a18311ceb078654dbea49c7c0f2cdd4",
+              "fromUrl": "https://api-docs.deepseek.com/quick_start/pricing/"
+            }
+          ],
+          "status": "UNREAD",
+          "documentId": null,
+          "evidenceIds": [],
+          "reason": null,
+          "tier": 2,
+          "priorityReason": "层2：需要原始事实；来源类型匹配；同站点，仍须检查作者/上游。",
+          "expectedSource": "OFFICIAL"
+        },
+        {
+          "id": "ba056560-fd46-4ec0-bcf1-27173092ec6b",
+          "url": "https://api-docs.deepseek.com/guides/json_mode",
+          "canonicalUrl": "https://api-docs.deepseek.com/guides/json_mode",
+          "title": "Json Output",
+          "snippet": null,
+          "taskIds": [
+            "8f7d49ca-693f-4e1a-89a3-0481c6575d87"
+          ],
+          "discoveries": [
+            {
+              "kind": "DOCUMENT_LINK",
+              "recordId": null,
+              "documentId": "a48f06fc2a66bf26d82c738aca33f5465a18311ceb078654dbea49c7c0f2cdd4",
+              "fromUrl": "https://api-docs.deepseek.com/quick_start/pricing/"
+            }
+          ],
+          "status": "UNREAD",
+          "documentId": null,
+          "evidenceIds": [],
+          "reason": null,
+          "tier": 2,
+          "priorityReason": "层2：需要原始事实；来源类型匹配；同站点，仍须检查作者/上游。",
+          "expectedSource": "OFFICIAL"
+        },
+        {
+          "id": "e50b1b77-81ef-49a0-a139-d03254d9d7ea",
+          "url": "https://api-docs.deepseek.com/guides/tool_calls",
+          "canonicalUrl": "https://api-docs.deepseek.com/guides/tool_calls",
+          "title": "Tool Calls",
+          "snippet": null,
+          "taskIds": [
+            "8f7d49ca-693f-4e1a-89a3-0481c6575d87"
+          ],
+          "discoveries": [
+            {
+              "kind": "DOCUMENT_LINK",
+              "recordId": null,
+              "documentId": "a48f06fc2a66bf26d82c738aca33f5465a18311ceb078654dbea49c7c0f2cdd4",
+              "fromUrl": "https://api-docs.deepseek.com/quick_start/pricing/"
+            }
+          ],
+          "status": "UNREAD",
+          "documentId": null,
+          "evidenceIds": [],
+          "reason": null,
+          "tier": 2,
+          "priorityReason": "层2：需要原始事实；来源类型匹配；同站点，仍须检查作者/上游。",
+          "expectedSource": "OFFICIAL"
+        },
+        {
+          "id": "ffe80780-4644-4c14-b955-426ca65712d1",
+          "url": "https://api-docs.deepseek.com/guides/responses_api",
+          "canonicalUrl": "https://api-docs.deepseek.com/guides/responses_api",
+          "title": "Responses API",
+          "snippet": null,
+          "taskIds": [
+            "8f7d49ca-693f-4e1a-89a3-0481c6575d87"
+          ],
+          "discoveries": [
+            {
+              "kind": "DOCUMENT_LINK",
+              "recordId": null,
+              "documentId": "a48f06fc2a66bf26d82c738aca33f5465a18311ceb078654dbea49c7c0f2cdd4",
+              "fromUrl": "https://api-docs.deepseek.com/quick_start/pricing/"
+            }
+          ],
+          "status": "UNREAD",
+          "documentId": null,
+          "evidenceIds": [],
+          "reason": null,
+          "tier": 2,
+          "priorityReason": "层2：需要原始事实；来源类型匹配；同站点，仍须检查作者/上游。",
+          "expectedSource": "OFFICIAL"
+        },
+        {
+          "id": "4c2078be-b56b-441e-8f34-78b7bafc83a2",
+          "url": "https://api-docs.deepseek.com/guides/anthropic_api",
+          "canonicalUrl": "https://api-docs.deepseek.com/guides/anthropic_api",
+          "title": "Anthropic API",
+          "snippet": null,
+          "taskIds": [
+            "8f7d49ca-693f-4e1a-89a3-0481c6575d87"
+          ],
+          "discoveries": [
+            {
+              "kind": "DOCUMENT_LINK",
+              "recordId": null,
+              "documentId": "a48f06fc2a66bf26d82c738aca33f5465a18311ceb078654dbea49c7c0f2cdd4",
+              "fromUrl": "https://api-docs.deepseek.com/quick_start/pricing/"
+            }
+          ],
+          "status": "UNREAD",
+          "documentId": null,
+          "evidenceIds": [],
+          "reason": null,
+          "tier": 2,
+          "priorityReason": "层2：需要原始事实；来源类型匹配；同站点，仍须检查作者/上游。",
+          "expectedSource": "OFFICIAL"
+        },
+        {
+          "id": "92e1c3a8-bdfb-4709-a8aa-a7c2d12f1dcf",
+          "url": "https://api-docs.deepseek.com/guides/chat_prefix_completion",
+          "canonicalUrl": "https://api-docs.deepseek.com/guides/chat_prefix_completion",
+          "title": "Chat Prefix Completion（Beta）",
+          "snippet": null,
+          "taskIds": [
+            "8f7d49ca-693f-4e1a-89a3-0481c6575d87"
+          ],
+          "discoveries": [
+            {
+              "kind": "DOCUMENT_LINK",
+              "recordId": null,
+              "documentId": "a48f06fc2a66bf26d82c738aca33f5465a18311ceb078654dbea49c7c0f2cdd4",
+              "fromUrl": "https://api-docs.deepseek.com/quick_start/pricing/"
+            }
+          ],
+          "status": "UNREAD",
+          "documentId": null,
+          "evidenceIds": [],
+          "reason": null,
+          "tier": 2,
+          "priorityReason": "层2：需要原始事实；来源类型匹配；同站点，仍须检查作者/上游。",
+          "expectedSource": "OFFICIAL"
+        },
+        {
+          "id": "0133e6f0-8046-4d82-8e6c-42f49b726605",
+          "url": "https://api-docs.deepseek.com/guides/fim_completion",
+          "canonicalUrl": "https://api-docs.deepseek.com/guides/fim_completion",
+          "title": "FIM Completion（Beta）",
+          "snippet": null,
+          "taskIds": [
+            "8f7d49ca-693f-4e1a-89a3-0481c6575d87"
+          ],
+          "discoveries": [
+            {
+              "kind": "DOCUMENT_LINK",
+              "recordId": null,
+              "documentId": "a48f06fc2a66bf26d82c738aca33f5465a18311ceb078654dbea49c7c0f2cdd4",
+              "fromUrl": "https://api-docs.deepseek.com/quick_start/pricing/"
+            }
+          ],
+          "status": "UNREAD",
+          "documentId": null,
+          "evidenceIds": [],
+          "reason": null,
+          "tier": 2,
+          "priorityReason": "层2：需要原始事实；来源类型匹配；同站点，仍须检查作者/上游。",
+          "expectedSource": "OFFICIAL"
+        },
+        {
+          "id": "fd5cc89f-20f8-455a-8364-d2921d5bf5aa",
+          "url": "https://api-docs.deepseek.com/guides/vision",
+          "canonicalUrl": "https://api-docs.deepseek.com/guides/vision",
+          "title": "Vision",
+          "snippet": null,
+          "taskIds": [
+            "8f7d49ca-693f-4e1a-89a3-0481c6575d87"
+          ],
+          "discoveries": [
+            {
+              "kind": "DOCUMENT_LINK",
+              "recordId": null,
+              "documentId": "a48f06fc2a66bf26d82c738aca33f5465a18311ceb078654dbea49c7c0f2cdd4",
+              "fromUrl": "https://api-docs.deepseek.com/quick_start/pricing/"
+            }
+          ],
+          "status": "UNREAD",
+          "documentId": null,
+          "evidenceIds": [],
+          "reason": null,
+          "tier": 2,
+          "priorityReason": "层2：需要原始事实；来源类型匹配；同站点，仍须检查作者/上游。",
+          "expectedSource": "OFFICIAL"
+        },
+        {
+          "id": "91c0acb0-249c-4bf5-8ccf-ffb5fc9e1793",
+          "url": "https://api-docs.deepseek.com/quick_start/rate_limit",
+          "canonicalUrl": "https://api-docs.deepseek.com/quick_start/rate_limit",
+          "title": "Rate Limit & Isolation",
+          "snippet": null,
+          "taskIds": [
+            "8f7d49ca-693f-4e1a-89a3-0481c6575d87"
+          ],
+          "discoveries": [
+            {
+              "kind": "DOCUMENT_LINK",
+              "recordId": null,
+              "documentId": "a48f06fc2a66bf26d82c738aca33f5465a18311ceb078654dbea49c7c0f2cdd4",
+              "fromUrl": "https://api-docs.deepseek.com/quick_start/pricing/"
+            }
+          ],
+          "status": "UNREAD",
+          "documentId": null,
+          "evidenceIds": [],
+          "reason": null,
+          "tier": 2,
+          "priorityReason": "层2：需要原始事实；来源类型匹配；同站点，仍须检查作者/上游。",
+          "expectedSource": "OFFICIAL"
+        },
+        {
+          "id": "75765e64-d734-4de8-970a-6bbd5c87bf08",
+          "url": "https://api-docs.deepseek.com/zh-cn/guides/search",
+          "canonicalUrl": "https://api-docs.deepseek.com/zh-cn/guides/search",
+          "title": "点此查看使用指南。",
+          "snippet": null,
+          "taskIds": [
+            "8f7d49ca-693f-4e1a-89a3-0481c6575d87"
+          ],
+          "discoveries": [
+            {
+              "kind": "DOCUMENT_LINK",
+              "recordId": null,
+              "documentId": "773be17aaf5ef707c024091f8c16c064dd6100068e0e3256dcd1a0fcec8ebaff",
+              "fromUrl": "https://api-docs.deepseek.com/zh-cn/quick_start/pricing/"
+            }
+          ],
+          "status": "UNREAD",
+          "documentId": null,
+          "evidenceIds": [],
+          "reason": null,
+          "tier": 2,
+          "priorityReason": "层2：需要原始事实；来源类型匹配；同站点，仍须检查作者/上游。",
+          "expectedSource": "OFFICIAL"
+        },
+        {
+          "id": "06f20128-076a-41af-84ee-f7655019ecf2",
+          "url": "https://api-docs.deepseek.com/zh-cn/guides/thinking_mode",
+          "canonicalUrl": "https://api-docs.deepseek.com/zh-cn/guides/thinking_mode",
+          "title": "思考模式",
+          "snippet": null,
+          "taskIds": [
+            "8f7d49ca-693f-4e1a-89a3-0481c6575d87"
+          ],
+          "discoveries": [
+            {
+              "kind": "DOCUMENT_LINK",
+              "recordId": null,
+              "documentId": "773be17aaf5ef707c024091f8c16c064dd6100068e0e3256dcd1a0fcec8ebaff",
+              "fromUrl": "https://api-docs.deepseek.com/zh-cn/quick_start/pricing/"
+            }
+          ],
+          "status": "UNREAD",
+          "documentId": null,
+          "evidenceIds": [],
+          "reason": null,
+          "tier": 2,
+          "priorityReason": "层2：需要原始事实；来源类型匹配；同站点，仍须检查作者/上游。",
+          "expectedSource": "OFFICIAL"
+        },
+        {
+          "id": "809dad42-33d5-47fa-b3f4-a1cccc7ed783",
+          "url": "https://api-docs.deepseek.com/zh-cn/guides/json_mode",
+          "canonicalUrl": "https://api-docs.deepseek.com/zh-cn/guides/json_mode",
+          "title": "Json Output",
+          "snippet": null,
+          "taskIds": [
+            "8f7d49ca-693f-4e1a-89a3-0481c6575d87"
+          ],
+          "discoveries": [
+            {
+              "kind": "DOCUMENT_LINK",
+              "recordId": null,
+              "documentId": "773be17aaf5ef707c024091f8c16c064dd6100068e0e3256dcd1a0fcec8ebaff",
+              "fromUrl": "https://api-docs.deepseek.com/zh-cn/quick_start/pricing/"
+            }
+          ],
+          "status": "UNREAD",
+          "documentId": null,
+          "evidenceIds": [],
+          "reason": null,
+          "tier": 2,
+          "priorityReason": "层2：需要原始事实；来源类型匹配；同站点，仍须检查作者/上游。",
+          "expectedSource": "OFFICIAL"
+        },
+        {
+          "id": "a43340f6-a708-4edf-a12c-f53424144e95",
+          "url": "https://api-docs.deepseek.com/zh-cn/guides/tool_calls",
+          "canonicalUrl": "https://api-docs.deepseek.com/zh-cn/guides/tool_calls",
+          "title": "Tool Calls",
+          "snippet": null,
+          "taskIds": [
+            "8f7d49ca-693f-4e1a-89a3-0481c6575d87"
+          ],
+          "discoveries": [
+            {
+              "kind": "DOCUMENT_LINK",
+              "recordId": null,
+              "documentId": "773be17aaf5ef707c024091f8c16c064dd6100068e0e3256dcd1a0fcec8ebaff",
+              "fromUrl": "https://api-docs.deepseek.com/zh-cn/quick_start/pricing/"
+            }
+          ],
+          "status": "UNREAD",
+          "documentId": null,
+          "evidenceIds": [],
+          "reason": null,
+          "tier": 2,
+          "priorityReason": "层2：需要原始事实；来源类型匹配；同站点，仍须检查作者/上游。",
+          "expectedSource": "OFFICIAL"
+        },
+        {
+          "id": "da067f18-4873-4dd8-8afd-da7315162138",
+          "url": "https://api-docs.deepseek.com/zh-cn/guides/responses_api",
+          "canonicalUrl": "https://api-docs.deepseek.com/zh-cn/guides/responses_api",
+          "title": "Responses API",
+          "snippet": null,
+          "taskIds": [
+            "8f7d49ca-693f-4e1a-89a3-0481c6575d87"
+          ],
+          "discoveries": [
+            {
+              "kind": "DOCUMENT_LINK",
+              "recordId": null,
+              "documentId": "773be17aaf5ef707c024091f8c16c064dd6100068e0e3256dcd1a0fcec8ebaff",
+              "fromUrl": "https://api-docs.deepseek.com/zh-cn/quick_start/pricing/"
+            }
+          ],
+          "status": "UNREAD",
+          "documentId": null,
+          "evidenceIds": [],
+          "reason": null,
+          "tier": 2,
+          "priorityReason": "层2：需要原始事实；来源类型匹配；同站点，仍须检查作者/上游。",
+          "expectedSource": "OFFICIAL"
+        },
+        {
+          "id": "ce8d713e-2e03-41e6-bf6f-50a25f42db56",
+          "url": "https://api-docs.deepseek.com/zh-cn/guides/anthropic_api",
+          "canonicalUrl": "https://api-docs.deepseek.com/zh-cn/guides/anthropic_api",
+          "title": "Anthropic API",
+          "snippet": null,
+          "taskIds": [
+            "8f7d49ca-693f-4e1a-89a3-0481c6575d87"
+          ],
+          "discoveries": [
+            {
+              "kind": "DOCUMENT_LINK",
+              "recordId": null,
+              "documentId": "773be17aaf5ef707c024091f8c16c064dd6100068e0e3256dcd1a0fcec8ebaff",
+              "fromUrl": "https://api-docs.deepseek.com/zh-cn/quick_start/pricing/"
+            }
+          ],
+          "status": "UNREAD",
+          "documentId": null,
+          "evidenceIds": [],
+          "reason": null,
+          "tier": 2,
+          "priorityReason": "层2：需要原始事实；来源类型匹配；同站点，仍须检查作者/上游。",
+          "expectedSource": "OFFICIAL"
+        },
+        {
+          "id": "59db9921-01e0-4ffb-9e29-202870a8bb17",
+          "url": "https://api-docs.deepseek.com/zh-cn/guides/chat_prefix_completion",
+          "canonicalUrl": "https://api-docs.deepseek.com/zh-cn/guides/chat_prefix_completion",
+          "title": "对话前缀续写（Beta）",
+          "snippet": null,
+          "taskIds": [
+            "8f7d49ca-693f-4e1a-89a3-0481c6575d87"
+          ],
+          "discoveries": [
+            {
+              "kind": "DOCUMENT_LINK",
+              "recordId": null,
+              "documentId": "773be17aaf5ef707c024091f8c16c064dd6100068e0e3256dcd1a0fcec8ebaff",
+              "fromUrl": "https://api-docs.deepseek.com/zh-cn/quick_start/pricing/"
+            }
+          ],
+          "status": "UNREAD",
+          "documentId": null,
+          "evidenceIds": [],
+          "reason": null,
+          "tier": 2,
+          "priorityReason": "层2：需要原始事实；来源类型匹配；同站点，仍须检查作者/上游。",
+          "expectedSource": "OFFICIAL"
+        },
+        {
+          "id": "55e2b495-a16c-45a7-a4db-5aace8176f45",
+          "url": "https://api-docs.deepseek.com/zh-cn/guides/fim_completion",
+          "canonicalUrl": "https://api-docs.deepseek.com/zh-cn/guides/fim_completion",
+          "title": "FIM 补全（Beta）",
+          "snippet": null,
+          "taskIds": [
+            "8f7d49ca-693f-4e1a-89a3-0481c6575d87"
+          ],
+          "discoveries": [
+            {
+              "kind": "DOCUMENT_LINK",
+              "recordId": null,
+              "documentId": "773be17aaf5ef707c024091f8c16c064dd6100068e0e3256dcd1a0fcec8ebaff",
+              "fromUrl": "https://api-docs.deepseek.com/zh-cn/quick_start/pricing/"
+            }
+          ],
+          "status": "UNREAD",
+          "documentId": null,
+          "evidenceIds": [],
+          "reason": null,
+          "tier": 2,
+          "priorityReason": "层2：需要原始事实；来源类型匹配；同站点，仍须检查作者/上游。",
+          "expectedSource": "OFFICIAL"
+        },
+        {
+          "id": "a2f91362-3192-4363-aa37-6578c52ceb46",
+          "url": "https://api-docs.deepseek.com/zh-cn/guides/vision",
+          "canonicalUrl": "https://api-docs.deepseek.com/zh-cn/guides/vision",
+          "title": "图像理解",
+          "snippet": null,
+          "taskIds": [
+            "8f7d49ca-693f-4e1a-89a3-0481c6575d87"
+          ],
+          "discoveries": [
+            {
+              "kind": "DOCUMENT_LINK",
+              "recordId": null,
+              "documentId": "773be17aaf5ef707c024091f8c16c064dd6100068e0e3256dcd1a0fcec8ebaff",
+              "fromUrl": "https://api-docs.deepseek.com/zh-cn/quick_start/pricing/"
+            }
+          ],
+          "status": "UNREAD",
+          "documentId": null,
+          "evidenceIds": [],
+          "reason": null,
+          "tier": 2,
+          "priorityReason": "层2：需要原始事实；来源类型匹配；同站点，仍须检查作者/上游。",
+          "expectedSource": "OFFICIAL"
+        },
+        {
+          "id": "e997614d-89be-4e80-804a-57fc8117865e",
+          "url": "https://api-docs.deepseek.com/zh-cn/quick_start/rate_limit",
+          "canonicalUrl": "https://api-docs.deepseek.com/zh-cn/quick_start/rate_limit",
+          "title": "限速与隔离",
+          "snippet": null,
+          "taskIds": [
+            "8f7d49ca-693f-4e1a-89a3-0481c6575d87"
+          ],
+          "discoveries": [
+            {
+              "kind": "DOCUMENT_LINK",
+              "recordId": null,
+              "documentId": "773be17aaf5ef707c024091f8c16c064dd6100068e0e3256dcd1a0fcec8ebaff",
+              "fromUrl": "https://api-docs.deepseek.com/zh-cn/quick_start/pricing/"
+            }
+          ],
+          "status": "UNREAD",
+          "documentId": null,
+          "evidenceIds": [],
+          "reason": null,
+          "tier": 2,
+          "priorityReason": "层2：需要原始事实；来源类型匹配；同站点，仍须检查作者/上游。",
+          "expectedSource": "OFFICIAL"
+        },
+        {
+          "id": "d3b10799-2cd9-4535-887b-943527cb29ad",
+          "url": "https://hk.finance.yahoo.com/quote/%5EHSI/",
+          "canonicalUrl": "https://hk.finance.yahoo.com/quote/%5EHSI/",
+          "title": "恒指",
+          "snippet": null,
+          "taskIds": [
+            "8f7d49ca-693f-4e1a-89a3-0481c6575d87"
+          ],
+          "discoveries": [
+            {
+              "kind": "DOCUMENT_LINK",
+              "recordId": null,
+              "documentId": "1ebd26019be10d5389d968875f55165586a334421b8376af95d9f0d3a66c2be7",
+              "fromUrl": "https://hk.finance.yahoo.com/news/deepseek-%E6%AD%A3%E6%B8%AC%E8%A9%A6%E6%96%B0%E9%95%B7%E6%96%87%E6%9C%AC%E6%A8%A1%E5%9E%8B%E7%B5%90%E6%A7%8B-api%E6%9C%8D%E5%8B%99%E4%B8%8D%E8%AE%8A-233252601.html"
+            }
+          ],
+          "status": "UNREAD",
+          "documentId": null,
+          "evidenceIds": [],
+          "reason": null,
+          "tier": 2,
+          "priorityReason": "层2：需要原始事实；同站点，仍须检查作者/上游。",
+          "expectedSource": "UNKNOWN"
+        },
+        {
+          "id": "a909baca-a92d-42b0-84a6-e76094972465",
+          "url": "https://hk.finance.yahoo.com/quote/000001.SS/",
+          "canonicalUrl": "https://hk.finance.yahoo.com/quote/000001.SS/",
+          "title": "上證綜指",
+          "snippet": null,
+          "taskIds": [
+            "8f7d49ca-693f-4e1a-89a3-0481c6575d87"
+          ],
+          "discoveries": [
+            {
+              "kind": "DOCUMENT_LINK",
+              "recordId": null,
+              "documentId": "1ebd26019be10d5389d968875f55165586a334421b8376af95d9f0d3a66c2be7",
+              "fromUrl": "https://hk.finance.yahoo.com/news/deepseek-%E6%AD%A3%E6%B8%AC%E8%A9%A6%E6%96%B0%E9%95%B7%E6%96%87%E6%9C%AC%E6%A8%A1%E5%9E%8B%E7%B5%90%E6%A7%8B-api%E6%9C%8D%E5%8B%99%E4%B8%8D%E8%AE%8A-233252601.html"
+            }
+          ],
+          "status": "UNREAD",
+          "documentId": null,
+          "evidenceIds": [],
+          "reason": null,
+          "tier": 2,
+          "priorityReason": "层2：需要原始事实；同站点，仍须检查作者/上游。",
+          "expectedSource": "UNKNOWN"
+        },
+        {
+          "id": "84d79740-489d-4665-ad51-b3235774d82d",
+          "url": "https://hk.finance.yahoo.com/quote/%5EGSPC/",
+          "canonicalUrl": "https://hk.finance.yahoo.com/quote/%5EGSPC/",
+          "title": "標普 500",
+          "snippet": null,
+          "taskIds": [
+            "8f7d49ca-693f-4e1a-89a3-0481c6575d87"
+          ],
+          "discoveries": [
+            {
+              "kind": "DOCUMENT_LINK",
+              "recordId": null,
+              "documentId": "1ebd26019be10d5389d968875f55165586a334421b8376af95d9f0d3a66c2be7",
+              "fromUrl": "https://hk.finance.yahoo.com/news/deepseek-%E6%AD%A3%E6%B8%AC%E8%A9%A6%E6%96%B0%E9%95%B7%E6%96%87%E6%9C%AC%E6%A8%A1%E5%9E%8B%E7%B5%90%E6%A7%8B-api%E6%9C%8D%E5%8B%99%E4%B8%8D%E8%AE%8A-233252601.html"
+            }
+          ],
+          "status": "UNREAD",
+          "documentId": null,
+          "evidenceIds": [],
+          "reason": null,
+          "tier": 2,
+          "priorityReason": "层2：需要原始事实；同站点，仍须检查作者/上游。",
+          "expectedSource": "UNKNOWN"
+        },
+        {
+          "id": "fc007459-85fa-4fdc-b446-83356141a5c1",
+          "url": "https://hk.finance.yahoo.com/quote/JPYHKD%3DX/",
+          "canonicalUrl": "https://hk.finance.yahoo.com/quote/JPYHKD%3DX/",
+          "title": "日圓",
+          "snippet": null,
+          "taskIds": [
+            "8f7d49ca-693f-4e1a-89a3-0481c6575d87"
+          ],
+          "discoveries": [
+            {
+              "kind": "DOCUMENT_LINK",
+              "recordId": null,
+              "documentId": "1ebd26019be10d5389d968875f55165586a334421b8376af95d9f0d3a66c2be7",
+              "fromUrl": "https://hk.finance.yahoo.com/news/deepseek-%E6%AD%A3%E6%B8%AC%E8%A9%A6%E6%96%B0%E9%95%B7%E6%96%87%E6%9C%AC%E6%A8%A1%E5%9E%8B%E7%B5%90%E6%A7%8B-api%E6%9C%8D%E5%8B%99%E4%B8%8D%E8%AE%8A-233252601.html"
+            }
+          ],
+          "status": "UNREAD",
+          "documentId": null,
+          "evidenceIds": [],
+          "reason": null,
+          "tier": 2,
+          "priorityReason": "层2：需要原始事实；同站点，仍须检查作者/上游。",
+          "expectedSource": "UNKNOWN"
+        },
+        {
+          "id": "9b6e5270-f8e5-4c40-bb60-8e3d968c0830",
+          "url": "https://hk.finance.yahoo.com/quote/GBPHKD%3DX/",
+          "canonicalUrl": "https://hk.finance.yahoo.com/quote/GBPHKD%3DX/",
+          "title": "英鎊",
+          "snippet": null,
+          "taskIds": [
+            "8f7d49ca-693f-4e1a-89a3-0481c6575d87"
+          ],
+          "discoveries": [
+            {
+              "kind": "DOCUMENT_LINK",
+              "recordId": null,
+              "documentId": "1ebd26019be10d5389d968875f55165586a334421b8376af95d9f0d3a66c2be7",
+              "fromUrl": "https://hk.finance.yahoo.com/news/deepseek-%E6%AD%A3%E6%B8%AC%E8%A9%A6%E6%96%B0%E9%95%B7%E6%96%87%E6%9C%AC%E6%A8%A1%E5%9E%8B%E7%B5%90%E6%A7%8B-api%E6%9C%8D%E5%8B%99%E4%B8%8D%E8%AE%8A-233252601.html"
+            }
+          ],
+          "status": "UNREAD",
+          "documentId": null,
+          "evidenceIds": [],
+          "reason": null,
+          "tier": 2,
+          "priorityReason": "层2：需要原始事实；同站点，仍须检查作者/上游。",
+          "expectedSource": "UNKNOWN"
+        },
+        {
+          "id": "70922382-0563-4bb3-a484-ade1dc35eb5a",
+          "url": "https://hk.finance.yahoo.com/quote/HKDCNY%3DX/",
+          "canonicalUrl": "https://hk.finance.yahoo.com/quote/HKDCNY%3DX/",
+          "title": "人民幣",
+          "snippet": null,
+          "taskIds": [
+            "8f7d49ca-693f-4e1a-89a3-0481c6575d87"
+          ],
+          "discoveries": [
+            {
+              "kind": "DOCUMENT_LINK",
+              "recordId": null,
+              "documentId": "1ebd26019be10d5389d968875f55165586a334421b8376af95d9f0d3a66c2be7",
+              "fromUrl": "https://hk.finance.yahoo.com/news/deepseek-%E6%AD%A3%E6%B8%AC%E8%A9%A6%E6%96%B0%E9%95%B7%E6%96%87%E6%9C%AC%E6%A8%A1%E5%9E%8B%E7%B5%90%E6%A7%8B-api%E6%9C%8D%E5%8B%99%E4%B8%8D%E8%AE%8A-233252601.html"
+            }
+          ],
+          "status": "UNREAD",
+          "documentId": null,
+          "evidenceIds": [],
+          "reason": null,
+          "tier": 2,
+          "priorityReason": "层2：需要原始事实；同站点，仍须检查作者/上游。",
+          "expectedSource": "UNKNOWN"
+        },
+        {
+          "id": "726f9334-6ed1-47ca-bb72-705fcb2391bf",
+          "url": "https://guce.yahoo.com/terms?locale=zh-Hant-HK",
+          "canonicalUrl": "https://guce.yahoo.com/terms?locale=zh-Hant-HK",
+          "title": "條款",
+          "snippet": null,
+          "taskIds": [
+            "8f7d49ca-693f-4e1a-89a3-0481c6575d87"
+          ],
+          "discoveries": [
+            {
+              "kind": "DOCUMENT_LINK",
+              "recordId": null,
+              "documentId": "1ebd26019be10d5389d968875f55165586a334421b8376af95d9f0d3a66c2be7",
+              "fromUrl": "https://hk.finance.yahoo.com/news/deepseek-%E6%AD%A3%E6%B8%AC%E8%A9%A6%E6%96%B0%E9%95%B7%E6%96%87%E6%9C%AC%E6%A8%A1%E5%9E%8B%E7%B5%90%E6%A7%8B-api%E6%9C%8D%E5%8B%99%E4%B8%8D%E8%AE%8A-233252601.html"
+            }
+          ],
+          "status": "UNREAD",
+          "documentId": null,
+          "evidenceIds": [],
+          "reason": null,
+          "tier": 2,
+          "priorityReason": "层2：需要原始事实；新增站点线索，不等同独立证据。",
+          "expectedSource": "UNKNOWN"
+        },
+        {
+          "id": "31897f74-7464-4b7d-bb68-fe7518c94267",
+          "url": "https://guce.yahoo.com/privacy-policy?locale=zh-Hant-HK",
+          "canonicalUrl": "https://guce.yahoo.com/privacy-policy?locale=zh-Hant-HK",
+          "title": "私隱政策",
+          "snippet": null,
+          "taskIds": [
+            "8f7d49ca-693f-4e1a-89a3-0481c6575d87"
+          ],
+          "discoveries": [
+            {
+              "kind": "DOCUMENT_LINK",
+              "recordId": null,
+              "documentId": "1ebd26019be10d5389d968875f55165586a334421b8376af95d9f0d3a66c2be7",
+              "fromUrl": "https://hk.finance.yahoo.com/news/deepseek-%E6%AD%A3%E6%B8%AC%E8%A9%A6%E6%96%B0%E9%95%B7%E6%96%87%E6%9C%AC%E6%A8%A1%E5%9E%8B%E7%B5%90%E6%A7%8B-api%E6%9C%8D%E5%8B%99%E4%B8%8D%E8%AE%8A-233252601.html"
+            }
+          ],
+          "status": "UNREAD",
+          "documentId": null,
+          "evidenceIds": [],
+          "reason": null,
+          "tier": 2,
+          "priorityReason": "层2：需要原始事实；新增站点线索，不等同独立证据。",
+          "expectedSource": "UNKNOWN"
+        },
+        {
+          "id": "1ecdc6b5-80c1-4e9b-9379-6641ee030373",
+          "url": "https://guce.yahoo.com/privacy-dashboard?locale=zh-Hant-HK",
+          "canonicalUrl": "https://guce.yahoo.com/privacy-dashboard?locale=zh-Hant-HK",
+          "title": "私隱資訊主頁",
+          "snippet": null,
+          "taskIds": [
+            "8f7d49ca-693f-4e1a-89a3-0481c6575d87"
+          ],
+          "discoveries": [
+            {
+              "kind": "DOCUMENT_LINK",
+              "recordId": null,
+              "documentId": "1ebd26019be10d5389d968875f55165586a334421b8376af95d9f0d3a66c2be7",
+              "fromUrl": "https://hk.finance.yahoo.com/news/deepseek-%E6%AD%A3%E6%B8%AC%E8%A9%A6%E6%96%B0%E9%95%B7%E6%96%87%E6%9C%AC%E6%A8%A1%E5%9E%8B%E7%B5%90%E6%A7%8B-api%E6%9C%8D%E5%8B%99%E4%B8%8D%E8%AE%8A-233252601.html"
+            }
+          ],
+          "status": "UNREAD",
+          "documentId": null,
+          "evidenceIds": [],
+          "reason": null,
+          "tier": 2,
+          "priorityReason": "层2：需要原始事实；新增站点线索，不等同独立证据。",
+          "expectedSource": "UNKNOWN"
+        },
+        {
+          "id": "f79d5fa8-57bb-48ea-a4ad-538e6ebf92b7",
+          "url": "https://hk.finance.yahoo.com/trending-tickers",
+          "canonicalUrl": "https://hk.finance.yahoo.com/trending-tickers",
+          "title": "熱門股票代號",
+          "snippet": null,
+          "taskIds": [
+            "8f7d49ca-693f-4e1a-89a3-0481c6575d87"
+          ],
+          "discoveries": [
+            {
+              "kind": "DOCUMENT_LINK",
+              "recordId": null,
+              "documentId": "1ebd26019be10d5389d968875f55165586a334421b8376af95d9f0d3a66c2be7",
+              "fromUrl": "https://hk.finance.yahoo.com/news/deepseek-%E6%AD%A3%E6%B8%AC%E8%A9%A6%E6%96%B0%E9%95%B7%E6%96%87%E6%9C%AC%E6%A8%A1%E5%9E%8B%E7%B5%90%E6%A7%8B-api%E6%9C%8D%E5%8B%99%E4%B8%8D%E8%AE%8A-233252601.html"
+            }
+          ],
+          "status": "UNREAD",
+          "documentId": null,
+          "evidenceIds": [],
+          "reason": null,
+          "tier": 2,
+          "priorityReason": "层2：需要原始事实；同站点，仍须检查作者/上游。",
+          "expectedSource": "UNKNOWN"
+        },
+        {
+          "id": "7395b926-e94e-46b4-9960-2cd03f829b75",
+          "url": "https://hk.finance.yahoo.com/quote/1810.HK/",
+          "canonicalUrl": "https://hk.finance.yahoo.com/quote/1810.HK/",
+          "title": "1810.HK 小米集團－Ｗ 26.800 +1.000 (+3.88%)",
+          "snippet": null,
+          "taskIds": [
+            "8f7d49ca-693f-4e1a-89a3-0481c6575d87"
+          ],
+          "discoveries": [
+            {
+              "kind": "DOCUMENT_LINK",
+              "recordId": null,
+              "documentId": "1ebd26019be10d5389d968875f55165586a334421b8376af95d9f0d3a66c2be7",
+              "fromUrl": "https://hk.finance.yahoo.com/news/deepseek-%E6%AD%A3%E6%B8%AC%E8%A9%A6%E6%96%B0%E9%95%B7%E6%96%87%E6%9C%AC%E6%A8%A1%E5%9E%8B%E7%B5%90%E6%A7%8B-api%E6%9C%8D%E5%8B%99%E4%B8%8D%E8%AE%8A-233252601.html"
+            }
+          ],
+          "status": "UNREAD",
+          "documentId": null,
+          "evidenceIds": [],
+          "reason": null,
+          "tier": 2,
+          "priorityReason": "层2：需要原始事实；同站点，仍须检查作者/上游。",
+          "expectedSource": "UNKNOWN"
+        },
+        {
+          "id": "a7e7c029-038b-4553-9672-ef94af573065",
+          "url": "https://hk.finance.yahoo.com/quote/2477.HK/",
+          "canonicalUrl": "https://hk.finance.yahoo.com/quote/2477.HK/",
+          "title": "2477.HK 經緯天地 0.109 +0.003 (+2.83%)",
+          "snippet": null,
+          "taskIds": [
+            "8f7d49ca-693f-4e1a-89a3-0481c6575d87"
+          ],
+          "discoveries": [
+            {
+              "kind": "DOCUMENT_LINK",
+              "recordId": null,
+              "documentId": "1ebd26019be10d5389d968875f55165586a334421b8376af95d9f0d3a66c2be7",
+              "fromUrl": "https://hk.finance.yahoo.com/news/deepseek-%E6%AD%A3%E6%B8%AC%E8%A9%A6%E6%96%B0%E9%95%B7%E6%96%87%E6%9C%AC%E6%A8%A1%E5%9E%8B%E7%B5%90%E6%A7%8B-api%E6%9C%8D%E5%8B%99%E4%B8%8D%E8%AE%8A-233252601.html"
+            }
+          ],
+          "status": "UNREAD",
+          "documentId": null,
+          "evidenceIds": [],
+          "reason": null,
+          "tier": 2,
+          "priorityReason": "层2：需要原始事实；同站点，仍须检查作者/上游。",
+          "expectedSource": "UNKNOWN"
+        },
+        {
+          "id": "e3b55492-6aad-4220-96de-306342e7587c",
+          "url": "https://hk.finance.yahoo.com/quote/0939.HK/",
+          "canonicalUrl": "https://hk.finance.yahoo.com/quote/0939.HK/",
+          "title": "0939.HK 建設銀行 9.765 +0.045 (+0.46%)",
+          "snippet": null,
+          "taskIds": [
+            "8f7d49ca-693f-4e1a-89a3-0481c6575d87"
+          ],
+          "discoveries": [
+            {
+              "kind": "DOCUMENT_LINK",
+              "recordId": null,
+              "documentId": "1ebd26019be10d5389d968875f55165586a334421b8376af95d9f0d3a66c2be7",
+              "fromUrl": "https://hk.finance.yahoo.com/news/deepseek-%E6%AD%A3%E6%B8%AC%E8%A9%A6%E6%96%B0%E9%95%B7%E6%96%87%E6%9C%AC%E6%A8%A1%E5%9E%8B%E7%B5%90%E6%A7%8B-api%E6%9C%8D%E5%8B%99%E4%B8%8D%E8%AE%8A-233252601.html"
+            }
+          ],
+          "status": "UNREAD",
+          "documentId": null,
+          "evidenceIds": [],
+          "reason": null,
+          "tier": 2,
+          "priorityReason": "层2：需要原始事实；同站点，仍须检查作者/上游。",
+          "expectedSource": "UNKNOWN"
+        },
+        {
+          "id": "b6421f4b-a78a-4317-9bb9-d01a753defc8",
+          "url": "https://hk.finance.yahoo.com/portfolios",
+          "canonicalUrl": "https://hk.finance.yahoo.com/portfolios",
+          "title": "投資組合",
+          "snippet": null,
+          "taskIds": [
+            "8f7d49ca-693f-4e1a-89a3-0481c6575d87"
+          ],
+          "discoveries": [
+            {
+              "kind": "DOCUMENT_LINK",
+              "recordId": null,
+              "documentId": "1ebd26019be10d5389d968875f55165586a334421b8376af95d9f0d3a66c2be7",
+              "fromUrl": "https://hk.finance.yahoo.com/news/deepseek-%E6%AD%A3%E6%B8%AC%E8%A9%A6%E6%96%B0%E9%95%B7%E6%96%87%E6%9C%AC%E6%A8%A1%E5%9E%8B%E7%B5%90%E6%A7%8B-api%E6%9C%8D%E5%8B%99%E4%B8%8D%E8%AE%8A-233252601.html"
+            }
+          ],
+          "status": "UNREAD",
+          "documentId": null,
+          "evidenceIds": [],
+          "reason": null,
+          "tier": 2,
+          "priorityReason": "层2：需要原始事实；同站点，仍须检查作者/上游。",
+          "expectedSource": "UNKNOWN"
+        },
+        {
+          "id": "e71cd5fd-6daf-4f5e-8fc5-03038608cbde",
+          "url": "https://login.yahoo.com/config/login?activity=dock-portfolio&done=https%3A%2F%2Fhk.finance.yahoo.com%2Fnews%2Fdeepseek-%25E6%25AD%25A3%25E6%25B8%25AC%25E8%25A9%25A6%25E6%2596%25B0%25E9%2595%25B7%25E6%2596%2587%25E6%259C%25AC%25E6%25A8%25A1%25E5%259E%258B%25E7%25B5%2590%25E6%25A7%258B-api%25E6%259C%258D%25E5%258B%2599%25E4%25B8%258D%25E8%25AE%258A-233252601.html&intl=hk&lang=zh-Hant-HK&pspid=1186300001&src=finance",
+          "canonicalUrl": "https://login.yahoo.com/config/login?activity=dock-portfolio&done=https%3A%2F%2Fhk.finance.yahoo.com%2Fnews%2Fdeepseek-%25E6%25AD%25A3%25E6%25B8%25AC%25E8%25A9%25A6%25E6%2596%25B0%25E9%2595%25B7%25E6%2596%2587%25E6%259C%25AC%25E6%25A8%25A1%25E5%259E%258B%25E7%25B5%2590%25E6%25A7%258B-api%25E6%259C%258D%25E5%258B%2599%25E4%25B8%258D%25E8%25AE%258A-233252601.html&intl=hk&lang=zh-Hant-HK&pspid=1186300001&src=finance",
+          "title": "登入",
+          "snippet": null,
+          "taskIds": [
+            "8f7d49ca-693f-4e1a-89a3-0481c6575d87"
+          ],
+          "discoveries": [
+            {
+              "kind": "DOCUMENT_LINK",
+              "recordId": null,
+              "documentId": "1ebd26019be10d5389d968875f55165586a334421b8376af95d9f0d3a66c2be7",
+              "fromUrl": "https://hk.finance.yahoo.com/news/deepseek-%E6%AD%A3%E6%B8%AC%E8%A9%A6%E6%96%B0%E9%95%B7%E6%96%87%E6%9C%AC%E6%A8%A1%E5%9E%8B%E7%B5%90%E6%A7%8B-api%E6%9C%8D%E5%8B%99%E4%B8%8D%E8%AE%8A-233252601.html"
+            }
+          ],
+          "status": "UNREAD",
+          "documentId": null,
+          "evidenceIds": [],
+          "reason": null,
+          "tier": 2,
+          "priorityReason": "层2：需要原始事实；新增站点线索，不等同独立证据。",
+          "expectedSource": "UNKNOWN"
+        },
+        {
+          "id": "4d9cbe3b-3941-4289-9b0d-f164cb3625b1",
+          "url": "https://hk.finance.yahoo.com/recent-quotes",
+          "canonicalUrl": "https://hk.finance.yahoo.com/recent-quotes",
+          "title": "最近檢視",
+          "snippet": null,
+          "taskIds": [
+            "8f7d49ca-693f-4e1a-89a3-0481c6575d87"
+          ],
+          "discoveries": [
+            {
+              "kind": "DOCUMENT_LINK",
+              "recordId": null,
+              "documentId": "1ebd26019be10d5389d968875f55165586a334421b8376af95d9f0d3a66c2be7",
+              "fromUrl": "https://hk.finance.yahoo.com/news/deepseek-%E6%AD%A3%E6%B8%AC%E8%A9%A6%E6%96%B0%E9%95%B7%E6%96%87%E6%9C%AC%E6%A8%A1%E5%9E%8B%E7%B5%90%E6%A7%8B-api%E6%9C%8D%E5%8B%99%E4%B8%8D%E8%AE%8A-233252601.html"
+            }
+          ],
+          "status": "UNREAD",
+          "documentId": null,
+          "evidenceIds": [],
+          "reason": null,
+          "tier": 2,
+          "priorityReason": "层2：需要原始事实；同站点，仍须检查作者/上游。",
+          "expectedSource": "UNKNOWN"
+        },
+        {
+          "id": "9589d98e-75ee-4c78-b813-bc51b86a06f2",
+          "url": "https://hk.finance.yahoo.com/gainers/",
+          "canonicalUrl": "https://hk.finance.yahoo.com/gainers/",
+          "title": "最大升幅",
+          "snippet": null,
+          "taskIds": [
+            "8f7d49ca-693f-4e1a-89a3-0481c6575d87"
+          ],
+          "discoveries": [
+            {
+              "kind": "DOCUMENT_LINK",
+              "recordId": null,
+              "documentId": "1ebd26019be10d5389d968875f55165586a334421b8376af95d9f0d3a66c2be7",
+              "fromUrl": "https://hk.finance.yahoo.com/news/deepseek-%E6%AD%A3%E6%B8%AC%E8%A9%A6%E6%96%B0%E9%95%B7%E6%96%87%E6%9C%AC%E6%A8%A1%E5%9E%8B%E7%B5%90%E6%A7%8B-api%E6%9C%8D%E5%8B%99%E4%B8%8D%E8%AE%8A-233252601.html"
+            }
+          ],
+          "status": "UNREAD",
+          "documentId": null,
+          "evidenceIds": [],
+          "reason": null,
+          "tier": 2,
+          "priorityReason": "层2：需要原始事实；同站点，仍须检查作者/上游。",
+          "expectedSource": "UNKNOWN"
+        },
+        {
+          "id": "51f02f17-b7f0-479b-b72e-ca3e9cedcb8a",
+          "url": "https://hk.finance.yahoo.com/quote/6651.HK/",
+          "canonicalUrl": "https://hk.finance.yahoo.com/quote/6651.HK/",
+          "title": "6651.HK 五一視界 65.000 +15.120 (+30.31%)",
+          "snippet": null,
+          "taskIds": [
+            "8f7d49ca-693f-4e1a-89a3-0481c6575d87"
+          ],
+          "discoveries": [
+            {
+              "kind": "DOCUMENT_LINK",
+              "recordId": null,
+              "documentId": "1ebd26019be10d5389d968875f55165586a334421b8376af95d9f0d3a66c2be7",
+              "fromUrl": "https://hk.finance.yahoo.com/news/deepseek-%E6%AD%A3%E6%B8%AC%E8%A9%A6%E6%96%B0%E9%95%B7%E6%96%87%E6%9C%AC%E6%A8%A1%E5%9E%8B%E7%B5%90%E6%A7%8B-api%E6%9C%8D%E5%8B%99%E4%B8%8D%E8%AE%8A-233252601.html"
+            }
+          ],
+          "status": "UNREAD",
+          "documentId": null,
+          "evidenceIds": [],
+          "reason": null,
+          "tier": 2,
+          "priorityReason": "层2：需要原始事实；同站点，仍须检查作者/上游。",
+          "expectedSource": "UNKNOWN"
+        },
+        {
+          "id": "801e4e10-b5ef-4b16-bdc0-c3d8a8a2d111",
+          "url": "https://hk.finance.yahoo.com/quote/0100.HK/",
+          "canonicalUrl": "https://hk.finance.yahoo.com/quote/0100.HK/",
+          "title": "0100.HK MINIMAX-W 187.600 +26.900 (+16.74%)",
+          "snippet": null,
+          "taskIds": [
+            "8f7d49ca-693f-4e1a-89a3-0481c6575d87"
+          ],
+          "discoveries": [
+            {
+              "kind": "DOCUMENT_LINK",
+              "recordId": null,
+              "documentId": "1ebd26019be10d5389d968875f55165586a334421b8376af95d9f0d3a66c2be7",
+              "fromUrl": "https://hk.finance.yahoo.com/news/deepseek-%E6%AD%A3%E6%B8%AC%E8%A9%A6%E6%96%B0%E9%95%B7%E6%96%87%E6%9C%AC%E6%A8%A1%E5%9E%8B%E7%B5%90%E6%A7%8B-api%E6%9C%8D%E5%8B%99%E4%B8%8D%E8%AE%8A-233252601.html"
+            }
+          ],
+          "status": "UNREAD",
+          "documentId": null,
+          "evidenceIds": [],
+          "reason": null,
+          "tier": 2,
+          "priorityReason": "层2：需要原始事实；同站点，仍须检查作者/上游。",
+          "expectedSource": "UNKNOWN"
+        },
+        {
+          "id": "ce63922b-1d9c-4dea-9684-4d9ff8b93f8a",
+          "url": "https://hk.finance.yahoo.com/quote/2692.HK/",
+          "canonicalUrl": "https://hk.finance.yahoo.com/quote/2692.HK/",
+          "title": "2692.HK 兆威機電 39.800 +5.620 (+16.44%)",
+          "snippet": null,
+          "taskIds": [
+            "8f7d49ca-693f-4e1a-89a3-0481c6575d87"
+          ],
+          "discoveries": [
+            {
+              "kind": "DOCUMENT_LINK",
+              "recordId": null,
+              "documentId": "1ebd26019be10d5389d968875f55165586a334421b8376af95d9f0d3a66c2be7",
+              "fromUrl": "https://hk.finance.yahoo.com/news/deepseek-%E6%AD%A3%E6%B8%AC%E8%A9%A6%E6%96%B0%E9%95%B7%E6%96%87%E6%9C%AC%E6%A8%A1%E5%9E%8B%E7%B5%90%E6%A7%8B-api%E6%9C%8D%E5%8B%99%E4%B8%8D%E8%AE%8A-233252601.html"
+            }
+          ],
+          "status": "UNREAD",
+          "documentId": null,
+          "evidenceIds": [],
+          "reason": null,
+          "tier": 2,
+          "priorityReason": "层2：需要原始事实；同站点，仍须检查作者/上游。",
+          "expectedSource": "UNKNOWN"
+        },
+        {
+          "id": "1e3b17ea-f7ff-4a40-a206-881c86791e62",
+          "url": "https://hk.finance.yahoo.com/quote/1081.HK/",
+          "canonicalUrl": "https://hk.finance.yahoo.com/quote/1081.HK/",
+          "title": "1081.HK 大金重工 23.660 +3.180 (+15.53%)",
+          "snippet": null,
+          "taskIds": [
+            "8f7d49ca-693f-4e1a-89a3-0481c6575d87"
+          ],
+          "discoveries": [
+            {
+              "kind": "DOCUMENT_LINK",
+              "recordId": null,
+              "documentId": "1ebd26019be10d5389d968875f55165586a334421b8376af95d9f0d3a66c2be7",
+              "fromUrl": "https://hk.finance.yahoo.com/news/deepseek-%E6%AD%A3%E6%B8%AC%E8%A9%A6%E6%96%B0%E9%95%B7%E6%96%87%E6%9C%AC%E6%A8%A1%E5%9E%8B%E7%B5%90%E6%A7%8B-api%E6%9C%8D%E5%8B%99%E4%B8%8D%E8%AE%8A-233252601.html"
+            }
+          ],
+          "status": "UNREAD",
+          "documentId": null,
+          "evidenceIds": [],
+          "reason": null,
+          "tier": 2,
+          "priorityReason": "层2：需要原始事实；同站点，仍须检查作者/上游。",
+          "expectedSource": "UNKNOWN"
+        },
+        {
+          "id": "305ad34c-02db-4dd4-99cc-9db502d4fcb9",
+          "url": "https://hk.finance.yahoo.com/quote/3952.HK/",
+          "canonicalUrl": "https://hk.finance.yahoo.com/quote/3952.HK/",
+          "title": "3952.HK 來福諧波 31.140 +4.140 (+15.33%)",
+          "snippet": null,
+          "taskIds": [
+            "8f7d49ca-693f-4e1a-89a3-0481c6575d87"
+          ],
+          "discoveries": [
+            {
+              "kind": "DOCUMENT_LINK",
+              "recordId": null,
+              "documentId": "1ebd26019be10d5389d968875f55165586a334421b8376af95d9f0d3a66c2be7",
+              "fromUrl": "https://hk.finance.yahoo.com/news/deepseek-%E6%AD%A3%E6%B8%AC%E8%A9%A6%E6%96%B0%E9%95%B7%E6%96%87%E6%9C%AC%E6%A8%A1%E5%9E%8B%E7%B5%90%E6%A7%8B-api%E6%9C%8D%E5%8B%99%E4%B8%8D%E8%AE%8A-233252601.html"
+            }
+          ],
+          "status": "UNREAD",
+          "documentId": null,
+          "evidenceIds": [],
+          "reason": null,
+          "tier": 2,
+          "priorityReason": "层2：需要原始事实；同站点，仍须检查作者/上游。",
+          "expectedSource": "UNKNOWN"
+        },
+        {
+          "id": "4280aa8e-e3a0-485e-9c05-66b4d2ccafe0",
+          "url": "https://hk.finance.yahoo.com/losers/",
+          "canonicalUrl": "https://hk.finance.yahoo.com/losers/",
+          "title": "最大跌幅",
+          "snippet": null,
+          "taskIds": [
+            "8f7d49ca-693f-4e1a-89a3-0481c6575d87"
+          ],
+          "discoveries": [
+            {
+              "kind": "DOCUMENT_LINK",
+              "recordId": null,
+              "documentId": "1ebd26019be10d5389d968875f55165586a334421b8376af95d9f0d3a66c2be7",
+              "fromUrl": "https://hk.finance.yahoo.com/news/deepseek-%E6%AD%A3%E6%B8%AC%E8%A9%A6%E6%96%B0%E9%95%B7%E6%96%87%E6%9C%AC%E6%A8%A1%E5%9E%8B%E7%B5%90%E6%A7%8B-api%E6%9C%8D%E5%8B%99%E4%B8%8D%E8%AE%8A-233252601.html"
+            }
+          ],
+          "status": "UNREAD",
+          "documentId": null,
+          "evidenceIds": [],
+          "reason": null,
+          "tier": 2,
+          "priorityReason": "层2：需要原始事实；同站点，仍须检查作者/上游。",
+          "expectedSource": "UNKNOWN"
+        },
+        {
+          "id": "9d0d4c96-a081-4e99-b75b-f5286fbb7a3e",
+          "url": "https://hk.finance.yahoo.com/quote/1952.HK/",
+          "canonicalUrl": "https://hk.finance.yahoo.com/quote/1952.HK/",
+          "title": "1952.HK 雲頂新耀 30.640 -3.340 (-9.83%)",
+          "snippet": null,
+          "taskIds": [
+            "8f7d49ca-693f-4e1a-89a3-0481c6575d87"
+          ],
+          "discoveries": [
+            {
+              "kind": "DOCUMENT_LINK",
+              "recordId": null,
+              "documentId": "1ebd26019be10d5389d968875f55165586a334421b8376af95d9f0d3a66c2be7",
+              "fromUrl": "https://hk.finance.yahoo.com/news/deepseek-%E6%AD%A3%E6%B8%AC%E8%A9%A6%E6%96%B0%E9%95%B7%E6%96%87%E6%9C%AC%E6%A8%A1%E5%9E%8B%E7%B5%90%E6%A7%8B-api%E6%9C%8D%E5%8B%99%E4%B8%8D%E8%AE%8A-233252601.html"
+            }
+          ],
+          "status": "UNREAD",
+          "documentId": null,
+          "evidenceIds": [],
+          "reason": null,
+          "tier": 2,
+          "priorityReason": "层2：需要原始事实；同站点，仍须检查作者/上游。",
+          "expectedSource": "UNKNOWN"
+        },
+        {
+          "id": "93e96e72-a6c0-4060-9b09-b38e92698d99",
+          "url": "https://hk.finance.yahoo.com/quote/0167.HK/",
+          "canonicalUrl": "https://hk.finance.yahoo.com/quote/0167.HK/",
+          "title": "0167.HK IDT INT'L 6.000 -0.590 (-8.95%)",
+          "snippet": null,
+          "taskIds": [
+            "8f7d49ca-693f-4e1a-89a3-0481c6575d87"
+          ],
+          "discoveries": [
+            {
+              "kind": "DOCUMENT_LINK",
+              "recordId": null,
+              "documentId": "1ebd26019be10d5389d968875f55165586a334421b8376af95d9f0d3a66c2be7",
+              "fromUrl": "https://hk.finance.yahoo.com/news/deepseek-%E6%AD%A3%E6%B8%AC%E8%A9%A6%E6%96%B0%E9%95%B7%E6%96%87%E6%9C%AC%E6%A8%A1%E5%9E%8B%E7%B5%90%E6%A7%8B-api%E6%9C%8D%E5%8B%99%E4%B8%8D%E8%AE%8A-233252601.html"
+            }
+          ],
+          "status": "UNREAD",
+          "documentId": null,
+          "evidenceIds": [],
+          "reason": null,
+          "tier": 2,
+          "priorityReason": "层2：需要原始事实；同站点，仍须检查作者/上游。",
+          "expectedSource": "UNKNOWN"
+        },
+        {
+          "id": "df195eac-9ad8-40f5-9a37-0125cf257074",
+          "url": "https://hk.finance.yahoo.com/quote/2635.HK/",
+          "canonicalUrl": "https://hk.finance.yahoo.com/quote/2635.HK/",
+          "title": "2635.HK 諾比侃 6.375 -0.520 (-7.54%)",
+          "snippet": null,
+          "taskIds": [
+            "8f7d49ca-693f-4e1a-89a3-0481c6575d87"
+          ],
+          "discoveries": [
+            {
+              "kind": "DOCUMENT_LINK",
+              "recordId": null,
+              "documentId": "1ebd26019be10d5389d968875f55165586a334421b8376af95d9f0d3a66c2be7",
+              "fromUrl": "https://hk.finance.yahoo.com/news/deepseek-%E6%AD%A3%E6%B8%AC%E8%A9%A6%E6%96%B0%E9%95%B7%E6%96%87%E6%9C%AC%E6%A8%A1%E5%9E%8B%E7%B5%90%E6%A7%8B-api%E6%9C%8D%E5%8B%99%E4%B8%8D%E8%AE%8A-233252601.html"
+            }
+          ],
+          "status": "UNREAD",
+          "documentId": null,
+          "evidenceIds": [],
+          "reason": null,
+          "tier": 2,
+          "priorityReason": "层2：需要原始事实；同站点，仍须检查作者/上游。",
+          "expectedSource": "UNKNOWN"
+        },
+        {
+          "id": "391d7846-bcad-4fcd-b9ce-299c1cba9026",
+          "url": "https://hk.finance.yahoo.com/quote/0695.HK/",
+          "canonicalUrl": "https://hk.finance.yahoo.com/quote/0695.HK/",
+          "title": "0695.HK 東吳水泥 6.490 -0.510 (-7.29%)",
+          "snippet": null,
+          "taskIds": [
+            "8f7d49ca-693f-4e1a-89a3-0481c6575d87"
+          ],
+          "discoveries": [
+            {
+              "kind": "DOCUMENT_LINK",
+              "recordId": null,
+              "documentId": "1ebd26019be10d5389d968875f55165586a334421b8376af95d9f0d3a66c2be7",
+              "fromUrl": "https://hk.finance.yahoo.com/news/deepseek-%E6%AD%A3%E6%B8%AC%E8%A9%A6%E6%96%B0%E9%95%B7%E6%96%87%E6%9C%AC%E6%A8%A1%E5%9E%8B%E7%B5%90%E6%A7%8B-api%E6%9C%8D%E5%8B%99%E4%B8%8D%E8%AE%8A-233252601.html"
+            }
+          ],
+          "status": "UNREAD",
+          "documentId": null,
+          "evidenceIds": [],
+          "reason": null,
+          "tier": 2,
+          "priorityReason": "层2：需要原始事实；同站点，仍须检查作者/上游。",
+          "expectedSource": "UNKNOWN"
+        },
+        {
+          "id": "d33b2c94-b0db-4ae9-8f09-add997b0565e",
+          "url": "https://hk.finance.yahoo.com/quote/6872.HK/",
+          "canonicalUrl": "https://hk.finance.yahoo.com/quote/6872.HK/",
+          "title": "6872.HK 丹諾醫藥－Ｂ 95.750 -5.950 (-5.85%)",
+          "snippet": null,
+          "taskIds": [
+            "8f7d49ca-693f-4e1a-89a3-0481c6575d87"
+          ],
+          "discoveries": [
+            {
+              "kind": "DOCUMENT_LINK",
+              "recordId": null,
+              "documentId": "1ebd26019be10d5389d968875f55165586a334421b8376af95d9f0d3a66c2be7",
+              "fromUrl": "https://hk.finance.yahoo.com/news/deepseek-%E6%AD%A3%E6%B8%AC%E8%A9%A6%E6%96%B0%E9%95%B7%E6%96%87%E6%9C%AC%E6%A8%A1%E5%9E%8B%E7%B5%90%E6%A7%8B-api%E6%9C%8D%E5%8B%99%E4%B8%8D%E8%AE%8A-233252601.html"
+            }
+          ],
+          "status": "UNREAD",
+          "documentId": null,
+          "evidenceIds": [],
+          "reason": null,
+          "tier": 2,
+          "priorityReason": "层2：需要原始事实；同站点，仍须检查作者/上游。",
+          "expectedSource": "UNKNOWN"
+        },
+        {
+          "id": "91f5e342-ad3e-469e-b362-3980c2d63a9c",
+          "url": "https://hk.finance.yahoo.com/most-active/",
+          "canonicalUrl": "https://hk.finance.yahoo.com/most-active/",
+          "title": "最活躍",
+          "snippet": null,
+          "taskIds": [
+            "8f7d49ca-693f-4e1a-89a3-0481c6575d87"
+          ],
+          "discoveries": [
+            {
+              "kind": "DOCUMENT_LINK",
+              "recordId": null,
+              "documentId": "1ebd26019be10d5389d968875f55165586a334421b8376af95d9f0d3a66c2be7",
+              "fromUrl": "https://hk.finance.yahoo.com/news/deepseek-%E6%AD%A3%E6%B8%AC%E8%A9%A6%E6%96%B0%E9%95%B7%E6%96%87%E6%9C%AC%E6%A8%A1%E5%9E%8B%E7%B5%90%E6%A7%8B-api%E6%9C%8D%E5%8B%99%E4%B8%8D%E8%AE%8A-233252601.html"
+            }
+          ],
+          "status": "UNREAD",
+          "documentId": null,
+          "evidenceIds": [],
+          "reason": null,
+          "tier": 2,
+          "priorityReason": "层2：需要原始事实；同站点，仍须检查作者/上游。",
+          "expectedSource": "UNKNOWN"
+        },
+        {
+          "id": "686676fc-0321-4fbc-bb0c-2f7fb4ee15a5",
+          "url": "https://hk.finance.yahoo.com/quote/0020.HK/",
+          "canonicalUrl": "https://hk.finance.yahoo.com/quote/0020.HK/",
+          "title": "0020.HK 商湯－Ｗ 1.160 +0.050 (+4.50%)",
+          "snippet": null,
+          "taskIds": [
+            "8f7d49ca-693f-4e1a-89a3-0481c6575d87"
+          ],
+          "discoveries": [
+            {
+              "kind": "DOCUMENT_LINK",
+              "recordId": null,
+              "documentId": "1ebd26019be10d5389d968875f55165586a334421b8376af95d9f0d3a66c2be7",
+              "fromUrl": "https://hk.finance.yahoo.com/news/deepseek-%E6%AD%A3%E6%B8%AC%E8%A9%A6%E6%96%B0%E9%95%B7%E6%96%87%E6%9C%AC%E6%A8%A1%E5%9E%8B%E7%B5%90%E6%A7%8B-api%E6%9C%8D%E5%8B%99%E4%B8%8D%E8%AE%8A-233252601.html"
+            }
+          ],
+          "status": "UNREAD",
+          "documentId": null,
+          "evidenceIds": [],
+          "reason": null,
+          "tier": 2,
+          "priorityReason": "层2：需要原始事实；同站点，仍须检查作者/上游。",
+          "expectedSource": "UNKNOWN"
+        },
+        {
+          "id": "06ad8907-1472-47fe-ae00-9b7a09d9a0f2",
+          "url": "https://hk.finance.yahoo.com/quote/1398.HK/",
+          "canonicalUrl": "https://hk.finance.yahoo.com/quote/1398.HK/",
+          "title": "1398.HK 工商銀行 7.240 -0.110 (-1.50%)",
+          "snippet": null,
+          "taskIds": [
+            "8f7d49ca-693f-4e1a-89a3-0481c6575d87"
+          ],
+          "discoveries": [
+            {
+              "kind": "DOCUMENT_LINK",
+              "recordId": null,
+              "documentId": "1ebd26019be10d5389d968875f55165586a334421b8376af95d9f0d3a66c2be7",
+              "fromUrl": "https://hk.finance.yahoo.com/news/deepseek-%E6%AD%A3%E6%B8%AC%E8%A9%A6%E6%96%B0%E9%95%B7%E6%96%87%E6%9C%AC%E6%A8%A1%E5%9E%8B%E7%B5%90%E6%A7%8B-api%E6%9C%8D%E5%8B%99%E4%B8%8D%E8%AE%8A-233252601.html"
+            }
+          ],
+          "status": "UNREAD",
+          "documentId": null,
+          "evidenceIds": [],
+          "reason": null,
+          "tier": 2,
+          "priorityReason": "层2：需要原始事实；同站点，仍须检查作者/上游。",
+          "expectedSource": "UNKNOWN"
+        },
+        {
+          "id": "ca8f78d6-d177-421a-b4e2-81dd001bf502",
+          "url": "https://hk.finance.yahoo.com/quote/3800.HK/",
+          "canonicalUrl": "https://hk.finance.yahoo.com/quote/3800.HK/",
+          "title": "3800.HK 協鑫科技 0.600 -0.025 (-4.00%)",
+          "snippet": null,
+          "taskIds": [
+            "8f7d49ca-693f-4e1a-89a3-0481c6575d87"
+          ],
+          "discoveries": [
+            {
+              "kind": "DOCUMENT_LINK",
+              "recordId": null,
+              "documentId": "1ebd26019be10d5389d968875f55165586a334421b8376af95d9f0d3a66c2be7",
+              "fromUrl": "https://hk.finance.yahoo.com/news/deepseek-%E6%AD%A3%E6%B8%AC%E8%A9%A6%E6%96%B0%E9%95%B7%E6%96%87%E6%9C%AC%E6%A8%A1%E5%9E%8B%E7%B5%90%E6%A7%8B-api%E6%9C%8D%E5%8B%99%E4%B8%8D%E8%AE%8A-233252601.html"
+            }
+          ],
+          "status": "UNREAD",
+          "documentId": null,
+          "evidenceIds": [],
+          "reason": null,
+          "tier": 2,
+          "priorityReason": "层2：需要原始事实；同站点，仍须检查作者/上游。",
+          "expectedSource": "UNKNOWN"
+        },
+        {
+          "id": "ceda4ff4-6ac9-4b4c-8bc5-945fda750ecf",
+          "url": "https://hk.finance.yahoo.com/quote/3988.HK/",
+          "canonicalUrl": "https://hk.finance.yahoo.com/quote/3988.HK/",
+          "title": "3988.HK 中國銀行 5.955 -0.035 (-0.58%)",
+          "snippet": null,
+          "taskIds": [
+            "8f7d49ca-693f-4e1a-89a3-0481c6575d87"
+          ],
+          "discoveries": [
+            {
+              "kind": "DOCUMENT_LINK",
+              "recordId": null,
+              "documentId": "1ebd26019be10d5389d968875f55165586a334421b8376af95d9f0d3a66c2be7",
+              "fromUrl": "https://hk.finance.yahoo.com/news/deepseek-%E6%AD%A3%E6%B8%AC%E8%A9%A6%E6%96%B0%E9%95%B7%E6%96%87%E6%9C%AC%E6%A8%A1%E5%9E%8B%E7%B5%90%E6%A7%8B-api%E6%9C%8D%E5%8B%99%E4%B8%8D%E8%AE%8A-233252601.html"
+            }
+          ],
+          "status": "UNREAD",
+          "documentId": null,
+          "evidenceIds": [],
+          "reason": null,
+          "tier": 2,
+          "priorityReason": "层2：需要原始事实；同站点，仍须检查作者/上游。",
+          "expectedSource": "UNKNOWN"
+        },
+        {
+          "id": "425f285f-329f-453c-a984-1f3ae6434a71",
+          "url": "https://hk.finance.yahoo.com/calendar/economic",
+          "canonicalUrl": "https://hk.finance.yahoo.com/calendar/economic",
+          "title": "主要經濟數據",
+          "snippet": null,
+          "taskIds": [
+            "8f7d49ca-693f-4e1a-89a3-0481c6575d87"
+          ],
+          "discoveries": [
+            {
+              "kind": "DOCUMENT_LINK",
+              "recordId": null,
+              "documentId": "1ebd26019be10d5389d968875f55165586a334421b8376af95d9f0d3a66c2be7",
+              "fromUrl": "https://hk.finance.yahoo.com/news/deepseek-%E6%AD%A3%E6%B8%AC%E8%A9%A6%E6%96%B0%E9%95%B7%E6%96%87%E6%9C%AC%E6%A8%A1%E5%9E%8B%E7%B5%90%E6%A7%8B-api%E6%9C%8D%E5%8B%99%E4%B8%8D%E8%AE%8A-233252601.html"
+            }
+          ],
+          "status": "UNREAD",
+          "documentId": null,
+          "evidenceIds": [],
+          "reason": null,
+          "tier": 2,
+          "priorityReason": "层2：需要原始事实；同站点，仍须检查作者/上游。",
+          "expectedSource": "UNKNOWN"
+        },
+        {
+          "id": "af157ca1-659b-41e1-b134-4aa7bfa7cd2d",
+          "url": "https://hk.finance.yahoo.com/calendar/earnings?day=2026-10-25",
+          "canonicalUrl": "https://hk.finance.yahoo.com/calendar/earnings?day=2026-10-25",
+          "title": "業績公佈",
+          "snippet": null,
+          "taskIds": [
+            "8f7d49ca-693f-4e1a-89a3-0481c6575d87"
+          ],
+          "discoveries": [
+            {
+              "kind": "DOCUMENT_LINK",
+              "recordId": null,
+              "documentId": "1ebd26019be10d5389d968875f55165586a334421b8376af95d9f0d3a66c2be7",
+              "fromUrl": "https://hk.finance.yahoo.com/news/deepseek-%E6%AD%A3%E6%B8%AC%E8%A9%A6%E6%96%B0%E9%95%B7%E6%96%87%E6%9C%AC%E6%A8%A1%E5%9E%8B%E7%B5%90%E6%A7%8B-api%E6%9C%8D%E5%8B%99%E4%B8%8D%E8%AE%8A-233252601.html"
+            }
+          ],
+          "status": "UNREAD",
+          "documentId": null,
+          "evidenceIds": [],
+          "reason": null,
+          "tier": 2,
+          "priorityReason": "层2：需要原始事实；同站点，仍须检查作者/上游。",
+          "expectedSource": "UNKNOWN"
+        },
+        {
+          "id": "2cfe7554-e1f1-40d8-88d1-8e4d69320f34",
+          "url": "https://legal.yahoo.com/e2/zh-hant/yahoo/privacy/adinfo/index.html",
+          "canonicalUrl": "https://legal.yahoo.com/e2/zh-hant/yahoo/privacy/adinfo/index.html",
+          "title": "廣告條款",
+          "snippet": null,
+          "taskIds": [
+            "8f7d49ca-693f-4e1a-89a3-0481c6575d87"
+          ],
+          "discoveries": [
+            {
+              "kind": "DOCUMENT_LINK",
+              "recordId": null,
+              "documentId": "1ebd26019be10d5389d968875f55165586a334421b8376af95d9f0d3a66c2be7",
+              "fromUrl": "https://hk.finance.yahoo.com/news/deepseek-%E6%AD%A3%E6%B8%AC%E8%A9%A6%E6%96%B0%E9%95%B7%E6%96%87%E6%9C%AC%E6%A8%A1%E5%9E%8B%E7%B5%90%E6%A7%8B-api%E6%9C%8D%E5%8B%99%E4%B8%8D%E8%AE%8A-233252601.html"
+            }
+          ],
+          "status": "UNREAD",
+          "documentId": null,
+          "evidenceIds": [],
+          "reason": null,
+          "tier": 2,
+          "priorityReason": "层2：需要原始事实；新增站点线索，不等同独立证据。",
+          "expectedSource": "UNKNOWN"
+        }
+      ],
+      "documents": [
+        {
+          "id": "a48f06fc2a66bf26d82c738aca33f5465a18311ceb078654dbea49c7c0f2cdd4",
+          "version": "6eb4ae54b763eba6aa33ace2521995b48d2a91a089236310877eb4480fdc81f2",
+          "requestedUrl": "https://api-docs.deepseek.com/quick_start/pricing",
+          "finalUrl": "https://api-docs.deepseek.com/quick_start/pricing/",
+          "retrievedAt": "2026-10-25T04:22:03.348Z",
+          "status": "READ",
+          "textHash": "4d791bb7563ef270baf20c50a40e913573f6da5de3417a76b48e3beadeb05a68",
+          "rawHash": "b856a6e93fa4793ecc8f3fd03a01bb7d8f7572f78a4739da8ce6dbdb09328d66",
+          "manifestPath": "C:\\Users\\qianchen\\Documents\\waytoagi-1024-detective-a2-v4\\.cache\\source-documents-v4\\42df84a5-9bb7-40dd-8aff-a474c98d87a7\\a48f06fc2a66bf26d82c738aca33f5465a18311ceb078654dbea49c7c0f2cdd4\\manifest.json",
+          "parser": "readability+source-dom@readability-0.6.0+jsdom-30.1.3+source-dom-2",
+          "characters": 2890,
+          "blockCount": 21,
+          "truncated": false,
+          "error": null
+        },
+        {
+          "id": "773be17aaf5ef707c024091f8c16c064dd6100068e0e3256dcd1a0fcec8ebaff",
+          "version": "c78fc94ea73970193375637ec26e6b1ae901063400e7ae9683976f494763be91",
+          "requestedUrl": "https://api-docs.deepseek.com/zh-cn/quick_start/pricing",
+          "finalUrl": "https://api-docs.deepseek.com/zh-cn/quick_start/pricing/",
+          "retrievedAt": "2026-10-25T04:22:03.474Z",
+          "status": "READ",
+          "textHash": "db09a343a4d633c64231991c96ddd338cb148398727a38c75cb9dc68e93e81fc",
+          "rawHash": "556097caba8adfeeed6455714bffd731c7f60db520fcee06a922eba5840663a3",
+          "manifestPath": "C:\\Users\\qianchen\\Documents\\waytoagi-1024-detective-a2-v4\\.cache\\source-documents-v4\\42df84a5-9bb7-40dd-8aff-a474c98d87a7\\773be17aaf5ef707c024091f8c16c064dd6100068e0e3256dcd1a0fcec8ebaff\\manifest.json",
+          "parser": "readability+source-dom@readability-0.6.0+jsdom-30.1.3+source-dom-2",
+          "characters": 1425,
+          "blockCount": 21,
+          "truncated": false,
+          "error": null
+        },
+        {
+          "id": "1ebd26019be10d5389d968875f55165586a334421b8376af95d9f0d3a66c2be7",
+          "version": "466243a8c2f21f3caa76960fb931321ba8dad7786f7a929ad80cee9d1b78de65",
+          "requestedUrl": "https://hk.finance.yahoo.com/news/deepseek-%E6%AD%A3%E6%B8%AC%E8%A9%A6%E6%96%B0%E9%95%B7%E6%96%87%E6%9C%AC%E6%A8%A1%E5%9E%8B%E7%B5%90%E6%A7%8B-api%E6%9C%8D%E5%8B%99%E4%B8%8D%E8%AE%8A-233252601.html",
+          "finalUrl": "https://hk.finance.yahoo.com/news/deepseek-%E6%AD%A3%E6%B8%AC%E8%A9%A6%E6%96%B0%E9%95%B7%E6%96%87%E6%9C%AC%E6%A8%A1%E5%9E%8B%E7%B5%90%E6%A7%8B-api%E6%9C%8D%E5%8B%99%E4%B8%8D%E8%AE%8A-233252601.html",
+          "retrievedAt": "2026-10-25T04:22:04.375Z",
+          "status": "READ",
+          "textHash": "559dfa3f74114ce1724c6a6b7f9a5bfcaac276597e22569fbbaa96038e1bf08a",
+          "rawHash": "dda90da663279d2f1f1fc5414931aa3184b0b07ae873da320d1abb822d107011",
+          "manifestPath": "C:\\Users\\qianchen\\Documents\\waytoagi-1024-detective-a2-v4\\.cache\\source-documents-v4\\42df84a5-9bb7-40dd-8aff-a474c98d87a7\\1ebd26019be10d5389d968875f55165586a334421b8376af95d9f0d3a66c2be7\\manifest.json",
+          "parser": "readability+source-dom@readability-0.6.0+jsdom-30.1.3+source-dom-2",
+          "characters": 1448,
+          "blockCount": 24,
+          "truncated": false,
+          "error": null
+        }
+      ],
+      "actions": [
+        {
+          "id": "d5196698-2038-4b62-894c-508dbea29123",
+          "kind": "PLAN",
+          "startedAt": "2026-10-25T04:21:56.564Z",
+          "durationMs": 1117,
+          "taskIds": [
+            "470d5628-dd5d-4772-a630-44d306677755"
+          ],
+          "basisEvidenceIds": [],
+          "basisRecordIds": [],
+          "target": "DeepSeek API 的上下文长度是多少？",
+          "reason": "仅从用户问题拆解必答项与研究方向；不使用预置案例/参考答案。",
+          "gap": null,
+          "outcome": "SUCCEEDED",
+          "recordIds": [],
+          "documentIds": [],
+          "evidenceIds": [],
+          "newFragments": 0,
+          "coverageChanges": [],
+          "cacheHit": false,
+          "error": null
+        },
+        {
+          "id": "592b9f89-4aa3-42fc-9f88-c68967c7a76a",
+          "kind": "SEARCH",
+          "startedAt": "2026-10-25T04:21:57.692Z",
+          "durationMs": 155,
+          "taskIds": [
+            "8f7d49ca-693f-4e1a-89a3-0481c6575d87"
+          ],
+          "basisEvidenceIds": [],
+          "basisRecordIds": [],
+          "target": "yuanbao:DeepSeek API 上下文长度",
+          "reason": "初始多方向发现；下一批由取得材料决定。",
+          "gap": null,
+          "outcome": "SUCCEEDED",
+          "recordIds": [
+            "b82b0ea7-37e0-41d9-8cf3-4ddea25bcba3"
+          ],
+          "documentIds": [],
+          "evidenceIds": [],
+          "newFragments": 0,
+          "coverageChanges": [],
+          "cacheHit": false,
+          "error": null
+        },
+        {
+          "id": "1dbe1469-9fb6-4366-ae96-b91de423fdff",
+          "kind": "SEARCH",
+          "startedAt": "2026-10-25T04:21:57.693Z",
+          "durationMs": 2971,
+          "taskIds": [
+            "8f7d49ca-693f-4e1a-89a3-0481c6575d87"
+          ],
+          "basisEvidenceIds": [],
+          "basisRecordIds": [],
+          "target": "tavily:DeepSeek API 上下文长度",
+          "reason": "初始多方向发现；下一批由取得材料决定。",
+          "gap": null,
+          "outcome": "SUCCEEDED",
+          "recordIds": [
+            "f372c0be-f2f3-4d16-826e-2148fe81b6d7"
+          ],
+          "documentIds": [],
+          "evidenceIds": [],
+          "newFragments": 0,
+          "coverageChanges": [],
+          "cacheHit": false,
+          "error": null
+        },
+        {
+          "id": "bd3f9dd5-2641-4e6b-a6a9-18f2ac263cd8",
+          "kind": "READ",
+          "startedAt": "2026-10-25T04:22:03.117Z",
+          "durationMs": 473,
+          "taskIds": [
+            "8f7d49ca-693f-4e1a-89a3-0481c6575d87"
+          ],
+          "basisEvidenceIds": [],
+          "basisRecordIds": [
+            "b82b0ea7-37e0-41d9-8cf3-4ddea25bcba3",
+            "f372c0be-f2f3-4d16-826e-2148fe81b6d7"
+          ],
+          "target": "https://api-docs.deepseek.com/zh-cn/quick_start/pricing",
+          "reason": "候选摘要显示官方 pricing 页同时出现 128K（V3.2）与 v4 系列模型，且新闻报道称 API 仍为 128K 而网页版测试 1M；需读取官方原始页面确认当前 API 上下文长度及模型版本对应关系，摘要不能作为证据。",
+          "gap": "尚无任何已读证据；缺官方原文明确各 API 模型的上下文长度，以及新版 v4 模型与 128K/1M 的对应关系。",
+          "outcome": "SUCCEEDED",
+          "recordIds": [],
+          "documentIds": [
+            "773be17aaf5ef707c024091f8c16c064dd6100068e0e3256dcd1a0fcec8ebaff"
+          ],
+          "evidenceIds": [],
+          "newFragments": 0,
+          "coverageChanges": [],
+          "cacheHit": false,
+          "error": null
+        },
+        {
+          "id": "928d45a8-1395-44bc-a2e8-4fc7480e8456",
+          "kind": "READ",
+          "startedAt": "2026-10-25T04:22:03.117Z",
+          "durationMs": 470,
+          "taskIds": [
+            "8f7d49ca-693f-4e1a-89a3-0481c6575d87"
+          ],
+          "basisEvidenceIds": [],
+          "basisRecordIds": [
+            "b82b0ea7-37e0-41d9-8cf3-4ddea25bcba3",
+            "f372c0be-f2f3-4d16-826e-2148fe81b6d7"
+          ],
+          "target": "https://api-docs.deepseek.com/quick_start/pricing",
+          "reason": "候选摘要显示官方 pricing 页同时出现 128K（V3.2）与 v4 系列模型，且新闻报道称 API 仍为 128K 而网页版测试 1M；需读取官方原始页面确认当前 API 上下文长度及模型版本对应关系，摘要不能作为证据。",
+          "gap": "尚无任何已读证据；缺官方原文明确各 API 模型的上下文长度，以及新版 v4 模型与 128K/1M 的对应关系。",
+          "outcome": "SUCCEEDED",
+          "recordIds": [],
+          "documentIds": [
+            "a48f06fc2a66bf26d82c738aca33f5465a18311ceb078654dbea49c7c0f2cdd4"
+          ],
+          "evidenceIds": [],
+          "newFragments": 0,
+          "coverageChanges": [],
+          "cacheHit": false,
+          "error": null
+        },
+        {
+          "id": "ff152fe3-6a35-4578-8dc8-c83863d2f6d8",
+          "kind": "READ",
+          "startedAt": "2026-10-25T04:22:03.117Z",
+          "durationMs": 1898,
+          "taskIds": [
+            "8f7d49ca-693f-4e1a-89a3-0481c6575d87"
+          ],
+          "basisEvidenceIds": [],
+          "basisRecordIds": [
+            "b82b0ea7-37e0-41d9-8cf3-4ddea25bcba3",
+            "f372c0be-f2f3-4d16-826e-2148fe81b6d7"
+          ],
+          "target": "https://hk.finance.yahoo.com/news/deepseek-%E6%AD%A3%E6%B8%AC%E8%A9%A6%E6%96%B0%E9%95%B7%E6%96%87%E6%9C%AC%E6%A8%A1%E5%9E%8B%E7%B5%90%E6%A7%8B-api%E6%9C%8D%E5%8B%99%E4%B8%8D%E8%AE%8A-233252601.html",
+          "reason": "候选摘要显示官方 pricing 页同时出现 128K（V3.2）与 v4 系列模型，且新闻报道称 API 仍为 128K 而网页版测试 1M；需读取官方原始页面确认当前 API 上下文长度及模型版本对应关系，摘要不能作为证据。",
+          "gap": "尚无任何已读证据；缺官方原文明确各 API 模型的上下文长度，以及新版 v4 模型与 128K/1M 的对应关系。",
+          "outcome": "SUCCEEDED",
+          "recordIds": [],
+          "documentIds": [
+            "1ebd26019be10d5389d968875f55165586a334421b8376af95d9f0d3a66c2be7"
+          ],
+          "evidenceIds": [],
+          "newFragments": 0,
+          "coverageChanges": [],
+          "cacheHit": false,
+          "error": null
+        },
+        {
+          "id": "16c4fba4-d45f-4975-8f4c-56f10cda359b",
+          "kind": "SELECT",
+          "startedAt": "2026-10-25T04:22:03.588Z",
+          "durationMs": 1417,
+          "taskIds": [
+            "8f7d49ca-693f-4e1a-89a3-0481c6575d87"
+          ],
+          "basisEvidenceIds": [],
+          "basisRecordIds": [],
+          "target": "https://api-docs.deepseek.com/quick_start/pricing/ :: 官方文档中 DeepSeek API 各模型（deepseek-chat、deepseek-reasoner、deepseek-v4 系列）的上下文长度具体数值，并区分 API 与 APP/WEB 版本差异。",
+          "reason": "候选摘要显示官方 pricing 页同时出现 128K（V3.2）与 v4 系列模型，且新闻报道称 API 仍为 128K 而网页版测试 1M；需读取官方原始页面确认当前 API 上下文长度及模型版本对应关系，摘要不能作为证据。 文档阅读：用户询问 DeepSeek API 上下文长度，最直接的证据是 Model Details 表格中的 CONTEXT LENGTH 行及对应模型列（deepseek-flash、deepseek-v4-pro），并需引用脚注说明旧模型名 deepseek-v4-flash 已停用、请求由新模型承接的别名链。b5 为该表所属小节标题，辅助定位。",
+          "gap": "尚无任何已读证据；缺官方原文明确各 API 模型的上下文长度，以及新版 v4 模型与 128K/1M 的对应关系。",
+          "outcome": "SUCCEEDED",
+          "recordIds": [],
+          "documentIds": [
+            "a48f06fc2a66bf26d82c738aca33f5465a18311ceb078654dbea49c7c0f2cdd4"
+          ],
+          "evidenceIds": [
+            "1f5d3819-fa18-42ce-a217-ef678a2caea3",
+            "175a149d-82a9-4d2d-a631-01b49a866784",
+            "6bff6953-9407-4a15-a476-8ee5f0c042a4"
+          ],
+          "newFragments": 3,
+          "coverageChanges": [],
+          "cacheHit": false,
+          "error": null
+        },
+        {
+          "id": "27c414bd-2bf1-4804-bbc3-631ffe88cbb7",
+          "kind": "SELECT",
+          "startedAt": "2026-10-25T04:22:03.590Z",
+          "durationMs": 1440,
+          "taskIds": [
+            "8f7d49ca-693f-4e1a-89a3-0481c6575d87"
+          ],
+          "basisEvidenceIds": [],
+          "basisRecordIds": [],
+          "target": "https://api-docs.deepseek.com/zh-cn/quick_start/pricing/ :: 官方文档中 DeepSeek API 各模型（deepseek-chat、deepseek-reasoner、deepseek-v4 系列）的上下文长度具体数值，并区分 API 与 APP/WEB 版本差异。",
+          "reason": "候选摘要显示官方 pricing 页同时出现 128K（V3.2）与 v4 系列模型，且新闻报道称 API 仍为 128K 而网页版测试 1M；需读取官方原始页面确认当前 API 上下文长度及模型版本对应关系，摘要不能作为证据。 文档阅读：用户问 DeepSeek API 各模型的上下文长度。b6 是官方“模型细节”表，列头含 deepseek-flash、deepseek-v4-pro，目标行直接给出上下文长度 1M、输出长度最大 384K，是最直接依据。b7 说明旧模型名 deepseek-v4-flash、deepseek-v4-flash-vision-exp 仍可调用但已下线，实际由 DeepSeek-V4.1-Flash-1017 提供服务，属于必须核对的别名/变更链，可避免用旧条目回答。材料中未出现 deepseek-chat、deepseek-reasoner，也未涉及 APP/WEB 版本差异，故不臆补。",
+          "gap": "尚无任何已读证据；缺官方原文明确各 API 模型的上下文长度，以及新版 v4 模型与 128K/1M 的对应关系。",
+          "outcome": "SUCCEEDED",
+          "recordIds": [],
+          "documentIds": [
+            "773be17aaf5ef707c024091f8c16c064dd6100068e0e3256dcd1a0fcec8ebaff"
+          ],
+          "evidenceIds": [
+            "d740d6ff-d359-4ec8-aa24-c04edc2cbc21",
+            "2b50910e-3aea-4ae7-b614-19a79ec97843"
+          ],
+          "newFragments": 2,
+          "coverageChanges": [],
+          "cacheHit": false,
+          "error": null
+        },
+        {
+          "id": "a528bdcb-3670-488d-bc3a-de267e8fcf10",
+          "kind": "SELECT",
+          "startedAt": "2026-10-25T04:22:05.017Z",
+          "durationMs": 1141,
+          "taskIds": [
+            "8f7d49ca-693f-4e1a-89a3-0481c6575d87"
+          ],
+          "basisEvidenceIds": [],
+          "basisRecordIds": [],
+          "target": "https://hk.finance.yahoo.com/news/deepseek-%E6%AD%A3%E6%B8%AC%E8%A9%A6%E6%96%B0%E9%95%B7%E6%96%87%E6%9C%AC%E6%A8%A1%E5%9E%8B%E7%B5%90%E6%A7%8B-api%E6%9C%8D%E5%8B%99%E4%B8%8D%E8%AE%8A-233252601.html :: 官方文档中 DeepSeek API 各模型（deepseek-chat、deepseek-reasoner、deepseek-v4 系列）的上下文长度具体数值，并区分 API 与 APP/WEB 版本差异。",
+          "reason": "候选摘要显示官方 pricing 页同时出现 128K（V3.2）与 v4 系列模型，且新闻报道称 API 仍为 128K 而网页版测试 1M；需读取官方原始页面确认当前 API 上下文长度及模型版本对应关系，摘要不能作为证据。 文档阅读：用户问 DeepSeek API 上下文长度。b10 是正文，直接说明 API 服务不变仍为 V3.2、仅支持 128K 上下文，并对比 APP/网版测试的 1M 上下文，且提及新模型上下文窗口提升与 500 页 A4 等量。b8、b9 提供该声明所处标题与时间背景，辅助定位原文。",
+          "gap": "尚无任何已读证据；缺官方原文明确各 API 模型的上下文长度，以及新版 v4 模型与 128K/1M 的对应关系。",
+          "outcome": "SUCCEEDED",
+          "recordIds": [],
+          "documentIds": [
+            "1ebd26019be10d5389d968875f55165586a334421b8376af95d9f0d3a66c2be7"
+          ],
+          "evidenceIds": [
+            "d20989ed-49bf-41a2-a0aa-a6a2a9c07b1c",
+            "a815ec57-13a4-4317-9063-789a17e13b35"
+          ],
+          "newFragments": 2,
+          "coverageChanges": [],
+          "cacheHit": false,
+          "error": null
+        },
+        {
+          "id": "c76b67c2-fe33-4e86-b925-96ff28dd5675",
+          "kind": "VERIFY",
+          "startedAt": "2026-10-25T04:22:06.160Z",
+          "durationMs": 5840,
+          "taskIds": [
+            "470d5628-dd5d-4772-a630-44d306677755",
+            "8f7d49ca-693f-4e1a-89a3-0481c6575d87"
+          ],
+          "basisEvidenceIds": [],
+          "basisRecordIds": [],
+          "target": "new fragments and affected claims",
+          "reason": "逐主张核查新片段与关联反证，更新不可删除的覆盖账本。",
+          "gap": null,
+          "outcome": "SUCCEEDED",
+          "recordIds": [],
+          "documentIds": [],
+          "evidenceIds": [
+            "1f5d3819-fa18-42ce-a217-ef678a2caea3",
+            "175a149d-82a9-4d2d-a631-01b49a866784",
+            "6bff6953-9407-4a15-a476-8ee5f0c042a4",
+            "d740d6ff-d359-4ec8-aa24-c04edc2cbc21",
+            "2b50910e-3aea-4ae7-b614-19a79ec97843",
+            "d20989ed-49bf-41a2-a0aa-a6a2a9c07b1c",
+            "a815ec57-13a4-4317-9063-789a17e13b35"
+          ],
+          "newFragments": 0,
+          "coverageChanges": [
+            "470d5628-dd5d-4772-a630-44d306677755:SUPPORTED",
+            "8f7d49ca-693f-4e1a-89a3-0481c6575d87:SUPPORTED"
+          ],
+          "cacheHit": false,
+          "error": null
+        },
+        {
+          "id": "1f515ac7-e00b-4605-a8d1-dabca725fd2a",
+          "kind": "VERIFY",
+          "startedAt": "2026-10-25T04:22:14.943Z",
+          "durationMs": 0,
+          "taskIds": [
+            "470d5628-dd5d-4772-a630-44d306677755",
+            "8f7d49ca-693f-4e1a-89a3-0481c6575d87"
+          ],
+          "basisEvidenceIds": [],
+          "basisRecordIds": [],
+          "target": "final affected claims",
+          "reason": "最终预算仅核查未完成/受新材料影响的主张，不清空已核验结果。",
+          "gap": null,
+          "outcome": "SUCCEEDED",
+          "recordIds": [],
+          "documentIds": [],
+          "evidenceIds": [],
+          "newFragments": 0,
+          "coverageChanges": [],
+          "cacheHit": false,
+          "error": null
+        },
+        {
+          "id": "4f3b8dc9-962f-424f-b570-6018b3fcf048",
+          "kind": "SYNTHESIZE",
+          "startedAt": "2026-10-25T04:22:14.949Z",
+          "durationMs": 3578,
+          "taskIds": [
+            "470d5628-dd5d-4772-a630-44d306677755",
+            "8f7d49ca-693f-4e1a-89a3-0481c6575d87"
+          ],
+          "basisEvidenceIds": [],
+          "basisRecordIds": [],
+          "target": "direct answer and grounded analysis",
+          "reason": "综合句逐段核对全部事实，原句由程序装配。",
+          "gap": null,
+          "outcome": "SUCCEEDED",
+          "recordIds": [],
+          "documentIds": [],
+          "evidenceIds": [],
+          "newFragments": 0,
+          "coverageChanges": [],
+          "cacheHit": false,
+          "error": null
+        },
+        {
+          "id": "5d4dcd9a-6b5d-402b-815e-6cd7ae302370",
+          "kind": "STOP",
+          "startedAt": "2026-10-25T04:22:18.527Z",
+          "durationMs": 0,
+          "taskIds": [
+            "470d5628-dd5d-4772-a630-44d306677755"
+          ],
+          "basisEvidenceIds": [],
+          "basisRecordIds": [],
+          "target": "模型基于当前覆盖与可执行动作结束：必答项与子任务均已有已核验支持证据：官方中文文档“模型 & 价格”页原文写明 deepseek-flash（DeepSeek-V4.1-Flash-1017）与 deepseek-v4-pro（DeepSeek-V4-Pro-0813）上下文长度 1M、输出长度最大 384K，并说明旧模型名 deepseek-v4-flash 等已下线、请求由新模型承接。另有阿思达克报道转述官方助手称 API 服务当时仍为 V3.2、支持 128K，而网页/APP 在灰度测试 1M 长上下文；两者差异已通过时间与对象口径解释清楚（2026-02 报道的旧 API 状态 vs 官方当前文档的 v4 系列 1M）。当前无未覆盖缺口，继续同义搜索已无增量，故如实结束。",
+          "reason": "如实发布当前覆盖、失败与局限。",
+          "gap": null,
+          "outcome": "STOPPED",
+          "recordIds": [],
+          "documentIds": [],
+          "evidenceIds": [],
+          "newFragments": 0,
+          "coverageChanges": [],
+          "cacheHit": false,
+          "error": null
+        }
+      ],
+      "counts": {
+        "searchCalls": 2,
+        "documentFetches": 3,
+        "cacheSelections": 3,
+        "duplicateFragments": 0,
+        "modelCalls": 10,
+        "inputTokens": 38868,
+        "outputTokens": 3230,
+        "unknownUsageCalls": 0,
+        "noGainBatches": 0
+      },
+      "recommendation": {
+        "eligible": false,
+        "independentReports": 0,
+        "sites": [],
+        "reason": "正式用途推荐至少需3组已确认独立真实使用报告并跨2站点；未知独立性不计数，仍可提供客观事实与限定分析。"
+      },
+      "httpAttempts": [
+        {
+          "url": "https://api.wsa.cloud.tencent.com/SearchPro",
+          "method": "POST",
+          "startedAt": "2026-10-25T04:21:57.694Z",
+          "finishedAt": "2026-10-25T04:21:57.839Z",
+          "requestSent": true,
+          "status": 200,
+          "error": null,
+          "ownerId": "b82b0ea7-37e0-41d9-8cf3-4ddea25bcba3"
+        },
+        {
+          "url": "https://api.tavily.com/search",
+          "method": "POST",
+          "startedAt": "2026-10-25T04:21:57.694Z",
+          "finishedAt": "2026-10-25T04:22:00.662Z",
+          "requestSent": true,
+          "status": 200,
+          "error": null,
+          "ownerId": "f372c0be-f2f3-4d16-826e-2148fe81b6d7"
+        },
+        {
+          "url": "https://api-docs.deepseek.com/zh-cn/quick_start/pricing",
+          "method": "GET",
+          "startedAt": "2026-10-25T04:22:03.118Z",
+          "finishedAt": "2026-10-25T04:22:03.474Z",
+          "requestSent": true,
+          "status": 302,
+          "error": null,
+          "ownerId": "773be17aaf5ef707c024091f8c16c064dd6100068e0e3256dcd1a0fcec8ebaff"
+        },
+        {
+          "url": "https://api-docs.deepseek.com/quick_start/pricing",
+          "method": "GET",
+          "startedAt": "2026-10-25T04:22:03.119Z",
+          "finishedAt": "2026-10-25T04:22:03.348Z",
+          "requestSent": true,
+          "status": 302,
+          "error": null,
+          "ownerId": "a48f06fc2a66bf26d82c738aca33f5465a18311ceb078654dbea49c7c0f2cdd4"
+        },
+        {
+          "url": "https://hk.finance.yahoo.com/news/deepseek-%E6%AD%A3%E6%B8%AC%E8%A9%A6%E6%96%B0%E9%95%B7%E6%96%87%E6%9C%AC%E6%A8%A1%E5%9E%8B%E7%B5%90%E6%A7%8B-api%E6%9C%8D%E5%8B%99%E4%B8%8D%E8%AE%8A-233252601.html",
+          "method": "GET",
+          "startedAt": "2026-10-25T04:22:03.119Z",
+          "finishedAt": "2026-10-25T04:22:04.374Z",
+          "requestSent": true,
+          "status": 200,
+          "error": null,
+          "ownerId": "1ebd26019be10d5389d968875f55165586a334421b8376af95d9f0d3a66c2be7"
+        },
+        {
+          "url": "https://api-docs.deepseek.com/zh-cn/quick_start/pricing/",
+          "method": "GET",
+          "startedAt": "2026-10-25T04:22:03.294Z",
+          "finishedAt": "2026-10-25T04:22:03.474Z",
+          "requestSent": true,
+          "status": 200,
+          "error": null,
+          "ownerId": "773be17aaf5ef707c024091f8c16c064dd6100068e0e3256dcd1a0fcec8ebaff"
+        },
+        {
+          "url": "https://api-docs.deepseek.com/quick_start/pricing/",
+          "method": "GET",
+          "startedAt": "2026-10-25T04:22:03.319Z",
+          "finishedAt": "2026-10-25T04:22:03.348Z",
+          "requestSent": true,
+          "status": 200,
+          "error": null,
+          "ownerId": "a48f06fc2a66bf26d82c738aca33f5465a18311ceb078654dbea49c7c0f2cdd4"
+        }
+      ],
+      "diagnostics": []
+    },
+    "generatedAt": "2026-10-25T04:22:18.527Z",
+    "contractVersion": "1.0.0"
+  },
+  "answers": [
+    {
+      "id": "343dcca3-2b23-4c5d-bac1-ff917f675db7",
+      "snapshotId": "30ab56f6-e4aa-4163-ae7c-25dc99a90b27",
+      "body": "按 DeepSeek 中文版官方 API 文档“模型 & 价格”页，所列模型 deepseek-flash（版本 DeepSeek-V4.1-Flash-1017）和 deepseek-v4-pro（版本 DeepSeek-V4-Pro-0813）的上下文长度均为 1M，最大输出长度为 384K。 [1]\n\n需要注意适用条件不同：上述 1M 是当前官方文档针对所列两个模型的规格；而阿思达克财经新闻报道称，DeepSeek 官方助手在开发者交流群中表示 API 服务不变、仍为 V3.2，仅支持 128K 上下文，同时网页及 APP 正在测试支持 1M 上下文的新长文本模型结构。因此 128K 的表述针对的是报道当时 API 仍保持 V3.2 的情形，不能与前述当前文档所列模型的 1M 直接合并成一个普遍结论。 [2]",
+      "citations": [
+        {
+          "marker": "[1]",
+          "claimIds": [
+            "235e834b-42b7-4b7a-9c10-595c5dd1a43f"
+          ],
+          "evidenceIds": [
+            "d740d6ff-d359-4ec8-aa24-c04edc2cbc21"
+          ],
+          "quotes": [
+            {
+              "evidenceId": "d740d6ff-d359-4ec8-aa24-c04edc2cbc21",
+              "originalExcerpt": "模型deepseek-flash(1)deepseek-v4-proBASE URL (OpenAI 格式)https://api.deepseek.comBASE URL (Anthropic 格式)https://api.deepseek.com/anthropic模型版本DeepSeek-V4.1-Flash-1017DeepSeek-V4-Pro-0813思考模式支持非思考与思考模式（默认）切换方式详见思考模式上下文长度1M输出长度最大 384K功能Json Output支持支持Tool Calls支持支持Responses API支持支持Anthropic API支持支持对话前缀续写"
+            }
+          ]
+        },
+        {
+          "marker": "[2]",
+          "claimIds": [
+            "235e834b-42b7-4b7a-9c10-595c5dd1a43f",
+            "43fc96c6-e2bd-4e4a-8953-a620f2e38921"
+          ],
+          "evidenceIds": [
+            "d740d6ff-d359-4ec8-aa24-c04edc2cbc21",
+            "d20989ed-49bf-41a2-a0aa-a6a2a9c07b1c"
+          ],
+          "quotes": [
+            {
+              "evidenceId": "d740d6ff-d359-4ec8-aa24-c04edc2cbc21",
+              "originalExcerpt": "模型deepseek-flash(1)deepseek-v4-proBASE URL (OpenAI 格式)https://api.deepseek.comBASE URL (Anthropic 格式)https://api.deepseek.com/anthropic模型版本DeepSeek-V4.1-Flash-1017DeepSeek-V4-Pro-0813思考模式支持非思考与思考模式（默认）切换方式详见思考模式上下文长度1M输出长度最大 384K功能Json Output支持支持Tool Calls支持支持Responses API支持支持Anthropic API支持支持对话前缀续写"
+            },
+            {
+              "evidenceId": "d20989ed-49bf-41a2-a0aa-a6a2a9c07b1c",
+              "originalExcerpt": "DeepSeek官方助手在開發者交流群中表示，DeepSeek網頁及APP正在測試新的長文本模型結構，支持1M上下文，而API服務不變，仍為V3.2，僅支持128K上下文。此次測試為2月11日啟動的灰度測試。該新模型上下文窗口較此前128K的版本提升明顯，單次可處理相當於500頁A4文檔的文本量，能覆蓋長文檔分析及跨章節推理等場景。不過，有用戶反饋新版本交互風格有所變化。業內推測該版本或為DeepSeek-V4-Lite，犧牲部分質量換取速度，為正式版本做壓力測試。(ta/u)~阿思達克財經新聞網址: www.aastocks.com"
+            }
+          ]
+        }
+      ],
+      "generationConfig": {
+        "provider": "api.deepseek.com",
+        "model": "deepseek-flash",
+        "promptVersion": "a2-evidence-v4",
+        "temperature": null,
+        "thinkingMode": "DISABLED",
+        "generatedAt": "2026-10-25T04:22:18.527Z"
+      }
+    }
+  ]
+}

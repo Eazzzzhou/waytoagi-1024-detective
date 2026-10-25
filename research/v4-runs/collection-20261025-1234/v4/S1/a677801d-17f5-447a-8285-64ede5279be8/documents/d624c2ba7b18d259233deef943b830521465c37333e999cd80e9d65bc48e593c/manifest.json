@@ -1,0 +1,666 @@
+{
+  "schemaVersion": "source-document/v1",
+  "id": "d624c2ba7b18d259233deef943b830521465c37333e999cd80e9d65bc48e593c",
+  "version": "33e3646f82f986089ca9fb2e47a0a85af3792b97498615b7dc829514c96c42d8",
+  "requestedUrl": "https://api-docs.deepseek.com/zh-cn/news/news260424",
+  "finalUrl": "https://api-docs.deepseek.com/zh-cn/news/news260424/",
+  "retrievedAt": "2026-10-25T04:34:13.455Z",
+  "contentType": "text/html",
+  "status": "READ",
+  "readError": null,
+  "rawHash": "a46d3e87c1db456361a68b4525561e8063d70850ef9cb986aa54ba4c6b0efc1b",
+  "textHash": "d3ff4e9e0fc001bba4951a5d875542f0842c2e855d9e8b5caf33916a45c6785d",
+  "text": "跳到主要内容\n\nSearch / Fetch API 已上线，使用自研搜索引擎，支持网页搜索与抓取，点此查看使用指南。\n\n本页目录\n\nDeepSeek-V4 预览版：迈入百万上下文普惠时代\n\n今天，我们全新系列模型 DeepSeek-V4 的预览版本正式上线并同步开源。\n\nDeepSeek-V4 拥有百万字超长上下文，在 Agent 能力、世界知识和推理性能上均实现国内与开源领域的领先。模型按大小分为两个版本：\n\n即日起登录官网 chat.deepseek.com 或官方App，即可与最新的 DeepSeek-V4 对话，探索 1M 超长上下文记忆的全新体验。API 服务已同步更新，通过修改 model_name 为 deepseek-v4-pro 或 deepseek-v4-flash 即可调用。\n\nDeepSeek-V4-Pro：性能比肩顶级闭源模型​\n\nAgent 能力大幅提高：相比前代模型，DeepSeek-V4-Pro 的 Agent 能力显著增强。在 Agentic Coding 评测中，V4-Pro 已达到当前开源模型最佳水平，并在其他 Agent 相关评测中同样表现优异。目前 DeepSeek-V4 已成为公司内部员工使用的 Agentic Coding 模型，据评测反馈使用体验优于 Sonnet 4.5，交付质量接近 Opus 4.6 非思考模式，但仍与 Opus 4.6 思考模式存在一定差距。\n\n丰富的世界知识：DeepSeek-V4-Pro 在世界知识测评中，大幅领先其他开源模型，仅稍逊于顶尖闭源模型 Gemini-Pro-3.1。\n\n世界顶级推理性能：在数学、STEM、竞赛型代码的测评中，DeepSeek-V4-Pro 超越当前所有已公开评测的开源模型，取得了比肩世界顶级闭源模型的优异成绩。\n\nDeepSeek-V4-Flash：更快捷高效的经济之选​\n\n相比 DeepSeek-V4-Pro，DeepSeek-V4-Flash 在世界知识储备方面稍逊一筹，但展现出了接近的推理能力。而由于模型参数和激活更小，相较之下 V4-Flash 能够提供更加快捷、经济的 API 服务。\n\n在 Agent 测评中，DeepSeek-V4-Flash 在简单任务上与 DeepSeek-V4-Pro 旗鼓相当，但在高难度任务上仍有差距。\n\n结构创新和超高上下文效率​\n\nDeepSeek-V4 开创了一种全新的注意力机制，在 token 维度进行压缩，结合 DSA 稀疏注意力（DeepSeek Sparse Attention），实现了全球领先的长上下文能力，并且相比于传统方法大幅降低了对计算和显存的需求。从现在开始，1M（一百万）上下文将是 DeepSeek 所有官方服务的标配。\n\nAgent 能力专项优化​\n\nDeepSeek-V4 针对 Claude Code 、OpenClaw、OpenCode、CodeBuddy 等主流的 Agent 产品进行了适配和优化，在代码任务、文档生成任务等方面表现均有提升。下图为 V4-Pro 在某 Agent 框架下生成的 PPT 内页示例：\n\nAPI 访问​\n\n目前，DeepSeek API 已同步上线 V4-Pro 与 V4-Flash，支持 OpenAI ChatCompletions 接口与 Anthropic 接口。访问新模型时，base_url 不变, model 参数需要改为 deepseek-v4-pro 或 deepseek-v4-flash。\n\nV4-Pro 与 V4-Flash 最大上下文长度为 1M，均同时支持非思考模式与思考模式，其中思考模式支持 reasoning_effort 参数设置思考强度（high/max）。对于复杂的 Agent 场景建议使用思考模式，并设置强度为 max。模型调用与参数调整方法请参考 API 文档。\n\n请大家注意：旧有的 API 接口的两个模型名 deepseek-chat 与deepseek-reasoner 将于三个月后（2026-07-24）停止使用。当前阶段内，这两个模型名分别指向deepseek-v4-flash 的非思考模式与思考模式。\n\n开源权重和本地部署​\n\nDeepSeek-V4 模型开源链接：\n\nhttps://huggingface.co/collections/deepseek-ai/deepseek-v4\n\nhttps://modelscope.cn/collections/deepseek-ai/DeepSeek-V4\n\nDeepSeek-V4 技术报告：\n\nhttps://huggingface.co/deepseek-ai/DeepSeek-V4-Pro/blob/main/DeepSeek_V4.pdf\n\n「不诱于誉，不恐于诽，率道而行，端然正己。」\n\n感谢每一位用户的信任与支持，大家的肯定、建议和期许，是我们不竭探索、持续进步的动力，也让我们始终坚守初心，专注于不懈的创新。\n\n我们将始终秉持长期主义的原则理念，在尝试与思考中踏实前行，努力向实现 AGI 的目标不断靠近。\n\nDeepSeek-V4-Pro：性能比肩顶级闭源模型\n\nDeepSeek-V4-Flash：更快捷高效的经济之选\n\n结构创新和超高上下文效率\n\nAgent 能力专项优化\n\nAPI 访问\n\n开源权重和本地部署",
+  "rawSources": [
+    {
+      "mode": "STATIC",
+      "hash": "a46d3e87c1db456361a68b4525561e8063d70850ef9cb986aa54ba4c6b0efc1b",
+      "path": "C:\\Users\\qianchen\\Documents\\waytoagi-1024-detective-a2-v4\\.cache\\source-documents-v4\\a677801d-17f5-447a-8285-64ede5279be8\\d624c2ba7b18d259233deef943b830521465c37333e999cd80e9d65bc48e593c\\raw.bin"
+    }
+  ],
+  "storage": {
+    "rawPath": "C:\\Users\\qianchen\\Documents\\waytoagi-1024-detective-a2-v4\\.cache\\source-documents-v4\\a677801d-17f5-447a-8285-64ede5279be8\\d624c2ba7b18d259233deef943b830521465c37333e999cd80e9d65bc48e593c\\raw.bin",
+    "textPath": "C:\\Users\\qianchen\\Documents\\waytoagi-1024-detective-a2-v4\\.cache\\source-documents-v4\\a677801d-17f5-447a-8285-64ede5279be8\\d624c2ba7b18d259233deef943b830521465c37333e999cd80e9d65bc48e593c\\source.txt",
+    "manifestPath": "C:\\Users\\qianchen\\Documents\\waytoagi-1024-detective-a2-v4\\.cache\\source-documents-v4\\a677801d-17f5-447a-8285-64ede5279be8\\d624c2ba7b18d259233deef943b830521465c37333e999cd80e9d65bc48e593c\\manifest.json"
+  },
+  "parser": {
+    "name": "readability+source-dom",
+    "version": "readability-0.6.0+jsdom-30.1.3+source-dom-2",
+    "normalization": "source-text/v1",
+    "mode": "STATIC"
+  },
+  "metadata": {
+    "title": "DeepSeek-V4 预览版：迈入百万上下文普惠时代 | DeepSeek API Docs",
+    "author": null,
+    "publishedAt": null,
+    "language": "zh-cn"
+  },
+  "completeness": "COMPLETE",
+  "warnings": [],
+  "blocks": [
+    {
+      "start": 0,
+      "end": 6,
+      "id": "b0",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[0]",
+      "headingPath": [],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 8,
+      "end": 59,
+      "id": "b1",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[1]",
+      "headingPath": [],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 61,
+      "end": 65,
+      "id": "b2",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[2]",
+      "headingPath": [],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 67,
+      "end": 94,
+      "id": "b3",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[3]",
+      "headingPath": [
+        "DeepSeek-V4 预览版：迈入百万上下文普惠时代"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 96,
+      "end": 135,
+      "id": "b4",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[4]",
+      "headingPath": [
+        "DeepSeek-V4 预览版：迈入百万上下文普惠时代"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 137,
+      "end": 207,
+      "id": "b5",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[5]",
+      "headingPath": [
+        "DeepSeek-V4 预览版：迈入百万上下文普惠时代"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 209,
+      "end": 354,
+      "id": "b6",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[6]",
+      "headingPath": [
+        "DeepSeek-V4 预览版：迈入百万上下文普惠时代"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 356,
+      "end": 383,
+      "id": "b7",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[7]",
+      "headingPath": [
+        "DeepSeek-V4 预览版：迈入百万上下文普惠时代",
+        "DeepSeek-V4-Pro：性能比肩顶级闭源模型​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 385,
+      "end": 616,
+      "id": "b8",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[8]",
+      "headingPath": [
+        "DeepSeek-V4 预览版：迈入百万上下文普惠时代",
+        "DeepSeek-V4-Pro：性能比肩顶级闭源模型​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 618,
+      "end": 688,
+      "id": "b9",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[9]",
+      "headingPath": [
+        "DeepSeek-V4 预览版：迈入百万上下文普惠时代",
+        "DeepSeek-V4-Pro：性能比肩顶级闭源模型​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 690,
+      "end": 770,
+      "id": "b10",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[10]",
+      "headingPath": [
+        "DeepSeek-V4 预览版：迈入百万上下文普惠时代",
+        "DeepSeek-V4-Pro：性能比肩顶级闭源模型​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 772,
+      "end": 801,
+      "id": "b11",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[11]",
+      "headingPath": [
+        "DeepSeek-V4 预览版：迈入百万上下文普惠时代",
+        "DeepSeek-V4-Flash：更快捷高效的经济之选​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 803,
+      "end": 914,
+      "id": "b12",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[12]",
+      "headingPath": [
+        "DeepSeek-V4 预览版：迈入百万上下文普惠时代",
+        "DeepSeek-V4-Flash：更快捷高效的经济之选​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 916,
+      "end": 988,
+      "id": "b13",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[13]",
+      "headingPath": [
+        "DeepSeek-V4 预览版：迈入百万上下文普惠时代",
+        "DeepSeek-V4-Flash：更快捷高效的经济之选​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 990,
+      "end": 1003,
+      "id": "b14",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[14]",
+      "headingPath": [
+        "DeepSeek-V4 预览版：迈入百万上下文普惠时代",
+        "结构创新和超高上下文效率​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1005,
+      "end": 1163,
+      "id": "b15",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[15]",
+      "headingPath": [
+        "DeepSeek-V4 预览版：迈入百万上下文普惠时代",
+        "结构创新和超高上下文效率​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1165,
+      "end": 1178,
+      "id": "b16",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[16]",
+      "headingPath": [
+        "DeepSeek-V4 预览版：迈入百万上下文普惠时代",
+        "Agent 能力专项优化​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1180,
+      "end": 1316,
+      "id": "b17",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[17]",
+      "headingPath": [
+        "DeepSeek-V4 预览版：迈入百万上下文普惠时代",
+        "Agent 能力专项优化​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1318,
+      "end": 1325,
+      "id": "b18",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[18]",
+      "headingPath": [
+        "DeepSeek-V4 预览版：迈入百万上下文普惠时代",
+        "API 访问​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1327,
+      "end": 1479,
+      "id": "b19",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[19]",
+      "headingPath": [
+        "DeepSeek-V4 预览版：迈入百万上下文普惠时代",
+        "API 访问​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1481,
+      "end": 1628,
+      "id": "b20",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[20]",
+      "headingPath": [
+        "DeepSeek-V4 预览版：迈入百万上下文普惠时代",
+        "API 访问​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1630,
+      "end": 1755,
+      "id": "b21",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[21]",
+      "headingPath": [
+        "DeepSeek-V4 预览版：迈入百万上下文普惠时代",
+        "API 访问​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1757,
+      "end": 1767,
+      "id": "b22",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[22]",
+      "headingPath": [
+        "DeepSeek-V4 预览版：迈入百万上下文普惠时代",
+        "开源权重和本地部署​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1769,
+      "end": 1788,
+      "id": "b23",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[23]",
+      "headingPath": [
+        "DeepSeek-V4 预览版：迈入百万上下文普惠时代",
+        "开源权重和本地部署​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1790,
+      "end": 1848,
+      "id": "b24",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[24]",
+      "headingPath": [
+        "DeepSeek-V4 预览版：迈入百万上下文普惠时代",
+        "开源权重和本地部署​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1850,
+      "end": 1907,
+      "id": "b25",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[25]",
+      "headingPath": [
+        "DeepSeek-V4 预览版：迈入百万上下文普惠时代",
+        "开源权重和本地部署​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1909,
+      "end": 1926,
+      "id": "b26",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[26]",
+      "headingPath": [
+        "DeepSeek-V4 预览版：迈入百万上下文普惠时代",
+        "开源权重和本地部署​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1928,
+      "end": 2004,
+      "id": "b27",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[27]",
+      "headingPath": [
+        "DeepSeek-V4 预览版：迈入百万上下文普惠时代",
+        "开源权重和本地部署​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2006,
+      "end": 2028,
+      "id": "b28",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[28]",
+      "headingPath": [
+        "DeepSeek-V4 预览版：迈入百万上下文普惠时代",
+        "开源权重和本地部署​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2030,
+      "end": 2092,
+      "id": "b29",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[29]",
+      "headingPath": [
+        "DeepSeek-V4 预览版：迈入百万上下文普惠时代",
+        "开源权重和本地部署​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2094,
+      "end": 2141,
+      "id": "b30",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[30]",
+      "headingPath": [
+        "DeepSeek-V4 预览版：迈入百万上下文普惠时代",
+        "开源权重和本地部署​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2143,
+      "end": 2169,
+      "id": "b31",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[31]",
+      "headingPath": [
+        "DeepSeek-V4 预览版：迈入百万上下文普惠时代",
+        "开源权重和本地部署​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2171,
+      "end": 2199,
+      "id": "b32",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[32]",
+      "headingPath": [
+        "DeepSeek-V4 预览版：迈入百万上下文普惠时代",
+        "开源权重和本地部署​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2201,
+      "end": 2213,
+      "id": "b33",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[33]",
+      "headingPath": [
+        "DeepSeek-V4 预览版：迈入百万上下文普惠时代",
+        "开源权重和本地部署​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2215,
+      "end": 2227,
+      "id": "b34",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[34]",
+      "headingPath": [
+        "DeepSeek-V4 预览版：迈入百万上下文普惠时代",
+        "开源权重和本地部署​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2229,
+      "end": 2235,
+      "id": "b35",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[35]",
+      "headingPath": [
+        "DeepSeek-V4 预览版：迈入百万上下文普惠时代",
+        "开源权重和本地部署​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2237,
+      "end": 2246,
+      "id": "b36",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[36]",
+      "headingPath": [
+        "DeepSeek-V4 预览版：迈入百万上下文普惠时代",
+        "开源权重和本地部署​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    }
+  ],
+  "links": [
+    {
+      "url": "https://api-docs.deepseek.com/zh-cn/news/news260424",
+      "text": "",
+      "blockId": null,
+      "relation": "CANONICAL",
+      "locator": "source DOM link[0]"
+    },
+    {
+      "url": "https://api-docs.deepseek.com/zh-cn/guides/search",
+      "text": "点此查看使用指南。",
+      "blockId": "b1",
+      "relation": "LINK",
+      "locator": "source DOM link[2]"
+    },
+    {
+      "url": "https://api-docs.deepseek.com/zh-cn/guides/thinking_mode",
+      "text": "API 文档",
+      "blockId": "b20",
+      "relation": "LINK",
+      "locator": "source DOM link[43]"
+    },
+    {
+      "url": "https://huggingface.co/collections/deepseek-ai/deepseek-v4",
+      "text": "https://huggingface.co/collections/deepseek-ai/deepseek-v4",
+      "blockId": "b24",
+      "relation": "LINK",
+      "locator": "source DOM link[45]"
+    },
+    {
+      "url": "https://modelscope.cn/collections/deepseek-ai/DeepSeek-V4",
+      "text": "https://modelscope.cn/collections/deepseek-ai/DeepSeek-V4",
+      "blockId": "b25",
+      "relation": "LINK",
+      "locator": "source DOM link[46]"
+    },
+    {
+      "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro/blob/main/DeepSeek_V4.pdf",
+      "text": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro/blob/main/DeepSeek_V4.pdf",
+      "blockId": "b27",
+      "relation": "LINK",
+      "locator": "source DOM link[47]"
+    }
+  ],
+  "tables": []
+}

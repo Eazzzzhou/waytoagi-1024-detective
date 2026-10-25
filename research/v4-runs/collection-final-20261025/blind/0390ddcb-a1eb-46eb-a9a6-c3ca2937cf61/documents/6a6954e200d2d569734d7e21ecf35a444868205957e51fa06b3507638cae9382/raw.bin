@@ -1,0 +1,1304 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>try{var t=localStorage.getItem('pn-theme');if(t==='dark'||t==='light')document.documentElement.dataset.theme=t}catch(e){}document.addEventListener('error',function(e){var i=e.target;if(i&&i.tagName==='IMG'&&i.closest){var f=i.closest('.hd-pic,.hd-hero');if(f)f.remove()}},true)</script>
+<meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
+<link rel="icon" href="/_pn/pn-mark.v1.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/_pn/pn-mark-180.v1.png">
+<meta name="theme-color" content="#6e2bff">
+<link rel="stylesheet" href="/_pn/index.QmJpXd2K.css">
+
+	<!-- This site is optimized with the Yoast SEO plugin v27.3 - https://yoast.com/product/yoast-seo-wordpress/ -->
+	<title>Change Ollama’s Model Storage Location with OLLAMA_MODELS</title>
+	<meta name="description" content="Set Ollama’s OLLAMA_MODELS variable on Windows, Linux, or macOS, restart the server, and understand permissions and existing model files." />
+	<link rel="canonical" href="https://pcnmobile.com/how-to-change-ollamas-model-storage-location/" />
+	<meta property="og:locale" content="en_US" />
+	<meta property="og:type" content="article" />
+	<meta property="og:title" content="Change Ollama’s Model Storage Location with OLLAMA_MODELS" />
+	<meta property="og:description" content="Set Ollama’s OLLAMA_MODELS variable on Windows, Linux, or macOS, restart the server, and understand permissions and existing model files." />
+	<meta property="og:url" content="https://pcnmobile.com/how-to-change-ollamas-model-storage-location/" />
+	<meta property="og:site_name" content="PCNMobile" />
+	<meta property="article:published_time" content="2026-10-04T09:22:01+00:00" />
+	<meta name="author" content="PCNMobile Team" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:label1" content="Written by" />
+	<meta name="twitter:data1" content="PCNMobile Team" />
+	<meta name="twitter:label2" content="Est. reading time" />
+	<meta name="twitter:data2" content="4 minutes" />
+	<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https:\/\/schema.org","@graph":[{"@type":"Article","@id":"https:\/\/pcnmobile.com\/how-to-change-ollamas-model-storage-location\/#article","isPartOf":{"@id":"https:\/\/pcnmobile.com\/how-to-change-ollamas-model-storage-location\/"},"author":{"name":"PCNMobile Team","@id":"https:\/\/pcnmobile.com\/#\/schema\/person\/e991260bffabb2e66fa11a8eaa6584fb"},"headline":"How to Change Ollama’s Model Storage Location","datePublished":"2026-10-04T09:22:01+00:00","mainEntityOfPage":{"@id":"https:\/\/pcnmobile.com\/how-to-change-ollamas-model-storage-location\/"},"wordCount":688,"commentCount":0,"keywords":["AI Models","Linux","macOS","Ollama","Storage","Windows"],"articleSection":["Blog"],"inLanguage":"en-US","potentialAction":[{"@type":"CommentAction","name":"Comment","target":["https:\/\/pcnmobile.com\/how-to-change-ollamas-model-storage-location\/#respond"]}]},{"@type":"WebPage","@id":"https:\/\/pcnmobile.com\/how-to-change-ollamas-model-storage-location\/","url":"https:\/\/pcnmobile.com\/how-to-change-ollamas-model-storage-location\/","name":"Change Ollama’s Model Storage Location with OLLAMA_MODELS","isPartOf":{"@id":"https:\/\/pcnmobile.com\/#website"},"datePublished":"2026-10-04T09:22:01+00:00","author":{"@id":"https:\/\/pcnmobile.com\/#\/schema\/person\/e991260bffabb2e66fa11a8eaa6584fb"},"description":"Set Ollama’s OLLAMA_MODELS variable on Windows, Linux, or macOS, restart the server, and understand permissions and existing model files.","breadcrumb":{"@id":"https:\/\/pcnmobile.com\/how-to-change-ollamas-model-storage-location\/#breadcrumb"},"inLanguage":"en-US","potentialAction":[{"@type":"ReadAction","target":["https:\/\/pcnmobile.com\/how-to-change-ollamas-model-storage-location\/"]}]},{"@type":"BreadcrumbList","@id":"https:\/\/pcnmobile.com\/how-to-change-ollamas-model-storage-location\/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https:\/\/pcnmobile.com\/"},{"@type":"ListItem","position":2,"name":"How to Change Ollama’s Model Storage Location"}]},{"@type":"WebSite","@id":"https:\/\/pcnmobile.com\/#website","url":"https:\/\/pcnmobile.com\/","name":"PCNMobile","description":"DESK TO POCKET","potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https:\/\/pcnmobile.com\/?s={search_term_string}"},"query-input":{"@type":"PropertyValueSpecification","valueRequired":true,"valueName":"search_term_string"}}],"inLanguage":"en-US"},{"@type":"Person","@id":"https:\/\/pcnmobile.com\/#\/schema\/person\/e991260bffabb2e66fa11a8eaa6584fb","name":"PCNMobile Team","image":{"@type":"ImageObject","inLanguage":"en-US","@id":"https:\/\/secure.gravatar.com\/avatar\/2d80d1de1c20d6c19ea89df6016777d3249b34cf1162ac1d7e0b56a2e2583450?s=96&d=mm&r=g","url":"https:\/\/secure.gravatar.com\/avatar\/2d80d1de1c20d6c19ea89df6016777d3249b34cf1162ac1d7e0b56a2e2583450?s=96&d=mm&r=g","contentUrl":"https:\/\/secure.gravatar.com\/avatar\/2d80d1de1c20d6c19ea89df6016777d3249b34cf1162ac1d7e0b56a2e2583450?s=96&d=mm&r=g","caption":"PCNMobile Team"},"sameAs":["https:\/\/pcnmobile.com"],"url":"https:\/\/pcnmobile.com\/author\/pcnmobile\/"}]}</script>
+	<!-- / Yoast SEO plugin. -->
+
+
+<link rel='dns-prefetch' href='//scripts.journeymv.com' />
+<link rel="alternate" type="application/rss+xml" title="PCNMobile &raquo; Feed" href="https://pcnmobile.com/feed/" />
+<link rel="alternate" type="application/rss+xml" title="PCNMobile &raquo; Comments Feed" href="https://pcnmobile.com/comments/feed/" />
+<link rel="alternate" type="application/rss+xml" title="PCNMobile &raquo; How to Change Ollama’s Model Storage Location Comments Feed" href="https://pcnmobile.com/how-to-change-ollamas-model-storage-location/feed/" />
+<style id="ym-phase-theme-bridge">:root{--ym-p1-display:var(--pm-font-display);--ym-p1-text:var(--pm-font-body);--ym-p1-panel:var(--pm-surface);--ym-p1-paper:var(--pm-canvas);--ym-p1-ink:var(--pm-ink);--ym-p1-muted:var(--pm-ink-faint);--ym-p1-rule:var(--pm-line);--ym-p1-rule-dark:var(--pm-line-strong);--ym-p1-label:var(--pm-dusk-deep);--ym-p1-blue:var(--pm-dusk);--ym-p1-amber:var(--pm-dawn);--ym-p1-violet:var(--pm-dusk);--ym-aawp-surface:var(--pm-surface);--ym-aawp-panel:var(--pm-canvas);--ym-aawp-ink:var(--pm-ink);--ym-aawp-muted:var(--pm-ink-faint);--ym-aawp-line:var(--pm-line);--ym-aawp-line-soft:var(--pm-line);--ym-aawp-label:var(--pm-dusk-deep);--ym-aawp-link:var(--pm-dusk);}</style>
+<link rel="alternate" title="oEmbed (JSON)" type="application/json+oembed" href="https://pcnmobile.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fpcnmobile.com%2Fhow-to-change-ollamas-model-storage-location%2F" />
+<link rel="alternate" title="oEmbed (XML)" type="text/xml+oembed" href="https://pcnmobile.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fpcnmobile.com%2Fhow-to-change-ollamas-model-storage-location%2F&#038;format=xml" />
+<style id="wp-emoji-styles-inline-css">
+
+	img.wp-smiley, img.emoji {
+		display: inline !important;
+		border: none !important;
+		box-shadow: none !important;
+		height: 1em !important;
+		width: 1em !important;
+		margin: 0 0.07em !important;
+		vertical-align: -0.1em !important;
+		background: none !important;
+		padding: 0 !important;
+	}
+/*# sourceURL=wp-emoji-styles-inline-css */
+</style>
+<style id="wp-block-library-inline-css">
+:root{--wp-block-synced-color:#7a00df;--wp-block-synced-color--rgb:122,0,223;--wp-bound-block-color:var(--wp-block-synced-color);--wp-editor-canvas-background:#ddd;--wp-admin-theme-color:#007cba;--wp-admin-theme-color--rgb:0,124,186;--wp-admin-theme-color-darker-10:#006ba1;--wp-admin-theme-color-darker-10--rgb:0,107,160.5;--wp-admin-theme-color-darker-20:#005a87;--wp-admin-theme-color-darker-20--rgb:0,90,135;--wp-admin-border-width-focus:2px}@media (min-resolution:192dpi){:root{--wp-admin-border-width-focus:1.5px}}.wp-element-button{cursor:pointer}:root .has-very-light-gray-background-color{background-color:#eee}:root .has-very-dark-gray-background-color{background-color:#313131}:root .has-very-light-gray-color{color:#eee}:root .has-very-dark-gray-color{color:#313131}:root .has-vivid-green-cyan-to-vivid-cyan-blue-gradient-background{background:linear-gradient(135deg,#00d084,#0693e3)}:root .has-purple-crush-gradient-background{background:linear-gradient(135deg,#34e2e4,#4721fb 50%,#ab1dfe)}:root .has-hazy-dawn-gradient-background{background:linear-gradient(135deg,#faaca8,#dad0ec)}:root .has-subdued-olive-gradient-background{background:linear-gradient(135deg,#fafae1,#67a671)}:root .has-atomic-cream-gradient-background{background:linear-gradient(135deg,#fdd79a,#004a59)}:root .has-nightshade-gradient-background{background:linear-gradient(135deg,#330968,#31cdcf)}:root .has-midnight-gradient-background{background:linear-gradient(135deg,#020381,#2874fc)}:root{--wp--preset--font-size--normal:16px;--wp--preset--font-size--huge:42px}.has-regular-font-size{font-size:1em}.has-larger-font-size{font-size:2.625em}.has-normal-font-size{font-size:var(--wp--preset--font-size--normal)}.has-huge-font-size{font-size:var(--wp--preset--font-size--huge)}:root .has-text-align-center{text-align:center}:root .has-text-align-left{text-align:left}:root .has-text-align-right{text-align:right}.has-fit-text{white-space:nowrap!important}#end-resizable-editor-section{display:none}.aligncenter{clear:both}.items-justified-left{justify-content:flex-start}.items-justified-center{justify-content:center}.items-justified-right{justify-content:flex-end}.items-justified-space-between{justify-content:space-between}.screen-reader-text{word-wrap:normal!important;border:0;clip-path:inset(50%);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px}.screen-reader-text:focus{background-color:#ddd;clip-path:none;color:#444;display:block;font-size:1em;height:auto;left:5px;line-height:normal;padding:15px 23px 14px;text-decoration:none;top:5px;width:auto;z-index:100000}html :where(.has-border-color){border-style:solid}html :where([style*=border-color]){border-style:solid}html :where([style*=border-top-color]){border-top-style:solid}html :where([style*=border-right-color]){border-right-style:solid}html :where([style*=border-bottom-color]){border-bottom-style:solid}html :where([style*=border-left-color]){border-left-style:solid}html :where([style*=border-width]){border-style:solid}html :where([style*=border-top-width]){border-top-style:solid}html :where([style*=border-right-width]){border-right-style:solid}html :where([style*=border-bottom-width]){border-bottom-style:solid}html :where([style*=border-left-width]){border-left-style:solid}html :where(img[class*=wp-image-]){height:auto;max-width:100%}:where(figure){margin:0 0 1em}html :where(.is-position-sticky){--wp-admin--admin-bar--position-offset:var(--wp-admin--admin-bar--height,0px)}@media screen and (max-width:600px){html :where(.is-position-sticky){--wp-admin--admin-bar--position-offset:0px}}
+
+/*# sourceURL=/wp-includes/css/dist/block-library/common.min.css */
+</style>
+<style id="classic-theme-styles-inline-css">
+/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}
+/*# sourceURL=/wp-includes/css/classic-themes.min.css */
+</style>
+
+<style id="global-styles-inline-css">
+:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgb(6,147,227) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgb(252,185,0) 0%,rgb(255,105,0) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgb(255,105,0) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgb(255, 255, 255), 6px 6px rgb(0, 0, 0);--wp--preset--shadow--crisp: 6px 6px 0px rgb(0, 0, 0);}:where(body) { margin: 0; }:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}body{padding-top: 0px;padding-right: 0px;padding-bottom: 0px;padding-left: 0px;}:root :where(.wp-element-button, .wp-block-button__link){background-color: #32373c;border-width: 0;color: #fff;font-family: inherit;font-size: inherit;font-style: inherit;font-weight: inherit;letter-spacing: inherit;line-height: inherit;padding-top: calc(0.667em + 2px);padding-right: calc(1.333em + 2px);padding-bottom: calc(0.667em + 2px);padding-left: calc(1.333em + 2px);text-decoration: none;text-transform: inherit;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+/*# sourceURL=global-styles-inline-css */
+</style>
+
+<style id="ym-donation-scope-kofi-inline-css">
+
+        .ym-donation-kofi,
+        .ym-donation-kofi * {
+            box-sizing: border-box;
+        }
+        .ym-donation-kofi {
+            clear: both;
+            display: grid !important;
+            grid-template-columns: 1fr;
+            justify-items: center;
+            align-items: center;
+            gap: 20px;
+            width: min(100%, 900px);
+            min-height: 128px;
+            margin: 46px auto 40px;
+            padding: 34px 38px;
+            border: 1px solid #eef2f7;
+            border-radius: 8px;
+            background: linear-gradient(180deg, #ffffff 0%, #fffafa 100%);
+            box-shadow: 0 16px 36px rgba(15, 23, 42, 0.07);
+            color: #1f2937;
+            font-family: inherit;
+            text-decoration: none !important;
+            position: relative;
+            z-index: 1;
+            overflow: hidden;
+            transition: border-color 180ms ease, background 180ms ease, transform 180ms ease, box-shadow 180ms ease;
+        }
+        .ym-donation-kofi:hover,
+        .ym-donation-kofi:focus {
+            border-color: #ffc9c9;
+            background: linear-gradient(180deg, #ffffff 0%, #fff5f5 100%);
+            color: #1f2937;
+            text-decoration: none !important;
+            transform: translateY(-1px);
+            box-shadow: 0 18px 42px rgba(15, 23, 42, 0.09);
+        }
+        .ym-donation-kofi:before {
+            content: "";
+            position: absolute;
+            inset: 0 auto 0 0;
+            width: 4px;
+            background: #ff5f5f;
+        }
+        .ym-donation-kofi__body {
+            display: block;
+            min-width: 0;
+            max-width: 720px;
+            text-align: center;
+        }
+        .ym-donation-kofi__eyebrow {
+            display: block;
+            margin: 0 0 8px;
+            color: #be123c;
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 0;
+            text-transform: uppercase;
+        }
+        .ym-donation-kofi__text {
+            display: block;
+            margin: 0;
+            color: #374151;
+            font-size: 17px;
+            line-height: 1.65;
+            text-align: center;
+        }
+        .ym-donation-kofi__button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            justify-self: center;
+            min-width: 190px;
+            min-height: 54px;
+            padding: 14px 22px;
+            border-radius: 6px;
+            background: linear-gradient(135deg, #ff5f5f 0%, #e54848 100%);
+            color: #ffffff !important;
+            font-size: 15px;
+            font-weight: 800;
+            line-height: 1.2;
+            text-decoration: none !important;
+            white-space: nowrap;
+            animation: ymDonationKofiGlow 2.8s ease-in-out infinite;
+        }
+        .ym-donation-kofi__button:hover,
+        .ym-donation-kofi__button:focus {
+            background: linear-gradient(135deg, #ff6b6b 0%, #d93f3f 100%);
+            color: #ffffff !important;
+        }
+        /* Bottom-right corner, every width. The old build docked this into the left
+           margin and hid itself whenever the gutter was under ~210px, which on a real
+           1440px or 1536px window meant almost every site rendered nothing at all
+           (measured 2026-09-08: visible on 1/33 at 1440, 6/33 at 1536). */
+        .ym-donation-kofi-quick-wrap {
+            clear: both;
+            position: fixed;
+            right: 18px;
+            left: auto;
+            /* Lifted clear of the bottom furniture measured across the fleet on
+               2026-09-08: anchor ads (adthrive-footer 90px desktop / 50px mobile,
+               floating_ads_bottom 58px) and the back-to-top buttons several themes
+               park in this corner. Ad containers carry z-index 2147483535, far above
+               this one, so an ad always paints over the button and never the reverse,
+               and the script below walks the button upwards whenever something else
+               owns the spot. */
+            bottom: var(--ym-kofi-bottom, 104px);
+            z-index: 99998;
+            display: block;
+            width: auto;
+            max-width: calc(100vw - 36px);
+            margin: 0;
+            padding: 0;
+            text-align: left;
+        }
+        .ym-donation-kofi-quick-wrap[hidden],
+        .ym-donation-kofi-quick-dismissed .ym-donation-kofi-quick-wrap {
+            display: none !important;
+        }
+        .ym-donation-kofi-quick {
+            display: inline-flex;
+            align-items: center;
+            gap: 14px;
+            max-width: 100%;
+        }
+        .ym-donation-kofi-float {
+            position: static;
+            z-index: auto;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            min-height: 50px;
+            padding: 12px 18px;
+            border-radius: 999px;
+            background: linear-gradient(135deg, #ff5f5f 0%, #e54848 100%);
+            color: #ffffff !important;
+            font-family: inherit;
+            font-size: 14px;
+            font-weight: 800;
+            line-height: 1.1;
+            text-decoration: none !important;
+            white-space: nowrap;
+            box-shadow: 0 12px 28px rgba(229, 72, 72, 0.26);
+            animation: ymDonationKofiGlowDark 2.8s ease-in-out infinite;
+        }
+        .ym-donation-kofi-float:hover,
+        .ym-donation-kofi-float:focus {
+            background: linear-gradient(135deg, #ff6b6b 0%, #d93f3f 100%);
+            color: #ffffff !important;
+            animation-play-state: paused;
+        }
+        .ym-donation-kofi-quick__close {
+            appearance: none;
+            -webkit-appearance: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 30px;
+            min-width: 30px;
+            height: 30px;
+            margin: 0;
+            padding: 0;
+            border: 1px solid #e5e7eb;
+            border-radius: 999px;
+            background: #ffffff;
+            color: #4b5563;
+            cursor: pointer;
+            font-family: inherit;
+            font-size: 17px;
+            font-weight: 700;
+            line-height: 1;
+            box-shadow: 0 5px 14px rgba(15, 23, 42, 0.12);
+        }
+        .ym-donation-kofi-quick__close:hover,
+        .ym-donation-kofi-quick__close:focus {
+            border-color: #ffb4b4;
+            background: #fff5f5;
+            color: #e54848;
+            outline: none;
+        }
+        @keyframes ymDonationKofiGlow {
+            0%,
+            100% {
+                box-shadow: 0 0 0 0 rgba(255, 95, 95, 0.24);
+            }
+            50% {
+                box-shadow: 0 0 0 7px rgba(255, 95, 95, 0.12);
+            }
+        }
+        @keyframes ymDonationKofiGlowDark {
+            0%,
+            100% {
+                box-shadow: 0 12px 28px rgba(229, 72, 72, 0.26), 0 0 0 0 rgba(255, 95, 95, 0.28);
+            }
+            50% {
+                box-shadow: 0 12px 28px rgba(229, 72, 72, 0.26), 0 0 0 8px rgba(255, 95, 95, 0.14);
+            }
+        }
+        @media (max-width: 900px) {
+            .ym-donation-kofi {
+                align-items: flex-start;
+                gap: 18px;
+                min-height: 0;
+                padding: 22px;
+            }
+            .ym-donation-kofi__button {
+                width: 100%;
+                justify-self: stretch;
+                margin-top: 2px;
+            }
+        }
+        @media (max-width: 1024px) {
+            .ym-donation-kofi-float {
+                min-height: 44px;
+                padding: 10px 14px;
+                font-size: 13px;
+            }
+        }
+        @media (max-width: 600px) {
+            .ym-donation-kofi-quick-wrap {
+                right: 12px;
+                bottom: var(--ym-kofi-bottom, 76px);
+            }
+            .ym-donation-kofi-quick {
+                gap: 8px;
+            }
+            .ym-donation-kofi-float {
+                min-height: 42px;
+                padding: 9px 13px;
+                font-size: 12.5px;
+            }
+            .ym-donation-kofi-quick__close {
+                width: 26px;
+                min-width: 26px;
+                height: 26px;
+                font-size: 15px;
+            }
+        }
+        /* Dark mode. The card now sits inside the article instead of after it, so a
+           white block in a dark theme is no longer something a reader scrolls past.
+           Themes that stamp html[data-theme="dark"] and readers who never touch a
+           toggle (prefers-color-scheme) are both covered. The coral CTA stays: it is
+           the brand colour and it reads fine on a dark surface. */
+        @media (prefers-color-scheme: dark) {
+            html:not([data-theme="light"]) .ym-donation-kofi,
+            html:not([data-theme="light"]) .ym-donation-kofi:hover,
+            html:not([data-theme="light"]) .ym-donation-kofi:focus {
+                border-color: #2a3038;
+                background: linear-gradient(180deg, #171a1f 0%, #1d2128 100%);
+                color: #e8eaed;
+                box-shadow: 0 16px 36px rgba(0, 0, 0, 0.38);
+            }
+            html:not([data-theme="light"]) .ym-donation-kofi__eyebrow {
+                color: #ff8a8a;
+            }
+            html:not([data-theme="light"]) .ym-donation-kofi__text {
+                color: #c3c7cd;
+            }
+            html:not([data-theme="light"]) .ym-donation-kofi-quick__close {
+                border-color: #2a3038;
+                background: #171a1f;
+                color: #c3c7cd;
+            }
+        }
+        html[data-theme="dark"] .ym-donation-kofi,
+        html[data-theme="dark"] .ym-donation-kofi:hover,
+        html[data-theme="dark"] .ym-donation-kofi:focus {
+            border-color: #2a3038;
+            background: linear-gradient(180deg, #171a1f 0%, #1d2128 100%);
+            color: #e8eaed;
+            box-shadow: 0 16px 36px rgba(0, 0, 0, 0.38);
+        }
+        html[data-theme="dark"] .ym-donation-kofi__eyebrow {
+            color: #ff8a8a;
+        }
+        html[data-theme="dark"] .ym-donation-kofi__text {
+            color: #c3c7cd;
+        }
+        html[data-theme="dark"] .ym-donation-kofi-quick__close {
+            border-color: #2a3038;
+            background: #171a1f;
+            color: #c3c7cd;
+        }
+        @media (prefers-reduced-motion: reduce) {
+            .ym-donation-kofi__button,
+            .ym-donation-kofi-float {
+                animation: none;
+            }
+        }
+    
+/*# sourceURL=ym-donation-scope-kofi-inline-css */
+</style>
+<link rel='stylesheet' id='pcnmobile-handoff-css' href='https://pcnmobile.com/wp-content/themes/pcnmobile-handoff/style.css?ver=1792419891' media='all' />
+<link rel='stylesheet' id='aawp-css' href='https://pcnmobile.com/wp-content/plugins/aawp/assets/dist/css/main.css?ver=3.18.3' media='all' />
+<script id="mv-script-wrapper-js" async="async" fetchpriority="high" data-noptimize="1" data-cfasync="false" data-mv-mcp="2.10.12" src="https://scripts.journeymv.com/tags/60041b3d-906b-46a8-b8a7-d62004ec2f01.js?ver=7.0.7"></script>
+<script id="jquery-core-js" src="https://pcnmobile.com/wp-includes/js/jquery/jquery.min.js?ver=3.7.1"></script>
+<script id="jquery-migrate-js" src="https://pcnmobile.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1"></script>
+<link rel="https://api.w.org/" href="https://pcnmobile.com/wp-json/" /><link rel="alternate" title="JSON" type="application/json" href="https://pcnmobile.com/wp-json/wp/v2/posts/750519" /><meta name="generator" content="WordPress 7.0.7" />
+<style type="text/css">.aawp .aawp-tb__row--highlight{background-color:#256aaf;}.aawp .aawp-tb__row--highlight{color:#256aaf;}.aawp .aawp-tb__row--highlight a{color:#256aaf;}</style><!-- YM_PHASE3_SERVER_HEAVY_START version=20261015.6 site=pcnmobile -->
+<script id="ym-phase3-browser-gate">
+(function(){var ua=navigator.userAgent||"",ok=/Windows|Win64|Win32/i.test(ua)&&!/Mobile|Android|iPhone|iPad|iPod|Tablet|Windows Phone/i.test(ua);if(!ok)return;function mark(){document.documentElement.classList.add("ym-p3-browser-ok");if(document.body)document.body.classList.add("ym-p3-browser-ok");}mark();if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",mark,{once:true});[0,200,1000,2500].forEach(function(ms){setTimeout(mark,ms);});})();
+</script>
+<style id="ym-phase3-server-css">
+html:not(.ym-p3-browser-ok) body:not(.ym-p3-browser-ok) .ym-p3-server-gate { display: none !important; }
+/* ym-p3-top-reveal-20261015: top sticky units wait for the title; sidebar creatives keep their own ratio */
+.ym-p3-top-wait { visibility: hidden !important; opacity: 0 !important; pointer-events: none !important; }
+html body .dyn-wsoezg-sidebar-image-widget img { aspect-ratio: auto !important; height: auto !important; max-height: none !important; object-fit: contain !important; }
+html.ym-p3-browser-ok body, body.ym-p3-browser-ok { padding-bottom: 104px !important; }
+.dyn-wsoezg-wide-rail { position: fixed; left: 50%; transform: translateX(-50%); z-index: 9998; background: transparent; }
+.dyn-wsoezg-wide-rail.dyn-wsoezg-top { top: var(--ym-p3-top-offset, var(--rk-top-offset, 0px)) !important; width: 728px; height: 90px; }
+.dyn-wsoezg-wide-rail.dyn-wsoezg-bottom { bottom: 0; width: 728px; height: 90px; }
+.dyn-wsoezg-context-rail { position: fixed; left: 50%; transform: translateX(-50%); z-index: 9998; background: transparent; }
+.dyn-wsoezg-context-rail.dyn-wsoezg-top { top: var(--ym-p3-top-offset, var(--rk-top-offset, 0px)) !important; width: 728px; height: 90px; }
+.dyn-wsoezg-context-rail.dyn-wsoezg-bottom { bottom: 0; width: 728px; height: 90px; }
+.dyn-wsoezg-wide-rail .dyn-wsoezg-close-btn, .dyn-wsoezg-context-rail .dyn-wsoezg-close-btn, .dyn-wsoezg-commerce-panel .dyn-wsoezg-close-btn, .dyn-wsoezg-context-fallback .dyn-wsoezg-close-btn { top: 6px !important; right: 6px !important; display: flex !important; align-items: center !important; justify-content: center !important; line-height: 1 !important; z-index: 2147483647 !important; }
+.dyn-wsoezg-context-fallback { box-sizing: border-box; overflow: visible; background: transparent; border: 0; box-shadow: none; }
+.dyn-wsoezg-center-media { display: block; width: 728px; height: 90px; max-width: 100%; text-decoration: none !important; }
+.dyn-wsoezg-center-media img { display: block; width: 728px; height: 90px; max-width: 100%; object-fit: contain; border: 0; border-radius: 0; }
+.dyn-wsoezg-corner-panel { position: fixed; width: 300px; z-index: 9990; }
+.dyn-wsoezg-corner-panel.dyn-wsoezg-top-right { top: var(--ym-p3-top-offset, var(--rk-top-offset, 0px)) !important; right: 2px; }
+.dyn-wsoezg-corner-panel.dyn-wsoezg-bottom-right { bottom: 5px; right: 2px; }
+.dyn-wsoezg-corner-panel .dyn-wsoezg-universal-cta { height: 90px; padding: 10px 15px; border-radius: var(--ymp3-r-lg, 8px); }
+.dyn-wsoezg-corner-panel .dyn-wsoezg-cta-text { font-size: 1rem; line-height: 1.4; }
+.dyn-wsoezg-corner-panel .dyn-wsoezg-close-btn { top: -8px; right: -8px; }
+.dyn-wsoezg-close-btn { position: absolute; box-sizing: border-box; width: 26px; height: 26px; min-width: 26px; min-height: 26px; padding: 0; background-color: rgba(5, 5, 5, 0.92); color: #ffffff; border: 2px solid #ffffff; border-radius: 50%; cursor: pointer; font-family: Arial, sans-serif; font-size: 18px; font-weight: bold; line-height: 1; text-align: center; z-index: 2147483647; box-shadow: 0 2px 7px rgba(0,0,0,0.35); transition: transform 0.2s ease, background-color 0.2s ease; }
+.dyn-wsoezg-close-btn:hover { background-color: #000000; transform: scale(1.1); }
+.dyn-wsoezg-universal-card .dyn-wsoezg-close-btn, .dyn-wsoezg-sidebar-image-widget .dyn-wsoezg-close-btn { top: -10px; right: -10px; }
+.dyn-wsoezg-universal-card, .dyn-wsoezg-sidebar-image-widget { position: relative; }
+.dyn-wsoezg-universal-card { box-sizing: border-box; background: var(--ymp3-panel); border: 1px solid var(--ymp3-rule); border-top: 3px double var(--ymp3-rule-dark); border-radius: var(--ymp3-r, 4px); box-shadow: 0 1px 2px rgba(19,19,22,0.04), 0 14px 30px rgba(19,19,22,0.07); overflow: visible; font-family: var(--ymp3-text); color: var(--ymp3-ink); }
+.ym-p3-server-gate { --ymp3-display: var(--pm-font-display, inherit); --ymp3-text: var(--pm-font-body, inherit); --ymp3-panel: var(--pm-surface, #ffffff); --ymp3-paper: var(--pm-surface-2, #ecf0f4); --ymp3-ink: var(--pm-ink, #1a222c); --ymp3-muted: var(--pm-ink-faint, #5f6c79); --ymp3-rule: var(--pm-line, #dde3ea); --ymp3-rule-dark: var(--pm-ink, #1a222c); --ymp3-label: var(--pm-dawn-deep, #a04d12); --ymp3-blue: #0b57d0; --ymp3-amber: var(--pm-dawn-deep, #a04d12); --ymp3-violet: var(--pm-dusk-deep, #55439e); --ymp3-teal: #0f766e; --ymp3-r: var(--pm-r-s, 10px); --ymp3-r-lg: var(--pm-r-m, 14px); }
+[data-theme="dark"] .ym-p3-server-gate, html.rw-dark .ym-p3-server-gate { --ymp3-blue: #6ca4ff; --ymp3-teal: #65d6c7; }
+.dyn-wsoezg-pc-fix { --ymp3-a: var(--ymp3-blue); }
+.dyn-wsoezg-driver-update { --ymp3-a: var(--ymp3-amber); }
+.dyn-wsoezg-kicker { display: flex; align-items: center; gap: 10px; margin: 0 0 14px; font-family: var(--ymp3-display); font-size: 0.68rem; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ymp3-label); }
+.dyn-wsoezg-kicker::after { content: ""; flex: 1 1 auto; height: 1px; background: var(--ymp3-rule); }
+.dyn-wsoezg-tile { display: inline-flex; align-items: center; justify-content: center; width: 42px; height: 42px; border-radius: 9px; flex-shrink: 0; color: var(--ymp3-a, var(--ymp3-ink)); background: color-mix(in srgb, var(--ymp3-a, var(--ymp3-ink)) 11%, transparent); }
+.dyn-wsoezg-chip { display: inline-block; padding: 3px 9px; border-radius: 3px; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.03em; background: var(--ymp3-paper); border: 1px solid var(--ymp3-rule); color: var(--ymp3-muted); white-space: nowrap; }
+.dyn-wsoezg-pill { display: inline-flex; align-items: center; padding: 9px 16px; border-radius: var(--ymp3-r, 4px); color: var(--ymp3-paper, #fff) !important; background: var(--ymp3-a, var(--ymp3-ink)); font-family: var(--ymp3-display); font-weight: 800; font-size: 0.82rem; letter-spacing: 0.01em; white-space: nowrap; flex-shrink: 0; transition: filter 0.15s ease, transform 0.15s ease; }
+a:hover .dyn-wsoezg-pill { filter: brightness(0.9); transform: translateY(-1px); }
+.dyn-wsoezg-go { font-weight: 900; color: var(--ymp3-a, var(--ymp3-ink)); flex-shrink: 0; display: inline-flex; transition: transform 0.15s ease; }
+a:hover .dyn-wsoezg-go { transform: translateX(4px); }
+.dyn-wsoezg-inline-style1 { width: 728px; max-width: 100%; margin: 32px auto 24px; padding: 20px 24px 22px; display: block; }
+.dyn-wsoezg-style1-grid { display: flex; align-items: stretch; gap: 0; }
+a.dyn-wsoezg-promo-column { flex: 1; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 10px; padding: 6px 16px 0; text-decoration: none; }
+a.dyn-wsoezg-promo-column:hover .dyn-wsoezg-promo-title { text-decoration: underline; text-decoration-color: var(--ymp3-a); text-underline-offset: 3px; }
+.dyn-wsoezg-promo-divider { width: 1px; background: var(--ymp3-rule); }
+.dyn-wsoezg-promo-title { font-family: var(--ymp3-display); font-size: 1.02rem; font-weight: 800; letter-spacing: -0.01em; line-height: 1.3; color: var(--ymp3-ink); margin: 0; flex-grow: 1; }
+.dyn-wsoezg-promo-button { display: block; width: 100%; padding: 11px 10px; border-radius: var(--ymp3-r, 4px); background: var(--ymp3-a); color: var(--ymp3-paper, #fff) !important; font-family: var(--ymp3-display); font-weight: 800; font-size: 0.85rem; transition: filter 0.15s ease; }
+a.dyn-wsoezg-promo-column:hover .dyn-wsoezg-promo-button { filter: brightness(0.9); }
+.dyn-wsoezg-inline-style2 { width: 728px; max-width: 100%; margin: 32px auto 24px; padding: 16px 20px; display: flex; flex-direction: column; gap: 10px; }
+a.dyn-wsoezg-bulletin { display: flex; align-items: center; gap: 14px; padding: 12px 16px 12px 14px; background: var(--ymp3-paper); border: 1px solid var(--ymp3-rule); border-left: 3px solid var(--ymp3-a); border-radius: var(--ymp3-r, 4px); text-decoration: none; transition: background-color 0.15s ease; }
+a.dyn-wsoezg-bulletin:hover { background: var(--ymp3-panel); }
+.dyn-wsoezg-bulletin-main { flex: 1 1 auto; min-width: 0; }
+.dyn-wsoezg-bulletin-line { display: block; font-family: var(--ymp3-display); font-size: 0.98rem; font-weight: 700; letter-spacing: -0.005em; line-height: 1.35; color: var(--ymp3-ink); }
+.dyn-wsoezg-bulletin-meta { display: block; font-size: 0.75rem; color: var(--ymp3-muted); margin-top: 3px; }
+.dyn-wsoezg-inline-style3 { width: 728px; max-width: 100%; margin: 32px auto 24px; padding: 6px 24px; }
+a.dyn-wsoezg-feature-section { display: flex; align-items: center; gap: 18px; padding: 18px 0; text-decoration: none; }
+a.dyn-wsoezg-feature-section + a.dyn-wsoezg-feature-section { border-top: 1px solid var(--ymp3-rule); }
+.dyn-wsoezg-feature-text-content { flex-grow: 1; min-width: 0; }
+.dyn-wsoezg-feature-title { font-family: var(--ymp3-display); font-size: 1.08rem; font-weight: 800; letter-spacing: -0.01em; color: var(--ymp3-ink); margin: 0 0 4px; }
+a.dyn-wsoezg-feature-section:hover .dyn-wsoezg-feature-title { text-decoration: underline; text-decoration-color: var(--ymp3-a); text-underline-offset: 3px; }
+.dyn-wsoezg-feature-description { display: block; font-size: 0.9rem; color: var(--ymp3-muted); line-height: 1.55; margin: 0 0 7px; }
+.dyn-wsoezg-feature-button-area { flex-shrink: 0; }
+.dyn-wsoezg-inline-style4 { width: 728px; max-width: 100%; margin: 32px auto 24px; padding: 18px 24px; }
+a.dyn-wsoezg-pick-row { display: flex; align-items: center; gap: 14px; padding: 12px 2px; text-decoration: none; }
+a.dyn-wsoezg-pick-row + a.dyn-wsoezg-pick-row { border-top: 1px dashed var(--ymp3-rule); }
+a.dyn-wsoezg-pick-row:hover { background: var(--ymp3-paper); }
+.dyn-wsoezg-pick-text { flex-grow: 1; min-width: 0; }
+.dyn-wsoezg-pick-name { display: flex; align-items: center; gap: 8px; font-family: var(--ymp3-display); font-size: 0.95rem; font-weight: 800; color: var(--ymp3-ink); }
+.dyn-wsoezg-free-flag { display: inline-block; padding: 1px 6px; border: 1px solid var(--ymp3-a); border-radius: 3px; color: var(--ymp3-a); font-size: 0.62rem; font-weight: 800; letter-spacing: 0.08em; }
+.dyn-wsoezg-pick-benefit { display: block; font-size: 0.85rem; color: var(--ymp3-muted); margin-top: 3px; line-height: 1.45; }
+.dyn-wsoezg-inline-style5 { width: 728px; max-width: 100%; margin: 32px auto 24px; padding: 18px 24px 20px; }
+.dyn-wsoezg-check-head { font-family: var(--ymp3-display); font-size: 1.05rem; font-weight: 800; letter-spacing: -0.01em; color: var(--ymp3-ink); margin: 0 0 12px; }
+a.dyn-wsoezg-check-row { display: flex; align-items: center; gap: 12px; padding: 11px 14px; margin: 7px 0; background: var(--ymp3-paper); border: 1px solid var(--ymp3-rule); border-radius: var(--ymp3-r, 4px); text-decoration: none; transition: transform 0.15s ease, border-color 0.15s ease; }
+a.dyn-wsoezg-check-row:hover { transform: translateX(4px); border-color: var(--ymp3-a); }
+.dyn-wsoezg-check-mark { display: inline-flex; align-items: center; justify-content: center; width: 26px; height: 26px; border-radius: 50%; color: var(--ymp3-paper, #fff); background: var(--ymp3-a); flex-shrink: 0; }
+.dyn-wsoezg-check-text { flex-grow: 1; font-size: 0.93rem; color: var(--ymp3-ink); font-weight: 600; }
+.dyn-wsoezg-inline-style6 { width: 728px; max-width: 100%; margin: 32px auto 24px; padding: 14px 18px; display: flex; flex-direction: column; gap: 9px; }
+a.dyn-wsoezg-strip-row { display: flex; align-items: center; gap: 13px; padding: 11px 14px; border: 1px solid var(--ymp3-rule); border-left: 3px solid var(--ymp3-a); border-radius: var(--ymp3-r, 4px); background: var(--ymp3-panel); text-decoration: none; transition: background-color 0.15s ease, box-shadow 0.15s ease; }
+a.dyn-wsoezg-strip-row:hover { background: var(--ymp3-paper); box-shadow: 0 4px 14px rgba(19,19,22,0.07); }
+.dyn-wsoezg-strip-tag { font-family: var(--ymp3-display); font-size: 0.62rem; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ymp3-a); flex-shrink: 0; min-width: 86px; }
+.dyn-wsoezg-strip-text { flex-grow: 1; font-family: var(--ymp3-display); font-size: 0.95rem; font-weight: 700; letter-spacing: -0.005em; color: var(--ymp3-ink); }
+.dyn-wsoezg-inline-style7 { width: 728px; max-width: 100%; margin: 32px auto 24px; padding: 0; }
+a.dyn-wsoezg-hero-main { display: block; padding: 24px 28px 22px; background: var(--ymp3-paper); border-radius: var(--ymp3-r, 3px) var(--ymp3-r, 3px) 0 0; text-decoration: none; }
+.dyn-wsoezg-hero-kicker { display: block; font-family: var(--ymp3-display); font-size: 0.66rem; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ymp3-a); margin: 0 0 10px; }
+.dyn-wsoezg-hero-title { font-family: var(--ymp3-display); font-size: 1.55rem; font-weight: 900; letter-spacing: -0.015em; line-height: 1.18; color: var(--ymp3-ink); margin: 0 0 8px; }
+.dyn-wsoezg-hero-benefit { font-size: 0.95rem; color: var(--ymp3-muted); margin: 0 0 16px; line-height: 1.55; max-width: 56ch; }
+.dyn-wsoezg-hero-cta-row { display: flex; align-items: center; gap: 12px; }
+.dyn-wsoezg-hero-btn { display: inline-flex; padding: 11px 22px; border-radius: var(--ymp3-r, 4px); background: var(--ymp3-a); color: var(--ymp3-paper, #fff) !important; font-family: var(--ymp3-display); font-weight: 800; font-size: 0.9rem; transition: filter 0.15s ease, transform 0.15s ease; }
+a.dyn-wsoezg-hero-main:hover .dyn-wsoezg-hero-btn { filter: brightness(0.9); transform: translateY(-1px); }
+.dyn-wsoezg-hero-minis { display: flex; border-top: 1px solid var(--ymp3-rule); }
+a.dyn-wsoezg-hero-mini { flex: 1; display: flex; align-items: center; justify-content: center; gap: 9px; padding: 13px 10px; background: var(--ymp3-panel); text-decoration: none; font-family: var(--ymp3-display); font-weight: 700; font-size: 0.88rem; color: var(--ymp3-ink) !important; }
+a.dyn-wsoezg-hero-mini + a.dyn-wsoezg-hero-mini { border-left: 1px solid var(--ymp3-rule); }
+a.dyn-wsoezg-hero-mini:hover { background: var(--ymp3-paper); }
+a.dyn-wsoezg-hero-mini svg { color: var(--ymp3-a); }
+.dyn-wsoezg-inline-style8 { width: 728px; max-width: 100%; margin: 32px auto 24px; padding: 18px 24px; }
+.dyn-wsoezg-steps-head { font-family: var(--ymp3-display); font-size: 1.05rem; font-weight: 800; letter-spacing: -0.01em; color: var(--ymp3-ink); margin: 0 0 6px; }
+a.dyn-wsoezg-step-row { display: flex; align-items: center; gap: 16px; padding: 12px 2px; text-decoration: none; }
+a.dyn-wsoezg-step-row + a.dyn-wsoezg-step-row { border-top: 1px solid var(--ymp3-rule); }
+.dyn-wsoezg-step-num { flex-shrink: 0; width: 34px; font-family: var(--ymp3-display); font-size: 1.7rem; font-weight: 900; line-height: 1; color: var(--ymp3-a); text-align: center; }
+.dyn-wsoezg-step-text { flex-grow: 1; font-size: 0.94rem; color: var(--ymp3-ink); font-weight: 600; line-height: 1.45; }
+.dyn-wsoezg-inline-style9 { width: 728px; max-width: 100%; margin: 32px auto 24px; padding: 20px 24px 22px; background: var(--ymp3-paper); }
+.dyn-wsoezg-qa-q { font-family: var(--ymp3-display); font-size: 1.25rem; font-weight: 900; letter-spacing: -0.01em; color: var(--ymp3-ink); margin: 0 0 4px; }
+.dyn-wsoezg-qa-sub { font-size: 0.85rem; color: var(--ymp3-muted); margin: 0 0 14px; }
+.dyn-wsoezg-qa-options { display: flex; flex-wrap: wrap; gap: 10px; }
+a.dyn-wsoezg-qa-opt { flex: 1 1 44%; min-width: 260px; display: flex; align-items: center; gap: 12px; padding: 13px 14px; background: var(--ymp3-panel); border: 1px solid var(--ymp3-rule); border-radius: var(--ymp3-r, 4px); text-decoration: none; transition: border-color 0.15s ease, transform 0.15s ease; }
+a.dyn-wsoezg-qa-opt:hover { border-color: var(--ymp3-a); transform: translateY(-2px); }
+.dyn-wsoezg-qa-opt .dyn-wsoezg-tile { width: 36px; height: 36px; border-radius: 7px; }
+.dyn-wsoezg-qa-opt-text { flex-grow: 1; min-width: 0; }
+.dyn-wsoezg-qa-opt-label { display: block; font-family: var(--ymp3-display); font-size: 0.93rem; font-weight: 800; color: var(--ymp3-ink); }
+.dyn-wsoezg-qa-opt-hint { display: block; font-size: 0.75rem; font-weight: 700; color: var(--ymp3-a); margin-top: 2px; }
+.dyn-wsoezg-inline-style10 { width: 728px; max-width: 100%; margin: 32px auto 24px; padding: 20px 24px 22px; background: #131316; border: 1px solid rgba(255,255,255,0.12); border-top: 3px double rgba(242,240,234,0.4); --ymp3-blue: #0b57d0; --ymp3-amber: #b45309; --ymp3-violet: #6d28d9; --ymp3-teal: #0f766e; }
+.dyn-wsoezg-dark-head { font-family: var(--ymp3-display); color: #ffffff; font-size: 1.15rem; font-weight: 900; letter-spacing: -0.01em; margin: 0 0 3px; }
+.dyn-wsoezg-dark-sub { color: rgba(255,255,255,0.68); font-size: 0.83rem; margin: 0 0 14px; }
+.dyn-wsoezg-dark-btns { display: flex; gap: 10px; }
+a.dyn-wsoezg-dark-btn { flex: 1; display: flex; align-items: center; justify-content: center; gap: 9px; padding: 13px 10px; border-radius: var(--ymp3-r, 4px); color: #fdfdfb !important; background: var(--ymp3-a); text-decoration: none; font-family: var(--ymp3-display); font-weight: 800; font-size: 0.9rem; transition: filter 0.15s ease, transform 0.15s ease; }
+a.dyn-wsoezg-dark-btn:hover { filter: brightness(0.9); transform: translateY(-2px); }
+.dyn-wsoezg-inline-style11 { width: 728px; max-width: 100%; margin: 32px auto 24px; padding: 20px 24px 22px; }
+a.dyn-wsoezg-spot { display: flex; align-items: center; gap: 18px; text-decoration: none; }
+.dyn-wsoezg-spot-body { flex-grow: 1; min-width: 0; }
+.dyn-wsoezg-spot-title { font-family: var(--ymp3-display); font-size: 1.25rem; font-weight: 900; letter-spacing: -0.012em; color: var(--ymp3-ink); margin: 0 0 5px; line-height: 1.22; }
+a.dyn-wsoezg-spot:hover .dyn-wsoezg-spot-title { text-decoration: underline; text-decoration-color: var(--ymp3-a); text-underline-offset: 3px; }
+.dyn-wsoezg-spot-benefit { display: block; font-size: 0.9rem; color: var(--ymp3-muted); line-height: 1.5; margin: 0 0 9px; }
+.dyn-wsoezg-spot-meta { display: flex; gap: 7px; flex-wrap: wrap; }
+.dyn-wsoezg-spot .dyn-wsoezg-tile { width: 54px; height: 54px; }
+.dyn-wsoezg-flag { position: absolute; top: -13px; left: 18px; background: var(--ymp3-label); color: var(--ymp3-paper, #fff); font-family: var(--ymp3-display); font-size: 0.64rem; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; padding: 5px 14px 5px 12px; border-radius: 2px; clip-path: polygon(0 0, 100% 0, calc(100% - 8px) 50%, 100% 100%, 0 100%); }
+.dyn-wsoezg-inline-style11 { padding-top: 26px; }
+.dyn-wsoezg-spot-name { display: block; font-size: 0.85rem; font-weight: 600; color: var(--ymp3-muted); margin: 0 0 7px; }
+a.dyn-wsoezg-corner-card { display: flex; align-items: center; gap: 10px; background: var(--ymp3-panel); border: 1px solid var(--ymp3-rule); border-top: 3px double var(--ymp3-rule-dark); border-left: 3px solid var(--ymp3-a); border-radius: var(--ymp3-r, 4px); padding: 11px 12px; box-shadow: 0 10px 30px rgba(19,19,22,0.16); text-decoration: none; font-family: var(--ymp3-text); }
+a.dyn-wsoezg-corner-card:hover { box-shadow: 0 14px 36px rgba(19,19,22,0.24); }
+.dyn-wsoezg-corner-card .dyn-wsoezg-tile { width: 36px; height: 36px; border-radius: 7px; }
+.dyn-wsoezg-corner-text { flex-grow: 1; min-width: 0; }
+.dyn-wsoezg-corner-head { display: block; font-family: var(--ymp3-display); font-size: 0.86rem; font-weight: 800; letter-spacing: -0.005em; color: var(--ymp3-ink); line-height: 1.25; }
+.dyn-wsoezg-corner-sub { display: block; font-size: 0.72rem; color: var(--ymp3-muted); line-height: 1.3; margin-top: 2px; }
+a.dyn-wsoezg-modal-row { display: flex; align-items: center; gap: 12px; padding: 10px 12px; background: var(--ymp3-paper); border: 1px solid var(--ymp3-rule); border-radius: var(--ymp3-r, 4px); text-decoration: none; transition: border-color 0.15s ease; }
+a.dyn-wsoezg-modal-row:hover { border-color: var(--ymp3-a); }
+.dyn-wsoezg-modal-row .dyn-wsoezg-tile { width: 38px; height: 38px; border-radius: 8px; }
+.dyn-wsoezg-modal-row-text { flex-grow: 1; min-width: 0; }
+.dyn-wsoezg-modal-row-name { display: block; font-family: var(--ymp3-display); font-size: 0.9rem; font-weight: 800; color: var(--ymp3-ink); }
+.dyn-wsoezg-modal-row-benefit { display: block; font-size: 0.78rem; color: var(--ymp3-muted); margin-top: 1px; }
+.dyn-wsoezg-sidebar-image-widget { margin: 24px auto; max-width: 100%; width: 300px; }
+.dyn-wsoezg-sidebar-image-widget a { display: block; text-decoration: none; }
+.dyn-wsoezg-sidebar-image-widget img { display: block; width: 100%; height: auto; border-radius: 8px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+#dyn-wsoezg-exit-modal { display: none; flex-direction: row; align-items: stretch; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); box-sizing: border-box; width: 680px; max-width: 90%; background: var(--ymp3-panel); font-family: var(--ymp3-text); border-radius: var(--ymp3-r-lg, 8px); box-shadow: 0 10px 40px rgba(0,0,0,0.25); padding: 0; z-index: 10000; overflow: hidden; }
+#dyn-wsoezg-exit-modal .dyn-wsoezg-modal-graphic-panel { flex: 0 0 220px; background: var(--ymp3-ink); display: flex; flex-direction: column; align-items: center; justify-content: center; position: relative; }
+#dyn-wsoezg-exit-modal .dyn-wsoezg-modal-tilegrid { display: grid; grid-template-columns: 58px 58px; gap: 14px; justify-content: center; }
+#dyn-wsoezg-exit-modal .dyn-wsoezg-modal-tilegrid .dyn-wsoezg-tile { width: 58px; height: 58px; border-radius: 12px; background: color-mix(in srgb, var(--ymp3-a) 22%, transparent); }
+#dyn-wsoezg-exit-modal .dyn-wsoezg-modal-panel-note { margin: 14px 0 0; text-align: center; font-family: var(--ymp3-display); font-size: 0.62rem; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ymp3-paper); opacity: 0.55; }
+#dyn-wsoezg-exit-modal .dyn-wsoezg-modal-content-panel { padding: 32px; flex-grow: 1; }
+#dyn-wsoezg-exit-modal h2 { margin: 0 0 12px; font-family: var(--ymp3-display); font-size: 1.5rem; letter-spacing: -0.01em; color: var(--ymp3-ink); font-weight: 900; }
+#dyn-wsoezg-exit-modal .dyn-wsoezg-modal-description { font-size: 0.95rem; color: var(--ymp3-muted); line-height: 1.6; margin: 0 0 24px; }
+#dyn-wsoezg-exit-modal .dyn-wsoezg-modal-offers { display: flex; flex-direction: column; gap: 10px; }
+.dyn-wsoezg-modal-offer-item { flex: 1; text-align: center; }
+.dyn-wsoezg-modal-offer-item .dyn-wsoezg-offer-title { font-size: 1rem; font-weight: 600; color: #333; margin-bottom: 8px; }
+.dyn-wsoezg-modal-offer-item .dyn-wsoezg-offer-button { display: block; text-decoration: none; color: #fff !important; padding: 12px; border-radius: var(--ymp3-r, 8px); font-weight: 600; font-size: 0.9rem; transition: transform 0.2s, box-shadow 0.2s; }
+.dyn-wsoezg-modal-offer-item .dyn-wsoezg-offer-button:hover { transform: translateY(-3px); box-shadow: 0 6px 15px rgba(0,0,0,0.2); }
+.dyn-wsoezg-modal-offer-item .dyn-wsoezg-offer-button.dyn-wsoezg-pc-fix { background: #0073aa; }
+.dyn-wsoezg-modal-offer-item .dyn-wsoezg-offer-button.dyn-wsoezg-driver-update { background: #ff6600; }
+#dyn-wsoezg-modal-close { background: none; border: none; cursor: pointer; display: block; font-size: 0.9rem; color: #999; text-decoration: none; margin: 24px auto 0; }
+#dyn-wsoezg-modal-close:hover { text-decoration: underline; }
+#dyn-wsoezg-exit-modal .dyn-wsoezg-compliance-note { font-size: 0.7rem; color: #aaa; margin-top: 16px; text-align: left;}
+#dyn-wsoezg-exit-modal .dyn-wsoezg-compliance-note a { color: #999; }
+#dyn-wsoezg-exit-modal-bg { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(20, 37, 51, 0.6); z-index: 9999; }
+.dyn-wsoezg-compliance-note { font-size: 0.72rem; color: var(--ymp3-muted, #666); text-align: center; margin: 12px auto 24px; max-width: 100%; }
+.dyn-wsoezg-compliance-note a { color: #0073aa; text-decoration: underline; }
+</style>
+<style id="ym-aawp-creators-price-guard-20260625">
+html body .ym-aawp-phase2-top .aawp-product__price,
+html body .ym-aawp-phase2-box .aawp-product__price,
+html body .ym-aawp-phase2-bottom .aawp-product__price,
+html body .ym-aawp-phase2-top .aawp-table__td-pricing,
+html body .ym-aawp-phase2-box .aawp-table__td-pricing,
+html body .ym-aawp-phase2-bottom .aawp-table__td-pricing{visibility:hidden}
+</style>
+		<style id="ym-p4-link-style">.pf-outbyte-affiliate-product-link,.pf-amazon-affiliate-product-link,.pf-streamneo-house-product-link{color:var(--ym-p1-accent,var(--ym-aawp-accent,currentColor));text-decoration:underline;text-decoration-color:var(--ym-p1-accent,var(--ym-aawp-accent,currentColor));font-weight:600}.pf-outbyte-affiliate-product-link:hover,.pf-amazon-affiliate-product-link:hover,.pf-streamneo-house-product-link:hover{opacity:.85}</style>
+<style id="ym-required-pages-footer-css">
+.ym-required-pages-footer{clear:both;text-align:center;margin:10px auto 8px;padding:0 12px;font-size:13px;line-height:1.7}
+.ym-required-pages-footer ul{list-style:none;margin:0;padding:0}
+.ym-required-pages-footer li{display:inline-block;margin:0 9px}
+.ym-required-pages-footer a{color:inherit;text-decoration:underline;text-underline-offset:2px}
+</style>
+			<style id="ym-sidebar-latest-cards-css">
+	.ym-latest-posts-widget {
+		--ym-latest-accent: var(--asona--color--primary, #2456d6);
+		--ym-latest-ink: #111827;
+		--ym-latest-muted: rgba(17, 24, 39, .64);
+		--ym-latest-border: rgba(17, 24, 39, .1);
+	}
+
+	.ym-latest-posts-widget a {
+		text-decoration: none;
+	}
+
+	.ym-latest-posts-widget .ym-sidebar-latest {
+		display: flex;
+		flex-direction: column;
+		gap: 12px;
+	}
+
+	.ym-latest-posts-widget .ym-sidebar-latest-card {
+		align-items: center;
+		color: inherit;
+		display: grid;
+		gap: 12px;
+		grid-template-columns: minmax(96px, 34%) minmax(0, 1fr);
+		min-block-size: 86px;
+	}
+
+	.ym-latest-posts-widget .ym-sidebar-latest-media {
+		aspect-ratio: 4 / 3;
+		background: #eef2f7;
+		border-radius: 6px;
+		display: block;
+		overflow: hidden;
+		position: relative;
+	}
+
+	.ym-latest-posts-widget .ym-sidebar-latest-img {
+		block-size: 100%;
+		display: block;
+		inline-size: 100%;
+		object-fit: cover;
+		transition: filter .25s ease, transform .25s ease;
+	}
+
+	.ym-latest-posts-widget .ym-sidebar-latest-title {
+		color: var(--ym-latest-ink);
+		display: -webkit-box;
+		font-family: var(--asona--font-family--headings, inherit);
+		font-size: .92rem;
+		font-weight: 800;
+		line-height: 1.28;
+		overflow: hidden;
+		-webkit-box-orient: vertical;
+		-webkit-line-clamp: 2;
+	}
+
+	.ym-latest-posts-widget .ym-sidebar-latest-meta {
+		color: var(--ym-latest-muted);
+		display: block;
+		font-size: .68rem;
+		font-weight: 800;
+		letter-spacing: 0;
+		line-height: 1.25;
+		margin-block-start: 6px;
+		text-transform: uppercase;
+	}
+
+	.ym-latest-posts-widget .ym-sidebar-latest-rank {
+		align-items: center;
+		background: #fff;
+		border-radius: 999px;
+		box-shadow: 0 4px 12px rgba(15, 23, 42, .16);
+		color: var(--ym-latest-accent);
+		display: inline-flex;
+		font-size: .62rem;
+		font-weight: 900;
+		inset-block-start: 6px;
+		inset-inline-start: 6px;
+		justify-content: center;
+		line-height: 1;
+		min-block-size: 22px;
+		min-inline-size: 22px;
+		position: absolute;
+	}
+
+	.ym-latest-posts-widget .ym-sidebar-latest-card:hover .ym-sidebar-latest-img {
+		filter: saturate(1.08);
+		transform: scale(1.035);
+	}
+
+	.ym-latest-theme-asona .widget-title {
+		align-items: center;
+		display: flex;
+		margin-block-end: 14px;
+	}
+
+	.ym-latest-theme-asona .widget-title::after {
+		background: linear-gradient(90deg, var(--ym-latest-accent), rgba(36, 86, 214, 0));
+		block-size: 2px;
+		content: "";
+		flex: 1;
+		margin-inline-start: 10px;
+		max-inline-size: 72px;
+	}
+
+	@media (max-width: 520px) {
+		.ym-latest-posts-widget .ym-sidebar-latest-card {
+			grid-template-columns: minmax(90px, 36%) minmax(0, 1fr);
+		}
+	}
+	</style>
+	<style id="ym-amazon-assoc-css">.ym-amazon-assoc{font-size:.8em;line-height:1.45;opacity:.78;margin:.35em 0 1.1em}</style>
+<style id='ymhs-css'>.ymhs{position:relative;display:inline-flex;align-items:center;margin:0 2px 0 0}.ymhs>summary{list-style:none;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;padding:6px;color:inherit;border-radius:8px;opacity:.82;-webkit-tap-highlight-color:transparent}.ymhs>summary::-webkit-details-marker{display:none}.ymhs>summary::marker{content:""}.ymhs>summary:hover,.ymhs[open]>summary{opacity:1}.ymhs-panel{position:absolute;top:calc(100% + 10px);right:0;z-index:1200;display:flex;align-items:center;gap:2px;background:#fff;color:#161616;border:1px solid rgba(0,0,0,.14);border-radius:11px;padding:4px 4px 4px 13px;box-shadow:0 10px 30px rgba(0,0,0,.20);min-width:238px}.ymhs-panel::before{content:"";position:absolute;top:-6px;right:13px;width:11px;height:11px;background:inherit;border-left:inherit;border-top:inherit;transform:rotate(45deg)}.ymhs-in{border:0;background:transparent;color:inherit;font:inherit;font-size:.92rem;flex:1;min-width:0;outline:0;padding:8px 2px}.ymhs-in::placeholder{color:inherit;opacity:.5}.ymhs-go{border:0;background:transparent;color:inherit;cursor:pointer;display:inline-flex;align-items:center;padding:6px;opacity:.8}.ymhs-go:hover{opacity:1}.ymhs-go svg{width:17px;height:17px}@media (prefers-color-scheme:dark){.ymhs-panel{background:#20232a;color:#f1f1f1;border-color:rgba(255,255,255,.16)}}html[data-theme=dark] .ymhs-panel,html.dark .ymhs-panel,body.dark .ymhs-panel,body.dark-mode .ymhs-panel,.dark-mode .ymhs-panel{background:#20232a;color:#f1f1f1;border-color:rgba(255,255,255,.16)}</style>
+<style id="ym-fix-post-ui">.entry-content table{display:block;max-width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch}.entry-content td,.entry-content th{overflow-wrap:normal;word-break:normal;min-width:6.5em}.entry-content tr>:first-child{min-width:8.5em}</style>
+<script src="/yorker-push-init.js?v=5" defer></script>
+<style id="ym-fix-kofi-phone">@media (max-width:600px){.ym-donation-kofi-quick-wrap{display:none!important}}</style>
+<style id="ym-disable-sticky-header-css">
+html {
+	scroll-padding-top: 0 !important;
+}
+
+body.ym-theme-generatepress .main-navigation.navigation-stick,
+body.ym-theme-generatepress .main-navigation.is_stuck,
+body.ym-theme-generatepress .sticky-enabled .main-navigation.is_stuck,
+body.ym-theme-generatepress #mobile-header.navigation-stick,
+body.ym-theme-generatepress #mobile-header.is_stuck,
+body.ym-theme-generatepress .gen-sidebar-nav.is_stuck,
+body.ym-theme-generatepress .navigation-stick:not(.gen-sidebar-nav) {
+	position: relative !important;
+	top: auto !important;
+	right: auto !important;
+	left: auto !important;
+	bottom: auto !important;
+	width: auto !important;
+	max-width: none !important;
+	transform: none !important;
+}
+
+body.ym-theme-generatepress #sticky-placeholder {
+	display: none !important;
+	height: 0 !important;
+	min-height: 0 !important;
+	margin: 0 !important;
+	padding: 0 !important;
+}
+
+body.ym-theme-asona .site-header {
+	position: relative !important;
+	inset-block-start: auto !important;
+	top: auto !important;
+	right: auto !important;
+	left: auto !important;
+	transform: none !important;
+}
+
+body.ym-theme-asona .site-header[data-is-sticky="true"] {
+	box-shadow: none !important;
+}
+
+body.ym-theme-divi #main-header,
+body.ym-theme-divi #top-header,
+body.ym-theme-divi #main-header.et-fixed-header {
+	position: relative !important;
+	top: auto !important;
+	right: auto !important;
+	left: auto !important;
+	transform: none !important;
+}
+
+body.ym-theme-divi #page-container {
+	padding-top: 0 !important;
+	margin-top: 0 !important;
+}
+
+body.ym-theme-smart-mag .smart-head-sticky,
+body.ym-theme-smart-mag .smart-head-main .smart-head-sticky,
+body.ym-theme-smart-mag .smart-head-mobile .smart-head-sticky {
+	position: relative !important;
+	top: auto !important;
+	right: auto !important;
+	left: auto !important;
+	transform: none !important;
+	width: auto !important;
+}
+
+body.ym-theme-smart-mag .smart-head-sticky.off,
+body.ym-theme-smart-mag .smart-head-sticky.animate {
+	transform: none !important;
+}
+
+body.ym-theme-newspaper .td-header-wrap .td-affix,
+body.ym-theme-newspaper .td-header-menu-wrap.td-affix,
+body.ym-theme-newspaper .td-header-sticky-wrap {
+	position: relative !important;
+	top: auto !important;
+	right: auto !important;
+	left: auto !important;
+	transform: none !important;
+	width: auto !important;
+}
+
+body.ym-theme-aspirebasic .site-header,
+body.ym-theme-aspirebasic.front-page .site-header,
+body.ym-theme-aspirebasic .featured-section .site-header {
+	position: relative !important;
+	top: auto !important;
+	right: auto !important;
+	left: auto !important;
+	transform: none !important;
+}
+
+body.ym-theme-twentytwentyfive header[style*="position:sticky"],
+body.ym-theme-twentytwentyfive header[style*="position: sticky"],
+body.ym-theme-twentytwentyfive .wp-block-template-part[style*="position:sticky"],
+body.ym-theme-twentytwentyfive .wp-block-template-part[style*="position: sticky"] {
+	position: relative !important;
+	top: auto !important;
+	transform: none !important;
+}
+
+body.ym-theme-carcody .site-header.sticky,
+body.ym-theme-carcody .site-header[style*="position:fixed"],
+body.ym-theme-carcody .site-header[style*="position: fixed"],
+body.ym-theme-carcody .site-header[style*="position:sticky"],
+body.ym-theme-carcody .site-header[style*="position: sticky"] {
+	position: relative !important;
+	top: auto !important;
+	transform: none !important;
+}
+</style>
+		</head>
+<body class="wp-singular post-template-default single single-post postid-750519 single-format-standard wp-embed-responsive wp-theme-pcnmobile-handoff handoff ym-no-sticky-header ym-theme-pcnmobile-handoff aawp-custom">
+<a class="hd-skip" href="#main">Skip to the article</a>
+<header class="mast"> <div class="shell"> <a class="logo" href="/" aria-label="PCNMobile home"><img src="/_pn/pn-mark.v1.svg" alt="" width="36" height="36"><b><i>PCN</i>MOBILE</b></a> <nav class="menu" aria-label="Main"> <a href="/best/">Lists</a> <a href="/jobs/">Jobs</a> <a href="/tools/">Tools</a> <a href="/blog/" aria-current="page">Articles</a> </nav> <form class="ask" action="/find/" method="get" role="search"><input name="q" type="search" maxlength="80" placeholder="Find a tool or a list" aria-label="Find a tool or a list"><button type="submit">Find</button></form> <button class="mode" type="button" aria-label="Light or dark mode" onclick="var r=document.documentElement,d=r.dataset.theme?r.dataset.theme==='dark':matchMedia('(prefers-color-scheme: dark)').matches;r.dataset.theme=d?'light':'dark';try{localStorage.setItem('pn-theme',r.dataset.theme)}catch(e){}"><svg viewBox="0 0 20 20" width="18" height="18" aria-hidden="true"><circle cx="10" cy="10" r="7.2" fill="none" stroke="currentColor" stroke-width="1.6"></circle><path d="M10 2.8a7.2 7.2 0 0 1 0 14.4z" fill="currentColor"></path></svg></button> <a class="for-makers" href="/advertise/">For makers</a> </div> </header><script>(function(){try{var m=document.querySelector('header.mast');if(!m)return;var s=document.querySelector('.ym-p1-server-strip'),low=8,b;if(s){b=s.getBoundingClientRect();if(b.height>0&&b.bottom>0)low=Math.ceil(b.bottom)+8}var y=Math.max(low,Math.ceil(m.getBoundingClientRect().bottom)+8)+'px',st=document.documentElement.style;st.setProperty('--ym-p3-top-offset',y);st.setProperty('--rk-top-offset',y)}catch(e){}})();</script>
+<main id="main" class="hd-main">
+<article class="hd-anchor"><header></header></article>
+<div class="shell">
+	<nav class="hd-trail" aria-label="Breadcrumb"><a href="/">PCNMobile</a> / <span>Articles</span></nav>	<div class="hd-split">
+		<div class="hd-col">
+			<article id="post-750519" class="hd-article post-750519 post type-post status-publish format-standard hentry category-blog tag-ai-models tag-linux tag-macos tag-ollama tag-storage tag-windows mv-content-wrapper">
+				<header>
+					<p class="hd-kicker">Article</p>
+					<h1>How to Change Ollama’s Model Storage Location</h1>
+					<p class="hd-byline">
+						<span>By <a href="https://pcnmobile.com/author/pcnmobile/">PCNMobile Team</a></span>
+						<time datetime="2026-10-04T14:52:01+05:30">4 Oct 2026</time>
+												<span>3 min read</span>
+					</p>
+				</header>
+								<div class="entry-content article-content">
+					<p>Set the <code>OLLAMA_MODELS</code> environment variable to the full path of the directory where you want Ollama to store models. The variable must be available to the Ollama server process—not just an unrelated terminal—and changing it does not, by itself, move models already downloaded.</p>
+<h2>Where Ollama stores models by default</h2>
+<p>Ollama uses <code>OLLAMA_MODELS</code> when it is set. Otherwise, it falls back to a <code>models</code> directory beneath the running process user’s <code>.ollama</code> directory. The documented standard paths are:</p>
+<table>
+<thead>
+<tr>
+<th>Platform</th>
+<th>Documented default model directory</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>macOS</td>
+<td><code>~/.ollama/models</code></td>
+</tr>
+<tr>
+<td>Linux</td>
+<td><code>/usr/share/ollama/.ollama/models</code> for the standard installation described in the FAQ</td>
+</tr>
+<tr>
+<td>Windows</td>
+<td><code>C:Users%username%.ollamamodels</code></td>
+</tr>
+</tbody>
+</table>
+<p>The effective fallback depends on the account running Ollama. On Linux, a system service can run as the <code>ollama</code> account, whose home directory may differ from the administrator’s. Ollama’s <a href="https://github.com/ollama/ollama/blob/main/envconfig/config.go">environment configuration</a> describes the general fallback as the process user’s <code>$HOME/.ollama/models</code>.</p>
+<h2>Choose a destination with enough space</h2>
+<p>Choose a full path on a volume with sufficient free space. Ollama’s <a href="https://github.com/ollama/ollama/blob/main/docs/windows.md">Windows installation guide</a> says model storage can require “tens to hundreds of GB.” A larger existing drive can be used as the destination; an external drive is not inherently required.</p>
+<h2>Change the model location on Windows</h2>
+<ol>
+<li>Open the Windows account’s Environment Variables settings. Create a user variable named <code>OLLAMA_MODELS</code>, or edit it if it already exists.</li>
+<li>Set its value to the complete destination path, for example <code>D:Ollamamodels</code>. Create the destination folder if needed.</li>
+<li>Click <strong>Apply</strong> and <strong>OK</strong> to save the change.</li>
+<li>Quit Ollama from the tray, then launch it again from Start. If you start Ollama from a terminal, open a new terminal after saving the variable.</li>
+</ol>
+<p>Ollama inherits environment variables when it starts, so an already-running app will not pick up a change made afterward. The restart guidance is in the project’s <a href="https://github.com/ollama/ollama/blob/main/docs/windows.md">Windows documentation</a>.</p>
+<h2>Change the location on Linux with systemd</h2>
+<p>For the standard Linux installation, set the variable in the service environment. Setting it only in your interactive shell will not configure a separately running system service.</p>
+<ol>
+<li>Run <code>sudo systemctl edit ollama</code> to open a service drop-in editor.</li>
+<li>Add this configuration, replacing the example path with your destination:<br /><code>[Service]<br />Environment="OLLAMA_MODELS=/mnt/storage/ollama/models"</code></li>
+<li>Save and close the editor, then reload systemd and restart Ollama:<br /><code>sudo systemctl daemon-reload<br />sudo systemctl restart ollama</code></li>
+<li>Ensure the destination exists and that the <code>ollama</code> service account can read and write to it. Without the required access, model downloads may fail.</li>
+</ol>
+<p>Ollama’s <a href="https://github.com/ollama/ollama/blob/main/docs/faq.md">FAQ</a> covers service environment configuration and access requirements; its <a href="https://github.com/ollama/ollama/blob/main/docs/linux.md">Linux guide</a> describes systemd customization. If you run <code>ollama serve</code> manually instead, set <code>OLLAMA_MODELS</code> in the environment used to start that server process.</p>
+<!-- YM_DONATION_SCOPE_KOFI_20260610A --><a class="ym-donation-kofi" href="https://ko-fi.com/yorkermedia" target="_blank" rel="noopener nofollow" aria-label="Support this site"><span class="ym-donation-kofi__body"><span class="ym-donation-kofi__eyebrow">Independent reader support</span><span class="ym-donation-kofi__text">Your contribution helps us test, update, and keep practical guides available for everyone.</span></span><span class="ym-donation-kofi__button">Support on Ko-Fi</span></a><h2>Change the location on macOS</h2>
+<p>Set <code>OLLAMA_MODELS</code> in the environment visible to the Ollama application or server, then restart the application. The official <a href="https://github.com/ollama/ollama/blob/main/docs/faq.md">FAQ</a> points macOS users to its environment-variable guidance, which uses <code>launchctl setenv</code> followed by an application restart. Confirm that the variable is available to the process that serves Ollama; a value set only in a separate shell may not reach an app launched independently.</p>
+<h2>What happens to models already downloaded?</h2>
+<p>Setting a new directory chooses where Ollama will look for model storage under the new configuration; the official instructions cited here do not say that changing the variable automatically moves existing files. Do not delete the old model directory on the assumption that it has been migrated. Keep it until Ollama can see the models at the new location, and consult current platform-specific migration guidance if you need exact file-transfer steps.</p>
+<h2>Check the setting if it does not take effect</h2>
+<ul>
+<li><strong>Confirm the server can see the variable.</strong> Restart Ollama after changing the environment. A service or app launched separately does not necessarily inherit variables set in your current shell.</li>
+<li><strong>Check the path.</strong> Make sure the destination exists and the configured value is the intended full path.</li>
+<li><strong>Check permissions on Linux.</strong> The <code>ollama</code> service account needs read and write access to the destination.</li>
+<li><strong>Check available space.</strong> Model files can take substantial room; confirm the chosen volume has enough free capacity.</li>
+</ul>
+<p>For container deployments, set <code>OLLAMA_MODELS</code> in the environment of the container running the server, and ensure the chosen directory is mounted there and writable. The cited Ollama pages do not provide a complete container-specific volume migration procedure, so use the instructions for your deployment before changing mounts or moving existing data.</p>
+<aside class="ymel ymel--post_end" data-ymel-src="post_end" aria-label="Newsletter sign-up"><div class="ymel-brand"><img src="https://pcnmobile.com/wp-content/uploads/2026/10/pn-site-icon-512-150x150.png" alt="" width="20" height="20"  decoding="async"><span>PCnMobile newsletter</span></div><div class="ymel-t">More Windows guides like this, every week</div><div class="ymel-d">One short e-mail a week. Free, no spam &mdash; unsubscribe in one click.</div><form class="ymel-f" method="post" action="https://pcnmobile.com/wp-json/ym/v1/subscribe" novalidate><label class="ymel-sr" for="ymel-e-post_end">E-mail address</label><input class="ymel-i" id="ymel-e-post_end" type="email" name="email" autocomplete="email" inputmode="email" placeholder="you@example.com" required maxlength="190"><input type="text" name="website" class="ymel-hp" tabindex="-1" autocomplete="off" aria-hidden="true"><input type="hidden" name="ts" value="1792903368.372dea833cdc840bba93"><input type="hidden" name="source" value="post_end"><button class="ymel-b" type="submit">Join free</button></form><div class="ymel-m" role="status" aria-live="polite"></div><div class="ymel-p">Your address stays with us &mdash; <a href="https://pcnmobile.com/privacy-policy/">privacy</a>.</div></aside>				</div>
+									<p class="hd-tags"><a href="https://pcnmobile.com/tag/ai-models/">AI Models</a><a href="https://pcnmobile.com/tag/linux/">Linux</a><a href="https://pcnmobile.com/tag/macos/">macOS</a><a href="https://pcnmobile.com/tag/ollama/">Ollama</a><a href="https://pcnmobile.com/tag/storage/">Storage</a><a href="https://pcnmobile.com/tag/windows/">Windows</a></p>
+													<aside class="hd-sponsor" aria-label="Sponsor this article">
+						<p class="hd-kicker">Sponsor this article</p>
+						<p>Show your tool to the people reading this: a link inside the article, a place in one of PCNMobile's lists, or an article of your own.</p>
+						<a href="/advertise/sponsor-an-article/">See the prices</a>
+					</aside>
+								<section class="hd-comments" id="comments">
+			<div id="respond" class="comment-respond">
+		<h3 id="reply-title" class="comment-reply-title">Leave a comment <small><a rel="nofollow" id="cancel-comment-reply-link" href="/how-to-change-ollamas-model-storage-location/#respond" style="display:none;">Cancel reply</a></small></h3><form action="https://pcnmobile.com/wp-comments-post.php" method="post" id="commentform" class="comment-form"><p class="comment-notes"><span id="email-notes">Your email address will not be published.</span> <span class="required-field-message">Required fields are marked <span class="required">*</span></span></p><p class="comment-form-comment"><label for="comment">Comment <span class="required">*</span></label> <textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" required></textarea></p><p class="comment-form-author"><label for="author">Name <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" autocomplete="name" required /></p>
+<p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" autocomplete="email" required /></p>
+<p class="comment-form-url"><label for="url">Website</label> <input id="url" name="url" type="url" value="" size="30" maxlength="200" autocomplete="url" /></p>
+<p class="comment-form-cookies-consent"><input id="wp-comment-cookies-consent" name="wp-comment-cookies-consent" type="checkbox" value="yes" /> <label for="wp-comment-cookies-consent">Save my name, email, and website in this browser for the next time I comment.</label></p>
+<p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Post Comment" /> <input type='hidden' name='comment_post_ID' value='750519' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+</p><p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="6ae1463b79" /></p><p style="display: none !important;" class="akismet-fields-container" data-prefix="ak_"><label>&#916;<textarea name="ak_hp_textarea" cols="45" rows="8" maxlength="100"></textarea></label><input type="hidden" id="ak_js_1" name="ak_js" value="4"/><script>document.getElementById( "ak_js_1" ).setAttribute( "value", ( new Date() ).getTime() );</script></p></form>	</div><!-- #respond -->
+	</section>
+			</article>
+							<nav class="hd-turn" aria-label="Older and newer articles">
+					<a href="https://pcnmobile.com/creating-a-pkgbuild-to-make-packages-for-arch-linux/"><small>← Older</small>Creating a PKGBUILD to Make Packages for Arch Linux</a>					<a class="hd-turn-new" href="https://pcnmobile.com/how-to-secure-your-accounts-after-sharing-personal-information-with-a-scammer/"><small>Newer →</small>How to Secure Your Accounts After Sharing Personal Information With a Scammer</a>				</nav>
+										<section class="hd-more" aria-label="More articles">
+					<h2>More articles</h2>
+					<ul class="hd-grid"><li class="hd-card"><a href="https://pcnmobile.com/unlocking-the-mystery-of-multiple-hdmi-ports-on-your-tv-a-comprehensive-guide/"><span class="hd-pic"><img width="768" height="432" src="https://pcnmobile.com/wp-content/uploads/2026/10/846554-768x432.jpg" class="attachment-medium_large size-medium_large wp-post-image" alt="" decoding="async" fetchpriority="high" srcset="https://pcnmobile.com/wp-content/uploads/2026/10/846554-768x432.jpg 768w, https://pcnmobile.com/wp-content/uploads/2026/10/846554-300x169.jpg 300w, https://pcnmobile.com/wp-content/uploads/2026/10/846554-1024x576.jpg 1024w, https://pcnmobile.com/wp-content/uploads/2026/10/846554.jpg 1200w" sizes="(max-width: 768px) 100vw, 768px" /></span><span class="hd-card-text"><b>Unlocking the Mystery of Multiple HDMI Ports on Your TV: A Comprehensive Guide</b><small>9 Oct 2026 · 6 min</small></span></a></li><li class="hd-card"><a href="https://pcnmobile.com/how-to-secure-your-accounts-after-sharing-personal-information-with-a-scammer/"><span class="hd-pic"><img width="768" height="432" src="https://pcnmobile.com/wp-content/uploads/2026/10/846494-768x432.jpg" class="attachment-medium_large size-medium_large wp-post-image" alt="" decoding="async" srcset="https://pcnmobile.com/wp-content/uploads/2026/10/846494-768x432.jpg 768w, https://pcnmobile.com/wp-content/uploads/2026/10/846494-300x169.jpg 300w, https://pcnmobile.com/wp-content/uploads/2026/10/846494-1024x576.jpg 1024w, https://pcnmobile.com/wp-content/uploads/2026/10/846494.jpg 1200w" sizes="(max-width: 768px) 100vw, 768px" /></span><span class="hd-card-text"><b>How to Secure Your Accounts After Sharing Personal Information With a Scammer</b><small>9 Oct 2026 · 5 min</small></span></a></li><li class="hd-card"><a href="https://pcnmobile.com/creating-a-pkgbuild-to-make-packages-for-arch-linux/"><span class="hd-pic"><img width="768" height="432" src="https://pcnmobile.com/wp-content/uploads/2026/06/ym-generated-featured/creating-a-pkgbuild-to-make-packages-for-arch-linux-130977-768x432.jpg" class="attachment-medium_large size-medium_large wp-post-image" alt="" decoding="async" srcset="https://pcnmobile.com/wp-content/uploads/2026/06/ym-generated-featured/creating-a-pkgbuild-to-make-packages-for-arch-linux-130977-768x432.jpg 768w, https://pcnmobile.com/wp-content/uploads/2026/06/ym-generated-featured/creating-a-pkgbuild-to-make-packages-for-arch-linux-130977-300x169.jpg 300w, https://pcnmobile.com/wp-content/uploads/2026/06/ym-generated-featured/creating-a-pkgbuild-to-make-packages-for-arch-linux-130977-1024x576.jpg 1024w, https://pcnmobile.com/wp-content/uploads/2026/06/ym-generated-featured/creating-a-pkgbuild-to-make-packages-for-arch-linux-130977.jpg 1200w" sizes="(max-width: 768px) 100vw, 768px" /></span><span class="hd-card-text"><b>Creating a PKGBUILD to Make Packages for Arch Linux</b><small>12 Mar 2026 · 38 min</small></span></a></li></ul>
+				</section>
+					</div>
+		<aside class="hd-rail article-sidebar widget-area" aria-label="Sidebar"><div id="recent-posts-2" class="ym-latest-posts-widget ym-latest-theme-clean widget widget_recent_entries"><h2 class="widget-title">Latest Posts</h2>	<nav class="ym-sidebar-latest" aria-label="Latest Posts">
+			<a class="ym-sidebar-latest-card" href="https://pcnmobile.com/unlocking-the-mystery-of-multiple-hdmi-ports-on-your-tv-a-comprehensive-guide/">
+		<span class="ym-sidebar-latest-media">
+			<img width="300" height="169" src="https://pcnmobile.com/wp-content/uploads/2026/10/846554-300x169.jpg" class="ym-sidebar-latest-img" alt="Unlocking the Mystery of Multiple HDMI Ports on Your TV: A Comprehensive Guide" decoding="async" sizes="(max-width: 768px) 38vw, 120px" srcset="https://pcnmobile.com/wp-content/uploads/2026/10/846554-300x169.jpg 300w, https://pcnmobile.com/wp-content/uploads/2026/10/846554-1024x576.jpg 1024w, https://pcnmobile.com/wp-content/uploads/2026/10/846554-768x432.jpg 768w, https://pcnmobile.com/wp-content/uploads/2026/10/846554.jpg 1200w" />			<span class="ym-sidebar-latest-rank">01</span>
+		</span>
+		<span class="ym-sidebar-latest-copy">
+			<span class="ym-sidebar-latest-title">Unlocking the Mystery of Multiple HDMI Ports on Your TV: A Comprehensive Guide</span>
+			<span class="ym-sidebar-latest-meta">Blog / Oct 9</span>
+		</span>
+	</a>
+		<a class="ym-sidebar-latest-card" href="https://pcnmobile.com/how-to-secure-your-accounts-after-sharing-personal-information-with-a-scammer/">
+		<span class="ym-sidebar-latest-media">
+			<img width="300" height="169" src="https://pcnmobile.com/wp-content/uploads/2026/10/846494-300x169.jpg" class="ym-sidebar-latest-img" alt="How to Secure Your Accounts After Sharing Personal Information With a Scammer" decoding="async" sizes="(max-width: 768px) 38vw, 120px" srcset="https://pcnmobile.com/wp-content/uploads/2026/10/846494-300x169.jpg 300w, https://pcnmobile.com/wp-content/uploads/2026/10/846494-1024x576.jpg 1024w, https://pcnmobile.com/wp-content/uploads/2026/10/846494-768x432.jpg 768w, https://pcnmobile.com/wp-content/uploads/2026/10/846494.jpg 1200w" />			<span class="ym-sidebar-latest-rank">02</span>
+		</span>
+		<span class="ym-sidebar-latest-copy">
+			<span class="ym-sidebar-latest-title">How to Secure Your Accounts After Sharing Personal Information With a Scammer</span>
+			<span class="ym-sidebar-latest-meta">Blog / Oct 9</span>
+		</span>
+	</a>
+		<a class="ym-sidebar-latest-card" href="https://pcnmobile.com/creating-a-pkgbuild-to-make-packages-for-arch-linux/">
+		<span class="ym-sidebar-latest-media">
+			<img width="300" height="169" src="https://pcnmobile.com/wp-content/uploads/2026/06/ym-generated-featured/creating-a-pkgbuild-to-make-packages-for-arch-linux-130977-300x169.jpg" class="ym-sidebar-latest-img" alt="Creating a PKGBUILD to Make Packages for Arch Linux" decoding="async" sizes="(max-width: 768px) 38vw, 120px" srcset="https://pcnmobile.com/wp-content/uploads/2026/06/ym-generated-featured/creating-a-pkgbuild-to-make-packages-for-arch-linux-130977-300x169.jpg 300w, https://pcnmobile.com/wp-content/uploads/2026/06/ym-generated-featured/creating-a-pkgbuild-to-make-packages-for-arch-linux-130977-1024x576.jpg 1024w, https://pcnmobile.com/wp-content/uploads/2026/06/ym-generated-featured/creating-a-pkgbuild-to-make-packages-for-arch-linux-130977-768x432.jpg 768w, https://pcnmobile.com/wp-content/uploads/2026/06/ym-generated-featured/creating-a-pkgbuild-to-make-packages-for-arch-linux-130977.jpg 1200w" />			<span class="ym-sidebar-latest-rank">03</span>
+		</span>
+		<span class="ym-sidebar-latest-copy">
+			<span class="ym-sidebar-latest-title">Creating a PKGBUILD to Make Packages for Arch Linux</span>
+			<span class="ym-sidebar-latest-meta">Blog / Mar 12</span>
+		</span>
+	</a>
+		<a class="ym-sidebar-latest-card" href="https://pcnmobile.com/how-to-setup-a-virtual-machine-on-windows-11/">
+		<span class="ym-sidebar-latest-media">
+			<img width="300" height="169" src="https://pcnmobile.com/wp-content/uploads/2026/06/ym-generated-featured/how-to-setup-a-virtual-machine-on-windows-11-130975-300x169.jpg" class="ym-sidebar-latest-img" alt="How to setup a virtual machine on Windows 11" decoding="async" sizes="(max-width: 768px) 38vw, 120px" srcset="https://pcnmobile.com/wp-content/uploads/2026/06/ym-generated-featured/how-to-setup-a-virtual-machine-on-windows-11-130975-300x169.jpg 300w, https://pcnmobile.com/wp-content/uploads/2026/06/ym-generated-featured/how-to-setup-a-virtual-machine-on-windows-11-130975-1024x576.jpg 1024w, https://pcnmobile.com/wp-content/uploads/2026/06/ym-generated-featured/how-to-setup-a-virtual-machine-on-windows-11-130975-768x432.jpg 768w, https://pcnmobile.com/wp-content/uploads/2026/06/ym-generated-featured/how-to-setup-a-virtual-machine-on-windows-11-130975.jpg 1200w" />			<span class="ym-sidebar-latest-rank">04</span>
+		</span>
+		<span class="ym-sidebar-latest-copy">
+			<span class="ym-sidebar-latest-title">How to setup a virtual machine on Windows 11</span>
+			<span class="ym-sidebar-latest-meta">Blog / Mar 12</span>
+		</span>
+	</a>
+		<a class="ym-sidebar-latest-card" href="https://pcnmobile.com/how-to-build-a-custom-keyboard-with-mechanical-switches-a-complete-guide/">
+		<span class="ym-sidebar-latest-media">
+			<img width="300" height="169" src="https://pcnmobile.com/wp-content/uploads/2026/06/ym-generated-featured/how-to-build-a-custom-keyboard-with-mechanical-switches-a-complete-guide-130974-300x169.jpg" class="ym-sidebar-latest-img" alt="How to Build a Custom Keyboard With Mechanical Switches: A Complete Guide" decoding="async" sizes="(max-width: 768px) 38vw, 120px" srcset="https://pcnmobile.com/wp-content/uploads/2026/06/ym-generated-featured/how-to-build-a-custom-keyboard-with-mechanical-switches-a-complete-guide-130974-300x169.jpg 300w, https://pcnmobile.com/wp-content/uploads/2026/06/ym-generated-featured/how-to-build-a-custom-keyboard-with-mechanical-switches-a-complete-guide-130974-1024x576.jpg 1024w, https://pcnmobile.com/wp-content/uploads/2026/06/ym-generated-featured/how-to-build-a-custom-keyboard-with-mechanical-switches-a-complete-guide-130974-768x432.jpg 768w, https://pcnmobile.com/wp-content/uploads/2026/06/ym-generated-featured/how-to-build-a-custom-keyboard-with-mechanical-switches-a-complete-guide-130974.jpg 1200w" />			<span class="ym-sidebar-latest-rank">05</span>
+		</span>
+		<span class="ym-sidebar-latest-copy">
+			<span class="ym-sidebar-latest-title">How to Build a Custom Keyboard With Mechanical Switches: A Complete Guide</span>
+			<span class="ym-sidebar-latest-meta">Blog / Mar 12</span>
+		</span>
+	</a>
+		</nav>
+	</div></aside>	</div>
+</div>
+</main>
+	<footer class="foot"> <div class="shell"> <div class="cols"> <div><a class="logo" href="/"><img src="/_pn/pn-mark.v1.svg" alt="" width="32" height="32"><b><i>PCN</i>MOBILE</b></a><p class="slogan">DESK TO POCKET</p></div> <div><h4>Directory</h4><ul><li><a href="/best/">Every list</a></li><li><a href="/jobs/">Jobs</a></li><li><a href="/tools/">Tools</a></li><li><a href="/makers/">Makers</a></li><li><a href="/find/">Find</a></li></ul></div> <div><h4>For makers</h4><ul><li><a href="/advertise/">Advertise</a></li><li><a href="/submit/">List your tool</a></li><li><a href="/vendor/">Maker sign-in</a></li></ul></div> <div><h4>PCNMobile</h4><ul><li><a href="/about/">About</a></li><li><a href="/how-we-rank/">How we rank</a></li><li><a href="/disclosure/">Disclosure</a></li><li><a href="/contact/">Contact</a></li><li><a href="/terms/">Terms</a></li><li><a href="/advertise/refund-policy/">Refund policy</a></li></ul></div> </div> <nav class="legal" aria-label="Legal"><a href="https://pcnmobile.com/privacy-policy/">Privacy Policy</a><a href="https://pcnmobile.com/publishing/">Publishing</a><a href="https://pcnmobile.com/affiliate-disclosure/">Affiliate Disclosure</a></nav> <p class="fine">© 2026 PCNMobile, published by Yorker Media. Facts come from each maker's own pages, with the day we read them. Some top positions are paid placements; see the <a href="/disclosure/">disclosure</a>.</p> </div> </footer><script type="speculationrules">
+{"prefetch":[{"source":"document","where":{"and":[{"href_matches":"/*"},{"not":{"href_matches":["/wp-*.php","/wp-admin/*","/wp-content/uploads/*","/wp-content/*","/wp-content/plugins/*","/wp-content/themes/pcnmobile-handoff/*","/*\\?(.+)"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prefetch, .no-prefetch a"}}]},"eagerness":"conservative"}]}
+</script>
+<script id="ym-donation-scope-kofi-behavior-js-after">
+(function () {
+            var storageKey = "ymDonationKofiQuickHiddenUntil";
+            var hideMs = 7 * 24 * 60 * 60 * 1000;
+
+            function getHiddenUntil() {
+                try {
+                    return Number(window.localStorage.getItem(storageKey) || 0);
+                } catch (error) {
+                    return 0;
+                }
+            }
+
+            function isHidden() {
+                return getHiddenUntil() > Date.now();
+            }
+
+            if (isHidden()) {
+                document.documentElement.classList.add("ym-donation-kofi-quick-dismissed");
+            }
+
+            function ready(callback) {
+                if (document.readyState === "loading") {
+                    document.addEventListener("DOMContentLoaded", callback);
+                    return;
+                }
+                callback();
+            }
+
+            // Ads own this corner on several sites (Mediavine floating player, network
+            // bottom container) and a few themes park a back-to-top button here. Ad
+            // containers sit far above us in z-order, so a blocked button is an
+            // invisible button. Rather than fight for the spot, step upwards until the
+            // point belongs to us. Runs after ads have had time to settle, twice,
+            // because some of them lazy-load on the first scroll.
+            function clearOfFurniture(wrap) {
+                var tries = 0;
+
+                function attempt() {
+                    var rect = wrap.getBoundingClientRect();
+                    if (!rect.width || wrap.hidden) {
+                        return;
+                    }
+                    var el = document.elementFromPoint(rect.left + rect.width / 2, rect.top + rect.height / 2);
+                    if (!el || wrap.contains(el) || tries >= 4) {
+                        return;
+                    }
+                    var current = parseInt(window.getComputedStyle(wrap).bottom, 10);
+                    if (!current) {
+                        current = 104;
+                    }
+                    // Stop climbing before the button reaches the middle of the screen:
+                    // on a phone three steps would put it over the article itself, which
+                    // is worse than losing the corner to an ad.
+                    if (current + 96 > window.innerHeight * 0.45) {
+                        return;
+                    }
+                    tries++;
+                    wrap.style.setProperty("--ym-kofi-bottom", (current + 96) + "px");
+                    window.setTimeout(attempt, 300);
+                }
+
+                // Several ad slots only fill after the first scroll, well past the two
+                // early checks, so keep looking for a while and once more on scroll.
+                window.setTimeout(attempt, 2500);
+                window.setTimeout(attempt, 6500);
+                window.setTimeout(attempt, 12000);
+                window.setTimeout(attempt, 20000);
+                window.addEventListener("scroll", function () {
+                    window.setTimeout(attempt, 1200);
+                }, { passive: true, once: true });
+            }
+
+            ready(function () {
+                var wraps = document.querySelectorAll("[data-ym-kofi-quick]");
+                if (!wraps.length) {
+                    return;
+                }
+
+                if (isHidden()) {
+                    wraps.forEach(function (wrap) {
+                        wrap.hidden = true;
+                    });
+                    return;
+                }
+
+                wraps.forEach(function (wrap) {
+                    clearOfFurniture(wrap);
+
+                    var close = wrap.querySelector("[data-ym-kofi-dismiss]");
+                    if (!close) {
+                        return;
+                    }
+
+                    close.addEventListener("click", function (event) {
+                        event.preventDefault();
+                        event.stopPropagation();
+                        wrap.hidden = true;
+                        document.documentElement.classList.add("ym-donation-kofi-quick-dismissed");
+                        try {
+                            window.localStorage.setItem(storageKey, String(Date.now() + hideMs));
+                        } catch (error) {}
+                    });
+                });
+            });
+        })();
+    
+//# sourceURL=ym-donation-scope-kofi-behavior-js-after
+</script>
+<script id="pcnmobile-handoff-js" src="https://pcnmobile.com/wp-content/themes/pcnmobile-handoff/offset.js?ver=1792100635"></script>
+<script async data-wp-strategy="async" fetchpriority="low" id="comment-reply-js" src="https://pcnmobile.com/wp-includes/js/comment-reply.min.js?ver=7.0.7"></script>
+<script id="aawp-js" src="https://pcnmobile.com/wp-content/plugins/aawp/assets/dist/js/main.js?ver=3.18.3"></script>
+<script defer id="akismet-frontend-js" src="https://pcnmobile.com/wp-content/plugins/akismet/_inc/akismet-frontend.js?ver=1764129272"></script>
+<script id="wp-emoji-settings" type="application/json">
+{"baseUrl":"https://s.w.org/images/core/emoji/17.0.2/72x72/","ext":".png","svgUrl":"https://s.w.org/images/core/emoji/17.0.2/svg/","svgExt":".svg","source":{"concatemoji":"https://pcnmobile.com/wp-includes/js/wp-emoji-release.min.js?ver=7.0.7"}}
+</script>
+<script type="module">
+/*! This file is auto-generated */
+var e="script#wp-emoji-settings",t=document.querySelector(e);if(!(t instanceof HTMLScriptElement))throw new Error("Element missing: "+e);const r=JSON.parse(t.text),s=(window._wpemojiSettings=r,"wpEmojiSettingsSupports"),o=["flag","emoji"];function i(e){try{var t={supportTests:e,timestamp:(new Date).valueOf()};sessionStorage.setItem(s,JSON.stringify(t))}catch(e){}}function c(e,t,n){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);t=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data);e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(n,0,0);const r=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data);return t.every((e,t)=>e===r[t])}function p(e,t){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);var n=e.getImageData(16,16,1,1);for(let e=0;e<n.data.length;e++)if(0!==n.data[e])return!1;return!0}function u(e,t,n,r){switch(t){case"flag":return n(e,"\ud83c\udff3\ufe0f\u200d\u26a7\ufe0f","\ud83c\udff3\ufe0f\u200b\u26a7\ufe0f")?!1:!n(e,"\ud83c\udde8\ud83c\uddf6","\ud83c\udde8\u200b\ud83c\uddf6")&&!n(e,"\ud83c\udff4\udb40\udc67\udb40\udc62\udb40\udc65\udb40\udc6e\udb40\udc67\udb40\udc7f","\ud83c\udff4\u200b\udb40\udc67\u200b\udb40\udc62\u200b\udb40\udc65\u200b\udb40\udc6e\u200b\udb40\udc67\u200b\udb40\udc7f");case"emoji":return!r(e,"\ud83e\u1fac8")}return!1}function f(e,t,n,r){let a;const s=(a="undefined"!=typeof WorkerGlobalScope&&self instanceof WorkerGlobalScope?new OffscreenCanvas(300,150):document.createElement("canvas")).getContext("2d",{willReadFrequently:!0}),o=(s.textBaseline="top",s.font="600 32px Arial",{});return e.forEach(e=>{o[e]=t(s,e,n,r)}),o}function a(e){var t=document.createElement("script");t.src=e,t.defer=!0,document.head.appendChild(t)}r.supports={everything:!0,everythingExceptFlag:!0},new Promise(t=>{let n=function(){try{var e=JSON.parse(sessionStorage.getItem(s));if("object"==typeof e&&"number"==typeof e.timestamp&&(new Date).valueOf()<e.timestamp+604800&&"object"==typeof e.supportTests)return e.supportTests}catch(e){}return null}();if(!n){if("undefined"!=typeof Worker&&"undefined"!=typeof OffscreenCanvas&&"undefined"!=typeof URL&&URL.createObjectURL&&"undefined"!=typeof Blob)try{var e="postMessage("+f.toString()+"("+[JSON.stringify(o),u.toString(),c.toString(),p.toString()].join(",")+"));",r=new Blob([e],{type:"text/javascript"});const a=new Worker(URL.createObjectURL(r),{name:"wpTestEmojiSupports"});return void(a.onmessage=e=>{i(n=e.data),a.terminate(),t(n)})}catch(e){}i(n=f(o,u,c,p))}t(n)}).then(e=>{for(const n in e)r.supports[n]=e[n],r.supports.everything=r.supports.everything&&r.supports[n],"flag"!==n&&(r.supports.everythingExceptFlag=r.supports.everythingExceptFlag&&r.supports[n]);var t;r.supports.everythingExceptFlag=r.supports.everythingExceptFlag&&!r.supports.flag,r.supports.everything||((t=r.source||{}).concatemoji?a(t.concatemoji):t.wpemoji&&t.twemoji&&(a(t.twemoji),a(t.wpemoji)))});
+//# sourceURL=https://pcnmobile.com/wp-includes/js/wp-emoji-loader.min.js
+</script>
+<script id="ym-aawp-creators-price-hydrator-20260606-2">
+(function(){
+  if (window.YM_AAWP_CREATORS_PRICE_HYDRATOR_20260606_2) return;
+  window.YM_AAWP_CREATORS_PRICE_HYDRATOR_20260606_2 = true;
+  var endpoint = "https:\/\/pcnmobile.com\/wp-json\/ym-aawp-creators\/v1\/prices";
+  function collect(){
+    var seen = Object.create(null), asins = [];
+    document.querySelectorAll('.aawp-product[data-aawp-product-id], [data-aawp-product-id], [data-aawp-product-asin]').forEach(function(el){
+      var asin = (el.getAttribute('data-aawp-product-id') || el.getAttribute('data-aawp-product-asin') || '').trim();
+      if (/^[A-Z0-9]{10}$/.test(asin) && !seen[asin]) {
+        seen[asin] = true;
+        asins.push(asin);
+      }
+    });
+    return asins.slice(0, 40);
+  }
+  function priceTargets(root){
+    return Array.prototype.slice.call(root.querySelectorAll(
+      '.aawp-product__price:not(.aawp-product__price--old):not(.aawp-product__price--saved),' +
+      '.aawp-box__price--current,.price--current'
+    ));
+  }
+  function rootsForAsin(asin){
+    return Array.prototype.slice.call(document.querySelectorAll('[data-aawp-product-id="' + asin + '"], [data-aawp-product-asin="' + asin + '"]'));
+  }
+  function clearNotice(node){
+    var n = node.parentNode && node.parentNode.querySelector ? node.parentNode.querySelector('.ym-creators-price-timestamp') : null;
+    if (n) n.remove();
+  }
+  function writeNotice(node, text){
+    clearNotice(node);
+    if (!text) return;
+    var small = document.createElement('small');
+    small.className = 'ym-creators-price-timestamp';
+    small.style.display = 'block';
+    small.style.fontSize = '11px';
+    small.style.lineHeight = '1.3';
+    small.style.color = '#667085';
+    small.textContent = text;
+    node.insertAdjacentElement('afterend', small);
+  }
+  function writeFallback(root, updatedAt){
+    priceTargets(root).forEach(function(node){
+      node.textContent = '';
+      node.style.display = 'none';
+      node.style.visibility = 'hidden';
+      node.setAttribute('data-ym-creators-price-stale', '1');
+      if (updatedAt) node.setAttribute('data-ym-creators-price-updated', updatedAt);
+      clearNotice(node);
+    });
+  }
+  function apply(items, asins){
+    items = items || {};
+    Object.keys(items).forEach(function(asin){
+      var item = items[asin];
+      rootsForAsin(asin).forEach(function(root){
+        if (!item || item.stale || !item.html) {
+          writeFallback(root, item && item.updated_at ? item.updated_at : '');
+          return;
+        }
+        priceTargets(root).forEach(function(node){
+          node.innerHTML = item.html;
+          node.style.display = '';
+          node.style.visibility = 'visible';
+          node.removeAttribute('data-ym-creators-price-stale');
+          node.setAttribute('data-ym-creators-price-updated', item.updated_at || '');
+          writeNotice(node, item.needs_time ? item.time_html : '');
+        });
+      });
+    });
+    (asins || []).forEach(function(asin){
+      if (items[asin]) return;
+      rootsForAsin(asin).forEach(function(root){ writeFallback(root, ''); });
+    });
+    try { window.dispatchEvent(new Event('ym:aawp:price-hydrated')); } catch(e) {}
+  }
+  var asked = {};
+  function run(){
+    var asins = collect();
+    if (!asins.length || !window.fetch) return;
+    var key = asins.join(',');
+    if (asked[key]) return;   // the load-event re-run only matters when new boxes appeared
+    asked[key] = 1;
+    // one URL per 10 minutes for everyone (not a per-call cache-buster), so the browser, nginx and Cloudflare can answer it
+    fetch(endpoint + '?asins=' + encodeURIComponent(key) + '&_ym=' + Math.floor(Date.now() / 600000), {credentials:'same-origin'})
+      .then(function(res){ return res.ok ? res.json() : null; })
+      .then(function(data){ if (data && data.items) apply(data.items, asins); })
+      .catch(function(){});
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', run);
+  else run();
+  window.addEventListener('load', run);
+})();
+</script>
+		<style id="ymel-css">.ymel{box-sizing:border-box;margin:2.2em 0 1.6em;padding:20px 22px;border:1px solid var(--line,rgba(127,127,127,.28));border-radius:var(--radius-lg,12px);background:var(--surface-2,rgba(127,127,127,.06));font-family:var(--font-text,inherit);color:var(--ink,inherit);max-width:100%;text-align:left}.ymel-brand{display:flex;align-items:center;gap:8px;margin:0 0 8px;font-size:.74em;font-weight:800;letter-spacing:.07em;text-transform:uppercase;color:var(--brand,inherit)}.ymel-brand img{width:20px;height:20px;border-radius:5px;flex:none}.ymel{border-top:3px solid var(--brand,rgba(127,127,127,.4))}.ymel *{box-sizing:border-box}.ymel-t{margin:0 0 4px;font-family:var(--font-display,inherit);font-size:1.12em;font-weight:700;line-height:1.3;color:var(--ink,inherit)}.ymel-d{margin:0 0 12px;font-size:.95em;line-height:1.45;color:var(--muted,inherit)}.ymel-f{display:flex;gap:8px;flex-wrap:wrap;margin:0}.ymel-i{flex:1 1 220px;min-width:0;height:44px;padding:0 12px;border:1px solid var(--line,rgba(127,127,127,.45));border-radius:var(--radius,8px);font:inherit;font-size:16px;background:var(--surface,#fff);color:var(--ink,#111)}.ymel-b{height:44px;padding:0 18px;border:0;border-radius:var(--radius,8px);font:inherit;font-weight:700;cursor:pointer;background:var(--brand,#111);color:var(--brand-ink,#fff)}.ymel-b[disabled]{opacity:.6;cursor:default}.ymel-hp{position:absolute!important;left:-9999px!important;width:1px;height:1px;opacity:0}.ymel-sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}.ymel-m{margin:8px 0 0;font-size:.93em;font-weight:600;min-height:1.2em}.ymel-m.ok{color:#2a9d5c}.ymel-m.err{color:#d93a3a}.ymel-p{margin:6px 0 0;font-size:.8em;color:var(--muted,inherit)}.ymel-p a{color:inherit}.ymel-hint{margin:6px 0 0;font-size:.9em;line-height:1.4}.ymel-hint button{padding:0;border:0;background:none;font:inherit;font-weight:700;color:var(--brand,inherit);text-decoration:underline;cursor:pointer}.ymel-pk{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:10px 0 0}.ymel-pk p{flex:1 0 100%;margin:0 0 2px;font-weight:600;font-size:.93em}.ymel-ch{height:34px;padding:0 12px;border:1px solid var(--line,rgba(127,127,127,.45));border-radius:999px;background:transparent;color:inherit;font:inherit;font-size:.9em;cursor:pointer}.ymel-ch[aria-pressed=true]{background:var(--brand,#111);color:var(--brand-ink,#fff);border-color:transparent}.ymel-pk .ymel-b{height:34px;padding:0 14px}.ymel-sk{background:none;border:0;padding:0 6px;color:var(--muted,inherit);font:inherit;font-size:.85em;cursor:pointer;text-decoration:underline}.ymel-band{box-sizing:border-box;max-width:1100px;margin:0 auto;padding:0 16px}.ymel-band .ymel{margin:28px 0}.ymel-x{position:fixed;inset:0;z-index:2147483000;display:none;align-items:center;justify-content:center;padding:16px;background:rgba(10,12,14,.55)}.ymel-x.on{display:flex}.ymel-x .ymel{margin:0;max-width:460px;width:100%;background:var(--surface,#fff);color:var(--ink,#111);box-shadow:0 18px 50px rgba(0,0,0,.25);position:relative}.ymel-c{position:absolute;top:8px;right:10px;width:32px;height:32px;border:0;background:transparent;font-size:22px;line-height:1;cursor:pointer;color:var(--muted,#555)}</style><div class="ymel-x" id="ymel-x" role="dialog" aria-modal="true" aria-label="Newsletter sign-up" hidden><aside class="ymel ymel--exit"><button type="button" class="ymel-c" aria-label="Close">&times;</button data-ymel-src="exit" aria-label="Newsletter sign-up"><div class="ymel-brand"><img src="https://pcnmobile.com/wp-content/uploads/2026/10/pn-site-icon-512-150x150.png" alt="" width="20" height="20" loading="lazy" decoding="async"><span>PCnMobile newsletter</span></div><div class="ymel-t">Before you go &mdash; get our best guides by e-mail</div><div class="ymel-d">One short e-mail a week. Free, no spam &mdash; unsubscribe in one click.</div><form class="ymel-f" method="post" action="https://pcnmobile.com/wp-json/ym/v1/subscribe" novalidate><label class="ymel-sr" for="ymel-e-exit">E-mail address</label><input class="ymel-i" id="ymel-e-exit" type="email" name="email" autocomplete="email" inputmode="email" placeholder="you@example.com" required maxlength="190"><input type="text" name="website" class="ymel-hp" tabindex="-1" autocomplete="off" aria-hidden="true"><input type="hidden" name="ts" value="1792903368.372dea833cdc840bba93"><input type="hidden" name="source" value="exit"><button class="ymel-b" type="submit">Join free</button></form><div class="ymel-m" role="status" aria-live="polite"></div><div class="ymel-p">Your address stays with us &mdash; <a href="https://pcnmobile.com/privacy-policy/">privacy</a>.</div></aside></div><script id="ymel-js">(function(STAMP){
+  var KEY_SUB="ymel_sub",KEY_EXIT="ymel_exit";
+  /*ymel-suggest*/
+  // "did you mean …?" for the big mailbox providers (5-Oct-2026: most bounced sign-ups were gmail typos): growth's typo list, then a
+  // near miss of a provider (one edit, two for longer domains, a swapped pair counts as one). A hint only: the reader decides.
+  var TY={"gam.com":"gmail.com","gamil.com":"gmail.com","gmai.com":"gmail.com","gmail.c":"gmail.com","gmail.cm":"gmail.com","gmail.cmo":"gmail.com","gmail.co":"gmail.com","gmail.comm":"gmail.com","gmail.con":"gmail.com","gmail.om":"gmail.com","gmail.vom":"gmail.com","gmaill.com":"gmail.com","gmal.com":"gmail.com","gmali.com":"gmail.com","gmaul.com":"gmail.com","gmial.com":"gmail.com","gmsil.com":"gmail.com","gnail.co":"gmail.com","gnail.com":"gmail.com","gom.com":"gmail.com","hotmai.com":"hotmail.com","hotmail.co":"hotmail.com","hotmail.con":"hotmail.com","hotmal.com":"hotmail.com","hotmial.com":"hotmail.com","hotmil.com":"hotmail.com","iclod.com":"icloud.com","icloud.co":"icloud.com","icoud.com":"icloud.com","outllok.com":"outlook.com","outlok.com":"outlook.com","outlook.co":"outlook.com","outlook.con":"outlook.com","rediffmai.com":"rediffmail.com","redifmail.com":"rediffmail.com","yaho.com":"yahoo.com","yahoo.co":"yahoo.com","yahoo.con":"yahoo.com","yahooo.com":"yahoo.com","yhoo.com":"yahoo.com"},PV=["gmail.com","yahoo.com","hotmail.com","outlook.com","icloud.com","aol.com","live.com","msn.com","me.com","proton.me","protonmail.com","googlemail.com"];
+  function osa(a,b){var d=[],i,j,c;for(i=0;i<=a.length;i++)d[i]=[i];for(j=0;j<=b.length;j++)d[0][j]=j;
+    for(i=1;i<=a.length;i++)for(j=1;j<=b.length;j++){c=a[i-1]===b[j-1]?0:1;d[i][j]=Math.min(d[i-1][j]+1,d[i][j-1]+1,d[i-1][j-1]+c);
+      if(i>1&&j>1&&a[i-1]===b[j-2]&&a[i-2]===b[j-1])d[i][j]=Math.min(d[i][j],d[i-2][j-2]+1)}
+    return d[a.length][b.length]}
+  function suggest(e){var i=e.lastIndexOf("@");if(i<1)return"";var l=e.slice(0,i),d=e.slice(i+1).toLowerCase(),best="",bd=9;
+    if(!d||PV.indexOf(d)>=0)return"";if(TY[d])return l+"@"+TY[d];
+    PV.forEach(function(p){var x=osa(d,p);if(x<bd){bd=x;best=p}});
+    return bd>0&&bd<=(d.length<8?1:2)?l+"@"+best:""}
+  /*/ymel-suggest*/
+  function hint(f,s){var h=f.parentNode.querySelector(".ymel-hint");if(!s){if(h)h.parentNode.removeChild(h);return}
+    if(!h){h=document.createElement("p");h.className="ymel-hint";f.parentNode.insertBefore(h,f.nextSibling)}
+    h.textContent="Did you mean ";var a=document.createElement("button");a.type="button";a.textContent=s;
+    a.addEventListener("click",function(){f.email.value=s;hint(f,"");f.email.focus()});h.appendChild(a);h.appendChild(document.createTextNode("?"))}
+  function get(k){try{return localStorage.getItem(k)}catch(e){return null}}
+  function set(k,v){try{localStorage.setItem(k,v)}catch(e){}}
+  // where this visit came from, once per browser session: the first outside referrer, the first page and its utm tags, pages read
+  var S={},T0=Date.now();try{S=JSON.parse(sessionStorage.getItem("ymel_s")||"{}")||{}}catch(e){}
+  if(!S.l){var q=new URLSearchParams(location.search),u=["utm_source","utm_medium","utm_campaign"].map(function(k){return(q.get(k)||"").slice(0,60)}).join("|"),r=document.referrer||"";
+    S={r:r&&r.indexOf(location.origin)!==0?r.split("?")[0].slice(0,300):"",l:location.href.split("#")[0].split("?")[0].slice(0,500),u:u==="||"?"":u,n:0}}
+  S.n=(S.n||0)+1;try{sessionStorage.setItem("ymel_s",JSON.stringify(S))}catch(e){}
+  // the band's place (main 20-Oct-2026, after it showed ABOVE ScreenshotNeo's header): before the page's own footer, i.e. the last
+  // footer that is not inside a header, nav, main, article, section, aside, form or dialog and that starts in the lower half of the
+  // page; else right after the last article, if that ends in the lower half; else nowhere: the band is removed, never shown at the top
+  var band=document.getElementById("ymel-band");
+  if(band){
+    var H=Math.max(document.documentElement.scrollHeight,document.body?document.body.scrollHeight:0,1),Y=window.scrollY||0;
+    var lower=function(e,end){var r=e.getBoundingClientRect();return((end?r.bottom:r.top)+Y)>=H*0.5};
+    var inside=function(e,sel){return !!(e.parentElement&&e.parentElement.closest(sel))};
+    var box="header,nav,main,article,section,aside,form,dialog,[role=banner],[role=navigation]";
+    var fs=[].filter.call(document.querySelectorAll("footer,[role=contentinfo],#colophon,.site-footer"),function(e){return !band.contains(e)&&!inside(e,box)});
+    var ft=fs.length?fs[fs.length-1]:null;
+    var as=[].filter.call(document.querySelectorAll("article"),function(e){return !band.contains(e)&&!inside(e,"header,nav,aside")});
+    var art=as.length?as[as.length-1]:null;
+    if(ft&&ft.parentNode&&lower(ft,false))ft.parentNode.insertBefore(band,ft);
+    else if(art&&art.parentNode&&lower(art,true))art.parentNode.insertBefore(band,art.nextSibling);
+    else if(band.parentNode)band.parentNode.removeChild(band);
+  }
+  function fresh(f){ // a page served from a cache can carry an old stamp: take a new one first
+    var s=(f.ts.value||"").split(".")[0];if(s&&Date.now()/1000-(+s)<86400)return Promise.resolve();
+    return fetch(STAMP,{credentials:"omit",cache:"no-store"}).then(function(r){return r.json()}).then(function(j){if(j&&j.ts)f.ts.value=j.ts}).catch(function(){});
+  }
+  function wire(box){
+    var f=box.querySelector(".ymel-f"),m=box.querySelector(".ymel-m"),b=box.querySelector(".ymel-b");
+    if(!f)return;
+    var chk=function(){hint(f,suggest(f.email.value.trim()))};
+    f.email.addEventListener("blur",chk);f.email.addEventListener("change",chk);
+    f.addEventListener("submit",function(ev){
+      ev.preventDefault();
+      var e=f.email.value.trim();
+      if(!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(e)){m.className="ymel-m err";m.textContent="Please enter a valid e-mail address.";return}
+      b.disabled=true;m.className="ymel-m";m.textContent="Sending…";
+      fresh(f).then(function(){
+        var body=new URLSearchParams();body.set("email",e);body.set("website",f.website.value);body.set("ts",f.ts.value);body.set("source",f.source.value);body.set("page",location.href.split("#")[0]);
+        body.set("ref",S.r||"");body.set("land",S.l||"");body.set("utm",S.u||"");body.set("pages",String(S.n||1));body.set("secs",String(Math.round((Date.now()-T0)/1000)));
+        try{body.set("lang",(navigator.language||"").slice(0,16));body.set("tz",Intl.DateTimeFormat().resolvedOptions().timeZone||"")}catch(x){}
+        return fetch(f.action,{method:"POST",body:body,credentials:"omit",headers:{"Accept":"application/json"}}).then(function(r){return r.json().then(function(j){return{ok:r.ok,j:j}})});
+      }).then(function(x){
+          if(x.ok&&x.j&&x.j.ok){m.className="ymel-m ok";m.textContent=x.j.message||"Check your inbox to confirm.";f.style.display="none";set(KEY_SUB,"1");hint(f,"");
+            if(x.j.prefs&&x.j.topics&&x.j.topics.length>1)pick(box,m,f.action.replace(/subscribe\/?$/,"prefs"),x.j)}
+          else{m.className="ymel-m err";m.textContent=(x.j&&x.j.message)||"Something went wrong. Please try again.";b.disabled=false;if(x.j&&x.j.suggest)hint(f,x.j.suggest)}
+        }).catch(function(){m.className="ymel-m err";m.textContent="Network error. Please try again.";b.disabled=false});
+    });
+  }
+  // step two, right after signing up: what the reader wants more of — a tap each, up to three; Skip leaves it as it was
+  function pick(box,m,url,j){
+    var w=document.createElement("div"),chosen=[];w.className="ymel-pk";
+    var q=document.createElement("p");q.textContent="One more thing \u2014 what do you want more of?";w.appendChild(q);
+    j.topics.forEach(function(t){var c=document.createElement("button");c.type="button";c.className="ymel-ch";c.textContent=t[1];c.setAttribute("aria-pressed","false");
+      c.addEventListener("click",function(){var i=chosen.indexOf(t[0]);if(i>=0){chosen.splice(i,1);c.setAttribute("aria-pressed","false")}else if(chosen.length<3){chosen.push(t[0]);c.setAttribute("aria-pressed","true")}});
+      w.appendChild(c)});
+    var s=document.createElement("button");s.type="button";s.className="ymel-b";s.textContent="Save";
+    var k=document.createElement("button");k.type="button";k.className="ymel-sk";k.textContent="Skip";
+    k.addEventListener("click",function(){if(w.parentNode)w.parentNode.removeChild(w)});
+    s.addEventListener("click",function(){
+      if(!chosen.length)return;s.disabled=true;var b=new URLSearchParams();b.set("p",j.prefs);b.set("topics",chosen.join(","));
+      fetch(url,{method:"POST",body:b,credentials:"omit",headers:{"Accept":"application/json"}}).then(function(r){return r.json()}).then(function(r){
+        while(w.firstChild)w.removeChild(w.firstChild);var d=document.createElement("p");d.className="ymel-m ok";d.textContent=(r&&r.message)||"Thank you!";w.appendChild(d)
+      }).catch(function(){if(w.parentNode)w.parentNode.removeChild(w)})});
+    w.appendChild(s);w.appendChild(k);
+    if(m.parentNode)m.parentNode.insertBefore(w,m.nextSibling);
+  }
+  var boxes=document.querySelectorAll(".ymel");for(var i=0;i<boxes.length;i++)wire(boxes[i]);
+  var x=document.getElementById("ymel-x");if(!x)return;
+  var ua=navigator.userAgent||"";
+  var desktop=!/Mobile|Android|iPhone|iPad|iPod|Tablet/i.test(ua)&&window.matchMedia&&window.matchMedia("(pointer:fine)").matches;
+  var windows=/Windows|Win64|Win32/i.test(ua);
+  if(!desktop||windows||get(KEY_SUB))return;
+  var last=+get(KEY_EXIT)||0;if(Date.now()-last<14*864e5)return;
+  var t0=Date.now(),shown=false;
+  function close(){x.classList.remove("on");x.hidden=true;document.removeEventListener("keydown",esc)}
+  function esc(e){if(e.key==="Escape")close()}
+  document.addEventListener("mouseout",function(e){
+    if(shown||e.relatedTarget||e.toElement||e.clientY>8||Date.now()-t0<10000)return;
+    shown=true;set(KEY_EXIT,String(Date.now()));x.hidden=false;x.classList.add("on");
+    var i=x.querySelector(".ymel-i");if(i)setTimeout(function(){i.focus()},50);
+    document.addEventListener("keydown",esc);
+  });
+  x.addEventListener("click",function(e){if(e.target===x||(e.target.classList&&e.target.classList.contains("ymel-c")))close()});
+})("https:\/\/pcnmobile.com\/wp-json\/ym\/v1\/stamp");</script><script>(function(){if(!document.querySelector(".ymhs")){var t=document.querySelector('header [data-itgw-theme],header button[aria-pressed],header button[aria-label*="mode" i],header button[aria-label*="dark" i]');var w=document.createElement("template");w.innerHTML="<details class=\"ymhs\" data-ymhs><summary class=\"ymhs-toggle\" aria-label=\"Search\" title=\"Search\"><svg viewBox=\"0 0 24 24\" width=\"19\" height=\"19\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" aria-hidden=\"true\"><circle cx=\"11\" cy=\"11\" r=\"7.5\"><\/circle><line x1=\"21\" y1=\"21\" x2=\"16.8\" y2=\"16.8\"><\/line><\/svg><\/summary><form class=\"ymhs-panel\" role=\"search\" method=\"get\" action=\"https:\/\/pcnmobile.com\/\"><input class=\"ymhs-in\" type=\"search\" name=\"s\" value=\"\" placeholder=\"Search this site&hellip;\" aria-label=\"Search this site\" autocomplete=\"off\" enterkeyhint=\"search\" \/><button class=\"ymhs-go\" type=\"submit\" aria-label=\"Search\"><svg viewBox=\"0 0 24 24\" width=\"19\" height=\"19\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" aria-hidden=\"true\"><circle cx=\"11\" cy=\"11\" r=\"7.5\"><\/circle><line x1=\"21\" y1=\"21\" x2=\"16.8\" y2=\"16.8\"><\/line><\/svg><\/button><\/form><\/details>";var el=w.content.firstChild;if(t&&t.parentNode){t.parentNode.insertBefore(el,t);}else{var n=document.querySelector("header nav")||document.querySelector("header");if(n){n.appendChild(el);}}}document.addEventListener("click",function(e){document.querySelectorAll("details.ymhs[open]").forEach(function(d){if(!d.contains(e.target)){d.removeAttribute("open");}});});document.addEventListener("keydown",function(e){if(e.key==="Escape"){document.querySelectorAll("details.ymhs[open]").forEach(function(d){d.removeAttribute("open");});}});document.addEventListener("toggle",function(e){var d=e.target;if(d&&d.classList&&d.classList.contains("ymhs")&&d.open){var i=d.querySelector(".ymhs-in");if(i){i.focus();}}},true);})();</script>
+<script id="ya" data-cfasync="false">/*ya:f43fb26b200a*/!function t(e,a,n){var r=navigator,i=location,o=a.body||a.documentElement,c=a.currentScript;if(!e.__ya&&"1"!=r.doNotTrack&&"1"!=e.doNotTrack&&!r.globalPrivacyControl)if(a.prerendering)a.addEventListener("prerenderingchange",function(){t(e,a,n)},{once:!0});else{var s=(n=n||{}).k||c&&c.getAttribute("data-k"),u=n.e||c&&c.getAttribute("data-e")||(c&&c.src?new URL(c.src).origin+"/v1/e":"");if(s&&u){e.__ya=1;var d,l,f,h,v,p,m=N("_yv"),g=N("_ys"),y=[],b="#ymhx exit-banner|.ym-p1-server-strip outbyte-p1|.ym-p3-server-gate outbyte|.ymgc glh-card|.pf-affiliate-context line|.aawp aawp|table table|#comments,.comment-respond comments|nav,header,footer,aside,.widget chrome|.entry-content,article,main content".split("|");a.addEventListener("click",function(t){var e,a,n,r=H(t.target,"a[href],[data-ax-goal]");if(r){if(e=r.getAttribute("data-ax-goal"))return R(e,null,r);if(r.hostname&&r.hostname.replace(/^www\./,"")!=i.hostname.replace(/^www\./,"")){a={k:"c",h:r.hostname.replace(/^www\./,""),el:(n=r.getAttribute("data-ax-el"))||q(r),u:r.href.slice(0,600)};var o=H(r,"[data-ax-surface]");o&&(a.a=o.getAttribute("data-ax-surface")),!n&&(e=function(t){var e,a,n=H(t,".entry-content,article,main"),r=0;if(n){for(e=n.querySelectorAll("p,li,h2,h3,tr"),a=0;a<e.length;a++){if(e[a].contains(t))return a+1;4&e[a].compareDocumentPosition(t)&&(r=a+1)}return r||void 0}}(r))&&(a.rk=e),O(a,1)}}},!0),e.addEventListener("scroll",J,{passive:!0}),a.addEventListener("visibilitychange",function(){a.hidden?U():f=Date.now()}),e.addEventListener("pagehide",U);var w,x=e.PerformanceObserver;if(x&&Math.random()<.1){var k=0,S=0,A=0,E=function(t,e){try{new x(function(t){t.getEntries().forEach(e)}).observe(t)}catch(t){}};E({type:"largest-contentful-paint",buffered:!0},function(t){k=t.startTime}),E({type:"layout-shift",buffered:!0},function(t){t.hadRecentInput||(S+=t.value)}),E({type:"event",buffered:!0,durationThreshold:40},function(t){t.interactionId&&t.duration>A&&(A=t.duration)}),w=function(){k&&O({k:"w",n:"LCP",v:Math.round(k)}),O({k:"w",n:"CLS",v:Math.round(1e3*S)/1e3}),A&&O({k:"w",n:"INP",v:Math.round(A)}),w=0}}var L=i.href;["pushState","replaceState"].forEach(function(t){var e=history[t];history[t]=function(){var t=e.apply(this,arguments);return setTimeout(W,0),t}}),e.addEventListener("popstate",W);var M=e.ya;if(e.ya={g:R,v:1},D(a.referrer),M&&M.length)for(var T=0;T<M.length;T++)R.apply(0,M[T])}}function _(){return Math.random().toString(36).slice(2,10)+Date.now().toString(36)}function N(t){var e=a.cookie.match("(?:^|; )"+t+"=([\\w-]{8,40})");return e&&e[1]}function P(t,e,n){a.cookie=t+"="+e+";path=/;max-age="+n+";SameSite=Lax"+("https:"==i.protocol?";Secure":"")}function C(){var t=" "+o.className+" ";return o.getAttribute("data-ax-pt")||(/ home /.test(t)?"home":/ single /.test(t)?"post":/ error404 /.test(t)?"404":/ page /.test(t)?"page":/ (archive|search) /.test(t)?"archive":"other")}function D(t){var e=" "+o.className+" ";l={k:s,v:m||_(),n:m?0:1,i:g||_(),e:g?0:1,p:_(),u:i.href,r:t,t:C(),o:(e.match(/ postid-(\d+) /)||[])[1],d:o.getAttribute("data-ax-dir")||void 0,wd:r.webdriver?1:0},m=l.v,g=l.i,P("_yv",m,3456e4),P("_ys",g,1800),f=a.hidden?0:Date.now(),h=0,v=0,p=0,J(),O({k:"pv"},1)}function B(t){try{if(r.sendBeacon&&r.sendBeacon(u,new Blob([t],{type:"text/plain"})))return}catch(t){}try{fetch(u,{method:"POST",body:t,keepalive:!0,credentials:"omit",headers:{"Content-Type":"text/plain"}})}catch(t){}}function I(){for(clearTimeout(d),d=0;y.length;)l.ev=y.splice(0,40),B(JSON.stringify(l))}function O(t,e){y.push(t),e?I():d||(d=setTimeout(I,1500))}function H(t,e){return t&&t.closest&&t.closest(e)}function R(t,e,a){var n={k:"g",n:(""+t).toLowerCase().replace(/\W/g,"_").slice(0,40)},r=H(a,"[data-ax-surface]");r&&(n.a=r.getAttribute("data-ax-surface")),null!=e&&(n.v=e),O(n,1)}function q(t){var e,a,n,r=t.getAttribute("data-ym-brand");if(r)return"brand:"+r;for(e=0;e<b.length;e++)if(n=H(t,(a=b[e].split(" "))[0]))return"outbyte"==a[1]?"outbyte-"+(H(t,"[class*=exit-modal]")?"exit":/corner/.test(n.className)?"corner":/sidebar|widget/.test(n.className)?"side":"card"):"line"==a[1]?"line:"+(n.getAttribute("data-pf-product")||""):a[1];return"other"}function J(){var t=a.documentElement;p=Math.max(p,Math.min(100,Math.round(100*(e.scrollY+e.innerHeight)/Math.max(1,t.scrollHeight))))}function U(){f&&(h+=Date.now()-f,f=0),w&&w(),h>v&&(O({k:"x",ms:h-v,sc:p}),v=h),I()}function W(){if(i.href!=L){var t=L;L=i.href,U(),D(t)}}}(window,document,{"k":"zm5o27wivqdk","e":"\/wx\/m0wgx"});</script>
+<script id="ym-disable-sticky-header-js">
+(function () {
+  function resetGeneratePress() {
+    document.querySelectorAll('.main-navigation.navigation-stick, .main-navigation.is_stuck, #mobile-header.navigation-stick, #mobile-header.is_stuck').forEach(function (el) {
+      el.classList.remove('navigation-stick', 'is_stuck');
+      ['position', 'top', 'right', 'left', 'bottom', 'width', 'max-width', 'transform'].forEach(function (prop) {
+        el.style.removeProperty(prop);
+      });
+    });
+  }
+
+  function resetAsona() {
+    document.querySelectorAll('.site-header[data-is-sticky], .site-header[data-sticky-animate]').forEach(function (el) {
+      el.removeAttribute('data-is-sticky');
+      el.removeAttribute('data-sticky-animate');
+    });
+  }
+
+  function resetDivi() {
+    var header = document.getElementById('main-header');
+    if (header) {
+      header.classList.remove('et-fixed-header');
+    }
+    document.body.classList.remove('et_fixed_nav_temp');
+  }
+
+  function run() {
+    if (document.body.classList.contains('ym-theme-generatepress')) {
+      resetGeneratePress();
+    } else if (document.body.classList.contains('ym-theme-asona')) {
+      resetAsona();
+    } else if (document.body.classList.contains('ym-theme-divi')) {
+      resetDivi();
+    }
+  }
+
+  run();
+  window.addEventListener('load', run, { passive: true });
+  window.addEventListener('resize', run, { passive: true });
+  window.addEventListener('scroll', run, { passive: true });
+})();
+</script>
+		<script>(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a4fe8e811b5387f0',t:'MTc5MjkwMzM2Nw=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092" integrity="sha512-UKNk8GbxkABxKcXYuLkO16EleLGUkcvJWtpSNmExE0Too3ZaFAxTscNWEc1OdAv5/BikHawapSCaiD2XCmp+Bw==" data-cf-beacon='{"version":"2024.11.0","token":"32aa3f4d032f423ca6077c6d4c5dca44","r":1,"spa":2}' crossorigin="anonymous"></script>
+</body>
+</html>

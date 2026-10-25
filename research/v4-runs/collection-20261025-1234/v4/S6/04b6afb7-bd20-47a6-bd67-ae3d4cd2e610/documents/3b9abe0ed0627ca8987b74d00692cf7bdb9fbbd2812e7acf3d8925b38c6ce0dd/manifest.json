@@ -1,0 +1,2272 @@
+{
+  "schemaVersion": "source-document/v1",
+  "id": "3b9abe0ed0627ca8987b74d00692cf7bdb9fbbd2812e7acf3d8925b38c6ce0dd",
+  "version": "bf750e551d587a17f569ac694ba416e38776dde79da58c8fbcc6a09723d3a85e",
+  "requestedUrl": "https://code.visualstudio.com/docs/copilot/copilot-edits",
+  "finalUrl": "https://code.visualstudio.com/docs/chat/chat-overview",
+  "retrievedAt": "2026-10-25T04:39:43.735Z",
+  "contentType": "text/html; charset=utf-8",
+  "status": "READ",
+  "readError": null,
+  "rawHash": "2a9a26b6b69187ecb5bec07b2e1c6f1db6e54968cc94edc1d3556c80c3d531d4",
+  "textHash": "abb44508da1b9802c0dc4da2aba709d49c1380315b373b9be9a419142bb3a7fe",
+  "text": "Join VS Code at GitHub Universe!\n\nDismiss this update\n\nRelated\n\nGet started with agents\n\nFollow a hands-on tutorial to build an app with AI agents in VS Code.\n\nStart agentic coding tutorial\n\nUse chat in VS Code\n\nCopy as Markdown\n\nCopy as Markdown\n\nView as Markdown\n\nAsk in VS Code\n\nAsk in VS Code Insiders\n\nChat in Visual Studio Code lets you use natural language for interacting with AI agents. Ask questions about your code, get help understanding complex logic, generate new features, fix bugs, and more, all through a conversational interface.\n\nThis article describes interaction mechanics shared by chat surfaces in VS Code, including how to send and steer requests, add context, navigate a conversation, and personalize the chat display. For an introduction to AI workflows, agents, and the available interfaces, see Build with AI in VS Code.\n\nChoose where to chat\n\nThe interaction mechanics in this article apply to the Chat view, chat editor tabs, and the Agents window. Both the Chat view and the Agents window run agents. To choose between collaborating over code in your current workspace and coordinating work across projects, see Run agents.\n\nFor lightweight interactions, use inline chat to edit code or get terminal suggestions in place, or open Quick Chat for a temporary conversation.\n\nSend a chat request\n\nType your message in the chat input box and press Enter or select the Send button. The agent can answer questions, analyze your code, run tools, make changes, and respond with a summary. You can then continue the conversation with follow-up messages. For example, you might ask an agent to make this change:\n\nAdd input validation to the signup form\n\nFor a hands-free conversation, start Voice Mode from the chat input. Voice Mode listens for follow-up requests and reads the agent's responses aloud. Voice Mode is experimental and might change or be removed.\n\nTo give extra project-specific context, you can add context to your prompt by referencing files, symbols, or other information with #-mentions.\n\nFor common tasks, you can use slash commands as shortcuts for frequently used prompts or to invoke agent skills. Type / in the chat input to see all available commands.\n\nYou can run multiple sessions in parallel and switch between them without losing context. Learn more in Manage agent sessions.\n\nEach session has controls that shape how the agent responds: Session Target, Agent, Language model, and Permissions. Learn how to compare agent harnesses and select one for a session.\n\nTip\n\nTo get the best results, be specific about what you want, provide relevant context, and write clear instructions. For more information, see Get better responses.\n\nRun terminal commands from chat\n\nStart a message with ! to run a terminal command directly from the Chat view or Agents window. The ! must be the first character and must be followed by a command.\n\nFor example, enter the following message to run your tests:\n\n!npm test\n\nThe command runs immediately in the session's default shell, without sending the message to the agent or asking for approval. It uses the session folder or worktree as the working directory. The command output and exit status appear in the chat transcript.\n\nNote\n\nThe ! command isn't available in Local harness sessions, cloud sessions, or extension-based agent integrations. Use the integrated terminal to run commands yourself instead.\n\nSend messages while a request is running\n\nYou don't have to wait for a response to finish before sending your next message. While a request is in progress, the Send button changes to a dropdown that gives you three options for how to handle the new message.\n\nAdd to Queue: your message waits and sends automatically after the current response completes. The current response finishes uninterrupted.\n\nSteer with Message: signals the current request to yield after finishing the current tool execution. The current response stops and your new message processes immediately. Use this to redirect the agent when it's heading in the wrong direction.\n\nStop and Send: cancels the current request entirely and sends your new message right away.\n\nStopping a request doesn't undo file edits, terminal commands, or other actions that already completed. To restore affected workspace files and chat history, restore a checkpoint. Checkpoints don't reverse changes to external services.\n\nFor examples of when to steer or stop a request and how to write a focused correction, see Get an agent back on track.\n\nThe default action for the Send button is configurable. Use chat.requestQueuing.defaultAction Open in VS Code Open in VS Code Insiders to set it to steer (default) or queue.\n\nReorder pending messages\n\nWhen you have multiple pending messages (queued or steering), you can drag and drop them to change the order in which they are processed. A drag handle appears on hover when more than one message of the same type is pending.\n\nAdd context to your prompts\n\nProviding the right context helps the AI generate more relevant and accurate responses.\n\nImplicit context: VS Code can include or suggest editor context, such as the active file or selection. The behavior depends on the interface, harness, and context settings. Attach important files explicitly instead of assuming that opening a file adds its contents to the request. Learn how implicit context works.\n\n#-mentions: type # in the chat input to explicitly reference files (#file), folders, symbols, your codebase (#codebase), terminal output (#terminalSelection), or tools like #fetch.\n\nVision: attach images, such as screenshots or UI mockups, as context for your prompt.\n\nBrowser elements: select elements from the integrated browser to add HTML, CSS, and screenshot context to your prompt.\n\nLearn more about managing context for AI.\n\nImage carousel\n\nYou can select images or videos in chat responses to open a dedicated carousel view. Media files from tool results (such as the integrated browser, Playwright, or other MCP servers) and inlined in assistant messages are all accessible from the carousel.\n\nTo disable the image carousel, set imageCarousel.chat.enabled Open in VS Code Open in VS Code Insiders to false.\n\nReview and manage changes\n\nAfter the AI changes files, review and validate the result before you commit or integrate it. In the Chat view, select a changed file in the response to open its diff. In the Agents window, use the Changes panel.\n\nFor keyboard and screen reader access to a diff, use the Accessible Diff Viewer.\n\nFor instructions about requesting revisions, restoring checkpoints, and integrating folder or worktree changes, see Review AI-generated code edits.\n\nGet notified about chat responses\n\nWhen you're working in another window or application, VS Code can send you OS notifications to let you know about important chat events, so you don't have to keep checking back.\n\nUse chat.notifyWindowOnResponseReceived Open in VS Code Open in VS Code Insiders to configure when you receive an OS notification when a chat response is received. The notification includes a preview of the response, and selecting it brings focus to the chat session.\n\nUse chat.notifyWindowOnConfirmation Open in VS Code Open in VS Code Insiders to configure when you receive an OS notification when the agent needs your input or confirmation to continue.\n\nBoth settings have three possible values:\n\noff: never show notifications\n\nwindowNotFocused (default): show notifications only when the VS Code window is not focused\n\nalways: show notifications even when the VS Code window is in focus\n\nTip\n\nSet the value to always if you want to stay aware of chat activity while working in other parts of VS Code, such as when running long agent tasks in the background.\n\nFind text in a chat session\n\nPress ⌘F (Windows, Linux Ctrl+F) to search the entire conversation. Find is available in the Chat view, chat editor tabs, and the Agents window. It searches prompts and responses, including off-screen content and code blocks.\n\nUse Enter and ⇧Enter (Windows, Linux Shift+Enter) to navigate between matches. When a match is inside a collapsed Completed N steps section, navigating to the match expands the section. Use the Match Case, Whole Word, and Regular Expression options to refine the results.\n\nNote\n\nFind is not available in Quick Chat or inline chat. It does not search text inside tool pills or collapsed reasoning.\n\nNavigate between prompts in a chat session\n\nUse the following keyboard shortcuts to navigate between prompts in a chat session:\n\n⌥⌘↑ (Windows, Linux Ctrl+Alt+Up): Go to the previous prompt in the chat session.\n\n⌥⌘↓ (Windows, Linux Ctrl+Alt+Down): Go to the next prompt in the chat session.\n\n⌥⌘PageUp (Windows, Linux Ctrl+Alt+PageUp): Go to the previous code block in the chat session.\n\n⌥⌘PageDown (Windows, Linux Ctrl+Alt+PageDown): Go to the next code block in the chat session.\n\nTo inspect a chat response character by character or line by line with a keyboard or screen reader, run Open Accessible View (⌥F2 (Windows Alt+F2, Linux Shift+Alt+F2)). Learn more about the Accessible View.\n\nPersonalize chat\n\nAdjust how chat content appears, add an interactive pet, or set a decorative background in the Agents window.\n\nCustomize the chat display\n\nUse these settings to adjust the chat transcript:\n\nDisplay option Settings Markdown font Set the font family with chat.fontFamily Open in VS Code Open in VS Code Insiders and the font size with chat.fontSize Open in VS Code Open in VS Code Insiders . Code block font and layout Set the font family, size, weight, and line height with chat.editor.fontFamily Open in VS Code Open in VS Code Insiders , chat.editor.fontSize Open in VS Code Open in VS Code Insiders , chat.editor.fontWeight Open in VS Code Open in VS Code Insiders , and chat.editor.lineHeight Open in VS Code Open in VS Code Insiders . Control line wrapping with chat.editor.wordWrap Open in VS Code Open in VS Code Insiders . Sticky prompts Use chat.stickyScroll.enabled Open in VS Code Open in VS Code Insiders to pin the current prompt to the top of the transcript while you scroll. Request timestamps Use chat.verbose Open in VS Code Open in VS Code Insiders to show or hide request and completion timestamps. Hover over a completion timestamp to view the elapsed response time. Persistent progress (Experimental) Use chat.experimental.persistentProgress Open in VS Code Open in VS Code Insiders to keep a progress indicator visible until an agent response finishes. Choose a colored or monochrome Draw animation, or turn the indicator off.\n\nWith persistent progress, reasoning appears in separate collapsible previews and tool calls remain visible while they run. chat.experimental.persistentProgressVerbosity Open in VS Code Open in VS Code Insiders controls completed tool-call details. Compact replaces completed groups with expandable summaries when response text resumes or the response finishes. Verbose keeps the full details visible.\n\nPersistent progress defaults to Draw in Insiders and Off in Stable.\n\nFor more chat preferences, see the AI settings reference.\n\nCustomize the Agents window chat background\n\nExperimental Agents window chat backgrounds is experimental and might change or be removed.\n\nAdd a decorative background to the chat area of the Agents window without changing chat in the main VS Code window.\n\nTo set a background, run the Chat: Set Background... command from the Command Palette (⇧⌘P (Windows, Linux Ctrl+Shift+P)) or right-click an empty area of the chat. Then, choose one of these options:\n\nNo Background: remove the background for the current color theme.\n\nCodicons: use a theme-aware pattern of built-in VS Code icons.\n\nImage...: select an image from your machine.\n\nRecently used: reuse one of your five most recent background images.\n\nFor an image background, run Chat: Change Background Layout... to repeat, stretch, center, or position the image along an edge or in a corner for the current color theme. Moving through the layout options previews each one. Select an option to save it, or dismiss the picker to restore the previous layout.\n\nNote\n\nLight and dark color themes have separate backgrounds and image layouts. These choices are stored on the current machine and don't sync across devices.\n\nBackgrounds are hidden in high contrast themes to preserve chat readability. The background commands are also unavailable while a high contrast theme is active.\n\nGet better responses\n\nChat provides several ways to improve the quality and relevance of AI responses:\n\nWrite effective prompts: be specific about what you want, reference relevant files and symbols, and use / commands for common tasks. Get inspired by prompt examples or review the full prompt engineering guide.\n\nCustomize the AI: tailor the AI's behavior to your project by adding custom instructions, creating reusable prompt files, or building custom agents for specialized workflows. For example, create a \"Code Reviewer\" agent that provides feedback on code quality and adherence to your team's coding standards.\n\nExtend with tools: connect MCP servers or install extensions that contribute tools to give the agent access to external services, databases, or APIs.\n\nFor more information, see Customize agent behavior in VS Code.\n\nTroubleshoot chat interactions\n\nUse Agent Logs and the Chat Debug view to inspect what happens when you send a prompt. Agent Logs shows a chronological event log of tool calls, LLM requests, and prompt file discovery. The Chat Debug view shows the raw system prompt, user prompt, context, and tool payloads for each interaction. These tools are useful for understanding why the AI responded in a certain way or for troubleshooting unexpected results.\n\nSupport\n\nSupport for GitHub Copilot Chat is provided by GitHub and can be reached at https://support.github.com.\n\nTo learn more about Copilot's security, privacy, compliance, and transparency, see the GitHub Copilot Trust Center FAQ.\n\nRelated resources\n\nCreate and manage agent sessions\n\nChoose an agent harness\n\nPrompt examples\n\n10/21/2026",
+  "rawSources": [
+    {
+      "mode": "STATIC",
+      "hash": "2a9a26b6b69187ecb5bec07b2e1c6f1db6e54968cc94edc1d3556c80c3d531d4",
+      "path": "C:\\Users\\qianchen\\Documents\\waytoagi-1024-detective-a2-v4\\.cache\\source-documents-v4\\04b6afb7-bd20-47a6-bd67-ae3d4cd2e610\\3b9abe0ed0627ca8987b74d00692cf7bdb9fbbd2812e7acf3d8925b38c6ce0dd\\raw.bin"
+    }
+  ],
+  "storage": {
+    "rawPath": "C:\\Users\\qianchen\\Documents\\waytoagi-1024-detective-a2-v4\\.cache\\source-documents-v4\\04b6afb7-bd20-47a6-bd67-ae3d4cd2e610\\3b9abe0ed0627ca8987b74d00692cf7bdb9fbbd2812e7acf3d8925b38c6ce0dd\\raw.bin",
+    "textPath": "C:\\Users\\qianchen\\Documents\\waytoagi-1024-detective-a2-v4\\.cache\\source-documents-v4\\04b6afb7-bd20-47a6-bd67-ae3d4cd2e610\\3b9abe0ed0627ca8987b74d00692cf7bdb9fbbd2812e7acf3d8925b38c6ce0dd\\source.txt",
+    "manifestPath": "C:\\Users\\qianchen\\Documents\\waytoagi-1024-detective-a2-v4\\.cache\\source-documents-v4\\04b6afb7-bd20-47a6-bd67-ae3d4cd2e610\\3b9abe0ed0627ca8987b74d00692cf7bdb9fbbd2812e7acf3d8925b38c6ce0dd\\manifest.json"
+  },
+  "parser": {
+    "name": "readability+source-dom",
+    "version": "readability-0.6.0+jsdom-30.1.3+source-dom-2",
+    "normalization": "source-text/v1",
+    "mode": "STATIC"
+  },
+  "metadata": {
+    "title": "Use chat in VS Code",
+    "author": null,
+    "publishedAt": null,
+    "language": "en"
+  },
+  "completeness": "COMPLETE",
+  "warnings": [],
+  "blocks": [
+    {
+      "start": 0,
+      "end": 32,
+      "id": "b0",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[0]",
+      "headingPath": [],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 34,
+      "end": 53,
+      "id": "b1",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[1]",
+      "headingPath": [],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 55,
+      "end": 62,
+      "id": "b2",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[2]",
+      "headingPath": [
+        "Related"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 64,
+      "end": 87,
+      "id": "b3",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[3]",
+      "headingPath": [
+        "Related"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 89,
+      "end": 158,
+      "id": "b4",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[4]",
+      "headingPath": [
+        "Related"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 160,
+      "end": 189,
+      "id": "b5",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[5]",
+      "headingPath": [
+        "Related"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 191,
+      "end": 210,
+      "id": "b6",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[6]",
+      "headingPath": [
+        "Use chat in VS Code"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 212,
+      "end": 228,
+      "id": "b7",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[7]",
+      "headingPath": [
+        "Use chat in VS Code"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 230,
+      "end": 246,
+      "id": "b8",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[8]",
+      "headingPath": [
+        "Use chat in VS Code"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 248,
+      "end": 264,
+      "id": "b9",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[9]",
+      "headingPath": [
+        "Use chat in VS Code"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 266,
+      "end": 280,
+      "id": "b10",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[10]",
+      "headingPath": [
+        "Use chat in VS Code"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 282,
+      "end": 305,
+      "id": "b11",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[11]",
+      "headingPath": [
+        "Use chat in VS Code"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 307,
+      "end": 547,
+      "id": "b12",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[12]",
+      "headingPath": [
+        "Use chat in VS Code"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 549,
+      "end": 848,
+      "id": "b13",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[13]",
+      "headingPath": [
+        "Use chat in VS Code"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 850,
+      "end": 870,
+      "id": "b14",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[14]",
+      "headingPath": [
+        "Use chat in VS Code",
+        "Choose where to chat"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 872,
+      "end": 1154,
+      "id": "b15",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[15]",
+      "headingPath": [
+        "Use chat in VS Code",
+        "Choose where to chat"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1156,
+      "end": 1301,
+      "id": "b16",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[16]",
+      "headingPath": [
+        "Use chat in VS Code",
+        "Choose where to chat"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1303,
+      "end": 1322,
+      "id": "b17",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[17]",
+      "headingPath": [
+        "Use chat in VS Code",
+        "Send a chat request"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1324,
+      "end": 1631,
+      "id": "b18",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[18]",
+      "headingPath": [
+        "Use chat in VS Code",
+        "Send a chat request"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1633,
+      "end": 1672,
+      "id": "b19",
+      "kind": "CODE",
+      "locator": "source DOM normalized block[19]",
+      "headingPath": [
+        "Use chat in VS Code",
+        "Send a chat request"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1674,
+      "end": 1882,
+      "id": "b20",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[20]",
+      "headingPath": [
+        "Use chat in VS Code",
+        "Send a chat request"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1884,
+      "end": 2027,
+      "id": "b21",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[21]",
+      "headingPath": [
+        "Use chat in VS Code",
+        "Send a chat request"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2029,
+      "end": 2197,
+      "id": "b22",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[22]",
+      "headingPath": [
+        "Use chat in VS Code",
+        "Send a chat request"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2199,
+      "end": 2325,
+      "id": "b23",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[23]",
+      "headingPath": [
+        "Use chat in VS Code",
+        "Send a chat request"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2327,
+      "end": 2510,
+      "id": "b24",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[24]",
+      "headingPath": [
+        "Use chat in VS Code",
+        "Send a chat request"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2512,
+      "end": 2515,
+      "id": "b25",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[25]",
+      "headingPath": [
+        "Use chat in VS Code",
+        "Send a chat request"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2517,
+      "end": 2678,
+      "id": "b26",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[26]",
+      "headingPath": [
+        "Use chat in VS Code",
+        "Send a chat request"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2680,
+      "end": 2711,
+      "id": "b27",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[27]",
+      "headingPath": [
+        "Use chat in VS Code",
+        "Run terminal commands from chat"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2713,
+      "end": 2876,
+      "id": "b28",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[28]",
+      "headingPath": [
+        "Use chat in VS Code",
+        "Run terminal commands from chat"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2878,
+      "end": 2937,
+      "id": "b29",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[29]",
+      "headingPath": [
+        "Use chat in VS Code",
+        "Run terminal commands from chat"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2939,
+      "end": 2948,
+      "id": "b30",
+      "kind": "CODE",
+      "locator": "source DOM normalized block[30]",
+      "headingPath": [
+        "Use chat in VS Code",
+        "Run terminal commands from chat"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2950,
+      "end": 3206,
+      "id": "b31",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[31]",
+      "headingPath": [
+        "Use chat in VS Code",
+        "Run terminal commands from chat"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3208,
+      "end": 3212,
+      "id": "b32",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[32]",
+      "headingPath": [
+        "Use chat in VS Code",
+        "Run terminal commands from chat"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3214,
+      "end": 3387,
+      "id": "b33",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[33]",
+      "headingPath": [
+        "Use chat in VS Code",
+        "Run terminal commands from chat"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3389,
+      "end": 3429,
+      "id": "b34",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[34]",
+      "headingPath": [
+        "Use chat in VS Code",
+        "Send messages while a request is running"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3431,
+      "end": 3646,
+      "id": "b35",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[35]",
+      "headingPath": [
+        "Use chat in VS Code",
+        "Send messages while a request is running"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3648,
+      "end": 3787,
+      "id": "b36",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[36]",
+      "headingPath": [
+        "Use chat in VS Code",
+        "Send messages while a request is running"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3789,
+      "end": 4033,
+      "id": "b37",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[37]",
+      "headingPath": [
+        "Use chat in VS Code",
+        "Send messages while a request is running"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4035,
+      "end": 4125,
+      "id": "b38",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[38]",
+      "headingPath": [
+        "Use chat in VS Code",
+        "Send messages while a request is running"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4127,
+      "end": 4362,
+      "id": "b39",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[39]",
+      "headingPath": [
+        "Use chat in VS Code",
+        "Send messages while a request is running"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4364,
+      "end": 4482,
+      "id": "b40",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[40]",
+      "headingPath": [
+        "Use chat in VS Code",
+        "Send messages while a request is running"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4484,
+      "end": 4657,
+      "id": "b41",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[41]",
+      "headingPath": [
+        "Use chat in VS Code",
+        "Send messages while a request is running"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4659,
+      "end": 4683,
+      "id": "b42",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[42]",
+      "headingPath": [
+        "Use chat in VS Code",
+        "Send messages while a request is running",
+        "Reorder pending messages"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4685,
+      "end": 4909,
+      "id": "b43",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[43]",
+      "headingPath": [
+        "Use chat in VS Code",
+        "Send messages while a request is running",
+        "Reorder pending messages"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4911,
+      "end": 4938,
+      "id": "b44",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[44]",
+      "headingPath": [
+        "Use chat in VS Code",
+        "Add context to your prompts"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4940,
+      "end": 5027,
+      "id": "b45",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[45]",
+      "headingPath": [
+        "Use chat in VS Code",
+        "Add context to your prompts"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5029,
+      "end": 5343,
+      "id": "b46",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[46]",
+      "headingPath": [
+        "Use chat in VS Code",
+        "Add context to your prompts"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5345,
+      "end": 5525,
+      "id": "b47",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[47]",
+      "headingPath": [
+        "Use chat in VS Code",
+        "Add context to your prompts"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5527,
+      "end": 5612,
+      "id": "b48",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[48]",
+      "headingPath": [
+        "Use chat in VS Code",
+        "Add context to your prompts"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5614,
+      "end": 5732,
+      "id": "b49",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[49]",
+      "headingPath": [
+        "Use chat in VS Code",
+        "Add context to your prompts"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5734,
+      "end": 5775,
+      "id": "b50",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[50]",
+      "headingPath": [
+        "Use chat in VS Code",
+        "Add context to your prompts"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5777,
+      "end": 5791,
+      "id": "b51",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[51]",
+      "headingPath": [
+        "Use chat in VS Code",
+        "Image carousel"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5793,
+      "end": 6046,
+      "id": "b52",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[52]",
+      "headingPath": [
+        "Use chat in VS Code",
+        "Image carousel"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 6048,
+      "end": 6160,
+      "id": "b53",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[53]",
+      "headingPath": [
+        "Use chat in VS Code",
+        "Image carousel"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 6162,
+      "end": 6187,
+      "id": "b54",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[54]",
+      "headingPath": [
+        "Use chat in VS Code",
+        "Review and manage changes"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 6189,
+      "end": 6401,
+      "id": "b55",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[55]",
+      "headingPath": [
+        "Use chat in VS Code",
+        "Review and manage changes"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 6403,
+      "end": 6483,
+      "id": "b56",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[56]",
+      "headingPath": [
+        "Use chat in VS Code",
+        "Review and manage changes"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 6485,
+      "end": 6632,
+      "id": "b57",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[57]",
+      "headingPath": [
+        "Use chat in VS Code",
+        "Review and manage changes"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 6634,
+      "end": 6667,
+      "id": "b58",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[58]",
+      "headingPath": [
+        "Use chat in VS Code",
+        "Get notified about chat responses"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 6669,
+      "end": 6846,
+      "id": "b59",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[59]",
+      "headingPath": [
+        "Use chat in VS Code",
+        "Get notified about chat responses"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 6848,
+      "end": 7115,
+      "id": "b60",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[60]",
+      "headingPath": [
+        "Use chat in VS Code",
+        "Get notified about chat responses"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 7117,
+      "end": 7303,
+      "id": "b61",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[61]",
+      "headingPath": [
+        "Use chat in VS Code",
+        "Get notified about chat responses"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 7305,
+      "end": 7346,
+      "id": "b62",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[62]",
+      "headingPath": [
+        "Use chat in VS Code",
+        "Get notified about chat responses"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 7348,
+      "end": 7377,
+      "id": "b63",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[63]",
+      "headingPath": [
+        "Use chat in VS Code",
+        "Get notified about chat responses"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 7379,
+      "end": 7469,
+      "id": "b64",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[64]",
+      "headingPath": [
+        "Use chat in VS Code",
+        "Get notified about chat responses"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 7471,
+      "end": 7538,
+      "id": "b65",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[65]",
+      "headingPath": [
+        "Use chat in VS Code",
+        "Get notified about chat responses"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 7540,
+      "end": 7543,
+      "id": "b66",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[66]",
+      "headingPath": [
+        "Use chat in VS Code",
+        "Get notified about chat responses"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 7545,
+      "end": 7709,
+      "id": "b67",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[67]",
+      "headingPath": [
+        "Use chat in VS Code",
+        "Get notified about chat responses"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 7711,
+      "end": 7738,
+      "id": "b68",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[68]",
+      "headingPath": [
+        "Use chat in VS Code",
+        "Find text in a chat session"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 7740,
+      "end": 7965,
+      "id": "b69",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[69]",
+      "headingPath": [
+        "Use chat in VS Code",
+        "Find text in a chat session"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 7967,
+      "end": 8238,
+      "id": "b70",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[70]",
+      "headingPath": [
+        "Use chat in VS Code",
+        "Find text in a chat session"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 8240,
+      "end": 8244,
+      "id": "b71",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[71]",
+      "headingPath": [
+        "Use chat in VS Code",
+        "Find text in a chat session"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 8246,
+      "end": 8363,
+      "id": "b72",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[72]",
+      "headingPath": [
+        "Use chat in VS Code",
+        "Find text in a chat session"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 8365,
+      "end": 8407,
+      "id": "b73",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[73]",
+      "headingPath": [
+        "Use chat in VS Code",
+        "Navigate between prompts in a chat session"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 8409,
+      "end": 8492,
+      "id": "b74",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[74]",
+      "headingPath": [
+        "Use chat in VS Code",
+        "Navigate between prompts in a chat session"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 8494,
+      "end": 8574,
+      "id": "b75",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[75]",
+      "headingPath": [
+        "Use chat in VS Code",
+        "Navigate between prompts in a chat session"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 8576,
+      "end": 8654,
+      "id": "b76",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[76]",
+      "headingPath": [
+        "Use chat in VS Code",
+        "Navigate between prompts in a chat session"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 8656,
+      "end": 8749,
+      "id": "b77",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[77]",
+      "headingPath": [
+        "Use chat in VS Code",
+        "Navigate between prompts in a chat session"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 8751,
+      "end": 8844,
+      "id": "b78",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[78]",
+      "headingPath": [
+        "Use chat in VS Code",
+        "Navigate between prompts in a chat session"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 8846,
+      "end": 9052,
+      "id": "b79",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[79]",
+      "headingPath": [
+        "Use chat in VS Code",
+        "Navigate between prompts in a chat session"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 9054,
+      "end": 9070,
+      "id": "b80",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[80]",
+      "headingPath": [
+        "Use chat in VS Code",
+        "Personalize chat"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 9072,
+      "end": 9181,
+      "id": "b81",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[81]",
+      "headingPath": [
+        "Use chat in VS Code",
+        "Personalize chat"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 9183,
+      "end": 9209,
+      "id": "b82",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[82]",
+      "headingPath": [
+        "Use chat in VS Code",
+        "Personalize chat",
+        "Customize the chat display"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 9211,
+      "end": 9260,
+      "id": "b83",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[83]",
+      "headingPath": [
+        "Use chat in VS Code",
+        "Personalize chat",
+        "Customize the chat display"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 9262,
+      "end": 10519,
+      "id": "b84",
+      "kind": "TABLE",
+      "locator": "source DOM normalized block[84]",
+      "headingPath": [
+        "Use chat in VS Code",
+        "Personalize chat",
+        "Customize the chat display"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 10521,
+      "end": 10921,
+      "id": "b85",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[85]",
+      "headingPath": [
+        "Use chat in VS Code",
+        "Personalize chat",
+        "Customize the chat display"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 10923,
+      "end": 10990,
+      "id": "b86",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[86]",
+      "headingPath": [
+        "Use chat in VS Code",
+        "Personalize chat",
+        "Customize the chat display"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 10992,
+      "end": 11049,
+      "id": "b87",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[87]",
+      "headingPath": [
+        "Use chat in VS Code",
+        "Personalize chat",
+        "Customize the chat display"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 11051,
+      "end": 11094,
+      "id": "b88",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[88]",
+      "headingPath": [
+        "Use chat in VS Code",
+        "Personalize chat",
+        "Customize the Agents window chat background"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 11096,
+      "end": 11187,
+      "id": "b89",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[89]",
+      "headingPath": [
+        "Use chat in VS Code",
+        "Personalize chat",
+        "Customize the Agents window chat background"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 11189,
+      "end": 11304,
+      "id": "b90",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[90]",
+      "headingPath": [
+        "Use chat in VS Code",
+        "Personalize chat",
+        "Customize the Agents window chat background"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 11306,
+      "end": 11504,
+      "id": "b91",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[91]",
+      "headingPath": [
+        "Use chat in VS Code",
+        "Personalize chat",
+        "Customize the Agents window chat background"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 11506,
+      "end": 11571,
+      "id": "b92",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[92]",
+      "headingPath": [
+        "Use chat in VS Code",
+        "Personalize chat",
+        "Customize the Agents window chat background"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 11573,
+      "end": 11635,
+      "id": "b93",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[93]",
+      "headingPath": [
+        "Use chat in VS Code",
+        "Personalize chat",
+        "Customize the Agents window chat background"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 11637,
+      "end": 11681,
+      "id": "b94",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[94]",
+      "headingPath": [
+        "Use chat in VS Code",
+        "Personalize chat",
+        "Customize the Agents window chat background"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 11683,
+      "end": 11751,
+      "id": "b95",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[95]",
+      "headingPath": [
+        "Use chat in VS Code",
+        "Personalize chat",
+        "Customize the Agents window chat background"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 11753,
+      "end": 12059,
+      "id": "b96",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[96]",
+      "headingPath": [
+        "Use chat in VS Code",
+        "Personalize chat",
+        "Customize the Agents window chat background"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 12061,
+      "end": 12065,
+      "id": "b97",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[97]",
+      "headingPath": [
+        "Use chat in VS Code",
+        "Personalize chat",
+        "Customize the Agents window chat background"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 12067,
+      "end": 12218,
+      "id": "b98",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[98]",
+      "headingPath": [
+        "Use chat in VS Code",
+        "Personalize chat",
+        "Customize the Agents window chat background"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 12220,
+      "end": 12380,
+      "id": "b99",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[99]",
+      "headingPath": [
+        "Use chat in VS Code",
+        "Personalize chat",
+        "Customize the Agents window chat background"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 12382,
+      "end": 12402,
+      "id": "b100",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[100]",
+      "headingPath": [
+        "Use chat in VS Code",
+        "Get better responses"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 12404,
+      "end": 12484,
+      "id": "b101",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[101]",
+      "headingPath": [
+        "Use chat in VS Code",
+        "Get better responses"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 12486,
+      "end": 12695,
+      "id": "b102",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[102]",
+      "headingPath": [
+        "Use chat in VS Code",
+        "Get better responses"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 12697,
+      "end": 13001,
+      "id": "b103",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[103]",
+      "headingPath": [
+        "Use chat in VS Code",
+        "Get better responses"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 13003,
+      "end": 13152,
+      "id": "b104",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[104]",
+      "headingPath": [
+        "Use chat in VS Code",
+        "Get better responses"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 13154,
+      "end": 13216,
+      "id": "b105",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[105]",
+      "headingPath": [
+        "Use chat in VS Code",
+        "Get better responses"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 13218,
+      "end": 13248,
+      "id": "b106",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[106]",
+      "headingPath": [
+        "Use chat in VS Code",
+        "Troubleshoot chat interactions"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 13250,
+      "end": 13668,
+      "id": "b107",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[107]",
+      "headingPath": [
+        "Use chat in VS Code",
+        "Troubleshoot chat interactions"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 13670,
+      "end": 13677,
+      "id": "b108",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[108]",
+      "headingPath": [
+        "Use chat in VS Code",
+        "Support"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 13679,
+      "end": 13782,
+      "id": "b109",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[109]",
+      "headingPath": [
+        "Use chat in VS Code",
+        "Support"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 13784,
+      "end": 13903,
+      "id": "b110",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[110]",
+      "headingPath": [
+        "Use chat in VS Code",
+        "Support"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 13905,
+      "end": 13922,
+      "id": "b111",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[111]",
+      "headingPath": [
+        "Use chat in VS Code",
+        "Related resources"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 13924,
+      "end": 13956,
+      "id": "b112",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[112]",
+      "headingPath": [
+        "Use chat in VS Code",
+        "Related resources"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 13958,
+      "end": 13981,
+      "id": "b113",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[113]",
+      "headingPath": [
+        "Use chat in VS Code",
+        "Related resources"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 13983,
+      "end": 13998,
+      "id": "b114",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[114]",
+      "headingPath": [
+        "Use chat in VS Code",
+        "Related resources"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 14000,
+      "end": 14010,
+      "id": "b115",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[115]",
+      "headingPath": [
+        "Use chat in VS Code",
+        "Related resources"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    }
+  ],
+  "links": [
+    {
+      "url": "https://githubuniverse.com/?source=vsc-website-banner",
+      "text": "Join VS Code at GitHub Universe!",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[22]"
+    },
+    {
+      "url": "https://code.visualstudio.com/docs/agents/agents-tutorial",
+      "text": "Start agentic coding tutorial",
+      "blockId": "b5",
+      "relation": "LINK",
+      "locator": "source DOM link[235]"
+    },
+    {
+      "url": "https://code.visualstudio.com/docs/chat/chat-overview.md",
+      "text": "View as Markdown",
+      "blockId": "b9",
+      "relation": "LINK",
+      "locator": "source DOM link[236]"
+    },
+    {
+      "url": "https://code.visualstudio.com/docs/agents/overview",
+      "text": "Build with AI in VS Code",
+      "blockId": "b13",
+      "relation": "LINK",
+      "locator": "source DOM link[239]"
+    },
+    {
+      "url": "https://code.visualstudio.com/docs/agents/run/overview",
+      "text": "Run agents",
+      "blockId": "b15",
+      "relation": "LINK",
+      "locator": "source DOM link[240]"
+    },
+    {
+      "url": "https://code.visualstudio.com/docs/chat/inline-chat",
+      "text": "inline chat",
+      "blockId": "b16",
+      "relation": "LINK",
+      "locator": "source DOM link[241]"
+    },
+    {
+      "url": "https://code.visualstudio.com/docs/configure/accessibility/voice",
+      "text": "Voice Mode",
+      "blockId": "b20",
+      "relation": "LINK",
+      "locator": "source DOM link[243]"
+    },
+    {
+      "url": "https://code.visualstudio.com/docs/agent-customization/agent-skills",
+      "text": "agent skills",
+      "blockId": "b22",
+      "relation": "LINK",
+      "locator": "source DOM link[245]"
+    },
+    {
+      "url": "https://code.visualstudio.com/docs/agents/run/sessions/manage-sessions",
+      "text": "Manage agent sessions",
+      "blockId": "b23",
+      "relation": "LINK",
+      "locator": "source DOM link[246]"
+    },
+    {
+      "url": "https://code.visualstudio.com/docs/agents/run/agent-harnesses",
+      "text": "compare agent harnesses",
+      "blockId": "b24",
+      "relation": "LINK",
+      "locator": "source DOM link[247]"
+    },
+    {
+      "url": "https://code.visualstudio.com/docs/terminal/getting-started",
+      "text": "integrated terminal",
+      "blockId": "b33",
+      "relation": "LINK",
+      "locator": "source DOM link[250]"
+    },
+    {
+      "url": "https://code.visualstudio.com/docs/agents/run/review-code-edits",
+      "text": "restore a checkpoint",
+      "blockId": "b39",
+      "relation": "LINK",
+      "locator": "source DOM link[251]"
+    },
+    {
+      "url": "https://code.visualstudio.com/docs/agents/guides/get-agent-back-on-track",
+      "text": "Get an agent back on track",
+      "blockId": "b40",
+      "relation": "LINK",
+      "locator": "source DOM link[252]"
+    },
+    {
+      "url": "https://code.visualstudio.com/docs/agents/concepts/context",
+      "text": "implicit context works",
+      "blockId": "b46",
+      "relation": "LINK",
+      "locator": "source DOM link[253]"
+    },
+    {
+      "url": "https://code.visualstudio.com/docs/debugtest/integrated-browser",
+      "text": "integrated browser",
+      "blockId": "b49",
+      "relation": "LINK",
+      "locator": "source DOM link[254]"
+    },
+    {
+      "url": "https://code.visualstudio.com/docs/chat/copilot-chat-context",
+      "text": "managing context for AI",
+      "blockId": "b50",
+      "relation": "LINK",
+      "locator": "source DOM link[255]"
+    },
+    {
+      "url": "https://code.visualstudio.com/docs/configure/accessibility/accessibility",
+      "text": "Accessible Diff Viewer",
+      "blockId": "b56",
+      "relation": "LINK",
+      "locator": "source DOM link[256]"
+    },
+    {
+      "url": "https://code.visualstudio.com/docs/agents/run/review-code-edits",
+      "text": "Review AI-generated code edits",
+      "blockId": "b57",
+      "relation": "LINK",
+      "locator": "source DOM link[257]"
+    },
+    {
+      "url": "https://code.visualstudio.com/docs/configure/accessibility/accessibility",
+      "text": "Accessible View",
+      "blockId": "b79",
+      "relation": "LINK",
+      "locator": "source DOM link[258]"
+    },
+    {
+      "url": "https://code.visualstudio.com/docs/agents/reference/ai-settings",
+      "text": "AI settings reference",
+      "blockId": "b87",
+      "relation": "LINK",
+      "locator": "source DOM link[259]"
+    },
+    {
+      "url": "https://code.visualstudio.com/docs/agents/guides/prompt-examples",
+      "text": "prompt examples",
+      "blockId": "b102",
+      "relation": "LINK",
+      "locator": "source DOM link[260]"
+    },
+    {
+      "url": "https://code.visualstudio.com/docs/agents/best-practices",
+      "text": "prompt engineering guide",
+      "blockId": "b102",
+      "relation": "LINK",
+      "locator": "source DOM link[261]"
+    },
+    {
+      "url": "https://code.visualstudio.com/docs/agent-customization/custom-instructions",
+      "text": "custom instructions",
+      "blockId": "b103",
+      "relation": "LINK",
+      "locator": "source DOM link[262]"
+    },
+    {
+      "url": "https://code.visualstudio.com/docs/agent-customization/prompt-files",
+      "text": "prompt files",
+      "blockId": "b103",
+      "relation": "LINK",
+      "locator": "source DOM link[263]"
+    },
+    {
+      "url": "https://code.visualstudio.com/docs/agent-customization/custom-agents",
+      "text": "custom agents",
+      "blockId": "b103",
+      "relation": "LINK",
+      "locator": "source DOM link[264]"
+    },
+    {
+      "url": "https://code.visualstudio.com/docs/agent-customization/mcp-servers",
+      "text": "MCP servers",
+      "blockId": "b104",
+      "relation": "LINK",
+      "locator": "source DOM link[265]"
+    },
+    {
+      "url": "https://code.visualstudio.com/docs/agent-customization/overview",
+      "text": "Customize agent behavior in VS Code",
+      "blockId": "b105",
+      "relation": "LINK",
+      "locator": "source DOM link[266]"
+    },
+    {
+      "url": "https://code.visualstudio.com/docs/agents/agent-troubleshooting/chat-debug-view",
+      "text": "Agent Logs and the Chat Debug view",
+      "blockId": "b107",
+      "relation": "LINK",
+      "locator": "source DOM link[267]"
+    },
+    {
+      "url": "https://support.github.com/",
+      "text": "https://support.github.com",
+      "blockId": "b109",
+      "relation": "LINK",
+      "locator": "source DOM link[268]"
+    },
+    {
+      "url": "https://copilot.github.trust.page/faq",
+      "text": "GitHub Copilot Trust Center FAQ",
+      "blockId": "b110",
+      "relation": "LINK",
+      "locator": "source DOM link[269]"
+    },
+    {
+      "url": "https://code.visualstudio.com/docs/agents/run/sessions/manage-sessions",
+      "text": "Create and manage agent sessions",
+      "blockId": "b112",
+      "relation": "LINK",
+      "locator": "source DOM link[270]"
+    },
+    {
+      "url": "https://code.visualstudio.com/docs/agents/run/agent-harnesses",
+      "text": "Choose an agent harness",
+      "blockId": "b113",
+      "relation": "LINK",
+      "locator": "source DOM link[271]"
+    },
+    {
+      "url": "https://code.visualstudio.com/docs/agents/guides/prompt-examples",
+      "text": "Prompt examples",
+      "blockId": "b114",
+      "relation": "LINK",
+      "locator": "source DOM link[272]"
+    }
+  ],
+  "tables": [
+    {
+      "blockId": "b84",
+      "rows": [
+        {
+          "start": 9262,
+          "end": 9285,
+          "cells": [
+            {
+              "start": 9262,
+              "end": 9276,
+              "text": "Display option",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 9277,
+              "end": 9285,
+              "text": "Settings",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 9286,
+          "end": 9461,
+          "cells": [
+            {
+              "start": 9286,
+              "end": 9299,
+              "text": "Markdown font",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 9300,
+              "end": 9461,
+              "text": "Set the font family with chat.fontFamily Open in VS Code Open in VS Code Insiders and the font size with chat.fontSize Open in VS Code Open in VS Code Insiders .",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 9462,
+          "end": 9901,
+          "cells": [
+            {
+              "start": 9462,
+              "end": 9488,
+              "text": "Code block font and layout",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 9489,
+              "end": 9901,
+              "text": "Set the font family, size, weight, and line height with chat.editor.fontFamily Open in VS Code Open in VS Code Insiders , chat.editor.fontSize Open in VS Code Open in VS Code Insiders , chat.editor.fontWeight Open in VS Code Open in VS Code Insiders , and chat.editor.lineHeight Open in VS Code Open in VS Code Insiders . Control line wrapping with chat.editor.wordWrap Open in VS Code Open in VS Code Insiders .",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 9902,
+          "end": 10060,
+          "cells": [
+            {
+              "start": 9902,
+              "end": 9916,
+              "text": "Sticky prompts",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 9917,
+              "end": 10060,
+              "text": "Use chat.stickyScroll.enabled Open in VS Code Open in VS Code Insiders to pin the current prompt to the top of the transcript while you scroll.",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 10061,
+          "end": 10257,
+          "cells": [
+            {
+              "start": 10061,
+              "end": 10079,
+              "text": "Request timestamps",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 10080,
+              "end": 10257,
+              "text": "Use chat.verbose Open in VS Code Open in VS Code Insiders to show or hide request and completion timestamps. Hover over a completion timestamp to view the elapsed response time.",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 10258,
+          "end": 10519,
+          "cells": [
+            {
+              "start": 10258,
+              "end": 10292,
+              "text": "Persistent progress (Experimental)",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 10293,
+              "end": 10519,
+              "text": "Use chat.experimental.persistentProgress Open in VS Code Open in VS Code Insiders to keep a progress indicator visible until an agent response finishes. Choose a colored or monochrome Draw animation, or turn the indicator off.",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

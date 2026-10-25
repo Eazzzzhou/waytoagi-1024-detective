@@ -1,0 +1,6196 @@
+{
+  "schemaVersion": "source-document/v1",
+  "id": "340a24f0da9c80dc72310ae74c1e219aaa5774efb6cf162bc5f436f62571234d",
+  "version": "7d8ea6eb3a0c0ae34f22830d4daa3cea8b8008c7be45a0456574cf3f0569d214",
+  "requestedUrl": "https://blog.csdn.net/lrt369805210/article/details/164253677",
+  "finalUrl": "https://blog.csdn.net/lrt369805210/article/details/164253677",
+  "retrievedAt": "2026-10-25T04:24:00.776Z",
+  "contentType": "text/html;charset=utf-8",
+  "status": "READ",
+  "readError": null,
+  "rawHash": "4822273e2af9accf2af39518308827c568ad8f67e3757cf89a105fc0b2e6782f",
+  "textHash": "d95b6598bd3fed7b4ae80a410ca825d44b966aa56636b233d5849e9838743245",
+  "text": "首页 博客 下载 学习 社区 模型市场 AI搜索 AtomGit InsCode 技术会议 墨衍 MoGrow 收藏 历史 会员中心 创作中心\n\nAI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源\n\n半熟AI蒸馏室 墨衍会员 · AI 创作全网分发 墨衍智能分发 本文由作者通过墨衍一键同步至各平台 7分发平台 500+累计阅读 82平均单平台 已同步平台 CSDN 微信公众号 微博 知乎 百家号 抖音 小红书 掘金 博客园 你的文章也可以这样分发 墨衍会员 ¥399起/年，写一次发全网 我也要 码龄6年 关注 原创 最新推荐文章于 2026-10-22 11:29:32 发布 576 阅读 AI 写同款· GEO 优化 ›\n\n阿里巴巴 研发岗 面试 总结（干货） 一遍一遍地刷阿里网站，今天发现“面试中”变成“待跟进offer”了，写个面经攒人品，希望offer通知邮件早点来吧。 我当时投简历时投了C/C++工程师，其实也没经过啥考虑，因为我一开始是把重点放在进网易游戏或者腾讯游戏部门，投阿里就纯粹出于增加点面试经验，随便找了个C/C++工程师岗位就找人内推了(后转为算法工程师)。 一面（3月16日）：电话打来时手机显示北京电话，还以为是诈骗的（囧... 阅读详情\n\n摘要：AI 能快速给出答案和链接，但搜索结果不等于证据。本文基于 SIFT 四步法，用 GitHub Copilot Free 的真实资料演示如何调查来源、追溯原文、识别过期信息，并整理出可直接复用的检索模板。\n\n关键词：AI搜索、SIFT四步法、信息检索、事实核查、GitHub Copilot、人工智能、新手教程\n\n有些 AI 回答并不是假的，麻烦在于它曾经是真的。\n\n比如你问：\n\nGitHub Copilot Free 每个月是不是有 2,000 次代码补全和 50 条聊天消息？\n\n你很容易搜到一份 GitHub 官方公告。标题、日期、数字都对，来源也足够正式。到这里，很多人会觉得已经查完了。\n\n但这份公告发布于 2024 年 12 月。到了 2026 年，GitHub 当前套餐文档仍写着 Copilot Free 每月最多 2,000 次补全，套餐页对 AI 用量和模型使用则已经采用 GitHub AI Credits、自动模型选择等表述。旧公告能证明“发布时怎样”，却不足以单独证明“现在仍然怎样”。\n\n这就是 AI 搜索里最容易漏掉的一层：找到一个支持答案的链接，不等于找到了适合当前问题的证据。\n\n上一篇文章解决的是“AI 已经给出一段答案，怎样快速检查其中的数字、日期和范围”。这一篇再往前走一步：从一条二手说法出发，怎样离开当前页面，调查来源，并追到更适合回答问题的原始材料。\n\n这套方法不是我临时编出来的。核心来自 Mike Caulfield 提出的 SIFT 四步法，同时参考了 Civic Online Reasoning 的横向阅读方法和 ACRL 信息素养框架。为了适应 AI 检索，我只额外增加两项操作：先拆分待核验主张，最后保留证据记录。\n\n一、为什么“让 AI 再搜一次”通常解决不了问题\n\n当一条回答让人不放心，最直接的反应往往是：\n\n再问一次同一个 AI；\n\n换一个模型重新回答；\n\n让它多给几个链接；\n\n打开排名最靠前的搜索结果。\n\n这些动作可能带来更多内容，却未必带来新的证据。\n\n两款模型可能引用同一篇旧公告；十篇文章可能都转载自同一份新闻稿；搜索摘要里的一句话，也可能省略了正文里的时间和限制条件。\n\n还有一种更隐蔽的情况：来源本身没有问题，只是不适合回答你现在的问题。\n\n发布公告适合回答“当时推出了什么”；当前帮助文档更适合回答“现在能用什么”；价格页适合核对套餐，但不一定能证明产品效果；企业自己的案例可以说明它如何描述自己，却不能单独证明它优于所有竞品。\n\n所以检索真正要解决的不是“有没有链接”，而是三个问题：\n\n谁发布了这条信息？\n\n这个来源具体支持哪一句话？\n\n它是否适合回答当前时间、范围和用途下的问题？\n\n二、SIFT 四步法到底是什么\n\nSIFT 不是一个 AI 提示词，也不是“看网站是否专业”的评分表。\n\nMike Caulfield 在公开说明中把它概括为四个动作：\n\nSIFT 动作要解决的问题实际动作Stop，先停一下我现在究竟要确认什么？暂停阅读和转发，明确任务与风险Investigate the source，调查来源这是谁发布的，专业性和利益关系是什么？离开当前页面，查看外部资料如何评价这个来源Find better coverage，寻找更好的报道或材料有没有更适合回答当前问题的来源？找当前文档、权威资料和不同证据链Trace to the original context，追溯原始语境这句话、数字或图片原本出现在什么上下文里？回到公告、论文、数据表或完整记录\n\nSIFT 的重点不是在一张陌生网页里读得更久，而是适时离开它。\n\nCivic Online Reasoning 将这种做法称为“横向阅读”：遇到不熟悉的来源时，打开新的页面，看看可信来源如何描述它，而不是只在原网站内部寻找“关于我们”和自我介绍。\n\nACRL 的信息素养框架也提醒了两个容易被忽略的事实：\n\n权威性与使用场景有关，同一份材料不适合证明所有结论；\n\n检索通常是非线性、反复调整的过程，第一轮搜索没有得到合适结果很正常。\n\n三、开始搜索前，先把问题改成“证据任务”\n\n“帮我查一下 Copilot Free 能不能用”太宽了。\n\nAI 会把功能、价格、地区和主观建议混在一起，最后给你一个看起来完整、实际上很难核验的答案。\n\n更有效的做法，是先写一张很短的检索任务卡：\n\n字段本文案例待核验主张Copilot Free 当前每月提供 2,000 次代码补全和 50 条聊天消息核对截止日期2026 年 8 月 31 日适用对象个人开发者的 Copilot Free 套餐优先来源GitHub 当前套餐文档、帮助文档、正式公告可接受结论当前成立 / 历史上成立 / 部分成立 / 暂无法确认\n\n这里最重要的是“截止日期”。\n\n如果没有这个字段，AI 找到 2024 年的官方公告，也可以理直气壮地说自己给了官方来源。但我们要问的是当前套餐，证据自然要优先选择当前维护的文档。\n\n可以把任务直接写成下面这样：\n\n请核验下面的主张，不要先回答“是”或“否”。\n\n待核验主张：\nGitHub Copilot Free 当前每月提供 2,000 次代码补全和 50 条聊天消息。\n\n核对截止日期：2026 年 8 月 31 日\n适用对象：个人开发者的 Copilot Free 套餐\n\n请分别核对“2,000 次代码补全”和“50 条聊天消息”。\n优先查找 GitHub 当前套餐文档、帮助文档和正式公告。\n对每个来源记录标题、发布日期或核对日期、原文摘录、链接和适用范围。\n如果只能证明过去成立，请明确标记为“历史上成立”，不要写成当前事实。\n\n这段提示词不会自动保证答案正确。它的作用，是让检索任务不再含糊，也让后面的人工检查有明确对象。\n\n四、真实案例：一句官方说法，为什么到了今天不能直接引用\n\n现在按 SIFT 四步完整走一遍。\n\n待核验主张是：\n\nGitHub Copilot Free 当前每月提供 2,000 次代码补全和 50 条聊天消息。\n\n第一步：Stop，先把一句话拆成两个主张\n\n这句话其实包含两个独立数字：\n\nCopilot Free 当前每月最多有 2,000 次代码补全；\n\nCopilot Free 当前每月有 50 条聊天消息。\n\n它们可能来自同一份旧公告，但不代表今天仍然同时成立。\n\n还要注意两个限定词：\n\n“当前”：要求证据能够反映 2026 年 8 月 31 日附近的产品状态；\n\n“Copilot Free”：不能拿 Copilot Pro、学生套餐或组织套餐的额度替代。\n\n拆到这里以后，搜索方向已经很清楚了。我们不再搜索“Copilot 好不好用”，而是分别核对两个当前额度。\n\n第二步：Investigate，先判断手里的来源是什么\n\nGitHub 在 2024 年 12 月 18 日发布了《Announcing GitHub Copilot Free》。\n\n公告原文写道：\n\nBy simply signing in with your personal GitHub account, you will have access to 2000 Code Completions and 50 chat messages per month.\n\n这是一份真实的 GitHub 官方公告。它足以证明：\n\n2024 年 12 月发布 Copilot Free 时，官方公布了这两个额度；\n\n这不是第三方媒体自己编出的数字。\n\n但它仍然不能单独证明：\n\n2026 年当前套餐继续沿用同一计量方式；\n\n中间没有改版、调整模型或更换额度体系。\n\n“官方来源”解决了来源身份问题，却没有自动解决时效问题。\n\n第三步：Find better coverage，找更适合回答“当前状态”的材料\n\n要回答当前套餐，GitHub 正在维护的《Plans for GitHub Copilot》比两年前的发布公告更合适。\n\n我在 2026 年 8 月 31 日核对该页面时，文档显示：\n\nCopilot Free 的内联建议每月最多 2,000 次补全；\n\nCopilot Free 拥有一定额度的 GitHub AI Credits；\n\nCopilot Free 和 Copilot Student 通过自动模型选择使用模型；\n\nCopilot Free 只面向没有通过组织或企业获得 Copilot 权限的个人开发者。\n\n这里出现了关键变化：当前文档仍能直接支持“2,000 次补全”，但当前套餐的 AI 用量说明已经采用 AI Credits 等表述，并没有继续用 2024 年公告中的“每月 50 条聊天消息”作为当前套餐表述。\n\n因此，不能因为旧公告真实，就把两个旧数字一起复制到今天。\n\n第四步：Trace，追溯原始语境再下结论\n\n把两份官方资料放回各自语境：\n\n来源能证明什么不能单独证明什么2024 年 12 月 18 日发布公告Copilot Free 发布时公布了 2,000 次补全和 50 条聊天消息2026 年仍沿用同样的聊天计量规则2026 年 8 月 31 日读取的当前套餐文档当前仍列出每月最多 2,000 次补全，并使用 AI Credits 描述部分 AI 用量旧公告中的 50 条聊天消息仍是当前额度\n\n最后可以发布的结论应该是：\n\nGitHub 在 2024 年 12 月发布 Copilot Free 时，官方公告写明每月提供 2,000 次代码补全和 50 条聊天消息。截至 2026 年 8 月 31 日，GitHub 当前套餐文档仍列出每月最多 2,000 次补全，套餐页对 AI 用量和模型使用则已经采用 GitHub AI Credits、自动模型选择等表述。因此，“50 条聊天消息”可以作为历史发布信息引用，不宜在缺少当前文档支持的情况下继续写成现行额度。\n\n注意这个结论没有说“50 条已经被取消”。\n\n当前资料足以说明旧公告不能单独代表现在，却不足以让我们凭空补出一个新的聊天额度。证据到哪里，结论就停在哪里。\n\n五、什么才算“更好的来源”\n\nSIFT 里的 Find better coverage，不是机械地寻找更多网页。\n\n所谓“更好”，要看它是否更贴近当前问题。\n\n你想确认什么通常优先寻找仍需注意当前功能和套餐当前帮助文档、套餐页、更新日志地区、账号类型和灰度范围某次发布时说了什么原始公告、发布会、完整演讲不要自动延伸到当前论文得出了什么论文原文、补充材料、勘误样本、方法和结论限制政策现在如何执行发布机关的现行文件与解释生效日期、地区和废止情况公司披露的数字财报、监管文件、原始数据表统计口径和报告周期产品是否“更好”独立测试、可复现实验、多方评价指标是否适合你的场景\n\n原始来源也不是免检标签。\n\n企业官网适合证明“企业当前如何描述自己的套餐”，不适合单独证明“产品效果行业第一”；论文原文适合核对研究结论，也需要查看样本、方法和局限；政府文件能证明规定内容，还要确认是否现行有效。\n\n可以记住一个简单判断：\n\n不是问“这个网站够不够权威”，而是问“它有没有资格证明我正在写的这句话”。\n\n六、搜索时怎样更快追到原文\n\n没有必要一开始就写很长的自然语言问题。检索词越接近材料本身，越容易绕开大量二手解释。\n\n1. 从独特短语反查\n\n如果 AI 给出了一句看起来像原文的表述，可以截取其中最独特的 6—12 个词，加英文引号搜索。\n\n本文案例可以搜索：\n\n\"2000 Code Completions\" \"50 chat messages\"\n\n这一步很快就能定位到 2024 年的 GitHub 发布公告。\n\n2. 限定可能发布原文的网站\n\nsite:docs.github.com Copilot Free plans\nsite:github.blog/changelog Copilot Free\nsite:github.com/features/copilot plans\n\nsite: 不能保证页面正确，但可以明显减少转载站和聚合内容。\n\n3. 把时间和状态词加进去\n\n对于会变化的产品信息，可以加入：\n\ncurrent\npricing\nplans\nlimits\nrelease notes\nupdated\ndeprecated\n\n中文政策或公告则可以加入发布机关、文号、生效、修订、废止等字段。\n\n4. 搜索旧说法，也搜索新术语\n\n如果当前文档已经换了计量方式，只盯着“50 chat messages”可能一直回到旧公告。\n\n在本文案例中，继续搜索 Copilot Free 与 AI Credits，才能发现当前套餐的描述方式已经发生变化。\n\n这也是为什么检索不是一次命中。第一份来源经常只是告诉你：下一轮应该改用什么词继续找。\n\n七、AI 在这套流程里最适合做什么\n\nAI 可以显著减少整理工作，但不要让它既当回答者，又当唯一的证人。\n\n它最适合承担四类任务：\n\n把一段回答拆成独立主张；\n\n为不同主张设计检索词；\n\n对比两份已经打开的原文；\n\n将来源、摘录、日期和结论整理成证据表。\n\n提示词一：生成检索路线，不急着下结论\n\n我需要核验下面的主张。请先设计检索路线，不要直接凭已有知识回答。\n\n主张：<填写>\n核对截止日期：<填写>\n适用范围：<地区、版本、套餐、样本或人群>\n\n请输出：\n1. 需要分别核验的子主张；\n2. 每个子主张最合适的原始来源类型；\n3. 第一轮检索词；\n4. 找到旧公告后，怎样继续定位当前材料；\n5. 哪些情况只能标记为“暂无法确认”。\n\n不要编造网页标题、数字和链接。\n\n提示词二：只比较我提供的两份原文\n\n下面是同一主题的两份材料：\nA：较早的发布公告\nB：当前维护的帮助文档\n\n请只依据我提供的原文，逐项比较：\n- 两份材料共同支持的内容；\n- 只在 A 中出现的内容；\n- 只在 B 中出现的内容；\n- 术语、额度、适用对象和计量方式是否变化；\n- 哪些旧说法不能继续写成当前事实。\n\n对每个判断附上对应原句。没有证据时写“材料未说明”，不要自行补全。\n\n提示词三：把证据压回可发布表述\n\n请根据下面的证据表改写结论。\n\n要求：\n- 当前来源直接支持的内容，可以写成确定事实；\n- 只被旧资料支持的内容，标记为“历史上成立”；\n- 来源没有说明的内容，写成“暂无法确认”；\n- 不把“没有找到”改写成“已经不存在”；\n- 保留日期、地区、版本和套餐范围；\n- 每句话后标注对应来源编号。\n\n证据表：\n<粘贴>\n\n这里有个很实用的习惯：让 AI 输出“材料未说明”。\n\n很多错误不是模型看错了原文，而是它觉得回答不够完整，于是用常识或旧知识把空缺补上。允许它停下来，反而更可靠。\n\n八、保留一张证据表，别只保存一堆书签\n\n浏览器里开了十几个标签页，并不等于检索结果可以交付。\n\n真正有用的是一张能回答“哪份材料支持哪句话”的表：\n\n| 编号 | 待核验主张 | 来源与链接 | 发布/核对日期 | 原文摘录 | 适用范围 | 状态 | 可发布表述 |\n|---|---|---|---|---|---|---|---|\n| S1 |  |  |  |  |  | 当前确认/历史成立/部分成立/暂无法确认/冲突 |  |\n\n本文案例可以这样记录：\n\n编号待核验主张来源时间状态S1发布时有 2,000 次补全和 50 条聊天消息GitHub 2024 发布公告2024-12-18历史上成立S2当前仍有每月最多 2,000 次补全GitHub 当前套餐文档2026-08-31 核对当前确认S3当前仍固定为 50 条聊天消息GitHub 当前套餐文档未沿用该表述2026-08-31 核对暂无法按旧说法确认\n\n书签只能告诉你“我看过这些页面”。证据表才能告诉下一位读者：结论是怎样从原文里得出来的。\n\n九、什么时候可以停止搜索\n\n检索很容易变成无止境地开标签页。SIFT 的第一个动作 Stop，也包括在过程中停下来重新确认任务。\n\n低风险问题通常满足下面几项，就可以结束：\n\n已找到适合当前时间和场景的直接来源；\n\n关键主张都能对应到具体原文；\n\n日期、版本、地区和对象没有错位；\n\n不同来源之间没有影响结论的明显冲突；\n\n对无法确认的部分已经降低语气，而不是继续猜。\n\n如果遇到以下情况，就不应该只靠普通网页检索结束：\n\n医疗、法律、投资、税务等高风险决策；\n\n原始资料互相冲突；\n\n关键数据只能在付费报告或缺失附件中找到；\n\n结论会影响他人权益或造成不可逆损失；\n\n需要行业资质才能正确解释的专业材料。\n\n有时候最准确的交付不是一个“是”或“否”，而是把目前能确认的边界写清楚。\n\n十、五个看起来认真、其实不够可靠的检索习惯\n\n只看搜索结果摘要\n\n摘要可能被截断，也可能来自页面旧版本。它适合帮助你选页面，不适合直接当引文。\n\n给了三个链接，就当成三份证据\n\n如果三篇文章都引用同一份公告，证据链仍然只有一条。应该继续追到共同来源。\n\n官方页面支持产品存在，就顺便相信效果宣传\n\n“提供某功能”和“该功能效果最好”是两个主张，需要不同证据。\n\n换一个模型得到同样答案，就算交叉验证\n\n模型可能引用相同网页、相同训练数据或同一条过时说法。模型之间的一致不是来源独立。\n\n搜不到反例，就写成已经证实\n\n没有找到反驳，不等于已经证明。先确认正面证据是否直接、当前且范围一致。\n\n十一、一份可以直接复制的 SIFT 检索模板\n\n你是我的资料检索助手。目标不是尽快给出完整答案，而是帮助我找到能支持结论的原始材料。\n\n【问题】\n<填写>\n\n【待核验主张】\n<填写，一行一个>\n\n【核对截止日期】\n<填写>\n\n【适用范围】\n地区：\n版本：\n套餐/账号：\n人群或样本：\n\n请按下面流程执行：\n\n1. Stop\n   说明这个问题中哪些词需要先定义，哪些主张一旦出错会改变结论。\n\n2. Investigate the source\n   对找到的来源说明发布者、材料类型、发布时间、专业性和可能的利益关系。\n   不要只引用来源自己的“关于我们”。\n\n3. Find better coverage\n   优先寻找当前官方文档、原始论文、正式文件、数据集或完整记录。\n   多个来源必须说明是否相互独立。\n\n4. Trace to the original context\n   将数字、引用、图片或结论追溯到最早可用原文，保留上下文和限制条件。\n\n【输出】\n- 先给证据表，不先写总结；\n- 每条证据包含标题、链接、日期、原文摘录和适用范围；\n- 区分“当前确认、历史上成立、部分成立、暂无法确认、与来源冲突”；\n- 搜不到时明确说明检索过哪些位置；\n- 不编造来源，不用搜索摘要代替正文；\n- 最后把结论改写到证据能够支持的程度。\n\n这份模板可以交给 ChatGPT、Claude、Gemini、Codex 或其他支持检索、读取网页的工具。不同产品的联网能力和引用质量会变化，因此最终仍需要打开关键原文自行确认。\n\n十二、继续阅读\n\n这篇文章和上一篇事实核验稿是一前一后两步：先学会把 AI 答案拆成可检查的主张，再把二手说法追到适合当前问题的原始材料。\n\nAI 回答得头头是道，怎么判断它在胡说？新手也能照着做的 5 分钟核验法\n\nChatGPT、Claude、Gemini、Codex 怎么选？先分清产品层级，再看 8 类真实任务\n\n不会写代码，也能用 Codex 做什么？7 个普通人今天就能上手的工作场景\n\nCodex 改完代码，怎么判断能不能提交？一套可直接复制的验收流程\n\n如果资料检索或代码分析还在电脑上运行，人却需要暂时离开，问题会从“怎样找到证据”变成“怎样继续查看本地 Agent 的进度并补充要求”。Linco Bridge 是我们围绕这个场景开源的跨端连接项目，相关内容可以从项目介绍开始阅读：\n\nLinco Bridge 开源：在手机端续接 Codex、Claude Code、Hermes 等本地 AI Agent（架构与实践）\n\n手机端续接 Codex 实战：从安装 linco-connect 到跑通第一个跨端会话\n\ncc-connect 已经很强了，我们为什么还要做 Linco Bridge？\n\n离开电脑后，怎么继续跟进 Codex 任务？国内用户的 5 种远程方案\n\n更多实战内容可以从 半熟 AI 蒸馏室的 CSDN 主页 按发布时间继续阅读。\n\n十三、参考资料与适用范围\n\nMike Caulfield：SIFT (The Four Moves)\n\nCivic Online Reasoning：Intro to Lateral Reading\n\nACRL：Framework for Information Literacy for Higher Education\n\nGitHub Changelog：Announcing GitHub Copilot Free\n\nGitHub Docs：Plans for GitHub Copilot\n\n本文保留 SIFT 的四个原始动作；“主张拆分、截止日期、证据表和结论状态”是为了适配 AI 检索场景增加的实践步骤，不属于 SIFT 官方原文。GitHub 当前套餐文档的核对日期为 2026 年 8 月 31 日，产品规则后续可能继续变化，请以发布或阅读当日的官方文档为准。\n\n·\n\n收录于\n\n当前文章被以下社区和专栏收录：\n\n标签 #人工智能\n\n版权声明：本文为博主原创文章，遵循 CC 4.0 BY-SA 版权协议，转载请附上原文出处链接和本声明。\n\n机器学习入门到深度学习：核心概念、项目流程与避坑指南 机器学习本质上是让模型从数据中学习统计规律：以特征表示样本，用损失函数衡量预测偏差，再通过梯度下降等优化方法更新参数，最终关注的是模型在未见数据上的泛化误差。它把传统手工规则转为数据驱动，因而适合分类、回归、聚类、推荐、图像与文本等场景。入门时，吴恩达机器学习课程与周志华《机器学习》常被搭配使用，前者建立工程直觉，后者补足理论推导；同时可借助scikit-learn跑通数据清洗、特征工程、训练调参和评估闭环，别过早被深度学习环境配置困住。抓住过拟合、验证集、正则化这些不变概念，再过渡到CNN、Transfo 阅读详情\n\n相关推荐\n\n换一换\n\nGAN模型选型与工业落地实操指南\n\n生成对抗网络（GAN）是一类通过对抗学习隐式建模数据分布的生成式AI基础技术，其核心原理在于生成器与判别器的极小极大博弈优化。相较于传统监督模型，GAN在小样本、无配对数据、高保真结构生成等场景具备独特技术价值，广泛应用于医疗影像增强、工业缺陷合成、虚拟试穿及跨域图像转换等实际任务。本文聚焦GAN Models在真实业务中的应用逻辑，摒弃理论堆砌，直击数据稀缺、控制粒度粗、部署资源受限等高频痛点，结合WGAN-GP、StyleGAN2、ProGAN、CycleGAN等主流架构，系统梳理从问题诊断→模型匹配→\n\nweixin_30268071的博客 448\n\nBIOREASON：AI驱动的临床级DNA分析平台解析\n\nDNA分析是精准医疗的核心环节，涉及测序数据质控、变异识别、临床解读与报告生成等多阶段技术流程。其底层依赖生物信息学原理，包括比对算法（如BWA-MEM）、变异检测模型（如DeepVariant）和ACMG致病性评级体系。随着NGS在基层医院普及，如何降低技术门槛、提升分析一致性与临床可解释性，成为关键工程挑战。AI在此并非替代专家，而是将十年沉淀的规则、指南与经验结构化蒸馏为可验证、可审计、可部署的智能模块。BIOREASON正是这一范式的典型实践——融合轻量AI、符号推理与临床知识图谱，实现从FASTQ\n\nweixin_33997389的博客 290\n\n机器视觉质检：从成像原理到深度学习落地的全流程实践\n\n机器视觉是人工智能与自动化领域的关键技术，其核心原理在于通过光学成像系统获取图像，并利用图像处理与模式识别算法提取信息。在工业质检场景中，该技术的核心价值在于实现检测过程的自动化、标准化与数据化，从而大幅提升生产效率和产品质量稳定性。其典型应用包括产品外观缺陷检测、尺寸测量、装配完整性验证等。无论是基于传统图像处理的特征工程建模，还是利用深度学习进行端到端缺陷识别，都需要深入理解从成像硬件选型、图像预处理到模型部署的完整技术链条。本文将结合工业质检中的实际痛点，系统解析如何构建稳定可靠的视觉系统，并重点探讨\n\ncongjukun0600的博客 434\n\n华为杯DS数模竞赛选题策略：从团队能力评估到四小时黄金决策\n\n数据科学与数学建模（DS数模）是数学建模竞赛中融合数据分析、算法模型与工程实践的重要赛道。其核心在于运用数学工具解决数据驱动的实际问题，考察从业务理解、数据预处理、特征工程到模型构建与结果解释的全流程能力。在工程实践中，团队需评估自身在数据处理、模型创新与业务解释等方面的技术储备。对于预测、分类、优化等常见问题类型，需结合时序分析、特征工程、模型融合等具体技术，选择与团队能力矩阵匹配的赛题。华为杯研究生数学建模竞赛的DS赛道尤其注重解决方案的落地性与创新性，选题时应基于数据敏感性、工程化思维进行理性评估，确\n\nweixin_30642869的博客 421\n\n可微三角形SLAM：用可微几何基元重构实时稠密建图\n\n三角形网格是计算机图形学中最基础、最硬件友好的显式几何表示，其顶点、法向与拓扑关系天然支持精确碰撞检测与物理交互。可微渲染技术使三角形参数（位置、朝向、尺寸、材质）能通过图像光度与深度一致性联合优化，实现端到端的感知-几何联合学习。这种可微三角形范式突破了传统TSDF/点云建图在下游任务（如机器人抓取、AR空间锚定、工业三维比对）中需额外网格化、表面重建的瓶颈，提供即建即用的结构化三维语义。Triangle Splatting SLAM正是将该思想落地为实时SLAM系统的技术实践，以消费级GPU实现亚像素级\n\nweixin_33898876的博客 399\n\nMac mini M1源码编译OpenCV 4.7.0：完整流程与踩坑实战\n\n计算机视觉开发中，OpenCV是最常用的图像处理与视频分析库。然而，通过pip安装的预编译包往往裁剪了大量核心功能，例如ffmpeg视频解码、TBB并行加速以及contrib扩展模块。理解OpenCV的构建原理，从源码自行编译才能充分释放硬件性能。在Apple Silicon芯片上，利用Homebrew管理依赖、通过CMake配置参数，可以定制出完全符合需求的OpenCV版本，尤其适用于需要读取rtsp视频流或使用SIFT等contrib算法的场景。本文以Mac mini M1为例，详细讲解OpenCV 4\n\nweixin_28842269的博客 236\n\nOpenMontage开源图像拼接工具：从特征提取到蒙太奇合成实战\n\n图像拼接是计算机视觉中的经典任务，广泛应用于全景摄影、视频帧组合与历史影像修复。其核心原理在于通过特征提取算法识别多张图片中的对应点，再以单应性矩阵完成几何对齐，最后通过颜色一致性处理消除接缝差异。OpenMontage作为一款免费开源的自动蒙太奇合成工具，将上述技术封装为可控参数，既支持SIFT与ORB等特征匹配模式，也提供锚点加权与亮度均衡等精细调节能力，使复杂素材下的拼接稳定性显著提升。无论是影视后期从业者需要快速合成多视角素材，还是独立创作者希望修复老照片碎片，OpenMontage都能以命令行的轻\n\nweixin_28362173的博客 291\n\nRstan下载安装攻略\n\n准备把Rtools删掉，重新下载（胡乱猜测是安装顺序的问题），但是卸载时显示Rtools被占用，但我已经把该关的都关了。这一问题的出现，直接让我卸载掉了Rstudio，又重新安装了一个，不过这次安装在另一个磁盘，因为原来的内存不多了。或者参考知乎，使用清华镜像网址进行下载：（知乎链接）https://zhuanlan.zhihu.com/p/346947595（清华下载链接）https://mirrors.tuna.tsinghua.edu.cn/CRAN/bin/windows/Rtools/\n\nm0_64643017的博客 3085\n\nDeepChat计算机视觉教学：OpenCV交互式学习平台\n\n本文介绍了基于星图GPU平台自动化部署🧠 DeepChat - 深度对话引擎镜像，构建OpenCV交互式学习平台。该平台能理解自然语言提问，提供从概念解释、代码示例到实时调试的全方位计算机视觉教学辅导，例如指导用户完成实时人脸检测等项目的开发，显著提升学习效率。\n\nweixin_34471637的博客 172\n\n华为昇腾NPU环境搭建：torch-npu安装避坑指南（附常见错误解决方案）\n\n本文详细解析了在华为昇腾NPU环境中安装torch-npu适配包的全流程与核心要点。从基础环境准备、严格的版本匹配策略，到针对‘RuntimeError: NPU error’、‘ImportError: libxxx.so’等高频错误的深度解析与解决方案，提供了一份实用的避坑指南，旨在帮助开发者高效搭建稳定的PyTorch开发环境。\n\nweixin_29094979的博客 401\n\n大象机器人myAGV移动机器人+mechArm六轴机械臂，开源复合机器人开发与实践！\n\n我们这章节的内容是将协作性机械臂打破距离上的限制，跟移动机器人（myAGV）相连接，实现一个案例。\n\nm0_71627844的博客 1469\n\n视觉大模型时代，OpenCV为何仍是刚需？从预处理到Agent实战\n\n图像处理是计算机视觉的基石，而多模态大模型的输入并非原始图片，而是经过预处理转换后的张量。OpenCV作为最成熟的图像处理库，承担着读取、通道转换、几何变换、区域掩码等关键职责。模型越强，输入侧越不能含糊，BGR与RGB转换、letterbox缩放、fillPoly掩码等操作直接影响模型输出质量。在16G显存环境下，合理选型与4bit量化能让视觉大模型顺利落地，而OpenCV的标定、轮廓提取等经典算法，也在多模态融合与视觉Agent中焕发新生。从工业检测、情感分析到让Agent‘看见后行动’，OpenCV始\n\nweixin_29032337的博客 330\n\nAugustus手动安装教程\n\n本文记载了如何结合conda手动安装Augustus\n\nm0_65437087的博客 1250\n\nPython深度学习实战：基于CNN的猫脸识别图像分类完整指南\n\n图像分类是计算机视觉中最基础也最热门的任务之一，无论是物体识别、场景理解还是医学影像分析，都离不开对图像特征的提取与建模。卷积神经网络（CNN）作为深度学习的核心架构，通过局部感受野、参数共享与层次化特征学习，能够自动从原始像素中捕捉边缘、纹理和语义部件，显著优于传统手工特征加分类器的方案。在实际工程中，构建一个图像分类器不仅涉及模型设计，还涵盖数据清洗、图像增强、迁移学习、训练调参与结果评估等完整链路。以猫脸识别这一经典项目为例，基于Python和PyTorch等框架，利用CNN或预训练模型如ResNet\n\nweixin_34079177的博客 277\n\nTC3XX - MCAL知识点（三十五）：Tasking编译器下，Tc3xx的MCAL代码如何使用多核，多核中断、多核任务、多核外设之间的MCAL配置与代码例程\n\n文章用于记录在裸机情况下使用多核Tc387芯片，如何高效运行以及正确的代码、工程属性、链接文件配置等问题，相互结合、相互影响的地方，以示后续使用记录。\n\n梦想技术家 942\n\nSAP UI5 控件剖析系列之 sap.m.DatePicker：单日选择的工程化用法、最佳实践与常见坑\n\n在 SAP UI5 的输入控件族里，是最常被使用的日期选择控件。它把一个可编辑的输入框与一个弹出的日历整合在一起，允许用户用触摸、鼠标或键盘在本地化格式下选择某一天；控件既可以从弹出的日历里点选，也可以直接在输入框里键入日期。官方 Fiori 设计规范对它的定位就是：完成单个日期的选择，不牵涉时间，也不负责跨天的范围选择。\n\n2007 年 ~ 2025 年，深耕 SAP 技术 18 年 333\n\nOpenCV未过时：视觉大模型时代的“管道工”实战指南\n\n计算机视觉与图像处理是人工智能应用落地的基础支撑。在视觉大模型与多模态技术快速迭代的背景下，模型对输入数据的质量与格式要求愈发严格，而真实场景中的图像往往存在噪声、遮挡与尺度差异。OpenCV作为经典且持续更新的数据处理工具，承担起模型前后端的“管道工”角色——从视频流取帧、人脸检测、ROI裁剪到透视矫正与特征匹配，为大模型提供标准化输入。它不仅是多模态情绪识别、多模态RAG等场景中不可或缺的预处理环节，也在三维重建、3DGS等前沿方向中扮演基石角色。掌握OpenCV的安装配置、核心API及与深度学习框架的\n\nweixin_34015336的博客 438\n\n基于STM32L4XX、HAL库的DP83822 以太网收发器（PHY）驱动程序设计\n\n一、简介：DP83822是德州仪器(TI)推出的一款低功耗、高性能10/100Mbps以太网物理层收发器(PHY)。它具有以下主要特性：支持10BASE-T和100BASE-TX以太网标准低功耗设计，适合嵌入式应用MII/RMII接口，方便与微控制器连接内置自检和诊断功能支持自动协商和手动配置工业级温度范围(-40°C至+85°C)\n\nzhusl6688的博客 515\n\nDPT-2：面向企业级PDF理解的Agentic文档解析架构\n\nPDF解析长期面临语义断层、布局失焦与责任真空三大技术瓶颈，传统OCR+规则引擎难以应对金融、法律、医疗等场景中扫描件混排、手写批注、电子签章遮挡等复杂需求。基于多Agent协同的文档理解范式正成为新一代解决方案的核心路径，其通过任务解耦、模块化验证与可追溯推理，显著提升结构化提取准确率与合规可信度。Agentic Document Extraction（ADE）强调系统具备主动拆解、跨模块调度与逻辑自检能力，而非端到端黑箱输出；结合Layout/Text/Table/Semantic四大专业化Agent，\n\nweixin_33816821的博客 381\n\nYOLO11改进|卷积篇|引入多样化分支块DBB\n\nYOLO11中添加多样化分支块DBB\n\nA1983Z的博客 1432\n\npscad IEEE标准系统搭建说明\n\npscad IEEE标准系统搭建说明，包含典型的IEEE 9节点、14节点、30节点、39节点和118节点系统。内含标准测试系统的原始数据和潮流结果。\n\n2026年多模态开发中OpenCV为何仍是必修课？实战路径与避坑指南\n\n计算机视觉与图像处理是人工智能应用落地的基石。在深度学习框架和视觉大模型快速迭代的今天，底层图像操作依然决定上层模型的输入质量与最终效果。图像预处理、ROI裁剪、颜色空间转换、几何校正等一系列基础操作，构成了数据清洗与特征工程的关键环节。无论是训练CLIP、微调VLM，还是构建多模态Agent，都离不开对图像格式、尺寸和归一化的精细控制。3D视觉与三维重建同样依赖相机标定、特征匹配和位姿估计等传统算法。本文以工程实践为主线，梳理2026年OpenCV在多模态开发中的核心位置，结合视觉大模型、CLIP/VLM\n\nweixin_34327761的博客 436\n\n假人有限元模型\n\n假人模型，车辆碰撞假人有限元模型，适合做乘员安全的研究者利用\n\nLua定时器实现：最小堆与时间轮方案详解\n\n定时器是游戏后端和嵌入式脚本开发中的基础组件，用于在指定时间后执行回调逻辑。其核心原理通常基于最小堆或时间轮等数据结构，实现高效的任务调度与触发。在Lua中自研定时器，能有效管理技能冷却、buff计时、网络超时等场景，提升代码可维护性与性能。本文深入拆解最小堆定时器的设计与实现，涵盖堆操作、句柄取消、循环定时及精度控制，并探讨向时间轮演进的优化思路，为Lua开发者提供可直接复用的工程方案。\n\nweixin_34392435的博客 213\n\nOV9734 DATASHEET，完整规格书\n\nOV9734完整规格书，包括电气参数，尺寸规格，寄存器配置表等\n\n温度PID控制PLC程序\n\n温度PID稳定控制程序，适用于欧姆龙PLC，对其他PLC也具有很大参考价值\n\n3D引擎开发与计算机视觉：笔试核心考点与实战解析\n\n3D引擎与计算机视觉的交叉融合正在重塑游戏与AR的交互体验。从相机标定到多视图几何，从渲染管线到SLAM定位，理解视觉算法在引擎中的落地原理成为开发者的核心竞争力。掌握针孔相机模型、内外参矩阵与坐标变换，能够串联起图形学与视觉两大知识体系。动作捕捉、三维重建与AR锚定等典型应用，都需要将视觉几何能力与实时渲染深度结合。本文系统梳理3D引擎开发（计算机视觉方向）笔试中的高频考点、工程实践路径与常见坑点，帮助开发者构建从数学基础到系统实现的完整技术框架。\n\nweixin_34409357的博客 368\n\n本体论强势回归：为什么AI Agent正在复兴语义网或知识图谱\n\nAIAgent正推动语义网复兴，通过本体论构建可解释、可审计的“逻辑护栏”，将大模型的不确定性约束在确定性边界内。企业需融合大模型理解力、本体业务上下文与规则执行层，形成协同体系。复用Schema.org等既有本体，结合神经符号AI，实现智能代理的可靠决策与规模化应用。未来趋势是“薄代理”依托共享语义层，而非孤立的“厚代理”。本体作为独立于模型权重的结构化知识层，使代理更“诚实”，但其维护难题仍待解决。\n\nhhue2007的专栏 381\n\nSpark介绍\n\n底层数据仍可放在HDFS、Hive、HBase等存储系统中，Spark把数据读出来，在集群上分布式计算，再把结果写回去或交给下游。内存计算是优势，不是万能。减少不必要的shuffle：MapReduce很多操作要反复落盘，Spark的DAG调度可以在不涉及跨节点数据交换时，把中间结果放在内存中连续计算，减少磁盘IO。：Spark Core的核心抽象，表示分布在多个节点上的、不可变的、可分区的数据集，支持并行计算和容错。Spark Core：基础功能，任务调度、内存管理、错误恢复、存储交互、RDD API。\n\nyyk33324的博客 311\n\n「大车小标」自动稽核怎么落地：识别车型与计费车型如何自动比对、争议如何排除\n\n在高速公路货车逃费里，\"大车小标\"是最高频、也最难缠的一类：实际是更大车型、更多轴数的货车，却按更小车型交费，跑同样的路交更少的钱。单次差额可能不大，但放到长距离、高频次、规模化运营的路网里，累积的通行费流失相当可观。自动稽核\"大车小标\"，核心不是\"识别出这是什么车\"这么简单，而是要把多个来源的车型判断和最终计费车型自动比对，并在大量正常交易里把真正可疑的少数挑出来，同时把设备误差、遮挡污染造成的误判排除掉。本文拆解这条链路的工程落地思路，全文定性，不涉及具体识别率与金额。\n\nweixin_53898122的博客 312\n\n上一篇： AI 回答得头头是道，怎么判断它在胡说？新手也能照着做的 5 分钟核验法 下一篇： 2026 年 8 月 AI 大复盘：35 亿美元押注联发科，Agent 开始真正“干活”\n\n目录\n\n展开全部\n\n收起\n\n12\n\n0\n\n8\n\n复制链接 分享到 QQ 分享到新浪微博 扫一扫\n\n举报\n\n半熟AI蒸馏室 码龄6年 83粉丝 25原创 + 关注\n\n评论 条评论被折叠 查看 被折叠的 条评论 为什么被折叠? 到【灌水乐园】发言 查看更多评论 添加红包\n\n实付元\n\n使用余额支付\n\n点击重新获取 扫码支付\n\n钱包余额\n\n0\n\n抵扣说明：\n\n1.余额是钱包充值的虚拟货币，按照1:1的比例进行支付金额的抵扣。 2.余额无法直接购买下载，可以购买VIP、付费专栏及课程。\n\n余额充值",
+  "rawSources": [
+    {
+      "mode": "STATIC",
+      "hash": "4822273e2af9accf2af39518308827c568ad8f67e3757cf89a105fc0b2e6782f",
+      "path": "C:\\Users\\qianchen\\Documents\\waytoagi-1024-detective-a2-v4\\.cache\\source-documents-v4\\0d5db2c1-9aad-4b5b-9364-139aa20e8bb7\\340a24f0da9c80dc72310ae74c1e219aaa5774efb6cf162bc5f436f62571234d\\raw.bin"
+    }
+  ],
+  "storage": {
+    "rawPath": "C:\\Users\\qianchen\\Documents\\waytoagi-1024-detective-a2-v4\\.cache\\source-documents-v4\\0d5db2c1-9aad-4b5b-9364-139aa20e8bb7\\340a24f0da9c80dc72310ae74c1e219aaa5774efb6cf162bc5f436f62571234d\\raw.bin",
+    "textPath": "C:\\Users\\qianchen\\Documents\\waytoagi-1024-detective-a2-v4\\.cache\\source-documents-v4\\0d5db2c1-9aad-4b5b-9364-139aa20e8bb7\\340a24f0da9c80dc72310ae74c1e219aaa5774efb6cf162bc5f436f62571234d\\source.txt",
+    "manifestPath": "C:\\Users\\qianchen\\Documents\\waytoagi-1024-detective-a2-v4\\.cache\\source-documents-v4\\0d5db2c1-9aad-4b5b-9364-139aa20e8bb7\\340a24f0da9c80dc72310ae74c1e219aaa5774efb6cf162bc5f436f62571234d\\manifest.json"
+  },
+  "parser": {
+    "name": "readability+source-dom",
+    "version": "readability-0.6.0+jsdom-30.1.3+source-dom-2",
+    "normalization": "source-text/v1",
+    "mode": "STATIC"
+  },
+  "metadata": {
+    "title": "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源_sift mike caulfield-CSDN博客",
+    "author": "半熟AI蒸馏室",
+    "publishedAt": "2026-09-01T02:06:55.000Z",
+    "language": "zh-CN"
+  },
+  "completeness": "COMPLETE",
+  "warnings": [],
+  "blocks": [
+    {
+      "start": 0,
+      "end": 71,
+      "id": "b0",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[0]",
+      "headingPath": [],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 73,
+      "end": 107,
+      "id": "b1",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[1]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 109,
+      "end": 324,
+      "id": "b2",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[2]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 326,
+      "end": 548,
+      "id": "b3",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[3]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 550,
+      "end": 655,
+      "id": "b4",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[4]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 657,
+      "end": 708,
+      "id": "b5",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[5]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 710,
+      "end": 735,
+      "id": "b6",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[6]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 737,
+      "end": 742,
+      "id": "b7",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[7]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 744,
+      "end": 794,
+      "id": "b8",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[8]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 796,
+      "end": 852,
+      "id": "b9",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[9]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 854,
+      "end": 1010,
+      "id": "b10",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[10]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1012,
+      "end": 1059,
+      "id": "b11",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[11]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1061,
+      "end": 1152,
+      "id": "b12",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[12]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1154,
+      "end": 1291,
+      "id": "b13",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[13]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1293,
+      "end": 1317,
+      "id": "b14",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[14]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1319,
+      "end": 1340,
+      "id": "b15",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[15]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1342,
+      "end": 1353,
+      "id": "b16",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[16]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1355,
+      "end": 1365,
+      "id": "b17",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[17]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1367,
+      "end": 1376,
+      "id": "b18",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[18]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1378,
+      "end": 1391,
+      "id": "b19",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[19]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1393,
+      "end": 1416,
+      "id": "b20",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[20]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1418,
+      "end": 1478,
+      "id": "b21",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[21]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1480,
+      "end": 1514,
+      "id": "b22",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[22]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1516,
+      "end": 1610,
+      "id": "b23",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[23]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1612,
+      "end": 1639,
+      "id": "b24",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[24]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1641,
+      "end": 1650,
+      "id": "b25",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[25]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1652,
+      "end": 1665,
+      "id": "b26",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[26]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1667,
+      "end": 1689,
+      "id": "b27",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[27]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1691,
+      "end": 1706,
+      "id": "b28",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[28]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "二、SIFT 四步法到底是什么"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1708,
+      "end": 1742,
+      "id": "b29",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[29]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "二、SIFT 四步法到底是什么"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1744,
+      "end": 1775,
+      "id": "b30",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[30]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "二、SIFT 四步法到底是什么"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1777,
+      "end": 2032,
+      "id": "b31",
+      "kind": "TABLE",
+      "locator": "source DOM normalized block[31]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "二、SIFT 四步法到底是什么"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2034,
+      "end": 2065,
+      "id": "b32",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[32]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "二、SIFT 四步法到底是什么"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2067,
+      "end": 2157,
+      "id": "b33",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[33]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "二、SIFT 四步法到底是什么"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2159,
+      "end": 2186,
+      "id": "b34",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[34]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "二、SIFT 四步法到底是什么"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2188,
+      "end": 2214,
+      "id": "b35",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[35]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "二、SIFT 四步法到底是什么"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2216,
+      "end": 2250,
+      "id": "b36",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[36]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "二、SIFT 四步法到底是什么"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2252,
+      "end": 2272,
+      "id": "b37",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[37]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "三、开始搜索前，先把问题改成“证据任务”"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2274,
+      "end": 2303,
+      "id": "b38",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[38]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "三、开始搜索前，先把问题改成“证据任务”"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2305,
+      "end": 2351,
+      "id": "b39",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[39]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "三、开始搜索前，先把问题改成“证据任务”"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2353,
+      "end": 2374,
+      "id": "b40",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[40]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "三、开始搜索前，先把问题改成“证据任务”"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2376,
+      "end": 2534,
+      "id": "b41",
+      "kind": "TABLE",
+      "locator": "source DOM normalized block[41]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "三、开始搜索前，先把问题改成“证据任务”"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2536,
+      "end": 2550,
+      "id": "b42",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[42]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "三、开始搜索前，先把问题改成“证据任务”"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2552,
+      "end": 2626,
+      "id": "b43",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[43]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "三、开始搜索前，先把问题改成“证据任务”"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2628,
+      "end": 2642,
+      "id": "b44",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[44]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "三、开始搜索前，先把问题改成“证据任务”"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2644,
+      "end": 2907,
+      "id": "b45",
+      "kind": "CODE",
+      "locator": "source DOM normalized block[45]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "三、开始搜索前，先把问题改成“证据任务”"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2909,
+      "end": 2956,
+      "id": "b46",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[46]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "三、开始搜索前，先把问题改成“证据任务”"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2958,
+      "end": 2985,
+      "id": "b47",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[47]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "四、真实案例：一句官方说法，为什么到了今天不能直接引用"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2987,
+      "end": 3004,
+      "id": "b48",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[48]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "四、真实案例：一句官方说法，为什么到了今天不能直接引用"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3006,
+      "end": 3013,
+      "id": "b49",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[49]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "四、真实案例：一句官方说法，为什么到了今天不能直接引用"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3015,
+      "end": 3064,
+      "id": "b50",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[50]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "四、真实案例：一句官方说法，为什么到了今天不能直接引用"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3066,
+      "end": 3086,
+      "id": "b51",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[51]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "四、真实案例：一句官方说法，为什么到了今天不能直接引用",
+        "第一步：Stop，先把一句话拆成两个主张"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3088,
+      "end": 3102,
+      "id": "b52",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[52]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "四、真实案例：一句官方说法，为什么到了今天不能直接引用",
+        "第一步：Stop，先把一句话拆成两个主张"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3104,
+      "end": 3137,
+      "id": "b53",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[53]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "四、真实案例：一句官方说法，为什么到了今天不能直接引用",
+        "第一步：Stop，先把一句话拆成两个主张"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3139,
+      "end": 3167,
+      "id": "b54",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[54]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "四、真实案例：一句官方说法，为什么到了今天不能直接引用",
+        "第一步：Stop，先把一句话拆成两个主张"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3169,
+      "end": 3195,
+      "id": "b55",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[55]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "四、真实案例：一句官方说法，为什么到了今天不能直接引用",
+        "第一步：Stop，先把一句话拆成两个主张"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3197,
+      "end": 3207,
+      "id": "b56",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[56]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "四、真实案例：一句官方说法，为什么到了今天不能直接引用",
+        "第一步：Stop，先把一句话拆成两个主张"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3209,
+      "end": 3246,
+      "id": "b57",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[57]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "四、真实案例：一句官方说法，为什么到了今天不能直接引用",
+        "第一步：Stop，先把一句话拆成两个主张"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3248,
+      "end": 3294,
+      "id": "b58",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[58]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "四、真实案例：一句官方说法，为什么到了今天不能直接引用",
+        "第一步：Stop，先把一句话拆成两个主张"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3296,
+      "end": 3348,
+      "id": "b59",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[59]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "四、真实案例：一句官方说法，为什么到了今天不能直接引用",
+        "第一步：Stop，先把一句话拆成两个主张"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3350,
+      "end": 3377,
+      "id": "b60",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[60]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "四、真实案例：一句官方说法，为什么到了今天不能直接引用",
+        "第二步：Investigate，先判断手里的来源是什么"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3379,
+      "end": 3440,
+      "id": "b61",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[61]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "四、真实案例：一句官方说法，为什么到了今天不能直接引用",
+        "第二步：Investigate，先判断手里的来源是什么"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3442,
+      "end": 3449,
+      "id": "b62",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[62]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "四、真实案例：一句官方说法，为什么到了今天不能直接引用",
+        "第二步：Investigate，先判断手里的来源是什么"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3451,
+      "end": 3584,
+      "id": "b63",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[63]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "四、真实案例：一句官方说法，为什么到了今天不能直接引用",
+        "第二步：Investigate，先判断手里的来源是什么"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3586,
+      "end": 3612,
+      "id": "b64",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[64]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "四、真实案例：一句官方说法，为什么到了今天不能直接引用",
+        "第二步：Investigate，先判断手里的来源是什么"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3614,
+      "end": 3654,
+      "id": "b65",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[65]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "四、真实案例：一句官方说法，为什么到了今天不能直接引用",
+        "第二步：Investigate，先判断手里的来源是什么"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3656,
+      "end": 3672,
+      "id": "b66",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[66]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "四、真实案例：一句官方说法，为什么到了今天不能直接引用",
+        "第二步：Investigate，先判断手里的来源是什么"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3674,
+      "end": 3685,
+      "id": "b67",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[67]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "四、真实案例：一句官方说法，为什么到了今天不能直接引用",
+        "第二步：Investigate，先判断手里的来源是什么"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3687,
+      "end": 3708,
+      "id": "b68",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[68]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "四、真实案例：一句官方说法，为什么到了今天不能直接引用",
+        "第二步：Investigate，先判断手里的来源是什么"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3710,
+      "end": 3729,
+      "id": "b69",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[69]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "四、真实案例：一句官方说法，为什么到了今天不能直接引用",
+        "第二步：Investigate，先判断手里的来源是什么"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3731,
+      "end": 3759,
+      "id": "b70",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[70]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "四、真实案例：一句官方说法，为什么到了今天不能直接引用",
+        "第二步：Investigate，先判断手里的来源是什么"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3761,
+      "end": 3801,
+      "id": "b71",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[71]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "四、真实案例：一句官方说法，为什么到了今天不能直接引用",
+        "第三步：Find better coverage，找更适合回答“当前状态”的材料"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3803,
+      "end": 3862,
+      "id": "b72",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[72]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "四、真实案例：一句官方说法，为什么到了今天不能直接引用",
+        "第三步：Find better coverage，找更适合回答“当前状态”的材料"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3864,
+      "end": 3894,
+      "id": "b73",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[73]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "四、真实案例：一句官方说法，为什么到了今天不能直接引用",
+        "第三步：Find better coverage，找更适合回答“当前状态”的材料"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3896,
+      "end": 3929,
+      "id": "b74",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[74]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "四、真实案例：一句官方说法，为什么到了今天不能直接引用",
+        "第三步：Find better coverage，找更适合回答“当前状态”的材料"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3931,
+      "end": 3970,
+      "id": "b75",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[75]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "四、真实案例：一句官方说法，为什么到了今天不能直接引用",
+        "第三步：Find better coverage，找更适合回答“当前状态”的材料"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3972,
+      "end": 4016,
+      "id": "b76",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[76]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "四、真实案例：一句官方说法，为什么到了今天不能直接引用",
+        "第三步：Find better coverage，找更适合回答“当前状态”的材料"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4018,
+      "end": 4063,
+      "id": "b77",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[77]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "四、真实案例：一句官方说法，为什么到了今天不能直接引用",
+        "第三步：Find better coverage，找更适合回答“当前状态”的材料"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4065,
+      "end": 4170,
+      "id": "b78",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[78]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "四、真实案例：一句官方说法，为什么到了今天不能直接引用",
+        "第三步：Find better coverage，找更适合回答“当前状态”的材料"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4172,
+      "end": 4200,
+      "id": "b79",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[79]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "四、真实案例：一句官方说法，为什么到了今天不能直接引用",
+        "第三步：Find better coverage，找更适合回答“当前状态”的材料"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4202,
+      "end": 4222,
+      "id": "b80",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[80]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "四、真实案例：一句官方说法，为什么到了今天不能直接引用",
+        "第四步：Trace，追溯原始语境再下结论"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4224,
+      "end": 4238,
+      "id": "b81",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[81]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "四、真实案例：一句官方说法，为什么到了今天不能直接引用",
+        "第四步：Trace，追溯原始语境再下结论"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4240,
+      "end": 4421,
+      "id": "b82",
+      "kind": "TABLE",
+      "locator": "source DOM normalized block[82]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "四、真实案例：一句官方说法，为什么到了今天不能直接引用",
+        "第四步：Trace，追溯原始语境再下结论"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4423,
+      "end": 4436,
+      "id": "b83",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[83]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "四、真实案例：一句官方说法，为什么到了今天不能直接引用",
+        "第四步：Trace，追溯原始语境再下结论"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4438,
+      "end": 4658,
+      "id": "b84",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[84]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "四、真实案例：一句官方说法，为什么到了今天不能直接引用",
+        "第四步：Trace，追溯原始语境再下结论"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4660,
+      "end": 4681,
+      "id": "b85",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[85]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "四、真实案例：一句官方说法，为什么到了今天不能直接引用",
+        "第四步：Trace，追溯原始语境再下结论"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4683,
+      "end": 4737,
+      "id": "b86",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[86]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "四、真实案例：一句官方说法，为什么到了今天不能直接引用",
+        "第四步：Trace，追溯原始语境再下结论"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4739,
+      "end": 4752,
+      "id": "b87",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[87]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "五、什么才算“更好的来源”"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4754,
+      "end": 4795,
+      "id": "b88",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[88]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "五、什么才算“更好的来源”"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4797,
+      "end": 4817,
+      "id": "b89",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[89]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "五、什么才算“更好的来源”"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4819,
+      "end": 5023,
+      "id": "b90",
+      "kind": "TABLE",
+      "locator": "source DOM normalized block[90]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "五、什么才算“更好的来源”"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5025,
+      "end": 5037,
+      "id": "b91",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[91]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "五、什么才算“更好的来源”"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5039,
+      "end": 5131,
+      "id": "b92",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[92]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "五、什么才算“更好的来源”"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5133,
+      "end": 5144,
+      "id": "b93",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[93]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "五、什么才算“更好的来源”"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5146,
+      "end": 5183,
+      "id": "b94",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[94]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "五、什么才算“更好的来源”"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5185,
+      "end": 5198,
+      "id": "b95",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[95]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "六、搜索时怎样更快追到原文"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5200,
+      "end": 5242,
+      "id": "b96",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[96]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "六、搜索时怎样更快追到原文"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5244,
+      "end": 5254,
+      "id": "b97",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[97]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "六、搜索时怎样更快追到原文",
+        "1. 从独特短语反查"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5256,
+      "end": 5304,
+      "id": "b98",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[98]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "六、搜索时怎样更快追到原文",
+        "1. 从独特短语反查"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5306,
+      "end": 5315,
+      "id": "b99",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[99]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "六、搜索时怎样更快追到原文",
+        "1. 从独特短语反查"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5317,
+      "end": 5359,
+      "id": "b100",
+      "kind": "CODE",
+      "locator": "source DOM normalized block[100]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "六、搜索时怎样更快追到原文",
+        "1. 从独特短语反查"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5361,
+      "end": 5392,
+      "id": "b101",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[101]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "六、搜索时怎样更快追到原文",
+        "1. 从独特短语反查"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5394,
+      "end": 5408,
+      "id": "b102",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[102]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "六、搜索时怎样更快追到原文",
+        "2. 限定可能发布原文的网站"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5410,
+      "end": 5528,
+      "id": "b103",
+      "kind": "CODE",
+      "locator": "source DOM normalized block[103]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "六、搜索时怎样更快追到原文",
+        "2. 限定可能发布原文的网站"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5530,
+      "end": 5561,
+      "id": "b104",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[104]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "六、搜索时怎样更快追到原文",
+        "2. 限定可能发布原文的网站"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5563,
+      "end": 5576,
+      "id": "b105",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[105]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "六、搜索时怎样更快追到原文",
+        "3. 把时间和状态词加进去"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5578,
+      "end": 5594,
+      "id": "b106",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[106]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "六、搜索时怎样更快追到原文",
+        "3. 把时间和状态词加进去"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5596,
+      "end": 5657,
+      "id": "b107",
+      "kind": "CODE",
+      "locator": "source DOM normalized block[107]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "六、搜索时怎样更快追到原文",
+        "3. 把时间和状态词加进去"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5659,
+      "end": 5691,
+      "id": "b108",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[108]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "六、搜索时怎样更快追到原文",
+        "3. 把时间和状态词加进去"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5693,
+      "end": 5708,
+      "id": "b109",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[109]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "六、搜索时怎样更快追到原文",
+        "4. 搜索旧说法，也搜索新术语"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5710,
+      "end": 5756,
+      "id": "b110",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[110]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "六、搜索时怎样更快追到原文",
+        "4. 搜索旧说法，也搜索新术语"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5758,
+      "end": 5816,
+      "id": "b111",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[111]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "六、搜索时怎样更快追到原文",
+        "4. 搜索旧说法，也搜索新术语"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5818,
+      "end": 5860,
+      "id": "b112",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[112]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "六、搜索时怎样更快追到原文",
+        "4. 搜索旧说法，也搜索新术语"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5862,
+      "end": 5879,
+      "id": "b113",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[113]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "七、AI 在这套流程里最适合做什么"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5881,
+      "end": 5914,
+      "id": "b114",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[114]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "七、AI 在这套流程里最适合做什么"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5916,
+      "end": 5927,
+      "id": "b115",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[115]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "七、AI 在这套流程里最适合做什么"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5929,
+      "end": 5941,
+      "id": "b116",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[116]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "七、AI 在这套流程里最适合做什么"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5943,
+      "end": 5954,
+      "id": "b117",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[117]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "七、AI 在这套流程里最适合做什么"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5956,
+      "end": 5968,
+      "id": "b118",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[118]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "七、AI 在这套流程里最适合做什么"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5970,
+      "end": 5989,
+      "id": "b119",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[119]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "七、AI 在这套流程里最适合做什么"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5991,
+      "end": 6009,
+      "id": "b120",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[120]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "七、AI 在这套流程里最适合做什么",
+        "提示词一：生成检索路线，不急着下结论"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 6011,
+      "end": 6198,
+      "id": "b121",
+      "kind": "CODE",
+      "locator": "source DOM normalized block[121]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "七、AI 在这套流程里最适合做什么",
+        "提示词一：生成检索路线，不急着下结论"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 6200,
+      "end": 6216,
+      "id": "b122",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[122]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "七、AI 在这套流程里最适合做什么",
+        "提示词二：只比较我提供的两份原文"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 6218,
+      "end": 6393,
+      "id": "b123",
+      "kind": "CODE",
+      "locator": "source DOM normalized block[123]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "七、AI 在这套流程里最适合做什么",
+        "提示词二：只比较我提供的两份原文"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 6395,
+      "end": 6410,
+      "id": "b124",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[124]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "七、AI 在这套流程里最适合做什么",
+        "提示词三：把证据压回可发布表述"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 6412,
+      "end": 6571,
+      "id": "b125",
+      "kind": "CODE",
+      "locator": "source DOM normalized block[125]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "七、AI 在这套流程里最适合做什么",
+        "提示词三：把证据压回可发布表述"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 6573,
+      "end": 6599,
+      "id": "b126",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[126]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "七、AI 在这套流程里最适合做什么",
+        "提示词三：把证据压回可发布表述"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 6601,
+      "end": 6655,
+      "id": "b127",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[127]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "七、AI 在这套流程里最适合做什么",
+        "提示词三：把证据压回可发布表述"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 6657,
+      "end": 6675,
+      "id": "b128",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[128]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "八、保留一张证据表，别只保存一堆书签"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 6677,
+      "end": 6703,
+      "id": "b129",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[129]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "八、保留一张证据表，别只保存一堆书签"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 6705,
+      "end": 6730,
+      "id": "b130",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[130]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "八、保留一张证据表，别只保存一堆书签"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 6732,
+      "end": 6876,
+      "id": "b131",
+      "kind": "CODE",
+      "locator": "source DOM normalized block[131]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "八、保留一张证据表，别只保存一堆书签"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 6878,
+      "end": 6889,
+      "id": "b132",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[132]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "八、保留一张证据表，别只保存一堆书签"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 6891,
+      "end": 7069,
+      "id": "b133",
+      "kind": "TABLE",
+      "locator": "source DOM normalized block[133]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "八、保留一张证据表，别只保存一堆书签"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 7071,
+      "end": 7115,
+      "id": "b134",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[134]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "八、保留一张证据表，别只保存一堆书签"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 7117,
+      "end": 7129,
+      "id": "b135",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[135]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "九、什么时候可以停止搜索"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 7131,
+      "end": 7181,
+      "id": "b136",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[136]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "九、什么时候可以停止搜索"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 7183,
+      "end": 7203,
+      "id": "b137",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[137]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "九、什么时候可以停止搜索"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 7205,
+      "end": 7223,
+      "id": "b138",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[138]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "九、什么时候可以停止搜索"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 7225,
+      "end": 7239,
+      "id": "b139",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[139]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "九、什么时候可以停止搜索"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 7241,
+      "end": 7257,
+      "id": "b140",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[140]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "九、什么时候可以停止搜索"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 7259,
+      "end": 7277,
+      "id": "b141",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[141]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "九、什么时候可以停止搜索"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 7279,
+      "end": 7301,
+      "id": "b142",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[142]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "九、什么时候可以停止搜索"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 7303,
+      "end": 7327,
+      "id": "b143",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[143]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "九、什么时候可以停止搜索"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 7329,
+      "end": 7347,
+      "id": "b144",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[144]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "九、什么时候可以停止搜索"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 7349,
+      "end": 7358,
+      "id": "b145",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[145]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "九、什么时候可以停止搜索"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 7360,
+      "end": 7380,
+      "id": "b146",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[146]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "九、什么时候可以停止搜索"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 7382,
+      "end": 7400,
+      "id": "b147",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[147]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "九、什么时候可以停止搜索"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 7402,
+      "end": 7420,
+      "id": "b148",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[148]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "九、什么时候可以停止搜索"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 7422,
+      "end": 7458,
+      "id": "b149",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[149]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "九、什么时候可以停止搜索"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 7460,
+      "end": 7481,
+      "id": "b150",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[150]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "十、五个看起来认真、其实不够可靠的检索习惯"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 7483,
+      "end": 7491,
+      "id": "b151",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[151]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "十、五个看起来认真、其实不够可靠的检索习惯",
+        "只看搜索结果摘要"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 7493,
+      "end": 7531,
+      "id": "b152",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[152]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "十、五个看起来认真、其实不够可靠的检索习惯",
+        "只看搜索结果摘要"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 7533,
+      "end": 7547,
+      "id": "b153",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[153]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "十、五个看起来认真、其实不够可靠的检索习惯",
+        "给了三个链接，就当成三份证据"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 7549,
+      "end": 7585,
+      "id": "b154",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[154]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "十、五个看起来认真、其实不够可靠的检索习惯",
+        "给了三个链接，就当成三份证据"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 7587,
+      "end": 7607,
+      "id": "b155",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[155]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "十、五个看起来认真、其实不够可靠的检索习惯",
+        "官方页面支持产品存在，就顺便相信效果宣传"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 7609,
+      "end": 7639,
+      "id": "b156",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[156]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "十、五个看起来认真、其实不够可靠的检索习惯",
+        "官方页面支持产品存在，就顺便相信效果宣传"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 7641,
+      "end": 7659,
+      "id": "b157",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[157]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "十、五个看起来认真、其实不够可靠的检索习惯",
+        "换一个模型得到同样答案，就算交叉验证"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 7661,
+      "end": 7701,
+      "id": "b158",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[158]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "十、五个看起来认真、其实不够可靠的检索习惯",
+        "换一个模型得到同样答案，就算交叉验证"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 7703,
+      "end": 7716,
+      "id": "b159",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[159]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "十、五个看起来认真、其实不够可靠的检索习惯",
+        "搜不到反例，就写成已经证实"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 7718,
+      "end": 7753,
+      "id": "b160",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[160]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "十、五个看起来认真、其实不够可靠的检索习惯",
+        "搜不到反例，就写成已经证实"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 7755,
+      "end": 7777,
+      "id": "b161",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[161]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "十一、一份可以直接复制的 SIFT 检索模板"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 7779,
+      "end": 8329,
+      "id": "b162",
+      "kind": "CODE",
+      "locator": "source DOM normalized block[162]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "十一、一份可以直接复制的 SIFT 检索模板"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 8331,
+      "end": 8420,
+      "id": "b163",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[163]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "十一、一份可以直接复制的 SIFT 检索模板"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 8422,
+      "end": 8429,
+      "id": "b164",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[164]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "十二、继续阅读"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 8431,
+      "end": 8491,
+      "id": "b165",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[165]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "十二、继续阅读"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 8493,
+      "end": 8529,
+      "id": "b166",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[166]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "十二、继续阅读"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 8531,
+      "end": 8581,
+      "id": "b167",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[167]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "十二、继续阅读"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 8583,
+      "end": 8620,
+      "id": "b168",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[168]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "十二、继续阅读"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 8622,
+      "end": 8655,
+      "id": "b169",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[169]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "十二、继续阅读"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 8657,
+      "end": 8773,
+      "id": "b170",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[170]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "十二、继续阅读"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 8775,
+      "end": 8842,
+      "id": "b171",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[171]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "十二、继续阅读"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 8844,
+      "end": 8887,
+      "id": "b172",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[172]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "十二、继续阅读"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 8889,
+      "end": 8928,
+      "id": "b173",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[173]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "十二、继续阅读"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 8930,
+      "end": 8965,
+      "id": "b174",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[174]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "十二、继续阅读"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 8967,
+      "end": 9006,
+      "id": "b175",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[175]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "十二、继续阅读"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 9008,
+      "end": 9020,
+      "id": "b176",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[176]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "十三、参考资料与适用范围"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 9022,
+      "end": 9058,
+      "id": "b177",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[177]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "十三、参考资料与适用范围"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 9060,
+      "end": 9107,
+      "id": "b178",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[178]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "十三、参考资料与适用范围"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 9109,
+      "end": 9169,
+      "id": "b179",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[179]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "十三、参考资料与适用范围"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 9171,
+      "end": 9218,
+      "id": "b180",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[180]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "十三、参考资料与适用范围"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 9220,
+      "end": 9256,
+      "id": "b181",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[181]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "十三、参考资料与适用范围"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 9258,
+      "end": 9397,
+      "id": "b182",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[182]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "十三、参考资料与适用范围"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 9399,
+      "end": 9400,
+      "id": "b183",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[183]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "十三、参考资料与适用范围"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 9402,
+      "end": 9405,
+      "id": "b184",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[184]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "十三、参考资料与适用范围"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 9407,
+      "end": 9422,
+      "id": "b185",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[185]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "十三、参考资料与适用范围"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 9424,
+      "end": 9432,
+      "id": "b186",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[186]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "十三、参考资料与适用范围"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 9434,
+      "end": 9486,
+      "id": "b187",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[187]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "十三、参考资料与适用范围"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 9488,
+      "end": 9776,
+      "id": "b188",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[188]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "十三、参考资料与适用范围"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 9778,
+      "end": 9782,
+      "id": "b189",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[189]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 9784,
+      "end": 9787,
+      "id": "b190",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[190]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 9789,
+      "end": 9805,
+      "id": "b191",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[191]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 9807,
+      "end": 10063,
+      "id": "b192",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[192]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 10065,
+      "end": 10087,
+      "id": "b193",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[193]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 10089,
+      "end": 10116,
+      "id": "b194",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[194]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 10118,
+      "end": 10374,
+      "id": "b195",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[195]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 10376,
+      "end": 10398,
+      "id": "b196",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[196]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 10400,
+      "end": 10425,
+      "id": "b197",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[197]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 10427,
+      "end": 10683,
+      "id": "b198",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[198]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 10685,
+      "end": 10705,
+      "id": "b199",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[199]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 10707,
+      "end": 10736,
+      "id": "b200",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[200]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 10738,
+      "end": 10994,
+      "id": "b201",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[201]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 10996,
+      "end": 11018,
+      "id": "b202",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[202]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 11020,
+      "end": 11045,
+      "id": "b203",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[203]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 11047,
+      "end": 11303,
+      "id": "b204",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[204]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 11305,
+      "end": 11327,
+      "id": "b205",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[205]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 11329,
+      "end": 11366,
+      "id": "b206",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[206]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 11368,
+      "end": 11624,
+      "id": "b207",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[207]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 11626,
+      "end": 11648,
+      "id": "b208",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[208]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 11650,
+      "end": 11683,
+      "id": "b209",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[209]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 11685,
+      "end": 11941,
+      "id": "b210",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[210]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 11943,
+      "end": 11965,
+      "id": "b211",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[211]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 11967,
+      "end": 11978,
+      "id": "b212",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[212]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 11980,
+      "end": 12230,
+      "id": "b213",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[213]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 12232,
+      "end": 12251,
+      "id": "b214",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[214]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 12253,
+      "end": 12282,
+      "id": "b215",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[215]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 12284,
+      "end": 12416,
+      "id": "b216",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[216]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 12418,
+      "end": 12440,
+      "id": "b217",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[217]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 12442,
+      "end": 12480,
+      "id": "b218",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[218]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 12482,
+      "end": 12650,
+      "id": "b219",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[219]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 12652,
+      "end": 12674,
+      "id": "b220",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[220]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 12676,
+      "end": 12718,
+      "id": "b221",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[221]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 12720,
+      "end": 12769,
+      "id": "b222",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[222]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 12771,
+      "end": 12790,
+      "id": "b223",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[223]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 12792,
+      "end": 12825,
+      "id": "b224",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[224]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 12827,
+      "end": 13083,
+      "id": "b225",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[225]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 13085,
+      "end": 13107,
+      "id": "b226",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[226]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 13109,
+      "end": 13123,
+      "id": "b227",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[227]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 13125,
+      "end": 13151,
+      "id": "b228",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[228]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 13153,
+      "end": 13172,
+      "id": "b229",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[229]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 13174,
+      "end": 13205,
+      "id": "b230",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[230]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 13207,
+      "end": 13463,
+      "id": "b231",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[231]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 13465,
+      "end": 13487,
+      "id": "b232",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[232]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 13489,
+      "end": 13569,
+      "id": "b233",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[233]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 13571,
+      "end": 13646,
+      "id": "b234",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[234]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 13648,
+      "end": 13657,
+      "id": "b235",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[235]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 13659,
+      "end": 13711,
+      "id": "b236",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[236]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 13713,
+      "end": 13875,
+      "id": "b237",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[237]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 13877,
+      "end": 13911,
+      "id": "b238",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[238]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 13913,
+      "end": 13940,
+      "id": "b239",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[239]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 13942,
+      "end": 14198,
+      "id": "b240",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[240]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 14200,
+      "end": 14222,
+      "id": "b241",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[241]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 14224,
+      "end": 14266,
+      "id": "b242",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[242]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 14268,
+      "end": 14435,
+      "id": "b243",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[243]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 14437,
+      "end": 14453,
+      "id": "b244",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[244]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 14455,
+      "end": 14485,
+      "id": "b245",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[245]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 14487,
+      "end": 14743,
+      "id": "b246",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[246]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 14745,
+      "end": 14767,
+      "id": "b247",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[247]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 14769,
+      "end": 14793,
+      "id": "b248",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[248]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 14795,
+      "end": 14813,
+      "id": "b249",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[249]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 14815,
+      "end": 14829,
+      "id": "b250",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[250]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 14831,
+      "end": 14849,
+      "id": "b251",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[251]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 14851,
+      "end": 14926,
+      "id": "b252",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[252]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 14928,
+      "end": 14962,
+      "id": "b253",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[253]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 14964,
+      "end": 15220,
+      "id": "b254",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[254]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 15222,
+      "end": 15244,
+      "id": "b255",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[255]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 15246,
+      "end": 15253,
+      "id": "b256",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[256]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 15255,
+      "end": 15285,
+      "id": "b257",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[257]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 15287,
+      "end": 15307,
+      "id": "b258",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[258]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 15309,
+      "end": 15505,
+      "id": "b259",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[259]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 15507,
+      "end": 15529,
+      "id": "b260",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[260]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 15531,
+      "end": 15553,
+      "id": "b261",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[261]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 15555,
+      "end": 15586,
+      "id": "b262",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[262]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 15588,
+      "end": 15600,
+      "id": "b263",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[263]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 15602,
+      "end": 15639,
+      "id": "b264",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[264]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 15641,
+      "end": 15665,
+      "id": "b265",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[265]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 15667,
+      "end": 15894,
+      "id": "b266",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[266]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 15896,
+      "end": 15918,
+      "id": "b267",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[267]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 15920,
+      "end": 15951,
+      "id": "b268",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[268]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 15953,
+      "end": 16156,
+      "id": "b269",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[269]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 16158,
+      "end": 16173,
+      "id": "b270",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[270]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 16175,
+      "end": 16182,
+      "id": "b271",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[271]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 16184,
+      "end": 16439,
+      "id": "b272",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[272]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 16441,
+      "end": 16456,
+      "id": "b273",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[273]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 16458,
+      "end": 16495,
+      "id": "b274",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[274]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 16497,
+      "end": 16736,
+      "id": "b275",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[275]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 16738,
+      "end": 16760,
+      "id": "b276",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[276]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 16762,
+      "end": 16853,
+      "id": "b277",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[277]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 16855,
+      "end": 16857,
+      "id": "b278",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[278]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 16859,
+      "end": 16863,
+      "id": "b279",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[279]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 16865,
+      "end": 16867,
+      "id": "b280",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[280]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 16869,
+      "end": 16871,
+      "id": "b281",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[281]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "相关推荐"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 16873,
+      "end": 16874,
+      "id": "b282",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[282]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "相关推荐"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 16876,
+      "end": 16877,
+      "id": "b283",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[283]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "相关推荐"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 16879,
+      "end": 16902,
+      "id": "b284",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[284]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 16904,
+      "end": 16906,
+      "id": "b285",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[285]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 16908,
+      "end": 16935,
+      "id": "b286",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[286]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 16937,
+      "end": 16988,
+      "id": "b287",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[287]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 16990,
+      "end": 16993,
+      "id": "b288",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[288]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 16995,
+      "end": 17001,
+      "id": "b289",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[289]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 17003,
+      "end": 17014,
+      "id": "b290",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[290]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 17016,
+      "end": 17020,
+      "id": "b291",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[291]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 17022,
+      "end": 17023,
+      "id": "b292",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[292]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "相关推荐"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 17025,
+      "end": 17030,
+      "id": "b293",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[293]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 17032,
+      "end": 17095,
+      "id": "b294",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[294]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 17097,
+      "end": 17101,
+      "id": "b295",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[295]",
+      "headingPath": [
+        "AI 搜了半天还是不敢用？用 SIFT 四步法把二手答案追到原始来源",
+        "一、为什么“让 AI 再搜一次”通常解决不了问题",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    }
+  ],
+  "links": [
+    {
+      "url": "https://blog.csdn.net/lrt369805210/article/details/164253677",
+      "text": "",
+      "blockId": null,
+      "relation": "CANONICAL",
+      "locator": "source DOM link[0]"
+    },
+    {
+      "url": "https://www.csdn.net/",
+      "text": "",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[1]"
+    },
+    {
+      "url": "https://blog.csdn.net/",
+      "text": "博客",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[4]"
+    },
+    {
+      "url": "https://download.csdn.net/",
+      "text": "下载",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[5]"
+    },
+    {
+      "url": "https://edu.csdn.net/",
+      "text": "学习",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[6]"
+    },
+    {
+      "url": "https://devpress.csdn.net/",
+      "text": "社区",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[7]"
+    },
+    {
+      "url": "https://ai.csdn.net/coding-plan",
+      "text": "模型市场",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[8]"
+    },
+    {
+      "url": "https://ai.csdn.net/chat",
+      "text": "AI搜索",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[9]"
+    },
+    {
+      "url": "https://link.csdn.net/?target=https%3A%2F%2Fgitcode.com%3Futm_source%3Dcsdn_toolbar",
+      "text": "AtomGit",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[10]"
+    },
+    {
+      "url": "https://agent.inscode.net/",
+      "text": "InsCode",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[11]"
+    },
+    {
+      "url": "https://summit.csdn.net/",
+      "text": "技术会议",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[12]"
+    },
+    {
+      "url": "https://mp.csdn.net/creation_overview",
+      "text": "墨衍 MoGrow",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[13]"
+    },
+    {
+      "url": "https://www.csdn.net/i/collections",
+      "text": "收藏",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[14]"
+    },
+    {
+      "url": "https://www.csdn.net/i/history",
+      "text": "历史",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[15]"
+    },
+    {
+      "url": "https://mall.csdn.net/vip",
+      "text": "会员中心",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[16]"
+    },
+    {
+      "url": "https://mp.csdn.net/",
+      "text": "创作中心",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[17]"
+    },
+    {
+      "url": "https://blog.csdn.net/lrt369805210",
+      "text": "半熟AI蒸馏室",
+      "blockId": "b2",
+      "relation": "LINK",
+      "locator": "source DOM link[18]"
+    },
+    {
+      "url": "https://mp.csdn.net/vip?spm=1001.2101.3001.11990",
+      "text": "墨衍会员 · AI 创作全网分发",
+      "blockId": "b2",
+      "relation": "LINK",
+      "locator": "source DOM link[19]"
+    },
+    {
+      "url": "https://mp.csdn.net/creation_topic?spm=1001.2101.3001.11779",
+      "text": "AI 写同款· GEO 优化 ›",
+      "blockId": "b2",
+      "relation": "LINK",
+      "locator": "source DOM link[22]"
+    },
+    {
+      "url": "https://blog.csdn.net/helloworldsss/article/details/73350643",
+      "text": "阿里巴巴 研发岗 面试 总结（干货） 一遍一遍地刷阿里网站，今天发现“面试中”变成“待跟进offer”了，写个面经攒人品，希望offer通知邮件早点来吧。 我当时投简历时投了C/C++工程师，其实也没经过啥考虑，因为我一开始是把重点放在进网易游戏或者腾讯游戏部门，投阿里就纯粹出于增加点面试经验，随便找了个C/C++工程师岗位就找人内推了(后转为算法工程师)。 一面（3月16日）：电话打来时手机显示北京电话，还以为是诈骗的（囧... 阅读详情",
+      "blockId": "b3",
+      "relation": "LINK",
+      "locator": "source DOM link[23]"
+    },
+    {
+      "url": "https://blog.csdn.net/lrt369805210/article/details/164147335",
+      "text": "AI 回答得头头是道，怎么判断它在胡说？新手也能照着做的 5 分钟核验法",
+      "blockId": "b166",
+      "relation": "LINK",
+      "locator": "source DOM link[24]"
+    },
+    {
+      "url": "https://blog.csdn.net/lrt369805210/article/details/164141362",
+      "text": "ChatGPT、Claude、Gemini、Codex 怎么选？先分清产品层级，再看 8 类真实任务",
+      "blockId": "b167",
+      "relation": "LINK",
+      "locator": "source DOM link[25]"
+    },
+    {
+      "url": "https://blog.csdn.net/lrt369805210/article/details/163693138",
+      "text": "不会写代码，也能用 Codex 做什么？7 个普通人今天就能上手的工作场景",
+      "blockId": "b168",
+      "relation": "LINK",
+      "locator": "source DOM link[26]"
+    },
+    {
+      "url": "https://blog.csdn.net/lrt369805210/article/details/163432601",
+      "text": "Codex 改完代码，怎么判断能不能提交？一套可直接复制的验收流程",
+      "blockId": "b169",
+      "relation": "LINK",
+      "locator": "source DOM link[27]"
+    },
+    {
+      "url": "https://blog.csdn.net/lrt369805210/article/details/163248725",
+      "text": "Linco Bridge 开源：在手机端续接 Codex、Claude Code、Hermes 等本地 AI Agent（架构与实践）",
+      "blockId": "b171",
+      "relation": "LINK",
+      "locator": "source DOM link[28]"
+    },
+    {
+      "url": "https://blog.csdn.net/lrt369805210/article/details/163276105",
+      "text": "手机端续接 Codex 实战：从安装 linco-connect 到跑通第一个跨端会话",
+      "blockId": "b172",
+      "relation": "LINK",
+      "locator": "source DOM link[29]"
+    },
+    {
+      "url": "https://blog.csdn.net/lrt369805210/article/details/163308254",
+      "text": "cc-connect 已经很强了，我们为什么还要做 Linco Bridge？",
+      "blockId": "b173",
+      "relation": "LINK",
+      "locator": "source DOM link[30]"
+    },
+    {
+      "url": "https://blog.csdn.net/lrt369805210/article/details/163336789",
+      "text": "离开电脑后，怎么继续跟进 Codex 任务？国内用户的 5 种远程方案",
+      "blockId": "b174",
+      "relation": "LINK",
+      "locator": "source DOM link[31]"
+    },
+    {
+      "url": "https://blog.csdn.net/lrt369805210",
+      "text": "半熟 AI 蒸馏室的 CSDN 主页",
+      "blockId": "b175",
+      "relation": "LINK",
+      "locator": "source DOM link[32]"
+    },
+    {
+      "url": "https://hapgood.us/2019/06/19/sift-the-four-moves/",
+      "text": "Mike Caulfield：SIFT (The Four Moves)",
+      "blockId": "b177",
+      "relation": "LINK",
+      "locator": "source DOM link[33]"
+    },
+    {
+      "url": "https://cor.inquirygroup.org/curriculum/lessons/intro-to-lateral-reading/",
+      "text": "Civic Online Reasoning：Intro to Lateral Reading",
+      "blockId": "b178",
+      "relation": "LINK",
+      "locator": "source DOM link[34]"
+    },
+    {
+      "url": "https://www.ala.org/acrl/standards/ilframework",
+      "text": "ACRL：Framework for Information Literacy for Higher Education",
+      "blockId": "b179",
+      "relation": "LINK",
+      "locator": "source DOM link[35]"
+    },
+    {
+      "url": "https://github.blog/changelog/2024-12-18-announcing-github-copilot-free/",
+      "text": "GitHub Changelog：Announcing GitHub Copilot Free",
+      "blockId": "b180",
+      "relation": "LINK",
+      "locator": "source DOM link[36]"
+    },
+    {
+      "url": "https://docs.github.com/en/copilot/get-started/plans-for-github-copilot",
+      "text": "GitHub Docs：Plans for GitHub Copilot",
+      "blockId": "b181",
+      "relation": "LINK",
+      "locator": "source DOM link[37]"
+    },
+    {
+      "url": "https://so.csdn.net/so/search/s.do?f=&from_code=app_blog_art&from_tracking_code=tag_word&l=&o=vip&q=%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD&s=&t=all&viparticle=",
+      "text": "#人工智能",
+      "blockId": "b186",
+      "relation": "LINK",
+      "locator": "source DOM link[38]"
+    },
+    {
+      "url": "http://creativecommons.org/licenses/by-sa/4.0/",
+      "text": "CC 4.0 BY-SA",
+      "blockId": "b187",
+      "relation": "LINK",
+      "locator": "source DOM link[39]"
+    },
+    {
+      "url": "https://blog.csdn.net/weixin_33906657/article/details/88880991",
+      "text": "机器学习入门到深度学习：核心概念、项目流程与避坑指南 机器学习本质上是让模型从数据中学习统计规律：以特征表示样本，用损失函数衡量预测偏差，再通过梯度下降等优化方法更新参数，最终关注的是模型在未见数据上的泛化误差。它把传统手工规则转为数据驱动，因而适合分类、回归、聚类、推荐、图像与文本等场景。入门时，吴恩达机器学习课程与周志华《机器学习》常被搭配使用，前者建立工程直觉，后者补足理论推导；同时可借助scikit-learn跑通数据清洗、特征工程、训练调参和评估闭环，别过早被深度学习环境配置困住。抓住过拟合、验证集、正则化这些不变概念，再过渡到CNN、Transfo 阅读详情",
+      "blockId": "b188",
+      "relation": "LINK",
+      "locator": "source DOM link[40]"
+    },
+    {
+      "url": "https://blog.csdn.net/lrt369805210/article/details/164147335",
+      "text": "AI 回答得头头是道，怎么判断它在胡说？新手也能照着做的 5 分钟核验法",
+      "blockId": "b277",
+      "relation": "LINK",
+      "locator": "source DOM link[71]"
+    },
+    {
+      "url": "https://blog.csdn.net/lrt369805210/article/details/164326973",
+      "text": "2026 年 8 月 AI 大复盘：35 亿美元押注联发科，Agent 开始真正“干活”",
+      "blockId": "b277",
+      "relation": "LINK",
+      "locator": "source DOM link[72]"
+    },
+    {
+      "url": "https://blog.csdn.net/lrt369805210",
+      "text": "",
+      "blockId": "b286",
+      "relation": "LINK",
+      "locator": "source DOM link[159]"
+    },
+    {
+      "url": "https://blogdev.blog.csdn.net/article/details/122245662",
+      "text": "为什么被折叠?",
+      "blockId": "b287",
+      "relation": "LINK",
+      "locator": "source DOM link[162]"
+    },
+    {
+      "url": "https://bbs.csdn.net/forums/FreeZone",
+      "text": "到【灌水乐园】发言",
+      "blockId": "b287",
+      "relation": "LINK",
+      "locator": "source DOM link[163]"
+    },
+    {
+      "url": "https://i.csdn.net/",
+      "text": "余额充值",
+      "blockId": "b295",
+      "relation": "LINK",
+      "locator": "source DOM link[167]"
+    }
+  ],
+  "tables": [
+    {
+      "blockId": "b31",
+      "rows": [
+        {
+          "start": 1777,
+          "end": 1794,
+          "cells": [
+            {
+              "start": 1777,
+              "end": 1784,
+              "text": "SIFT 动作",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1784,
+              "end": 1790,
+              "text": "要解决的问题",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1790,
+              "end": 1794,
+              "text": "实际动作",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 1794,
+          "end": 1829,
+          "cells": [
+            {
+              "start": 1794,
+              "end": 1803,
+              "text": "Stop，先停一下",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1803,
+              "end": 1814,
+              "text": "我现在究竟要确认什么？",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1814,
+              "end": 1829,
+              "text": "暂停阅读和转发，明确任务与风险",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 1829,
+          "end": 1896,
+          "cells": [
+            {
+              "start": 1829,
+              "end": 1856,
+              "text": "Investigate the source，调查来源",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1856,
+              "end": 1875,
+              "text": "这是谁发布的，专业性和利益关系是什么？",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1875,
+              "end": 1896,
+              "text": "离开当前页面，查看外部资料如何评价这个来源",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 1896,
+          "end": 1959,
+          "cells": [
+            {
+              "start": 1896,
+              "end": 1927,
+              "text": "Find better coverage，寻找更好的报道或材料",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1927,
+              "end": 1943,
+              "text": "有没有更适合回答当前问题的来源？",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1943,
+              "end": 1959,
+              "text": "找当前文档、权威资料和不同证据链",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 1959,
+          "end": 2032,
+          "cells": [
+            {
+              "start": 1959,
+              "end": 1995,
+              "text": "Trace to the original context，追溯原始语境",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1995,
+              "end": 2016,
+              "text": "这句话、数字或图片原本出现在什么上下文里？",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 2016,
+              "end": 2032,
+              "text": "回到公告、论文、数据表或完整记录",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "blockId": "b41",
+      "rows": [
+        {
+          "start": 2376,
+          "end": 2382,
+          "cells": [
+            {
+              "start": 2376,
+              "end": 2378,
+              "text": "字段",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 2378,
+              "end": 2382,
+              "text": "本文案例",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 2382,
+          "end": 2428,
+          "cells": [
+            {
+              "start": 2382,
+              "end": 2387,
+              "text": "待核验主张",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 2387,
+              "end": 2428,
+              "text": "Copilot Free 当前每月提供 2,000 次代码补全和 50 条聊天消息",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 2428,
+          "end": 2449,
+          "cells": [
+            {
+              "start": 2428,
+              "end": 2434,
+              "text": "核对截止日期",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 2434,
+              "end": 2449,
+              "text": "2026 年 8 月 31 日",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 2449,
+          "end": 2475,
+          "cells": [
+            {
+              "start": 2449,
+              "end": 2453,
+              "text": "适用对象",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 2453,
+              "end": 2475,
+              "text": "个人开发者的 Copilot Free 套餐",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 2475,
+          "end": 2502,
+          "cells": [
+            {
+              "start": 2475,
+              "end": 2479,
+              "text": "优先来源",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 2479,
+              "end": 2502,
+              "text": "GitHub 当前套餐文档、帮助文档、正式公告",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 2502,
+          "end": 2534,
+          "cells": [
+            {
+              "start": 2502,
+              "end": 2507,
+              "text": "可接受结论",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 2507,
+              "end": 2534,
+              "text": "当前成立 / 历史上成立 / 部分成立 / 暂无法确认",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "blockId": "b82",
+      "rows": [
+        {
+          "start": 4240,
+          "end": 4255,
+          "cells": [
+            {
+              "start": 4240,
+              "end": 4242,
+              "text": "来源",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 4242,
+              "end": 4247,
+              "text": "能证明什么",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 4247,
+              "end": 4255,
+              "text": "不能单独证明什么",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 4255,
+          "end": 4332,
+          "cells": [
+            {
+              "start": 4255,
+              "end": 4275,
+              "text": "2024 年 12 月 18 日发布公告",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 4275,
+              "end": 4314,
+              "text": "Copilot Free 发布时公布了 2,000 次补全和 50 条聊天消息",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 4314,
+              "end": 4332,
+              "text": "2026 年仍沿用同样的聊天计量规则",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 4332,
+          "end": 4421,
+          "cells": [
+            {
+              "start": 4332,
+              "end": 4356,
+              "text": "2026 年 8 月 31 日读取的当前套餐文档",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 4356,
+              "end": 4401,
+              "text": "当前仍列出每月最多 2,000 次补全，并使用 AI Credits 描述部分 AI 用量",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 4401,
+              "end": 4421,
+              "text": "旧公告中的 50 条聊天消息仍是当前额度",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "blockId": "b90",
+      "rows": [
+        {
+          "start": 4819,
+          "end": 4835,
+          "cells": [
+            {
+              "start": 4819,
+              "end": 4825,
+              "text": "你想确认什么",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 4825,
+              "end": 4831,
+              "text": "通常优先寻找",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 4831,
+              "end": 4835,
+              "text": "仍需注意",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 4835,
+          "end": 4869,
+          "cells": [
+            {
+              "start": 4835,
+              "end": 4842,
+              "text": "当前功能和套餐",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 4842,
+              "end": 4857,
+              "text": "当前帮助文档、套餐页、更新日志",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 4857,
+              "end": 4869,
+              "text": "地区、账号类型和灰度范围",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 4869,
+          "end": 4900,
+          "cells": [
+            {
+              "start": 4869,
+              "end": 4878,
+              "text": "某次发布时说了什么",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 4878,
+              "end": 4891,
+              "text": "原始公告、发布会、完整演讲",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 4891,
+              "end": 4900,
+              "text": "不要自动延伸到当前",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 4900,
+          "end": 4929,
+          "cells": [
+            {
+              "start": 4900,
+              "end": 4907,
+              "text": "论文得出了什么",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 4907,
+              "end": 4919,
+              "text": "论文原文、补充材料、勘误",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 4919,
+              "end": 4929,
+              "text": "样本、方法和结论限制",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 4929,
+          "end": 4961,
+          "cells": [
+            {
+              "start": 4929,
+              "end": 4937,
+              "text": "政策现在如何执行",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 4937,
+              "end": 4949,
+              "text": "发布机关的现行文件与解释",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 4949,
+              "end": 4961,
+              "text": "生效日期、地区和废止情况",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 4961,
+          "end": 4990,
+          "cells": [
+            {
+              "start": 4961,
+              "end": 4968,
+              "text": "公司披露的数字",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 4968,
+              "end": 4981,
+              "text": "财报、监管文件、原始数据表",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 4981,
+              "end": 4990,
+              "text": "统计口径和报告周期",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 4990,
+          "end": 5023,
+          "cells": [
+            {
+              "start": 4990,
+              "end": 4998,
+              "text": "产品是否“更好”",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 4998,
+              "end": 5013,
+              "text": "独立测试、可复现实验、多方评价",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 5013,
+              "end": 5023,
+              "text": "指标是否适合你的场景",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "blockId": "b133",
+      "rows": [
+        {
+          "start": 6891,
+          "end": 6904,
+          "cells": [
+            {
+              "start": 6891,
+              "end": 6893,
+              "text": "编号",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 6893,
+              "end": 6898,
+              "text": "待核验主张",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 6898,
+              "end": 6900,
+              "text": "来源",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 6900,
+              "end": 6902,
+              "text": "时间",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 6902,
+              "end": 6904,
+              "text": "状态",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 6904,
+          "end": 6961,
+          "cells": [
+            {
+              "start": 6904,
+              "end": 6906,
+              "text": "S1",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 6906,
+              "end": 6930,
+              "text": "发布时有 2,000 次补全和 50 条聊天消息",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 6930,
+              "end": 6946,
+              "text": "GitHub 2024 发布公告",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 6946,
+              "end": 6956,
+              "text": "2024-12-18",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 6956,
+              "end": 6961,
+              "text": "历史上成立",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 6961,
+          "end": 7011,
+          "cells": [
+            {
+              "start": 6961,
+              "end": 6963,
+              "text": "S2",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 6963,
+              "end": 6981,
+              "text": "当前仍有每月最多 2,000 次补全",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 6981,
+              "end": 6994,
+              "text": "GitHub 当前套餐文档",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 6994,
+              "end": 7007,
+              "text": "2026-08-31 核对",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 7007,
+              "end": 7011,
+              "text": "当前确认",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 7011,
+          "end": 7069,
+          "cells": [
+            {
+              "start": 7011,
+              "end": 7013,
+              "text": "S3",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 7013,
+              "end": 7028,
+              "text": "当前仍固定为 50 条聊天消息",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 7028,
+              "end": 7047,
+              "text": "GitHub 当前套餐文档未沿用该表述",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 7047,
+              "end": 7060,
+              "text": "2026-08-31 核对",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 7060,
+              "end": 7069,
+              "text": "暂无法按旧说法确认",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

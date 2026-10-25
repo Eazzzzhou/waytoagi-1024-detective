@@ -1,0 +1,3077 @@
+{
+  "schemaVersion": "source-document/v1",
+  "id": "02daed6b31fb9670d9335dc93d2664c2869be3bef8d2cfa4f26629181fed08b9",
+  "version": "aca43fc96aac7864716e57b0d11752215ab7d6c6c8e38114da9c1fd659377510",
+  "requestedUrl": "https://docs.ollama.com/faq",
+  "finalUrl": "https://docs.ollama.com/faq",
+  "retrievedAt": "2026-10-25T04:42:53.477Z",
+  "contentType": "text/html; charset=utf-8",
+  "status": "READ",
+  "readError": null,
+  "rawHash": "b317237aa79567bf712accfdf6ac7886b5eeaef7a11d62d83f1f3a01493166d5",
+  "textHash": "5948c8cf8a5a00a19b2cc17978c29960d353ecfbaf108ef717be1d575e6919be",
+  "text": "Skip to main content\n\nGuideIntegrationsAPI Reference\n\nMore information\n\nFAQ\n\nCopy page\n\nCopy page\n\n​How can I upgrade Ollama?\n\nOllama on macOS and Windows will automatically download updates. Click on the taskbar or menubar item and then click “Restart to update” to apply the update. Updates can also be installed by downloading the latest version manually.\n\nOn Linux, re-run the install script:\n\ncurl -fsSL https://ollama.com/install.sh | sh\n\n​How can I view the logs?\n\nReview the Troubleshooting docs for more about using logs.\n\n​Is my GPU compatible with Ollama?\n\nPlease refer to the GPU docs.\n\n​How can I specify the context window size?\n\nBy default, Ollama uses a context window size of 4096 tokens.\n\nThis can be overridden with the OLLAMA_CONTEXT_LENGTH environment variable. For example, to set the default context window to 8K, use:\n\nOLLAMA_CONTEXT_LENGTH=8192 ollama serve\n\nTo change this when using ollama run, use /set parameter:\n\n/set parameter num_ctx 4096\n\nWhen using the API, specify the num_ctx parameter:\n\ncurl http://localhost:11434/api/generate -d '{\n  \"model\": \"llama3.2\",\n  \"prompt\": \"Why is the sky blue?\",\n  \"options\": {\n    \"num_ctx\": 4096\n  }\n}'\n\n​How can I tell if my model was loaded onto the GPU?\n\nUse the ollama ps command to see what models are currently loaded into memory.\n\nollama ps\n\nOutput:\n\nNAME        ID            SIZE    PROCESSOR   UNTIL\nllama3:70b  bcfb190ca3a7  42 GB   100% GPU    4 minutes from now\n\nThe Processor column will show which memory the model was loaded into:\n\n100% GPU means the model was loaded entirely into the GPU\n\n100% CPU means the model was loaded entirely in system memory\n\n48%/52% CPU/GPU means the model was loaded partially onto both the GPU and into system memory\n\n​How do I configure Ollama server?\n\nOllama server can be configured with environment variables.\n\n​Setting environment variables on Mac\n\nIf Ollama is run as a macOS application, environment variables should be set using launchctl:\n\nFor each environment variable, call launchctl setenv.\n\nlaunchctl setenv OLLAMA_HOST \"0.0.0.0:11434\"\n\nRestart Ollama application.\n\n​Setting environment variables on Linux\n\nIf Ollama is run as a systemd service, environment variables should be set using systemctl:\n\nEdit the systemd service by calling systemctl edit ollama.service. This will open an editor.\n\nFor each environment variable, add a line Environment under section [Service]:\n\n[Service]\nEnvironment=\"OLLAMA_HOST=0.0.0.0:11434\"\n\nSave and exit.\n\nReload systemd and restart Ollama:\n\nsystemctl daemon-reload\nsystemctl restart ollama\n\n​Setting environment variables on Windows\n\nOn Windows, Ollama inherits your user and system environment variables.\n\nFirst Quit Ollama by clicking on it in the task bar.\n\nStart the Settings (Windows 11) or Control Panel (Windows 10) application and search for environment variables.\n\nClick on Edit environment variables for your account.\n\nEdit or create a new variable for your user account for OLLAMA_HOST, OLLAMA_MODELS, etc.\n\nClick OK/Apply to save.\n\nStart the Ollama application from the Windows Start menu.\n\n​How do I use Ollama behind a proxy?\n\nOllama pulls models from the Internet and may require a proxy server to access the models. Use HTTPS_PROXY to redirect outbound requests through the proxy. Ensure the proxy certificate is installed as a system certificate. Refer to the section above for how to use environment variables on your platform.\n\nAvoid setting HTTP_PROXY. Ollama does not use HTTP for model pulls, only HTTPS. Setting HTTP_PROXY may interrupt client connections to the server.\n\n​How do I use Ollama behind a proxy in Docker?\n\nThe Ollama Docker container image can be configured to use a proxy by passing -e HTTPS_PROXY=https://proxy.example.com when starting the container.\n\nAlternatively, the Docker daemon can be configured to use a proxy. Instructions are available for Docker Desktop on macOS, Windows, and Linux, and Docker daemon with systemd.\n\nEnsure the certificate is installed as a system certificate when using HTTPS. This may require a new Docker image when using a self-signed certificate.\n\nFROM ollama/ollama\nCOPY my-ca.pem /usr/local/share/ca-certificates/my-ca.crt\nRUN update-ca-certificates\n\nBuild and run this image:\n\ndocker build -t ollama-with-ca .\ndocker run -d -e HTTPS_PROXY=https://my.proxy.example.com -p 11434:11434 ollama-with-ca\n\n​Does Ollama send my prompts and answers back to ollama.com?\n\nOllama runs locally. We don’t see your prompts or data when you run locally. When using cloud-hosted models, we process your prompts and responses to provide the service but do not store or log that content and never train on it. We collect basic account info and limited usage metadata to provide the service that does not include prompt or response content. We don’t sell your data. You can delete your account anytime.\n\n​How do I disable Ollama’s cloud features?\n\nOllama can run in local only mode by disabling Ollama’s cloud features. By turning off Ollama’s cloud features, you will lose the ability to use Ollama’s cloud models and web search.\n\nSet disable_ollama_cloud in ~/.ollama/server.json:\n\n{\n  \"disable_ollama_cloud\": true\n}\n\nYou can also set the environment variable:\n\nOLLAMA_NO_CLOUD=1\n\nRestart Ollama after changing configuration. Once disabled, Ollama’s logs will show Ollama cloud disabled: true.\n\n​How can I expose Ollama on my network?\n\nOllama binds 127.0.0.1 port 11434 by default. Change the bind address with the OLLAMA_HOST environment variable.\n\nRefer to the section above for how to set environment variables on your platform.\n\n​How can I use Ollama with a proxy server?\n\nOllama runs an HTTP server and can be exposed using a proxy server such as Nginx. To do so, configure the proxy to forward requests and optionally set required headers (if not exposing Ollama on the network). For example, with Nginx:\n\nserver {\n    listen 80;\n    server_name example.com;  # Replace with your domain or IP\n    location / {\n        proxy_pass http://localhost:11434;\n        proxy_set_header Host localhost:11434;\n    }\n}\n\n​How can I use Ollama with ngrok?\n\nOllama can be accessed using a range of tunneling apps. For example with Ngrok:\n\nngrok http 11434 --host-header=\"localhost:11434\"\n\n​How can I use Ollama with Cloudflare Tunnel?\n\nTo use Ollama with Cloudflare Tunnel, use the --url and --http-host-header flags:\n\ncloudflared tunnel --url http://localhost:11434 --http-host-header=\"localhost:11434\"\n\n​How can I allow additional web origins to access Ollama?\n\nOllama allows cross-origin requests from 127.0.0.1 and 0.0.0.0 by default. Additional origins can be configured with OLLAMA_ORIGINS.\n\nFor browser extensions, you’ll need to explicitly allow the extension’s origin pattern. Set OLLAMA_ORIGINS to include chrome-extension://*, moz-extension://*, and safari-web-extension://* if you wish to allow all browser extensions access, or specific extensions as needed:\n\n# Allow all Chrome, Firefox, and Safari extensions\nOLLAMA_ORIGINS=chrome-extension://*,moz-extension://*,safari-web-extension://* ollama serve\n\nRefer to the section above for how to set environment variables on your platform.\n\n​Where are models stored?\n\nmacOS: ~/.ollama/models\n\nLinux: /usr/share/ollama/.ollama/models\n\nWindows: C:\\Users\\%username%\\.ollama\\models\n\n​How do I set them to a different location?\n\nIf a different directory needs to be used, set the environment variable OLLAMA_MODELS to the chosen directory.\n\nOn Linux using the standard installer, the ollama user needs read and write access to the specified directory. To assign the directory to the ollama user run sudo chown -R ollama:ollama <directory>.\n\nRefer to the section above for how to set environment variables on your platform.\n\n​How can I use Ollama in Visual Studio Code?\n\nInstall the Ollama extension to use Ollama models in VS Code Chat. See the VS Code integration guide for setup and troubleshooting.\n\n​How do I use Ollama with GPU acceleration in Docker?\n\nThe Ollama Docker container can be configured with GPU acceleration in Linux or Windows (with WSL2). This requires the nvidia-container-toolkit. See ollama/ollama for more details.\n\nGPU acceleration is not available for Docker Desktop in macOS due to the lack of GPU passthrough and emulation.\n\n​Why is networking slow in WSL2 on Windows 10?\n\nThis can impact both installing Ollama, as well as downloading models.\n\nOpen Control Panel > Networking and Internet > View network status and tasks and click on Change adapter settings on the left panel. Find the vEthernet (WSL) adapter, right click and select Properties. Click on Configure and open the Advanced tab. Search through each of the properties until you find Large Send Offload Version 2 (IPv4) and Large Send Offload Version 2 (IPv6). Disable both of these properties.\n\n​How can I preload a model into Ollama to get faster response times?\n\nIf you are using the API you can preload a model by sending the Ollama server an empty request. This works with both the /api/generate and /api/chat API endpoints.\n\nTo preload the mistral model using the generate endpoint, use:\n\ncurl http://localhost:11434/api/generate -d '{\"model\": \"mistral\"}'\n\nTo use the chat completions endpoint, use:\n\ncurl http://localhost:11434/api/chat -d '{\"model\": \"mistral\"}'\n\nTo preload a model using the CLI, use the command:\n\nollama run llama3.2 \"\"\n\n​How do I keep a model loaded in memory or make it unload immediately?\n\nBy default models are kept in memory for 5 minutes before being unloaded. This allows for quicker response times if you’re making numerous requests to the LLM. If you want to immediately unload a model from memory, use the ollama stop command:\n\nollama stop llama3.2\n\nIf you’re using the API, use the keep_alive parameter with the /api/generate and /api/chat endpoints to set the amount of time that a model stays in memory. The keep_alive parameter can be set to:\n\na duration string (such as “10m” or “24h”)\n\na number in seconds (such as 3600)\n\nany negative number which will keep the model loaded in memory (e.g. -1 or “-1m”)\n\n‘0’ which will unload the model immediately after generating a response\n\nFor example, to preload a model and leave it in memory use:\n\ncurl http://localhost:11434/api/generate -d '{\"model\": \"llama3.2\", \"keep_alive\": -1}'\n\nTo unload the model and free up memory use:\n\ncurl http://localhost:11434/api/generate -d '{\"model\": \"llama3.2\", \"keep_alive\": 0}'\n\nAlternatively, you can change the amount of time all models are loaded into memory by setting the OLLAMA_KEEP_ALIVE environment variable when starting the Ollama server. The OLLAMA_KEEP_ALIVE variable uses the same parameter types as the keep_alive parameter types mentioned above. Refer to the section explaining how to configure the Ollama server to correctly set the environment variable.\n\nThe keep_alive API parameter with the /api/generate and /api/chat API endpoints will override the OLLAMA_KEEP_ALIVE setting.\n\n​How do I manage the maximum number of requests the Ollama server can queue?\n\nIf too many requests are sent to the server, it will respond with a 503 error indicating the server is overloaded. You can adjust how many requests may be queued by setting OLLAMA_MAX_QUEUE.\n\n​How does Ollama handle concurrent requests?\n\nOllama supports two levels of concurrent processing. If your system has sufficient available memory (system memory when using CPU inference, or VRAM for GPU inference) then multiple models can be loaded at the same time. For a given model, if there is sufficient available memory when the model is loaded, it is configured to allow parallel request processing.\n\nIf there is insufficient available memory to load a new model request while one or more models are already loaded, all new requests will be queued until the new model can be loaded. As prior models become idle, one or more will be unloaded to make room for the new model. Queued requests will be processed in order. When using GPU inference new models must be able to completely fit in VRAM to allow concurrent model loads.\n\nParallel request processing for a given model results in increasing the context size by the number of parallel requests. For example, a 2K context with 4 parallel requests will result in an 8K context and additional memory allocation.\n\nThe following server settings may be used to adjust how Ollama handles concurrent requests on most platforms:\n\nOLLAMA_MAX_LOADED_MODELS - The maximum number of models that can be loaded concurrently provided they fit in available memory. The default is 3 * the number of GPUs or 3 for CPU inference.\n\nOLLAMA_NUM_PARALLEL - The maximum number of parallel requests each model will process at the same time, default 1. Required RAM will scale by OLLAMA_NUM_PARALLEL * OLLAMA_CONTEXT_LENGTH.\n\nOLLAMA_MAX_QUEUE - The maximum number of requests Ollama will queue when busy before rejecting additional requests. The default is 512\n\nNote: Windows with Radeon GPUs currently default to 1 model maximum due to limitations in ROCm v5.7 for available VRAM reporting. Once ROCm v6.2 is available, Windows Radeon will follow the defaults above. You may enable concurrent model loads on Radeon on Windows, but ensure you don’t load more models than will fit into your GPU’s VRAM.\n\n​How does Ollama load models on multiple GPUs?\n\nWhen loading a new model, Ollama evaluates the required VRAM for the model against what is currently available. If the model will entirely fit on any single GPU, Ollama will load the model on that GPU. This typically provides the best performance as it reduces the amount of data transferring across the PCI bus during inference. If the model does not fit entirely on one GPU, then it will be spread across all the available GPUs.\n\n​How can I enable Flash Attention?\n\nFlash Attention is a feature of most modern models that can significantly reduce memory usage as the context size grows. Ollama uses Flash Attention automatically when the selected backend and devices support it. To force Flash Attention on, set OLLAMA_FLASH_ATTENTION=1 when starting the Ollama server. To disable it, set OLLAMA_FLASH_ATTENTION=0.\n\n​How can I set the quantization type for the K/V cache?\n\nThe K/V context cache can be quantized to significantly reduce memory usage when Flash Attention is enabled.\n\nTo use quantized K/V cache with Ollama you can set the following environment variable:\n\nOLLAMA_KV_CACHE_TYPE - The quantization type for the K/V cache. Default is f16.\n\nCurrently this is a global option - meaning all models will run with the specified quantization type.\n\nThe currently available K/V cache quantization types are:\n\nf16 - high precision and memory usage (default).\n\nq8_0 - 8-bit quantization, uses approximately 1/2 the memory of f16 with a very small loss in precision, this usually has no noticeable impact on the model’s quality (recommended if not using f16).\n\nq4_0 - 4-bit quantization, uses approximately 1/4 the memory of f16 with a small-medium loss in precision that may be more noticeable at higher context sizes.\n\nHow much the cache quantization impacts the model’s response quality will depend on the model and the task. Models that have a high GQA count (e.g. Qwen2) may see a larger impact on precision from quantization than models with a low GQA count.\n\nYou may need to experiment with different quantization types to find the best balance between memory usage and quality.\n\n​Where can I find my Ollama Public Key?\n\nYour Ollama Public Key is the public part of the key pair that lets your local Ollama instance talk to ollama.com.\n\nYou’ll need it to:\n\nPush models to Ollama\n\nPull private models from Ollama to your machine\n\nRun models hosted in Ollama’s cloud\n\n​How to Add the Key\n\nSign-in via the Settings page in the Mac and Windows App\n\nSign‑in via CLI\n\nollama signin\n\nManually copy & paste the key on the Ollama Keys page: https://ollama.com/settings/keys\n\n​Where the Ollama Public Key lives\n\nOSPath to id_ed25519.pubmacOS~/.ollama/id_ed25519.pubLinux/usr/share/ollama/.ollama/id_ed25519.pubWindowsC:\\Users\\<username>\\.ollama\\id_ed25519.pub\n\nReplace <username> with your actual Windows user name.\n\n​How can I stop Ollama from starting when I login to my computer?\n\nOllama for Windows and macOS register as a login item during installation. You can disable this if you prefer not to have Ollama automatically start. Ollama will respect this setting across upgrades, unless you uninstall the application.\n\nWindows\n\nIn Task Manager go to the Startup apps tab, search for ollama then click Disable\n\nMacOS\n\nOpen Settings and search for “Login Items”, find the Ollama entry under Allow in the Background, then click the slider to disable.",
+  "rawSources": [
+    {
+      "mode": "STATIC",
+      "hash": "b317237aa79567bf712accfdf6ac7886b5eeaef7a11d62d83f1f3a01493166d5",
+      "path": "C:\\Users\\qianchen\\Documents\\waytoagi-1024-detective-a2-v4\\.cache\\source-documents-v4\\0390ddcb-a1eb-46eb-a9a6-c3ca2937cf61\\02daed6b31fb9670d9335dc93d2664c2869be3bef8d2cfa4f26629181fed08b9\\raw.bin"
+    }
+  ],
+  "storage": {
+    "rawPath": "C:\\Users\\qianchen\\Documents\\waytoagi-1024-detective-a2-v4\\.cache\\source-documents-v4\\0390ddcb-a1eb-46eb-a9a6-c3ca2937cf61\\02daed6b31fb9670d9335dc93d2664c2869be3bef8d2cfa4f26629181fed08b9\\raw.bin",
+    "textPath": "C:\\Users\\qianchen\\Documents\\waytoagi-1024-detective-a2-v4\\.cache\\source-documents-v4\\0390ddcb-a1eb-46eb-a9a6-c3ca2937cf61\\02daed6b31fb9670d9335dc93d2664c2869be3bef8d2cfa4f26629181fed08b9\\source.txt",
+    "manifestPath": "C:\\Users\\qianchen\\Documents\\waytoagi-1024-detective-a2-v4\\.cache\\source-documents-v4\\0390ddcb-a1eb-46eb-a9a6-c3ca2937cf61\\02daed6b31fb9670d9335dc93d2664c2869be3bef8d2cfa4f26629181fed08b9\\manifest.json"
+  },
+  "parser": {
+    "name": "readability+source-dom",
+    "version": "readability-0.6.0+jsdom-30.1.3+source-dom-2",
+    "normalization": "source-text/v1",
+    "mode": "STATIC"
+  },
+  "metadata": {
+    "title": "FAQ - Ollama",
+    "author": null,
+    "publishedAt": null,
+    "language": "en"
+  },
+  "completeness": "COMPLETE",
+  "warnings": [],
+  "blocks": [
+    {
+      "start": 0,
+      "end": 20,
+      "id": "b0",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[0]",
+      "headingPath": [],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 22,
+      "end": 52,
+      "id": "b1",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[1]",
+      "headingPath": [],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 54,
+      "end": 70,
+      "id": "b2",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[2]",
+      "headingPath": [],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 72,
+      "end": 75,
+      "id": "b3",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[3]",
+      "headingPath": [
+        "FAQ"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 77,
+      "end": 86,
+      "id": "b4",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[4]",
+      "headingPath": [
+        "FAQ"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 88,
+      "end": 97,
+      "id": "b5",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[5]",
+      "headingPath": [
+        "FAQ"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 99,
+      "end": 125,
+      "id": "b6",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[6]",
+      "headingPath": [
+        "FAQ",
+        "​How can I upgrade Ollama?"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 127,
+      "end": 358,
+      "id": "b7",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[7]",
+      "headingPath": [
+        "FAQ",
+        "​How can I upgrade Ollama?"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 360,
+      "end": 396,
+      "id": "b8",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[8]",
+      "headingPath": [
+        "FAQ",
+        "​How can I upgrade Ollama?"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 398,
+      "end": 443,
+      "id": "b9",
+      "kind": "CODE",
+      "locator": "source DOM normalized block[9]",
+      "headingPath": [
+        "FAQ",
+        "​How can I upgrade Ollama?"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 445,
+      "end": 470,
+      "id": "b10",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[10]",
+      "headingPath": [
+        "FAQ",
+        "​How can I view the logs?"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 472,
+      "end": 530,
+      "id": "b11",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[11]",
+      "headingPath": [
+        "FAQ",
+        "​How can I view the logs?"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 532,
+      "end": 566,
+      "id": "b12",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[12]",
+      "headingPath": [
+        "FAQ",
+        "​Is my GPU compatible with Ollama?"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 568,
+      "end": 597,
+      "id": "b13",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[13]",
+      "headingPath": [
+        "FAQ",
+        "​Is my GPU compatible with Ollama?"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 599,
+      "end": 642,
+      "id": "b14",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[14]",
+      "headingPath": [
+        "FAQ",
+        "​How can I specify the context window size?"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 644,
+      "end": 705,
+      "id": "b15",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[15]",
+      "headingPath": [
+        "FAQ",
+        "​How can I specify the context window size?"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 707,
+      "end": 841,
+      "id": "b16",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[16]",
+      "headingPath": [
+        "FAQ",
+        "​How can I specify the context window size?"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 843,
+      "end": 882,
+      "id": "b17",
+      "kind": "CODE",
+      "locator": "source DOM normalized block[17]",
+      "headingPath": [
+        "FAQ",
+        "​How can I specify the context window size?"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 884,
+      "end": 941,
+      "id": "b18",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[18]",
+      "headingPath": [
+        "FAQ",
+        "​How can I specify the context window size?"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 943,
+      "end": 970,
+      "id": "b19",
+      "kind": "CODE",
+      "locator": "source DOM normalized block[19]",
+      "headingPath": [
+        "FAQ",
+        "​How can I specify the context window size?"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 972,
+      "end": 1022,
+      "id": "b20",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[20]",
+      "headingPath": [
+        "FAQ",
+        "​How can I specify the context window size?"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1024,
+      "end": 1171,
+      "id": "b21",
+      "kind": "CODE",
+      "locator": "source DOM normalized block[21]",
+      "headingPath": [
+        "FAQ",
+        "​How can I specify the context window size?"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1173,
+      "end": 1225,
+      "id": "b22",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[22]",
+      "headingPath": [
+        "FAQ",
+        "​How can I tell if my model was loaded onto the GPU?"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1227,
+      "end": 1305,
+      "id": "b23",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[23]",
+      "headingPath": [
+        "FAQ",
+        "​How can I tell if my model was loaded onto the GPU?"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1307,
+      "end": 1316,
+      "id": "b24",
+      "kind": "CODE",
+      "locator": "source DOM normalized block[24]",
+      "headingPath": [
+        "FAQ",
+        "​How can I tell if my model was loaded onto the GPU?"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1318,
+      "end": 1325,
+      "id": "b25",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[25]",
+      "headingPath": [
+        "FAQ",
+        "​How can I tell if my model was loaded onto the GPU?"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1327,
+      "end": 1443,
+      "id": "b26",
+      "kind": "CODE",
+      "locator": "source DOM normalized block[26]",
+      "headingPath": [
+        "FAQ",
+        "​How can I tell if my model was loaded onto the GPU?"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1445,
+      "end": 1515,
+      "id": "b27",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[27]",
+      "headingPath": [
+        "FAQ",
+        "​How can I tell if my model was loaded onto the GPU?"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1517,
+      "end": 1574,
+      "id": "b28",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[28]",
+      "headingPath": [
+        "FAQ",
+        "​How can I tell if my model was loaded onto the GPU?"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1576,
+      "end": 1637,
+      "id": "b29",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[29]",
+      "headingPath": [
+        "FAQ",
+        "​How can I tell if my model was loaded onto the GPU?"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1639,
+      "end": 1732,
+      "id": "b30",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[30]",
+      "headingPath": [
+        "FAQ",
+        "​How can I tell if my model was loaded onto the GPU?"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1734,
+      "end": 1768,
+      "id": "b31",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[31]",
+      "headingPath": [
+        "FAQ",
+        "​How do I configure Ollama server?"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1770,
+      "end": 1829,
+      "id": "b32",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[32]",
+      "headingPath": [
+        "FAQ",
+        "​How do I configure Ollama server?"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1831,
+      "end": 1868,
+      "id": "b33",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[33]",
+      "headingPath": [
+        "FAQ",
+        "​How do I configure Ollama server?",
+        "​Setting environment variables on Mac"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1870,
+      "end": 1963,
+      "id": "b34",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[34]",
+      "headingPath": [
+        "FAQ",
+        "​How do I configure Ollama server?",
+        "​Setting environment variables on Mac"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1965,
+      "end": 2018,
+      "id": "b35",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[35]",
+      "headingPath": [
+        "FAQ",
+        "​How do I configure Ollama server?",
+        "​Setting environment variables on Mac"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2020,
+      "end": 2064,
+      "id": "b36",
+      "kind": "CODE",
+      "locator": "source DOM normalized block[36]",
+      "headingPath": [
+        "FAQ",
+        "​How do I configure Ollama server?",
+        "​Setting environment variables on Mac"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2066,
+      "end": 2093,
+      "id": "b37",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[37]",
+      "headingPath": [
+        "FAQ",
+        "​How do I configure Ollama server?",
+        "​Setting environment variables on Mac"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2095,
+      "end": 2134,
+      "id": "b38",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[38]",
+      "headingPath": [
+        "FAQ",
+        "​How do I configure Ollama server?",
+        "​Setting environment variables on Linux"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2136,
+      "end": 2227,
+      "id": "b39",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[39]",
+      "headingPath": [
+        "FAQ",
+        "​How do I configure Ollama server?",
+        "​Setting environment variables on Linux"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2229,
+      "end": 2321,
+      "id": "b40",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[40]",
+      "headingPath": [
+        "FAQ",
+        "​How do I configure Ollama server?",
+        "​Setting environment variables on Linux"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2323,
+      "end": 2401,
+      "id": "b41",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[41]",
+      "headingPath": [
+        "FAQ",
+        "​How do I configure Ollama server?",
+        "​Setting environment variables on Linux"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2403,
+      "end": 2452,
+      "id": "b42",
+      "kind": "CODE",
+      "locator": "source DOM normalized block[42]",
+      "headingPath": [
+        "FAQ",
+        "​How do I configure Ollama server?",
+        "​Setting environment variables on Linux"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2454,
+      "end": 2468,
+      "id": "b43",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[43]",
+      "headingPath": [
+        "FAQ",
+        "​How do I configure Ollama server?",
+        "​Setting environment variables on Linux"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2470,
+      "end": 2504,
+      "id": "b44",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[44]",
+      "headingPath": [
+        "FAQ",
+        "​How do I configure Ollama server?",
+        "​Setting environment variables on Linux"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2506,
+      "end": 2554,
+      "id": "b45",
+      "kind": "CODE",
+      "locator": "source DOM normalized block[45]",
+      "headingPath": [
+        "FAQ",
+        "​How do I configure Ollama server?",
+        "​Setting environment variables on Linux"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2556,
+      "end": 2597,
+      "id": "b46",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[46]",
+      "headingPath": [
+        "FAQ",
+        "​How do I configure Ollama server?",
+        "​Setting environment variables on Windows"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2599,
+      "end": 2670,
+      "id": "b47",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[47]",
+      "headingPath": [
+        "FAQ",
+        "​How do I configure Ollama server?",
+        "​Setting environment variables on Windows"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2672,
+      "end": 2724,
+      "id": "b48",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[48]",
+      "headingPath": [
+        "FAQ",
+        "​How do I configure Ollama server?",
+        "​Setting environment variables on Windows"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2726,
+      "end": 2837,
+      "id": "b49",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[49]",
+      "headingPath": [
+        "FAQ",
+        "​How do I configure Ollama server?",
+        "​Setting environment variables on Windows"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2839,
+      "end": 2892,
+      "id": "b50",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[50]",
+      "headingPath": [
+        "FAQ",
+        "​How do I configure Ollama server?",
+        "​Setting environment variables on Windows"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2894,
+      "end": 2982,
+      "id": "b51",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[51]",
+      "headingPath": [
+        "FAQ",
+        "​How do I configure Ollama server?",
+        "​Setting environment variables on Windows"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2984,
+      "end": 3007,
+      "id": "b52",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[52]",
+      "headingPath": [
+        "FAQ",
+        "​How do I configure Ollama server?",
+        "​Setting environment variables on Windows"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3009,
+      "end": 3066,
+      "id": "b53",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[53]",
+      "headingPath": [
+        "FAQ",
+        "​How do I configure Ollama server?",
+        "​Setting environment variables on Windows"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3068,
+      "end": 3104,
+      "id": "b54",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[54]",
+      "headingPath": [
+        "FAQ",
+        "​How do I use Ollama behind a proxy?"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3106,
+      "end": 3410,
+      "id": "b55",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[55]",
+      "headingPath": [
+        "FAQ",
+        "​How do I use Ollama behind a proxy?"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3412,
+      "end": 3558,
+      "id": "b56",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[56]",
+      "headingPath": [
+        "FAQ",
+        "​How do I use Ollama behind a proxy?"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3560,
+      "end": 3606,
+      "id": "b57",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[57]",
+      "headingPath": [
+        "FAQ",
+        "​How do I use Ollama behind a proxy?",
+        "​How do I use Ollama behind a proxy in Docker?"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3608,
+      "end": 3755,
+      "id": "b58",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[58]",
+      "headingPath": [
+        "FAQ",
+        "​How do I use Ollama behind a proxy?",
+        "​How do I use Ollama behind a proxy in Docker?"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3757,
+      "end": 3931,
+      "id": "b59",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[59]",
+      "headingPath": [
+        "FAQ",
+        "​How do I use Ollama behind a proxy?",
+        "​How do I use Ollama behind a proxy in Docker?"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3933,
+      "end": 4084,
+      "id": "b60",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[60]",
+      "headingPath": [
+        "FAQ",
+        "​How do I use Ollama behind a proxy?",
+        "​How do I use Ollama behind a proxy in Docker?"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4086,
+      "end": 4189,
+      "id": "b61",
+      "kind": "CODE",
+      "locator": "source DOM normalized block[61]",
+      "headingPath": [
+        "FAQ",
+        "​How do I use Ollama behind a proxy?",
+        "​How do I use Ollama behind a proxy in Docker?"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4191,
+      "end": 4216,
+      "id": "b62",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[62]",
+      "headingPath": [
+        "FAQ",
+        "​How do I use Ollama behind a proxy?",
+        "​How do I use Ollama behind a proxy in Docker?"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4218,
+      "end": 4338,
+      "id": "b63",
+      "kind": "CODE",
+      "locator": "source DOM normalized block[63]",
+      "headingPath": [
+        "FAQ",
+        "​How do I use Ollama behind a proxy?",
+        "​How do I use Ollama behind a proxy in Docker?"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4340,
+      "end": 4400,
+      "id": "b64",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[64]",
+      "headingPath": [
+        "FAQ",
+        "​Does Ollama send my prompts and answers back to ollama.com?"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4402,
+      "end": 4823,
+      "id": "b65",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[65]",
+      "headingPath": [
+        "FAQ",
+        "​Does Ollama send my prompts and answers back to ollama.com?"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4825,
+      "end": 4867,
+      "id": "b66",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[66]",
+      "headingPath": [
+        "FAQ",
+        "​How do I disable Ollama’s cloud features?"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4869,
+      "end": 5051,
+      "id": "b67",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[67]",
+      "headingPath": [
+        "FAQ",
+        "​How do I disable Ollama’s cloud features?"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5053,
+      "end": 5103,
+      "id": "b68",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[68]",
+      "headingPath": [
+        "FAQ",
+        "​How do I disable Ollama’s cloud features?"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5105,
+      "end": 5139,
+      "id": "b69",
+      "kind": "CODE",
+      "locator": "source DOM normalized block[69]",
+      "headingPath": [
+        "FAQ",
+        "​How do I disable Ollama’s cloud features?"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5141,
+      "end": 5183,
+      "id": "b70",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[70]",
+      "headingPath": [
+        "FAQ",
+        "​How do I disable Ollama’s cloud features?"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5185,
+      "end": 5202,
+      "id": "b71",
+      "kind": "CODE",
+      "locator": "source DOM normalized block[71]",
+      "headingPath": [
+        "FAQ",
+        "​How do I disable Ollama’s cloud features?"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5204,
+      "end": 5316,
+      "id": "b72",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[72]",
+      "headingPath": [
+        "FAQ",
+        "​How do I disable Ollama’s cloud features?"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5318,
+      "end": 5357,
+      "id": "b73",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[73]",
+      "headingPath": [
+        "FAQ",
+        "​How can I expose Ollama on my network?"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5359,
+      "end": 5471,
+      "id": "b74",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[74]",
+      "headingPath": [
+        "FAQ",
+        "​How can I expose Ollama on my network?"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5473,
+      "end": 5554,
+      "id": "b75",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[75]",
+      "headingPath": [
+        "FAQ",
+        "​How can I expose Ollama on my network?"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5556,
+      "end": 5598,
+      "id": "b76",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[76]",
+      "headingPath": [
+        "FAQ",
+        "​How can I use Ollama with a proxy server?"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5600,
+      "end": 5833,
+      "id": "b77",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[77]",
+      "headingPath": [
+        "FAQ",
+        "​How can I use Ollama with a proxy server?"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5835,
+      "end": 6036,
+      "id": "b78",
+      "kind": "CODE",
+      "locator": "source DOM normalized block[78]",
+      "headingPath": [
+        "FAQ",
+        "​How can I use Ollama with a proxy server?"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 6038,
+      "end": 6071,
+      "id": "b79",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[79]",
+      "headingPath": [
+        "FAQ",
+        "​How can I use Ollama with ngrok?"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 6073,
+      "end": 6152,
+      "id": "b80",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[80]",
+      "headingPath": [
+        "FAQ",
+        "​How can I use Ollama with ngrok?"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 6154,
+      "end": 6202,
+      "id": "b81",
+      "kind": "CODE",
+      "locator": "source DOM normalized block[81]",
+      "headingPath": [
+        "FAQ",
+        "​How can I use Ollama with ngrok?"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 6204,
+      "end": 6249,
+      "id": "b82",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[82]",
+      "headingPath": [
+        "FAQ",
+        "​How can I use Ollama with Cloudflare Tunnel?"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 6251,
+      "end": 6332,
+      "id": "b83",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[83]",
+      "headingPath": [
+        "FAQ",
+        "​How can I use Ollama with Cloudflare Tunnel?"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 6334,
+      "end": 6418,
+      "id": "b84",
+      "kind": "CODE",
+      "locator": "source DOM normalized block[84]",
+      "headingPath": [
+        "FAQ",
+        "​How can I use Ollama with Cloudflare Tunnel?"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 6420,
+      "end": 6477,
+      "id": "b85",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[85]",
+      "headingPath": [
+        "FAQ",
+        "​How can I allow additional web origins to access Ollama?"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 6479,
+      "end": 6611,
+      "id": "b86",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[86]",
+      "headingPath": [
+        "FAQ",
+        "​How can I allow additional web origins to access Ollama?"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 6613,
+      "end": 6886,
+      "id": "b87",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[87]",
+      "headingPath": [
+        "FAQ",
+        "​How can I allow additional web origins to access Ollama?"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 6888,
+      "end": 7030,
+      "id": "b88",
+      "kind": "CODE",
+      "locator": "source DOM normalized block[88]",
+      "headingPath": [
+        "FAQ",
+        "​How can I allow additional web origins to access Ollama?"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 7032,
+      "end": 7113,
+      "id": "b89",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[89]",
+      "headingPath": [
+        "FAQ",
+        "​How can I allow additional web origins to access Ollama?"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 7115,
+      "end": 7140,
+      "id": "b90",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[90]",
+      "headingPath": [
+        "FAQ",
+        "​Where are models stored?"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 7142,
+      "end": 7165,
+      "id": "b91",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[91]",
+      "headingPath": [
+        "FAQ",
+        "​Where are models stored?"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 7167,
+      "end": 7206,
+      "id": "b92",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[92]",
+      "headingPath": [
+        "FAQ",
+        "​Where are models stored?"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 7208,
+      "end": 7251,
+      "id": "b93",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[93]",
+      "headingPath": [
+        "FAQ",
+        "​Where are models stored?"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 7253,
+      "end": 7296,
+      "id": "b94",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[94]",
+      "headingPath": [
+        "FAQ",
+        "​Where are models stored?",
+        "​How do I set them to a different location?"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 7298,
+      "end": 7408,
+      "id": "b95",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[95]",
+      "headingPath": [
+        "FAQ",
+        "​Where are models stored?",
+        "​How do I set them to a different location?"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 7410,
+      "end": 7608,
+      "id": "b96",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[96]",
+      "headingPath": [
+        "FAQ",
+        "​Where are models stored?",
+        "​How do I set them to a different location?"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 7610,
+      "end": 7691,
+      "id": "b97",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[97]",
+      "headingPath": [
+        "FAQ",
+        "​Where are models stored?",
+        "​How do I set them to a different location?"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 7693,
+      "end": 7737,
+      "id": "b98",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[98]",
+      "headingPath": [
+        "FAQ",
+        "​How can I use Ollama in Visual Studio Code?"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 7739,
+      "end": 7870,
+      "id": "b99",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[99]",
+      "headingPath": [
+        "FAQ",
+        "​How can I use Ollama in Visual Studio Code?"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 7872,
+      "end": 7925,
+      "id": "b100",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[100]",
+      "headingPath": [
+        "FAQ",
+        "​How do I use Ollama with GPU acceleration in Docker?"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 7927,
+      "end": 8107,
+      "id": "b101",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[101]",
+      "headingPath": [
+        "FAQ",
+        "​How do I use Ollama with GPU acceleration in Docker?"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 8109,
+      "end": 8220,
+      "id": "b102",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[102]",
+      "headingPath": [
+        "FAQ",
+        "​How do I use Ollama with GPU acceleration in Docker?"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 8222,
+      "end": 8268,
+      "id": "b103",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[103]",
+      "headingPath": [
+        "FAQ",
+        "​Why is networking slow in WSL2 on Windows 10?"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 8270,
+      "end": 8340,
+      "id": "b104",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[104]",
+      "headingPath": [
+        "FAQ",
+        "​Why is networking slow in WSL2 on Windows 10?"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 8342,
+      "end": 8753,
+      "id": "b105",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[105]",
+      "headingPath": [
+        "FAQ",
+        "​Why is networking slow in WSL2 on Windows 10?"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 8755,
+      "end": 8823,
+      "id": "b106",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[106]",
+      "headingPath": [
+        "FAQ",
+        "​How can I preload a model into Ollama to get faster response times?"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 8825,
+      "end": 8988,
+      "id": "b107",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[107]",
+      "headingPath": [
+        "FAQ",
+        "​How can I preload a model into Ollama to get faster response times?"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 8990,
+      "end": 9052,
+      "id": "b108",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[108]",
+      "headingPath": [
+        "FAQ",
+        "​How can I preload a model into Ollama to get faster response times?"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 9054,
+      "end": 9120,
+      "id": "b109",
+      "kind": "CODE",
+      "locator": "source DOM normalized block[109]",
+      "headingPath": [
+        "FAQ",
+        "​How can I preload a model into Ollama to get faster response times?"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 9122,
+      "end": 9164,
+      "id": "b110",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[110]",
+      "headingPath": [
+        "FAQ",
+        "​How can I preload a model into Ollama to get faster response times?"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 9166,
+      "end": 9228,
+      "id": "b111",
+      "kind": "CODE",
+      "locator": "source DOM normalized block[111]",
+      "headingPath": [
+        "FAQ",
+        "​How can I preload a model into Ollama to get faster response times?"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 9230,
+      "end": 9280,
+      "id": "b112",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[112]",
+      "headingPath": [
+        "FAQ",
+        "​How can I preload a model into Ollama to get faster response times?"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 9282,
+      "end": 9304,
+      "id": "b113",
+      "kind": "CODE",
+      "locator": "source DOM normalized block[113]",
+      "headingPath": [
+        "FAQ",
+        "​How can I preload a model into Ollama to get faster response times?"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 9306,
+      "end": 9376,
+      "id": "b114",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[114]",
+      "headingPath": [
+        "FAQ",
+        "​How do I keep a model loaded in memory or make it unload immediately?"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 9378,
+      "end": 9621,
+      "id": "b115",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[115]",
+      "headingPath": [
+        "FAQ",
+        "​How do I keep a model loaded in memory or make it unload immediately?"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 9623,
+      "end": 9643,
+      "id": "b116",
+      "kind": "CODE",
+      "locator": "source DOM normalized block[116]",
+      "headingPath": [
+        "FAQ",
+        "​How do I keep a model loaded in memory or make it unload immediately?"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 9645,
+      "end": 9841,
+      "id": "b117",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[117]",
+      "headingPath": [
+        "FAQ",
+        "​How do I keep a model loaded in memory or make it unload immediately?"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 9843,
+      "end": 9885,
+      "id": "b118",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[118]",
+      "headingPath": [
+        "FAQ",
+        "​How do I keep a model loaded in memory or make it unload immediately?"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 9887,
+      "end": 9921,
+      "id": "b119",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[119]",
+      "headingPath": [
+        "FAQ",
+        "​How do I keep a model loaded in memory or make it unload immediately?"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 9923,
+      "end": 10004,
+      "id": "b120",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[120]",
+      "headingPath": [
+        "FAQ",
+        "​How do I keep a model loaded in memory or make it unload immediately?"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 10006,
+      "end": 10077,
+      "id": "b121",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[121]",
+      "headingPath": [
+        "FAQ",
+        "​How do I keep a model loaded in memory or make it unload immediately?"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 10079,
+      "end": 10138,
+      "id": "b122",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[122]",
+      "headingPath": [
+        "FAQ",
+        "​How do I keep a model loaded in memory or make it unload immediately?"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 10140,
+      "end": 10225,
+      "id": "b123",
+      "kind": "CODE",
+      "locator": "source DOM normalized block[123]",
+      "headingPath": [
+        "FAQ",
+        "​How do I keep a model loaded in memory or make it unload immediately?"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 10227,
+      "end": 10270,
+      "id": "b124",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[124]",
+      "headingPath": [
+        "FAQ",
+        "​How do I keep a model loaded in memory or make it unload immediately?"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 10272,
+      "end": 10356,
+      "id": "b125",
+      "kind": "CODE",
+      "locator": "source DOM normalized block[125]",
+      "headingPath": [
+        "FAQ",
+        "​How do I keep a model loaded in memory or make it unload immediately?"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 10358,
+      "end": 10749,
+      "id": "b126",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[126]",
+      "headingPath": [
+        "FAQ",
+        "​How do I keep a model loaded in memory or make it unload immediately?"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 10751,
+      "end": 10875,
+      "id": "b127",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[127]",
+      "headingPath": [
+        "FAQ",
+        "​How do I keep a model loaded in memory or make it unload immediately?"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 10877,
+      "end": 10953,
+      "id": "b128",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[128]",
+      "headingPath": [
+        "FAQ",
+        "​How do I manage the maximum number of requests the Ollama server can queue?"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 10955,
+      "end": 11145,
+      "id": "b129",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[129]",
+      "headingPath": [
+        "FAQ",
+        "​How do I manage the maximum number of requests the Ollama server can queue?"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 11147,
+      "end": 11191,
+      "id": "b130",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[130]",
+      "headingPath": [
+        "FAQ",
+        "​How does Ollama handle concurrent requests?"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 11193,
+      "end": 11553,
+      "id": "b131",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[131]",
+      "headingPath": [
+        "FAQ",
+        "​How does Ollama handle concurrent requests?"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 11555,
+      "end": 11978,
+      "id": "b132",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[132]",
+      "headingPath": [
+        "FAQ",
+        "​How does Ollama handle concurrent requests?"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 11980,
+      "end": 12214,
+      "id": "b133",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[133]",
+      "headingPath": [
+        "FAQ",
+        "​How does Ollama handle concurrent requests?"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 12216,
+      "end": 12325,
+      "id": "b134",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[134]",
+      "headingPath": [
+        "FAQ",
+        "​How does Ollama handle concurrent requests?"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 12327,
+      "end": 12515,
+      "id": "b135",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[135]",
+      "headingPath": [
+        "FAQ",
+        "​How does Ollama handle concurrent requests?"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 12517,
+      "end": 12703,
+      "id": "b136",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[136]",
+      "headingPath": [
+        "FAQ",
+        "​How does Ollama handle concurrent requests?"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 12705,
+      "end": 12839,
+      "id": "b137",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[137]",
+      "headingPath": [
+        "FAQ",
+        "​How does Ollama handle concurrent requests?"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 12841,
+      "end": 13180,
+      "id": "b138",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[138]",
+      "headingPath": [
+        "FAQ",
+        "​How does Ollama handle concurrent requests?"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 13182,
+      "end": 13228,
+      "id": "b139",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[139]",
+      "headingPath": [
+        "FAQ",
+        "​How does Ollama load models on multiple GPUs?"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 13230,
+      "end": 13660,
+      "id": "b140",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[140]",
+      "headingPath": [
+        "FAQ",
+        "​How does Ollama load models on multiple GPUs?"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 13662,
+      "end": 13696,
+      "id": "b141",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[141]",
+      "headingPath": [
+        "FAQ",
+        "​How can I enable Flash Attention?"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 13698,
+      "end": 14046,
+      "id": "b142",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[142]",
+      "headingPath": [
+        "FAQ",
+        "​How can I enable Flash Attention?"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 14048,
+      "end": 14103,
+      "id": "b143",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[143]",
+      "headingPath": [
+        "FAQ",
+        "​How can I set the quantization type for the K/V cache?"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 14105,
+      "end": 14213,
+      "id": "b144",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[144]",
+      "headingPath": [
+        "FAQ",
+        "​How can I set the quantization type for the K/V cache?"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 14215,
+      "end": 14301,
+      "id": "b145",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[145]",
+      "headingPath": [
+        "FAQ",
+        "​How can I set the quantization type for the K/V cache?"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 14303,
+      "end": 14382,
+      "id": "b146",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[146]",
+      "headingPath": [
+        "FAQ",
+        "​How can I set the quantization type for the K/V cache?"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 14384,
+      "end": 14485,
+      "id": "b147",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[147]",
+      "headingPath": [
+        "FAQ",
+        "​How can I set the quantization type for the K/V cache?"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 14487,
+      "end": 14544,
+      "id": "b148",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[148]",
+      "headingPath": [
+        "FAQ",
+        "​How can I set the quantization type for the K/V cache?"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 14546,
+      "end": 14594,
+      "id": "b149",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[149]",
+      "headingPath": [
+        "FAQ",
+        "​How can I set the quantization type for the K/V cache?"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 14596,
+      "end": 14793,
+      "id": "b150",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[150]",
+      "headingPath": [
+        "FAQ",
+        "​How can I set the quantization type for the K/V cache?"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 14795,
+      "end": 14953,
+      "id": "b151",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[151]",
+      "headingPath": [
+        "FAQ",
+        "​How can I set the quantization type for the K/V cache?"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 14955,
+      "end": 15198,
+      "id": "b152",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[152]",
+      "headingPath": [
+        "FAQ",
+        "​How can I set the quantization type for the K/V cache?"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 15200,
+      "end": 15319,
+      "id": "b153",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[153]",
+      "headingPath": [
+        "FAQ",
+        "​How can I set the quantization type for the K/V cache?"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 15321,
+      "end": 15360,
+      "id": "b154",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[154]",
+      "headingPath": [
+        "FAQ",
+        "​Where can I find my Ollama Public Key?"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 15362,
+      "end": 15476,
+      "id": "b155",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[155]",
+      "headingPath": [
+        "FAQ",
+        "​Where can I find my Ollama Public Key?"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 15478,
+      "end": 15496,
+      "id": "b156",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[156]",
+      "headingPath": [
+        "FAQ",
+        "​Where can I find my Ollama Public Key?"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 15498,
+      "end": 15519,
+      "id": "b157",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[157]",
+      "headingPath": [
+        "FAQ",
+        "​Where can I find my Ollama Public Key?"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 15521,
+      "end": 15568,
+      "id": "b158",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[158]",
+      "headingPath": [
+        "FAQ",
+        "​Where can I find my Ollama Public Key?"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 15570,
+      "end": 15605,
+      "id": "b159",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[159]",
+      "headingPath": [
+        "FAQ",
+        "​Where can I find my Ollama Public Key?"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 15607,
+      "end": 15626,
+      "id": "b160",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[160]",
+      "headingPath": [
+        "FAQ",
+        "​Where can I find my Ollama Public Key?",
+        "​How to Add the Key"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 15628,
+      "end": 15684,
+      "id": "b161",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[161]",
+      "headingPath": [
+        "FAQ",
+        "​Where can I find my Ollama Public Key?",
+        "​How to Add the Key"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 15686,
+      "end": 15701,
+      "id": "b162",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[162]",
+      "headingPath": [
+        "FAQ",
+        "​Where can I find my Ollama Public Key?",
+        "​How to Add the Key"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 15703,
+      "end": 15716,
+      "id": "b163",
+      "kind": "CODE",
+      "locator": "source DOM normalized block[163]",
+      "headingPath": [
+        "FAQ",
+        "​Where can I find my Ollama Public Key?",
+        "​How to Add the Key"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 15718,
+      "end": 15805,
+      "id": "b164",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[164]",
+      "headingPath": [
+        "FAQ",
+        "​Where can I find my Ollama Public Key?",
+        "​How to Add the Key"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 15807,
+      "end": 15841,
+      "id": "b165",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[165]",
+      "headingPath": [
+        "FAQ",
+        "​Where can I find my Ollama Public Key?",
+        "​Where the Ollama Public Key lives"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 15843,
+      "end": 15990,
+      "id": "b166",
+      "kind": "TABLE",
+      "locator": "source DOM normalized block[166]",
+      "headingPath": [
+        "FAQ",
+        "​Where can I find my Ollama Public Key?",
+        "​Where the Ollama Public Key lives"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 15992,
+      "end": 16046,
+      "id": "b167",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[167]",
+      "headingPath": [
+        "FAQ",
+        "​Where can I find my Ollama Public Key?",
+        "​Where the Ollama Public Key lives"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 16048,
+      "end": 16113,
+      "id": "b168",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[168]",
+      "headingPath": [
+        "FAQ",
+        "​How can I stop Ollama from starting when I login to my computer?"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 16115,
+      "end": 16352,
+      "id": "b169",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[169]",
+      "headingPath": [
+        "FAQ",
+        "​How can I stop Ollama from starting when I login to my computer?"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 16354,
+      "end": 16361,
+      "id": "b170",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[170]",
+      "headingPath": [
+        "FAQ",
+        "​How can I stop Ollama from starting when I login to my computer?"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 16363,
+      "end": 16443,
+      "id": "b171",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[171]",
+      "headingPath": [
+        "FAQ",
+        "​How can I stop Ollama from starting when I login to my computer?"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 16445,
+      "end": 16450,
+      "id": "b172",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[172]",
+      "headingPath": [
+        "FAQ",
+        "​How can I stop Ollama from starting when I login to my computer?"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 16452,
+      "end": 16582,
+      "id": "b173",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[173]",
+      "headingPath": [
+        "FAQ",
+        "​How can I stop Ollama from starting when I login to my computer?"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    }
+  ],
+  "links": [
+    {
+      "url": "https://docs.ollama.com/faq",
+      "text": "",
+      "blockId": null,
+      "relation": "CANONICAL",
+      "locator": "source DOM link[0]"
+    },
+    {
+      "url": "https://docs.ollama.com/",
+      "text": "Guide",
+      "blockId": "b1",
+      "relation": "LINK",
+      "locator": "source DOM link[29]"
+    },
+    {
+      "url": "https://docs.ollama.com/integrations",
+      "text": "Integrations",
+      "blockId": "b1",
+      "relation": "LINK",
+      "locator": "source DOM link[30]"
+    },
+    {
+      "url": "https://docs.ollama.com/api/introduction",
+      "text": "API Reference",
+      "blockId": "b1",
+      "relation": "LINK",
+      "locator": "source DOM link[31]"
+    },
+    {
+      "url": "https://ollama.com/download/",
+      "text": "manually",
+      "blockId": "b7",
+      "relation": "LINK",
+      "locator": "source DOM link[40]"
+    },
+    {
+      "url": "https://docs.ollama.com/troubleshooting",
+      "text": "Troubleshooting",
+      "blockId": "b11",
+      "relation": "LINK",
+      "locator": "source DOM link[42]"
+    },
+    {
+      "url": "https://docs.ollama.com/gpu",
+      "text": "GPU docs",
+      "blockId": "b13",
+      "relation": "LINK",
+      "locator": "source DOM link[44]"
+    },
+    {
+      "url": "https://docs.docker.com/desktop/settings/mac/",
+      "text": "macOS",
+      "blockId": "b59",
+      "relation": "LINK",
+      "locator": "source DOM link[53]"
+    },
+    {
+      "url": "https://docs.docker.com/desktop/settings/windows/",
+      "text": "Windows",
+      "blockId": "b59",
+      "relation": "LINK",
+      "locator": "source DOM link[54]"
+    },
+    {
+      "url": "https://docs.docker.com/desktop/settings/linux/",
+      "text": "Linux",
+      "blockId": "b59",
+      "relation": "LINK",
+      "locator": "source DOM link[55]"
+    },
+    {
+      "url": "https://docs.docker.com/config/daemon/systemd/",
+      "text": "daemon with systemd",
+      "blockId": "b59",
+      "relation": "LINK",
+      "locator": "source DOM link[56]"
+    },
+    {
+      "url": "https://marketplace.visualstudio.com/items?itemName=Ollama.ollama",
+      "text": "Ollama extension",
+      "blockId": "b99",
+      "relation": "LINK",
+      "locator": "source DOM link[70]"
+    },
+    {
+      "url": "https://docs.ollama.com/integrations/vscode",
+      "text": "VS Code integration guide",
+      "blockId": "b99",
+      "relation": "LINK",
+      "locator": "source DOM link[71]"
+    },
+    {
+      "url": "https://github.com/NVIDIA/nvidia-container-toolkit",
+      "text": "nvidia-container-toolkit",
+      "blockId": "b101",
+      "relation": "LINK",
+      "locator": "source DOM link[73]"
+    },
+    {
+      "url": "https://hub.docker.com/r/ollama/ollama",
+      "text": "ollama/ollama",
+      "blockId": "b101",
+      "relation": "LINK",
+      "locator": "source DOM link[74]"
+    },
+    {
+      "url": "https://ollama.com/",
+      "text": "ollama.com",
+      "blockId": "b155",
+      "relation": "LINK",
+      "locator": "source DOM link[85]"
+    },
+    {
+      "url": "https://ollama.com/cloud",
+      "text": "Ollama’s cloud",
+      "blockId": "b159",
+      "relation": "LINK",
+      "locator": "source DOM link[86]"
+    },
+    {
+      "url": "https://ollama.com/settings/keys",
+      "text": "https://ollama.com/settings/keys",
+      "blockId": "b164",
+      "relation": "LINK",
+      "locator": "source DOM link[88]"
+    }
+  ],
+  "tables": [
+    {
+      "blockId": "b166",
+      "rows": [
+        {
+          "start": 15843,
+          "end": 15867,
+          "cells": [
+            {
+              "start": 15843,
+              "end": 15845,
+              "text": "OS",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 15845,
+              "end": 15867,
+              "text": "Path to id_ed25519.pub",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 15867,
+          "end": 15896,
+          "cells": [
+            {
+              "start": 15867,
+              "end": 15872,
+              "text": "macOS",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 15872,
+              "end": 15896,
+              "text": "~/.ollama/id_ed25519.pub",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 15896,
+          "end": 15941,
+          "cells": [
+            {
+              "start": 15896,
+              "end": 15901,
+              "text": "Linux",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 15901,
+              "end": 15941,
+              "text": "/usr/share/ollama/.ollama/id_ed25519.pub",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 15941,
+          "end": 15990,
+          "cells": [
+            {
+              "start": 15941,
+              "end": 15948,
+              "text": "Windows",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 15948,
+              "end": 15990,
+              "text": "C:\\Users\\<username>\\.ollama\\id_ed25519.pub",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "capturedAt": "2026-10-25T04:39:57.740Z",
+  "url": "http://127.0.0.1:3104/investigations/04b6afb7-bd20-47a6-bd67-ae3d4cd2e610",
+  "detail": {
+    "investigation": {
+      "id": "04b6afb7-bd20-47a6-bd67-ae3d4cd2e610",
+      "question": "Copilot 免费版每月有多少次对话？",
+      "researchDepth": "AUTO",
+      "status": "SUCCEEDED",
+      "stage": "COMPLETED",
+      "error": null,
+      "createdAt": "2026-10-25T04:39:11.415Z",
+      "updatedAt": "2026-10-25T04:39:57.519Z",
+      "startedAt": "2026-10-25T04:39:11.956Z",
+      "completedAt": "2026-10-25T04:39:57.519Z",
+      "resultSnapshotId": "613e16ea-46bc-4b1a-a45e-0c185eaf37f3"
+    },
+    "identityConfirmation": null,
+    "retry": {
+      "allowed": false,
+      "reason": "仅失败的调查可以手动重试。",
+      "remaining": 2,
+      "expectedAttemptCount": 1
+    }
+  },
+  "observedStates": [
+    {
+      "status": "RUNNING",
+      "stage": "RETRIEVAL",
+      "observedAt": "2026-10-25T04:39:13.074Z"
+    },
+    {
+      "status": "RUNNING",
+      "stage": "SOURCE_FETCH",
+      "observedAt": "2026-10-25T04:39:16.146Z"
+    },
+    {
+      "status": "RUNNING",
+      "stage": "RETRIEVAL",
+      "observedAt": "2026-10-25T04:39:35.425Z"
+    },
+    {
+      "status": "RUNNING",
+      "stage": "SOURCE_FETCH",
+      "observedAt": "2026-10-25T04:39:38.475Z"
+    },
+    {
+      "status": "RUNNING",
+      "stage": "VERIFICATION",
+      "observedAt": "2026-10-25T04:39:47.614Z"
+    },
+    {
+      "status": "RUNNING",
+      "stage": "ANSWER",
+      "observedAt": "2026-10-25T04:39:53.674Z"
+    },
+    {
+      "status": "SUCCEEDED",
+      "stage": "COMPLETED",
+      "observedAt": "2026-10-25T04:39:57.739Z"
+    }
+  ]
+}

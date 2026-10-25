@@ -1,0 +1,2510 @@
+{
+  "schemaVersion": "source-document/v1",
+  "id": "4b5ee6b4253cae9c59a2a7c54b2a3e5356ecd39a050e448fd7edcd87a6d453bc",
+  "version": "bb35945bd9cea135443e9a47a9ce0058c68b07e817e4d100252b18eaac5830a5",
+  "requestedUrl": "https://andrew.ooo/posts/text-to-cad-review-agent-cad-plugin",
+  "finalUrl": "https://andrew.ooo/posts/text-to-cad-review-agent-cad-plugin/",
+  "retrievedAt": "2026-10-25T04:43:26.089Z",
+  "contentType": "text/html; charset=utf-8",
+  "status": "READ",
+  "readError": null,
+  "rawHash": "35bde1088f02acea13e055914a203539ce8188a6ca080e8edb2cf1cb86cf0121",
+  "textHash": "e63f1ee907d5c0dcaf8e42b1066344199322a5b3a049d2fcc6072c0fe7f459c6",
+  "text": "text-to-cad Review: CAD Skills for Claude Code and Codex\n\nOctober 9, 2026\n\ntext-to-cadcadgencadbuild123d3d-printingclaude-codecodexagent-skillsmcpopen-sourcetool-reviewgithub-trending\n\ntext-to-cad review: the MIT plugin that lets Claude Code, Codex and Cursor write build123d CAD and export STEP, STL and 3MF. Our container test, limits, rivals.\n\nRepository facts, checked Oct 24, 2026: earthtojake/text-to-cad · 22,809 stars (+1,494 in 7 days) · latest release v0.7.26 (Oct 20, 2026) · last commit Oct 23, 2026 · MIT license · 3 open issues. All tracked tools\n\nHands-on test, Oct 9, 2026:1 of 6 steps passed. Run by andrew.ooo's review agent in a clean Linux container (python:3.12-bookworm, x86_64, 2 CPUs, 8 GB RAM, no GPU), repository at commit 523ae21341a4. How we test\n\nCommands and recorded output (6 steps)\n\n1. Install uv (cadgen runs through uv) — exit code 0, 2.4s\n\n$ pip install -q uv && uv --version\nWARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if\n[notice] A new release of pip is available: 25.0.1 -> 26.2.1\n[notice] To update, run: pip install --upgrade pip\nuv 0.12.24 (x86_64-unknown-linux-gnu)\n\n2. Version + doctor (first run downloads the runtime) — exit code 4, 6.8s\n\n$ export DO_NOT_TRACK=1; uvx --no-config --managed-python --python 3.13 --from cadgen==0.7.19 cadgen --version && uvx --no-config --managed-python --python 3.13 --from cadgen==0.7.19 cadgen doctor\nDownloading cpython-3.13.16-linux-x86_64-gnu (download) (33.5MiB)\n Downloaded cpython-3.13.16-linux-x86_64-gnu (download)\nDownloading jedi (4.7MiB)\nDownloading kiwisolver (1.4MiB)\nDownloading pygments (1.2MiB)\nDownloading sympy (6.0MiB)\nDownloading scikit-learn (8.7MiB)\nDownloading pillow (6.6MiB)\nDownloading playwright (46.0MiB)\nDownloading lib3mf (1.5MiB)\nDownloading numpy (15.9MiB)\nDownloading fonttools (5.1MiB)\nDownloading cadgen (11.1MiB)\nDownloading matplotlib (9.4MiB)\nDownloading scipy (33.7MiB)\nDownloading ezdxf (5.5MiB)\nDownloading cadquery-ocp-novtk (64.3MiB)\nDownloading shapely (2.2MiB)\n Downloaded kiwisolver\n Downloaded lib3mf\n Downloaded pygments\n Downloaded shapely\n Downloaded fonttools\n Downloaded ezdxf\n Downloaded pillow\n Downloaded sympy\n Downloaded matplotlib\n Downloaded scikit-learn\n Downloaded cadgen\n Downloaded numpy\n Downloaded scipy\n Downloaded jedi\n Downloaded playwright\n Downloaded cadquery-ocp-novtk\nInstalled 59 packages in 989ms\ncadgen 0.7.19\n  kernel   FAILED — ImportError: libGL.so.1: cannot open shared object file: No such file or directory\ncadgen 0.7.19\n  python   3.13.16 (/root/.cache/uv/archive-v0/0_DTioZNzWYBd0cr/bin/python)\n  install  /root/.cache/uv/archive-v0/0_DTioZNzWYBd0cr/lib/python3.13/site-packages/cadgen\n  daemon   7b5058cc1dbd\n  sharing  off: set by DO_NOT_TRACK or CADGEN_TELEMETRY in this environment\n  pin      none found (no SKILL.md to check)\n\n3. Smallest real example: README bracket model to STEP — not run (an earlier step failed)\n\n4. Measure the saved STEP — not run (an earlier step failed)\n\n5. Export STL and 3MF — not run (an earlier step failed)\n\n6. Headless snapshot render — not run (an earlier step failed)\n\nTL;DR\n\ntext-to-cad (earthtojake/text-to-cad) is a plugin and a set of agent skills that let coding agents produce real, editable CAD. You ask Claude Code, Codex, Cursor, Gemini or Grok for a part. The agent writes a short Python script with build123d on the OpenCascade kernel, runs it, and you get a STEP file. From there it can export STL, 3MF and GLB, draw dimensioned PDFs, check a part for manufacturing and slice it for a 3D printer. The repo’s tagline is five words: “Give your agent CAD superpowers.”\n\nFacts as of October 9, 2026:\n\n18,595 GitHub stars, 1,849 forks, MIT license, written in Python. The repo was created on April 22, 2026, and gained 1,898 stars in the past week, according to GitHub Trending.\n\nLatest release: v0.7.19 (October 9, 2026). It is the repo’s 80th release. The runtime ships on PyPI as cadgen, which pypistats counts at 11,281 downloads in the last week.\n\n1 open issue. Almost all commits come from the author: 1,127 by earthtojake. The next two contributors are the github-actions bot (102) and Claude (87).\n\nRequirements: uv and a network connection on first start. cadgen itself needs Python 3.11 or newer; the skills pin Python 3.13 through uv.\n\nTelemetry is on by default. Anonymous usage stats and crash reports go to PostHog; uvx cadgen telemetry off turns them off.\n\nOur verdict: text-to-cad is the most complete open-source answer to “can my coding agent do CAD?” right now. It gives the model the tools that matter: a real B-rep kernel, STEP as the main output, geometry checks written in code, and a viewer. In our clean Linux container, though, it failed before making a single part. The CAD kernel would not load because a system library (libGL.so.1) was missing, and the README says nothing about that. It is a good fit for makers and robotics hobbyists who use Claude Code or Codex on a desktop. It is not yet a drop-in tool for headless servers or CI.\n\nWhat problem text-to-cad solves\n\nLanguage models can write OpenSCAD, but the model can’t see what it built, and the mesh output doesn’t carry exact faces and edges a professional CAD tool or manufacturer can use. text-to-cad keeps the model in a language it is good at (Python) and points it at a real parametric kernel. The author, who posts on Hacker News as softservo, described the goal in the May 2026 HN thread: “The purpose of this repo (harness and skills) is really to just give the models more direct tools to generate and inspect STEP files.” He built it for his own project: “I built this harness / skill to help me generate some basic CAD models for a 7dof robot arm I’m designing. It ended up working much better than I expected, particularly on the latest GPT 5.5 and Opus 4.7 models.”\n\nHe is also open about the main limit: much of the skill text is there “to plan for more complex parts (this is mostly a stop gap while the models don’t have amazing spatial reasoning).”\n\nHow it works\n\ntext-to-cad has three layers, per the README and the shipped skill files:\n\ncadgen, the runtime. A Python package on PyPI that wraps build123d and OCP (OpenCascade’s Python binding). Its dependencies include build123d, cadquery-ocp-novtk, ezdxf, shapely, matplotlib and playwright (for headless snapshot rendering). Every skill runs it with the same pinned uv command, so all of them share one installation and one warm build daemon.\n\nThe skills. Twelve SKILL.md files that teach the agent each workflow (listed below).\n\nThe plugin and viewer. In Claude Code, Codex and Cursor, the plugin also starts a local MCP server (cadgen mcp) and a CAD Viewer. Where the app can show views, models appear in the chat as cards you can orbit and select; Claude “can read what you selected and see what you see.” In a terminal, asking to see a model gives you a browser link instead.\n\nA model is just a decorated Python function\n\nThis is the core contract from the CAD skill. A model is a plain script whose decorated function returns a build123d shape:\n\nfrom cadgen import build123d as bd\nfrom cadgen import step\n\nWIDTH = 40.0\n\n\n@step(out=\"../STEP/bracket.step\")\ndef bracket():\n    body = bd.Box(WIDTH, 20, 6)\n    body.label = \"bracket\"\n    return body\n\n\nif __name__ == \"__main__\":\n    bracket()\n\nRunning python src/bracket.py (through the pinned uv command) writes STEP/bracket.step. Stack @stl, @threemf or @glb on the same function and the mesh files are kept up to date on every run. One-off exports work from the command line:\n\ncadgen stl build STEP/bracket.step STL/bracket.stl\ncadgen 3mf build STEP/bracket.step 3MF/bracket.3mf\ncadgen glb build STEP/bracket.step GLB/bracket.glb\n\nBecause the source is code, a design lives in git and a parameter change is a one-line diff. The agent measures in code too: read_step() returns native build123d geometry and read_scene() gives every face, edge and vertex a selector, so “is this hole 8 mm?” is a few lines of Python, not a guess from a screenshot.\n\nThe twelve skills\n\nSkillWhat it doesCADCreates and edits models from text or images; STEP output, STL/3MF/GLB exportsstep.partsSearches a hosted catalog of off-the-shelf STEP parts (screws, bearings, servos, connectors)Engineering DrawingDimensioned PDF drawings: views, hidden lines, hole callouts, title blockDXF2D profiles, gaskets and cut layoutsURDF / SRDF / SDFRobot description files, MoveIt planning groups, simulator worldsSendCutSendChecks DXF and STEP files before upload to the SendCutSend serviceDfAM CheckMesh printability: wall thickness, overhangs, support volume, orientationDFMSheet metal, CNC and injection-molding reviews, citing the rule behind each findingG-codeSlices models with OrcaSlicer using your printer presetsBambu LabsSends prints to Bambu Lab printers via Bambu Connect or Bambu Studio\n\nThe step.parts skill tells the agent to search the catalog “before creating simplified placeholder geometry”, and the DFM skill calls itself “a guided review skill, not an automatic feature-recognition or manufacturing certification engine.”\n\nQuick start\n\nInstall uv first (uv --version to check). Then, for Claude Code, per the README:\n\nclaude plugin marketplace add earthtojake/text-to-cad#latest\nclaude plugin install text-to-cad@earthtojake\n\nRestart Claude Code; the first start downloads the CAD runtime. Codex, Cursor, Grok Build and Gemini each have their own one or two commands in the README. For any other agent that supports skills:\n\nnpx skills add earthtojake/text-to-cad#latest\n\nInstall the plugin or the skills in an app, not both. As the README warns, “two copies means every skill twice.” The #latest branch holds only released versions. To opt out of telemetry, run uvx cadgen telemetry off (or set DO_NOT_TRACK=1 for one process).\n\nHands-on test (October 9, 2026)\n\nWe ran text-to-cad’s runtime in a fresh python:3.12-bookworm container on a GitHub-hosted runner (x86_64, 2 CPUs, 8 GB RAM, no GPU) against commit 523ae21341a4, with telemetry off. We did not use an agent: the plan was to run the README’s own bracket model directly, measure the STEP file, export STL and 3MF, and render a headless snapshot. The verdict is partial: 1 of 6 steps passed, and the run stopped at step 2 after 9.2 seconds.\n\nStepResultTimeInstall uv (pip install uv)uv 0.12.242.4 scadgen --version and cadgen doctor via the skills’ pinned uvx commandRuntime downloaded and installed; kernel FAILED6.8 s (exit 4)Build the README bracket to STEPSkipped—Measure the saved STEPSkipped—Export STL and 3MFSkipped—Headless snapshot renderSkipped—\n\nWhat worked. The download is quick. uv fetched the runtime, including the 64.3 MiB cadquery-ocp-novtk kernel wheel, 33.7 MiB of SciPy and Playwright, and reported “Installed 59 packages in 989ms”. cadgen --version printed cadgen 0.7.19, and cadgen doctor found Python 3.13.16 and a build daemon and confirmed that sharing was “off: set by DO_NOT_TRACK or CADGEN_TELEMETRY in this environment”.\n\nWhat failed. The kernel check:\n\nkernel   FAILED — ImportError: libGL.so.1: cannot open shared object file: No such file or directory\n\nThe OpenCascade binding needs the system OpenGL library even in its “novtk” build, and a slim Debian image doesn’t have it. Without the kernel, nothing else can run: no model, no STEP, no export. The README covers a similar kernel-load failure on Windows (Smart App Control), but not this one on Linux. On Debian and Ubuntu, libGL.so.1 comes from the libgl1 package, so apt-get install libgl1 is the likely fix. We did not re-run with it, so we can’t confirm that it is the only missing piece. The good news is that cadgen doctor named the problem in under seven seconds instead of failing halfway through a build.\n\nWhat this does not tell you. On a normal macOS or Linux desktop, OpenGL is almost always installed, so most users won’t hit this. Our run says nothing about how good the generated parts are, how well the viewer works, or how many tokens a real design takes. It does tell you that a Docker image, CI job or headless cloud agent needs one extra system package that isn’t documented.\n\nCommunity reactions\n\nThe Hacker News launch thread (May 1, 2026; 186 points, 48 comments) was friendly to the project and skeptical of the category.\n\nSpatial reasoning is the bottleneck. One commenter concluded that “LLMs are still very weak at spatial reasoning compared to diffusion models”, and pointed to Zoo as a company that “went to extreme lengths on this.” Another, who had built a blueprint-to-B-rep tool with Codex, agreed: “the damn thing has really no idea where things are in space.”\n\nHobbyists versus professionals. A skeptical reply argued that “there is a niche where text-to-CAD is good: hobby users who don’t want invest in learning a CAD software UI. For professionals, where results have dollar values, there needs to be a much deeper understanding of the problem domain.”\n\nBenchmarks. One commenter wrote that “without benchmarks and/or a whole suite of non-cherrypicked examples, this means nothing.” The author replied that he was “working on benchmarks at the moment” and later said basic benchmarks had been added.\n\nPractical tips. Several users got better results by having the agent render PNGs from several angles while iterating, a loop text-to-cad builds in through its snapshot command. One noted that Opus 4.7 on CAD work “uses up tokens like crazy.”\n\nThe issue tracker shows the pace: 80 releases in under six months, and now-closed bugs such as broken STL meshes from a valid teacup (#555), a hole through a curved wall (#433) and a Codex viewer timeout (#506).\n\nHonest limitations\n\nThe model is still the weak link. text-to-cad gives the agent better tools; it doesn’t give it a sense of space. The author calls the planning text in the skills a “stop gap.” Expect simple brackets, enclosures and adapters to work, and complex assemblies to need several rounds of correction.\n\nUndocumented Linux system dependency. As our test showed, a minimal Linux container can’t load the kernel without libGL.so.1.\n\nWindows Smart App Control blocks the kernel. The README says the OCP wheel ships an unsigned native module, so on a fresh Windows 11 install with Smart App Control on “every cadgen command and import build123d fails.” The fixes are to turn Smart App Control off (it can only be turned back on by reinstalling Windows) or to use WSL.\n\nTelemetry by default. It is anonymous, documented in detail, and never includes files, paths or prompts, but it is opt-out, not opt-in. A version check also contacts api.texttocad.dev once a day unless you set CADGEN_UPDATE_CHECK=0.\n\nA fast-moving pin. Each skill pins an exact cadgen version, and the CAD skill warns that “an unmigrated model silently loses kinematics, materials and animation.” Update the plugin and skills together.\n\nOne main maintainer, who calls it “a fun open source tool” rather than a business.\n\nNot a certification tool. The DFM and printability checks report measurements and cited rules. They don’t replace a machinist’s or a manufacturer’s review.\n\nWhen to use text-to-cad, and what to pick instead\n\nUse text-to-cad if you already work in Claude Code, Codex or Cursor and want printable or machinable parts as code: enclosures, mounts, adapters, robot links with matching URDF files.\n\nWrite build123d or CadQuery yourself if you want full control; it is the same open stack.\n\nUse OpenSCAD with a general assistant for quick shapes where a mesh is enough.\n\nLook at Zoo for a commercial text-to-CAD product with its own kernel.\n\nStay in Onshape, Fusion or SolidWorks for professional work with tolerances, assemblies and change control.\n\nFAQ\n\nIs text-to-cad free?\n\nYes. The repository and the cadgen package are MIT-licensed. You pay only for the agent you run it with (a Claude, ChatGPT or other subscription or API usage). Fabrication services such as SendCutSend charge for parts as usual.\n\nWhich agents does text-to-cad support?\n\nThe README lists plugins for Claude Code, Claude Desktop (as an MCP server), Codex, Cursor, Grok Build and Gemini. Any other agent that supports the skills format can install the skills with npx skills add earthtojake/text-to-cad#latest, without the in-chat viewer.\n\nWhat file formats does it produce?\n\nSTEP is the main output. It also exports STL, 3MF and GLB meshes, 2D DXF drawings, dimensioned PDF engineering drawings, sliced G-code (via OrcaSlicer) and robot description files (URDF, SRDF, SDF).\n\nDoes text-to-cad work in Docker or CI?\n\nIt can, but not out of the box on a slim image. In our October 9, 2026 test on python:3.12-bookworm, the CAD kernel failed to load because libGL.so.1 was missing. Installing the system OpenGL library (libgl1 on Debian and Ubuntu) is the likely fix; we did not verify it. Snapshot rendering also needs a headless Chromium and its system libraries, which cadgen offers to install when it runs as root on Linux with apt.\n\nDoes text-to-cad send my designs anywhere?\n\nNo. Per the README, telemetry is “Never file names, paths, contents or prompts.” Your prompts do go to your agent’s model provider.\n\nVerdict\n\ntext-to-cad is the best-built bridge between coding agents and real CAD we have seen: STEP from a proper kernel, models and checks as code, and a skill for each step from part catalog to printer. The agent’s spatial reasoning still sets the ceiling; the tooling raises the floor. If you print or machine parts and already live in Claude Code or Codex, install it and start with something simple. If you plan to run it on a server, add libgl1 to your image first.\n\nSources\n\nearthtojake/text-to-cad on GitHub: README, stars, license, contributors\n\ntext-to-cad v0.7.19 release notes\n\nCAD skill (SKILL.md)\n\nDFM skill (SKILL.md)\n\nstep.parts skill (SKILL.md)\n\ncadgen on PyPI\n\ncadgen download statistics (pypistats)\n\ntexttocad.dev\n\nbuild123d\n\nHacker News: Text-to-CAD, May 2026\n\nIssue #555: STL export produces holes on a valid teacup\n\nIssue #433: STL export breaks on a hole through a curved wall\n\nIssue #404: OCP blocked by Windows Smart App Control\n\nIssue #506: CAD viewer timeout in Codex desktop\n\nRelated reading\n\n📝OpenRig Review: Claude Code and Codex as One Agent TeamOpenRig review: the Apache-2.0 harness that runs Claude Code and Codex as one persistent, YAML-defined team in tmux. Our install test, RigSpec, limits, rivals.\n\n📝Matt Pocock's Skills Review: 54k Stars for Claude CodeMatt Pocock's 'Skills for Real Engineers' hit 53k GitHub stars in 90 days. Hands-on review of grill-me, tdd, diagnose, and the rest of the .claude directory.\n\n📝Superpowers Review: The 124K-Star Skills Framework for Claude CodeSuperpowers turns Claude Code into a senior dev with TDD, subagent-driven development, and code review. 124K GitHub stars. Works with Cursor, Codex, Gemini CLI too. Honest review.\n\n📝Ruflo Review: The Claude Code Harness Behind 77K StarsRuflo (ex-Claude Flow) review: what npx ruflo init adds to Claude Code, its agents, plugins and MCP tools, what audits found, and who should install it.\n\n📝Claude Context Review: Semantic Code Search MCP (2026)Claude Context review — Zilliz's MCP plugin gives Claude Code, Cursor, and Codex CLI semantic search over your codebase with ~40% fewer tokens.",
+  "rawSources": [
+    {
+      "mode": "STATIC",
+      "hash": "35bde1088f02acea13e055914a203539ce8188a6ca080e8edb2cf1cb86cf0121",
+      "path": "C:\\Users\\qianchen\\Documents\\waytoagi-1024-detective-a2-v4\\.cache\\source-documents-v4\\1b770812-831e-444b-9bd6-f858f030b627\\4b5ee6b4253cae9c59a2a7c54b2a3e5356ecd39a050e448fd7edcd87a6d453bc\\raw.bin"
+    }
+  ],
+  "storage": {
+    "rawPath": "C:\\Users\\qianchen\\Documents\\waytoagi-1024-detective-a2-v4\\.cache\\source-documents-v4\\1b770812-831e-444b-9bd6-f858f030b627\\4b5ee6b4253cae9c59a2a7c54b2a3e5356ecd39a050e448fd7edcd87a6d453bc\\raw.bin",
+    "textPath": "C:\\Users\\qianchen\\Documents\\waytoagi-1024-detective-a2-v4\\.cache\\source-documents-v4\\1b770812-831e-444b-9bd6-f858f030b627\\4b5ee6b4253cae9c59a2a7c54b2a3e5356ecd39a050e448fd7edcd87a6d453bc\\source.txt",
+    "manifestPath": "C:\\Users\\qianchen\\Documents\\waytoagi-1024-detective-a2-v4\\.cache\\source-documents-v4\\1b770812-831e-444b-9bd6-f858f030b627\\4b5ee6b4253cae9c59a2a7c54b2a3e5356ecd39a050e448fd7edcd87a6d453bc\\manifest.json"
+  },
+  "parser": {
+    "name": "readability+source-dom",
+    "version": "readability-0.6.0+jsdom-30.1.3+source-dom-2",
+    "normalization": "source-text/v1",
+    "mode": "STATIC"
+  },
+  "metadata": {
+    "title": "text-to-cad Review: CAD Skills for Claude Code and Codex — andrew.ooo",
+    "author": "Andrew",
+    "publishedAt": "2026-10-09T00:00:00.000Z",
+    "language": "en"
+  },
+  "completeness": "COMPLETE",
+  "warnings": [],
+  "blocks": [
+    {
+      "start": 0,
+      "end": 56,
+      "id": "b0",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[0]",
+      "headingPath": [
+        "text-to-cad Review: CAD Skills for Claude Code and Codex"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 58,
+      "end": 73,
+      "id": "b1",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[1]",
+      "headingPath": [
+        "text-to-cad Review: CAD Skills for Claude Code and Codex"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 75,
+      "end": 183,
+      "id": "b2",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[2]",
+      "headingPath": [
+        "text-to-cad Review: CAD Skills for Claude Code and Codex"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 185,
+      "end": 345,
+      "id": "b3",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[3]",
+      "headingPath": [
+        "text-to-cad Review: CAD Skills for Claude Code and Codex"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 347,
+      "end": 560,
+      "id": "b4",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[4]",
+      "headingPath": [
+        "text-to-cad Review: CAD Skills for Claude Code and Codex"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 562,
+      "end": 774,
+      "id": "b5",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[5]",
+      "headingPath": [
+        "text-to-cad Review: CAD Skills for Claude Code and Codex"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 776,
+      "end": 814,
+      "id": "b6",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[6]",
+      "headingPath": [
+        "text-to-cad Review: CAD Skills for Claude Code and Codex"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 816,
+      "end": 874,
+      "id": "b7",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[7]",
+      "headingPath": [
+        "text-to-cad Review: CAD Skills for Claude Code and Codex"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 876,
+      "end": 1362,
+      "id": "b8",
+      "kind": "CODE",
+      "locator": "source DOM normalized block[8]",
+      "headingPath": [
+        "text-to-cad Review: CAD Skills for Claude Code and Codex"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1364,
+      "end": 1437,
+      "id": "b9",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[9]",
+      "headingPath": [
+        "text-to-cad Review: CAD Skills for Claude Code and Codex"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1439,
+      "end": 3048,
+      "id": "b10",
+      "kind": "CODE",
+      "locator": "source DOM normalized block[10]",
+      "headingPath": [
+        "text-to-cad Review: CAD Skills for Claude Code and Codex"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3050,
+      "end": 3139,
+      "id": "b11",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[11]",
+      "headingPath": [
+        "text-to-cad Review: CAD Skills for Claude Code and Codex"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3141,
+      "end": 3201,
+      "id": "b12",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[12]",
+      "headingPath": [
+        "text-to-cad Review: CAD Skills for Claude Code and Codex"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3203,
+      "end": 3259,
+      "id": "b13",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[13]",
+      "headingPath": [
+        "text-to-cad Review: CAD Skills for Claude Code and Codex"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3261,
+      "end": 3323,
+      "id": "b14",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[14]",
+      "headingPath": [
+        "text-to-cad Review: CAD Skills for Claude Code and Codex"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3325,
+      "end": 3330,
+      "id": "b15",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[15]",
+      "headingPath": [
+        "text-to-cad Review: CAD Skills for Claude Code and Codex",
+        "TL;DR"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3332,
+      "end": 3833,
+      "id": "b16",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[16]",
+      "headingPath": [
+        "text-to-cad Review: CAD Skills for Claude Code and Codex",
+        "TL;DR"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3835,
+      "end": 3863,
+      "id": "b17",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[17]",
+      "headingPath": [
+        "text-to-cad Review: CAD Skills for Claude Code and Codex",
+        "TL;DR"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3865,
+      "end": 4041,
+      "id": "b18",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[18]",
+      "headingPath": [
+        "text-to-cad Review: CAD Skills for Claude Code and Codex",
+        "TL;DR"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4043,
+      "end": 4214,
+      "id": "b19",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[19]",
+      "headingPath": [
+        "text-to-cad Review: CAD Skills for Claude Code and Codex",
+        "TL;DR"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4216,
+      "end": 4368,
+      "id": "b20",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[20]",
+      "headingPath": [
+        "text-to-cad Review: CAD Skills for Claude Code and Codex",
+        "TL;DR"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4370,
+      "end": 4508,
+      "id": "b21",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[21]",
+      "headingPath": [
+        "text-to-cad Review: CAD Skills for Claude Code and Codex",
+        "TL;DR"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4510,
+      "end": 4633,
+      "id": "b22",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[22]",
+      "headingPath": [
+        "text-to-cad Review: CAD Skills for Claude Code and Codex",
+        "TL;DR"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4635,
+      "end": 5227,
+      "id": "b23",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[23]",
+      "headingPath": [
+        "text-to-cad Review: CAD Skills for Claude Code and Codex",
+        "TL;DR"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5229,
+      "end": 5260,
+      "id": "b24",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[24]",
+      "headingPath": [
+        "text-to-cad Review: CAD Skills for Claude Code and Codex",
+        "What problem text-to-cad solves"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5262,
+      "end": 6029,
+      "id": "b25",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[25]",
+      "headingPath": [
+        "text-to-cad Review: CAD Skills for Claude Code and Codex",
+        "What problem text-to-cad solves"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 6031,
+      "end": 6216,
+      "id": "b26",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[26]",
+      "headingPath": [
+        "text-to-cad Review: CAD Skills for Claude Code and Codex",
+        "What problem text-to-cad solves"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 6218,
+      "end": 6230,
+      "id": "b27",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[27]",
+      "headingPath": [
+        "text-to-cad Review: CAD Skills for Claude Code and Codex",
+        "How it works"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 6232,
+      "end": 6305,
+      "id": "b28",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[28]",
+      "headingPath": [
+        "text-to-cad Review: CAD Skills for Claude Code and Codex",
+        "How it works"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 6307,
+      "end": 6664,
+      "id": "b29",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[29]",
+      "headingPath": [
+        "text-to-cad Review: CAD Skills for Claude Code and Codex",
+        "How it works"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 6666,
+      "end": 6750,
+      "id": "b30",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[30]",
+      "headingPath": [
+        "text-to-cad Review: CAD Skills for Claude Code and Codex",
+        "How it works"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 6752,
+      "end": 7101,
+      "id": "b31",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[31]",
+      "headingPath": [
+        "text-to-cad Review: CAD Skills for Claude Code and Codex",
+        "How it works"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 7103,
+      "end": 7146,
+      "id": "b32",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[32]",
+      "headingPath": [
+        "text-to-cad Review: CAD Skills for Claude Code and Codex",
+        "How it works",
+        "A model is just a decorated Python function"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 7148,
+      "end": 7271,
+      "id": "b33",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[33]",
+      "headingPath": [
+        "text-to-cad Review: CAD Skills for Claude Code and Codex",
+        "How it works",
+        "A model is just a decorated Python function"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 7273,
+      "end": 7514,
+      "id": "b34",
+      "kind": "CODE",
+      "locator": "source DOM normalized block[34]",
+      "headingPath": [
+        "text-to-cad Review: CAD Skills for Claude Code and Codex",
+        "How it works",
+        "A model is just a decorated Python function"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 7516,
+      "end": 7750,
+      "id": "b35",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[35]",
+      "headingPath": [
+        "text-to-cad Review: CAD Skills for Claude Code and Codex",
+        "How it works",
+        "A model is just a decorated Python function"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 7752,
+      "end": 7904,
+      "id": "b36",
+      "kind": "CODE",
+      "locator": "source DOM normalized block[36]",
+      "headingPath": [
+        "text-to-cad Review: CAD Skills for Claude Code and Codex",
+        "How it works",
+        "A model is just a decorated Python function"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 7906,
+      "end": 8220,
+      "id": "b37",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[37]",
+      "headingPath": [
+        "text-to-cad Review: CAD Skills for Claude Code and Codex",
+        "How it works",
+        "A model is just a decorated Python function"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 8222,
+      "end": 8239,
+      "id": "b38",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[38]",
+      "headingPath": [
+        "text-to-cad Review: CAD Skills for Claude Code and Codex",
+        "How it works",
+        "The twelve skills"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 8241,
+      "end": 9040,
+      "id": "b39",
+      "kind": "TABLE",
+      "locator": "source DOM normalized block[39]",
+      "headingPath": [
+        "text-to-cad Review: CAD Skills for Claude Code and Codex",
+        "How it works",
+        "The twelve skills"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 9042,
+      "end": 9283,
+      "id": "b40",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[40]",
+      "headingPath": [
+        "text-to-cad Review: CAD Skills for Claude Code and Codex",
+        "How it works",
+        "The twelve skills"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 9285,
+      "end": 9296,
+      "id": "b41",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[41]",
+      "headingPath": [
+        "text-to-cad Review: CAD Skills for Claude Code and Codex",
+        "Quick start"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 9298,
+      "end": 9378,
+      "id": "b42",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[42]",
+      "headingPath": [
+        "text-to-cad Review: CAD Skills for Claude Code and Codex",
+        "Quick start"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 9380,
+      "end": 9486,
+      "id": "b43",
+      "kind": "CODE",
+      "locator": "source DOM normalized block[43]",
+      "headingPath": [
+        "text-to-cad Review: CAD Skills for Claude Code and Codex",
+        "Quick start"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 9488,
+      "end": 9685,
+      "id": "b44",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[44]",
+      "headingPath": [
+        "text-to-cad Review: CAD Skills for Claude Code and Codex",
+        "Quick start"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 9687,
+      "end": 9732,
+      "id": "b45",
+      "kind": "CODE",
+      "locator": "source DOM normalized block[45]",
+      "headingPath": [
+        "text-to-cad Review: CAD Skills for Claude Code and Codex",
+        "Quick start"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 9734,
+      "end": 9990,
+      "id": "b46",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[46]",
+      "headingPath": [
+        "text-to-cad Review: CAD Skills for Claude Code and Codex",
+        "Quick start"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 9992,
+      "end": 10023,
+      "id": "b47",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[47]",
+      "headingPath": [
+        "text-to-cad Review: CAD Skills for Claude Code and Codex",
+        "Hands-on test (October 9, 2026)"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 10025,
+      "end": 10460,
+      "id": "b48",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[48]",
+      "headingPath": [
+        "text-to-cad Review: CAD Skills for Claude Code and Codex",
+        "Hands-on test (October 9, 2026)"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 10462,
+      "end": 10776,
+      "id": "b49",
+      "kind": "TABLE",
+      "locator": "source DOM normalized block[49]",
+      "headingPath": [
+        "text-to-cad Review: CAD Skills for Claude Code and Codex",
+        "Hands-on test (October 9, 2026)"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 10778,
+      "end": 11171,
+      "id": "b50",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[50]",
+      "headingPath": [
+        "text-to-cad Review: CAD Skills for Claude Code and Codex",
+        "Hands-on test (October 9, 2026)"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 11173,
+      "end": 11203,
+      "id": "b51",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[51]",
+      "headingPath": [
+        "text-to-cad Review: CAD Skills for Claude Code and Codex",
+        "Hands-on test (October 9, 2026)"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 11205,
+      "end": 11305,
+      "id": "b52",
+      "kind": "CODE",
+      "locator": "source DOM normalized block[52]",
+      "headingPath": [
+        "text-to-cad Review: CAD Skills for Claude Code and Codex",
+        "Hands-on test (October 9, 2026)"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 11307,
+      "end": 11921,
+      "id": "b53",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[53]",
+      "headingPath": [
+        "text-to-cad Review: CAD Skills for Claude Code and Codex",
+        "Hands-on test (October 9, 2026)"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 11923,
+      "end": 12303,
+      "id": "b54",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[54]",
+      "headingPath": [
+        "text-to-cad Review: CAD Skills for Claude Code and Codex",
+        "Hands-on test (October 9, 2026)"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 12305,
+      "end": 12324,
+      "id": "b55",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[55]",
+      "headingPath": [
+        "text-to-cad Review: CAD Skills for Claude Code and Codex",
+        "Community reactions"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 12326,
+      "end": 12453,
+      "id": "b56",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[56]",
+      "headingPath": [
+        "text-to-cad Review: CAD Skills for Claude Code and Codex",
+        "Community reactions"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 12455,
+      "end": 12802,
+      "id": "b57",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[57]",
+      "headingPath": [
+        "text-to-cad Review: CAD Skills for Claude Code and Codex",
+        "Community reactions"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 12804,
+      "end": 13098,
+      "id": "b58",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[58]",
+      "headingPath": [
+        "text-to-cad Review: CAD Skills for Claude Code and Codex",
+        "Community reactions"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 13100,
+      "end": 13345,
+      "id": "b59",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[59]",
+      "headingPath": [
+        "text-to-cad Review: CAD Skills for Claude Code and Codex",
+        "Community reactions"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 13347,
+      "end": 13588,
+      "id": "b60",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[60]",
+      "headingPath": [
+        "text-to-cad Review: CAD Skills for Claude Code and Codex",
+        "Community reactions"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 13590,
+      "end": 13801,
+      "id": "b61",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[61]",
+      "headingPath": [
+        "text-to-cad Review: CAD Skills for Claude Code and Codex",
+        "Community reactions"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 13803,
+      "end": 13821,
+      "id": "b62",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[62]",
+      "headingPath": [
+        "text-to-cad Review: CAD Skills for Claude Code and Codex",
+        "Honest limitations"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 13823,
+      "end": 14116,
+      "id": "b63",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[63]",
+      "headingPath": [
+        "text-to-cad Review: CAD Skills for Claude Code and Codex",
+        "Honest limitations"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 14118,
+      "end": 14243,
+      "id": "b64",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[64]",
+      "headingPath": [
+        "text-to-cad Review: CAD Skills for Claude Code and Codex",
+        "Honest limitations"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 14245,
+      "end": 14577,
+      "id": "b65",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[65]",
+      "headingPath": [
+        "text-to-cad Review: CAD Skills for Claude Code and Codex",
+        "Honest limitations"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 14579,
+      "end": 14811,
+      "id": "b66",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[66]",
+      "headingPath": [
+        "text-to-cad Review: CAD Skills for Claude Code and Codex",
+        "Honest limitations"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 14813,
+      "end": 15014,
+      "id": "b67",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[67]",
+      "headingPath": [
+        "text-to-cad Review: CAD Skills for Claude Code and Codex",
+        "Honest limitations"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 15016,
+      "end": 15098,
+      "id": "b68",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[68]",
+      "headingPath": [
+        "text-to-cad Review: CAD Skills for Claude Code and Codex",
+        "Honest limitations"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 15100,
+      "end": 15255,
+      "id": "b69",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[69]",
+      "headingPath": [
+        "text-to-cad Review: CAD Skills for Claude Code and Codex",
+        "Honest limitations"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 15257,
+      "end": 15306,
+      "id": "b70",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[70]",
+      "headingPath": [
+        "text-to-cad Review: CAD Skills for Claude Code and Codex",
+        "When to use text-to-cad, and what to pick instead"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 15308,
+      "end": 15491,
+      "id": "b71",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[71]",
+      "headingPath": [
+        "text-to-cad Review: CAD Skills for Claude Code and Codex",
+        "When to use text-to-cad, and what to pick instead"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 15493,
+      "end": 15582,
+      "id": "b72",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[72]",
+      "headingPath": [
+        "text-to-cad Review: CAD Skills for Claude Code and Codex",
+        "When to use text-to-cad, and what to pick instead"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 15584,
+      "end": 15662,
+      "id": "b73",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[73]",
+      "headingPath": [
+        "text-to-cad Review: CAD Skills for Claude Code and Codex",
+        "When to use text-to-cad, and what to pick instead"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 15664,
+      "end": 15733,
+      "id": "b74",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[74]",
+      "headingPath": [
+        "text-to-cad Review: CAD Skills for Claude Code and Codex",
+        "When to use text-to-cad, and what to pick instead"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 15735,
+      "end": 15842,
+      "id": "b75",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[75]",
+      "headingPath": [
+        "text-to-cad Review: CAD Skills for Claude Code and Codex",
+        "When to use text-to-cad, and what to pick instead"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 15844,
+      "end": 15847,
+      "id": "b76",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[76]",
+      "headingPath": [
+        "text-to-cad Review: CAD Skills for Claude Code and Codex",
+        "FAQ"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 15849,
+      "end": 15869,
+      "id": "b77",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[77]",
+      "headingPath": [
+        "text-to-cad Review: CAD Skills for Claude Code and Codex",
+        "FAQ",
+        "Is text-to-cad free?"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 15871,
+      "end": 16098,
+      "id": "b78",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[78]",
+      "headingPath": [
+        "text-to-cad Review: CAD Skills for Claude Code and Codex",
+        "FAQ",
+        "Is text-to-cad free?"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 16100,
+      "end": 16138,
+      "id": "b79",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[79]",
+      "headingPath": [
+        "text-to-cad Review: CAD Skills for Claude Code and Codex",
+        "FAQ",
+        "Which agents does text-to-cad support?"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 16140,
+      "end": 16405,
+      "id": "b80",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[80]",
+      "headingPath": [
+        "text-to-cad Review: CAD Skills for Claude Code and Codex",
+        "FAQ",
+        "Which agents does text-to-cad support?"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 16407,
+      "end": 16441,
+      "id": "b81",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[81]",
+      "headingPath": [
+        "text-to-cad Review: CAD Skills for Claude Code and Codex",
+        "FAQ",
+        "What file formats does it produce?"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 16443,
+      "end": 16641,
+      "id": "b82",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[82]",
+      "headingPath": [
+        "text-to-cad Review: CAD Skills for Claude Code and Codex",
+        "FAQ",
+        "What file formats does it produce?"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 16643,
+      "end": 16681,
+      "id": "b83",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[83]",
+      "headingPath": [
+        "text-to-cad Review: CAD Skills for Claude Code and Codex",
+        "FAQ",
+        "Does text-to-cad work in Docker or CI?"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 16683,
+      "end": 17100,
+      "id": "b84",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[84]",
+      "headingPath": [
+        "text-to-cad Review: CAD Skills for Claude Code and Codex",
+        "FAQ",
+        "Does text-to-cad work in Docker or CI?"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 17102,
+      "end": 17144,
+      "id": "b85",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[85]",
+      "headingPath": [
+        "text-to-cad Review: CAD Skills for Claude Code and Codex",
+        "FAQ",
+        "Does text-to-cad send my designs anywhere?"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 17146,
+      "end": 17277,
+      "id": "b86",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[86]",
+      "headingPath": [
+        "text-to-cad Review: CAD Skills for Claude Code and Codex",
+        "FAQ",
+        "Does text-to-cad send my designs anywhere?"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 17279,
+      "end": 17286,
+      "id": "b87",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[87]",
+      "headingPath": [
+        "text-to-cad Review: CAD Skills for Claude Code and Codex",
+        "Verdict"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 17288,
+      "end": 17750,
+      "id": "b88",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[88]",
+      "headingPath": [
+        "text-to-cad Review: CAD Skills for Claude Code and Codex",
+        "Verdict"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 17752,
+      "end": 17759,
+      "id": "b89",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[89]",
+      "headingPath": [
+        "text-to-cad Review: CAD Skills for Claude Code and Codex",
+        "Sources"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 17761,
+      "end": 17832,
+      "id": "b90",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[90]",
+      "headingPath": [
+        "text-to-cad Review: CAD Skills for Claude Code and Codex",
+        "Sources"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 17834,
+      "end": 17867,
+      "id": "b91",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[91]",
+      "headingPath": [
+        "text-to-cad Review: CAD Skills for Claude Code and Codex",
+        "Sources"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 17869,
+      "end": 17889,
+      "id": "b92",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[92]",
+      "headingPath": [
+        "text-to-cad Review: CAD Skills for Claude Code and Codex",
+        "Sources"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 17891,
+      "end": 17911,
+      "id": "b93",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[93]",
+      "headingPath": [
+        "text-to-cad Review: CAD Skills for Claude Code and Codex",
+        "Sources"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 17913,
+      "end": 17940,
+      "id": "b94",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[94]",
+      "headingPath": [
+        "text-to-cad Review: CAD Skills for Claude Code and Codex",
+        "Sources"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 17942,
+      "end": 17956,
+      "id": "b95",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[95]",
+      "headingPath": [
+        "text-to-cad Review: CAD Skills for Claude Code and Codex",
+        "Sources"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 17958,
+      "end": 17996,
+      "id": "b96",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[96]",
+      "headingPath": [
+        "text-to-cad Review: CAD Skills for Claude Code and Codex",
+        "Sources"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 17998,
+      "end": 18011,
+      "id": "b97",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[97]",
+      "headingPath": [
+        "text-to-cad Review: CAD Skills for Claude Code and Codex",
+        "Sources"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 18013,
+      "end": 18022,
+      "id": "b98",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[98]",
+      "headingPath": [
+        "text-to-cad Review: CAD Skills for Claude Code and Codex",
+        "Sources"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 18024,
+      "end": 18058,
+      "id": "b99",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[99]",
+      "headingPath": [
+        "text-to-cad Review: CAD Skills for Claude Code and Codex",
+        "Sources"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 18060,
+      "end": 18115,
+      "id": "b100",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[100]",
+      "headingPath": [
+        "text-to-cad Review: CAD Skills for Claude Code and Codex",
+        "Sources"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 18117,
+      "end": 18178,
+      "id": "b101",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[101]",
+      "headingPath": [
+        "text-to-cad Review: CAD Skills for Claude Code and Codex",
+        "Sources"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 18180,
+      "end": 18232,
+      "id": "b102",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[102]",
+      "headingPath": [
+        "text-to-cad Review: CAD Skills for Claude Code and Codex",
+        "Sources"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 18234,
+      "end": 18281,
+      "id": "b103",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[103]",
+      "headingPath": [
+        "text-to-cad Review: CAD Skills for Claude Code and Codex",
+        "Sources"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 18283,
+      "end": 18298,
+      "id": "b104",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[104]",
+      "headingPath": [
+        "text-to-cad Review: CAD Skills for Claude Code and Codex",
+        "Related reading"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 18300,
+      "end": 18516,
+      "id": "b105",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[105]",
+      "headingPath": [
+        "text-to-cad Review: CAD Skills for Claude Code and Codex",
+        "Related reading"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 18518,
+      "end": 18731,
+      "id": "b106",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[106]",
+      "headingPath": [
+        "text-to-cad Review: CAD Skills for Claude Code and Codex",
+        "Related reading"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 18733,
+      "end": 18980,
+      "id": "b107",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[107]",
+      "headingPath": [
+        "text-to-cad Review: CAD Skills for Claude Code and Codex",
+        "Related reading"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 18982,
+      "end": 19190,
+      "id": "b108",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[108]",
+      "headingPath": [
+        "text-to-cad Review: CAD Skills for Claude Code and Codex",
+        "Related reading"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 19192,
+      "end": 19391,
+      "id": "b109",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[109]",
+      "headingPath": [
+        "text-to-cad Review: CAD Skills for Claude Code and Codex",
+        "Related reading"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    }
+  ],
+  "links": [
+    {
+      "url": "https://andrew.ooo/posts/text-to-cad-review-agent-cad-plugin/",
+      "text": "",
+      "blockId": null,
+      "relation": "CANONICAL",
+      "locator": "source DOM link[0]"
+    },
+    {
+      "url": "https://github.com/earthtojake/text-to-cad",
+      "text": "earthtojake/text-to-cad",
+      "blockId": "b4",
+      "relation": "LINK",
+      "locator": "source DOM link[9]"
+    },
+    {
+      "url": "https://andrew.ooo/reference/open-source-ai-tools/",
+      "text": "All tracked tools",
+      "blockId": "b4",
+      "relation": "LINK",
+      "locator": "source DOM link[10]"
+    },
+    {
+      "url": "https://andrew.ooo/editorial-policy/",
+      "text": "How we test",
+      "blockId": "b5",
+      "relation": "LINK",
+      "locator": "source DOM link[11]"
+    },
+    {
+      "url": "https://github.com/earthtojake/text-to-cad",
+      "text": "earthtojake/text-to-cad",
+      "blockId": "b16",
+      "relation": "LINK",
+      "locator": "source DOM link[12]"
+    },
+    {
+      "url": "https://github.com/gumyr/build123d",
+      "text": "build123d",
+      "blockId": "b16",
+      "relation": "LINK",
+      "locator": "source DOM link[13]"
+    },
+    {
+      "url": "https://pypistats.org/packages/cadgen",
+      "text": "pypistats",
+      "blockId": "b19",
+      "relation": "LINK",
+      "locator": "source DOM link[14]"
+    },
+    {
+      "url": "https://docs.astral.sh/uv/",
+      "text": "uv",
+      "blockId": "b21",
+      "relation": "LINK",
+      "locator": "source DOM link[15]"
+    },
+    {
+      "url": "https://news.ycombinator.com/item?id=47970497",
+      "text": "May 2026 HN thread",
+      "blockId": "b25",
+      "relation": "LINK",
+      "locator": "source DOM link[16]"
+    },
+    {
+      "url": "https://news.ycombinator.com/item?id=47970497",
+      "text": "Hacker News launch thread",
+      "blockId": "b56",
+      "relation": "LINK",
+      "locator": "source DOM link[17]"
+    },
+    {
+      "url": "https://zoo.dev/",
+      "text": "Zoo",
+      "blockId": "b57",
+      "relation": "LINK",
+      "locator": "source DOM link[18]"
+    },
+    {
+      "url": "https://github.com/earthtojake/text-to-cad/issues/555",
+      "text": "#555",
+      "blockId": "b61",
+      "relation": "LINK",
+      "locator": "source DOM link[19]"
+    },
+    {
+      "url": "https://github.com/earthtojake/text-to-cad/issues/433",
+      "text": "#433",
+      "blockId": "b61",
+      "relation": "LINK",
+      "locator": "source DOM link[20]"
+    },
+    {
+      "url": "https://github.com/earthtojake/text-to-cad/issues/506",
+      "text": "#506",
+      "blockId": "b61",
+      "relation": "LINK",
+      "locator": "source DOM link[21]"
+    },
+    {
+      "url": "https://zoo.dev/",
+      "text": "Zoo",
+      "blockId": "b74",
+      "relation": "LINK",
+      "locator": "source DOM link[22]"
+    },
+    {
+      "url": "https://github.com/earthtojake/text-to-cad",
+      "text": "earthtojake/text-to-cad on GitHub",
+      "blockId": "b90",
+      "relation": "LINK",
+      "locator": "source DOM link[23]"
+    },
+    {
+      "url": "https://github.com/earthtojake/text-to-cad/releases/tag/v0.7.19",
+      "text": "text-to-cad v0.7.19 release notes",
+      "blockId": "b91",
+      "relation": "LINK",
+      "locator": "source DOM link[24]"
+    },
+    {
+      "url": "https://github.com/earthtojake/text-to-cad/blob/main/skills/cad/SKILL.md",
+      "text": "CAD skill (SKILL.md)",
+      "blockId": "b92",
+      "relation": "LINK",
+      "locator": "source DOM link[25]"
+    },
+    {
+      "url": "https://github.com/earthtojake/text-to-cad/blob/main/skills/dfm/SKILL.md",
+      "text": "DFM skill (SKILL.md)",
+      "blockId": "b93",
+      "relation": "LINK",
+      "locator": "source DOM link[26]"
+    },
+    {
+      "url": "https://github.com/earthtojake/text-to-cad/blob/main/skills/step-parts/SKILL.md",
+      "text": "step.parts skill (SKILL.md)",
+      "blockId": "b94",
+      "relation": "LINK",
+      "locator": "source DOM link[27]"
+    },
+    {
+      "url": "https://pypi.org/project/cadgen/",
+      "text": "cadgen on PyPI",
+      "blockId": "b95",
+      "relation": "LINK",
+      "locator": "source DOM link[28]"
+    },
+    {
+      "url": "https://pypistats.org/packages/cadgen",
+      "text": "cadgen download statistics (pypistats)",
+      "blockId": "b96",
+      "relation": "LINK",
+      "locator": "source DOM link[29]"
+    },
+    {
+      "url": "https://www.texttocad.dev/",
+      "text": "texttocad.dev",
+      "blockId": "b97",
+      "relation": "LINK",
+      "locator": "source DOM link[30]"
+    },
+    {
+      "url": "https://github.com/gumyr/build123d",
+      "text": "build123d",
+      "blockId": "b98",
+      "relation": "LINK",
+      "locator": "source DOM link[31]"
+    },
+    {
+      "url": "https://news.ycombinator.com/item?id=47970497",
+      "text": "Hacker News: Text-to-CAD, May 2026",
+      "blockId": "b99",
+      "relation": "LINK",
+      "locator": "source DOM link[32]"
+    },
+    {
+      "url": "https://github.com/earthtojake/text-to-cad/issues/555",
+      "text": "Issue #555: STL export produces holes on a valid teacup",
+      "blockId": "b100",
+      "relation": "LINK",
+      "locator": "source DOM link[33]"
+    },
+    {
+      "url": "https://github.com/earthtojake/text-to-cad/issues/433",
+      "text": "Issue #433: STL export breaks on a hole through a curved wall",
+      "blockId": "b101",
+      "relation": "LINK",
+      "locator": "source DOM link[34]"
+    },
+    {
+      "url": "https://github.com/earthtojake/text-to-cad/issues/404",
+      "text": "Issue #404: OCP blocked by Windows Smart App Control",
+      "blockId": "b102",
+      "relation": "LINK",
+      "locator": "source DOM link[35]"
+    },
+    {
+      "url": "https://github.com/earthtojake/text-to-cad/issues/506",
+      "text": "Issue #506: CAD viewer timeout in Codex desktop",
+      "blockId": "b103",
+      "relation": "LINK",
+      "locator": "source DOM link[36]"
+    },
+    {
+      "url": "https://andrew.ooo/posts/openrig-review-multi-agent-harness-claude-code-codex/",
+      "text": "📝OpenRig Review: Claude Code and Codex as One Agent Team",
+      "blockId": "b105",
+      "relation": "LINK",
+      "locator": "source DOM link[37]"
+    },
+    {
+      "url": "https://andrew.ooo/posts/matt-pocock-skills-claude-code-review/",
+      "text": "📝Matt Pocock's Skills Review: 54k Stars for Claude Code",
+      "blockId": "b106",
+      "relation": "LINK",
+      "locator": "source DOM link[38]"
+    },
+    {
+      "url": "https://andrew.ooo/posts/superpowers-agentic-skills-framework-claude-code/",
+      "text": "📝Superpowers Review: The 124K-Star Skills Framework for Claude Code",
+      "blockId": "b107",
+      "relation": "LINK",
+      "locator": "source DOM link[39]"
+    },
+    {
+      "url": "https://andrew.ooo/posts/ruflo-review-agent-harness-claude-code-codex/",
+      "text": "📝Ruflo Review: The Claude Code Harness Behind 77K Stars",
+      "blockId": "b108",
+      "relation": "LINK",
+      "locator": "source DOM link[40]"
+    },
+    {
+      "url": "https://andrew.ooo/posts/claude-context-mcp-semantic-code-search-review/",
+      "text": "📝Claude Context Review: Semantic Code Search MCP (2026)",
+      "blockId": "b109",
+      "relation": "LINK",
+      "locator": "source DOM link[41]"
+    }
+  ],
+  "tables": [
+    {
+      "blockId": "b39",
+      "rows": [
+        {
+          "start": 8241,
+          "end": 8258,
+          "cells": [
+            {
+              "start": 8241,
+              "end": 8246,
+              "text": "Skill",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 8246,
+              "end": 8258,
+              "text": "What it does",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 8258,
+          "end": 8339,
+          "cells": [
+            {
+              "start": 8258,
+              "end": 8261,
+              "text": "CAD",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 8261,
+              "end": 8339,
+              "text": "Creates and edits models from text or images; STEP output, STL/3MF/GLB exports",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 8339,
+          "end": 8441,
+          "cells": [
+            {
+              "start": 8339,
+              "end": 8349,
+              "text": "step.parts",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 8349,
+              "end": 8441,
+              "text": "Searches a hosted catalog of off-the-shelf STEP parts (screws, bearings, servos, connectors)",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 8441,
+          "end": 8533,
+          "cells": [
+            {
+              "start": 8441,
+              "end": 8460,
+              "text": "Engineering Drawing",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 8460,
+              "end": 8533,
+              "text": "Dimensioned PDF drawings: views, hidden lines, hole callouts, title block",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 8533,
+          "end": 8572,
+          "cells": [
+            {
+              "start": 8533,
+              "end": 8536,
+              "text": "DXF",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 8536,
+              "end": 8572,
+              "text": "2D profiles, gaskets and cut layouts",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 8572,
+          "end": 8654,
+          "cells": [
+            {
+              "start": 8572,
+              "end": 8589,
+              "text": "URDF / SRDF / SDF",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 8589,
+              "end": 8654,
+              "text": "Robot description files, MoveIt planning groups, simulator worlds",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 8654,
+          "end": 8731,
+          "cells": [
+            {
+              "start": 8654,
+              "end": 8665,
+              "text": "SendCutSend",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 8665,
+              "end": 8731,
+              "text": "Checks DXF and STEP files before upload to the SendCutSend service",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 8731,
+          "end": 8814,
+          "cells": [
+            {
+              "start": 8731,
+              "end": 8741,
+              "text": "DfAM Check",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 8741,
+              "end": 8814,
+              "text": "Mesh printability: wall thickness, overhangs, support volume, orientation",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 8814,
+          "end": 8900,
+          "cells": [
+            {
+              "start": 8814,
+              "end": 8817,
+              "text": "DFM",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 8817,
+              "end": 8900,
+              "text": "Sheet metal, CNC and injection-molding reviews, citing the rule behind each finding",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 8900,
+          "end": 8962,
+          "cells": [
+            {
+              "start": 8900,
+              "end": 8906,
+              "text": "G-code",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 8906,
+              "end": 8962,
+              "text": "Slices models with OrcaSlicer using your printer presets",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 8962,
+          "end": 9040,
+          "cells": [
+            {
+              "start": 8962,
+              "end": 8972,
+              "text": "Bambu Labs",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 8972,
+              "end": 9040,
+              "text": "Sends prints to Bambu Lab printers via Bambu Connect or Bambu Studio",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "blockId": "b49",
+      "rows": [
+        {
+          "start": 10462,
+          "end": 10476,
+          "cells": [
+            {
+              "start": 10462,
+              "end": 10466,
+              "text": "Step",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 10466,
+              "end": 10472,
+              "text": "Result",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 10472,
+              "end": 10476,
+              "text": "Time",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 10476,
+          "end": 10518,
+          "cells": [
+            {
+              "start": 10476,
+              "end": 10503,
+              "text": "Install uv (pip install uv)",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 10503,
+              "end": 10513,
+              "text": "uv 0.12.24",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 10513,
+              "end": 10518,
+              "text": "2.4 s",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 10518,
+          "end": 10648,
+          "cells": [
+            {
+              "start": 10518,
+              "end": 10587,
+              "text": "cadgen --version and cadgen doctor via the skills’ pinned uvx command",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 10587,
+              "end": 10634,
+              "text": "Runtime downloaded and installed; kernel FAILED",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 10634,
+              "end": 10648,
+              "text": "6.8 s (exit 4)",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 10648,
+          "end": 10688,
+          "cells": [
+            {
+              "start": 10648,
+              "end": 10680,
+              "text": "Build the README bracket to STEP",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 10680,
+              "end": 10687,
+              "text": "Skipped",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 10687,
+              "end": 10688,
+              "text": "—",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 10688,
+          "end": 10718,
+          "cells": [
+            {
+              "start": 10688,
+              "end": 10710,
+              "text": "Measure the saved STEP",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 10710,
+              "end": 10717,
+              "text": "Skipped",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 10717,
+              "end": 10718,
+              "text": "—",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 10718,
+          "end": 10744,
+          "cells": [
+            {
+              "start": 10718,
+              "end": 10736,
+              "text": "Export STL and 3MF",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 10736,
+              "end": 10743,
+              "text": "Skipped",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 10743,
+              "end": 10744,
+              "text": "—",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 10744,
+          "end": 10776,
+          "cells": [
+            {
+              "start": 10744,
+              "end": 10768,
+              "text": "Headless snapshot render",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 10768,
+              "end": 10775,
+              "text": "Skipped",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 10775,
+              "end": 10776,
+              "text": "—",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

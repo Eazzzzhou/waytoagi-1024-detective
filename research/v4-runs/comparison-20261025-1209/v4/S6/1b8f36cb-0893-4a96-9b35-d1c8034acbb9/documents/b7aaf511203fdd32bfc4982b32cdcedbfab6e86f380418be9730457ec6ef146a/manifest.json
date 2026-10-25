@@ -1,0 +1,1174 @@
+{
+  "schemaVersion": "source-document/v1",
+  "id": "b7aaf511203fdd32bfc4982b32cdcedbfab6e86f380418be9730457ec6ef146a",
+  "version": "cd7ac28b57ec8f30749d7857376b7bada2f4ecaa7d95470b7c8f66e5396ff4c1",
+  "requestedUrl": "https://learn.microsoft.com/zh-cn/visualstudio/ide/copilot-free-plan?view=visualstudio",
+  "finalUrl": "https://learn.microsoft.com/zh-cn/visualstudio/ide/copilot-free-plan?view=visualstudio",
+  "retrievedAt": "2026-10-25T04:25:13.816Z",
+  "contentType": "text/html",
+  "status": "READ",
+  "readError": null,
+  "rawHash": "86046e0f6752896545a05e2a35edc96b6caa4e6f1570aed578ec626ede95a651",
+  "textHash": "a5133ed462efb2bf3f046f96f8569cf9eb428a694ef7ae1050ae7222bbfb2a96",
+  "text": "目录 退出编辑器模式\n\n读取模式 目录 添加 复制 Markdown 打印\n\n在 Visual Studio 中免费使用 GitHub Copilot\n\n通过 GitHub Copilot Free，你可以通过提供对选择 Copilot 功能的有限访问权限，在 IDE 中体验 AI 支持的编码帮助。 使用 Copilot 免费版，你现在可以访问 Visual Studio 中所有 AI 集成功能，包括补全、编辑和聊天。\n\nPrerequisites\n\n若要在 Visual Studio 中开始使用 Copilot Free，需要：\n\nVisual Studio 2022 版本 17.8 或更高\n\nVisual Studio 中的 GitHub Copilot\n\n在 Visual Studio 中开始使用 Copilot Free\n\n使用 Visual Studio 版本 17.14 或更高版本，可以在 首次启动时激活 Copilot Free。 你也可以随时按照以下步骤从 Copilot 对话助手 窗口进行设置。\n\n如果未登录，尝试使用任何 Copilot 功能时，将显示 开始使用 Copilot Free 对话框。\n\n使用 Ctrl+\\+C 在 Visual Studio 中打开聊天窗口。 还可以选择 IDE 右上角的 GitHub Copilot 图标，然后从下拉列表中选择打开聊天窗口以打开聊天。\n\n在“聊天”窗口中，输入开始使用 Copilot 的提示。 将显示“开始使用 Copilot Free”对话框。\n\n选择 继续使用 GitHub 或 继续使用 Google。\n\n如果有现有的 GitHub 帐户，请在出现提示时登录。 否则，请按照步骤创建新的 GitHub 帐户。\n\n完成后，会重定向回 Visual Studio。\n\nVisual Studio 中的 Copilot Free 使用限制\n\nCopilot 免费版提供数量有限的内联建议，并且对 Copilot 对话助手 和其他功能设有每月使用限额。 接近每月使用限制时，Visual Studio可能会显示使用情况警报。 达到每月限制后，你会注意到Copilot功能发生了变化。\n\n在 IDE 右上角的 Copilot 徽章下拉菜单中选择 Copilot 使用情况，随时检查免费层状态。\n\n下图显示了包含每月限制详细信息的“Copilot免费使用”对话框。\n\n你可以随时通过从 IDE 右上角的 Copilot 徽章下拉列表中选择 Copilot 免费版状态来检查你的免费层状态。\n\n还可以在 GitHub 帐户设置页上检查 Copilot Free 帐户的当前状态，。\n\n已达到使用限制\n\n如果达到Copilot免费版的使用限制，请等待每月重置或升级到另一个Copilot计划以继续使用Copilot。\n\n有关不同计划之间的使用行为和模型相关指导，请参阅 管理 Copilot 使用情况和模型。\n\n注释\n\n截至 2026 年 4 月 20 日，GitHub Copilot Pro试用版已暂停。 如果试用，请切换到 Copilot Free 或升级到付费计划。 如需支持，请参阅 https://docs.github.com/en/copilot/get-started/plans。\n\n充分利用 Copilot 免费版的技巧\n\n在长时间聊天会话之前检查 Copilot Usage，以便可以决定何时节省使用情况。\n\n保持例行提示简洁，并为聊天或编辑添加最多值的任务保留更大的提示。\n\n若要自定义Copilot行为，请打开 Tools>Options>GitHub>Copilot启用或禁用要使用的功能。\n\n如果Copilot的行为不符合预期，请确认正确的GitHub帐户在Visual Studio处于活动状态。\n\n常见问题解答\n\n谁可以访问 Copilot Free？\n\n如果你有 EMU 帐户、通过组织获得 Copilot 许可证、现有 Copilot Pro 订阅，或作为学生、教师或开源维护者免费获得 Copilot Pro，则不可使用 Copilot 免费版。 有关最新信息，请参阅关于 GitHub Copilot 免费版。\n\n我可以关闭补全以节省以后使用吗？\n\nYes. 你可以随时启用或禁用补全。 要启用或禁用补全，请从 IDE 右上角的 GitHub Copilot 徽章中选择“设置”，然后选中或取消选中“启用 GitHub Copilot 补全”。 还可以从 设置>选项访问它。\n\n我可以使用 Copilot 免费版阻止匹配公共代码的建议吗？\n\nYes. 可以从 GitHub Copilot 设置 页配置这些设置。\n\nCopilot Free 中包括哪些 Copilot 功能？\n\nCopilot 免费版包括以下功能：Copilot 补全、编辑和聊天。 在关于 GitHub Copilot 免费版中了解更多信息。\n\nCopilot 免费版对补全和聊天的限制是什么？\n\n请参阅关于 GitHub Copilot 免费版获取信息。\n\n相关内容\n\n在 Visual Studio 中安装和管理 GitHub Copilot\n\nVisual Studio 的 GitHub Copilot 体验\n\n适用于 Visual Studio 的 GitHub Copilot 聊天体验\n\n关于 GitHub Copilot 免费版\n\n反馈\n\n此页面是否有帮助？\n\n是\n\n否\n\n需要有关本主题的帮助？\n\n想要尝试使用 Ask Learn 阐明或指导你完成本主题？\n\n建议修复？\n\n上次更新时间为 2026-06-02\n\n此页面是否有帮助？\n\n需要有关本主题的帮助？\n\n想要尝试使用 Ask Learn 阐明或指导你完成本主题？\n\n建议修复？",
+  "rawSources": [
+    {
+      "mode": "STATIC",
+      "hash": "86046e0f6752896545a05e2a35edc96b6caa4e6f1570aed578ec626ede95a651",
+      "path": "C:\\Users\\qianchen\\Documents\\waytoagi-1024-detective-a2-v4\\.cache\\source-documents-v4\\1b8f36cb-0893-4a96-9b35-d1c8034acbb9\\b7aaf511203fdd32bfc4982b32cdcedbfab6e86f380418be9730457ec6ef146a\\raw.bin"
+    }
+  ],
+  "storage": {
+    "rawPath": "C:\\Users\\qianchen\\Documents\\waytoagi-1024-detective-a2-v4\\.cache\\source-documents-v4\\1b8f36cb-0893-4a96-9b35-d1c8034acbb9\\b7aaf511203fdd32bfc4982b32cdcedbfab6e86f380418be9730457ec6ef146a\\raw.bin",
+    "textPath": "C:\\Users\\qianchen\\Documents\\waytoagi-1024-detective-a2-v4\\.cache\\source-documents-v4\\1b8f36cb-0893-4a96-9b35-d1c8034acbb9\\b7aaf511203fdd32bfc4982b32cdcedbfab6e86f380418be9730457ec6ef146a\\source.txt",
+    "manifestPath": "C:\\Users\\qianchen\\Documents\\waytoagi-1024-detective-a2-v4\\.cache\\source-documents-v4\\1b8f36cb-0893-4a96-9b35-d1c8034acbb9\\b7aaf511203fdd32bfc4982b32cdcedbfab6e86f380418be9730457ec6ef146a\\manifest.json"
+  },
+  "parser": {
+    "name": "readability+source-dom",
+    "version": "readability-0.6.0+jsdom-30.1.3+source-dom-2",
+    "normalization": "source-text/v1",
+    "mode": "STATIC"
+  },
+  "metadata": {
+    "title": "Visual Studio 中的 GitHub Copilot 免费版 - Visual Studio (Windows) | Microsoft Learn",
+    "author": "madskristensen",
+    "publishedAt": null,
+    "language": "zh-cn"
+  },
+  "completeness": "COMPLETE",
+  "warnings": [],
+  "blocks": [
+    {
+      "start": 0,
+      "end": 10,
+      "id": "b0",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[0]",
+      "headingPath": [],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 12,
+      "end": 37,
+      "id": "b1",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[1]",
+      "headingPath": [],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 39,
+      "end": 75,
+      "id": "b2",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[2]",
+      "headingPath": [
+        "在 Visual Studio 中免费使用 GitHub Copilot"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 77,
+      "end": 211,
+      "id": "b3",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[3]",
+      "headingPath": [
+        "在 Visual Studio 中免费使用 GitHub Copilot"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 213,
+      "end": 226,
+      "id": "b4",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[4]",
+      "headingPath": [
+        "在 Visual Studio 中免费使用 GitHub Copilot",
+        "Prerequisites"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 228,
+      "end": 268,
+      "id": "b5",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[5]",
+      "headingPath": [
+        "在 Visual Studio 中免费使用 GitHub Copilot",
+        "Prerequisites"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 270,
+      "end": 300,
+      "id": "b6",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[6]",
+      "headingPath": [
+        "在 Visual Studio 中免费使用 GitHub Copilot",
+        "Prerequisites"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 302,
+      "end": 333,
+      "id": "b7",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[7]",
+      "headingPath": [
+        "在 Visual Studio 中免费使用 GitHub Copilot",
+        "Prerequisites"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 335,
+      "end": 369,
+      "id": "b8",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[8]",
+      "headingPath": [
+        "在 Visual Studio 中免费使用 GitHub Copilot",
+        "在 Visual Studio 中开始使用 Copilot Free"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 371,
+      "end": 463,
+      "id": "b9",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[9]",
+      "headingPath": [
+        "在 Visual Studio 中免费使用 GitHub Copilot",
+        "在 Visual Studio 中开始使用 Copilot Free"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 465,
+      "end": 516,
+      "id": "b10",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[10]",
+      "headingPath": [
+        "在 Visual Studio 中免费使用 GitHub Copilot",
+        "在 Visual Studio 中开始使用 Copilot Free"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 518,
+      "end": 610,
+      "id": "b11",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[11]",
+      "headingPath": [
+        "在 Visual Studio 中免费使用 GitHub Copilot",
+        "在 Visual Studio 中开始使用 Copilot Free"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 612,
+      "end": 667,
+      "id": "b12",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[12]",
+      "headingPath": [
+        "在 Visual Studio 中免费使用 GitHub Copilot",
+        "在 Visual Studio 中开始使用 Copilot Free"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 669,
+      "end": 698,
+      "id": "b13",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[13]",
+      "headingPath": [
+        "在 Visual Studio 中免费使用 GitHub Copilot",
+        "在 Visual Studio 中开始使用 Copilot Free"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 700,
+      "end": 751,
+      "id": "b14",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[14]",
+      "headingPath": [
+        "在 Visual Studio 中免费使用 GitHub Copilot",
+        "在 Visual Studio 中开始使用 Copilot Free"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 753,
+      "end": 777,
+      "id": "b15",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[15]",
+      "headingPath": [
+        "在 Visual Studio 中免费使用 GitHub Copilot",
+        "在 Visual Studio 中开始使用 Copilot Free"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 779,
+      "end": 813,
+      "id": "b16",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[16]",
+      "headingPath": [
+        "在 Visual Studio 中免费使用 GitHub Copilot",
+        "Visual Studio 中的 Copilot Free 使用限制"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 815,
+      "end": 934,
+      "id": "b17",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[17]",
+      "headingPath": [
+        "在 Visual Studio 中免费使用 GitHub Copilot",
+        "Visual Studio 中的 Copilot Free 使用限制"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 936,
+      "end": 988,
+      "id": "b18",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[18]",
+      "headingPath": [
+        "在 Visual Studio 中免费使用 GitHub Copilot",
+        "Visual Studio 中的 Copilot Free 使用限制"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 990,
+      "end": 1023,
+      "id": "b19",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[19]",
+      "headingPath": [
+        "在 Visual Studio 中免费使用 GitHub Copilot",
+        "Visual Studio 中的 Copilot Free 使用限制"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1025,
+      "end": 1085,
+      "id": "b20",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[20]",
+      "headingPath": [
+        "在 Visual Studio 中免费使用 GitHub Copilot",
+        "Visual Studio 中的 Copilot Free 使用限制"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1087,
+      "end": 1130,
+      "id": "b21",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[21]",
+      "headingPath": [
+        "在 Visual Studio 中免费使用 GitHub Copilot",
+        "Visual Studio 中的 Copilot Free 使用限制"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1132,
+      "end": 1139,
+      "id": "b22",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[22]",
+      "headingPath": [
+        "在 Visual Studio 中免费使用 GitHub Copilot",
+        "Visual Studio 中的 Copilot Free 使用限制",
+        "已达到使用限制"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1141,
+      "end": 1197,
+      "id": "b23",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[23]",
+      "headingPath": [
+        "在 Visual Studio 中免费使用 GitHub Copilot",
+        "Visual Studio 中的 Copilot Free 使用限制",
+        "已达到使用限制"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1199,
+      "end": 1243,
+      "id": "b24",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[24]",
+      "headingPath": [
+        "在 Visual Studio 中免费使用 GitHub Copilot",
+        "Visual Studio 中的 Copilot Free 使用限制",
+        "已达到使用限制"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1245,
+      "end": 1247,
+      "id": "b25",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[25]",
+      "headingPath": [
+        "在 Visual Studio 中免费使用 GitHub Copilot",
+        "Visual Studio 中的 Copilot Free 使用限制",
+        "已达到使用限制"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1249,
+      "end": 1389,
+      "id": "b26",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[26]",
+      "headingPath": [
+        "在 Visual Studio 中免费使用 GitHub Copilot",
+        "Visual Studio 中的 Copilot Free 使用限制",
+        "已达到使用限制"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1391,
+      "end": 1410,
+      "id": "b27",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[27]",
+      "headingPath": [
+        "在 Visual Studio 中免费使用 GitHub Copilot",
+        "充分利用 Copilot 免费版的技巧"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1412,
+      "end": 1454,
+      "id": "b28",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[28]",
+      "headingPath": [
+        "在 Visual Studio 中免费使用 GitHub Copilot",
+        "充分利用 Copilot 免费版的技巧"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1456,
+      "end": 1488,
+      "id": "b29",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[29]",
+      "headingPath": [
+        "在 Visual Studio 中免费使用 GitHub Copilot",
+        "充分利用 Copilot 免费版的技巧"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1490,
+      "end": 1549,
+      "id": "b30",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[30]",
+      "headingPath": [
+        "在 Visual Studio 中免费使用 GitHub Copilot",
+        "充分利用 Copilot 免费版的技巧"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1551,
+      "end": 1604,
+      "id": "b31",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[31]",
+      "headingPath": [
+        "在 Visual Studio 中免费使用 GitHub Copilot",
+        "充分利用 Copilot 免费版的技巧"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1606,
+      "end": 1612,
+      "id": "b32",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[32]",
+      "headingPath": [
+        "在 Visual Studio 中免费使用 GitHub Copilot",
+        "常见问题解答"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1614,
+      "end": 1633,
+      "id": "b33",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[33]",
+      "headingPath": [
+        "在 Visual Studio 中免费使用 GitHub Copilot",
+        "常见问题解答",
+        "谁可以访问 Copilot Free？"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1635,
+      "end": 1766,
+      "id": "b34",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[34]",
+      "headingPath": [
+        "在 Visual Studio 中免费使用 GitHub Copilot",
+        "常见问题解答",
+        "谁可以访问 Copilot Free？"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1768,
+      "end": 1784,
+      "id": "b35",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[35]",
+      "headingPath": [
+        "在 Visual Studio 中免费使用 GitHub Copilot",
+        "常见问题解答",
+        "谁可以访问 Copilot Free？",
+        "我可以关闭补全以节省以后使用吗？"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1786,
+      "end": 1898,
+      "id": "b36",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[36]",
+      "headingPath": [
+        "在 Visual Studio 中免费使用 GitHub Copilot",
+        "常见问题解答",
+        "谁可以访问 Copilot Free？",
+        "我可以关闭补全以节省以后使用吗？"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1900,
+      "end": 1930,
+      "id": "b37",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[37]",
+      "headingPath": [
+        "在 Visual Studio 中免费使用 GitHub Copilot",
+        "常见问题解答",
+        "谁可以访问 Copilot Free？",
+        "我可以使用 Copilot 免费版阻止匹配公共代码的建议吗？"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1932,
+      "end": 1967,
+      "id": "b38",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[38]",
+      "headingPath": [
+        "在 Visual Studio 中免费使用 GitHub Copilot",
+        "常见问题解答",
+        "谁可以访问 Copilot Free？",
+        "我可以使用 Copilot 免费版阻止匹配公共代码的建议吗？"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1969,
+      "end": 1999,
+      "id": "b39",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[39]",
+      "headingPath": [
+        "在 Visual Studio 中免费使用 GitHub Copilot",
+        "常见问题解答",
+        "谁可以访问 Copilot Free？",
+        "Copilot Free 中包括哪些 Copilot 功能？"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2001,
+      "end": 2067,
+      "id": "b40",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[40]",
+      "headingPath": [
+        "在 Visual Studio 中免费使用 GitHub Copilot",
+        "常见问题解答",
+        "谁可以访问 Copilot Free？",
+        "Copilot Free 中包括哪些 Copilot 功能？"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2069,
+      "end": 2093,
+      "id": "b41",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[41]",
+      "headingPath": [
+        "在 Visual Studio 中免费使用 GitHub Copilot",
+        "常见问题解答",
+        "谁可以访问 Copilot Free？",
+        "Copilot 免费版对补全和聊天的限制是什么？"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2095,
+      "end": 2124,
+      "id": "b42",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[42]",
+      "headingPath": [
+        "在 Visual Studio 中免费使用 GitHub Copilot",
+        "常见问题解答",
+        "谁可以访问 Copilot Free？",
+        "Copilot 免费版对补全和聊天的限制是什么？"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2126,
+      "end": 2130,
+      "id": "b43",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[43]",
+      "headingPath": [
+        "在 Visual Studio 中免费使用 GitHub Copilot",
+        "相关内容"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2132,
+      "end": 2169,
+      "id": "b44",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[44]",
+      "headingPath": [
+        "在 Visual Studio 中免费使用 GitHub Copilot",
+        "相关内容"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2171,
+      "end": 2204,
+      "id": "b45",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[45]",
+      "headingPath": [
+        "在 Visual Studio 中免费使用 GitHub Copilot",
+        "相关内容"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2206,
+      "end": 2245,
+      "id": "b46",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[46]",
+      "headingPath": [
+        "在 Visual Studio 中免费使用 GitHub Copilot",
+        "相关内容"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2247,
+      "end": 2268,
+      "id": "b47",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[47]",
+      "headingPath": [
+        "在 Visual Studio 中免费使用 GitHub Copilot",
+        "相关内容"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2270,
+      "end": 2272,
+      "id": "b48",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[48]",
+      "headingPath": [
+        "在 Visual Studio 中免费使用 GitHub Copilot",
+        "反馈"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2274,
+      "end": 2283,
+      "id": "b49",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[49]",
+      "headingPath": [
+        "在 Visual Studio 中免费使用 GitHub Copilot",
+        "反馈"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2285,
+      "end": 2286,
+      "id": "b50",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[50]",
+      "headingPath": [
+        "在 Visual Studio 中免费使用 GitHub Copilot",
+        "反馈"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2288,
+      "end": 2289,
+      "id": "b51",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[51]",
+      "headingPath": [
+        "在 Visual Studio 中免费使用 GitHub Copilot",
+        "反馈"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2291,
+      "end": 2302,
+      "id": "b52",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[52]",
+      "headingPath": [
+        "在 Visual Studio 中免费使用 GitHub Copilot",
+        "反馈"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2304,
+      "end": 2333,
+      "id": "b53",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[53]",
+      "headingPath": [
+        "在 Visual Studio 中免费使用 GitHub Copilot",
+        "反馈"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2335,
+      "end": 2340,
+      "id": "b54",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[54]",
+      "headingPath": [
+        "在 Visual Studio 中免费使用 GitHub Copilot",
+        "反馈"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2342,
+      "end": 2360,
+      "id": "b55",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[55]",
+      "headingPath": [
+        "在 Visual Studio 中免费使用 GitHub Copilot",
+        "反馈"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2362,
+      "end": 2371,
+      "id": "b56",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[56]",
+      "headingPath": [
+        "在 Visual Studio 中免费使用 GitHub Copilot",
+        "反馈"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2373,
+      "end": 2384,
+      "id": "b57",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[57]",
+      "headingPath": [
+        "在 Visual Studio 中免费使用 GitHub Copilot",
+        "反馈"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2386,
+      "end": 2415,
+      "id": "b58",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[58]",
+      "headingPath": [
+        "在 Visual Studio 中免费使用 GitHub Copilot",
+        "反馈"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2417,
+      "end": 2422,
+      "id": "b59",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[59]",
+      "headingPath": [
+        "在 Visual Studio 中免费使用 GitHub Copilot",
+        "反馈"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    }
+  ],
+  "links": [
+    {
+      "url": "https://learn.microsoft.com/zh-cn/visualstudio/ide/copilot-free-plan?view=visualstudio",
+      "text": "",
+      "blockId": null,
+      "relation": "CANONICAL",
+      "locator": "source DOM link[0]"
+    },
+    {
+      "url": "https://devblogs.microsoft.com/visualstudio/github-copilot-free-is-here-in-visual-studio/",
+      "text": "Copilot 免费版",
+      "blockId": "b3",
+      "relation": "LINK",
+      "locator": "source DOM link[7]"
+    },
+    {
+      "url": "https://learn.microsoft.com/zh-cn/visualstudio/ide/visual-studio-github-copilot-extension?view=visualstudio",
+      "text": "补全",
+      "blockId": "b3",
+      "relation": "LINK",
+      "locator": "source DOM link[8]"
+    },
+    {
+      "url": "https://learn.microsoft.com/zh-cn/visualstudio/ide/visual-studio-github-copilot-chat?view=visualstudio",
+      "text": "聊天",
+      "blockId": "b3",
+      "relation": "LINK",
+      "locator": "source DOM link[9]"
+    },
+    {
+      "url": "https://learn.microsoft.com/zh-cn/visualstudio/releases/2022/release-history",
+      "text": "版本 17.8",
+      "blockId": "b6",
+      "relation": "LINK",
+      "locator": "source DOM link[10]"
+    },
+    {
+      "url": "https://learn.microsoft.com/zh-cn/visualstudio/ide/visual-studio-github-copilot-install-and-states?view=visualstudio",
+      "text": "GitHub Copilot",
+      "blockId": "b7",
+      "relation": "LINK",
+      "locator": "source DOM link[11]"
+    },
+    {
+      "url": "https://learn.microsoft.com/zh-cn/visualstudio/ide/work-with-github-accounts?view=visualstudio",
+      "text": "首次启动时激活 Copilot Free",
+      "blockId": "b9",
+      "relation": "LINK",
+      "locator": "source DOM link[12]"
+    },
+    {
+      "url": "https://github.com/settings/copilot",
+      "text": "GitHub 帐户设置页上检查 Copilot Free 帐户的当前状态，",
+      "blockId": "b21",
+      "relation": "LINK",
+      "locator": "source DOM link[15]"
+    },
+    {
+      "url": "https://learn.microsoft.com/zh-cn/visualstudio/ide/copilot-usage-and-models?view=visualstudio",
+      "text": "管理 Copilot 使用情况和模型",
+      "blockId": "b24",
+      "relation": "LINK",
+      "locator": "source DOM link[16]"
+    },
+    {
+      "url": "https://learn.microsoft.com/zh-cn/visualstudio/ide/copilot-free-plan?view=visualstudio",
+      "text": "Copilot Free",
+      "blockId": "b26",
+      "relation": "LINK",
+      "locator": "source DOM link[17]"
+    },
+    {
+      "url": "https://docs.github.com/en/copilot/get-started/plans",
+      "text": "https://docs.github.com/en/copilot/get-started/plans",
+      "blockId": "b26",
+      "relation": "LINK",
+      "locator": "source DOM link[18]"
+    },
+    {
+      "url": "https://docs.github.com/en/copilot/how-tos/manage-your-account/get-started-with-a-copilot-plan",
+      "text": "关于 GitHub Copilot 免费版",
+      "blockId": "b34",
+      "relation": "LINK",
+      "locator": "source DOM link[19]"
+    },
+    {
+      "url": "https://github.com/settings/copilot",
+      "text": "GitHub Copilot 设置",
+      "blockId": "b38",
+      "relation": "LINK",
+      "locator": "source DOM link[20]"
+    },
+    {
+      "url": "https://learn.microsoft.com/zh-cn/visualstudio/ide/visual-studio-github-copilot-extension?view=visualstudio",
+      "text": "补全",
+      "blockId": "b40",
+      "relation": "LINK",
+      "locator": "source DOM link[21]"
+    },
+    {
+      "url": "https://learn.microsoft.com/zh-cn/visualstudio/ide/copilot-edits?view=visualstudio",
+      "text": "编辑",
+      "blockId": "b40",
+      "relation": "LINK",
+      "locator": "source DOM link[22]"
+    },
+    {
+      "url": "https://learn.microsoft.com/zh-cn/visualstudio/ide/visual-studio-github-copilot-chat?view=visualstudio",
+      "text": "聊天",
+      "blockId": "b40",
+      "relation": "LINK",
+      "locator": "source DOM link[23]"
+    },
+    {
+      "url": "https://docs.github.com/en/copilot/how-tos/manage-your-account/get-started-with-a-copilot-plan",
+      "text": "关于 GitHub Copilot 免费版",
+      "blockId": "b40",
+      "relation": "LINK",
+      "locator": "source DOM link[24]"
+    },
+    {
+      "url": "https://docs.github.com/en/copilot/how-tos/manage-your-account/get-started-with-a-copilot-plan",
+      "text": "关于 GitHub Copilot 免费版",
+      "blockId": "b42",
+      "relation": "LINK",
+      "locator": "source DOM link[25]"
+    },
+    {
+      "url": "https://learn.microsoft.com/zh-cn/visualstudio/ide/visual-studio-github-copilot-install-and-states?view=visualstudio",
+      "text": "在 Visual Studio",
+      "blockId": "b44",
+      "relation": "LINK",
+      "locator": "source DOM link[26]"
+    },
+    {
+      "url": "https://learn.microsoft.com/zh-cn/visualstudio/ide/visual-studio-github-copilot-extension?view=visualstudio",
+      "text": "Visual Studio 的 GitHub Copilot 体验",
+      "blockId": "b45",
+      "relation": "LINK",
+      "locator": "source DOM link[27]"
+    },
+    {
+      "url": "https://learn.microsoft.com/zh-cn/visualstudio/ide/visual-studio-github-copilot-chat?view=visualstudio",
+      "text": "适用于 Visual Studio 的 GitHub Copilot 聊天体验",
+      "blockId": "b46",
+      "relation": "LINK",
+      "locator": "source DOM link[28]"
+    },
+    {
+      "url": "https://docs.github.com/en/copilot/how-tos/manage-your-account/get-started-with-a-copilot-plan",
+      "text": "关于 GitHub Copilot 免费版",
+      "blockId": "b47",
+      "relation": "LINK",
+      "locator": "source DOM link[29]"
+    }
+  ],
+  "tables": []
+}

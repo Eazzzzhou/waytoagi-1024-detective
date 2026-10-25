@@ -1,0 +1,223 @@
+{
+  "investigationId": "c073843d-7dd5-4b8d-a68e-fdc8d8ac72b9",
+  "snapshotId": "fbe4e951-1d54-43cb-9a79-43a792d944ba",
+  "status": "SUCCEEDED",
+  "url": "http://127.0.0.1:3104/investigations/c073843d-7dd5-4b8d-a68e-fdc8d8ac72b9",
+  "citations": 2,
+  "exactQuoteChecks": "PASSED",
+  "excerptHashChecks": "PASSED",
+  "semanticChecks": [
+    {
+      "marker": "[1]",
+      "supported": true,
+      "reason": "原句为Hacker News评论者直接质问“Devin似乎并未完成所要求的任务，即提供AWS使用说明吗？”，是评论者本人对演示的看法，并未自称转述他人；但该评论针对的演示（Cognition官方Twitter发布的Upwork演示）由原文位置与检索时间/标题间接关联。原句确实支持‘Devin似乎未完成所要求任务（提供AWS使用说明）’这一说法，并明确将其归属为Hacker News评论。摘要附加的‘转述’和具体日期2024年3月官方Twitter演示等细节在原句中并不直接可见，但评论发布于2024-03-13，标题为“Devin: AI Software Engineer”，与所指演示大体对应。原句本身并未声明未独立复现，但该声明属于来源标注而非事实主张；核心事实（评论者认为Devin似乎未完成AWS说明任务）由原句直接支持。"
+    },
+    {
+      "marker": "[2]",
+      "supported": true,
+      "reason": "原句明确说‘Devin是我听说过的第一个AI开发工具——事实上也是我第一个使用的，因为我在私有测试阶段收到了邀请。现在这个产品似乎已经在cursor等其他工具之间褪色（变得无关紧要？）’。这支持‘第一个听说/第一个使用（私有测试受邀）’及‘似乎已被其他工具边缘化’的个人经历与观感；作者为edude03，发布于2026-09-08，与适用范围一致。摘要中的‘未独立复现’属于来源标注，不影响核心事实。"
+    }
+  ],
+  "documentReferenceChecks": 0,
+  "documentIntegrityChecks": "NOT_APPLICABLE_V3",
+  "review": {
+    "status": "NOT_CONFIGURED",
+    "reason": "未配置第二模型；不声称完成独立模型复核或精度提高。",
+    "independentAssessment": null,
+    "findings": []
+  },
+  "retrieval": [
+    {
+      "provider": "tencent-yuanbao-search-api",
+      "status": "SUCCEEDED",
+      "returnedSources": 6,
+      "adopted": 1
+    },
+    {
+      "provider": "tavily-search-api:keyless-capped",
+      "status": "SUCCEEDED",
+      "returnedSources": 6,
+      "adopted": 4
+    },
+    {
+      "provider": "tencent-yuanbao-search-api",
+      "status": "SUCCEEDED",
+      "returnedSources": 6,
+      "adopted": 1
+    },
+    {
+      "provider": "tavily-search-api:keyless-capped",
+      "status": "SUCCEEDED",
+      "returnedSources": 6,
+      "adopted": 1
+    }
+  ],
+  "modelCalls": [
+    {
+      "provider": "api.deepseek.com",
+      "model": "deepseek-flash",
+      "promptVersion": "a2-evidence-v4",
+      "temperature": null,
+      "thinkingMode": "DISABLED",
+      "generatedAt": "2026-10-25T04:10:56.787Z",
+      "id": "20a40b5f-85af-41ae-b4a3-7c6ee0631c30",
+      "purpose": "investigation-initial-decision",
+      "startedAt": "2026-10-25T04:10:55.616Z",
+      "durationMs": 1171,
+      "outcome": "SUCCEEDED",
+      "inputTokens": 1430,
+      "outputTokens": 116
+    },
+    {
+      "provider": "api.deepseek.com",
+      "model": "deepseek-flash",
+      "promptVersion": "a2-evidence-v4",
+      "temperature": null,
+      "thinkingMode": "DISABLED",
+      "generatedAt": "2026-10-25T04:11:01.128Z",
+      "id": "a3bec528-044e-4b0f-904a-4bb86e24c23b",
+      "purpose": "investigation-evidence-decision",
+      "startedAt": "2026-10-25T04:10:59.456Z",
+      "durationMs": 1672,
+      "outcome": "SUCCEEDED",
+      "inputTokens": 5555,
+      "outputTokens": 221
+    },
+    {
+      "provider": "api.deepseek.com",
+      "model": "deepseek-flash",
+      "promptVersion": "a2-evidence-v4",
+      "temperature": null,
+      "thinkingMode": "DISABLED",
+      "generatedAt": "2026-10-25T04:11:05.479Z",
+      "id": "43b19ae5-1995-4f10-ae1c-e7a91131ad1c",
+      "purpose": "investigation-evidence-decision",
+      "startedAt": "2026-10-25T04:11:03.354Z",
+      "durationMs": 2126,
+      "outcome": "SUCCEEDED",
+      "inputTokens": 7354,
+      "outputTokens": 348
+    },
+    {
+      "provider": "api.deepseek.com",
+      "model": "deepseek-flash",
+      "promptVersion": "a2-evidence-v4",
+      "temperature": null,
+      "thinkingMode": "DISABLED",
+      "generatedAt": "2026-10-25T04:11:09.626Z",
+      "id": "f4955ef5-0085-408d-9c6c-926663596490",
+      "purpose": "investigation-evidence-decision",
+      "startedAt": "2026-10-25T04:11:07.495Z",
+      "durationMs": 2131,
+      "outcome": "SUCCEEDED",
+      "inputTokens": 8744,
+      "outputTokens": 359
+    },
+    {
+      "provider": "api.deepseek.com",
+      "model": "deepseek-flash",
+      "promptVersion": "a2-evidence-v4",
+      "temperature": null,
+      "thinkingMode": "DISABLED",
+      "generatedAt": "2026-10-25T04:11:14.122Z",
+      "id": "f7898de9-13e6-4071-b3e8-c656ffe44c09",
+      "purpose": "investigation-evidence-decision",
+      "startedAt": "2026-10-25T04:11:12.060Z",
+      "durationMs": 2063,
+      "outcome": "SUCCEEDED",
+      "inputTokens": 13461,
+      "outputTokens": 373
+    },
+    {
+      "provider": "api.deepseek.com",
+      "model": "deepseek-flash",
+      "promptVersion": "a2-evidence-v4",
+      "temperature": null,
+      "thinkingMode": "DISABLED",
+      "generatedAt": "2026-10-25T04:11:19.596Z",
+      "id": "e63fbc20-9c97-4529-899d-540a6e1d0435",
+      "purpose": "investigation-evidence-decision",
+      "startedAt": "2026-10-25T04:11:16.348Z",
+      "durationMs": 3248,
+      "outcome": "SUCCEEDED",
+      "inputTokens": 14958,
+      "outputTokens": 512
+    },
+    {
+      "provider": "api.deepseek.com",
+      "model": "deepseek-flash",
+      "promptVersion": "a2-evidence-v4",
+      "temperature": null,
+      "thinkingMode": "DISABLED",
+      "generatedAt": "2026-10-25T04:11:22.511Z",
+      "id": "b6dd4810-13cb-4203-bca7-391203611489",
+      "purpose": "claim-extraction",
+      "startedAt": "2026-10-25T04:11:19.607Z",
+      "durationMs": 2904,
+      "outcome": "SUCCEEDED",
+      "inputTokens": 4244,
+      "outputTokens": 465
+    },
+    {
+      "provider": "api.deepseek.com",
+      "model": "deepseek-flash",
+      "promptVersion": "a2-evidence-v4",
+      "temperature": null,
+      "thinkingMode": "DISABLED",
+      "generatedAt": "2026-10-25T04:11:30.669Z",
+      "id": "cf59c687-043d-4b66-aebb-8b4ec1d83fb1",
+      "purpose": "claim-evidence-verification",
+      "startedAt": "2026-10-25T04:11:22.512Z",
+      "durationMs": 8162,
+      "outcome": "SUCCEEDED",
+      "inputTokens": 6780,
+      "outputTokens": 1972
+    },
+    {
+      "provider": "api.deepseek.com",
+      "model": "deepseek-flash",
+      "promptVersion": "a2-evidence-v4",
+      "temperature": null,
+      "thinkingMode": "DISABLED",
+      "generatedAt": "2026-10-25T04:11:34.552Z",
+      "id": "aa8fc83f-ebae-4b3f-8d18-00afcd4ecb80",
+      "purpose": "investigation-evidence-decision",
+      "startedAt": "2026-10-25T04:11:30.671Z",
+      "durationMs": 3881,
+      "outcome": "SUCCEEDED",
+      "inputTokens": 16757,
+      "outputTokens": 569
+    },
+    {
+      "provider": "api.deepseek.com",
+      "model": "deepseek-flash",
+      "promptVersion": "a2-evidence-v4",
+      "temperature": null,
+      "thinkingMode": "DISABLED",
+      "generatedAt": "2026-10-25T04:11:35.405Z",
+      "id": "981ecd9c-ceec-4602-9ead-51c5f799a5d1",
+      "purpose": "cited-answer-selection",
+      "startedAt": "2026-10-25T04:11:34.558Z",
+      "durationMs": 846,
+      "outcome": "SUCCEEDED",
+      "inputTokens": 1584,
+      "outputTokens": 56
+    },
+    {
+      "provider": "api.deepseek.com",
+      "model": "deepseek-flash",
+      "promptVersion": "a2-evidence-v4",
+      "temperature": null,
+      "thinkingMode": "DISABLED",
+      "generatedAt": "2026-10-25T04:11:38.221Z",
+      "id": "e311f1fe-94cd-450f-9677-ed37a15565c4",
+      "purpose": "citation-semantic-support-check",
+      "startedAt": "2026-10-25T04:11:35.405Z",
+      "durationMs": 2816,
+      "outcome": "SUCCEEDED",
+      "inputTokens": 1754,
+      "outputTokens": 332
+    }
+  ],
+  "directory": "C:\\Users\\qianchen\\Documents\\waytoagi-1024-detective-a2-v4\\research\\v4-runs\\comparison-20261025-1209\\v3\\S3\\c073843d-7dd5-4b8d-a68e-fdc8d8ac72b9"
+}

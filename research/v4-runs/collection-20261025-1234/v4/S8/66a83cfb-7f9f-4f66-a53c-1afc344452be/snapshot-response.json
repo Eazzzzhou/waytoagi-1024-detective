@@ -1,0 +1,173 @@
+{
+  "snapshot": {
+    "id": "6c521726-79b2-4840-8791-c99a59f92394",
+    "investigationId": "66a83cfb-7f9f-4f66-a53c-1afc344452be",
+    "version": 1,
+    "parentSnapshotId": null,
+    "productIdentity": {
+      "name": "帮我写一首关于秋天的诗",
+      "officialWebsite": null,
+      "version": null,
+      "plan": null,
+      "confirmationStatus": "UNRESOLVED",
+      "confirmationBasis": []
+    },
+    "evidence": [],
+    "claims": [],
+    "relations": [],
+    "conflicts": [],
+    "gaps": [],
+    "retrievalRecords": [],
+    "verificationAudit": {
+      "modelCalls": [
+        {
+          "provider": "api.deepseek.com",
+          "model": "deepseek-flash",
+          "promptVersion": "a2-evidence-v4",
+          "temperature": null,
+          "thinkingMode": "DISABLED",
+          "generatedAt": "2026-10-25T04:40:54.115Z",
+          "id": "8c073b56-169c-46b1-a759-10c9d493b2df",
+          "purpose": "v4-research-plan",
+          "startedAt": "2026-10-25T04:40:53.488Z",
+          "durationMs": 627,
+          "outcome": "SUCCEEDED",
+          "inputTokens": 675,
+          "outputTokens": 53
+        }
+      ],
+      "review": {
+        "status": "NOT_CONFIGURED",
+        "reason": "本轮未完成第二模型独立原文复核；不同搜索入口不等于独立模型。",
+        "independentAssessment": null,
+        "findings": []
+      },
+      "citationChecks": [],
+      "followup": {
+        "queriesUsed": 0,
+        "maxQueries": 6,
+        "stopReason": "该请求不属于AI产品事实调查或用途评测。"
+      }
+    },
+    "research": {
+      "schemaVersion": "2.0.0",
+      "originalQuestion": "帮我写一首关于秋天的诗",
+      "intent": "OUT_OF_SCOPE",
+      "budget": {
+        "profile": "COMPARISON",
+        "totalMs": 180000,
+        "reserveMs": 45000,
+        "searchCalls": 6,
+        "documents": 10,
+        "selections": 18,
+        "modelCalls": 44,
+        "explorationTokens": 125000,
+        "totalTokens": 180000,
+        "maxCandidates": 160,
+        "maxActions": 80
+      },
+      "startedAt": "2026-10-25T04:40:53.484Z",
+      "durationMs": 635,
+      "stopReason": "该请求不属于AI产品事实调查或用途评测。",
+      "tasks": [
+        {
+          "id": "449719a1-eab8-4c93-9300-b799f86efa4d",
+          "label": "帮我写一首关于秋天的诗",
+          "required": true,
+          "requirementAnchor": "帮我写一首关于秋天的诗",
+          "parentId": null,
+          "evidenceNeed": "ANY",
+          "status": "NOT_APPLICABLE",
+          "claimIds": [],
+          "evidenceIds": [],
+          "attempts": 0,
+          "explanation": "该请求不属于AI产品事实调查或用途评测。"
+        }
+      ],
+      "candidates": [],
+      "documents": [],
+      "actions": [
+        {
+          "id": "b89e438f-6fbb-47cb-b255-44d5eb876a9c",
+          "kind": "PLAN",
+          "startedAt": "2026-10-25T04:40:53.488Z",
+          "durationMs": 627,
+          "taskIds": [
+            "449719a1-eab8-4c93-9300-b799f86efa4d"
+          ],
+          "basisEvidenceIds": [],
+          "basisRecordIds": [],
+          "target": "帮我写一首关于秋天的诗",
+          "reason": "仅从用户问题拆解必答项与研究方向；不使用预置案例/参考答案。",
+          "gap": null,
+          "outcome": "SUCCEEDED",
+          "recordIds": [],
+          "documentIds": [],
+          "evidenceIds": [],
+          "newFragments": 0,
+          "coverageChanges": [],
+          "cacheHit": false,
+          "error": null
+        },
+        {
+          "id": "a0d0efbd-31d0-4cad-9c1c-206ea8e98706",
+          "kind": "STOP",
+          "startedAt": "2026-10-25T04:40:54.120Z",
+          "durationMs": 0,
+          "taskIds": [
+            "449719a1-eab8-4c93-9300-b799f86efa4d"
+          ],
+          "basisEvidenceIds": [],
+          "basisRecordIds": [],
+          "target": "该请求不属于AI产品事实调查或用途评测。",
+          "reason": "如实发布当前覆盖、失败与局限。",
+          "gap": null,
+          "outcome": "STOPPED",
+          "recordIds": [],
+          "documentIds": [],
+          "evidenceIds": [],
+          "newFragments": 0,
+          "coverageChanges": [],
+          "cacheHit": false,
+          "error": null
+        }
+      ],
+      "counts": {
+        "searchCalls": 0,
+        "documentFetches": 0,
+        "cacheSelections": 0,
+        "duplicateFragments": 0,
+        "modelCalls": 1,
+        "inputTokens": 675,
+        "outputTokens": 53,
+        "unknownUsageCalls": 0,
+        "noGainBatches": 0
+      },
+      "recommendation": {
+        "eligible": false,
+        "independentReports": 0,
+        "sites": [],
+        "reason": "正式用途推荐至少需3组已确认独立真实使用报告并跨2站点；未知独立性不计数，仍可提供客观事实与限定分析。"
+      },
+      "httpAttempts": [],
+      "diagnostics": []
+    },
+    "generatedAt": "2026-10-25T04:40:54.120Z",
+    "contractVersion": "1.0.0"
+  },
+  "answers": [
+    {
+      "id": "1202d975-68af-4f9d-a8bf-a235738416ac",
+      "snapshotId": "6c521726-79b2-4840-8791-c99a59f92394",
+      "body": "这里用于调查 AI 产品事实与按用途评测。这个请求不在当前调查范围内；可以改问某款 AI 产品的功能、限制或实际使用表现。",
+      "citations": [],
+      "generationConfig": {
+        "provider": "local-capability-router",
+        "model": "no-factual-generation",
+        "promptVersion": "research-v4",
+        "temperature": null,
+        "generatedAt": "2026-10-25T04:40:54.119Z"
+      }
+    }
+  ]
+}

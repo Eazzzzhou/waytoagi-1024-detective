@@ -1,0 +1,1289 @@
+{
+  "schemaVersion": "source-document/v1",
+  "id": "b601a307f32f5a8f6cabe7bd3166a2f97a35bd6d01e6843e9e01f5b0414d58c3",
+  "version": "70c2278ebc4c9dffdf6d39e647073ff2b64fc08cee7cdcfeb917f5272fb21a11",
+  "requestedUrl": "https://deepseekapi.dev/docs",
+  "finalUrl": "https://deepseekapi.dev/docs",
+  "retrievedAt": "2026-10-25T04:06:06.197Z",
+  "contentType": "text/html",
+  "status": "READ",
+  "readError": null,
+  "rawHash": "fe65b922abfad89a4f6929bb0645a8ae5426e5f7f1347cbd3f5ae86e778702cc",
+  "textHash": "5fb61dc3fafb183be8867d5b63bd2423a8cc7731017c0c43f903f7c732382950",
+  "text": "Skip to content\n\nGetting started\n\nIntroduction\n\nBase URL\n\nAuthentication\n\nQuickstart\n\nAPI reference\n\nChat completions\n\nStreaming\n\nModels\n\nErrors\n\nRate limits\n\nDeepSeek API Documentation\n\nBuy credits, generate a key, and call DeepSeek-V3 and DeepSeek-R1 through an OpenAI-compatible endpoint. If you've used the OpenAI API before, you already know this one.\n\ndeepseekapi.dev is an authorized reseller and proxy for the DeepSeek API. Endpoints below point at our proxy; responses originate from DeepSeek's models.\n\nIntroduction\n\nThe DeepSeek API proxy exposes a REST interface that mirrors the OpenAI Chat Completions specification. You authenticate with a bearer token, send a list of messages, and receive a model completion. Because the schema matches, the official OpenAI SDKs for Python and JavaScript work out of the box.\n\nBase URL\n\nAll requests are made to:\n\nBASEhttps://api.deepseekapi.dev/v1\n\nAppend the standard paths such as /chat/completions and /models to this base URL.\n\nAuthentication\n\nThe API uses bearer token authentication. Create a key from your dashboard after topping up credits, then pass it in the Authorization header on every request:\n\nCopy\n\n# HTTP headers\nAuthorization: Bearer sk-ds-your-key\nContent-Type: application/json\n\nKeep keys secret. Treat API keys like passwords. Never embed them in client-side code or commit them to a repository. Rotate or revoke a leaked key instantly from your dashboard.\n\nQuickstart\n\nInstall the OpenAI SDK and point it at the proxy. Only the base_url and api_key change.\n\nPython\n\nCopy\n\nfrom openai import OpenAI\n\nclient = OpenAI(\n    api_key=\"sk-ds-your-key\",\n    base_url=\"https://api.deepseekapi.dev/v1\",\n)\n\nresponse = client.chat.completions.create(\n    model=\"deepseek-chat\",\n    messages=[\n        {\"role\": \"system\", \"content\": \"You are a helpful assistant.\"},\n        {\"role\": \"user\", \"content\": \"Explain reinforcement learning in one sentence.\"},\n    ],\n)\nprint(response.choices[0].message.content)\n\nJavaScript / Node.js\n\nCopy\n\nimport OpenAI from \"openai\";\n\nconst client = new OpenAI({\n  apiKey: \"sk-ds-your-key\",\n  baseURL: \"https://api.deepseekapi.dev/v1\",\n});\n\nconst res = await client.chat.completions.create({\n  model: \"deepseek-chat\",\n  messages: [{ role: \"user\", content: \"Hello, DeepSeek!\" }],\n});\n\nconsole.log(res.choices[0].message.content);\n\ncURL\n\nCopy\n\ncurl https://api.deepseekapi.dev/v1/chat/completions \\\n  -H \"Authorization: Bearer sk-ds-your-key\" \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\n    \"model\": \"deepseek-chat\",\n    \"messages\": [{\"role\": \"user\", \"content\": \"Hello, DeepSeek!\"}]\n  }'\n\nChat completions\n\nPOST/v1/chat/completions\n\nCreates a model response for the given conversation. Core parameters:\n\nmodel — deepseek-chat or deepseek-reasoner. Required.\n\nmessages — array of { role, content } objects (system, user, assistant). Required.\n\ntemperature — sampling temperature, 0–2. Default 1.0.\n\nmax_tokens — maximum tokens to generate in the response.\n\nstream — set true to stream tokens as server-sent events.\n\nExample response:\n\nCopy\n\n{\n  \"id\": \"chatcmpl-ds-abc123\",\n  \"object\": \"chat.completion\",\n  \"model\": \"deepseek-chat\",\n  \"choices\": [{\n    \"index\": 0,\n    \"message\": { \"role\": \"assistant\", \"content\": \"Hello! How can I help?\" },\n    \"finish_reason\": \"stop\"\n  }],\n  \"usage\": { \"prompt_tokens\": 12, \"completion_tokens\": 7, \"total_tokens\": 19 }\n}\n\nStreaming\n\nSet stream: true to receive tokens incrementally as server-sent events (SSE). Each chunk follows the OpenAI delta format and the stream terminates with data: [DONE].\n\nCopy\n\nstream = client.chat.completions.create(\n    model=\"deepseek-chat\",\n    messages=[{\"role\": \"user\", \"content\": \"Write a haiku about the sea.\"}],\n    stream=True,\n)\nfor chunk in stream:\n    print(chunk.choices[0].delta.content or \"\", end=\"\")\n\nModels\n\nGET/v1/models\n\nLists the models available to your account.\n\nModel IDBest forContext deepseek-chatGeneral chat, coding, RAGLarge deepseek-reasonerMath, complex reasoningLarge\n\nErrors\n\nThe API uses conventional HTTP status codes. Error bodies follow the OpenAI error shape: { \"error\": { \"message\", \"type\", \"code\" } }.\n\nCodeMeaning 400Malformed request 401Invalid or missing API key 402Insufficient credits — top up your balance 429Rate limit exceeded 500 / 503Upstream or proxy error — retry with backoff\n\nRate limits\n\nRate limits scale with your plan and account balance. Starter offers entry-level throughput; Builder and Scale raise both requests-per-minute and tokens-per-minute ceilings. When you exceed a limit you'll receive a 429 with a Retry-After header — back off and retry. Need a custom limit? Contact us.\n\nReady to build? Get your API key and make your first call in minutes.",
+  "rawSources": [
+    {
+      "mode": "STATIC",
+      "hash": "fe65b922abfad89a4f6929bb0645a8ae5426e5f7f1347cbd3f5ae86e778702cc",
+      "path": "C:\\Users\\qianchen\\Documents\\waytoagi-1024-detective-a2-v4\\.cache\\source-documents-v4\\852908bc-f6db-4e67-b72c-c19dc8ad342b\\b601a307f32f5a8f6cabe7bd3166a2f97a35bd6d01e6843e9e01f5b0414d58c3\\raw.bin"
+    }
+  ],
+  "storage": {
+    "rawPath": "C:\\Users\\qianchen\\Documents\\waytoagi-1024-detective-a2-v4\\.cache\\source-documents-v4\\852908bc-f6db-4e67-b72c-c19dc8ad342b\\b601a307f32f5a8f6cabe7bd3166a2f97a35bd6d01e6843e9e01f5b0414d58c3\\raw.bin",
+    "textPath": "C:\\Users\\qianchen\\Documents\\waytoagi-1024-detective-a2-v4\\.cache\\source-documents-v4\\852908bc-f6db-4e67-b72c-c19dc8ad342b\\b601a307f32f5a8f6cabe7bd3166a2f97a35bd6d01e6843e9e01f5b0414d58c3\\source.txt",
+    "manifestPath": "C:\\Users\\qianchen\\Documents\\waytoagi-1024-detective-a2-v4\\.cache\\source-documents-v4\\852908bc-f6db-4e67-b72c-c19dc8ad342b\\b601a307f32f5a8f6cabe7bd3166a2f97a35bd6d01e6843e9e01f5b0414d58c3\\manifest.json"
+  },
+  "parser": {
+    "name": "readability+source-dom",
+    "version": "readability-0.6.0+jsdom-30.1.3+source-dom-2",
+    "normalization": "source-text/v1",
+    "mode": "STATIC"
+  },
+  "metadata": {
+    "title": "DeepSeek API Documentation — Authentication, Endpoints & Examples | deepseekapi.dev",
+    "author": "DeepSeek API",
+    "publishedAt": null,
+    "language": "en"
+  },
+  "completeness": "COMPLETE",
+  "warnings": [],
+  "blocks": [
+    {
+      "start": 0,
+      "end": 15,
+      "id": "b0",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[0]",
+      "headingPath": [],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 17,
+      "end": 32,
+      "id": "b1",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[1]",
+      "headingPath": [
+        "Getting started"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 34,
+      "end": 46,
+      "id": "b2",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[2]",
+      "headingPath": [
+        "Getting started"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 48,
+      "end": 56,
+      "id": "b3",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[3]",
+      "headingPath": [
+        "Getting started"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 58,
+      "end": 72,
+      "id": "b4",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[4]",
+      "headingPath": [
+        "Getting started"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 74,
+      "end": 84,
+      "id": "b5",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[5]",
+      "headingPath": [
+        "Getting started"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 86,
+      "end": 99,
+      "id": "b6",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[6]",
+      "headingPath": [
+        "Getting started",
+        "API reference"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 101,
+      "end": 117,
+      "id": "b7",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[7]",
+      "headingPath": [
+        "Getting started",
+        "API reference"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 119,
+      "end": 128,
+      "id": "b8",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[8]",
+      "headingPath": [
+        "Getting started",
+        "API reference"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 130,
+      "end": 136,
+      "id": "b9",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[9]",
+      "headingPath": [
+        "Getting started",
+        "API reference"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 138,
+      "end": 144,
+      "id": "b10",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[10]",
+      "headingPath": [
+        "Getting started",
+        "API reference"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 146,
+      "end": 157,
+      "id": "b11",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[11]",
+      "headingPath": [
+        "Getting started",
+        "API reference"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 159,
+      "end": 185,
+      "id": "b12",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[12]",
+      "headingPath": [
+        "DeepSeek API Documentation"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 187,
+      "end": 356,
+      "id": "b13",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[13]",
+      "headingPath": [
+        "DeepSeek API Documentation"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 358,
+      "end": 511,
+      "id": "b14",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[14]",
+      "headingPath": [
+        "DeepSeek API Documentation"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 513,
+      "end": 525,
+      "id": "b15",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[15]",
+      "headingPath": [
+        "DeepSeek API Documentation",
+        "Introduction"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 527,
+      "end": 825,
+      "id": "b16",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[16]",
+      "headingPath": [
+        "DeepSeek API Documentation",
+        "Introduction"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 827,
+      "end": 835,
+      "id": "b17",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[17]",
+      "headingPath": [
+        "DeepSeek API Documentation",
+        "Base URL"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 837,
+      "end": 862,
+      "id": "b18",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[18]",
+      "headingPath": [
+        "DeepSeek API Documentation",
+        "Base URL"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 864,
+      "end": 898,
+      "id": "b19",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[19]",
+      "headingPath": [
+        "DeepSeek API Documentation",
+        "Base URL"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 900,
+      "end": 981,
+      "id": "b20",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[20]",
+      "headingPath": [
+        "DeepSeek API Documentation",
+        "Base URL"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 983,
+      "end": 997,
+      "id": "b21",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[21]",
+      "headingPath": [
+        "DeepSeek API Documentation",
+        "Authentication"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 999,
+      "end": 1158,
+      "id": "b22",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[22]",
+      "headingPath": [
+        "DeepSeek API Documentation",
+        "Authentication"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1160,
+      "end": 1164,
+      "id": "b23",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[23]",
+      "headingPath": [
+        "DeepSeek API Documentation",
+        "Authentication"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1166,
+      "end": 1248,
+      "id": "b24",
+      "kind": "CODE",
+      "locator": "source DOM normalized block[24]",
+      "headingPath": [
+        "DeepSeek API Documentation",
+        "Authentication"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1250,
+      "end": 1428,
+      "id": "b25",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[25]",
+      "headingPath": [
+        "DeepSeek API Documentation",
+        "Authentication"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1430,
+      "end": 1440,
+      "id": "b26",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[26]",
+      "headingPath": [
+        "DeepSeek API Documentation",
+        "Quickstart"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1442,
+      "end": 1529,
+      "id": "b27",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[27]",
+      "headingPath": [
+        "DeepSeek API Documentation",
+        "Quickstart"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1531,
+      "end": 1537,
+      "id": "b28",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[28]",
+      "headingPath": [
+        "DeepSeek API Documentation",
+        "Quickstart",
+        "Python"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1539,
+      "end": 1543,
+      "id": "b29",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[29]",
+      "headingPath": [
+        "DeepSeek API Documentation",
+        "Quickstart",
+        "Python"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1545,
+      "end": 1964,
+      "id": "b30",
+      "kind": "CODE",
+      "locator": "source DOM normalized block[30]",
+      "headingPath": [
+        "DeepSeek API Documentation",
+        "Quickstart",
+        "Python"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1966,
+      "end": 1986,
+      "id": "b31",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[31]",
+      "headingPath": [
+        "DeepSeek API Documentation",
+        "Quickstart",
+        "JavaScript / Node.js"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1988,
+      "end": 1992,
+      "id": "b32",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[32]",
+      "headingPath": [
+        "DeepSeek API Documentation",
+        "Quickstart",
+        "JavaScript / Node.js"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1994,
+      "end": 2317,
+      "id": "b33",
+      "kind": "CODE",
+      "locator": "source DOM normalized block[33]",
+      "headingPath": [
+        "DeepSeek API Documentation",
+        "Quickstart",
+        "JavaScript / Node.js"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2319,
+      "end": 2323,
+      "id": "b34",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[34]",
+      "headingPath": [
+        "DeepSeek API Documentation",
+        "Quickstart",
+        "cURL"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2325,
+      "end": 2329,
+      "id": "b35",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[35]",
+      "headingPath": [
+        "DeepSeek API Documentation",
+        "Quickstart",
+        "cURL"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2331,
+      "end": 2580,
+      "id": "b36",
+      "kind": "CODE",
+      "locator": "source DOM normalized block[36]",
+      "headingPath": [
+        "DeepSeek API Documentation",
+        "Quickstart",
+        "cURL"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2582,
+      "end": 2598,
+      "id": "b37",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[37]",
+      "headingPath": [
+        "DeepSeek API Documentation",
+        "Chat completions"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2600,
+      "end": 2624,
+      "id": "b38",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[38]",
+      "headingPath": [
+        "DeepSeek API Documentation",
+        "Chat completions"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2626,
+      "end": 2695,
+      "id": "b39",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[39]",
+      "headingPath": [
+        "DeepSeek API Documentation",
+        "Chat completions"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2697,
+      "end": 2750,
+      "id": "b40",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[40]",
+      "headingPath": [
+        "DeepSeek API Documentation",
+        "Chat completions"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2752,
+      "end": 2834,
+      "id": "b41",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[41]",
+      "headingPath": [
+        "DeepSeek API Documentation",
+        "Chat completions"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2836,
+      "end": 2889,
+      "id": "b42",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[42]",
+      "headingPath": [
+        "DeepSeek API Documentation",
+        "Chat completions"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2891,
+      "end": 2947,
+      "id": "b43",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[43]",
+      "headingPath": [
+        "DeepSeek API Documentation",
+        "Chat completions"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2949,
+      "end": 3006,
+      "id": "b44",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[44]",
+      "headingPath": [
+        "DeepSeek API Documentation",
+        "Chat completions"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3008,
+      "end": 3025,
+      "id": "b45",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[45]",
+      "headingPath": [
+        "DeepSeek API Documentation",
+        "Chat completions"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3027,
+      "end": 3031,
+      "id": "b46",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[46]",
+      "headingPath": [
+        "DeepSeek API Documentation",
+        "Chat completions"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3033,
+      "end": 3347,
+      "id": "b47",
+      "kind": "CODE",
+      "locator": "source DOM normalized block[47]",
+      "headingPath": [
+        "DeepSeek API Documentation",
+        "Chat completions"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3349,
+      "end": 3358,
+      "id": "b48",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[48]",
+      "headingPath": [
+        "DeepSeek API Documentation",
+        "Streaming"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3360,
+      "end": 3525,
+      "id": "b49",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[49]",
+      "headingPath": [
+        "DeepSeek API Documentation",
+        "Streaming"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3527,
+      "end": 3531,
+      "id": "b50",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[50]",
+      "headingPath": [
+        "DeepSeek API Documentation",
+        "Streaming"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3533,
+      "end": 3772,
+      "id": "b51",
+      "kind": "CODE",
+      "locator": "source DOM normalized block[51]",
+      "headingPath": [
+        "DeepSeek API Documentation",
+        "Streaming"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3774,
+      "end": 3780,
+      "id": "b52",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[52]",
+      "headingPath": [
+        "DeepSeek API Documentation",
+        "Models"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3782,
+      "end": 3795,
+      "id": "b53",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[53]",
+      "headingPath": [
+        "DeepSeek API Documentation",
+        "Models"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3797,
+      "end": 3840,
+      "id": "b54",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[54]",
+      "headingPath": [
+        "DeepSeek API Documentation",
+        "Models"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3842,
+      "end": 3955,
+      "id": "b55",
+      "kind": "TABLE",
+      "locator": "source DOM normalized block[55]",
+      "headingPath": [
+        "DeepSeek API Documentation",
+        "Models"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3957,
+      "end": 3963,
+      "id": "b56",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[56]",
+      "headingPath": [
+        "DeepSeek API Documentation",
+        "Errors"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3965,
+      "end": 4097,
+      "id": "b57",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[57]",
+      "headingPath": [
+        "DeepSeek API Documentation",
+        "Errors"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4099,
+      "end": 4284,
+      "id": "b58",
+      "kind": "TABLE",
+      "locator": "source DOM normalized block[58]",
+      "headingPath": [
+        "DeepSeek API Documentation",
+        "Errors"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4286,
+      "end": 4297,
+      "id": "b59",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[59]",
+      "headingPath": [
+        "DeepSeek API Documentation",
+        "Rate limits"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4299,
+      "end": 4598,
+      "id": "b60",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[60]",
+      "headingPath": [
+        "DeepSeek API Documentation",
+        "Rate limits"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4600,
+      "end": 4669,
+      "id": "b61",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[61]",
+      "headingPath": [
+        "DeepSeek API Documentation",
+        "Rate limits"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    }
+  ],
+  "links": [
+    {
+      "url": "https://deepseekapi.dev/docs",
+      "text": "",
+      "blockId": null,
+      "relation": "CANONICAL",
+      "locator": "source DOM link[0]"
+    },
+    {
+      "url": "https://deepseekapi.dev/contact",
+      "text": "Contact us",
+      "blockId": "b60",
+      "relation": "LINK",
+      "locator": "source DOM link[19]"
+    },
+    {
+      "url": "https://deepseekapi.dev/signup",
+      "text": "Get your API key",
+      "blockId": "b61",
+      "relation": "LINK",
+      "locator": "source DOM link[20]"
+    }
+  ],
+  "tables": [
+    {
+      "blockId": "b55",
+      "rows": [
+        {
+          "start": 3842,
+          "end": 3865,
+          "cells": [
+            {
+              "start": 3842,
+              "end": 3850,
+              "text": "Model ID",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 3850,
+              "end": 3858,
+              "text": "Best for",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 3858,
+              "end": 3865,
+              "text": "Context",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 3866,
+          "end": 3909,
+          "cells": [
+            {
+              "start": 3866,
+              "end": 3879,
+              "text": "deepseek-chat",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 3879,
+              "end": 3904,
+              "text": "General chat, coding, RAG",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 3904,
+              "end": 3909,
+              "text": "Large",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 3910,
+          "end": 3955,
+          "cells": [
+            {
+              "start": 3910,
+              "end": 3927,
+              "text": "deepseek-reasoner",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 3927,
+              "end": 3950,
+              "text": "Math, complex reasoning",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 3950,
+              "end": 3955,
+              "text": "Large",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "blockId": "b58",
+      "rows": [
+        {
+          "start": 4099,
+          "end": 4110,
+          "cells": [
+            {
+              "start": 4099,
+              "end": 4103,
+              "text": "Code",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 4103,
+              "end": 4110,
+              "text": "Meaning",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 4111,
+          "end": 4131,
+          "cells": [
+            {
+              "start": 4111,
+              "end": 4114,
+              "text": "400",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 4114,
+              "end": 4131,
+              "text": "Malformed request",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 4132,
+          "end": 4161,
+          "cells": [
+            {
+              "start": 4132,
+              "end": 4135,
+              "text": "401",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 4135,
+              "end": 4161,
+              "text": "Invalid or missing API key",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 4162,
+          "end": 4207,
+          "cells": [
+            {
+              "start": 4162,
+              "end": 4165,
+              "text": "402",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 4165,
+              "end": 4207,
+              "text": "Insufficient credits — top up your balance",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 4208,
+          "end": 4230,
+          "cells": [
+            {
+              "start": 4208,
+              "end": 4211,
+              "text": "429",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 4211,
+              "end": 4230,
+              "text": "Rate limit exceeded",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 4231,
+          "end": 4284,
+          "cells": [
+            {
+              "start": 4231,
+              "end": 4240,
+              "text": "500 / 503",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 4240,
+              "end": 4284,
+              "text": "Upstream or proxy error — retry with backoff",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

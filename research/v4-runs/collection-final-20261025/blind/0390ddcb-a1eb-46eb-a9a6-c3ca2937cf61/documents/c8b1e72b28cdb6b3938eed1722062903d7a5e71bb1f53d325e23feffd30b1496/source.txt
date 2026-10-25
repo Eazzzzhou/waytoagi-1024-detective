@@ -1,0 +1,57 @@
+Skip to content
+
+macOSWindowsLinux
+
+Where Does Ollama Store Downloaded Models?
+
+Ollama model storage folders on Mac, Windows and Linux, and the variable that moves them.
+
+Last updated September 26, 2026
+
+Ollama splits each model into blobs (the weights) and manifests (the metadata) inside a models folder. On Mac that folder is ~/.ollama/models, on Windows it is %USERPROFILE%\.ollama\models, and on a Linux systemd install it is /usr/share/ollama/.ollama/models under the service account.
+
+The Windows default fills C: fast, so most people move it. Set OLLAMA_MODELS to any folder on any OS (on Linux through a systemd drop in with a daemon reload, on Windows as a user variable with a tray Quit and relaunch). Uninstalling never deletes a custom models folder, so orphaned gigabytes are common.
+
+Where Ollama stores this, by platform
+
+macOS
+
+~/.ollama/models
+
+Contains blobs/ (weights, the large files) and manifests/ (metadata). Override with the OLLAMA_MODELS variable (launchctl setenv, then restart). Logs alongside in ~/.ollama/logs.
+
+Windows
+
+%USERPROFILE%\.ollama\models
+
+Under your user profile, so C: fills fast. Override with a user OLLAMA_MODELS variable, then Quit from the tray and relaunch. Binaries live separately in %LOCALAPPDATA%\Programs\Ollama.
+
+Linux
+
+/usr/share/ollama/.ollama/models
+
+Home of the ollama service user on systemd installs. Override with OLLAMA_MODELS in a systemd drop in plus daemon reload. Running ollama serve as your own user stores models in ~/.ollama/models instead.
+
+Frequently asked questions
+
+How do I move Ollama models to another drive?
+
+Set OLLAMA_MODELS to the new folder, move the existing models directory there, then restart the service (systemd drop in plus reload on Linux, tray Quit plus relaunch on Windows). Pull one small model to confirm the new path works.
+
+Does uninstalling Ollama delete my models?
+
+Not a custom OLLAMA_MODELS folder. The uninstaller leaves it behind, which is how people end up with mystery gigabytes. Delete or repoint that folder yourself after uninstalling.
+
+ollamallmmodels locationai
+
+Notice an outdated path? Let us know.
+
+Related locations
+
+LM Studio Where Does LM Studio Store Downloaded Models? WindowsmacOSLinux
+
+KoboldCpp Where Does KoboldCpp Store Models? WindowsLinux
+
+llama.cpp Where Does llama.cpp Store Models? LinuxWindows
+
+vLLM Where Does vLLM Store Downloaded Models? LinuxmacOSWindows

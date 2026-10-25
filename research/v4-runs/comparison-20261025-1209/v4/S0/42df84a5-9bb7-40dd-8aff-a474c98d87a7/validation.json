@@ -1,0 +1,196 @@
+{
+  "investigationId": "42df84a5-9bb7-40dd-8aff-a474c98d87a7",
+  "snapshotId": "30ab56f6-e4aa-4163-ae7c-25dc99a90b27",
+  "status": "SUCCEEDED",
+  "url": "http://127.0.0.1:3104/investigations/42df84a5-9bb7-40dd-8aff-a474c98d87a7",
+  "citations": 2,
+  "exactQuoteChecks": "PASSED",
+  "excerptHashChecks": "PASSED",
+  "semanticChecks": [
+    {
+      "marker": "v4:0",
+      "supported": true,
+      "reason": "官方文档引文明确列出模型 deepseek-flash 与 deepseek-v4-pro，版本分别为 DeepSeek-V4.1-Flash-1017、DeepSeek-V4-Pro-0813，上下文长度 1M，输出长度最大 384K；主张各分句均被同一引文直接支持。官方宣称仅证明官方如此表述。"
+    },
+    {
+      "marker": "v4:1",
+      "supported": true,
+      "reason": "引文支持官方文档所列两模型为 1M；另一引文明确“API 服務不變，仍為 V3.2，僅支持 128K 上下文”且网页及 APP 在测试 1M 长文本结构，故 128K 针对报道当时 API 仍为 V3.2 的条件；主张作了条件区分而非合并为普遍结论，各分句均有对应引文支持。"
+    }
+  ],
+  "documentReferenceChecks": 7,
+  "documentIntegrityChecks": "PASSED",
+  "review": {
+    "status": "NOT_CONFIGURED",
+    "reason": "本轮未完成第二模型独立原文复核；不同搜索入口不等于独立模型。",
+    "independentAssessment": null,
+    "findings": []
+  },
+  "retrieval": [
+    {
+      "provider": "tencent-yuanbao-search-api",
+      "status": "SUCCEEDED",
+      "returnedSources": 7,
+      "adopted": 4
+    },
+    {
+      "provider": "tavily-search-api:keyless-capped",
+      "status": "SUCCEEDED",
+      "returnedSources": 8,
+      "adopted": 2
+    }
+  ],
+  "modelCalls": [
+    {
+      "provider": "api.deepseek.com",
+      "model": "deepseek-flash",
+      "promptVersion": "a2-evidence-v4",
+      "temperature": null,
+      "thinkingMode": "DISABLED",
+      "generatedAt": "2026-10-25T04:21:57.681Z",
+      "id": "508aec4c-8560-4ee4-9c71-d0e1412177ba",
+      "purpose": "v4-research-plan",
+      "startedAt": "2026-10-25T04:21:56.565Z",
+      "durationMs": 1116,
+      "outcome": "SUCCEEDED",
+      "inputTokens": 630,
+      "outputTokens": 79
+    },
+    {
+      "provider": "api.deepseek.com",
+      "model": "deepseek-flash",
+      "promptVersion": "a2-evidence-v4",
+      "temperature": null,
+      "thinkingMode": "DISABLED",
+      "generatedAt": "2026-10-25T04:22:03.110Z",
+      "id": "0d58ef2c-61c7-47c8-be8a-bb90de576d91",
+      "purpose": "v4-next-research-action",
+      "startedAt": "2026-10-25T04:22:00.664Z",
+      "durationMs": 2446,
+      "outcome": "SUCCEEDED",
+      "inputTokens": 7093,
+      "outputTokens": 390
+    },
+    {
+      "provider": "api.deepseek.com",
+      "model": "deepseek-flash",
+      "promptVersion": "a2-evidence-v4",
+      "temperature": null,
+      "thinkingMode": "DISABLED",
+      "generatedAt": "2026-10-25T04:22:05.002Z",
+      "id": "c12c24dc-7226-4729-89a1-7c6ca06f3d07",
+      "purpose": "v4-document-reading",
+      "startedAt": "2026-10-25T04:22:03.588Z",
+      "durationMs": 1414,
+      "outcome": "SUCCEEDED",
+      "inputTokens": 1749,
+      "outputTokens": 145
+    },
+    {
+      "provider": "api.deepseek.com",
+      "model": "deepseek-flash",
+      "promptVersion": "a2-evidence-v4",
+      "temperature": null,
+      "thinkingMode": "DISABLED",
+      "generatedAt": "2026-10-25T04:22:05.028Z",
+      "id": "d902f091-6561-4ec5-8985-e7699bd50277",
+      "purpose": "v4-document-reading",
+      "startedAt": "2026-10-25T04:22:03.590Z",
+      "durationMs": 1438,
+      "outcome": "SUCCEEDED",
+      "inputTokens": 1745,
+      "outputTokens": 215
+    },
+    {
+      "provider": "api.deepseek.com",
+      "model": "deepseek-flash",
+      "promptVersion": "a2-evidence-v4",
+      "temperature": null,
+      "thinkingMode": "DISABLED",
+      "generatedAt": "2026-10-25T04:22:06.155Z",
+      "id": "a2b083c0-7e56-415d-91c6-a47427497446",
+      "purpose": "v4-document-reading",
+      "startedAt": "2026-10-25T04:22:05.017Z",
+      "durationMs": 1138,
+      "outcome": "SUCCEEDED",
+      "inputTokens": 2247,
+      "outputTokens": 145
+    },
+    {
+      "provider": "api.deepseek.com",
+      "model": "deepseek-flash",
+      "promptVersion": "a2-evidence-v4",
+      "temperature": null,
+      "thinkingMode": "DISABLED",
+      "generatedAt": "2026-10-25T04:22:08.894Z",
+      "id": "d8dbbe9e-7360-4761-913f-4b135f1812d7",
+      "purpose": "v4-claim-extraction",
+      "startedAt": "2026-10-25T04:22:06.174Z",
+      "durationMs": 2720,
+      "outcome": "SUCCEEDED",
+      "inputTokens": 2694,
+      "outputTokens": 524
+    },
+    {
+      "provider": "api.deepseek.com",
+      "model": "deepseek-flash",
+      "promptVersion": "a2-evidence-v4",
+      "temperature": null,
+      "thinkingMode": "DISABLED",
+      "generatedAt": "2026-10-25T04:22:12.012Z",
+      "id": "adbde3a7-a54c-49b6-9915-f1af5f64f0c8",
+      "purpose": "v4-claim-verification-batch",
+      "startedAt": "2026-10-25T04:22:08.894Z",
+      "durationMs": 3118,
+      "outcome": "SUCCEEDED",
+      "inputTokens": 3530,
+      "outputTokens": 613
+    },
+    {
+      "provider": "api.deepseek.com",
+      "model": "deepseek-flash",
+      "promptVersion": "a2-evidence-v4",
+      "temperature": null,
+      "thinkingMode": "DISABLED",
+      "generatedAt": "2026-10-25T04:22:14.942Z",
+      "id": "9cf78788-9f9d-4eda-a36c-4334e5e2e04c",
+      "purpose": "v4-next-research-action",
+      "startedAt": "2026-10-25T04:22:12.016Z",
+      "durationMs": 2926,
+      "outcome": "SUCCEEDED",
+      "inputTokens": 15886,
+      "outputTokens": 569
+    },
+    {
+      "provider": "api.deepseek.com",
+      "model": "deepseek-flash",
+      "promptVersion": "a2-evidence-v4",
+      "temperature": null,
+      "thinkingMode": "DISABLED",
+      "generatedAt": "2026-10-25T04:22:16.989Z",
+      "id": "4cdbb0e4-e30d-46f3-a4f9-bbd366379daa",
+      "purpose": "v4-direct-answer-and-analysis",
+      "startedAt": "2026-10-25T04:22:14.949Z",
+      "durationMs": 2040,
+      "outcome": "SUCCEEDED",
+      "inputTokens": 1771,
+      "outputTokens": 354
+    },
+    {
+      "provider": "api.deepseek.com",
+      "model": "deepseek-flash",
+      "promptVersion": "a2-evidence-v4",
+      "temperature": null,
+      "thinkingMode": "DISABLED",
+      "generatedAt": "2026-10-25T04:22:18.527Z",
+      "id": "b4643b75-426c-4ad9-8fea-ab7aa59786f6",
+      "purpose": "v4-synthesis-semantic-check",
+      "startedAt": "2026-10-25T04:22:16.990Z",
+      "durationMs": 1537,
+      "outcome": "SUCCEEDED",
+      "inputTokens": 1523,
+      "outputTokens": 196
+    }
+  ],
+  "directory": "C:\\Users\\qianchen\\Documents\\waytoagi-1024-detective-a2-v4\\research\\v4-runs\\comparison-20261025-1209\\v4\\S0\\42df84a5-9bb7-40dd-8aff-a474c98d87a7"
+}

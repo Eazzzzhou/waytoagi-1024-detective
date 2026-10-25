@@ -1,0 +1,121 @@
+Skip to main content
+
+Skip to content
+
+在本文中
+
+GitHub Copilot 的模型和定价
+
+查看 GitHub Copilot 中可用模型的按词元定价方式以及各种计划的超额用量的参考价格。
+
+复制 markdown
+
+在本文中
+
+模型定价的工作原理
+
+使用 Copilot时，交互使用令牌：输入令牌（发送到模型的内容）、输出令牌（模型生成的内容）和缓存令牌（模型重用或存储上下文）。 每个令牌都基于所使用的模型定价，总价格转换为 AI credits1 AI credit = $0.01 USD。
+
+交互的成本取决于两个事项：模型和使用的令牌数。
+
+如何跟踪和计费Copilot的使用情况取决于您的计划类型：
+
+个人计划（Copilot Free、Copilot Pro和Copilot Pro+Copilot Max）包括GitHub AI Credits按计划而异的津贴。 有关详细信息，请参阅 个人基于使用情况的计费。
+
+Copilot Business 与 Copilot Enterprise 包含可在计费实体层面汇总的按用户 GitHub AI Credits 额度。 有关详细信息，请参阅 组织和企业的基于使用情况的计费。
+
+当使用量超出任何Copilot计划包含的津贴时，超出的使用量将以GitHub AI Credits为单位，按照以下定价表中显示的每个令牌费率进行计费（1AI credit = $0.01 USD）。
+
+注意
+
+如果你通过 iOS 或 Android 订阅或曾订阅Copilot计划，那么购买额外AI credits的选项GitHub Mobile将不可用。
+
+定价表
+
+所有价格均为每百万词元。
+
+OpenAI
+
+注意
+
+Models with a Long context tier, offer extended capabilities and longer context windows. See GitHub Copilot中支持的 AI 模型
+
+GPT-5.6 Sol、GPT-5.6 Terra、GPT-6 Astra、GPT-5.6 Luna、GPT-6 Luna、GPT-6 Sol 和 GPT-6.1 Sol除了缓存输入成本外，还包括缓存写入成本。 早期的 OpenAI 模型没有缓存写入成本。
+
+型号版本状态类别层阈值（输入令牌）Input缓存输入缓存写入输出GPT-5.3-CodexGAPowerfulDefaultNot applicable$1.75$0.175Not applicable$14.00GPT-5.4 nanoGALightweightDefaultNot applicable$0.20$0.02Not applicable$1.25GPT-5.6 LunaGALightweightDefault≤ 200K$0.20$0.02$0.25$1.20GPT-5.6 LunaGALightweightLong context> 200K$0.40$0.04$0.50$1.80GPT-5.6 SolGAPowerfulDefault≤ 272K$4.00$0.40$5.00$20.00GPT-5.6 SolGAPowerfulLong context> 272K$8.00$0.80$10.00$30.00GPT-5.6 TerraGAVersatileDefault≤ 272K$2.00$0.20$2.50$12.00GPT-5.6 TerraGAVersatileLong context> 272K$4.00$0.40$5.00$18.00GPT-6 AstraGAPowerfulDefault≤ 272K$10.00$1.00$12.50$50.00GPT-6 AstraGAPowerfulLong context> 272K$20.00$2.00$25.00$75.00GPT-6 LunaGALightweightDefault≤ 272K$0.10$0.01$0.125$0.50GPT-6 LunaGALightweightLong context> 272K$0.20$0.02$0.25$0.75GPT-6 SolGAPowerfulDefault≤ 272K$2.00$0.20$2.50$10.00GPT-6 SolGAPowerfulLong context> 272K$4.00$0.40$5.00$15.00GPT-6.1 SolGAPowerfulDefault≤ 272K$2.00$0.10$2.50$10.00GPT-6.1 SolGAPowerfulLong context> 272K$4.00$0.20$5.00$15.00
+
+Anthropic
+
+注意
+
+Models with a Long context tier, offer extended capabilities and longer context windows. See GitHub Copilot中支持的 AI 模型
+
+除了缓存的输入之外，Anthropic模型还包括缓存写入成本。
+
+型号版本状态类别层阈值（输入令牌）Input缓存输入缓存写入输出Claude Haiku 4.5GAVersatile默认值不适用$1.00$0.10$1.25$5.00Claude Haiku 5.5GALightweight
+
+Default |
+
+≤ 100K | $0.10 | $0.01 | $0.125 | $0.50 | | | | Claude Haiku 5.5 | GA | Lightweight |
+
+Long context |
+
+100K | $0.50 | $0.05 | $0.625 | $2.50 | | | | Claude Sonnet 4 | GA | Versatile | 默认值 | 不适用 | $3.00 | $0.30 | $3.75 | $15.00 | | | | Claude Sonnet 4.6 | GA | Versatile | 默认值 | 不适用 | $3.00 | $0.30 | $3.75 | $15.00 | | | | Claude Opus 4.8 | GA | Powerful | 默认值 | 不适用 | $5.00 | $0.50 | $6.25 | $25.00 | | | | Claude Opus 5 | GA | Powerful | 默认值 | 不适用 | $5.00 | $0.50 | $6.25 | $25.00 | | | | Claude Opus 5.5 | GA | Powerful | 默认值 | 不适用 | $4.00 | $0.20 | $5.00 | $20.00 | | | | Claude Sonnet 5 | GA | Versatile | 默认值 | 不适用 | $2.00 | $0.20 | $2.50 | $10.00 | | | | Claude Sonnet 5.5 | GA | Versatile | 默认值 | 不适用 | $2.00 | $0.10 | $2.50 | $10.00 | | | | Claude Opus 4.8 (fast mode) (preview) | GA | Powerful | 默认值 | 不适用 | $10.00 | $1.00 | $12.50 | $50.00 | | | | Claude Fable 5 | GA | Powerful | 默认值 | 不适用 | $10.00 | $1.00 | $12.50 | $50.00 | | | | Claude Fable 5.1 | GA | Powerful | 默认值 | 不适用 | $10.00 | $0.25 | $12.50 | $50.00 | | |
+
+Google
+
+注意
+
+Models with a Long context tier, offer extended capabilities and longer context windows. See GitHub Copilot中支持的 AI 模型
+
+型号版本状态类别层阈值（输入令牌）Input缓存输入输出Gemini 3.8 Flash1GAVersatileDefaultNot applicable$0.75$0.075$3.75Gemini 4 Argon2GAPowerfulDefaultNot applicable$2.00$0.10$10.00
+
+微调 （GitHub）
+
+型号版本状态类别Input缓存输入输出
+
+Microsoft
+
+型号版本状态类别Input缓存输入输出MAI-Code-1.1-FlashGALightweight$0.20$0.02$1.20
+
+xAI（可解释的人工智能）
+
+注意
+
+Models with a Long context tier, offer extended capabilities and longer context windows. See GitHub Copilot中支持的 AI 模型
+
+型号版本状态类别层阈值（输入令牌）Input缓存输入输出Grok 4.5GAVersatileDefault≤ 200K$2.00$0.50$6.00Grok 4.5GAVersatileLong context> 200K$4.00$1.00$12.00Grok 4.6GAVersatileDefault≤ 200K$2.00$0.50$6.00Grok 4.6GAVersatileLong context> 200K$4.00$1.00$12.00Grok 4.7GAVersatileDefault≤ 200K$2.00$0.50$6.00Grok 4.7GAVersatileLong context> 200K$4.00$1.00$12.00
+
+Moonshot AI
+
+型号版本状态类别Input缓存输入输出Kimi K3GAPowerful$3.00$0.30$15.00
+
+代码补全
+
+代码完成和next edit suggestions不在AI credits中计费。 对于所有付费 Copilot 计划，它们仍然不受限制，并继续使用其现有的计数机制。
+
+Copilot code review 的定价方式与使用成本注意事项
+
+对于大多数 Copilot 功能，用于每个交互的模型是可见的，因此可以参考上述定价表来估算成本。 Copilot code review 是一个例外 - 模型是自动选择的，不会透露，因此每令牌成本在评审之间可能会有所不同。
+
+每次代码评审采用两项计费规则：词元消耗量按 AI credits 计费，支撑评审运行的智能体基础设施会消耗 GitHub Actions 分钟时长。
+
+GitHub Actions 分钟先归入存储库，然后在适用的情况下再归入企业或成本中心。 对于与具有付费 Copilot 许可证的组织成员关联的请求，AI credits 将按成员或组织收费，具体取决于 选择如何为具有付费 Copilot 许可证的成员计费 策略的配置方式。
+
+如果与评审关联的人员没有 Copilot 席位，则使用情况将改为向企业或成本中心计费。 对于由 Copilot cloud agent 创建的拉取请求，使用量会优先归属于与该更改关联的人类共同作者。 如果无法向共同作者计费，则使用情况将直接计费给组织。 对于由其他机器人创建的拉取请求，或者当机器人发起评审请求时，相关用量也会直接计入组织账单。 这些拉取请求可进行智能体评审。
+
+可以通过以下方式查看 GitHub Actions 当前在 Copilot code review 上的使用情况：
+
+GitHub Actions 指标：按 copilot-pull-request-reviewer 工作流进行筛选。 请参阅“查看组织的 GitHub Actions 指标”。
+
+计费使用情况报告：使用值 workflow_path，按照 dynamic/agents/copilot-pull-request-reviewer 进行筛选。 请参阅“账单报告参考资料”。
+
+年度 Copilot Pro 和 Copilot Pro+ 订阅者的模型乘数
+
+采用Copilot Pro模式的Copilot Pro+中的**** 和**** 订阅者具有不同的模型乘数。 请参阅“按请求计费的年度套餐模型乘数（旧版）”。
+
+Footnotes
+
+Gemini 3.8 Flash is available at the promotional pricing of $0.75 per 1M input tokens, $0.075 per 1M cached input tokens, and $3.75 per 1M output tokens through December 31, 2026. ↩
+
+Gemini 4 Argon is available at the promotional pricing of $2.00 per 1M input tokens, $0.10 per 1M cached input tokens, and $10.00 per 1M output tokens until December 1, 2026. ↩

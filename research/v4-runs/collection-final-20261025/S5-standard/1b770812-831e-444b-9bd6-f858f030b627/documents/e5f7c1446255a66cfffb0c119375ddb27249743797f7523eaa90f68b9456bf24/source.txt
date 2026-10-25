@@ -1,0 +1,181 @@
+← Back to Blog Home
+
+What Happened When I Tried Blender Scripting with AI
+
+AI for Developers by: Meghan Harris July 7, 2025
+
+Twitter
+
+Facebook
+
+Linkedin
+
+Hackernews
+
+Article summary
+
+Brief Intro to Cursor and Blender Scripting
+
+Basic Example: a simple 3D house
+
+Intermediate Examples: an animation, and the Blender Donut
+
+Advanced Examples: a diamond pyramid, and geometry nodes
+
+Future Considerations and Unanswered Questions
+
+Since I began working with AI tools, I’ve looked for their boundaries—what can I use them for, and when do I abandon them for another tool instead? Another question I’ve been asking myself: how would AI tooling fare in generating 3D models?
+
+Specifically, I wanted to know how well a Cursor Agent could help me write a set of Blender scripts to generate 3D models. Doing so would test both the agent’s ability to follow simple instructions, interact with the Blender API, and find the limits of Blender scripting itself.
+
+Brief Intro to Cursor and Blender Scripting
+
+Cursor is an AI-powered IDE that I currently use as a software developer. Scripting in Blender is accomplished through Python and the built-in scripting editor in Blender.
+
+The code is very specific because Blender is a stateful, context-based system. For instance, many operations rely on what’s currently “active” or selected:
+
+# This depends on what object is currently active
+bpy.context.active_object.name = "Door_Cutter"
+
+# This requires setting the active object first
+bpy.context.view_layer.objects.active = front_wall
+bpy.ops.object.modifier_apply(modifier="Door_Boolean")
+
+Also, objects must exist before you can modify them:
+
+# Must create material first
+wall_material = create_material("Wall_Material", (0.8, 0.7, 0.6))
+# Then create object
+front_wall = create_cube("Front_Wall", (0, -4, 1.5), (6, 0.2, 3))
+# Then apply material
+front_wall.data.materials.append(wall_material)
+
+Basic Example: a simple 3D house
+
+For starters, I asked Cursor to make a script for Blender that would render a house without any other prompting. Simple, right? 💥 Let the Runtime Errors Ensue 💥:
+
+Python: Traceback (most recent call last):
+File "/Text", line 251, in
+File "/Text", line 232, in main
+File "/Text", line 217, in setup_render_settings
+TypeError: bpy_struct: item.attr = val: enum "BLENDER_EEVEE" not found in ('BLENDER_EEVEE_NEXT', 'BLENDER_WORKBENCH', 'CYCLES')
+
+After lots of attempts to access attributes that didn’t exist or passing the wrong datatype to a function, I realized one key issue: I hadn’t told the agent what Blender version I was using. From that point on, we did run into issues, but they were less.
+
+The generated code specified a foundation, walls, roof, door, windows, chimney, porch, and ground (with green grass). Behold the house:
+
+Nice roof, right? I relayed that the roof looked a bit cockeyed and the agent said something about a pitched roof, and I responded, “Well, the point of a roof is to not let the elements inside, so…,” and eventually we had a flat roof.
+
+That’s a lot of cycles just for a house that I’m not super impressed with. Also, note, there were indeed doors and windows, but the doors and windows were only internally visible, which is cool. I asked it to make them visible from the outside, and it did (kind of):
+
+Wut? Really, the cutting out of windows and a door in Blender take very little time once you are in Edit Mode in Blender’s UI. So, this isn’t necessarily an AI shortcoming—sometimes the manual tool is easier and more precise.
+
+One more thing, where did the grass go? Oh, that’s where:
+
+Yikes 😑. Let’s move on.
+
+Intermediate Examples: an animation, and the Blender Donut
+
+A Bouncy Ball
+
+My prompt again was simple: create an animation of a ball bouncing with a Python script for Blender with version 4.3.2. I’ll spare you and say that the Cursor agent again had some more trouble with the Blender version, but we finally got an animation:
+
+https://spin.atomicobject.com/wp-content/uploads/Blender_Bouncing_Ball.mp4
+
+The cool thing is that the agent was able to write the code to create the ball, the animation, and the camera. Another aspect of this scripting is that the agent “knew” to set up the lighting in both this example and the house. I appreciate that whatever dataset it was trained on, the agent utilized one of the most common components of setting a scene.
+
+The Blender Donut
+
+If you’ve spent anytime looking for Blender anything, especially a tutorial, you’ve run into the Blender Donut.
+
+I thought if ever there was a measure of how well an AI tool can follow instructions, to really test its dataset, it would be the Blender Donut, since its creation is well-documented, and tutorials abound.
+
+Surely, then, it should be able to create the Blender Donut. This is the result after I gave the AI agent the above picture:
+
+So, where is the frosting? And, why do the sprinkles look like they’re in some weird, inner gravitational field in the donut’s hole?
+
+We gave it another try:
+
+The frosting is still missing, but now the sprinkles are where we’d expect them.
+
+I asked the agent one more time to add the frosting. Behold:
+
+Sweet! Frosting, but also orbiting sprinkles? 🙃
+
+Takeaway: the agent did a fairly good job rendering the donut, and frosting (extra points for shininess), but with lots of coaching. Plus, if you’ve ever done the donut tutorial you know that a realistic donut isn’t perfectly symmetrical, and, during that tutorial, you learned how to make it look more realistic. This is certainly reminiscent of a donut, but those final touches seem much more achievable with the Blender UI than with AI-led scripting.
+
+Advanced Examples: a diamond pyramid, and geometry nodes
+
+A Diamond Pyramid
+
+I asked the agent to create a diamond pyramid. The material considerations and the lighting techniques to simulate that type of sparkle would mean both the agent and the Blender API could be used to achieve something significant. My prompt was simple: create a diamond pyramid with a Python script for Blender with version 4.3.2.
+
+I was imagining a multi-faceted prism. This is what it created:
+
+This mirrored pyramid is what was rendered, though I’m doubtful how close scripting would get me to a realistic diamond pyramid.
+
+Geometry Nodes
+
+For another advanced example, I asked the agent to show me what it could do with geometry nodes. Geometry nodes are great for creating customizable, and non-destructive (the original geometry is preserved while operations on that geometry can be reordered or removed) models and scenes through procedural workflows.
+
+This is what the agent was able to create:
+
+Note the different positions, and sizes, but also the patterns:
+
+Now from above:
+
+What excites me about this is that I see potential for reducing the amount of time it takes me to set up a surface or structure with lots of repeating features. I imagine using this to create a scene in a video game, a procedural landscape, or a set piece in a movie. Again, geometry nodes are reproducible and non-destructive. Combine those with scripting, and I can set up similar landscapes with some of the same code, reducing the amount of time it takes to create each scene.
+
+Future Considerations and Unanswered Questions
+
+Overall, the AI agent wasn’t so hot at creating the realistic touches I was looking for, but I also don’t know that scripting can accomplish something so inherently visual. Cursor paired with scripting can, however, help me iterate on scene setup. Here I can see scripting help me set up scenes with large landscapes much more quickly, while I use the UI to add the more complex features.
+
+I think there’s a lot of promise in the combination of tools for geometry nodes. Scripting naturally aligns with geometry nodes because both create systems and rules rather than direct manual manipulation. They’re more procedural. Add in AI that’s well-trained on how to script with the Blender API, and you have a tool mash-up that actually delivers.
+
+I still have lots of unanswered and unexplored questions like:
+
+Could it stand up to a high level of animation that requires joint movement? How might I advance my prompting to get better results? Would there be better results? Where does the Blender API really struggle? How could I make some of the scripting more reusable?
+
+Related Posts
+
+AI for Developers How to Run SQL Server Outside Docker Sandboxes
+
+AI for Developers Reduce AI Decision Fatigue: Lessons from Game Design
+
+AI for Developers My Coding Agents Moved Off My Laptop and Onto a Remote Server
+
+Keep up with our latest posts.
+
+We’ll send our latest tips, learnings, and case studies from the Atomic braintrust on a monthly basis.
+
+[mailpoet_form id="1"]
+
+Conversation
+
+Join the conversation Cancel reply
+
+Artificial Intelligence Category
+
+AI for Designers
+
+AI for Developers
+
+Related Posts
+
+AI for Developers
+
+How to Run SQL Server Outside Docker Sandboxes
+
+AI for Developers
+
+Reduce AI Decision Fatigue: Lessons from Game Design
+
+AI for Developers
+
+My Coding Agents Moved Off My Laptop and Onto a Remote Server
+
+Tell Us About Your Project
+
+We’d love to talk with you about your next great software project. Fill out this form and we’ll get back to you within two business days.
+
+Share Your Project

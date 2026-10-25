@@ -1,0 +1,1707 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Devin review: is it a better AI coding agent than Cursor? - DEV Community</title>
+    
+    <link rel="preload" href="/reactions?article_id=2152197" as="fetch" crossorigin="same-origin">
+    <link rel="canonical" href="https://www.builder.io/blog/devin-vs-cursor" />
+    <meta name="description" content="I paid the $500 a month to use Devin, the AI coding agent, so you don&#39;t have to. Let&#39;s compare it to... Tagged with cursor, ai, productivity, webdev.">
+    <meta name="keywords" content="cursor, ai, productivity, webdev, software, coding, development, engineering, inclusive, community">
+
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://dev.to/builderio/devin-review-is-it-a-better-ai-coding-agent-than-cursor-d6p" />
+    <meta property="og:title" content="Devin review: is it a better AI coding agent than Cursor?" />
+    <meta property="og:description" content="I paid the $500 a month to use Devin, the AI coding agent, so you don&#39;t have to. Let&#39;s compare it to..." />
+    <meta property="og:site_name" content="DEV Community" />
+    <meta name="twitter:site" content="@thepracticaldev">
+    <meta name="twitter:creator" content="@Steve8708">
+    <meta name="author-trust" content="0">
+    <meta name="twitter:title" content="Devin review: is it a better AI coding agent than Cursor?">
+    <meta name="twitter:description" content="I paid the $500 a month to use Devin, the AI coding agent, so you don&#39;t have to. Let&#39;s compare it to...">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:widgets:new-embed-design" content="on">
+    <meta name="robots" content="max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+      <meta property="og:image" content="https://media2.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fjzppm7oxks62c6fyqknh.png" />
+      <meta name="twitter:image:src" content="https://media2.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fjzppm7oxks62c6fyqknh.png">
+
+      <meta name="last-updated" content="2026-10-25 04:40:06 UTC">
+      <meta name="user-signed-in" content="false">
+      <meta name="head-cached-at" content="1792903206">
+      <meta name="environment" content="production">
+      <link rel="stylesheet" href="https://assets.dev.to/assets/minimal-748d75fcbcdf614051d6bdeef40d5a93f94d3263852b1e1e88c87711a84f3679.css" media="all" id="main-minimal-stylesheet" />
+<link rel="stylesheet" href="https://assets.dev.to/assets/views-d827dd1b7ae893ade296ffb0d04531be38453c07b79dbfca9a7cfb39455a7607.css" media="all" id="main-views-stylesheet" />
+<link rel="stylesheet" href="https://assets.dev.to/assets/crayons-11de7dc631b0aee5df5d618a8dff12f00c997e4f4e3e4ad66a1efb1041affb47.css" media="all" id="main-crayons-stylesheet" />
+
+      <script src="https://assets.dev.to/assets/base-808927d6bbaeaffb8817b866088a2bd8d986432b17775b8e955c437951152f34.js" defer="defer"></script>
+<script src="https://assets.dev.to/assets/application-efb790efa421687ca3bc8bca51e8a86ac550afffd629bf590b6d4e535de9e7c7.js" defer="defer"></script>
+<script src="https://assets.dev.to/assets/baseInitializers-b84685845718082fd04dcdf9cad0c14222f12f0d9889d2bd2431e594abc769f4.js" defer="defer"></script>
+<script src="https://assets.dev.to/assets/baseTracking-72a6d524cdf9aea517a8bbc18f8e57c791fd563c348bbfc9428a31d39ae4054e.js" defer="defer"></script>
+<script src="https://assets.dev.to/assets/followButtons-a4f30bdc9d999c4b9db199da360a75710cfb62e8f28c7d937a8d21384b4ff402.js" defer="defer"></script>
+<script src="https://assets.dev.to/assets/eventSignupButtons-d7be454dd15c446a3bd5f62b1ea9a91085c9a1c22e76fd9056002bb721293652.js" defer="defer"></script>
+
+        <meta name="search-script" content="https://assets.dev.to/assets/Search-c620c235d5e789adcead2ff786156e38e66a878946b9a8f1c6755f40b7f58ea4.js">
+      <meta name="mermaid-script" content="https://assets.dev.to/assets/mermaidRenderer-2799dd717da288d72e5de9448cc9c0f0495ad4e3277ba9b7c0911fd32a8efcf3.js">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+      <link rel="icon" type="image/x-icon" href="https://media2.dev.to/dynamic/image/width=32,height=,fit=scale-down,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F8j7kvp660rqzt99zui8e.png" />
+      <link rel="apple-touch-icon" href="https://media2.dev.to/dynamic/image/width=180,height=,fit=scale-down,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F8j7kvp660rqzt99zui8e.png">
+      <link rel="apple-touch-icon" sizes="152x152" href="https://media2.dev.to/dynamic/image/width=152,height=,fit=scale-down,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F8j7kvp660rqzt99zui8e.png">
+      <link rel="apple-touch-icon" sizes="180x180" href="https://media2.dev.to/dynamic/image/width=180,height=,fit=scale-down,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F8j7kvp660rqzt99zui8e.png">
+      <link rel="apple-touch-icon" sizes="167x167" href="https://media2.dev.to/dynamic/image/width=167,height=,fit=scale-down,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F8j7kvp660rqzt99zui8e.png">
+      <link href="https://media2.dev.to/dynamic/image/width=192,height=,fit=scale-down,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F8j7kvp660rqzt99zui8e.png" rel="icon" sizes="192x192" />
+      <link href="https://media2.dev.to/dynamic/image/width=128,height=,fit=scale-down,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F8j7kvp660rqzt99zui8e.png" rel="icon" sizes="128x128" />
+      <meta name="apple-mobile-web-app-title" content="dev.to">
+      <meta name="application-name" content="dev.to">
+      <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+      <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
+      <link rel="search" href="https://dev.to/open-search.xml" type="application/opensearchdescription+xml" title="DEV Community" />
+
+      <link rel="describedby" href="https://dev.to/llms.txt" type="text/plain" title="Guidance for AI agents" />
+
+      <meta property="forem:name" content="DEV Community" />
+      <meta property="forem:logo" content="https://media2.dev.to/dynamic/image/width=512,height=,fit=scale-down,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F8j7kvp660rqzt99zui8e.png" />
+      <meta property="forem:domain" content="dev.to" />
+    <style>
+body:has(.pageslug-aie) #topbar {
+    display: none !important;
+}
+
+@media screen and (max-width: 768px) and (pointer: coarse) {
+  /* Target WebKit/Blink specific behaviors */
+  @supports (-webkit-app-region: none) {
+    body:has(.pageslug-aie) .dc-page {
+      padding-top: 56px !important;
+    }
+  }
+}
+
+body:not(.hidden-shell) .pageslug-aie {
+    margin-top: -56px !important;
+}
+
+/* ==========================================================================
+   THE 418 CHALLENGE: THEME-AWARE RETRO EDITION
+   ========================================================================== */
+.articletag-418challenge {
+  font-family: "Comic Sans MS", "Chalkboard SE", "Marker Felt", sans-serif !important;
+  cursor: crosshair !important;
+}
+
+/* Destroy modern rounded corners and add brutal borders */
+.articletag-418challenge .crayons-card,
+.articletag-418challenge .crayons-article__main,
+.articletag-418challenge .crayons-article__header {
+  border-radius: 0 !important;
+  margin-bottom: 2rem !important;
+}
+
+/* Typography specifics */
+.articletag-418challenge h1,
+.articletag-418challenge h2,
+.articletag-418challenge h3 {
+  text-transform: uppercase !important;
+}
+
+/* Fake <marquee> effect for the main article title */
+.articletag-418challenge h1.fs-3xl {
+  animation: retro-slide 5s linear infinite alternate;
+  overflow: visible;
+}
+
+/* Spin those avatars */
+.articletag-418challenge .crayons-article__header__meta img {
+  border-radius: 0 !important; 
+  animation: retro-spin 5s linear infinite;
+}
+
+/* Obnoxious tags */
+.articletag-418challenge .crayons-tag {
+  border-radius: 0 !important;
+  font-weight: 900 !important;
+  transform: rotate(-3deg);
+  display: inline-block;
+}
+.articletag-418challenge .crayons-tag:nth-child(even) {
+  transform: rotate(3deg);
+}
+
+/* --------------------------------------------------------------------------
+   2. LIGHT THEME (Windows 95 / Office 97 Vibes)
+   -------------------------------------------------------------------------- */
+body:not(.dark-theme) .articletag-418challenge {
+  background-color: #008080 !important; /* Win95 Teal Desktop */
+}
+
+body:not(.dark-theme) .articletag-418challenge .crayons-card,
+body:not(.dark-theme) .articletag-418challenge .crayons-article__main,
+body:not(.dark-theme) .articletag-418challenge .crayons-article__header {
+  background-color: #c0c0c0 !important; /* Classic dialog gray */
+  color: #000000 !important;
+  border: 4px outset #ffffff !important;
+  box-shadow: 8px 8px 0px #000000 !important;
+}
+
+body:not(.dark-theme) .articletag-418challenge h1,
+body:not(.dark-theme) .articletag-418challenge h2,
+body:not(.dark-theme) .articletag-418challenge h3 {
+  color: #ff0000 !important;
+  text-shadow: 2px 2px 0px #ffff00 !important;
+  border-bottom: 3px dashed #0000ff !important;
+}
+
+body:not(.dark-theme) .articletag-418challenge a,
+body:not(.dark-theme) .articletag-418challenge .crayons-link {
+  color: #0000ff !important; /* Standard unvisited blue */
+  text-decoration: underline !important;
+  font-weight: bold !important;
+}
+
+body:not(.dark-theme) .articletag-418challenge a:hover,
+body:not(.dark-theme) .articletag-418challenge .crayons-link:hover {
+  background-color: #ffff00 !important;
+  color: #ff0000 !important;
+}
+
+body:not(.dark-theme) .articletag-418challenge .crayons-tag {
+  background: #ffff00 !important;
+  color: #ff0000 !important;
+  border: 2px dotted #0000ff !important;
+}
+
+/* --------------------------------------------------------------------------
+   3. DARK THEME (1999 Hacker / Deep GeoCities Vibes)
+   -------------------------------------------------------------------------- */
+body.dark-theme .articletag-418challenge {
+  background-color: #000000 !important;
+  /* Dumb CSS: A scrolling, eye-bleeding neon green hacker grid with CRT scanlines */
+  background-image: 
+    linear-gradient(transparent 50%, rgba(0, 255, 0, 0.25) 50%), 
+    linear-gradient(90deg, rgba(0, 255, 0, 0.5) 1px, transparent 1px), 
+    linear-gradient(rgba(0, 255, 0, 0.5) 1px, transparent 1px) !important;
+  background-size: 100% 4px, 20px 20px, 20px 20px !important;
+  animation: retro-pan 60s linear infinite !important;
+}
+
+body.dark-theme .articletag-418challenge .crayons-card,
+body.dark-theme .articletag-418challenge .crayons-article__main,
+body.dark-theme .articletag-418challenge .crayons-article__header {
+  background-color: #111111 !important;
+  color: #00ff00 !important; /* Terminal Green */
+  border: 4px outset #555555 !important;
+  box-shadow: 8px 8px 0px #ff00ff !important; /* Hot pink shadow */
+}
+
+body.dark-theme .articletag-418challenge h1,
+body.dark-theme .articletag-418challenge h2,
+body.dark-theme .articletag-418challenge h3 {
+  color: #ff00ff !important; /* Magenta headers */
+  text-shadow: 2px 2px 0px #00ffff !important; /* Cyan shadow */
+  border-bottom: 3px dashed #00ff00 !important;
+}
+
+body.dark-theme .articletag-418challenge a,
+body.dark-theme .articletag-418challenge .crayons-link {
+  color: #00ffff !important; /* Cyan links */
+  text-decoration: underline !important;
+  font-weight: bold !important;
+}
+
+body.dark-theme .articletag-418challenge a:hover,
+body.dark-theme .articletag-418challenge .crayons-link:hover {
+  background-color: #ff00ff !important;
+  color: #ffffff !important;
+}
+
+body.dark-theme .articletag-418challenge .crayons-tag {
+  background: #000000 !important;
+  color: #00ff00 !important;
+  border: 2px dotted #ff00ff !important;
+}
+
+/* --------------------------------------------------------------------------
+   4. ANIMATIONS
+   -------------------------------------------------------------------------- */
+@keyframes retro-spin {
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes retro-slide {
+  0% { transform: translateX(-2%); }
+  100% { transform: translateX(2%); }
+}
+
+@keyframes retro-pan {
+  0% { background-position: 0 0, 0 0, 0 0; }
+  /* Numbers must be multiples of the background-size (4px and 20px) to loop perfectly */
+  100% { background-position: 0 100px, 40px 40px, 40px 40px; }
+}
+
+/* --------------------------------------------------------------------------
+   5. BONUS: CAUTION TAPE REACTION BAR
+   -------------------------------------------------------------------------- */
+.articletag-418challenge .crayons-article-actions {
+  background: repeating-linear-gradient(
+    45deg,
+    #ffff00,
+    #ffff00 10px,
+    #000000 10px,
+    #000000 20px
+  ) !important;
+  border: 4px solid #ff0000 !important;
+  border-radius: 0 !important;
+}
+
+.articletag-418challenge .crayons-article-actions button {
+  background:black;
+  color: #ff00ff !important;
+}
+
+.articletag-418challenge .crayons-article-actions .crayons-reaction__count {
+    color: #ff00ff !important;
+    font-weight: bold !important;
+}
+
+.articletag-418challenge .crayons-icon:not(.crayons-icon--default) * {
+    fill: #ffff00 !important;
+}
+
+.articletag-418challenge .c-embed .crayons-btn--primary {
+  color: #00ff00 !important;
+}
+
+.articletag-418challenge .popover-billboard {
+margin-bottom: 0 !important;
+}
+
+.crayons-story__contentpreview .ltag__link--embedded {
+margin-top: 0 !important;
+}
+
+.subscription-icon {
+    max-height: 16px !important;
+    display: inline-block !important;
+}
+
+@media screen and (min-width: 950px) {
+    .event-show-layout {
+        margin-top: 24px !important;
+    }
+}
+
+@media screen and (max-width: 949px) {
+    .event-show-layout {
+        padding: 11px !important;
+    }
+}
+
+
+</style>
+  </head>
+    <body
+      class="sans-serif-article-body default-header"
+      data-user-status="logged-out"
+      data-is-root-subforem="false"
+        data-subforem-id="1"
+      data-side-nav-visible="true"
+      data-community-name="DEV Community"
+      data-subscription-icon="https://assets.dev.to/assets/subscription-icon-805dfa7ac7dd660f07ed8d654877270825b07a92a03841aa99a1093bd00431b2.png"
+      data-community-leader-icon="https://assets.dev.to/assets/community-leader-icon-b72c9e74eff54916e5c46c962f47ba40c9f611a71f8b157511f9613f69c0001b.svg"
+      data-locale="en"
+      data-honeybadger-key="hbp_nqu4Y66HuEKlD6YRGssZuRQnPOjDm50J8Zkr"
+      data-deployed-at="2026-10-25T03:21:57Z"
+      data-latest-commit-id="88f91b40d4e2917756f5e56b72577e727da49995"
+      data-ga-tracking="UA-71991109-1"
+      data-cookie-banner-user-context="logged_out_only"
+      data-cookie-banner-platform-context="off"
+      data-algolia-id="PRSOBFP46H"
+      data-algolia-search-key="9aa7d31610cba78851c9b1f63776a9dd"
+      data-algolia-display="true"
+      data-dynamic-url-component="bmar11"
+      data-ga4-tracking-id="G-TYEM8Y3JN3"
+      data-global-feature-flags-enabled="data_update_scripts onboarding_newsletter_content schedule_articles moderator_role display_ad_tags replace_unicorn_with_jump_to_comments article_id_adjusted_weight cloudflare_preferred_for_hosted_images multiple_reactions subscriber_icon ab_experiment_feed_strategy use_stories_endpoint digest_subject_testing digest_results_count_testing consistent_rendering discover_and_following_tabs hero_billboard onboarding_drip_emails algolia_frontend hide_onboarding_task_card optimize_article_tag_query dev_core_user_sync personalized_email_digests customerio_email_delivery community_favorites"
+      data-style-fingerprint="c939ca9c3f">
+      
+      <script>
+        if (navigator.userAgent === 'ForemWebView/1' || window.frameElement) {
+          document.body.classList.add("hidden-shell");
+        }
+        window.Forem = window.Forem || {};
+        window.Forem.revealBillboardPlacement = window.Forem.revealBillboardPlacement || function (placementArea) {
+          (window.Forem.queuedBillboardPlacementReveals = window.Forem.queuedBillboardPlacementReveals || []).push(placementArea);
+        };
+          if (new Date() > new Date("2026-02-04T09:00:00-05:00")) {
+            document.body.dataset.sideNavVisible = "false";
+          } 
+      </script>
+
+      <link rel="stylesheet" href="https://assets.dev.to/assets/minimal-748d75fcbcdf614051d6bdeef40d5a93f94d3263852b1e1e88c87711a84f3679.css" media="all" id="secondary-minimal-stylesheet" />
+<link rel="stylesheet" href="https://assets.dev.to/assets/views-d827dd1b7ae893ade296ffb0d04531be38453c07b79dbfca9a7cfb39455a7607.css" media="all" id="secondary-views-stylesheet" />
+<link rel="stylesheet" href="https://assets.dev.to/assets/crayons-11de7dc631b0aee5df5d618a8dff12f00c997e4f4e3e4ad66a1efb1041affb47.css" media="all" id="secondary-crayons-stylesheet" />
+
+      <div id="body-styles">
+        <style>
+          :root {
+            --accent-brand-lighter-rgb: 86, 105, 285;
+            --accent-brand-rgb: 64, 78, 211;
+            --accent-brand-darker-rgb: 51, 62, 169;
+          }
+        </style>
+      </div>
+      <div id="audiocontent" data-podcast="">
+        
+      </div>
+      <div class="navigation-progress" id="navigation-progress"></div>
+
+<header id="topbar" class="crayons-header topbar print-hidden">
+  <span id="route-change-target" tabindex="-1"></span>
+  <a href="#main-content" class="skip-content-link">Skip to content</a>
+  <div class="crayons-header__container">
+    <span class="inline-block m:hidden ">
+      <button class="c-btn c-btn--icon-alone js-hamburger-trigger mx-2">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" role="img" aria-labelledby="abkl25ga5r0gpaoya191uzhuq8t1ffxm" class="crayons-icon"><title id="abkl25ga5r0gpaoya191uzhuq8t1ffxm">Navigation menu</title>
+    <path d="M3 4h18v2H3V4zm0 7h18v2H3v-2zm0 7h18v2H3v-2z"></path>
+</svg>
+
+      </button>
+    </span>
+    <a href="/" class="site-logo" aria-label="DEV Community Home" >
+    <img class="site-logo__img"
+         src="https://media2.dev.to/dynamic/image/quality=100/https://dev-to-uploads.s3.amazonaws.com/uploads/logos/resized_logo_UQww2soKuUsjaOGNB38o.png"
+         style="aspect-ratio: 10 / 8"
+         alt="DEV Community">
+</a>
+
+
+    <div class="crayons-header--search js-search-form" id="header-search">
+      <form accept-charset="UTF-8" method="get" action="/search" role="search">
+        <div class="crayons-fields crayons-fields--horizontal">
+          <div class="crayons-field flex-1 relative">
+            <input id="search-input" class="crayons-header--search-input crayons-textfield js-search-input" type="text" id="nav-search" name="q" placeholder="Find related posts..." autocomplete="off" />
+            <button type="submit" aria-label="Search" class="c-btn c-btn--icon-alone absolute inset-px right-auto mt-0 py-0">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" role="img" aria-labelledby="a45hkyzwo8w3r49itel8zosoj9bcz89t" aria-hidden="true" class="crayons-icon"><title id="a45hkyzwo8w3r49itel8zosoj9bcz89t">Search</title>
+    <path d="M18.031 16.617l4.283 4.282-1.415 1.415-4.282-4.283A8.96 8.96 0 0111 20c-4.968 0-9-4.032-9-9s4.032-9 9-9 9 4.032 9 9a8.96 8.96 0 01-1.969 5.617zm-2.006-.742A6.977 6.977 0 0018 11c0-3.868-3.133-7-7-7-3.868 0-7 3.132-7 7 0 3.867 3.132 7 7 7a6.977 6.977 0 004.875-1.975l.15-.15z"></path>
+</svg>
+
+            </button>
+
+            <a class="crayons-header--search-brand-indicator" href="https://www.algolia.com/developers/?utm_source=devto&utm_medium=referral" target="_blank" rel="noopener noreferrer">
+                Powered by Algolia
+                <svg xmlns="http://www.w3.org/2000/svg" id="Layer_1" width="24" height="24" viewBox="0 0 500 500.34" role="img" aria-labelledby="ar8s48lerug92z3zjuoxyjs0mdnb6js3" aria-hidden="true" class="crayons-icon"><title id="ar8s48lerug92z3zjuoxyjs0mdnb6js3">Search</title>
+  <defs></defs><path class="cls-1" d="M250,0C113.38,0,2,110.16,.03,246.32c-2,138.29,110.19,252.87,248.49,253.67,42.71,.25,83.85-10.2,120.38-30.05,3.56-1.93,4.11-6.83,1.08-9.52l-23.39-20.74c-4.75-4.22-11.52-5.41-17.37-2.92-25.5,10.85-53.21,16.39-81.76,16.04-111.75-1.37-202.04-94.35-200.26-206.1,1.76-110.33,92.06-199.55,202.8-199.55h202.83V407.68l-115.08-102.25c-3.72-3.31-9.43-2.66-12.43,1.31-18.47,24.46-48.56,39.67-81.98,37.36-46.36-3.2-83.92-40.52-87.4-86.86-4.15-55.28,39.65-101.58,94.07-101.58,49.21,0,89.74,37.88,93.97,86.01,.38,4.28,2.31,8.28,5.53,11.13l29.97,26.57c3.4,3.01,8.8,1.17,9.63-3.3,2.16-11.55,2.92-23.6,2.07-35.95-4.83-70.39-61.84-127.01-132.26-131.35-80.73-4.98-148.23,58.18-150.37,137.35-2.09,77.15,61.12,143.66,138.28,145.36,32.21,.71,62.07-9.42,86.2-26.97l150.36,133.29c6.45,5.71,16.62,1.14,16.62-7.48V9.49C500,4.25,495.75,0,490.51,0H250Z"></path>
+</svg>
+
+            </a>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <div class="flex items-center h-100 ml-auto">
+        <div class="flex" id="authentication-top-nav-actions">
+          <span class="hidden m:block">
+            <a href="https://dev.to/enter?signup_subforem=1" class="c-link c-link--block mr-2 whitespace-nowrap ml-auto" data-no-instant>
+              Log in
+            </a>
+          </span>
+
+          <a href="https://dev.to/enter?signup_subforem=1&amp;state=new-user" data-tracking-id="ca_top_nav" data-tracking-source="top_navbar" class="c-cta c-cta--branded whitespace-nowrap mr-2" data-no-instant>
+            Create account
+          </a>
+        </div>
+    </div>
+  </div>
+</header>
+
+<div class="hamburger">
+  <div class="hamburger__content">
+    <header class="hamburger__content__header">
+      <h2 class="fs-l fw-bold flex-1 break-word lh-tight">DEV Community</h2>
+
+      <button class="c-btn c-btn--icon-alone js-hamburger-trigger shrink-0" aria-label="Close">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" role="img" aria-labelledby="af97c0mujczsbmryl5uhh7mikp9v5fta" aria-hidden="true" class="crayons-icon c-btn__icon"><title id="af97c0mujczsbmryl5uhh7mikp9v5fta">Close</title><path d="M12 10.586l4.95-4.95 1.414 1.414-4.95 4.95 4.95 4.95-1.414 1.414-4.95-4.95-4.95 4.95-1.414-1.414 4.95-4.95-4.95-4.95L7.05 5.636l4.95 4.95z"></path></svg>
+
+      </button>
+    </header>
+
+    <div class="p-2 js-navigation-links-container" id="authentication-hamburger-actions">
+    </div>
+  </div>
+  <div class="hamburger__overlay js-hamburger-trigger"></div>
+</div>
+
+
+      <div id="active-broadcast" class="broadcast-wrapper"></div>
+<div id="page-content" class="wrapper stories stories-show articletag-cursor articletag-ai articletag-productivity articletag-webdev articleuser-523496 articleorg-5062" data-current-page="stories-show">
+  <div id="page-content-inner" data-internal-nav="false" data-viewable-id="2152197" data-viewable-type="Article">
+    <div id="page-route-change" class="screen-reader-only" aria-live="polite" aria-atomic="true"></div>
+
+    
+<style>
+  .html-variant-wrapper { display: none}
+</style>
+
+
+
+<script src="https://unpkg.com/@webcomponents/webcomponentsjs@2.2.10/webcomponents-loader.js"
+        integrity="sha384-3HK5hxQbkFqOIxMbpROlRmRtYl2LBZ52t+tqcjzsmr9NJuOWQxl8RgQSyFvq2lhy"
+        crossorigin="anonymous" defer></script>
+
+  <script src="https://assets.dev.to/assets/webShare-38f916fbdd1159d0c1b10d09a2584278ae77bcd49967d1e221f22b03f7d22dec.js" defer="defer"></script>
+<script src="https://assets.dev.to/assets/articlePage-98114d9aea223f5edec7c6f8152fc9d90df2c174a8cf2fcc21d470bed5a8a36f.js" defer="defer"></script>
+<script src="https://assets.dev.to/assets/commentDropdowns-5cbe0f3fc0c36872443a47dcbb0e4e2e32e0a41b57fdd10b143b793900af0122.js" defer="defer"></script>
+
+
+  <script type="application/ld+json">
+    {"@context":"http://schema.org","@type":"Article","mainEntityOfPage":{"@type":"WebPage","@id":"https://dev.to/builderio/devin-review-is-it-a-better-ai-coding-agent-than-cursor-d6p"},"url":"https://dev.to/builderio/devin-review-is-it-a-better-ai-coding-agent-than-cursor-d6p","image":["https://media2.dev.to/dynamic/image/width=1080,height=1080,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fjzppm7oxks62c6fyqknh.png","https://media2.dev.to/dynamic/image/width=1280,height=720,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fjzppm7oxks62c6fyqknh.png","https://media2.dev.to/dynamic/image/width=1600,height=900,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fjzppm7oxks62c6fyqknh.png"],"publisher":{"@context":"http://schema.org","@type":"Organization","name":"DEV Community","logo":{"@context":"http://schema.org","@type":"ImageObject","url":"https://media2.dev.to/dynamic/image/width=192,height=,fit=scale-down,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F8j7kvp660rqzt99zui8e.png","width":"192","height":"192"}},"headline":"Devin review: is it a better AI coding agent than Cursor?","author":{"@context":"http://schema.org","@type":"Person","url":"https://dev.to/steve8708","name":"Steve Sewell"},"datePublished":"2024-12-11T20:42:26Z","dateModified":"2024-12-11T20:42:37Z"}
+  </script>
+
+  
+  <div class="crayons-layout crayons-layout--3-cols crayons-layout--article">
+    <aside class="crayons-layout__sidebar-left" aria-label="Article actions">
+      <script>
+  if (/Twitter for (iPhone|iPad|Android)/i.test(navigator.userAgent)) {
+    document.documentElement.classList.add('is-twitter-in-app');
+  }
+</script>
+
+<style>
+  .community-leader-visible-block {
+    display: none !important;
+  }
+  .trusted-visible-block {
+    display: none !important;
+  }
+  .only-sidebar-menu-item {
+    display: none !important;
+  }
+  @media (min-width: 640px) {
+    body.community-leader-status-true .only-sidebar-menu-item.community-leader-visible-block {
+      display: block !important;
+    }
+    body.trusted-status-true .only-sidebar-menu-item.trusted-visible-block {
+      display: block !important;
+    }
+  }
+  .only-mobile-menu-item {
+    display: none !important;
+  }
+  body.community-leader-status-true .only-mobile-menu-item.community-leader-visible-block {
+    display: block !important;
+  }
+  body.trusted-status-true .only-mobile-menu-item.trusted-visible-block {
+    display: block !important;
+  }
+  @media (min-width: 640px) {
+    body.community-leader-status-true .only-mobile-menu-item.community-leader-visible-block {
+      display: none !important;
+    }
+    body.trusted-status-true .only-mobile-menu-item.trusted-visible-block {
+      display: none !important;
+    }
+  }
+  .crayons-reaction__count {
+    line-height: 18px !important;
+    height: 18px !important;
+    min-height: 18px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+  @media (min-width: 768px) {
+    .crayons-reaction__count {
+      display: flex !important;
+    }
+  }
+  .crayons-reaction__count > span {
+    height: 16px !important;
+    width: 16px !important;
+    padding: 0 !important;
+    display: inline-block !important;
+  }
+</style>
+
+  <div class="crayons-article-actions print-hidden">
+    <div class="crayons-article-actions__inner">
+
+      
+<div class="reaction-drawer__outer hoverdown" style="">
+  <button
+    id="reaction-drawer-trigger"
+    aria-label="reaction-drawer-trigger"
+    aria-pressed="false"
+    class="hoverdown-trigger crayons-reaction pseudo-reaction crayons-tooltip__activator relative">
+      <span class="crayons-reaction__icon crayons-reaction__icon--borderless crayons-reaction--like crayons-reaction__icon--inactive" style="width: 40px; height: 40px">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" role="img" aria-hidden="true" class="crayons-icon">
+    <g clip-path="url(#clip0_988_3276)">
+        <path d="M19 14V17H22V19H18.999L19 22H17L16.999 19H14V17H17V14H19ZM20.243 4.75698C22.505 7.02498 22.583 10.637 20.479 12.992L19.059 11.574C20.39 10.05 20.32 7.65998 18.827 6.16998C17.324 4.67098 14.907 4.60698 13.337 6.01698L12.002 7.21498L10.666 6.01798C9.09103 4.60598 6.67503 4.66798 5.17203 6.17198C3.68203 7.66198 3.60703 10.047 4.98003 11.623L13.412 20.069L12 21.485L3.52003 12.993C1.41603 10.637 1.49503 7.01898 3.75603 4.75698C6.02103 2.49298 9.64403 2.41698 12 4.52898C14.349 2.41998 17.979 2.48998 20.242 4.75698H20.243Z" fill="#525252"></path>
+    </g>
+    <defs>
+        <clipPath id="clip0_988_3276">
+        <rect width="24" height="24" fill="white"></rect>
+        </clipPath>
+    </defs>
+</svg>
+
+      </span>
+      <span class="crayons-reaction__icon crayons-reaction__icon--borderless crayons-reaction__icon--active" style="width: 40px; height: 40px">
+        <img aria_hidden="true" height="24" width="24" src="https://assets.dev.to/assets/heart-plus-active-9ea3b22f2bc311281db911d416166c5f430636e76b15cd5df6b3b841d830eefa.svg" />
+      </span>
+      <span class="crayons-reaction__count" id="reaction_total_count">
+        <span class="bg-base-40 opacity-25 inline-block radius-default" style="height: 16px; width: 16px;"></span>
+      </span>
+      <span class="crayons-tooltip__content">
+        Add reaction
+      </span>
+  </button>
+
+  <div class="reaction-drawer" aria-expanded="false">
+    <div class="reaction-drawer__container">
+        <button
+  id="reaction-butt-like"
+  name="Like"
+  aria-label="Like"
+  aria-pressed="false"
+  class="crayons-reaction crayons-tooltip__activator relative pt-2 pr-2 pb-1 pl-2"
+  data-category="like">
+    <span class="crayons-reaction__icon crayons-reaction__icon--inactive p-0">
+      <img aria_hidden="true" height="32" width="32" src="https://assets.dev.to/assets/sparkle-heart-5f9bee3767e18deb1bb725290cb151c25234768a0e9a2bd39370c382d02920cf.svg" />
+    </span>
+    <span class="crayons-reaction__count" id="reaction-number-like"><span class="bg-base-40 opacity-25 p-2 inline-block radius-default"></span></span>
+
+    <span data-testid="tooltip" class="crayons-tooltip__content">
+      Like
+    </span>
+</button>
+
+        <button
+  id="reaction-butt-unicorn"
+  name="Unicorn"
+  aria-label="Unicorn"
+  aria-pressed="false"
+  class="crayons-reaction crayons-tooltip__activator relative pt-2 pr-2 pb-1 pl-2"
+  data-category="unicorn">
+    <span class="crayons-reaction__icon crayons-reaction__icon--inactive p-0">
+      <img aria_hidden="true" height="32" width="32" src="https://assets.dev.to/assets/multi-unicorn-b44d6f8c23cdd00964192bedc38af3e82463978aa611b4365bd33a0f1f4f3e97.svg" />
+    </span>
+    <span class="crayons-reaction__count" id="reaction-number-unicorn"><span class="bg-base-40 opacity-25 p-2 inline-block radius-default"></span></span>
+
+    <span data-testid="tooltip" class="crayons-tooltip__content">
+      Unicorn
+    </span>
+</button>
+
+        <button
+  id="reaction-butt-exploding_head"
+  name="Exploding Head"
+  aria-label="Exploding Head"
+  aria-pressed="false"
+  class="crayons-reaction crayons-tooltip__activator relative pt-2 pr-2 pb-1 pl-2"
+  data-category="exploding_head">
+    <span class="crayons-reaction__icon crayons-reaction__icon--inactive p-0">
+      <img aria_hidden="true" height="32" width="32" src="https://assets.dev.to/assets/exploding-head-daceb38d627e6ae9b730f36a1e390fca556a4289d5a41abb2c35068ad3e2c4b5.svg" />
+    </span>
+    <span class="crayons-reaction__count" id="reaction-number-exploding_head"><span class="bg-base-40 opacity-25 p-2 inline-block radius-default"></span></span>
+
+    <span data-testid="tooltip" class="crayons-tooltip__content">
+      Exploding Head
+    </span>
+</button>
+
+        <button
+  id="reaction-butt-raised_hands"
+  name="Raised Hands"
+  aria-label="Raised Hands"
+  aria-pressed="false"
+  class="crayons-reaction crayons-tooltip__activator relative pt-2 pr-2 pb-1 pl-2"
+  data-category="raised_hands">
+    <span class="crayons-reaction__icon crayons-reaction__icon--inactive p-0">
+      <img aria_hidden="true" height="32" width="32" src="https://assets.dev.to/assets/raised-hands-74b2099fd66a39f2d7eed9305ee0f4553df0eb7b4f11b01b6b1b499973048fe5.svg" />
+    </span>
+    <span class="crayons-reaction__count" id="reaction-number-raised_hands"><span class="bg-base-40 opacity-25 p-2 inline-block radius-default"></span></span>
+
+    <span data-testid="tooltip" class="crayons-tooltip__content">
+      Raised Hands
+    </span>
+</button>
+
+        <button
+  id="reaction-butt-fire"
+  name="Fire"
+  aria-label="Fire"
+  aria-pressed="false"
+  class="crayons-reaction crayons-tooltip__activator relative pt-2 pr-2 pb-1 pl-2"
+  data-category="fire">
+    <span class="crayons-reaction__icon crayons-reaction__icon--inactive p-0">
+      <img aria_hidden="true" height="32" width="32" src="https://assets.dev.to/assets/fire-f60e7a582391810302117f987b22a8ef04a2fe0df7e3258a5f49332df1cec71e.svg" />
+    </span>
+    <span class="crayons-reaction__count" id="reaction-number-fire"><span class="bg-base-40 opacity-25 p-2 inline-block radius-default"></span></span>
+
+    <span data-testid="tooltip" class="crayons-tooltip__content">
+      Fire
+    </span>
+</button>
+
+    </div>
+  </div>
+</div>
+
+<button
+  id="reaction-butt-comment"
+  aria-label="Jump to Comments"
+  aria-pressed="false"
+  class="crayons-reaction crayons-reaction--comment crayons-tooltip__activator relative"
+  data-category="comment">
+    <span class="crayons-reaction__icon crayons-reaction__icon--borderless crayons-reaction__icon--inactive">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" role="img" aria-hidden="true" class="crayons-icon">
+    <path d="M10 3h4a8 8 0 010 16v3.5c-5-2-12-5-12-11.5a8 8 0 018-8zm2 14h2a6 6 0 000-12h-4a6 6 0 00-6 6c0 3.61 2.462 5.966 8 8.48V17z"></path>
+</svg>
+
+    </span>
+    <span class="crayons-reaction__count" id="reaction-number-comment" data-count="0">
+      <span class="bg-base-40 opacity-25 inline-block radius-default" style="height: 16px; width: 16px;"></span>
+    </span>
+
+    <span data-testid="tooltip" class="crayons-tooltip__content">
+      Jump to Comments
+    </span>
+</button>
+
+<button
+  id="reaction-butt-readinglist"
+  aria-label="Add to reading list"
+  aria-pressed="false"
+  class="crayons-reaction crayons-reaction--readinglist crayons-tooltip__activator relative"
+  data-category="readinglist">
+    <span class="crayons-reaction__icon crayons-reaction__icon--borderless crayons-reaction__icon--inactive">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" role="img" aria-hidden="true" class="crayons-icon">
+    <path d="M5 2h14a1 1 0 011 1v19.143a.5.5 0 01-.766.424L12 18.03l-7.234 4.536A.5.5 0 014 22.143V3a1 1 0 011-1zm13 2H6v15.432l6-3.761 6 3.761V4z"></path>
+</svg>
+
+    </span>
+    <span class="crayons-reaction__count" id="reaction-number-readinglist"><span class="bg-base-40 opacity-25 inline-block radius-default" style="height: 16px; width: 16px;"></span></span>
+
+    <span data-testid="tooltip" class="crayons-tooltip__content">
+      Save
+    </span>
+</button>
+
+
+<button
+  id="reaction-butt-boost"
+  aria-label="Boost"
+  aria-pressed="false"
+  class="crayons-reaction crayons-reaction--boost crayons-tooltip__activator relative">
+    <span class="crayons-reaction__icon crayons-reaction__icon--borderless crayons-reaction__icon--inactive">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" role="img" aria-hidden="true" class="crayons-icon" width="24" height="24">
+  <path transform="translate(24,0) scale(-1,1)" d="M6 4H21C21.5523 4 22 4.44772 22 5V12H20V6H6V9L1 5L6 1V4ZM18 20H3C2.44772 20 2 19.5523 2 19V12H4V18H18V15L23 19L18 23V20Z"></path>
+</svg>
+
+    </span>
+    <span data-testid="tooltip" class="crayons-tooltip__content">
+      Boost
+    </span>
+</button>
+
+
+      <div class="only-sidebar-menu-item community-leader-visible-block align-center">
+        <span class="favorite-control-root" data-favorite-control="true" data-variant="article" data-favoritable-type="Article" data-favoritable-id="2152197" data-favoritable-user-id="523496" data-favorited="false" data-label-favorite="Pick as gem" data-label-favorited="Picked as gem" data-label-favorited-by-you="Picked as gem by you" data-modal-title="Gem Picked!" data-modal-body="You&#39;ve picked this as a community gem!" data-modal-remaining-zero="You have no more gems left to give out today." data-modal-remaining-one="You have 1 more gem left to give out today." data-modal-remaining-other="You have %{count} more gems left to give out today." data-modal-remaining-unlimited="You have unlimited gems to give out." data-modal-close="Got it" data-modal-exhausted-title="Out of Gems" data-modal-exhausted-body="You have no more gems left to give out today. Your allowance will refresh soon!" data-modal-exhausted-close="Got it"><button type="button" class="favorite-reaction favorite-control crayons-tooltip__activator relative" aria-label="Pick as gem"><span class="crayons-reaction__icon crayons-reaction__icon--borderless"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" role="img" class="crayons-icon crayons-icon--default"><path d="M5.95 3.5h12.1L23.5 9 12 20.5.5 9 5.95 3.5z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+</span><span data-testid="tooltip" class="crayons-tooltip__content">Pick as gem</span></button></span>
+      </div>
+
+      <div id="mod-actions-menu-btn-area" class="only-sidebar-menu-item trusted-visible-block align-center">
+      </div>
+      <div class="align-center m:relative">
+        <button id="article-show-more-button" aria-controls="article-show-more-dropdown" aria-expanded="false" aria-haspopup="true" class="dropbtn crayons-btn crayons-btn--ghost-dimmed crayons-btn--icon-rounded" aria-label="Share post options">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" role="img" aria-labelledby="apmv6bzr322f9ajwt65l4eakt2kbtgni" aria-hidden="true" class="crayons-icon dropdown-icon"><title id="apmv6bzr322f9ajwt65l4eakt2kbtgni">More...</title><path fill-rule="evenodd" clip-rule="evenodd" d="M7 12a2 2 0 11-4 0 2 2 0 014 0zm7 0a2 2 0 11-4 0 2 2 0 014 0zm5 2a2 2 0 100-4 2 2 0 000 4z"></path></svg>
+
+        </button>
+
+        <div id="article-show-more-dropdown" class="crayons-dropdown side-bar left-2 right-2 m:right-auto m:left-100 s:left-auto mb-1 m:mb-0 top-unset bottom-100 m:top-0 m:bottom-unset">
+          <div>
+            <button
+              id="copy-post-url-button"
+              class="flex justify-between crayons-link crayons-link--block w-100 bg-transparent border-0"
+              data-postUrl="https://dev.to/builderio/devin-review-is-it-a-better-ai-coding-agent-than-cursor-d6p">
+              <span class="fw-bold">Copy link</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" id="article-copy-icon" role="img" aria-labelledby="ah1yjmpctfvccy3v6jqyuo5b8vodqv64" aria-hidden="true" class="crayons-icon mx-2 shrink-0"><title id="ah1yjmpctfvccy3v6jqyuo5b8vodqv64">Copy link</title>
+    <path d="M7 6V3a1 1 0 011-1h12a1 1 0 011 1v14a1 1 0 01-1 1h-3v3c0 .552-.45 1-1.007 1H4.007A1 1 0 013 21l.003-14c0-.552.45-1 1.007-1H7zm2 0h8v10h2V4H9v2zm-2 5v2h6v-2H7zm0 4v2h6v-2H7z"></path>
+</svg>
+
+            </button>
+            <div id="article-copy-link-announcer" aria-live="polite" class="crayons-notice crayons-notice--success my-2 p-1" aria-live="polite" hidden>Copied to Clipboard</div>
+          </div>
+
+          <div class="Desktop-only">
+            <a
+              target="_blank"
+              class="crayons-link crayons-link--block"
+              rel="noopener"
+              href='https://twitter.com/intent/tweet?text=%22Devin%20review%3A%20is%20it%20a%20better%20AI%20coding%20agent%20than%20Cursor%3F%22%20by%20%40Steve8708%20%23DEVCommunity%20https%3A%2F%2Fdev.to%2Fbuilderio%2Fdevin-review-is-it-a-better-ai-coding-agent-than-cursor-d6p'>
+              Share to X
+            </a>
+            <a
+              target="_blank"
+              class="crayons-link crayons-link--block"
+              rel="noopener"
+              href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fdev.to%2Fbuilderio%2Fdevin-review-is-it-a-better-ai-coding-agent-than-cursor-d6p&title=Devin%20review%3A%20is%20it%20a%20better%20AI%20coding%20agent%20than%20Cursor%3F&summary=I%20paid%20the%20%24500%20a%20month%20to%20use%20Devin%2C%20the%20AI%20coding%20agent%2C%20so%20you%20don%27t%20have%20to.%20Let%27s%20compare%20it%20to...&source=DEV%20Community">
+              Share to LinkedIn
+            </a>
+            <a
+              target="_blank"
+              class="crayons-link crayons-link--block"
+              rel="noopener"
+              href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fdev.to%2Fbuilderio%2Fdevin-review-is-it-a-better-ai-coding-agent-than-cursor-d6p">
+              Share to Facebook
+            </a>
+            <a
+              target="_blank"
+              class="crayons-link crayons-link--block"
+              rel="noopener"
+              href="https://s2f.kytta.dev/?text=https%3A%2F%2Fdev.to%2Fbuilderio%2Fdevin-review-is-it-a-better-ai-coding-agent-than-cursor-d6p">
+              Share to Mastodon
+            </a>
+          </div>
+
+          <web-share-wrapper shareurl="https://dev.to/builderio/devin-review-is-it-a-better-ai-coding-agent-than-cursor-d6p" sharetitle="Devin review: is it a better AI coding agent than Cursor?" sharetext="I paid the $500 a month to use Devin, the AI coding agent, so you don&#39;t have to. Let&#39;s compare it to..." template="web-share-button">
+          </web-share-wrapper>
+          <template id="web-share-button">
+            <a href="#" class="dropdown-link-row crayons-link crayons-link--block">Share Post via...</a>
+          </template>
+
+          <a href="/report-abuse" class="crayons-link crayons-link--block" id="ReportButtonAuthor">Report Abuse</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    </aside>
+
+    <main id="main-content" class="crayons-layout__content grid gap-4">
+      <div class="article-wrapper">
+
+
+        <article class="crayons-card crayons-article mb-4"
+          id="article-show-container"
+          data-article-id="2152197"
+          data-article-slug="devin-review-is-it-a-better-ai-coding-agent-than-cursor-d6p"
+          data-article-tags="cursor,ai,productivity,webdev"
+          data-author-id="523496"
+          data-author-name="Steve Sewell"
+          data-author-username="builderio"
+          data-co-author-ids=""
+          data-path="/builderio/devin-review-is-it-a-better-ai-coding-agent-than-cursor-d6p"
+          data-pin-path="/stories/feed/pinned_article"
+          data-pinned-article-id=""
+          data-published="true"
+          data-scheduled="false"
+          lang=en
+           >
+          <script>
+            try {
+              if(localStorage) {
+                let currentUser = localStorage.getItem('current_user');
+
+                if (currentUser) {
+                  currentUser = JSON.parse(currentUser);
+                  if (currentUser.id === 523496) {
+                    document.getElementById('article-show-container').classList.add('current-user-is-article-author');
+                  }
+                }
+              }
+            } catch (e) {
+              console.error(e);
+            }
+          </script>
+          <header class="crayons-article__header" id="main-title">
+              <a class="crayons-article__cover" href="https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fjzppm7oxks62c6fyqknh.png">
+                <img
+                  src="https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fjzppm7oxks62c6fyqknh.png"
+                  style="aspect-ratio: auto 1000 / 420;"
+                  width="1000" height="420"
+                  class="crayons-article__cover__image" alt="Cover image for Devin review: is it a better AI coding agent than Cursor?">
+              </a>
+
+            <div class="crayons-article__header__meta">
+              <div class="flex s:items-start flex-col s:flex-row">
+                <div id="action-space" class="crayons-article__actions mb-4 s:mb-0 s:order-last"></div>
+                <div class="flex flex-1 mb-5 items-start">
+                  <div class="relative">
+                      <a href="/builderio"><img src="https://media2.dev.to/dynamic/image/width=50,height=50,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Forganization%2Fprofile_image%2F5062%2F24170c0a-24e7-40e7-acb0-2bb79830a69d.png" class="radius-default align-middle" width="40" height="40" alt="Builder.io profile image"></a>
+                      <a href="/steve8708" class="absolute -right-2 -bottom-2 radius-full border border-solid border-2 border-base-inverted inline-flex">
+                        <img class="radius-full align-middle" src="https://media2.dev.to/dynamic/image/width=50,height=50,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F523496%2F8dd7a765-04cd-4a91-bb6b-c93c2dc37f63.jpg" width="24" height="24" alt="Steve Sewell" />
+                      </a>
+                  </div>
+                  <div class="pl-3 flex-1">
+                    <a href="/steve8708" class="crayons-link fw-bold">Steve Sewell</a>
+                    
+                    
+                      <span class="color-base-60"> for </span><a href="/builderio" class="crayons-link">Builder.io</a>
+                    <p class="fs-xs color-base-60 flex flex-wrap items-center gap-1">
+                        <span>Posted on <time datetime="2024-12-11T20:42:26Z" class="date">Dec 11, 2024</time></span>
+
+
+                        <span class="mx-0.5 opacity-60" aria-hidden="true">&bull;</span>
+                        <span>Originally published at <a style="color:#1395b8" href="https://www.builder.io/blog/devin-vs-cursor">builder.io</a> </span>
+
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="multiple_reactions_engagement">
+    <button
+      class="reaction_engagement_like hidden crayons-reaction crayons-reaction--like"
+      data-category="like"
+      aria-label="Like"
+      type="button"
+    ><span class="crayons-reaction__icon crayons-reaction__icon--inactive p-1"><img src="https://assets.dev.to/assets/sparkle-heart-5f9bee3767e18deb1bb725290cb151c25234768a0e9a2bd39370c382d02920cf.svg" width="24" height="24" /></span>
+      <span class="crayons-reaction__count" id="reaction_engagement_like_count">&nbsp;</span>
+    </button>    <button
+      class="reaction_engagement_unicorn hidden crayons-reaction crayons-reaction--unicorn"
+      data-category="unicorn"
+      aria-label="Unicorn"
+      type="button"
+    ><span class="crayons-reaction__icon crayons-reaction__icon--inactive p-1"><img src="https://assets.dev.to/assets/multi-unicorn-b44d6f8c23cdd00964192bedc38af3e82463978aa611b4365bd33a0f1f4f3e97.svg" width="24" height="24" /></span>
+      <span class="crayons-reaction__count" id="reaction_engagement_unicorn_count">&nbsp;</span>
+    </button>    <button
+      class="reaction_engagement_exploding_head hidden crayons-reaction crayons-reaction--exploding_head"
+      data-category="exploding_head"
+      aria-label="Exploding Head"
+      type="button"
+    ><span class="crayons-reaction__icon crayons-reaction__icon--inactive p-1"><img src="https://assets.dev.to/assets/exploding-head-daceb38d627e6ae9b730f36a1e390fca556a4289d5a41abb2c35068ad3e2c4b5.svg" width="24" height="24" /></span>
+      <span class="crayons-reaction__count" id="reaction_engagement_exploding_head_count">&nbsp;</span>
+    </button>    <button
+      class="reaction_engagement_raised_hands hidden crayons-reaction crayons-reaction--raised_hands"
+      data-category="raised_hands"
+      aria-label="Raised Hands"
+      type="button"
+    ><span class="crayons-reaction__icon crayons-reaction__icon--inactive p-1"><img src="https://assets.dev.to/assets/raised-hands-74b2099fd66a39f2d7eed9305ee0f4553df0eb7b4f11b01b6b1b499973048fe5.svg" width="24" height="24" /></span>
+      <span class="crayons-reaction__count" id="reaction_engagement_raised_hands_count">&nbsp;</span>
+    </button>    <button
+      class="reaction_engagement_fire hidden crayons-reaction crayons-reaction--fire"
+      data-category="fire"
+      aria-label="Fire"
+      type="button"
+    ><span class="crayons-reaction__icon crayons-reaction__icon--inactive p-1"><img src="https://assets.dev.to/assets/fire-f60e7a582391810302117f987b22a8ef04a2fe0df7e3258a5f49332df1cec71e.svg" width="24" height="24" /></span>
+      <span class="crayons-reaction__count" id="reaction_engagement_fire_count">&nbsp;</span>
+    </button>
+</div>
+
+
+              <h1 class=" fs-3xl m:fs-4xl l:fs-5xl fw-bold s:fw-heavy lh-tight mb-2 medium">
+                Devin review: is it a better AI coding agent than Cursor?
+              </h1>
+              
+                  <div class="spec__tags flex flex-wrap">
+                      <a class="crayons-tag   " style="
+        --tag-bg: rgba(64, 78, 211, 0.10);
+        --tag-prefix: #404ED3;
+        --tag-bg-hover: rgba(64, 78, 211, 0.10);
+        --tag-prefix-hover: #404ED3;
+      " href="/t/cursor"><span class="crayons-tag__prefix">#</span>cursor</a>
+                      <a class="crayons-tag   " style="
+        --tag-bg: rgba(23, 253, 26, 0.10);
+        --tag-prefix: #17fd1a;
+        --tag-bg-hover: rgba(23, 253, 26, 0.10);
+        --tag-prefix-hover: #17fd1a;
+      " href="/t/ai"><span class="crayons-tag__prefix">#</span>ai</a>
+                      <a class="crayons-tag   " style="
+        --tag-bg: rgba(42, 7, 152, 0.10);
+        --tag-prefix: #2A0798;
+        --tag-bg-hover: rgba(42, 7, 152, 0.10);
+        --tag-prefix-hover: #2A0798;
+      " href="/t/productivity"><span class="crayons-tag__prefix">#</span>productivity</a>
+                      <a class="crayons-tag   " style="
+        --tag-bg: rgba(86, 39, 101, 0.10);
+        --tag-prefix: #562765;
+        --tag-bg-hover: rgba(86, 39, 101, 0.10);
+        --tag-prefix-hover: #562765;
+      " href="/t/webdev"><span class="crayons-tag__prefix">#</span>webdev</a>
+                  </div>
+            </div>
+          </header>
+
+          <div class="crayons-article__main ">
+            <div class="crayons-article__body text-styles spec__body" data-article-id="2152197"
+              id="article-body">
+                <p>I paid the $500 a month to use <a href="https://devin.ai/" target="_blank" rel="noopener noreferrer">Devin</a>, the AI coding agent, so you don't have to. Let's compare it to Cursor agents and see if it's worth the $2 billion valuation of their company.</p>
+
+<h2>
+  <a name="what-is-devin" href="#what-is-devin">
+  </a>
+  What is Devin?
+</h2>
+
+<p>The main thing to know about Devin is it's primarily a Slack-based workflow — it's not an IDE.</p>
+
+<p><a href="https://media2.dev.to/dynamic/image/width=800%2Cheight=%2Cfit=scale-down%2Cgravity=auto%2Cformat=auto/https%3A%2F%2Fcdn.builder.io%2Fapi%2Fv1%2Fimage%2Fassets%252FYJIGb4i01jvw0SRdL5Bt%252F30df82ede2bc4b1db6385a2bbbf181c2%3Fwidth%3D705" class="article-body-image-wrapper"><img src="https://media2.dev.to/dynamic/image/width=800%2Cheight=%2Cfit=scale-down%2Cgravity=auto%2Cformat=auto/https%3A%2F%2Fcdn.builder.io%2Fapi%2Fv1%2Fimage%2Fassets%252FYJIGb4i01jvw0SRdL5Bt%252F30df82ede2bc4b1db6385a2bbbf181c2%3Fwidth%3D705" alt="Screenshot of me asking Devin to do something" loading="lazy" width="705" height="341"></a></p>
+
+<p>You tag Devin in Slack and ask Devin to update something, fix something, et cetera. Devin includes:</p>
+
+<ul>
+<li>A remote server</li>
+<li>Browser interface</li>
+<li>VS Code editing interface</li>
+<li>A planner</li>
+<li>A chat interface</li>
+</ul>
+
+<p>You can follow along step-by-step to see what Devin did and what it's doing.</p>
+
+<video src="https://cdn.builder.io/o/assets%2FYJIGb4i01jvw0SRdL5Bt%2Fb3aadcda38584d6390c2c2ea985273ab%2Fcompressed?apiKey=YJIGb4i01jvw0SRdL5Bt&amp;token=b3aadcda38584d6390c2c2ea985273ab&amp;alt=media&amp;optimized=true" controls=""></video>
+
+<h2>
+  <a name="testing-devin-with-an-image-generation-model" href="#testing-devin-with-an-image-generation-model">
+  </a>
+  Testing Devin with an image generation model
+</h2>
+
+<p>I heard about this new <a href="https://github.com/ChenDarYen/NitroFusion" target="_blank" rel="noopener noreferrer">image generation model</a> that's supposed to be small enough to run on consumer-grade hardware.</p>
+
+<p>I was hoping for a basic web UI, but then I found all of this and realized I don't code in Python. I didn't know what to do with this, so I asked Devin.</p>
+
+<p>Devin went to work and in the course of about 12 minutes it:</p>
+
+<ol>
+<li>Cloned the repo</li>
+<li>Got it spun up</li>
+<li>Generated an image of a cat for me</li>
+<li>Attached the image back to me</li>
+</ol>
+
+<p>I then asked for four more images of a dog riding in a hot air balloon. And I got my images in full, terrifying quality.</p>
+
+<p>Now that's not Devin's fault, of course; that's the model we're using.</p>
+
+<video src="https://cdn.builder.io/o/assets%2FYJIGb4i01jvw0SRdL5Bt%2Fe042be9a4749442e9fa40956c02183ac%2Fcompressed?apiKey=YJIGb4i01jvw0SRdL5Bt&amp;token=e042be9a4749442e9fa40956c02183ac&amp;alt=media&amp;optimized=true" controls=""></video>
+
+<h2>
+  <a name="asking-devin-to-create-a-web-ui" href="#asking-devin-to-create-a-web-ui">
+  </a>
+  Asking Devin to create a web UI
+</h2>
+
+<p>I saw one of the todos on this repo is to create a local, real-time interactive app.</p>
+
+<p>So I asked Devin if he could clone this repo and add a web-based UI to type prompts and see images. Devin began spinning things up and sending me updates.</p>
+
+<p>One really interesting thing Devin does is it takes notes and stores them in a notes.txt file to refer back to and use in subsequent prompts.</p>
+
+<p><a href="https://media2.dev.to/dynamic/image/width=800%2Cheight=%2Cfit=scale-down%2Cgravity=auto%2Cformat=auto/https%3A%2F%2Fcdn.builder.io%2Fapi%2Fv1%2Fimage%2Fassets%252FYJIGb4i01jvw0SRdL5Bt%252Ff3f9e1380c204d568c6923ad67ebd9b9%3Fwidth%3D705" class="article-body-image-wrapper"><img src="https://media2.dev.to/dynamic/image/width=800%2Cheight=%2Cfit=scale-down%2Cgravity=auto%2Cformat=auto/https%3A%2F%2Fcdn.builder.io%2Fapi%2Fv1%2Fimage%2Fassets%252FYJIGb4i01jvw0SRdL5Bt%252Ff3f9e1380c204d568c6923ad67ebd9b9%3Fwidth%3D705" alt="Screenshot of Devin's notes.txt file" loading="lazy" width="705" height="379"></a></p>
+
+<p>This seems like an interesting technique to summarize information that's important and carry it across subsequent steps.</p>
+
+<p>Devin will also sometimes create knowledge entries, which are like bits of information that could be useful to refer back to in totally subsequent runs.</p>
+
+<p>It'll store these and look them up when needed, which is supposed to emulate the tribal knowledge that exists within a team.</p>
+
+<p>Devin was in fact able to add the web UI I asked for, but we hit other issues. More on that in a moment.</p>
+
+<h2>
+  <a name="devins-capabilities-and-limitations" href="#devins-capabilities-and-limitations">
+  </a>
+  Devin's capabilities and limitations
+</h2>
+
+<p>Overall, Devin's pretty impressive. It:</p>
+
+<ul>
+<li>Creates plans</li>
+<li>Writes code</li>
+<li>Finds bugs in the code</li>
+<li>Corrects the code</li>
+<li>Runs its own end-to-end tests to verify it works</li>
+<li>Responds to your feedback if you find issues and attempts to address them</li>
+</ul>
+
+<p>Anything you reply in Slack, Devin will start working on a reply to. In this case, it was able to verify we're hitting deployment issues.</p>
+
+<p>I kept working on debugging it, but unfortunately, after a lot of back and forth, it still never was able to solve it. Eventually, I gave up because I was sick of trying.</p>
+
+<p>Personally, slack thread hell is not my favorite method of developing/debugging:</p>
+
+<video src="https://cdn.builder.io/o/assets%2FYJIGb4i01jvw0SRdL5Bt%2F4ea8935cdc164a4393287aee74d4c444%2Fcompressed?apiKey=YJIGb4i01jvw0SRdL5Bt&amp;token=4ea8935cdc164a4393287aee74d4c444&amp;alt=media&amp;optimized=true" controls=""></video>
+
+<p>I prefer not to be demoted to the “any updates?” guy.</p>
+
+<p>Finally, I asked if I could just pull this code down locally and run it locally. It gave me instructions, but they weren't valid because it didn't actually send this code in a pull request.</p>
+
+<h2>
+  <a name="devins-pull-request-capabilities" href="#devins-pull-request-capabilities">
+  </a>
+  Devin's pull request capabilities
+</h2>
+
+<p>That's not to say that Devin can't do a pull request. One of my very first runs of Devin was to add a feature to a weather app.</p>
+
+<p>It was able to add the feature I wanted as well as respond to my feedback that I wanted it to look more like iOS styling.</p>
+
+<p>The final pull request was not bad. It added two packages, and the code was pretty good, but there was a console log in the code.</p>
+
+<video src="https://cdn.builder.io/o/assets%2FYJIGb4i01jvw0SRdL5Bt%2F503df45833d24bf4a2840a4bfbe3d8a7%2Fcompressed?apiKey=YJIGb4i01jvw0SRdL5Bt&amp;token=503df45833d24bf4a2840a4bfbe3d8a7&amp;alt=media&amp;optimized=true" controls=""></video>
+
+<p>It also forgot to uninstall a package that it no longer needed after my feedback. But we can go in and just leave comments, like a normal person, to remove this log and<span> that this package is no longer needed.</span></p>
+
+<video src="https://cdn.builder.io/o/assets%2FYJIGb4i01jvw0SRdL5Bt%2F56caf13d75af4072bcfa256da7ef0381%2Fcompressed?apiKey=YJIGb4i01jvw0SRdL5Bt&amp;token=56caf13d75af4072bcfa256da7ef0381&amp;alt=media&amp;optimized=true" controls=""></video>
+
+<p>One cool thing Devin did when we were going back and forth on what the UI of this weather app update should be is it actually generated a deployment with a preview URL without me asking.</p>
+
+<p>So when I type in a city, I can see that the feature I wanted has an iOS style like I asked. Even though I actually don't have a deploy preview set up on this repo, it deployed a version for me to see anyway.</p>
+
+<video src="https://cdn.builder.io/o/assets%2FYJIGb4i01jvw0SRdL5Bt%2F858dbf1f4a79448daa7277d4b44c3569%2Fcompressed?apiKey=YJIGb4i01jvw0SRdL5Bt&amp;token=858dbf1f4a79448daa7277d4b44c3569&amp;alt=media&amp;optimized=true" controls=""></video>
+
+<p>When it learned I want an iOS style for this app, it proposed this to save in the knowledge. I can review and approve it, and it'll remember that during subsequent runs.</p>
+
+<video src="https://cdn.builder.io/o/assets%2FYJIGb4i01jvw0SRdL5Bt%2Fc97a28b3b2c74cdf99f1bda7750fb9f6%2Fcompressed?apiKey=YJIGb4i01jvw0SRdL5Bt&amp;token=c97a28b3b2c74cdf99f1bda7750fb9f6&amp;alt=media&amp;optimized=true" controls=""></video>
+
+<p>For some reason though, I couldn't get Devin to reply to my feedback this time, even though I've seen it do it before. I don't know what went wrong.</p>
+
+<p>In general, I hit a few bugs along the way while using Devin, but nothing super crazy that I couldn't <em>usually</em> work around.</p>
+
+<h2>
+  <a name="fixing-bugs-with-devin" href="#fixing-bugs-with-devin">
+  </a>
+  Fixing bugs with Devin
+</h2>
+
+<p>A separate task I asked of Devin was to fix a bug in our existing website. After about 12 minutes, it spun up a PR with a fix, finding the necessary boolean and updating it from true to false.</p>
+
+<video src="https://cdn.builder.io/o/assets%2FYJIGb4i01jvw0SRdL5Bt%2F49525fd7475541d5ad73976cfbc8100e%2Fcompressed?apiKey=YJIGb4i01jvw0SRdL5Bt&amp;token=49525fd7475541d5ad73976cfbc8100e&amp;alt=media&amp;optimized=true" controls=""></video>
+
+<p>But then it updated some other stuff I didn't expect:</p>
+
+<ul>
+<li>Added a <code>fallback: true</code> in <code>getStaticPaths</code>, even though <code>getBuilderStaticPaths</code> already sets fallback to <code>'blocking'</code>
+</li>
+<li>Removed a check, even though we already turned that value to false</li>
+<li>Added a type declaration that I know firsthand isn't needed</li>
+</ul>
+
+<p>The cool part is I asked in the PR why it did this, and Devin added the eyes emoji to tell me it sees this. Then it explained itself.</p>
+
+<p>I'll be honest, I was kind of hoping it would fix those things. But it did provide a thorough explanation. It just wasn't a good one. Most of this information is not actually true.</p>
+
+<p><a href="https://media2.dev.to/dynamic/image/width=800%2Cheight=%2Cfit=scale-down%2Cgravity=auto%2Cformat=auto/https%3A%2F%2Fcdn.builder.io%2Fapi%2Fv1%2Fimage%2Fassets%252FYJIGb4i01jvw0SRdL5Bt%252F8f6a54d4ac4d4e578e1919e1d4093ffc%3Fwidth%3D705" class="article-body-image-wrapper"><img src="https://media2.dev.to/dynamic/image/width=800%2Cheight=%2Cfit=scale-down%2Cgravity=auto%2Cformat=auto/https%3A%2F%2Fcdn.builder.io%2Fapi%2Fv1%2Fimage%2Fassets%252FYJIGb4i01jvw0SRdL5Bt%252F8f6a54d4ac4d4e578e1919e1d4093ffc%3Fwidth%3D705" alt="Screenshot of Devin's reply" loading="lazy" width="705" height="368"></a></p>
+
+<p>Fallback true does not enable client-side navigation or enable <a href="https://www.builder.io/" target="_blank" rel="noopener noreferrer">Builder.io</a>'s preview system. Fallback blocking, which was already used, is our preference. Also, the tabler icons react type definition is just not needed. It's included in the package.</p>
+
+<p>It made some weird comment that these components are part of the client-side navigation system, whatever that means. But the nice part is I can talk to Devin like a human, leave a comment, and it can make updates accordingly.</p>
+
+<p><a href="https://media2.dev.to/dynamic/image/width=800%2Cheight=%2Cfit=scale-down%2Cgravity=auto%2Cformat=auto/https%3A%2F%2Fcdn.builder.io%2Fapi%2Fv1%2Fimage%2Fassets%252FYJIGb4i01jvw0SRdL5Bt%252Fc51de45da4fd4049ab859ccb9c91de2f%3Fwidth%3D705" class="article-body-image-wrapper"><img src="https://media2.dev.to/dynamic/image/width=800%2Cheight=%2Cfit=scale-down%2Cgravity=auto%2Cformat=auto/https%3A%2F%2Fcdn.builder.io%2Fapi%2Fv1%2Fimage%2Fassets%252FYJIGb4i01jvw0SRdL5Bt%252Fc51de45da4fd4049ab859ccb9c91de2f%3Fwidth%3D705" alt="Screenshot of me requesting changes" loading="lazy" width="705" height="344"></a></p>
+
+<h2>
+  <a name="adding-a-backend-feature" href="#adding-a-backend-feature">
+  </a>
+  Adding a backend feature
+</h2>
+
+<p>The last thing I asked Devin to do is implement a backend feature. I said to add to our GraphQL admin API the ability to read and write from the comments collection.</p>
+
+<p>Devin created a PR that was decent. It added this reflect metadata package that I don't think is needed (we haven't needed it to date).</p>
+
+<p>But most importantly, it did recognize we use this resolver structure. It created a comments resolver and added it.</p>
+
+<video src="https://cdn.builder.io/o/assets%2FYJIGb4i01jvw0SRdL5Bt%2Fdbf70a90b6e14793bd180d9e065873d1%2Fcompressed?apiKey=YJIGb4i01jvw0SRdL5Bt&amp;token=dbf70a90b6e14793bd180d9e065873d1&amp;alt=media&amp;optimized=true" controls=""></video>
+
+<p>This code actually looks pretty typical of how we've written this on the backend. Now it did make up a couple of fields that would have been nice to ask me what the schema is. But otherwise, I'd say this is decent code.</p>
+
+<h2>
+  <a name="workflow-issues-with-devin" href="#workflow-issues-with-devin">
+  </a>
+  Workflow issues with Devin
+</h2>
+
+<p>Overall, I'd say the biggest problem I have with Devin is this is just not my preferred workflow. I don't want to make an ask and wait 15 minutes for a pull request, and then have this back and forth on the pull request and/or Slack.</p>
+
+<p>I much prefer Cursor's workflow where I have all of this right in my local environment and IDE. I can see the updates in real-time and can commit and debug locally, without jumping to some remote server and other set of tools I don't know, and having all these long waits and delays that are just unfamiliar and unproductive.</p>
+
+<p>I get that the idea of Devin is to set some asynchronous agent coworkers off at a task and let them do lots of things in parallel and just come to you with results.</p>
+
+<p>But that really isn't a great workflow until Devins are a lot better. I don't want the AI to just go off and do its thing and come back only when it's done, unless I have high confidence it's going to be really, really reliable at that.</p>
+
+<p>Otherwise, I'd prefer my IDE just do it.</p>
+
+<h2>
+  <a name="comparing-with-cursor-agents" href="#comparing-with-cursor-agents">
+  </a>
+  Comparing with Cursor agents
+</h2>
+
+<p>Let's compare some of the same tasks with Cursor's new agent features.</p>
+
+<h3>
+  <a name="context-handling" href="#context-handling">
+  </a>
+  Context handling
+</h3>
+
+<p>The big difference between Cursor agents and the standard Cursor composer view is you don't have to manually add files to the context. Cursor will scan your codebase and find the relevant files and add them for you.</p>
+
+<p>Cursor was able to find this no client-side routing variable and flip it to false. If I accept the updates, we can see it did exactly what we wanted. One basic minimal diff.</p>
+
+<video src="https://cdn.builder.io/o/assets%2FYJIGb4i01jvw0SRdL5Bt%2F8eb695cebcde49d8bcef48c000a2007f%2Fcompressed?apiKey=YJIGb4i01jvw0SRdL5Bt&amp;token=8eb695cebcde49d8bcef48c000a2007f&amp;alt=media&amp;optimized=true" controls=""></video>
+
+<h3>
+  <a name="user-control-and-feedback" href="#user-control-and-feedback">
+  </a>
+  User control and feedback
+</h3>
+
+<p>Cursor's not always perfect, but the part I like most is I'm in control and in the driver's seat. If I want something different, I could also say, just delete that variable and all references altogether. And I could see the update immediately. There's less waiting and more action.</p>
+
+<video src="https://cdn.builder.io/o/assets%2FYJIGb4i01jvw0SRdL5Bt%2Fa888f680f2c342de8769c792abdc2846%2Fcompressed?apiKey=YJIGb4i01jvw0SRdL5Bt&amp;token=a888f680f2c342de8769c792abdc2846&amp;alt=media&amp;optimized=true" controls=""></video>
+
+<p>While I'm more closely in the loop, I have more trust with this process. Because I know what I want, and if it can scan my code, update multiple files and not make me have to worry about the details, I can provide real-time feedback and hand modifications and send the pull request my way.</p>
+
+<p>That's a much easier to adopt workflow for me and my team.</p>
+
+<h3>
+  <a name="ownership-clarity" href="#ownership-clarity">
+  </a>
+  Ownership clarity
+</h3>
+
+<p>With Cursor it's also more clear who owns the pull request: it's me. I find this process faster, easier, and nicer. We don't have weird bots creating pull requests where it's unclear who actually owns that and is responsible for making sure the code is good.</p>
+
+<p>Nobody has to clone down that bot's PR and push updates to it. And every update happens pretty quickly.</p>
+
+<h3>
+  <a name="graphql-example" href="#graphql-example">
+  </a>
+  GraphQL example
+</h3>
+
+<p>I also tried the GraphQL prompt with our very large internal repo in Cursor agent mode as well. And I got very similar results. It:</p>
+
+<ul>
+<li>Added the comments resolver</li>
+<li>Integrated it into the API</li>
+<li>Added the types as well</li>
+</ul>
+
+<p>So pretty similar results to what you'd expect with Cursor's composer view. But again, because of the agent mode, I didn't have to specify files. I just typed my prompt and it happened. That was nice.</p>
+
+<video src="https://cdn.builder.io/o/assets%2FYJIGb4i01jvw0SRdL5Bt%2F1393443d52ff48b0b3e286a60f1d3985%2Fcompressed?apiKey=YJIGb4i01jvw0SRdL5Bt&amp;token=1393443d52ff48b0b3e286a60f1d3985&amp;alt=media&amp;optimized=true" controls=""></video>
+
+<h3>
+  <a name="image-generator-repo-clone" href="#image-generator-repo-clone">
+  </a>
+  Image generator repo clone
+</h3>
+
+<p>Now let's try a more agentic workflow where we have it clone this image generator model repo. You'll see the main difference between Cursor agents and Devin is it asked me before it runs commands.</p>
+
+<p>Cursor is generally more cautious than Devin, which is nice because it's running on my local machine. But also sometimes I wish it would just run this stuff for me.</p>
+
+<video src="https://cdn.builder.io/o/assets%2FYJIGb4i01jvw0SRdL5Bt%2Fed603103d07241e8a6787938e8faba55%2Fcompressed?apiKey=YJIGb4i01jvw0SRdL5Bt&amp;token=ed603103d07241e8a6787938e8faba55&amp;alt=media&amp;optimized=true" controls=""></video>
+
+<p>I've noticed if it catches an error, it'll automatically try to fix it, which I've seen it be successful at, which is great. Now it's written the code, which I'll accept. It found an error and it's rewriting the command accordingly.</p>
+
+<p>Unfortunately, my computer froze before I could show you if Cursor was able to finish that task. It looked to me like it was generating the image fine, but it turns out that model is meant for having a real GPU and not burning through my laptop CPU like I was trying to do.</p>
+
+<h2>
+  <a name="the-results" href="#the-results">
+  </a>
+  The results
+</h2>
+
+<p>Overall, I don't think Devin will take off like Cursor. And it's not just because of the $500 a month starting point. Cursor is so much easier to adopt and I like their incremental approach.</p>
+
+<p>Devin, I fear, is trying to jump too far. They've raised all this money saying there's this all-new way to build software with agents, but it just wasn't my preferred workflow.</p>
+
+<p><a href="https://media2.dev.to/dynamic/image/width=800%2Cheight=%2Cfit=scale-down%2Cgravity=auto%2Cformat=auto/https%3A%2F%2Fcdn.builder.io%2Fapi%2Fv1%2Fimage%2Fassets%252FYJIGb4i01jvw0SRdL5Bt%252Fbfaa4f0b45874a67881e9d1b73d74d60%3Fwidth%3D705" class="article-body-image-wrapper"><img src="https://media2.dev.to/dynamic/image/width=800%2Cheight=%2Cfit=scale-down%2Cgravity=auto%2Cformat=auto/https%3A%2F%2Fcdn.builder.io%2Fapi%2Fv1%2Fimage%2Fassets%252FYJIGb4i01jvw0SRdL5Bt%252Fbfaa4f0b45874a67881e9d1b73d74d60%3Fwidth%3D705" alt="Devin vs Cursor pros/cons list" loading="lazy" width="705" height="434"></a></p>
+
+<p>Maybe one day when LLMs are even better and agents are extremely reliable. But I'm not sure the rate of progress will get us there really soon. And I personally believe more in Cursor's incremental approach than Devin's "let's change everything" approach.</p>
+
+<h2>
+  <a name="my-preferred-ai-stack" href="#my-preferred-ai-stack">
+  </a>
+  My preferred AI stack
+</h2>
+
+<p>My preferred workflow looks more like this:</p>
+
+<ol>
+<li>A developer works iteratively with Cursor</li>
+<li>Other teammates like designers iterate with their tools</li>
+<li>Products like <a href="https://www.builder.io/" target="_blank" rel="noopener noreferrer">builder.io</a> can convert designs to code and also patch in design updates as they're needed</li>
+</ol>
+
+<p><a href="https://media2.dev.to/dynamic/image/width=800%2Cheight=%2Cfit=scale-down%2Cgravity=auto%2Cformat=auto/https%3A%2F%2Fcdn.builder.io%2Fapi%2Fv1%2Fimage%2Fassets%252FYJIGb4i01jvw0SRdL5Bt%252F706fed109d0c48b68b87fd0278e07f85%3Fwidth%3D705" class="article-body-image-wrapper"><img src="https://media2.dev.to/dynamic/image/width=800%2Cheight=%2Cfit=scale-down%2Cgravity=auto%2Cformat=auto/https%3A%2F%2Fcdn.builder.io%2Fapi%2Fv1%2Fimage%2Fassets%252FYJIGb4i01jvw0SRdL5Bt%252F706fed109d0c48b68b87fd0278e07f85%3Fwidth%3D705" alt="Diagram of my preferred AI stack" loading="lazy" width="705" height="506"></a></p>
+
+<p>Ultimately your workflow doesn't change much. You're still coding and debugging locally. You're pushing changes as needed.</p>
+
+<p>But I will say that I'm excited to have a new player in the agent coding space to push Cursor even further. And I can't wait to see what comes out from the result of this.</p>
+
+<p>But that's my quick take. From everything you saw, what do you think? Let me know in the comments. And if you made it to the end and you want to see more videos like this, be sure to like and subscribe.</p>
+
+<p><iframe width="710" height="399" src="https://www.youtube.com/embed/oU3H581uCsA" allowfullscreen loading="lazy">
+</iframe>
+</p>
+
+
+            </div>
+
+              <div class="bb-shuffle-group js-bb-shuffle-group">
+                <div class="below-post-bb body-billboard-container" data-async-url="/builderio/devin-review-is-it-a-better-ai-coding-agent-than-cursor-d6p/bmar11/post_body_bottom"></div>
+                <div class="below-post-bb body-billboard-container" data-async-url="/bmar11/post_body_bottom_secondary"></div>
+              </div>
+          </div>
+          <section id="comments" data-follow-button-container="true" data-updated-at="2026-10-25 04:40:06 UTC" class="text-padding mb-4 border-t-1 border-0 border-solid border-base-10">
+    <header class="relative flex justify-between items-center mb-6">
+      <div class="flex items-center">
+        <h2 class="crayons-subtitle-1">
+          Top comments <span class="js-comments-count" data-comments-count="0">(0)</span>
+        </h2>
+      </div>
+
+
+      <div id="comment-subscription" class="print-hidden">
+        <div class="crayons-btn-group">
+          <span class="crayons-btn crayons-btn--outlined">Subscribe</span>
+        </div>
+      </div>
+    </header>
+    <div id="billboard_delay_trigger"></div>
+    <div
+      id="comments-container"
+      data-testid="comments-container"
+      data-commentable-id="2152197"
+      data-commentable-type="Article"
+      data-has-recent-comment-activity="false">
+
+        <div id="response-templates-data" class="hidden"></div>
+
+
+<form class="comment-form print-hidden" id="new_comment" action="/comments" accept-charset="UTF-8" method="post">
+
+  <input type="hidden" name="authenticity_token" value="NOTHING" id="new_comment_authenticity_token">
+
+    <input value="2152197" autocomplete="off" type="hidden" name="comment[commentable_id]" id="comment_commentable_id" />
+    <input value="Article" autocomplete="off" type="hidden" name="comment[commentable_type]" id="comment_commentable_type" />
+    
+
+  <span class="crayons-avatar m:crayons-avatar--l mr-2 shrink-0">
+    <img src="https://media2.dev.to/dynamic/image/width=256,height=,fit=scale-down,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F8j7kvp660rqzt99zui8e.png" width="32" height="32" alt="pic" class="crayons-avatar__image overflow-hidden" id="comment-primary-user-profile--avatar" loading="lazy" />
+  </span>
+  <div class="comment-form__inner">
+    <div class="comment-form__field" data-tracking-name="comment_form_textfield">
+      <textarea placeholder="Add to the discussion" onfocus="handleFocus(event)" onkeyup="handleKeyUp(event)" onkeydown="handleKeyDown(event)" oninput="handleChange(event)" id="text-area" required="required" class="crayons-textfield comment-textarea crayons-textfield--ghost" aria-label="Add a comment to the discussion" name="comment[body_markdown]">
+</textarea>
+
+    </div>
+
+    <div class="response-templates-container crayons-card crayons-card--secondary p-4 mb-4 comment-form__templates fs-base hidden">
+      <header class="mb-3">
+        <button type="button" class="crayons-btn personal-template-button active" data-target-type="personal" data-form-id="new_comment">Personal</button>
+        <button type="button" class="crayons-btn moderator-template-button hidden" data-target-type="moderator" data-form-id="new_comment">Trusted User</button>
+      </header>
+
+      <div class="personal-responses-container">
+      </div>
+      <div class="moderator-responses-container hidden">
+      </div>
+
+      <a target="_blank" rel="noopener nofollow" href="/settings/response-templates">
+        Create template
+      </a>
+      <p>Templates let you quickly answer FAQs or store snippets for re-use.</p>
+    </div>
+
+    <div class="comment-form__preview text-styles text-styles--secondary" id="preview-div"></div>
+
+    <div class="comment-form__buttons mb-4 flex items-center flex-wrap gap-2">
+      <button type="submit" class="crayons-btn mr-2 js-btn-enable" onclick="validateField(event)" data-tracking-name="comment_submit_button" disabled>Submit</button>
+      <button type="button" class="preview-toggle crayons-btn crayons-btn--secondary comment-action-preview js-btn-enable mr-2" data-tracking-name="comment_preview_button" disabled>Preview</button>
+      <a href="/404.html" class="dismiss-edit-comment crayons-btn crayons-btn--ghost js-btn-dismiss hidden">Dismiss</a>
+    </div>
+  </div>
+
+  <div class="code-of-conduct" id="toggle-code-of-conduct-checkbox"></div>
+</form>
+
+
+      <div class="comments" id="comment-trees-container">
+      </div>
+    </div>
+
+    <div class="align-center">
+
+
+  <nav class="fs-s align-center block" aria-label="Conduct controls">
+  <a href="/code-of-conduct" class="crayons-link crayons-link--secondary">Code of Conduct</a>
+  <span class="opacity-25 px-2" role="presentation">&bull;</span>
+  <a href="/report-abuse" class="crayons-link crayons-link--secondary">Report abuse</a>
+</nav>
+
+</div>
+
+</section>
+<div id="hide-comments-modal" class="hidden">
+  <form id="hide-comments-modal__form" class="hide-comments-modal__form" data-type="json" action="/comments/hide" accept-charset="UTF-8" data-remote="true" method="post"><input type="hidden" name="_method" value="patch" autocomplete="off" /><input type="hidden" name="authenticity_token" value="_e2bZWW7rzp-cMV3wq8Urn5uEhhTpHrUfZVZfIy8Zg_kjYnx6mYg16VS404jQ0zpcFJ_eKv9kyA7SWBnP_u1Bw" autocomplete="off" />
+    <div class="hide-comments-modal__content">
+      <p class="pb-2">
+        Are you sure you want to hide this comment? It will become hidden in your post, but will still be visible via the comment's <a id="hide-comments-modal__comment-permalink" href="#">permalink</a>.
+      </p>
+      <label class="crayons-field crayons-field--checkbox my-2">
+        <input name="hide_children" type="hidden" value="0" autocomplete="off" /><input class="hide_children crayons-checkbox" type="checkbox" value="1" name="hide_children" id="hide_children" />
+        <p class="crayons-field__label">Hide child comments as well</p>
+      </label>
+      <p class="pb-4 pt-2">
+        <button type="submit" class="crayons-btn">
+          Confirm
+        </button>
+      </p>
+    </div>
+</form>  <p class="fs-s color-base-60">For further actions, you may consider blocking this person and/or <a id="hide-comments-modal__report-link" href="/report-abuse">reporting abuse</a></p>
+</div>
+
+
+
+        </article>
+
+        <div class="pb-4 crayons-layout__comments-billboard bb-shuffle-group js-bb-shuffle-group">
+          <div class="new-bb-container pb-4 crayons-layout__comments-billboard" data-async-url="/builderio/devin-review-is-it-a-better-ai-coding-agent-than-cursor-d6p/bmar11/post_comments"></div>
+          <div class="new-bb-container pb-4 crayons-layout__comments-billboard" data-async-url="/bmar11/post_comments_secondary"></div>
+        </div>
+
+          <!-- Bottom content skipped via SKIP_BOTTOM_CONTENT config -->
+      </div>
+    </main>
+
+    <aside class="crayons-layout__sidebar-right" aria-label="Author details">
+      <div class="crayons-article-sticky grid gap-4 pb-4 break-word" id="article-show-primary-sticky-nav">
+  <div class="crayons-card crayons-card--secondary branded-7 p-4 pt-0 gap-4 grid" style="border-top-color: #005fcd;">
+    <div class="-mt-4">
+  <a href="/builderio" class="flex">
+    <span class="crayons-logo crayons-logo--xl  mr-2 shrink-0">
+      <img src="https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Forganization%2Fprofile_image%2F5062%2F24170c0a-24e7-40e7-acb0-2bb79830a69d.png" class="crayons-logo__image" alt="" loading="lazy" />
+    </span>
+    <span class="crayons-link crayons-subtitle-2 mt-5">
+      Builder.io
+      
+      
+    </span>
+  </a>
+</div>
+
+<div class="print-hidden">
+  <button name="button" type="button" data-info="{&quot;className&quot;:&quot;Organization&quot;,&quot;style&quot;:&quot;&quot;,&quot;id&quot;:5062,&quot;name&quot;:&quot;Builder.io&quot;}" class="crayons-btn follow-action-button whitespace-nowrap w-100 " aria-label="Follow organization: Builder.io" aria-pressed="false">Follow</button>
+</div>
+  <div class="color-base-70">
+    Go from idea to production with unprecedented efficiency
+  </div>
+
+  <div>
+    <p>Drag and drop to build visually with your components!</p>
+
+  </div>
+    <div>
+      <a href="https://www.builder.io/signup" class="crayons-btn crayons-btn--outlined w-100">
+        Try Builder.io free
+      </a>
+    </div>
+
+  </div>
+
+      <div class="crayons-card crayons-card--secondary">
+        <header class="crayons-card__header">
+          <h3 class="crayons-subtitle-3">
+            More from <a href="/builderio">Builder.io</a>
+          </h3>
+        </header>
+        <div>
+            <a class="crayons-link crayons-link--contentful" href="/builderio/what-is-an-llm-for-web-developers-2064">
+              What is an LLM (For Web Developers)
+              <div class="crayons-link__secondary -ml-1">
+                  <span class="mr-1"><span class="opacity-50">#</span>ai</span>
+                  <span class="mr-1"><span class="opacity-50">#</span>webdev</span>
+                  <span class="mr-1"><span class="opacity-50">#</span>productivity</span>
+                  <span class="mr-1"><span class="opacity-50">#</span>programming</span>
+              </div>
+            </a>
+            <a class="crayons-link crayons-link--contentful" href="/builderio/how-i-use-cursor-my-best-tips-4918">
+              How I use Cursor (+ my best tips)
+              <div class="crayons-link__secondary -ml-1">
+                  <span class="mr-1"><span class="opacity-50">#</span>webdev</span>
+                  <span class="mr-1"><span class="opacity-50">#</span>cursor</span>
+                  <span class="mr-1"><span class="opacity-50">#</span>tooling</span>
+                  <span class="mr-1"><span class="opacity-50">#</span>programming</span>
+              </div>
+            </a>
+        </div>
+      </div>
+</div>
+
+<div class="crayons-article-sticky grid gap-4 break-word bb-shuffle-group js-bb-shuffle-group">
+  <div class="grid gap-4 sidebar-bb" data-async-url="/builderio/devin-review-is-it-a-better-ai-coding-agent-than-cursor-d6p/bmar11/post_sidebar"></div>
+  <div class="grid gap-4 sidebar-bb" data-async-url="/bmar11/post_sidebar_secondary"></div>
+</div>
+
+
+    </aside>
+  </div>
+
+  <div class="mod-actions-menu print-hidden"></div>
+  <div data-testid="unpublish-post-modal-container" class="unpublish-post-modal-container hidden"></div>
+
+  <div class="fullscreen-code js-fullscreen-code"></div>
+  <script src="https://assets.dev.to/assets/billboard-a2ae4497495b4240f720f278670979ff858ada6fc0c13afc96c0f098a5b302d5.js" defer="defer"></script>
+<script src="https://assets.dev.to/assets/localizeArticleDates-ae9de0a2788a22884a206d2884c5caa8f6c344a28ce597574b4b78d1dd64f9d8.js" defer="defer"></script>
+<script src="https://assets.dev.to/assets/articleReactions-8b74c2d98b97a4389643c1441359225a0d425ee4cc9a1bf54ef15be90f15a74e.js" defer="defer"></script>
+<script src="https://assets.dev.to/assets/favoriteControls-ed6fd0ea20adcdf103e34e717dafa13c1e4745630f36c288b4b41b6c400f6233.js" defer="defer"></script>
+
+  <script>
+      if (document.getElementsByClassName('fluidvids').length === 0) {
+        window.Fluidvids=function(a,b){"use strict";var c,d,e=b.head||b.head,f=".fluidvids-elem{position:absolute;top:0px;left:0px;width:100%;height:100%;border:none;}.fluidvids{width:100%;position:relative;}",g=function(a){return c=new RegExp("^(https?:)?//(?:"+d.join("|")+").*$","i"),c.test(a)},h=function(a){var c=b.createElement("div"),d=a.parentNode,attrH=a.getAttribute("height"),attrW=a.getAttribute("width"),hVal=(attrH&&!attrH.includes("%"))?parseInt(attrH,10):a.offsetHeight,wVal=(attrW&&!attrW.includes("%"))?parseInt(attrW,10):a.offsetWidth,e=(wVal&&hVal)?100*(hVal/wVal):56.25;d.insertBefore(c,a),a.className+=" fluidvids-elem",c.className+=" fluidvids",c.style.paddingTop=e+"%",c.appendChild(a)},i=function(){var a=b.createElement("div");a.innerHTML="<p>x</p><style>"+f+"</style>",e.appendChild(a.childNodes[1])},j=function(a){var c=a||{},e=c.selector||"iframe";d=c.players||["www.youtube.com","player.vimeo.com","clips.twitch.tv"];for(var f=b.querySelectorAll(e),j=0;j<f.length;j++){var k=f[j];g(k.src)&&h(k)}i()};return{init:j}}(window,document);
+        Fluidvids.init({
+          selector: ['iframe', 'object'], // runs querySelectorAll()
+          players: ['www.youtube.com', 'player.vimeo.com', 'clips.twitch.tv'] // players to support
+        });
+      }
+  </script>
+  <div class="js-billboard-container pb-4 crayons-layout__comments-billboard" data-async-url="/builderio/devin-review-is-it-a-better-ai-coding-agent-than-cursor-d6p/bmar11/post_fixed_bottom"></div>
+
+
+    <div id="runtime-banner-container"></div>
+    <div id="i18n-translations" data-translations="{&quot;en&quot;:{&quot;core&quot;:{&quot;add_comment&quot;:&quot;Add comment&quot;,&quot;beta&quot;:&quot;beta&quot;,&quot;comment&quot;:&quot;Comment&quot;,&quot;copy_link&quot;:&quot;Copy link&quot;,&quot;edit_profile&quot;:&quot;Edit profile&quot;,&quot;follow&quot;:&quot;Follow&quot;,&quot;follow_back&quot;:&quot;Follow back&quot;,&quot;following&quot;:&quot;Following&quot;,&quot;image_upload_server_error&quot;:&quot;A server error has occurred!&quot;,&quot;like&quot;:&quot;Like&quot;,&quot;loading&quot;:&quot;loading...&quot;,&quot;reaction&quot;:&quot;Reaction&quot;,&quot;report_abuse&quot;:&quot;Report abuse&quot;,&quot;search&quot;:&quot;Search&quot;,&quot;success_settings&quot;:&quot;Successfully updated settings.&quot;,&quot;search_placeholder&quot;:&quot;Search...&quot;,&quot;search_find_related_posts&quot;:&quot;Find related posts...&quot;,&quot;search_powered_by&quot;:&quot;Powered by Algolia&quot;,&quot;search_submit_search&quot;:&quot;Submit search for advanced filtering.&quot;,&quot;search_displaying_recommendations&quot;:&quot;Displaying Algolia Recommendations — Start typing to search&quot;,&quot;article_form_save_changes&quot;:&quot;Save changes&quot;,&quot;article_form_schedule&quot;:&quot;Schedule&quot;,&quot;article_form_publish&quot;:&quot;Publish&quot;,&quot;article_form_loading_preview&quot;:&quot;Loading preview&quot;,&quot;article_form_preview_loaded&quot;:&quot;Preview loaded&quot;,&quot;article_form_co_authors&quot;:&quot;Co-authors&quot;,&quot;article_form_co_authors_description&quot;:&quot;Add up to 4 co-authors from %{org_name}.&quot;,&quot;article_form_co_authors_placeholder&quot;:&quot;Add up to 4...&quot;,&quot;article_form_co_author_invitations_description&quot;:&quot;Invite people who follow you. They&#39;ll be credited once they accept from their notifications.&quot;,&quot;article_form_co_author_invitations_placeholder&quot;:&quot;Search your followers...&quot;,&quot;article_form_co_author_invitations_declined&quot;:&quot;Declined: %{names}&quot;,&quot;article_form_co_author_invitation_new&quot;:&quot;Invite on save&quot;,&quot;article_form_co_author_invitation_pending&quot;:&quot;Pending&quot;,&quot;article_form_co_author_invitation_accepted&quot;:&quot;Accepted&quot;,&quot;article_form_co_author_invitation_edit&quot;:&quot;Edit %{name}&quot;,&quot;article_form_co_author_invitation_remove&quot;:&quot;Remove %{name}&quot;,&quot;comments_preview&quot;:&quot;Preview&quot;,&quot;comments_continue_editing&quot;:&quot;Continue editing&quot;,&quot;survey_enter_response&quot;:&quot;Enter your response here...&quot;,&quot;survey_thank_you_response&quot;:&quot;Thank you for your response.&quot;,&quot;survey_thank_you_completing&quot;:&quot;Thank you for completing the survey!&quot;,&quot;dashboard_analytics_readers&quot;:&quot;Readers&quot;,&quot;dashboard_analytics_avg_read_time&quot;:&quot;avg. read time %{seconds}s&quot;,&quot;dashboard_analytics_comments&quot;:&quot;Comments&quot;,&quot;dashboard_analytics_reactions&quot;:&quot;Reactions&quot;,&quot;dashboard_analytics_unique_reactors&quot;:&quot;from %{count} unique users&quot;,&quot;dashboard_analytics_bookmarks&quot;:&quot;Bookmarks&quot;,&quot;dashboard_analytics_followers&quot;:&quot;New Followers&quot;,&quot;top_contributors_empty&quot;:&quot;No engagers found for this period.&quot;,&quot;top_contributors_reactions&quot;:&quot;reactions&quot;,&quot;top_contributors_comments&quot;:&quot;comments&quot;,&quot;top_contributors_weight_note&quot;:&quot;Comments carry more weight&quot;,&quot;follower_engagement_ratio&quot;:&quot;%{ratio}% of followers engaged&quot;,&quot;follower_engagement_detail&quot;:&quot;(%{engaged} of %{total})&quot;,&quot;dashboard_analytics_no_data&quot;:&quot;No data available for this period&quot;,&quot;dashboard_analytics_no_referrers&quot;:&quot;No traffic sources yet&quot;,&quot;stats_by&quot;:&quot;by&quot;,&quot;editor_new_title&quot;:&quot;New post title here...&quot;,&quot;editor_body_placeholder&quot;:&quot;Write your post content here...&quot;,&quot;tags_field_label&quot;:&quot;Add up to 4 tags&quot;,&quot;tags_field_placeholder&quot;:&quot;Add up to 4 tags...&quot;,&quot;counted_organization&quot;:{&quot;one&quot;:&quot;%{count} organization&quot;,&quot;other&quot;:&quot;%{count} organizations&quot;},&quot;counted_user&quot;:{&quot;one&quot;:&quot;%{count} person&quot;,&quot;other&quot;:&quot;%{count} people&quot;},&quot;not_following&quot;:&quot;You&#39;re not following anyone&quot;,&quot;following_everyone&quot;:&quot;You&#39;re following %{details} (everyone)&quot;,&quot;you_are_following&quot;:&quot;You&#39;re following&quot;,&quot;and&quot;:&quot;and&quot;}}}"></div>
+  </div>
+</div>
+    
+
+<footer id="footer" class="crayons-footer print-hidden">
+  <div id="footer-container" class="crayons-footer__container">
+
+
+
+    <p class="fs-s crayons-footer__description">
+      <a class="c-link c-link--branded fw-medium" aria-label="DEV Community Home" href="/">DEV Community</a> — A space to discuss and keep up software development and manage your software career
+    </p>
+
+    <ul class="footer__nav-links flex gap-2 justify-center flex-wrap fs-s p-0" style="" />
+        <li class="footer__nav-link flex items-center">
+    <a href="/">
+      Home
+    </a>
+    <span class="dot ml-2"></span>
+  </li>
+  <li class="footer__nav-link flex items-center">
+    <a href="/challenges">
+      DEV Challenges
+    </a>
+    <span class="dot ml-2"></span>
+  </li>
+  <li class="footer__nav-link flex items-center">
+    <a href="/++">
+      DEV++
+    </a>
+    <span class="dot ml-2"></span>
+  </li>
+  <li class="footer__nav-link flex items-center">
+    <a href="/videos">
+      Videos
+    </a>
+    <span class="dot ml-2"></span>
+  </li>
+  <li class="footer__nav-link flex items-center">
+    <a href="/deved">
+      DEV Education Tracks
+    </a>
+    <span class="dot ml-2"></span>
+  </li>
+  <li class="footer__nav-link flex items-center">
+    <a href="/help">
+      DEV Help
+    </a>
+    <span class="dot ml-2"></span>
+  </li>
+  <li class="footer__nav-link flex items-center">
+    <a href="/advertise">
+      Advertise on DEV
+    </a>
+    <span class="dot ml-2"></span>
+  </li>
+  <li class="footer__nav-link flex items-center">
+    <a href="/organizations">
+      Organization Accounts
+    </a>
+    <span class="dot ml-2"></span>
+  </li>
+  <li class="footer__nav-link flex items-center">
+    <a href="/showcase">
+      DEV Showcase
+    </a>
+    <span class="dot ml-2"></span>
+  </li>
+  <li class="footer__nav-link flex items-center">
+    <a href="/about">
+      About
+    </a>
+    <span class="dot ml-2"></span>
+  </li>
+  <li class="footer__nav-link flex items-center">
+    <a href="/contact">
+      Contact
+    </a>
+    <span class="dot ml-2"></span>
+  </li>
+  <li class="footer__nav-link flex items-center">
+    <a href="/free-postgres-database-tier">
+      Free Postgres Database
+    </a>
+    <span class="dot ml-2"></span>
+  </li>
+  <li class="footer__nav-link flex items-center">
+    <a href="https://shop.forem.com/">
+      DEV Shop
+    </a>
+    <span class="dot ml-2"></span>
+  </li>
+  <li class="footer__nav-link flex items-center">
+    <a href="https://mlh.io/">
+      MLH
+    </a>
+    <span class="dot ml-2"></span>
+  </li>
+
+    </ul>
+
+    <ul class="footer__nav-links flex gap-2 justify-center flex-wrap fs-s p-0" style="" />
+        <li class="footer__nav-link flex items-center">
+    <a href="/code-of-conduct">
+      Code of Conduct
+    </a>
+    <span class="dot ml-2"></span>
+  </li>
+  <li class="footer__nav-link flex items-center">
+    <a href="/privacy">
+      Privacy Policy
+    </a>
+    <span class="dot ml-2"></span>
+  </li>
+  <li class="footer__nav-link flex items-center">
+    <a href="/terms">
+      Terms of Use
+    </a>
+    <span class="dot ml-2"></span>
+  </li>
+
+    </ul>
+
+    <div class="fs-s">
+      <p>Built on <a class="c-link c-link--branded" target="_blank" rel="noopener" href="https://www.forem.com">Forem</a> — the <a target="_blank" rel="noopener" class="c-link c-link--branded" href="https://dev.to/t/opensource">open source</a> software that powers <a target="_blank" rel="noopener" class="c-link c-link--branded" href="https://dev.to">DEV</a> and other inclusive communities.</p>
+      <p>Made with love and <a target="_blank" rel="noopener" class="c-link c-link--branded" href="https://dev.to/t/rails">Ruby on Rails</a>. DEV Community <span title="copyright">&copy;</span> 2016 - 2026.</p>
+    </div>
+  </div>
+</footer>
+<div id="snack-zone"></div>
+
+    <div id="global-signup-modal" class="authentication-modal hidden">
+  <div class="authentication-modal__container">
+    <figure class="authentication-modal__image-container">
+      <img class="authentication-modal__image" src="https://media2.dev.to/dynamic/image/width=190,height=,fit=scale-down,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F8j7kvp660rqzt99zui8e.png"
+        alt="DEV Community" loading="lazy" />
+    </figure>
+    <div class="authentication-modal__content">
+      <p class="authentication-modal__description">
+          We&#39;re a place where coders share, stay up-to-date and grow their careers.
+      </p>
+    </div>
+    <div class="authentication-modal__actions">
+      <a href="https://dev.to/enter?signup_subforem=1" class="crayons-btn" aria-label="Log in" data-no-instant>
+        Log in
+      </a>
+      <a href="https://dev.to/enter?signup_subforem=1&amp;state=new-user" class="crayons-btn crayons-btn--ghost-brand js-global-signup-modal__create-account" aria-label="Create new account" data-no-instant>
+        Create account
+      </a>
+    </div>
+  </div>
+</div>
+
+<script src="https://assets.dev.to/assets/signupModalShortcuts-26d9b060053ea01474ae33d1e545700ae8416b0baf9f40c401957e81dd1ece4e.js" defer="defer"></script>
+
+    <div id="cookie-consent"></div>
+  <div id="reaction-category-resources" class="hidden" aria-hidden="true">
+    <img data-name="Like" data-slug="like" data-position="1" src="https://assets.dev.to/assets/sparkle-heart-5f9bee3767e18deb1bb725290cb151c25234768a0e9a2bd39370c382d02920cf.svg" width="18" height="18" />
+    <img data-name="Unicorn" data-slug="unicorn" data-position="2" src="https://assets.dev.to/assets/multi-unicorn-b44d6f8c23cdd00964192bedc38af3e82463978aa611b4365bd33a0f1f4f3e97.svg" width="18" height="18" />
+    <img data-name="Exploding Head" data-slug="exploding_head" data-position="3" src="https://assets.dev.to/assets/exploding-head-daceb38d627e6ae9b730f36a1e390fca556a4289d5a41abb2c35068ad3e2c4b5.svg" width="18" height="18" />
+    <img data-name="Raised Hands" data-slug="raised_hands" data-position="4" src="https://assets.dev.to/assets/raised-hands-74b2099fd66a39f2d7eed9305ee0f4553df0eb7b4f11b01b6b1b499973048fe5.svg" width="18" height="18" />
+    <img data-name="Fire" data-slug="fire" data-position="5" src="https://assets.dev.to/assets/fire-f60e7a582391810302117f987b22a8ef04a2fe0df7e3258a5f49332df1cec71e.svg" width="18" height="18" />
+</div>
+
+    <script>
+  var userSignedIn = false;
+  if (document.readyState === 'complete' || document.readyState === 'interactive') {
+    initAuth();
+  } else {
+    document.addEventListener('DOMContentLoaded', initAuth);
+  }
+
+  function initAuth() {
+      var paramToken = new URLSearchParams(window.location.search).get('jwt');
+
+      if (paramToken && !userSignedIn) {
+        authenticateUser(paramToken);
+      } else {
+        var iframe = document.createElement('iframe');
+        iframe.style.display = 'none';
+        iframe.src = 'https://forem.com/auth_pass/iframe?passed_domain=' + encodeURIComponent(window.location.origin || (window.location.protocol + '//' + window.location.host));
+
+        document.body.appendChild(iframe);
+
+        window.addEventListener('message', function(event) {
+          if (event.origin !== 'https://forem.com' && event.origin !== window.location.origin) {
+            return;
+          }
+
+          var data = event.data;
+
+          if (data.authenticated && !userSignedIn) {
+            authenticateUser(data.token);
+          } else if(data.authenticated && window.ReactNativeWebView && window.ReactNativeWebView.postMessage) {
+            window.ReactNativeWebView.postMessage(JSON.stringify({
+              action: 'login',
+              token: data.token,
+            }));
+          }
+        });
+      }
+
+      function authenticateUser(token) {
+        fetch('/auth_pass/token_login', {
+          method: 'POST',
+          credentials: 'include',
+          headers: {
+            'Content-Type': 'application/json',
+            'X-CSRF-Token': getMetaContent('csrf-token'),
+          },
+          body: JSON.stringify({ token: token }),
+        })
+        .then(function(response) {
+          return response.json();
+        })
+        .then(function(data) {
+          if (data.success) {
+            if (document.head.querySelector('meta[name="user-signed-in"][content="false"]')) {
+              // Reload the page to update the user's state
+              location.reload();
+            }
+          }
+        })
+        .catch(function(error) {
+          console.error('Error during authentication:', error);
+        });
+      }
+
+      function getMetaContent(name) {
+        var element = document.querySelector('meta[name="' + name + '"]');
+        return element ? element.getAttribute('content') : '';
+      }
+  }
+</script>
+
+  
+  
+  
+  </body>
+  </html>

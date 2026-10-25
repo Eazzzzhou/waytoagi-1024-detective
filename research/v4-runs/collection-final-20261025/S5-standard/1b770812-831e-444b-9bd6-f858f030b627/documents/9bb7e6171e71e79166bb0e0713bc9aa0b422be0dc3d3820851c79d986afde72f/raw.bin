@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="zh">
+  <head>
+    <meta charset="UTF-8" />
+    <script>
+      // AI 味尺(/aismell、/en/aismell)防闪白:同步读三态主题,在任何 CSS 前给 <html> 打 data-theme + color-scheme。
+      // 主站其他页面保持浅色,这里不碰。React 端(sections/aismell/index.tsx)读同一个 key 并保持同步。
+      (function () {
+        try {
+          if (!/^\/(en\/)?aismell(\/|$)/.test(location.pathname)) return;
+          var t = localStorage.getItem("aismell:theme");
+          if (t === "light" || t === "dark") document.documentElement.dataset.theme = t;
+          var d = t === "dark" || ((!t || t === "system") && matchMedia("(prefers-color-scheme: dark)").matches);
+          document.documentElement.style.colorScheme = d ? "dark" : "light";
+          if (d) document.documentElement.style.backgroundColor = "#0d0e11";
+        } catch (e) {}
+      })();
+    </script>
+    <script>
+      // 主站深浅色防闪白:同步读偏好(src/lib/theme.ts 同一 key),首帧前给 <html> 打 data-mode。AI 味尺页由上面那段接管。
+      (function () {
+        try {
+          if (/^\/(en\/)?aismell(\/|$)/.test(location.pathname)) return;
+          var t = localStorage.getItem("agihunt:theme");
+          var d = t === "dark" || (t !== "light" && matchMedia("(prefers-color-scheme: dark)").matches);
+          document.documentElement.dataset.mode = d ? "dark" : "light";
+          document.documentElement.style.colorScheme = d ? "dark" : "light";
+        } catch (e) {}
+      })();
+    </script>
+    <link rel="icon" type="image/svg+xml" href="/mark.svg" />
+    <link rel="alternate icon" type="image/jpeg" href="/logo.jpg" />
+    <link rel="apple-touch-icon" href="/logo.jpg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <script>
+      // iOS Safari 聚焦 <16px 输入框会自动放大整页;maximum-scale=1 只禁这个行为
+      // (iOS 10+ 用户双指缩放不受 maximum-scale 限制,可访问性不受影响)。
+      // 只对 iOS 加:安卓会因此真的禁掉手动缩放。
+      if (/iPhone|iPad|iPod/.test(navigator.userAgent) || (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1)) {
+        document
+          .querySelector("meta[name=viewport]")
+          .setAttribute("content", "width=device-width, initial-scale=1.0, maximum-scale=1.0, viewport-fit=cover");
+      }
+    </script>
+    <title>零基础用户借Cursor与MCP跑通Blender渲染(2026-07-12)· AGI Hunt</title>
+    <meta name="description" content="一名几乎零Blender经验的用户借助Cursor中的GPT-5.6 Sol配置Blender MCP，成功生成并渲染了“逼真的悬浮MacBook”。该案例表明，AI编程工具已能通过MCP实际操控3D与桌面软件…" />
+    <!-- 这个壳不写 canonical:nginx 把它直发给 /access /jobs,并在后端 502 时兜底所有 SSR
+         内容路径,写死首页 canonical 会让那些页面自称首页副本。/index.html 的重复副本问题
+         由 nginx 301 到 / 解决,不靠壳里的标签。 -->
+    <meta name="theme-color" content="#f4f1ea" />
+    <!-- OG/Twitter 静态兜底:不执行 JS 的爬虫可见;执行 JS 后由 src/lib/seo.ts 按页面内容覆盖 -->
+    <meta property="og:site_name" content="AGI Hunt" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="零基础用户借Cursor与MCP跑通Blender渲染(2026-07-12)· AGI Hunt" />
+    <meta property="og:description" content="一名几乎零Blender经验的用户借助Cursor中的GPT-5.6 Sol配置Blender MCP，成功生成并渲染了“逼真的悬浮MacBook”。该案例表明，AI编程工具已能通过MCP实际操控3D与桌面软件…" />
+    <meta property="og:image" content="https://agihunt.info/og.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@agi_hunt" />
+    <meta name="twitter:image" content="https://agihunt.info/og.jpg" />
+    <script type="module" crossorigin src="/assets/index-WoqkBoD3.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-Dj5gGugL.css">
+  
+    <link rel="canonical" href="https://agihunt.info/e/19f5609be2748217799dea52292" data-ssr-path="/e/19f5609be2748217799dea52292" />
+    <meta property="og:url" content="https://agihunt.info/e/19f5609be2748217799dea52292" />
+    <link rel="alternate" type="application/rss+xml" title="AGI Hunt RSS" href="https://agihunt.info/feed.xml" />
+    <link rel="alternate" hreflang="zh" href="https://agihunt.info/e/19f5609be2748217799dea52292" data-ssr-path="/e/19f5609be2748217799dea52292" />
+    <link rel="alternate" hreflang="en" href="https://agihunt.info/en/e/19f5609be2748217799dea52292" data-ssr-path="/e/19f5609be2748217799dea52292" />
+    <link rel="alternate" hreflang="x-default" href="https://agihunt.info/en/e/19f5609be2748217799dea52292" data-ssr-path="/e/19f5609be2748217799dea52292" />
+    <script type="application/ld+json" data-ssr-path="/e/19f5609be2748217799dea52292">[{"@context":"https://schema.org","@type":"NewsArticle","headline":"零基础用户借Cursor与MCP跑通Blender渲染","description":"一名几乎零Blender经验的用户借助Cursor中的GPT-5.6 Sol配置Blender MCP，成功生成并渲染了“逼真的悬浮MacBook”。该案例表明，AI编程工具已能通过MCP实际操控3D与桌面软件…","image":["https://agihunt.info/og.jpg"],"inLanguage":"zh-CN","datePublished":"2026-07-12T10:59:28Z","dateModified":"2026-07-14T07:47:52Z","citation":["https://x.com/Star_Knight12/status/2076631428926972177","https://x.com/Star_Knight12/status/2076661090663182708","https://x.com/Star_Knight12/status/2076686166422884646"],"author":{"@type":"Organization","name":"AGI Hunt","url":"https://agihunt.info"},"mainEntityOfPage":"https://agihunt.info/e/19f5609be2748217799dea52292","publisher":{"@type":"Organization","name":"AGI Hunt","url":"https://agihunt.info","logo":{"@type":"ImageObject","url":"https://agihunt.info/logo.jpg"}}},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"AGI Hunt","item":"https://agihunt.info/"},{"@type":"ListItem","position":2,"name":"零基础用户借Cursor与MCP跑通Blender渲染","item":"https://agihunt.info/e/19f5609be2748217799dea52292"}]}]</script>
+  </head>
+  <body>
+    <div id="root"></div>
+  <div id="ssr"><article><h1>零基础用户借Cursor与MCP跑通Blender渲染</h1><p>近日，一名几乎零经验的用户成功在Cursor中借助GPT-5.6 Sol配置了Blender MCP，直接生成并渲染了一个“逼真的悬浮MacBook”。这一案例之所以受到关注，是因为它表明AI编程工具已经开始能与3D及桌面软件形成可操作的工作流，大幅降低了专业软件的入门门槛。</p><h2>关键细节与工作流</h2><p>据发帖者描述，当事人此前从未真正打开过Blender，但通过模型与MCP的配合跑通了从搭建到出图的完整流程。在工具选择上，当事人最初尝试了Fable但效果很差，随后采纳了Grok的建议改用GPT，最终由Cursor里的GPT-5.6 Sol真正完成任务。此外，还有回复总结出一种更稳妥的用法：先在网页端让GPT把操作步骤写细，再把这些提示词复制到Cursor中执行。</p><h2>配套资源与提醒</h2><p>帖子还提到了有可自行搭建的Blender MCP仓库可供参考。但发帖者提醒其他用户不要贸然改动代码，最好在操作前先向自己常用的LLM询问或查看相关教程。整体而言，这一实践证明了即使不熟悉底层专业软件，普通用户也能借助AI形成可用的agent工作流。</p><p>2026-07-12 ~ 2026-07-14 · 9 条相关</p><section><h2>一手来源</h2><ul><li><a href="https://x.com/Star_Knight12/status/2076631428926972177" rel="noopener noreferrer">Cursor+MCP 让新手直接做Blender渲染</a> — Star_Knight12 · <time datetime="2026-07-13T11:34:49Z">2026-07-13 19:34 北京时间</time></li><li><a href="https://x.com/Star_Knight12/status/2076661090663182708" rel="noopener noreferrer">Cursor 里用 GPT 跑通 Blender MCP</a> — Star_Knight12 · <time datetime="2026-07-13T13:32:41Z">2026-07-13 21:32 北京时间</time></li><li><a href="https://x.com/Star_Knight12/status/2076686166422884646" rel="noopener noreferrer">Cursor里用MCP驱动Blender</a> — Star_Knight12 · <time datetime="2026-07-13T15:12:19Z">2026-07-13 23:12 北京时间</time></li></ul></section><ul><li><a href="/p/19f5604bcdb8d33ed0c0185caf6">Cursor接Blender居然能跑</a> — Star_Knight12 · 2026-07-12</li><li>【源头】<a href="/p/19f5b5704f1cab1a021f556e48b">Cursor+MCP 让新手直接做Blender渲染</a> — Star_Knight12 · 2026-07-13</li><li><a href="/p/19f5ba46962eb9fc90e8130b984">先让GPT写提示词再进Cursor</a> — Star_Knight12 · 2026-07-13</li><li>【源头】<a href="/p/19f5bb24c254e93ae16748a2d08">Cursor 里用 GPT 跑通 Blender MCP</a> — Star_Knight12 · 2026-07-13</li><li><a href="/p/19f5bca0f83d687484bf5e7db4d">GPT在Cursor里直接调Blender</a> — Star_Knight12 · 2026-07-13</li><li>【源头】<a href="/p/19f5c11b0eb6be63d24582e20e1">Cursor里用MCP驱动Blender</a> — Star_Knight12 · 2026-07-13</li><li><a href="/p/19f5c194f07b3fe9e2a503954ac">零 Blender 经验做出漂浮 MacBook</a> — Star_Knight12 · 2026-07-13</li><li><a href="/p/19f5cbc8c941648b30f57de9515">Cursor里让模型操控Blender</a> — Star_Knight12 · 2026-07-14</li><li><a href="/p/19f5fa6cdff9d08a060ca223364">MCP入门：用Cursor操控Blender</a> — Star_Knight12 · 2026-07-14</li></ul></article></div><script>document.getElementById("ssr").remove()</script>
+  <script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092" integrity="sha512-UKNk8GbxkABxKcXYuLkO16EleLGUkcvJWtpSNmExE0Too3ZaFAxTscNWEc1OdAv5/BikHawapSCaiD2XCmp+Bw==" data-cf-beacon='{"version":"2024.11.0","token":"a6fc5b74a3e4478bbde8f54a008b0af5","r":1,"spa":2}' crossorigin="anonymous"></script>
+<script>(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a4fe9045abd9fe8a',t:'MTc5MjkwMzQ0MA=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>

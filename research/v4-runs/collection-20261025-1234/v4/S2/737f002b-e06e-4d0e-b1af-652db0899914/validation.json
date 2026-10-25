@@ -1,0 +1,225 @@
+{
+  "investigationId": "737f002b-e06e-4d0e-b1af-652db0899914",
+  "snapshotId": "011799fd-94b2-4bc3-b642-306f4178e90f",
+  "status": "SUCCEEDED",
+  "url": "http://127.0.0.1:3104/investigations/737f002b-e06e-4d0e-b1af-652db0899914",
+  "citations": 1,
+  "exactQuoteChecks": "PASSED",
+  "excerptHashChecks": "PASSED",
+  "semanticChecks": [
+    {
+      "marker": "v4:0",
+      "supported": true,
+      "reason": "两份文档的引文分别支持2,000次代码补全+50条聊天消息与每月2000次代码补全、Free/Student额度为AI credits且只能通过auto model selection访问模型；所引片段均未标注生效日期，故只能证明页面如此表述、不能确认2026-10-25当日口径，这一限定与引文一致。"
+    },
+    {
+      "marker": "v4:1",
+      "supported": false,
+      "reason": "该段称docs.github.com称“所有 Copilot 计划均包含 AI credits 的月度配额”并引“如果用尽计划中包含的所有信用额度，可以购买更多额度并继续工作”，有引文支持；但githubdocs.cn镜像的“在 Visual Studio、VS Code 或 GitHub.com：您会收到一条包含重置日期以及升级至 Copilot Pro 或 Copilot Pro+”引文来自githubdocs.cn与gitdocs.cn的“计划入门”页面，而非该镜像设置页，且要求保留引文含义。该段说“两份文档均未标注生效日期”等细则无对应句。整体包含未按原句定位的归属表述（镜像页面归属），越界。"
+    },
+    {
+      "marker": "v4:2",
+      "supported": false,
+      "reason": "“代码补全和 next edit suggestions 功能不计入 AI credits 费用，且所有付费套餐均不限次数”有引文支持，且限定针对付费套餐与Free计量并存表述无生效日期也基本可对应；但该段断言“无法确认 Free 用尽后是否可单独购买额外 AI credits；此点本次未获可支持原文”，而所给证据中并无任何句子讨论Free是否可购买额外额度或“未获原文”这一状态，属于未被给定原句直接支持的附加断言，整段不足。"
+    }
+  ],
+  "documentReferenceChecks": 83,
+  "documentIntegrityChecks": "PASSED",
+  "review": {
+    "status": "NOT_CONFIGURED",
+    "reason": "本轮未完成第二模型独立原文复核；不同搜索入口不等于独立模型。",
+    "independentAssessment": null,
+    "findings": []
+  },
+  "retrieval": [
+    {
+      "provider": "tencent-yuanbao-search-api",
+      "status": "SUCCEEDED",
+      "returnedSources": 8,
+      "adopted": 2
+    },
+    {
+      "provider": "tavily-search-api:keyless-capped",
+      "status": "SUCCEEDED",
+      "returnedSources": 8,
+      "adopted": 2
+    },
+    {
+      "provider": "tencent-yuanbao-search-api",
+      "status": "SUCCEEDED",
+      "returnedSources": 7,
+      "adopted": 3
+    },
+    {
+      "provider": "tencent-yuanbao-search-api",
+      "status": "SUCCEEDED",
+      "returnedSources": 8,
+      "adopted": 2
+    },
+    {
+      "provider": "tencent-yuanbao-search-api",
+      "status": "SUCCEEDED",
+      "returnedSources": 8,
+      "adopted": 0
+    },
+    {
+      "provider": "tavily-search-api:keyless-capped",
+      "status": "SUCCEEDED",
+      "returnedSources": 8,
+      "adopted": 0
+    }
+  ],
+  "modelCalls": [
+    {
+      "provider": "api.deepseek.com",
+      "model": "deepseek-flash",
+      "promptVersion": "a2-evidence-v4",
+      "temperature": null,
+      "thinkingMode": "DISABLED",
+      "generatedAt": "2026-10-25T04:35:16.234Z",
+      "id": "04e44861-f448-47c4-99cf-0a724ac0ea92",
+      "purpose": "v4-research-plan",
+      "startedAt": "2026-10-25T04:35:14.759Z",
+      "durationMs": 1475,
+      "outcome": "SUCCEEDED",
+      "inputTokens": 689,
+      "outputTokens": 226
+    },
+    {
+      "provider": "api.deepseek.com",
+      "model": "deepseek-flash",
+      "promptVersion": "a2-evidence-v4",
+      "temperature": null,
+      "thinkingMode": "DISABLED",
+      "generatedAt": "2026-10-25T04:35:22.858Z",
+      "id": "a2b75005-e6cb-4e39-a565-6df8a2b38d60",
+      "purpose": "v4-next-research-action",
+      "startedAt": "2026-10-25T04:35:19.926Z",
+      "durationMs": 2931,
+      "outcome": "SUCCEEDED",
+      "inputTokens": 12298,
+      "outputTokens": 476
+    },
+    {
+      "provider": "api.deepseek.com",
+      "model": "deepseek-flash",
+      "promptVersion": "a2-evidence-v4",
+      "temperature": null,
+      "thinkingMode": "DISABLED",
+      "generatedAt": "2026-10-25T04:35:29.750Z",
+      "id": "f961f8ec-8655-4f21-b613-3af0965cd5f0",
+      "purpose": "v4-next-research-action",
+      "startedAt": "2026-10-25T04:35:26.215Z",
+      "durationMs": 3535,
+      "outcome": "SUCCEEDED",
+      "inputTokens": 20122,
+      "outputTokens": 615
+    },
+    {
+      "provider": "api.deepseek.com",
+      "model": "deepseek-flash",
+      "promptVersion": "a2-evidence-v4",
+      "temperature": null,
+      "thinkingMode": "DISABLED",
+      "generatedAt": "2026-10-25T04:35:46.079Z",
+      "id": "fa5db9f2-9540-4b0c-8f3f-f395d6f47355",
+      "purpose": "v4-next-research-action",
+      "startedAt": "2026-10-25T04:35:41.169Z",
+      "durationMs": 4911,
+      "outcome": "SUCCEEDED",
+      "inputTokens": 26211,
+      "outputTokens": 830
+    },
+    {
+      "provider": "api.deepseek.com",
+      "model": "deepseek-flash",
+      "promptVersion": "a2-evidence-v4",
+      "temperature": null,
+      "thinkingMode": "DISABLED",
+      "generatedAt": "2026-10-25T04:35:52.388Z",
+      "id": "53ac22bc-f2f9-4b15-95db-a27a3df85fe6",
+      "purpose": "v4-next-research-action",
+      "startedAt": "2026-10-25T04:35:49.429Z",
+      "durationMs": 2958,
+      "outcome": "SUCCEEDED",
+      "inputTokens": 26408,
+      "outputTokens": 604
+    },
+    {
+      "provider": "api.deepseek.com",
+      "model": "deepseek-flash",
+      "promptVersion": "a2-evidence-v4",
+      "temperature": null,
+      "thinkingMode": "DISABLED",
+      "generatedAt": "2026-10-25T04:35:59.951Z",
+      "id": "66a658b4-2d53-4bd4-9530-d7c448bb0eea",
+      "purpose": "v4-claim-extraction",
+      "startedAt": "2026-10-25T04:35:55.105Z",
+      "durationMs": 4846,
+      "outcome": "SUCCEEDED",
+      "inputTokens": 11254,
+      "outputTokens": 1269
+    },
+    {
+      "provider": "api.deepseek.com",
+      "model": "deepseek-flash",
+      "promptVersion": "a2-evidence-v4",
+      "temperature": null,
+      "thinkingMode": "DISABLED",
+      "generatedAt": "2026-10-25T04:36:03.277Z",
+      "id": "50769e9e-834c-4e70-bb54-de60448f87b9",
+      "purpose": "v4-claim-verification-batch",
+      "startedAt": "2026-10-25T04:35:59.952Z",
+      "durationMs": 3325,
+      "outcome": "SUCCEEDED",
+      "inputTokens": 10178,
+      "outputTokens": 867
+    },
+    {
+      "provider": "api.deepseek.com",
+      "model": "deepseek-flash",
+      "promptVersion": "a2-evidence-v4",
+      "temperature": null,
+      "thinkingMode": "DISABLED",
+      "generatedAt": "2026-10-25T04:36:07.494Z",
+      "id": "21cee6b6-4919-43e6-a3a2-895916d30b42",
+      "purpose": "v4-claim-verification-batch",
+      "startedAt": "2026-10-25T04:36:03.279Z",
+      "durationMs": 4214,
+      "outcome": "SUCCEEDED",
+      "inputTokens": 10223,
+      "outputTokens": 913
+    },
+    {
+      "provider": "api.deepseek.com",
+      "model": "deepseek-flash",
+      "promptVersion": "a2-evidence-v4",
+      "temperature": null,
+      "thinkingMode": "DISABLED",
+      "generatedAt": "2026-10-25T04:36:10.700Z",
+      "id": "7a0c2547-46cc-4675-9fe5-2f892ff80c7d",
+      "purpose": "v4-direct-answer-and-analysis",
+      "startedAt": "2026-10-25T04:36:07.516Z",
+      "durationMs": 3184,
+      "outcome": "SUCCEEDED",
+      "inputTokens": 4962,
+      "outputTokens": 764
+    },
+    {
+      "provider": "api.deepseek.com",
+      "model": "deepseek-flash",
+      "promptVersion": "a2-evidence-v4",
+      "temperature": null,
+      "thinkingMode": "DISABLED",
+      "generatedAt": "2026-10-25T04:36:13.675Z",
+      "id": "48defe7a-5462-4dd6-8262-446ea577f9fa",
+      "purpose": "v4-synthesis-semantic-check",
+      "startedAt": "2026-10-25T04:36:10.702Z",
+      "durationMs": 2973,
+      "outcome": "SUCCEEDED",
+      "inputTokens": 3336,
+      "outputTokens": 380
+    }
+  ],
+  "directory": "C:\\Users\\qianchen\\Documents\\waytoagi-1024-detective-a2-v4\\research\\v4-runs\\collection-20261025-1234\\v4\\S2\\737f002b-e06e-4d0e-b1af-652db0899914"
+}

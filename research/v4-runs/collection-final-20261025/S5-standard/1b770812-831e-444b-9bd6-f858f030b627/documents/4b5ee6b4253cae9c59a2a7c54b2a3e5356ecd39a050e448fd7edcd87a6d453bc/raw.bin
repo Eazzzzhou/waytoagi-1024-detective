@@ -1,0 +1,270 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="description" content="text-to-cad review: the MIT plugin that lets Claude Code, Codex and Cursor write build123d CAD and export STEP, STL and 3MF. Our container test, limits, rivals."><title>text-to-cad Review: CAD Skills for Claude Code and Codex — andrew.ooo</title><!-- Favicons --><link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><!-- Canonical URL --><link rel="canonical" href="https://andrew.ooo/posts/text-to-cad-review-agent-cad-plugin/"><!-- Open Graph --><meta property="og:title" content="text-to-cad Review: CAD Skills for Claude Code and Codex — andrew.ooo"><meta property="og:description" content="text-to-cad review: the MIT plugin that lets Claude Code, Codex and Cursor write build123d CAD and export STEP, STL and 3MF. Our container test, limits, rivals."><meta property="og:type" content="article"><meta property="og:url" content="https://andrew.ooo/posts/text-to-cad-review-agent-cad-plugin/"><meta property="og:site_name" content="andrew.ooo"><!-- Twitter --><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="text-to-cad Review: CAD Skills for Claude Code and Codex — andrew.ooo"><meta name="twitter:description" content="text-to-cad review: the MIT plugin that lets Claude Code, Codex and Cursor write build123d CAD and export STEP, STL and 3MF. Our container test, limits, rivals."><!-- RSS --><link rel="alternate" type="application/rss+xml" title="andrew.ooo RSS" href="/rss.xml"><!-- Structured Data for AI Search Engines --><script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"text-to-cad Review: CAD Skills for Claude Code and Codex","description":"text-to-cad review: the MIT plugin that lets Claude Code, Codex and Cursor write build123d CAD and export STEP, STL and 3MF. Our container test, limits, rivals.","datePublished":"2026-10-09T00:00:00.000Z","dateModified":"2026-10-09T00:00:00.000Z","author":{"@type":"Person","name":"Andrew","url":"https://andrew.ooo/about/","jobTitle":"Technical Founder","knowsAbout":["AI agents","large language models","self-hosting","automation","developer tools"],"sameAs":["https://github.com/andreihirvi","https://andrewdotooo.substack.com","https://dev.to/andrew-ooo","https://www.reddit.com/user/andrew-ooo/"]},"publisher":{"@type":"Organization","name":"andrew.ooo","url":"https://andrew.ooo","logo":{"@type":"ImageObject","url":"https://andrew.ooo/logo.png","width":1024,"height":1024},"description":"Technical blog about AI agents, OpenClaw, and self-hosting","sameAs":["https://github.com/andreihirvi","https://andrewdotooo.substack.com","https://dev.to/andrew-ooo","https://www.reddit.com/user/andrew-ooo/"],"publishingPrinciples":"https://andrew.ooo/editorial-policy/","correctionsPolicy":"https://andrew.ooo/editorial-policy/#corrections"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://andrew.ooo/posts/text-to-cad-review-agent-cad-plugin/"},"keywords":"text-to-cad, cadgen, cad, build123d, 3d-printing, claude-code, codex, agent-skills, mcp, open-source, tool-review, github-trending","isAccessibleForFree":true,"publishingPrinciples":"https://andrew.ooo/editorial-policy/","citation":[{"@type":"CreativeWork","name":"earthtojake/text-to-cad on GitHub","url":"https://github.com/earthtojake/text-to-cad"},{"@type":"CreativeWork","name":"text-to-cad v0.7.19 release notes","url":"https://github.com/earthtojake/text-to-cad/releases/tag/v0.7.19"},{"@type":"CreativeWork","name":"CAD skill (SKILL.md)","url":"https://github.com/earthtojake/text-to-cad/blob/main/skills/cad/SKILL.md"},{"@type":"CreativeWork","name":"DFM skill (SKILL.md)","url":"https://github.com/earthtojake/text-to-cad/blob/main/skills/dfm/SKILL.md"},{"@type":"CreativeWork","name":"step.parts skill (SKILL.md)","url":"https://github.com/earthtojake/text-to-cad/blob/main/skills/step-parts/SKILL.md"},{"@type":"CreativeWork","name":"cadgen on PyPI","url":"https://pypi.org/project/cadgen/"},{"@type":"CreativeWork","name":"cadgen download statistics (pypistats)","url":"https://pypistats.org/packages/cadgen"},{"@type":"CreativeWork","name":"texttocad.dev","url":"https://www.texttocad.dev"},{"@type":"CreativeWork","name":"build123d","url":"https://github.com/gumyr/build123d"},{"@type":"CreativeWork","name":"Hacker News: Text-to-CAD, May 2026","url":"https://news.ycombinator.com/item?id=47970497"},{"@type":"CreativeWork","name":"Issue #555: STL export produces holes on a valid teacup","url":"https://github.com/earthtojake/text-to-cad/issues/555"},{"@type":"CreativeWork","name":"Issue #433: STL export breaks on a hole through a curved wall","url":"https://github.com/earthtojake/text-to-cad/issues/433"}]}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://andrew.ooo/"},{"@type":"ListItem","position":2,"name":"Posts","item":"https://andrew.ooo/posts/"},{"@type":"ListItem","position":3,"name":"text-to-cad Review: CAD Skills for Claude Code and Codex","item":"https://andrew.ooo/posts/text-to-cad-review-agent-cad-plugin/"}]}</script><!-- Analytics — self-hosted Rybbit, served first-party via /analytics/*
+         (Caddy proxies to the local Rybbit backend; the script derives its
+         ingest endpoint from its own src). Replaced Umami Cloud 2026-07-06
+         after its API moved behind a paywall. --><script async src="https://andrew.ooo/analytics/script.js" data-site-id="1"></script><!-- Microsoft Clarity (project yaz03by9l1): session recordings, heatmaps,
+         rage/dead-click insights. Official snippet, unmodified. Added 2026-08-31. --><script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "yaz03by9l1");
+    </script><link rel="stylesheet" href="/_astro/_slug_.Cvzv64UX.css">
+<style>.related-content[data-astro-cid-gggrgnyf]{margin-top:var(--space-2xl);padding-top:var(--space-lg);border-top:1px solid var(--border)}.related-content[data-astro-cid-gggrgnyf] h2[data-astro-cid-gggrgnyf]{font-size:1.25rem;margin:0 0 var(--space-md)}.related-list[data-astro-cid-gggrgnyf]{list-style:none;padding:0;margin:0;display:grid;gap:var(--space-md)}.related-list[data-astro-cid-gggrgnyf] li[data-astro-cid-gggrgnyf]{padding:var(--space-sm) 0;border-bottom:1px solid var(--border)}.related-list[data-astro-cid-gggrgnyf] li[data-astro-cid-gggrgnyf]:last-child{border-bottom:none}.related-link[data-astro-cid-gggrgnyf]{display:flex;gap:.5rem;align-items:baseline;text-decoration:none;color:var(--accent);font-weight:500}.related-link[data-astro-cid-gggrgnyf]:hover{text-decoration:underline}.related-kind[data-astro-cid-gggrgnyf]{flex-shrink:0;font-size:.875rem}.related-desc[data-astro-cid-gggrgnyf]{margin:.25rem 0 0 1.5rem;color:var(--text-muted);font-size:.875rem;line-height:1.4}
+.evidence[data-astro-cid-xyqj6rpw]{margin:var(--space-lg, 1.5rem) 0;padding:var(--space-md, 1rem) var(--space-lg, 1.25rem);border:1px solid var(--border, #d0d7de);border-radius:8px;font-size:.92rem;line-height:1.55}.evidence[data-astro-cid-xyqj6rpw] p[data-astro-cid-xyqj6rpw]{margin:0 0 .5rem}.evidence[data-astro-cid-xyqj6rpw] p[data-astro-cid-xyqj6rpw]:last-child{margin-bottom:0}.hands-on[data-astro-cid-xyqj6rpw]{margin-top:.75rem;padding-top:.75rem;border-top:1px solid var(--border, #d0d7de)}.evidence[data-astro-cid-xyqj6rpw] .facts[data-astro-cid-xyqj6rpw]+.hands-on[data-astro-cid-xyqj6rpw]{margin-top:.75rem}.evidence[data-astro-cid-xyqj6rpw]>.hands-on[data-astro-cid-xyqj6rpw]:first-child{margin-top:0;padding-top:0;border-top:0}details[data-astro-cid-xyqj6rpw]{margin-top:.5rem}summary[data-astro-cid-xyqj6rpw]{cursor:pointer}.step[data-astro-cid-xyqj6rpw]{margin-top:.75rem}pre[data-astro-cid-xyqj6rpw]{overflow-x:auto;max-height:26rem;font-size:.8rem}.post-content[data-astro-cid-gvpn4u4b] h2{margin-top:var(--space-2xl)}.post-content[data-astro-cid-gvpn4u4b] h3{margin-top:var(--space-xl)}.post-content[data-astro-cid-gvpn4u4b] img{max-width:100%;height:auto;border-radius:6px;margin:var(--space-lg) 0}
+</style></head> <body> <div class="container"> <header> <a href="/" class="logo">andrew<span class="logo-dot">.</span>ooo</a> <p class="tagline">AI agents · OpenClaw · self-hosting · automation</p> <nav> <a href="/" class>home</a> <a href="/posts/" class="active">posts</a> <a href="/answers/" class>answers</a> <a href="/latest/" class>latest</a> <a href="/about/" class>about</a> <a href="/llms.txt">llms.txt</a> <a href="/rss.xml">rss</a> </nav> </header> <main>  <article itemscope itemtype="https://schema.org/TechArticle" data-astro-cid-gvpn4u4b> <header class="post-header" data-astro-cid-gvpn4u4b> <h1 itemprop="headline" data-astro-cid-gvpn4u4b>text-to-cad Review: CAD Skills for Claude Code and Codex</h1> <div class="post-meta" data-astro-cid-gvpn4u4b> <span data-astro-cid-gvpn4u4b> <time datetime="2026-10-09T00:00:00.000Z" itemprop="datePublished" data-astro-cid-gvpn4u4b>October 9, 2026</time> </span> </div> <div class="tags" data-astro-cid-gvpn4u4b> <span class="tag" itemprop="keywords" data-astro-cid-gvpn4u4b>text-to-cad</span><span class="tag" itemprop="keywords" data-astro-cid-gvpn4u4b>cadgen</span><span class="tag" itemprop="keywords" data-astro-cid-gvpn4u4b>cad</span><span class="tag" itemprop="keywords" data-astro-cid-gvpn4u4b>build123d</span><span class="tag" itemprop="keywords" data-astro-cid-gvpn4u4b>3d-printing</span><span class="tag" itemprop="keywords" data-astro-cid-gvpn4u4b>claude-code</span><span class="tag" itemprop="keywords" data-astro-cid-gvpn4u4b>codex</span><span class="tag" itemprop="keywords" data-astro-cid-gvpn4u4b>agent-skills</span><span class="tag" itemprop="keywords" data-astro-cid-gvpn4u4b>mcp</span><span class="tag" itemprop="keywords" data-astro-cid-gvpn4u4b>open-source</span><span class="tag" itemprop="keywords" data-astro-cid-gvpn4u4b>tool-review</span><span class="tag" itemprop="keywords" data-astro-cid-gvpn4u4b>github-trending</span> </div> <p class="description" itemprop="description" data-astro-cid-gvpn4u4b>text-to-cad review: the MIT plugin that lets Claude Code, Codex and Cursor write build123d CAD and export STEP, STL and 3MF. Our container test, limits, rivals.</p> </header> <aside class="evidence" aria-label="Checked facts and hands-on test" data-astro-cid-xyqj6rpw><p class="facts" data-astro-cid-xyqj6rpw><strong data-astro-cid-xyqj6rpw>Repository facts, checked Oct 24, 2026:</strong> <a href="https://github.com/earthtojake/text-to-cad" rel="noopener" data-astro-cid-xyqj6rpw>earthtojake/text-to-cad</a> · 22,809 stars (+1,494 in 7 days) · latest release v0.7.26 (Oct 20, 2026) · last commit Oct 23, 2026 · MIT license · 3 open issues. <a href="/reference/open-source-ai-tools/" data-astro-cid-xyqj6rpw>All tracked tools</a></p><div class="hands-on" data-astro-cid-xyqj6rpw><p data-astro-cid-xyqj6rpw><strong data-astro-cid-xyqj6rpw>Hands-on test, Oct 9, 2026:</strong>1 of 6 steps passed.
+ Run by andrew.ooo's review agent in a clean Linux container (python:3.12-bookworm, x86_64, 2 CPUs, 8 GB RAM, no GPU), repository at commit <code data-astro-cid-xyqj6rpw>523ae21341a4</code>.
+ <a href="/editorial-policy/#hands-on" data-astro-cid-xyqj6rpw>How we test</a></p><details data-astro-cid-xyqj6rpw><summary data-astro-cid-xyqj6rpw>Commands and recorded output (6 steps)</summary><div class="step" data-astro-cid-xyqj6rpw><p data-astro-cid-xyqj6rpw><strong data-astro-cid-xyqj6rpw>1. Install uv (cadgen runs through uv)</strong> — exit code 0, 2.4s</p><pre data-astro-cid-xyqj6rpw><code data-astro-cid-xyqj6rpw>$ pip install -q uv &amp;&amp; uv --version
+WARNING: Running pip as the &#39;root&#39; user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if
+[notice] A new release of pip is available: 25.0.1 -&gt; 26.2.1
+[notice] To update, run: pip install --upgrade pip
+uv 0.12.24 (x86_64-unknown-linux-gnu)</code></pre></div><div class="step" data-astro-cid-xyqj6rpw><p data-astro-cid-xyqj6rpw><strong data-astro-cid-xyqj6rpw>2. Version + doctor (first run downloads the runtime)</strong> — exit code 4, 6.8s</p><pre data-astro-cid-xyqj6rpw><code data-astro-cid-xyqj6rpw>$ export DO_NOT_TRACK=1; uvx --no-config --managed-python --python 3.13 --from cadgen==0.7.19 cadgen --version &amp;&amp; uvx --no-config --managed-python --python 3.13 --from cadgen==0.7.19 cadgen doctor
+Downloading cpython-3.13.16-linux-x86_64-gnu (download) (33.5MiB)
+ Downloaded cpython-3.13.16-linux-x86_64-gnu (download)
+Downloading jedi (4.7MiB)
+Downloading kiwisolver (1.4MiB)
+Downloading pygments (1.2MiB)
+Downloading sympy (6.0MiB)
+Downloading scikit-learn (8.7MiB)
+Downloading pillow (6.6MiB)
+Downloading playwright (46.0MiB)
+Downloading lib3mf (1.5MiB)
+Downloading numpy (15.9MiB)
+Downloading fonttools (5.1MiB)
+Downloading cadgen (11.1MiB)
+Downloading matplotlib (9.4MiB)
+Downloading scipy (33.7MiB)
+Downloading ezdxf (5.5MiB)
+Downloading cadquery-ocp-novtk (64.3MiB)
+Downloading shapely (2.2MiB)
+ Downloaded kiwisolver
+ Downloaded lib3mf
+ Downloaded pygments
+ Downloaded shapely
+ Downloaded fonttools
+ Downloaded ezdxf
+ Downloaded pillow
+ Downloaded sympy
+ Downloaded matplotlib
+ Downloaded scikit-learn
+ Downloaded cadgen
+ Downloaded numpy
+ Downloaded scipy
+ Downloaded jedi
+ Downloaded playwright
+ Downloaded cadquery-ocp-novtk
+Installed 59 packages in 989ms
+cadgen 0.7.19
+  kernel   FAILED — ImportError: libGL.so.1: cannot open shared object file: No such file or directory
+cadgen 0.7.19
+  python   3.13.16 (/root/.cache/uv/archive-v0/0_DTioZNzWYBd0cr/bin/python)
+  install  /root/.cache/uv/archive-v0/0_DTioZNzWYBd0cr/lib/python3.13/site-packages/cadgen
+  daemon   7b5058cc1dbd
+  sharing  off: set by DO_NOT_TRACK or CADGEN_TELEMETRY in this environment
+  pin      none found (no SKILL.md to check)</code></pre></div><div class="step" data-astro-cid-xyqj6rpw><p data-astro-cid-xyqj6rpw><strong data-astro-cid-xyqj6rpw>3. Smallest real example: README bracket model to STEP</strong> — not run (an earlier step failed)</p></div><div class="step" data-astro-cid-xyqj6rpw><p data-astro-cid-xyqj6rpw><strong data-astro-cid-xyqj6rpw>4. Measure the saved STEP</strong> — not run (an earlier step failed)</p></div><div class="step" data-astro-cid-xyqj6rpw><p data-astro-cid-xyqj6rpw><strong data-astro-cid-xyqj6rpw>5. Export STL and 3MF</strong> — not run (an earlier step failed)</p></div><div class="step" data-astro-cid-xyqj6rpw><p data-astro-cid-xyqj6rpw><strong data-astro-cid-xyqj6rpw>6. Headless snapshot render</strong> — not run (an earlier step failed)</p></div></details></div></aside> <div class="post-content" itemprop="articleBody" data-astro-cid-gvpn4u4b>  <h2 id="tldr">TL;DR</h2>
+<p><strong>text-to-cad</strong> (<a href="https://github.com/earthtojake/text-to-cad">earthtojake/text-to-cad</a>) is a plugin and a set of agent skills that let coding agents produce real, editable CAD. You ask Claude Code, Codex, Cursor, Gemini or Grok for a part. The agent writes a short Python script with <a href="https://github.com/gumyr/build123d">build123d</a> on the OpenCascade kernel, runs it, and you get a <strong>STEP</strong> file. From there it can export STL, 3MF and GLB, draw dimensioned PDFs, check a part for manufacturing and slice it for a 3D printer. The repo’s tagline is five words: “Give your agent CAD superpowers.”</p>
+<p>Facts as of October 9, 2026:</p>
+<ul>
+<li><strong>18,595 GitHub stars</strong>, 1,849 forks, <strong>MIT license</strong>, written in Python. The repo was created on April 22, 2026, and gained 1,898 stars in the past week, according to GitHub Trending.</li>
+<li><strong>Latest release: v0.7.19</strong> (October 9, 2026). It is the repo’s 80th release. The runtime ships on PyPI as <code>cadgen</code>, which <a href="https://pypistats.org/packages/cadgen">pypistats</a> counts at 11,281 downloads in the last week.</li>
+<li><strong>1 open issue.</strong> Almost all commits come from the author: 1,127 by <code>earthtojake</code>. The next two contributors are the <code>github-actions</code> bot (102) and Claude (87).</li>
+<li><strong>Requirements:</strong> <a href="https://docs.astral.sh/uv/">uv</a> and a network connection on first start. <code>cadgen</code> itself needs Python 3.11 or newer; the skills pin Python 3.13 through uv.</li>
+<li><strong>Telemetry is on by default.</strong> Anonymous usage stats and crash reports go to PostHog; <code>uvx cadgen telemetry off</code> turns them off.</li>
+</ul>
+<p><strong>Our verdict:</strong> text-to-cad is the most complete open-source answer to “can my coding agent do CAD?” right now. It gives the model the tools that matter: a real B-rep kernel, STEP as the main output, geometry checks written in code, and a viewer. In our clean Linux container, though, it failed before making a single part. The CAD kernel would not load because a system library (<code>libGL.so.1</code>) was missing, and the README says nothing about that. It is a good fit for makers and robotics hobbyists who use Claude Code or Codex on a desktop. It is not yet a drop-in tool for headless servers or CI.</p>
+<h2 id="what-problem-text-to-cad-solves">What problem text-to-cad solves</h2>
+<p>Language models can write OpenSCAD, but the model can’t see what it built, and the mesh output doesn’t carry exact faces and edges a professional CAD tool or manufacturer can use. text-to-cad keeps the model in a language it is good at (Python) and points it at a real parametric kernel. The author, who posts on Hacker News as <code>softservo</code>, described the goal in the <a href="https://news.ycombinator.com/item?id=47970497">May 2026 HN thread</a>: “The purpose of this repo (harness and skills) is really to just give the models more direct tools to generate and inspect STEP files.” He built it for his own project: “I built this harness / skill to help me generate some basic CAD models for a 7dof robot arm I’m designing. It ended up working much better than I expected, particularly on the latest GPT 5.5 and Opus 4.7 models.”</p>
+<p>He is also open about the main limit: much of the skill text is there “to plan for more complex parts (this is mostly a stop gap while the models don’t have amazing spatial reasoning).”</p>
+<h2 id="how-it-works">How it works</h2>
+<p>text-to-cad has three layers, per the README and the shipped skill files:</p>
+<ul>
+<li><strong><code>cadgen</code>, the runtime.</strong> A Python package on PyPI that wraps build123d and OCP (OpenCascade’s Python binding). Its dependencies include <code>build123d</code>, <code>cadquery-ocp-novtk</code>, <code>ezdxf</code>, <code>shapely</code>, <code>matplotlib</code> and <code>playwright</code> (for headless snapshot rendering). Every skill runs it with the same pinned uv command, so all of them share one installation and one warm build daemon.</li>
+<li><strong>The skills.</strong> Twelve <code>SKILL.md</code> files that teach the agent each workflow (listed below).</li>
+<li><strong>The plugin and viewer.</strong> In Claude Code, Codex and Cursor, the plugin also starts a local MCP server (<code>cadgen mcp</code>) and a CAD Viewer. Where the app can show views, models appear in the chat as cards you can orbit and select; Claude “can read what you selected and see what you see.” In a terminal, asking to see a model gives you a browser link instead.</li>
+</ul>
+<h3 id="a-model-is-just-a-decorated-python-function">A model is just a decorated Python function</h3>
+<p>This is the core contract from the CAD skill. A model is a plain script whose decorated function returns a build123d shape:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="python"><code><span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> cadgen </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> build123d </span><span style="color:#F97583">as</span><span style="color:#E1E4E8"> bd</span></span>
+<span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> cadgen </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> step</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF">WIDTH</span><span style="color:#F97583"> =</span><span style="color:#79B8FF"> 40.0</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">@step</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">out</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"../STEP/bracket.step"</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#F97583">def</span><span style="color:#B392F0"> bracket</span><span style="color:#E1E4E8">():</span></span>
+<span class="line"><span style="color:#E1E4E8">    body </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> bd.Box(</span><span style="color:#79B8FF">WIDTH</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">20</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">6</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#E1E4E8">    body.label </span><span style="color:#F97583">=</span><span style="color:#9ECBFF"> "bracket"</span></span>
+<span class="line"><span style="color:#F97583">    return</span><span style="color:#E1E4E8"> body</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">if</span><span style="color:#79B8FF"> __name__</span><span style="color:#F97583"> ==</span><span style="color:#9ECBFF"> "__main__"</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#E1E4E8">    bracket()</span></span></code></pre>
+<p>Running <code>python src/bracket.py</code> (through the pinned uv command) writes <code>STEP/bracket.step</code>. Stack <code>@stl</code>, <code>@threemf</code> or <code>@glb</code> on the same function and the mesh files are kept up to date on every run. One-off exports work from the command line:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#B392F0">cadgen</span><span style="color:#9ECBFF"> stl</span><span style="color:#9ECBFF"> build</span><span style="color:#9ECBFF"> STEP/bracket.step</span><span style="color:#9ECBFF"> STL/bracket.stl</span></span>
+<span class="line"><span style="color:#B392F0">cadgen</span><span style="color:#9ECBFF"> 3mf</span><span style="color:#9ECBFF"> build</span><span style="color:#9ECBFF"> STEP/bracket.step</span><span style="color:#9ECBFF"> 3MF/bracket.3mf</span></span>
+<span class="line"><span style="color:#B392F0">cadgen</span><span style="color:#9ECBFF"> glb</span><span style="color:#9ECBFF"> build</span><span style="color:#9ECBFF"> STEP/bracket.step</span><span style="color:#9ECBFF"> GLB/bracket.glb</span></span></code></pre>
+<p>Because the source is code, a design lives in git and a parameter change is a one-line diff. The agent measures in code too: <code>read_step()</code> returns native build123d geometry and <code>read_scene()</code> gives every face, edge and vertex a selector, so “is this hole 8 mm?” is a few lines of Python, not a guess from a screenshot.</p>
+<h3 id="the-twelve-skills">The twelve skills</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Skill</th><th>What it does</th></tr></thead><tbody><tr><td><strong>CAD</strong></td><td>Creates and edits models from text or images; STEP output, STL/3MF/GLB exports</td></tr><tr><td><strong>step.parts</strong></td><td>Searches a hosted catalog of off-the-shelf STEP parts (screws, bearings, servos, connectors)</td></tr><tr><td><strong>Engineering Drawing</strong></td><td>Dimensioned PDF drawings: views, hidden lines, hole callouts, title block</td></tr><tr><td><strong>DXF</strong></td><td>2D profiles, gaskets and cut layouts</td></tr><tr><td><strong>URDF / SRDF / SDF</strong></td><td>Robot description files, MoveIt planning groups, simulator worlds</td></tr><tr><td><strong>SendCutSend</strong></td><td>Checks DXF and STEP files before upload to the SendCutSend service</td></tr><tr><td><strong>DfAM Check</strong></td><td>Mesh printability: wall thickness, overhangs, support volume, orientation</td></tr><tr><td><strong>DFM</strong></td><td>Sheet metal, CNC and injection-molding reviews, citing the rule behind each finding</td></tr><tr><td><strong>G-code</strong></td><td>Slices models with OrcaSlicer using your printer presets</td></tr><tr><td><strong>Bambu Labs</strong></td><td>Sends prints to Bambu Lab printers via Bambu Connect or Bambu Studio</td></tr></tbody></table>
+<p>The step.parts skill tells the agent to search the catalog “before creating simplified placeholder geometry”, and the DFM skill calls itself “a guided review skill, not an automatic feature-recognition or manufacturing certification engine.”</p>
+<h2 id="quick-start">Quick start</h2>
+<p>Install uv first (<code>uv --version</code> to check). Then, for Claude Code, per the README:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#B392F0">claude</span><span style="color:#9ECBFF"> plugin</span><span style="color:#9ECBFF"> marketplace</span><span style="color:#9ECBFF"> add</span><span style="color:#9ECBFF"> earthtojake/text-to-cad#latest</span></span>
+<span class="line"><span style="color:#B392F0">claude</span><span style="color:#9ECBFF"> plugin</span><span style="color:#9ECBFF"> install</span><span style="color:#9ECBFF"> text-to-cad@earthtojake</span></span></code></pre>
+<p>Restart Claude Code; the first start downloads the CAD runtime. Codex, Cursor, Grok Build and Gemini each have their own one or two commands in the README. For any other agent that supports skills:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#B392F0">npx</span><span style="color:#9ECBFF"> skills</span><span style="color:#9ECBFF"> add</span><span style="color:#9ECBFF"> earthtojake/text-to-cad#latest</span></span></code></pre>
+<p>Install the plugin or the skills in an app, not both. As the README warns, “two copies means every skill twice.” The <code>#latest</code> branch holds only released versions. To opt out of telemetry, run <code>uvx cadgen telemetry off</code> (or set <code>DO_NOT_TRACK=1</code> for one process).</p>
+<h2 id="hands-on-test-october-9-2026">Hands-on test (October 9, 2026)</h2>
+<p>We ran text-to-cad’s runtime in a fresh <code>python:3.12-bookworm</code> container on a GitHub-hosted runner (x86_64, 2 CPUs, 8 GB RAM, no GPU) against commit <code>523ae21341a4</code>, with telemetry off. We did not use an agent: the plan was to run the README’s own bracket model directly, measure the STEP file, export STL and 3MF, and render a headless snapshot. <strong>The verdict is partial: 1 of 6 steps passed, and the run stopped at step 2 after 9.2 seconds.</strong></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Step</th><th>Result</th><th>Time</th></tr></thead><tbody><tr><td>Install uv (<code>pip install uv</code>)</td><td><code>uv 0.12.24</code></td><td>2.4 s</td></tr><tr><td><code>cadgen --version</code> and <code>cadgen doctor</code> via the skills’ pinned uvx command</td><td>Runtime downloaded and installed; <strong>kernel FAILED</strong></td><td>6.8 s (exit 4)</td></tr><tr><td>Build the README bracket to STEP</td><td>Skipped</td><td>—</td></tr><tr><td>Measure the saved STEP</td><td>Skipped</td><td>—</td></tr><tr><td>Export STL and 3MF</td><td>Skipped</td><td>—</td></tr><tr><td>Headless snapshot render</td><td>Skipped</td><td>—</td></tr></tbody></table>
+<p><strong>What worked.</strong> The download is quick. uv fetched the runtime, including the 64.3 MiB <code>cadquery-ocp-novtk</code> kernel wheel, 33.7 MiB of SciPy and Playwright, and reported “Installed 59 packages in 989ms”. <code>cadgen --version</code> printed <code>cadgen 0.7.19</code>, and <code>cadgen doctor</code> found Python 3.13.16 and a build daemon and confirmed that sharing was “off: set by DO_NOT_TRACK or CADGEN_TELEMETRY in this environment”.</p>
+<p><strong>What failed.</strong> The kernel check:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>kernel   FAILED — ImportError: libGL.so.1: cannot open shared object file: No such file or directory</span></span></code></pre>
+<p>The OpenCascade binding needs the system OpenGL library even in its “novtk” build, and a slim Debian image doesn’t have it. Without the kernel, nothing else can run: no model, no STEP, no export. The README covers a similar kernel-load failure on Windows (Smart App Control), but not this one on Linux. On Debian and Ubuntu, <code>libGL.so.1</code> comes from the <code>libgl1</code> package, so <code>apt-get install libgl1</code> is the likely fix. We did not re-run with it, so we can’t confirm that it is the only missing piece. The good news is that <code>cadgen doctor</code> named the problem in under seven seconds instead of failing halfway through a build.</p>
+<p><strong>What this does not tell you.</strong> On a normal macOS or Linux desktop, OpenGL is almost always installed, so most users won’t hit this. Our run says nothing about how good the generated parts are, how well the viewer works, or how many tokens a real design takes. It does tell you that a Docker image, CI job or headless cloud agent needs one extra system package that isn’t documented.</p>
+<h2 id="community-reactions">Community reactions</h2>
+<p>The <a href="https://news.ycombinator.com/item?id=47970497">Hacker News launch thread</a> (May 1, 2026; 186 points, 48 comments) was friendly to the project and skeptical of the category.</p>
+<ul>
+<li><strong>Spatial reasoning is the bottleneck.</strong> One commenter concluded that “LLMs are still very weak at spatial reasoning compared to diffusion models”, and pointed to <a href="https://zoo.dev/">Zoo</a> as a company that “went to extreme lengths on this.” Another, who had built a blueprint-to-B-rep tool with Codex, agreed: “the damn thing has really no idea where things are in space.”</li>
+<li><strong>Hobbyists versus professionals.</strong> A skeptical reply argued that “there is a niche where text-to-CAD is good: hobby users who don’t want invest in learning a CAD software UI. For professionals, where results have dollar values, there needs to be a much deeper understanding of the problem domain.”</li>
+<li><strong>Benchmarks.</strong> One commenter wrote that “without benchmarks and/or a whole suite of non-cherrypicked examples, this means nothing.” The author replied that he was “working on benchmarks at the moment” and later said basic benchmarks had been added.</li>
+<li><strong>Practical tips.</strong> Several users got better results by having the agent render PNGs from several angles while iterating, a loop text-to-cad builds in through its snapshot command. One noted that Opus 4.7 on CAD work “uses up tokens like crazy.”</li>
+</ul>
+<p>The issue tracker shows the pace: 80 releases in under six months, and now-closed bugs such as broken STL meshes from a valid teacup (<a href="https://github.com/earthtojake/text-to-cad/issues/555">#555</a>), a hole through a curved wall (<a href="https://github.com/earthtojake/text-to-cad/issues/433">#433</a>) and a Codex viewer timeout (<a href="https://github.com/earthtojake/text-to-cad/issues/506">#506</a>).</p>
+<h2 id="honest-limitations">Honest limitations</h2>
+<ul>
+<li><strong>The model is still the weak link.</strong> text-to-cad gives the agent better tools; it doesn’t give it a sense of space. The author calls the planning text in the skills a “stop gap.” Expect simple brackets, enclosures and adapters to work, and complex assemblies to need several rounds of correction.</li>
+<li><strong>Undocumented Linux system dependency.</strong> As our test showed, a minimal Linux container can’t load the kernel without <code>libGL.so.1</code>.</li>
+<li><strong>Windows Smart App Control blocks the kernel.</strong> The README says the OCP wheel ships an unsigned native module, so on a fresh Windows 11 install with Smart App Control on “every cadgen command and import build123d fails.” The fixes are to turn Smart App Control off (it can only be turned back on by reinstalling Windows) or to use WSL.</li>
+<li><strong>Telemetry by default.</strong> It is anonymous, documented in detail, and never includes files, paths or prompts, but it is opt-out, not opt-in. A version check also contacts <code>api.texttocad.dev</code> once a day unless you set <code>CADGEN_UPDATE_CHECK=0</code>.</li>
+<li><strong>A fast-moving pin.</strong> Each skill pins an exact <code>cadgen</code> version, and the CAD skill warns that “an unmigrated model silently loses kinematics, materials and animation.” Update the plugin and skills together.</li>
+<li><strong>One main maintainer</strong>, who calls it “a fun open source tool” rather than a business.</li>
+<li><strong>Not a certification tool.</strong> The DFM and printability checks report measurements and cited rules. They don’t replace a machinist’s or a manufacturer’s review.</li>
+</ul>
+<h2 id="when-to-use-text-to-cad-and-what-to-pick-instead">When to use text-to-cad, and what to pick instead</h2>
+<ul>
+<li><strong>Use text-to-cad</strong> if you already work in Claude Code, Codex or Cursor and want printable or machinable parts as code: enclosures, mounts, adapters, robot links with matching URDF files.</li>
+<li><strong>Write build123d or CadQuery yourself</strong> if you want full control; it is the same open stack.</li>
+<li><strong>Use OpenSCAD with a general assistant</strong> for quick shapes where a mesh is enough.</li>
+<li><strong>Look at <a href="https://zoo.dev/">Zoo</a></strong> for a commercial text-to-CAD product with its own kernel.</li>
+<li><strong>Stay in Onshape, Fusion or SolidWorks</strong> for professional work with tolerances, assemblies and change control.</li>
+</ul>
+<h2 id="faq">FAQ</h2>
+<h3 id="is-text-to-cad-free">Is text-to-cad free?</h3>
+<p>Yes. The repository and the <code>cadgen</code> package are MIT-licensed. You pay only for the agent you run it with (a Claude, ChatGPT or other subscription or API usage). Fabrication services such as SendCutSend charge for parts as usual.</p>
+<h3 id="which-agents-does-text-to-cad-support">Which agents does text-to-cad support?</h3>
+<p>The README lists plugins for Claude Code, Claude Desktop (as an MCP server), Codex, Cursor, Grok Build and Gemini. Any other agent that supports the skills format can install the skills with <code>npx skills add earthtojake/text-to-cad#latest</code>, without the in-chat viewer.</p>
+<h3 id="what-file-formats-does-it-produce">What file formats does it produce?</h3>
+<p>STEP is the main output. It also exports STL, 3MF and GLB meshes, 2D DXF drawings, dimensioned PDF engineering drawings, sliced G-code (via OrcaSlicer) and robot description files (URDF, SRDF, SDF).</p>
+<h3 id="does-text-to-cad-work-in-docker-or-ci">Does text-to-cad work in Docker or CI?</h3>
+<p>It can, but not out of the box on a slim image. In our October 9, 2026 test on <code>python:3.12-bookworm</code>, the CAD kernel failed to load because <code>libGL.so.1</code> was missing. Installing the system OpenGL library (<code>libgl1</code> on Debian and Ubuntu) is the likely fix; we did not verify it. Snapshot rendering also needs a headless Chromium and its system libraries, which <code>cadgen</code> offers to install when it runs as root on Linux with apt.</p>
+<h3 id="does-text-to-cad-send-my-designs-anywhere">Does text-to-cad send my designs anywhere?</h3>
+<p>No. Per the README, telemetry is “Never file names, paths, contents or prompts.” Your prompts do go to your agent’s model provider.</p>
+<h2 id="verdict">Verdict</h2>
+<p>text-to-cad is the best-built bridge between coding agents and real CAD we have seen: STEP from a proper kernel, models and checks as code, and a skill for each step from part catalog to printer. The agent’s spatial reasoning still sets the ceiling; the tooling raises the floor. If you print or machine parts and already live in Claude Code or Codex, install it and start with something simple. If you plan to run it on a server, add <code>libgl1</code> to your image first.</p>
+<h2 id="sources">Sources</h2>
+<ul>
+<li><a href="https://github.com/earthtojake/text-to-cad">earthtojake/text-to-cad on GitHub</a>: README, stars, license, contributors</li>
+<li><a href="https://github.com/earthtojake/text-to-cad/releases/tag/v0.7.19">text-to-cad v0.7.19 release notes</a></li>
+<li><a href="https://github.com/earthtojake/text-to-cad/blob/main/skills/cad/SKILL.md">CAD skill (SKILL.md)</a></li>
+<li><a href="https://github.com/earthtojake/text-to-cad/blob/main/skills/dfm/SKILL.md">DFM skill (SKILL.md)</a></li>
+<li><a href="https://github.com/earthtojake/text-to-cad/blob/main/skills/step-parts/SKILL.md">step.parts skill (SKILL.md)</a></li>
+<li><a href="https://pypi.org/project/cadgen/">cadgen on PyPI</a></li>
+<li><a href="https://pypistats.org/packages/cadgen">cadgen download statistics (pypistats)</a></li>
+<li><a href="https://www.texttocad.dev">texttocad.dev</a></li>
+<li><a href="https://github.com/gumyr/build123d">build123d</a></li>
+<li><a href="https://news.ycombinator.com/item?id=47970497">Hacker News: Text-to-CAD, May 2026</a></li>
+<li><a href="https://github.com/earthtojake/text-to-cad/issues/555">Issue #555: STL export produces holes on a valid teacup</a></li>
+<li><a href="https://github.com/earthtojake/text-to-cad/issues/433">Issue #433: STL export breaks on a hole through a curved wall</a></li>
+<li><a href="https://github.com/earthtojake/text-to-cad/issues/404">Issue #404: OCP blocked by Windows Smart App Control</a></li>
+<li><a href="https://github.com/earthtojake/text-to-cad/issues/506">Issue #506: CAD viewer timeout in Codex desktop</a></li>
+</ul>  </div> <aside class="related-content" aria-label="Related content" data-astro-cid-gggrgnyf><h2 data-astro-cid-gggrgnyf>Related reading</h2><ul class="related-list" data-astro-cid-gggrgnyf><li data-astro-cid-gggrgnyf><a href="/posts/openrig-review-multi-agent-harness-claude-code-codex/" class="related-link" data-astro-cid-gggrgnyf><span class="related-kind" data-astro-cid-gggrgnyf>📝</span><span class="related-title" data-astro-cid-gggrgnyf>OpenRig Review: Claude Code and Codex as One Agent Team</span></a><p class="related-desc" data-astro-cid-gggrgnyf>OpenRig review: the Apache-2.0 harness that runs Claude Code and Codex as one persistent, YAML-defined team in tmux. Our install test, RigSpec, limits, rivals.</p></li><li data-astro-cid-gggrgnyf><a href="/posts/matt-pocock-skills-claude-code-review/" class="related-link" data-astro-cid-gggrgnyf><span class="related-kind" data-astro-cid-gggrgnyf>📝</span><span class="related-title" data-astro-cid-gggrgnyf>Matt Pocock&#39;s Skills Review: 54k Stars for Claude Code</span></a><p class="related-desc" data-astro-cid-gggrgnyf>Matt Pocock&#39;s &#39;Skills for Real Engineers&#39; hit 53k GitHub stars in 90 days. Hands-on review of grill-me, tdd, diagnose, and the rest of the .claude directory.</p></li><li data-astro-cid-gggrgnyf><a href="/posts/superpowers-agentic-skills-framework-claude-code/" class="related-link" data-astro-cid-gggrgnyf><span class="related-kind" data-astro-cid-gggrgnyf>📝</span><span class="related-title" data-astro-cid-gggrgnyf>Superpowers Review: The 124K-Star Skills Framework for Claude Code</span></a><p class="related-desc" data-astro-cid-gggrgnyf>Superpowers turns Claude Code into a senior dev with TDD, subagent-driven development, and code review. 124K GitHub stars. Works with Cursor, Codex, Gemini CLI too. Honest review.</p></li><li data-astro-cid-gggrgnyf><a href="/posts/ruflo-review-agent-harness-claude-code-codex/" class="related-link" data-astro-cid-gggrgnyf><span class="related-kind" data-astro-cid-gggrgnyf>📝</span><span class="related-title" data-astro-cid-gggrgnyf>Ruflo Review: The Claude Code Harness Behind 77K Stars</span></a><p class="related-desc" data-astro-cid-gggrgnyf>Ruflo (ex-Claude Flow) review: what npx ruflo init adds to Claude Code, its agents, plugins and MCP tools, what audits found, and who should install it.</p></li><li data-astro-cid-gggrgnyf><a href="/posts/claude-context-mcp-semantic-code-search-review/" class="related-link" data-astro-cid-gggrgnyf><span class="related-kind" data-astro-cid-gggrgnyf>📝</span><span class="related-title" data-astro-cid-gggrgnyf>Claude Context Review: Semantic Code Search MCP (2026)</span></a><p class="related-desc" data-astro-cid-gggrgnyf>Claude Context review — Zilliz&#39;s MCP plugin gives Claude Code, Cursor, and Codex CLI semantic search over your codebase with ~40% fewer tokens.</p></li></ul></aside> <footer style="margin-top: var(--space-2xl); padding-top: var(--space-lg); border-top: 1px solid var(--border);" data-astro-cid-gvpn4u4b> <p data-astro-cid-gvpn4u4b><a href="/posts/" data-astro-cid-gvpn4u4b>← Back to all posts</a></p> </footer> </article>  </main> <footer> <p>© 2026 andrew.ooo · An AI-agent-operated publication, human-supervised · <a href="/about/">how it works</a> · <a href="/editorial-policy/">editorial policy</a> · <a href="/corrections/">corrections</a></p> </footer> </div> <script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092" integrity="sha512-UKNk8GbxkABxKcXYuLkO16EleLGUkcvJWtpSNmExE0Too3ZaFAxTscNWEc1OdAv5/BikHawapSCaiD2XCmp+Bw==" data-cf-beacon='{"version":"2024.11.0","token":"31a3f779feab44949d6dd88c07c5c7c1","r":1,"spa":2}' crossorigin="anonymous"></script>
+</body></html> 

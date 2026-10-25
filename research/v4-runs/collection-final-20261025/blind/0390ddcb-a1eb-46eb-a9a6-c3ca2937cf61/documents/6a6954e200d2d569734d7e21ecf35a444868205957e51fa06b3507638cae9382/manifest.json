@@ -1,0 +1,1014 @@
+{
+  "schemaVersion": "source-document/v1",
+  "id": "6a6954e200d2d569734d7e21ecf35a444868205957e51fa06b3507638cae9382",
+  "version": "24eaddafb1c36f0f3a571004ce1057b952bb8c3a10dc64dd683aef90f97f55bf",
+  "requestedUrl": "https://pcnmobile.com/how-to-change-ollamas-model-storage-location",
+  "finalUrl": "https://pcnmobile.com/how-to-change-ollamas-model-storage-location/",
+  "retrievedAt": "2026-10-25T04:42:48.839Z",
+  "contentType": "text/html; charset=UTF-8",
+  "status": "READ",
+  "readError": null,
+  "rawHash": "b81fc49a3a8c07bafde1b1fdad2c87d6045d1d771b1e7fb13a42ef14b48b5d62",
+  "textHash": "13b4932058f2ce6468850f7750f8a3442fef9db0ab30c4ec9f362aa6b9a64c3d",
+  "text": "Skip to the article\n\nArticle\n\nHow to Change Ollama’s Model Storage Location\n\nBy PCNMobile Team 4 Oct 2026 3 min read\n\nSet the OLLAMA_MODELS environment variable to the full path of the directory where you want Ollama to store models. The variable must be available to the Ollama server process—not just an unrelated terminal—and changing it does not, by itself, move models already downloaded.\n\nWhere Ollama stores models by default\n\nOllama uses OLLAMA_MODELS when it is set. Otherwise, it falls back to a models directory beneath the running process user’s .ollama directory. The documented standard paths are:\n\nPlatform Documented default model directory macOS ~/.ollama/models Linux /usr/share/ollama/.ollama/models for the standard installation described in the FAQ Windows C:Users%username%.ollamamodels\n\nThe effective fallback depends on the account running Ollama. On Linux, a system service can run as the ollama account, whose home directory may differ from the administrator’s. Ollama’s environment configuration describes the general fallback as the process user’s $HOME/.ollama/models.\n\nChoose a destination with enough space\n\nChoose a full path on a volume with sufficient free space. Ollama’s Windows installation guide says model storage can require “tens to hundreds of GB.” A larger existing drive can be used as the destination; an external drive is not inherently required.\n\nChange the model location on Windows\n\nOpen the Windows account’s Environment Variables settings. Create a user variable named OLLAMA_MODELS, or edit it if it already exists.\n\nSet its value to the complete destination path, for example D:Ollamamodels. Create the destination folder if needed.\n\nClick Apply and OK to save the change.\n\nQuit Ollama from the tray, then launch it again from Start. If you start Ollama from a terminal, open a new terminal after saving the variable.\n\nOllama inherits environment variables when it starts, so an already-running app will not pick up a change made afterward. The restart guidance is in the project’s Windows documentation.\n\nChange the location on Linux with systemd\n\nFor the standard Linux installation, set the variable in the service environment. Setting it only in your interactive shell will not configure a separately running system service.\n\nRun sudo systemctl edit ollama to open a service drop-in editor.\n\nAdd this configuration, replacing the example path with your destination:[Service]Environment=\"OLLAMA_MODELS=/mnt/storage/ollama/models\"\n\nSave and close the editor, then reload systemd and restart Ollama:sudo systemctl daemon-reloadsudo systemctl restart ollama\n\nEnsure the destination exists and that the ollama service account can read and write to it. Without the required access, model downloads may fail.\n\nOllama’s FAQ covers service environment configuration and access requirements; its Linux guide describes systemd customization. If you run ollama serve manually instead, set OLLAMA_MODELS in the environment used to start that server process.\n\nIndependent reader supportYour contribution helps us test, update, and keep practical guides available for everyone.Support on Ko-Fi\n\nChange the location on macOS\n\nSet OLLAMA_MODELS in the environment visible to the Ollama application or server, then restart the application. The official FAQ points macOS users to its environment-variable guidance, which uses launchctl setenv followed by an application restart. Confirm that the variable is available to the process that serves Ollama; a value set only in a separate shell may not reach an app launched independently.\n\nWhat happens to models already downloaded?\n\nSetting a new directory chooses where Ollama will look for model storage under the new configuration; the official instructions cited here do not say that changing the variable automatically moves existing files. Do not delete the old model directory on the assumption that it has been migrated. Keep it until Ollama can see the models at the new location, and consult current platform-specific migration guidance if you need exact file-transfer steps.\n\nCheck the setting if it does not take effect\n\nConfirm the server can see the variable. Restart Ollama after changing the environment. A service or app launched separately does not necessarily inherit variables set in your current shell.\n\nCheck the path. Make sure the destination exists and the configured value is the intended full path.\n\nCheck permissions on Linux. The ollama service account needs read and write access to the destination.\n\nCheck available space. Model files can take substantial room; confirm the chosen volume has enough free capacity.\n\nFor container deployments, set OLLAMA_MODELS in the environment of the container running the server, and ensure the chosen directory is mounted there and writable. The cited Ollama pages do not provide a complete container-specific volume migration procedure, so use the instructions for your deployment before changing mounts or moving existing data.\n\nPCnMobile newsletterMore Windows guides like this, every weekOne short e-mail a week. Free, no spam — unsubscribe in one click.Your address stays with us — privacy.\n\nAI ModelsLinuxmacOSOllamaStorageWindows\n\nSponsor this article\n\nShow your tool to the people reading this: a link inside the article, a place in one of PCNMobile's lists, or an article of your own.\n\nSee the prices\n\nLeave a comment Cancel reply\n\nMore articles\n\nUnlocking the Mystery of Multiple HDMI Ports on Your TV: A Comprehensive Guide9 Oct 2026 · 6 min\n\nHow to Secure Your Accounts After Sharing Personal Information With a Scammer9 Oct 2026 · 5 min\n\nCreating a PKGBUILD to Make Packages for Arch Linux12 Mar 2026 · 38 min\n\nLatest Posts",
+  "rawSources": [
+    {
+      "mode": "STATIC",
+      "hash": "b81fc49a3a8c07bafde1b1fdad2c87d6045d1d771b1e7fb13a42ef14b48b5d62",
+      "path": "C:\\Users\\qianchen\\Documents\\waytoagi-1024-detective-a2-v4\\.cache\\source-documents-v4\\0390ddcb-a1eb-46eb-a9a6-c3ca2937cf61\\6a6954e200d2d569734d7e21ecf35a444868205957e51fa06b3507638cae9382\\raw.bin"
+    }
+  ],
+  "storage": {
+    "rawPath": "C:\\Users\\qianchen\\Documents\\waytoagi-1024-detective-a2-v4\\.cache\\source-documents-v4\\0390ddcb-a1eb-46eb-a9a6-c3ca2937cf61\\6a6954e200d2d569734d7e21ecf35a444868205957e51fa06b3507638cae9382\\raw.bin",
+    "textPath": "C:\\Users\\qianchen\\Documents\\waytoagi-1024-detective-a2-v4\\.cache\\source-documents-v4\\0390ddcb-a1eb-46eb-a9a6-c3ca2937cf61\\6a6954e200d2d569734d7e21ecf35a444868205957e51fa06b3507638cae9382\\source.txt",
+    "manifestPath": "C:\\Users\\qianchen\\Documents\\waytoagi-1024-detective-a2-v4\\.cache\\source-documents-v4\\0390ddcb-a1eb-46eb-a9a6-c3ca2937cf61\\6a6954e200d2d569734d7e21ecf35a444868205957e51fa06b3507638cae9382\\manifest.json"
+  },
+  "parser": {
+    "name": "readability+source-dom",
+    "version": "readability-0.6.0+jsdom-30.1.3+source-dom-2",
+    "normalization": "source-text/v1",
+    "mode": "STATIC"
+  },
+  "metadata": {
+    "title": "Change Ollama’s Model Storage Location with OLLAMA_MODELS",
+    "author": "PCNMobile Team",
+    "publishedAt": "2026-10-04T09:22:01.000Z",
+    "language": "en-US"
+  },
+  "completeness": "COMPLETE",
+  "warnings": [],
+  "blocks": [
+    {
+      "start": 0,
+      "end": 19,
+      "id": "b0",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[0]",
+      "headingPath": [],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 21,
+      "end": 28,
+      "id": "b1",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[1]",
+      "headingPath": [],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 30,
+      "end": 75,
+      "id": "b2",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[2]",
+      "headingPath": [
+        "How to Change Ollama’s Model Storage Location"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 77,
+      "end": 116,
+      "id": "b3",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[3]",
+      "headingPath": [
+        "How to Change Ollama’s Model Storage Location"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 118,
+      "end": 393,
+      "id": "b4",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[4]",
+      "headingPath": [
+        "How to Change Ollama’s Model Storage Location"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 395,
+      "end": 432,
+      "id": "b5",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[5]",
+      "headingPath": [
+        "How to Change Ollama’s Model Storage Location",
+        "Where Ollama stores models by default"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 434,
+      "end": 611,
+      "id": "b6",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[6]",
+      "headingPath": [
+        "How to Change Ollama’s Model Storage Location",
+        "Where Ollama stores models by default"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 613,
+      "end": 808,
+      "id": "b7",
+      "kind": "TABLE",
+      "locator": "source DOM normalized block[7]",
+      "headingPath": [
+        "How to Change Ollama’s Model Storage Location",
+        "Where Ollama stores models by default"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 810,
+      "end": 1097,
+      "id": "b8",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[8]",
+      "headingPath": [
+        "How to Change Ollama’s Model Storage Location",
+        "Where Ollama stores models by default"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1099,
+      "end": 1137,
+      "id": "b9",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[9]",
+      "headingPath": [
+        "How to Change Ollama’s Model Storage Location",
+        "Choose a destination with enough space"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1139,
+      "end": 1392,
+      "id": "b10",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[10]",
+      "headingPath": [
+        "How to Change Ollama’s Model Storage Location",
+        "Choose a destination with enough space"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1394,
+      "end": 1430,
+      "id": "b11",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[11]",
+      "headingPath": [
+        "How to Change Ollama’s Model Storage Location",
+        "Change the model location on Windows"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1432,
+      "end": 1567,
+      "id": "b12",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[12]",
+      "headingPath": [
+        "How to Change Ollama’s Model Storage Location",
+        "Change the model location on Windows"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1569,
+      "end": 1685,
+      "id": "b13",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[13]",
+      "headingPath": [
+        "How to Change Ollama’s Model Storage Location",
+        "Change the model location on Windows"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1687,
+      "end": 1725,
+      "id": "b14",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[14]",
+      "headingPath": [
+        "How to Change Ollama’s Model Storage Location",
+        "Change the model location on Windows"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1727,
+      "end": 1870,
+      "id": "b15",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[15]",
+      "headingPath": [
+        "How to Change Ollama’s Model Storage Location",
+        "Change the model location on Windows"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1872,
+      "end": 2057,
+      "id": "b16",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[16]",
+      "headingPath": [
+        "How to Change Ollama’s Model Storage Location",
+        "Change the model location on Windows"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2059,
+      "end": 2100,
+      "id": "b17",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[17]",
+      "headingPath": [
+        "How to Change Ollama’s Model Storage Location",
+        "Change the location on Linux with systemd"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2102,
+      "end": 2281,
+      "id": "b18",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[18]",
+      "headingPath": [
+        "How to Change Ollama’s Model Storage Location",
+        "Change the location on Linux with systemd"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2283,
+      "end": 2347,
+      "id": "b19",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[19]",
+      "headingPath": [
+        "How to Change Ollama’s Model Storage Location",
+        "Change the location on Linux with systemd"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2349,
+      "end": 2485,
+      "id": "b20",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[20]",
+      "headingPath": [
+        "How to Change Ollama’s Model Storage Location",
+        "Change the location on Linux with systemd"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2487,
+      "end": 2610,
+      "id": "b21",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[21]",
+      "headingPath": [
+        "How to Change Ollama’s Model Storage Location",
+        "Change the location on Linux with systemd"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2612,
+      "end": 2758,
+      "id": "b22",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[22]",
+      "headingPath": [
+        "How to Change Ollama’s Model Storage Location",
+        "Change the location on Linux with systemd"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2760,
+      "end": 3001,
+      "id": "b23",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[23]",
+      "headingPath": [
+        "How to Change Ollama’s Model Storage Location",
+        "Change the location on Linux with systemd"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3003,
+      "end": 3135,
+      "id": "b24",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[24]",
+      "headingPath": [
+        "How to Change Ollama’s Model Storage Location",
+        "Change the location on Linux with systemd"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3137,
+      "end": 3165,
+      "id": "b25",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[25]",
+      "headingPath": [
+        "How to Change Ollama’s Model Storage Location",
+        "Change the location on macOS"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3167,
+      "end": 3572,
+      "id": "b26",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[26]",
+      "headingPath": [
+        "How to Change Ollama’s Model Storage Location",
+        "Change the location on macOS"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3574,
+      "end": 3616,
+      "id": "b27",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[27]",
+      "headingPath": [
+        "How to Change Ollama’s Model Storage Location",
+        "What happens to models already downloaded?"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3618,
+      "end": 4070,
+      "id": "b28",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[28]",
+      "headingPath": [
+        "How to Change Ollama’s Model Storage Location",
+        "What happens to models already downloaded?"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4072,
+      "end": 4116,
+      "id": "b29",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[29]",
+      "headingPath": [
+        "How to Change Ollama’s Model Storage Location",
+        "Check the setting if it does not take effect"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4118,
+      "end": 4308,
+      "id": "b30",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[30]",
+      "headingPath": [
+        "How to Change Ollama’s Model Storage Location",
+        "Check the setting if it does not take effect"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4310,
+      "end": 4410,
+      "id": "b31",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[31]",
+      "headingPath": [
+        "How to Change Ollama’s Model Storage Location",
+        "Check the setting if it does not take effect"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4412,
+      "end": 4514,
+      "id": "b32",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[32]",
+      "headingPath": [
+        "How to Change Ollama’s Model Storage Location",
+        "Check the setting if it does not take effect"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4516,
+      "end": 4629,
+      "id": "b33",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[33]",
+      "headingPath": [
+        "How to Change Ollama’s Model Storage Location",
+        "Check the setting if it does not take effect"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4631,
+      "end": 4982,
+      "id": "b34",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[34]",
+      "headingPath": [
+        "How to Change Ollama’s Model Storage Location",
+        "Check the setting if it does not take effect"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4984,
+      "end": 5148,
+      "id": "b35",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[35]",
+      "headingPath": [
+        "How to Change Ollama’s Model Storage Location",
+        "Check the setting if it does not take effect"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5150,
+      "end": 5189,
+      "id": "b36",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[36]",
+      "headingPath": [
+        "How to Change Ollama’s Model Storage Location",
+        "Check the setting if it does not take effect"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5191,
+      "end": 5211,
+      "id": "b37",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[37]",
+      "headingPath": [
+        "How to Change Ollama’s Model Storage Location",
+        "Check the setting if it does not take effect"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5213,
+      "end": 5346,
+      "id": "b38",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[38]",
+      "headingPath": [
+        "How to Change Ollama’s Model Storage Location",
+        "Check the setting if it does not take effect"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5348,
+      "end": 5362,
+      "id": "b39",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[39]",
+      "headingPath": [
+        "How to Change Ollama’s Model Storage Location",
+        "Check the setting if it does not take effect"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5364,
+      "end": 5392,
+      "id": "b40",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[40]",
+      "headingPath": [
+        "How to Change Ollama’s Model Storage Location",
+        "Check the setting if it does not take effect",
+        "Leave a comment Cancel reply"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5394,
+      "end": 5407,
+      "id": "b41",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[41]",
+      "headingPath": [
+        "How to Change Ollama’s Model Storage Location",
+        "More articles"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5409,
+      "end": 5505,
+      "id": "b42",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[42]",
+      "headingPath": [
+        "How to Change Ollama’s Model Storage Location",
+        "More articles"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5507,
+      "end": 5602,
+      "id": "b43",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[43]",
+      "headingPath": [
+        "How to Change Ollama’s Model Storage Location",
+        "More articles"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5604,
+      "end": 5675,
+      "id": "b44",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[44]",
+      "headingPath": [
+        "How to Change Ollama’s Model Storage Location",
+        "More articles"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5677,
+      "end": 5689,
+      "id": "b45",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[45]",
+      "headingPath": [
+        "How to Change Ollama’s Model Storage Location",
+        "Latest Posts"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    }
+  ],
+  "links": [
+    {
+      "url": "https://pcnmobile.com/how-to-change-ollamas-model-storage-location/",
+      "text": "",
+      "blockId": null,
+      "relation": "CANONICAL",
+      "locator": "source DOM link[0]"
+    },
+    {
+      "url": "https://pcnmobile.com/author/pcnmobile/",
+      "text": "PCNMobile Team",
+      "blockId": "b3",
+      "relation": "LINK",
+      "locator": "source DOM link[9]"
+    },
+    {
+      "url": "https://github.com/ollama/ollama/blob/main/envconfig/config.go",
+      "text": "environment configuration",
+      "blockId": "b8",
+      "relation": "LINK",
+      "locator": "source DOM link[10]"
+    },
+    {
+      "url": "https://github.com/ollama/ollama/blob/main/docs/windows.md",
+      "text": "Windows installation guide",
+      "blockId": "b10",
+      "relation": "LINK",
+      "locator": "source DOM link[11]"
+    },
+    {
+      "url": "https://github.com/ollama/ollama/blob/main/docs/windows.md",
+      "text": "Windows documentation",
+      "blockId": "b16",
+      "relation": "LINK",
+      "locator": "source DOM link[12]"
+    },
+    {
+      "url": "https://github.com/ollama/ollama/blob/main/docs/faq.md",
+      "text": "FAQ",
+      "blockId": "b23",
+      "relation": "LINK",
+      "locator": "source DOM link[13]"
+    },
+    {
+      "url": "https://github.com/ollama/ollama/blob/main/docs/linux.md",
+      "text": "Linux guide",
+      "blockId": "b23",
+      "relation": "LINK",
+      "locator": "source DOM link[14]"
+    },
+    {
+      "url": "https://ko-fi.com/yorkermedia",
+      "text": "Independent reader supportYour contribution helps us test, update, and keep practical guides available for everyone.Support on Ko-Fi",
+      "blockId": "b24",
+      "relation": "LINK",
+      "locator": "source DOM link[15]"
+    },
+    {
+      "url": "https://github.com/ollama/ollama/blob/main/docs/faq.md",
+      "text": "FAQ",
+      "blockId": "b26",
+      "relation": "LINK",
+      "locator": "source DOM link[16]"
+    },
+    {
+      "url": "https://pcnmobile.com/privacy-policy/",
+      "text": "privacy",
+      "blockId": "b35",
+      "relation": "LINK",
+      "locator": "source DOM link[17]"
+    },
+    {
+      "url": "https://pcnmobile.com/tag/ai-models/",
+      "text": "AI Models",
+      "blockId": "b36",
+      "relation": "LINK",
+      "locator": "source DOM link[18]"
+    },
+    {
+      "url": "https://pcnmobile.com/tag/linux/",
+      "text": "Linux",
+      "blockId": "b36",
+      "relation": "LINK",
+      "locator": "source DOM link[19]"
+    },
+    {
+      "url": "https://pcnmobile.com/tag/macos/",
+      "text": "macOS",
+      "blockId": "b36",
+      "relation": "LINK",
+      "locator": "source DOM link[20]"
+    },
+    {
+      "url": "https://pcnmobile.com/tag/ollama/",
+      "text": "Ollama",
+      "blockId": "b36",
+      "relation": "LINK",
+      "locator": "source DOM link[21]"
+    },
+    {
+      "url": "https://pcnmobile.com/tag/storage/",
+      "text": "Storage",
+      "blockId": "b36",
+      "relation": "LINK",
+      "locator": "source DOM link[22]"
+    },
+    {
+      "url": "https://pcnmobile.com/tag/windows/",
+      "text": "Windows",
+      "blockId": "b36",
+      "relation": "LINK",
+      "locator": "source DOM link[23]"
+    },
+    {
+      "url": "https://pcnmobile.com/advertise/sponsor-an-article/",
+      "text": "See the prices",
+      "blockId": "b39",
+      "relation": "LINK",
+      "locator": "source DOM link[24]"
+    },
+    {
+      "url": "https://pcnmobile.com/how-to-change-ollamas-model-storage-location/",
+      "text": "Cancel reply",
+      "blockId": "b40",
+      "relation": "LINK",
+      "locator": "source DOM link[25]"
+    },
+    {
+      "url": "https://pcnmobile.com/unlocking-the-mystery-of-multiple-hdmi-ports-on-your-tv-a-comprehensive-guide/",
+      "text": "Unlocking the Mystery of Multiple HDMI Ports on Your TV: A Comprehensive Guide9 Oct 2026 · 6 min",
+      "blockId": "b42",
+      "relation": "LINK",
+      "locator": "source DOM link[28]"
+    },
+    {
+      "url": "https://pcnmobile.com/how-to-secure-your-accounts-after-sharing-personal-information-with-a-scammer/",
+      "text": "How to Secure Your Accounts After Sharing Personal Information With a Scammer9 Oct 2026 · 5 min",
+      "blockId": "b43",
+      "relation": "LINK",
+      "locator": "source DOM link[29]"
+    },
+    {
+      "url": "https://pcnmobile.com/creating-a-pkgbuild-to-make-packages-for-arch-linux/",
+      "text": "Creating a PKGBUILD to Make Packages for Arch Linux12 Mar 2026 · 38 min",
+      "blockId": "b44",
+      "relation": "LINK",
+      "locator": "source DOM link[30]"
+    }
+  ],
+  "tables": [
+    {
+      "blockId": "b7",
+      "rows": [
+        {
+          "start": 613,
+          "end": 656,
+          "cells": [
+            {
+              "start": 613,
+              "end": 621,
+              "text": "Platform",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 622,
+              "end": 656,
+              "text": "Documented default model directory",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 657,
+          "end": 679,
+          "cells": [
+            {
+              "start": 657,
+              "end": 662,
+              "text": "macOS",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 663,
+              "end": 679,
+              "text": "~/.ollama/models",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 680,
+          "end": 769,
+          "cells": [
+            {
+              "start": 680,
+              "end": 685,
+              "text": "Linux",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 686,
+              "end": 769,
+              "text": "/usr/share/ollama/.ollama/models for the standard installation described in the FAQ",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 770,
+          "end": 808,
+          "cells": [
+            {
+              "start": 770,
+              "end": 777,
+              "text": "Windows",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 778,
+              "end": 808,
+              "text": "C:Users%username%.ollamamodels",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

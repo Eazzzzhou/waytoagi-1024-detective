@@ -1,0 +1,3370 @@
+{
+  "schemaVersion": "source-document/v1",
+  "id": "6012b2474b4d0e30f8f4f08ccddd4e50a2a9840eace913930636a91796d3be48",
+  "version": "98457f1eea418cf967bbbc4f5a6127d7256d2fd839dc77661e36f558d80d5d9b",
+  "requestedUrl": "https://cursor.com/cn/blog/agent-best-practices",
+  "finalUrl": "https://cursor.com/cn/blog/agent-best-practices",
+  "retrievedAt": "2026-10-25T04:38:30.423Z",
+  "contentType": "text/html; charset=utf-8",
+  "status": "READ",
+  "readError": null,
+  "rawHash": "4b90f2a384af9d83735642ee15b5b1e4fd380fbfaa70e2472f79cefb1da73488",
+  "textHash": "823a8c64839dcdbccccb77f073eb084e802d60c8ebf9b388457b55c7b8b6778e",
+  "text": "Blog / 产品\n\nJan 9, 2026产品\n\n使用智能体编码的最佳实践\n\nLee Robinson8 分钟阅读\n\n编码智能体正在改变软件的构建方式。\n\n模型现在可以连续运行数小时，完成大规模的多文件重构，并持续迭代直到测试通过。但要充分发挥智能体的能力，你需要理解它们的工作原理，并形成新的使用范式。\n\n本指南重点介绍如何使用 Cursor 智能体的各种技巧。无论你是刚开始尝试基于智能体的编码，还是想了解我们团队是如何使用 Cursor 的，我们都会系统性地讲解使用智能体编码的最佳实践。\n\n理解智能体 harness\n\n一个智能体 harness 建立在三个组件之上：\n\nInstructions：引导智能体行为的 system prompt 和规则\n\nTools：文件编辑、代码库搜索、终端执行等工具\n\nModel：你为任务选择的智能体模型\n\nCursor 的智能体 harness 会为我们支持的每个模型编排这些组件。我们会基于内部评估和外部基准测试，为每个前沿模型专门调整 instructions和工具。\n\nharness 之所以重要，是因为不同模型对相同提示词的响应方式不同。一个在 shell 导向工作流上经过大量训练的模型，可能更偏好使用 grep 而不是专门的搜索工具；另一个模型可能需要明确的指令，在编辑后调用 linter 工具。Cursor 的智能体会为你处理这些问题，因此当新模型发布时，你可以专注于构建软件。\n\n从规划开始\n\n你能做出的最大改变，就是在编写代码之前先进行规划。\n\n来自芝加哥大学的一项研究发现，有经验的开发者更倾向于在生成代码之前先进行规划。规划会促使你更清晰地思考自己要构建的内容，并为 Agent 提供明确的目标去实现。\n\n使用 Plan 模式\n\n在 agent 输入框中按下 Shift+Tab 以切换 Plan 模式。agent 不会立即编写代码，而是会：\n\n分析你的代码库以查找相关文件\n\n就你的需求提出澄清问题\n\n创建包含文件路径和代码引用的详细实现计划\n\n在开始构建前等待你的确认\n\nPlan 模式实战：agent 会提出澄清问题并创建可审查的计划。\n\n计划会以 Markdown 文件的形式打开，你可以直接编辑它们，以删除不必要的步骤、调整实现方式，或补充 agent 遗漏的上下文。\n\n提示： 点击 “Save to workspace” 将计划存储到 .cursor/plans/。这样可以为你的团队创建文档，方便在中断后继续工作，并为未来在同一特性上工作的 agent 提供上下文。\n\n并不是每个任务都需要详细的计划。对于一些简单的小改动，或是你已经做过很多次的任务，直接交给 agent 处理就可以。\n\n从计划重新开始\n\n有时 agent 生成的内容并不符合你的预期。与其试图通过后续提示来修修补补，不如回到计划本身。\n\n先回滚这些改动，重新细化计划，把你的需求描述得更具体，然后再运行一次。这样通常比修一个进行中的 agent 更快，生成的结果也更干净利落。\n\n管理上下文\n\n随着你越来越习惯由 agent 编写代码，你的主要工作就变成：为每个 agent 提供完成其任务所需的上下文。\n\n让 agent 自行获取上下文\n\n你不需要在提示里手动标记每一个文件。\n\nCursor 的 agent 具备强大的搜索工具，并且可以按需获取上下文。比如，当你询问 “the authentication flow”（身份验证流程）时，agent 会通过 grep 和语义搜索找到相关文件，即使你的提示里没有包含这些完全相同的词语。\n\n即时 grep 让 agent 能在毫秒级搜索你的代码库。\n\n保持简单：如果你知道确切的文件，就在提示中引用它；如果不知道，就交给 agent 去查找。包含不相关的文件可能会让 agent 弄不清哪些内容才是重要的。\n\nCursor 的 agent 还提供了许多实用工具，比如 @Branch，可以让你为 agent 提供你当前工作的上下文。诸如 “Review the changes on this branch” 或 “What am I working on?” 之类的请求，会成为引导 agent 了解你当前任务的自然方式。\n\n什么时候开始一个新对话\n\n许多人都会问：我应该继续这个对话，还是重新开始一个新的？\n\n在以下情况下开始新对话：\n\n你要切换到一个不同的任务或功能\n\nAgent 看起来很困惑，或者总是在犯同样的错误\n\n你已经完成了一个逻辑完整的工作单元\n\n在以下情况下继续当前对话：\n\n你还在对同一个功能进行迭代\n\nAgent 需要用到先前讨论中的上下文\n\n你正在调试它刚刚构建出来的内容\n\n过长的对话可能会让 Agent 失去焦点。经过多轮对话和多次总结后，上下文里会积累噪音，Agent 容易被分散注意力或切换到不相关的任务。如果你发现 Agent 的效果在下降，就是该开始一个新对话的时候了。\n\n引用以往的工作成果\n\n当你开始一段新对话时，可以使用 @Chats 引用之前的工作成果，而不是把整段对话原封不动地复制粘贴过来。智能体可以有选择地读取聊天记录，只提取它所需要的上下文。\n\n这样比重复整个对话要高效得多。\n\n扩展 Agent\n\nCursor 提供两种主要方式来自定义 Agent 的行为：Rules 提供适用于每次对话的静态上下文，Skills 则提供 Agent 在需要时可以调用的动态能力。\n\nRules：为你的项目提供静态上下文\n\nRules 提供持续生效的指令，用来塑造 agent 如何处理你的代码。可以把它们看作始终生效的上下文，agent 在每次对话开始时都会先看到这些内容。\n\n在 .cursor/rules/ 中以 markdown 文件形式创建规则：\n\n# Commands\n\n- `npm run build`: Build the project\n- `npm run typecheck`: Run the typechecker\n- `npm run test`: Run tests (prefer single test files for speed)\n\n# 代码风格\n\n- 使用 ES 模块(import/export),而非 CommonJS(require)\n- 尽可能使用解构导入:`import { foo } from 'bar'`\n- 参考 `components/Button.tsx` 了解标准组件结构\n\n# Workflow\n\n- Always typecheck after making a series of code changes\n- API routes go in `app/api/` following existing patterns\n\n让规则聚焦在要点上：需要运行的命令、应遵循的模式，以及指向你代码库中规范示例的引用。引用文件而不是复制其内容；这样可以让规则保持简洁，并避免在代码变更后迅速过时。\n\n在规则中应避免：\n\n复制整份风格指南（改用 linter）\n\n记录所有可能的命令（agent 已经了解常用工具）\n\n为极少适用的边缘情况添加指令\n\n提示： 从简单开始。只有当你发现 agent 反复犯同样的错误时，再新增规则。在真正理解自己的模式之前，不要过度优化。\n\n将规则提交到 Git，让整个团队都能受益。当你看到 agent 犯错时，更新对应的规则。你甚至可以在 GitHub issue 或 PR 中标记 @cursor，让 agent 帮你更新规则。\n\nSkills：动态能力与工作流\n\nAgent Skills 扩展了 智能体 的能力范围。Skills 封装了特定领域的知识、工作流和脚本，智能体 在需要时可以调用。\n\nSkills 定义在 SKILL.md 文件中，并且可以包括：\n\nCustom commands：通过在 智能体 输入中使用 / 触发的可复用工作流\n\nHooks：在 智能体 动作之前或之后运行的脚本\n\nDomain knowledge：智能体 可按需调用的针对特定任务的指令\n\n与始终包含的 Rules 不同，Skills 会在 智能体 认为相关时动态加载。这样既能保持你的上下文窗口简洁，又能为 智能体 提供访问专业能力的途径。\n\n示例：长时间运行的 智能体 循环\n\n一个常用且强大的模式是使用 Skills 来创建长时间运行的 智能体，让它不断迭代直到实现某个目标。下面是一个示例，展示如何构建一个 hook，让 智能体 一直工作，直到所有测试都通过。\n\n首先，在 .cursor/hooks.json 中配置该 hook：\n\n{\n  \"version\": 1,\n  \"hooks\": {\n    \"stop\": [{ \"command\": \"bun run .cursor/hooks/grind.ts\" }]\n  }\n}\n\nhook 脚本 (.cursor/hooks/grind.ts) 从标准输入 (stdin) 接收上下文，并返回一个 followup_message，用于继续循环：\n\nimport { readFileSync, existsSync } from \"fs\";\n\ninterface StopHookInput {\n  conversation_id: string;\n  status: \"completed\" | \"aborted\" | \"error\";\n  loop_count: number;\n}\n\nconst input: StopHookInput = await Bun.stdin.json();\nconst MAX_ITERATIONS = 5;\n\nif (input.status !== \"completed\" || input.loop_count >= MAX_ITERATIONS) {\n  console.log(JSON.stringify({}));\n  process.exit(0);\n}\n\nconst scratchpad = existsSync(\".cursor/scratchpad.md\")\n  ? readFileSync(\".cursor/scratchpad.md\", \"utf-8\")\n  : \"\";\n\nif (scratchpad.includes(\"DONE\")) {\n  console.log(JSON.stringify({}));\n} else {\n  console.log(JSON.stringify({\n    followup_message: `[Iteration ${input.loop_count + 1}/${MAX_ITERATIONS}] Continue working. Update .cursor/scratchpad.md with DONE when complete.`\n  }));\n}\n\n这种模式适用于：\n\n一直运行 (并修复问题) ，直到所有测试通过\n\n反复迭代 UI，直到与设计稿一致\n\n任何目标导向且成功结果可验证的任务\n\n提示： 结合 hooks 的 Skills 可以集成安全工具、机密信息管理工具以及可观测性平台。有关合作伙伴集成，请参阅 hooks 文档。\n\nAgent Skills 目前仅在 nightly 发布通道中可用。打开 Cursor 设置，选择 Beta，将更新通道设置为 Nightly，然后重启。\n\n除了编写代码之外，你还可以把 智能体 连接到你日常使用的其他工具。MCP (Model Context Protocol) 允许 智能体 读取 Slack 消息、分析 Datadog 日志、调试来自 Sentry 的错误、查询数据库等。\n\n包含图片\n\nAgent 可以直接处理你在提示中提供的图片。你可以粘贴截图、拖入设计文件，或引用图片路径。\n\n从设计到代码\n\n粘贴设计稿并让智能体帮你实现。智能体能识别图片，并匹配布局、颜色和间距。你也可以使用 Figma MCP 服务器。\n\n可视化调试\n\n对错误状态或异常 UI 截图，然后让 智能体 帮你排查问题。这样通常比用文字描述要更高效。\n\n智能体 还可以控制浏览器自行截屏、测试应用，并验证界面变化。详情请参阅 Browser 文档。\n\n浏览器侧边栏让你可以一边设计一边编码。\n\n常见工作流\n\n以下是几种在不同类型任务中都非常有效的 Agent 使用模式。\n\n测试驱动开发\n\n智能体可以自动编写代码、运行测试并进行迭代：\n\n让智能体根据预期的输入/输出对编写测试。 要明确说明你在做 TDD，这样它就会避免为尚不存在的功能编写模拟实现。\n\n让智能体运行测试并确认测试确实失败。 明确说明在这个阶段不要编写实现代码。\n\n在你对测试满意后提交这些测试。\n\n让智能体编写能通过测试的代码，并指示它不要修改测试。告诉它持续迭代，直到所有测试通过。\n\n在你对改动满意后提交实现代码。\n\n当智能体有清晰的迭代目标时，它的表现最好。测试可以让智能体在不断修改的同时评估结果，并逐步改进直到全部通过。\n\n理解代码库\n\n在接手一个新代码库时，可以使用 Agent 来进行学习和探索。像向队友请教一样提问：\n\n“这个项目里的日志是如何运作的？”\n\n“我该如何添加一个新的 API endpoint？”\n\n“`CustomerOnboardingFlow` 处理了哪些边界情况？”\n\n“为什么我们在第 1738 行调用的是 `setUser()` 而不是 `createUser()`？”\n\nAgent 会同时使用 `grep` 和语义搜索在整个代码库中查找答案。这是快速上手陌生代码库的最高效方式之一。\n\nGit 工作流\n\nAgent 智能体可以查找 Git 历史记录、解决合并冲突，并自动化你的 Git 工作流。\n\n例如，一个 /pr 命令可以提交、推送代码并打开一个 pull request：\n\n为当前更改创建 Pull Request。\n\n1. 使用 `git diff` 查看已暂存和未暂存的更改\n2. 根据更改内容编写清晰的提交信息\n3. 提交并推送到当前分支\n4. 使用 `gh pr create` 创建 Pull Request,并提供标题和描述\n5. 完成后返回 PR URL\n\n命令非常适合你每天会多次运行的工作流。将它们保存为 Markdown 文件放在 .cursor/commands/ 中，并提交到 git，这样整个团队都可以使用。\n\n我们使用的其他命令示例：\n\n/fix-issue [number]：使用 gh issue view 获取 issue 详情，查找相关代码，进行修复并打开一个 PR\n\n/review：运行 linter 工具，检查常见问题，并总结可能需要关注的内容\n\n/update-deps：检查过时依赖项并逐个更新，每次更新后运行测试\n\nAgent 智能体可以自动使用这些命令，这样你就可以只通过一次 / 调用来委托多步工作流。\n\n代码审查\n\nAI 生成的代码同样需要代码审查，Cursor 提供了多种方式。\n\n生成过程中\n\n实时查看 agent 的工作过程。Diff 视图会在更改发生时即时显示。如果你发现 agent 的修改方向不对，可以点击 Stop 取消并重新引导。\n\nAgent Review\n\nAgent 完成后，点击 Review → Find Issues 来运行一次专门的审查流程。Agent 会逐行分析建议的修改，并标记潜在问题。\n\n对于所有本地更改，打开 Source Control 选项卡并运行 Agent Review，与主分支进行对比。\n\nAI 代码审查可在 Cursor 中直接发现并修复 bug。\n\n用于 Pull Request 的 Bugbot\n\n推送到代码仓库后，即可为 Pull Request 获取自动化代码审查。Bugbot 会进行高级分析，以尽早发现问题，并为每个 PR 提出改进建议。\n\n架构图\n\n对于重大变更，可以让 agent 帮你生成架构图。可以这样提示它：\"Create a Mermaid diagram showing the data flow for our authentication system, including OAuth providers, session management, and token refresh.\" 这些图对编写文档非常有帮助，并且可以在代码评审之前提前发现架构问题。\n\n并行运行 Agent\n\nCursor 让你可以轻松并行运行多个 Agent，而且它们之间不会互相干扰。我们发现，让多个模型同时尝试解决同一个问题，再从中选出最优结果，可以显著提升最终输出质量，尤其适用于更棘手的任务。\n\n原生 worktree 支持\n\nCursor 会为并行运行的 agent 自动创建和管理 git worktrees。每个 agent 都在自己的 worktree 中运行，文件和更改彼此隔离，因此各个 agent 可以编辑、构建和测试代码，而不会相互干扰。\n\n要在 worktree 中运行 agent，请在 agent 的下拉菜单中选择 worktree 选项。agent 完成后，点击 Apply，将其更改合并回你当前的工作分支。\n\n同时运行多个模型\n\n一种非常强大的使用方式是：让同一个提示词同时在多个模型上运行。从下拉菜单中选择多个模型，提交你的提示词，然后将结果并排比较。Cursor 还会提示它认为最优的解决方案。\n\n这在以下场景中特别有用：\n\n棘手的问题，不同模型可能会采用不同的方法\n\n比较不同模型家族之间的代码质量\n\n发现某个模型可能遗漏的边缘情况\n\n在并行运行大量 Agent 时，配置通知和声音提醒，以便在它们完成时获知进度。\n\n将任务委托给云端 Agent\n\n对于那些原本会被你丢进待办列表的任务，云端 Agent 非常适合处理：\n\n在处理其他工作时顺带发现的 bug 修复\n\n最近代码改动的重构\n\n为现有代码生成测试\n\n文档更新\n\n你可以根据任务在本地 Agent 和云端 Agent 之间切换。可以从 cursor.com/agents、Cursor 编辑器或手机启动云端 Agent。离开工位时，可以通过网页或手机查看会话进度。云端 Agent 在远程沙箱中运行，因此你可以合上电脑，稍后再回来查看结果。\n\n在 cursor.com/agents 管理多个云端 Agent\n\n云端 Agent 在幕后是这样工作的：\n\n描述任务以及相关上下文\n\nAgent 克隆你的仓库并创建一个分支\n\n它会自主工作，并在完成后打开一个 pull request\n\n任务完成后你会收到通知（通过 Slack、电子邮件或 Web 界面）\n\n审查改动并在准备好后合并\n\n提示： 你可以在 Slack 中通过“@Cursor”来触发 Agent。了解更多。\n\n针对棘手 bug 的 Debug Mode\n\n当标准 agent 交互难以解决某个 bug 时，Debug Mode 提供了一种不同的调试思路。\n\n与其凭感觉猜测修复方案，Debug Mode 会：\n\n生成多个关于可能出错原因的假设\n\n使用日志语句对你的代码进行埋点\n\n要求你在收集运行时数据的同时复现该 bug\n\n分析实际行为来精准定位根本原因\n\n基于证据进行有针对性的修复\n\n它最适合用于：\n\n你能复现但搞不清原因的 bug\n\n竞争条件和时序问题\n\n性能问题和内存泄漏\n\n之前能正常工作、但现在出现回归的问题\n\n关键是提供如何复现问题的详细上下文信息。你描述得越具体，agent 添加的埋点就越有价值。\n\n打造你的工作流程\n\n那些能最大化利用 agent 的开发者通常有一些共同特点：\n\n他们会写具体的提示。 指令越具体，agent 的成功率就越高。对比一下“add tests for auth.ts”和“Write a test case for auth.ts covering the logout edge case, using the patterns in __tests__/ and avoiding mocks.”。\n\n他们会不断迭代自己的配置。 从简单开始。只有当你发现 agent 一再犯同样的错误时，才添加规则。只有当你摸索出一个想要重复使用的工作流程时，才添加命令。在真正理解自己的模式之前，不要过度优化。\n\n他们会认真 review。 AI 生成的代码看起来可能是对的，但实际上可能存在细微错误。阅读 diff，并认真进行 review。agent 工作得越快，你的 review 流程就越重要。\n\n他们会提供可验证的目标。 agent 无法修复它“看不见”的问题。使用强类型语言，配置 linters，并编写测试。给 agent 明确的信号，以判断更改是否正确。\n\n他们把 agent 当作有能力的协作者。 让它给出计划，要求它解释，对你不认可的方案要敢于提出质疑。\n\nAgent 正在快速进化。即使模式会随着新模型而变化，我们也希望这些经验能帮助你在使用编程 agent 时更高效地完成工作。\n\n开始使用 Cursor 的 agent 来尝试这些技巧吧。\n\n相关文章\n\nFeb 17, 2026产品\n\n使用插件扩展 Cursor\n\nCursor Team5 分钟阅读\n\nFeb 12, 2026产品\n\n扩展我们的长时间运行 Agent 研究预览\n\nCursor Team1 分钟阅读\n\nFeb 11, 2026产品\n\n智能体用量提升\n\nCursor Team1 分钟阅读\n\n查看更多文章 →",
+  "rawSources": [
+    {
+      "mode": "STATIC",
+      "hash": "4b90f2a384af9d83735642ee15b5b1e4fd380fbfaa70e2472f79cefb1da73488",
+      "path": "C:\\Users\\qianchen\\Documents\\waytoagi-1024-detective-a2-v4\\.cache\\source-documents-v4\\d369248d-0424-4ce6-8100-5af7be6a2f87\\6012b2474b4d0e30f8f4f08ccddd4e50a2a9840eace913930636a91796d3be48\\raw.bin"
+    }
+  ],
+  "storage": {
+    "rawPath": "C:\\Users\\qianchen\\Documents\\waytoagi-1024-detective-a2-v4\\.cache\\source-documents-v4\\d369248d-0424-4ce6-8100-5af7be6a2f87\\6012b2474b4d0e30f8f4f08ccddd4e50a2a9840eace913930636a91796d3be48\\raw.bin",
+    "textPath": "C:\\Users\\qianchen\\Documents\\waytoagi-1024-detective-a2-v4\\.cache\\source-documents-v4\\d369248d-0424-4ce6-8100-5af7be6a2f87\\6012b2474b4d0e30f8f4f08ccddd4e50a2a9840eace913930636a91796d3be48\\source.txt",
+    "manifestPath": "C:\\Users\\qianchen\\Documents\\waytoagi-1024-detective-a2-v4\\.cache\\source-documents-v4\\d369248d-0424-4ce6-8100-5af7be6a2f87\\6012b2474b4d0e30f8f4f08ccddd4e50a2a9840eace913930636a91796d3be48\\manifest.json"
+  },
+  "parser": {
+    "name": "readability+source-dom",
+    "version": "readability-0.6.0+jsdom-30.1.3+source-dom-2",
+    "normalization": "source-text/v1",
+    "mode": "STATIC"
+  },
+  "metadata": {
+    "title": "使用智能体编码的最佳实践 · Cursor",
+    "author": "Lee Robinson",
+    "publishedAt": "2026-01-09T12:00:00.000Z",
+    "language": "zh"
+  },
+  "completeness": "COMPLETE",
+  "warnings": [],
+  "blocks": [
+    {
+      "start": 0,
+      "end": 9,
+      "id": "b0",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[0]",
+      "headingPath": [],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 11,
+      "end": 24,
+      "id": "b1",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[1]",
+      "headingPath": [],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 26,
+      "end": 38,
+      "id": "b2",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[2]",
+      "headingPath": [
+        "使用智能体编码的最佳实践"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 40,
+      "end": 58,
+      "id": "b3",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[3]",
+      "headingPath": [
+        "使用智能体编码的最佳实践"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 60,
+      "end": 77,
+      "id": "b4",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[4]",
+      "headingPath": [
+        "使用智能体编码的最佳实践"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 79,
+      "end": 153,
+      "id": "b5",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[5]",
+      "headingPath": [
+        "使用智能体编码的最佳实践"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 155,
+      "end": 248,
+      "id": "b6",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[6]",
+      "headingPath": [
+        "使用智能体编码的最佳实践"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 250,
+      "end": 263,
+      "id": "b7",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[7]",
+      "headingPath": [
+        "使用智能体编码的最佳实践",
+        "理解智能体 harness"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 265,
+      "end": 289,
+      "id": "b8",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[8]",
+      "headingPath": [
+        "使用智能体编码的最佳实践",
+        "理解智能体 harness"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 291,
+      "end": 330,
+      "id": "b9",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[9]",
+      "headingPath": [
+        "使用智能体编码的最佳实践",
+        "理解智能体 harness"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 332,
+      "end": 356,
+      "id": "b10",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[10]",
+      "headingPath": [
+        "使用智能体编码的最佳实践",
+        "理解智能体 harness"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 358,
+      "end": 376,
+      "id": "b11",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[11]",
+      "headingPath": [
+        "使用智能体编码的最佳实践",
+        "理解智能体 harness"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 378,
+      "end": 461,
+      "id": "b12",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[12]",
+      "headingPath": [
+        "使用智能体编码的最佳实践",
+        "理解智能体 harness"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 463,
+      "end": 622,
+      "id": "b13",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[13]",
+      "headingPath": [
+        "使用智能体编码的最佳实践",
+        "理解智能体 harness"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 624,
+      "end": 629,
+      "id": "b14",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[14]",
+      "headingPath": [
+        "使用智能体编码的最佳实践",
+        "从规划开始"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 631,
+      "end": 656,
+      "id": "b15",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[15]",
+      "headingPath": [
+        "使用智能体编码的最佳实践",
+        "从规划开始"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 658,
+      "end": 738,
+      "id": "b16",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[16]",
+      "headingPath": [
+        "使用智能体编码的最佳实践",
+        "从规划开始"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 740,
+      "end": 750,
+      "id": "b17",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[17]",
+      "headingPath": [
+        "使用智能体编码的最佳实践",
+        "从规划开始",
+        "使用 Plan 模式"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 752,
+      "end": 808,
+      "id": "b18",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[18]",
+      "headingPath": [
+        "使用智能体编码的最佳实践",
+        "从规划开始",
+        "使用 Plan 模式"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 810,
+      "end": 824,
+      "id": "b19",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[19]",
+      "headingPath": [
+        "使用智能体编码的最佳实践",
+        "从规划开始",
+        "使用 Plan 模式"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 826,
+      "end": 837,
+      "id": "b20",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[20]",
+      "headingPath": [
+        "使用智能体编码的最佳实践",
+        "从规划开始",
+        "使用 Plan 模式"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 839,
+      "end": 859,
+      "id": "b21",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[21]",
+      "headingPath": [
+        "使用智能体编码的最佳实践",
+        "从规划开始",
+        "使用 Plan 模式"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 861,
+      "end": 873,
+      "id": "b22",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[22]",
+      "headingPath": [
+        "使用智能体编码的最佳实践",
+        "从规划开始",
+        "使用 Plan 模式"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 875,
+      "end": 908,
+      "id": "b23",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[23]",
+      "headingPath": [
+        "使用智能体编码的最佳实践",
+        "从规划开始",
+        "使用 Plan 模式"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 910,
+      "end": 976,
+      "id": "b24",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[24]",
+      "headingPath": [
+        "使用智能体编码的最佳实践",
+        "从规划开始",
+        "使用 Plan 模式"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 978,
+      "end": 1078,
+      "id": "b25",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[25]",
+      "headingPath": [
+        "使用智能体编码的最佳实践",
+        "从规划开始",
+        "使用 Plan 模式"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1080,
+      "end": 1138,
+      "id": "b26",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[26]",
+      "headingPath": [
+        "使用智能体编码的最佳实践",
+        "从规划开始",
+        "使用 Plan 模式"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1140,
+      "end": 1147,
+      "id": "b27",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[27]",
+      "headingPath": [
+        "使用智能体编码的最佳实践",
+        "从规划开始",
+        "从计划重新开始"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1149,
+      "end": 1197,
+      "id": "b28",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[28]",
+      "headingPath": [
+        "使用智能体编码的最佳实践",
+        "从规划开始",
+        "从计划重新开始"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1199,
+      "end": 1268,
+      "id": "b29",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[29]",
+      "headingPath": [
+        "使用智能体编码的最佳实践",
+        "从规划开始",
+        "从计划重新开始"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1270,
+      "end": 1275,
+      "id": "b30",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[30]",
+      "headingPath": [
+        "使用智能体编码的最佳实践",
+        "管理上下文"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1277,
+      "end": 1332,
+      "id": "b31",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[31]",
+      "headingPath": [
+        "使用智能体编码的最佳实践",
+        "管理上下文"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1334,
+      "end": 1349,
+      "id": "b32",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[32]",
+      "headingPath": [
+        "使用智能体编码的最佳实践",
+        "管理上下文",
+        "让 agent 自行获取上下文"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1351,
+      "end": 1369,
+      "id": "b33",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[33]",
+      "headingPath": [
+        "使用智能体编码的最佳实践",
+        "管理上下文",
+        "让 agent 自行获取上下文"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1371,
+      "end": 1499,
+      "id": "b34",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[34]",
+      "headingPath": [
+        "使用智能体编码的最佳实践",
+        "管理上下文",
+        "让 agent 自行获取上下文"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1501,
+      "end": 1530,
+      "id": "b35",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[35]",
+      "headingPath": [
+        "使用智能体编码的最佳实践",
+        "管理上下文",
+        "让 agent 自行获取上下文"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1532,
+      "end": 1609,
+      "id": "b36",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[36]",
+      "headingPath": [
+        "使用智能体编码的最佳实践",
+        "管理上下文",
+        "让 agent 自行获取上下文"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1611,
+      "end": 1768,
+      "id": "b37",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[37]",
+      "headingPath": [
+        "使用智能体编码的最佳实践",
+        "管理上下文",
+        "让 agent 自行获取上下文"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1770,
+      "end": 1781,
+      "id": "b38",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[38]",
+      "headingPath": [
+        "使用智能体编码的最佳实践",
+        "管理上下文",
+        "什么时候开始一个新对话"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1783,
+      "end": 1811,
+      "id": "b39",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[39]",
+      "headingPath": [
+        "使用智能体编码的最佳实践",
+        "管理上下文",
+        "什么时候开始一个新对话"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1813,
+      "end": 1825,
+      "id": "b40",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[40]",
+      "headingPath": [
+        "使用智能体编码的最佳实践",
+        "管理上下文",
+        "什么时候开始一个新对话"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1827,
+      "end": 1842,
+      "id": "b41",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[41]",
+      "headingPath": [
+        "使用智能体编码的最佳实践",
+        "管理上下文",
+        "什么时候开始一个新对话"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1844,
+      "end": 1868,
+      "id": "b42",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[42]",
+      "headingPath": [
+        "使用智能体编码的最佳实践",
+        "管理上下文",
+        "什么时候开始一个新对话"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1870,
+      "end": 1887,
+      "id": "b43",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[43]",
+      "headingPath": [
+        "使用智能体编码的最佳实践",
+        "管理上下文",
+        "什么时候开始一个新对话"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1889,
+      "end": 1902,
+      "id": "b44",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[44]",
+      "headingPath": [
+        "使用智能体编码的最佳实践",
+        "管理上下文",
+        "什么时候开始一个新对话"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1904,
+      "end": 1917,
+      "id": "b45",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[45]",
+      "headingPath": [
+        "使用智能体编码的最佳实践",
+        "管理上下文",
+        "什么时候开始一个新对话"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1919,
+      "end": 1938,
+      "id": "b46",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[46]",
+      "headingPath": [
+        "使用智能体编码的最佳实践",
+        "管理上下文",
+        "什么时候开始一个新对话"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1940,
+      "end": 1955,
+      "id": "b47",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[47]",
+      "headingPath": [
+        "使用智能体编码的最佳实践",
+        "管理上下文",
+        "什么时候开始一个新对话"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1957,
+      "end": 2060,
+      "id": "b48",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[48]",
+      "headingPath": [
+        "使用智能体编码的最佳实践",
+        "管理上下文",
+        "什么时候开始一个新对话"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2062,
+      "end": 2071,
+      "id": "b49",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[49]",
+      "headingPath": [
+        "使用智能体编码的最佳实践",
+        "管理上下文",
+        "引用以往的工作成果"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2073,
+      "end": 2154,
+      "id": "b50",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[50]",
+      "headingPath": [
+        "使用智能体编码的最佳实践",
+        "管理上下文",
+        "引用以往的工作成果"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2156,
+      "end": 2171,
+      "id": "b51",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[51]",
+      "headingPath": [
+        "使用智能体编码的最佳实践",
+        "管理上下文",
+        "引用以往的工作成果"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2173,
+      "end": 2181,
+      "id": "b52",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[52]",
+      "headingPath": [
+        "使用智能体编码的最佳实践",
+        "扩展 Agent"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2183,
+      "end": 2266,
+      "id": "b53",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[53]",
+      "headingPath": [
+        "使用智能体编码的最佳实践",
+        "扩展 Agent"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2268,
+      "end": 2286,
+      "id": "b54",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[54]",
+      "headingPath": [
+        "使用智能体编码的最佳实践",
+        "扩展 Agent",
+        "Rules：为你的项目提供静态上下文"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2288,
+      "end": 2364,
+      "id": "b55",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[55]",
+      "headingPath": [
+        "使用智能体编码的最佳实践",
+        "扩展 Agent",
+        "Rules：为你的项目提供静态上下文"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2366,
+      "end": 2404,
+      "id": "b56",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[56]",
+      "headingPath": [
+        "使用智能体编码的最佳实践",
+        "扩展 Agent",
+        "Rules：为你的项目提供静态上下文"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2406,
+      "end": 2824,
+      "id": "b57",
+      "kind": "CODE",
+      "locator": "source DOM normalized block[57]",
+      "headingPath": [
+        "使用智能体编码的最佳实践",
+        "扩展 Agent",
+        "Rules：为你的项目提供静态上下文"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2826,
+      "end": 2907,
+      "id": "b58",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[58]",
+      "headingPath": [
+        "使用智能体编码的最佳实践",
+        "扩展 Agent",
+        "Rules：为你的项目提供静态上下文"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2909,
+      "end": 2917,
+      "id": "b59",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[59]",
+      "headingPath": [
+        "使用智能体编码的最佳实践",
+        "扩展 Agent",
+        "Rules：为你的项目提供静态上下文"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2919,
+      "end": 2938,
+      "id": "b60",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[60]",
+      "headingPath": [
+        "使用智能体编码的最佳实践",
+        "扩展 Agent",
+        "Rules：为你的项目提供静态上下文"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2940,
+      "end": 2965,
+      "id": "b61",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[61]",
+      "headingPath": [
+        "使用智能体编码的最佳实践",
+        "扩展 Agent",
+        "Rules：为你的项目提供静态上下文"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2967,
+      "end": 2981,
+      "id": "b62",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[62]",
+      "headingPath": [
+        "使用智能体编码的最佳实践",
+        "扩展 Agent",
+        "Rules：为你的项目提供静态上下文"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2983,
+      "end": 3042,
+      "id": "b63",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[63]",
+      "headingPath": [
+        "使用智能体编码的最佳实践",
+        "扩展 Agent",
+        "Rules：为你的项目提供静态上下文"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3044,
+      "end": 3140,
+      "id": "b64",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[64]",
+      "headingPath": [
+        "使用智能体编码的最佳实践",
+        "扩展 Agent",
+        "Rules：为你的项目提供静态上下文"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3142,
+      "end": 3157,
+      "id": "b65",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[65]",
+      "headingPath": [
+        "使用智能体编码的最佳实践",
+        "扩展 Agent",
+        "Skills：动态能力与工作流"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3159,
+      "end": 3224,
+      "id": "b66",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[66]",
+      "headingPath": [
+        "使用智能体编码的最佳实践",
+        "扩展 Agent",
+        "Skills：动态能力与工作流"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3226,
+      "end": 3257,
+      "id": "b67",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[67]",
+      "headingPath": [
+        "使用智能体编码的最佳实践",
+        "扩展 Agent",
+        "Skills：动态能力与工作流"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3259,
+      "end": 3300,
+      "id": "b68",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[68]",
+      "headingPath": [
+        "使用智能体编码的最佳实践",
+        "扩展 Agent",
+        "Skills：动态能力与工作流"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3302,
+      "end": 3326,
+      "id": "b69",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[69]",
+      "headingPath": [
+        "使用智能体编码的最佳实践",
+        "扩展 Agent",
+        "Skills：动态能力与工作流"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3328,
+      "end": 3364,
+      "id": "b70",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[70]",
+      "headingPath": [
+        "使用智能体编码的最佳实践",
+        "扩展 Agent",
+        "Skills：动态能力与工作流"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3366,
+      "end": 3442,
+      "id": "b71",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[71]",
+      "headingPath": [
+        "使用智能体编码的最佳实践",
+        "扩展 Agent",
+        "Skills：动态能力与工作流"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3444,
+      "end": 3460,
+      "id": "b72",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[72]",
+      "headingPath": [
+        "使用智能体编码的最佳实践",
+        "扩展 Agent",
+        "示例：长时间运行的 智能体 循环"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3462,
+      "end": 3555,
+      "id": "b73",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[73]",
+      "headingPath": [
+        "使用智能体编码的最佳实践",
+        "扩展 Agent",
+        "示例：长时间运行的 智能体 循环"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3557,
+      "end": 3591,
+      "id": "b74",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[74]",
+      "headingPath": [
+        "使用智能体编码的最佳实践",
+        "扩展 Agent",
+        "示例：长时间运行的 智能体 循环"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3593,
+      "end": 3691,
+      "id": "b75",
+      "kind": "CODE",
+      "locator": "source DOM normalized block[75]",
+      "headingPath": [
+        "使用智能体编码的最佳实践",
+        "扩展 Agent",
+        "示例：长时间运行的 智能体 循环"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3693,
+      "end": 3776,
+      "id": "b76",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[76]",
+      "headingPath": [
+        "使用智能体编码的最佳实践",
+        "扩展 Agent",
+        "示例：长时间运行的 智能体 循环"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3778,
+      "end": 4543,
+      "id": "b77",
+      "kind": "CODE",
+      "locator": "source DOM normalized block[77]",
+      "headingPath": [
+        "使用智能体编码的最佳实践",
+        "扩展 Agent",
+        "示例：长时间运行的 智能体 循环"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4545,
+      "end": 4553,
+      "id": "b78",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[78]",
+      "headingPath": [
+        "使用智能体编码的最佳实践",
+        "扩展 Agent",
+        "示例：长时间运行的 智能体 循环"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4555,
+      "end": 4577,
+      "id": "b79",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[79]",
+      "headingPath": [
+        "使用智能体编码的最佳实践",
+        "扩展 Agent",
+        "示例：长时间运行的 智能体 循环"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4579,
+      "end": 4595,
+      "id": "b80",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[80]",
+      "headingPath": [
+        "使用智能体编码的最佳实践",
+        "扩展 Agent",
+        "示例：长时间运行的 智能体 循环"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4597,
+      "end": 4614,
+      "id": "b81",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[81]",
+      "headingPath": [
+        "使用智能体编码的最佳实践",
+        "扩展 Agent",
+        "示例：长时间运行的 智能体 循环"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4616,
+      "end": 4686,
+      "id": "b82",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[82]",
+      "headingPath": [
+        "使用智能体编码的最佳实践",
+        "扩展 Agent",
+        "示例：长时间运行的 智能体 循环"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4688,
+      "end": 4765,
+      "id": "b83",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[83]",
+      "headingPath": [
+        "使用智能体编码的最佳实践",
+        "扩展 Agent",
+        "示例：长时间运行的 智能体 循环"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4767,
+      "end": 4885,
+      "id": "b84",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[84]",
+      "headingPath": [
+        "使用智能体编码的最佳实践",
+        "扩展 Agent",
+        "示例：长时间运行的 智能体 循环"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4887,
+      "end": 4891,
+      "id": "b85",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[85]",
+      "headingPath": [
+        "使用智能体编码的最佳实践",
+        "包含图片"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4893,
+      "end": 4939,
+      "id": "b86",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[86]",
+      "headingPath": [
+        "使用智能体编码的最佳实践",
+        "包含图片"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4941,
+      "end": 4947,
+      "id": "b87",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[87]",
+      "headingPath": [
+        "使用智能体编码的最佳实践",
+        "包含图片",
+        "从设计到代码"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4949,
+      "end": 5006,
+      "id": "b88",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[88]",
+      "headingPath": [
+        "使用智能体编码的最佳实践",
+        "包含图片",
+        "从设计到代码"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5008,
+      "end": 5013,
+      "id": "b89",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[89]",
+      "headingPath": [
+        "使用智能体编码的最佳实践",
+        "包含图片",
+        "可视化调试"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5015,
+      "end": 5060,
+      "id": "b90",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[90]",
+      "headingPath": [
+        "使用智能体编码的最佳实践",
+        "包含图片",
+        "可视化调试"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5062,
+      "end": 5109,
+      "id": "b91",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[91]",
+      "headingPath": [
+        "使用智能体编码的最佳实践",
+        "包含图片",
+        "可视化调试"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5111,
+      "end": 5130,
+      "id": "b92",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[92]",
+      "headingPath": [
+        "使用智能体编码的最佳实践",
+        "包含图片",
+        "可视化调试"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5132,
+      "end": 5137,
+      "id": "b93",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[93]",
+      "headingPath": [
+        "使用智能体编码的最佳实践",
+        "常见工作流"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5139,
+      "end": 5170,
+      "id": "b94",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[94]",
+      "headingPath": [
+        "使用智能体编码的最佳实践",
+        "常见工作流"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5172,
+      "end": 5178,
+      "id": "b95",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[95]",
+      "headingPath": [
+        "使用智能体编码的最佳实践",
+        "常见工作流",
+        "测试驱动开发"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5180,
+      "end": 5202,
+      "id": "b96",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[96]",
+      "headingPath": [
+        "使用智能体编码的最佳实践",
+        "常见工作流",
+        "测试驱动开发"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5204,
+      "end": 5260,
+      "id": "b97",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[97]",
+      "headingPath": [
+        "使用智能体编码的最佳实践",
+        "常见工作流",
+        "测试驱动开发"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5262,
+      "end": 5299,
+      "id": "b98",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[98]",
+      "headingPath": [
+        "使用智能体编码的最佳实践",
+        "常见工作流",
+        "测试驱动开发"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5301,
+      "end": 5316,
+      "id": "b99",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[99]",
+      "headingPath": [
+        "使用智能体编码的最佳实践",
+        "常见工作流",
+        "测试驱动开发"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5318,
+      "end": 5361,
+      "id": "b100",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[100]",
+      "headingPath": [
+        "使用智能体编码的最佳实践",
+        "常见工作流",
+        "测试驱动开发"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5363,
+      "end": 5378,
+      "id": "b101",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[101]",
+      "headingPath": [
+        "使用智能体编码的最佳实践",
+        "常见工作流",
+        "测试驱动开发"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5380,
+      "end": 5434,
+      "id": "b102",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[102]",
+      "headingPath": [
+        "使用智能体编码的最佳实践",
+        "常见工作流",
+        "测试驱动开发"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5436,
+      "end": 5441,
+      "id": "b103",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[103]",
+      "headingPath": [
+        "使用智能体编码的最佳实践",
+        "常见工作流",
+        "理解代码库"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5443,
+      "end": 5485,
+      "id": "b104",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[104]",
+      "headingPath": [
+        "使用智能体编码的最佳实践",
+        "常见工作流",
+        "理解代码库"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5487,
+      "end": 5504,
+      "id": "b105",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[105]",
+      "headingPath": [
+        "使用智能体编码的最佳实践",
+        "常见工作流",
+        "理解代码库"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5506,
+      "end": 5532,
+      "id": "b106",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[106]",
+      "headingPath": [
+        "使用智能体编码的最佳实践",
+        "常见工作流",
+        "理解代码库"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5534,
+      "end": 5571,
+      "id": "b107",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[107]",
+      "headingPath": [
+        "使用智能体编码的最佳实践",
+        "常见工作流",
+        "理解代码库"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5573,
+      "end": 5625,
+      "id": "b108",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[108]",
+      "headingPath": [
+        "使用智能体编码的最佳实践",
+        "常见工作流",
+        "理解代码库"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5627,
+      "end": 5683,
+      "id": "b109",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[109]",
+      "headingPath": [
+        "使用智能体编码的最佳实践",
+        "常见工作流",
+        "理解代码库"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5685,
+      "end": 5692,
+      "id": "b110",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[110]",
+      "headingPath": [
+        "使用智能体编码的最佳实践",
+        "常见工作流",
+        "Git 工作流"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5694,
+      "end": 5739,
+      "id": "b111",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[111]",
+      "headingPath": [
+        "使用智能体编码的最佳实践",
+        "常见工作流",
+        "Git 工作流"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5741,
+      "end": 5781,
+      "id": "b112",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[112]",
+      "headingPath": [
+        "使用智能体编码的最佳实践",
+        "常见工作流",
+        "Git 工作流"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5783,
+      "end": 5930,
+      "id": "b113",
+      "kind": "CODE",
+      "locator": "source DOM normalized block[113]",
+      "headingPath": [
+        "使用智能体编码的最佳实践",
+        "常见工作流",
+        "Git 工作流"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5932,
+      "end": 6013,
+      "id": "b114",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[114]",
+      "headingPath": [
+        "使用智能体编码的最佳实践",
+        "常见工作流",
+        "Git 工作流"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 6015,
+      "end": 6027,
+      "id": "b115",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[115]",
+      "headingPath": [
+        "使用智能体编码的最佳实践",
+        "常见工作流",
+        "Git 工作流"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 6029,
+      "end": 6097,
+      "id": "b116",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[116]",
+      "headingPath": [
+        "使用智能体编码的最佳实践",
+        "常见工作流",
+        "Git 工作流"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 6099,
+      "end": 6139,
+      "id": "b117",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[117]",
+      "headingPath": [
+        "使用智能体编码的最佳实践",
+        "常见工作流",
+        "Git 工作流"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 6141,
+      "end": 6176,
+      "id": "b118",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[118]",
+      "headingPath": [
+        "使用智能体编码的最佳实践",
+        "常见工作流",
+        "Git 工作流"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 6178,
+      "end": 6223,
+      "id": "b119",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[119]",
+      "headingPath": [
+        "使用智能体编码的最佳实践",
+        "常见工作流",
+        "Git 工作流"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 6225,
+      "end": 6229,
+      "id": "b120",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[120]",
+      "headingPath": [
+        "使用智能体编码的最佳实践",
+        "代码审查"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 6231,
+      "end": 6263,
+      "id": "b121",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[121]",
+      "headingPath": [
+        "使用智能体编码的最佳实践",
+        "代码审查"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 6265,
+      "end": 6270,
+      "id": "b122",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[122]",
+      "headingPath": [
+        "使用智能体编码的最佳实践",
+        "代码审查",
+        "生成过程中"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 6272,
+      "end": 6346,
+      "id": "b123",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[123]",
+      "headingPath": [
+        "使用智能体编码的最佳实践",
+        "代码审查",
+        "生成过程中"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 6348,
+      "end": 6360,
+      "id": "b124",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[124]",
+      "headingPath": [
+        "使用智能体编码的最佳实践",
+        "代码审查",
+        "Agent Review"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 6362,
+      "end": 6434,
+      "id": "b125",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[125]",
+      "headingPath": [
+        "使用智能体编码的最佳实践",
+        "代码审查",
+        "Agent Review"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 6436,
+      "end": 6492,
+      "id": "b126",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[126]",
+      "headingPath": [
+        "使用智能体编码的最佳实践",
+        "代码审查",
+        "Agent Review"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 6494,
+      "end": 6524,
+      "id": "b127",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[127]",
+      "headingPath": [
+        "使用智能体编码的最佳实践",
+        "代码审查",
+        "Agent Review"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 6526,
+      "end": 6550,
+      "id": "b128",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[128]",
+      "headingPath": [
+        "使用智能体编码的最佳实践",
+        "代码审查",
+        "用于 Pull Request 的 Bugbot"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 6552,
+      "end": 6626,
+      "id": "b129",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[129]",
+      "headingPath": [
+        "使用智能体编码的最佳实践",
+        "代码审查",
+        "用于 Pull Request 的 Bugbot"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 6628,
+      "end": 6631,
+      "id": "b130",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[130]",
+      "headingPath": [
+        "使用智能体编码的最佳实践",
+        "代码审查",
+        "架构图"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 6633,
+      "end": 6846,
+      "id": "b131",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[131]",
+      "headingPath": [
+        "使用智能体编码的最佳实践",
+        "代码审查",
+        "架构图"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 6848,
+      "end": 6858,
+      "id": "b132",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[132]",
+      "headingPath": [
+        "使用智能体编码的最佳实践",
+        "并行运行 Agent"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 6860,
+      "end": 6956,
+      "id": "b133",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[133]",
+      "headingPath": [
+        "使用智能体编码的最佳实践",
+        "并行运行 Agent"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 6958,
+      "end": 6972,
+      "id": "b134",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[134]",
+      "headingPath": [
+        "使用智能体编码的最佳实践",
+        "并行运行 Agent",
+        "原生 worktree 支持"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 6974,
+      "end": 7087,
+      "id": "b135",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[135]",
+      "headingPath": [
+        "使用智能体编码的最佳实践",
+        "并行运行 Agent",
+        "原生 worktree 支持"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 7089,
+      "end": 7176,
+      "id": "b136",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[136]",
+      "headingPath": [
+        "使用智能体编码的最佳实践",
+        "并行运行 Agent",
+        "原生 worktree 支持"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 7178,
+      "end": 7186,
+      "id": "b137",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[137]",
+      "headingPath": [
+        "使用智能体编码的最佳实践",
+        "并行运行 Agent",
+        "同时运行多个模型"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 7188,
+      "end": 7272,
+      "id": "b138",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[138]",
+      "headingPath": [
+        "使用智能体编码的最佳实践",
+        "并行运行 Agent",
+        "同时运行多个模型"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 7274,
+      "end": 7286,
+      "id": "b139",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[139]",
+      "headingPath": [
+        "使用智能体编码的最佳实践",
+        "并行运行 Agent",
+        "同时运行多个模型"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 7288,
+      "end": 7308,
+      "id": "b140",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[140]",
+      "headingPath": [
+        "使用智能体编码的最佳实践",
+        "并行运行 Agent",
+        "同时运行多个模型"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 7310,
+      "end": 7325,
+      "id": "b141",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[141]",
+      "headingPath": [
+        "使用智能体编码的最佳实践",
+        "并行运行 Agent",
+        "同时运行多个模型"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 7327,
+      "end": 7342,
+      "id": "b142",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[142]",
+      "headingPath": [
+        "使用智能体编码的最佳实践",
+        "并行运行 Agent",
+        "同时运行多个模型"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 7344,
+      "end": 7383,
+      "id": "b143",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[143]",
+      "headingPath": [
+        "使用智能体编码的最佳实践",
+        "并行运行 Agent",
+        "同时运行多个模型"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 7385,
+      "end": 7399,
+      "id": "b144",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[144]",
+      "headingPath": [
+        "使用智能体编码的最佳实践",
+        "将任务委托给云端 Agent"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 7401,
+      "end": 7436,
+      "id": "b145",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[145]",
+      "headingPath": [
+        "使用智能体编码的最佳实践",
+        "将任务委托给云端 Agent"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 7438,
+      "end": 7458,
+      "id": "b146",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[146]",
+      "headingPath": [
+        "使用智能体编码的最佳实践",
+        "将任务委托给云端 Agent"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 7460,
+      "end": 7469,
+      "id": "b147",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[147]",
+      "headingPath": [
+        "使用智能体编码的最佳实践",
+        "将任务委托给云端 Agent"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 7471,
+      "end": 7480,
+      "id": "b148",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[148]",
+      "headingPath": [
+        "使用智能体编码的最佳实践",
+        "将任务委托给云端 Agent"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 7482,
+      "end": 7486,
+      "id": "b149",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[149]",
+      "headingPath": [
+        "使用智能体编码的最佳实践",
+        "将任务委托给云端 Agent"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 7488,
+      "end": 7626,
+      "id": "b150",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[150]",
+      "headingPath": [
+        "使用智能体编码的最佳实践",
+        "将任务委托给云端 Agent"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 7628,
+      "end": 7660,
+      "id": "b151",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[151]",
+      "headingPath": [
+        "使用智能体编码的最佳实践",
+        "将任务委托给云端 Agent"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 7662,
+      "end": 7681,
+      "id": "b152",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[152]",
+      "headingPath": [
+        "使用智能体编码的最佳实践",
+        "将任务委托给云端 Agent"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 7683,
+      "end": 7694,
+      "id": "b153",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[153]",
+      "headingPath": [
+        "使用智能体编码的最佳实践",
+        "将任务委托给云端 Agent"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 7696,
+      "end": 7715,
+      "id": "b154",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[154]",
+      "headingPath": [
+        "使用智能体编码的最佳实践",
+        "将任务委托给云端 Agent"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 7717,
+      "end": 7746,
+      "id": "b155",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[155]",
+      "headingPath": [
+        "使用智能体编码的最佳实践",
+        "将任务委托给云端 Agent"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 7748,
+      "end": 7782,
+      "id": "b156",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[156]",
+      "headingPath": [
+        "使用智能体编码的最佳实践",
+        "将任务委托给云端 Agent"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 7784,
+      "end": 7796,
+      "id": "b157",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[157]",
+      "headingPath": [
+        "使用智能体编码的最佳实践",
+        "将任务委托给云端 Agent"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 7798,
+      "end": 7840,
+      "id": "b158",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[158]",
+      "headingPath": [
+        "使用智能体编码的最佳实践",
+        "将任务委托给云端 Agent"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 7842,
+      "end": 7863,
+      "id": "b159",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[159]",
+      "headingPath": [
+        "使用智能体编码的最佳实践",
+        "针对棘手 bug 的 Debug Mode"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 7865,
+      "end": 7914,
+      "id": "b160",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[160]",
+      "headingPath": [
+        "使用智能体编码的最佳实践",
+        "针对棘手 bug 的 Debug Mode"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 7916,
+      "end": 7941,
+      "id": "b161",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[161]",
+      "headingPath": [
+        "使用智能体编码的最佳实践",
+        "针对棘手 bug 的 Debug Mode"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 7943,
+      "end": 7958,
+      "id": "b162",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[162]",
+      "headingPath": [
+        "使用智能体编码的最佳实践",
+        "针对棘手 bug 的 Debug Mode"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 7960,
+      "end": 7975,
+      "id": "b163",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[163]",
+      "headingPath": [
+        "使用智能体编码的最佳实践",
+        "针对棘手 bug 的 Debug Mode"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 7977,
+      "end": 7998,
+      "id": "b164",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[164]",
+      "headingPath": [
+        "使用智能体编码的最佳实践",
+        "针对棘手 bug 的 Debug Mode"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 8000,
+      "end": 8015,
+      "id": "b165",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[165]",
+      "headingPath": [
+        "使用智能体编码的最佳实践",
+        "针对棘手 bug 的 Debug Mode"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 8017,
+      "end": 8030,
+      "id": "b166",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[166]",
+      "headingPath": [
+        "使用智能体编码的最佳实践",
+        "针对棘手 bug 的 Debug Mode"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 8032,
+      "end": 8039,
+      "id": "b167",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[167]",
+      "headingPath": [
+        "使用智能体编码的最佳实践",
+        "针对棘手 bug 的 Debug Mode"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 8041,
+      "end": 8056,
+      "id": "b168",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[168]",
+      "headingPath": [
+        "使用智能体编码的最佳实践",
+        "针对棘手 bug 的 Debug Mode"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 8058,
+      "end": 8067,
+      "id": "b169",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[169]",
+      "headingPath": [
+        "使用智能体编码的最佳实践",
+        "针对棘手 bug 的 Debug Mode"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 8069,
+      "end": 8078,
+      "id": "b170",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[170]",
+      "headingPath": [
+        "使用智能体编码的最佳实践",
+        "针对棘手 bug 的 Debug Mode"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 8080,
+      "end": 8098,
+      "id": "b171",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[171]",
+      "headingPath": [
+        "使用智能体编码的最佳实践",
+        "针对棘手 bug 的 Debug Mode"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 8100,
+      "end": 8145,
+      "id": "b172",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[172]",
+      "headingPath": [
+        "使用智能体编码的最佳实践",
+        "针对棘手 bug 的 Debug Mode"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 8147,
+      "end": 8155,
+      "id": "b173",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[173]",
+      "headingPath": [
+        "使用智能体编码的最佳实践",
+        "打造你的工作流程"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 8157,
+      "end": 8186,
+      "id": "b174",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[174]",
+      "headingPath": [
+        "使用智能体编码的最佳实践",
+        "打造你的工作流程"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 8188,
+      "end": 8363,
+      "id": "b175",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[175]",
+      "headingPath": [
+        "使用智能体编码的最佳实践",
+        "打造你的工作流程"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 8365,
+      "end": 8462,
+      "id": "b176",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[176]",
+      "headingPath": [
+        "使用智能体编码的最佳实践",
+        "打造你的工作流程"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 8464,
+      "end": 8558,
+      "id": "b177",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[177]",
+      "headingPath": [
+        "使用智能体编码的最佳实践",
+        "打造你的工作流程"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 8560,
+      "end": 8642,
+      "id": "b178",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[178]",
+      "headingPath": [
+        "使用智能体编码的最佳实践",
+        "打造你的工作流程"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 8644,
+      "end": 8694,
+      "id": "b179",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[179]",
+      "headingPath": [
+        "使用智能体编码的最佳实践",
+        "打造你的工作流程"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 8696,
+      "end": 8758,
+      "id": "b180",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[180]",
+      "headingPath": [
+        "使用智能体编码的最佳实践",
+        "打造你的工作流程"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 8760,
+      "end": 8789,
+      "id": "b181",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[181]",
+      "headingPath": [
+        "使用智能体编码的最佳实践",
+        "打造你的工作流程"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 8791,
+      "end": 8795,
+      "id": "b182",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[182]",
+      "headingPath": [
+        "使用智能体编码的最佳实践",
+        "相关文章"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 8797,
+      "end": 8811,
+      "id": "b183",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[183]",
+      "headingPath": [
+        "使用智能体编码的最佳实践",
+        "相关文章"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 8813,
+      "end": 8826,
+      "id": "b184",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[184]",
+      "headingPath": [
+        "使用智能体编码的最佳实践",
+        "相关文章"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 8828,
+      "end": 8845,
+      "id": "b185",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[185]",
+      "headingPath": [
+        "使用智能体编码的最佳实践",
+        "相关文章"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 8847,
+      "end": 8861,
+      "id": "b186",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[186]",
+      "headingPath": [
+        "使用智能体编码的最佳实践",
+        "相关文章"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 8863,
+      "end": 8884,
+      "id": "b187",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[187]",
+      "headingPath": [
+        "使用智能体编码的最佳实践",
+        "相关文章"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 8886,
+      "end": 8903,
+      "id": "b188",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[188]",
+      "headingPath": [
+        "使用智能体编码的最佳实践",
+        "相关文章"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 8905,
+      "end": 8919,
+      "id": "b189",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[189]",
+      "headingPath": [
+        "使用智能体编码的最佳实践",
+        "相关文章"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 8921,
+      "end": 8928,
+      "id": "b190",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[190]",
+      "headingPath": [
+        "使用智能体编码的最佳实践",
+        "相关文章"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 8930,
+      "end": 8947,
+      "id": "b191",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[191]",
+      "headingPath": [
+        "使用智能体编码的最佳实践",
+        "相关文章"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 8949,
+      "end": 8957,
+      "id": "b192",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[192]",
+      "headingPath": [
+        "使用智能体编码的最佳实践",
+        "相关文章"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    }
+  ],
+  "links": [
+    {
+      "url": "https://cursor.com/blog/agent-best-practices",
+      "text": "",
+      "blockId": null,
+      "relation": "CANONICAL",
+      "locator": "source DOM link[0]"
+    },
+    {
+      "url": "https://cursor.com/cn/blog",
+      "text": "Blog",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[31]"
+    },
+    {
+      "url": "https://cursor.com/cn/blog/topic/product",
+      "text": "产品",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[32]"
+    },
+    {
+      "url": "https://cursor.com/cn/blog/topic/product",
+      "text": "产品",
+      "blockId": "b1",
+      "relation": "LINK",
+      "locator": "source DOM link[33]"
+    },
+    {
+      "url": "https://cursor.com/blog/codex-model-harness",
+      "text": "调整 instructions",
+      "blockId": "b12",
+      "relation": "LINK",
+      "locator": "source DOM link[35]"
+    },
+    {
+      "url": "https://cursor.com/blog/semsearch",
+      "text": "工具",
+      "blockId": "b12",
+      "relation": "LINK",
+      "locator": "source DOM link[36]"
+    },
+    {
+      "url": "https://cursor.com/blog/productivity",
+      "text": "一项研究",
+      "blockId": "b16",
+      "relation": "LINK",
+      "locator": "source DOM link[38]"
+    },
+    {
+      "url": "https://cursor.com/blog/semsearch",
+      "text": "搜索工具",
+      "blockId": "b34",
+      "relation": "LINK",
+      "locator": "source DOM link[43]"
+    },
+    {
+      "url": "https://cursor.com/docs/skills",
+      "text": "Agent Skills",
+      "blockId": "b66",
+      "relation": "LINK",
+      "locator": "source DOM link[49]"
+    },
+    {
+      "url": "https://cursor.com/docs/hooks",
+      "text": "hooks 文档",
+      "blockId": "b82",
+      "relation": "LINK",
+      "locator": "source DOM link[51]"
+    },
+    {
+      "url": "https://cursor.com/marketplace",
+      "text": "MCP (Model Context Protocol)",
+      "blockId": "b84",
+      "relation": "LINK",
+      "locator": "source DOM link[52]"
+    },
+    {
+      "url": "https://cursor.com/marketplace/figma",
+      "text": "Figma MCP 服务器",
+      "blockId": "b88",
+      "relation": "LINK",
+      "locator": "source DOM link[55]"
+    },
+    {
+      "url": "https://cursor.com/docs/agent/tools/browser",
+      "text": "Browser 文档",
+      "blockId": "b91",
+      "relation": "LINK",
+      "locator": "source DOM link[57]"
+    },
+    {
+      "url": "https://cursor.com/docs/bugbot",
+      "text": "Bugbot",
+      "blockId": "b129",
+      "relation": "LINK",
+      "locator": "source DOM link[66]"
+    },
+    {
+      "url": "https://cursor.com/docs/configuration/worktrees",
+      "text": "git worktrees",
+      "blockId": "b135",
+      "relation": "LINK",
+      "locator": "source DOM link[70]"
+    },
+    {
+      "url": "https://cursor.com/agents",
+      "text": "cursor.com/agents",
+      "blockId": "b150",
+      "relation": "LINK",
+      "locator": "source DOM link[73]"
+    },
+    {
+      "url": "https://cursor.com/docs/integrations/slack",
+      "text": "了解更多",
+      "blockId": "b158",
+      "relation": "LINK",
+      "locator": "source DOM link[74]"
+    },
+    {
+      "url": "https://cursor.com/download",
+      "text": "Cursor 的 agent",
+      "blockId": "b181",
+      "relation": "LINK",
+      "locator": "source DOM link[77]"
+    },
+    {
+      "url": "https://cursor.com/cn/blog",
+      "text": "查看更多文章 →",
+      "blockId": "b192",
+      "relation": "LINK",
+      "locator": "source DOM link[82]"
+    }
+  ],
+  "tables": []
+}

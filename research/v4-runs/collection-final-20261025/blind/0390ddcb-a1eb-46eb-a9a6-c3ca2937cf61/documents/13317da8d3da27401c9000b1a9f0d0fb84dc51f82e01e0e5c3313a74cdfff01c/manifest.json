@@ -1,0 +1,64 @@
+{
+  "schemaVersion": "source-document/v1",
+  "id": "13317da8d3da27401c9000b1a9f0d0fb84dc51f82e01e0e5c3313a74cdfff01c",
+  "version": "4ca6436ec95202295e7eb0ce4cc7378362a2311a163fbaa5728a55df5a0b149e",
+  "requestedUrl": "https://github.com/ollama/ollama/blob/0b6c6c9092222c850250d8408e7b29056f040bf3/docs/faq.md",
+  "finalUrl": "https://raw.githubusercontent.com/ollama/ollama/0b6c6c9092222c850250d8408e7b29056f040bf3/docs/faq.md",
+  "retrievedAt": "2026-10-25T04:42:43.964Z",
+  "contentType": "text/plain; charset=utf-8",
+  "status": "READ",
+  "readError": null,
+  "rawHash": "191d6beaf286dec0500558237e79562dcd5b6cf15463b1a201221d67b139f0e8",
+  "textHash": "74908f3c3fda426732c12d8f20934b495e8f3259d3a9ac117fb474983e0f6f93",
+  "text": "# FAQ\n\n## How can I upgrade Ollama?\n\nOllama on macOS and Windows will automatically download updates. Click on the taskbar or menubar item and then click \"Restart to update\" to apply the update. Updates can also be installed by downloading the latest version [manually](https://ollama.com/download/).\n\nOn Linux, re-run the install script:\n\n```\ncurl -fsSL https://ollama.com/install.sh | sh\n```\n\n## How can I view the logs?\n\nReview the [Troubleshooting](./troubleshooting.md) docs for more about using logs.\n\n## How do I configure Ollama server?\n\nOllama server can be configured with environment variables.\n\n### Setting environment variables on Mac\n\nIf Ollama is run as a macOS application, environment variables should be set using `launchctl`:\n\n1. For each environment variable, call `launchctl setenv`.\n\n    ```bash\n    launchctl setenv OLLAMA_HOST \"0.0.0.0\"\n    ```\n\n2. Restart Ollama application.\n\n### Setting environment variables on Linux\n\nIf Ollama is run as a systemd service, environment variables should be set using `systemctl`:\n\n1. Edit the systemd service by calling `systemctl edit ollama.service`. This will open an editor.\n\n2. For each environment variable, add a line `Environment` under section `[Service]`:\n\n    ```ini\n    [Service]\n    Environment=\"OLLAMA_HOST=0.0.0.0\"\n    ```\n\n3. Save and exit.\n\n4. Reload `systemd` and restart Ollama:\n\n   ```bash\n   systemctl daemon-reload\n   systemctl restart ollama\n   ```\n\n### Setting environment variables on Windows\n\nOn windows, Ollama inherits your user and system environment variables.\n\n1. First Quit Ollama by clicking on it in the task bar\n\n2. Edit system environment variables from the control panel\n\n3. Edit or create New variable(s) for your user account for `OLLAMA_HOST`, `OLLAMA_MODELS`, etc.\n\n4. Click OK/Apply to save \n\n5. Run `ollama` from a new terminal window \n\n\n## How can I expose Ollama on my network?\n\nOllama binds 127.0.0.1 port 11434 by default. Change the bind address with the `OLLAMA_HOST` environment variable.\n\nRefer to the section [above](#how-do-i-configure-ollama-server) for how to set environment variables on your platform.\n\n## How can I allow additional web origins to access Ollama?\n\nOllama allows cross-origin requests from `127.0.0.1` and `0.0.0.0` by default. Additional origins can be configured with `OLLAMA_ORIGINS`.\n\nRefer to the section [above](#how-do-i-configure-ollama-server) for how to set environment variables on your platform.\n\n## Where are models stored?\n\n- macOS: `~/.ollama/models`\n- Linux: `/usr/share/ollama/.ollama/models`\n- Windows: `C:\\Users\\<username>\\.ollama\\models`\n\n### How do I set them to a different location?\n\nIf a different directory needs to be used, set the environment variable `OLLAMA_MODELS` to the chosen directory.\n\nRefer to the section [above](#how-do-i-configure-ollama-server) for how to set environment variables on your platform.\n\n## Does Ollama send my prompts and answers back to Ollama.ai to use in any way?\n\nNo, Ollama runs entirely locally, and conversation data will never leave your machine.\n\n## How can I use Ollama in Visual Studio Code?\n\nThere is already a large collection of plugins available for VSCode as well as other editors that leverage Ollama. See the list of [extensions & plugins](https://github.com/jmorganca/ollama#extensions--plugins) at the bottom of the main repository readme.\n\n## How do I use Ollama behind a proxy?\n\nOllama is compatible with proxy servers if `HTTP_PROXY` or `HTTPS_PROXY` are configured. When using either variables, ensure it is set where `ollama serve` can access the values. When using `HTTPS_PROXY`, ensure the proxy certificate is installed as a system certificate. Refer to the section above for how to use environment variables on your platform.\n\n### How do I use Ollama behind a proxy in Docker?\n\nThe Ollama Docker container image can be configured to use a proxy by passing `-e HTTPS_PROXY=https://proxy.example.com` when starting the container.\n\nAlternatively, the Docker daemon can be configured to use a proxy. Instructions are available for Docker Desktop on [macOS](https://docs.docker.com/desktop/settings/mac/#proxies), [Windows](https://docs.docker.com/desktop/settings/windows/#proxies), and [Linux](https://docs.docker.com/desktop/settings/linux/#proxies), and Docker [daemon with systemd](https://docs.docker.com/config/daemon/systemd/#httphttps-proxy).\n\nEnsure the certificate is installed as a system certificate when using HTTPS. This may require a new Docker image when using a self-signed certificate.\n\n```dockerfile\nFROM ollama/ollama\nCOPY my-ca.pem /usr/local/share/ca-certificates/my-ca.crt\nRUN update-ca-certificates\n```\n\nBuild and run this image:\n\n```shell\ndocker build -t ollama-with-ca .\ndocker run -d -e HTTPS_PROXY=https://my.proxy.example.com -p 11434:11434 ollama-with-ca\n```\n\n## How do I use Ollama with GPU acceleration in Docker?\n\nThe Ollama Docker container can be configured with GPU acceleration in Linux or Windows (with WSL2). This requires the [nvidia-container-toolkit](https://github.com/NVIDIA/nvidia-container-toolkit). See [ollama/ollama](https://hub.docker.com/r/ollama/ollama) for more details.\n\nGPU acceleration is not available for Docker Desktop in macOS due to the lack of GPU passthrough and emulation.\n\n## Why is networking slow in WSL2 on Windows 10?\n\nThis can impact both installing Ollama, as well as downloading models.\n\nOpen `Control Panel > Networking and Internet > View network status and tasks` and click on `Change adapter settings` on the left panel. Find the `vEthernel (WSL)` adapter, right click and select `Properties`.\nClick on `Configure` and open the `Advanced` tab. Search through each of the properties until you find `Large Send Offload Version 2 (IPv4)` and `Large Send Offload Version 2 (IPv6)`. *Disable* both of these\nproperties.\n\n## How can I pre-load a model to get faster response times?\n\nIf you are using the API you can preload a model by sending the Ollama server an empty request. This works with both the `/api/generate` and `/api/chat` API endpoints.\n\nTo preload the mistral model using the generate endpoint, use:\n```shell\ncurl http://localhost:11434/api/generate -d '{\"model\": \"mistral\"}'\n```\n\nTo use the chat completions endpoint, use:\n```shell\ncurl http://localhost:11434/api/chat -d '{\"model\": \"mistral\"}'\n```\n\n## How do I keep a model loaded in memory or make it unload immediately?\n\nBy default models are kept in memory for 5 minutes before being unloaded. This allows for quicker response times if you are making numerous requests to the LLM. You may, however, want to free up the memory before the 5 minutes have elapsed or keep the model loaded indefinitely. Use the `keep_alive` parameter with either the `/api/generate` and `/api/chat` API endpoints to control how long the model is left in memory.\n\nThe `keep_alive` parameter can be set to:\n* a duration string (such as \"10m\" or \"24h\")\n* a number in seconds (such as 3600)\n* any negative number which will keep the model loaded in memory (e.g. -1 or \"-1m\")\n* '0' which will unload the model immediately after generating a response\n\nFor example, to preload a model and leave it in memory use:\n```shell\ncurl http://localhost:11434/api/generate -d '{\"model\": \"llama2\", \"keep_alive\": -1}'\n```\n\nTo unload the model and free up memory use:\n```shell\ncurl http://localhost:11434/api/generate -d '{\"model\": \"llama2\", \"keep_alive\": 0}'\n```",
+  "rawSources": [
+    {
+      "mode": "STATIC",
+      "hash": "4f98cc3368c01a9ec2a984efa32754b4520bcea4c8d9c20826634aeb571d96c3",
+      "path": "C:\\Users\\qianchen\\Documents\\waytoagi-1024-detective-a2-v4\\.cache\\source-documents-v4\\0390ddcb-a1eb-46eb-a9a6-c3ca2937cf61\\13317da8d3da27401c9000b1a9f0d0fb84dc51f82e01e0e5c3313a74cdfff01c\\static.bin"
+    },
+    {
+      "mode": "PLAIN_TEXT",
+      "hash": "191d6beaf286dec0500558237e79562dcd5b6cf15463b1a201221d67b139f0e8",
+      "path": "C:\\Users\\qianchen\\Documents\\waytoagi-1024-detective-a2-v4\\.cache\\source-documents-v4\\0390ddcb-a1eb-46eb-a9a6-c3ca2937cf61\\13317da8d3da27401c9000b1a9f0d0fb84dc51f82e01e0e5c3313a74cdfff01c\\raw.bin"
+    }
+  ],
+  "storage": {
+    "rawPath": "C:\\Users\\qianchen\\Documents\\waytoagi-1024-detective-a2-v4\\.cache\\source-documents-v4\\0390ddcb-a1eb-46eb-a9a6-c3ca2937cf61\\13317da8d3da27401c9000b1a9f0d0fb84dc51f82e01e0e5c3313a74cdfff01c\\raw.bin",
+    "textPath": "C:\\Users\\qianchen\\Documents\\waytoagi-1024-detective-a2-v4\\.cache\\source-documents-v4\\0390ddcb-a1eb-46eb-a9a6-c3ca2937cf61\\13317da8d3da27401c9000b1a9f0d0fb84dc51f82e01e0e5c3313a74cdfff01c\\source.txt",
+    "manifestPath": "C:\\Users\\qianchen\\Documents\\waytoagi-1024-detective-a2-v4\\.cache\\source-documents-v4\\0390ddcb-a1eb-46eb-a9a6-c3ca2937cf61\\13317da8d3da27401c9000b1a9f0d0fb84dc51f82e01e0e5c3313a74cdfff01c\\manifest.json"
+  },
+  "parser": {
+    "name": "readability+source-dom",
+    "version": "readability-0.6.0+jsdom-30.1.3+source-dom-2",
+    "normalization": "source-text/v1",
+    "mode": "PLAIN_TEXT"
+  },
+  "metadata": {
+    "title": "ollama/docs/faq.md at 0b6c6c9092222c850250d8408e7b29056f040bf3 · ollama/ollama · GitHub",
+    "author": null,
+    "publishedAt": null,
+    "language": null
+  },
+  "completeness": "COMPLETE",
+  "warnings": [
+    "GitHub blob page followed its actual raw-file link; branch/path retained in requestedUrl, raw content version fixed by hash"
+  ],
+  "blocks": [
+    {
+      "start": 0,
+      "end": 7372,
+      "id": "b0",
+      "kind": "TEXT",
+      "locator": "UTF-8 source text",
+      "headingPath": [],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    }
+  ],
+  "links": [],
+  "tables": []
+}

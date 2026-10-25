@@ -1,0 +1,1003 @@
+{
+  "schemaVersion": "source-document/v1",
+  "id": "7beaa66b0219947ca5baaeef8941f8d5161a24fb6e954c4c4bfbb297d7e516e9",
+  "version": "6261a12b2dfa30433fd196a4cd242de1417afbdd87a8becc1b3cc936431a4d31",
+  "requestedUrl": "https://docs.devin.ai/zh/get-started/devin-intro",
+  "finalUrl": "https://docs.devin.ai/zh/get-started/devin-intro",
+  "retrievedAt": "2026-10-25T04:36:24.647Z",
+  "contentType": "text/html; charset=utf-8",
+  "status": "READ",
+  "readError": null,
+  "rawHash": "9d4117be63d11545201534f3f953f5124fea2a26b7527a442eb3ccfac841997c",
+  "textHash": "a535feaacf3a5a26b06eb6aa1d4e2aa7c885840b75ce9e7cc1d9f2d473bdedc4",
+  "text": "Skip to main content\n\n开始使用\n\nDevin 简介\n\n复制页面\n\nDevin 是一名 AI 软件工程师，专为帮助有雄心的工程团队高效清理积压工作而打造。\n\n复制页面\n\nDevin 快速导览\n\nDevin 是一名自主工作的 AI 软件工程师，能够编写、运行和测试代码。Devin 可以处理大多数任务 (极其困难的任务除外) 。一个经验法则是：如果你能在三小时内完成某件事情，Devin 大概率也能完成。可以让 Devin 处理 Linear/Jira 工单，实现全新的功能，复现并修复 bug，构建内部工具等！\n\n在我们的发布说明中了解 Devin 的最新动态！\n\n在某些情况下，Devin 的实际表现可能与本文所述并不完全一致，或者文档内容可能已过时。\n\n​已注册？立即开始：\n\n浏览使用场景\n\n​Devin 的优势是什么？\n\n以下是 Devin 擅长处理的任务类型：\n\n并行处理大量任务，在它们进入你的 待办列表 之前完成 Linear / Jira 工单 从零开始实现完整功能 Bug 报告 应用测试\n\n代码迁移、重构和现代化改造 语言迁移 (例如：JavaScript 到 TypeScript) 框架升级 (例如：Angular 16 -> 18) 从 monorepo 转换为 submodule 移除未使用的 feature flag 将通用代码抽取为公共库\n\n常见且重复的工程任务 PR Review 代码库问答 复现并修复 bug 编写单元测试 维护文档\n\n客户工程支持 构建新集成并对接不熟悉的 API 创建自定义演示 方案原型设计 / 快速原型开发 构建内部工具\n\n要从 Devin 获得最佳效果：\n\n编写清晰的提示，并明确完成标准——任务越清晰，成功率越高，尤其是对复杂工作。\n\n让任务易于验证——例如检查 CI 是否通过，或测试一次自动部署。\n\n对于更难的任务，将其拆分为边界清晰的步骤，并提供相关上下文或示例。\n\n遵循我们的最佳实践和任务前检查清单。\n\n最有效的工作流程通常包括：\n\n在你和同事在 Slack 或 Teams 讨论某个 bug 的会话线程中 @Devin\n\n通过 Web 应用程序委派一个更复杂的任务，并在 Devin 的 IDE 给出不错的初稿后接手\n\n在本地环境中运行 终端版 Devin，直接在命令行中进行快速修复、代码探索和交互式编码——然后使用 /handoff 将耗时更长的任务交给云端 Devin。\n\n在一天开始时从待办清单中拆分出适合的任务交给 Devin，之后再回来查看等待你审核的草稿 PR\n\n当你把 Devin 融入团队和现有工作流程时，它的效果最佳。\n\nSlack 中的 Devin\n\n​产品通用功能\n\n​Devin 界面\n\nDevin 被设计为一个对话式用户界面，你可以在内嵌的 IDE 中实时查看并接管 Devin 的开发过程。Devin 也可以通过 Devin API 使用。\n\n在 Devin 的 Workspace 中，你会看到 Devin 为你完成任务时使用的开发者工具。\n\nShell\n\nDevin 的终端，你可以在这里观察命令的执行情况并查看输出日志。你也可以复制 Shell 输出用于调试。如果你想直接运行命令，请使用 IDE 的 Shell。\n\nIDE\n\nDevin 内嵌的代码编辑器，配备你熟悉的所有 IDE 工具和快捷键。你可以实时跟踪 Devin 的工作，并在需要时接管来运行命令、直接修改代码或测试 Devin 的代码。\n\nBrowser\n\n你可以看到 Devin 如何浏览文档、测试其构建的 Web 应用程序、下载/上传信息等更多内容。你也可以通过 Interactive Browser 随时介入，帮助 Devin 完成浏览相关任务。\n\n你可以在侧边栏或通过点击会话中的任意进度步骤来找到 Devin 的工具\n\n​获取访问权限\n\n要访问 Devin，请在 app.devin.ai 注册。提供个人和 Teams 套餐。\n\n你也可以安装 Devin CLI，通过命令行直接使用 Devin：\n\ncurl -fsSL https://cli.devin.ai/install.sh | bash\n\n如果你的公司已经在与 Cognition 合作，你可以向你的管理员或直接向 Cognition 申请权限，并通过 Web 应用 app.devin.ai 访问 Devin。\n\n​反馈\n\n我们一直在不断改进，而客户的意见至关重要！你可以发送邮件至 support@cognition.ai、通过 Slack Connect (适用于 Teams 用户) ，或直接在 Web 应用中点击 sidebar 底部的 Help (问号) 图标并选择 Contact support 来提交反馈。\n\n我们会记录客户提供的所有反馈，用于快速改进 Devin，并指导我们的产品优先级和路线图规划。\n\n​演示\n\n如需了解更多，请访问我们的博客。\n\n​关于 Cognition\n\n我们是一家构建端到端软件智能体的应用型 AI 实验室。\n\n我们正在打造 AI 软件工程师，帮助有抱负的工程团队高效清理积压工作。",
+  "rawSources": [
+    {
+      "mode": "STATIC",
+      "hash": "9d4117be63d11545201534f3f953f5124fea2a26b7527a442eb3ccfac841997c",
+      "path": "C:\\Users\\qianchen\\Documents\\waytoagi-1024-detective-a2-v4\\.cache\\source-documents-v4\\2f854f35-1c32-4a2e-b7a6-1599e6db213f\\7beaa66b0219947ca5baaeef8941f8d5161a24fb6e954c4c4bfbb297d7e516e9\\raw.bin"
+    }
+  ],
+  "storage": {
+    "rawPath": "C:\\Users\\qianchen\\Documents\\waytoagi-1024-detective-a2-v4\\.cache\\source-documents-v4\\2f854f35-1c32-4a2e-b7a6-1599e6db213f\\7beaa66b0219947ca5baaeef8941f8d5161a24fb6e954c4c4bfbb297d7e516e9\\raw.bin",
+    "textPath": "C:\\Users\\qianchen\\Documents\\waytoagi-1024-detective-a2-v4\\.cache\\source-documents-v4\\2f854f35-1c32-4a2e-b7a6-1599e6db213f\\7beaa66b0219947ca5baaeef8941f8d5161a24fb6e954c4c4bfbb297d7e516e9\\source.txt",
+    "manifestPath": "C:\\Users\\qianchen\\Documents\\waytoagi-1024-detective-a2-v4\\.cache\\source-documents-v4\\2f854f35-1c32-4a2e-b7a6-1599e6db213f\\7beaa66b0219947ca5baaeef8941f8d5161a24fb6e954c4c4bfbb297d7e516e9\\manifest.json"
+  },
+  "parser": {
+    "name": "readability+source-dom",
+    "version": "readability-0.6.0+jsdom-30.1.3+source-dom-2",
+    "normalization": "source-text/v1",
+    "mode": "STATIC"
+  },
+  "metadata": {
+    "title": "Devin 简介 - Devin Docs",
+    "author": null,
+    "publishedAt": null,
+    "language": "zh"
+  },
+  "completeness": "COMPLETE",
+  "warnings": [],
+  "blocks": [
+    {
+      "start": 0,
+      "end": 20,
+      "id": "b0",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[0]",
+      "headingPath": [],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 22,
+      "end": 26,
+      "id": "b1",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[1]",
+      "headingPath": [],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 28,
+      "end": 36,
+      "id": "b2",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[2]",
+      "headingPath": [
+        "Devin 简介"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 38,
+      "end": 42,
+      "id": "b3",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[3]",
+      "headingPath": [
+        "Devin 简介"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 44,
+      "end": 87,
+      "id": "b4",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[4]",
+      "headingPath": [
+        "Devin 简介"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 89,
+      "end": 93,
+      "id": "b5",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[5]",
+      "headingPath": [
+        "Devin 简介"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 95,
+      "end": 105,
+      "id": "b6",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[6]",
+      "headingPath": [
+        "Devin 简介"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 107,
+      "end": 265,
+      "id": "b7",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[7]",
+      "headingPath": [
+        "Devin 简介"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 267,
+      "end": 291,
+      "id": "b8",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[8]",
+      "headingPath": [
+        "Devin 简介"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 293,
+      "end": 337,
+      "id": "b9",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[9]",
+      "headingPath": [
+        "Devin 简介"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 339,
+      "end": 349,
+      "id": "b10",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[10]",
+      "headingPath": [
+        "Devin 简介",
+        "​已注册？立即开始："
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 351,
+      "end": 357,
+      "id": "b11",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[11]",
+      "headingPath": [
+        "Devin 简介",
+        "​已注册？立即开始："
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 359,
+      "end": 373,
+      "id": "b12",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[12]",
+      "headingPath": [
+        "Devin 简介",
+        "​Devin 的优势是什么？"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 375,
+      "end": 395,
+      "id": "b13",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[13]",
+      "headingPath": [
+        "Devin 简介",
+        "​Devin 的优势是什么？"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 397,
+      "end": 463,
+      "id": "b14",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[14]",
+      "headingPath": [
+        "Devin 简介",
+        "​Devin 的优势是什么？"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 465,
+      "end": 596,
+      "id": "b15",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[15]",
+      "headingPath": [
+        "Devin 简介",
+        "​Devin 的优势是什么？"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 598,
+      "end": 646,
+      "id": "b16",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[16]",
+      "headingPath": [
+        "Devin 简介",
+        "​Devin 的优势是什么？"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 648,
+      "end": 702,
+      "id": "b17",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[17]",
+      "headingPath": [
+        "Devin 简介",
+        "​Devin 的优势是什么？"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 704,
+      "end": 720,
+      "id": "b18",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[18]",
+      "headingPath": [
+        "Devin 简介",
+        "​Devin 的优势是什么？"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 722,
+      "end": 760,
+      "id": "b19",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[19]",
+      "headingPath": [
+        "Devin 简介",
+        "​Devin 的优势是什么？"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 762,
+      "end": 794,
+      "id": "b20",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[20]",
+      "headingPath": [
+        "Devin 简介",
+        "​Devin 的优势是什么？"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 796,
+      "end": 829,
+      "id": "b21",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[21]",
+      "headingPath": [
+        "Devin 简介",
+        "​Devin 的优势是什么？"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 831,
+      "end": 849,
+      "id": "b22",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[22]",
+      "headingPath": [
+        "Devin 简介",
+        "​Devin 的优势是什么？"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 851,
+      "end": 864,
+      "id": "b23",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[23]",
+      "headingPath": [
+        "Devin 简介",
+        "​Devin 的优势是什么？"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 866,
+      "end": 909,
+      "id": "b24",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[24]",
+      "headingPath": [
+        "Devin 简介",
+        "​Devin 的优势是什么？"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 911,
+      "end": 958,
+      "id": "b25",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[25]",
+      "headingPath": [
+        "Devin 简介",
+        "​Devin 的优势是什么？"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 960,
+      "end": 1038,
+      "id": "b26",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[26]",
+      "headingPath": [
+        "Devin 简介",
+        "​Devin 的优势是什么？"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1040,
+      "end": 1087,
+      "id": "b27",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[27]",
+      "headingPath": [
+        "Devin 简介",
+        "​Devin 的优势是什么？"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1089,
+      "end": 1119,
+      "id": "b28",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[28]",
+      "headingPath": [
+        "Devin 简介",
+        "​Devin 的优势是什么？"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1121,
+      "end": 1135,
+      "id": "b29",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[29]",
+      "headingPath": [
+        "Devin 简介",
+        "​Devin 的优势是什么？"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1137,
+      "end": 1144,
+      "id": "b30",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[30]",
+      "headingPath": [
+        "Devin 简介",
+        "​产品通用功能"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1146,
+      "end": 1155,
+      "id": "b31",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[31]",
+      "headingPath": [
+        "Devin 简介",
+        "​产品通用功能",
+        "​Devin 界面"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1157,
+      "end": 1235,
+      "id": "b32",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[32]",
+      "headingPath": [
+        "Devin 简介",
+        "​产品通用功能",
+        "​Devin 界面"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1237,
+      "end": 1286,
+      "id": "b33",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[33]",
+      "headingPath": [
+        "Devin 简介",
+        "​产品通用功能",
+        "​Devin 界面"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1288,
+      "end": 1293,
+      "id": "b34",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[34]",
+      "headingPath": [
+        "Devin 简介",
+        "Shell"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1295,
+      "end": 1375,
+      "id": "b35",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[35]",
+      "headingPath": [
+        "Devin 简介",
+        "Shell"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1377,
+      "end": 1380,
+      "id": "b36",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[36]",
+      "headingPath": [
+        "Devin 简介",
+        "IDE"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1382,
+      "end": 1468,
+      "id": "b37",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[37]",
+      "headingPath": [
+        "Devin 简介",
+        "IDE"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1470,
+      "end": 1477,
+      "id": "b38",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[38]",
+      "headingPath": [
+        "Devin 简介",
+        "Browser"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1479,
+      "end": 1577,
+      "id": "b39",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[39]",
+      "headingPath": [
+        "Devin 简介",
+        "Browser"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1579,
+      "end": 1614,
+      "id": "b40",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[40]",
+      "headingPath": [
+        "Devin 简介",
+        "Browser"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1616,
+      "end": 1623,
+      "id": "b41",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[41]",
+      "headingPath": [
+        "Devin 简介",
+        "​获取访问权限"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1625,
+      "end": 1669,
+      "id": "b42",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[42]",
+      "headingPath": [
+        "Devin 简介",
+        "​获取访问权限"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1671,
+      "end": 1704,
+      "id": "b43",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[43]",
+      "headingPath": [
+        "Devin 简介",
+        "​获取访问权限"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1706,
+      "end": 1755,
+      "id": "b44",
+      "kind": "CODE",
+      "locator": "source DOM normalized block[44]",
+      "headingPath": [
+        "Devin 简介",
+        "​获取访问权限"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1757,
+      "end": 1843,
+      "id": "b45",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[45]",
+      "headingPath": [
+        "Devin 简介",
+        "​获取访问权限"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1845,
+      "end": 1848,
+      "id": "b46",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[46]",
+      "headingPath": [
+        "Devin 简介",
+        "​反馈"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1850,
+      "end": 1999,
+      "id": "b47",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[47]",
+      "headingPath": [
+        "Devin 简介",
+        "​反馈"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2001,
+      "end": 2047,
+      "id": "b48",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[48]",
+      "headingPath": [
+        "Devin 简介",
+        "​反馈"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2049,
+      "end": 2052,
+      "id": "b49",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[49]",
+      "headingPath": [
+        "Devin 简介",
+        "​演示"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2054,
+      "end": 2070,
+      "id": "b50",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[50]",
+      "headingPath": [
+        "Devin 简介",
+        "​演示"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2072,
+      "end": 2085,
+      "id": "b51",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[51]",
+      "headingPath": [
+        "Devin 简介",
+        "​关于 Cognition"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2087,
+      "end": 2114,
+      "id": "b52",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[52]",
+      "headingPath": [
+        "Devin 简介",
+        "​关于 Cognition"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2116,
+      "end": 2151,
+      "id": "b53",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[53]",
+      "headingPath": [
+        "Devin 简介",
+        "​关于 Cognition"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    }
+  ],
+  "links": [
+    {
+      "url": "https://docs.devin.ai/zh/get-started/devin-intro",
+      "text": "",
+      "blockId": null,
+      "relation": "CANONICAL",
+      "locator": "source DOM link[0]"
+    },
+    {
+      "url": "https://docs.devin.ai/zh/release-notes/overview",
+      "text": "发布说明",
+      "blockId": "b8",
+      "relation": "LINK",
+      "locator": "source DOM link[91]"
+    },
+    {
+      "url": "https://docs.devin.ai/zh/use-cases/gallery/index",
+      "text": "浏览使用场景",
+      "blockId": "b11",
+      "relation": "LINK",
+      "locator": "source DOM link[93]"
+    },
+    {
+      "url": "https://docs.devin.ai/zh/essential-guidelines/when-to-use-devin",
+      "text": "最佳实践和任务前检查清单",
+      "blockId": "b22",
+      "relation": "LINK",
+      "locator": "source DOM link[95]"
+    },
+    {
+      "url": "https://docs.devin.ai/zh/integrations/slack",
+      "text": "Slack",
+      "blockId": "b24",
+      "relation": "LINK",
+      "locator": "source DOM link[96]"
+    },
+    {
+      "url": "https://docs.devin.ai/zh/integrations/microsoft-teams",
+      "text": "Teams",
+      "blockId": "b24",
+      "relation": "LINK",
+      "locator": "source DOM link[97]"
+    },
+    {
+      "url": "https://cli.devin.ai/",
+      "text": "终端版 Devin",
+      "blockId": "b26",
+      "relation": "LINK",
+      "locator": "source DOM link[98]"
+    },
+    {
+      "url": "https://docs.devin.ai/zh/cli/handoff",
+      "text": "/handoff",
+      "blockId": "b26",
+      "relation": "LINK",
+      "locator": "source DOM link[99]"
+    },
+    {
+      "url": "https://docs.devin.ai/zh/api-reference/overview",
+      "text": "Devin API",
+      "blockId": "b32",
+      "relation": "LINK",
+      "locator": "source DOM link[102]"
+    },
+    {
+      "url": "https://docs.devin.ai/zh/work-with-devin/devin-session-tools",
+      "text": "开发者工具",
+      "blockId": "b33",
+      "relation": "LINK",
+      "locator": "source DOM link[103]"
+    },
+    {
+      "url": "https://app.devin.ai/",
+      "text": "app.devin.ai",
+      "blockId": "b42",
+      "relation": "LINK",
+      "locator": "source DOM link[105]"
+    },
+    {
+      "url": "https://docs.devin.ai/zh/cli",
+      "text": "Devin CLI",
+      "blockId": "b43",
+      "relation": "LINK",
+      "locator": "source DOM link[106]"
+    },
+    {
+      "url": "https://app.devin.ai/",
+      "text": "app.devin.ai",
+      "blockId": "b45",
+      "relation": "LINK",
+      "locator": "source DOM link[107]"
+    },
+    {
+      "url": "https://app.devin.ai/settings/support",
+      "text": "通过 Slack Connect",
+      "blockId": "b47",
+      "relation": "LINK",
+      "locator": "source DOM link[110]"
+    },
+    {
+      "url": "https://cognition.com/blog/devin-generally-available",
+      "text": "博客",
+      "blockId": "b50",
+      "relation": "LINK",
+      "locator": "source DOM link[112]"
+    }
+  ],
+  "tables": []
+}

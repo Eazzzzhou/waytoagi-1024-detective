@@ -1,0 +1,53 @@
+{
+  "capturedAt": "2026-10-25T04:15:30.947Z",
+  "url": "http://127.0.0.1:3104/investigations/702aca7b-0aad-4e92-ab0b-82ee6b4b21ee",
+  "detail": {
+    "investigation": {
+      "id": "702aca7b-0aad-4e92-ab0b-82ee6b4b21ee",
+      "question": "帮我写一首关于秋天的诗",
+      "researchDepth": "AUTO",
+      "status": "SUCCEEDED",
+      "stage": "COMPLETED",
+      "error": null,
+      "createdAt": "2026-10-25T04:15:02.880Z",
+      "updatedAt": "2026-10-25T04:15:30.381Z",
+      "startedAt": "2026-10-25T04:15:03.882Z",
+      "completedAt": "2026-10-25T04:15:30.381Z",
+      "resultSnapshotId": "c7795185-48f3-428c-ae77-f5f085e074d5"
+    },
+    "identityConfirmation": null,
+    "retry": {
+      "allowed": false,
+      "reason": "仅失败的调查可以手动重试。",
+      "remaining": 2,
+      "expectedAttemptCount": 1
+    }
+  },
+  "observedStates": [
+    {
+      "status": "RUNNING",
+      "stage": "IDENTITY",
+      "observedAt": "2026-10-25T04:15:04.597Z"
+    },
+    {
+      "status": "RUNNING",
+      "stage": "RETRIEVAL",
+      "observedAt": "2026-10-25T04:15:06.612Z"
+    },
+    {
+      "status": "RUNNING",
+      "stage": "SOURCE_FETCH",
+      "observedAt": "2026-10-25T04:15:10.661Z"
+    },
+    {
+      "status": "RUNNING",
+      "stage": "VERIFICATION",
+      "observedAt": "2026-10-25T04:15:15.724Z"
+    },
+    {
+      "status": "SUCCEEDED",
+      "stage": "COMPLETED",
+      "observedAt": "2026-10-25T04:15:30.945Z"
+    }
+  ]
+}

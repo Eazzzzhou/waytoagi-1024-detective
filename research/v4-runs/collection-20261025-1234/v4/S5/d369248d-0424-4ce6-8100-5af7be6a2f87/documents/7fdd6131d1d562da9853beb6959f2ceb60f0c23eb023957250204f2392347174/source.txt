@@ -1,0 +1,67 @@
+首页核心服务+获客网站定制转化型网站搭建营销落地页设计私域流量网站转化率优化CRO关键词SEO优化网站获客诊断竞品网站拆解数据分析报告数字营销全案广告投放策划私域运营陪跑品牌官网定制品牌官网改版商城型网站集团企业官网行业门户网站外贸独立站企业CMS建站多语言网站建设SEO搜索引擎优化SEM竞价托管营销文案撰写内容营销策划营销日历策划网站代运营百度爱采购推广品牌定位策划企业宣传片电商大促页面动效与交互动画产品原型设计UX体验设计企业技术官网高稳定防护开发性能加速优化SSL证书部署服务器托管域名注册备案数据备份运维监控网站安全加固行业方案+制造业官网方案科技企业官网零售电商方案金融服务网站教育机构官网服务型企业网站制造业解决方案医疗健康官网教育培训网站律师事务所网站房产家居网站餐饮连锁官网物流运输网站跨境电商独立站美妆个护官网旅游文旅网站汽车后市场网站B2B企业服务官网金融科技官网农业食品网站文化创意网站小程序开发数据可视化大屏AI智能客服视频营销网站会员系统建设预约挂号系统招聘官网建设企业邮箱建设案例展示+制造业获客案例科技企业官网案例零售电商转化案例客户成功故事集客户评价合作伙伴资讯中心+资讯中心行业动态营销干货营销型网站设计指南企业官网SEO白皮书转化率提升清单企业建站避坑指南2026建站趋势解读外贸获客指南内容运营指南网站加速指南ICP备案指南域名注册指南服务器选购指南网站安全指南在线支付指南关于我们+关于我们核心团队团队文化网站建设流程网站诊断报告常见问题FAQ定制网站报价免费诊断申请联系我们免费获取建站方案
+
+首页 / 资讯中心 / 正文
+
+YOUTU · 资讯
+
+Cursor 配 TaoToken：Blender-MCP 生成 3D 模型配置与验证
+
+尧 尧图网络科技 原创内容团队 📅 发布时间：2026/10/25 3:35:43 👁 阅读 2.4k 微 博 链
+
+1. 为什么要在 Cursor 里接 Blender-MCP 生成 3D 模型如果你平时用 Blender 建模又刚好在用 Cursor 写代码那这套组合值得试一次在 Cursor 里通过 MCP 协议连上 Blender用自然语言描述就能让 Blender 自动生成基础 3D 模型比如“做一个低多边形的小房子”“生成一个带倒角的立方体阵列”。它适合三类人想快速出草模的 3D 爱好者、需要批量生成简单几何体的开发者、以及想把 AI 能力接进自己工作流的 Cursor 用户。Blender-MCP 的本质是一个跑在本地的 MCP Server它通过 socket 和 Blender 里的插件通信。Cursor 负责把模型对话转成 MCP 调用Blender 负责执行建模命令。中间这条链路需要一个稳定的 API 通道来驱动模型TaoToken 在这里的作用就是统一 Key 和 API 入口让你不用在 Cursor、Blender-MCP 之间来回换配置。下面我会把 settings.json、config.toml 骨架、连接参数和验证动作都写清楚你照着改就能跑。2. TaoToken 前置准备Key 与 API 通道TaoToken 是一个统一的大模型 API 接入层你可以把它理解成“一个 Key 走通多个模型”的通道。对 Blender-MCP 这种需要频繁调用模型生成建模指令的场景来说统一入口能省掉很多切换成本。你需要先拿到两样东西API Key 和 API Base URL。打开官网 https://taotoken.net/?utm_sourcetaotoken_aicg_blog_endutm_mediumcsdnutm_campaignrewriteutm_content 注册后进入控制台在 API Keys 页面创建一个新 Key。建议给这个 Key 起个能认出来的名字比如cursor-blender-mcp方便后面排查。创建完复制保存页面只显示一次。API 地址用 https://taotoken.net/api 注意这个地址不带 UTM 参数直接填在配置里就行。如果你用的是 Claude Code 或 Anthropic 风格的客户端接入文档里有对应的 base_url 写法可以对照 https://taotoken.net/doc 调整。注意Key 不要写进会提交到 Git 的文件里。下面配置里我用环境变量占位你本地替换成真实值即可。3. 可复制配置settings.json 与 config.toml 骨架Cursor 的 MCP 配置放在用户目录下的settings.json里不同系统路径不一样Windows 是%APPDATA%\Cursor\User\settings.jsonmacOS 是~/Library/Application Support/Cursor/User/settings.json。如果你更习惯用项目级配置也可以在项目根目录建.cursor/mcp.json。先看 Cursor 侧的settings.json骨架重点是mcpServers这一段{ mcpServers: { blender: { command: uvx, args: [blender-mcp], env: { BLENDER_HOST: 127.0.0.1, BLENDER_PORT: 9876, TAOTOKEN_API_KEY: sk-你的Key, TAOTOKEN_BASE_URL: https://taotoken.net/api } } } }这里command用uvx是为了免安装直接跑blender-mcp包。如果你本地没装 uvWindows 下执行pip install uvmacOS 下执行brew install uv。BLENDER_HOST和BLENDER_PORT是 Blender 插件监听的地址和端口默认 9876后面插件里要保持一致。再看config.toml骨架这个文件主要给 Blender-MCP 读取模型通道参数用放在项目根目录或用户配置目录都行[model] provider taotoken api_key sk-你的Key base_url https://taotoken.net/api model_name claude-3-5-sonnet [blender] host 127.0.0.1 port 9876 timeout 30 [mcp] transport stdio log_level infomodel_name按你实际想用的模型填TaoToken 支持多种模型具体列表在模型对话页面能看到。timeout给 30 秒是保守值生成复杂模型时可以调到 60。4. Blender 插件安装与连接参数配置写完还不算完Blender 那边要装插件并启动监听。打开 Blender进入Edit Preferences Add-ons点Install选择你 clone 下来的blender-mcp仓库里的插件文件。装好后勾选启用在 3D 视图侧边栏会出现 Blender-MCP 面板。在面板里设置监听参数要和settings.json里的BLENDER_HOST、BLENDER_PORT对上# Blender 插件面板里对应的参数 host 127.0.0.1 port 9876 auto_start True勾选auto_start后Blender 启动时会自动开监听。你也可以手动点Start Server。启动成功后Blender 底部状态栏会显示类似MCP server listening on 127.0.0.1:9876的提示。命令行侧可以单独验证一下blender-mcp能不能跑起来uvx blender-mcp --host 127.0.0.1 --port 9876如果这条命令报找不到包说明 uv 环境没配好回到第 2 步检查。正常情况它会打印启动日志并等待连接。5. 验证 MCP 调用与 3D 模型生成结果配置和插件都就绪后打开 Cursor在对话窗口里输入一句建模指令比如“在 Blender 里生成一个边长 2 的立方体并加 0.1 的倒角”。Cursor 会通过 MCP 把这条指令转给 Blender-MCP再由插件在 Blender 里执行。验证分三步。第一步看 Cursor 的 MCP 状态在设置里找到 MCP Serversblender那一项应该显示绿色已连接。第二步看 Blender 控制台执行建模指令时会有日志输出类似Executing bpy.ops.mesh.primitive_cube_add。第三步看 3D 视图模型应该出现在场景里。如果模型没出现先在 Cursor 里发一条最简单的测试指令“列出当前 Blender 场景里的所有对象”。这条不涉及建模只验证通信链路。能返回对象列表说明 MCP 通道是通的问题出在建模指令本身。返回为空或报错就回到第 4 步检查端口和插件状态。生成成功后你可以继续用自然语言调整比如“把倒角改成 0.3”“复制三个并排排列”。每次调整都会触发一次 MCP 调用Blender 里实时更新。实测下来简单几何体的生成延迟在 2 到 5 秒之间取决于模型响应速度。6. 本篇常见错排查报错uvx: command not founduv 没装或没加进 PATH。Windows 下重新执行pip install uv并确认 Python Scripts 目录在环境变量里macOS 下brew install uv后重开终端。Cursor 里 MCP 显示红色未连接先确认settings.json的 JSON 格式没写错逗号、引号最容易出问题。再用uvx blender-mcp手动跑一次看能不能启动。如果手动能启动但 Cursor 连不上检查 Cursor 是否重启过配置改动后需要重启 Cursor 才生效。Blender 插件启动后端口被占用9876 被别的进程占了。换个端口比如 9877同时改settings.json和插件面板里的port两边必须一致。建模指令执行了但场景没变化确认 Blender 当前处于 Object 模式而不是 Edit 模式Edit 模式下部分操作不会生效。另外检查插件面板里的auto_start是否勾选没勾选的话每次都要手动 Start Server。API 调用报 401 或 403Key 填错了或过期了。回到 TaoToken 控制台的 API Keys 页面重新生成一个替换settings.json和config.toml里的值。注意 Key 前面有没有多余空格。如果你在排障过程中需要确认模型通道是否正常可以直接用模型对话页面发一条测试消息能正常返回就说明 Key 和 API 地址没问题问题在 MCP 链路。接入文档里有更细的 base_url 和 header 写法对照检查一遍通常能定位到问题。长期在 Cursor 里做编码和 Agent 类任务的话Coding Plan 会比按次调用更划算适合高频使用 Blender-MCP 生成模型的场景。配置过程中遇到链路问题优先查 API Keys 和接入文档两处大部分报错都能在那里找到对应说明。 营销建站 行业洞察 尧图原创 尧 尧图内容团队 10+ 年营销建站经验沉淀
+
+相关资讯
+
+延伸阅读 · 更多营销建站实战思考
+
+盘石网站建设从零搭建：告别模板丑陋，流量转化翻倍
+
+2026/10/13 8:21:06
+
+终于把OpenClaw接入微信了：openclaw.json 配置与安全验证全流程
+
+2026/10/24 13:31:09
+
+Codex 接入 Kimi 模型：Key、Endpoint、Provider、Model 四层配置一次讲清
+
+2026/10/23 18:56:11
+
+最新发布 LATEST
+
+【FreeRTOS学习笔记】（二）
+
+2026/10/24 11:57:42
+
+Buzz Mac 版安装教程：选对芯片架构，离线语音转文字 2 步装好
+
+2026/10/24 11:57:48
+
+3 步搭好你的二次元发卡店铺
+
+2026/10/25 10:02:44
+
+列表的操作 3
+
+2026/10/25 10:02:44
+
+AI编程工具格局大变：Copilot付费用户暴涨200%，但免费工具也在崛起——TaoToken统一Key接入Cline与CC Switch的配置骨架
+
+2026/10/25 10:02:44
+
+Semantica 知识图谱可视化实战指南：3 个场景把图数据变成交互式 HTML
+
+2026/10/25 10:02:44
+
+今日资讯 TODAY
+
+本周精选 WEEKLY
+
+本月精选
+
+本月最受关注的营销建站内容
+
+有想法？来聊聊您的项目
+
+看完文章，如果对您的项目有所启发，欢迎联系我们的建站顾问，获取免费的方案咨询与诊断建议。
+
+免费咨询 →

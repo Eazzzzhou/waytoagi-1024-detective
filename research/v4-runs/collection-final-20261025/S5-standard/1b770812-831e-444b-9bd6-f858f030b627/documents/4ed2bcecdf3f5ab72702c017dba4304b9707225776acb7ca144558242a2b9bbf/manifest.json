@@ -1,0 +1,4576 @@
+{
+  "schemaVersion": "source-document/v1",
+  "id": "4ed2bcecdf3f5ab72702c017dba4304b9707225776acb7ca144558242a2b9bbf",
+  "version": "72ad3a5263731472870ec04a0d896e50e84330f1a23d2f2764be6b9f5458af69",
+  "requestedUrl": "https://github.com/earthtojake/text-to-cad",
+  "finalUrl": "https://github.com/earthtojake/text-to-cad",
+  "retrievedAt": "2026-10-25T04:43:56.045Z",
+  "contentType": "text/html; charset=utf-8",
+  "status": "READ",
+  "readError": null,
+  "rawHash": "5850fc0999ddbd7bdffe8e4af3347dfa63af73162f4eff45ca8eae3d56bafe8b",
+  "textHash": "783168f21bf5afbdec2fec0801f9e7fb775551efc780febfea5c05714900dcba",
+  "text": "Skip to content\n\nRepository navigation\n\ntext-to-cadPublic\n\nNotifications\n\nFork (2.2k)\n\nStar (23k)\n\nAbout\n\nGive your agent CAD superpowers.\n\nwww.texttocad.dev\n\nTopics\n\nagentsai-agentscadmechanical-engineeringroboticsstepstlstptext-to-cad\n\nResources\n\nReadme\n\nMIT license\n\nContributing\n\nContributing\n\nSecurity policy\n\nSecurity policy\n\nActivity\n\nStars\n\n23.0k stars\n\nWatchers\n\n103 watching\n\nForks\n\n2.2k forks\n\nReport repository\n\nmainBranchesTagsGo to fileCode\n\nLatest commit\n\nHistory\n\n1,462 Commits\n\nFolders and files\n\nNameNameLast commit messageLast commit date.claude-plugin.claude-plugin .codex-plugin.codex-plugin .cursor-plugin.cursor-plugin .githooks.githooks .github.github appsapps docs/migrationsdocs/migrations modelsmodels packagespackages scriptsscripts skillsskills teststests .gitignore.gitignore AGENTS.mdAGENTS.md CONTRIBUTING.mdCONTRIBUTING.md LICENSELICENSE README.mdREADME.md SECURITY.mdSECURITY.md SPLIT_REPORT.mdSPLIT_REPORT.md VERSIONVERSION claude.mcp.jsonclaude.mcp.json codex.mcp.jsoncodex.mcp.json cursor.mcp.jsoncursor.mcp.json gemini-extension.jsongemini-extension.json mcp.jsonmcp.json package-lock.jsonpackage-lock.json package.jsonpackage.json plugin.jsonplugin.json requirements-dev.txtrequirements-dev.txt skills.sh.jsonskills.sh.json View all files\n\nRepository files navigation\n\nGive your agent CAD superpowers.\n\nDocs\n\ntext-to-cad\n\nThe text-to-cad plugin gives your agent local workflows for generating 3D models as STEP, GLB, STL or 3MF files. It also does design for manufacturing checks, generates engineering drawings, and connects to popular 3D printing, sheet metal and CNC fabrication services.\n\nIt is supported by all popular agents that support plugins or the skills framework, including Claude Code, Codex, Cursor, Gemini and Grok.\n\n💻 Install\n\nAsk your agent (recommended)\n\nSend this message to your agent and it will install text-to-cad for you.\n\nInstall text-to-cad from https://github.com/earthtojake/text-to-cad\n\nBy default, text-to-cad sends usage stats and crash reports, tagged with a random ID and never including your files, paths or prompts; turn them off with uvx cadgen telemetry off, or ask your agent to. Telemetry says the rest.\n\nOr install it yourself:\n\nCAD runs through uv: check that it is installed (uv --version), and if it is missing, install it with uv's installer.\n\nRun the commands under your agent app's heading below, or under Other Agents if it has none.\n\nRestart the app. Its first start downloads CAD's runtime, so it needs a network connection.\n\nThe plugin for your agent app brings the skills and CAD's viewer, a local server (cadgen mcp). For an agent without a plugin, install the skills alone. Install one or the other in an app, not both: two copies means every skill twice.\n\nThe install commands below take the latest branch: it holds the plugin alone and gets each release once it is on PyPI. main, where development happens, installs too, but can hold changes that aren't released yet. Each app names the branch in its own way (#latest, --ref latest, @latest or --branch latest); leave it out and the app installs main.\n\nEach app's heading also says how to update text-to-cad, and how to reinstall it: remove it, then install it again. Updating the plugin updates CAD: the new release's cadgen is downloaded the first time it runs, and the skills and the server share it. Earlier releases stay in uv's cache until you run uv cache prune.\n\nClaude Code\n\nclaude plugin marketplace add earthtojake/text-to-cad#latest\nclaude plugin install text-to-cad@earthtojake\n\nThe plugin also starts CAD's server. Where Claude Code can show app views, CAD shows models as viewer cards in the conversation; otherwise, as in a terminal, asking it to show a model gives you a link that opens the model in the CAD Viewer in your browser.\n\nTo update, run these, then restart Claude Code:\n\nclaude plugin marketplace update earthtojake\nclaude plugin update text-to-cad@earthtojake\n\nTo reinstall, remove it with these, then run the install commands again:\n\nclaude plugin uninstall text-to-cad@earthtojake\nclaude plugin marketplace remove earthtojake\n\nClaude Desktop\n\nCAD shows models in the chat: ask Claude to show one and it appears as a viewer card you can orbit, add to your prompt, and open full size; Claude can read what you selected and see what you see. It runs locally through uv: add the server to Claude Desktop's config (Settings > Developer > Edit Config), then restart the app. If Claude Desktop cannot find uvx, give its full path (which uvx).\n\n{\n  \"mcpServers\": {\n    \"cad\": {\n      \"command\": \"uvx\",\n      \"args\": [\"--no-config\", \"--managed-python\", \"--python\", \"3.13\", \"--from\", \"cadgen==0.7.26\", \"cadgen\", \"mcp\"],\n      \"env\": {\"CADGEN_INSTALL_CHANNEL\": \"claude-desktop\"}\n    }\n  }\n}\n\nThe config pins a cadgen release in args, and uvx keeps the version it first downloads. To update, change that version to the latest release, then restart Claude Desktop.\n\nCodex\n\nInstall text-to-cad from Codex's plugin directory: text-to-cad for Codex, then Open in desktop app.\n\nIn the Codex app the plugin also brings the CAD viewer: CAD in the sidebar (recent models, and Open), a CAD tab beside each thread that the agent drives, and Open with CAD for model files.\n\nManual install\n\ncodex plugin marketplace add earthtojake/text-to-cad --ref latest\ncodex plugin add text-to-cad@earthtojake\n\nTo update, upgrade the earthtojake marketplace (or use Plugins › Manage › Marketplace), then restart Codex:\n\ncodex plugin marketplace upgrade earthtojake\n\nTo reinstall, remove it with these, then run the install commands again:\n\ncodex plugin remove text-to-cad@earthtojake\ncodex plugin marketplace remove earthtojake\n\nThe marketplace was renamed from text-to-cad to earthtojake; if you added it before, remove the old one first (codex plugin marketplace remove text-to-cad).\n\nCursor\n\nCursor also loads the plugin installed with Claude Code. If the Claude Code plugin is installed, Cursor already has text-to-cad: skip this.\n\ngit clone --depth 1 --branch latest https://github.com/earthtojake/text-to-cad ~/.cursor/plugins/local/text-to-cad\n\nCursor reads .cursor-plugin/plugin.json: restart Cursor after cloning. Teams can import the repository instead, under Dashboard → Plugins & MCPs → Team Marketplaces.\n\nTo update, pull the latest release, then restart Cursor:\n\ngit -C ~/.cursor/plugins/local/text-to-cad pull\n\nTo reinstall, delete the folder, then run the install command again:\n\nrm -rf ~/.cursor/plugins/local/text-to-cad\n\nGrok Build\n\nGrok Build also loads the plugin installed with Claude Code. If the Claude Code plugin is installed, Grok Build already has text-to-cad: skip this.\n\ngrok plugin install earthtojake/text-to-cad@latest --trust\ngrok plugin enable text-to-cad\n\nGrok Build reads the Claude plugin manifest. Grok shows tool results as text, so asking it to show a model gives you a CAD Viewer link.\n\nTo update, run this, then restart Grok Build:\n\ngrok plugin update text-to-cad\n\nTo reinstall, remove it with this, then run the install commands again:\n\ngrok plugin uninstall text-to-cad\n\nGemini\n\ngemini extensions install https://github.com/earthtojake/text-to-cad --ref latest --consent --auto-update\n\nGemini installs the plugin as an extension, with the skills and CAD's server, and keeps it up to date (--auto-update; --consent answers its security prompt). Like Grok, it shows tool results as text, so asking it to show a model gives you a CAD Viewer link.\n\nTo update now, run this, then restart Gemini:\n\ngemini extensions update text-to-cad\n\nTo reinstall, remove it with this, then run the install command again:\n\ngemini extensions uninstall text-to-cad\n\nOther Agents\n\nFor an agent without plugin support: the skills give you everything you need for core CAD workflows and let you view CAD files in a localhost web app. Install them with the Skills CLI:\n\nnpx skills add earthtojake/text-to-cad#latest\n\nThe command asks which agents to install for, and where. To skip the questions, name the agent and install for your user: npx skills add earthtojake/text-to-cad#latest -g -a <agent> -y.\n\nEach skill runs cadgen through uv with the same pinned command the plugin's server uses, so uv must be installed. Without the plugin there is no CAD server, so the skills open models in the CAD Viewer in your browser.\n\nTo update or reinstall, run the same command again, then restart the app. add re-fetches the package and overwrites what is already installed, so it both refreshes existing skills and installs any skill added in a newer release. npx skills update only refreshes skills already in your lockfile, so it silently misses new ones — which matters here, because releases do add skills.\n\nNeither command removes a skill that was retired upstream; drop one with npx skills remove <skill> if you need to. The retired cad-viewer skill is now covered by the CAD, DXF and robot-description skills, and the retired cad-mcp-setup by this README's install and update steps. Remove old standalone installs with npx skills remove cad-viewer cad-mcp-setup.\n\nNo plugin for your agent yet? Request one.\n\nUpdates\n\nTo update, ask your agent to update text-to-cad, or run the update commands under your app's heading, then restart the app.\n\nWhen a newer release is out, a copy you installed yourself says so: a blue update button, first in CAD's navbar and on its home, whose Send to agent posts \"Update text-to-cad to 0.9.0 from https://github.com/earthtojake/text-to-cad\" to your chat, worded like the install message (the browser viewer's copies it instead), or, in an app that shows CAD's replies as text, a line with its reply. Your agent then runs the update commands under your app's heading here. The button also links to the install instructions, to update by hand. Copies from a plugin directory or the Cursor Marketplace never show it, since their store updates them, and neither does Gemini's extension, which Gemini updates: for those there is nothing to run.\n\nTo find out, cadgen fetches api.texttocad.dev/v1/versions at most once a day: one anonymous request, with no ID, path or anything about you, never in CI and never for a copy that something else updates. CADGEN_UPDATE_CHECK=0 turns it off.\n\nTelemetry\n\nThe CAD app (the plugin's cad server), the browser viewer (cadgen viewer) and the build daemon that builds for them and for every cadgen command send usage stats by default, tagged with a random install ID: versions, where you installed it from (as the plugin's CAD app names it, noted in cadgen's state folder for the other two), your OS and agent app, and counts -- how often each CAD tool was called and why a call failed (one of a fixed set of words, such as \"no file at that path\" or \"no view open\", never its message), how often views were used, how many files of each format were shown, how many models were built and snapshots rendered, how those ended, why one failed (again a fixed word, such as \"the model's code raised\" or \"the geometry kernel refused\", never its message) and how long they took, which features were used -- added up over a few minutes before they are sent, each batch under a random ID of its own and the time it was made, so one sent again is counted once. When cadgen's own code fails, they also send a crash report: the error's type and where in cadgen (or Python, or one of its dependencies) it failed, never its message, and with any of your own code a bare placeholder. Our server adds the country each request comes from (worked out from its IP address, which it doesn't keep) and stores it all with PostHog. Never file names, paths, contents or prompts. The first cadgen command says so once, and sending starts then. Turn it off, which also deletes what was sent, with uvx cadgen telemetry off, Share usage stats in either app's menu (the logo at the top left, over any model), or by asking your agent. DO_NOT_TRACK=1 or CADGEN_TELEMETRY=0 turns it off for one process, and CADGEN_TELEMETRY=1 on, without changing your setting; nothing is sent by default in CI or from a development install. Nothing waits to send: what a command counts without the build daemon, and what any part of cadgen counted since its last send when it exits, waits in small files in cadgen's state folder until the next part of cadgen sends it in the background; turning telemetry off deletes them. Offline, nothing is sent and everything works. See the privacy policy.\n\nWindows 11: Smart App Control\n\nThe CAD kernel behind the cad, dxf, urdf, srdf and sdf skills is OCP, OpenCascade's Python binding, and its wheel ships an unsigned native module. Windows 11's Smart App Control blocks unsigned native code, so on a machine where it is on (the default on a fresh install) every cadgen command and import build123d fails with ImportError: DLL load failed while importing OCP, and Event Viewer records the refusal as Event ID 3077 under CodeIntegrity › Operational. cadgen doctor names this when it sees it.\n\nSmart App Control has no per-app exception. Either turn it off (Settings › Privacy & security › Windows Security › App & browser control › Smart App Control settings; once off it can only be turned back on by reinstalling Windows) or run the CAD skills under WSL, where it does not apply. The wheel is built by the cadquery-ocp project, so signing it is not something this repository can do.\n\n🧰 Skills\n\nInstall the library to give agents focused workflows for CAD, fabrication, robot description files, simulation, and local review.\n\nSkill Summary Source CAD Creates and edits CAD models from plain-language or image requests, with STEP as the main output along with options to export to STL, 3MF and GLB. skills/cad step.parts Finds off-the-shelf STEP parts like screws, bearings, motors, and connectors. skills/step-parts Engineering Drawing Dimensioned engineering drawings from a part, as a PDF: views, hidden lines, dimensions, hole callouts, title block. skills/engineering-drawing DXF Creates 2D DXF drawings like profiles, templates, gaskets, and cut layouts from Python sources or CAD geometry. skills/dxf URDF Writes robot structure files with links, joints, limits, inertials, and meshes. skills/urdf SRDF Adds MoveIt planning groups, end effectors, poses, and collision rules to a URDF. skills/srdf SDF Creates simulator models and worlds with frames, physics, sensors, and lights. skills/sdf SendCutSend Checks DXF and STEP files before upload to SendCutSend. skills/sendcutsend DfAM Check Measures mesh printability per process: wall thickness, overhangs, support volume, and build orientation. skills/dfam-check DFM Reviews a part for sheet metal, CNC machining, or injection molding, with measured evidence and the cited rule behind every finding; measures draft, undercuts and projected area from a mesh. skills/dfm G-code Slices models into printer-ready G-code with OrcaSlicer, using your own printer presets. skills/gcode Bambu Labs Sends prints to Bambu Lab printers through Bambu Connect, Bambu Lab's official app, or Bambu Studio. skills/bambu-labs\n\n🛠️ Contributing\n\nBranch from main and open PRs against main. For the local workflow, testing in agent apps and validation, see CONTRIBUTING.md.\n\nAbout\n\nGive your agent CAD superpowers.\n\nwww.texttocad.dev\n\nTopics\n\nagentsai-agentscadmechanical-engineeringroboticsstepstlstptext-to-cad\n\nResources\n\nReadme\n\nMIT license\n\nContributing\n\nContributing\n\nSecurity policy\n\nSecurity policy\n\nActivity\n\nStars\n\n23.0k stars\n\nWatchers\n\n103 watching\n\nForks\n\n2.2k forks\n\nReport repository\n\nReleases\n\nPackages\n\nContributors\n\nLanguages",
+  "rawSources": [
+    {
+      "mode": "STATIC",
+      "hash": "5850fc0999ddbd7bdffe8e4af3347dfa63af73162f4eff45ca8eae3d56bafe8b",
+      "path": "C:\\Users\\qianchen\\Documents\\waytoagi-1024-detective-a2-v4\\.cache\\source-documents-v4\\1b770812-831e-444b-9bd6-f858f030b627\\4ed2bcecdf3f5ab72702c017dba4304b9707225776acb7ca144558242a2b9bbf\\raw.bin"
+    }
+  ],
+  "storage": {
+    "rawPath": "C:\\Users\\qianchen\\Documents\\waytoagi-1024-detective-a2-v4\\.cache\\source-documents-v4\\1b770812-831e-444b-9bd6-f858f030b627\\4ed2bcecdf3f5ab72702c017dba4304b9707225776acb7ca144558242a2b9bbf\\raw.bin",
+    "textPath": "C:\\Users\\qianchen\\Documents\\waytoagi-1024-detective-a2-v4\\.cache\\source-documents-v4\\1b770812-831e-444b-9bd6-f858f030b627\\4ed2bcecdf3f5ab72702c017dba4304b9707225776acb7ca144558242a2b9bbf\\source.txt",
+    "manifestPath": "C:\\Users\\qianchen\\Documents\\waytoagi-1024-detective-a2-v4\\.cache\\source-documents-v4\\1b770812-831e-444b-9bd6-f858f030b627\\4ed2bcecdf3f5ab72702c017dba4304b9707225776acb7ca144558242a2b9bbf\\manifest.json"
+  },
+  "parser": {
+    "name": "readability+source-dom",
+    "version": "readability-0.6.0+jsdom-30.1.3+source-dom-2",
+    "normalization": "source-text/v1",
+    "mode": "STATIC"
+  },
+  "metadata": {
+    "title": "GitHub - earthtojake/text-to-cad: Give your agent CAD superpowers. · GitHub",
+    "author": null,
+    "publishedAt": null,
+    "language": "en"
+  },
+  "completeness": "COMPLETE",
+  "warnings": [],
+  "blocks": [
+    {
+      "start": 0,
+      "end": 15,
+      "id": "b0",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[0]",
+      "headingPath": [],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 17,
+      "end": 38,
+      "id": "b1",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[1]",
+      "headingPath": [
+        "Repository navigation"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 40,
+      "end": 57,
+      "id": "b2",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[2]",
+      "headingPath": [
+        "Repository navigation"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 59,
+      "end": 72,
+      "id": "b3",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[3]",
+      "headingPath": [
+        "Repository navigation"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 74,
+      "end": 85,
+      "id": "b4",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[4]",
+      "headingPath": [
+        "Repository navigation"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 87,
+      "end": 97,
+      "id": "b5",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[5]",
+      "headingPath": [
+        "Repository navigation"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 99,
+      "end": 104,
+      "id": "b6",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[6]",
+      "headingPath": [
+        "Repository navigation",
+        "About"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 106,
+      "end": 138,
+      "id": "b7",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[7]",
+      "headingPath": [
+        "Repository navigation",
+        "About"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 140,
+      "end": 157,
+      "id": "b8",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[8]",
+      "headingPath": [
+        "Repository navigation",
+        "About"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 159,
+      "end": 165,
+      "id": "b9",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[9]",
+      "headingPath": [
+        "Repository navigation",
+        "About",
+        "Topics"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 167,
+      "end": 236,
+      "id": "b10",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[10]",
+      "headingPath": [
+        "Repository navigation",
+        "About",
+        "Topics"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 238,
+      "end": 247,
+      "id": "b11",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[11]",
+      "headingPath": [
+        "Repository navigation",
+        "About",
+        "Resources"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 249,
+      "end": 255,
+      "id": "b12",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[12]",
+      "headingPath": [
+        "Repository navigation",
+        "About",
+        "Resources"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 257,
+      "end": 268,
+      "id": "b13",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[13]",
+      "headingPath": [
+        "Repository navigation",
+        "About",
+        "Resources"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 270,
+      "end": 282,
+      "id": "b14",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[14]",
+      "headingPath": [
+        "Repository navigation",
+        "About",
+        "Contributing"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 284,
+      "end": 296,
+      "id": "b15",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[15]",
+      "headingPath": [
+        "Repository navigation",
+        "About",
+        "Contributing"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 298,
+      "end": 313,
+      "id": "b16",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[16]",
+      "headingPath": [
+        "Repository navigation",
+        "About",
+        "Security policy"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 315,
+      "end": 330,
+      "id": "b17",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[17]",
+      "headingPath": [
+        "Repository navigation",
+        "About",
+        "Security policy"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 332,
+      "end": 340,
+      "id": "b18",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[18]",
+      "headingPath": [
+        "Repository navigation",
+        "About",
+        "Security policy"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 342,
+      "end": 347,
+      "id": "b19",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[19]",
+      "headingPath": [
+        "Repository navigation",
+        "About",
+        "Stars"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 349,
+      "end": 360,
+      "id": "b20",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[20]",
+      "headingPath": [
+        "Repository navigation",
+        "About",
+        "Stars"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 362,
+      "end": 370,
+      "id": "b21",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[21]",
+      "headingPath": [
+        "Repository navigation",
+        "About",
+        "Watchers"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 372,
+      "end": 384,
+      "id": "b22",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[22]",
+      "headingPath": [
+        "Repository navigation",
+        "About",
+        "Watchers"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 386,
+      "end": 391,
+      "id": "b23",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[23]",
+      "headingPath": [
+        "Repository navigation",
+        "About",
+        "Forks"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 393,
+      "end": 403,
+      "id": "b24",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[24]",
+      "headingPath": [
+        "Repository navigation",
+        "About",
+        "Forks"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 405,
+      "end": 422,
+      "id": "b25",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[25]",
+      "headingPath": [
+        "Repository navigation",
+        "About",
+        "Forks"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 424,
+      "end": 454,
+      "id": "b26",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[26]",
+      "headingPath": [
+        "Repository navigation",
+        "About",
+        "Forks"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 456,
+      "end": 469,
+      "id": "b27",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[27]",
+      "headingPath": [
+        "Repository navigation",
+        "Latest commit"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 471,
+      "end": 478,
+      "id": "b28",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[28]",
+      "headingPath": [
+        "Repository navigation",
+        "History"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 480,
+      "end": 493,
+      "id": "b29",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[29]",
+      "headingPath": [
+        "Repository navigation",
+        "History"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 495,
+      "end": 512,
+      "id": "b30",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[30]",
+      "headingPath": [
+        "Repository navigation",
+        "Folders and files"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 514,
+      "end": 1277,
+      "id": "b31",
+      "kind": "TABLE",
+      "locator": "source DOM normalized block[31]",
+      "headingPath": [
+        "Repository navigation",
+        "Folders and files"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1279,
+      "end": 1306,
+      "id": "b32",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[32]",
+      "headingPath": [
+        "Repository navigation",
+        "Repository files navigation"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1308,
+      "end": 1340,
+      "id": "b33",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[33]",
+      "headingPath": [
+        "Repository navigation",
+        "Repository files navigation"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1342,
+      "end": 1346,
+      "id": "b34",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[34]",
+      "headingPath": [
+        "Repository navigation",
+        "Repository files navigation"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1348,
+      "end": 1359,
+      "id": "b35",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[35]",
+      "headingPath": [
+        "text-to-cad"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1361,
+      "end": 1630,
+      "id": "b36",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[36]",
+      "headingPath": [
+        "text-to-cad"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1632,
+      "end": 1770,
+      "id": "b37",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[37]",
+      "headingPath": [
+        "text-to-cad"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1772,
+      "end": 1782,
+      "id": "b38",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[38]",
+      "headingPath": [
+        "text-to-cad",
+        "💻 Install"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1784,
+      "end": 1812,
+      "id": "b39",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[39]",
+      "headingPath": [
+        "text-to-cad",
+        "💻 Install",
+        "Ask your agent (recommended)"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1814,
+      "end": 1886,
+      "id": "b40",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[40]",
+      "headingPath": [
+        "text-to-cad",
+        "💻 Install",
+        "Ask your agent (recommended)"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1888,
+      "end": 1955,
+      "id": "b41",
+      "kind": "CODE",
+      "locator": "source DOM normalized block[41]",
+      "headingPath": [
+        "text-to-cad",
+        "💻 Install",
+        "Ask your agent (recommended)"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1957,
+      "end": 2183,
+      "id": "b42",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[42]",
+      "headingPath": [
+        "text-to-cad",
+        "💻 Install",
+        "Ask your agent (recommended)"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2185,
+      "end": 2208,
+      "id": "b43",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[43]",
+      "headingPath": [
+        "text-to-cad",
+        "💻 Install",
+        "Ask your agent (recommended)"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2210,
+      "end": 2327,
+      "id": "b44",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[44]",
+      "headingPath": [
+        "text-to-cad",
+        "💻 Install",
+        "Ask your agent (recommended)"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2329,
+      "end": 2421,
+      "id": "b45",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[45]",
+      "headingPath": [
+        "text-to-cad",
+        "💻 Install",
+        "Ask your agent (recommended)"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2423,
+      "end": 2514,
+      "id": "b46",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[46]",
+      "headingPath": [
+        "text-to-cad",
+        "💻 Install",
+        "Ask your agent (recommended)"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2516,
+      "end": 2749,
+      "id": "b47",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[47]",
+      "headingPath": [
+        "text-to-cad",
+        "💻 Install",
+        "Ask your agent (recommended)"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2751,
+      "end": 3097,
+      "id": "b48",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[48]",
+      "headingPath": [
+        "text-to-cad",
+        "💻 Install",
+        "Ask your agent (recommended)"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3099,
+      "end": 3415,
+      "id": "b49",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[49]",
+      "headingPath": [
+        "text-to-cad",
+        "💻 Install",
+        "Ask your agent (recommended)"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3417,
+      "end": 3428,
+      "id": "b50",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[50]",
+      "headingPath": [
+        "text-to-cad",
+        "💻 Install",
+        "Claude Code"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3430,
+      "end": 3536,
+      "id": "b51",
+      "kind": "CODE",
+      "locator": "source DOM normalized block[51]",
+      "headingPath": [
+        "text-to-cad",
+        "💻 Install",
+        "Claude Code"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3538,
+      "end": 3794,
+      "id": "b52",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[52]",
+      "headingPath": [
+        "text-to-cad",
+        "💻 Install",
+        "Claude Code"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3796,
+      "end": 3843,
+      "id": "b53",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[53]",
+      "headingPath": [
+        "text-to-cad",
+        "💻 Install",
+        "Claude Code"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3845,
+      "end": 3934,
+      "id": "b54",
+      "kind": "CODE",
+      "locator": "source DOM normalized block[54]",
+      "headingPath": [
+        "text-to-cad",
+        "💻 Install",
+        "Claude Code"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3936,
+      "end": 4008,
+      "id": "b55",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[55]",
+      "headingPath": [
+        "text-to-cad",
+        "💻 Install",
+        "Claude Code"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4010,
+      "end": 4102,
+      "id": "b56",
+      "kind": "CODE",
+      "locator": "source DOM normalized block[56]",
+      "headingPath": [
+        "text-to-cad",
+        "💻 Install",
+        "Claude Code"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4104,
+      "end": 4118,
+      "id": "b57",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[57]",
+      "headingPath": [
+        "text-to-cad",
+        "💻 Install",
+        "Claude Desktop"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4120,
+      "end": 4512,
+      "id": "b58",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[58]",
+      "headingPath": [
+        "text-to-cad",
+        "💻 Install",
+        "Claude Desktop"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4514,
+      "end": 4756,
+      "id": "b59",
+      "kind": "CODE",
+      "locator": "source DOM normalized block[59]",
+      "headingPath": [
+        "text-to-cad",
+        "💻 Install",
+        "Claude Desktop"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4758,
+      "end": 4928,
+      "id": "b60",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[60]",
+      "headingPath": [
+        "text-to-cad",
+        "💻 Install",
+        "Claude Desktop"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4930,
+      "end": 4935,
+      "id": "b61",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[61]",
+      "headingPath": [
+        "text-to-cad",
+        "💻 Install",
+        "Codex"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4937,
+      "end": 5036,
+      "id": "b62",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[62]",
+      "headingPath": [
+        "text-to-cad",
+        "💻 Install",
+        "Codex"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5038,
+      "end": 5226,
+      "id": "b63",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[63]",
+      "headingPath": [
+        "text-to-cad",
+        "💻 Install",
+        "Codex"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5228,
+      "end": 5242,
+      "id": "b64",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[64]",
+      "headingPath": [
+        "text-to-cad",
+        "💻 Install",
+        "Codex"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5244,
+      "end": 5350,
+      "id": "b65",
+      "kind": "CODE",
+      "locator": "source DOM normalized block[65]",
+      "headingPath": [
+        "text-to-cad",
+        "💻 Install",
+        "Codex"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5352,
+      "end": 5459,
+      "id": "b66",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[66]",
+      "headingPath": [
+        "text-to-cad",
+        "💻 Install",
+        "Codex"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5461,
+      "end": 5505,
+      "id": "b67",
+      "kind": "CODE",
+      "locator": "source DOM normalized block[67]",
+      "headingPath": [
+        "text-to-cad",
+        "💻 Install",
+        "Codex"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5507,
+      "end": 5579,
+      "id": "b68",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[68]",
+      "headingPath": [
+        "text-to-cad",
+        "💻 Install",
+        "Codex"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5581,
+      "end": 5668,
+      "id": "b69",
+      "kind": "CODE",
+      "locator": "source DOM normalized block[69]",
+      "headingPath": [
+        "text-to-cad",
+        "💻 Install",
+        "Codex"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5670,
+      "end": 5826,
+      "id": "b70",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[70]",
+      "headingPath": [
+        "text-to-cad",
+        "💻 Install",
+        "Codex"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5828,
+      "end": 5834,
+      "id": "b71",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[71]",
+      "headingPath": [
+        "text-to-cad",
+        "💻 Install",
+        "Cursor"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5836,
+      "end": 5975,
+      "id": "b72",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[72]",
+      "headingPath": [
+        "text-to-cad",
+        "💻 Install",
+        "Cursor"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5977,
+      "end": 6091,
+      "id": "b73",
+      "kind": "CODE",
+      "locator": "source DOM normalized block[73]",
+      "headingPath": [
+        "text-to-cad",
+        "💻 Install",
+        "Cursor"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 6093,
+      "end": 6258,
+      "id": "b74",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[74]",
+      "headingPath": [
+        "text-to-cad",
+        "💻 Install",
+        "Cursor"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 6260,
+      "end": 6316,
+      "id": "b75",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[75]",
+      "headingPath": [
+        "text-to-cad",
+        "💻 Install",
+        "Cursor"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 6318,
+      "end": 6365,
+      "id": "b76",
+      "kind": "CODE",
+      "locator": "source DOM normalized block[76]",
+      "headingPath": [
+        "text-to-cad",
+        "💻 Install",
+        "Cursor"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 6367,
+      "end": 6435,
+      "id": "b77",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[77]",
+      "headingPath": [
+        "text-to-cad",
+        "💻 Install",
+        "Cursor"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 6437,
+      "end": 6479,
+      "id": "b78",
+      "kind": "CODE",
+      "locator": "source DOM normalized block[78]",
+      "headingPath": [
+        "text-to-cad",
+        "💻 Install",
+        "Cursor"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 6481,
+      "end": 6491,
+      "id": "b79",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[79]",
+      "headingPath": [
+        "text-to-cad",
+        "💻 Install",
+        "Grok Build"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 6493,
+      "end": 6640,
+      "id": "b80",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[80]",
+      "headingPath": [
+        "text-to-cad",
+        "💻 Install",
+        "Grok Build"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 6642,
+      "end": 6731,
+      "id": "b81",
+      "kind": "CODE",
+      "locator": "source DOM normalized block[81]",
+      "headingPath": [
+        "text-to-cad",
+        "💻 Install",
+        "Grok Build"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 6733,
+      "end": 6868,
+      "id": "b82",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[82]",
+      "headingPath": [
+        "text-to-cad",
+        "💻 Install",
+        "Grok Build"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 6870,
+      "end": 6915,
+      "id": "b83",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[83]",
+      "headingPath": [
+        "text-to-cad",
+        "💻 Install",
+        "Grok Build"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 6917,
+      "end": 6947,
+      "id": "b84",
+      "kind": "CODE",
+      "locator": "source DOM normalized block[84]",
+      "headingPath": [
+        "text-to-cad",
+        "💻 Install",
+        "Grok Build"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 6949,
+      "end": 7020,
+      "id": "b85",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[85]",
+      "headingPath": [
+        "text-to-cad",
+        "💻 Install",
+        "Grok Build"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 7022,
+      "end": 7055,
+      "id": "b86",
+      "kind": "CODE",
+      "locator": "source DOM normalized block[86]",
+      "headingPath": [
+        "text-to-cad",
+        "💻 Install",
+        "Grok Build"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 7057,
+      "end": 7063,
+      "id": "b87",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[87]",
+      "headingPath": [
+        "text-to-cad",
+        "💻 Install",
+        "Gemini"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 7065,
+      "end": 7170,
+      "id": "b88",
+      "kind": "CODE",
+      "locator": "source DOM normalized block[88]",
+      "headingPath": [
+        "text-to-cad",
+        "💻 Install",
+        "Gemini"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 7172,
+      "end": 7429,
+      "id": "b89",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[89]",
+      "headingPath": [
+        "text-to-cad",
+        "💻 Install",
+        "Gemini"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 7431,
+      "end": 7476,
+      "id": "b90",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[90]",
+      "headingPath": [
+        "text-to-cad",
+        "💻 Install",
+        "Gemini"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 7478,
+      "end": 7514,
+      "id": "b91",
+      "kind": "CODE",
+      "locator": "source DOM normalized block[91]",
+      "headingPath": [
+        "text-to-cad",
+        "💻 Install",
+        "Gemini"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 7516,
+      "end": 7586,
+      "id": "b92",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[92]",
+      "headingPath": [
+        "text-to-cad",
+        "💻 Install",
+        "Gemini"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 7588,
+      "end": 7627,
+      "id": "b93",
+      "kind": "CODE",
+      "locator": "source DOM normalized block[93]",
+      "headingPath": [
+        "text-to-cad",
+        "💻 Install",
+        "Gemini"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 7629,
+      "end": 7641,
+      "id": "b94",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[94]",
+      "headingPath": [
+        "text-to-cad",
+        "💻 Install",
+        "Other Agents"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 7643,
+      "end": 7827,
+      "id": "b95",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[95]",
+      "headingPath": [
+        "text-to-cad",
+        "💻 Install",
+        "Other Agents"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 7829,
+      "end": 7874,
+      "id": "b96",
+      "kind": "CODE",
+      "locator": "source DOM normalized block[96]",
+      "headingPath": [
+        "text-to-cad",
+        "💻 Install",
+        "Other Agents"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 7876,
+      "end": 8061,
+      "id": "b97",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[97]",
+      "headingPath": [
+        "text-to-cad",
+        "💻 Install",
+        "Other Agents"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 8063,
+      "end": 8280,
+      "id": "b98",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[98]",
+      "headingPath": [
+        "text-to-cad",
+        "💻 Install",
+        "Other Agents"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 8282,
+      "end": 8661,
+      "id": "b99",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[99]",
+      "headingPath": [
+        "text-to-cad",
+        "💻 Install",
+        "Other Agents"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 8663,
+      "end": 9020,
+      "id": "b100",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[100]",
+      "headingPath": [
+        "text-to-cad",
+        "💻 Install",
+        "Other Agents"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 9022,
+      "end": 9064,
+      "id": "b101",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[101]",
+      "headingPath": [
+        "text-to-cad",
+        "💻 Install",
+        "Other Agents"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 9066,
+      "end": 9073,
+      "id": "b102",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[102]",
+      "headingPath": [
+        "text-to-cad",
+        "💻 Install",
+        "Updates"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 9075,
+      "end": 9198,
+      "id": "b103",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[103]",
+      "headingPath": [
+        "text-to-cad",
+        "💻 Install",
+        "Updates"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 9200,
+      "end": 9931,
+      "id": "b104",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[104]",
+      "headingPath": [
+        "text-to-cad",
+        "💻 Install",
+        "Updates"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 9933,
+      "end": 10171,
+      "id": "b105",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[105]",
+      "headingPath": [
+        "text-to-cad",
+        "💻 Install",
+        "Updates"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 10173,
+      "end": 10182,
+      "id": "b106",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[106]",
+      "headingPath": [
+        "text-to-cad",
+        "💻 Install",
+        "Telemetry"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 10184,
+      "end": 12367,
+      "id": "b107",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[107]",
+      "headingPath": [
+        "text-to-cad",
+        "💻 Install",
+        "Telemetry"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 12369,
+      "end": 12398,
+      "id": "b108",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[108]",
+      "headingPath": [
+        "text-to-cad",
+        "💻 Install",
+        "Windows 11: Smart App Control"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 12400,
+      "end": 12904,
+      "id": "b109",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[109]",
+      "headingPath": [
+        "text-to-cad",
+        "💻 Install",
+        "Windows 11: Smart App Control"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 12906,
+      "end": 13297,
+      "id": "b110",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[110]",
+      "headingPath": [
+        "text-to-cad",
+        "💻 Install",
+        "Windows 11: Smart App Control"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 13299,
+      "end": 13308,
+      "id": "b111",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[111]",
+      "headingPath": [
+        "text-to-cad",
+        "🧰 Skills"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 13310,
+      "end": 13439,
+      "id": "b112",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[112]",
+      "headingPath": [
+        "text-to-cad",
+        "🧰 Skills"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 13441,
+      "end": 14978,
+      "id": "b113",
+      "kind": "TABLE",
+      "locator": "source DOM normalized block[113]",
+      "headingPath": [
+        "text-to-cad",
+        "🧰 Skills"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 14980,
+      "end": 14996,
+      "id": "b114",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[114]",
+      "headingPath": [
+        "text-to-cad",
+        "🛠️ Contributing"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 14998,
+      "end": 15124,
+      "id": "b115",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[115]",
+      "headingPath": [
+        "text-to-cad",
+        "🛠️ Contributing"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 15126,
+      "end": 15131,
+      "id": "b116",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[116]",
+      "headingPath": [
+        "text-to-cad",
+        "About"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 15133,
+      "end": 15165,
+      "id": "b117",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[117]",
+      "headingPath": [
+        "text-to-cad",
+        "About"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 15167,
+      "end": 15184,
+      "id": "b118",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[118]",
+      "headingPath": [
+        "text-to-cad",
+        "About"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 15186,
+      "end": 15192,
+      "id": "b119",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[119]",
+      "headingPath": [
+        "text-to-cad",
+        "About",
+        "Topics"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 15194,
+      "end": 15263,
+      "id": "b120",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[120]",
+      "headingPath": [
+        "text-to-cad",
+        "About",
+        "Topics"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 15265,
+      "end": 15274,
+      "id": "b121",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[121]",
+      "headingPath": [
+        "text-to-cad",
+        "About",
+        "Resources"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 15276,
+      "end": 15282,
+      "id": "b122",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[122]",
+      "headingPath": [
+        "text-to-cad",
+        "About",
+        "Resources"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 15284,
+      "end": 15295,
+      "id": "b123",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[123]",
+      "headingPath": [
+        "text-to-cad",
+        "About",
+        "Resources"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 15297,
+      "end": 15309,
+      "id": "b124",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[124]",
+      "headingPath": [
+        "text-to-cad",
+        "About",
+        "Contributing"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 15311,
+      "end": 15323,
+      "id": "b125",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[125]",
+      "headingPath": [
+        "text-to-cad",
+        "About",
+        "Contributing"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 15325,
+      "end": 15340,
+      "id": "b126",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[126]",
+      "headingPath": [
+        "text-to-cad",
+        "About",
+        "Security policy"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 15342,
+      "end": 15357,
+      "id": "b127",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[127]",
+      "headingPath": [
+        "text-to-cad",
+        "About",
+        "Security policy"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 15359,
+      "end": 15367,
+      "id": "b128",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[128]",
+      "headingPath": [
+        "text-to-cad",
+        "About",
+        "Security policy"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 15369,
+      "end": 15374,
+      "id": "b129",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[129]",
+      "headingPath": [
+        "text-to-cad",
+        "About",
+        "Stars"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 15376,
+      "end": 15387,
+      "id": "b130",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[130]",
+      "headingPath": [
+        "text-to-cad",
+        "About",
+        "Stars"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 15389,
+      "end": 15397,
+      "id": "b131",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[131]",
+      "headingPath": [
+        "text-to-cad",
+        "About",
+        "Watchers"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 15399,
+      "end": 15411,
+      "id": "b132",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[132]",
+      "headingPath": [
+        "text-to-cad",
+        "About",
+        "Watchers"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 15413,
+      "end": 15418,
+      "id": "b133",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[133]",
+      "headingPath": [
+        "text-to-cad",
+        "About",
+        "Forks"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 15420,
+      "end": 15430,
+      "id": "b134",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[134]",
+      "headingPath": [
+        "text-to-cad",
+        "About",
+        "Forks"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 15432,
+      "end": 15449,
+      "id": "b135",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[135]",
+      "headingPath": [
+        "text-to-cad",
+        "About",
+        "Forks"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 15451,
+      "end": 15459,
+      "id": "b136",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[136]",
+      "headingPath": [
+        "text-to-cad",
+        "Releases"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 15461,
+      "end": 15469,
+      "id": "b137",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[137]",
+      "headingPath": [
+        "text-to-cad",
+        "Packages"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 15471,
+      "end": 15483,
+      "id": "b138",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[138]",
+      "headingPath": [
+        "text-to-cad",
+        "Contributors"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 15485,
+      "end": 15494,
+      "id": "b139",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[139]",
+      "headingPath": [
+        "text-to-cad",
+        "Languages"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    }
+  ],
+  "links": [
+    {
+      "url": "https://github.com/earthtojake/text-to-cad",
+      "text": "text-to-cad",
+      "blockId": "b2",
+      "relation": "LINK",
+      "locator": "source DOM link[80]"
+    },
+    {
+      "url": "https://github.com/login?return_to=%2Fearthtojake%2Ftext-to-cad",
+      "text": "Notifications",
+      "blockId": "b3",
+      "relation": "LINK",
+      "locator": "source DOM link[81]"
+    },
+    {
+      "url": "https://github.com/login?return_to=%2Fearthtojake%2Ftext-to-cad",
+      "text": "Fork (2.2k)",
+      "blockId": "b4",
+      "relation": "LINK",
+      "locator": "source DOM link[82]"
+    },
+    {
+      "url": "https://github.com/login?return_to=%2Fearthtojake%2Ftext-to-cad",
+      "text": "Star (23k)",
+      "blockId": "b5",
+      "relation": "LINK",
+      "locator": "source DOM link[83]"
+    },
+    {
+      "url": "https://www.texttocad.dev/",
+      "text": "www.texttocad.dev",
+      "blockId": "b8",
+      "relation": "LINK",
+      "locator": "source DOM link[84]"
+    },
+    {
+      "url": "https://github.com/topics/agents",
+      "text": "agents",
+      "blockId": "b10",
+      "relation": "LINK",
+      "locator": "source DOM link[85]"
+    },
+    {
+      "url": "https://github.com/topics/ai-agents",
+      "text": "ai-agents",
+      "blockId": "b10",
+      "relation": "LINK",
+      "locator": "source DOM link[86]"
+    },
+    {
+      "url": "https://github.com/topics/cad",
+      "text": "cad",
+      "blockId": "b10",
+      "relation": "LINK",
+      "locator": "source DOM link[87]"
+    },
+    {
+      "url": "https://github.com/topics/mechanical-engineering",
+      "text": "mechanical-engineering",
+      "blockId": "b10",
+      "relation": "LINK",
+      "locator": "source DOM link[88]"
+    },
+    {
+      "url": "https://github.com/topics/robotics",
+      "text": "robotics",
+      "blockId": "b10",
+      "relation": "LINK",
+      "locator": "source DOM link[89]"
+    },
+    {
+      "url": "https://github.com/topics/step",
+      "text": "step",
+      "blockId": "b10",
+      "relation": "LINK",
+      "locator": "source DOM link[90]"
+    },
+    {
+      "url": "https://github.com/topics/stl",
+      "text": "stl",
+      "blockId": "b10",
+      "relation": "LINK",
+      "locator": "source DOM link[91]"
+    },
+    {
+      "url": "https://github.com/topics/stp",
+      "text": "stp",
+      "blockId": "b10",
+      "relation": "LINK",
+      "locator": "source DOM link[92]"
+    },
+    {
+      "url": "https://github.com/topics/text-to-cad",
+      "text": "text-to-cad",
+      "blockId": "b10",
+      "relation": "LINK",
+      "locator": "source DOM link[93]"
+    },
+    {
+      "url": "https://github.com/earthtojake/text-to-cad/activity",
+      "text": "Activity",
+      "blockId": "b18",
+      "relation": "LINK",
+      "locator": "source DOM link[98]"
+    },
+    {
+      "url": "https://github.com/earthtojake/text-to-cad/forks",
+      "text": "2.2k forks",
+      "blockId": "b24",
+      "relation": "LINK",
+      "locator": "source DOM link[99]"
+    },
+    {
+      "url": "https://github.com/contact/report-content?content_url=https%3A%2F%2Fgithub.com%2Fearthtojake%2Ftext-to-cad&report=earthtojake+%28user%29",
+      "text": "Report repository",
+      "blockId": "b25",
+      "relation": "LINK",
+      "locator": "source DOM link[100]"
+    },
+    {
+      "url": "https://github.com/earthtojake/text-to-cad/branches",
+      "text": "Branches",
+      "blockId": "b26",
+      "relation": "LINK",
+      "locator": "source DOM link[101]"
+    },
+    {
+      "url": "https://github.com/earthtojake/text-to-cad/tags",
+      "text": "Tags",
+      "blockId": "b26",
+      "relation": "LINK",
+      "locator": "source DOM link[102]"
+    },
+    {
+      "url": "https://github.com/earthtojake/text-to-cad/commits/main/",
+      "text": "1,462 Commits",
+      "blockId": "b29",
+      "relation": "LINK",
+      "locator": "source DOM link[105]"
+    },
+    {
+      "url": "https://github.com/earthtojake/text-to-cad/tree/main/.claude-plugin",
+      "text": ".claude-plugin",
+      "blockId": "b31",
+      "relation": "LINK",
+      "locator": "source DOM link[107]"
+    },
+    {
+      "url": "https://github.com/earthtojake/text-to-cad/tree/main/.codex-plugin",
+      "text": ".codex-plugin",
+      "blockId": "b31",
+      "relation": "LINK",
+      "locator": "source DOM link[109]"
+    },
+    {
+      "url": "https://github.com/earthtojake/text-to-cad/tree/main/.cursor-plugin",
+      "text": ".cursor-plugin",
+      "blockId": "b31",
+      "relation": "LINK",
+      "locator": "source DOM link[111]"
+    },
+    {
+      "url": "https://github.com/earthtojake/text-to-cad/tree/main/.githooks",
+      "text": ".githooks",
+      "blockId": "b31",
+      "relation": "LINK",
+      "locator": "source DOM link[113]"
+    },
+    {
+      "url": "https://github.com/earthtojake/text-to-cad/tree/main/.github",
+      "text": ".github",
+      "blockId": "b31",
+      "relation": "LINK",
+      "locator": "source DOM link[115]"
+    },
+    {
+      "url": "https://github.com/earthtojake/text-to-cad/tree/main/apps",
+      "text": "apps",
+      "blockId": "b31",
+      "relation": "LINK",
+      "locator": "source DOM link[117]"
+    },
+    {
+      "url": "https://github.com/earthtojake/text-to-cad/tree/main/docs/migrations",
+      "text": "docs/migrations",
+      "blockId": "b31",
+      "relation": "LINK",
+      "locator": "source DOM link[119]"
+    },
+    {
+      "url": "https://github.com/earthtojake/text-to-cad/tree/main/models",
+      "text": "models",
+      "blockId": "b31",
+      "relation": "LINK",
+      "locator": "source DOM link[121]"
+    },
+    {
+      "url": "https://github.com/earthtojake/text-to-cad/tree/main/packages",
+      "text": "packages",
+      "blockId": "b31",
+      "relation": "LINK",
+      "locator": "source DOM link[123]"
+    },
+    {
+      "url": "https://github.com/earthtojake/text-to-cad/tree/main/scripts",
+      "text": "scripts",
+      "blockId": "b31",
+      "relation": "LINK",
+      "locator": "source DOM link[125]"
+    },
+    {
+      "url": "https://github.com/earthtojake/text-to-cad/tree/main/skills",
+      "text": "skills",
+      "blockId": "b31",
+      "relation": "LINK",
+      "locator": "source DOM link[127]"
+    },
+    {
+      "url": "https://github.com/earthtojake/text-to-cad/tree/main/tests",
+      "text": "tests",
+      "blockId": "b31",
+      "relation": "LINK",
+      "locator": "source DOM link[129]"
+    },
+    {
+      "url": "https://github.com/earthtojake/text-to-cad/blob/main/.gitignore",
+      "text": ".gitignore",
+      "blockId": "b31",
+      "relation": "LINK",
+      "locator": "source DOM link[131]"
+    },
+    {
+      "url": "https://github.com/earthtojake/text-to-cad/blob/main/AGENTS.md",
+      "text": "AGENTS.md",
+      "blockId": "b31",
+      "relation": "LINK",
+      "locator": "source DOM link[133]"
+    },
+    {
+      "url": "https://github.com/earthtojake/text-to-cad/blob/main/CONTRIBUTING.md",
+      "text": "CONTRIBUTING.md",
+      "blockId": "b31",
+      "relation": "LINK",
+      "locator": "source DOM link[135]"
+    },
+    {
+      "url": "https://github.com/earthtojake/text-to-cad/blob/main/LICENSE",
+      "text": "LICENSE",
+      "blockId": "b31",
+      "relation": "LINK",
+      "locator": "source DOM link[137]"
+    },
+    {
+      "url": "https://github.com/earthtojake/text-to-cad/blob/main/README.md",
+      "text": "README.md",
+      "blockId": "b31",
+      "relation": "LINK",
+      "locator": "source DOM link[139]"
+    },
+    {
+      "url": "https://github.com/earthtojake/text-to-cad/blob/main/SECURITY.md",
+      "text": "SECURITY.md",
+      "blockId": "b31",
+      "relation": "LINK",
+      "locator": "source DOM link[141]"
+    },
+    {
+      "url": "https://github.com/earthtojake/text-to-cad/blob/main/SPLIT_REPORT.md",
+      "text": "SPLIT_REPORT.md",
+      "blockId": "b31",
+      "relation": "LINK",
+      "locator": "source DOM link[143]"
+    },
+    {
+      "url": "https://github.com/earthtojake/text-to-cad/blob/main/VERSION",
+      "text": "VERSION",
+      "blockId": "b31",
+      "relation": "LINK",
+      "locator": "source DOM link[145]"
+    },
+    {
+      "url": "https://github.com/earthtojake/text-to-cad/blob/main/claude.mcp.json",
+      "text": "claude.mcp.json",
+      "blockId": "b31",
+      "relation": "LINK",
+      "locator": "source DOM link[147]"
+    },
+    {
+      "url": "https://github.com/earthtojake/text-to-cad/blob/main/codex.mcp.json",
+      "text": "codex.mcp.json",
+      "blockId": "b31",
+      "relation": "LINK",
+      "locator": "source DOM link[149]"
+    },
+    {
+      "url": "https://github.com/earthtojake/text-to-cad/blob/main/cursor.mcp.json",
+      "text": "cursor.mcp.json",
+      "blockId": "b31",
+      "relation": "LINK",
+      "locator": "source DOM link[151]"
+    },
+    {
+      "url": "https://github.com/earthtojake/text-to-cad/blob/main/gemini-extension.json",
+      "text": "gemini-extension.json",
+      "blockId": "b31",
+      "relation": "LINK",
+      "locator": "source DOM link[153]"
+    },
+    {
+      "url": "https://github.com/earthtojake/text-to-cad/blob/main/mcp.json",
+      "text": "mcp.json",
+      "blockId": "b31",
+      "relation": "LINK",
+      "locator": "source DOM link[155]"
+    },
+    {
+      "url": "https://github.com/earthtojake/text-to-cad/blob/main/package-lock.json",
+      "text": "package-lock.json",
+      "blockId": "b31",
+      "relation": "LINK",
+      "locator": "source DOM link[157]"
+    },
+    {
+      "url": "https://github.com/earthtojake/text-to-cad/blob/main/package.json",
+      "text": "package.json",
+      "blockId": "b31",
+      "relation": "LINK",
+      "locator": "source DOM link[159]"
+    },
+    {
+      "url": "https://github.com/earthtojake/text-to-cad/blob/main/plugin.json",
+      "text": "plugin.json",
+      "blockId": "b31",
+      "relation": "LINK",
+      "locator": "source DOM link[161]"
+    },
+    {
+      "url": "https://github.com/earthtojake/text-to-cad/blob/main/requirements-dev.txt",
+      "text": "requirements-dev.txt",
+      "blockId": "b31",
+      "relation": "LINK",
+      "locator": "source DOM link[163]"
+    },
+    {
+      "url": "https://github.com/earthtojake/text-to-cad/blob/main/skills.sh.json",
+      "text": "skills.sh.json",
+      "blockId": "b31",
+      "relation": "LINK",
+      "locator": "source DOM link[165]"
+    },
+    {
+      "url": "https://www.texttocad.dev/",
+      "text": "Docs",
+      "blockId": "b34",
+      "relation": "LINK",
+      "locator": "source DOM link[172]"
+    },
+    {
+      "url": "https://skills.sh/",
+      "text": "skills",
+      "blockId": "b37",
+      "relation": "LINK",
+      "locator": "source DOM link[185]"
+    },
+    {
+      "url": "https://docs.astral.sh/uv/",
+      "text": "uv",
+      "blockId": "b44",
+      "relation": "LINK",
+      "locator": "source DOM link[189]"
+    },
+    {
+      "url": "https://docs.astral.sh/uv/getting-started/installation/",
+      "text": "uv's installer",
+      "blockId": "b44",
+      "relation": "LINK",
+      "locator": "source DOM link[190]"
+    },
+    {
+      "url": "https://pypi.org/project/cadgen/",
+      "text": "latest release",
+      "blockId": "b60",
+      "relation": "LINK",
+      "locator": "source DOM link[194]"
+    },
+    {
+      "url": "https://chatgpt.com/plugins/plugins_6ac09476ef008191a35887b22b0d048a",
+      "text": "text-to-cad for Codex",
+      "blockId": "b62",
+      "relation": "LINK",
+      "locator": "source DOM link[196]"
+    },
+    {
+      "url": "https://github.com/earthtojake/text-to-cad/issues/new?title=Plugin+request%3A+",
+      "text": "Request one",
+      "blockId": "b101",
+      "relation": "LINK",
+      "locator": "source DOM link[201]"
+    },
+    {
+      "url": "https://github.com/earthtojake/text-to-cad",
+      "text": "https://github.com/earthtojake/text-to-cad",
+      "blockId": "b104",
+      "relation": "LINK",
+      "locator": "source DOM link[203]"
+    },
+    {
+      "url": "https://www.texttocad.dev/install",
+      "text": "install instructions",
+      "blockId": "b104",
+      "relation": "LINK",
+      "locator": "source DOM link[204]"
+    },
+    {
+      "url": "https://www.texttocad.dev/privacy-policy",
+      "text": "privacy policy",
+      "blockId": "b107",
+      "relation": "LINK",
+      "locator": "source DOM link[206]"
+    },
+    {
+      "url": "https://github.com/earthtojake/text-to-cad/blob/main/skills/cad/SKILL.md",
+      "text": "skills/cad",
+      "blockId": "b113",
+      "relation": "LINK",
+      "locator": "source DOM link[209]"
+    },
+    {
+      "url": "https://github.com/earthtojake/text-to-cad/blob/main/skills/step-parts/SKILL.md",
+      "text": "skills/step-parts",
+      "blockId": "b113",
+      "relation": "LINK",
+      "locator": "source DOM link[210]"
+    },
+    {
+      "url": "https://github.com/earthtojake/text-to-cad/blob/main/skills/engineering-drawing/SKILL.md",
+      "text": "skills/engineering-drawing",
+      "blockId": "b113",
+      "relation": "LINK",
+      "locator": "source DOM link[211]"
+    },
+    {
+      "url": "https://github.com/earthtojake/text-to-cad/blob/main/skills/dxf/SKILL.md",
+      "text": "skills/dxf",
+      "blockId": "b113",
+      "relation": "LINK",
+      "locator": "source DOM link[212]"
+    },
+    {
+      "url": "https://github.com/earthtojake/text-to-cad/blob/main/skills/urdf/SKILL.md",
+      "text": "skills/urdf",
+      "blockId": "b113",
+      "relation": "LINK",
+      "locator": "source DOM link[213]"
+    },
+    {
+      "url": "https://github.com/earthtojake/text-to-cad/blob/main/skills/srdf/SKILL.md",
+      "text": "skills/srdf",
+      "blockId": "b113",
+      "relation": "LINK",
+      "locator": "source DOM link[214]"
+    },
+    {
+      "url": "https://github.com/earthtojake/text-to-cad/blob/main/skills/sdf/SKILL.md",
+      "text": "skills/sdf",
+      "blockId": "b113",
+      "relation": "LINK",
+      "locator": "source DOM link[215]"
+    },
+    {
+      "url": "https://github.com/earthtojake/text-to-cad/blob/main/skills/sendcutsend/SKILL.md",
+      "text": "skills/sendcutsend",
+      "blockId": "b113",
+      "relation": "LINK",
+      "locator": "source DOM link[216]"
+    },
+    {
+      "url": "https://github.com/earthtojake/text-to-cad/blob/main/skills/dfam-check/SKILL.md",
+      "text": "skills/dfam-check",
+      "blockId": "b113",
+      "relation": "LINK",
+      "locator": "source DOM link[217]"
+    },
+    {
+      "url": "https://github.com/earthtojake/text-to-cad/blob/main/skills/dfm/SKILL.md",
+      "text": "skills/dfm",
+      "blockId": "b113",
+      "relation": "LINK",
+      "locator": "source DOM link[218]"
+    },
+    {
+      "url": "https://github.com/earthtojake/text-to-cad/blob/main/skills/gcode/SKILL.md",
+      "text": "skills/gcode",
+      "blockId": "b113",
+      "relation": "LINK",
+      "locator": "source DOM link[219]"
+    },
+    {
+      "url": "https://github.com/earthtojake/text-to-cad/blob/main/skills/bambu-labs/SKILL.md",
+      "text": "skills/bambu-labs",
+      "blockId": "b113",
+      "relation": "LINK",
+      "locator": "source DOM link[220]"
+    },
+    {
+      "url": "https://github.com/earthtojake/text-to-cad/blob/main/CONTRIBUTING.md",
+      "text": "CONTRIBUTING.md",
+      "blockId": "b115",
+      "relation": "LINK",
+      "locator": "source DOM link[222]"
+    },
+    {
+      "url": "https://www.texttocad.dev/",
+      "text": "www.texttocad.dev",
+      "blockId": "b118",
+      "relation": "LINK",
+      "locator": "source DOM link[223]"
+    },
+    {
+      "url": "https://github.com/topics/agents",
+      "text": "agents",
+      "blockId": "b120",
+      "relation": "LINK",
+      "locator": "source DOM link[224]"
+    },
+    {
+      "url": "https://github.com/topics/ai-agents",
+      "text": "ai-agents",
+      "blockId": "b120",
+      "relation": "LINK",
+      "locator": "source DOM link[225]"
+    },
+    {
+      "url": "https://github.com/topics/cad",
+      "text": "cad",
+      "blockId": "b120",
+      "relation": "LINK",
+      "locator": "source DOM link[226]"
+    },
+    {
+      "url": "https://github.com/topics/mechanical-engineering",
+      "text": "mechanical-engineering",
+      "blockId": "b120",
+      "relation": "LINK",
+      "locator": "source DOM link[227]"
+    },
+    {
+      "url": "https://github.com/topics/robotics",
+      "text": "robotics",
+      "blockId": "b120",
+      "relation": "LINK",
+      "locator": "source DOM link[228]"
+    },
+    {
+      "url": "https://github.com/topics/step",
+      "text": "step",
+      "blockId": "b120",
+      "relation": "LINK",
+      "locator": "source DOM link[229]"
+    },
+    {
+      "url": "https://github.com/topics/stl",
+      "text": "stl",
+      "blockId": "b120",
+      "relation": "LINK",
+      "locator": "source DOM link[230]"
+    },
+    {
+      "url": "https://github.com/topics/stp",
+      "text": "stp",
+      "blockId": "b120",
+      "relation": "LINK",
+      "locator": "source DOM link[231]"
+    },
+    {
+      "url": "https://github.com/topics/text-to-cad",
+      "text": "text-to-cad",
+      "blockId": "b120",
+      "relation": "LINK",
+      "locator": "source DOM link[232]"
+    },
+    {
+      "url": "https://github.com/earthtojake/text-to-cad/activity",
+      "text": "Activity",
+      "blockId": "b128",
+      "relation": "LINK",
+      "locator": "source DOM link[237]"
+    },
+    {
+      "url": "https://github.com/earthtojake/text-to-cad/forks",
+      "text": "2.2k forks",
+      "blockId": "b134",
+      "relation": "LINK",
+      "locator": "source DOM link[238]"
+    },
+    {
+      "url": "https://github.com/contact/report-content?content_url=https%3A%2F%2Fgithub.com%2Fearthtojake%2Ftext-to-cad&report=earthtojake+%28user%29",
+      "text": "Report repository",
+      "blockId": "b135",
+      "relation": "LINK",
+      "locator": "source DOM link[239]"
+    }
+  ],
+  "tables": [
+    {
+      "blockId": "b31",
+      "rows": [
+        {
+          "start": 514,
+          "end": 557,
+          "cells": [
+            {
+              "start": 514,
+              "end": 518,
+              "text": "Name",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 2
+            },
+            {
+              "start": 518,
+              "end": 522,
+              "text": "Name",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 522,
+              "end": 541,
+              "text": "Last commit message",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 541,
+              "end": 557,
+              "text": "Last commit date",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 557,
+          "end": 585,
+          "cells": [
+            {
+              "start": 557,
+              "end": 571,
+              "text": ".claude-plugin",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 2
+            },
+            {
+              "start": 571,
+              "end": 585,
+              "text": ".claude-plugin",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 585,
+              "end": 585,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 585,
+              "end": 585,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 586,
+          "end": 612,
+          "cells": [
+            {
+              "start": 586,
+              "end": 599,
+              "text": ".codex-plugin",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 2
+            },
+            {
+              "start": 599,
+              "end": 612,
+              "text": ".codex-plugin",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 612,
+              "end": 612,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 612,
+              "end": 612,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 613,
+          "end": 641,
+          "cells": [
+            {
+              "start": 613,
+              "end": 627,
+              "text": ".cursor-plugin",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 2
+            },
+            {
+              "start": 627,
+              "end": 641,
+              "text": ".cursor-plugin",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 641,
+              "end": 641,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 641,
+              "end": 641,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 642,
+          "end": 660,
+          "cells": [
+            {
+              "start": 642,
+              "end": 651,
+              "text": ".githooks",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 2
+            },
+            {
+              "start": 651,
+              "end": 660,
+              "text": ".githooks",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 660,
+              "end": 660,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 660,
+              "end": 660,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 661,
+          "end": 675,
+          "cells": [
+            {
+              "start": 661,
+              "end": 668,
+              "text": ".github",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 2
+            },
+            {
+              "start": 668,
+              "end": 675,
+              "text": ".github",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 675,
+              "end": 675,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 675,
+              "end": 675,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 676,
+          "end": 684,
+          "cells": [
+            {
+              "start": 676,
+              "end": 680,
+              "text": "apps",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 2
+            },
+            {
+              "start": 680,
+              "end": 684,
+              "text": "apps",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 684,
+              "end": 684,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 684,
+              "end": 684,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 685,
+          "end": 715,
+          "cells": [
+            {
+              "start": 685,
+              "end": 700,
+              "text": "docs/migrations",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 2
+            },
+            {
+              "start": 700,
+              "end": 715,
+              "text": "docs/migrations",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 715,
+              "end": 715,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 715,
+              "end": 715,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 716,
+          "end": 728,
+          "cells": [
+            {
+              "start": 716,
+              "end": 722,
+              "text": "models",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 2
+            },
+            {
+              "start": 722,
+              "end": 728,
+              "text": "models",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 728,
+              "end": 728,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 728,
+              "end": 728,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 729,
+          "end": 745,
+          "cells": [
+            {
+              "start": 729,
+              "end": 737,
+              "text": "packages",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 2
+            },
+            {
+              "start": 737,
+              "end": 745,
+              "text": "packages",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 745,
+              "end": 745,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 745,
+              "end": 745,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 746,
+          "end": 760,
+          "cells": [
+            {
+              "start": 746,
+              "end": 753,
+              "text": "scripts",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 2
+            },
+            {
+              "start": 753,
+              "end": 760,
+              "text": "scripts",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 760,
+              "end": 760,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 760,
+              "end": 760,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 761,
+          "end": 773,
+          "cells": [
+            {
+              "start": 761,
+              "end": 767,
+              "text": "skills",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 2
+            },
+            {
+              "start": 767,
+              "end": 773,
+              "text": "skills",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 773,
+              "end": 773,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 773,
+              "end": 773,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 774,
+          "end": 784,
+          "cells": [
+            {
+              "start": 774,
+              "end": 779,
+              "text": "tests",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 2
+            },
+            {
+              "start": 779,
+              "end": 784,
+              "text": "tests",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 784,
+              "end": 784,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 784,
+              "end": 784,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 785,
+          "end": 805,
+          "cells": [
+            {
+              "start": 785,
+              "end": 795,
+              "text": ".gitignore",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 2
+            },
+            {
+              "start": 795,
+              "end": 805,
+              "text": ".gitignore",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 805,
+              "end": 805,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 805,
+              "end": 805,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 806,
+          "end": 824,
+          "cells": [
+            {
+              "start": 806,
+              "end": 815,
+              "text": "AGENTS.md",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 2
+            },
+            {
+              "start": 815,
+              "end": 824,
+              "text": "AGENTS.md",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 824,
+              "end": 824,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 824,
+              "end": 824,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 825,
+          "end": 855,
+          "cells": [
+            {
+              "start": 825,
+              "end": 840,
+              "text": "CONTRIBUTING.md",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 2
+            },
+            {
+              "start": 840,
+              "end": 855,
+              "text": "CONTRIBUTING.md",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 855,
+              "end": 855,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 855,
+              "end": 855,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 856,
+          "end": 870,
+          "cells": [
+            {
+              "start": 856,
+              "end": 863,
+              "text": "LICENSE",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 2
+            },
+            {
+              "start": 863,
+              "end": 870,
+              "text": "LICENSE",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 870,
+              "end": 870,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 870,
+              "end": 870,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 871,
+          "end": 889,
+          "cells": [
+            {
+              "start": 871,
+              "end": 880,
+              "text": "README.md",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 2
+            },
+            {
+              "start": 880,
+              "end": 889,
+              "text": "README.md",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 889,
+              "end": 889,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 889,
+              "end": 889,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 890,
+          "end": 912,
+          "cells": [
+            {
+              "start": 890,
+              "end": 901,
+              "text": "SECURITY.md",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 2
+            },
+            {
+              "start": 901,
+              "end": 912,
+              "text": "SECURITY.md",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 912,
+              "end": 912,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 912,
+              "end": 912,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 913,
+          "end": 943,
+          "cells": [
+            {
+              "start": 913,
+              "end": 928,
+              "text": "SPLIT_REPORT.md",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 2
+            },
+            {
+              "start": 928,
+              "end": 943,
+              "text": "SPLIT_REPORT.md",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 943,
+              "end": 943,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 943,
+              "end": 943,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 944,
+          "end": 958,
+          "cells": [
+            {
+              "start": 944,
+              "end": 951,
+              "text": "VERSION",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 2
+            },
+            {
+              "start": 951,
+              "end": 958,
+              "text": "VERSION",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 958,
+              "end": 958,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 958,
+              "end": 958,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 959,
+          "end": 989,
+          "cells": [
+            {
+              "start": 959,
+              "end": 974,
+              "text": "claude.mcp.json",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 2
+            },
+            {
+              "start": 974,
+              "end": 989,
+              "text": "claude.mcp.json",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 989,
+              "end": 989,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 989,
+              "end": 989,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 990,
+          "end": 1018,
+          "cells": [
+            {
+              "start": 990,
+              "end": 1004,
+              "text": "codex.mcp.json",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 2
+            },
+            {
+              "start": 1004,
+              "end": 1018,
+              "text": "codex.mcp.json",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1018,
+              "end": 1018,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1018,
+              "end": 1018,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 1019,
+          "end": 1049,
+          "cells": [
+            {
+              "start": 1019,
+              "end": 1034,
+              "text": "cursor.mcp.json",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 2
+            },
+            {
+              "start": 1034,
+              "end": 1049,
+              "text": "cursor.mcp.json",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1049,
+              "end": 1049,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1049,
+              "end": 1049,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 1050,
+          "end": 1092,
+          "cells": [
+            {
+              "start": 1050,
+              "end": 1071,
+              "text": "gemini-extension.json",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 2
+            },
+            {
+              "start": 1071,
+              "end": 1092,
+              "text": "gemini-extension.json",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1092,
+              "end": 1092,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1092,
+              "end": 1092,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 1093,
+          "end": 1109,
+          "cells": [
+            {
+              "start": 1093,
+              "end": 1101,
+              "text": "mcp.json",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 2
+            },
+            {
+              "start": 1101,
+              "end": 1109,
+              "text": "mcp.json",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1109,
+              "end": 1109,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1109,
+              "end": 1109,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 1110,
+          "end": 1144,
+          "cells": [
+            {
+              "start": 1110,
+              "end": 1127,
+              "text": "package-lock.json",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 2
+            },
+            {
+              "start": 1127,
+              "end": 1144,
+              "text": "package-lock.json",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1144,
+              "end": 1144,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1144,
+              "end": 1144,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 1145,
+          "end": 1169,
+          "cells": [
+            {
+              "start": 1145,
+              "end": 1157,
+              "text": "package.json",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 2
+            },
+            {
+              "start": 1157,
+              "end": 1169,
+              "text": "package.json",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1169,
+              "end": 1169,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1169,
+              "end": 1169,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 1170,
+          "end": 1192,
+          "cells": [
+            {
+              "start": 1170,
+              "end": 1181,
+              "text": "plugin.json",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 2
+            },
+            {
+              "start": 1181,
+              "end": 1192,
+              "text": "plugin.json",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1192,
+              "end": 1192,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1192,
+              "end": 1192,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 1193,
+          "end": 1233,
+          "cells": [
+            {
+              "start": 1193,
+              "end": 1213,
+              "text": "requirements-dev.txt",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 2
+            },
+            {
+              "start": 1213,
+              "end": 1233,
+              "text": "requirements-dev.txt",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1233,
+              "end": 1233,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1233,
+              "end": 1233,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 1234,
+          "end": 1262,
+          "cells": [
+            {
+              "start": 1234,
+              "end": 1248,
+              "text": "skills.sh.json",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 2
+            },
+            {
+              "start": 1248,
+              "end": 1262,
+              "text": "skills.sh.json",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1262,
+              "end": 1262,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1262,
+              "end": 1262,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 1263,
+          "end": 1277,
+          "cells": [
+            {
+              "start": 1263,
+              "end": 1277,
+              "text": "View all files",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "blockId": "b113",
+      "rows": [
+        {
+          "start": 13441,
+          "end": 13461,
+          "cells": [
+            {
+              "start": 13441,
+              "end": 13446,
+              "text": "Skill",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 13447,
+              "end": 13454,
+              "text": "Summary",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 13455,
+              "end": 13461,
+              "text": "Source",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 13462,
+          "end": 13623,
+          "cells": [
+            {
+              "start": 13462,
+              "end": 13465,
+              "text": "CAD",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 13466,
+              "end": 13612,
+              "text": "Creates and edits CAD models from plain-language or image requests, with STEP as the main output along with options to export to STL, 3MF and GLB.",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 13613,
+              "end": 13623,
+              "text": "skills/cad",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 13624,
+          "end": 13730,
+          "cells": [
+            {
+              "start": 13624,
+              "end": 13634,
+              "text": "step.parts",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 13635,
+              "end": 13712,
+              "text": "Finds off-the-shelf STEP parts like screws, bearings, motors, and connectors.",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 13713,
+              "end": 13730,
+              "text": "skills/step-parts",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 13731,
+          "end": 13894,
+          "cells": [
+            {
+              "start": 13731,
+              "end": 13750,
+              "text": "Engineering Drawing",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 13751,
+              "end": 13867,
+              "text": "Dimensioned engineering drawings from a part, as a PDF: views, hidden lines, dimensions, hole callouts, title block.",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 13868,
+              "end": 13894,
+              "text": "skills/engineering-drawing",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 13895,
+          "end": 14021,
+          "cells": [
+            {
+              "start": 13895,
+              "end": 13898,
+              "text": "DXF",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 13899,
+              "end": 14010,
+              "text": "Creates 2D DXF drawings like profiles, templates, gaskets, and cut layouts from Python sources or CAD geometry.",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 14011,
+              "end": 14021,
+              "text": "skills/dxf",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 14022,
+          "end": 14118,
+          "cells": [
+            {
+              "start": 14022,
+              "end": 14026,
+              "text": "URDF",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 14027,
+              "end": 14106,
+              "text": "Writes robot structure files with links, joints, limits, inertials, and meshes.",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 14107,
+              "end": 14118,
+              "text": "skills/urdf",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 14119,
+          "end": 14217,
+          "cells": [
+            {
+              "start": 14119,
+              "end": 14123,
+              "text": "SRDF",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 14124,
+              "end": 14205,
+              "text": "Adds MoveIt planning groups, end effectors, poses, and collision rules to a URDF.",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 14206,
+              "end": 14217,
+              "text": "skills/srdf",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 14218,
+          "end": 14311,
+          "cells": [
+            {
+              "start": 14218,
+              "end": 14221,
+              "text": "SDF",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 14222,
+              "end": 14300,
+              "text": "Creates simulator models and worlds with frames, physics, sensors, and lights.",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 14301,
+              "end": 14311,
+              "text": "skills/sdf",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 14312,
+          "end": 14398,
+          "cells": [
+            {
+              "start": 14312,
+              "end": 14323,
+              "text": "SendCutSend",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 14324,
+              "end": 14379,
+              "text": "Checks DXF and STEP files before upload to SendCutSend.",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 14380,
+              "end": 14398,
+              "text": "skills/sendcutsend",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 14399,
+          "end": 14533,
+          "cells": [
+            {
+              "start": 14399,
+              "end": 14409,
+              "text": "DfAM Check",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 14410,
+              "end": 14515,
+              "text": "Measures mesh printability per process: wall thickness, overhangs, support volume, and build orientation.",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 14516,
+              "end": 14533,
+              "text": "skills/dfam-check",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 14534,
+          "end": 14739,
+          "cells": [
+            {
+              "start": 14534,
+              "end": 14537,
+              "text": "DFM",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 14538,
+              "end": 14728,
+              "text": "Reviews a part for sheet metal, CNC machining, or injection molding, with measured evidence and the cited rule behind every finding; measures draft, undercuts and projected area from a mesh.",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 14729,
+              "end": 14739,
+              "text": "skills/dfm",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 14740,
+          "end": 14848,
+          "cells": [
+            {
+              "start": 14740,
+              "end": 14746,
+              "text": "G-code",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 14747,
+              "end": 14835,
+              "text": "Slices models into printer-ready G-code with OrcaSlicer, using your own printer presets.",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 14836,
+              "end": 14848,
+              "text": "skills/gcode",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 14849,
+          "end": 14978,
+          "cells": [
+            {
+              "start": 14849,
+              "end": 14859,
+              "text": "Bambu Labs",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 14860,
+              "end": 14960,
+              "text": "Sends prints to Bambu Lab printers through Bambu Connect, Bambu Lab's official app, or Bambu Studio.",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 14961,
+              "end": 14978,
+              "text": "skills/bambu-labs",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

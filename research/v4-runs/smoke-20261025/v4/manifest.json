@@ -1,0 +1,28 @@
+{
+  "startedAt": "2026-10-25T04:04:54.620Z",
+  "engine": "v4",
+  "codeCommit": "9596bd31d729000cc300268e3bfa5e666539c119",
+  "dirty": "",
+  "base": "http://127.0.0.1:3104",
+  "requestedDepth": "AUTO",
+  "comparisonCeilings": {
+    "totalMs": 180000,
+    "searchCalls": 6,
+    "documentAttempts": 10,
+    "reserveMs": 45000
+  },
+  "cases": [
+    {
+      "id": "S1",
+      "question": "DeepSeek API 的 deepseek-chat 模型上下文长度、最大输出和价格分别是多少？"
+    }
+  ],
+  "runs": [
+    {
+      "case": "S1",
+      "investigationId": "bec58bc1-96a0-4b68-bc57-c560c8fb2ad4",
+      "captureExit": 0,
+      "completedAt": "2026-10-25T04:05:31.135Z"
+    }
+  ]
+}

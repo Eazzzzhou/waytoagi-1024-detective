@@ -1,0 +1,2122 @@
+{
+  "schemaVersion": "source-document/v1",
+  "id": "cfdfe2a00ecb3ee22d8d619d274bd802c3ab4f9c20797900c1e987be4a16cbb8",
+  "version": "328c7e2b390861d5f87cc53b5d197f0a02e8554ab53249676f449799d48be031",
+  "requestedUrl": "https://blog.csdn.net/weixin_42534103/article/details/160016741",
+  "finalUrl": "https://blog.csdn.net/weixin_42534103/article/details/160016741",
+  "retrievedAt": "2026-10-25T04:43:24.833Z",
+  "contentType": "text/html;charset=utf-8",
+  "status": "READ",
+  "readError": null,
+  "rawHash": "c5c86ae0e7f786264ed89634fa21d4118b18326e1ad695b38cec3fcc5115af9f",
+  "textHash": "64ca2011cc33be2be0e94f53bd92aa179cb735672f5def385114bc214b3b22de",
+  "text": "首页 博客 下载 学习 社区 模型市场 AI搜索 AtomGit InsCode 技术会议 墨衍 MoGrow 收藏 历史 会员中心 创作中心\n\n从零搭建 Cursor 与 Blender 的 AI 工作流 —— 基于 MCP 的自动化实践指南\n\n一只特立独行的cherry 墨衍会员 · AI 创作全网分发 墨衍智能分发 本文由作者通过墨衍一键同步至各平台 1分发平台 100+累计阅读 116平均单平台 已同步平台 CSDN 微信公众号 微博 知乎 掘金 百家号 博客园 抖音 小红书 你的文章也可以这样分发 墨衍会员 ¥399起/年，写一次发全网 我也要 码龄6年 关注 VIP免费 原创 最新推荐文章于 2026-09-05 15:02:08 发布 116 阅读 AI 写同款· GEO 优化 ›\n\nMCP - 使用 BlenderMCP 让 Claude AI 控制你的 Blender 模型创作 BlenderMCP 打通了 AI 与 3D 工具之间的壁垒，使得通过 Claude 自然语言即可进行场景构建、模型控制和素材管理等操作，大幅度简化建模流程。无论是个人创作、游戏原型设计还是团队协作，这套流程都值得你体验一番。uv。 阅读详情\n\n1. 为什么需要AI驱动的3D创作工作流\n\n作为一个长期在3D建模领域摸爬滚打的老手，我深刻理解传统工作流程的痛点。每次在Blender里建模时，都要反复切换视图、调整参数、测试效果，一个简单的模型往往要折腾大半天。直到发现Cursor这个AI编程助手和Blender MCP的结合方案，才真正体会到什么叫\"科技改变生产力\"。\n\n想象一下这样的场景：你只需要在聊天框输入\"创建一个表面有凹凸纹理的金属球体\"，AI就能自动生成对应的Python代码并发送给Blender执行。这就像有个专业的技术助理，把你的创意想法直接转化为3D作品。实测下来，原本需要2小时的手动建模工作，现在用自然语言描述5分钟就能搞定。\n\n这套工作流特别适合三类人群：\n\n独立创作者：没有编程基础但想实现复杂效果\n\n技术美术：需要快速验证设计想法的TA人员\n\n教育工作者：演示3D建模原理的教师群体\n\n2. 环境搭建的避坑指南\n\n2.1 软件版本的黄金组合\n\n踩过各种版本兼容的坑之后，我强烈推荐这个稳定组合：\n\nBlender 4.1：这个版本对Python 3.10+的支持最完善\n\nPython 3.10.11：避免使用3.11+版本，某些依赖包会有兼容问题\n\nCursor 1.57+：需要支持MCP协议的最新版\n\n安装时有个小技巧：先装Python再装Blender，这样Blender会自动绑定系统Python环境。我曾在Windows和Mac上都测试过这个流程，Windows的路径处理会更友好些。\n\n2.2 UV工具的安装玄机\n\n官方推荐的uv安装命令有时会抽风，特别是公司网络有安全限制时。我总结出三种备选方案：\n\n# 方案1：标准安装（适合家庭网络）\npowershell -Command \"irm https://astral.sh/uv/install.ps1 | iex\"\n\n# 方案2：手动下载安装\n# 先浏览器下载install_uv.ps1，然后执行\npowershell -ExecutionPolicy Bypass -File .\\install_uv.ps1\n\n# 方案3：conda替代方案（适合已有Anaconda环境）\nconda install -c conda-forge uv\n\n遇到TLS错误时，可以尝试在PowerShell先执行这个命令：\n\n[Net.ServicePointManager]::SecurityProtocol = [Net.\n\n最低0.47元/天 解锁文章\n\n·\n\n收录于\n\n当前文章被以下社区和专栏收录：\n\n标签 #Blender #Cursor #AI工作流 #MCP\n\nAI 应用开发（二）：Blender 建模助手 要想用自然对话的方式在 Blender 中建模，就不得不提到 BlenderMCP 了，全称为 Blender Model Context Protocol，是一个旨在将 Blender 与 AI 模型无缝集成的工具。它通过模型上下文协议（MCP）实现 Blender 与 AI 之间的双向通信，让用户能够利用自然语言指令来控制 Blender，从而极大地简化了 3D 建模和场景操作的流程，它主要由两个部分组成：Blender 插件和 MCP 服务器。1. Blender 插件（addon.py） 阅读详情\n\n相关推荐\n\n换一换\n\nAI语音驱动Blender建模：MCP协议与Cursor实战指南\n\n3D建模领域正经历AI技术带来的范式变革，其中自然语言交互与自动化流程成为关键技术突破点。通过协议层创新（如MCP协议），开发者能够桥接AI编程助手（如Cursor）与专业建模工具（如Blender），实现语音/文本指令直接生成复杂模型。这种技术组合显著降低了3D创作门槛，其核心价值在于：1）将传统手动操作转化为声明式编程；2）通过UV包管理器解决Python环境依赖问题；3）支持建筑、动画等场景的批量建模需求。以Blender插件开发为例，合理配置MCP协议后，用户可快速实现从\"生成带纹理的UV球体\"到\"\n\nweixin_30596735的博客 371\n\n从零到一：用Cursor与MCP打通Blender自动化建模工作流\n\n本文详细介绍了如何利用Cursor与MCP插件实现Blender自动化建模工作流，从环境配置到实战演练，帮助用户快速掌握自动建模技术。通过自然语言指令生成3D模型，大幅提升建模效率，特别适合需要频繁调整模型的设计场景。\n\nweixin_33688840的博客 179\n\nCursor + MCP：解锁Blender自动化建模新范式\n\n本文详细介绍了如何利用Cursor编辑器与MCP协议，实现通过自然语言指令驱动Blender进行自动建模的全新工作流。该组合通过AI理解用户意图并转化为Blender API命令，显著降低了3D建模的操作门槛，提升了从参数化生成到批量处理等场景的创作效率，为设计师和开发者解锁了自动化建模新范式。\n\nweixin_29062963的博客 201\n\nBlender MCP 实战：用自然语言驱动 AI 完成 3D 建模与场景搭建\n\n人工智能与三维设计工具的融合正在重塑内容创作流程。MCP（模型上下文协议）作为一种标准化接口，让 AI 不再局限于文本对话，而能直接调用外部软件执行具体操作。通过将 MCP 与 Blender 结合，用户可以用自然语言指令控制建模、材质、灯光等复杂功能，大幅提升场景搭建与批量操作效率。该方案基于客户端-服务端架构，由 Blender 插件与 Python 服务端协同工作，实现 AI 对 bpy API 的透明调用。其应用场景覆盖游戏关卡白盒预演、自动化工作流、Python API 学习等方向，适合希望以低成\n\n480\n\nGPT-5.6与Cursor编辑器通过MCP协议连接Blender的完整配置指南\n\nMCP协议作为AI模型与外部工具通信的标准化框架，其核心原理是通过定义客户端与服务器间的交互规范，实现AI能力的边界扩展。这一技术价值在于将语言模型的文本生成能力转化为对专业软件的实际操作，显著提升3D建模等复杂任务的自动化水平。在应用场景上，MCP协议特别适用于需要AI驱动工作流的领域，例如通过GPT-5.6模型结合Cursor编辑器操控Blender进行智能建模。本文以配置GPT-5.6连接Blender为例，详细解析了MCP协议在具体工程实践中的实现路径，包括环境准备、服务器部署及常见问题解决方案，为\n\nweixin_31236101的博客 344\n\nBlender 4.1 自动化新玩法：手把手教你配置Cursor的MCP服务器（附mcp.json详解）\n\n本文详细介绍了如何在Blender 4.1中配置Cursor的MCP服务器，实现3D模型自动化创作。通过解析mcp.json配置文件和使用Python脚本，开发者可以搭建Blender与Cursor之间的桥梁，提升工作效率。文章还提供了环境准备、配置详解和实战案例，帮助技术美术和开发者快速掌握这一自动化工具链。\n\nweixin_42523543的博客 320\n\n告别手动建模！用Cursor+Blender MCP实现AI一句话生成3D模型（保姆级避坑指南）\n\n本文详细介绍了如何利用Cursor和Blender MCP实现AI一句话生成3D模型的自动化工作流，特别适合游戏开发、影视动画和工业设计等领域。通过保姆级避坑指南，读者可以快速掌握环境配置、Blender MCP深度集成和Cursor智能交互等关键技术，大幅提升3D建模效率。\n\nweixin_30752699的博客 466\n\n基于MCP协议实现Cursor AI与Unity引擎的深度集成与自动化开发\n\n在AI辅助编程领域，大型语言模型（LLM）与开发工具的深度集成正成为提升开发效率的关键。Model Context Protocol（MCP）作为一种标准化协议，为LLM提供了安全、结构化访问外部工具和系统的通用接口，其原理类似于计算机的USB标准，通过定义统一的通信规范，使AI工具能够动态调用外部功能。这一技术的核心价值在于，它使AI助手从单纯的代码补全工具，升级为能理解项目完整上下文、感知运行时状态的智能伙伴。在游戏开发场景中，这尤其适用于Unity引擎的复杂项目管理，如处理脚本、预制体与资源间的依赖关\n\ndingdi3021的博客 359\n\n告别手动拉点！用Cursor和MCP插件在Blender里实现AI建模（保姆级配置教程）\n\n本文详细介绍了如何利用Cursor和MCP插件在Blender中实现AI自动建模，告别繁琐的手动操作。通过保姆级配置教程，帮助3D设计师快速掌握自然语言指令驱动建模的技术，大幅提升工作效率，特别适合游戏开发、建筑可视化和3D艺术创作等领域。\n\nweixin_29085151的博客 413\n\n[华为]华为无线控制器AC6508简单配置实例\n\n用户需求：3个地址段，分别是领导、员工、访客，访问控制策略是只允许访客上网，不允许访客访问内网。 vlan173为设备的管理地址和AP获取的地址,领导、员工、访客的vlan分别是vlan131/vlan132/vlan133 首先是许可的下载，使用华为的账号登陆http://app.huawei.com/isdp ，然后按照说明输入许可，下载许可，将许可导入到设备。 web界面访问后，直接按照配置向导配置就可以了。 1.基本配置里主要配置license、设备名称、设备时间 2.端口配置：连接上\n\n日子_很简单 2万+\n\n用AI生成React/Vue页面？实测Locofy等5款工具，教你选最适合的\n\n本文深度评测了2024年五大AI生成前端页面工具，包括Locofy、Builder.io等，从代码质量、可视化编辑器成本到企业级落地方案进行全面分析。通过实测数据和实战案例，揭示如何利用AI生成技术高效创建React/Vue页面，提升开发效率并优化性能。\n\nm5n6o7的博客 600\n\nSSD训练自定义数据集实战：VOC格式标注与模型调参技巧\n\n本文详细介绍了如何使用SSD模型训练自定义VOC格式数据集，包括数据标注工具选择、VOC数据集目录结构规范、数据集划分方法以及模型调参技巧。通过实战案例演示了SSD源码的关键修改点和训练参数优化策略，帮助开发者高效实现目标检测任务。\n\nphp55的博客 558\n\n简化神经元模型6 -- Hindmarsh-Rose Model\n\n简化神经元模型 6 Hindmarsh-Rose Model\n\nweixin_73557167的博客 1412\n\nR_柱状图（加误差线，显著性差异）\n\n先放最终效果图 结果图 # bar_plot 2021/01/19 # 导入所需的包 library(ggplot2) library(ggthemr) library(ggsignif) library(tidyverse) library(dplyr) library(ggpubr) library(devEMF) # 导入并处理数据,需要两张表，一个是原始汇总表格，另外一些是每一...\n\nwt141643的博客 2万+\n\nPyTorch生成式人工智能（25）——基于Transformer实现机器翻译\n\n不同于循环神经网络 (RNN) 按顺序处理数据，Transformer 以并行的方式处理输入数据(例如句子)。这种并行处理提高了效率，但并未使其能够识别输入的顺序。为了解决这个问题，Transformer 向输入的词嵌入中添加了位置编码。这些位置编码是分配给输入序列中每个位置的独特向量，其维度与输入词嵌入对齐。本节将以英语到法语的翻译为例，通过介绍如何训练 Transformer 模型将英语句子转换为法语，深入理解 Transformer 的架构及自注意力机制的运作方式。\n\n盼小辉丶的博客 2546\n\n巧妙解决网页弹窗重复出现问题\n\n本文探讨了网页弹窗关闭后刷新重现的问题及解决方案。通过分析原生JavaScript实现的弹窗代码存在的缺陷，提出了使用jQuery改进的方法。关键点包括：利用event.preventDefault()阻止默认行为避免刷新，采用jQuery的hide(\"slow\")方法实现优雅的关闭动画，确保关闭状态持久化。改进后的方案既解决了弹窗重复出现的问题，又提升了用户体验，为网页弹窗交互提供了更优的实现方式。文中提供了完整的HTML、CSS和JavaScript代码示例，便于开发者直接应用。\n\n2501_90323865的博客 173\n\n【WRF-Urban数据集】中国60个城市的1 km分辨率城市冠层参数（UCPs）\n\n中国60个城市的1 km分辨率城市冠层参数（UCPs）\n\nWW、forever的博客 1047\n\n计算机控制技术及应用\n\n《计算机控制技术及应用》通过总结作者的科研成果和吸收国内外的先进理论、方法和技术，以计算机控制系统的网络化、开放化、智能化和集成化发展趋势为主线索，主要介绍计算机控制系统的基本概念和计算机控制系统的典型形式，计算机控制系统的数学描述与基本分析方法，以及数字PID控制器、最少拍控制系统、达林算法、状态变量设计法等设计方法及其各种改进算法。重点突出计算机控制系统输入输出通道接口的设计方法和典型控制系统的设计案例与实现方法等。\n\nOutlook Express 6 (OE6) for Win7/Win8/Win10\n\n英文版 Outlook Express6.0， 兼容Win7/Win10/WinXP，解压就可用。\n\nData-Structures-and-Algorithm-Analysis-in-Java.pdf\n\n作者: Weiss, Mark A. 出版社: Addison Wesley Data Structures and Algorithm Analysis in Java is an “advanced algorithms” book that fits between traditional CS2 and Algorithms Analysis courses. In the old ACM Curriculum Guidelines, this course was known as CS7. This text is for readers who want to learn good programming and algorithm analysis skills simultaneously so that they can develop such programs with the maximum amo...\n\nCamera2Demo\n\n在Camera2 的基础上进行封装，使得Camera2一堆初始化逻辑与Activity分离，降低耦合度，完成预览拍照并保存的操作\n\n上一篇： 从指数分布到Gamma分布：两个独立同分布变量和的分布推导与直观理解 下一篇： 中文语音克隆实战|MockingBird项目从零部署到音质调优（避坑指南）\n\n目录\n\n展开全部\n\n收起\n\n0\n\n0\n\n1\n\n复制链接 分享到 QQ 分享到新浪微博 扫一扫\n\n举报\n\n一只特立独行的cherry 码龄6年 40粉丝 1302原创 + 关注\n\n评论 条评论被折叠 查看 被折叠的 条评论 为什么被折叠? 到【灌水乐园】发言 查看更多评论 添加红包\n\n实付元\n\n使用余额支付\n\n点击重新获取 扫码支付\n\n钱包余额\n\n0\n\n抵扣说明：\n\n1.余额是钱包充值的虚拟货币，按照1:1的比例进行支付金额的抵扣。 2.余额无法直接购买下载，可以购买VIP、付费专栏及课程。\n\n余额充值",
+  "rawSources": [
+    {
+      "mode": "STATIC",
+      "hash": "c5c86ae0e7f786264ed89634fa21d4118b18326e1ad695b38cec3fcc5115af9f",
+      "path": "C:\\Users\\qianchen\\Documents\\waytoagi-1024-detective-a2-v4\\.cache\\source-documents-v4\\1b770812-831e-444b-9bd6-f858f030b627\\cfdfe2a00ecb3ee22d8d619d274bd802c3ab4f9c20797900c1e987be4a16cbb8\\raw.bin"
+    }
+  ],
+  "storage": {
+    "rawPath": "C:\\Users\\qianchen\\Documents\\waytoagi-1024-detective-a2-v4\\.cache\\source-documents-v4\\1b770812-831e-444b-9bd6-f858f030b627\\cfdfe2a00ecb3ee22d8d619d274bd802c3ab4f9c20797900c1e987be4a16cbb8\\raw.bin",
+    "textPath": "C:\\Users\\qianchen\\Documents\\waytoagi-1024-detective-a2-v4\\.cache\\source-documents-v4\\1b770812-831e-444b-9bd6-f858f030b627\\cfdfe2a00ecb3ee22d8d619d274bd802c3ab4f9c20797900c1e987be4a16cbb8\\source.txt",
+    "manifestPath": "C:\\Users\\qianchen\\Documents\\waytoagi-1024-detective-a2-v4\\.cache\\source-documents-v4\\1b770812-831e-444b-9bd6-f858f030b627\\cfdfe2a00ecb3ee22d8d619d274bd802c3ab4f9c20797900c1e987be4a16cbb8\\manifest.json"
+  },
+  "parser": {
+    "name": "readability+source-dom",
+    "version": "readability-0.6.0+jsdom-30.1.3+source-dom-2",
+    "normalization": "source-text/v1",
+    "mode": "STATIC"
+  },
+  "metadata": {
+    "title": "从零搭建 Cursor 与 Blender 的 AI 工作流 —— 基于 MCP 的自动化实践指南-CSDN博客",
+    "author": "一只特立独行的cherry",
+    "publishedAt": "2026-04-10T03:36:22.000Z",
+    "language": "zh-CN"
+  },
+  "completeness": "COMPLETE",
+  "warnings": [],
+  "blocks": [
+    {
+      "start": 0,
+      "end": 71,
+      "id": "b0",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[0]",
+      "headingPath": [],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 73,
+      "end": 122,
+      "id": "b1",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[1]",
+      "headingPath": [
+        "从零搭建 Cursor 与 Blender 的 AI 工作流 —— 基于 MCP 的自动化实践指南"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 124,
+      "end": 352,
+      "id": "b2",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[2]",
+      "headingPath": [
+        "从零搭建 Cursor 与 Blender 的 AI 工作流 —— 基于 MCP 的自动化实践指南"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 354,
+      "end": 525,
+      "id": "b3",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[3]",
+      "headingPath": [
+        "从零搭建 Cursor 与 Blender 的 AI 工作流 —— 基于 MCP 的自动化实践指南"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 527,
+      "end": 547,
+      "id": "b4",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[4]",
+      "headingPath": [
+        "从零搭建 Cursor 与 Blender 的 AI 工作流 —— 基于 MCP 的自动化实践指南",
+        "1. 为什么需要AI驱动的3D创作工作流"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 549,
+      "end": 690,
+      "id": "b5",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[5]",
+      "headingPath": [
+        "从零搭建 Cursor 与 Blender 的 AI 工作流 —— 基于 MCP 的自动化实践指南",
+        "1. 为什么需要AI驱动的3D创作工作流"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 692,
+      "end": 831,
+      "id": "b6",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[6]",
+      "headingPath": [
+        "从零搭建 Cursor 与 Blender 的 AI 工作流 —— 基于 MCP 的自动化实践指南",
+        "1. 为什么需要AI驱动的3D创作工作流"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 833,
+      "end": 847,
+      "id": "b7",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[7]",
+      "headingPath": [
+        "从零搭建 Cursor 与 Blender 的 AI 工作流 —— 基于 MCP 的自动化实践指南",
+        "1. 为什么需要AI驱动的3D创作工作流"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 849,
+      "end": 869,
+      "id": "b8",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[8]",
+      "headingPath": [
+        "从零搭建 Cursor 与 Blender 的 AI 工作流 —— 基于 MCP 的自动化实践指南",
+        "1. 为什么需要AI驱动的3D创作工作流"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 871,
+      "end": 891,
+      "id": "b9",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[9]",
+      "headingPath": [
+        "从零搭建 Cursor 与 Blender 的 AI 工作流 —— 基于 MCP 的自动化实践指南",
+        "1. 为什么需要AI驱动的3D创作工作流"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 893,
+      "end": 912,
+      "id": "b10",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[10]",
+      "headingPath": [
+        "从零搭建 Cursor 与 Blender 的 AI 工作流 —— 基于 MCP 的自动化实践指南",
+        "1. 为什么需要AI驱动的3D创作工作流"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 914,
+      "end": 926,
+      "id": "b11",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[11]",
+      "headingPath": [
+        "从零搭建 Cursor 与 Blender 的 AI 工作流 —— 基于 MCP 的自动化实践指南",
+        "1. 为什么需要AI驱动的3D创作工作流",
+        "2. 环境搭建的避坑指南"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 928,
+      "end": 941,
+      "id": "b12",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[12]",
+      "headingPath": [
+        "从零搭建 Cursor 与 Blender 的 AI 工作流 —— 基于 MCP 的自动化实践指南",
+        "1. 为什么需要AI驱动的3D创作工作流",
+        "2. 环境搭建的避坑指南",
+        "2.1 软件版本的黄金组合"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 943,
+      "end": 968,
+      "id": "b13",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[13]",
+      "headingPath": [
+        "从零搭建 Cursor 与 Blender 的 AI 工作流 —— 基于 MCP 的自动化实践指南",
+        "1. 为什么需要AI驱动的3D创作工作流",
+        "2. 环境搭建的避坑指南",
+        "2.1 软件版本的黄金组合"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 970,
+      "end": 1005,
+      "id": "b14",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[14]",
+      "headingPath": [
+        "从零搭建 Cursor 与 Blender 的 AI 工作流 —— 基于 MCP 的自动化实践指南",
+        "1. 为什么需要AI驱动的3D创作工作流",
+        "2. 环境搭建的避坑指南",
+        "2.1 软件版本的黄金组合"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1007,
+      "end": 1045,
+      "id": "b15",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[15]",
+      "headingPath": [
+        "从零搭建 Cursor 与 Blender 的 AI 工作流 —— 基于 MCP 的自动化实践指南",
+        "1. 为什么需要AI驱动的3D创作工作流",
+        "2. 环境搭建的避坑指南",
+        "2.1 软件版本的黄金组合"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1047,
+      "end": 1073,
+      "id": "b16",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[16]",
+      "headingPath": [
+        "从零搭建 Cursor 与 Blender 的 AI 工作流 —— 基于 MCP 的自动化实践指南",
+        "1. 为什么需要AI驱动的3D创作工作流",
+        "2. 环境搭建的避坑指南",
+        "2.1 软件版本的黄金组合"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1075,
+      "end": 1169,
+      "id": "b17",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[17]",
+      "headingPath": [
+        "从零搭建 Cursor 与 Blender 的 AI 工作流 —— 基于 MCP 的自动化实践指南",
+        "1. 为什么需要AI驱动的3D创作工作流",
+        "2. 环境搭建的避坑指南",
+        "2.1 软件版本的黄金组合"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1171,
+      "end": 1184,
+      "id": "b18",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[18]",
+      "headingPath": [
+        "从零搭建 Cursor 与 Blender 的 AI 工作流 —— 基于 MCP 的自动化实践指南",
+        "1. 为什么需要AI驱动的3D创作工作流",
+        "2. 环境搭建的避坑指南",
+        "2.2 UV工具的安装玄机"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1186,
+      "end": 1228,
+      "id": "b19",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[19]",
+      "headingPath": [
+        "从零搭建 Cursor 与 Blender 的 AI 工作流 —— 基于 MCP 的自动化实践指南",
+        "1. 为什么需要AI驱动的3D创作工作流",
+        "2. 环境搭建的避坑指南",
+        "2.2 UV工具的安装玄机"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1230,
+      "end": 1478,
+      "id": "b20",
+      "kind": "CODE",
+      "locator": "source DOM normalized block[20]",
+      "headingPath": [
+        "从零搭建 Cursor 与 Blender 的 AI 工作流 —— 基于 MCP 的自动化实践指南",
+        "1. 为什么需要AI驱动的3D创作工作流",
+        "2. 环境搭建的避坑指南",
+        "2.2 UV工具的安装玄机"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1480,
+      "end": 1512,
+      "id": "b21",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[21]",
+      "headingPath": [
+        "从零搭建 Cursor 与 Blender 的 AI 工作流 —— 基于 MCP 的自动化实践指南",
+        "1. 为什么需要AI驱动的3D创作工作流",
+        "2. 环境搭建的避坑指南",
+        "2.2 UV工具的安装玄机"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1514,
+      "end": 1565,
+      "id": "b22",
+      "kind": "CODE",
+      "locator": "source DOM normalized block[22]",
+      "headingPath": [
+        "从零搭建 Cursor 与 Blender 的 AI 工作流 —— 基于 MCP 的自动化实践指南",
+        "1. 为什么需要AI驱动的3D创作工作流",
+        "2. 环境搭建的避坑指南",
+        "2.2 UV工具的安装玄机"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1567,
+      "end": 1581,
+      "id": "b23",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[23]",
+      "headingPath": [
+        "从零搭建 Cursor 与 Blender 的 AI 工作流 —— 基于 MCP 的自动化实践指南",
+        "1. 为什么需要AI驱动的3D创作工作流",
+        "2. 环境搭建的避坑指南",
+        "2.2 UV工具的安装玄机"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1583,
+      "end": 1584,
+      "id": "b24",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[24]",
+      "headingPath": [
+        "从零搭建 Cursor 与 Blender 的 AI 工作流 —— 基于 MCP 的自动化实践指南",
+        "1. 为什么需要AI驱动的3D创作工作流",
+        "2. 环境搭建的避坑指南",
+        "2.2 UV工具的安装玄机"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1586,
+      "end": 1589,
+      "id": "b25",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[25]",
+      "headingPath": [
+        "从零搭建 Cursor 与 Blender 的 AI 工作流 —— 基于 MCP 的自动化实践指南",
+        "1. 为什么需要AI驱动的3D创作工作流",
+        "2. 环境搭建的避坑指南",
+        "2.2 UV工具的安装玄机"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1591,
+      "end": 1606,
+      "id": "b26",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[26]",
+      "headingPath": [
+        "从零搭建 Cursor 与 Blender 的 AI 工作流 —— 基于 MCP 的自动化实践指南",
+        "1. 为什么需要AI驱动的3D创作工作流",
+        "2. 环境搭建的避坑指南",
+        "2.2 UV工具的安装玄机"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1608,
+      "end": 1639,
+      "id": "b27",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[27]",
+      "headingPath": [
+        "从零搭建 Cursor 与 Blender 的 AI 工作流 —— 基于 MCP 的自动化实践指南",
+        "1. 为什么需要AI驱动的3D创作工作流",
+        "2. 环境搭建的避坑指南",
+        "2.2 UV工具的安装玄机"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1641,
+      "end": 1920,
+      "id": "b28",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[28]",
+      "headingPath": [
+        "从零搭建 Cursor 与 Blender 的 AI 工作流 —— 基于 MCP 的自动化实践指南",
+        "1. 为什么需要AI驱动的3D创作工作流",
+        "2. 环境搭建的避坑指南",
+        "2.2 UV工具的安装玄机"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1922,
+      "end": 1926,
+      "id": "b29",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[29]",
+      "headingPath": [
+        "从零搭建 Cursor 与 Blender 的 AI 工作流 —— 基于 MCP 的自动化实践指南",
+        "1. 为什么需要AI驱动的3D创作工作流",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1928,
+      "end": 1931,
+      "id": "b30",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[30]",
+      "headingPath": [
+        "从零搭建 Cursor 与 Blender 的 AI 工作流 —— 基于 MCP 的自动化实践指南",
+        "1. 为什么需要AI驱动的3D创作工作流",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1933,
+      "end": 1965,
+      "id": "b31",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[31]",
+      "headingPath": [
+        "从零搭建 Cursor 与 Blender 的 AI 工作流 —— 基于 MCP 的自动化实践指南",
+        "1. 为什么需要AI驱动的3D创作工作流",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1967,
+      "end": 2223,
+      "id": "b32",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[32]",
+      "headingPath": [
+        "从零搭建 Cursor 与 Blender 的 AI 工作流 —— 基于 MCP 的自动化实践指南",
+        "1. 为什么需要AI驱动的3D创作工作流",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2225,
+      "end": 2247,
+      "id": "b33",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[33]",
+      "headingPath": [
+        "从零搭建 Cursor 与 Blender 的 AI 工作流 —— 基于 MCP 的自动化实践指南",
+        "1. 为什么需要AI驱动的3D创作工作流",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2249,
+      "end": 2282,
+      "id": "b34",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[34]",
+      "headingPath": [
+        "从零搭建 Cursor 与 Blender 的 AI 工作流 —— 基于 MCP 的自动化实践指南",
+        "1. 为什么需要AI驱动的3D创作工作流",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2284,
+      "end": 2393,
+      "id": "b35",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[35]",
+      "headingPath": [
+        "从零搭建 Cursor 与 Blender 的 AI 工作流 —— 基于 MCP 的自动化实践指南",
+        "1. 为什么需要AI驱动的3D创作工作流",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2395,
+      "end": 2417,
+      "id": "b36",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[36]",
+      "headingPath": [
+        "从零搭建 Cursor 与 Blender 的 AI 工作流 —— 基于 MCP 的自动化实践指南",
+        "1. 为什么需要AI驱动的3D创作工作流",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2419,
+      "end": 2449,
+      "id": "b37",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[37]",
+      "headingPath": [
+        "从零搭建 Cursor 与 Blender 的 AI 工作流 —— 基于 MCP 的自动化实践指南",
+        "1. 为什么需要AI驱动的3D创作工作流",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2451,
+      "end": 2599,
+      "id": "b38",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[38]",
+      "headingPath": [
+        "从零搭建 Cursor 与 Blender 的 AI 工作流 —— 基于 MCP 的自动化实践指南",
+        "1. 为什么需要AI驱动的3D创作工作流",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2601,
+      "end": 2623,
+      "id": "b39",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[39]",
+      "headingPath": [
+        "从零搭建 Cursor 与 Blender 的 AI 工作流 —— 基于 MCP 的自动化实践指南",
+        "1. 为什么需要AI驱动的3D创作工作流",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2625,
+      "end": 2664,
+      "id": "b40",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[40]",
+      "headingPath": [
+        "从零搭建 Cursor 与 Blender 的 AI 工作流 —— 基于 MCP 的自动化实践指南",
+        "1. 为什么需要AI驱动的3D创作工作流",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2666,
+      "end": 2922,
+      "id": "b41",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[41]",
+      "headingPath": [
+        "从零搭建 Cursor 与 Blender 的 AI 工作流 —— 基于 MCP 的自动化实践指南",
+        "1. 为什么需要AI驱动的3D创作工作流",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2924,
+      "end": 2927,
+      "id": "b42",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[42]",
+      "headingPath": [
+        "从零搭建 Cursor 与 Blender 的 AI 工作流 —— 基于 MCP 的自动化实践指南",
+        "1. 为什么需要AI驱动的3D创作工作流",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2929,
+      "end": 2969,
+      "id": "b43",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[43]",
+      "headingPath": [
+        "从零搭建 Cursor 与 Blender 的 AI 工作流 —— 基于 MCP 的自动化实践指南",
+        "1. 为什么需要AI驱动的3D创作工作流",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2971,
+      "end": 3227,
+      "id": "b44",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[44]",
+      "headingPath": [
+        "从零搭建 Cursor 与 Blender 的 AI 工作流 —— 基于 MCP 的自动化实践指南",
+        "1. 为什么需要AI驱动的3D创作工作流",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3229,
+      "end": 3251,
+      "id": "b45",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[45]",
+      "headingPath": [
+        "从零搭建 Cursor 与 Blender 的 AI 工作流 —— 基于 MCP 的自动化实践指南",
+        "1. 为什么需要AI驱动的3D创作工作流",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3253,
+      "end": 3305,
+      "id": "b46",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[46]",
+      "headingPath": [
+        "从零搭建 Cursor 与 Blender 的 AI 工作流 —— 基于 MCP 的自动化实践指南",
+        "1. 为什么需要AI驱动的3D创作工作流",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3307,
+      "end": 3463,
+      "id": "b47",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[47]",
+      "headingPath": [
+        "从零搭建 Cursor 与 Blender 的 AI 工作流 —— 基于 MCP 的自动化实践指南",
+        "1. 为什么需要AI驱动的3D创作工作流",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3465,
+      "end": 3487,
+      "id": "b48",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[48]",
+      "headingPath": [
+        "从零搭建 Cursor 与 Blender 的 AI 工作流 —— 基于 MCP 的自动化实践指南",
+        "1. 为什么需要AI驱动的3D创作工作流",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3489,
+      "end": 3537,
+      "id": "b49",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[49]",
+      "headingPath": [
+        "从零搭建 Cursor 与 Blender 的 AI 工作流 —— 基于 MCP 的自动化实践指南",
+        "1. 为什么需要AI驱动的3D创作工作流",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3539,
+      "end": 3677,
+      "id": "b50",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[50]",
+      "headingPath": [
+        "从零搭建 Cursor 与 Blender 的 AI 工作流 —— 基于 MCP 的自动化实践指南",
+        "1. 为什么需要AI驱动的3D创作工作流",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3679,
+      "end": 3701,
+      "id": "b51",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[51]",
+      "headingPath": [
+        "从零搭建 Cursor 与 Blender 的 AI 工作流 —— 基于 MCP 的自动化实践指南",
+        "1. 为什么需要AI驱动的3D创作工作流",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3703,
+      "end": 3740,
+      "id": "b52",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[52]",
+      "headingPath": [
+        "从零搭建 Cursor 与 Blender 的 AI 工作流 —— 基于 MCP 的自动化实践指南",
+        "1. 为什么需要AI驱动的3D创作工作流",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3742,
+      "end": 3998,
+      "id": "b53",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[53]",
+      "headingPath": [
+        "从零搭建 Cursor 与 Blender 的 AI 工作流 —— 基于 MCP 的自动化实践指南",
+        "1. 为什么需要AI驱动的3D创作工作流",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4000,
+      "end": 4017,
+      "id": "b54",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[54]",
+      "headingPath": [
+        "从零搭建 Cursor 与 Blender 的 AI 工作流 —— 基于 MCP 的自动化实践指南",
+        "1. 为什么需要AI驱动的3D创作工作流",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4019,
+      "end": 4063,
+      "id": "b55",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[55]",
+      "headingPath": [
+        "从零搭建 Cursor 与 Blender 的 AI 工作流 —— 基于 MCP 的自动化实践指南",
+        "1. 为什么需要AI驱动的3D创作工作流",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4065,
+      "end": 4185,
+      "id": "b56",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[56]",
+      "headingPath": [
+        "从零搭建 Cursor 与 Blender 的 AI 工作流 —— 基于 MCP 的自动化实践指南",
+        "1. 为什么需要AI驱动的3D创作工作流",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4187,
+      "end": 4209,
+      "id": "b57",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[57]",
+      "headingPath": [
+        "从零搭建 Cursor 与 Blender 的 AI 工作流 —— 基于 MCP 的自动化实践指南",
+        "1. 为什么需要AI驱动的3D创作工作流",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4211,
+      "end": 4234,
+      "id": "b58",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[58]",
+      "headingPath": [
+        "从零搭建 Cursor 与 Blender 的 AI 工作流 —— 基于 MCP 的自动化实践指南",
+        "1. 为什么需要AI驱动的3D创作工作流",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4236,
+      "end": 4485,
+      "id": "b59",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[59]",
+      "headingPath": [
+        "从零搭建 Cursor 与 Blender 的 AI 工作流 —— 基于 MCP 的自动化实践指南",
+        "1. 为什么需要AI驱动的3D创作工作流",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4487,
+      "end": 4497,
+      "id": "b60",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[60]",
+      "headingPath": [
+        "从零搭建 Cursor 与 Blender 的 AI 工作流 —— 基于 MCP 的自动化实践指南",
+        "1. 为什么需要AI驱动的3D创作工作流",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4499,
+      "end": 4537,
+      "id": "b61",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[61]",
+      "headingPath": [
+        "从零搭建 Cursor 与 Blender 的 AI 工作流 —— 基于 MCP 的自动化实践指南",
+        "1. 为什么需要AI驱动的3D创作工作流",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4539,
+      "end": 4666,
+      "id": "b62",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[62]",
+      "headingPath": [
+        "从零搭建 Cursor 与 Blender 的 AI 工作流 —— 基于 MCP 的自动化实践指南",
+        "1. 为什么需要AI驱动的3D创作工作流",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4668,
+      "end": 4681,
+      "id": "b63",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[63]",
+      "headingPath": [
+        "从零搭建 Cursor 与 Blender 的 AI 工作流 —— 基于 MCP 的自动化实践指南",
+        "1. 为什么需要AI驱动的3D创作工作流",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4683,
+      "end": 4711,
+      "id": "b64",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[64]",
+      "headingPath": [
+        "从零搭建 Cursor 与 Blender 的 AI 工作流 —— 基于 MCP 的自动化实践指南",
+        "1. 为什么需要AI驱动的3D创作工作流",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4713,
+      "end": 4829,
+      "id": "b65",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[65]",
+      "headingPath": [
+        "从零搭建 Cursor 与 Blender 的 AI 工作流 —— 基于 MCP 的自动化实践指南",
+        "1. 为什么需要AI驱动的3D创作工作流",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4831,
+      "end": 4843,
+      "id": "b66",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[66]",
+      "headingPath": [
+        "从零搭建 Cursor 与 Blender 的 AI 工作流 —— 基于 MCP 的自动化实践指南",
+        "1. 为什么需要AI驱动的3D创作工作流",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4845,
+      "end": 4877,
+      "id": "b67",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[67]",
+      "headingPath": [
+        "从零搭建 Cursor 与 Blender 的 AI 工作流 —— 基于 MCP 的自动化实践指南",
+        "1. 为什么需要AI驱动的3D创作工作流",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4879,
+      "end": 4909,
+      "id": "b68",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[68]",
+      "headingPath": [
+        "从零搭建 Cursor 与 Blender 的 AI 工作流 —— 基于 MCP 的自动化实践指南",
+        "1. 为什么需要AI驱动的3D创作工作流",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4911,
+      "end": 4934,
+      "id": "b69",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[69]",
+      "headingPath": [
+        "从零搭建 Cursor 与 Blender 的 AI 工作流 —— 基于 MCP 的自动化实践指南",
+        "1. 为什么需要AI驱动的3D创作工作流",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4936,
+      "end": 4953,
+      "id": "b70",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[70]",
+      "headingPath": [
+        "从零搭建 Cursor 与 Blender 的 AI 工作流 —— 基于 MCP 的自动化实践指南",
+        "1. 为什么需要AI驱动的3D创作工作流",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4955,
+      "end": 5152,
+      "id": "b71",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[71]",
+      "headingPath": [
+        "从零搭建 Cursor 与 Blender 的 AI 工作流 —— 基于 MCP 的自动化实践指南",
+        "1. 为什么需要AI驱动的3D创作工作流",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5154,
+      "end": 5169,
+      "id": "b72",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[72]",
+      "headingPath": [
+        "从零搭建 Cursor 与 Blender 的 AI 工作流 —— 基于 MCP 的自动化实践指南",
+        "1. 为什么需要AI驱动的3D创作工作流",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5171,
+      "end": 5210,
+      "id": "b73",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[73]",
+      "headingPath": [
+        "从零搭建 Cursor 与 Blender 的 AI 工作流 —— 基于 MCP 的自动化实践指南",
+        "1. 为什么需要AI驱动的3D创作工作流",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5212,
+      "end": 5450,
+      "id": "b74",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[74]",
+      "headingPath": [
+        "从零搭建 Cursor 与 Blender 的 AI 工作流 —— 基于 MCP 的自动化实践指南",
+        "1. 为什么需要AI驱动的3D创作工作流",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5452,
+      "end": 5464,
+      "id": "b75",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[75]",
+      "headingPath": [
+        "从零搭建 Cursor 与 Blender 的 AI 工作流 —— 基于 MCP 的自动化实践指南",
+        "1. 为什么需要AI驱动的3D创作工作流",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5466,
+      "end": 5480,
+      "id": "b76",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[76]",
+      "headingPath": [
+        "从零搭建 Cursor 与 Blender 的 AI 工作流 —— 基于 MCP 的自动化实践指南",
+        "1. 为什么需要AI驱动的3D创作工作流",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5482,
+      "end": 5726,
+      "id": "b77",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[77]",
+      "headingPath": [
+        "从零搭建 Cursor 与 Blender 的 AI 工作流 —— 基于 MCP 的自动化实践指南",
+        "1. 为什么需要AI驱动的3D创作工作流",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5728,
+      "end": 5748,
+      "id": "b78",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[78]",
+      "headingPath": [
+        "从零搭建 Cursor 与 Blender 的 AI 工作流 —— 基于 MCP 的自动化实践指南",
+        "1. 为什么需要AI驱动的3D创作工作流",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5750,
+      "end": 5791,
+      "id": "b79",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[79]",
+      "headingPath": [
+        "从零搭建 Cursor 与 Blender 的 AI 工作流 —— 基于 MCP 的自动化实践指南",
+        "1. 为什么需要AI驱动的3D创作工作流",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5793,
+      "end": 5820,
+      "id": "b80",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[80]",
+      "headingPath": [
+        "从零搭建 Cursor 与 Blender 的 AI 工作流 —— 基于 MCP 的自动化实践指南",
+        "1. 为什么需要AI驱动的3D创作工作流",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5822,
+      "end": 5840,
+      "id": "b81",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[81]",
+      "headingPath": [
+        "从零搭建 Cursor 与 Blender 的 AI 工作流 —— 基于 MCP 的自动化实践指南",
+        "1. 为什么需要AI驱动的3D创作工作流",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5842,
+      "end": 5852,
+      "id": "b82",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[82]",
+      "headingPath": [
+        "从零搭建 Cursor 与 Blender 的 AI 工作流 —— 基于 MCP 的自动化实践指南",
+        "1. 为什么需要AI驱动的3D创作工作流",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5854,
+      "end": 6066,
+      "id": "b83",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[83]",
+      "headingPath": [
+        "从零搭建 Cursor 与 Blender 的 AI 工作流 —— 基于 MCP 的自动化实践指南",
+        "1. 为什么需要AI驱动的3D创作工作流",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 6068,
+      "end": 6111,
+      "id": "b84",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[84]",
+      "headingPath": [
+        "从零搭建 Cursor 与 Blender 的 AI 工作流 —— 基于 MCP 的自动化实践指南",
+        "1. 为什么需要AI驱动的3D创作工作流",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 6113,
+      "end": 6162,
+      "id": "b85",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[85]",
+      "headingPath": [
+        "从零搭建 Cursor 与 Blender 的 AI 工作流 —— 基于 MCP 的自动化实践指南",
+        "1. 为什么需要AI驱动的3D创作工作流",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 6164,
+      "end": 6214,
+      "id": "b86",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[86]",
+      "headingPath": [
+        "从零搭建 Cursor 与 Blender 的 AI 工作流 —— 基于 MCP 的自动化实践指南",
+        "1. 为什么需要AI驱动的3D创作工作流",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 6216,
+      "end": 6637,
+      "id": "b87",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[87]",
+      "headingPath": [
+        "从零搭建 Cursor 与 Blender 的 AI 工作流 —— 基于 MCP 的自动化实践指南",
+        "1. 为什么需要AI驱动的3D创作工作流",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 6639,
+      "end": 6650,
+      "id": "b88",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[88]",
+      "headingPath": [
+        "从零搭建 Cursor 与 Blender 的 AI 工作流 —— 基于 MCP 的自动化实践指南",
+        "1. 为什么需要AI驱动的3D创作工作流",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 6652,
+      "end": 6716,
+      "id": "b89",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[89]",
+      "headingPath": [
+        "从零搭建 Cursor 与 Blender 的 AI 工作流 —— 基于 MCP 的自动化实践指南",
+        "1. 为什么需要AI驱动的3D创作工作流",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 6718,
+      "end": 6800,
+      "id": "b90",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[90]",
+      "headingPath": [
+        "从零搭建 Cursor 与 Blender 的 AI 工作流 —— 基于 MCP 的自动化实践指南",
+        "1. 为什么需要AI驱动的3D创作工作流",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 6802,
+      "end": 6804,
+      "id": "b91",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[91]",
+      "headingPath": [
+        "从零搭建 Cursor 与 Blender 的 AI 工作流 —— 基于 MCP 的自动化实践指南",
+        "1. 为什么需要AI驱动的3D创作工作流",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 6806,
+      "end": 6810,
+      "id": "b92",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[92]",
+      "headingPath": [
+        "从零搭建 Cursor 与 Blender 的 AI 工作流 —— 基于 MCP 的自动化实践指南",
+        "1. 为什么需要AI驱动的3D创作工作流",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 6812,
+      "end": 6814,
+      "id": "b93",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[93]",
+      "headingPath": [
+        "从零搭建 Cursor 与 Blender 的 AI 工作流 —— 基于 MCP 的自动化实践指南",
+        "1. 为什么需要AI驱动的3D创作工作流",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 6816,
+      "end": 6817,
+      "id": "b94",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[94]",
+      "headingPath": [
+        "从零搭建 Cursor 与 Blender 的 AI 工作流 —— 基于 MCP 的自动化实践指南",
+        "1. 为什么需要AI驱动的3D创作工作流",
+        "相关推荐"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 6819,
+      "end": 6820,
+      "id": "b95",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[95]",
+      "headingPath": [
+        "从零搭建 Cursor 与 Blender 的 AI 工作流 —— 基于 MCP 的自动化实践指南",
+        "1. 为什么需要AI驱动的3D创作工作流",
+        "相关推荐"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 6822,
+      "end": 6823,
+      "id": "b96",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[96]",
+      "headingPath": [
+        "从零搭建 Cursor 与 Blender 的 AI 工作流 —— 基于 MCP 的自动化实践指南",
+        "1. 为什么需要AI驱动的3D创作工作流",
+        "相关推荐"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 6825,
+      "end": 6848,
+      "id": "b97",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[97]",
+      "headingPath": [
+        "从零搭建 Cursor 与 Blender 的 AI 工作流 —— 基于 MCP 的自动化实践指南",
+        "1. 为什么需要AI驱动的3D创作工作流",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 6850,
+      "end": 6852,
+      "id": "b98",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[98]",
+      "headingPath": [
+        "从零搭建 Cursor 与 Blender 的 AI 工作流 —— 基于 MCP 的自动化实践指南",
+        "1. 为什么需要AI驱动的3D创作工作流",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 6854,
+      "end": 6889,
+      "id": "b99",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[99]",
+      "headingPath": [
+        "从零搭建 Cursor 与 Blender 的 AI 工作流 —— 基于 MCP 的自动化实践指南",
+        "1. 为什么需要AI驱动的3D创作工作流",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 6891,
+      "end": 6942,
+      "id": "b100",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[100]",
+      "headingPath": [
+        "从零搭建 Cursor 与 Blender 的 AI 工作流 —— 基于 MCP 的自动化实践指南",
+        "1. 为什么需要AI驱动的3D创作工作流",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 6944,
+      "end": 6947,
+      "id": "b101",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[101]",
+      "headingPath": [
+        "从零搭建 Cursor 与 Blender 的 AI 工作流 —— 基于 MCP 的自动化实践指南",
+        "1. 为什么需要AI驱动的3D创作工作流",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 6949,
+      "end": 6955,
+      "id": "b102",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[102]",
+      "headingPath": [
+        "从零搭建 Cursor 与 Blender 的 AI 工作流 —— 基于 MCP 的自动化实践指南",
+        "1. 为什么需要AI驱动的3D创作工作流",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 6957,
+      "end": 6968,
+      "id": "b103",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[103]",
+      "headingPath": [
+        "从零搭建 Cursor 与 Blender 的 AI 工作流 —— 基于 MCP 的自动化实践指南",
+        "1. 为什么需要AI驱动的3D创作工作流",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 6970,
+      "end": 6974,
+      "id": "b104",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[104]",
+      "headingPath": [
+        "从零搭建 Cursor 与 Blender 的 AI 工作流 —— 基于 MCP 的自动化实践指南",
+        "1. 为什么需要AI驱动的3D创作工作流",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 6976,
+      "end": 6977,
+      "id": "b105",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[105]",
+      "headingPath": [
+        "从零搭建 Cursor 与 Blender 的 AI 工作流 —— 基于 MCP 的自动化实践指南",
+        "1. 为什么需要AI驱动的3D创作工作流",
+        "相关推荐"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 6979,
+      "end": 6984,
+      "id": "b106",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[106]",
+      "headingPath": [
+        "从零搭建 Cursor 与 Blender 的 AI 工作流 —— 基于 MCP 的自动化实践指南",
+        "1. 为什么需要AI驱动的3D创作工作流",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 6986,
+      "end": 7049,
+      "id": "b107",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[107]",
+      "headingPath": [
+        "从零搭建 Cursor 与 Blender 的 AI 工作流 —— 基于 MCP 的自动化实践指南",
+        "1. 为什么需要AI驱动的3D创作工作流",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 7051,
+      "end": 7055,
+      "id": "b108",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[108]",
+      "headingPath": [
+        "从零搭建 Cursor 与 Blender 的 AI 工作流 —— 基于 MCP 的自动化实践指南",
+        "1. 为什么需要AI驱动的3D创作工作流",
+        "相关推荐"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    }
+  ],
+  "links": [
+    {
+      "url": "https://blog.csdn.net/weixin_42534103/article/details/160016741",
+      "text": "",
+      "blockId": null,
+      "relation": "CANONICAL",
+      "locator": "source DOM link[0]"
+    },
+    {
+      "url": "https://www.csdn.net/",
+      "text": "",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[1]"
+    },
+    {
+      "url": "https://blog.csdn.net/",
+      "text": "博客",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[4]"
+    },
+    {
+      "url": "https://download.csdn.net/",
+      "text": "下载",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[5]"
+    },
+    {
+      "url": "https://edu.csdn.net/",
+      "text": "学习",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[6]"
+    },
+    {
+      "url": "https://devpress.csdn.net/",
+      "text": "社区",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[7]"
+    },
+    {
+      "url": "https://ai.csdn.net/coding-plan",
+      "text": "模型市场",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[8]"
+    },
+    {
+      "url": "https://ai.csdn.net/chat",
+      "text": "AI搜索",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[9]"
+    },
+    {
+      "url": "https://link.csdn.net/?target=https%3A%2F%2Fgitcode.com%3Futm_source%3Dcsdn_toolbar",
+      "text": "AtomGit",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[10]"
+    },
+    {
+      "url": "https://agent.inscode.net/",
+      "text": "InsCode",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[11]"
+    },
+    {
+      "url": "https://summit.csdn.net/",
+      "text": "技术会议",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[12]"
+    },
+    {
+      "url": "https://mp.csdn.net/creation_overview",
+      "text": "墨衍 MoGrow",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[13]"
+    },
+    {
+      "url": "https://www.csdn.net/i/collections",
+      "text": "收藏",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[14]"
+    },
+    {
+      "url": "https://www.csdn.net/i/history",
+      "text": "历史",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[15]"
+    },
+    {
+      "url": "https://mall.csdn.net/vip",
+      "text": "会员中心",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[16]"
+    },
+    {
+      "url": "https://mp.csdn.net/",
+      "text": "创作中心",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[17]"
+    },
+    {
+      "url": "https://blog.csdn.net/weixin_42534103",
+      "text": "一只特立独行的cherry",
+      "blockId": "b2",
+      "relation": "LINK",
+      "locator": "source DOM link[18]"
+    },
+    {
+      "url": "https://mp.csdn.net/vip?spm=1001.2101.3001.11990",
+      "text": "墨衍会员 · AI 创作全网分发",
+      "blockId": "b2",
+      "relation": "LINK",
+      "locator": "source DOM link[19]"
+    },
+    {
+      "url": "https://mall.csdn.net/vip",
+      "text": "VIP免费",
+      "blockId": "b2",
+      "relation": "LINK",
+      "locator": "source DOM link[22]"
+    },
+    {
+      "url": "https://mp.csdn.net/creation_topic?spm=1001.2101.3001.11779",
+      "text": "AI 写同款· GEO 优化 ›",
+      "blockId": "b2",
+      "relation": "LINK",
+      "locator": "source DOM link[23]"
+    },
+    {
+      "url": "https://blog.csdn.net/fenglingguitar/article/details/146746000",
+      "text": "MCP - 使用 BlenderMCP 让 Claude AI 控制你的 Blender 模型创作 BlenderMCP 打通了 AI 与 3D 工具之间的壁垒，使得通过 Claude 自然语言即可进行场景构建、模型控制和素材管理等操作，大幅度简化建模流程。无论是个人创作、游戏原型设计还是团队协作，这套流程都值得你体验一番。uv。 阅读详情",
+      "blockId": "b3",
+      "relation": "LINK",
+      "locator": "source DOM link[24]"
+    },
+    {
+      "url": "https://so.csdn.net/so/search/s.do?f=&from_code=app_blog_art&from_tracking_code=tag_word&l=&o=vip&q=Blender&s=&t=all&viparticle=",
+      "text": "#Blender",
+      "blockId": "b27",
+      "relation": "LINK",
+      "locator": "source DOM link[25]"
+    },
+    {
+      "url": "https://so.csdn.net/so/search/s.do?f=&from_code=app_blog_art&from_tracking_code=tag_word&l=&o=vip&q=Cursor&s=&t=all&viparticle=",
+      "text": "#Cursor",
+      "blockId": "b27",
+      "relation": "LINK",
+      "locator": "source DOM link[26]"
+    },
+    {
+      "url": "https://so.csdn.net/so/search/s.do?f=&from_code=app_blog_art&from_tracking_code=tag_word&l=&o=vip&q=AI%E5%B7%A5%E4%BD%9C%E6%B5%81&s=&t=all&viparticle=",
+      "text": "#AI工作流",
+      "blockId": "b27",
+      "relation": "LINK",
+      "locator": "source DOM link[27]"
+    },
+    {
+      "url": "https://so.csdn.net/so/search/s.do?f=&from_code=app_blog_art&from_tracking_code=tag_word&l=&o=vip&q=MCP&s=&t=all&viparticle=",
+      "text": "#MCP",
+      "blockId": "b27",
+      "relation": "LINK",
+      "locator": "source DOM link[28]"
+    },
+    {
+      "url": "https://blog.csdn.net/qq_35704550/article/details/149077506",
+      "text": "AI 应用开发（二）：Blender 建模助手 要想用自然对话的方式在 Blender 中建模，就不得不提到 BlenderMCP 了，全称为 Blender Model Context Protocol，是一个旨在将 Blender 与 AI 模型无缝集成的工具。它通过模型上下文协议（MCP）实现 Blender 与 AI 之间的双向通信，让用户能够利用自然语言指令来控制 Blender，从而极大地简化了 3D 建模和场景操作的流程，它主要由两个部分组成：Blender 插件和 MCP 服务器。1. Blender 插件（addon.py） 阅读详情",
+      "blockId": "b28",
+      "relation": "LINK",
+      "locator": "source DOM link[29]"
+    },
+    {
+      "url": "https://blog.csdn.net/weixin_42534103/article/details/160016599",
+      "text": "从指数分布到Gamma分布：两个独立同分布变量和的分布推导与直观理解",
+      "blockId": "b90",
+      "relation": "LINK",
+      "locator": "source DOM link[51]"
+    },
+    {
+      "url": "https://blog.csdn.net/weixin_42534103/article/details/160017661",
+      "text": "中文语音克隆实战|MockingBird项目从零部署到音质调优（避坑指南）",
+      "blockId": "b90",
+      "relation": "LINK",
+      "locator": "source DOM link[52]"
+    },
+    {
+      "url": "https://blog.csdn.net/weixin_42534103",
+      "text": "",
+      "blockId": "b99",
+      "relation": "LINK",
+      "locator": "source DOM link[112]"
+    },
+    {
+      "url": "https://blogdev.blog.csdn.net/article/details/122245662",
+      "text": "为什么被折叠?",
+      "blockId": "b100",
+      "relation": "LINK",
+      "locator": "source DOM link[115]"
+    },
+    {
+      "url": "https://bbs.csdn.net/forums/FreeZone",
+      "text": "到【灌水乐园】发言",
+      "blockId": "b100",
+      "relation": "LINK",
+      "locator": "source DOM link[116]"
+    },
+    {
+      "url": "https://i.csdn.net/",
+      "text": "余额充值",
+      "blockId": "b108",
+      "relation": "LINK",
+      "locator": "source DOM link[120]"
+    }
+  ],
+  "tables": []
+}

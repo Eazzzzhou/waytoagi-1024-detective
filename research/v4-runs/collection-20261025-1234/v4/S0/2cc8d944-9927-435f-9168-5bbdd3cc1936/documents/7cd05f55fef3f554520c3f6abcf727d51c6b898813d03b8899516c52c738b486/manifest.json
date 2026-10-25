@@ -1,0 +1,1199 @@
+{
+  "schemaVersion": "source-document/v1",
+  "id": "7cd05f55fef3f554520c3f6abcf727d51c6b898813d03b8899516c52c738b486",
+  "version": "c78fc94ea73970193375637ec26e6b1ae901063400e7ae9683976f494763be91",
+  "requestedUrl": "https://api-docs.deepseek.com/zh-cn/quick_start/pricing",
+  "finalUrl": "https://api-docs.deepseek.com/zh-cn/quick_start/pricing/",
+  "retrievedAt": "2026-10-25T04:34:52.064Z",
+  "contentType": "text/html",
+  "status": "READ",
+  "readError": null,
+  "rawHash": "556097caba8adfeeed6455714bffd731c7f60db520fcee06a922eba5840663a3",
+  "textHash": "db09a343a4d633c64231991c96ddd338cb148398727a38c75cb9dc68e93e81fc",
+  "text": "跳到主要内容\n\nSearch / Fetch API 已上线，使用自研搜索引擎，支持网页搜索与抓取，点此查看使用指南。\n\n本页目录\n\n模型 & 价格\n\n下表所列模型价格以“百万 tokens”为单位。Token 是模型用来表示自然语言文本的的最小单位，可以是一个词、一个数字或一个标点符号等。我们将根据模型输入和输出的总 token 数进行计量计费。\n\n模型细节​\n\n模型deepseek-flash(1)deepseek-v4-proBASE URL (OpenAI 格式)https://api.deepseek.comBASE URL (Anthropic 格式)https://api.deepseek.com/anthropic模型版本DeepSeek-V4.1-Flash-1017DeepSeek-V4-Pro-0813思考模式支持非思考与思考模式（默认）切换方式详见思考模式上下文长度1M输出长度最大 384K功能Json Output支持支持Tool Calls支持支持Responses API支持支持Anthropic API支持支持对话前缀续写（Beta）支持支持FIM 补全（Beta）仅非思考模式支持仅非思考模式支持图像理解支持不支持价格(2)百万tokens输入（缓存命中）空闲时段0.02元0.15元高峰时段0.04元0.30元百万tokens输入（缓存未命中）空闲时段1元4.5元高峰时段2元9.0元百万tokens输出空闲时段4元13.5元高峰时段8元27.0元并发限制(3)2500500\n\n(1) 模型名请使用 deepseek-flash。旧模型名 deepseek-v4-flash、deepseek-v4-flash-vision-exp 仍可调用，但对应模型已下线，请求将由 DeepSeek-V4.1-Flash-1017 模型提供服务，并按 Flash 价格计费。\n\n(2) 空闲时段价格为高峰时段价格的一半。北京时间周一至周五（不含中国法定节假日）9:00 - 12:00、14:00 - 18:00 为高峰时段；其余时段，包括周末及中国法定节假日全天均为空闲时段。\n\n(3) 更多并发限制细节，请参考限速与隔离。\n\n网页搜索与抓取价格​\n\nSearch 和 Fetch 是独立的 API，按请求次数计费。\n\nAPI计费单位价格Search每 1,000 次成功请求5元Fetch每 1,000 次成功请求5元\n\n请注意，当前用户在 DeepSeek Harness/Claude Code/Codex 中使用 DeepSeek API 时，已经会通过 Server 端工具调用访问到 Search/Fetch 接口，这部分 Search/Fetch 接口调用目前未计费，并将于北京时间 2026 年 11 月 1 日 00:00 起按次收取调用费用。\n\n接口用法与完整计费规则详见网页搜索与抓取。\n\n扣费规则​\n\n模型调用费用 = token 消耗量 × 模型单价；Search 和 Fetch 按上表中的成功请求次数计费。对应的费用将直接从充值余额或赠送余额中进行扣减。 当充值余额与赠送余额同时存在时，优先扣减赠送余额。\n\n产品价格可能发生变动，DeepSeek 保留修改价格的权利。请您依据实际用量按需充值，定期查看此页面以获知最新价格信息。\n\n模型细节\n\n网页搜索与抓取价格\n\n扣费规则",
+  "rawSources": [
+    {
+      "mode": "STATIC",
+      "hash": "556097caba8adfeeed6455714bffd731c7f60db520fcee06a922eba5840663a3",
+      "path": "C:\\Users\\qianchen\\Documents\\waytoagi-1024-detective-a2-v4\\.cache\\source-documents-v4\\2cc8d944-9927-435f-9168-5bbdd3cc1936\\7cd05f55fef3f554520c3f6abcf727d51c6b898813d03b8899516c52c738b486\\raw.bin"
+    }
+  ],
+  "storage": {
+    "rawPath": "C:\\Users\\qianchen\\Documents\\waytoagi-1024-detective-a2-v4\\.cache\\source-documents-v4\\2cc8d944-9927-435f-9168-5bbdd3cc1936\\7cd05f55fef3f554520c3f6abcf727d51c6b898813d03b8899516c52c738b486\\raw.bin",
+    "textPath": "C:\\Users\\qianchen\\Documents\\waytoagi-1024-detective-a2-v4\\.cache\\source-documents-v4\\2cc8d944-9927-435f-9168-5bbdd3cc1936\\7cd05f55fef3f554520c3f6abcf727d51c6b898813d03b8899516c52c738b486\\source.txt",
+    "manifestPath": "C:\\Users\\qianchen\\Documents\\waytoagi-1024-detective-a2-v4\\.cache\\source-documents-v4\\2cc8d944-9927-435f-9168-5bbdd3cc1936\\7cd05f55fef3f554520c3f6abcf727d51c6b898813d03b8899516c52c738b486\\manifest.json"
+  },
+  "parser": {
+    "name": "readability+source-dom",
+    "version": "readability-0.6.0+jsdom-30.1.3+source-dom-2",
+    "normalization": "source-text/v1",
+    "mode": "STATIC"
+  },
+  "metadata": {
+    "title": "模型 & 价格 | DeepSeek API Docs",
+    "author": null,
+    "publishedAt": null,
+    "language": "zh-cn"
+  },
+  "completeness": "COMPLETE",
+  "warnings": [],
+  "blocks": [
+    {
+      "start": 0,
+      "end": 6,
+      "id": "b0",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[0]",
+      "headingPath": [],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 8,
+      "end": 59,
+      "id": "b1",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[1]",
+      "headingPath": [],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 61,
+      "end": 65,
+      "id": "b2",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[2]",
+      "headingPath": [],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 67,
+      "end": 74,
+      "id": "b3",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[3]",
+      "headingPath": [
+        "模型 & 价格"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 76,
+      "end": 175,
+      "id": "b4",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[4]",
+      "headingPath": [
+        "模型 & 价格"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 177,
+      "end": 182,
+      "id": "b5",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[5]",
+      "headingPath": [
+        "模型 & 价格",
+        "模型细节​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 184,
+      "end": 663,
+      "id": "b6",
+      "kind": "TABLE",
+      "locator": "source DOM normalized block[6]",
+      "headingPath": [
+        "模型 & 价格",
+        "模型细节​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 665,
+      "end": 808,
+      "id": "b7",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[7]",
+      "headingPath": [
+        "模型 & 价格",
+        "模型细节​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 810,
+      "end": 910,
+      "id": "b8",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[8]",
+      "headingPath": [
+        "模型 & 价格",
+        "模型细节​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 912,
+      "end": 934,
+      "id": "b9",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[9]",
+      "headingPath": [
+        "模型 & 价格",
+        "模型细节​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 936,
+      "end": 946,
+      "id": "b10",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[10]",
+      "headingPath": [
+        "模型 & 价格",
+        "网页搜索与抓取价格​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 948,
+      "end": 980,
+      "id": "b11",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[11]",
+      "headingPath": [
+        "模型 & 价格",
+        "网页搜索与抓取价格​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 982,
+      "end": 1032,
+      "id": "b12",
+      "kind": "TABLE",
+      "locator": "source DOM normalized block[12]",
+      "headingPath": [
+        "模型 & 价格",
+        "网页搜索与抓取价格​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1034,
+      "end": 1203,
+      "id": "b13",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[13]",
+      "headingPath": [
+        "模型 & 价格",
+        "网页搜索与抓取价格​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1205,
+      "end": 1226,
+      "id": "b14",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[14]",
+      "headingPath": [
+        "模型 & 价格",
+        "网页搜索与抓取价格​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1228,
+      "end": 1233,
+      "id": "b15",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[15]",
+      "headingPath": [
+        "模型 & 价格",
+        "扣费规则​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1235,
+      "end": 1340,
+      "id": "b16",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[16]",
+      "headingPath": [
+        "模型 & 价格",
+        "扣费规则​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1342,
+      "end": 1402,
+      "id": "b17",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[17]",
+      "headingPath": [
+        "模型 & 价格",
+        "扣费规则​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1404,
+      "end": 1408,
+      "id": "b18",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[18]",
+      "headingPath": [
+        "模型 & 价格",
+        "扣费规则​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1410,
+      "end": 1419,
+      "id": "b19",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[19]",
+      "headingPath": [
+        "模型 & 价格",
+        "扣费规则​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1421,
+      "end": 1425,
+      "id": "b20",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[20]",
+      "headingPath": [
+        "模型 & 价格",
+        "扣费规则​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    }
+  ],
+  "links": [
+    {
+      "url": "https://api-docs.deepseek.com/zh-cn/quick_start/pricing",
+      "text": "",
+      "blockId": null,
+      "relation": "CANONICAL",
+      "locator": "source DOM link[0]"
+    },
+    {
+      "url": "https://api-docs.deepseek.com/zh-cn/guides/search",
+      "text": "点此查看使用指南。",
+      "blockId": "b1",
+      "relation": "LINK",
+      "locator": "source DOM link[2]"
+    },
+    {
+      "url": "https://api.deepseek.com/",
+      "text": "https://api.deepseek.com",
+      "blockId": "b6",
+      "relation": "LINK",
+      "locator": "source DOM link[35]"
+    },
+    {
+      "url": "https://api.deepseek.com/anthropic",
+      "text": "https://api.deepseek.com/anthropic",
+      "blockId": "b6",
+      "relation": "LINK",
+      "locator": "source DOM link[36]"
+    },
+    {
+      "url": "https://api-docs.deepseek.com/zh-cn/guides/thinking_mode",
+      "text": "思考模式",
+      "blockId": "b6",
+      "relation": "LINK",
+      "locator": "source DOM link[37]"
+    },
+    {
+      "url": "https://api-docs.deepseek.com/zh-cn/guides/json_mode",
+      "text": "Json Output",
+      "blockId": "b6",
+      "relation": "LINK",
+      "locator": "source DOM link[38]"
+    },
+    {
+      "url": "https://api-docs.deepseek.com/zh-cn/guides/tool_calls",
+      "text": "Tool Calls",
+      "blockId": "b6",
+      "relation": "LINK",
+      "locator": "source DOM link[39]"
+    },
+    {
+      "url": "https://api-docs.deepseek.com/zh-cn/guides/responses_api",
+      "text": "Responses API",
+      "blockId": "b6",
+      "relation": "LINK",
+      "locator": "source DOM link[40]"
+    },
+    {
+      "url": "https://api-docs.deepseek.com/zh-cn/guides/anthropic_api",
+      "text": "Anthropic API",
+      "blockId": "b6",
+      "relation": "LINK",
+      "locator": "source DOM link[41]"
+    },
+    {
+      "url": "https://api-docs.deepseek.com/zh-cn/guides/chat_prefix_completion",
+      "text": "对话前缀续写（Beta）",
+      "blockId": "b6",
+      "relation": "LINK",
+      "locator": "source DOM link[42]"
+    },
+    {
+      "url": "https://api-docs.deepseek.com/zh-cn/guides/fim_completion",
+      "text": "FIM 补全（Beta）",
+      "blockId": "b6",
+      "relation": "LINK",
+      "locator": "source DOM link[43]"
+    },
+    {
+      "url": "https://api-docs.deepseek.com/zh-cn/guides/vision",
+      "text": "图像理解",
+      "blockId": "b6",
+      "relation": "LINK",
+      "locator": "source DOM link[44]"
+    },
+    {
+      "url": "https://api-docs.deepseek.com/zh-cn/quick_start/rate_limit",
+      "text": "限速与隔离",
+      "blockId": "b9",
+      "relation": "LINK",
+      "locator": "source DOM link[45]"
+    },
+    {
+      "url": "https://api-docs.deepseek.com/zh-cn/guides/search",
+      "text": "网页搜索与抓取",
+      "blockId": "b14",
+      "relation": "LINK",
+      "locator": "source DOM link[47]"
+    }
+  ],
+  "tables": [
+    {
+      "blockId": "b6",
+      "rows": [
+        {
+          "start": 184,
+          "end": 218,
+          "cells": [
+            {
+              "start": 184,
+              "end": 186,
+              "text": "模型",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 3
+            },
+            {
+              "start": 186,
+              "end": 203,
+              "text": "deepseek-flash(1)",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 203,
+              "end": 218,
+              "text": "deepseek-v4-pro",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 218,
+          "end": 262,
+          "cells": [
+            {
+              "start": 218,
+              "end": 238,
+              "text": "BASE URL (OpenAI 格式)",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 3
+            },
+            {
+              "start": 238,
+              "end": 262,
+              "text": "https://api.deepseek.com",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 2
+            }
+          ]
+        },
+        {
+          "start": 262,
+          "end": 319,
+          "cells": [
+            {
+              "start": 262,
+              "end": 285,
+              "text": "BASE URL (Anthropic 格式)",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 3
+            },
+            {
+              "start": 285,
+              "end": 319,
+              "text": "https://api.deepseek.com/anthropic",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 2
+            }
+          ]
+        },
+        {
+          "start": 319,
+          "end": 367,
+          "cells": [
+            {
+              "start": 319,
+              "end": 323,
+              "text": "模型版本",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 3
+            },
+            {
+              "start": 323,
+              "end": 347,
+              "text": "DeepSeek-V4.1-Flash-1017",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 347,
+              "end": 367,
+              "text": "DeepSeek-V4-Pro-0813",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 367,
+          "end": 395,
+          "cells": [
+            {
+              "start": 367,
+              "end": 371,
+              "text": "思考模式",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 3
+            },
+            {
+              "start": 371,
+              "end": 395,
+              "text": "支持非思考与思考模式（默认）切换方式详见思考模式",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 2
+            }
+          ]
+        },
+        {
+          "start": 395,
+          "end": 402,
+          "cells": [
+            {
+              "start": 395,
+              "end": 400,
+              "text": "上下文长度",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 3
+            },
+            {
+              "start": 400,
+              "end": 402,
+              "text": "1M",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 2
+            }
+          ]
+        },
+        {
+          "start": 402,
+          "end": 413,
+          "cells": [
+            {
+              "start": 402,
+              "end": 406,
+              "text": "输出长度",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 3
+            },
+            {
+              "start": 406,
+              "end": 413,
+              "text": "最大 384K",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 2
+            }
+          ]
+        },
+        {
+          "start": 413,
+          "end": 430,
+          "cells": [
+            {
+              "start": 413,
+              "end": 415,
+              "text": "功能",
+              "header": false,
+              "rowSpan": 7,
+              "colSpan": 1
+            },
+            {
+              "start": 415,
+              "end": 426,
+              "text": "Json Output",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 2
+            },
+            {
+              "start": 426,
+              "end": 428,
+              "text": "支持",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 428,
+              "end": 430,
+              "text": "支持",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 430,
+          "end": 444,
+          "cells": [
+            {
+              "start": 430,
+              "end": 440,
+              "text": "Tool Calls",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 2
+            },
+            {
+              "start": 440,
+              "end": 442,
+              "text": "支持",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 442,
+              "end": 444,
+              "text": "支持",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 444,
+          "end": 461,
+          "cells": [
+            {
+              "start": 444,
+              "end": 457,
+              "text": "Responses API",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 2
+            },
+            {
+              "start": 457,
+              "end": 459,
+              "text": "支持",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 459,
+              "end": 461,
+              "text": "支持",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 461,
+          "end": 478,
+          "cells": [
+            {
+              "start": 461,
+              "end": 474,
+              "text": "Anthropic API",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 2
+            },
+            {
+              "start": 474,
+              "end": 476,
+              "text": "支持",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 476,
+              "end": 478,
+              "text": "支持",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 478,
+          "end": 494,
+          "cells": [
+            {
+              "start": 478,
+              "end": 490,
+              "text": "对话前缀续写（Beta）",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 2
+            },
+            {
+              "start": 490,
+              "end": 492,
+              "text": "支持",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 492,
+              "end": 494,
+              "text": "支持",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 494,
+          "end": 522,
+          "cells": [
+            {
+              "start": 494,
+              "end": 506,
+              "text": "FIM 补全（Beta）",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 2
+            },
+            {
+              "start": 506,
+              "end": 514,
+              "text": "仅非思考模式支持",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 514,
+              "end": 522,
+              "text": "仅非思考模式支持",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 522,
+          "end": 531,
+          "cells": [
+            {
+              "start": 522,
+              "end": 526,
+              "text": "图像理解",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 2
+            },
+            {
+              "start": 526,
+              "end": 528,
+              "text": "支持",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 528,
+              "end": 531,
+              "text": "不支持",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 531,
+          "end": 566,
+          "cells": [
+            {
+              "start": 531,
+              "end": 536,
+              "text": "价格(2)",
+              "header": false,
+              "rowSpan": 6,
+              "colSpan": 1
+            },
+            {
+              "start": 536,
+              "end": 552,
+              "text": "百万tokens输入（缓存命中）",
+              "header": false,
+              "rowSpan": 2,
+              "colSpan": 1
+            },
+            {
+              "start": 552,
+              "end": 556,
+              "text": "空闲时段",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 556,
+              "end": 561,
+              "text": "0.02元",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 561,
+              "end": 566,
+              "text": "0.15元",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 566,
+          "end": 580,
+          "cells": [
+            {
+              "start": 566,
+              "end": 570,
+              "text": "高峰时段",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 570,
+              "end": 575,
+              "text": "0.04元",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 575,
+              "end": 580,
+              "text": "0.30元",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 580,
+          "end": 607,
+          "cells": [
+            {
+              "start": 580,
+              "end": 597,
+              "text": "百万tokens输入（缓存未命中）",
+              "header": false,
+              "rowSpan": 2,
+              "colSpan": 1
+            },
+            {
+              "start": 597,
+              "end": 601,
+              "text": "空闲时段",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 601,
+              "end": 603,
+              "text": "1元",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 603,
+              "end": 607,
+              "text": "4.5元",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 607,
+          "end": 617,
+          "cells": [
+            {
+              "start": 607,
+              "end": 611,
+              "text": "高峰时段",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 611,
+              "end": 613,
+              "text": "2元",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 613,
+              "end": 617,
+              "text": "9.0元",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 617,
+          "end": 638,
+          "cells": [
+            {
+              "start": 617,
+              "end": 627,
+              "text": "百万tokens输出",
+              "header": false,
+              "rowSpan": 2,
+              "colSpan": 1
+            },
+            {
+              "start": 627,
+              "end": 631,
+              "text": "空闲时段",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 631,
+              "end": 633,
+              "text": "4元",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 633,
+              "end": 638,
+              "text": "13.5元",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 638,
+          "end": 649,
+          "cells": [
+            {
+              "start": 638,
+              "end": 642,
+              "text": "高峰时段",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 642,
+              "end": 644,
+              "text": "8元",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 644,
+              "end": 649,
+              "text": "27.0元",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 649,
+          "end": 663,
+          "cells": [
+            {
+              "start": 649,
+              "end": 656,
+              "text": "并发限制(3)",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 3
+            },
+            {
+              "start": 656,
+              "end": 660,
+              "text": "2500",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 660,
+              "end": 663,
+              "text": "500",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "blockId": "b12",
+      "rows": [
+        {
+          "start": 982,
+          "end": 991,
+          "cells": [
+            {
+              "start": 982,
+              "end": 985,
+              "text": "API",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 985,
+              "end": 989,
+              "text": "计费单位",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 989,
+              "end": 991,
+              "text": "价格",
+              "header": true,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 991,
+          "end": 1012,
+          "cells": [
+            {
+              "start": 991,
+              "end": 997,
+              "text": "Search",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 997,
+              "end": 1010,
+              "text": "每 1,000 次成功请求",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1010,
+              "end": 1012,
+              "text": "5元",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 1012,
+          "end": 1032,
+          "cells": [
+            {
+              "start": 1012,
+              "end": 1017,
+              "text": "Fetch",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1017,
+              "end": 1030,
+              "text": "每 1,000 次成功请求",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 1030,
+              "end": 1032,
+              "text": "5元",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

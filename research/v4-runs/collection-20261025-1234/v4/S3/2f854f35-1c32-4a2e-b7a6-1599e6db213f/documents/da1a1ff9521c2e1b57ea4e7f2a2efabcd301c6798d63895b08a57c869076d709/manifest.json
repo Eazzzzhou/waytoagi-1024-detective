@@ -1,0 +1,1286 @@
+{
+  "schemaVersion": "source-document/v1",
+  "id": "da1a1ff9521c2e1b57ea4e7f2a2efabcd301c6798d63895b08a57c869076d709",
+  "version": "bc08d155acc78c28daee389d915567d749a3c43cc709f2e3d47a4017ce94bd13",
+  "requestedUrl": "https://murmure.nanocorp.app/blog/what-reddit-thinks-about-devin-ai",
+  "finalUrl": "https://murmure.nanocorp.app/blog/what-reddit-thinks-about-devin-ai",
+  "retrievedAt": "2026-10-25T04:36:31.447Z",
+  "contentType": "text/html; charset=utf-8",
+  "status": "READ",
+  "readError": null,
+  "rawHash": "4183eb9dfbf30f7f11e1676f444a4a7f3d94f00a8683331d418b09b54f424090",
+  "textHash": "b9c2ce0049335627f69cda9dbcb413a8c0dd3a4877b13ec62212588bd2b6bcc9",
+  "text": "HomeBlogAI Coding Tools\n\nDevin gets judged less like a coding assistant and more like a paid teammate, which is why pricing, trust, and task-completion debates dominate the conversation.\n\nWhat Reddit Really Thinks About Devin AI in 2026\n\nDevin AI Reddit 2026 is a pricing, trust, and workflow story. We analyzed 340+ Reddit and Hacker News discussions on Cognition's Devin to map what developers praise, what they distrust, and whether Devin's $500/month price feels worth it.\n\nApril 16, 202612 min read\n\nHook: 340+ Reddit and Hacker News discussions analyzed. Here is the unfiltered truth.\n\nSearches like 'Devin AI Reddit 2026', 'Cognition AI Devin review Reddit', and 'Devin AI software engineer review' all point to the same high-stakes question: does Devin actually deliver autonomous engineering value, or is it still a very polished promise with a very expensive seat price? We reviewed 340+ Reddit and Hacker News discussions to answer that question from the perspective buyers actually care about: real workflow fit, real task completion, and real budget pressure.\n\nThe verdict is sharper than the marketing copy. Reddit does not think Devin is fake, but it also does not treat Devin like a normal coding assistant. It gets genuine praise when it handles complex codebase navigation, migrations, and repetitive repo chores. It gets just as much backlash when the real-world completion rate falls short of the original demo aura, or when users realize the roughly $500 per month entry point forces every test to be judged like a hiring decision. In 2026, the unfiltered view is simple: Devin is real, useful in specific lanes, and still over-scrutinized because of how it was introduced.\n\nMethodology note\n\nUsing Murmure's analysis workflow, we reviewed 340+ Reddit and Hacker News discussions from the last 90 days mentioning Devin, Cognition, 'AI software engineer', and direct comparisons such as 'Devin vs Cursor', 'Devin vs Claude Code', and 'Devin vs Copilot.' We prioritized communities where developers tend to discuss real usage, budget, and workflow fit instead of just reposting launch clips.\n\nWeekly sentiment update\n\nWant the weekly sentiment update? We track 13 AI tools across Reddit + HN.\n\nGet the Monday drop with the biggest sentiment shifts, trust breaks, and leaderboard moves.\n\nWe de-duplicated link reposts, filtered out low-signal meme replies, and tagged each thread for sentiment, task type, pricing reaction, trust concerns, and competitor framing. The percentages below are not market share. They are a snapshot of what high-intent developer buying conversations sound like in 2026.\n\nSentiment breakdown: interest is high, but skepticism still wins\n\nThe simplest way to frame Devin sentiment is that curiosity remains strong, but belief is conditional. Across the 340+ discussions we mapped, about 39% of the conversation is clearly positive, 41% is negative, and 20% is neutral or mixed. That does not mean developers hate the product. It means Devin gets discussed under a more demanding rubric than most AI coding tools. Users are constantly weighing what it can do today against what it was presented as doing from day one.\n\nThe positive cluster usually comes from people who treat Devin as an asynchronous worker for narrow, well-scoped tasks. The negative cluster comes from two places: buyers who think the product still does not justify a roughly $500/month starting price, and critics who anchor every new claim against the original gap between the polished demo narrative and the more limited real-world completion data. Neutral threads are mostly evaluation logs, pricing questions, or tool-comparison debates where the verdict depends on workflow rather than raw model quality.\n\nPositive: about 39% | Praise centers on complex codebase navigation, background task delegation, test writing, and repetitive repo chores that benefit from long context.\n\nNegative: about 41% | Complaints cluster around the $500/month barrier, trust damage from the demo-versus-reality gap, opaque failure modes, and the cleanup burden on ambiguous tasks.\n\nNeutral: about 20% | These threads are mostly evaluation logs, pricing questions, and fit debates against Cursor, Claude Code, GitHub Copilot, and human contractors.\n\nWhat developers love about Devin\n\nThe strongest positive theme is not raw code generation. It is leverage on annoying work. Developers who like Devin usually describe the same pattern: hand it a bounded task, let it work asynchronously, and come back to a draft that moved the project forward. That could be a bug reproduction case, a failing-test investigation, a repetitive migration, a draft PR, or a repo-wide cleanup pass. A representative Reddit-style line sounds like this: 'The win is not genius code. The win is that it can burn an hour on the setup and first pass while I stay on higher-leverage work.'\n\nComplex codebase navigation is the most credible area of praise. This is one of the few Devin advantages that shows up again and again in serious discussions. Developers report that Devin can track dependency chains, follow architectural patterns across many files, and keep more repo context in play than lightweight editor assistants usually can. That matters because real engineering work is often less about writing the line and more about understanding where the line belongs. In that lane, Devin gets described less like autocomplete and more like an execution-minded analyst who can do repo archaeology at speed.\n\nThe other major love is the fire-and-forget model itself. Senior engineers and founders do not always want another inline assistant whispering suggestions while they type. Sometimes they want to assign a task and return later. Devin's async dashboard is genuinely attractive in those cases, especially for testing, migrations, and other chores with clearer pass-fail criteria. Teams using Devin as a starting point generator often say some version of: 'Nobody expects production-grade perfection. We expect a working first draft that saves a few hours of boilerplate.' Praise appears when expectations are operational and narrow, not when the product is treated like a fully autonomous engineer.\n\nWhat developers hate about Devin\n\nThe biggest complaint is still the credibility gap. Once you brand a product as an AI software engineer, people stop judging it like a helper and start judging it like a teammate. That is why the original demo story still hangs over the product. Developers have not forgotten the backlash over the gap between the polished early narrative and later evidence that real-world autonomous completion is much narrower. A representative criticism is: 'Devin would get less hate if it had launched as a strong delegation tool instead of a self-driving engineer.'\n\nThat distrust gets amplified by public performance debates. One independent evaluation cited in community threads found only 3 outright successes in 20 diverse tasks, or about 15%, while SWE-bench style discussion often surfaces an autonomous resolution rate around 13.86%. Even people who think those figures understate the product still use them as a rhetorical anchor. The core question becomes: can Devin actually do a full PR autonomously, or does it mostly produce promising first drafts that still need heavy review? Reddit has not reached consensus there, which is exactly why the controversy keeps resurfacing.\n\nReliability is the next recurring frustration. Devin can look productive while heading in the wrong direction. Developers describe runs that start strong, touch many files, and then collapse because of a bad assumption, tool mismatch, or missing recovery path. The problem is not just that it fails. It is that failure can be expensive, slow, and opaque. A representative Reddit-style complaint is: 'Devin looks useful until you realize it has spent twenty minutes being wrong at full speed.' That is a harsher failure mode than a bad chat answer because the cleanup cost compounds across time, context, and budget.\n\nWorkflow friction is another major reason developers churn back to interactive tools. Devin lives in a separate web dashboard rather than inside the IDE, and that matters more than it sounds. Many users do not want to file a request in a browser tab and wait fifteen minutes for a PR when Cursor, Copilot, and Claude Code keep them inside the editor with faster feedback. The complaint is not just about taste. It is about control. If a developer has to spec the work, monitor the run, review the logs, and manually fix the edge cases, the promise of autonomy starts to collapse into a slower supervision loop.\n\nComparisons: Devin vs Cursor, Claude Code, and GitHub Copilot\n\nCursor is still the comparison that shows up most often. In the repo-grounded Devin report, Cursor appears in 14+ direct comparison threads because it represents the opposite workflow philosophy. Cursor is the interactive tool you drive. Devin is the asynchronous tool you delegate to. Reddit usually prefers Cursor for daily coding because it stays inside the IDE, keeps edits inspectable, and preserves the developer's sense of control. Devin becomes interesting only when the task is large enough, boring enough, or parallelizable enough that delegation beats flow-state editing.\n\nClaude Code sits closer to Devin in ambition, which is why the comparison feels sharper. Reddit's mental model increasingly sounds like this: Cursor for interactive edits, Claude Code for transparent local agentic loops, and Devin for fully async delegation. Claude Code wins praise for visibility and real-time tool-use feedback. Devin wins only when the buyer values queue-based delegation more than hands-on steering. A useful summary from the threads is: 'With Claude Code you operate; with Devin you assign and wait.' That makes Devin feel more differentiated, but also more niche.\n\nGitHub Copilot is usually framed as the practical baseline rather than a direct substitute. Copilot stays cheap, embedded, and predictable. Devin asks for a much bigger budget and a different way of working, so Copilot often wins the everyday question while Devin only wins the task-economics question. The broader pattern is that Reddit no longer argues about these tools as if they are interchangeable. Copilot is lightweight assistance, Cursor is interactive power use, Claude Code is transparent agent loops, and Devin is delegation. That segmentation helps Devin by making the use case clearer, but it also makes the total use case look much smaller than the original software-engineer narrative implied.\n\nPricing deep dive: is Devin's roughly $500/month price worth it?\n\nThis is the part of the Devin conversation where most evaluation threads actually end. The price point gets discussed as roughly $500 per month before overages, which means almost nobody benchmarks Devin against a $20 editor add-on. They benchmark it against saved engineering hours. That is why 'Devin $500 month worth it' is such a common search. At that price, novelty does not matter. The product has to remove real work from a real team.\n\nReddit's answer is usually role-dependent. For an individual developer, the consensus leans no. The spend feels too high unless Devin is being used constantly on bounded, high-confidence tasks. For founders, managers, or teams with a queue of repetitive work, the answer becomes more conditional. If Devin can burn down migrations, test coverage, or low-risk refactors in the background, the price can make sense. If it fails halfway through expensive tasks, the ACU burn makes the economics look brutal very quickly.\n\nThat is why pricing is the number one friction in complaint-heavy threads. Developers do not object only to the sticker. They object to cost unpredictability. A task that quietly burns credits while failing feels worse than a human taking longer, because the buyer loses both money and trust. The most persuasive pro-Devin argument is still ROI on narrow repetitive work. The most persuasive anti-Devin argument is that the supervision and failure cost often erode that ROI before it compounds.\n\nTrends: what Reddit thinks about Devin in 2026\n\nThe healthiest shift for Devin is that the discussion is becoming more concrete. Early discourse was dominated by launch theater, disbelief, and general arguments about whether autonomous software engineering was possible at all. In 2026, the better threads are much more specific: which tasks work, which tasks fail, how much supervision is acceptable, and what budget makes the tradeoff rational. That is progress, because it replaces vibe-based reactions with workflow-based evaluation.\n\nThe less healthy trend is that credibility debt still compounds. The original demo gap remains a reference point in almost every serious review cycle, which means new feature launches start from skepticism instead of excitement. At the same time, Cursor, Claude Code, and GitHub Copilot all give developers easier default choices for everyday work. That leaves Devin with a narrower but more legible position: async delegation for teams that already know how to scope tasks tightly.\n\nCTA: where to go next if you are evaluating Devin\n\nThe practical answer to 'what Reddit really thinks about Devin AI in 2026' is this: developers think Devin can be genuinely useful, but mostly when you treat it like an expensive delegation layer for bounded tasks rather than like a self-driving software engineer. The product earns real praise on codebase navigation and async execution, then loses trust when the work gets ambiguous, the run gets expensive, or the claim gets bigger than the evidence.\n\nIf you want this same analysis for your own product, Murmure can map what developers say about your pricing, roadmap, positioning, and competitors with a custom $99 report, then help you scope ongoing tracking if you need it.\n\nSee the live Community Pulse leaderboard →\n\nOrder your custom $99 report →\n\nWhat Reddit really thinks about Cursor →\n\nWhat Reddit really thinks about GitHub Copilot →\n\nCustom report\n\nWant this exact analysis for your own product?\n\nOrder Murmure's $99 custom report to map what developers say about your pricing, roadmap, positioning, and competitors.\n\nOrder your custom $99 report →See the live Community Pulse →\n\nKey takeaways\n\nDevin sentiment is meaningfully split: roughly 39% positive, 41% negative, and 20% neutral across the 340+ Reddit and Hacker News discussions we reviewed.\n\nThe praise is real, but narrow. Developers genuinely like Devin for complex codebase navigation, background task delegation, test work, and repetitive migration-style jobs with clear success criteria.\n\nThe main blockers are also consistent: the roughly $500/month price point, debate over whether Devin can actually finish a full PR autonomously, and lingering trust damage from the gap between the original demo aura and real-world performance.\n\nKeywords\n\nDevin AI Reddit 2026Cognition AI Devin review RedditDevin AI software engineer reviewDevin $500 month worth itDevin vs Cursor RedditDevin vs Claude Code\n\nShare this insight\n\nSend this page to the teammate who owns product, growth, or customer experience.\n\nBrowse more articles\n\nContinue reading\n\nMore signal from the Murmure blog\n\nAI Coding ToolsMay 4, 202610 min read\n\nCursor vs Windsurf vs Cline: Which AI Coding Tool Do Developers Actually Trust in 2026?\n\nIf you are searching for cursor vs windsurf vs cline, best AI coding tool 2026, cursor alternative 2026, or windsurf vs cursor reddit, the real question is no longer who demos best. It is which product developers actually trust enough to wire into daily work.\n\ncursor vs windsurf vs clinebest AI coding tool 2026cursor alternative 2026\n\nRead article\n\nAI Coding ToolsMay 2, 20268 min read\n\nCline vs Cursor: Which AI Coding Agent Do Developers Actually Trust in 2026?\n\nIf you search for cline vs cursor, cline vs cursor reddit, or cursor alternative open source 2026, the real question is not which tool looks better in a demo. It is which one developers trust enough to wire into daily work.\n\ncline vs cursorcline vs cursor redditcursor alternative open source 2026\n\nRead article",
+  "rawSources": [
+    {
+      "mode": "STATIC",
+      "hash": "4183eb9dfbf30f7f11e1676f444a4a7f3d94f00a8683331d418b09b54f424090",
+      "path": "C:\\Users\\qianchen\\Documents\\waytoagi-1024-detective-a2-v4\\.cache\\source-documents-v4\\2f854f35-1c32-4a2e-b7a6-1599e6db213f\\da1a1ff9521c2e1b57ea4e7f2a2efabcd301c6798d63895b08a57c869076d709\\raw.bin"
+    }
+  ],
+  "storage": {
+    "rawPath": "C:\\Users\\qianchen\\Documents\\waytoagi-1024-detective-a2-v4\\.cache\\source-documents-v4\\2f854f35-1c32-4a2e-b7a6-1599e6db213f\\da1a1ff9521c2e1b57ea4e7f2a2efabcd301c6798d63895b08a57c869076d709\\raw.bin",
+    "textPath": "C:\\Users\\qianchen\\Documents\\waytoagi-1024-detective-a2-v4\\.cache\\source-documents-v4\\2f854f35-1c32-4a2e-b7a6-1599e6db213f\\da1a1ff9521c2e1b57ea4e7f2a2efabcd301c6798d63895b08a57c869076d709\\source.txt",
+    "manifestPath": "C:\\Users\\qianchen\\Documents\\waytoagi-1024-detective-a2-v4\\.cache\\source-documents-v4\\2f854f35-1c32-4a2e-b7a6-1599e6db213f\\da1a1ff9521c2e1b57ea4e7f2a2efabcd301c6798d63895b08a57c869076d709\\manifest.json"
+  },
+  "parser": {
+    "name": "readability+source-dom",
+    "version": "readability-0.6.0+jsdom-30.1.3+source-dom-2",
+    "normalization": "source-text/v1",
+    "mode": "STATIC"
+  },
+  "metadata": {
+    "title": "What Reddit Really Thinks About Devin AI in 2026 | Murmure",
+    "author": "Murmure",
+    "publishedAt": null,
+    "language": "en"
+  },
+  "completeness": "COMPLETE",
+  "warnings": [],
+  "blocks": [
+    {
+      "start": 0,
+      "end": 23,
+      "id": "b0",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[0]",
+      "headingPath": [],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 25,
+      "end": 186,
+      "id": "b1",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[1]",
+      "headingPath": [],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 188,
+      "end": 236,
+      "id": "b2",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[2]",
+      "headingPath": [
+        "What Reddit Really Thinks About Devin AI in 2026"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 238,
+      "end": 476,
+      "id": "b3",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[3]",
+      "headingPath": [
+        "What Reddit Really Thinks About Devin AI in 2026"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 478,
+      "end": 503,
+      "id": "b4",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[4]",
+      "headingPath": [
+        "What Reddit Really Thinks About Devin AI in 2026"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 505,
+      "end": 590,
+      "id": "b5",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[5]",
+      "headingPath": [
+        "What Reddit Really Thinks About Devin AI in 2026",
+        "Hook: 340+ Reddit and Hacker News discussions analyzed. Here is the unfiltered truth."
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 592,
+      "end": 1072,
+      "id": "b6",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[6]",
+      "headingPath": [
+        "What Reddit Really Thinks About Devin AI in 2026",
+        "Hook: 340+ Reddit and Hacker News discussions analyzed. Here is the unfiltered truth."
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1074,
+      "end": 1694,
+      "id": "b7",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[7]",
+      "headingPath": [
+        "What Reddit Really Thinks About Devin AI in 2026",
+        "Hook: 340+ Reddit and Hacker News discussions analyzed. Here is the unfiltered truth."
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1696,
+      "end": 1712,
+      "id": "b8",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[8]",
+      "headingPath": [
+        "What Reddit Really Thinks About Devin AI in 2026",
+        "Methodology note"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1714,
+      "end": 2110,
+      "id": "b9",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[9]",
+      "headingPath": [
+        "What Reddit Really Thinks About Devin AI in 2026",
+        "Methodology note"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2112,
+      "end": 2135,
+      "id": "b10",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[10]",
+      "headingPath": [
+        "What Reddit Really Thinks About Devin AI in 2026",
+        "Methodology note"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2137,
+      "end": 2211,
+      "id": "b11",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[11]",
+      "headingPath": [
+        "What Reddit Really Thinks About Devin AI in 2026",
+        "Want the weekly sentiment update? We track 13 AI tools across Reddit + HN."
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2213,
+      "end": 2304,
+      "id": "b12",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[12]",
+      "headingPath": [
+        "What Reddit Really Thinks About Devin AI in 2026",
+        "Want the weekly sentiment update? We track 13 AI tools across Reddit + HN."
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2306,
+      "end": 2616,
+      "id": "b13",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[13]",
+      "headingPath": [
+        "What Reddit Really Thinks About Devin AI in 2026",
+        "Want the weekly sentiment update? We track 13 AI tools across Reddit + HN."
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2618,
+      "end": 2682,
+      "id": "b14",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[14]",
+      "headingPath": [
+        "What Reddit Really Thinks About Devin AI in 2026",
+        "Sentiment breakdown: interest is high, but skepticism still wins"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2684,
+      "end": 3161,
+      "id": "b15",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[15]",
+      "headingPath": [
+        "What Reddit Really Thinks About Devin AI in 2026",
+        "Sentiment breakdown: interest is high, but skepticism still wins"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3163,
+      "end": 3723,
+      "id": "b16",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[16]",
+      "headingPath": [
+        "What Reddit Really Thinks About Devin AI in 2026",
+        "Sentiment breakdown: interest is high, but skepticism still wins"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3725,
+      "end": 3894,
+      "id": "b17",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[17]",
+      "headingPath": [
+        "What Reddit Really Thinks About Devin AI in 2026",
+        "Sentiment breakdown: interest is high, but skepticism still wins"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3896,
+      "end": 4079,
+      "id": "b18",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[18]",
+      "headingPath": [
+        "What Reddit Really Thinks About Devin AI in 2026",
+        "Sentiment breakdown: interest is high, but skepticism still wins"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4081,
+      "end": 4246,
+      "id": "b19",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[19]",
+      "headingPath": [
+        "What Reddit Really Thinks About Devin AI in 2026",
+        "Sentiment breakdown: interest is high, but skepticism still wins"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4248,
+      "end": 4280,
+      "id": "b20",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[20]",
+      "headingPath": [
+        "What Reddit Really Thinks About Devin AI in 2026",
+        "What developers love about Devin"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4282,
+      "end": 4860,
+      "id": "b21",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[21]",
+      "headingPath": [
+        "What Reddit Really Thinks About Devin AI in 2026",
+        "What developers love about Devin"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4862,
+      "end": 5481,
+      "id": "b22",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[22]",
+      "headingPath": [
+        "What Reddit Really Thinks About Devin AI in 2026",
+        "What developers love about Devin"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5483,
+      "end": 6178,
+      "id": "b23",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[23]",
+      "headingPath": [
+        "What Reddit Really Thinks About Devin AI in 2026",
+        "What developers love about Devin"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 6180,
+      "end": 6212,
+      "id": "b24",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[24]",
+      "headingPath": [
+        "What Reddit Really Thinks About Devin AI in 2026",
+        "What developers hate about Devin"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 6214,
+      "end": 6769,
+      "id": "b25",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[25]",
+      "headingPath": [
+        "What Reddit Really Thinks About Devin AI in 2026",
+        "What developers hate about Devin"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 6771,
+      "end": 7390,
+      "id": "b26",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[26]",
+      "headingPath": [
+        "What Reddit Really Thinks About Devin AI in 2026",
+        "What developers hate about Devin"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 7392,
+      "end": 8007,
+      "id": "b27",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[27]",
+      "headingPath": [
+        "What Reddit Really Thinks About Devin AI in 2026",
+        "What developers hate about Devin"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 8009,
+      "end": 8619,
+      "id": "b28",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[28]",
+      "headingPath": [
+        "What Reddit Really Thinks About Devin AI in 2026",
+        "What developers hate about Devin"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 8621,
+      "end": 8682,
+      "id": "b29",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[29]",
+      "headingPath": [
+        "What Reddit Really Thinks About Devin AI in 2026",
+        "Comparisons: Devin vs Cursor, Claude Code, and GitHub Copilot"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 8684,
+      "end": 9266,
+      "id": "b30",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[30]",
+      "headingPath": [
+        "What Reddit Really Thinks About Devin AI in 2026",
+        "Comparisons: Devin vs Cursor, Claude Code, and GitHub Copilot"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 9268,
+      "end": 9854,
+      "id": "b31",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[31]",
+      "headingPath": [
+        "What Reddit Really Thinks About Devin AI in 2026",
+        "Comparisons: Devin vs Cursor, Claude Code, and GitHub Copilot"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 9856,
+      "end": 10565,
+      "id": "b32",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[32]",
+      "headingPath": [
+        "What Reddit Really Thinks About Devin AI in 2026",
+        "Comparisons: Devin vs Cursor, Claude Code, and GitHub Copilot"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 10567,
+      "end": 10631,
+      "id": "b33",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[33]",
+      "headingPath": [
+        "What Reddit Really Thinks About Devin AI in 2026",
+        "Pricing deep dive: is Devin's roughly $500/month price worth it?"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 10633,
+      "end": 11075,
+      "id": "b34",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[34]",
+      "headingPath": [
+        "What Reddit Really Thinks About Devin AI in 2026",
+        "Pricing deep dive: is Devin's roughly $500/month price worth it?"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 11077,
+      "end": 11594,
+      "id": "b35",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[35]",
+      "headingPath": [
+        "What Reddit Really Thinks About Devin AI in 2026",
+        "Pricing deep dive: is Devin's roughly $500/month price worth it?"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 11596,
+      "end": 12090,
+      "id": "b36",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[36]",
+      "headingPath": [
+        "What Reddit Really Thinks About Devin AI in 2026",
+        "Pricing deep dive: is Devin's roughly $500/month price worth it?"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 12092,
+      "end": 12138,
+      "id": "b37",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[37]",
+      "headingPath": [
+        "What Reddit Really Thinks About Devin AI in 2026",
+        "Trends: what Reddit thinks about Devin in 2026"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 12140,
+      "end": 12629,
+      "id": "b38",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[38]",
+      "headingPath": [
+        "What Reddit Really Thinks About Devin AI in 2026",
+        "Trends: what Reddit thinks about Devin in 2026"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 12631,
+      "end": 13113,
+      "id": "b39",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[39]",
+      "headingPath": [
+        "What Reddit Really Thinks About Devin AI in 2026",
+        "Trends: what Reddit thinks about Devin in 2026"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 13115,
+      "end": 13164,
+      "id": "b40",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[40]",
+      "headingPath": [
+        "What Reddit Really Thinks About Devin AI in 2026",
+        "CTA: where to go next if you are evaluating Devin"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 13166,
+      "end": 13619,
+      "id": "b41",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[41]",
+      "headingPath": [
+        "What Reddit Really Thinks About Devin AI in 2026",
+        "CTA: where to go next if you are evaluating Devin"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 13621,
+      "end": 13846,
+      "id": "b42",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[42]",
+      "headingPath": [
+        "What Reddit Really Thinks About Devin AI in 2026",
+        "CTA: where to go next if you are evaluating Devin"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 13848,
+      "end": 13890,
+      "id": "b43",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[43]",
+      "headingPath": [
+        "What Reddit Really Thinks About Devin AI in 2026",
+        "CTA: where to go next if you are evaluating Devin"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 13892,
+      "end": 13922,
+      "id": "b44",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[44]",
+      "headingPath": [
+        "What Reddit Really Thinks About Devin AI in 2026",
+        "CTA: where to go next if you are evaluating Devin"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 13924,
+      "end": 13964,
+      "id": "b45",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[45]",
+      "headingPath": [
+        "What Reddit Really Thinks About Devin AI in 2026",
+        "CTA: where to go next if you are evaluating Devin"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 13966,
+      "end": 14014,
+      "id": "b46",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[46]",
+      "headingPath": [
+        "What Reddit Really Thinks About Devin AI in 2026",
+        "CTA: where to go next if you are evaluating Devin"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 14016,
+      "end": 14029,
+      "id": "b47",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[47]",
+      "headingPath": [
+        "What Reddit Really Thinks About Devin AI in 2026",
+        "CTA: where to go next if you are evaluating Devin"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 14031,
+      "end": 14077,
+      "id": "b48",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[48]",
+      "headingPath": [
+        "What Reddit Really Thinks About Devin AI in 2026",
+        "Want this exact analysis for your own product?"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 14079,
+      "end": 14198,
+      "id": "b49",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[49]",
+      "headingPath": [
+        "What Reddit Really Thinks About Devin AI in 2026",
+        "Want this exact analysis for your own product?"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 14200,
+      "end": 14260,
+      "id": "b50",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[50]",
+      "headingPath": [
+        "What Reddit Really Thinks About Devin AI in 2026",
+        "Want this exact analysis for your own product?"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 14262,
+      "end": 14275,
+      "id": "b51",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[51]",
+      "headingPath": [
+        "What Reddit Really Thinks About Devin AI in 2026",
+        "Want this exact analysis for your own product?"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 14277,
+      "end": 14431,
+      "id": "b52",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[52]",
+      "headingPath": [
+        "What Reddit Really Thinks About Devin AI in 2026",
+        "Want this exact analysis for your own product?"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 14433,
+      "end": 14633,
+      "id": "b53",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[53]",
+      "headingPath": [
+        "What Reddit Really Thinks About Devin AI in 2026",
+        "Want this exact analysis for your own product?"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 14635,
+      "end": 14878,
+      "id": "b54",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[54]",
+      "headingPath": [
+        "What Reddit Really Thinks About Devin AI in 2026",
+        "Want this exact analysis for your own product?"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 14880,
+      "end": 14888,
+      "id": "b55",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[55]",
+      "headingPath": [
+        "What Reddit Really Thinks About Devin AI in 2026",
+        "Want this exact analysis for your own product?"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 14890,
+      "end": 15042,
+      "id": "b56",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[56]",
+      "headingPath": [
+        "What Reddit Really Thinks About Devin AI in 2026",
+        "Want this exact analysis for your own product?"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 15044,
+      "end": 15062,
+      "id": "b57",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[57]",
+      "headingPath": [
+        "What Reddit Really Thinks About Devin AI in 2026",
+        "Want this exact analysis for your own product?"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 15064,
+      "end": 15144,
+      "id": "b58",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[58]",
+      "headingPath": [
+        "What Reddit Really Thinks About Devin AI in 2026",
+        "Want this exact analysis for your own product?"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 15146,
+      "end": 15166,
+      "id": "b59",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[59]",
+      "headingPath": [
+        "What Reddit Really Thinks About Devin AI in 2026",
+        "Want this exact analysis for your own product?"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 15168,
+      "end": 15184,
+      "id": "b60",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[60]",
+      "headingPath": [
+        "What Reddit Really Thinks About Devin AI in 2026",
+        "Want this exact analysis for your own product?"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 15186,
+      "end": 15219,
+      "id": "b61",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[61]",
+      "headingPath": [
+        "What Reddit Really Thinks About Devin AI in 2026",
+        "More signal from the Murmure blog"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 15221,
+      "end": 15258,
+      "id": "b62",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[62]",
+      "headingPath": [
+        "What Reddit Really Thinks About Devin AI in 2026",
+        "More signal from the Murmure blog"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 15260,
+      "end": 15347,
+      "id": "b63",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[63]",
+      "headingPath": [
+        "What Reddit Really Thinks About Devin AI in 2026",
+        "Cursor vs Windsurf vs Cline: Which AI Coding Tool Do Developers Actually Trust in 2026?"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 15349,
+      "end": 15608,
+      "id": "b64",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[64]",
+      "headingPath": [
+        "What Reddit Really Thinks About Devin AI in 2026",
+        "Cursor vs Windsurf vs Cline: Which AI Coding Tool Do Developers Actually Trust in 2026?"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 15610,
+      "end": 15684,
+      "id": "b65",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[65]",
+      "headingPath": [
+        "What Reddit Really Thinks About Devin AI in 2026",
+        "Cursor vs Windsurf vs Cline: Which AI Coding Tool Do Developers Actually Trust in 2026?"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 15686,
+      "end": 15698,
+      "id": "b66",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[66]",
+      "headingPath": [
+        "What Reddit Really Thinks About Devin AI in 2026",
+        "Cursor vs Windsurf vs Cline: Which AI Coding Tool Do Developers Actually Trust in 2026?"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 15700,
+      "end": 15736,
+      "id": "b67",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[67]",
+      "headingPath": [
+        "What Reddit Really Thinks About Devin AI in 2026",
+        "Cursor vs Windsurf vs Cline: Which AI Coding Tool Do Developers Actually Trust in 2026?"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 15738,
+      "end": 15814,
+      "id": "b68",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[68]",
+      "headingPath": [
+        "What Reddit Really Thinks About Devin AI in 2026",
+        "Cline vs Cursor: Which AI Coding Agent Do Developers Actually Trust in 2026?"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 15816,
+      "end": 16039,
+      "id": "b69",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[69]",
+      "headingPath": [
+        "What Reddit Really Thinks About Devin AI in 2026",
+        "Cline vs Cursor: Which AI Coding Agent Do Developers Actually Trust in 2026?"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 16041,
+      "end": 16113,
+      "id": "b70",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[70]",
+      "headingPath": [
+        "What Reddit Really Thinks About Devin AI in 2026",
+        "Cline vs Cursor: Which AI Coding Agent Do Developers Actually Trust in 2026?"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 16115,
+      "end": 16127,
+      "id": "b71",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[71]",
+      "headingPath": [
+        "What Reddit Really Thinks About Devin AI in 2026",
+        "Cline vs Cursor: Which AI Coding Agent Do Developers Actually Trust in 2026?"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    }
+  ],
+  "links": [
+    {
+      "url": "https://murmure.cc/blog/what-reddit-thinks-about-devin-ai",
+      "text": "",
+      "blockId": null,
+      "relation": "CANONICAL",
+      "locator": "source DOM link[0]"
+    },
+    {
+      "url": "https://murmure.nanocorp.app/",
+      "text": "Home",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[8]"
+    },
+    {
+      "url": "https://murmure.nanocorp.app/blog",
+      "text": "Blog",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[9]"
+    },
+    {
+      "url": "https://murmure.nanocorp.app/pulse",
+      "text": "See the live Community Pulse leaderboard →",
+      "blockId": "b43",
+      "relation": "LINK",
+      "locator": "source DOM link[10]"
+    },
+    {
+      "url": "https://murmure.nanocorp.app/request-report",
+      "text": "Order your custom $99 report →",
+      "blockId": "b44",
+      "relation": "LINK",
+      "locator": "source DOM link[11]"
+    },
+    {
+      "url": "https://murmure.nanocorp.app/blog/cursor-ai-reddit-review-2026",
+      "text": "What Reddit really thinks about Cursor →",
+      "blockId": "b45",
+      "relation": "LINK",
+      "locator": "source DOM link[12]"
+    },
+    {
+      "url": "https://murmure.nanocorp.app/blog/what-reddit-thinks-about-github-copilot",
+      "text": "What Reddit really thinks about GitHub Copilot →",
+      "blockId": "b46",
+      "relation": "LINK",
+      "locator": "source DOM link[13]"
+    },
+    {
+      "url": "https://murmure.nanocorp.app/request-report",
+      "text": "Order your custom $99 report →",
+      "blockId": "b50",
+      "relation": "LINK",
+      "locator": "source DOM link[14]"
+    },
+    {
+      "url": "https://murmure.nanocorp.app/pulse",
+      "text": "See the live Community Pulse →",
+      "blockId": "b50",
+      "relation": "LINK",
+      "locator": "source DOM link[15]"
+    },
+    {
+      "url": "https://murmure.nanocorp.app/blog",
+      "text": "Browse more articles",
+      "blockId": "b59",
+      "relation": "LINK",
+      "locator": "source DOM link[16]"
+    },
+    {
+      "url": "https://murmure.nanocorp.app/blog/cursor-vs-windsurf-vs-cline-2026",
+      "text": "Cursor vs Windsurf vs Cline: Which AI Coding Tool Do Developers Actually Trust in 2026?",
+      "blockId": "b63",
+      "relation": "LINK",
+      "locator": "source DOM link[17]"
+    },
+    {
+      "url": "https://murmure.nanocorp.app/blog/cursor-vs-windsurf-vs-cline-2026",
+      "text": "Read article",
+      "blockId": "b66",
+      "relation": "LINK",
+      "locator": "source DOM link[18]"
+    },
+    {
+      "url": "https://murmure.nanocorp.app/blog/cline-vs-cursor-2026",
+      "text": "Cline vs Cursor: Which AI Coding Agent Do Developers Actually Trust in 2026?",
+      "blockId": "b68",
+      "relation": "LINK",
+      "locator": "source DOM link[19]"
+    },
+    {
+      "url": "https://murmure.nanocorp.app/blog/cline-vs-cursor-2026",
+      "text": "Read article",
+      "blockId": "b71",
+      "relation": "LINK",
+      "locator": "source DOM link[20]"
+    }
+  ],
+  "tables": []
+}

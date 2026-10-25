@@ -1,0 +1,83 @@
+{
+  "schemaVersion": "source-document/v1",
+  "id": "edcf7d35466c8540e04eff2bfeead2880077053eb48544fe3a5c1195b6fe640b",
+  "version": "4cfe3a85de1cd7efe0ec9e901f300af63234384ebdc584c18746473d60284ad7",
+  "requestedUrl": "https://news.ycombinator.com/item?id=36953720",
+  "finalUrl": "https://news.ycombinator.com/item?id=36953720",
+  "retrievedAt": "2026-10-25T04:36:34.842Z",
+  "contentType": "application/json",
+  "status": "READ",
+  "readError": null,
+  "rawHash": "75e8e28afd8bbdd54a30bbe6d027935a5e68f1f46b919c490edbab78fb071c5e",
+  "textHash": "24ac6316b185917061a37e52776b7ee461dfa53bd56a918952259623a265e6e6",
+  "text": "OT: I'm not clear on whether or not Sweep is fully open source - I mean, can you run it fully self-hosted (apart from the GPT4 engine obv), or is the repo essentially a client to a Sweep API/binary?Cool project btw!\n\nThanks! The repo is just the backend that runs the GitHub webhooks. We used to have a \"chat with your code\" client but stopped supporting it. Now it's only the GitHub interface with creating tickets and comments.\n\nThanks for the clarification.",
+  "rawSources": [
+    {
+      "mode": "HN_JSON",
+      "hash": "75e8e28afd8bbdd54a30bbe6d027935a5e68f1f46b919c490edbab78fb071c5e",
+      "path": "C:\\Users\\qianchen\\Documents\\waytoagi-1024-detective-a2-v4\\.cache\\source-documents-v4\\2f854f35-1c32-4a2e-b7a6-1599e6db213f\\edcf7d35466c8540e04eff2bfeead2880077053eb48544fe3a5c1195b6fe640b\\raw.bin"
+    }
+  ],
+  "storage": {
+    "rawPath": "C:\\Users\\qianchen\\Documents\\waytoagi-1024-detective-a2-v4\\.cache\\source-documents-v4\\2f854f35-1c32-4a2e-b7a6-1599e6db213f\\edcf7d35466c8540e04eff2bfeead2880077053eb48544fe3a5c1195b6fe640b\\raw.bin",
+    "textPath": "C:\\Users\\qianchen\\Documents\\waytoagi-1024-detective-a2-v4\\.cache\\source-documents-v4\\2f854f35-1c32-4a2e-b7a6-1599e6db213f\\edcf7d35466c8540e04eff2bfeead2880077053eb48544fe3a5c1195b6fe640b\\source.txt",
+    "manifestPath": "C:\\Users\\qianchen\\Documents\\waytoagi-1024-detective-a2-v4\\.cache\\source-documents-v4\\2f854f35-1c32-4a2e-b7a6-1599e6db213f\\edcf7d35466c8540e04eff2bfeead2880077053eb48544fe3a5c1195b6fe640b\\manifest.json"
+  },
+  "parser": {
+    "name": "readability+source-dom",
+    "version": "readability-0.6.0+jsdom-30.1.3+source-dom-2",
+    "normalization": "source-text/v1",
+    "mode": "HN_JSON"
+  },
+  "metadata": {
+    "title": null,
+    "author": "mellosouls",
+    "publishedAt": "2023-08-01T08:28:06.000Z",
+    "language": null
+  },
+  "completeness": "COMPLETE",
+  "warnings": [],
+  "blocks": [
+    {
+      "start": 0,
+      "end": 215,
+      "id": "hn-36953720",
+      "kind": "COMMENT",
+      "locator": "HN comment #36953720; JSON $.text",
+      "headingPath": [],
+      "mainContent": true,
+      "author": "mellosouls",
+      "publishedAt": "2023-08-01T08:28:06.000Z",
+      "parentId": null,
+      "sourceUrl": "https://news.ycombinator.com/item?id=36953720"
+    },
+    {
+      "start": 217,
+      "end": 429,
+      "id": "hn-36954244",
+      "kind": "COMMENT",
+      "locator": "HN comment #36954244; JSON $.children[0].text",
+      "headingPath": [],
+      "mainContent": true,
+      "author": "kevinlu1248",
+      "publishedAt": "2023-08-01T10:01:49.000Z",
+      "parentId": "hn-36953720",
+      "sourceUrl": "https://news.ycombinator.com/item?id=36954244"
+    },
+    {
+      "start": 431,
+      "end": 460,
+      "id": "hn-36954612",
+      "kind": "COMMENT",
+      "locator": "HN comment #36954612; JSON $.children[0].children[0].text",
+      "headingPath": [],
+      "mainContent": true,
+      "author": "mellosouls",
+      "publishedAt": "2023-08-01T11:07:01.000Z",
+      "parentId": "hn-36954244",
+      "sourceUrl": "https://news.ycombinator.com/item?id=36954612"
+    }
+  ],
+  "links": [],
+  "tables": []
+}

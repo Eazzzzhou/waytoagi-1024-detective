@@ -1,0 +1,810 @@
+{
+  "schemaVersion": "source-document/v1",
+  "id": "599288ab2c3b5c8b17ed2edef25f83ba35fd8507ce0ee2668fcfaf1fb54e081a",
+  "version": "240cf28b32cac9f814cd7c756b9bc95fbaf75162099061f429da895244f74c1c",
+  "requestedUrl": "https://usevulcan.app/blog/modelling-brockley-home-with-vulcan",
+  "finalUrl": "https://usevulcan.app/blog/modelling-brockley-home-with-vulcan",
+  "retrievedAt": "2026-10-25T04:43:44.491Z",
+  "contentType": "text/html; charset=utf-8",
+  "status": "READ",
+  "readError": null,
+  "rawHash": "8d11edd5b066142efb3a3502485433771a29b189d8e81be001c26146faaa31d0",
+  "textHash": "39ae49163a5c0ee6f5b7e8c98e5e0f858c2a409db599371fd7376140c17bd5a3",
+  "text": "Case Study7 min read\n\nModelling a Brockley home with Vulcan and AI\n\nVulcan’s MCP workflow lets me model my South London terrace and compare retrofit options from inside Cursor.\n\nBy Baz Iyer·25 November 2025\n\nModelling a Brockley home with Vulcan\n\nVulcan aims to make it easier for energy assessors to use the UK Government’s new Home Energy Model (HEM): so they can save time and money, move away from SAP (the methodology currently behind EPCs), and create more value for their clients.\n\nVulcan can now integrate directly with Cursor, Claude, and ChatGPT, or with scripts you build yourself, letting assessors work in their preferred AI environment. That means assessors can ask an LLM to create parameter files, batch model configurations, execute simulation runs, and compare results between scenarios without leaving their favourite AI chat.\n\nIn this article I use these new capabilities to ask questions about how to improve my own Brockley home: a cold 1930s South London mid-terrace building with uninsulated cavity walls, still running on an ageing boiler.\n\nStep 1: Build the base model\n\nVulcan captures on-site survey data required for the Home Energy Model in a structured CSV format. Anything you physically locate on a floor plan (the size and position of walls, windows, doors, and various systems) lives in that CSV file, while a companion defaults JSON file fills in dependable assumptions such as location weather, infiltration templates, and typical schedules. Splitting inputs this way means our users only need to collect what’s unique to a property, and can do so in a format easy to read or edit with Excel/Sheets.\n\nHere's what I did to complete inputs for my home:\n\nDraw orthogonal rooms, then fine-tune dimensions for precision.\n\nYour browser does not support the video tag.\n\nEdit the front wall to match the bay-window profile so the glazing surface area is accurate.\n\nMark the side walls as adjacent to conditioned space (our neighbours) to adjust how heat loss through these elements is calculated.\n\nAdd external shading blocks for the hedges and neighbouring buildings, to support more accurate solar gains calculations.\n\nSelect every element and adjust wall height as a group to keep floor-to-ceiling dimensions consistent.\n\nDraw windows (holding Shift for rapid placement), then batch-edit the openable area of the three styles: central bay, side bay/mid-size, and glazed door.\n\nDrop a shading overhang object above each window to capture the eaves.\n\nCopy the ground-floor group, flip it to the first floor, and tweak the few differences (landing offsets, rear window sizes).\n\nPlace the front door, snap it to its parent wall, and update properties so infiltration and U‑values are correct.\n\nAdd two sloped building elements for the external roof plus the inner ceiling that defines the thermal envelope, marking the roof as unheated and pitched.\n\nEdit thermal properties in the defaults file (eg, increasing solar absorptance of the roof given dark tiles, but reducing thermal resistance given surveyor feedback), then dive into detailed suspended-floor attributes (height of suspended floors, ventilation areas, resistances at wall junctions) required for a HEM simulation.\n\nUse HEM’s simplified settings for thermal bridges, appliances, and lighting for this first pass so I can focus on the geometry.\n\nAdd an intermittent bathroom vent, radiators in each room, and approximate internal walls for thermal mass.\n\nThe data entry took ~30 minutes, plus an hour to research details that weren’t on the floor plan like window free-area heights or frame areas, and the appliances/lighting per room. The final result looks like the below:\n\nYour browser does not support the video tag.\n\nThe CSV file that captures this data records 1 zone, 15 exposed elements, 11 windows, 7 window-shading objects, 12 adjacent/party elements, a single suspended ground slab, 8 radiators, 8 lights, 4 appliances, 4 hot-water fixtures, 7 context obstacles, and an intermittent MEV system. That’s roughly 70 individual objects: compact enough for a solo assessor to sanity-check.\n\nStep 2: No interface required — running Vulcan conversationally\n\nWith the base model ready, I switched to Cursor and ran all my remaining analysis through the new Vulcan MCP (Model Context Protocol) server. MCP is an industry standard for LLM-readable APIs to expose the same commands as the Vulcan web app, including creating HEM parameters (that add or vary systems or controls), running simulations and synthesising results.\n\nThat opens up two big wins: assessors can embed Vulcan in their own workflows, and they can work conversationally with AI assistants to orchestrate modelling work on their behalf (Cursor, Claude, ChatGPT - desktop versions that have locally hosted MCP integrations).\n\nKey findings from my modelling:\n\nThe Brockley house has empty cavity walls and an ageing boiler that we may relocate with internal remodelling.\n\nI asked Cursor to model a heat pump vs gas boiler, and compare operations on a variable tariff under different operating patterns. I also asked it to model a loft extension, making edits to the CSV geometry file and adding solar as a parameter in batch modelling.\n\nUsing HEM meant this analysis reflected the 76% reduction in peak heating demand from fabric improvements, as well as the £265/year savings that switching to a heat pump could unlock (but only with variable tariffs). HEM also enabled me to model granular details such as the impact of heating controls (i.e., cost-minimizing controls I tested increased energy use by 1.2%, suggesting either poor controls strategy or that constraining heating to specific periods reduced efficiency).\n\nI was also able to model comfort improvements. My current home was (unsurprisingly based on my experience to date) predicted to spend 34% of time below 18°C, with a minimum of 0.4°C with an undersized heating system — with good insulation my home could be an average of 24.4°C and minimum of 16.8°C.\n\nThis granular analysis would not be possible with the SAP methodology currently used with Energy Performance Certificates.\n\nWorking with Cursor: what worked, what didn't\n\nUsing Vulcan through Cursor's MCP integration was a positive experience. The agent had real flexibility in how it used and extended Vulcan functionality: it could write code to solve problems, extend existing tools, help debug issues, and synthesize findings from multiple simulation runs. In the below screenshot it had updated the base CSV to reflect the change in geometry of a loft extension, while modelling solar.\n\nThe agent did have limitations; I found myself providing a lot of guidance on what decarbonisation measures to explore, and correcting assumptions made when modelling solutions. This makes sense: energy modelling requires domain knowledge that an LLM doesn't inherently have.\n\nThe workflow still saved time and changed my role into a problem solving coach rather than a number cruncher. Once I'd guided the agent toward the right scenarios, it executed them quickly: creating batch configs, running simulations, pulling out the key numbers, summarising, and spotting patterns I might have missed.\n\nSpeak to Vulcan\n\nOutside of enabling you to use Vulcan with modern desktop AI assistants, the MCP server unlocks wider integration options with HEM: any script can now interact with local files the same way a user of the web UI does.\n\nAccess to the server is for early adopter customers, and is enabled by a step-by-step guided process in the Vulcan app.\n\nStart using Vulcan today\n\nUse our software or become a member of our Scheme. Work faster, and create more value.\n\nSpeak to Vulcan\n\nModelling a Brockley home with Vulcan and AI | Vulcan",
+  "rawSources": [
+    {
+      "mode": "STATIC",
+      "hash": "8d11edd5b066142efb3a3502485433771a29b189d8e81be001c26146faaa31d0",
+      "path": "C:\\Users\\qianchen\\Documents\\waytoagi-1024-detective-a2-v4\\.cache\\source-documents-v4\\1b770812-831e-444b-9bd6-f858f030b627\\599288ab2c3b5c8b17ed2edef25f83ba35fd8507ce0ee2668fcfaf1fb54e081a\\raw.bin"
+    }
+  ],
+  "storage": {
+    "rawPath": "C:\\Users\\qianchen\\Documents\\waytoagi-1024-detective-a2-v4\\.cache\\source-documents-v4\\1b770812-831e-444b-9bd6-f858f030b627\\599288ab2c3b5c8b17ed2edef25f83ba35fd8507ce0ee2668fcfaf1fb54e081a\\raw.bin",
+    "textPath": "C:\\Users\\qianchen\\Documents\\waytoagi-1024-detective-a2-v4\\.cache\\source-documents-v4\\1b770812-831e-444b-9bd6-f858f030b627\\599288ab2c3b5c8b17ed2edef25f83ba35fd8507ce0ee2668fcfaf1fb54e081a\\source.txt",
+    "manifestPath": "C:\\Users\\qianchen\\Documents\\waytoagi-1024-detective-a2-v4\\.cache\\source-documents-v4\\1b770812-831e-444b-9bd6-f858f030b627\\599288ab2c3b5c8b17ed2edef25f83ba35fd8507ce0ee2668fcfaf1fb54e081a\\manifest.json"
+  },
+  "parser": {
+    "name": "readability+source-dom",
+    "version": "readability-0.6.0+jsdom-30.1.3+source-dom-2",
+    "normalization": "source-text/v1",
+    "mode": "STATIC"
+  },
+  "metadata": {
+    "title": "Modelling a Brockley home with Vulcan and AI | Vulcan",
+    "author": "Baz Iyer",
+    "publishedAt": null,
+    "language": "en"
+  },
+  "completeness": "COMPLETE",
+  "warnings": [],
+  "blocks": [
+    {
+      "start": 0,
+      "end": 20,
+      "id": "b0",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[0]",
+      "headingPath": [],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 22,
+      "end": 66,
+      "id": "b1",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[1]",
+      "headingPath": [
+        "Modelling a Brockley home with Vulcan and AI"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 68,
+      "end": 176,
+      "id": "b2",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[2]",
+      "headingPath": [
+        "Modelling a Brockley home with Vulcan and AI"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 178,
+      "end": 206,
+      "id": "b3",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[3]",
+      "headingPath": [
+        "Modelling a Brockley home with Vulcan and AI"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 208,
+      "end": 245,
+      "id": "b4",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[4]",
+      "headingPath": [
+        "Modelling a Brockley home with Vulcan"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 247,
+      "end": 487,
+      "id": "b5",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[5]",
+      "headingPath": [
+        "Modelling a Brockley home with Vulcan"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 489,
+      "end": 845,
+      "id": "b6",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[6]",
+      "headingPath": [
+        "Modelling a Brockley home with Vulcan"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 847,
+      "end": 1064,
+      "id": "b7",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[7]",
+      "headingPath": [
+        "Modelling a Brockley home with Vulcan"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1066,
+      "end": 1094,
+      "id": "b8",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[8]",
+      "headingPath": [
+        "Modelling a Brockley home with Vulcan",
+        "Step 1: Build the base model"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1096,
+      "end": 1635,
+      "id": "b9",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[9]",
+      "headingPath": [
+        "Modelling a Brockley home with Vulcan",
+        "Step 1: Build the base model"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1637,
+      "end": 1686,
+      "id": "b10",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[10]",
+      "headingPath": [
+        "Modelling a Brockley home with Vulcan",
+        "Step 1: Build the base model"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1688,
+      "end": 1751,
+      "id": "b11",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[11]",
+      "headingPath": [
+        "Modelling a Brockley home with Vulcan",
+        "Step 1: Build the base model"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1753,
+      "end": 1797,
+      "id": "b12",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[12]",
+      "headingPath": [
+        "Modelling a Brockley home with Vulcan",
+        "Step 1: Build the base model"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1799,
+      "end": 1891,
+      "id": "b13",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[13]",
+      "headingPath": [
+        "Modelling a Brockley home with Vulcan",
+        "Step 1: Build the base model"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1893,
+      "end": 2024,
+      "id": "b14",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[14]",
+      "headingPath": [
+        "Modelling a Brockley home with Vulcan",
+        "Step 1: Build the base model"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2026,
+      "end": 2147,
+      "id": "b15",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[15]",
+      "headingPath": [
+        "Modelling a Brockley home with Vulcan",
+        "Step 1: Build the base model"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2149,
+      "end": 2251,
+      "id": "b16",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[16]",
+      "headingPath": [
+        "Modelling a Brockley home with Vulcan",
+        "Step 1: Build the base model"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2253,
+      "end": 2406,
+      "id": "b17",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[17]",
+      "headingPath": [
+        "Modelling a Brockley home with Vulcan",
+        "Step 1: Build the base model"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2408,
+      "end": 2478,
+      "id": "b18",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[18]",
+      "headingPath": [
+        "Modelling a Brockley home with Vulcan",
+        "Step 1: Build the base model"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2480,
+      "end": 2604,
+      "id": "b19",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[19]",
+      "headingPath": [
+        "Modelling a Brockley home with Vulcan",
+        "Step 1: Build the base model"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2606,
+      "end": 2719,
+      "id": "b20",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[20]",
+      "headingPath": [
+        "Modelling a Brockley home with Vulcan",
+        "Step 1: Build the base model"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2721,
+      "end": 2875,
+      "id": "b21",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[21]",
+      "headingPath": [
+        "Modelling a Brockley home with Vulcan",
+        "Step 1: Build the base model"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2877,
+      "end": 3204,
+      "id": "b22",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[22]",
+      "headingPath": [
+        "Modelling a Brockley home with Vulcan",
+        "Step 1: Build the base model"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3206,
+      "end": 3333,
+      "id": "b23",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[23]",
+      "headingPath": [
+        "Modelling a Brockley home with Vulcan",
+        "Step 1: Build the base model"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3335,
+      "end": 3442,
+      "id": "b24",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[24]",
+      "headingPath": [
+        "Modelling a Brockley home with Vulcan",
+        "Step 1: Build the base model"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3444,
+      "end": 3663,
+      "id": "b25",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[25]",
+      "headingPath": [
+        "Modelling a Brockley home with Vulcan",
+        "Step 1: Build the base model"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3665,
+      "end": 3709,
+      "id": "b26",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[26]",
+      "headingPath": [
+        "Modelling a Brockley home with Vulcan",
+        "Step 1: Build the base model"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3711,
+      "end": 4084,
+      "id": "b27",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[27]",
+      "headingPath": [
+        "Modelling a Brockley home with Vulcan",
+        "Step 1: Build the base model"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4086,
+      "end": 4149,
+      "id": "b28",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[28]",
+      "headingPath": [
+        "Modelling a Brockley home with Vulcan",
+        "Step 2: No interface required — running Vulcan conversationally"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4151,
+      "end": 4513,
+      "id": "b29",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[29]",
+      "headingPath": [
+        "Modelling a Brockley home with Vulcan",
+        "Step 2: No interface required — running Vulcan conversationally"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4515,
+      "end": 4781,
+      "id": "b30",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[30]",
+      "headingPath": [
+        "Modelling a Brockley home with Vulcan",
+        "Step 2: No interface required — running Vulcan conversationally"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4783,
+      "end": 4814,
+      "id": "b31",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[31]",
+      "headingPath": [
+        "Modelling a Brockley home with Vulcan",
+        "Step 2: No interface required — running Vulcan conversationally"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4816,
+      "end": 4926,
+      "id": "b32",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[32]",
+      "headingPath": [
+        "Modelling a Brockley home with Vulcan",
+        "Step 2: No interface required — running Vulcan conversationally"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4928,
+      "end": 5191,
+      "id": "b33",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[33]",
+      "headingPath": [
+        "Modelling a Brockley home with Vulcan",
+        "Step 2: No interface required — running Vulcan conversationally"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5193,
+      "end": 5676,
+      "id": "b34",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[34]",
+      "headingPath": [
+        "Modelling a Brockley home with Vulcan",
+        "Step 2: No interface required — running Vulcan conversationally"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5678,
+      "end": 5977,
+      "id": "b35",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[35]",
+      "headingPath": [
+        "Modelling a Brockley home with Vulcan",
+        "Step 2: No interface required — running Vulcan conversationally"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5979,
+      "end": 6101,
+      "id": "b36",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[36]",
+      "headingPath": [
+        "Modelling a Brockley home with Vulcan",
+        "Step 2: No interface required — running Vulcan conversationally"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 6103,
+      "end": 6148,
+      "id": "b37",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[37]",
+      "headingPath": [
+        "Modelling a Brockley home with Vulcan",
+        "Working with Cursor: what worked, what didn't"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 6150,
+      "end": 6569,
+      "id": "b38",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[38]",
+      "headingPath": [
+        "Modelling a Brockley home with Vulcan",
+        "Working with Cursor: what worked, what didn't"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 6571,
+      "end": 6846,
+      "id": "b39",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[39]",
+      "headingPath": [
+        "Modelling a Brockley home with Vulcan",
+        "Working with Cursor: what worked, what didn't"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 6848,
+      "end": 7167,
+      "id": "b40",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[40]",
+      "headingPath": [
+        "Modelling a Brockley home with Vulcan",
+        "Working with Cursor: what worked, what didn't"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 7169,
+      "end": 7184,
+      "id": "b41",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[41]",
+      "headingPath": [
+        "Modelling a Brockley home with Vulcan",
+        "Speak to Vulcan"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 7186,
+      "end": 7402,
+      "id": "b42",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[42]",
+      "headingPath": [
+        "Modelling a Brockley home with Vulcan",
+        "Speak to Vulcan"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 7404,
+      "end": 7523,
+      "id": "b43",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[43]",
+      "headingPath": [
+        "Modelling a Brockley home with Vulcan",
+        "Speak to Vulcan"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 7525,
+      "end": 7549,
+      "id": "b44",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[44]",
+      "headingPath": [
+        "Modelling a Brockley home with Vulcan",
+        "Start using Vulcan today"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 7551,
+      "end": 7637,
+      "id": "b45",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[45]",
+      "headingPath": [
+        "Modelling a Brockley home with Vulcan",
+        "Start using Vulcan today"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 7639,
+      "end": 7654,
+      "id": "b46",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[46]",
+      "headingPath": [
+        "Modelling a Brockley home with Vulcan",
+        "Start using Vulcan today"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 7656,
+      "end": 7709,
+      "id": "b47",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[47]",
+      "headingPath": [
+        "Modelling a Brockley home with Vulcan",
+        "Start using Vulcan today"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    }
+  ],
+  "links": [
+    {
+      "url": "https://usevulcan.app/blog/modelling-brockley-home-with-vulcan",
+      "text": "",
+      "blockId": null,
+      "relation": "CANONICAL",
+      "locator": "source DOM link[18]"
+    }
+  ],
+  "tables": []
+}

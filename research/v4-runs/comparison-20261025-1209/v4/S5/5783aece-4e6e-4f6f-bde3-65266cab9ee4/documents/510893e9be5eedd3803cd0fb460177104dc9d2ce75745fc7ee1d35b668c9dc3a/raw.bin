@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <script>
+      // AI 味尺(/aismell、/en/aismell)防闪白:同步读三态主题,在任何 CSS 前给 <html> 打 data-theme + color-scheme。
+      // 主站其他页面保持浅色,这里不碰。React 端(sections/aismell/index.tsx)读同一个 key 并保持同步。
+      (function () {
+        try {
+          if (!/^\/(en\/)?aismell(\/|$)/.test(location.pathname)) return;
+          var t = localStorage.getItem("aismell:theme");
+          if (t === "light" || t === "dark") document.documentElement.dataset.theme = t;
+          var d = t === "dark" || ((!t || t === "system") && matchMedia("(prefers-color-scheme: dark)").matches);
+          document.documentElement.style.colorScheme = d ? "dark" : "light";
+          if (d) document.documentElement.style.backgroundColor = "#0d0e11";
+        } catch (e) {}
+      })();
+    </script>
+    <script>
+      // 主站深浅色防闪白:同步读偏好(src/lib/theme.ts 同一 key),首帧前给 <html> 打 data-mode。AI 味尺页由上面那段接管。
+      (function () {
+        try {
+          if (/^\/(en\/)?aismell(\/|$)/.test(location.pathname)) return;
+          var t = localStorage.getItem("agihunt:theme");
+          var d = t === "dark" || (t !== "light" && matchMedia("(prefers-color-scheme: dark)").matches);
+          document.documentElement.dataset.mode = d ? "dark" : "light";
+          document.documentElement.style.colorScheme = d ? "dark" : "light";
+        } catch (e) {}
+      })();
+    </script>
+    <link rel="icon" type="image/svg+xml" href="/mark.svg" />
+    <link rel="alternate icon" type="image/jpeg" href="/logo.jpg" />
+    <link rel="apple-touch-icon" href="/logo.jpg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <script>
+      // iOS Safari 聚焦 <16px 输入框会自动放大整页;maximum-scale=1 只禁这个行为
+      // (iOS 10+ 用户双指缩放不受 maximum-scale 限制,可访问性不受影响)。
+      // 只对 iOS 加:安卓会因此真的禁掉手动缩放。
+      if (/iPhone|iPad|iPod/.test(navigator.userAgent) || (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1)) {
+        document
+          .querySelector("meta[name=viewport]")
+          .setAttribute("content", "width=device-width, initial-scale=1.0, maximum-scale=1.0, viewport-fit=cover");
+      }
+    </script>
+    <title>Beginner Runs Blender Rendering via Cursor… · AGI Hunt</title>
+    <meta name="description" content="A user with almost no Blender experience used GPT-5.6 Sol in Cursor to configure Blender MCP and successfully rendered a realistic floating MacBook." />
+    <!-- 这个壳不写 canonical:nginx 把它直发给 /access /jobs,并在后端 502 时兜底所有 SSR
+         内容路径,写死首页 canonical 会让那些页面自称首页副本。/index.html 的重复副本问题
+         由 nginx 301 到 / 解决,不靠壳里的标签。 -->
+    <meta name="theme-color" content="#f4f1ea" />
+    <!-- OG/Twitter 静态兜底:不执行 JS 的爬虫可见;执行 JS 后由 src/lib/seo.ts 按页面内容覆盖 -->
+    <meta property="og:site_name" content="AGI Hunt" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Beginner Runs Blender Rendering via Cursor… · AGI Hunt" />
+    <meta property="og:description" content="A user with almost no Blender experience used GPT-5.6 Sol in Cursor to configure Blender MCP and successfully rendered a realistic floating MacBook." />
+    <meta property="og:image" content="https://agihunt.info/og.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@agi_hunt" />
+    <meta name="twitter:image" content="https://agihunt.info/og.jpg" />
+    <script type="module" crossorigin src="/assets/index-WoqkBoD3.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-Dj5gGugL.css">
+  
+    <link rel="canonical" href="https://agihunt.info/en/e/19f5609be2748217799dea52292" data-ssr-path="/en/e/19f5609be2748217799dea52292" />
+    <meta property="og:url" content="https://agihunt.info/en/e/19f5609be2748217799dea52292" />
+    <link rel="alternate" type="application/rss+xml" title="AGI Hunt RSS" href="https://agihunt.info/feed.xml" />
+    <link rel="alternate" hreflang="zh" href="https://agihunt.info/e/19f5609be2748217799dea52292" data-ssr-path="/en/e/19f5609be2748217799dea52292" />
+    <link rel="alternate" hreflang="en" href="https://agihunt.info/en/e/19f5609be2748217799dea52292" data-ssr-path="/en/e/19f5609be2748217799dea52292" />
+    <link rel="alternate" hreflang="x-default" href="https://agihunt.info/en/e/19f5609be2748217799dea52292" data-ssr-path="/en/e/19f5609be2748217799dea52292" />
+    <script type="application/ld+json" data-ssr-path="/en/e/19f5609be2748217799dea52292">[{"@context":"https://schema.org","@type":"NewsArticle","headline":"Beginner Runs Blender Rendering via Cursor and MCP","description":"A user with almost no Blender experience used GPT-5.6 Sol in Cursor to configure Blender MCP and successfully rendered a realistic floating MacBook.","image":["https://agihunt.info/og.jpg"],"inLanguage":"en","datePublished":"2026-07-12T10:59:28Z","dateModified":"2026-07-14T07:47:52Z","citation":["https://x.com/Star_Knight12/status/2076631428926972177","https://x.com/Star_Knight12/status/2076661090663182708","https://x.com/Star_Knight12/status/2076686166422884646"],"author":{"@type":"Organization","name":"AGI Hunt","url":"https://agihunt.info"},"mainEntityOfPage":"https://agihunt.info/en/e/19f5609be2748217799dea52292","publisher":{"@type":"Organization","name":"AGI Hunt","url":"https://agihunt.info","logo":{"@type":"ImageObject","url":"https://agihunt.info/logo.jpg"}}},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"AGI Hunt","item":"https://agihunt.info/en/"},{"@type":"ListItem","position":2,"name":"Beginner Runs Blender Rendering via Cursor and MCP","item":"https://agihunt.info/en/e/19f5609be2748217799dea52292"}]}]</script>
+  </head>
+  <body>
+    <div id="root"></div>
+  <div id="ssr"><article><h1>Beginner Runs Blender Rendering via Cursor and MCP</h1><p>Recently, a user with almost no prior experience successfully configured Blender MCP using GPT-5.6 Sol in Cursor, directly generating and rendering a realistic floating MacBook. This case drew attention because it demonstrates that AI coding tools can now form operable workflows with 3D and desktop software, significantly lowering the barrier to entry for professional software.</p><h2>Key Details and Workflow</h2><p>According to the posts, the user had never really opened Blender before but managed to complete the entire process from setup to final output using the model and MCP. Regarding tool selection, the user initially tried Fable but found the results lacking. Following Grok&#39;s advice, they switched to GPT, with GPT-5.6 Sol in Cursor ultimately completing the task. Additionally, a reply summarized a more reliable usage method: first, use GPT on the web interface to detail the operational steps, and then copy these prompts into Cursor for execution.</p><h2>Resources and Reminders</h2><p>The posts also mentioned a self-buildable Blender MCP repository. However, the poster reminded users not to modify the code recklessly, advising them to consult their frequently used LLM or watch tutorials before operating. Overall, this practice proves that even without familiarity with underlying professional software, ordinary users can form a usable agent workflow with the help of AI.</p><p>2026-07-12 ~ 2026-07-14 · 9 related posts</p><section><h2>Primary sources</h2><ul><li><a href="https://x.com/Star_Knight12/status/2076631428926972177" rel="noopener noreferrer">Cursor+MCP Enables Beginners to Do Blender Renders</a> — Star_Knight12 · <time datetime="2026-07-13T11:34:49Z">2026-07-13 19:34 (UTC+08:00)</time></li><li><a href="https://x.com/Star_Knight12/status/2076661090663182708" rel="noopener noreferrer">Running Blender MCP via GPT in Cursor</a> — Star_Knight12 · <time datetime="2026-07-13T13:32:41Z">2026-07-13 21:32 (UTC+08:00)</time></li><li><a href="https://x.com/Star_Knight12/status/2076686166422884646" rel="noopener noreferrer">Driving Blender via MCP in Cursor</a> — Star_Knight12 · <time datetime="2026-07-13T15:12:19Z">2026-07-13 23:12 (UTC+08:00)</time></li></ul></section><ul><li><a href="/en/p/19f5604bcdb8d33ed0c0185caf6">Cursor Connects to Blender and Runs Flawlessly</a> — Star_Knight12 · 2026-07-12</li><li>[source] <a href="/en/p/19f5b5704f1cab1a021f556e48b">Cursor+MCP Enables Beginners to Do Blender Renders</a> — Star_Knight12 · 2026-07-13</li><li><a href="/en/p/19f5ba46962eb9fc90e8130b984">Workflow: GPT for Prompts, Cursor for Execution</a> — Star_Knight12 · 2026-07-13</li><li>[source] <a href="/en/p/19f5bb24c254e93ae16748a2d08">Running Blender MCP via GPT in Cursor</a> — Star_Knight12 · 2026-07-13</li><li><a href="/en/p/19f5bca0f83d687484bf5e7db4d">GPT Directly Controls Blender Inside Cursor</a> — Star_Knight12 · 2026-07-13</li><li>[source] <a href="/en/p/19f5c11b0eb6be63d24582e20e1">Driving Blender via MCP in Cursor</a> — Star_Knight12 · 2026-07-13</li><li><a href="/en/p/19f5c194f07b3fe9e2a503954ac">Creating a Floating MacBook With Zero Blender Experience</a> — Star_Knight12 · 2026-07-13</li><li><a href="/en/p/19f5cbc8c941648b30f57de9515">Controlling Blender via Models Inside Cursor</a> — Star_Knight12 · 2026-07-14</li><li><a href="/en/p/19f5fa6cdff9d08a060ca223364">Intro to MCP: Controlling Blender via Cursor</a> — Star_Knight12 · 2026-07-14</li></ul></article></div><script>document.getElementById("ssr").remove()</script>
+  <script>(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a4fe73e9cada5d17',t:'MTc5MjkwMjI3OA=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092" integrity="sha512-UKNk8GbxkABxKcXYuLkO16EleLGUkcvJWtpSNmExE0Too3ZaFAxTscNWEc1OdAv5/BikHawapSCaiD2XCmp+Bw==" data-cf-beacon='{"version":"2024.11.0","token":"a6fc5b74a3e4478bbde8f54a008b0af5","r":1,"spa":2}' crossorigin="anonymous"></script>
+</body>
+</html>

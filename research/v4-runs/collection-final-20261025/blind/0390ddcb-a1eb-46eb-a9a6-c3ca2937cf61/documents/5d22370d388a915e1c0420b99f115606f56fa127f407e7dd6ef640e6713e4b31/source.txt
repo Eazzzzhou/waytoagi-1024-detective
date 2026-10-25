@@ -1,0 +1,180 @@
+Buying hardware? Every part we would buy today, by budget Open the gear list
+
+← All guides
+
+Guides August 25, 2026
+
+How to Move Ollama Models to Another Drive (macOS, Linux, Windows)
+
+Ollama writes every model to your boot drive by default, and a model library fills a boot drive faster than anything else you install. The fix is one environment variable, OLLAMA_MODELS, plus moving the files you already have. The variable has to be set where the Ollama service actually reads it, which is different on each operating system — and on macOS the documented command is lost on the next reboot.
+
+Bottom Line
+
+One variable does it: OLLAMA_MODELS. Point it at the new directory and restart Ollama.
+
+Move the files yourself. Setting the variable does not migrate anything. Move both blobs/ and manifests/, or your library disappears.
+
+Set it where the service reads it. A shell export never reaches a systemd daemon or a macOS app. This is the single most common failure.
+
+macOS gotcha the docs skip: launchctl setenv is lost on reboot. Use a LaunchAgent if you want it to stick.
+
+Linux gotcha: ownership. The standard installer runs the daemon as the ollama user, which needs chown -R ollama:ollama on the target.
+
+Defaults: ~/.ollama/models on macOS, /usr/share/ollama/.ollama/models on Linux, C:\Users\%username%\.ollama\models on Windows.
+
+External drives work, with a caveat. If the drive is not mounted at service start, Ollama behaves as though your models are gone.
+
+What You Are Actually Moving
+
+Open the models directory and you will find exactly two things:
+
+models/
+├── blobs/       # the weight data — this is the tens of gigabytes
+└── manifests/   # which blobs make up each tagged model
+
+Both must move together. The manifests are small and easy to forget. Move only the blobs and Ollama sees no models at all, even though the data is right there. Move only the manifests and every model reports missing layers.
+
+This also explains why you should move rather than re-pull. The blobs are content-addressed, so moving them keeps every tag you already have without re-downloading anything.
+
+macOS
+
+The documented steps:
+
+# 1. Create the target directory on the new drive
+mkdir -p /Volumes/BigDrive/ollama-models
+
+# 2. Move your existing library
+mv ~/.ollama/models/blobs ~/.ollama/models/manifests /Volumes/BigDrive/ollama-models/
+
+# 3. Set the variable
+launchctl setenv OLLAMA_MODELS "/Volumes/BigDrive/ollama-models"
+
+# 4. Restart the Ollama application
+
+Now the part the FAQ does not tell you. launchctl setenv sets the variable for the current boot only. It is not persistent. Restart the Mac and the value is gone, Ollama falls back to ~/.ollama/models, and your library appears to have vanished. Nothing is lost — the daemon is simply reading the old path again.
+
+To make it permanent, run the same command from a LaunchAgent at login. Create ~/Library/LaunchAgents/com.user.ollama-models.plist:
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN"
+  "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>Label</key>
+  <string>com.user.ollama-models</string>
+  <key>ProgramArguments</key>
+  <array>
+    <string>/bin/launchctl</string>
+    <string>setenv</string>
+    <string>OLLAMA_MODELS</string>
+    <string>/Volumes/BigDrive/ollama-models</string>
+  </array>
+  <key>RunAtLoad</key>
+  <true/>
+</dict>
+</plist>
+
+Then load it with launchctl load ~/Library/LaunchAgents/com.user.ollama-models.plist. The LaunchAgent approach is the standard replacement for the withdrawn /etc/launchd.conf, and it is not specific to Ollama.
+
+Linux
+
+The daemon runs under systemd, so the variable belongs in the unit.
+
+# 1. Create the target and give the daemon ownership
+sudo mkdir -p /mnt/bigdrive/ollama-models
+sudo chown -R ollama:ollama /mnt/bigdrive/ollama-models
+
+# 2. Move the existing library
+sudo mv /usr/share/ollama/.ollama/models/blobs \
+        /usr/share/ollama/.ollama/models/manifests \
+        /mnt/bigdrive/ollama-models/
+sudo chown -R ollama:ollama /mnt/bigdrive/ollama-models
+
+# 3. Edit the unit
+sudo systemctl edit ollama.service
+
+Add this under [Service]:
+
+[Service]
+Environment="OLLAMA_MODELS=/mnt/bigdrive/ollama-models"
+
+Then reload and restart:
+
+sudo systemctl daemon-reload
+sudo systemctl restart ollama
+
+Two things break this reliably.
+
+First, ownership. The standard installer creates a dedicated ollama user, and that user needs read and write access to the directory. sudo chown -R ollama:ollama <directory> is the documented fix. Run it again after you move files in, because mv across filesystems can carry the old ownership.
+
+Second, traversal. The ollama user needs execute permission on every directory in the path, not just the last one. A mount point at /mnt/bigdrive owned by root with mode 700 will block the daemon even when the final directory is owned correctly. Check with sudo -u ollama ls /mnt/bigdrive/ollama-models — if that fails, the daemon will fail the same way.
+
+Windows
+
+1. Quit Ollama from the taskbar. Do not just close the window.
+2. Open Settings and search for environment variables.
+3. Click "Edit environment variables for your account".
+4. Create OLLAMA_MODELS with the new path, for example D:\ollama-models
+5. Click OK, then restart Ollama.
+
+Move blobs and manifests out of C:\Users\%username%\.ollama\models into the new directory before you restart.
+
+Quitting from the taskbar matters. Closing the window leaves the background service running with the old environment, and it will keep writing to the old path while you conclude the setting is broken.
+
+Symlinks and Bind Mounts: When to Use Them Instead
+
+The environment variable is the supported route. Two alternatives exist and each has a right moment.
+
+MethodUse it whenWatch out forOLLAMA_MODELSAlmost always. It is the documented mechanism.Must be set where the service reads it, not in your shell.Symlink the models directoryOther tools also expect the default pathThe daemon needs permission on the target, not the link. A broken link looks like an empty library.Bind mount (mount --bind, Linux)The path must stay identical for other softwareAdd it to /etc/fstab or it disappears on reboot, silently.
+
+Neither symlinks nor bind mounts are documented by Ollama. They work because they operate below the application, not because they are supported. If you file a bug report, mention that you are using one.
+
+When It Does Not Work
+
+SymptomCauseFixollama list is empty after the moveManifests were left behindMove manifests/ as well as blobs/Setting worked, then stopped after reboot (macOS)launchctl setenv is not persistentAdd the LaunchAgent aboveSetting has no effect (Linux)Variable exported in a shell profileUse a systemd drop-in via systemctl edit ollama.servicePermission denied writing models (Linux)Daemon runs as the ollama usersudo chown -R ollama:ollama <dir>, then check parent-directory traversalWorks, then breaks at random (external drive)Drive was not mounted at service startMount at boot, or keep daily models internalWindows setting ignoredWindow closed, service still runningQuit from the taskbar, then restart
+
+Do You Need a Bigger Drive Instead?
+
+Moving models buys you the capacity of the drive you moved to. If that drive is also small, you are solving the problem twice. Our model storage sizing guide has the arithmetic: 1TB is the floor, 2TB is the right default for a single-GPU box, and 4TB once you are past 48GB of VRAM. The multiplier that catches people out is not model count. It is keeping Q4, Q6 and Q8 of the same model while you decide which one to use.
+
+See Also
+
+How Much Storage Do You Need for Local Models? — drive sizing, load-time arithmetic, and what to buy
+
+Ollama vs llama.cpp — llama.cpp takes a path argument and has no equivalent variable
+
+How to Move the Hugging Face Cache to Another Drive — the HF_HOME version of this job, and why rsync -r breaks it
+
+Using Hugging Face Models With Ollama — the other download cache that fills your boot drive, controlled by HF_HOME
+
+Ollama Crash Course for Local Agents — the rest of the operational basics
+
+Ollama vs LM Studio — how the other popular runtime handles model storage
+
+Sources
+
+Ollama FAQ (docs.ollama.com) — default directories per operating system, OLLAMA_MODELS, the launchctl setenv and systemctl edit procedures, and the chown -R ollama:ollama permission requirement; read 2026-08-25
+
+The blobs/ and manifests/ layout was confirmed on a macOS install on 2026-08-25
+
+launchctl setenv is not persistent across reboots; the LaunchAgent pattern is the standard replacement for the /etc/launchd.conf support withdrawn in OS X 10.10
+
+Symlink and bind-mount behaviour is general operating-system behaviour, not documented Ollama support
+
+The Dispatch / Weekly
+
+Still deciding on hardware?
+
+One email every Wednesday: what actually runs well on which machine, real cost-per-token numbers, and the setups worth copying. Written for people mid-build.
+
+No spam. Unsubscribe whenever.
+
+Need OpenClaw fixed live?
+
+Remote rescue sessions for gateway, auth, tunnel, VPS, and model access problems.
+
+See Rescue Session
+
+Read next
+
+How to Move the Hugging Face Cache to Another Drive Set HF_HOME, then copy the hub cache with a tool that keeps symlinks. We tested five copy methods: rsync -r silently drops model files and Python copytree tripled the size of a two-revision cache. How Much SSD Do You Need for a Local Model Library? Every local-LLM build guide sizes the GPU and forgets the disk. Real footprints, the hoarding multiplier nobody warns you about, load-time arithmetic per drive class, and the honest answer to whether a faster SSD makes your tokens faster. It does not. Fix OpenClaw macOS: Gateway Won't Stay Running / Telegram Bot Silent Fix OpenClaw on macOS: gateway dies when you close the terminal, and the Telegram bot stops responding. Install the launchd service and fix binding + permissions. Local LLM Coding Setup on Windows + NVIDIA: The Guide Mac Tutorials Skip (2026) A Windows-native path to a local coding agent on an NVIDIA GPU. No WSL, no Docker required. Runtime choice, verifying GPU offload actually engaged, MoE offload for 12-16GB cards, and wiring a coding agent to a local endpoint.

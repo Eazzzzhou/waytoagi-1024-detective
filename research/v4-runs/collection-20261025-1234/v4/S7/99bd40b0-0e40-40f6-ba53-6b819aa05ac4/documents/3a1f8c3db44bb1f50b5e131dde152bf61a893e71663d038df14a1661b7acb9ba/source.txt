@@ -1,0 +1,143 @@
+Add reaction Like Unicorn Exploding Head Raised Hands Fire Jump to Comments Save Boost Pick as gem Copy link Share to X Share to LinkedIn Share to Facebook Share to Mastodon Report Abuse
+
+Alan West
+
+Posted on Apr 1
+
+I Gave Devin 10 Real Tasks. It Completed 3.
+
+#aicoding #devin #developertools #productivity
+
+The $500-to-$20 AI Developer That Still Can't Ship
+
+Last year, Cognition launched Devin at $500/month and called it the world's first AI software engineer. The internet lost its mind. Engineers panicked. Twitter predicted mass layoffs. Fast forward to 2026, and Devin costs $20/month -- the same price as a Claude Code or Cursor Pro subscription. That price drop tells you everything you need to know about how reality met the hype.
+
+I spent two weeks giving Devin real tasks from my actual backlog. Not toy problems. Not "build me a calculator." Real tickets that a junior developer on my team would handle. Here's what happened.
+
+The Test Setup
+
+I picked 10 tasks spanning different categories:
+
+2 bug fixes (a date parsing issue, a broken API response)
+
+2 migrations (database schema change, dependency upgrade)
+
+2 new features (a webhook handler, a user settings page)
+
+2 test suites (unit tests for an auth module, integration tests for a payment flow)
+
+1 refactoring task (extract shared logic into a utility module)
+
+1 architectural task (design a caching layer for a multi-tenant API)
+
+Each task had a clear description, acceptance criteria, and access to the relevant codebase.
+
+What Devin Actually Completed
+
+Three tasks. The two bug fixes and one of the test suites.
+
+The date parsing bug was genuinely impressive. Devin identified the root cause, found the edge case in timezone handling, and submitted a clean fix:
+
+# Devin's fix -- correctly handles DST transitions
+from zoneinfo import ZoneInfo
+
+def parse_user_date(date_str: str, user_tz: str) -> datetime:
+    local_tz = ZoneInfo(user_tz)
+    naive = datetime.strptime(date_str, "%Y-%m-%d %H:%M")
+    local_dt = naive.replace(tzinfo=local_tz)
+    return local_dt.astimezone(ZoneInfo("UTC"))
+
+The broken API response fix was similarly clean. Devin traced through the serialization chain, found a missing field in the response schema, and patched it correctly on the first attempt.
+
+For the auth module unit tests, Devin produced a reasonable test suite covering the core paths. It missed some edge cases around token expiration, but the foundation was solid and saved maybe two hours of work.
+
+Where It Fell Apart
+
+The remaining seven tasks ranged from "close but unusable" to "completely off the rails."
+
+The database migration task was a disaster. Devin generated migration files that would have caused data loss on the user_preferences table. It created a new column, attempted to copy data, then dropped the old column -- but the copy step silently truncated values exceeding the new column's length. In production, this would have corrupted thousands of records.
+
+The webhook handler feature started fine but went sideways when Devin needed to make architectural decisions. It couldn't decide between a queue-based approach and synchronous processing, so it implemented both -- leaving dead code paths and conflicting error handling:
+
+// What Devin produced -- two competing patterns in the same file
+export async function handleWebhook(payload: WebhookPayload) {
+  // Synchronous path
+  const result = await processEvent(payload);
+  await saveResult(result);
+
+  // Also queued path (never cleaned up)
+  await webhookQueue.add("process", {
+    payload,
+    retries: 3,
+    backoff: { type: "exponential", delay: 1000 },
+  });
+
+  return { processed: true, queued: true }; // which is it?
+}
+
+The caching layer task? Devin produced a single-tenant in-memory cache and called it done. The words "multi-tenant" were in the task title.
+
+The Numbers Don't Lie
+
+Devin's SWE-bench score sits at 13.86%. That benchmark measures the ability to resolve real GitHub issues from popular open-source projects. For context, a strong human developer typically resolves these at 50-70% depending on the project.
+
+On Trustpilot, Devin holds a 3.0 out of 5.0 rating. The reviews paint a consistent picture: great for simple tasks, frustrating for anything that requires judgment.
+
+My own results -- 3 out of 10 completed, or 30% -- align with what other teams report. Independent testing tends to show 15-30% success rates on tasks that require more than pattern matching.
+
+Where Devin Actually Works
+
+After this experiment, I've landed on a narrow set of tasks where Devin genuinely saves time:
+
+Bounded bug fixes. When the problem is clearly defined and the fix is localized, Devin performs well. It's good at tracing through code and finding the specific line that's wrong.
+
+Writing test suites for existing code. Give Devin a module and tell it to write tests. It'll produce reasonable coverage. You'll need to review and add edge cases, but it handles the boilerplate.
+
+Dependency upgrades and migrations -- but only mechanical ones. Bumping a library version and fixing the resulting type errors? Fine. Redesigning your data model? Absolutely not.
+
+Boilerplate generation. CRUD endpoints, form components, configuration files. Anything where the pattern is well-established and the decisions are minimal.
+
+The Comparison Everyone Wants
+
+At $20/month, Devin competes directly with Claude Code, Cursor, and GitHub Copilot. The fundamental difference is autonomy versus control.
+
+Devin tries to work independently. You give it a task, it spins up an environment, and it attempts the work without your input. This sounds great until it makes a wrong turn at step 3 and spends 40 minutes going deeper into a bad approach.
+
+Claude Code, at the same $20/month price point, takes the opposite approach. You're in the loop. You see what it's doing. You can redirect it. The tradeoff is that you're spending your time, but the success rate on complex tasks is dramatically higher because a human is making the architectural decisions.
+
+# Claude Code workflow -- you stay in control
+claude "Fix the date parsing bug in src/utils/dates.ts"
+# Review the proposed changes inline
+# Accept, modify, or redirect
+
+For my workflow, the Claude Code model wins. I'd rather spend 15 minutes collaborating with an AI that I can steer than spend 5 minutes dispatching Devin and then 45 minutes cleaning up its output.
+
+The Honest Verdict
+
+Devin is not a replacement for developers. It's not even close. It's more like a junior developer that works 24/7, never complains, and costs $20/month -- but requires heavy supervision and can only handle the simplest 20-30% of your backlog.
+
+The Cognition team has made real improvements since Devin 2.0 launched in April 2025. The agent is faster, the IDE is better, and the Slack integration is genuinely useful for quick tasks. But the core limitation remains: Devin cannot make good judgment calls, and most real engineering work is judgment calls.
+
+If you're a solo developer drowning in boilerplate, Devin might save you a few hours a week. If you're a team lead hoping to multiply your team's output by 2x, look elsewhere. The gap between "AI software engineer" and "AI code assistant" is still enormous, and for now, the assistants that keep humans in the loop are delivering more value than the agents trying to replace them.
+
+The price dropped from $500 to $20 for a reason. Calibrate your expectations accordingly.
+
+Top comments (0)
+
+Subscribe
+
+For further actions, you may consider blocking this person and/or reporting abuse
+
+Alan West
+
+Follow
+
+Full-stack developer working with TypeScript, React, and blockchain. Interested in AI-powered dev workflows and open-source tooling.
+
+Joined Mar 19, 2026
+
+OpenAI CLI vs Codex CLI vs Claude Code: The New One Isn't a Coding Agent #ai #openai #cli #developertools How to Run Multiple Claude Code Sessions in tmux (and Why 3 Beats 5) #claudecode #ai #productivity #linux
+
+We're a place where coders share, stay up-to-date and grow their careers.
+
+Log in Create account

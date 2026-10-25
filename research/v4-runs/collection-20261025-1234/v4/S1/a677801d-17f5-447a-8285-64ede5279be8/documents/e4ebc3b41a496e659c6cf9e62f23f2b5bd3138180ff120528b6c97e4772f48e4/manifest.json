@@ -1,0 +1,753 @@
+{
+  "schemaVersion": "source-document/v1",
+  "id": "e4ebc3b41a496e659c6cf9e62f23f2b5bd3138180ff120528b6c97e4772f48e4",
+  "version": "4aef35bd7a22c29032870a846eff18ca8b56796c0377382bcc1f3e1ea30221eb",
+  "requestedUrl": "https://api-docs.deepseek.com/zh-cn/quick_start/rate_limit",
+  "finalUrl": "https://api-docs.deepseek.com/zh-cn/quick_start/rate_limit/",
+  "retrievedAt": "2026-10-25T04:34:20.216Z",
+  "contentType": "text/html",
+  "status": "READ",
+  "readError": null,
+  "rawHash": "3a6cbb433422145b3ab51451cecab3fd81927db91886c5ef1de6bb0bfe5d1dbc",
+  "textHash": "ca97092f0cc2d49795cbf8628bbde52866ef440370c1f1547905441fe820c812",
+  "text": "跳到主要内容\n\nSearch / Fetch API 已上线，使用自研搜索引擎，支持网页搜索与抓取，点此查看使用指南。\n\n本页目录\n\n限速与隔离\n\n并发限速​\n\n对每个账号，DeepSeek API 不同模型的并发限制如下表所示。\n\n若您有更高的并发需求，可提交账号扩容申请工单，我们将根据您实际的业务需求匹配合适的并发量，扩容并不增加额外的费用。\n\ndeepseek-flashdeepseek-v4-pro并发限制2500500\n\n一个请求从发出后，到模型响应完成之前记为一个并发\n\n并发限制以账号粒度计，与 API Key 无关\n\n对于一个账号，在并发限度内，您的 API 请求都会得到响应；超过并发限度时，您会收到 HTTP 429 错误码\n\nuser_id 隔离​\n\n用户可以向 API 传递 user_id 参数，来实现同一账号下，对您业务侧不同用户的细粒度管理。user_id 的具体功能如下：\n\n内容安全隔离：user_id 用于我们区分您业务侧的用户身份，以进行内容安全状况处理\n\nKVCache 隔离：user_id 用于我们对您业务侧用户进行 KVCache 隔离，以进行隐私管理\n\n调度隔离：user_id 用于我们对您业务侧用户进行调度隔离 对于普通 API 用户，所有 user_id 合并计算并发限速 对于提升了并发配额的 API 用户，我们会限制您账号下的总并发，同时我们会对每个您传入的 user_id 进行并发限制（空 id 为一个特殊的 user_id）。对每个 user_id，deepseek-flash 的并发限制为 2500，deepseek-v4-pro 的并发限制为 500。若某个 user_id 超过了该限制，则您账号下设置了该 user_id 的请求将会收到 HTTP 429 错误码\n\nuser_id 设置方法​\n\nuser_id 参数需为满足正则表达式 [a-zA-Z0-9\\-_]+ 的字符串，最大长度为 512。请不要在 user_id 中包含用户隐私信息。\n\n您可以通过以下方式，设置 user_id 参数：\n\nOpenAI Chat Completions 接口​\n\nHTTP 请求体：\n\n{    \"model\": \"deepseek-flash\",    \"messages\": [{\"role\": \"user\", \"content\": \"Hello!\"}],    \"user_id\": \"your_user_id\"}\n\n如果您使用的是 OpenAI SDK，您需要将 user_id 参数放入 extra_body 参数下面：\n\nresponse = client.chat.completions.create(    model=\"deepseek-flash\",    messages=[{\"role\": \"user\", \"content\": \"Hello!\"}],    extra_body={\"user_id\": \"your_user_id\"},)\n\nAnthropic 接口​\n\nHTTP 请求体：\n\n{    \"model\": \"deepseek-flash\",    \"messages\": [{\"role\": \"user\", \"content\": \"Hello!\"}],    \"metadata\": {\"user_id\": \"your_user_id\"},    \"max_tokens\": 1024}\n\n如果您使用的是 Anthropic SDK，调用方式如下：\n\nmessage = client.messages.create(    model=\"deepseek-flash\",    messages=[{\"role\": \"user\", \"type\": \"text\", \"content\": \"Hello!\"}],    metadata={\"user_id\": \"your_user_id\"},    max_tokens=1024,)\n\n请求保活机制​\n\n您的请求发出后，有时需要等待一段时间才能获取服务器的响应。在这段时间里，您的 HTTP 请求会保持连接，并持续收到如下格式的返回内容：\n\n非流式请求：持续返回空行\n\n流式请求：持续返回 SSE keep-alive 注释（: keep-alive）\n\n这些内容不影响对响应的 JSON body 的解析。如果您在自己解析 HTTP 响应，请注意处理这些空行或注释。\n\n如果 10 分钟后，请求仍未开始推理，服务器将关闭连接。\n\n并发限速\n\nuser_id 隔离user_id 设置方法\n\n请求保活机制",
+  "rawSources": [
+    {
+      "mode": "STATIC",
+      "hash": "3a6cbb433422145b3ab51451cecab3fd81927db91886c5ef1de6bb0bfe5d1dbc",
+      "path": "C:\\Users\\qianchen\\Documents\\waytoagi-1024-detective-a2-v4\\.cache\\source-documents-v4\\a677801d-17f5-447a-8285-64ede5279be8\\e4ebc3b41a496e659c6cf9e62f23f2b5bd3138180ff120528b6c97e4772f48e4\\raw.bin"
+    }
+  ],
+  "storage": {
+    "rawPath": "C:\\Users\\qianchen\\Documents\\waytoagi-1024-detective-a2-v4\\.cache\\source-documents-v4\\a677801d-17f5-447a-8285-64ede5279be8\\e4ebc3b41a496e659c6cf9e62f23f2b5bd3138180ff120528b6c97e4772f48e4\\raw.bin",
+    "textPath": "C:\\Users\\qianchen\\Documents\\waytoagi-1024-detective-a2-v4\\.cache\\source-documents-v4\\a677801d-17f5-447a-8285-64ede5279be8\\e4ebc3b41a496e659c6cf9e62f23f2b5bd3138180ff120528b6c97e4772f48e4\\source.txt",
+    "manifestPath": "C:\\Users\\qianchen\\Documents\\waytoagi-1024-detective-a2-v4\\.cache\\source-documents-v4\\a677801d-17f5-447a-8285-64ede5279be8\\e4ebc3b41a496e659c6cf9e62f23f2b5bd3138180ff120528b6c97e4772f48e4\\manifest.json"
+  },
+  "parser": {
+    "name": "readability+source-dom",
+    "version": "readability-0.6.0+jsdom-30.1.3+source-dom-2",
+    "normalization": "source-text/v1",
+    "mode": "STATIC"
+  },
+  "metadata": {
+    "title": "限速与隔离 | DeepSeek API Docs",
+    "author": null,
+    "publishedAt": null,
+    "language": "zh-cn"
+  },
+  "completeness": "COMPLETE",
+  "warnings": [],
+  "blocks": [
+    {
+      "start": 0,
+      "end": 6,
+      "id": "b0",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[0]",
+      "headingPath": [],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 8,
+      "end": 59,
+      "id": "b1",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[1]",
+      "headingPath": [],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 61,
+      "end": 65,
+      "id": "b2",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[2]",
+      "headingPath": [],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 67,
+      "end": 72,
+      "id": "b3",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[3]",
+      "headingPath": [
+        "限速与隔离"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 74,
+      "end": 79,
+      "id": "b4",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[4]",
+      "headingPath": [
+        "限速与隔离",
+        "并发限速​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 81,
+      "end": 115,
+      "id": "b5",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[5]",
+      "headingPath": [
+        "限速与隔离",
+        "并发限速​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 117,
+      "end": 174,
+      "id": "b6",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[6]",
+      "headingPath": [
+        "限速与隔离",
+        "并发限速​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 176,
+      "end": 216,
+      "id": "b7",
+      "kind": "TABLE",
+      "locator": "source DOM normalized block[7]",
+      "headingPath": [
+        "限速与隔离",
+        "并发限速​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 218,
+      "end": 242,
+      "id": "b8",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[8]",
+      "headingPath": [
+        "限速与隔离",
+        "并发限速​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 244,
+      "end": 267,
+      "id": "b9",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[9]",
+      "headingPath": [
+        "限速与隔离",
+        "并发限速​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 269,
+      "end": 324,
+      "id": "b10",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[10]",
+      "headingPath": [
+        "限速与隔离",
+        "并发限速​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 326,
+      "end": 337,
+      "id": "b11",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[11]",
+      "headingPath": [
+        "限速与隔离",
+        "user_id 隔离​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 339,
+      "end": 404,
+      "id": "b12",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[12]",
+      "headingPath": [
+        "限速与隔离",
+        "user_id 隔离​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 406,
+      "end": 448,
+      "id": "b13",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[13]",
+      "headingPath": [
+        "限速与隔离",
+        "user_id 隔离​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 450,
+      "end": 501,
+      "id": "b14",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[14]",
+      "headingPath": [
+        "限速与隔离",
+        "user_id 隔离​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 503,
+      "end": 770,
+      "id": "b15",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[15]",
+      "headingPath": [
+        "限速与隔离",
+        "user_id 隔离​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 772,
+      "end": 785,
+      "id": "b16",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[16]",
+      "headingPath": [
+        "限速与隔离",
+        "user_id 隔离​",
+        "user_id 设置方法​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 787,
+      "end": 861,
+      "id": "b17",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[17]",
+      "headingPath": [
+        "限速与隔离",
+        "user_id 隔离​",
+        "user_id 设置方法​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 863,
+      "end": 887,
+      "id": "b18",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[18]",
+      "headingPath": [
+        "限速与隔离",
+        "user_id 隔离​",
+        "user_id 设置方法​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 889,
+      "end": 916,
+      "id": "b19",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[19]",
+      "headingPath": [
+        "限速与隔离",
+        "user_id 隔离​",
+        "user_id 设置方法​",
+        "OpenAI Chat Completions 接口​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 918,
+      "end": 927,
+      "id": "b20",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[20]",
+      "headingPath": [
+        "限速与隔离",
+        "user_id 隔离​",
+        "user_id 设置方法​",
+        "OpenAI Chat Completions 接口​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 929,
+      "end": 1046,
+      "id": "b21",
+      "kind": "CODE",
+      "locator": "source DOM normalized block[21]",
+      "headingPath": [
+        "限速与隔离",
+        "user_id 隔离​",
+        "user_id 设置方法​",
+        "OpenAI Chat Completions 接口​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1048,
+      "end": 1101,
+      "id": "b22",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[22]",
+      "headingPath": [
+        "限速与隔离",
+        "user_id 隔离​",
+        "user_id 设置方法​",
+        "OpenAI Chat Completions 接口​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1103,
+      "end": 1269,
+      "id": "b23",
+      "kind": "CODE",
+      "locator": "source DOM normalized block[23]",
+      "headingPath": [
+        "限速与隔离",
+        "user_id 隔离​",
+        "user_id 设置方法​",
+        "OpenAI Chat Completions 接口​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1271,
+      "end": 1284,
+      "id": "b24",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[24]",
+      "headingPath": [
+        "限速与隔离",
+        "user_id 隔离​",
+        "user_id 设置方法​",
+        "Anthropic 接口​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1286,
+      "end": 1295,
+      "id": "b25",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[25]",
+      "headingPath": [
+        "限速与隔离",
+        "user_id 隔离​",
+        "user_id 设置方法​",
+        "Anthropic 接口​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1297,
+      "end": 1451,
+      "id": "b26",
+      "kind": "CODE",
+      "locator": "source DOM normalized block[26]",
+      "headingPath": [
+        "限速与隔离",
+        "user_id 隔离​",
+        "user_id 设置方法​",
+        "Anthropic 接口​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1453,
+      "end": 1482,
+      "id": "b27",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[27]",
+      "headingPath": [
+        "限速与隔离",
+        "user_id 隔离​",
+        "user_id 设置方法​",
+        "Anthropic 接口​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1484,
+      "end": 1675,
+      "id": "b28",
+      "kind": "CODE",
+      "locator": "source DOM normalized block[28]",
+      "headingPath": [
+        "限速与隔离",
+        "user_id 隔离​",
+        "user_id 设置方法​",
+        "Anthropic 接口​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1677,
+      "end": 1684,
+      "id": "b29",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[29]",
+      "headingPath": [
+        "限速与隔离",
+        "请求保活机制​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1686,
+      "end": 1753,
+      "id": "b30",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[30]",
+      "headingPath": [
+        "限速与隔离",
+        "请求保活机制​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1755,
+      "end": 1767,
+      "id": "b31",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[31]",
+      "headingPath": [
+        "限速与隔离",
+        "请求保活机制​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1769,
+      "end": 1810,
+      "id": "b32",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[32]",
+      "headingPath": [
+        "限速与隔离",
+        "请求保活机制​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1812,
+      "end": 1868,
+      "id": "b33",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[33]",
+      "headingPath": [
+        "限速与隔离",
+        "请求保活机制​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1870,
+      "end": 1898,
+      "id": "b34",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[34]",
+      "headingPath": [
+        "限速与隔离",
+        "请求保活机制​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1900,
+      "end": 1904,
+      "id": "b35",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[35]",
+      "headingPath": [
+        "限速与隔离",
+        "请求保活机制​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1906,
+      "end": 1928,
+      "id": "b36",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[36]",
+      "headingPath": [
+        "限速与隔离",
+        "请求保活机制​"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1930,
+      "end": 1936,
+      "id": "b37",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[37]",
+      "headingPath": [
+        "限速与隔离",
+        "请求保活机制​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    }
+  ],
+  "links": [
+    {
+      "url": "https://api-docs.deepseek.com/zh-cn/quick_start/rate_limit",
+      "text": "",
+      "blockId": null,
+      "relation": "CANONICAL",
+      "locator": "source DOM link[0]"
+    },
+    {
+      "url": "https://api-docs.deepseek.com/zh-cn/guides/search",
+      "text": "点此查看使用指南。",
+      "blockId": "b1",
+      "relation": "LINK",
+      "locator": "source DOM link[2]"
+    },
+    {
+      "url": "https://trtgsjkv6r.feishu.cn/share/base/form/shrcnda9jNKvhyYr8xb843xLEzc",
+      "text": "账号扩容申请工单",
+      "blockId": "b6",
+      "relation": "LINK",
+      "locator": "source DOM link[35]"
+    }
+  ],
+  "tables": [
+    {
+      "blockId": "b7",
+      "rows": [
+        {
+          "start": 176,
+          "end": 205,
+          "cells": [
+            {
+              "start": 176,
+              "end": 176,
+              "text": "",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 176,
+              "end": 190,
+              "text": "deepseek-flash",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 190,
+              "end": 205,
+              "text": "deepseek-v4-pro",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        },
+        {
+          "start": 205,
+          "end": 216,
+          "cells": [
+            {
+              "start": 205,
+              "end": 209,
+              "text": "并发限制",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 209,
+              "end": 213,
+              "text": "2500",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            },
+            {
+              "start": 213,
+              "end": 216,
+              "text": "500",
+              "header": false,
+              "rowSpan": 1,
+              "colSpan": 1
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,916 @@
+{
+  "schemaVersion": "source-document/v1",
+  "id": "705809b69115de2d76a0fd513d5ed8e3d633003a1e29973593ca2fa7508aae1c",
+  "version": "5e35eb65fe9f9ce16d81e1e5182af7604a3ff9255cf63c0f17120e86e492d28b",
+  "requestedUrl": "https://cognition.ai/blog/introducing-devin?via=aivyx",
+  "finalUrl": "https://cognition.com/blog/introducing-devin?via=aivyx",
+  "retrievedAt": "2026-10-25T04:23:20.046Z",
+  "contentType": "text/html; charset=utf-8",
+  "status": "READ",
+  "readError": null,
+  "rawHash": "11cb3794a8d50a16b4cfc025730b96bd0e08ab798e21200405ded5f178a04895",
+  "textHash": "688d7cc66feaedf4bd1c3d442594c771263f19052eecbbd9be88ed9a355dbd55",
+  "text": "Menu\n\nClose\n\nIntroducing Devin, the first AI software engineer\n\nBy Scott Wu2024.03.12\n\nDevin is a tireless, skilled teammate, equally ready to build alongside you or independently complete tasks for you to review.\n\nWith Devin, engineers can focus on more interesting problems and engineering teams can strive for more ambitious goals.\n\nDevin's Capabilities\n\nWith our advances in long-term reasoning and planning, Devin can plan and execute complex engineering tasks requiring thousands of decisions. Devin can recall relevant context at every step, learn over time, and fix mistakes.\n\nWe've also equipped Devin with common developer tools including the shell, code editor, and browser within a sandboxed compute environment—everything a human would need to do their work.\n\nFinally, we've given Devin the ability to actively collaborate with the user. Devin reports on its progress in real time, accepts feedback, and works together with you through design choices as needed.‍Here's a sample of what Devin can do:\n\nDevin can learn how to use unfamiliar technologies.\n\nAfter reading a blog post, Devin runs ControlNet on Modal to produce images with concealed messages for Sara.\n\nDevin can build and deploy apps end to end\n\nDevin makes an interactive website which simulates the Game of Life! It incrementally adds features requested by the user and then deploys the app to Netlify.\n\nDevin can autonomously find and fix bugs in codebases\n\nDevin helps Andrew maintain and debug his open source competitive programming book.\n\nDevin can train and fine tune its own AI models\n\nDevin sets up fine tuning for a large language model given only a link to a research repository on GitHub.\n\nDevin can address bugs and feature requests in open source repositories\n\nGiven just a link to a GitHub issue, Devin does all the setup and context gathering that is needed.\n\nDevin can contribute to mature production repositories.\n\nThis example is part of the SWE-bench benchmark. Devin solves a bug with logarithm calculations in the sympy Python algebra system. Devin sets up the code environment, reproduces the bug, and codes and tests the fix on its own.\n\nWe even tried giving Devin real jobs on Upwork and it could do those too!\n\nHere, Devin writes and debugs code to run a computer vision model. Devin samples the resulting data and compiles a report at the end.\n\nDevin's Performance\n\nWe evaluated Devin on SWE-bench, a challenging benchmark that asks agents to resolve real-world GitHub issues found in open source projects like Django and scikit-learn.\n\nDevin correctly resolves 13.86%* of the issues end-to-end, far exceeding the previous state-of-the-art of 1.96%. Even when given the exact files to edit, the best previous models can only resolve 4.80% of issues.\n\nDevin was evaluated on a random 25% subset of the dataset. Devin was unassisted, whereas all other models were assisted (meaning the model was told exactly which files need to be edited).\n\nWe plan to publish a more detailed technical report soon—stay tuned for more details.\n\nAbout Cognition\n\nWe are an applied AI lab focused on reasoning.‍We’re building AI teammates with capabilities far beyond today’s existing AI tools. By solving reasoning, we can unlock new possibilities in a wide range of disciplines—code is just the beginning. We want to help people around the world turn their ideas into reality.\n\nWe are well funded, including a $21 million Series A led by Founders Fund. And we’re grateful for the support of industry leaders including Patrick and John Collison, Elad Gil, Sarah Guo, Chris Re, Eric Glyman, Karim Atiyeh, Erik Bernhardsson, Tony Xu, Fred Ehrsam and so many more.\n\nHire Devin\n\nDevin is currently in early access as we ramp up capacity. To start using Devin for engineering work, join the waitlist or get in touch at info@cognition.ai.\n\nEstimating the Productivity of an Autonomous AI Software Engineer\n\n2026.06.04\n\nAI should earn its keep: Introducing the AI Productivity Guarantee\n\n2026.06.04\n\nIntroducing Devin Desktop\n\n2026.06.02\n\nMore Devins in More Places\n\n2026.05.27\n\nDevin in Windsurf\n\n2026.04.15\n\nAn Early Preview of SWE-1.6 and Research Update\n\n2026.03.01\n\nHow Cognition Uses Devin to Build Devin\n\n2026.02.27\n\nIntroducing Cognition for Government\n\n2026.02.25\n\nIntroducing Devin 2.2\n\n2026.02.24",
+  "rawSources": [
+    {
+      "mode": "STATIC",
+      "hash": "11cb3794a8d50a16b4cfc025730b96bd0e08ab798e21200405ded5f178a04895",
+      "path": "C:\\Users\\qianchen\\Documents\\waytoagi-1024-detective-a2-v4\\.cache\\source-documents-v4\\0b578ad1-9e1a-419b-a88c-8252c8ec6ef0\\705809b69115de2d76a0fd513d5ed8e3d633003a1e29973593ca2fa7508aae1c\\raw.bin"
+    }
+  ],
+  "storage": {
+    "rawPath": "C:\\Users\\qianchen\\Documents\\waytoagi-1024-detective-a2-v4\\.cache\\source-documents-v4\\0b578ad1-9e1a-419b-a88c-8252c8ec6ef0\\705809b69115de2d76a0fd513d5ed8e3d633003a1e29973593ca2fa7508aae1c\\raw.bin",
+    "textPath": "C:\\Users\\qianchen\\Documents\\waytoagi-1024-detective-a2-v4\\.cache\\source-documents-v4\\0b578ad1-9e1a-419b-a88c-8252c8ec6ef0\\705809b69115de2d76a0fd513d5ed8e3d633003a1e29973593ca2fa7508aae1c\\source.txt",
+    "manifestPath": "C:\\Users\\qianchen\\Documents\\waytoagi-1024-detective-a2-v4\\.cache\\source-documents-v4\\0b578ad1-9e1a-419b-a88c-8252c8ec6ef0\\705809b69115de2d76a0fd513d5ed8e3d633003a1e29973593ca2fa7508aae1c\\manifest.json"
+  },
+  "parser": {
+    "name": "readability+source-dom",
+    "version": "readability-0.6.0+jsdom-30.1.3+source-dom-2",
+    "normalization": "source-text/v1",
+    "mode": "STATIC"
+  },
+  "metadata": {
+    "title": "Introducing Devin, the first AI software engineer",
+    "author": "Scott Wu",
+    "publishedAt": null,
+    "language": "en"
+  },
+  "completeness": "COMPLETE",
+  "warnings": [],
+  "blocks": [
+    {
+      "start": 0,
+      "end": 4,
+      "id": "b0",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[0]",
+      "headingPath": [],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 6,
+      "end": 11,
+      "id": "b1",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[1]",
+      "headingPath": [],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 13,
+      "end": 62,
+      "id": "b2",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[2]",
+      "headingPath": [
+        "Introducing Devin, the first AI software engineer"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 64,
+      "end": 85,
+      "id": "b3",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[3]",
+      "headingPath": [
+        "Introducing Devin, the first AI software engineer"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 87,
+      "end": 213,
+      "id": "b4",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[4]",
+      "headingPath": [
+        "Introducing Devin, the first AI software engineer"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 215,
+      "end": 334,
+      "id": "b5",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[5]",
+      "headingPath": [
+        "Introducing Devin, the first AI software engineer"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 336,
+      "end": 356,
+      "id": "b6",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[6]",
+      "headingPath": [
+        "Introducing Devin, the first AI software engineer",
+        "Devin's Capabilities"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 358,
+      "end": 583,
+      "id": "b7",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[7]",
+      "headingPath": [
+        "Introducing Devin, the first AI software engineer",
+        "Devin's Capabilities"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 585,
+      "end": 771,
+      "id": "b8",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[8]",
+      "headingPath": [
+        "Introducing Devin, the first AI software engineer",
+        "Devin's Capabilities"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 773,
+      "end": 1012,
+      "id": "b9",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[9]",
+      "headingPath": [
+        "Introducing Devin, the first AI software engineer",
+        "Devin's Capabilities"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1014,
+      "end": 1065,
+      "id": "b10",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[10]",
+      "headingPath": [
+        "Introducing Devin, the first AI software engineer",
+        "Devin's Capabilities",
+        "Devin can learn how to use unfamiliar technologies."
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1067,
+      "end": 1176,
+      "id": "b11",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[11]",
+      "headingPath": [
+        "Introducing Devin, the first AI software engineer",
+        "Devin's Capabilities",
+        "Devin can learn how to use unfamiliar technologies."
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1178,
+      "end": 1220,
+      "id": "b12",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[12]",
+      "headingPath": [
+        "Introducing Devin, the first AI software engineer",
+        "Devin's Capabilities",
+        "Devin can build and deploy apps end to end"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1222,
+      "end": 1380,
+      "id": "b13",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[13]",
+      "headingPath": [
+        "Introducing Devin, the first AI software engineer",
+        "Devin's Capabilities",
+        "Devin can build and deploy apps end to end"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1382,
+      "end": 1435,
+      "id": "b14",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[14]",
+      "headingPath": [
+        "Introducing Devin, the first AI software engineer",
+        "Devin's Capabilities",
+        "Devin can autonomously find and fix bugs in codebases"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1437,
+      "end": 1520,
+      "id": "b15",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[15]",
+      "headingPath": [
+        "Introducing Devin, the first AI software engineer",
+        "Devin's Capabilities",
+        "Devin can autonomously find and fix bugs in codebases"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1522,
+      "end": 1569,
+      "id": "b16",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[16]",
+      "headingPath": [
+        "Introducing Devin, the first AI software engineer",
+        "Devin's Capabilities",
+        "Devin can train and fine tune its own AI models"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1571,
+      "end": 1677,
+      "id": "b17",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[17]",
+      "headingPath": [
+        "Introducing Devin, the first AI software engineer",
+        "Devin's Capabilities",
+        "Devin can train and fine tune its own AI models"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1679,
+      "end": 1750,
+      "id": "b18",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[18]",
+      "headingPath": [
+        "Introducing Devin, the first AI software engineer",
+        "Devin's Capabilities",
+        "Devin can address bugs and feature requests in open source repositories"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1752,
+      "end": 1851,
+      "id": "b19",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[19]",
+      "headingPath": [
+        "Introducing Devin, the first AI software engineer",
+        "Devin's Capabilities",
+        "Devin can address bugs and feature requests in open source repositories"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1853,
+      "end": 1908,
+      "id": "b20",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[20]",
+      "headingPath": [
+        "Introducing Devin, the first AI software engineer",
+        "Devin's Capabilities",
+        "Devin can contribute to mature production repositories."
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1910,
+      "end": 2137,
+      "id": "b21",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[21]",
+      "headingPath": [
+        "Introducing Devin, the first AI software engineer",
+        "Devin's Capabilities",
+        "Devin can contribute to mature production repositories."
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2139,
+      "end": 2212,
+      "id": "b22",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[22]",
+      "headingPath": [
+        "Introducing Devin, the first AI software engineer",
+        "Devin's Capabilities",
+        "We even tried giving Devin real jobs on Upwork and it could do those too!"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2214,
+      "end": 2347,
+      "id": "b23",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[23]",
+      "headingPath": [
+        "Introducing Devin, the first AI software engineer",
+        "Devin's Capabilities",
+        "We even tried giving Devin real jobs on Upwork and it could do those too!"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2349,
+      "end": 2368,
+      "id": "b24",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[24]",
+      "headingPath": [
+        "Introducing Devin, the first AI software engineer",
+        "Devin's Performance"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2370,
+      "end": 2539,
+      "id": "b25",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[25]",
+      "headingPath": [
+        "Introducing Devin, the first AI software engineer",
+        "Devin's Performance"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2541,
+      "end": 2753,
+      "id": "b26",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[26]",
+      "headingPath": [
+        "Introducing Devin, the first AI software engineer",
+        "Devin's Performance"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2755,
+      "end": 2942,
+      "id": "b27",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[27]",
+      "headingPath": [
+        "Introducing Devin, the first AI software engineer",
+        "Devin's Performance"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2944,
+      "end": 3029,
+      "id": "b28",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[28]",
+      "headingPath": [
+        "Introducing Devin, the first AI software engineer",
+        "Devin's Performance"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3031,
+      "end": 3046,
+      "id": "b29",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[29]",
+      "headingPath": [
+        "Introducing Devin, the first AI software engineer",
+        "About Cognition"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3048,
+      "end": 3362,
+      "id": "b30",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[30]",
+      "headingPath": [
+        "Introducing Devin, the first AI software engineer",
+        "About Cognition"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3364,
+      "end": 3646,
+      "id": "b31",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[31]",
+      "headingPath": [
+        "Introducing Devin, the first AI software engineer",
+        "About Cognition"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3648,
+      "end": 3658,
+      "id": "b32",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[32]",
+      "headingPath": [
+        "Introducing Devin, the first AI software engineer",
+        "Hire Devin"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3660,
+      "end": 3817,
+      "id": "b33",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[33]",
+      "headingPath": [
+        "Introducing Devin, the first AI software engineer",
+        "Hire Devin"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3819,
+      "end": 3884,
+      "id": "b34",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[34]",
+      "headingPath": [
+        "Introducing Devin, the first AI software engineer",
+        "Hire Devin"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3886,
+      "end": 3896,
+      "id": "b35",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[35]",
+      "headingPath": [
+        "Introducing Devin, the first AI software engineer",
+        "Hire Devin"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3898,
+      "end": 3964,
+      "id": "b36",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[36]",
+      "headingPath": [
+        "Introducing Devin, the first AI software engineer",
+        "Hire Devin"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3966,
+      "end": 3976,
+      "id": "b37",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[37]",
+      "headingPath": [
+        "Introducing Devin, the first AI software engineer",
+        "Hire Devin"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3978,
+      "end": 4003,
+      "id": "b38",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[38]",
+      "headingPath": [
+        "Introducing Devin, the first AI software engineer",
+        "Hire Devin"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4005,
+      "end": 4015,
+      "id": "b39",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[39]",
+      "headingPath": [
+        "Introducing Devin, the first AI software engineer",
+        "Hire Devin"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4017,
+      "end": 4043,
+      "id": "b40",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[40]",
+      "headingPath": [
+        "Introducing Devin, the first AI software engineer",
+        "Hire Devin"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4045,
+      "end": 4055,
+      "id": "b41",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[41]",
+      "headingPath": [
+        "Introducing Devin, the first AI software engineer",
+        "Hire Devin"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4057,
+      "end": 4074,
+      "id": "b42",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[42]",
+      "headingPath": [
+        "Introducing Devin, the first AI software engineer",
+        "Hire Devin"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4076,
+      "end": 4086,
+      "id": "b43",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[43]",
+      "headingPath": [
+        "Introducing Devin, the first AI software engineer",
+        "Hire Devin"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4088,
+      "end": 4135,
+      "id": "b44",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[44]",
+      "headingPath": [
+        "Introducing Devin, the first AI software engineer",
+        "Hire Devin"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4137,
+      "end": 4147,
+      "id": "b45",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[45]",
+      "headingPath": [
+        "Introducing Devin, the first AI software engineer",
+        "Hire Devin"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4149,
+      "end": 4188,
+      "id": "b46",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[46]",
+      "headingPath": [
+        "Introducing Devin, the first AI software engineer",
+        "Hire Devin"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4190,
+      "end": 4200,
+      "id": "b47",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[47]",
+      "headingPath": [
+        "Introducing Devin, the first AI software engineer",
+        "Hire Devin"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4202,
+      "end": 4238,
+      "id": "b48",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[48]",
+      "headingPath": [
+        "Introducing Devin, the first AI software engineer",
+        "Hire Devin"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4240,
+      "end": 4250,
+      "id": "b49",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[49]",
+      "headingPath": [
+        "Introducing Devin, the first AI software engineer",
+        "Hire Devin"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4252,
+      "end": 4273,
+      "id": "b50",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[50]",
+      "headingPath": [
+        "Introducing Devin, the first AI software engineer",
+        "Hire Devin"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4275,
+      "end": 4285,
+      "id": "b51",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[51]",
+      "headingPath": [
+        "Introducing Devin, the first AI software engineer",
+        "Hire Devin"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    }
+  ],
+  "links": [
+    {
+      "url": "https://cognition.com/blog/introducing-devin",
+      "text": "",
+      "blockId": null,
+      "relation": "CANONICAL",
+      "locator": "source DOM link[0]"
+    },
+    {
+      "url": "https://cognition.com/",
+      "text": "",
+      "blockId": "b0",
+      "relation": "LINK",
+      "locator": "source DOM link[1]"
+    },
+    {
+      "url": "https://cognition.com/",
+      "text": "",
+      "blockId": "b1",
+      "relation": "LINK",
+      "locator": "source DOM link[2]"
+    },
+    {
+      "url": "https://swebench.com/",
+      "text": "SWE-bench",
+      "blockId": "b25",
+      "relation": "LINK",
+      "locator": "source DOM link[18]"
+    },
+    {
+      "url": "https://cognition.com/get-started",
+      "text": "join the waitlist",
+      "blockId": "b33",
+      "relation": "LINK",
+      "locator": "source DOM link[19]"
+    }
+  ],
+  "tables": []
+}

@@ -1,0 +1,4086 @@
+{
+  "schemaVersion": "source-document/v1",
+  "id": "804aa3b54cb5b674cb1e237abbf36128d42c4c34bf62a75b5a4b4c9dcd992211",
+  "version": "ec112cd24457663b731dab01ac9fafe5a8353e3dab3a6b69c7d142a46d5271af",
+  "requestedUrl": "https://api-docs.deepseek.com/zh-cn/updates",
+  "finalUrl": "https://api-docs.deepseek.com/zh-cn/updates/",
+  "retrievedAt": "2026-10-25T04:34:08.553Z",
+  "contentType": "text/html",
+  "status": "READ",
+  "readError": null,
+  "rawHash": "b206b3f638d21bc907a945281bde1e8f9279ec74c1f9905f5d9fdd1fc4812750",
+  "textHash": "23edc39b0a19f3cb52052a9231f32399691fcc59d253e934613057908217af85",
+  "text": "跳到主要内容\n\nSearch / Fetch API 已上线，使用自研搜索引擎，支持网页搜索与抓取，点此查看使用指南。\n\n本页目录\n\n更新日志\n\n时间: 2026-10-17​\n\n开放自研搜索 API​\n\nDeepSeek 网页端与 API 端的搜索能力均由自研 DeepSeek 搜索引擎提供底层支持，稳定处理每天来自全球各地的数亿次搜索请求。DeepSeek 搜索是 AI 原生的通用搜索引擎，索引了全球千亿级网页，支持多语言搜索，实时返回高相关、高权威、高时效的优质结果。针对 SEO 作弊、GEO 操纵和低质 AIGC，我们通过严格的识别机制进行过滤，确保向用户与 LLM 呈现权威可信的信息。使用方式请参考网页搜索与抓取指南。\n\nDeepSeek-V4.1-Flash-1017 更新​\n\nDeepSeek V4.1 Flash 已升级至 DeepSeek-V4.1-Flash-1017，官方网页端与 APP 模型也已同步更新至新版本。API 调用方式与价格保持不变，仍使用 deepseek-flash 即可访问最新模型。\n\n性能–费用的帕累托改进\n\n相比上一版本的 DeepSeek V4.1，新模型在各基准测试中取得了显著提升：\n\nHLE (w/o tools): 42.6 (44.0*)\n\nTerminal-Bench 4.0: 42.3\n\nDeepSWE v1.1: 77.0\n\nProgramBench: 29.1\n\nNL2Repo-Bench: 68.2\n\nAutomation-Bench v1.0.6: 60.5\n\nAgents' Last Exam: 35.4\n\nApex Bench v1.1: 72.1\n\nChartography (w/tools): 83.0\n\nBabyVision (w/tools): 92.5\n\nZeroBench-main (w/tools): 51.0\n\n* 表示仅在 HLE 评测集的纯文本子集上进行了测试；Terminal-Bench 4.0 使用 Claude Code 框架测试，DeepSWE 使用 Mini-SWE-V2 框架测试；ZeroBench-main 使用 Pass@5 评测。\n\n在提升性能的同时，我们还缩短了模型的任务运行时间与输出长度，让用户能够以更低成本、更快速度完成任务，在多个 Harness 下达到新的性能-费用帕累托最优。我们特别针对 DeepSeek Harness、腾讯 CodeBuddy、WorkBuddy 等平台框架进行了优化。请升级至 DeepSeek Harness 0.2.1-rc.1 及以上版本，以获得适配新版模型的最佳体验。\n\n时间: 2026-09-10​\n\nDeepSeek-V4.1-Flash 发布​\n\n今天，我们正式发布 DeepSeek-V4.1-Flash 模型。这是我们全新模型结构系列中的最小尺寸的模型，具备原生多模态视觉理解能力。新模型结构的设计初衷是：能力上限更高、推理速度更快、吞吐更大、可扩展到更大参数模型。\n\nGPQA Diamond: 90.9\n\nHLE: 36.8 (39.1*)\n\nCodeforces (Rating): 3471\n\nMathArena Apex: 65.6\n\nTerminal-Bench 2.1: 90.6\n\nTerminal-Bench 3.0: 30.0\n\nTerminal-Bench 4.0: 31.2\n\nDeepSWE v1.1: 74.2\n\nProgramBench: 20.3\n\nNL2Repo-Bench: 65.4\n\nCyberGym: 88.1\n\nSEC-Bench Pro: 62.8\n\nExploitGym: 15.3\n\nHLE (w/tools): 63.9\n\nAutomation-Bench: 54.8\n\nAgents' Last Exam: 31.8\n\nChartography (w/tools): 78.9\n\nBabyVision (w/tools): 89.6\n\nZeroBench-main (w/tools): 49.0\n\n* 表示仅在 HLE 评测集的纯文本子集上进行了测试。\n\nAPI 变更\n\nDeepSeek V4.1 Flash 已同步上线 DeepSeek API，原生支持多模态，将模型名称更改为 deepseek-flash 即可调用最新的 V4.1 Flash 模型。旧版本模型 V4 Flash 与 V4 Flash Vision Exp 现已下线，出于兼容考虑，模型名 deepseek-v4-flash、deepseek-v4-flash-vision-exp 将被暂时路由到 V4.1 Flash。\n\n为响应广大用户的需求，我们决定在 2026 年 9 月 14 日之后继续提供 DeepSeek V4 Pro 的 API 调用服务，计费方式保持不变；如有变动，我们将另行通知。感谢您的理解与支持！\n\nAPI 定价调整\n\n随着 DeepSeek-V4.1-Flash 上线，API 价格同步下调。详细价格请参考模型与价格。\n\n详细更新内容请参阅文档。\n\n时间: 2026-08-21​\n\nDeepSeek-V4-Flash-Vision-Exp 发布​\n\n今天，全新的多模态视觉理解模型 DeepSeek-V4-Flash-Vision-Exp 上线 DeepSeek API 平台，这是一个实验性质的模型，用户可以通过设置 model='deepseek-v4-flash-vision-exp' 访问该模型。\n\nTerminal Bench 2.1: 83.9\n\nNL2Repo: 57.7\n\nDeepSWE: 59.3\n\nDSBench-Hard: 63.6\n\nAutomationBench (Public): 25.7\n\nApexBench (Pass@1): 36.5\n\nAgents' Last Exam: 27.3\n\nChartography: 64.3\n\nZeroBench (Pass@5): 35.0\n\n* 对于公开基准测试集中的 Code Agent 文本任务，DeepSeek 系列模型使用 DeepSeek Harness 极简模式作为框架进行测试，并使用 max 档位，topp=0.95，temperature=1.0；在 ApexBench 与 Agents' Last Exam 测评中，文本模型 DeepSeek-V4-Flash 会忽略其中的多模态元素\n\n在纯文本能力（Agent、推理、世界知识等）方面，DeepSeek-V4-Flash-Vision-Exp 与 DeepSeek-V4-Flash 正式版持平。\n\n在需要视觉理解的 Agent Benchmark 上，DeepSeek-V4-Flash-Vision-Exp 相比 DeepSeek-V4-Flash 实现了大幅跃升，多模态 Agent 能力已接近 Opus-4.8。\n\n详细调用方法请参阅文档。\n\n时间: 2026-08-13​\n\nDeepSeek-V4-Pro 更新​\n\nDeepSeek-V4-Pro 正式版已同步在 APP、网页端和 API 更新上线。API 调用方式不变，模型名设置为 deepseek-v4-pro，即可使用最新版本。\n\nAgent 能力大幅提升\n\n正式版 DeepSeek V4 Pro 极大增强了 Agent 能力，在生产环境中的性能表现提升尤为显著。\n\nHLE (wo / w tools): 42.7/60.0\n\nTerminal Bench 2.1: 87.9\n\nNL2Repo: 61.5\n\nCybergym: 83.3\n\nDeepSWE: 62.7\n\nToolathlon-Verified: 74.1\n\nAgents' Last Exam: 25.7\n\nAutomationBench (Public): 31.8\n\nDSBench-FullStack: 71.1\n\nDSBench-Hard: 67.2\n\n原生支持 Responses API\n\nDeepSeek API 现已原生支持 OpenAI Responses API 格式，并针对性适配 Codex。用户可以参考官方文档，通过一键配置脚本完成 Codex 的配置。\n\n更灵活的思考强度控制\n\nV4-Pro 和 V4-Flash 思考模式现支持 low / high / max 三档思考强度，用户在实际使用中可以根据任务复杂度灵活选择：简单任务使用 low，日常 Agent 任务使用 high，更复杂的任务场景使用 max。设置方法请参考官方 API 文档：思考模式。\n\nAPI 定价调整\n\n随着 DeepSeek V4 全系列模型正式版上线，我们将对 API 价格进行更新调整。为了更加合理地调配资源，我们将采用峰谷定价，闲时价格为高峰时段价格的一半，鼓励用户根据实际使用情况调整任务时间。新价格将于北京时间 2026 年 8 月 17 日 0 时开始生效。\n\n详细更新内容请参阅文档\n\n时间: 2026-07-31​\n\nDeepSeek-V4-Flash 更新​\n\nDeepSeek-V4-Flash 正式版 API 上线公测，API 调用方式不变，模型名设置为 deepseek-v4-flash 即可使用最新版本。\n\nAgent 能力大幅增强，基准测试远超 V4-Pro-Preview：\n\nTerminal Bench 2.1: 82.7\n\nNL2Repo: 54.2\n\nCybergym: 76.7\n\nDeepSWE: 54.4\n\nToolathlon verified: 70.3\n\nAgent Last Exam: 25.2\n\nAutomation Bench (Public): 25.1\n\nDSBench-FullStack: 68.7\n\nDSBench-Hard: 59.6\n\n注1：对于公开基准测试集中的 Code Agent 任务，正式版 DeepSeek-V4-Flash 使用 DeepSeek Harness 极简模式（即将发布）作为框架进行测试，并使用 max 档位，topp=0.95，temperature=1.0 注2：DSBench-FullStack 是内部使用的全栈开发测试集，DSBench-Hard 是内部使用的 Coding Agent 难题测试集\n\n正式版 V4-Flash 原生支持 Responses API 格式并针对性适配 Codex，具体配置方法请参考文档\n\nDeepSeek-V4-Flash-0731 的模型结构、尺寸和 DeepSeek-V4-Flash-Preview 保持一致，仅重新进行了后训练。\n\n注意：本次仅升级了 DeepSeek-V4-Flash 的 API 接口，DeepSeek-V4-Pro API 及 APP/WEB 端模型未做更改。\n\nDeepSeek-V4-Pro 正式版将会尽快发布。\n\n时间: 2026-04-24​\n\nDeepSeek-V4​\n\nDeepSeek API 已支持 V4-Pro 与 V4-Flash，支持 OpenAI ChatCompletions 接口与 Anthropic 接口。访问新模型时，base_url 不变, model 参数需要改为 deepseek-v4-pro 或 deepseek-v4-flash。\n\n旧有的 API 接口的两个模型名 deepseek-chat 与 deepseek-reasoner 将于三个月后（2026-07-24）停止使用。当前阶段内，这两个模型名分别指向 deepseek-v4-flash 的非思考模式与思考模式。\n\n详细更新内容请参阅文档\n\n时间: 2025-12-01​\n\nDeepSeek-V3.2​\n\ndeepseek-chat 和 deepseek-reasoner 都已升级为 DeepSeek-V3.2.\n\ndeepseek-chat 对应 DeepSeek-V3.2 的非思考模式\n\ndeepseek-reasoner 对应 DeepSeek-V3.2 的思考模式\n\nDeepSeek-V3.2-Speciale​\n\n我们非正式部署了 DeepSeek-V3.2-Speciale 的 API 服务，API 用户可以通过设置 base_url=\"https://api.deepseek.com/v3.2_speciale_expires_on_20251215\" 访问该模型。该模型 API 价格不变，只支持思考模式下的对话功能，不支持工具调用等功能，最大输出长度默认为 128K，支持时间截止至北京时间 2025-12-15 23:59。\n\n详细更新内容请参阅文档\n\n时间: 2025-09-29​\n\nDeepSeek-V3.2-Exp​\n\ndeepseek-chat 和 deepseek-reasoner 都已经升级为 DeepSeek-V3.2-Exp。\n\ndeepseek-chat 对应 DeepSeek-V3.2-Exp 的非思考模式\n\ndeepseek-reasoner 对应 DeepSeek-V3.2-Exp 的思考模式\n\n详细更新内容请参阅文档\n\n时间: 2025-09-22​\n\nDeepSeek-V3.1-Terminus​\n\ndeepseek-chat 和 deepseek-reasoner 都已经升级为 DeepSeek-V3.1-Terminus。deepseek-chat 对应 DeepSeek-V3.1-Terminus 的非思考模式，deepseek-reasoner 对应 DeepSeek-V3.1-Terminus 的思考模式。\n\n此次更新在保持模型原有能力的基础上，针对用户反馈的问题进行了改进，包括：\n\n语言一致性：缓解了中英文混杂、偶发异常字符等情况；\n\nAgent能力：进一步优化了 Code Agent 与 Search Agent 的表现。\n\n时间: 2025-08-21​\n\nDeepSeek-V3.1​\n\ndeepseek-chat 和 deepseek-reasoner 都已经升级为 DeepSeek-V3.1。deepseek-chat 对应 DeepSeek-V3.1 的非思考模式，deepseek-reasoner 对应 DeepSeek-V3.1 的思考模式。\n\nDeepSeek-V3.1 包含以下主要变化： 混合推理架构：一个模型同时支持思考模式与非思考模式 更高的思考效率：相比 DeepSeek-R1-0528，DeepSeek-V3.1-Think 能在更短时间内给出答案 更强的 Agent 能力：通过 Post-Training 优化，新模型在工具使用与智能体任务中的表现有较大提升 SWE-bench Verified: 66.0 SWE-bench Multilingual: 54.5 Terminal-bench: 31.3\n\n时间: 2025-05-28​\n\ndeepseek-reasoner​\n\ndeepseek-reasoner 模型升级为 DeepSeek-R1-0528：\n\n推理能力增强 基准测试提升显著（Pass@1） AIME 2025: 70.0→ 87.5 (+17.5) GPQA: 71.5 → 81.0 (+9.5) LCB_v6: 63.5 → 73.3 (+9.8) Aider: 57.0 → 71.6 (+14.6) 注：复杂推理问题相比老版本R1会使用更多tokens\n\nWeb前端开发能力优化 生成的网页与游戏更加美观\n\n幻觉降低 极大程度抑制了老版本R1所存在的幻觉问题\n\nJson Output与Function Calling 支持 Function call性能 Tau-bench score: 53.5 (Airline)/63.9 (Retail)\n\n时间: 2025-03-24​\n\ndeepseek-chat​\n\ndeepseek-chat 模型升级为 DeepSeek-V3-0324：\n\n推理能力增强 基准测试提升显著 MMLU-Pro: 75.9 → 81.2 (+5.3) GPQA: 59.1 → 68.4 (+9.3) AIME: 39.6 → 59.4 (+19.8) LiveCodeBench: 39.2 → 49.2 (+10.0)\n\nWeb前端开发能力优化 代码生成准确率提升 生成的网页与游戏前端更加美观\n\n中文写作能力升级 风格与内容优化 实现与R1写作风格对齐 中长篇写作内容质量提升\n\n功能增强 多轮交互式改写能力提升 翻译质量与书信写作优化\n\n中文搜索能力优化 报告分析类请求优化，输出内容详实\n\nFunction Calling 能力改进 Function Calling 准确率提升，修复 V3 之前的问题\n\n时间: 2025-01-20​\n\ndeepseek-reasoner​\n\ndeepseek-reasoner 是我们的新模型 DeepSeek-R1. 可以通过指定 model=deepseek-reasoner 调用。\n\n详细更新，请参考: DeepSeek-R1 正式发布\n\n调用指南，请参考: 推理模型\n\n时间: 2024-12-26​\n\ndeepseek-chat​\n\ndeepseek-chat 模型升级为 DeepSeek-V3，接口不变，可以通过指定 model=deepseek-chat 调用。\n\n详细更新，请参考：DeepSeek-V3 正式发布\n\n时间：2024-12-10​\n\ndeepseek-chat​\n\ndeepseek-chat 模型升级为 DeepSeek-V2.5-1210，模型各项能力提升，相关基准测试：\n\n数学能力：在 MATH-500 基准测试中的表现从 74.8% 提升至 82.8%\n\n代码能力：在 LiveCodebench (08.01 - 12.01) 基准测试中的准确率从 29.2% 提升至 34.38%\n\n中文写作与推理能力：在内部测试集中表现也有相应提升\n\n与此同时，全新版本的模型对文件上传和网页总结功能的用户体验进行了优化。\n\n时间：2024-09-05​\n\ndeepseek-coder & deepseek-chat 升级为 DeepSeek V2.5 模型​\n\nDeepSeek V2 Chat 和 DeepSeek Coder V2 两个模型已经合并升级，升级后的新模型为 DeepSeek V2.5。\n\n为向前兼容，API 用户通过 deepseek-coder 或 deepseek-chat 均可以访问新的模型。\n\n新模型在通用能力、代码能力上，都显著超过了旧版本的两个模型。\n\n新模型更好的对齐了人类的偏好，在写作任务、指令跟随等多方面进行了优化：\n\nArenaHard winrate从 68.3% 提升至 76.3%\n\nAlpacaEval 2.0 LC winrate从 46.61% 提升至 50.52%\n\nMT-Bench 分数从 8.84 提升至 9.02\n\nAlignBench 分数从 7.88 提升至 8.04\n\n新模型在原Coder模型的基础上进一步提升了代码生成能力，对常见编程应用场景进行了优化，并在标准测试集上取得了以下成绩：\n\nHumanEval: 89%\n\nLiveCodeBench (1-9月): 41%\n\n时间：2024-08-02​\n\nAPI 上线硬盘缓存技术​\n\nDeepSeek API 创新采用硬盘缓存，价格再降一个数量级\n\n更新详情请跳转文档 API 上线硬盘缓存 2024/08/02\n\n时间：2024-07-25​\n\nAPI 接口更新​\n\n更新接口 /chat/completions JSON 输出 Function 调用 对话前缀续写（Beta） 8K 最长输出（Beta）\n\n新增接口 /completions FIM 补全（Beta）\n\n更新详情请跳转文档 API 升级新功能 2024/07/25\n\n时间：2024-07-24​\n\ndeepseek-coder​\n\ndeepseek-coder 模型升级为 DeepSeek-Coder-V2-0724。\n\n时间：2024-06-28​\n\ndeepseek-chat​\n\ndeepseek-chat 模型升级为 DeepSeek-V2-0628，模型推理能力提升，相关基准测试：\n\n代码，HumanEval Pass@1 79.88% -> 84.76%\n\n数学，MATH ACC@1 55.02% -> 71.02%\n\n推理，BBH 78.56% -> 83.40%\n\n在 Arena-Hard 测评中，与 GPT-4-0314 的对战胜率从 41.6% 提升到了 68.3%。\n\n模型角色扮演能力显著增强，可以在对话中按要求扮演不同角色。\n\n时间：2024-06-14​\n\ndeepseek-coder​\n\ndeepseek-coder 模型升级为 DeepSeek-Coder-V2-0614，代码能力显著提升，在代码生成、代码理解、代码修复和代码补全上达到了 GPT-4-Turbo-0409 的水平，并拥有卓越的数学和推理能力，其通用能力与 DeepSeek-V2-0517 持平。\n\n时间：2024-05-17​\n\ndeepseek-chat​\n\ndeepseek-chat 模型升级为 DeepSeek-V2-0517，模型在指令跟随方面的性能得到了显著提升，IFEval Benchmark Prompt-Level 准确率从 63.9% 跃升至 77.6%。此外，我们对API端的“system”区域指令跟随能力进行了优化，显著增强了沉浸式翻译、RAG 等任务的用户体验。\n\n模型对于 JSON 格式输出的准确性得到了提升。在内部测试集中，JSON 解析率从 78% 提高到了85%。通过引入恰当的正则表达式，JSON 解析率进一步提高至 97%。\n\n时间: 2026-10-17开放自研搜索 APIDeepSeek-V4.1-Flash-1017 更新\n\n时间: 2026-09-10DeepSeek-V4.1-Flash 发布\n\n时间: 2026-08-21DeepSeek-V4-Flash-Vision-Exp 发布\n\n时间: 2026-08-13DeepSeek-V4-Pro 更新\n\n时间: 2026-07-31DeepSeek-V4-Flash 更新\n\n时间: 2026-04-24DeepSeek-V4\n\n时间: 2025-12-01DeepSeek-V3.2DeepSeek-V3.2-Speciale\n\n时间: 2025-09-29DeepSeek-V3.2-Exp\n\n时间: 2025-09-22DeepSeek-V3.1-Terminus\n\n时间: 2025-08-21DeepSeek-V3.1\n\n时间: 2025-05-28deepseek-reasoner\n\n时间: 2025-03-24deepseek-chat\n\n时间: 2025-01-20deepseek-reasoner\n\n时间: 2024-12-26deepseek-chat\n\n时间：2024-12-10deepseek-chat\n\n时间：2024-09-05deepseek-coder & deepseek-chat 升级为 DeepSeek V2.5 模型\n\n时间：2024-08-02API 上线硬盘缓存技术\n\n时间：2024-07-25API 接口更新\n\n时间：2024-07-24deepseek-coder\n\n时间：2024-06-28deepseek-chat\n\n时间：2024-06-14deepseek-coder\n\n时间：2024-05-17deepseek-chat",
+  "rawSources": [
+    {
+      "mode": "STATIC",
+      "hash": "b206b3f638d21bc907a945281bde1e8f9279ec74c1f9905f5d9fdd1fc4812750",
+      "path": "C:\\Users\\qianchen\\Documents\\waytoagi-1024-detective-a2-v4\\.cache\\source-documents-v4\\a677801d-17f5-447a-8285-64ede5279be8\\804aa3b54cb5b674cb1e237abbf36128d42c4c34bf62a75b5a4b4c9dcd992211\\raw.bin"
+    }
+  ],
+  "storage": {
+    "rawPath": "C:\\Users\\qianchen\\Documents\\waytoagi-1024-detective-a2-v4\\.cache\\source-documents-v4\\a677801d-17f5-447a-8285-64ede5279be8\\804aa3b54cb5b674cb1e237abbf36128d42c4c34bf62a75b5a4b4c9dcd992211\\raw.bin",
+    "textPath": "C:\\Users\\qianchen\\Documents\\waytoagi-1024-detective-a2-v4\\.cache\\source-documents-v4\\a677801d-17f5-447a-8285-64ede5279be8\\804aa3b54cb5b674cb1e237abbf36128d42c4c34bf62a75b5a4b4c9dcd992211\\source.txt",
+    "manifestPath": "C:\\Users\\qianchen\\Documents\\waytoagi-1024-detective-a2-v4\\.cache\\source-documents-v4\\a677801d-17f5-447a-8285-64ede5279be8\\804aa3b54cb5b674cb1e237abbf36128d42c4c34bf62a75b5a4b4c9dcd992211\\manifest.json"
+  },
+  "parser": {
+    "name": "readability+source-dom",
+    "version": "readability-0.6.0+jsdom-30.1.3+source-dom-2",
+    "normalization": "source-text/v1",
+    "mode": "STATIC"
+  },
+  "metadata": {
+    "title": "更新日志 | DeepSeek API Docs",
+    "author": null,
+    "publishedAt": null,
+    "language": "zh-cn"
+  },
+  "completeness": "COMPLETE",
+  "warnings": [],
+  "blocks": [
+    {
+      "start": 0,
+      "end": 6,
+      "id": "b0",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[0]",
+      "headingPath": [],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 8,
+      "end": 59,
+      "id": "b1",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[1]",
+      "headingPath": [],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 61,
+      "end": 65,
+      "id": "b2",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[2]",
+      "headingPath": [],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 67,
+      "end": 71,
+      "id": "b3",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[3]",
+      "headingPath": [
+        "更新日志"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 73,
+      "end": 88,
+      "id": "b4",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[4]",
+      "headingPath": [
+        "更新日志",
+        "时间: 2026-10-17​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 90,
+      "end": 101,
+      "id": "b5",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[5]",
+      "headingPath": [
+        "更新日志",
+        "时间: 2026-10-17​",
+        "开放自研搜索 API​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 103,
+      "end": 318,
+      "id": "b6",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[6]",
+      "headingPath": [
+        "更新日志",
+        "时间: 2026-10-17​",
+        "开放自研搜索 API​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 320,
+      "end": 348,
+      "id": "b7",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[7]",
+      "headingPath": [
+        "更新日志",
+        "时间: 2026-10-17​",
+        "DeepSeek-V4.1-Flash-1017 更新​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 350,
+      "end": 468,
+      "id": "b8",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[8]",
+      "headingPath": [
+        "更新日志",
+        "时间: 2026-10-17​",
+        "DeepSeek-V4.1-Flash-1017 更新​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 470,
+      "end": 481,
+      "id": "b9",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[9]",
+      "headingPath": [
+        "更新日志",
+        "时间: 2026-10-17​",
+        "DeepSeek-V4.1-Flash-1017 更新​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 483,
+      "end": 523,
+      "id": "b10",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[10]",
+      "headingPath": [
+        "更新日志",
+        "时间: 2026-10-17​",
+        "DeepSeek-V4.1-Flash-1017 更新​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 525,
+      "end": 554,
+      "id": "b11",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[11]",
+      "headingPath": [
+        "更新日志",
+        "时间: 2026-10-17​",
+        "DeepSeek-V4.1-Flash-1017 更新​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 556,
+      "end": 580,
+      "id": "b12",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[12]",
+      "headingPath": [
+        "更新日志",
+        "时间: 2026-10-17​",
+        "DeepSeek-V4.1-Flash-1017 更新​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 582,
+      "end": 600,
+      "id": "b13",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[13]",
+      "headingPath": [
+        "更新日志",
+        "时间: 2026-10-17​",
+        "DeepSeek-V4.1-Flash-1017 更新​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 602,
+      "end": 620,
+      "id": "b14",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[14]",
+      "headingPath": [
+        "更新日志",
+        "时间: 2026-10-17​",
+        "DeepSeek-V4.1-Flash-1017 更新​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 622,
+      "end": 641,
+      "id": "b15",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[15]",
+      "headingPath": [
+        "更新日志",
+        "时间: 2026-10-17​",
+        "DeepSeek-V4.1-Flash-1017 更新​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 643,
+      "end": 672,
+      "id": "b16",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[16]",
+      "headingPath": [
+        "更新日志",
+        "时间: 2026-10-17​",
+        "DeepSeek-V4.1-Flash-1017 更新​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 674,
+      "end": 697,
+      "id": "b17",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[17]",
+      "headingPath": [
+        "更新日志",
+        "时间: 2026-10-17​",
+        "DeepSeek-V4.1-Flash-1017 更新​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 699,
+      "end": 720,
+      "id": "b18",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[18]",
+      "headingPath": [
+        "更新日志",
+        "时间: 2026-10-17​",
+        "DeepSeek-V4.1-Flash-1017 更新​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 722,
+      "end": 750,
+      "id": "b19",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[19]",
+      "headingPath": [
+        "更新日志",
+        "时间: 2026-10-17​",
+        "DeepSeek-V4.1-Flash-1017 更新​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 752,
+      "end": 778,
+      "id": "b20",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[20]",
+      "headingPath": [
+        "更新日志",
+        "时间: 2026-10-17​",
+        "DeepSeek-V4.1-Flash-1017 更新​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 780,
+      "end": 810,
+      "id": "b21",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[21]",
+      "headingPath": [
+        "更新日志",
+        "时间: 2026-10-17​",
+        "DeepSeek-V4.1-Flash-1017 更新​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 812,
+      "end": 934,
+      "id": "b22",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[22]",
+      "headingPath": [
+        "更新日志",
+        "时间: 2026-10-17​",
+        "DeepSeek-V4.1-Flash-1017 更新​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 936,
+      "end": 1126,
+      "id": "b23",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[23]",
+      "headingPath": [
+        "更新日志",
+        "时间: 2026-10-17​",
+        "DeepSeek-V4.1-Flash-1017 更新​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1128,
+      "end": 1143,
+      "id": "b24",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[24]",
+      "headingPath": [
+        "更新日志",
+        "时间: 2026-09-10​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1145,
+      "end": 1168,
+      "id": "b25",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[25]",
+      "headingPath": [
+        "更新日志",
+        "时间: 2026-09-10​",
+        "DeepSeek-V4.1-Flash 发布​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1170,
+      "end": 1281,
+      "id": "b26",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[26]",
+      "headingPath": [
+        "更新日志",
+        "时间: 2026-09-10​",
+        "DeepSeek-V4.1-Flash 发布​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1283,
+      "end": 1301,
+      "id": "b27",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[27]",
+      "headingPath": [
+        "更新日志",
+        "时间: 2026-09-10​",
+        "DeepSeek-V4.1-Flash 发布​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1303,
+      "end": 1320,
+      "id": "b28",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[28]",
+      "headingPath": [
+        "更新日志",
+        "时间: 2026-09-10​",
+        "DeepSeek-V4.1-Flash 发布​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1322,
+      "end": 1347,
+      "id": "b29",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[29]",
+      "headingPath": [
+        "更新日志",
+        "时间: 2026-09-10​",
+        "DeepSeek-V4.1-Flash 发布​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1349,
+      "end": 1369,
+      "id": "b30",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[30]",
+      "headingPath": [
+        "更新日志",
+        "时间: 2026-09-10​",
+        "DeepSeek-V4.1-Flash 发布​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1371,
+      "end": 1395,
+      "id": "b31",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[31]",
+      "headingPath": [
+        "更新日志",
+        "时间: 2026-09-10​",
+        "DeepSeek-V4.1-Flash 发布​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1397,
+      "end": 1421,
+      "id": "b32",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[32]",
+      "headingPath": [
+        "更新日志",
+        "时间: 2026-09-10​",
+        "DeepSeek-V4.1-Flash 发布​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1423,
+      "end": 1447,
+      "id": "b33",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[33]",
+      "headingPath": [
+        "更新日志",
+        "时间: 2026-09-10​",
+        "DeepSeek-V4.1-Flash 发布​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1449,
+      "end": 1467,
+      "id": "b34",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[34]",
+      "headingPath": [
+        "更新日志",
+        "时间: 2026-09-10​",
+        "DeepSeek-V4.1-Flash 发布​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1469,
+      "end": 1487,
+      "id": "b35",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[35]",
+      "headingPath": [
+        "更新日志",
+        "时间: 2026-09-10​",
+        "DeepSeek-V4.1-Flash 发布​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1489,
+      "end": 1508,
+      "id": "b36",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[36]",
+      "headingPath": [
+        "更新日志",
+        "时间: 2026-09-10​",
+        "DeepSeek-V4.1-Flash 发布​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1510,
+      "end": 1524,
+      "id": "b37",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[37]",
+      "headingPath": [
+        "更新日志",
+        "时间: 2026-09-10​",
+        "DeepSeek-V4.1-Flash 发布​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1526,
+      "end": 1545,
+      "id": "b38",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[38]",
+      "headingPath": [
+        "更新日志",
+        "时间: 2026-09-10​",
+        "DeepSeek-V4.1-Flash 发布​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1547,
+      "end": 1563,
+      "id": "b39",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[39]",
+      "headingPath": [
+        "更新日志",
+        "时间: 2026-09-10​",
+        "DeepSeek-V4.1-Flash 发布​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1565,
+      "end": 1584,
+      "id": "b40",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[40]",
+      "headingPath": [
+        "更新日志",
+        "时间: 2026-09-10​",
+        "DeepSeek-V4.1-Flash 发布​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1586,
+      "end": 1608,
+      "id": "b41",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[41]",
+      "headingPath": [
+        "更新日志",
+        "时间: 2026-09-10​",
+        "DeepSeek-V4.1-Flash 发布​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1610,
+      "end": 1633,
+      "id": "b42",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[42]",
+      "headingPath": [
+        "更新日志",
+        "时间: 2026-09-10​",
+        "DeepSeek-V4.1-Flash 发布​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1635,
+      "end": 1663,
+      "id": "b43",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[43]",
+      "headingPath": [
+        "更新日志",
+        "时间: 2026-09-10​",
+        "DeepSeek-V4.1-Flash 发布​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1665,
+      "end": 1691,
+      "id": "b44",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[44]",
+      "headingPath": [
+        "更新日志",
+        "时间: 2026-09-10​",
+        "DeepSeek-V4.1-Flash 发布​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1693,
+      "end": 1723,
+      "id": "b45",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[45]",
+      "headingPath": [
+        "更新日志",
+        "时间: 2026-09-10​",
+        "DeepSeek-V4.1-Flash 发布​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1725,
+      "end": 1752,
+      "id": "b46",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[46]",
+      "headingPath": [
+        "更新日志",
+        "时间: 2026-09-10​",
+        "DeepSeek-V4.1-Flash 发布​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1754,
+      "end": 1760,
+      "id": "b47",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[47]",
+      "headingPath": [
+        "更新日志",
+        "时间: 2026-09-10​",
+        "DeepSeek-V4.1-Flash 发布​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1762,
+      "end": 1974,
+      "id": "b48",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[48]",
+      "headingPath": [
+        "更新日志",
+        "时间: 2026-09-10​",
+        "DeepSeek-V4.1-Flash 发布​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 1976,
+      "end": 2074,
+      "id": "b49",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[49]",
+      "headingPath": [
+        "更新日志",
+        "时间: 2026-09-10​",
+        "DeepSeek-V4.1-Flash 发布​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2076,
+      "end": 2084,
+      "id": "b50",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[50]",
+      "headingPath": [
+        "更新日志",
+        "时间: 2026-09-10​",
+        "DeepSeek-V4.1-Flash 发布​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2086,
+      "end": 2136,
+      "id": "b51",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[51]",
+      "headingPath": [
+        "更新日志",
+        "时间: 2026-09-10​",
+        "DeepSeek-V4.1-Flash 发布​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2138,
+      "end": 2150,
+      "id": "b52",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[52]",
+      "headingPath": [
+        "更新日志",
+        "时间: 2026-09-10​",
+        "DeepSeek-V4.1-Flash 发布​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2152,
+      "end": 2167,
+      "id": "b53",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[53]",
+      "headingPath": [
+        "更新日志",
+        "时间: 2026-08-21​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2169,
+      "end": 2201,
+      "id": "b54",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[54]",
+      "headingPath": [
+        "更新日志",
+        "时间: 2026-08-21​",
+        "DeepSeek-V4-Flash-Vision-Exp 发布​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2203,
+      "end": 2331,
+      "id": "b55",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[55]",
+      "headingPath": [
+        "更新日志",
+        "时间: 2026-08-21​",
+        "DeepSeek-V4-Flash-Vision-Exp 发布​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2333,
+      "end": 2357,
+      "id": "b56",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[56]",
+      "headingPath": [
+        "更新日志",
+        "时间: 2026-08-21​",
+        "DeepSeek-V4-Flash-Vision-Exp 发布​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2359,
+      "end": 2372,
+      "id": "b57",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[57]",
+      "headingPath": [
+        "更新日志",
+        "时间: 2026-08-21​",
+        "DeepSeek-V4-Flash-Vision-Exp 发布​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2374,
+      "end": 2387,
+      "id": "b58",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[58]",
+      "headingPath": [
+        "更新日志",
+        "时间: 2026-08-21​",
+        "DeepSeek-V4-Flash-Vision-Exp 发布​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2389,
+      "end": 2407,
+      "id": "b59",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[59]",
+      "headingPath": [
+        "更新日志",
+        "时间: 2026-08-21​",
+        "DeepSeek-V4-Flash-Vision-Exp 发布​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2409,
+      "end": 2439,
+      "id": "b60",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[60]",
+      "headingPath": [
+        "更新日志",
+        "时间: 2026-08-21​",
+        "DeepSeek-V4-Flash-Vision-Exp 发布​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2441,
+      "end": 2465,
+      "id": "b61",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[61]",
+      "headingPath": [
+        "更新日志",
+        "时间: 2026-08-21​",
+        "DeepSeek-V4-Flash-Vision-Exp 发布​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2467,
+      "end": 2490,
+      "id": "b62",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[62]",
+      "headingPath": [
+        "更新日志",
+        "时间: 2026-08-21​",
+        "DeepSeek-V4-Flash-Vision-Exp 发布​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2492,
+      "end": 2510,
+      "id": "b63",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[63]",
+      "headingPath": [
+        "更新日志",
+        "时间: 2026-08-21​",
+        "DeepSeek-V4-Flash-Vision-Exp 发布​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2512,
+      "end": 2536,
+      "id": "b64",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[64]",
+      "headingPath": [
+        "更新日志",
+        "时间: 2026-08-21​",
+        "DeepSeek-V4-Flash-Vision-Exp 发布​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2538,
+      "end": 2721,
+      "id": "b65",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[65]",
+      "headingPath": [
+        "更新日志",
+        "时间: 2026-08-21​",
+        "DeepSeek-V4-Flash-Vision-Exp 发布​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2723,
+      "end": 2803,
+      "id": "b66",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[66]",
+      "headingPath": [
+        "更新日志",
+        "时间: 2026-08-21​",
+        "DeepSeek-V4-Flash-Vision-Exp 发布​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2805,
+      "end": 2915,
+      "id": "b67",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[67]",
+      "headingPath": [
+        "更新日志",
+        "时间: 2026-08-21​",
+        "DeepSeek-V4-Flash-Vision-Exp 发布​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2917,
+      "end": 2929,
+      "id": "b68",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[68]",
+      "headingPath": [
+        "更新日志",
+        "时间: 2026-08-21​",
+        "DeepSeek-V4-Flash-Vision-Exp 发布​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2931,
+      "end": 2946,
+      "id": "b69",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[69]",
+      "headingPath": [
+        "更新日志",
+        "时间: 2026-08-13​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2948,
+      "end": 2967,
+      "id": "b70",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[70]",
+      "headingPath": [
+        "更新日志",
+        "时间: 2026-08-13​",
+        "DeepSeek-V4-Pro 更新​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 2969,
+      "end": 3054,
+      "id": "b71",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[71]",
+      "headingPath": [
+        "更新日志",
+        "时间: 2026-08-13​",
+        "DeepSeek-V4-Pro 更新​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3056,
+      "end": 3068,
+      "id": "b72",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[72]",
+      "headingPath": [
+        "更新日志",
+        "时间: 2026-08-13​",
+        "DeepSeek-V4-Pro 更新​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3070,
+      "end": 3123,
+      "id": "b73",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[73]",
+      "headingPath": [
+        "更新日志",
+        "时间: 2026-08-13​",
+        "DeepSeek-V4-Pro 更新​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3125,
+      "end": 3154,
+      "id": "b74",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[74]",
+      "headingPath": [
+        "更新日志",
+        "时间: 2026-08-13​",
+        "DeepSeek-V4-Pro 更新​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3156,
+      "end": 3180,
+      "id": "b75",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[75]",
+      "headingPath": [
+        "更新日志",
+        "时间: 2026-08-13​",
+        "DeepSeek-V4-Pro 更新​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3182,
+      "end": 3195,
+      "id": "b76",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[76]",
+      "headingPath": [
+        "更新日志",
+        "时间: 2026-08-13​",
+        "DeepSeek-V4-Pro 更新​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3197,
+      "end": 3211,
+      "id": "b77",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[77]",
+      "headingPath": [
+        "更新日志",
+        "时间: 2026-08-13​",
+        "DeepSeek-V4-Pro 更新​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3213,
+      "end": 3226,
+      "id": "b78",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[78]",
+      "headingPath": [
+        "更新日志",
+        "时间: 2026-08-13​",
+        "DeepSeek-V4-Pro 更新​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3228,
+      "end": 3253,
+      "id": "b79",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[79]",
+      "headingPath": [
+        "更新日志",
+        "时间: 2026-08-13​",
+        "DeepSeek-V4-Pro 更新​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3255,
+      "end": 3278,
+      "id": "b80",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[80]",
+      "headingPath": [
+        "更新日志",
+        "时间: 2026-08-13​",
+        "DeepSeek-V4-Pro 更新​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3280,
+      "end": 3310,
+      "id": "b81",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[81]",
+      "headingPath": [
+        "更新日志",
+        "时间: 2026-08-13​",
+        "DeepSeek-V4-Pro 更新​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3312,
+      "end": 3335,
+      "id": "b82",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[82]",
+      "headingPath": [
+        "更新日志",
+        "时间: 2026-08-13​",
+        "DeepSeek-V4-Pro 更新​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3337,
+      "end": 3355,
+      "id": "b83",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[83]",
+      "headingPath": [
+        "更新日志",
+        "时间: 2026-08-13​",
+        "DeepSeek-V4-Pro 更新​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3357,
+      "end": 3375,
+      "id": "b84",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[84]",
+      "headingPath": [
+        "更新日志",
+        "时间: 2026-08-13​",
+        "DeepSeek-V4-Pro 更新​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3377,
+      "end": 3466,
+      "id": "b85",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[85]",
+      "headingPath": [
+        "更新日志",
+        "时间: 2026-08-13​",
+        "DeepSeek-V4-Pro 更新​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3468,
+      "end": 3478,
+      "id": "b86",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[86]",
+      "headingPath": [
+        "更新日志",
+        "时间: 2026-08-13​",
+        "DeepSeek-V4-Pro 更新​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3480,
+      "end": 3619,
+      "id": "b87",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[87]",
+      "headingPath": [
+        "更新日志",
+        "时间: 2026-08-13​",
+        "DeepSeek-V4-Pro 更新​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3621,
+      "end": 3629,
+      "id": "b88",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[88]",
+      "headingPath": [
+        "更新日志",
+        "时间: 2026-08-13​",
+        "DeepSeek-V4-Pro 更新​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3631,
+      "end": 3765,
+      "id": "b89",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[89]",
+      "headingPath": [
+        "更新日志",
+        "时间: 2026-08-13​",
+        "DeepSeek-V4-Pro 更新​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3767,
+      "end": 3778,
+      "id": "b90",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[90]",
+      "headingPath": [
+        "更新日志",
+        "时间: 2026-08-13​",
+        "DeepSeek-V4-Pro 更新​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3780,
+      "end": 3795,
+      "id": "b91",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[91]",
+      "headingPath": [
+        "更新日志",
+        "时间: 2026-07-31​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3797,
+      "end": 3818,
+      "id": "b92",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[92]",
+      "headingPath": [
+        "更新日志",
+        "时间: 2026-07-31​",
+        "DeepSeek-V4-Flash 更新​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3820,
+      "end": 3896,
+      "id": "b93",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[93]",
+      "headingPath": [
+        "更新日志",
+        "时间: 2026-07-31​",
+        "DeepSeek-V4-Flash 更新​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3898,
+      "end": 3933,
+      "id": "b94",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[94]",
+      "headingPath": [
+        "更新日志",
+        "时间: 2026-07-31​",
+        "DeepSeek-V4-Flash 更新​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3935,
+      "end": 3959,
+      "id": "b95",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[95]",
+      "headingPath": [
+        "更新日志",
+        "时间: 2026-07-31​",
+        "DeepSeek-V4-Flash 更新​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3961,
+      "end": 3974,
+      "id": "b96",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[96]",
+      "headingPath": [
+        "更新日志",
+        "时间: 2026-07-31​",
+        "DeepSeek-V4-Flash 更新​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3976,
+      "end": 3990,
+      "id": "b97",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[97]",
+      "headingPath": [
+        "更新日志",
+        "时间: 2026-07-31​",
+        "DeepSeek-V4-Flash 更新​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 3992,
+      "end": 4005,
+      "id": "b98",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[98]",
+      "headingPath": [
+        "更新日志",
+        "时间: 2026-07-31​",
+        "DeepSeek-V4-Flash 更新​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4007,
+      "end": 4032,
+      "id": "b99",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[99]",
+      "headingPath": [
+        "更新日志",
+        "时间: 2026-07-31​",
+        "DeepSeek-V4-Flash 更新​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4034,
+      "end": 4055,
+      "id": "b100",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[100]",
+      "headingPath": [
+        "更新日志",
+        "时间: 2026-07-31​",
+        "DeepSeek-V4-Flash 更新​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4057,
+      "end": 4088,
+      "id": "b101",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[101]",
+      "headingPath": [
+        "更新日志",
+        "时间: 2026-07-31​",
+        "DeepSeek-V4-Flash 更新​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4090,
+      "end": 4113,
+      "id": "b102",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[102]",
+      "headingPath": [
+        "更新日志",
+        "时间: 2026-07-31​",
+        "DeepSeek-V4-Flash 更新​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4115,
+      "end": 4133,
+      "id": "b103",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[103]",
+      "headingPath": [
+        "更新日志",
+        "时间: 2026-07-31​",
+        "DeepSeek-V4-Flash 更新​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4135,
+      "end": 4335,
+      "id": "b104",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[104]",
+      "headingPath": [
+        "更新日志",
+        "时间: 2026-07-31​",
+        "DeepSeek-V4-Flash 更新​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4337,
+      "end": 4395,
+      "id": "b105",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[105]",
+      "headingPath": [
+        "更新日志",
+        "时间: 2026-07-31​",
+        "DeepSeek-V4-Flash 更新​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4397,
+      "end": 4471,
+      "id": "b106",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[106]",
+      "headingPath": [
+        "更新日志",
+        "时间: 2026-07-31​",
+        "DeepSeek-V4-Flash 更新​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4473,
+      "end": 4548,
+      "id": "b107",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[107]",
+      "headingPath": [
+        "更新日志",
+        "时间: 2026-07-31​",
+        "DeepSeek-V4-Flash 更新​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4550,
+      "end": 4576,
+      "id": "b108",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[108]",
+      "headingPath": [
+        "更新日志",
+        "时间: 2026-07-31​",
+        "DeepSeek-V4-Flash 更新​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4578,
+      "end": 4593,
+      "id": "b109",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[109]",
+      "headingPath": [
+        "更新日志",
+        "时间: 2026-04-24​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4595,
+      "end": 4607,
+      "id": "b110",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[110]",
+      "headingPath": [
+        "更新日志",
+        "时间: 2026-04-24​",
+        "DeepSeek-V4​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4609,
+      "end": 4756,
+      "id": "b111",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[111]",
+      "headingPath": [
+        "更新日志",
+        "时间: 2026-04-24​",
+        "DeepSeek-V4​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4758,
+      "end": 4879,
+      "id": "b112",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[112]",
+      "headingPath": [
+        "更新日志",
+        "时间: 2026-04-24​",
+        "DeepSeek-V4​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4881,
+      "end": 4892,
+      "id": "b113",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[113]",
+      "headingPath": [
+        "更新日志",
+        "时间: 2026-04-24​",
+        "DeepSeek-V4​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4894,
+      "end": 4909,
+      "id": "b114",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[114]",
+      "headingPath": [
+        "更新日志",
+        "时间: 2025-12-01​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4911,
+      "end": 4925,
+      "id": "b115",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[115]",
+      "headingPath": [
+        "更新日志",
+        "时间: 2025-12-01​",
+        "DeepSeek-V3.2​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4927,
+      "end": 4981,
+      "id": "b116",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[116]",
+      "headingPath": [
+        "更新日志",
+        "时间: 2025-12-01​",
+        "DeepSeek-V3.2​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 4983,
+      "end": 5020,
+      "id": "b117",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[117]",
+      "headingPath": [
+        "更新日志",
+        "时间: 2025-12-01​",
+        "DeepSeek-V3.2​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5022,
+      "end": 5062,
+      "id": "b118",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[118]",
+      "headingPath": [
+        "更新日志",
+        "时间: 2025-12-01​",
+        "DeepSeek-V3.2​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5064,
+      "end": 5087,
+      "id": "b119",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[119]",
+      "headingPath": [
+        "更新日志",
+        "时间: 2025-12-01​",
+        "DeepSeek-V3.2-Speciale​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5089,
+      "end": 5301,
+      "id": "b120",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[120]",
+      "headingPath": [
+        "更新日志",
+        "时间: 2025-12-01​",
+        "DeepSeek-V3.2-Speciale​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5303,
+      "end": 5314,
+      "id": "b121",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[121]",
+      "headingPath": [
+        "更新日志",
+        "时间: 2025-12-01​",
+        "DeepSeek-V3.2-Speciale​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5316,
+      "end": 5331,
+      "id": "b122",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[122]",
+      "headingPath": [
+        "更新日志",
+        "时间: 2025-09-29​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5333,
+      "end": 5351,
+      "id": "b123",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[123]",
+      "headingPath": [
+        "更新日志",
+        "时间: 2025-09-29​",
+        "DeepSeek-V3.2-Exp​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5353,
+      "end": 5412,
+      "id": "b124",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[124]",
+      "headingPath": [
+        "更新日志",
+        "时间: 2025-09-29​",
+        "DeepSeek-V3.2-Exp​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5414,
+      "end": 5455,
+      "id": "b125",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[125]",
+      "headingPath": [
+        "更新日志",
+        "时间: 2025-09-29​",
+        "DeepSeek-V3.2-Exp​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5457,
+      "end": 5501,
+      "id": "b126",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[126]",
+      "headingPath": [
+        "更新日志",
+        "时间: 2025-09-29​",
+        "DeepSeek-V3.2-Exp​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5503,
+      "end": 5514,
+      "id": "b127",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[127]",
+      "headingPath": [
+        "更新日志",
+        "时间: 2025-09-29​",
+        "DeepSeek-V3.2-Exp​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5516,
+      "end": 5531,
+      "id": "b128",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[128]",
+      "headingPath": [
+        "更新日志",
+        "时间: 2025-09-22​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5533,
+      "end": 5556,
+      "id": "b129",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[129]",
+      "headingPath": [
+        "更新日志",
+        "时间: 2025-09-22​",
+        "DeepSeek-V3.1-Terminus​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5558,
+      "end": 5719,
+      "id": "b130",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[130]",
+      "headingPath": [
+        "更新日志",
+        "时间: 2025-09-22​",
+        "DeepSeek-V3.1-Terminus​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5721,
+      "end": 5757,
+      "id": "b131",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[131]",
+      "headingPath": [
+        "更新日志",
+        "时间: 2025-09-22​",
+        "DeepSeek-V3.1-Terminus​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5759,
+      "end": 5784,
+      "id": "b132",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[132]",
+      "headingPath": [
+        "更新日志",
+        "时间: 2025-09-22​",
+        "DeepSeek-V3.1-Terminus​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5786,
+      "end": 5831,
+      "id": "b133",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[133]",
+      "headingPath": [
+        "更新日志",
+        "时间: 2025-09-22​",
+        "DeepSeek-V3.1-Terminus​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5833,
+      "end": 5848,
+      "id": "b134",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[134]",
+      "headingPath": [
+        "更新日志",
+        "时间: 2025-08-21​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5850,
+      "end": 5864,
+      "id": "b135",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[135]",
+      "headingPath": [
+        "更新日志",
+        "时间: 2025-08-21​",
+        "DeepSeek-V3.1​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 5866,
+      "end": 6000,
+      "id": "b136",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[136]",
+      "headingPath": [
+        "更新日志",
+        "时间: 2025-08-21​",
+        "DeepSeek-V3.1​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 6002,
+      "end": 6243,
+      "id": "b137",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[137]",
+      "headingPath": [
+        "更新日志",
+        "时间: 2025-08-21​",
+        "DeepSeek-V3.1​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 6245,
+      "end": 6260,
+      "id": "b138",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[138]",
+      "headingPath": [
+        "更新日志",
+        "时间: 2025-05-28​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 6262,
+      "end": 6280,
+      "id": "b139",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[139]",
+      "headingPath": [
+        "更新日志",
+        "时间: 2025-05-28​",
+        "deepseek-reasoner​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 6282,
+      "end": 6323,
+      "id": "b140",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[140]",
+      "headingPath": [
+        "更新日志",
+        "时间: 2025-05-28​",
+        "deepseek-reasoner​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 6325,
+      "end": 6484,
+      "id": "b141",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[141]",
+      "headingPath": [
+        "更新日志",
+        "时间: 2025-05-28​",
+        "deepseek-reasoner​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 6486,
+      "end": 6510,
+      "id": "b142",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[142]",
+      "headingPath": [
+        "更新日志",
+        "时间: 2025-05-28​",
+        "deepseek-reasoner​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 6512,
+      "end": 6537,
+      "id": "b143",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[143]",
+      "headingPath": [
+        "更新日志",
+        "时间: 2025-05-28​",
+        "deepseek-reasoner​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 6539,
+      "end": 6632,
+      "id": "b144",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[144]",
+      "headingPath": [
+        "更新日志",
+        "时间: 2025-05-28​",
+        "deepseek-reasoner​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 6634,
+      "end": 6649,
+      "id": "b145",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[145]",
+      "headingPath": [
+        "更新日志",
+        "时间: 2025-03-24​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 6651,
+      "end": 6665,
+      "id": "b146",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[146]",
+      "headingPath": [
+        "更新日志",
+        "时间: 2025-03-24​",
+        "deepseek-chat​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 6667,
+      "end": 6704,
+      "id": "b147",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[147]",
+      "headingPath": [
+        "更新日志",
+        "时间: 2025-03-24​",
+        "deepseek-chat​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 6706,
+      "end": 6836,
+      "id": "b148",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[148]",
+      "headingPath": [
+        "更新日志",
+        "时间: 2025-03-24​",
+        "deepseek-chat​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 6838,
+      "end": 6874,
+      "id": "b149",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[149]",
+      "headingPath": [
+        "更新日志",
+        "时间: 2025-03-24​",
+        "deepseek-chat​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 6876,
+      "end": 6916,
+      "id": "b150",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[150]",
+      "headingPath": [
+        "更新日志",
+        "时间: 2025-03-24​",
+        "deepseek-chat​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 6918,
+      "end": 6946,
+      "id": "b151",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[151]",
+      "headingPath": [
+        "更新日志",
+        "时间: 2025-03-24​",
+        "deepseek-chat​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 6948,
+      "end": 6973,
+      "id": "b152",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[152]",
+      "headingPath": [
+        "更新日志",
+        "时间: 2025-03-24​",
+        "deepseek-chat​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 6975,
+      "end": 7031,
+      "id": "b153",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[153]",
+      "headingPath": [
+        "更新日志",
+        "时间: 2025-03-24​",
+        "deepseek-chat​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 7033,
+      "end": 7048,
+      "id": "b154",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[154]",
+      "headingPath": [
+        "更新日志",
+        "时间: 2025-01-20​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 7050,
+      "end": 7068,
+      "id": "b155",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[155]",
+      "headingPath": [
+        "更新日志",
+        "时间: 2025-01-20​",
+        "deepseek-reasoner​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 7070,
+      "end": 7143,
+      "id": "b156",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[156]",
+      "headingPath": [
+        "更新日志",
+        "时间: 2025-01-20​",
+        "deepseek-reasoner​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 7145,
+      "end": 7171,
+      "id": "b157",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[157]",
+      "headingPath": [
+        "更新日志",
+        "时间: 2025-01-20​",
+        "deepseek-reasoner​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 7173,
+      "end": 7187,
+      "id": "b158",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[158]",
+      "headingPath": [
+        "更新日志",
+        "时间: 2025-01-20​",
+        "deepseek-reasoner​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 7189,
+      "end": 7204,
+      "id": "b159",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[159]",
+      "headingPath": [
+        "更新日志",
+        "时间: 2024-12-26​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 7206,
+      "end": 7220,
+      "id": "b160",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[160]",
+      "headingPath": [
+        "更新日志",
+        "时间: 2024-12-26​",
+        "deepseek-chat​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 7222,
+      "end": 7289,
+      "id": "b161",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[161]",
+      "headingPath": [
+        "更新日志",
+        "时间: 2024-12-26​",
+        "deepseek-chat​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 7291,
+      "end": 7316,
+      "id": "b162",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[162]",
+      "headingPath": [
+        "更新日志",
+        "时间: 2024-12-26​",
+        "deepseek-chat​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 7318,
+      "end": 7332,
+      "id": "b163",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[163]",
+      "headingPath": [
+        "更新日志",
+        "时间：2024-12-10​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 7334,
+      "end": 7348,
+      "id": "b164",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[164]",
+      "headingPath": [
+        "更新日志",
+        "时间：2024-12-10​",
+        "deepseek-chat​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 7350,
+      "end": 7405,
+      "id": "b165",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[165]",
+      "headingPath": [
+        "更新日志",
+        "时间：2024-12-10​",
+        "deepseek-chat​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 7407,
+      "end": 7448,
+      "id": "b166",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[166]",
+      "headingPath": [
+        "更新日志",
+        "时间：2024-12-10​",
+        "deepseek-chat​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 7450,
+      "end": 7514,
+      "id": "b167",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[167]",
+      "headingPath": [
+        "更新日志",
+        "时间：2024-12-10​",
+        "deepseek-chat​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 7516,
+      "end": 7541,
+      "id": "b168",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[168]",
+      "headingPath": [
+        "更新日志",
+        "时间：2024-12-10​",
+        "deepseek-chat​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 7543,
+      "end": 7578,
+      "id": "b169",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[169]",
+      "headingPath": [
+        "更新日志",
+        "时间：2024-12-10​",
+        "deepseek-chat​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 7580,
+      "end": 7594,
+      "id": "b170",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[170]",
+      "headingPath": [
+        "更新日志",
+        "时间：2024-09-05​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 7596,
+      "end": 7648,
+      "id": "b171",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[171]",
+      "headingPath": [
+        "更新日志",
+        "时间：2024-09-05​",
+        "deepseek-coder & deepseek-chat 升级为 DeepSeek V2.5 模型​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 7650,
+      "end": 7721,
+      "id": "b172",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[172]",
+      "headingPath": [
+        "更新日志",
+        "时间：2024-09-05​",
+        "deepseek-coder & deepseek-chat 升级为 DeepSeek V2.5 模型​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 7723,
+      "end": 7779,
+      "id": "b173",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[173]",
+      "headingPath": [
+        "更新日志",
+        "时间：2024-09-05​",
+        "deepseek-coder & deepseek-chat 升级为 DeepSeek V2.5 模型​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 7781,
+      "end": 7811,
+      "id": "b174",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[174]",
+      "headingPath": [
+        "更新日志",
+        "时间：2024-09-05​",
+        "deepseek-coder & deepseek-chat 升级为 DeepSeek V2.5 模型​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 7813,
+      "end": 7848,
+      "id": "b175",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[175]",
+      "headingPath": [
+        "更新日志",
+        "时间：2024-09-05​",
+        "deepseek-coder & deepseek-chat 升级为 DeepSeek V2.5 模型​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 7850,
+      "end": 7884,
+      "id": "b176",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[176]",
+      "headingPath": [
+        "更新日志",
+        "时间：2024-09-05​",
+        "deepseek-coder & deepseek-chat 升级为 DeepSeek V2.5 模型​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 7886,
+      "end": 7930,
+      "id": "b177",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[177]",
+      "headingPath": [
+        "更新日志",
+        "时间：2024-09-05​",
+        "deepseek-coder & deepseek-chat 升级为 DeepSeek V2.5 模型​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 7932,
+      "end": 7958,
+      "id": "b178",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[178]",
+      "headingPath": [
+        "更新日志",
+        "时间：2024-09-05​",
+        "deepseek-coder & deepseek-chat 升级为 DeepSeek V2.5 模型​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 7960,
+      "end": 7988,
+      "id": "b179",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[179]",
+      "headingPath": [
+        "更新日志",
+        "时间：2024-09-05​",
+        "deepseek-coder & deepseek-chat 升级为 DeepSeek V2.5 模型​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 7990,
+      "end": 8050,
+      "id": "b180",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[180]",
+      "headingPath": [
+        "更新日志",
+        "时间：2024-09-05​",
+        "deepseek-coder & deepseek-chat 升级为 DeepSeek V2.5 模型​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 8052,
+      "end": 8066,
+      "id": "b181",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[181]",
+      "headingPath": [
+        "更新日志",
+        "时间：2024-09-05​",
+        "deepseek-coder & deepseek-chat 升级为 DeepSeek V2.5 模型​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 8068,
+      "end": 8093,
+      "id": "b182",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[182]",
+      "headingPath": [
+        "更新日志",
+        "时间：2024-09-05​",
+        "deepseek-coder & deepseek-chat 升级为 DeepSeek V2.5 模型​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 8095,
+      "end": 8109,
+      "id": "b183",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[183]",
+      "headingPath": [
+        "更新日志",
+        "时间：2024-08-02​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 8111,
+      "end": 8124,
+      "id": "b184",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[184]",
+      "headingPath": [
+        "更新日志",
+        "时间：2024-08-02​",
+        "API 上线硬盘缓存技术​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 8126,
+      "end": 8157,
+      "id": "b185",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[185]",
+      "headingPath": [
+        "更新日志",
+        "时间：2024-08-02​",
+        "API 上线硬盘缓存技术​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 8159,
+      "end": 8190,
+      "id": "b186",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[186]",
+      "headingPath": [
+        "更新日志",
+        "时间：2024-08-02​",
+        "API 上线硬盘缓存技术​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 8192,
+      "end": 8206,
+      "id": "b187",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[187]",
+      "headingPath": [
+        "更新日志",
+        "时间：2024-07-25​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 8208,
+      "end": 8217,
+      "id": "b188",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[188]",
+      "headingPath": [
+        "更新日志",
+        "时间：2024-07-25​",
+        "API 接口更新​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 8219,
+      "end": 8288,
+      "id": "b189",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[189]",
+      "headingPath": [
+        "更新日志",
+        "时间：2024-07-25​",
+        "API 接口更新​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 8290,
+      "end": 8320,
+      "id": "b190",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[190]",
+      "headingPath": [
+        "更新日志",
+        "时间：2024-07-25​",
+        "API 接口更新​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 8322,
+      "end": 8352,
+      "id": "b191",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[191]",
+      "headingPath": [
+        "更新日志",
+        "时间：2024-07-25​",
+        "API 接口更新​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 8354,
+      "end": 8368,
+      "id": "b192",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[192]",
+      "headingPath": [
+        "更新日志",
+        "时间：2024-07-24​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 8370,
+      "end": 8385,
+      "id": "b193",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[193]",
+      "headingPath": [
+        "更新日志",
+        "时间：2024-07-24​",
+        "deepseek-coder​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 8387,
+      "end": 8431,
+      "id": "b194",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[194]",
+      "headingPath": [
+        "更新日志",
+        "时间：2024-07-24​",
+        "deepseek-coder​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 8433,
+      "end": 8447,
+      "id": "b195",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[195]",
+      "headingPath": [
+        "更新日志",
+        "时间：2024-06-28​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 8449,
+      "end": 8463,
+      "id": "b196",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[196]",
+      "headingPath": [
+        "更新日志",
+        "时间：2024-06-28​",
+        "deepseek-chat​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 8465,
+      "end": 8518,
+      "id": "b197",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[197]",
+      "headingPath": [
+        "更新日志",
+        "时间：2024-06-28​",
+        "deepseek-chat​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 8520,
+      "end": 8556,
+      "id": "b198",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[198]",
+      "headingPath": [
+        "更新日志",
+        "时间：2024-06-28​",
+        "deepseek-chat​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 8558,
+      "end": 8588,
+      "id": "b199",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[199]",
+      "headingPath": [
+        "更新日志",
+        "时间：2024-06-28​",
+        "deepseek-chat​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 8590,
+      "end": 8613,
+      "id": "b200",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[200]",
+      "headingPath": [
+        "更新日志",
+        "时间：2024-06-28​",
+        "deepseek-chat​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 8615,
+      "end": 8669,
+      "id": "b201",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[201]",
+      "headingPath": [
+        "更新日志",
+        "时间：2024-06-28​",
+        "deepseek-chat​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 8671,
+      "end": 8700,
+      "id": "b202",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[202]",
+      "headingPath": [
+        "更新日志",
+        "时间：2024-06-28​",
+        "deepseek-chat​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 8702,
+      "end": 8716,
+      "id": "b203",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[203]",
+      "headingPath": [
+        "更新日志",
+        "时间：2024-06-14​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 8718,
+      "end": 8733,
+      "id": "b204",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[204]",
+      "headingPath": [
+        "更新日志",
+        "时间：2024-06-14​",
+        "deepseek-coder​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 8735,
+      "end": 8875,
+      "id": "b205",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[205]",
+      "headingPath": [
+        "更新日志",
+        "时间：2024-06-14​",
+        "deepseek-coder​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 8877,
+      "end": 8891,
+      "id": "b206",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[206]",
+      "headingPath": [
+        "更新日志",
+        "时间：2024-05-17​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 8893,
+      "end": 8907,
+      "id": "b207",
+      "kind": "HEADING",
+      "locator": "source DOM normalized block[207]",
+      "headingPath": [
+        "更新日志",
+        "时间：2024-05-17​",
+        "deepseek-chat​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 8909,
+      "end": 9074,
+      "id": "b208",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[208]",
+      "headingPath": [
+        "更新日志",
+        "时间：2024-05-17​",
+        "deepseek-chat​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 9076,
+      "end": 9162,
+      "id": "b209",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[209]",
+      "headingPath": [
+        "更新日志",
+        "时间：2024-05-17​",
+        "deepseek-chat​"
+      ],
+      "mainContent": true,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 9164,
+      "end": 9215,
+      "id": "b210",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[210]",
+      "headingPath": [
+        "更新日志",
+        "时间：2024-05-17​",
+        "deepseek-chat​"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 9217,
+      "end": 9253,
+      "id": "b211",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[211]",
+      "headingPath": [
+        "更新日志",
+        "时间：2024-05-17​",
+        "deepseek-chat​"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 9255,
+      "end": 9300,
+      "id": "b212",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[212]",
+      "headingPath": [
+        "更新日志",
+        "时间：2024-05-17​",
+        "deepseek-chat​"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 9302,
+      "end": 9334,
+      "id": "b213",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[213]",
+      "headingPath": [
+        "更新日志",
+        "时间：2024-05-17​",
+        "deepseek-chat​"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 9336,
+      "end": 9370,
+      "id": "b214",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[214]",
+      "headingPath": [
+        "更新日志",
+        "时间：2024-05-17​",
+        "deepseek-chat​"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 9372,
+      "end": 9397,
+      "id": "b215",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[215]",
+      "headingPath": [
+        "更新日志",
+        "时间：2024-05-17​",
+        "deepseek-chat​"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 9399,
+      "end": 9448,
+      "id": "b216",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[216]",
+      "headingPath": [
+        "更新日志",
+        "时间：2024-05-17​",
+        "deepseek-chat​"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 9450,
+      "end": 9481,
+      "id": "b217",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[217]",
+      "headingPath": [
+        "更新日志",
+        "时间：2024-05-17​",
+        "deepseek-chat​"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 9483,
+      "end": 9519,
+      "id": "b218",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[218]",
+      "headingPath": [
+        "更新日志",
+        "时间：2024-05-17​",
+        "deepseek-chat​"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 9521,
+      "end": 9548,
+      "id": "b219",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[219]",
+      "headingPath": [
+        "更新日志",
+        "时间：2024-05-17​",
+        "deepseek-chat​"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 9550,
+      "end": 9581,
+      "id": "b220",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[220]",
+      "headingPath": [
+        "更新日志",
+        "时间：2024-05-17​",
+        "deepseek-chat​"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 9583,
+      "end": 9610,
+      "id": "b221",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[221]",
+      "headingPath": [
+        "更新日志",
+        "时间：2024-05-17​",
+        "deepseek-chat​"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 9612,
+      "end": 9643,
+      "id": "b222",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[222]",
+      "headingPath": [
+        "更新日志",
+        "时间：2024-05-17​",
+        "deepseek-chat​"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 9645,
+      "end": 9672,
+      "id": "b223",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[223]",
+      "headingPath": [
+        "更新日志",
+        "时间：2024-05-17​",
+        "deepseek-chat​"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 9674,
+      "end": 9700,
+      "id": "b224",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[224]",
+      "headingPath": [
+        "更新日志",
+        "时间：2024-05-17​",
+        "deepseek-chat​"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 9702,
+      "end": 9766,
+      "id": "b225",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[225]",
+      "headingPath": [
+        "更新日志",
+        "时间：2024-05-17​",
+        "deepseek-chat​"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 9768,
+      "end": 9793,
+      "id": "b226",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[226]",
+      "headingPath": [
+        "更新日志",
+        "时间：2024-05-17​",
+        "deepseek-chat​"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 9795,
+      "end": 9816,
+      "id": "b227",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[227]",
+      "headingPath": [
+        "更新日志",
+        "时间：2024-05-17​",
+        "deepseek-chat​"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 9818,
+      "end": 9845,
+      "id": "b228",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[228]",
+      "headingPath": [
+        "更新日志",
+        "时间：2024-05-17​",
+        "deepseek-chat​"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 9847,
+      "end": 9873,
+      "id": "b229",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[229]",
+      "headingPath": [
+        "更新日志",
+        "时间：2024-05-17​",
+        "deepseek-chat​"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 9875,
+      "end": 9902,
+      "id": "b230",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[230]",
+      "headingPath": [
+        "更新日志",
+        "时间：2024-05-17​",
+        "deepseek-chat​"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    },
+    {
+      "start": 9904,
+      "end": 9930,
+      "id": "b231",
+      "kind": "PARAGRAPH",
+      "locator": "source DOM normalized block[231]",
+      "headingPath": [
+        "更新日志",
+        "时间：2024-05-17​",
+        "deepseek-chat​"
+      ],
+      "mainContent": false,
+      "author": null,
+      "publishedAt": null,
+      "parentId": null,
+      "sourceUrl": null
+    }
+  ],
+  "links": [
+    {
+      "url": "https://api-docs.deepseek.com/zh-cn/updates",
+      "text": "",
+      "blockId": null,
+      "relation": "CANONICAL",
+      "locator": "source DOM link[0]"
+    },
+    {
+      "url": "https://api-docs.deepseek.com/zh-cn/guides/search",
+      "text": "点此查看使用指南。",
+      "blockId": "b1",
+      "relation": "LINK",
+      "locator": "source DOM link[2]"
+    },
+    {
+      "url": "https://api-docs.deepseek.com/zh-cn/guides/search",
+      "text": "网页搜索与抓取指南",
+      "blockId": "b6",
+      "relation": "LINK",
+      "locator": "source DOM link[22]"
+    },
+    {
+      "url": "https://api-docs.deepseek.com/zh-cn/quick_start/pricing",
+      "text": "模型与价格",
+      "blockId": "b51",
+      "relation": "LINK",
+      "locator": "source DOM link[26]"
+    },
+    {
+      "url": "https://api-docs.deepseek.com/zh-cn/news/news260910",
+      "text": "参阅文档",
+      "blockId": "b52",
+      "relation": "LINK",
+      "locator": "source DOM link[27]"
+    },
+    {
+      "url": "https://api-docs.deepseek.com/zh-cn/guides/vision",
+      "text": "参阅文档",
+      "blockId": "b68",
+      "relation": "LINK",
+      "locator": "source DOM link[30]"
+    },
+    {
+      "url": "https://api-docs.deepseek.com/zh-cn/quick_start/agent_integrations/codex",
+      "text": "官方文档",
+      "blockId": "b85",
+      "relation": "LINK",
+      "locator": "source DOM link[33]"
+    },
+    {
+      "url": "https://api-docs.deepseek.com/zh-cn/guides/thinking_mode",
+      "text": "思考模式",
+      "blockId": "b87",
+      "relation": "LINK",
+      "locator": "source DOM link[34]"
+    },
+    {
+      "url": "https://api-docs.deepseek.com/zh-cn/quick_start/pricing",
+      "text": "更新调整",
+      "blockId": "b89",
+      "relation": "LINK",
+      "locator": "source DOM link[35]"
+    },
+    {
+      "url": "https://api-docs.deepseek.com/zh-cn/news/news260813",
+      "text": "参阅文档",
+      "blockId": "b90",
+      "relation": "LINK",
+      "locator": "source DOM link[36]"
+    },
+    {
+      "url": "https://api-docs.deepseek.com/zh-cn/quick_start/agent_integrations/codex",
+      "text": "文档",
+      "blockId": "b105",
+      "relation": "LINK",
+      "locator": "source DOM link[39]"
+    },
+    {
+      "url": "https://api-docs.deepseek.com/zh-cn/news/news260424",
+      "text": "参阅文档",
+      "blockId": "b113",
+      "relation": "LINK",
+      "locator": "source DOM link[42]"
+    },
+    {
+      "url": "https://api-docs.deepseek.com/zh-cn/news/news251201",
+      "text": "参阅文档",
+      "blockId": "b121",
+      "relation": "LINK",
+      "locator": "source DOM link[46]"
+    },
+    {
+      "url": "https://api-docs.deepseek.com/zh-cn/news/news250929",
+      "text": "参阅文档",
+      "blockId": "b127",
+      "relation": "LINK",
+      "locator": "source DOM link[49]"
+    },
+    {
+      "url": "https://api-docs.deepseek.com/zh-cn/news/news250120",
+      "text": "DeepSeek-R1 正式发布",
+      "blockId": "b157",
+      "relation": "LINK",
+      "locator": "source DOM link[60]"
+    },
+    {
+      "url": "https://api-docs.deepseek.com/zh-cn/guides/thinking_mode",
+      "text": "推理模型",
+      "blockId": "b158",
+      "relation": "LINK",
+      "locator": "source DOM link[61]"
+    },
+    {
+      "url": "https://api-docs.deepseek.com/zh-cn/news/news1226",
+      "text": "DeepSeek-V3 正式发布",
+      "blockId": "b162",
+      "relation": "LINK",
+      "locator": "source DOM link[64]"
+    },
+    {
+      "url": "https://api-docs.deepseek.com/zh-cn/news/news0802",
+      "text": "API 上线硬盘缓存 2024/08/02",
+      "blockId": "b186",
+      "relation": "LINK",
+      "locator": "source DOM link[71]"
+    },
+    {
+      "url": "https://api-docs.deepseek.com/zh-cn/news/news0725",
+      "text": "API 升级新功能 2024/07/25",
+      "blockId": "b191",
+      "relation": "LINK",
+      "locator": "source DOM link[74]"
+    }
+  ],
+  "tables": []
+}
