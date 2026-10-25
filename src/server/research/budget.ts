@@ -32,21 +32,31 @@ export async function bounded<T>(parent: AbortSignal, timeoutMs: number, run: (s
 
 export function budgetModel(model: ModelProvider, budget: ResearchBudget, calls: ModelCall[], remaining: () => number) {
   let attempts = 0;
-  let reservedTokens = 0;
+  const pendingEstimates = new Map<number, number>();
+  const completedEstimates: number[] = [];
+  const asOf = new Date().toISOString();
   let finalPhase = false;
   return {
     finishPhase: () => { finalPhase = true; },
     provider: {
       ...(model.config ? { config: () => model.config!() } : {}),
       async generate<T>(request: ModelRequest<T>): Promise<T> {
-        // Usage-less failures still consume a conservative estimate, not a fictional zero cost.
+        const prompt = `本次调查时间为${asOf}。判断当前事实须核对生效/停用/过渡日期；历史或过渡期映射不自动延续至今，日期不明不得默认为当前。\n${request.prompt}`;
+        // Reconcile completed calls with actual usage. Only pending/usage-less calls
+        // retain estimates, so a known cheap call cannot permanently exhaust the budget.
         const measured = calls.reduce((sum, call) => sum + (call.inputTokens ?? 0) + (call.outputTokens ?? 0), 0);
-        const estimate = Math.ceil(request.prompt.length / 2) + 4000;
+        const known = calls.filter(call => call.inputTokens !== null && call.outputTokens !== null).length;
+        const unknown = Math.max(0, completedEstimates.length - known);
+        const unknownCost = [...completedEstimates].sort((a, b) => b - a).slice(0, unknown).reduce((sum, value) => sum + value, 0);
+        const reserved = [...pendingEstimates.values()].reduce((sum, value) => sum + value, 0);
+        const estimate = Math.ceil(prompt.length / 2) + 4000;
         const ceiling = finalPhase ? budget.totalTokens : budget.explorationTokens;
         const attemptCeiling = finalPhase ? budget.modelCalls : budget.modelCalls - Math.min(6, Math.floor(budget.modelCalls / 4));
-        if (attempts >= attemptCeiling || Math.max(measured, reservedTokens) + estimate > ceiling || remaining() < 150) throw new Error("Research model/token budget exhausted; unresolved items retained");
-        attempts++; reservedTokens += estimate;
-        return model.generate({ ...request, formatRepair: false });
+        if (attempts >= attemptCeiling || measured + unknownCost + reserved + estimate > ceiling || remaining() < 150) throw new Error("Research model/token budget exhausted; unresolved items retained");
+        const attempt = ++attempts;
+        pendingEstimates.set(attempt, estimate);
+        try { return await model.generate({ ...request, prompt, formatRepair: false }); }
+        finally { pendingEstimates.delete(attempt); completedEstimates.push(estimate); }
       }
     } satisfies ModelProvider
   };

@@ -46,6 +46,7 @@ export function createResearchVerifier(model: ModelProvider, audit: ResearchAudi
   const taskByClaim = new Map<string, string[]>();
   const proposedEvidence = new Map<string, string[]>();
   const processedFragments = new Set<string>();
+  const pendingClaims = new Set<string>();
   const gap = (snapshot: EvidenceSnapshot, description: string, claimIds: string[] = []) => {
     if (!snapshot.gaps.some(item => item.description === description)) snapshot.gaps.push({ id: randomUUID(), claimIds, kind: "INSUFFICIENT_EVIDENCE", description, searchScope: null });
   };
@@ -71,7 +72,7 @@ export function createResearchVerifier(model: ModelProvider, audit: ResearchAudi
         fresh.forEach(item => processedFragments.add(`${item.sourceUrl}:${item.contentHash}`));
       } catch (error) { signal.throwIfAborted(); gap(snapshot, `新材料主张提取未完成：${errorText(error)}；已核验旧主张保留。`); }
     }
-    const claimsToCheck = snapshot.claims.filter(claim => claim.verificationStatus === "UNVERIFIED" || fresh.some(item => audit.candidates.some(candidate => candidate.evidenceIds.includes(item.id) && candidate.taskIds.some(id => taskByClaim.get(claim.id)?.includes(id)))));
+    const claimsToCheck = snapshot.claims.filter(claim => claim.verificationStatus === "UNVERIFIED" || pendingClaims.has(claim.id) || fresh.some(item => audit.candidates.some(candidate => candidate.evidenceIds.includes(item.id) && candidate.taskIds.some(id => taskByClaim.get(claim.id)?.includes(id)))));
     for (let offset = 0; offset < claimsToCheck.length && left() > 500; offset += 4) {
       const batch = claimsToCheck.slice(offset, offset + 4);
       const relatedIds = new Set(batch.flatMap(claim => proposedEvidence.get(claim.id) ?? []));
@@ -97,10 +98,12 @@ export function createResearchVerifier(model: ModelProvider, audit: ResearchAudi
           } catch { signal.throwIfAborted(); }
         }
         if (!result?.success || result.data.claimId !== claim.id) {
+          pendingClaims.add(claim.id);
           const reason = "该主张本轮核查输出未通过结构校验；既有有效核查及其他主张保留，新材料影响尚未判定。";
           if (claim.verificationStatus === "UNVERIFIED") { claim.verificationStatus = "INSUFFICIENT"; claim.verificationReason = reason; }
           gap(snapshot, reason, [claim.id]); continue;
         }
+        pendingClaims.delete(claim.id);
         snapshot.relations = snapshot.relations.filter(item => item.claimId !== claim.id);
         snapshot.conflicts = snapshot.conflicts.filter(item => !item.claimIds.includes(claim.id));
         const judgment = result.data;
@@ -152,7 +155,7 @@ export function createResearchVerifier(model: ModelProvider, audit: ResearchAudi
     if (resolved.length && left() > 1500) {
       try {
         const output = await bounded(signal, Math.min(23000, left()), inner => model.generate({ purpose: "v4-direct-answer-and-analysis", signal: inner, outputSchema: ParagraphsSchema,
-          prompt: `${rules}\n先直接回答用户的问题，再给有依据的综合分析（比较适用条件、工具层次、分歧和证据边界）。只能使用已SUPPORTED主张；每段claimIds覆盖其全部事实，不增加新事实。不要逐条抄核查日志。没有证据时不凑文字。recommendation=false时不得给总体用途推荐/四档评级，仍可提供有用事实和限定分析。不要写引用标记，程序会插入保存原句；未知项由程序另列。\n${JSON.stringify({ question: audit.originalQuestion, intent: audit.intent, tasks: audit.tasks, claims: resolved, recommendation: audit.recommendation })}` }));
+          prompt: `${rules}\n先直接回答用户的问题，再给有依据的综合分析（比较适用条件、工具层次、分歧和证据边界）。只能使用已SUPPORTED主张；每段claimIds覆盖其全部事实，不增加新事实。不要逐条抄核查日志。没有证据时不凑文字。recommendation=false时不得给总体用途推荐/四档评级，仍可提供有用事实和限定分析。每段写明涉及的作者或站点/时间；不同来源不能串成同一次任务或实验，跨段指代仅在来源相同才可用。不要写引用标记，程序会插入保存原句；未知项由程序另列。\n${JSON.stringify({ question: audit.originalQuestion, intent: audit.intent, tasks: audit.tasks, claims: resolved, recommendation: audit.recommendation })}` }));
         paragraphs = output.paragraphs.filter(item => item.claimIds.every(id => resolved.some(claim => claim.id === id)) && (audit.recommendation.eligible || !item.recommendation && !/值得一试|有条件值得|不建议|强烈推荐|推荐使用/.test(item.text)));
       } catch (error) { signal.throwIfAborted(); audit.diagnostics.push(`综合叙述未完成，转为逐主张原句核查：${errorText(error)}`); }
     }
@@ -164,7 +167,7 @@ export function createResearchVerifier(model: ModelProvider, audit: ResearchAudi
       const batch = paragraphs.slice(offset, offset + 4);
       try {
         const output = await bounded(signal, Math.min(18000, left()), inner => model.generate({ purpose: "v4-synthesis-semantic-check", signal: inner, outputSchema: Envelope,
-          prompt: `${rules}\n检查每段全部事实/数值/条件是否由其给定原句直接支持，不能用主张或其他段的证据补。任何一项越界整段false。items每项为${JSON.stringify(z.toJSONSchema(SemanticCheck))}；index采用给定全局index，每个一次。\n${JSON.stringify(batch.map((item, i) => ({ index: offset + i, text: item.text, evidence: quotes(snapshot.evidence.filter(evidence => paragraphEvidence(item.claimIds).includes(evidence.id))) })))}` }));
+          prompt: `${rules}\n检查每段全部事实/数值/条件是否由其给定原句直接支持，不能用主张或其他段的证据补。任何一项越界整段false。preceding只用于解析跨段指代，不是事实证据；“同一报道/该作者/该实验”须与前段实际出处相符，不能把不同来源串成一次实验。items每项为${JSON.stringify(z.toJSONSchema(SemanticCheck))}；index采用给定全局index，每个一次。\n${JSON.stringify(batch.map((item, i) => ({ index: offset + i, text: item.text, preceding: offset + i > 0 ? { text: paragraphs[offset + i - 1]!.text, urls: snapshot.evidence.filter(evidence => paragraphEvidence(paragraphs[offset + i - 1]!.claimIds).includes(evidence.id)).map(evidence => evidence.sourceUrl) } : null, evidence: quotes(snapshot.evidence.filter(evidence => paragraphEvidence(item.claimIds).includes(evidence.id))) })))}` }));
         for (let index = offset; index < offset + batch.length; index++) {
           const checks = output.items.map(item => SemanticCheck.safeParse(item)).filter(item => item.success && item.data.index === index);
           if (checks.length === 1 && checks[0]!.success) verified.push(checks[0]!.data);

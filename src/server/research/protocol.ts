@@ -1,4 +1,5 @@
 import type { Evidence } from "../../contracts";
+import type { SourceDocument } from "../retrieval/documents/types";
 
 // Structural seam matches A1's exported source-document/v1; no second document format.
 export interface ResearchDocument {
@@ -9,7 +10,8 @@ export interface ResearchDocument {
   parser: { name: string; version: string };
   completeness: "COMPLETE" | "TRUNCATED"; warnings: string[];
   metadata: { title: string | null; author: string | null; publishedAt: string | null; language: string | null };
-  blocks: { id: string; start: number; end: number; kind: string; headingPath: string[] }[];
+  blocks: { id: string; start: number; end: number; kind: string; headingPath: string[]; locator?: string; sourceUrl?: string | null }[];
+  tables?: SourceDocument["tables"];
   links: { url: string; text: string; blockId: string | null; relation: string; locator: string }[];
 }
 export interface ResearchFragment {
