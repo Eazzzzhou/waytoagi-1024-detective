@@ -248,6 +248,7 @@ export function createInvestigationHandler(dependencies: {
     }
     mergeJournals();
     syncSources();
+    if (loop.decisions.length === 10 && loop.decisions.at(-1)?.outcome !== "STOPPED") loop.stopReason = "达到十次决策预算，保留未决缺口并整理回答。";
     // Apply the discovered publisher to earlier reads as well as subsequent reads.
     if (identity.confirmationStatus === "CONFIRMED" && identity.officialWebsite) {
       const publisher = new URL(identity.officialWebsite);
