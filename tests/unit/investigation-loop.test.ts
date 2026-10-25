@@ -1,4 +1,4 @@
-import { randomUUID } from "node:crypto";
+import { createHash, randomUUID } from "node:crypto";
 import { describe, expect, it } from "vitest";
 import type { Evidence, InvestigationDecision, ModelCall, RetrievalRecord } from "../../src/contracts";
 import { createInvestigationHandler } from "../../src/server/investigation/handler";
@@ -27,9 +27,10 @@ function rig(decide: (input: Record<string, unknown>, call: number) => Investiga
     resolve: async () => { throw new Error("Unknown identity must not be a prerequisite"); }, search,
     searchWeb: options.failedWeb ? async (query: string): Promise<RetrievalRecord> => ({ id: randomUUID(), provider: "synthetic-failed-web", query, calledAt: new Date().toISOString(), status: "FAILED", error: "Injected HTTP 429", returnedSources: [] }) : search,
     searchCommunity: search,
-    fetch: async (url: string) => {
+    fetch: async (url: string, context?: { question?: string }) => {
       if (options.throwingRead && url.endsWith("v2")) throw new Error("Injected read transport failure");
-      const item = { ...makeSnapshot().evidence[0]!, sourceUrl: url, originalExcerpt: url.endsWith("v1") ? "Synthetic v1 report: v2 needs checking." : "Synthetic v2 report." };
+      const originalExcerpt = context?.question === "model version" ? "Synthetic model version V2." : url.endsWith("v1") ? "Synthetic v1 report: v2 needs checking." : "Synthetic v2 report.";
+      const item = { ...makeSnapshot().evidence[0]!, sourceUrl: url, originalExcerpt, contentHash: createHash("sha256").update(originalExcerpt).digest("hex") };
       originals.push(item); return item;
     },
     collect: async () => ({ identity, evidence: [], retrievalRecords: [] })
@@ -122,5 +123,29 @@ describe("evidence-driven investigation loop (synthetic controls, not business a
     if (result.kind !== "AWAITING_CONFIRMATION") throw new Error("Expected clarification");
     expect(result.request.reason).toBe("你指的是应用还是同名公司？");
     expect(result.request.identity.officialWebsite).toBeNull();
+  });
+  it("returns verification gaps to the model and reads another original passage before ending", async () => {
+    const test = rig((input, call) => {
+      const evidence = input.evidence as Evidence[];
+      if (call === 1) return choose("SEARCH", { query: "initial", entries: ["yuanbao"] });
+      if (call === 2) return choose("READ", { readUrls: ["https://example.com/v1"] });
+      if (call === 4) {
+        expect((input.verificationAssessment as { gaps: { description: string }[] }).gaps[0]!.description).toBe("Model version absent from the saved passage");
+        return choose("READ", { query: "model version", readUrls: ["https://example.com/v1"], observedGap: "Need the model name and version", basisEvidenceIds: [evidence[0]!.id] });
+      }
+      return choose("FINISH");
+    });
+    let verifications = 0;
+    const verification = () => ({ ...test.verification(), verification: { verify: async (input: ReturnType<typeof makeSnapshot>) => {
+      verifications++;
+      return { ...input, gaps: input.evidence.length === 1 ? [{ id: randomUUID(), claimIds: [], kind: "INSUFFICIENT_EVIDENCE" as const, description: "Model version absent from the saved passage", searchScope: null }] : [] };
+    } } });
+    const result = await run(createInvestigationHandler({ ...test, verification }));
+    if (result.kind !== "COMPLETE") throw new Error("Expected completion");
+    expect(result.result.snapshot.evidence).toHaveLength(2);
+    expect(result.result.snapshot.evidence[1]!.originalExcerpt).toBe("Synthetic model version V2.");
+    expect(result.result.snapshot.verificationAudit!.investigationLoop!.searchRounds).toBe(1);
+    expect(result.result.snapshot.gaps).toEqual([]);
+    expect(verifications).toBe(2);
   });
 });

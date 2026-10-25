@@ -142,7 +142,7 @@ describe("A2 synthetic boundary regressions (not real investigation acceptance)"
     const providers = createVerificationProviders({ env: {} });
     const record = { id: randomUUID(), provider: "test-only", query: "Synthetic question", calledAt: evidence.retrievedAt, status: "SUCCEEDED" as const, error: null, returnedSources: [{ url: evidence.sourceUrl, title: null, snippet: null, adoption: "PENDING" as const, adoptionReason: null, evidenceId: null }] };
     const search = async () => structuredClone({ ...record, id: randomUUID() });
-    const collection = { ...createCollectionProviders(), resolve: async () => identity, search, searchWeb: search, searchCommunity: search, fetch: async () => structuredClone(evidence), collect: async () => ({ identity, evidence: [], retrievalRecords: [], diagnostics: [] }) };
+    const collection = { ...createCollectionProviders(), resolve: async () => identity, discoverIdentity: () => identity, search, searchWeb: search, searchCommunity: search, fetch: async () => structuredClone(evidence), collect: async () => ({ identity, evidence: [], retrievalRecords: [], diagnostics: [] }) };
     const stages: string[] = [];
     const decision = { query: null, entries: [], readUrls: [], reason: "Synthetic test decision", observedGap: null, basisEvidenceIds: [], basisRecordIds: [], clarification: null, discoveredIdentity: null };
     const planner = scriptedModel([
