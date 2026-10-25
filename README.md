@@ -38,7 +38,7 @@ npm run worker
 
 在各自项目根目录保留已有 `.env`。Git 不传递 `.env`、密钥 CSV、数据库卷或原文缓存；配置路径按各自电脑填写，程序没有要求使用提交者的路径。例如原集成电脑可继续使用 `TENCENTCLOUD_WSA_APIKEY_FILE=C:/Users/qianchen/Downloads/apikey.csv`；数据库 URL、Chrome 路径和 local-tun 设置也保留各自实际环境。新增可选变量按 `.env.example` 合并，不覆盖原文件。
 
-先处理个人未提交代码，再在仓库根目录更新并执行：
+先处理个人未提交代码并停止 Web／Worker（Windows 下运行中的 Next 会锁住编译库），再在仓库根目录更新并执行：
 
 ```powershell
 git pull --ff-only
