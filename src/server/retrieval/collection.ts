@@ -103,7 +103,7 @@ export function extractHtml(html: string, question = "") {
 
 export function createCollectionProviders(options: CollectionOptions = {}) {
   const totalMs = options.timeoutMs ?? 60_000;
-  if (!Number.isInteger(totalMs) || totalMs < 1 || totalMs > 300_000) throw new Error("Collection budget must be 1..300000ms");
+  if (!Number.isInteger(totalMs) || totalMs < 1 || totalMs > 900_000) throw new Error("Collection budget must be 1..900000ms");
   const budget = AbortSignal.timeout(totalMs);
   const overall = options.signal ? AbortSignal.any([options.signal, budget]) : budget;
   const maxSources = Math.min(12, Math.max(1, options.maxSources ?? 6));

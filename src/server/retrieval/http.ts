@@ -2,6 +2,7 @@ import { lookup } from "node:dns/promises";
 import { request as httpsRequest } from "node:https";
 import { request as httpRequest } from "node:http";
 import { isIP } from "node:net";
+import { createHash } from "node:crypto";
 
 // Resolve once and pin the selected public address during connection (including redirects).
 export function isPublicAddress(address: string): boolean {
@@ -42,9 +43,15 @@ export interface HttpAttempt {
 export interface HttpRequestOptions {
   method?: string; body?: string; headers?: Record<string, string>; maxBytes?: number;
   onAttempt?: (attempt: HttpAttempt) => void;
+  followRedirects?: boolean;
+}
+export interface HttpTextResponse {
+  url: string; status: number; text: string; contentType: string;
+  /** Original response bytes, distinct from normalized document/fragment text. */
+  rawBytes?: Buffer; rawHash?: string; byteLength?: number; headers?: Record<string, string>;
 }
 
-export async function requestText(input: string, signal: AbortSignal, options: HttpRequestOptions = {}, redirects = 0): Promise<{ url: string; status: number; text: string; contentType: string }> {
+export async function requestText(input: string, signal: AbortSignal, options: HttpRequestOptions = {}, redirects = 0): Promise<HttpTextResponse> {
   const attempt: HttpAttempt = { url: publicUrl(input).href, method: options.method ?? "GET", startedAt: new Date().toISOString(),
     finishedAt: null, requestSent: false, status: null, error: null };
   options.onAttempt?.(attempt);
@@ -58,7 +65,7 @@ export async function requestText(input: string, signal: AbortSignal, options: H
   }
 }
 
-async function requestTextAttempt(input: string, signal: AbortSignal, options: HttpRequestOptions, redirects: number, attempt: HttpAttempt): Promise<{ url: string; status: number; text: string; contentType: string }> {
+async function requestTextAttempt(input: string, signal: AbortSignal, options: HttpRequestOptions, redirects: number, attempt: HttpAttempt): Promise<HttpTextResponse> {
   signal.throwIfAborted();
   const url = publicUrl(input);
   const host = url.hostname.replace(/^\[|\]$/g, "");
@@ -74,7 +81,7 @@ async function requestTextAttempt(input: string, signal: AbortSignal, options: H
     (localTun && /^198\.(18|19)\./.test(address));
   if (!addresses.length || addresses.some(a => !permitted(a.address))) throw new Error("Non-public DNS answer rejected (local TUN fake-IP DNS requires COLLECTION_DNS_MODE=local-tun)");
   const address = addresses[0]!;
-  const result = await new Promise<{ status: number; text: string; location?: string; contentType: string }>((resolve, reject) => {
+  const result = await new Promise<Omit<HttpTextResponse, "url"> & { location?: string }>((resolve, reject) => {
     const req = (url.protocol === "https:" ? httpsRequest : httpRequest)(url, {
       method: options.method ?? "GET", signal, family: address.family,
       lookup: (_host, _options, callback) => callback(null, address.address, address.family),
@@ -88,12 +95,20 @@ async function requestTextAttempt(input: string, signal: AbortSignal, options: H
         chunks.push(chunk);
       });
       res.on("error", reject);
-      res.on("end", () => resolve({ status: res.statusCode ?? 0, text: Buffer.concat(chunks).toString("utf8"),
-        ...(res.headers.location ? { location: res.headers.location } : {}), contentType: res.headers["content-type"] ?? "" }));
+      res.on("end", () => {
+        const rawBytes = Buffer.concat(chunks);
+        const headers: Record<string, string> = {};
+        for (const key of ["content-type", "content-security-policy", "location", "access-control-allow-origin", "access-control-allow-headers", "access-control-allow-methods", "cross-origin-resource-policy"]) {
+          const value = res.headers[key]; if (typeof value === "string") headers[key] = value;
+        }
+        resolve({ status: res.statusCode ?? 0, text: rawBytes.toString("utf8"), rawBytes,
+          rawHash: createHash("sha256").update(rawBytes).digest("hex"), byteLength: rawBytes.length, headers,
+          ...(res.headers.location ? { location: res.headers.location } : {}), contentType: res.headers["content-type"] ?? "" });
+      });
     });
     req.on("error", reject); attempt.requestSent = true; req.end(options.body);
   });
-  if ([301, 302, 303, 307, 308].includes(result.status) && result.location) {
+  if (options.followRedirects !== false && [301, 302, 303, 307, 308].includes(result.status) && result.location) {
     if (redirects >= 3) throw new Error("Redirect budget exhausted");
     // Never forward credentials or POST bodies to a redirect destination.
     if (options.method === "POST" || options.headers?.Authorization) throw new Error("Authenticated redirects rejected");
