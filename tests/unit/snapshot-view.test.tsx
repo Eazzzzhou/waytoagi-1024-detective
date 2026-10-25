@@ -14,6 +14,6 @@ it("renders evidence, translations, judgments, gaps and citation anchors as esca
   expect(html).not.toContain('<img src="x"');
   expect(html).toContain("明确分开的译文");
   expect(html).toContain("尚未核查");
-  expect(html).toContain(`href="#evidence-${snapshot.evidence[0]!.id}"`);
+  expect(html).toContain(`href="#snapshot-${snapshot.id}-evidence-${snapshot.evidence[0]!.id}"`);
   expect(html).toContain("证据缺口");
 });

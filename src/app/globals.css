@@ -1,15 +1,62 @@
+/* 案卷 · Neo-Classical Minimalism + Premium Editorial
+   暖白纸面 × 炭墨正文 × 香槟金线 × 鼠尾草辅助；金色不承载状态语义。
+   展示衬线与 Noto 采用零下载字体栈（系统回退），不引入字体依赖。 */
 @font-face { font-family: Geist; src: url('/fonts/geist-latin.woff2') format('woff2'); font-weight: 100 900; font-display: swap; }
 @font-face { font-family: 'Geist Mono'; src: url('/fonts/geist-mono-latin.woff2') format('woff2'); font-weight: 100 900; font-display: swap; }
+
 :root {
-  --ground: #f2f4f7; --surface: #fff; --raised: #eee; --border: #e6e6e6; --rule: #f0f0f0; --control: #d4d4d4;
-  --text: #0a0a0a; --muted: #626262; --accent: #343434; --negative: #b12028;
-  --radius-card: 8px; --radius-control: 6px; --gap: 12px; --pad: 24px;
+  /* 纸面 */
+  --bg: #fefefc;
+  --surface: #f7f6f3;
+  --surface-hover: #f0efeb;
+  --paper: #ffffff;
+
+  /* 炭墨文字 */
+  --ink: #292930;
+  --ink-soft: #747680;
+  --muted: #747680;
+
+  /* 香槟金（装饰与品牌线，不作状态色） */
+  --gold: #c4a16e;
+  --gold-soft: #f2eadf;
+  --gold-deep: #8c632c;
+
+  /* 鼠尾草（辅助与链接） */
+  --sage: #8ea79b;
+  --sage-soft: #e7ece6;
+  --sage-deep: #3e5a4b;
+
+  /* 边框 */
+  --border: #e5e1db;
+  --border-soft: #eeebe5;
+  --rule: #efede8;
+  --border-focus: #d2bea4;
+  --control: #cfc9bf;
+
+  /* 语义状态（成对使用，始终伴随文字） */
+  --positive: #3b7655; --positive-surface: #e4efe8;
+  --warning: #8c632c; --warning-surface: #f6ecdd;
+  --negative: #a33f47; --negative-surface: #f7e7e8;
+
+  /* 字体 */
+  --font-serif: 'Cormorant Garamond', 'Noto Serif SC', Georgia, 'Songti SC', 'STZhongsong', 'SimSun', serif;
+  --font-sans: Geist, 'Noto Sans SC', 'Microsoft YaHei', 'PingFang SC', sans-serif;
+  --font-mono: 'Geist Mono', monospace;
+
+  /* 圆角与间距 */
+  --radius-card: 12px; --radius-control: 10px; --radius-inline: 6px;
+  --gap: 16px; --pad: 28px;
 }
+
 * { box-sizing: border-box; }
-html { color-scheme: light; }
-body { margin: 0; background: var(--ground); color: var(--text); font-family: Geist, 'Microsoft YaHei', 'PingFang SC', sans-serif; font-size: 14px; line-height: 1.65; }
-a { color: inherit; text-underline-offset: 3px; }
-code { font-family: 'Geist Mono', monospace; font-size: 12px; overflow-wrap: anywhere; }
+html { color-scheme: light; scroll-behavior: auto; scrollbar-color: var(--control) var(--bg); }
+body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--font-sans); font-size: 15px; line-height: 1.7; }
+a { color: inherit; text-underline-offset: 3px; -webkit-tap-highlight-color: transparent; }
+button, a { touch-action: manipulation; }
+code { font-family: var(--font-mono); font-size: 12px; overflow-wrap: anywhere; }
 button, input, textarea { font: inherit; }
-:focus-visible { outline: 2px solid var(--text); outline-offset: 3px; }
-::selection { background: var(--control); }
+:focus-visible { outline: 3px solid var(--gold-deep); outline-offset: 3px; }
+::selection { background: var(--gold-soft); color: var(--ink); }
+input, textarea { caret-color: var(--gold-deep); }
+
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { animation: none !important; transition: none !important; } }

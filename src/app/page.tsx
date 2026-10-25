@@ -1,13 +1,24 @@
 import { NewInvestigationForm } from "@/components/investigation/NewInvestigationForm";
+import { TempleScene } from "@/components/investigation/TempleScene";
 import styles from "@/components/investigation/workbench.module.css";
 
 export default function Home() {
-  return <>
-    <header className={styles.titleRow}><div><h1>发起产品调查</h1><p className={styles.muted}>提出一个具体问题，让结论有据可查。</p></div></header>
-    <div className={styles.homeGrid}>
-      <section className={styles.panel}><NewInvestigationForm /></section>
-      <aside className={styles.guide}><h2>从问题到依据</h2><p>关注产品的哪一项能力？先把范围说清楚，再核对对应的版本、套餐和来源。</p><h3>回答与引用</h3><p className={styles.muted}>回答关联证据，原文与译文分别保留。</p><h3>冲突与未知</h3><p className={styles.muted}>不同说法和未查清的部分会明确列出；读取失败不等于没有讨论。</p></aside>
-    </div>
-    <p className={styles.meta}>本地开发版本 · 真实检索服务尚未接入时，任务会明确记录不可用错误。</p>
-  </>;
+  return <div className={styles.home}>
+    <section className={styles.hero}>
+      <p className={styles.heroKicker} aria-hidden="true"><span className={styles.sealBadge}>案</span></p>
+      <h1 className={styles.heroTitle}>案卷</h1>
+      <p className={styles.heroSub}>AI 产品调查与证据核查</p>
+      <p className={styles.heroLead}>关于这款 AI 产品，你想查清什么？</p>
+      <section className={styles.composer} aria-label="发起调查"><NewInvestigationForm /></section>
+      <ol className={styles.steps} aria-label="调查阅读流程">
+        <li className={styles.stepPill}><span className={styles.stepNo} aria-hidden="true">壹</span>提出问题</li>
+        <li aria-hidden="true" className={styles.stepArrow}>→</li>
+        <li className={styles.stepPill}><span className={styles.stepNo} aria-hidden="true">贰</span>查看真实状态</li>
+        <li aria-hidden="true" className={styles.stepArrow}>→</li>
+        <li className={styles.stepPill}><span className={styles.stepNo} aria-hidden="true">叁</span>沿引用复核</li>
+      </ol>
+      <p className={styles.homeNote}>本地开发版本 · 真实检索服务尚未接入时，任务会明确记录不可用错误。</p>
+    </section>
+    <div className={styles.scene} aria-hidden="true"><TempleScene /></div>
+  </div>;
 }

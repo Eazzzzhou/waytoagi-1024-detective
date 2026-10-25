@@ -1,0 +1,196 @@
+{
+  "regions": [
+    {
+      "id": "shell",
+      "kind": "chrome",
+      "pixelBox": {
+        "x": 0,
+        "y": 0,
+        "w": 1536,
+        "h": 1024
+      },
+      "note": "Flat pale blue application workspace",
+      "container": true
+    },
+    {
+      "id": "rail",
+      "kind": "chrome",
+      "pixelBox": {
+        "x": 0,
+        "y": 0,
+        "w": 237,
+        "h": 1024
+      },
+      "note": "Left navigation rail with existing single action",
+      "container": true
+    },
+    {
+      "id": "brand",
+      "kind": "text",
+      "pixelBox": {
+        "x": 60,
+        "y": 21,
+        "w": 55,
+        "h": 27
+      },
+      "note": "Product wordmark 案卷",
+      "parentId": "rail"
+    },
+    {
+      "id": "create",
+      "kind": "control",
+      "pixelBox": {
+        "x": 12,
+        "y": 98,
+        "w": 211,
+        "h": 43
+      },
+      "note": "Existing create investigation navigation",
+      "parentId": "rail"
+    },
+    {
+      "id": "sheet",
+      "kind": "chrome",
+      "pixelBox": {
+        "x": 265,
+        "y": 51,
+        "w": 1050,
+        "h": 973
+      },
+      "note": "White continuous research reading plane",
+      "container": true
+    },
+    {
+      "id": "question",
+      "kind": "text",
+      "pixelBox": {
+        "x": 290,
+        "y": 108,
+        "w": 595,
+        "h": 30
+      },
+      "note": "Current investigation question from HTTP response",
+      "parentId": "sheet"
+    },
+    {
+      "id": "state",
+      "kind": "chrome",
+      "pixelBox": {
+        "x": 291,
+        "y": 189,
+        "w": 999,
+        "h": 76
+      },
+      "note": "Amber waiting confirmation surface",
+      "container": true,
+      "parentId": "sheet"
+    },
+    {
+      "id": "state-title",
+      "kind": "text",
+      "pixelBox": {
+        "x": 359,
+        "y": 205,
+        "w": 117,
+        "h": 24
+      },
+      "note": "Awaiting identity confirmation state label",
+      "parentId": "state"
+    },
+    {
+      "id": "confirm",
+      "kind": "control",
+      "pixelBox": {
+        "x": 1102,
+        "y": 206,
+        "w": 129,
+        "h": 39
+      },
+      "note": "Confirm identity action standard button",
+      "parentId": "state"
+    },
+    {
+      "id": "answer-title",
+      "kind": "text",
+      "pixelBox": {
+        "x": 292,
+        "y": 288,
+        "w": 146,
+        "h": 26
+      },
+      "note": "Investigation answer section heading",
+      "parentId": "sheet"
+    },
+    {
+      "id": "answer-body",
+      "kind": "text",
+      "pixelBox": {
+        "x": 422,
+        "y": 351,
+        "w": 500,
+        "h": 44
+      },
+      "note": "Answer empty status; real result replaces only when saved",
+      "parentId": "sheet"
+    },
+    {
+      "id": "claims-title",
+      "kind": "text",
+      "pixelBox": {
+        "x": 291,
+        "y": 452,
+        "w": 147,
+        "h": 25
+      },
+      "note": "Claim verification heading",
+      "parentId": "sheet"
+    },
+    {
+      "id": "sources-title",
+      "kind": "text",
+      "pixelBox": {
+        "x": 291,
+        "y": 616,
+        "w": 247,
+        "h": 28
+      },
+      "note": "Citations and original sources heading",
+      "parentId": "sheet"
+    },
+    {
+      "id": "limits-title",
+      "kind": "text",
+      "pixelBox": {
+        "x": 291,
+        "y": 781,
+        "w": 249,
+        "h": 26
+      },
+      "note": "Conflicts and evidence gaps heading",
+      "parentId": "sheet"
+    },
+    {
+      "id": "info-title",
+      "kind": "text",
+      "pixelBox": {
+        "x": 291,
+        "y": 913,
+        "w": 144,
+        "h": 27
+      },
+      "note": "Snapshot information heading",
+      "parentId": "sheet"
+    },
+    {
+      "id": "index",
+      "kind": "control",
+      "pixelBox": {
+        "x": 1339,
+        "y": 51,
+        "w": 185,
+        "h": 247
+      },
+      "note": "Right marginal reading section index"
+    }
+  ]
+}

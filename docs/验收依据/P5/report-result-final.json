@@ -1,0 +1,2962 @@
+{
+ "url": "http://127.0.0.1:3100/investigations/12f79ba7-d9ff-4e8c-ab2c-bee6a6035403",
+ "at": "2026-10-24T16:43:31.311Z",
+ "allow": [],
+ "viewports": [
+  {
+   "width": 1440,
+   "height": 900,
+   "load": "load",
+   "screens": 12,
+   "filled": [
+    0.62,
+    0.83,
+    0.83,
+    0.8,
+    0.83,
+    0.8,
+    0.8,
+    0.83,
+    0.83,
+    0.83,
+    0.83,
+    0.83
+   ],
+   "motion": {
+    "elements": 0,
+    "css": 0,
+    "transitions": 0,
+    "scripted": 0,
+    "videos": 0,
+    "playingVideos": 0
+   },
+   "metrics": {
+    "viewport": {
+     "w": 1440,
+     "h": 900
+    },
+    "page": {
+     "height": 12407,
+     "screens": 13.8,
+     "words": 500,
+     "img": 0,
+     "video": 0,
+     "canvas": 0,
+     "svg": 2,
+     "sections": 6,
+     "horizontalOverflow": 0,
+     "overflowCulprits": [],
+     "uiFragments": 0,
+     "uiAbuse": false,
+     "realPictures": 0,
+     "videoCount": 0,
+     "uiPictures": 0,
+     "pictureSamples": [],
+     "blendText": 0,
+     "sideScrollers": 0,
+     "brokenImages": [],
+     "emoji": [],
+     "videosNoPoster": 0
+    },
+    "hero": {
+     "text": "隔离浏览器测试：核对引用与文本安全（不是产品调查结论）",
+     "words": 1,
+     "chars": 27,
+     "lines": 1,
+     "size": 26,
+     "vw": 1.8,
+     "font": "Geist",
+     "weight": 650,
+     "tracking": 0,
+     "leading": 1.6,
+     "top": 120,
+     "tag": "h1",
+     "kind": "heading",
+     "align": "left",
+     "position": "left"
+    },
+    "h1": {
+     "text": "隔离浏览器测试：核对引用与文本安全（不是产品调查结论）",
+     "words": 1,
+     "lines": 1,
+     "size": 26,
+     "font": "Geist"
+    },
+    "headings": [],
+    "headingSummary": {
+     "count": 0,
+     "maxLines": 0,
+     "over2Lines": 0,
+     "statements": 0,
+     "centered": 0,
+     "medianWords": null,
+     "mixedFontHeadings": 0
+    },
+    "type": {
+     "families": [
+      {
+       "family": "Geist",
+       "share": 0.97,
+       "mono": false
+      },
+      {
+       "family": "Geist Mono",
+       "share": 0.03,
+       "mono": true
+      }
+     ],
+     "familyCount": 2,
+     "sizes": [
+      12,
+      13,
+      14,
+      16,
+      24,
+      26
+     ],
+     "sizeCount": 6,
+     "notLoaded": [],
+     "body": {
+      "font": "Geist",
+      "size": 14,
+      "leading": 1.65,
+      "weight": 400,
+      "tracking": 0,
+      "contrast": 6.9
+     },
+     "measureChars": 121,
+     "max": {
+      "size": 26,
+      "vw": 1.8,
+      "font": "Geist",
+      "text": "隔离浏览器测试：核对引用与文本安全（不是产品调查结论）"
+     },
+     "monoShare": 0.03,
+     "monoProseShare": 0,
+     "monoFamilies": [
+      "Geist Mono"
+     ],
+     "monoSamples": [],
+     "microLabels": 0,
+     "microLabelShare": 0,
+     "microSamples": [],
+     "upperShare": 0.04,
+     "centerShare": 0,
+     "smallText": 5
+    },
+    "eyebrows": [],
+    "numbered": [],
+    "color": {
+     "bodyBg": "#f3f7fc",
+     "bodyBgHsl": {
+      "h": 213,
+      "s": 0.6,
+      "l": 0.97
+     },
+     "dark": false,
+     "sectionBgs": [
+      {
+       "color": "#f3f7fc",
+       "top": 0,
+       "hsl": {
+        "h": 213,
+        "s": 0.6,
+        "l": 0.97
+       }
+      },
+      {
+       "color": "#ffffff",
+       "top": 308,
+       "hsl": {
+        "h": 0,
+        "s": 0,
+        "l": 1
+       }
+      }
+     ],
+     "textColors": [
+      {
+       "color": "#17233b",
+       "share": 0.48
+      },
+      {
+       "color": "#2455b5",
+       "share": 0.26
+      },
+      {
+       "color": "#586a83",
+       "share": 0.24
+      },
+      {
+       "color": "#855009",
+       "share": 0.01
+      },
+      {
+       "color": "#a42b3b",
+       "share": 0
+      }
+     ],
+     "button": {
+      "bg": "#ffffff",
+      "hsl": {
+       "h": 0,
+       "s": 0,
+       "l": 1
+      },
+      "fg": "#2455b5"
+     },
+     "lowContrast": []
+    },
+    "buttons": {
+     "count": 2,
+     "inHero": 2,
+     "radius": 8,
+     "height": 45,
+     "withShadow": 0,
+     "withGradient": 0,
+     "mono": 0,
+     "upper": 0,
+     "heroLabels": [
+      "跳到主要内容",
+      "刷新状态"
+     ]
+    },
+    "surfaces": {
+     "shadowStatic": 0,
+     "shadowOverlay": 0,
+     "shadowSamples": [],
+     "gradients": 0,
+     "scrims": 0,
+     "gradientSamples": [],
+     "gradientText": 0,
+     "hairlines": 30,
+     "hairlineSamples": [
+      "section.julfMq_panel.julfMq_statePanel 1176px",
+      "dl.julfMq_metadata 301px",
+      "nav.julfMq_resultNav 192px",
+      "section#snapshot-3bcea9cc-deab-4575-bdbe-081c61429bbc-sectio 862px",
+      "article#snapshot-3bcea9cc-deab-4575-bdbe-081c61429bbc-claim- 862px"
+     ],
+     "outlinedBoxes": 1,
+     "dashed": 0,
+     "blurred": 0,
+     "roundedBoxes": 1,
+     "boxRadius": 16,
+     "squareMedia": 0,
+     "roundedMedia": 0,
+     "mediaRadius": 0,
+     "textShadow": 0,
+     "cardRows": [
+      {
+       "count": 4,
+       "iconTopped": false,
+       "rounded": false,
+       "top": 1160
+      },
+      {
+       "count": 7,
+       "iconTopped": false,
+       "rounded": false,
+       "top": 3081
+      },
+      {
+       "count": 4,
+       "iconTopped": false,
+       "rounded": false,
+       "top": 10352
+      }
+     ]
+    },
+    "heroMedia": [],
+    "nav": {
+     "links": 1,
+     "fixed": false,
+     "height": 44,
+     "floatingPill": false,
+     "blur": false
+    },
+    "fontsLoaded": [
+     "geist",
+     "geist mono"
+    ]
+   },
+   "layout": {
+    "viewport": {
+     "w": 1440,
+     "h": 900
+    },
+    "pageH": 12407,
+    "margins": {
+     "left": 169,
+     "right": 280
+    },
+    "sections": [],
+    "gaps": [],
+    "h1s": [
+     {
+      "text": "隔离浏览器测试：核对引用与文本安全（不是产品调查结论）",
+      "size": 26,
+      "top": 120,
+      "firstScreen": true
+     }
+    ],
+    "edgeText": [],
+    "edges": [
+     {
+      "x": 169,
+      "n": 21
+     },
+     {
+      "x": 223,
+      "n": 9
+     },
+     {
+      "x": 132,
+      "n": 1
+     },
+     {
+      "x": 259,
+      "n": 1
+     }
+    ],
+    "leftBlocks": 32,
+    "bodySize": 14,
+    "stage": false,
+    "explains": false,
+    "slivers": [],
+    "voidShare": 0.2,
+    "voidBox": {
+     "x": 600,
+     "y": 180,
+     "w": 360,
+     "h": 720
+    }
+   },
+   "app": {
+    "viewport": {
+     "w": 1440,
+     "h": 900
+    },
+    "dark": false,
+    "ground": "#f3f7fc",
+    "sidebar": null,
+    "topbar": null,
+    "canvas": {
+     "left": 169,
+     "right": 269
+    },
+    "hero": {
+     "text": "隔离浏览器测试：核对引用与文本安全（不是产品调查结论）",
+     "words": 1,
+     "chars": 27,
+     "lines": 1,
+     "size": 26,
+     "vw": 1.8,
+     "font": "Geist",
+     "weight": 650,
+     "tracking": 0,
+     "leading": 1.6,
+     "top": 120,
+     "tag": "h1",
+     "kind": "heading",
+     "align": "left",
+     "position": "left"
+    },
+    "charts": 0,
+    "layout": {
+     "panels": 1,
+     "firstScreen": 1,
+     "ragged": [],
+     "voids": []
+    },
+    "tiles": 0,
+    "panels": {
+     "count": 28,
+     "radii": [
+      [
+       0,
+       27
+      ],
+      [
+       16,
+       1
+      ]
+     ],
+     "heavyBorders": 0,
+     "borderSamples": [],
+     "heavyShadows": 0,
+     "softShadows": 0,
+     "shadowSamples": [],
+     "glass": 0
+    },
+    "chips": {
+     "count": 0,
+     "hues": 0,
+     "samples": []
+    },
+    "numbers": {
+     "cells": 0,
+     "leftAligned": 0,
+     "figures": 1,
+     "tabularShare": 0,
+     "kpiMax": 14
+    },
+    "rows": null,
+    "chartHues": 0,
+    "placeholders": [
+     "example.com"
+    ],
+    "type": {
+     "under13": 0.13,
+     "tiny": 0,
+     "tinySamples": [],
+     "sizes": [
+      12,
+      13,
+      14,
+      16,
+      24,
+      26
+     ]
+    },
+    "title": {
+     "text": "隔离浏览器测试：核对引用与文本安全（不是产品调查结论）",
+     "size": 26,
+     "top": 120
+    },
+    "colourShare": 0.001
+   },
+   "consoleErrors": []
+  },
+  {
+   "width": 1024,
+   "height": 768,
+   "load": "load",
+   "screens": 12,
+   "filled": [
+    0.63,
+    0.92,
+    0.92,
+    0.92,
+    0.88,
+    0.92,
+    0.88,
+    0.88,
+    0.92,
+    0.92,
+    0.92,
+    0.92
+   ],
+   "motion": {
+    "elements": 0,
+    "css": 0,
+    "transitions": 0,
+    "scripted": 0,
+    "videos": 0,
+    "playingVideos": 0
+   },
+   "metrics": {
+    "viewport": {
+     "w": 1024,
+     "h": 768
+    },
+    "page": {
+     "height": 12421,
+     "screens": 16.2,
+     "words": 500,
+     "img": 0,
+     "video": 0,
+     "canvas": 0,
+     "svg": 2,
+     "sections": 6,
+     "horizontalOverflow": 0,
+     "overflowCulprits": [],
+     "uiFragments": 0,
+     "uiAbuse": false,
+     "realPictures": 0,
+     "videoCount": 0,
+     "uiPictures": 0,
+     "pictureSamples": [],
+     "blendText": 0,
+     "sideScrollers": 0,
+     "brokenImages": [],
+     "emoji": [],
+     "videosNoPoster": 0
+    },
+    "hero": {
+     "text": "隔离浏览器测试：核对引用与文本安全（不是产品调查结论）",
+     "words": 1,
+     "chars": 27,
+     "lines": 1,
+     "size": 26,
+     "vw": 2.5,
+     "font": "Geist",
+     "weight": 650,
+     "tracking": 0,
+     "leading": 1.6,
+     "top": 104,
+     "tag": "h1",
+     "kind": "heading",
+     "align": "left",
+     "position": "left"
+    },
+    "h1": {
+     "text": "隔离浏览器测试：核对引用与文本安全（不是产品调查结论）",
+     "words": 1,
+     "lines": 1,
+     "size": 26,
+     "font": "Geist"
+    },
+    "headings": [
+     {
+      "text": "隔离浏览器测试：核对引用与文本安全（不是产品调查结论）",
+      "words": 1,
+      "chars": 27,
+      "lines": 1,
+      "size": 26,
+      "vw": 2.5,
+      "font": "Geist",
+      "weight": 650,
+      "tracking": 0,
+      "leading": 1.6,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.82,
+      "top": 104,
+      "tag": "h1",
+      "kind": "heading"
+     }
+    ],
+    "headingSummary": {
+     "count": 1,
+     "maxLines": 1,
+     "over2Lines": 0,
+     "statements": 0,
+     "centered": 0,
+     "medianWords": null,
+     "mixedFontHeadings": 0
+    },
+    "type": {
+     "families": [
+      {
+       "family": "Geist",
+       "share": 0.97,
+       "mono": false
+      },
+      {
+       "family": "Geist Mono",
+       "share": 0.03,
+       "mono": true
+      }
+     ],
+     "familyCount": 2,
+     "sizes": [
+      12,
+      13,
+      14,
+      16,
+      24,
+      26
+     ],
+     "sizeCount": 6,
+     "notLoaded": [],
+     "body": {
+      "font": "Geist",
+      "size": 14,
+      "leading": 1.65,
+      "weight": 400,
+      "tracking": 0,
+      "contrast": 6.9
+     },
+     "measureChars": 99,
+     "max": {
+      "size": 26,
+      "vw": 2.5,
+      "font": "Geist",
+      "text": "隔离浏览器测试：核对引用与文本安全（不是产品调查结论）"
+     },
+     "monoShare": 0.03,
+     "monoProseShare": 0,
+     "monoFamilies": [
+      "Geist Mono"
+     ],
+     "monoSamples": [],
+     "microLabels": 0,
+     "microLabelShare": 0,
+     "microSamples": [],
+     "upperShare": 0.04,
+     "centerShare": 0,
+     "smallText": 5
+    },
+    "eyebrows": [
+     {
+      "text": "AI 产品调查与证据核查",
+      "above": "隔离浏览器测试：核对引用与文本安全（不是产品调查结论）",
+      "upper": true,
+      "tracked": false,
+      "mono": false,
+      "pill": false,
+      "size": 13,
+      "top": 24
+     }
+    ],
+    "numbered": [],
+    "color": {
+     "bodyBg": "#f3f7fc",
+     "bodyBgHsl": {
+      "h": 213,
+      "s": 0.6,
+      "l": 0.97
+     },
+     "dark": false,
+     "sectionBgs": [
+      {
+       "color": "#f3f7fc",
+       "top": 0,
+       "hsl": {
+        "h": 213,
+        "s": 0.6,
+        "l": 0.97
+       }
+      },
+      {
+       "color": "#ffffff",
+       "top": 292,
+       "hsl": {
+        "h": 0,
+        "s": 0,
+        "l": 1
+       }
+      }
+     ],
+     "textColors": [
+      {
+       "color": "#17233b",
+       "share": 0.48
+      },
+      {
+       "color": "#2455b5",
+       "share": 0.26
+      },
+      {
+       "color": "#586a83",
+       "share": 0.24
+      },
+      {
+       "color": "#855009",
+       "share": 0.01
+      },
+      {
+       "color": "#a42b3b",
+       "share": 0
+      }
+     ],
+     "button": {
+      "bg": "#ffffff",
+      "hsl": {
+       "h": 0,
+       "s": 0,
+       "l": 1
+      },
+      "fg": "#2455b5"
+     },
+     "lowContrast": []
+    },
+    "buttons": {
+     "count": 2,
+     "inHero": 2,
+     "radius": 8,
+     "height": 45,
+     "withShadow": 0,
+     "withGradient": 0,
+     "mono": 0,
+     "upper": 0,
+     "heroLabels": [
+      "跳到主要内容",
+      "刷新状态"
+     ]
+    },
+    "surfaces": {
+     "shadowStatic": 0,
+     "shadowOverlay": 0,
+     "shadowSamples": [],
+     "gradients": 0,
+     "scrims": 0,
+     "gradientSamples": [],
+     "gradientText": 0,
+     "hairlines": 30,
+     "hairlineSamples": [
+      "section.julfMq_panel.julfMq_statePanel 960px",
+      "dl.julfMq_metadata 301px",
+      "nav.julfMq_resultNav 164px",
+      "section#snapshot-3bcea9cc-deab-4575-bdbe-081c61429bbc-sectio 706px",
+      "article#snapshot-3bcea9cc-deab-4575-bdbe-081c61429bbc-claim- 706px"
+     ],
+     "outlinedBoxes": 1,
+     "dashed": 0,
+     "blurred": 0,
+     "roundedBoxes": 1,
+     "boxRadius": 16,
+     "squareMedia": 0,
+     "roundedMedia": 0,
+     "mediaRadius": 0,
+     "textShadow": 0,
+     "cardRows": [
+      {
+       "count": 4,
+       "iconTopped": false,
+       "rounded": false,
+       "top": 1136
+      },
+      {
+       "count": 7,
+       "iconTopped": false,
+       "rounded": false,
+       "top": 3057
+      },
+      {
+       "count": 4,
+       "iconTopped": false,
+       "rounded": false,
+       "top": 10374
+      }
+     ]
+    },
+    "heroMedia": [],
+    "nav": {
+     "links": 1,
+     "fixed": false,
+     "height": 44,
+     "floatingPill": false,
+     "blur": false
+    },
+    "fontsLoaded": [
+     "geist",
+     "geist mono"
+    ]
+   },
+   "layout": {
+    "viewport": {
+     "w": 1024,
+     "h": 768
+    },
+    "pageH": 12421,
+    "margins": {
+     "left": 61,
+     "right": 148
+    },
+    "sections": [
+     {
+      "sel": "section#snapshot-3bcea9cc-deab-4575-bdbe-081c61429bbc-sectio",
+      "tag": "section",
+      "top": 321,
+      "height": 815,
+      "words": 71,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "调查回答",
+       "size": 24,
+       "tag": "h2"
+      },
+      "left": 61,
+      "right": 562,
+      "textLeft": 61,
+      "textRight": 562,
+      "fullBleed": false,
+      "footer": false,
+      "hero": true,
+      "continues": false,
+      "pinned": false
+     },
+     {
+      "sel": "section#snapshot-3bcea9cc-deab-4575-bdbe-081c61429bbc-sectio",
+      "tag": "section",
+      "top": 1136,
+      "height": 1170,
+      "words": 44,
+      "media": 0,
+      "middle": 116,
+      "heading": {
+       "text": "主张核查",
+       "size": 24,
+       "tag": "h2"
+      },
+      "left": 61,
+      "right": 267,
+      "textLeft": 61,
+      "textRight": 267,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     },
+     {
+      "sel": "div.julfMq_citationDetails",
+      "tag": "div",
+      "top": 2434,
+      "height": 555,
+      "words": 21,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "引用映射（",
+       "size": 16,
+       "tag": "h3"
+      },
+      "left": 61,
+      "right": 813,
+      "textLeft": 61,
+      "textRight": 813,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "article#snapshot-3bcea9cc-deab-4575-bdbe-081c61429bbc-eviden",
+      "tag": "article",
+      "top": 3057,
+      "height": 1152,
+      "words": 50,
+      "media": 0,
+      "middle": 46,
+      "heading": {
+       "text": "来源",
+       "size": 16,
+       "tag": "h3"
+      },
+      "left": 61,
+      "right": 267,
+      "textLeft": 61,
+      "textRight": 267,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "a.julfMq_sourceLink.julfMq_resultLink",
+      "tag": "a",
+      "top": 4277,
+      "height": 254,
+      "words": 166,
+      "media": 0,
+      "middle": 0,
+      "heading": null,
+      "left": 61,
+      "right": 275,
+      "textLeft": 61,
+      "textRight": 275,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "dl.julfMq_sourceMetadata",
+      "tag": "dl",
+      "top": 4551,
+      "height": 207,
+      "words": 16,
+      "media": 0,
+      "middle": 231,
+      "heading": null,
+      "left": 61,
+      "right": 373,
+      "textLeft": 61,
+      "textRight": 373,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "article#snapshot-3bcea9cc-deab-4575-bdbe-081c61429bbc-eviden",
+      "tag": "article",
+      "top": 5484,
+      "height": 890,
+      "words": 43,
+      "media": 0,
+      "middle": 46,
+      "heading": {
+       "text": "来源",
+       "size": 16,
+       "tag": "h3"
+      },
+      "left": 61,
+      "right": 267,
+      "textLeft": 61,
+      "textRight": 267,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "article#snapshot-3bcea9cc-deab-4575-bdbe-081c61429bbc-eviden",
+      "tag": "article",
+      "top": 6374,
+      "height": 967,
+      "words": 43,
+      "media": 0,
+      "middle": 58,
+      "heading": {
+       "text": "来源",
+       "size": 16,
+       "tag": "h3"
+      },
+      "left": 61,
+      "right": 267,
+      "textLeft": 61,
+      "textRight": 267,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "article#snapshot-3bcea9cc-deab-4575-bdbe-081c61429bbc-eviden",
+      "tag": "article",
+      "top": 7341,
+      "height": 967,
+      "words": 43,
+      "media": 0,
+      "middle": 58,
+      "heading": {
+       "text": "来源",
+       "size": 16,
+       "tag": "h3"
+      },
+      "left": 61,
+      "right": 267,
+      "textLeft": 61,
+      "textRight": 267,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "article#snapshot-3bcea9cc-deab-4575-bdbe-081c61429bbc-eviden",
+      "tag": "article",
+      "top": 8308,
+      "height": 967,
+      "words": 43,
+      "media": 0,
+      "middle": 34,
+      "heading": {
+       "text": "来源",
+       "size": 16,
+       "tag": "h3"
+      },
+      "left": 61,
+      "right": 267,
+      "textLeft": 61,
+      "textRight": 267,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "article#snapshot-3bcea9cc-deab-4575-bdbe-081c61429bbc-eviden",
+      "tag": "article",
+      "top": 9275,
+      "height": 927,
+      "words": 43,
+      "media": 0,
+      "middle": 58,
+      "heading": {
+       "text": "来源",
+       "size": 16,
+       "tag": "h3"
+      },
+      "left": 61,
+      "right": 267,
+      "textLeft": 61,
+      "textRight": 267,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "article#snapshot-3bcea9cc-deab-4575-bdbe-081c61429bbc-confli",
+      "tag": "article",
+      "top": 10374,
+      "height": 307,
+      "words": 9,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "尚未解决的冲突",
+       "size": 14,
+       "tag": "h4"
+      },
+      "left": 61,
+      "right": 683,
+      "textLeft": 61,
+      "textRight": 683,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "article#snapshot-3bcea9cc-deab-4575-bdbe-081c61429bbc-gap-f3",
+      "tag": "article",
+      "top": 10843,
+      "height": 251,
+      "words": 6,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "证据不足",
+       "size": 14,
+       "tag": "h4"
+      },
+      "left": 61,
+      "right": 725,
+      "textLeft": 61,
+      "textRight": 725,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "article#snapshot-3bcea9cc-deab-4575-bdbe-081c61429bbc-gap-d5",
+      "tag": "article",
+      "top": 11094,
+      "height": 251,
+      "words": 6,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "限定范围内未找到可用证据",
+       "size": 14,
+       "tag": "h4"
+      },
+      "left": 61,
+      "right": 697,
+      "textLeft": 61,
+      "textRight": 697,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "article#snapshot-3bcea9cc-deab-4575-bdbe-081c61429bbc-gap-ee",
+      "tag": "article",
+      "top": 11344,
+      "height": 230,
+      "words": 6,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "来源读取失败",
+       "size": 14,
+       "tag": "h4"
+      },
+      "left": 61,
+      "right": 725,
+      "textLeft": 61,
+      "textRight": 725,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section#snapshot-3bcea9cc-deab-4575-bdbe-081c61429bbc-sectio",
+      "tag": "section",
+      "top": 11921,
+      "height": 439,
+      "words": 27,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "快照版本与生成信息",
+       "size": 24,
+       "tag": "h2"
+      },
+      "left": 61,
+      "right": 339,
+      "textLeft": 61,
+      "textRight": 339,
+      "fullBleed": false,
+      "footer": true,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     }
+    ],
+    "gaps": [],
+    "h1s": [
+     {
+      "text": "隔离浏览器测试：核对引用与文本安全（不是产品调查结论）",
+      "size": 26,
+      "top": 104,
+      "firstScreen": true
+     }
+    ],
+    "edgeText": [],
+    "edges": [
+     {
+      "x": 61,
+      "n": 21
+     },
+     {
+      "x": 115,
+      "n": 9
+     },
+     {
+      "x": 32,
+      "n": 1
+     },
+     {
+      "x": 151,
+      "n": 1
+     }
+    ],
+    "leftBlocks": 32,
+    "bodySize": 14,
+    "stage": false,
+    "explains": false,
+    "slivers": [],
+    "voidShare": 0.17,
+    "voidBox": {
+     "x": 469,
+     "y": 154,
+     "w": 213,
+     "h": 614
+    }
+   },
+   "app": {
+    "viewport": {
+     "w": 1024,
+     "h": 768
+    },
+    "dark": false,
+    "ground": "#f3f7fc",
+    "sidebar": null,
+    "topbar": {
+     "h": 72
+    },
+    "canvas": {
+     "left": 61,
+     "right": 148
+    },
+    "hero": {
+     "text": "隔离浏览器测试：核对引用与文本安全（不是产品调查结论）",
+     "words": 1,
+     "chars": 27,
+     "lines": 1,
+     "size": 26,
+     "vw": 2.5,
+     "font": "Geist",
+     "weight": 650,
+     "tracking": 0,
+     "leading": 1.6,
+     "top": 104,
+     "tag": "h1",
+     "kind": "heading",
+     "align": "left",
+     "position": "left"
+    },
+    "charts": 0,
+    "layout": {
+     "panels": 1,
+     "firstScreen": 1,
+     "ragged": [],
+     "voids": []
+    },
+    "tiles": 0,
+    "panels": {
+     "count": 28,
+     "radii": [
+      [
+       0,
+       27
+      ],
+      [
+       16,
+       1
+      ]
+     ],
+     "heavyBorders": 0,
+     "borderSamples": [],
+     "heavyShadows": 0,
+     "softShadows": 0,
+     "shadowSamples": [],
+     "glass": 0
+    },
+    "chips": {
+     "count": 0,
+     "hues": 0,
+     "samples": []
+    },
+    "numbers": {
+     "cells": 0,
+     "leftAligned": 0,
+     "figures": 1,
+     "tabularShare": 0,
+     "kpiMax": 14
+    },
+    "rows": null,
+    "chartHues": 0,
+    "placeholders": [
+     "example.com"
+    ],
+    "type": {
+     "under13": 0.13,
+     "tiny": 0,
+     "tinySamples": [],
+     "sizes": [
+      12,
+      13,
+      14,
+      16,
+      24,
+      26
+     ]
+    },
+    "title": {
+     "text": "隔离浏览器测试：核对引用与文本安全（不是产品调查结论）",
+     "size": 26,
+     "top": 104
+    },
+    "colourShare": 0.001
+   },
+   "consoleErrors": []
+  },
+  {
+   "width": 768,
+   "height": 1024,
+   "load": "load",
+   "screens": 12,
+   "filled": [
+    0.64,
+    0.92,
+    0.92,
+    0.86,
+    0.86,
+    0.86,
+    0.92,
+    0.92,
+    0.92,
+    0.92,
+    0.92,
+    0.92
+   ],
+   "motion": {
+    "elements": 0,
+    "css": 0,
+    "transitions": 0,
+    "scripted": 0,
+    "videos": 0,
+    "playingVideos": 0
+   },
+   "metrics": {
+    "viewport": {
+     "w": 768,
+     "h": 1024
+    },
+    "page": {
+     "height": 12570,
+     "screens": 12.3,
+     "words": 497,
+     "img": 0,
+     "video": 0,
+     "canvas": 0,
+     "svg": 2,
+     "sections": 6,
+     "horizontalOverflow": 0,
+     "overflowCulprits": [],
+     "uiFragments": 0,
+     "uiAbuse": false,
+     "realPictures": 0,
+     "videoCount": 0,
+     "uiPictures": 0,
+     "pictureSamples": [],
+     "blendText": 0,
+     "sideScrollers": 0,
+     "brokenImages": [],
+     "emoji": [],
+     "videosNoPoster": 0
+    },
+    "hero": {
+     "text": "隔离浏览器测试：核对引用与文本安全（不是产品调查结论）",
+     "words": 1,
+     "chars": 27,
+     "lines": 2,
+     "size": 26,
+     "vw": 3.4,
+     "font": "Geist",
+     "weight": 650,
+     "tracking": 0,
+     "leading": 1.6,
+     "top": 104,
+     "tag": "h1",
+     "kind": "heading",
+     "align": "left",
+     "position": "left"
+    },
+    "h1": {
+     "text": "隔离浏览器测试：核对引用与文本安全（不是产品调查结论）",
+     "words": 1,
+     "lines": 2,
+     "size": 26,
+     "font": "Geist"
+    },
+    "headings": [
+     {
+      "text": "隔离浏览器测试：核对引用与文本安全（不是产品调查结论）",
+      "words": 1,
+      "chars": 27,
+      "lines": 2,
+      "size": 26,
+      "vw": 3.4,
+      "font": "Geist",
+      "weight": 650,
+      "tracking": 0,
+      "leading": 1.6,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.76,
+      "top": 104,
+      "tag": "h1",
+      "kind": "heading"
+     }
+    ],
+    "headingSummary": {
+     "count": 1,
+     "maxLines": 2,
+     "over2Lines": 0,
+     "statements": 0,
+     "centered": 0,
+     "medianWords": null,
+     "mixedFontHeadings": 0
+    },
+    "type": {
+     "families": [
+      {
+       "family": "Geist",
+       "share": 0.97,
+       "mono": false
+      },
+      {
+       "family": "Geist Mono",
+       "share": 0.03,
+       "mono": true
+      }
+     ],
+     "familyCount": 2,
+     "sizes": [
+      12,
+      14,
+      16,
+      24,
+      26
+     ],
+     "sizeCount": 5,
+     "notLoaded": [],
+     "body": {
+      "font": "Geist",
+      "size": 14,
+      "leading": 1.65,
+      "weight": 400,
+      "tracking": 0,
+      "contrast": 6.9
+     },
+     "measureChars": 91,
+     "max": {
+      "size": 26,
+      "vw": 3.4,
+      "font": "Geist",
+      "text": "隔离浏览器测试：核对引用与文本安全（不是产品调查结论）"
+     },
+     "monoShare": 0.03,
+     "monoProseShare": 0,
+     "monoFamilies": [
+      "Geist Mono"
+     ],
+     "monoSamples": [],
+     "microLabels": 0,
+     "microLabelShare": 0,
+     "microSamples": [],
+     "upperShare": 0.04,
+     "centerShare": 0,
+     "smallText": 5
+    },
+    "eyebrows": [],
+    "numbered": [],
+    "color": {
+     "bodyBg": "#f3f7fc",
+     "bodyBgHsl": {
+      "h": 213,
+      "s": 0.6,
+      "l": 0.97
+     },
+     "dark": false,
+     "sectionBgs": [
+      {
+       "color": "#f3f7fc",
+       "top": 0,
+       "hsl": {
+        "h": 213,
+        "s": 0.6,
+        "l": 0.97
+       }
+      },
+      {
+       "color": "#ffffff",
+       "top": 334,
+       "hsl": {
+        "h": 0,
+        "s": 0,
+        "l": 1
+       }
+      }
+     ],
+     "textColors": [
+      {
+       "color": "#17233b",
+       "share": 0.48
+      },
+      {
+       "color": "#2455b5",
+       "share": 0.26
+      },
+      {
+       "color": "#586a83",
+       "share": 0.24
+      },
+      {
+       "color": "#855009",
+       "share": 0.01
+      },
+      {
+       "color": "#a42b3b",
+       "share": 0
+      }
+     ],
+     "button": {
+      "bg": "#ffffff",
+      "hsl": {
+       "h": 0,
+       "s": 0,
+       "l": 1
+      },
+      "fg": "#2455b5"
+     },
+     "lowContrast": []
+    },
+    "buttons": {
+     "count": 2,
+     "inHero": 2,
+     "radius": 8,
+     "height": 45,
+     "withShadow": 0,
+     "withGradient": 0,
+     "mono": 0,
+     "upper": 0,
+     "heroLabels": [
+      "跳到主要内容",
+      "刷新状态"
+     ]
+    },
+    "surfaces": {
+     "shadowStatic": 0,
+     "shadowOverlay": 0,
+     "shadowSamples": [],
+     "gradients": 0,
+     "scrims": 0,
+     "gradientSamples": [],
+     "gradientText": 0,
+     "hairlines": 30,
+     "hairlineSamples": [
+      "section.julfMq_panel.julfMq_statePanel 704px",
+      "dl.julfMq_metadata 301px",
+      "section#snapshot-3bcea9cc-deab-4575-bdbe-081c61429bbc-sectio 646px",
+      "section#snapshot-3bcea9cc-deab-4575-bdbe-081c61429bbc-sectio 646px",
+      "article#snapshot-3bcea9cc-deab-4575-bdbe-081c61429bbc-claim- 646px"
+     ],
+     "outlinedBoxes": 1,
+     "dashed": 0,
+     "blurred": 0,
+     "roundedBoxes": 1,
+     "boxRadius": 16,
+     "squareMedia": 0,
+     "roundedMedia": 0,
+     "mediaRadius": 0,
+     "textShadow": 0,
+     "cardRows": [
+      {
+       "count": 5,
+       "iconTopped": false,
+       "rounded": false,
+       "top": 423
+      },
+      {
+       "count": 7,
+       "iconTopped": false,
+       "rounded": false,
+       "top": 3183
+      },
+      {
+       "count": 4,
+       "iconTopped": false,
+       "rounded": false,
+       "top": 10523
+      }
+     ]
+    },
+    "heroMedia": [],
+    "nav": {
+     "links": 1,
+     "fixed": false,
+     "height": 44,
+     "floatingPill": false,
+     "blur": false
+    },
+    "fontsLoaded": [
+     "geist",
+     "geist mono"
+    ]
+   },
+   "layout": {
+    "viewport": {
+     "w": 768,
+     "h": 1024
+    },
+    "pageH": 12570,
+    "margins": {
+     "left": 61,
+     "right": 71
+    },
+    "sections": [
+     {
+      "sel": "header.julfMq_titleRow.julfMq_detailIntro",
+      "tag": "header",
+      "top": 96,
+      "height": 121,
+      "words": 5,
+      "media": 0,
+      "middle": 34,
+      "heading": {
+       "text": "隔离浏览器测试：核对引用与文本安全（不是产品调查结论）",
+       "size": 26,
+       "tag": "h1"
+      },
+      "left": 32,
+      "right": 32,
+      "textLeft": 32,
+      "textRight": 53,
+      "fullBleed": false,
+      "footer": false,
+      "hero": true,
+      "continues": false,
+      "pinned": false
+     },
+     {
+      "sel": "section#snapshot-3bcea9cc-deab-4575-bdbe-081c61429bbc-sectio",
+      "tag": "section",
+      "top": 423,
+      "height": 840,
+      "words": 71,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "调查回答",
+       "size": 24,
+       "tag": "h2"
+      },
+      "left": 61,
+      "right": 306,
+      "textLeft": 61,
+      "textRight": 306,
+      "fullBleed": false,
+      "footer": false,
+      "hero": true,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section#snapshot-3bcea9cc-deab-4575-bdbe-081c61429bbc-sectio",
+      "tag": "section",
+      "top": 1263,
+      "height": 1170,
+      "words": 44,
+      "media": 0,
+      "middle": 56,
+      "heading": {
+       "text": "主张核查",
+       "size": 24,
+       "tag": "h2"
+      },
+      "left": 61,
+      "right": 71,
+      "textLeft": 61,
+      "textRight": 71,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "div.julfMq_citationDetails",
+      "tag": "div",
+      "top": 2561,
+      "height": 555,
+      "words": 21,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "引用映射（",
+       "size": 16,
+       "tag": "h3"
+      },
+      "left": 61,
+      "right": 557,
+      "textLeft": 61,
+      "textRight": 557,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "article#snapshot-3bcea9cc-deab-4575-bdbe-081c61429bbc-eviden",
+      "tag": "article",
+      "top": 3183,
+      "height": 1152,
+      "words": 50,
+      "media": 0,
+      "middle": 16,
+      "heading": {
+       "text": "来源",
+       "size": 16,
+       "tag": "h3"
+      },
+      "left": 61,
+      "right": 71,
+      "textLeft": 61,
+      "textRight": 71,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "article#snapshot-3bcea9cc-deab-4575-bdbe-081c61429bbc-eviden",
+      "tag": "article",
+      "top": 4336,
+      "height": 1298,
+      "words": 212,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "来源",
+       "size": 16,
+       "tag": "h3"
+      },
+      "left": 61,
+      "right": 71,
+      "textLeft": 61,
+      "textRight": 71,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "article#snapshot-3bcea9cc-deab-4575-bdbe-081c61429bbc-eviden",
+      "tag": "article",
+      "top": 5634,
+      "height": 890,
+      "words": 43,
+      "media": 0,
+      "middle": 16,
+      "heading": {
+       "text": "来源",
+       "size": 16,
+       "tag": "h3"
+      },
+      "left": 61,
+      "right": 71,
+      "textLeft": 61,
+      "textRight": 71,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "article#snapshot-3bcea9cc-deab-4575-bdbe-081c61429bbc-eviden",
+      "tag": "article",
+      "top": 6523,
+      "height": 967,
+      "words": 43,
+      "media": 0,
+      "middle": 28,
+      "heading": {
+       "text": "来源",
+       "size": 16,
+       "tag": "h3"
+      },
+      "left": 61,
+      "right": 71,
+      "textLeft": 61,
+      "textRight": 71,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "article#snapshot-3bcea9cc-deab-4575-bdbe-081c61429bbc-eviden",
+      "tag": "article",
+      "top": 7490,
+      "height": 967,
+      "words": 43,
+      "media": 0,
+      "middle": 28,
+      "heading": {
+       "text": "来源",
+       "size": 16,
+       "tag": "h3"
+      },
+      "left": 61,
+      "right": 71,
+      "textLeft": 61,
+      "textRight": 71,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "article#snapshot-3bcea9cc-deab-4575-bdbe-081c61429bbc-eviden",
+      "tag": "article",
+      "top": 8457,
+      "height": 967,
+      "words": 43,
+      "media": 0,
+      "middle": 4,
+      "heading": {
+       "text": "来源",
+       "size": 16,
+       "tag": "h3"
+      },
+      "left": 61,
+      "right": 71,
+      "textLeft": 61,
+      "textRight": 71,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "article#snapshot-3bcea9cc-deab-4575-bdbe-081c61429bbc-eviden",
+      "tag": "article",
+      "top": 9424,
+      "height": 927,
+      "words": 43,
+      "media": 0,
+      "middle": 28,
+      "heading": {
+       "text": "来源",
+       "size": 16,
+       "tag": "h3"
+      },
+      "left": 61,
+      "right": 71,
+      "textLeft": 61,
+      "textRight": 71,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "article#snapshot-3bcea9cc-deab-4575-bdbe-081c61429bbc-confli",
+      "tag": "article",
+      "top": 10523,
+      "height": 307,
+      "words": 9,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "尚未解决的冲突",
+       "size": 14,
+       "tag": "h4"
+      },
+      "left": 61,
+      "right": 427,
+      "textLeft": 61,
+      "textRight": 427,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "article#snapshot-3bcea9cc-deab-4575-bdbe-081c61429bbc-gap-f3",
+      "tag": "article",
+      "top": 10993,
+      "height": 251,
+      "words": 6,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "证据不足",
+       "size": 14,
+       "tag": "h4"
+      },
+      "left": 61,
+      "right": 469,
+      "textLeft": 61,
+      "textRight": 469,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "article#snapshot-3bcea9cc-deab-4575-bdbe-081c61429bbc-gap-d5",
+      "tag": "article",
+      "top": 11243,
+      "height": 251,
+      "words": 6,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "限定范围内未找到可用证据",
+       "size": 14,
+       "tag": "h4"
+      },
+      "left": 61,
+      "right": 441,
+      "textLeft": 61,
+      "textRight": 441,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "article#snapshot-3bcea9cc-deab-4575-bdbe-081c61429bbc-gap-ee",
+      "tag": "article",
+      "top": 11494,
+      "height": 230,
+      "words": 6,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "来源读取失败",
+       "size": 14,
+       "tag": "h4"
+      },
+      "left": 61,
+      "right": 469,
+      "textLeft": 61,
+      "textRight": 469,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section#snapshot-3bcea9cc-deab-4575-bdbe-081c61429bbc-sectio",
+      "tag": "section",
+      "top": 12071,
+      "height": 439,
+      "words": 27,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "快照版本与生成信息",
+       "size": 24,
+       "tag": "h2"
+      },
+      "left": 61,
+      "right": 113,
+      "textLeft": 61,
+      "textRight": 113,
+      "fullBleed": false,
+      "footer": true,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     }
+    ],
+    "gaps": [],
+    "h1s": [
+     {
+      "text": "隔离浏览器测试：核对引用与文本安全（不是产品调查结论）",
+      "size": 26,
+      "top": 104,
+      "firstScreen": true
+     }
+    ],
+    "edgeText": [],
+    "edges": [
+     {
+      "x": 61,
+      "n": 21
+     },
+     {
+      "x": 115,
+      "n": 9
+     },
+     {
+      "x": 32,
+      "n": 1
+     },
+     {
+      "x": 151,
+      "n": 1
+     }
+    ],
+    "leftBlocks": 32,
+    "bodySize": 14,
+    "stage": false,
+    "explains": false,
+    "slivers": [],
+    "voidShare": 0,
+    "voidBox": null
+   },
+   "app": {
+    "viewport": {
+     "w": 768,
+     "h": 1024
+    },
+    "dark": false,
+    "ground": "#f3f7fc",
+    "sidebar": null,
+    "topbar": {
+     "h": 72
+    },
+    "canvas": {
+     "left": 61,
+     "right": 71
+    },
+    "hero": {
+     "text": "隔离浏览器测试：核对引用与文本安全（不是产品调查结论）",
+     "words": 1,
+     "chars": 27,
+     "lines": 2,
+     "size": 26,
+     "vw": 3.4,
+     "font": "Geist",
+     "weight": 650,
+     "tracking": 0,
+     "leading": 1.6,
+     "top": 104,
+     "tag": "h1",
+     "kind": "heading",
+     "align": "left",
+     "position": "left"
+    },
+    "charts": 0,
+    "layout": {
+     "panels": 1,
+     "firstScreen": 1,
+     "ragged": [],
+     "voids": []
+    },
+    "tiles": 0,
+    "panels": {
+     "count": 29,
+     "radii": [
+      [
+       0,
+       28
+      ],
+      [
+       16,
+       1
+      ]
+     ],
+     "heavyBorders": 0,
+     "borderSamples": [],
+     "heavyShadows": 0,
+     "softShadows": 0,
+     "shadowSamples": [],
+     "glass": 0
+    },
+    "chips": {
+     "count": 0,
+     "hues": 0,
+     "samples": []
+    },
+    "numbers": {
+     "cells": 0,
+     "leftAligned": 0,
+     "figures": 1,
+     "tabularShare": 0,
+     "kpiMax": 14
+    },
+    "rows": null,
+    "chartHues": 0,
+    "placeholders": [
+     "example.com"
+    ],
+    "type": {
+     "under13": 0.14,
+     "tiny": 0,
+     "tinySamples": [],
+     "sizes": [
+      12,
+      14,
+      16,
+      24,
+      26
+     ]
+    },
+    "title": {
+     "text": "隔离浏览器测试：核对引用与文本安全（不是产品调查结论）",
+     "size": 26,
+     "top": 104
+    },
+    "colourShare": 0.003
+   },
+   "consoleErrors": []
+  },
+  {
+   "width": 390,
+   "height": 844,
+   "load": "load",
+   "screens": 12,
+   "filled": [
+    0.6,
+    0.92,
+    0.92,
+    0.92,
+    0.92,
+    0.89,
+    0.92,
+    0.89,
+    0.92,
+    0.89,
+    0.92,
+    0.92
+   ],
+   "motion": {
+    "elements": 0,
+    "css": 0,
+    "transitions": 0,
+    "scripted": 0,
+    "videos": 0,
+    "playingVideos": 0
+   },
+   "metrics": {
+    "viewport": {
+     "w": 390,
+     "h": 844
+    },
+    "page": {
+     "height": 15640,
+     "screens": 18.5,
+     "words": 496,
+     "img": 0,
+     "video": 0,
+     "canvas": 0,
+     "svg": 2,
+     "sections": 6,
+     "horizontalOverflow": 0,
+     "overflowCulprits": [],
+     "uiFragments": 0,
+     "uiAbuse": false,
+     "realPictures": 0,
+     "videoCount": 0,
+     "uiPictures": 0,
+     "pictureSamples": [],
+     "blendText": 0,
+     "sideScrollers": 0,
+     "brokenImages": [],
+     "emoji": [],
+     "videosNoPoster": 0
+    },
+    "hero": {
+     "text": "隔离浏览器测试：核对引用与文本安全（不是产品调查结论）",
+     "words": 1,
+     "chars": 27,
+     "lines": 2,
+     "size": 20,
+     "vw": 5.1,
+     "font": "Geist",
+     "weight": 650,
+     "tracking": 0,
+     "leading": 1.6,
+     "top": 96,
+     "tag": "h1",
+     "kind": "heading",
+     "align": "left",
+     "position": "left"
+    },
+    "h1": {
+     "text": "隔离浏览器测试：核对引用与文本安全（不是产品调查结论）",
+     "words": 1,
+     "lines": 2,
+     "size": 20,
+     "font": "Geist"
+    },
+    "headings": [
+     {
+      "text": "案卷",
+      "words": 1,
+      "chars": 2,
+      "lines": 1,
+      "size": 22,
+      "vw": 5.6,
+      "font": "Geist",
+      "weight": 700,
+      "tracking": -0.02,
+      "leading": 1.65,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.2,
+      "top": 12,
+      "tag": "a",
+      "kind": "heading"
+     }
+    ],
+    "headingSummary": {
+     "count": 1,
+     "maxLines": 1,
+     "over2Lines": 0,
+     "statements": 0,
+     "centered": 0,
+     "medianWords": null,
+     "mixedFontHeadings": 0
+    },
+    "type": {
+     "families": [
+      {
+       "family": "Geist",
+       "share": 0.97,
+       "mono": false
+      },
+      {
+       "family": "Geist Mono",
+       "share": 0.03,
+       "mono": true
+      }
+     ],
+     "familyCount": 2,
+     "sizes": [
+      12,
+      14,
+      16,
+      20,
+      22
+     ],
+     "sizeCount": 5,
+     "notLoaded": [],
+     "body": {
+      "font": "Geist",
+      "size": 14,
+      "leading": 2,
+      "weight": 400,
+      "tracking": 0,
+      "contrast": 15.7
+     },
+     "measureChars": 43,
+     "max": {
+      "size": 22,
+      "vw": 5.6,
+      "font": "Geist",
+      "text": "案卷"
+     },
+     "monoShare": 0.03,
+     "monoProseShare": 0,
+     "monoFamilies": [
+      "Geist Mono"
+     ],
+     "monoSamples": [],
+     "microLabels": 0,
+     "microLabelShare": 0,
+     "microSamples": [],
+     "upperShare": 0.04,
+     "centerShare": 0,
+     "smallText": 5
+    },
+    "eyebrows": [],
+    "numbered": [],
+    "color": {
+     "bodyBg": "#f3f7fc",
+     "bodyBgHsl": {
+      "h": 213,
+      "s": 0.6,
+      "l": 0.97
+     },
+     "dark": false,
+     "sectionBgs": [
+      {
+       "color": "#f3f7fc",
+       "top": 0,
+       "hsl": {
+        "h": 213,
+        "s": 0.6,
+        "l": 0.97
+       }
+      },
+      {
+       "color": "#ffffff",
+       "top": 381,
+       "hsl": {
+        "h": 0,
+        "s": 0,
+        "l": 1
+       }
+      }
+     ],
+     "textColors": [
+      {
+       "color": "#17233b",
+       "share": 0.48
+      },
+      {
+       "color": "#2455b5",
+       "share": 0.26
+      },
+      {
+       "color": "#586a83",
+       "share": 0.24
+      },
+      {
+       "color": "#855009",
+       "share": 0.01
+      },
+      {
+       "color": "#a42b3b",
+       "share": 0
+      }
+     ],
+     "button": {
+      "bg": "#ffffff",
+      "hsl": {
+       "h": 0,
+       "s": 0,
+       "l": 1
+      },
+      "fg": "#2455b5"
+     },
+     "lowContrast": []
+    },
+    "buttons": {
+     "count": 2,
+     "inHero": 2,
+     "radius": 8,
+     "height": 45,
+     "withShadow": 0,
+     "withGradient": 0,
+     "mono": 0,
+     "upper": 0,
+     "heroLabels": [
+      "跳到主要内容",
+      "刷新状态"
+     ]
+    },
+    "surfaces": {
+     "shadowStatic": 0,
+     "shadowOverlay": 0,
+     "shadowSamples": [],
+     "gradients": 0,
+     "scrims": 0,
+     "gradientSamples": [],
+     "gradientText": 0,
+     "hairlines": 30,
+     "hairlineSamples": [
+      "section.julfMq_panel.julfMq_statePanel 358px",
+      "dl.julfMq_metadata 358px",
+      "section#snapshot-3bcea9cc-deab-4575-bdbe-081c61429bbc-sectio 316px",
+      "section#snapshot-3bcea9cc-deab-4575-bdbe-081c61429bbc-sectio 316px",
+      "article#snapshot-3bcea9cc-deab-4575-bdbe-081c61429bbc-claim- 316px"
+     ],
+     "outlinedBoxes": 1,
+     "dashed": 0,
+     "blurred": 0,
+     "roundedBoxes": 1,
+     "boxRadius": 12,
+     "squareMedia": 0,
+     "roundedMedia": 0,
+     "mediaRadius": 0,
+     "textShadow": 0,
+     "cardRows": [
+      {
+       "count": 5,
+       "iconTopped": false,
+       "rounded": false,
+       "top": 506
+      },
+      {
+       "count": 7,
+       "iconTopped": false,
+       "rounded": false,
+       "top": 3959
+      },
+      {
+       "count": 4,
+       "iconTopped": false,
+       "rounded": false,
+       "top": 13392
+      }
+     ]
+    },
+    "heroMedia": [],
+    "nav": {
+     "links": 1,
+     "fixed": false,
+     "height": 44,
+     "floatingPill": false,
+     "blur": false
+    },
+    "fontsLoaded": [
+     "geist",
+     "geist mono"
+    ]
+   },
+   "layout": {
+    "viewport": {
+     "w": 390,
+     "h": 844
+    },
+    "pageH": 15640,
+    "margins": {
+     "left": 37,
+     "right": 45
+    },
+    "sections": [
+     {
+      "sel": "header.julfMq_titleRow.julfMq_detailIntro",
+      "tag": "header",
+      "top": 88,
+      "height": 154,
+      "words": 5,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "隔离浏览器测试：核对引用与文本安全（不是产品调查结论）",
+       "size": 20,
+       "tag": "h1"
+      },
+      "left": 16,
+      "right": 34,
+      "textLeft": 16,
+      "textRight": 34,
+      "fullBleed": false,
+      "footer": false,
+      "hero": true,
+      "continues": false,
+      "pinned": false
+     },
+     {
+      "sel": "section#snapshot-3bcea9cc-deab-4575-bdbe-081c61429bbc-sectio",
+      "tag": "section",
+      "top": 506,
+      "height": 1110,
+      "words": 71,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "调查回答",
+       "size": 20,
+       "tag": "h2"
+      },
+      "left": 37,
+      "right": 45,
+      "textLeft": 37,
+      "textRight": 45,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "article#snapshot-3bcea9cc-deab-4575-bdbe-081c61429bbc-claim-",
+      "tag": "article",
+      "top": 1744,
+      "height": 825,
+      "words": 26,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "主张",
+       "size": 16,
+       "tag": "h3"
+      },
+      "left": 37,
+      "right": 43,
+      "textLeft": 37,
+      "textRight": 43,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "article#snapshot-3bcea9cc-deab-4575-bdbe-081c61429bbc-claim-",
+      "tag": "article",
+      "top": 2569,
+      "height": 567,
+      "words": 16,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "主张",
+       "size": 16,
+       "tag": "h3"
+      },
+      "left": 37,
+      "right": 40,
+      "textLeft": 37,
+      "textRight": 40,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "div.julfMq_citationDetails",
+      "tag": "div",
+      "top": 3337,
+      "height": 555,
+      "words": 21,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "引用映射（",
+       "size": 16,
+       "tag": "h3"
+      },
+      "left": 37,
+      "right": 203,
+      "textLeft": 37,
+      "textRight": 203,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "article#snapshot-3bcea9cc-deab-4575-bdbe-081c61429bbc-eviden",
+      "tag": "article",
+      "top": 3959,
+      "height": 1429,
+      "words": 50,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "来源",
+       "size": 16,
+       "tag": "h3"
+      },
+      "left": 37,
+      "right": 45,
+      "textLeft": 37,
+      "textRight": 45,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "article#snapshot-3bcea9cc-deab-4575-bdbe-081c61429bbc-eviden",
+      "tag": "article",
+      "top": 5389,
+      "height": 1913,
+      "words": 212,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "来源",
+       "size": 16,
+       "tag": "h3"
+      },
+      "left": 37,
+      "right": 45,
+      "textLeft": 37,
+      "textRight": 45,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "article#snapshot-3bcea9cc-deab-4575-bdbe-081c61429bbc-eviden",
+      "tag": "article",
+      "top": 7302,
+      "height": 1098,
+      "words": 43,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "来源",
+       "size": 16,
+       "tag": "h3"
+      },
+      "left": 37,
+      "right": 45,
+      "textLeft": 37,
+      "textRight": 45,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "article#snapshot-3bcea9cc-deab-4575-bdbe-081c61429bbc-eviden",
+      "tag": "article",
+      "top": 8400,
+      "height": 1194,
+      "words": 43,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "来源",
+       "size": 16,
+       "tag": "h3"
+      },
+      "left": 37,
+      "right": 45,
+      "textLeft": 37,
+      "textRight": 45,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "article#snapshot-3bcea9cc-deab-4575-bdbe-081c61429bbc-eviden",
+      "tag": "article",
+      "top": 9593,
+      "height": 1194,
+      "words": 43,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "来源",
+       "size": 16,
+       "tag": "h3"
+      },
+      "left": 37,
+      "right": 45,
+      "textLeft": 37,
+      "textRight": 45,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "article#snapshot-3bcea9cc-deab-4575-bdbe-081c61429bbc-eviden",
+      "tag": "article",
+      "top": 10787,
+      "height": 1255,
+      "words": 43,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "来源",
+       "size": 16,
+       "tag": "h3"
+      },
+      "left": 37,
+      "right": 45,
+      "textLeft": 37,
+      "textRight": 45,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "article#snapshot-3bcea9cc-deab-4575-bdbe-081c61429bbc-eviden",
+      "tag": "article",
+      "top": 12042,
+      "height": 1192,
+      "words": 43,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "来源",
+       "size": 16,
+       "tag": "h3"
+      },
+      "left": 37,
+      "right": 45,
+      "textLeft": 37,
+      "textRight": 45,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "article#snapshot-3bcea9cc-deab-4575-bdbe-081c61429bbc-confli",
+      "tag": "article",
+      "top": 13392,
+      "height": 307,
+      "words": 9,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "尚未解决的冲突",
+       "size": 14,
+       "tag": "h4"
+      },
+      "left": 37,
+      "right": 73,
+      "textLeft": 37,
+      "textRight": 73,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "article#snapshot-3bcea9cc-deab-4575-bdbe-081c61429bbc-gap-f3",
+      "tag": "article",
+      "top": 13861,
+      "height": 251,
+      "words": 6,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "证据不足",
+       "size": 14,
+       "tag": "h4"
+      },
+      "left": 37,
+      "right": 115,
+      "textLeft": 37,
+      "textRight": 115,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "article#snapshot-3bcea9cc-deab-4575-bdbe-081c61429bbc-gap-d5",
+      "tag": "article",
+      "top": 14112,
+      "height": 251,
+      "words": 6,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "限定范围内未找到可用证据",
+       "size": 14,
+       "tag": "h4"
+      },
+      "left": 37,
+      "right": 87,
+      "textLeft": 37,
+      "textRight": 87,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "article#snapshot-3bcea9cc-deab-4575-bdbe-081c61429bbc-gap-ee",
+      "tag": "article",
+      "top": 14362,
+      "height": 230,
+      "words": 6,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "来源读取失败",
+       "size": 14,
+       "tag": "h4"
+      },
+      "left": 37,
+      "right": 115,
+      "textLeft": 37,
+      "textRight": 115,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section#snapshot-3bcea9cc-deab-4575-bdbe-081c61429bbc-sectio",
+      "tag": "section",
+      "top": 14955,
+      "height": 633,
+      "words": 22,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "快照版本与生成信息",
+       "size": 20,
+       "tag": "h2"
+      },
+      "left": 37,
+      "right": 45,
+      "textLeft": 37,
+      "textRight": 45,
+      "fullBleed": false,
+      "footer": true,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     }
+    ],
+    "gaps": [],
+    "h1s": [
+     {
+      "text": "隔离浏览器测试：核对引用与文本安全（不是产品调查结论）",
+      "size": 20,
+      "top": 96,
+      "firstScreen": true
+     }
+    ],
+    "edgeText": [],
+    "edges": [
+     {
+      "x": 37,
+      "n": 23
+     },
+     {
+      "x": 91,
+      "n": 7
+     },
+     {
+      "x": 16,
+      "n": 1
+     },
+     {
+      "x": 127,
+      "n": 1
+     }
+    ],
+    "leftBlocks": 32,
+    "bodySize": 14,
+    "stage": false,
+    "explains": false,
+    "slivers": [],
+    "voidShare": 0,
+    "voidBox": null
+   },
+   "app": {
+    "viewport": {
+     "w": 390,
+     "h": 844
+    },
+    "dark": false,
+    "ground": "#f3f7fc",
+    "sidebar": null,
+    "topbar": {
+     "h": 68
+    },
+    "canvas": {
+     "left": 29,
+     "right": 45
+    },
+    "hero": {
+     "text": "隔离浏览器测试：核对引用与文本安全（不是产品调查结论）",
+     "words": 1,
+     "chars": 27,
+     "lines": 2,
+     "size": 20,
+     "vw": 5.1,
+     "font": "Geist",
+     "weight": 650,
+     "tracking": 0,
+     "leading": 1.6,
+     "top": 96,
+     "tag": "h1",
+     "kind": "heading",
+     "align": "left",
+     "position": "left"
+    },
+    "charts": 0,
+    "layout": {
+     "panels": 1,
+     "firstScreen": 1,
+     "ragged": [],
+     "voids": []
+    },
+    "tiles": 0,
+    "panels": {
+     "count": 29,
+     "radii": [
+      [
+       0,
+       28
+      ],
+      [
+       12,
+       1
+      ]
+     ],
+     "heavyBorders": 0,
+     "borderSamples": [],
+     "heavyShadows": 0,
+     "softShadows": 0,
+     "shadowSamples": [],
+     "glass": 0
+    },
+    "chips": {
+     "count": 0,
+     "hues": 0,
+     "samples": []
+    },
+    "numbers": {
+     "cells": 0,
+     "leftAligned": 0,
+     "figures": 1,
+     "tabularShare": 0,
+     "kpiMax": 14
+    },
+    "rows": null,
+    "chartHues": 0,
+    "placeholders": [
+     "example.com"
+    ],
+    "type": {
+     "under13": 0.14,
+     "tiny": 0,
+     "tinySamples": [],
+     "sizes": [
+      12,
+      14,
+      16,
+      20,
+      22
+     ]
+    },
+    "title": {
+     "text": "隔离浏览器测试：核对引用与文本安全（不是产品调查结论）",
+     "size": 20,
+     "top": 96
+    },
+    "colourShare": 0.003
+   },
+   "consoleErrors": []
+  }
+ ],
+ "findings": [
+  {
+   "level": "WARN",
+   "id": "unused-canvas",
+   "width": 1440,
+   "message": "The content stops 269px short of the right edge while it starts 169px from the sidebar.",
+   "fix": "Let the grid fill the canvas (columns in fr units), or centre a capped canvas with equal margins. A dead strip on one side reads as unfinished."
+  },
+  {
+   "level": "FAIL",
+   "id": "placeholder-data",
+   "width": 1440,
+   "message": "Placeholder data on screen: example.com.",
+   "fix": "Use believable data for this product: real-looking names, amounts that add up, dates in order, units on every figure.",
+   "alsoAt": [
+    1024,
+    768,
+    390
+   ]
+  }
+ ],
+ "images": [
+  {
+   "viewport": "desktop",
+   "width": 1440,
+   "fold": "C:\\Users\\chens\\Documents\\ChatGPT\\naizhizhilong\\waytoagi-1024-detective\\.cache\\p5-audit\\taste-result-final\\desktop-fold.jpg",
+   "pages": [
+    "C:\\Users\\chens\\Documents\\ChatGPT\\naizhizhilong\\waytoagi-1024-detective\\.cache\\p5-audit\\taste-result-final\\desktop-page-01.jpg",
+    "C:\\Users\\chens\\Documents\\ChatGPT\\naizhizhilong\\waytoagi-1024-detective\\.cache\\p5-audit\\taste-result-final\\desktop-page-02.jpg",
+    "C:\\Users\\chens\\Documents\\ChatGPT\\naizhizhilong\\waytoagi-1024-detective\\.cache\\p5-audit\\taste-result-final\\desktop-page-03.jpg"
+   ],
+   "film": []
+  },
+  {
+   "viewport": "tablet",
+   "width": 1024,
+   "fold": "C:\\Users\\chens\\Documents\\ChatGPT\\naizhizhilong\\waytoagi-1024-detective\\.cache\\p5-audit\\taste-result-final\\tablet-fold.jpg",
+   "pages": [
+    "C:\\Users\\chens\\Documents\\ChatGPT\\naizhizhilong\\waytoagi-1024-detective\\.cache\\p5-audit\\taste-result-final\\tablet-page-01.jpg",
+    "C:\\Users\\chens\\Documents\\ChatGPT\\naizhizhilong\\waytoagi-1024-detective\\.cache\\p5-audit\\taste-result-final\\tablet-page-02.jpg"
+   ],
+   "film": []
+  },
+  {
+   "viewport": "tablet",
+   "width": 768,
+   "fold": "C:\\Users\\chens\\Documents\\ChatGPT\\naizhizhilong\\waytoagi-1024-detective\\.cache\\p5-audit\\taste-result-final\\tablet-fold.jpg",
+   "pages": [
+    "C:\\Users\\chens\\Documents\\ChatGPT\\naizhizhilong\\waytoagi-1024-detective\\.cache\\p5-audit\\taste-result-final\\tablet-page-01.jpg",
+    "C:\\Users\\chens\\Documents\\ChatGPT\\naizhizhilong\\waytoagi-1024-detective\\.cache\\p5-audit\\taste-result-final\\tablet-page-02.jpg"
+   ],
+   "film": []
+  },
+  {
+   "viewport": "mobile",
+   "width": 390,
+   "fold": "C:\\Users\\chens\\Documents\\ChatGPT\\naizhizhilong\\waytoagi-1024-detective\\.cache\\p5-audit\\taste-result-final\\mobile-fold.jpg",
+   "pages": [
+    "C:\\Users\\chens\\Documents\\ChatGPT\\naizhizhilong\\waytoagi-1024-detective\\.cache\\p5-audit\\taste-result-final\\mobile-page-01.jpg",
+    "C:\\Users\\chens\\Documents\\ChatGPT\\naizhizhilong\\waytoagi-1024-detective\\.cache\\p5-audit\\taste-result-final\\mobile-page-02.jpg"
+   ],
+   "film": []
+  }
+ ]
+}

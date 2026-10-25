@@ -1,23 +1,23 @@
 "use client";
-import { useRef, useState, type FormEvent } from "react";
+import { useState, type FormEvent } from "react";
 import { AcceptedInvestigationSchema, IdentityConfirmationBodySchema, type ConfirmationRequest } from "@/contracts";
-import { errorMessage, postJson, readApi } from "./api-client";
+import { CONFLICT_MESSAGE, errorMessage, isConflict, postJson, readApi } from "./api-client";
+import { useRequestAction } from "./use-request-action";
 import styles from "./workbench.module.css";
 
-export interface IdentityConfirmationFormProps { investigationId: string; request: ConfirmationRequest; expectedAttemptCount: number; onConfirmed(): Promise<void> }
+export interface IdentityConfirmationFormProps { investigationId: string; request: ConfirmationRequest; expectedAttemptCount: number; onConfirmed(): Promise<void>; onConflict(): Promise<void>; disabled?: boolean }
 function localDate(value: string | undefined) {
   if (!value) return "";
   const date = new Date(value);
   return new Date(date.getTime() - date.getTimezoneOffset() * 60000).toISOString().slice(0, 16);
 }
-export function IdentityConfirmationForm({ investigationId, request, expectedAttemptCount, onConfirmed }: IdentityConfirmationFormProps) {
+export function IdentityConfirmationForm({ investigationId, request, expectedAttemptCount, onConfirmed, onConflict, disabled = false }: IdentityConfirmationFormProps) {
   const identity = request.identity;
   const basis = identity.confirmationBasis[0];
-  const [busy, setBusy] = useState(false);
+  const { busy, run } = useRequestAction();
   const [error, setError] = useState<string | null>(null);
-  const submitting = useRef(false);
   async function submit(event: FormEvent<HTMLFormElement>) {
-    event.preventDefault(); if (submitting.current) return;
+    event.preventDefault(); if (busy || disabled) return;
     const data = new FormData(event.currentTarget);
     const text = (key: string) => String(data.get(key) ?? "").trim();
     const date = new Date(text("retrievedAt"));
@@ -26,15 +26,20 @@ export function IdentityConfirmationForm({ investigationId, request, expectedAtt
       confirmationBasis: [{ url: text("basisUrl"), excerpt: text("excerpt"), reason: text("reason"), retrievedAt: Number.isNaN(date.getTime()) ? "" : date.toISOString() }]
     } });
     if (!parsed.success) { setError("请填写产品名称、有效官网、原句、来源链接、实际获取时间与确认理由。"); return; }
-    submitting.current = true; setBusy(true); setError(null);
-    try { await readApi(`/api/investigations/${investigationId}/identity`, AcceptedInvestigationSchema, postJson(parsed.data)); await onConfirmed(); }
-    catch (failure) { setError(errorMessage(failure)); }
-    finally { submitting.current = false; setBusy(false); }
+    setError(null);
+    await run(async (signal) => {
+      try { await readApi(`/api/investigations/${investigationId}/identity`, AcceptedInvestigationSchema, { ...postJson(parsed.data), signal, expectedStatus: 202 }); if (!signal.aborted) await onConfirmed(); }
+      catch (failure) {
+        if (signal.aborted) return;
+        if (isConflict(failure)) { setError(CONFLICT_MESSAGE); await onConflict(); }
+        else setError(errorMessage(failure));
+      }
+    });
   }
   return <section className={styles.panel}>
     <h2>确认产品身份</h2><p>{request.reason}</p>
     <form onSubmit={submit} className={styles.form}>
-      <fieldset disabled={busy} className={styles.fields}>
+      <fieldset disabled={busy || disabled} className={styles.fields}>
         <label>产品名称<input name="name" defaultValue={identity.name} required /></label>
         <label>官网<input name="officialWebsite" type="url" defaultValue={identity.officialWebsite ?? ""} required /></label>
         <label>版本（未知可留空）<input name="version" defaultValue={identity.version ?? ""} /></label>
@@ -46,7 +51,8 @@ export function IdentityConfirmationForm({ investigationId, request, expectedAtt
       </fieldset>
       <p className={styles.meta}>请按实际核查情况填写依据。未知版本或套餐保持为空。</p>
       {error && <p role="alert" className={styles.errorText}>{error}</p>}
-      <button className={styles.primary} disabled={busy}>{busy ? "正在确认…" : "确认身份并继续"}</button>
+      {disabled && <p className={styles.meta}>请先成功刷新调查状态，再确认身份。</p>}
+      <button className={styles.primary} disabled={busy || disabled}>{busy ? "正在确认…" : "确认身份并继续"}</button>
     </form>
   </section>;
 }

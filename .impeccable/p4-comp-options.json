@@ -1,0 +1,47 @@
+{
+  "title": "案卷 · 阅读布局选择",
+  "question": "选择希望继续实现的布局。图中虚构菜单、日期及来源条目不进入正式产品，仅比较布局。",
+  "options": [
+    {
+      "id": "research-sheet",
+      "kind": "assigned",
+      "label": "连续阅读面与右侧目录（推荐）",
+      "thesis": "阅读连续，目录辅助长报告定位。",
+      "comp": ".impeccable/mocks/decision/research-sheet.png",
+      "palette": [
+        "#F3F7FC",
+        "#FFFFFF",
+        "#17233B",
+        "#326BDA"
+      ]
+    },
+    {
+      "id": "split-workspace",
+      "kind": "challenger",
+      "label": "回答与原文双栏",
+      "thesis": "回答与来源并排，桌面复核更集中。",
+      "comp": ".impeccable/mocks/decision/split-workspace.png",
+      "palette": [
+        "#F3F7FC",
+        "#FFFFFF",
+        "#17233B",
+        "#326BDA"
+      ]
+    },
+    {
+      "id": "stacked-reading",
+      "kind": "challenger",
+      "label": "纵向阅读与来源索引",
+      "thesis": "单列阅读优先，来源集中在下方。",
+      "comp": ".impeccable/mocks/decision/stacked-reading.png",
+      "palette": [
+        "#F3F7FC",
+        "#FFFFFF",
+        "#17233B",
+        "#326BDA"
+      ]
+    }
+  ],
+  "steer": true,
+  "reroll": true
+}

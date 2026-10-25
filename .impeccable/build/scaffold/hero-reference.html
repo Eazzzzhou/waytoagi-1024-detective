@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Scaffold reference: research-sheet.png</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bitcount+Grid+Single+Ink:wght@700&display=swap">
+  <link rel="stylesheet" href="layout.css">
+  <style>html,body{margin:0}body{background:#f4f8f7}.region{box-sizing:border-box}.region.text p{white-space:pre-wrap}</style>
+</head>
+<body>
+<!-- Reference only. Every region sits at its measured box inside a comp-aspect frame. Take the boxes (layout.css), keep your own semantic structure. -->
+<main class="comp-frame" style="max-width:1536px">
+  <div class="r-shell region chrome" data-region="shell"><!-- Flat pale blue application workspace --></div>
+  <div class="r-rail region chrome" data-region="rail"><!-- Left navigation rail with existing single action --></div>
+  <div class="r-brand region text" data-region="brand"><!-- Product wordmark 案卷 --><p style="line-height:1.05;margin:0">brand</p></div>
+  <div class="r-create region control" data-region="create"><!-- Existing create investigation navigation: match the control's lettering and visible shape to the crop (comp-spec.mjs --crop create); a control need not have button chrome --></div>
+  <div class="r-sheet region chrome" data-region="sheet"><!-- White continuous research reading plane --></div>
+  <div class="r-question region text" data-region="question"><!-- Current investigation question from HTTP response --><p style="font-size:var(--r-question-font);font-family:var(--r-question-family),sans-serif;font-weight:var(--r-question-weight);line-height:1.05;margin:0">question</p></div>
+  <div class="r-state region chrome" data-region="state"><!-- Amber waiting confirmation surface --></div>
+  <div class="r-state-title region text" data-region="state-title"><!-- Awaiting identity confirmation state label --><p style="font-size:var(--r-state-title-font);line-height:1.05;margin:0">state-title</p></div>
+  <div class="r-confirm region control" data-region="confirm"><!-- Confirm identity action standard button: match the control's lettering and visible shape to the crop (comp-spec.mjs --crop confirm); a control need not have button chrome --></div>
+  <div class="r-answer-title region text" data-region="answer-title"><!-- Investigation answer section heading --><p style="font-size:var(--r-answer-title-font);line-height:1.05;margin:0">answer-title</p></div>
+  <div class="r-answer-body region text" data-region="answer-body"><!-- Answer empty status; real result replaces only when saved --><p style="font-size:var(--r-answer-body-font);line-height:1.05;margin:0">answer-body</p></div>
+  <div class="r-claims-title region text" data-region="claims-title"><!-- Claim verification heading --><p style="font-size:var(--r-claims-title-font);line-height:1.05;margin:0">claims-title</p></div>
+  <div class="r-sources-title region text" data-region="sources-title"><!-- Citations and original sources heading --><p style="font-size:var(--r-sources-title-font);line-height:1.05;margin:0">sources-title</p></div>
+  <div class="r-limits-title region text" data-region="limits-title"><!-- Conflicts and evidence gaps heading --><p style="font-size:var(--r-limits-title-font);line-height:1.05;margin:0">limits-title</p></div>
+  <div class="r-info-title region text" data-region="info-title"><!-- Snapshot information heading --><p style="font-size:var(--r-info-title-font);line-height:1.05;margin:0">info-title</p></div>
+  <div class="r-index region control" data-region="index"><!-- Right marginal reading section index: match the control's lettering and visible shape to the crop (comp-spec.mjs --crop index); a control need not have button chrome --></div>
+</main>
+</body>
+</html>
