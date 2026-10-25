@@ -3,7 +3,7 @@ import { Prisma, type Job, type PrismaClient } from "../../generated/prisma/clie
 import { ErrorSchema, IdSchema, InvestigationStageSchema, TextSchema, type DomainError } from "../../contracts";
 import { InvestigationRepository } from "../storage/repository";
 import { QueueOptionsSchema, type QueueOptions } from "./config";
-import { CompletionSchema, ConfirmationRequestSchema, ConfirmedIdentitySchema, EnqueueSchema, ExecutionLeaseSchema, type ExecutionLease } from "./contracts";
+import { CompletionSchema, ConfirmationRequestSchema, ResumedIdentitySchema, EnqueueSchema, ExecutionLeaseSchema, type ExecutionLease } from "./contracts";
 import { IdempotencyConflictError, LeaseLostError, redactFailure } from "./errors";
 import { RetryBodySchema } from "../../contracts/http";
 import { retryAvailability } from "./retry-policy";
@@ -116,7 +116,7 @@ export class PostgresInvestigationQueue {
       await this.assertLive(tx, lease);
       const investigation = await new InvestigationRepository(tx).findInvestigation(job.investigationId);
       if (!investigation) throw new Error("Investigation is missing");
-      const confirmedIdentity = job.confirmedIdentity === null ? null : ConfirmedIdentitySchema.parse(job.confirmedIdentity);
+      const confirmedIdentity = job.confirmedIdentity === null ? null : ResumedIdentitySchema.parse(job.confirmedIdentity);
       return { investigation, confirmedIdentity };
     });
   }
@@ -183,7 +183,7 @@ export class PostgresInvestigationQueue {
 
   async confirmIdentity(investigationInput: unknown, identityInput: unknown, control?: { requireWaiting: true; expectedAttemptCount: number }) {
     const investigationId = IdSchema.parse(investigationInput);
-    const identity = ConfirmedIdentitySchema.parse(identityInput);
+    const identity = ResumedIdentitySchema.parse(identityInput);
     return this.transaction(async (tx) => {
       const [job] = await tx.$queryRaw<Job[]>`SELECT * FROM "Job" WHERE "investigationId" = ${investigationId}::uuid FOR UPDATE`;
       if (!job) throw new IdempotencyConflictError("Investigation has no queued job");
@@ -193,7 +193,7 @@ export class PostgresInvestigationQueue {
         if (job.status !== "AWAITING_CONFIRMATION" || investigation?.status !== "AWAITING_CONFIRMATION" || job.attemptCount !== expectedAttemptCount) throw new IdempotencyConflictError("身份确认请求已被处理或已发生变化，请刷新调查。");
       }
       if (job.status !== "AWAITING_CONFIRMATION") {
-        if (job.confirmedIdentity !== null && JSON.stringify(ConfirmedIdentitySchema.parse(job.confirmedIdentity)) === JSON.stringify(identity)) return { jobId: job.id, reused: true };
+        if (job.confirmedIdentity !== null && JSON.stringify(ResumedIdentitySchema.parse(job.confirmedIdentity)) === JSON.stringify(identity)) return { jobId: job.id, reused: true };
         throw new IdempotencyConflictError("Investigation is not awaiting identity confirmation");
       }
       ConfirmationRequestSchema.parse(job.confirmationRequest);

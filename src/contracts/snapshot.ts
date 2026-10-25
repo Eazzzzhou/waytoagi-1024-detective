@@ -50,5 +50,17 @@ export const EvidenceSnapshotSchema = z.strictObject({
     if (finding.evidenceIds.some((id) => evidence.get(id)?.readStatus !== "READ")) issue("Model review must refer to readable original evidence");
     if (finding.decision === "ACCEPTED" && !finding.evidenceIds.length) issue("Accepted model review requires concrete evidence");
   }
+  const loop = value.verificationAudit?.investigationLoop;
+  if (loop) {
+    if (loop.searchRounds > loop.maxSearchRounds || loop.readsUsed > loop.maxReads || loop.decisions.length > 10) issue("Investigation hard budget exceeded");
+    const records = new Set(value.retrievalRecords.map(record => record.id));
+    for (const item of loop.decisions) {
+      if (item.availableEvidenceIds.some(id => !evidence.has(id)) || item.availableRecordIds.some(id => !records.has(id))) issue("Decision observations reference absent material");
+      if (item.outcome === "EXECUTED" && (item.decision.basisEvidenceIds.some(id => !item.availableEvidenceIds.includes(id)) || item.decision.basisRecordIds.some(id => !item.availableRecordIds.includes(id)))) issue("Executed decision references unobserved material");
+    }
+    for (const call of loop.collectionCalls) {
+      if (call.resultId && !(call.operation === "read" ? evidence.has(call.resultId) : records.has(call.resultId))) issue("Collection audit result is absent from snapshot");
+    }
+  }
 });
 export type EvidenceSnapshot = z.infer<typeof EvidenceSnapshotSchema>;

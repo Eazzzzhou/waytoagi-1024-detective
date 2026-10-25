@@ -61,6 +61,7 @@ export function createModelProvider(options: {
       let outcome: ModelCall["outcome"] = "FAILED";
       let phase = "request";
       let finishedAt: number | undefined;
+      let failureCategory: string | undefined;
       try {
         const jsonSchema = z.toJSONSchema(request.outputSchema, { unrepresentable: "any" });
         const response = await (options.fetch ?? fetch)(`${value.baseUrl.replace(/\/$/, "")}/chat/completions`, {
@@ -95,6 +96,7 @@ export function createModelProvider(options: {
         outcome = "SUCCEEDED";
         return output;
       } catch (error) {
+        failureCategory = request.signal?.aborted ? "cancelled-or-budget-exhausted" : error instanceof Error && error.name === "TimeoutError" ? "timeout" : phase;
         request.signal?.throwIfAborted();
         if (error instanceof TaskFailure) throw error;
         const issues = error instanceof z.ZodError ? error.issues.map(issue => `${issue.path.join(".")}:${issue.code}`).slice(0, 8).join(",") : "";
@@ -105,7 +107,7 @@ export function createModelProvider(options: {
         }
         throw new TaskFailure({ code: "PROVIDER_FAILED", message: `${prefix}: ${request.purpose ?? "generation"} failed (${category}${issues ? `; ${issues}` : ""})`, retryable: category === "request" || category === "timeout" });
       } finally {
-        options.onCall?.({ ...config(), model: actualModel, id: crypto.randomUUID(), purpose: request.purpose ?? "generation", startedAt, durationMs: Math.round((finishedAt ?? performance.now()) - started), outcome, ...tokens });
+        options.onCall?.({ ...config(), model: actualModel, id: crypto.randomUUID(), purpose: request.purpose ?? "generation", startedAt, durationMs: Math.round((finishedAt ?? performance.now()) - started), outcome, ...tokens, ...(failureCategory ? { failureCategory } : {}) });
       }
   };
   return { config, generate };

@@ -1,6 +1,6 @@
 import { z } from "zod";
 import { AnswerSchema, ConfirmationRequestSchema, CreateInvestigationSchema, EvidenceSnapshotSchema, IdSchema, TextSchema } from "../../contracts";
-export { ConfirmationRequestSchema, ConfirmedIdentitySchema } from "../../contracts/identity";
+export { ConfirmationRequestSchema, ConfirmedIdentitySchema, ResumedIdentitySchema } from "../../contracts/identity";
 
 export const EnqueueSchema = CreateInvestigationSchema.extend({ idempotencyKey: TextSchema.max(200) });
 export const ExecutionLeaseSchema = z.strictObject({

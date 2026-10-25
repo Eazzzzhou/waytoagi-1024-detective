@@ -143,7 +143,13 @@ describe("A2 synthetic boundary regressions (not real investigation acceptance)"
     const search = async () => structuredClone({ ...record, id: randomUUID() });
     const collection = { resolve: async () => identity, search, searchWeb: search, searchCommunity: search, fetch: async () => structuredClone(evidence), collect: async () => ({ identity, evidence: [], retrievalRecords: [] }) };
     const stages: string[] = [];
-    const handler = createInvestigationHandler({ collection: () => collection, followupQueries: 0, verification: () => ({ ...providers,
+    const decision = { query: null, entries: [], readUrls: [], reason: "Synthetic test decision", observedGap: null, basisEvidenceIds: [], basisRecordIds: [], clarification: null, discoveredIdentity: null };
+    const planner = scriptedModel([
+      { ...decision, action: "SEARCH", query: "Synthetic question", entries: ["yuanbao", "bing"] },
+      { ...decision, action: "READ", readUrls: [evidence.sourceUrl] },
+      { ...decision, action: "FINISH" }
+    ]);
+    const handler = createInvestigationHandler({ collection: () => collection, planner, verification: () => ({ ...providers,
       extraction: { extract: async () => structuredClone(snapshot.claims) },
       verification: { verify: async input => input }, answer: { generate: async input => makeAnswer(input) }
     }) });
