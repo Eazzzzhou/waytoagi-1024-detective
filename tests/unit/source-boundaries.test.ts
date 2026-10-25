@@ -15,7 +15,7 @@ it("keeps production imports out of test fixtures and keeps Worker/contracts ind
       const target = specifier.startsWith(".") ? relative(resolve("."), resolve(path, "..", specifier)).replaceAll("\\", "/") : specifier;
       if (/(^|\/)tests(\/|$)/.test(target)) violations.push(`${name}: test import`);
       if (/^src\/(server|worker|contracts)\//.test(name) && /^(next(?:\/|$)|server-only$)/.test(specifier)) violations.push(`${name}: Next runtime import`);
-      if (/^src\/components\//.test(name) && /(?:^|\/)(server|worker|generated)(?:\/|$)|^(pg$|@prisma\/|node:)/.test(target)) violations.push(`${name}: server import`);
+      if (/^src\/(components|frontend)\//.test(name) && /(?:^|\/)(server|worker|generated)(?:\/|$)|^(pg$|@prisma\/|node:)/.test(target)) violations.push(`${name}: server import`);
     }
     function visit(node: ts.Node) {
       if ((ts.isImportDeclaration(node) || ts.isExportDeclaration(node)) && node.moduleSpecifier && ts.isStringLiteralLike(node.moduleSpecifier)) check(node.moduleSpecifier.text);

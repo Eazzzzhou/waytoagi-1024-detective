@@ -8,9 +8,9 @@ import { AcceptedInvestigationSchema } from "../../src/contracts";
 const { values } = parseArgs({ options: {
   engine: { type: "string" }, batch: { type: "string" }, base: { type: "string", default: "http://127.0.0.1:3104" },
   cases: { type: "string", default: "S0,S1,S2,S3,S4,S5,S6,S7,S8" }, depth: { type: "string", default: "AUTO" },
-  prompts: { type: "string", default: "C:/Users/qianchen/Desktop/WaytoAGI/第一版综合测试/prompts" }
+  prompts: { type: "string" }
 } });
-if (!values.engine || !values.batch) throw new Error("--engine and --batch are required");
+if (!values.engine || !values.batch || !values.prompts) throw new Error("--engine, --batch and --prompts are required");
 const directory = resolve("research/v4-runs", values.batch, values.engine);
 await mkdir(directory, { recursive: true });
 const cases = [];

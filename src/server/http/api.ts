@@ -77,10 +77,11 @@ export class InvestigationHttpApi {
     return this.serve(request, async () => {
       const id = parseInput(IdSchema, idInput);
       const data = await this.db.$transaction(async (tx) => {
-        const investigation = await new InvestigationRepository(tx).findInvestigation(id);
+        const repository = new InvestigationRepository(tx);
+        const investigation = await repository.findInvestigation(id);
         if (!investigation) throw new HttpError(404, "NOT_FOUND", "未找到这项调查。");
         if (investigation.error) investigation.error = redactFailure(investigation.error);
-        const job = await tx.job.findUnique({ where: { investigationId: id } });
+        const job = await repository.findJob(id);
         const identityConfirmation = investigation.status === "AWAITING_CONFIRMATION" && job?.status === "AWAITING_CONFIRMATION" ? ConfirmationRequestSchema.parse(job.confirmationRequest) : null;
         return InvestigationDetailSchema.parse({ investigation, identityConfirmation, retry: retryAvailability(job, investigation.status) });
       }, { isolationLevel: "RepeatableRead", timeout: 5000 });
@@ -92,7 +93,7 @@ export class InvestigationHttpApi {
     return this.serve(request, async () => {
       const id = parseInput(IdSchema, idInput);
       const body = parseInput(IdentityConfirmationBodySchema, await this.body(request));
-      if (!await this.db.investigation.findUnique({ where: { id }, select: { id: true } })) throw new HttpError(404, "NOT_FOUND", "未找到这项调查。");
+      if (!await new InvestigationRepository(this.db).exists(id)) throw new HttpError(404, "NOT_FOUND", "未找到这项调查。");
       await this.queue.confirmIdentity(id, body.identity, { requireWaiting: true, expectedAttemptCount: body.expectedAttemptCount });
       return Response.json(AcceptedInvestigationSchema.parse({ investigationId: id, reused: false }), { status: 202, headers });
     });
@@ -102,7 +103,7 @@ export class InvestigationHttpApi {
     return this.serve(request, async () => {
       const id = parseInput(IdSchema, idInput);
       const body = parseInput(RetryBodySchema, await this.body(request));
-      if (!await this.db.investigation.findUnique({ where: { id }, select: { id: true } })) throw new HttpError(404, "NOT_FOUND", "未找到这项调查。");
+      if (!await new InvestigationRepository(this.db).exists(id)) throw new HttpError(404, "NOT_FOUND", "未找到这项调查。");
       return Response.json(AcceptedInvestigationSchema.parse(await this.queue.retryFailed(id, body)), { status: 202, headers });
     });
   }

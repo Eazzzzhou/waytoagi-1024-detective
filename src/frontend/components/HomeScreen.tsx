@@ -11,7 +11,7 @@ import {
   Plus,
   ShieldCheck,
 } from 'lucide-react'
-import { EXAMPLES, HOME_ARCHIVE, SCENARIOS } from '../data/scenarios'
+import { EXAMPLES, HOME_ARCHIVE } from '../data/home'
 import { cn } from '../lib/utils'
 import { ChainPreview } from './ChainPreview'
 import { DecodeHeadline } from './DecodeHeadline'
@@ -43,7 +43,7 @@ export function HomeScreen({
   busy = false,
 }: {
   onSubmit: (text: string) => void
-  onExample: (scenarioId: keyof typeof SCENARIOS, question: string) => void
+  onExample: (scenarioId: string, question: string) => void
   onArchive: (scenarioId: string, at: string, caseNo: string) => void
   askRef: RefObject<HTMLTextAreaElement | null>
   live?: boolean
@@ -252,7 +252,7 @@ export function HomeScreen({
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.55, delay: 0.52 + index * 0.06, ease }}
                       onClick={() =>
-                        onExample(example.scenarioId as keyof typeof SCENARIOS, example.question)
+                        onExample(example.scenarioId, example.question)
                       }
                       className="corner-reveal-card group/card flex min-h-[132px] flex-col items-start p-2.5 text-left"
                     >

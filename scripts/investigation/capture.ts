@@ -9,7 +9,7 @@ import { createDocumentReader } from "../../src/server/retrieval/documents";
 const investigationId = process.argv[2];
 if (!investigationId) throw new Error("Usage: npx tsx scripts/investigation/capture.ts <investigationId> [outputDirectory] [baseUrl]");
 const directory = resolve(process.argv[3] ?? `research/runtime-runs/${investigationId}`);
-const base = process.argv[4] ?? "http://127.0.0.1:3000";
+const base = process.argv[4] ?? "http://127.0.0.1:3405";
 const states: { status: string; stage: string; observedAt: string }[] = [];
 let detail;
 for (let attempt = 0; attempt < 600; attempt++) {

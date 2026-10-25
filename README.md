@@ -64,8 +64,9 @@ npm run verify
 | npm run test:db | 专用 PostgreSQL 中的存储、队列、Worker、HTTP、D1 集成测试 |
 | npm run build | Prisma Client 生成和生产构建 |
 | npm run test:runtime | 隔离 schema 的真实迁移、生产 Web / 独立 Worker 进程与 HTTP |
-| npm run audit:bundles | 客户端产物中的受检配置值、服务端运行时和夹具导入 |
-| npm run docs:check | 活跃文档的内联本地链接目标 |
+| npm run audit:bundles | 客户端产物中的受检配置值、服务端运行时、夹具导入、演示语料隔离和初始 JS 预算 |
+| npm run docs:check | 活跃文档的本地链接和标题锚点；跳过 `.cache/` 机器本地证据 |
+| npm run hygiene | Git 跟踪文件中的可执行/压缩包和超过 2 MB 的大文件 |
 | npm run services:check | 离线服务配置检查，不输出凭据值或发网络请求；不代表服务已可用 |
 | npm run advice:capture -- 调查ID 请求ID 新文件.json | 只读采集真实建议请求及绑定快照／客观回答，拒绝覆盖；默认本地 3405 端口 |
 | npm run verify | 顺序执行上述检查，失败即停止 |
@@ -82,6 +83,6 @@ D1 评估命令见 [runs 约定](cases/runs/README.md)。测试夹具只证明�
 - prisma、config、infra、scripts、tests：乙丙维护的公共工程与验收工具。
 - docs：当前状态、分工、乙丙任务；cases：真实案例、参考、复核及只追加运行记录。
 - [参考资料](docs/reference/队友交接包/README.md)：外部资料入口及素材收藏，不作为当前任务清单。
-- public/fonts：本地字体及[来源与许可](public/fonts/字体文件来源与许可说明.md)。
+- public：favicon 等静态资源。正文与标题字体由 `src/app/layout.tsx` 的 Google Fonts 提供；离线时回退系统字体，仓库不再维护未使用的本地字体产物。
 
 不提交 .env、缓存、构建产物、生成 Client 或密钥；不把参考判断和测试夹具导入正式调查。

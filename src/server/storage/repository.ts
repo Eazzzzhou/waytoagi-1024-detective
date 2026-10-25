@@ -1,4 +1,4 @@
-import type { Prisma, PrismaClient } from "../../generated/prisma/client";
+import type { Job, Prisma, PrismaClient } from "../../generated/prisma/client";
 import { z } from "zod";
 import { AnswerSchema, CreateInvestigationSchema, EvidenceSnapshotSchema, IdSchema, InvestigationSchema, assertAnswerReferences } from "../../contracts";
 import { StoredDataError } from "./errors";
@@ -20,6 +20,16 @@ export class InvestigationRepository {
   async findInvestigation(id: unknown) {
     const row = await this.db.investigation.findUnique({ where: { id: IdSchema.parse(id) } });
     return row ? this.parseInvestigation(row) : null;
+  }
+
+  async exists(id: unknown): Promise<boolean> {
+    const row = await this.db.investigation.findUnique({ where: { id: IdSchema.parse(id) }, select: { id: true } });
+    return Boolean(row);
+  }
+
+  /** Retry availability is a queue policy, but the job lookup belongs to the investigation aggregate. */
+  async findJob(investigationId: unknown): Promise<Job | null> {
+    return this.db.job.findUnique({ where: { investigationId: IdSchema.parse(investigationId) } });
   }
 
   private parseInvestigation(row: Prisma.InvestigationGetPayload<object>) {
