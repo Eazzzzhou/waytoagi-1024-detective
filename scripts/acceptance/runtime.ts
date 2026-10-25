@@ -41,7 +41,7 @@ let badConfigWeb: ReturnType<typeof launch> | undefined;
 let failure: unknown;
 try {
   const migration = await database.pool.query<{ count: string }>('SELECT count(*) FROM "_prisma_migrations" WHERE finished_at IS NOT NULL AND rolled_back_at IS NULL');
-  assert.equal(Number(migration.rows[0]!.count), 4);
+  assert.equal(Number(migration.rows[0]!.count), 5);
   checks.push("fresh_schema_prisma_migrate_deploy");
   const port = await freePort();
   const base = `http://127.0.0.1:${port}`;

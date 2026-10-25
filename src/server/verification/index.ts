@@ -62,13 +62,15 @@ export function groupOrigins(evidence: Evidence[]): Evidence[] {
   const root = (index: number): number => parents[index] === index ? index : (parents[index] = root(parents[index]!));
   const keys = new Map<string, number>();
   evidence.forEach((item, index) => {
-    const identifiers = [`url:${canonicalUrl(item.sourceUrl)}`];
+    // Separate comments with saved block provenance; one forum host/thread isn't one experiment.
+    const commentKey = item.originalLocation?.kind === "COMMENT" && item.documentReference ? `:comment:${item.documentReference.blockId}` : "";
+    const identifiers = [`url:${canonicalUrl(item.sourceUrl)}${commentKey}`];
     const alias = new URL(item.sourceUrl);
     alias.hostname = alias.hostname.replace(/^www\./, "");
-    if (item.contentHash) identifiers.push(`www-alias:${canonicalUrl(alias.href)}:${item.contentHash}`);
+    if (item.contentHash) identifiers.push(`www-alias:${canonicalUrl(alias.href)}:${item.contentHash}${commentKey}`);
     // A1 stores the effective redirect URL at the beginning of TEXT locators.
     const effectiveUrl = item.originalLocation?.kind === "TEXT" ? item.originalLocation.locator.match(/^(https?:\/\/\S+) :: /)?.[1] : undefined;
-    if (effectiveUrl) identifiers.push(`url:${canonicalUrl(effectiveUrl)}`);
+    if (effectiveUrl) identifiers.push(`url:${canonicalUrl(effectiveUrl)}${commentKey}`);
     if (item.metadata.upstreamUrl) identifiers.push(`url:${canonicalUrl(item.metadata.upstreamUrl)}`);
     if (item.metadata.originGroupId) identifiers.push(`group:${item.metadata.originGroupId}`);
     for (const key of identifiers) {

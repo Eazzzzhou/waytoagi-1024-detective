@@ -38,9 +38,10 @@ describe("independent Worker execution with real PostgreSQL", () => {
   });
 
   it("keeps a long-running test handler alive through sequential database heartbeats", async () => {
-    await submit();
+    await queue.enqueue({ question: "Synthetic deep request propagation", researchDepth: "DEEP", idempotencyKey: randomUUID() });
     let heartbeats = 0;
     const handler: InvestigationHandler = async (context) => {
+      expect(context.researchDepth).toBe("DEEP");
       await context.setStage("RETRIEVAL");
       // Wait for several real heartbeat advances, longer than the original lease.
       const first = await database.db.job.findFirstOrThrow();

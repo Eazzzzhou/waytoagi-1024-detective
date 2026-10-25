@@ -46,6 +46,7 @@ enum AttemptStatus {
 model Investigation {
   id               String              @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
   question         String              @db.VarChar(4000)
+  researchDepth    String              @default("AUTO") @db.VarChar(16)
   status           InvestigationStatus @default(PENDING)
   stage            InvestigationStage  @default(CREATED)
   error            Json?               @db.JsonB

@@ -2,7 +2,7 @@ import { z } from "zod";
 
 export const QueueOptionsSchema = z.strictObject({
   leaseMs: z.number().int().min(50).max(300000).default(30000),
-  attemptTimeoutMs: z.number().int().min(50).max(3600000).default(300000),
+  attemptTimeoutMs: z.number().int().min(50).max(3600000).default(660000),
   maxAttempts: z.number().int().min(1).max(20).default(3),
   retryBaseMs: z.number().int().min(1).max(60000).default(1000),
   retryMaxMs: z.number().int().min(1).max(3600000).default(60000),

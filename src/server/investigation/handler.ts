@@ -15,6 +15,8 @@ import { createModelProvider, type ModelProvider } from "../models";
 export interface InvestigationContext {
   investigationId: string;
   question: string;
+  researchDepth?: import("../../contracts").ResearchDepth;
+  executionBudgetMs?: number;
   confirmedIdentity: ProductIdentity | null;
   signal: AbortSignal;
   setStage(stage: Exclude<InvestigationStage, "COMPLETED">): Promise<void>;

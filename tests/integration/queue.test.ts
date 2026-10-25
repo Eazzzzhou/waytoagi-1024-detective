@@ -70,7 +70,16 @@ describe("PostgreSQL reliable queue", () => {
     const key = randomUUID();
     await queue.enqueue({ question: "First request", idempotencyKey: key });
     await expect(otherQueue.enqueue({ question: "Different request", idempotencyKey: key })).rejects.toBeInstanceOf(IdempotencyConflictError);
+    await expect(otherQueue.enqueue({ question: "First request", researchDepth: "DEEP", idempotencyKey: key })).rejects.toBeInstanceOf(IdempotencyConflictError);
     expect(await database.db.investigation.count()).toBe(1);
+  });
+
+  it("persists research depth through enqueue, claim and task loading", async () => {
+    const created = await queue.enqueue({ question: "Synthetic deep research request", researchDepth: "DEEP", idempotencyKey: randomUUID() });
+    const current = await lease();
+    const loaded = await queue.loadTask(current);
+    expect(loaded.investigation.id).toBe(created.investigation!.id);
+    expect(loaded.investigation.researchDepth).toBe("DEEP");
   });
 
   it("renews leases using database time and records actual stages", async () => {

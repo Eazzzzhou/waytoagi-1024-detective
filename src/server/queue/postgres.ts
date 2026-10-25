@@ -28,7 +28,8 @@ export class PostgresInvestigationQueue {
 
   async enqueue(input: unknown) {
     const request = EnqueueSchema.parse(input);
-    const requestHash = hash(`question:v1:${request.question}`);
+    // Preserve legacy AUTO idempotency keys; an explicit depth is a different request.
+    const requestHash = hash(request.researchDepth === "AUTO" ? `question:v1:${request.question}` : `question:v2:${request.researchDepth}:${request.question}`);
     return this.transaction(async (tx) => {
       // Serializes creation for the same key before creating an investigation. Unique index is the final guard.
       await tx.$queryRaw`SELECT pg_advisory_xact_lock(hashtextextended(${`enqueue:${request.idempotencyKey}`}, 0))::text`;
@@ -37,7 +38,7 @@ export class PostgresInvestigationQueue {
         if (existing.requestHash !== requestHash) throw new IdempotencyConflictError();
         return { investigation: await new InvestigationRepository(tx).findInvestigation(existing.investigationId), jobId: existing.id, reused: true };
       }
-      const investigation = await new InvestigationRepository(tx).createInvestigation({ question: request.question });
+      const investigation = await new InvestigationRepository(tx).createInvestigation({ question: request.question, researchDepth: request.researchDepth });
       const job = await tx.job.create({ data: { investigationId: investigation.id, idempotencyKey: request.idempotencyKey, requestHash, maxAttempts: this.options.maxAttempts } });
       return { investigation, jobId: job.id, reused: false };
     });

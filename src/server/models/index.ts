@@ -7,6 +7,8 @@ export interface ModelRequest<T> {
   outputSchema: z.ZodType<T>;
   signal?: AbortSignal | undefined;
   purpose?: string | undefined;
+  /** V4 meters every external call; its claim-local repair owns retry policy. */
+  formatRepair?: boolean | undefined;
 }
 export interface ModelProvider {
   generate<T>(request: ModelRequest<T>): Promise<T>;
@@ -63,7 +65,7 @@ export function createModelProvider(options: {
       let finishedAt: number | undefined;
       let failureCategory: string | undefined;
       try {
-        const jsonSchema = z.toJSONSchema(request.outputSchema, { unrepresentable: "any" });
+        const jsonSchema = z.toJSONSchema(request.outputSchema);
         const response = await (options.fetch ?? fetch)(`${value.baseUrl.replace(/\/$/, "")}/chat/completions`, {
           method: "POST", headers: { authorization: `Bearer ${value.apiKey}`, "content-type": "application/json" },
           signal: request.signal ? AbortSignal.any([request.signal, AbortSignal.timeout(value.timeoutMs)]) : AbortSignal.timeout(value.timeoutMs),
@@ -101,7 +103,7 @@ export function createModelProvider(options: {
         if (error instanceof TaskFailure) throw error;
         const issues = error instanceof z.ZodError ? error.issues.map(issue => `${issue.path.join(".")}:${issue.code}`).slice(0, 8).join(",") : "";
         const category = error instanceof Error && error.name === "TimeoutError" ? "timeout" : phase;
-        if (!repairAttempt && ["output-schema", "json-syntax"].includes(category)) {
+        if (request.formatRepair !== false && !repairAttempt && ["output-schema", "json-syntax"].includes(category)) {
           finishedAt = performance.now();
           return await generate({ ...request, purpose: `${request.purpose ?? "generation"}:format-repair`, prompt: `${request.prompt}\n上一次返回未通过JSON/结构校验（${category}${issues ? `; ${issues}` : ""}）。只返回系统JSON schema允许的字段，不附加解释、顶层说明或其他字段。重新根据相同原始材料完成，不新增事实。` }, true);
         }
