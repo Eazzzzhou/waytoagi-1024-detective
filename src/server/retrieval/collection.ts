@@ -84,7 +84,7 @@ export function extractHtml(html: string, question = "") {
     .filter(({ el }) => $(el).is("tr") || (!$(el).closest("tr").length && !$(el).find(selector).length)).map(({ el, index }) => ({
       text: clean($(el).text()) ?? "", minimum: $(el).is("tr") ? 3 : 30,
       tableContext: $(el).is("tr") ? clean($(el).closest("table").text()) : null,
-      locator: $(el).is("tr") ? `${rootSelector} :: tables[${tables.indexOf($(el).closest("table").get(0)!)}]` : `${rootSelector} :: blocks(${selector})[${index}]`
+      locator: $(el).is("tr") ? `${rootSelector} :: tables[${tables.findIndex(table => table === $(el).closest("table").get(0))}]` : `${rootSelector} :: blocks(${selector})[${index}]`
     })).filter(b => b.text.length >= b.minimum);
   const ranked = blocks.map(b => ({ ...b, score: terms.reduce((s, t) => s + (b.text.toLowerCase().includes(t) ? t.length : 0), 0) })).sort((a, b) => b.score - a.score);
   const chosen = ranked[0];
