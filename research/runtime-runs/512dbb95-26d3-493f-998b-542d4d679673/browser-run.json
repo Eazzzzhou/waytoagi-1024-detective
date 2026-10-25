@@ -1,0 +1,56 @@
+{
+  "scope": "Real browser submission, actual services, existing application DB and standalone Worker; no case/source injection",
+  "question": "AnythingLLM 是否可以完全在本机运行，聊天内容会不会必须发给外部服务？只核实官方说明。",
+  "commit": "f99d8a2e5b9470fd00c30cab3e79b178208c3c23",
+  "id": "512dbb95-26d3-493f-998b-542d4d679673",
+  "detail": {
+    "investigation": {
+      "id": "512dbb95-26d3-493f-998b-542d4d679673",
+      "question": "AnythingLLM 是否可以完全在本机运行，聊天内容会不会必须发给外部服务？只核实官方说明。",
+      "status": "SUCCEEDED",
+      "stage": "COMPLETED",
+      "error": null,
+      "createdAt": "2026-10-25T01:44:51.847Z",
+      "updatedAt": "2026-10-25T01:45:43.130Z",
+      "startedAt": "2026-10-25T01:44:52.535Z",
+      "completedAt": "2026-10-25T01:45:43.130Z",
+      "resultSnapshotId": "65e67e53-e289-434b-bed1-812cebcc29ff"
+    },
+    "identityConfirmation": null,
+    "retry": {
+      "allowed": false,
+      "reason": "仅失败的调查可以手动重试。",
+      "remaining": 2,
+      "expectedAttemptCount": 1
+    }
+  },
+  "states": [
+    {
+      "state": "PENDING:CREATED",
+      "at": "2026-10-25T01:44:51.897Z"
+    },
+    {
+      "state": "RUNNING:IDENTITY",
+      "at": "2026-10-25T01:44:52.906Z"
+    },
+    {
+      "state": "RUNNING:RETRIEVAL",
+      "at": "2026-10-25T01:44:53.952Z"
+    },
+    {
+      "state": "RUNNING:SOURCE_FETCH",
+      "at": "2026-10-25T01:44:59.024Z"
+    },
+    {
+      "state": "RUNNING:VERIFICATION",
+      "at": "2026-10-25T01:45:30.540Z"
+    },
+    {
+      "state": "SUCCEEDED:COMPLETED",
+      "at": "2026-10-25T01:45:43.776Z"
+    }
+  ],
+  "consoleErrors": [],
+  "url": "http://127.0.0.1:3102/investigations/512dbb95-26d3-493f-998b-542d4d679673",
+  "title": "案卷 · AI 产品调查"
+}

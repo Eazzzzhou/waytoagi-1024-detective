@@ -1,0 +1,60 @@
+{
+  "scope": "Real browser submission, actual services, existing application DB and standalone Worker; no case/source injection",
+  "question": "Dify 社区版自托管为多个租户提供服务，官方许可条款和实际使用报告分别有哪些限制？",
+  "commit": "e8f19b09437ec2a2e1085404dbc1d9cb1d7acb31",
+  "id": "408b3101-68a6-4aaf-8301-ddbecdc1cccb",
+  "detail": {
+    "investigation": {
+      "id": "408b3101-68a6-4aaf-8301-ddbecdc1cccb",
+      "question": "Dify 社区版自托管为多个租户提供服务，官方许可条款和实际使用报告分别有哪些限制？",
+      "status": "SUCCEEDED",
+      "stage": "COMPLETED",
+      "error": null,
+      "createdAt": "2026-10-25T01:56:55.771Z",
+      "updatedAt": "2026-10-25T01:57:57.096Z",
+      "startedAt": "2026-10-25T01:56:56.756Z",
+      "completedAt": "2026-10-25T01:57:57.096Z",
+      "resultSnapshotId": "eee5a518-72f5-4969-883b-082183603907"
+    },
+    "identityConfirmation": null,
+    "retry": {
+      "allowed": false,
+      "reason": "仅失败的调查可以手动重试。",
+      "remaining": 2,
+      "expectedAttemptCount": 1
+    }
+  },
+  "states": [
+    {
+      "state": "PENDING:CREATED",
+      "at": "2026-10-25T01:56:55.816Z"
+    },
+    {
+      "state": "RUNNING:IDENTITY",
+      "at": "2026-10-25T01:56:56.835Z"
+    },
+    {
+      "state": "RUNNING:RETRIEVAL",
+      "at": "2026-10-25T01:56:58.875Z"
+    },
+    {
+      "state": "RUNNING:SOURCE_FETCH",
+      "at": "2026-10-25T01:57:03.959Z"
+    },
+    {
+      "state": "RUNNING:VERIFICATION",
+      "at": "2026-10-25T01:57:15.096Z"
+    },
+    {
+      "state": "RUNNING:ANSWER",
+      "at": "2026-10-25T01:57:54.823Z"
+    },
+    {
+      "state": "SUCCEEDED:COMPLETED",
+      "at": "2026-10-25T01:57:57.893Z"
+    }
+  ],
+  "consoleErrors": [],
+  "url": "http://127.0.0.1:3102/investigations/408b3101-68a6-4aaf-8301-ddbecdc1cccb#evidence-e085da29-d84b-4374-b390-38a7c94661e4",
+  "title": "案卷 · AI 产品调查"
+}

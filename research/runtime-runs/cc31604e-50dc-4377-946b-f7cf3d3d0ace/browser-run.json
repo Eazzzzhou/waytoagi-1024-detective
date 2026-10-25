@@ -1,0 +1,68 @@
+{
+  "scope": "Real browser submission, actual services, existing application DB and standalone Worker; no case/source injection",
+  "question": "Dify 社区版自托管为多个租户提供服务，官方许可条款和实际使用报告分别有哪些限制？",
+  "commit": "0dc58d8e600c9c20b85e0fbb3da748ec98688db7",
+  "id": "cc31604e-50dc-4377-946b-f7cf3d3d0ace",
+  "detail": {
+    "investigation": {
+      "id": "cc31604e-50dc-4377-946b-f7cf3d3d0ace",
+      "question": "Dify 社区版自托管为多个租户提供服务，官方许可条款和实际使用报告分别有哪些限制？",
+      "status": "SUCCEEDED",
+      "stage": "COMPLETED",
+      "error": null,
+      "createdAt": "2026-10-25T01:47:49.059Z",
+      "updatedAt": "2026-10-25T01:49:03.943Z",
+      "startedAt": "2026-10-25T01:47:49.538Z",
+      "completedAt": "2026-10-25T01:49:03.943Z",
+      "resultSnapshotId": "1dadef1e-0604-4798-9804-999812fd8412"
+    },
+    "identityConfirmation": null,
+    "retry": {
+      "allowed": false,
+      "reason": "仅失败的调查可以手动重试。",
+      "remaining": 2,
+      "expectedAttemptCount": 1
+    }
+  },
+  "states": [
+    {
+      "state": "PENDING:CREATED",
+      "at": "2026-10-25T01:47:49.193Z"
+    },
+    {
+      "state": "RUNNING:IDENTITY",
+      "at": "2026-10-25T01:47:50.205Z"
+    },
+    {
+      "state": "RUNNING:RETRIEVAL",
+      "at": "2026-10-25T01:47:51.223Z"
+    },
+    {
+      "state": "RUNNING:SOURCE_FETCH",
+      "at": "2026-10-25T01:47:55.278Z"
+    },
+    {
+      "state": "RUNNING:RETRIEVAL",
+      "at": "2026-10-25T01:48:02.366Z"
+    },
+    {
+      "state": "RUNNING:SOURCE_FETCH",
+      "at": "2026-10-25T01:48:06.446Z"
+    },
+    {
+      "state": "RUNNING:VERIFICATION",
+      "at": "2026-10-25T01:48:11.535Z"
+    },
+    {
+      "state": "RUNNING:ANSWER",
+      "at": "2026-10-25T01:49:00.318Z"
+    },
+    {
+      "state": "SUCCEEDED:COMPLETED",
+      "at": "2026-10-25T01:49:04.391Z"
+    }
+  ],
+  "consoleErrors": [],
+  "url": "http://127.0.0.1:3102/investigations/cc31604e-50dc-4377-946b-f7cf3d3d0ace#evidence-b130d542-df90-4b54-a53c-76395b37dbc5",
+  "title": "案卷 · AI 产品调查"
+}

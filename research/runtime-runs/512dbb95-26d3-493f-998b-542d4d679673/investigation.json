@@ -1,0 +1,32 @@
+{
+  "capturedAt": "2026-10-25T01:46:01.541Z",
+  "url": "http://127.0.0.1:3102/investigations/512dbb95-26d3-493f-998b-542d4d679673",
+  "detail": {
+    "investigation": {
+      "id": "512dbb95-26d3-493f-998b-542d4d679673",
+      "question": "AnythingLLM 是否可以完全在本机运行，聊天内容会不会必须发给外部服务？只核实官方说明。",
+      "status": "SUCCEEDED",
+      "stage": "COMPLETED",
+      "error": null,
+      "createdAt": "2026-10-25T01:44:51.847Z",
+      "updatedAt": "2026-10-25T01:45:43.130Z",
+      "startedAt": "2026-10-25T01:44:52.535Z",
+      "completedAt": "2026-10-25T01:45:43.130Z",
+      "resultSnapshotId": "65e67e53-e289-434b-bed1-812cebcc29ff"
+    },
+    "identityConfirmation": null,
+    "retry": {
+      "allowed": false,
+      "reason": "仅失败的调查可以手动重试。",
+      "remaining": 2,
+      "expectedAttemptCount": 1
+    }
+  },
+  "observedStates": [
+    {
+      "status": "SUCCEEDED",
+      "stage": "COMPLETED",
+      "observedAt": "2026-10-25T01:46:01.538Z"
+    }
+  ]
+}

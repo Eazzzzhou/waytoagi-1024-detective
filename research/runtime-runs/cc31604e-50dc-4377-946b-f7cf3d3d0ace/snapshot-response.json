@@ -1,0 +1,1553 @@
+{
+  "snapshot": {
+    "id": "1dadef1e-0604-4798-9804-999812fd8412",
+    "investigationId": "cc31604e-50dc-4377-946b-f7cf3d3d0ace",
+    "version": 1,
+    "parentSnapshotId": null,
+    "productIdentity": {
+      "name": "Dify",
+      "officialWebsite": "https://dify.ai",
+      "version": null,
+      "plan": null,
+      "confirmationStatus": "CONFIRMED",
+      "confirmationBasis": [
+        {
+          "url": "https://dify.ai/zh/pricing/dify-enterprise",
+          "excerpt": "探索页面模板为初学者提供高质量、场景化的模板，帮助快速学习并使用 Dify 构建应用。",
+          "retrievedAt": "2026-10-25T01:47:55.746Z",
+          "reason": "Explicit question name matches publisher domain label and freshly read page title; readable original text retained. Website self-identification, not verified legal ownership; version/plan unknown"
+        },
+        {
+          "url": "https://dify.ai/zh/pricing",
+          "excerpt": "5,000 条消息额度/月消息额度帮助您轻松试用 Dify 中来自 OpenAI、Anthropic、Gemini、xAI、通义等不同模型。额度消耗量因模型类型而异，用完后您可切换为自己的 API Key。",
+          "retrievedAt": "2026-10-25T01:47:59.853Z",
+          "reason": "Explicit question name matches publisher domain label and freshly read page title; readable original text retained. Website self-identification, not verified legal ownership; version/plan unknown"
+        },
+        {
+          "url": "https://dify.ai/zh/dify-enterprise",
+          "excerpt": "单个 Dify 集群，支持多业务单元独立运行。租户级别的配额、计费与访问策略管理。",
+          "retrievedAt": "2026-10-25T01:48:06.760Z",
+          "reason": "Explicit question name matches publisher domain label and freshly read page title; readable original text retained. Website self-identification, not verified legal ownership; version/plan unknown"
+        }
+      ]
+    },
+    "evidence": [
+      {
+        "id": "029ac157-1359-41e6-89ab-7900c4f0d6cf",
+        "sourceUrl": "https://blog.gitcode.com/bf606b1c12983e41c0dd323a1cf419be.html",
+        "originalExcerpt": null,
+        "translation": null,
+        "originalLocation": null,
+        "metadata": {
+          "title": null,
+          "siteName": "blog.gitcode.com",
+          "author": null,
+          "publishedAt": null,
+          "language": null,
+          "sourceType": "UNKNOWN",
+          "contentKind": "UNKNOWN",
+          "productVersion": null,
+          "plan": null,
+          "upstreamUrl": null,
+          "independence": "UNKNOWN",
+          "originGroupId": null,
+          "independenceReason": null
+        },
+        "retrievedAt": "2026-10-25T01:47:55.730Z",
+        "readStatus": "RESTRICTED",
+        "readError": "Source returned access challenge",
+        "contentHash": null
+      },
+      {
+        "id": "1cd7e010-baa2-4bd8-af0b-42a1e73ea539",
+        "sourceUrl": "https://dify.ai/zh/pricing/dify-enterprise",
+        "originalExcerpt": "探索页面模板为初学者提供高质量、场景化的模板，帮助快速学习并使用 Dify 构建应用。",
+        "translation": null,
+        "originalLocation": {
+          "kind": "TEXT",
+          "locator": "https://dify.ai/zh/pricing/dify-enterprise :: main:first :: blocks(p,li,pre,tr,h1,h2,h3)[36]; normalized UTF-16 [0,43)",
+          "context": "CommunityFree企业版Custom适合需要企业级安全、合规、可扩展性、控制及定制化解决方案的企业。模型提供商LLM API 负载均衡为模型添加多个 API Key，有效绕过 API 速率限制。本地模型支持与本地部署模型集成。模型厂商管理覆盖所有模型支持为工作空间添加和配置来自不同模型提供商的 API Key。应用工作室聊天机器人文本生成器agent聊天流WorkflowWeb 应用图标定制应用版本控制允许用户手动保存版本并恢复到任意历史版本。即将推出探索页面模板为初学者提供高质量、场景化的模板，帮助快速学习并使用 Dify 构建应用。Dify 市场目前免费目前免费知识库（RAG）批量文档上传支持向知识库批量上传文档。知识库来源支持多种数据来源：导入文本、使用外部来源（Notion 或同步网页内容），以及连接外部知识库。标准 / 外部知识 API标准 / 外部知识 API向量数据库自定义自主管理提供 Qdrant、Elasticsearch 和 Weaviate 的官方组件维护自定义知识流水线模板自定义并共享可复用的知识流水线模板，以标准化流程、缩短配置时间并提升团队效率。添加文本块应用部署发布为 Web 应用支持将 Dify 中构建的 AI 应用发布为 Web 应用，供互联网用户公开访问。发布为 API应用监控与反馈应用运行时数据分析标准、高级（Langsmith / Langfuse...）标准、高级（Langsmith / Langfuse...）应用日志历史30 天无限制企业版功能与能力SSO（SAML、OIDC、OAuth2）多工作空间角色自定义Dify 系统支持高可用性工作空间管理Web 应用品牌定制支持自定义 LOGO 和界面 UI。角色管理支持四种角色（所有者、管理员、编辑、普通成员）。只有所有者和管理员可以管理角色、计费和模型，并可查看各工作空间成员的操作日志。支持支持GitHub 社区标准技术支持，付费 1 对 1 支持SOC Type II 报告协商型 SLA由 Dify 合作伙伴支持定制服务自定义模型/工具集成由 Dify 合作伙伴支持1 对 1 使用培训由 Dify 合作伙伴支持最佳实践指导由 Dify 合作伙伴支持其他定制服务由 Dify 合作伙伴支持"
+        },
+        "metadata": {
+          "title": "Dify 企业版定价 - 适合各类组织的方案",
+          "siteName": "dify.ai",
+          "author": null,
+          "publishedAt": null,
+          "language": "zh",
+          "sourceType": "OFFICIAL",
+          "contentKind": "OFFICIAL_CLAIM",
+          "productVersion": null,
+          "plan": null,
+          "upstreamUrl": null,
+          "independence": "SHARED_ORIGIN",
+          "originGroupId": "origin:1a57c2fd-500d-4901-99d3-c6b0305f2e34",
+          "independenceReason": "保存的相同原文/重定向URL、明确upstreamUrl、采集来源组，或同路径且同hash的www别名相连；重复读取/转载不增加独立证据数量。"
+        },
+        "retrievedAt": "2026-10-25T01:47:55.746Z",
+        "readStatus": "READ",
+        "readError": null,
+        "contentHash": "c8aeebe5f958514b5fa930ad1c8d64372fe5e629dafc8b2681393bb243ac8e46"
+      },
+      {
+        "id": "f7107a4a-26f1-45c0-8e6d-16a5bfe93c91",
+        "sourceUrl": "https://vdf.ai/blog/dify-vs-n8n-vs-flowise-vs-langflow",
+        "originalExcerpt": null,
+        "translation": null,
+        "originalLocation": null,
+        "metadata": {
+          "title": null,
+          "siteName": "vdf.ai",
+          "author": null,
+          "publishedAt": null,
+          "language": null,
+          "sourceType": "UNKNOWN",
+          "contentKind": "UNKNOWN",
+          "productVersion": null,
+          "plan": null,
+          "upstreamUrl": null,
+          "independence": "UNKNOWN",
+          "originGroupId": null,
+          "independenceReason": null
+        },
+        "retrievedAt": "2026-10-25T01:47:54.879Z",
+        "readStatus": "FAILED",
+        "readError": "certificate has expired",
+        "contentHash": null
+      },
+      {
+        "id": "5f0b4172-e13b-4e16-b616-612af5223550",
+        "sourceUrl": "https://github.com/YFGaia/dify-plus",
+        "originalExcerpt": "本项目基于 Dify，遵循仓库内的 Dify Open Source License（基于 Apache 2.0，并附加条件）。部署、分发和商业使用前请阅读许可证。上游项目的品牌、社区和安全联系渠道归原项目所有。",
+        "translation": null,
+        "originalLocation": {
+          "kind": "TEXT",
+          "locator": "https://github.com/YFGaia/dify-plus :: article:first :: blocks(p,li,pre,tr,h1,h2,h3)[76]; normalized UTF-16 [0,106)",
+          "context": "本项目基于 Dify，遵循仓库内的 Dify Open Source License（基于 Apache 2.0，并附加条件）。部署、分发和商业使用前请阅读许可证。上游项目的品牌、社区和安全联系渠道归原项目所有。"
+        },
+        "metadata": {
+          "title": "GitHub - YFGaia/dify-plus: Dify-Plus 是面向企业场景的 Dify 开源增强版，基于 Dify 原生架构，提供 Casdoor 单点登录、统一系统管理、用户额度、API 密钥限额和应用中心等功能，无需单独部署管理后台。🚀 本项目为社区二次开发成果，遵循 Dify 原项目的开源许可证及版权要求。涉及商业授权、多租户服务或品牌使用等需求，请以 Dify 官方许可条款为准，并联系官方获取相应授权与支持。 · GitHub",
+          "siteName": "github.com",
+          "author": null,
+          "publishedAt": null,
+          "language": "en",
+          "sourceType": "COMMUNITY",
+          "contentKind": "UNKNOWN",
+          "productVersion": null,
+          "plan": null,
+          "upstreamUrl": null,
+          "independence": "UNKNOWN",
+          "originGroupId": null,
+          "independenceReason": null
+        },
+        "retrievedAt": "2026-10-25T01:47:56.507Z",
+        "readStatus": "READ",
+        "readError": null,
+        "contentHash": "f5b42dc6eb20cb47a14aac21eeff977b2b9495d8098b8f5e62475f25cb39e1ed"
+      },
+      {
+        "id": "b130d542-df90-4b54-a53c-76395b37dbc5",
+        "sourceUrl": "https://dify.ai/zh/legal/end-user-license-agreement",
+        "originalExcerpt": "1. “服务”指许可方提供 Dify 商业化版本程序，以及相应的文档、材料、电子文档，还包括许可方提供的任何升级、修改版本、更新、补充内容及其副本。",
+        "translation": null,
+        "originalLocation": {
+          "kind": "TEXT",
+          "locator": "https://dify.ai/zh/legal/end-user-license-agreement :: main:first :: blocks(p,li,pre,tr,h1,h2,h3)[2]; normalized UTF-16 [0,74)",
+          "context": "1. “服务”指许可方提供 Dify 商业化版本程序，以及相应的文档、材料、电子文档，还包括许可方提供的任何升级、修改版本、更新、补充内容及其副本。"
+        },
+        "metadata": {
+          "title": "最终用户许可协议",
+          "siteName": "dify.ai",
+          "author": null,
+          "publishedAt": null,
+          "language": "zh",
+          "sourceType": "OFFICIAL",
+          "contentKind": "OFFICIAL_CLAIM",
+          "productVersion": null,
+          "plan": null,
+          "upstreamUrl": null,
+          "independence": "SHARED_ORIGIN",
+          "originGroupId": "origin:1a57c2fd-500d-4901-99d3-c6b0305f2e34",
+          "independenceReason": "保存的相同原文/重定向URL、明确upstreamUrl、采集来源组，或同路径且同hash的www别名相连；重复读取/转载不增加独立证据数量。"
+        },
+        "retrievedAt": "2026-10-25T01:47:59.224Z",
+        "readStatus": "READ",
+        "readError": null,
+        "contentHash": "b3d9ed84f523489502ae4ba1b2c2b775028bb937215ab56afdadfff3ae07600b"
+      },
+      {
+        "id": "1a57c2fd-500d-4901-99d3-c6b0305f2e34",
+        "sourceUrl": "https://dify.ai/zh/pricing",
+        "originalExcerpt": "5,000 条消息额度/月消息额度帮助您轻松试用 Dify 中来自 OpenAI、Anthropic、Gemini、xAI、通义等不同模型。额度消耗量因模型类型而异，用完后您可切换为自己的 API Key。",
+        "translation": null,
+        "originalLocation": {
+          "kind": "TEXT",
+          "locator": "https://dify.ai/zh/pricing :: article:first :: blocks(p,li,pre,tr,h1,h2,h3)[2]; normalized UTF-16 [0,103)",
+          "context": "5,000 条消息额度/月消息额度帮助您轻松试用 Dify 中来自 OpenAI、Anthropic、Gemini、xAI、通义等不同模型。额度消耗量因模型类型而异，用完后您可切换为自己的 API Key。"
+        },
+        "metadata": {
+          "title": "Dify 定价 - 总有适合你的方案",
+          "siteName": "dify.ai",
+          "author": null,
+          "publishedAt": null,
+          "language": "zh",
+          "sourceType": "OFFICIAL",
+          "contentKind": "OFFICIAL_CLAIM",
+          "productVersion": null,
+          "plan": null,
+          "upstreamUrl": null,
+          "independence": "SHARED_ORIGIN",
+          "originGroupId": "origin:1a57c2fd-500d-4901-99d3-c6b0305f2e34",
+          "independenceReason": "保存的相同原文/重定向URL、明确upstreamUrl、采集来源组，或同路径且同hash的www别名相连；重复读取/转载不增加独立证据数量。"
+        },
+        "retrievedAt": "2026-10-25T01:47:59.853Z",
+        "readStatus": "READ",
+        "readError": null,
+        "contentHash": "102eb7c405e3c8a1955c49c96c5ffc44881724941c27f5b8f2331c085d7de152"
+      },
+      {
+        "id": "00bb4824-7ad8-4714-9ca5-b129c99cab42",
+        "sourceUrl": "https://blog.csdn.net/weixin_35754962/article/details/156282804",
+        "originalExcerpt": "Dify 的多租户隔离机制，并非单一功能点的堆砌，而是一套贯穿身份、数据、运行时与权限的完整体系。它以 Workspace 为核心，将租户上下文深植于每一层架构之中，确保无论是在数据库、向量库还是执行引擎中，都不会出现“越界”行为。",
+        "translation": null,
+        "originalLocation": {
+          "kind": "TEXT",
+          "locator": "https://blog.csdn.net/weixin_35754962/article/details/156282804 :: article:first :: blocks(p,li,pre,tr,h1,h2,h3)[67]; normalized UTF-16 [0,116)",
+          "context": "Dify 的多租户隔离机制，并非单一功能点的堆砌，而是一套贯穿身份、数据、运行时与权限的完整体系。它以 Workspace 为核心，将租户上下文深植于每一层架构之中，确保无论是在数据库、向量库还是执行引擎中，都不会出现“越界”行为。"
+        },
+        "metadata": {
+          "title": "Dify如何保证多租户环境下的隔离安全性？-CSDN博客",
+          "siteName": "blog.csdn.net",
+          "author": null,
+          "publishedAt": "2025-12-25T03:00:29.000Z",
+          "language": "zh-CN",
+          "sourceType": "UNKNOWN",
+          "contentKind": "UNKNOWN",
+          "productVersion": null,
+          "plan": null,
+          "upstreamUrl": null,
+          "independence": "UNKNOWN",
+          "originGroupId": null,
+          "independenceReason": null
+        },
+        "retrievedAt": "2026-10-25T01:48:06.649Z",
+        "readStatus": "READ",
+        "readError": null,
+        "contentHash": "e688f4906764580d8aeeb58722bfbe83a90020fceeb844ca0fd367772699ad79"
+      },
+      {
+        "id": "782f0b08-293d-4498-b4cd-7d3e2b0ca36a",
+        "sourceUrl": "https://dify.ai/zh/dify-enterprise",
+        "originalExcerpt": "单个 Dify 集群，支持多业务单元独立运行。租户级别的配额、计费与访问策略管理。",
+        "translation": null,
+        "originalLocation": {
+          "kind": "TEXT",
+          "locator": "https://dify.ai/zh/dify-enterprise :: main:first :: blocks(p,li,pre,tr,h1,h2,h3)[64]; normalized UTF-16 [0,41)",
+          "context": "单个 Dify 集群，支持多业务单元独立运行。租户级别的配额、计费与访问策略管理。"
+        },
+        "metadata": {
+          "title": "Dify 企业版 - 面向企业级规模构建智能体 AI 的基础设施",
+          "siteName": "dify.ai",
+          "author": null,
+          "publishedAt": null,
+          "language": "zh",
+          "sourceType": "OFFICIAL",
+          "contentKind": "OFFICIAL_CLAIM",
+          "productVersion": null,
+          "plan": null,
+          "upstreamUrl": null,
+          "independence": "SHARED_ORIGIN",
+          "originGroupId": "origin:1a57c2fd-500d-4901-99d3-c6b0305f2e34",
+          "independenceReason": "保存的相同原文/重定向URL、明确upstreamUrl、采集来源组，或同路径且同hash的www别名相连；重复读取/转载不增加独立证据数量。"
+        },
+        "retrievedAt": "2026-10-25T01:48:06.760Z",
+        "readStatus": "READ",
+        "readError": null,
+        "contentHash": "e286557f4fac1bd6c2d613ef19771bc042ac628289ef69a044d7f04f9fc5ae7a"
+      },
+      {
+        "id": "4c5105a3-43cf-4121-a9eb-92908321b4e0",
+        "sourceUrl": "https://txtmix.com/posts/tech/dify-agentic-workflow-development-platform-guide",
+        "originalExcerpt": "Tenant / Workspace（租户/工作空间）顶级隔离单位，对应独立成员体系与应用配置；license 层面一租户即一工作空间",
+        "translation": null,
+        "originalLocation": {
+          "kind": "TEXT",
+          "locator": "https://txtmix.com/posts/tech/dify-agentic-workflow-development-platform-guide/ :: article:first :: blocks(p,li,pre,tr,h1,h2,h3)[114]; normalized UTF-16 [0,67)",
+          "context": "术语说明Application（应用）Dify 的统一工作单元，聊天助手、Agent、工作流、RAG 应用都归到这一类App 模式chat / completion / advanced-chat（Chatflow）/ workflow / agent / agent-chat（传统）Workflow（工作流）用节点（Node）和边（Edge）编排的任务图，草稿与发布版本分离Node / EdgeNode 是处理单元，Edge 表示数据流向Tenant / Workspace（租户/工作空间）顶级隔离单位，对应独立成员体系与应用配置；license 层面一租户即一工作空间Dataset（知识库）RAG 载体，文档分段后存入向量数据库，默认 WeaviateChunking（分段）通用（General）与父子（Parent-child）两种模式，创建后不可切换Model Provider（模型供应商）以插件形式安装，数百个模型 / OpenAI 兼容接入plugin_daemon插件运行时服务，模型与工具插件跑在这里Sandbox隔离执行用户代码的独立容器ssrf_proxy工具外呼的 SSRF 防护代理Celery / Worker异步任务框架，承担文档索引、导出等耗时任务Service APIDify 自有格式的应用 API，非 OpenAI 兼容，App 级 Bearer Token 鉴权Marketplace官方插件市场，模型供应商、工具、Agent 策略等在此分发"
+        },
+        "metadata": {
+          "title": "Dify 拆解：把 LLM 应用的工程外围收进一个可视化平台 - Text Matrix",
+          "siteName": "txtmix.com",
+          "author": null,
+          "publishedAt": "2026-05-02T02:12:21.000Z",
+          "language": "zh-cn",
+          "sourceType": "UNKNOWN",
+          "contentKind": "UNKNOWN",
+          "productVersion": null,
+          "plan": null,
+          "upstreamUrl": null,
+          "independence": "UNKNOWN",
+          "originGroupId": null,
+          "independenceReason": null
+        },
+        "retrievedAt": "2026-10-25T01:48:07.227Z",
+        "readStatus": "READ",
+        "readError": null,
+        "contentHash": "e282048d3e086a6bdce4101c86f406f07b24ead196788bf909a0c59dda0de689"
+      },
+      {
+        "id": "7b707441-8fd2-4967-bf52-a782719da3a0",
+        "sourceUrl": "https://toolso.ai/tool/dify",
+        "originalExcerpt": null,
+        "translation": null,
+        "originalLocation": null,
+        "metadata": {
+          "title": null,
+          "siteName": "toolso.ai",
+          "author": null,
+          "publishedAt": null,
+          "language": null,
+          "sourceType": "UNKNOWN",
+          "contentKind": "UNKNOWN",
+          "productVersion": null,
+          "plan": null,
+          "upstreamUrl": null,
+          "independence": "UNKNOWN",
+          "originGroupId": null,
+          "independenceReason": null
+        },
+        "retrievedAt": "2026-10-25T01:48:07.298Z",
+        "readStatus": "FAILED",
+        "readError": "No readable article blocks; JavaScript shell/empty page is not original material",
+        "contentHash": null
+      }
+    ],
+    "claims": [
+      {
+        "id": "8c5c9826-6c94-4e34-ae49-f59b986677ea",
+        "statement": "来源报告（未独立复现）：Dify 社区二手项目 dify-plus 的仓库说明称，其基于 Dify 并遵循 Dify Open Source License（基于 Apache 2.0 并附加条件），部署、分发和商业使用前应阅读许可证。",
+        "kind": "USER_REPORT",
+        "verificationStatus": "SUPPORTED",
+        "verificationReason": "已读取的仓库说明原文含“基于 Dify”“遵循 Dify Open Source License（基于 Apache 2.0，并附加条件）”及“部署、分发和商业使用前请阅读许可证”，与主张一致。",
+        "scope": "dify-plus 仓库 README，未注明版本或日期"
+      },
+      {
+        "id": "8bbb670f-83d5-4780-9f3e-270340b71216",
+        "statement": "来源报告（未独立复现）：dify-plus 仓库说明称，涉及商业授权、多租户服务或品牌使用等需求，应以 Dify 官方许可条款为准并联系官方获取授权与支持。",
+        "kind": "USER_REPORT",
+        "verificationStatus": "INSUFFICIENT",
+        "verificationReason": "原句语义支持复查未通过：所给原句仅含“部署、分发和商业使用前请阅读许可证”及品牌、社区和安全联系渠道归原项目所有，未包含“涉及商业授权、多租户服务或品牌使用等需求，应以 Dify 官方许可条款为准并联系官方获取授权与支持”这一表述；该内容只出现在证据 metadata 的标题说明中，不属于被保存的原句。",
+        "scope": "dify-plus 仓库 README 标题说明，未注明版本或日期"
+      },
+      {
+        "id": "fe31d28d-47cf-4749-9aee-9a081bc7af18",
+        "statement": "Dify 官方《最终用户许可协议》把“服务”定义为许可方提供的 Dify 商业化版本程序及其文档、材料、电子文档，以及升级、修改版本、更新、补充内容与副本。",
+        "kind": "OFFICIAL_CLAIM",
+        "verificationStatus": "SUPPORTED",
+        "verificationReason": "已读取许可协议原文第1条“服务”定义逐项包含主张所列内容；该主张仅表示官方如此定义，不涉独立实测。",
+        "scope": "dify.ai 最终用户许可协议，未注明版本或生效日期"
+      },
+      {
+        "id": "3d102550-7732-4cee-b559-f51484f7d828",
+        "statement": "Dify 官方企业版页面宣称可在单个 Dify 集群上支持多业务单元独立运行，并提供租户级别的配额、计费与访问策略管理。",
+        "kind": "OFFICIAL_CLAIM",
+        "verificationStatus": "SUPPORTED",
+        "verificationReason": "已读取企业版页面原文含“单个 Dify 集群，支持多业务单元独立运行”“租户级别的配额、计费与访问策略管理”，与宣称一致。",
+        "scope": "Dify 企业版，未注明版本与日期"
+      },
+      {
+        "id": "6ceb0ebd-fa31-4944-ab9e-37aa7779d583",
+        "statement": "来源报告（未独立复现）：一篇技术博客称，Dify 的多租户隔离以 Workspace 为核心，贯穿身份、数据、运行时与权限各层，并称数据库、向量库和执行引擎中不会出现越界行为。",
+        "kind": "USER_REPORT",
+        "verificationStatus": "SUPPORTED",
+        "verificationReason": "已读博客原文自述 Workspace 为核心、贯穿身份数据运行时与权限，并称数据库、向量库、执行引擎不会“越界”；仅为博客观点，未独立复现。",
+        "scope": "blog.csdn.net 博文，发布于 2025-12-25；未注明 Dify 版本"
+      },
+      {
+        "id": "4bf521c0-f0f3-4909-a102-bc6abb2d2be7",
+        "statement": "来源报告（未独立复现）：一篇技术指南称，Tenant/Workspace 是 Dify 的顶级隔离单位，对应独立成员体系与应用配置，并称在 license 层面一个租户即一个工作空间。",
+        "kind": "USER_REPORT",
+        "verificationStatus": "SUPPORTED",
+        "verificationReason": "已读指南原文称 Tenant/Workspace 为顶级隔离单位、对应独立成员体系与应用配置，且“license 层面一租户即一工作空间”。",
+        "scope": "txtmix.com 技术指南，发布于 2026-05-02；未注明 Dify 版本"
+      },
+      {
+        "id": "fc41fed0-8c52-41bf-93bc-6d9eba088627",
+        "statement": "已读取的官方许可条款原文（《最终用户许可协议》“服务”定义）并未说明社区版自托管在多租户使用场景下的具体许可限制。",
+        "kind": "FACT",
+        "verificationStatus": "INSUFFICIENT",
+        "verificationReason": "仅读到“服务”定义一条摘录，未覆盖许可条款全文，无法判断全文是否另有相关限制；属证据不足而非已证实缺失。",
+        "scope": "仅限所读取的该条定义摘录"
+      },
+      {
+        "id": "a4a819bb-ec0a-4516-a87b-31ecb261d7f0",
+        "statement": "已读取的材料没有提供 Dify 社区版自托管用于多租户服务的官方许可条款全文或直接条款，也没有提供该场景下的实际使用报告。",
+        "kind": "FACT",
+        "verificationStatus": "INSUFFICIENT",
+        "verificationReason": "许可协议仅读到“服务”定义，另有来源读取失败；检索不完整，不能据此断定材料中不存在相关条款或使用报告。",
+        "scope": "本次检索所读取的摘录范围"
+      }
+    ],
+    "relations": [
+      {
+        "claimId": "8c5c9826-6c94-4e34-ae49-f59b986677ea",
+        "evidenceId": "5f0b4172-e13b-4e16-b616-612af5223550",
+        "relation": "SUPPORTS",
+        "reason": "仓库说明原文明确基于 Dify、遵循含 Apache 2.0 附加条件的 Dify 开源许可，并要求部署分发商业使用前阅读许可证。"
+      },
+      {
+        "claimId": "8bbb670f-83d5-4780-9f3e-270340b71216",
+        "evidenceId": "5f0b4172-e13b-4e16-b616-612af5223550",
+        "relation": "UNCERTAIN",
+        "reason": "原句语义支持复查否决该关系：所给原句仅含“部署、分发和商业使用前请阅读许可证”及品牌、社区和安全联系渠道归原项目所有，未包含“涉及商业授权、多租户服务或品牌使用等需求，应以 Dify 官方许可条款为准并联系官方获取授权与支持”这一表述；该内容只出现在证据 metadata 的标题说明中，不属于被保存的原句。"
+      },
+      {
+        "claimId": "fe31d28d-47cf-4749-9aee-9a081bc7af18",
+        "evidenceId": "b130d542-df90-4b54-a53c-76395b37dbc5",
+        "relation": "SUPPORTS",
+        "reason": "许可协议“服务”定义原文逐项列出商业化版本程序及文档、升级修改、更新补充与副本，与主张一致。"
+      },
+      {
+        "claimId": "3d102550-7732-4cee-b559-f51484f7d828",
+        "evidenceId": "782f0b08-293d-4498-b4cd-7d3e2b0ca36a",
+        "relation": "SUPPORTS",
+        "reason": "企业版页面原文即“单个 Dify 集群，支持多业务单元独立运行”“租户级别的配额、计费与访问策略管理”，属官方宣称。"
+      },
+      {
+        "claimId": "6ceb0ebd-fa31-4944-ab9e-37aa7779d583",
+        "evidenceId": "00bb4824-7ad8-4714-9ca5-b129c99cab42",
+        "relation": "SUPPORTS",
+        "reason": "博客原文称 Workspace 为核心、贯穿身份数据运行时权限，并称数据库向量库执行引擎不会越界，与主张所述博客观点一致。"
+      },
+      {
+        "claimId": "4bf521c0-f0f3-4909-a102-bc6abb2d2be7",
+        "evidenceId": "4c5105a3-43cf-4121-a9eb-92908321b4e0",
+        "relation": "SUPPORTS",
+        "reason": "指南原文称 Tenant/Workspace 为顶级隔离单位、对应独立成员体系与应用配置，并称 license 层面一租户一工作空间。"
+      },
+      {
+        "claimId": "fc41fed0-8c52-41bf-93bc-6d9eba088627",
+        "evidenceId": "b130d542-df90-4b54-a53c-76395b37dbc5",
+        "relation": "CONTEXT",
+        "reason": "该摘录只有“服务”定义，未含社区版自托管多租户限制；但不能据此代表协议全文，仅作范围说明。"
+      },
+      {
+        "claimId": "a4a819bb-ec0a-4516-a87b-31ecb261d7f0",
+        "evidenceId": "029ac157-1359-41e6-89ab-7900c4f0d6cf",
+        "relation": "UNCERTAIN",
+        "reason": "该来源读取受访问挑战阻断，内容未知，无法确认是否含许可条款或使用报告。"
+      },
+      {
+        "claimId": "a4a819bb-ec0a-4516-a87b-31ecb261d7f0",
+        "evidenceId": "f7107a4a-26f1-45c0-8e6d-16a5bfe93c91",
+        "relation": "UNCERTAIN",
+        "reason": "证书过期读取失败，内容未知，不能用来支持或排除相关条款与使用报告的存在。"
+      }
+    ],
+    "conflicts": [],
+    "gaps": [
+      {
+        "id": "177e2554-4778-487d-bb6a-554c73e6e09b",
+        "claimIds": [
+          "fc41fed0-8c52-41bf-93bc-6d9eba088627",
+          "a4a819bb-ec0a-4516-a87b-31ecb261d7f0"
+        ],
+        "kind": "INSUFFICIENT_EVIDENCE",
+        "description": "阶段核查未完成：TimeoutError: Investigation operation budget exhausted；社区版自托管多租户的官方许可全文与直接条款、以及实际使用报告均未取得。",
+        "searchScope": null
+      },
+      {
+        "id": "54357565-2fcb-480e-beac-4f86fc9348e6",
+        "claimIds": [
+          "a4a819bb-ec0a-4516-a87b-31ecb261d7f0"
+        ],
+        "kind": "READ_FAILED",
+        "description": "https://blog.gitcode.com/bf606b1c12983e41c0dd323a1cf419be.html：RESTRICTED；Source returned access challenge",
+        "searchScope": null
+      },
+      {
+        "id": "4576bba3-0c08-4f8d-b666-ac623d713c95",
+        "claimIds": [
+          "a4a819bb-ec0a-4516-a87b-31ecb261d7f0"
+        ],
+        "kind": "READ_FAILED",
+        "description": "https://vdf.ai/blog/dify-vs-n8n-vs-flowise-vs-langflow：FAILED；certificate has expired",
+        "searchScope": null
+      },
+      {
+        "id": "c847d1f7-7efc-4717-a085-da9fa3f8e104",
+        "claimIds": [
+          "a4a819bb-ec0a-4516-a87b-31ecb261d7f0"
+        ],
+        "kind": "READ_FAILED",
+        "description": "https://toolso.ai/tool/dify：FAILED；No readable article blocks; JavaScript shell/empty page is not original material",
+        "searchScope": null
+      },
+      {
+        "id": "12896f42-e2c7-456a-ad41-9a72157f1007",
+        "claimIds": [
+          "8bbb670f-83d5-4780-9f3e-270340b71216"
+        ],
+        "kind": "INSUFFICIENT_EVIDENCE",
+        "description": "回答段落未通过原句语义支持核查，已移除：所给原句仅含“部署、分发和商业使用前请阅读许可证”及品牌、社区和安全联系渠道归原项目所有，未包含“涉及商业授权、多租户服务或品牌使用等需求，应以 Dify 官方许可条款为准并联系官方获取授权与支持”这一表述；该内容只出现在证据 metadata 的标题说明中，不属于被保存的原句。",
+        "searchScope": null
+      }
+    ],
+    "retrievalRecords": [
+      {
+        "id": "fa595583-140e-43de-b67e-cbb5a49b45c7",
+        "provider": "tencent-yuanbao-search-api",
+        "query": "Dify 社区版 自托管 多租户 许可条款 限制",
+        "calledAt": "2026-10-25T01:47:50.930Z",
+        "status": "SUCCEEDED",
+        "error": null,
+        "returnedSources": [
+          {
+            "url": "https://dify.ai/end-user-license-agreement-zh",
+            "title": "最终用户许可协议",
+            "snippet": "最终用户许可协议 Dify。 “终止”指本协议因期满、提前解除或其他原因而不再具有法律效力的情形。 二、许可授予 许可方授予被许可方一项有限的、非排他、不可转让且不可再许可的许可,允许被许可方仅在其内部网络环境中进行私有化部署和使用本服务,但须严格遵守本协议的条款和条件。被许可方仅可将本服务用于内部业务目的,不得用于任何外部商业服务或向第三方提供服务。 被许可方可以在内部网络中的多台设备上安装和使用本服务,但需确保使用数量不超过购买的许可数量。若购买的是按用户数量许可的服务,同时使用本服务的用户数量不得超过许可的最大用户数;若购买的是按设备数量许可的服务,安装的设备数量不得超过许可的设备数量。 被许可方有权为软件服务制作合理数量的备份副本,仅用于存档和灾难恢复目的。备份副本不得用于其他任何用途,且应妥善保存,防止未经授权的访问或使用。在主副本无法正常使用时,方可使用备份副本,并在主副本恢复正常后,停止使用备份副本。 若服务包含开源组件,被许可方应遵守相应开源协议的规定。开源组件的使用、修改和分发需遵循开源协议的要求,许可方不承担因开源组件引发的任何责任,但会尽力协助被许可方解决与开源组件相关的问题。 三、许可限制 被许可方不得对本服务进行反向工程、反编译、反汇编、翻译、本地化或试图获取服务的源代码,不得分离本服务的组件用于多台设备,不得通过 SAAS 方式使用,不得对本服务进行解包、嵌入或重新打包后进行分发,不得删除或更改本服务中的任何商标、版权声明、标签或其他所有权标识。 被许可方不得且不得允许其他任何人出售、出租、分发、转让、分时共享、托管、出借、许可或再许可本服务或者相关许可,授予第三方使用本服务或相关许可的权利,除非事先获得许可方的书面同意。在获得许可方书面同意进行转让时,受让方必须书面同意接受本协议的条款和条件约束,所有的副本应包括原始版权信息。 被许可方不得将本...",
+            "adoption": "REJECTED",
+            "adoptionReason": "本轮未读取；搜索摘要不是原文证据。",
+            "evidenceId": null
+          },
+          {
+            "url": "https://dify.ai/legal/end-user-license-agreement",
+            "title": "End User License Agreement",
+            "snippet": "End User License Agreement Dify。 The Licensee shall not delete or change any trademarks, copyright notices, labels, or other ownership markings in the services. The Licensee shall not lease, license, transfer, timeshare, host, lend, sublicense, distribute, rent, or otherwise dispose of the services or any related licenses to third parties without the Licensor’s prior written consent. Any permitted transfer requires the transferee to agree in writing to be bound by this Agreement’s terms and conditions. The Licensee shall not, and shall not permit any other to, sell, rent, license, distribute, transfer, time-share, host, lend, license or sublicense the services or related licenses, grant third parties the right to use the services or related licenses, distribute or lease the services, or tr...",
+            "adoption": "REJECTED",
+            "adoptionReason": "本轮未读取；搜索摘要不是原文证据。",
+            "evidenceId": null
+          },
+          {
+            "url": "https://opensourcedrop.com/tools/langgenius/dify",
+            "title": "dify The Open Source Drop",
+            "snippet": "dify | The Open Source Drop Open Source Drop。 Team is $159 a month for 50. Self-hosted Community is one workspace, and SSO is Enterprise only, custom priced. Solo: self-host free. Small teams: self-host, or Professional to skip the ops. Larger orgs: Enterprise once you need SSO. The catch is the license: Apache 2.0 plus conditions. No multi-tenant hosting and no removing the Dify logo from the frontend without a commercial license. Security has been rough too, with a run of cross-tenant bugs through 2026. Patch fast. Free vs Self-Hosted vs Paid open core Free: Self-hosted Community Edition: all core features in the public repo (workflow canvas, RAG pipeline, agents, prompt IDE, model management, APIs), limited to a single workspace and bound by the Dify Open Source License. Dify Cloud Sand...",
+            "adoption": "REJECTED",
+            "adoptionReason": "本轮未读取；搜索摘要不是原文证据。",
+            "evidenceId": null
+          },
+          {
+            "url": "https://blog.gitcode.com/bf606b1c12983e41c0dd323a1cf419be.html",
+            "title": "Dify 自托管部署与核心能力详解:Docker Compose 快速上手､功能架构与高级部署路径",
+            "snippet": "Dify 自托管部署与核心能力详解:Docker Compose 快速上手、功能架构与高级部署路径 GitCode博客。 社区:分享你创建的 app、帮助其他用户并传播 Dify。 Bug 报告需包含清晰的标题、详细描述、复现步骤、预期行为,后端问题尤其要附上日志(可从 docker compose logs 获取)。官方对 issue 的优先级划分为:核心功能缺陷(无法登录、应用不可用、安全漏洞)为 Critical;非关键 bug 与性能优化为 Medium Priority;错别字等小修小补为 Low Priority。社区渠道包括 GitHub Discussions、GitHub Issues、Discord 与 X 官方账号,按需求类型选择最合适的渠道。 安全披露:为保护隐私,不要在公开 issue 中发布安全问题,应直接联系官方安全邮箱获取详细回应。 许可证说明 本仓库采用 Dify Open Source License,本质上是在 Apache 2.0 基础上附加了额外限制。从 LICENSE 文件看,关键附加条款有两点: 多租户限制:除非获得 Dify 书面授权,不得使用 Dify 源码运营多租户环境(官方定义:一个租户对应一个 workspace,workspace 为各租户的数据与配置提供隔离区域); LOGO 与版权信息限制:使用 Dify 前端时,不得移除或修改控制台或应用中的 LOGO 及版权信息(该限制不适用于不涉及前端的用法;源码部署时\"前端\"指 web/ 目录,Docker 部署时指 web 镜像)。 贡献者同时需同意:项目方可按需调整开源协议条款;贡献的代码可能被用于商业用途(包括其云业务)。其余权利与限制均遵循 Apache License 2.0。 小结 Dify 官方文档给出的是一条清晰的路径:用四条 Docker Compose...",
+            "adoption": "REJECTED",
+            "adoptionReason": "原文不可用：RESTRICTED；Source returned access challenge",
+            "evidenceId": "029ac157-1359-41e6-89ab-7900c4f0d6cf"
+          },
+          {
+            "url": "https://agentsindex.ai/dify",
+            "title": "Dify",
+            "snippet": "Dify AgentsIndex。 Team ($159/month or $1,590/year — 10,000 message credits/month, 50 members, 200 apps, unlimited trigger events, priority execution); and Enterprise (custom pricing, contact sales). All paid annual plans save ~17% over monthly. The limits that actually bite in production are trigger events (automations via Plugin/Schedule/Webhook) and annotation quota (manual Q&A corrections), not just app count or seats — worth checking against your expected automation volume before committing to Professional. Source: https://dify.ai/pricing. The free self-hosted edition is single-workspace — read the license before you self-host for a team Dify's source is public and licensed under a modified Apache 2.0 (confirmed via the repo's LICENSE file). The modifications matter: you cannot operate...",
+            "adoption": "REJECTED",
+            "adoptionReason": "本轮未读取；搜索摘要不是原文证据。",
+            "evidenceId": null
+          },
+          {
+            "url": "https://vdf.ai/blog/dify-vs-n8n-vs-flowise-vs-langflow",
+            "title": "Dify vs n8n vs Flowise vs Langflow: Licences, Self-Hosting and Agents (2026)",
+            "snippet": "Dify vs n8n vs Flowise vs Langflow: Licences, Self-Hosting and Agents (2026) VDF AI。 paid support on request Dify. Commercial use is allowed, including as a backend service or an internal application platform. A commercial licence is needed in two cases: running a multi-tenant environment from the source code without written authorisation, where one tenant equals one workspace, and removing or changing the logo or copyright information in the console or applications while using Dify’s frontend. Contributors accept that LangGenius may make the licence stricter or looser and may use contributed code commercially. Dify’s pricing page describes the free Community edition as a single-workspace edition for open-source enthusiasts, individual developers and non-commercial projects, a narrower fra...",
+            "adoption": "REJECTED",
+            "adoptionReason": "原文不可用：FAILED；certificate has expired",
+            "evidenceId": "f7107a4a-26f1-45c0-8e6d-16a5bfe93c91"
+          }
+        ]
+      },
+      {
+        "id": "7199b7be-b0fe-473a-a71c-8e20f0b4eae5",
+        "provider": "tavily-search-api:keyless-capped",
+        "query": "Dify 社区版 自托管 多租户 许可条款 限制",
+        "calledAt": "2026-10-25T01:47:50.930Z",
+        "status": "SUCCEEDED",
+        "error": null,
+        "returnedSources": [
+          {
+            "url": "https://dify.ai/zh/legal/end-user-license-agreement",
+            "title": "最终用户许可协议",
+            "snippet": "Dify 联系销售登录开始使用 中文 Dify 菜单 文档 定价 产品 Workflow 构建器可视化 Agent 工作流搭建平台 知识流水线构建可检索的知识库 插件市场探索 Dify 工具、模型与插件集成 Dify 云端版托管 SaaS——从原型设计到生产发布 Dify 企业版企业级私有化部署 Dify 社区版开源，使用 Docker 自托管 解决方案 测评与考试实现规模化出题与多阶段审核 制造与工业技术一套私有平台，覆盖所有业务单元 消费品与快消业务团队自己搭 Agent 专业服务与审计agent 与 RPA 驱动审计自动化 物流与供应链业务增长，成本不等比例增加 公共部门本地环境部署，跨机构安全共享 银行与金融服务统一平台支撑全行业务协同 医药与生命科学可治理的专家级 AI 助手 半导体在自研大模型之上编排 AI 教育统一知识库覆盖多校区服务 互联网与媒体从试点应用走向日常生产力 公司 关于我们 博客 加入我们 语言 English 简体中文 日本語 한국어 Deutsch [...] English 简体中文 日本語 한국어 Deutsch # 最终用户许可协议 最近更新: 2025年11月14日 本最终用户许可协议（“本协议”）是您（个人或代表实体进行购买或获取本服务的个人，以下统称“您”或“被许可方”）与苏州语灵人工智能科技有限公司（“许可方”）之间就本协议所涉及的服务（定义见下文）达成的具有法律约束力的协议。在安装或使用本服务之前，请仔细阅读本协议。通过安装、使用、点击同意或以其他方式承诺履行本协议义务，您即确认接受本协议的条款，并同意受其约束。如果您不同意本协议的条款，请不要安装或使用本软件服务，并退回购买处申请退款。本最终用户许可协议以许可方不时更新并公布的最新版为准。您对本服务的任何访问或使用，均视为您已同意并受该最新版全部条款约束。 ## 一、定义 1. “服务”指许可方提供 Dify 商业化版本程序，以及相应的文档、材料、电子文档，还包括许可方提供的任何升级、修改版本、更新、补充内容及其副本。 2. “关联方”指许可方的合作伙伴，其有权转售本服务并提供支持。 [...] 4. 若服务包含开源组件，被许可方应遵守相应开源协议的规定。开源组件的使用、修改和分发需遵循开源协议的要求，许可方不承担因开源组件引发的任何责任，但会尽力协助被许可方解决与开源组件相关的问题。 ## 三、许可限制 1. 被许可方不得对本服务进行反向工程、反编译、反汇编、翻译、本地化或试图获取服务的源代码，不得分离本服务的组件用于多台设备，不得通过 SAAS 方式使用，不得对本服务进行解包、嵌入或重新打包后进行分发，不得删除或更改本服务中的任何商标、版权声明、标签或其他所有权标识。 2. 被许可方不得且不得允许其他任何人出售、出租、分发、转让、分时共享、托管、出借、许可或再许可本服务或者相关许可，授予第三方使用本服务或相关许可的权利，除非事先获得许可方的书面同意。在获得许可方书面同意进行转让时，受让方必须书面同意接受本协议的条款和条件约束，所有的副本应包括原始版权信息。 3. 被许可方不得将本服务用于任何非法活动，不得利用本服务侵犯第三方的知识产权、隐私或其他合法权益，不得使用本服务从事可能损害许可方声誉或利益的活动。",
+            "adoption": "ADOPTED",
+            "adoptionReason": "保存原句；是否支持问题由逐主张核查决定。",
+            "evidenceId": "b130d542-df90-4b54-a53c-76395b37dbc5"
+          },
+          {
+            "url": "https://github.com/YFGaia/dify-plus",
+            "title": "GitHub - YFGaia/dify-plus: Dify-Plus 是 Dify 的企业级增强版，集成了基于 gin-vue-admin 的管理中心，并针对企业场景进行了功能优化。 🚀 Dify-Plus = 管理中心 + Dify 二开 。 特别说明： 本项目为开源社区的二次开发成果，严格遵循 Dify 原项目的版权许可协议，未涉及原项目许可的多租户功能及 logo 等版权信息。如有相关需求，请直接联系 Dify 官方获取授权与支持。 · GitHub",
+            "snippet": "### 一. Dify 二开功能 1. 新增：用户额度 1. 对话余额限制判断 2. 异步计算用户额度逻辑 3. 左上角新增使用额度显示 4. 新增个人监测页 2. 新增：密钥额度设置 1. 新增应用 API 调用余额限制判断 3. 新增 ：Web 公开页登录鉴权 4. 新增：管理员同步应用到应用模版 5. 新增：后台创建用户，自动邀请进管理员空间 6. 新增：可以鉴权的 cookie 7. 新增：同步应用到模版中心 8. 新增：应用中心页面 9. 调整 ：默认跳转到应用中心 10. 新增：应用使用次数记录、应用中心按照使用次数排序 11. 权限调整 1. 调整：不允许普通成员关闭模型 2. 调整：空间普通成员不渲染“模型供应商”标签 3. 调整：非管理员，隐藏密钥显示 4. 优化： csv 编码监测，修复批量请求，windows 下载后保存再上传问题 5. 优化： markdown 图片放大问题优化 12. 新增：钉钉登录 13. 新增：sandbox-full，以放开代码执行节点函数限制 [...] | web | web | | | | .coveragerc | .coveragerc | | | | .editorconfig | .editorconfig | | | | .gitattributes | .gitattributes | | | | .gitignore | .gitignore | | | | .gitlab-ci.yml | .gitlab-ci.yml | | | | .mcp.json | .mcp.json | | | | AGENTS.md~upstream\\_main | AGENTS.md~upstream\\_main | | | | AUTHORS | AUTHORS | | | | CLAUDE.md | CLAUDE.md | | | | CONTRIBUTING.md | CONTRIBUTING.md | | | | LICENSE | LICENSE | | | | Makefile | Makefile | | | [...] 见文档：Q&A ## 相关配置说明 Dify 相关配置说明： 管理中心 相关配置说明： + 后端： + 前端： Dify-plus 新增环境变量说明 ``` 待补充 ``` ## 联系我们 ### email toxingwang@gmail.com 906631095@qq.com ### 微信交流 1. 微信交流群 Dify-plus官方交流群1（已满） Dify-plus官方交流群2（已满） Dify-plus官方交流群3（已满） Dify-plus&Coze开源交流群4 image 2. 防止广告进群，添加微信，输入以下代码执行结果 ``` encoded_str =\"5Yqg5YWlZGlmeS1wbHVz5Lqk5rWB576kMgo=\" decoded_bytes = base64 b64decode encoded_str decoded_str = decoded_bytes decode'utf-8' print decoded_str ``` 1. 微信二维码：",
+            "adoption": "ADOPTED",
+            "adoptionReason": "保存原句；是否支持问题由逐主张核查决定。",
+            "evidenceId": "5f0b4172-e13b-4e16-b616-612af5223550"
+          },
+          {
+            "url": "https://dify.ai/zh/pricing/dify-enterprise",
+            "title": "Dify 企业版定价 - 适合各类组织的方案",
+            "snippet": "## 我们为您解答。 开始使用前您需要了解的一切。 我可以免费自托管 Dify 吗？ 可以。Dify 社区版是开源的，可在您自己的基础设施上免费自托管，并可访问核心平台功能——无需许可证。 许可证密钥是如何工作的？ 许可证密钥可激活您自托管 Dify 部署上的付费企业版功能。应用后，它将在许可期内解锁您套餐所包含的功能。 列出的价格是否包含所有内容？ 列出的价格涵盖每个套餐的核心权益。附加项、定制集成、专属支持和定制部署工作需单独报价——请联系我们获取定制报价。 针对开源项目、教育机构或非政府组织，是否有特别定价？ 有。我们为符合条件的开源项目、教育机构和非政府组织提供特别定价。请联系我们的团队了解资格要求和可用折扣。 Dify 安全吗？我的数据存储在哪里？ 在自托管部署情况下，您的数据完全留存于自己的基础设施中。Dify 企业版包含安全控制、审计日志及面向受监管行业设计的合规功能。 仍有疑问？请发邮件至 business@dify.ai 获取更多信息。 ## 准备好打造下一代 AI 应用了吗？ [...] Dify 联系销售登录开始使用 中文 Dify 菜单 文档 定价 产品 Workflow 构建器可视化 Agent 工作流搭建平台 知识流水线构建可检索的知识库 插件市场探索 Dify 工具、模型与插件集成 Deploy Dify 云端版托管 SaaS——从原型设计到生产发布 Dify 企业版企业级私有化部署 Dify 社区版开源，使用 Docker 自托管 解决方案 测评与考试实现规模化出题与多阶段审核 制造与工业技术一套私有平台，覆盖所有业务单元 消费品与快消业务团队自己搭 Agent 专业服务与审计agent 与 RPA 驱动审计自动化 物流与供应链业务增长，成本不等比例增加 公共部门本地环境部署，跨机构安全共享 银行与金融服务统一平台支撑全行业务协同 医药与生命科学可治理的专家级 AI 助手 半导体在自研大模型之上编排 AI 教育统一知识库覆盖多校区服务 互联网与媒体从试点应用走向日常生产力 公司 关于我们 博客 加入我们 语言 English 简体中文 日本語 한국어 Deutsch [...] English 简体中文 日本語 한국어 Deutsch Pricing / Dify Enterprise ## 企业级 AI，部署形态由你选择 ### Community 适合开源爱好者、独立开发者及非商业项目。 免费 立即开始 免费功能： + 公开仓库下发布的所有核心功能 + 单个工作空间 + 遵循 Dify 开源许可协议 ### 企业版 适合需要高级安全、合规、治理与专属支持的企业。 定制 联系销售 仅企业版提供： + 企业级可扩展部署解决方案 + 商业许可授权 + 专属企业功能 + 多工作空间与企业管理 + SSO + 通过 Dify 合作伙伴协商的 SLA + 高级安全与控制 + Dify 官方提供的更新与维护 + 专业技术支持 ## 对比方案与功能 各方案所含功能概览。",
+            "adoption": "ADOPTED",
+            "adoptionReason": "保存原句；是否支持问题由逐主张核查决定。",
+            "evidenceId": "1cd7e010-baa2-4bd8-af0b-42a1e73ea539"
+          },
+          {
+            "url": "https://dify.ai/zh/pricing",
+            "title": "Dify 定价 - 总有适合你的方案",
+            "snippet": "10,000 条消息额度/月 消息额度帮助您轻松试用 Dify 中来自 OpenAI、Anthropic、Gemini、xAI、通义等不同模型。额度消耗量因模型类型而异，用完后您可切换为自己的 API Key。 1 个团队空间 50 名团队成员 200 个应用程序 1,000 个知识库文档上传配额 从知识数据源导入的文档数量配额。 20GB 知识库数据存储空间 使用高质量索引模式的文档会消耗知识库数据存储资源。当存储达到上限时，新文档将无法上传。 1,000 知识库请求频率限制/分钟 指定工作空间每分钟可在知识库内执行的操作总数，包括数据集的创建、删除、更新、文档上传、修改、归档以及知识库查询。此指标用于评估知识库请求的性能。例如，若 Sandbox 用户在一分钟内执行了 10 次命中测试，该工作空间将在下一分钟内暂时限制以下操作：数据集创建、删除、更新以及文档上传或修改。 最高优先级文档处理 无限制触发器事件数 [...] 指定工作空间每分钟可在知识库内执行的操作总数，包括数据集的创建、删除、更新、文档上传、修改、归档以及知识库查询。此指标用于评估知识库请求的性能。例如，若 Sandbox 用户在一分钟内执行了 10 次命中测试，该工作空间将在下一分钟内暂时限制以下操作：数据集创建、删除、更新以及文档上传或修改。 标准优先级文档处理 3,000 触发器事件数 通过插件、计划任务或 Webhook 触发器自动启动工作流的事件数量。 最多 2 个触发器/Workflow 标准 Workflow 执行队列 Workflow 执行队列优先级与速度。 10 个标注回复数 手动编辑和标注回复，为应用提供可自定义的高质量问答能力。（仅适用于聊天应用） 30 天日志历史记录 每月 5,000 次 API 限速 对比所有功能特性 → ## 自托管与企业版 ### 企业版 适合需要高级安全、合规、治理与专属支持的企业。 定制 联系销售 仅企业版提供： [...] 使用高质量索引模式的文档会消耗知识库数据存储资源。当存储达到上限时，新文档将无法上传。 100 知识库请求频率限制/分钟 指定工作空间每分钟可在知识库内执行的操作总数，包括数据集的创建、删除、更新、文档上传、修改、归档以及知识库查询。此指标用于评估知识库请求的性能。例如，若 Sandbox 用户在一分钟内执行了 10 次命中测试，该工作空间将在下一分钟内暂时限制以下操作：数据集创建、删除、更新以及文档上传或修改。 优先文档处理 20,000 触发器事件数/月 通过插件、计划任务或 Webhook 触发器自动启动工作流的事件数量。 无限制的触发器/Workflow 快速 Workflow 执行队列 Workflow 执行队列优先级与速度。 2,000 个标注回复数 手动编辑和标注回复，为应用提供可自定义的高质量问答能力。（仅适用于聊天应用） 无限制日志历史记录 API 请求频率无限制 ### Team 适合需要协作和更高吞吐量的中等规模团队。 $1590每工作空间 / 年 立即试用 10,000 条消息额度/月",
+            "adoption": "ADOPTED",
+            "adoptionReason": "保存原句；是否支持问题由逐主张核查决定。",
+            "evidenceId": "1a57c2fd-500d-4901-99d3-c6b0305f2e34"
+          },
+          {
+            "url": "https://dify.ai/zh/dify-enterprise",
+            "title": "Dify 企业版 - 面向企业级规模构建智能体 AI 的基础设施",
+            "snippet": "Dify 联系销售登录开始使用 中文 Dify 菜单 文档 定价 产品 Workflow 构建器可视化 Agent 工作流搭建平台 知识流水线构建可检索的知识库 插件市场探索 Dify 工具、模型与插件集成 Dify 云端版托管 SaaS——从原型设计到生产发布 Dify 企业版企业级私有化部署 Dify 社区版开源，使用 Docker 自托管 解决方案 测评与考试实现规模化出题与多阶段审核 制造与工业技术一套私有平台，覆盖所有业务单元 消费品与快消业务团队自己搭 Agent 专业服务与审计agent 与 RPA 驱动审计自动化 物流与供应链业务增长，成本不等比例增加 公共部门本地环境部署，跨机构安全共享 银行与金融服务统一平台支撑全行业务协同 医药与生命科学可治理的专家级 AI 助手 半导体在自研大模型之上编排 AI 教育统一知识库覆盖多校区服务 互联网与媒体从试点应用走向日常生产力 公司 关于我们 博客 加入我们 语言 English 简体中文 日本語 한국어 Deutsch [...] ### Dify 托管（专属） 由 Dify 在企业所在区域的单租户集群上托管，并提供部署路径及实施、支持过程中的专门对接人。 ### 客户自管 VPC 将 Dify 部署在企业自有云账户内，通过 Helm Charts 快速上线，数据不出企业安全边界，Dify 负责监控运维，控制权始终归企业。 ### 完全隔离的本地部署 ## 预约企业方案咨询 联系销售 [...] A.P. 穆勒-马士基 100 已培训掌握 AI Agent 构建的业务用户数（FY2025） Lion Corporation（狮王） ## 企业级 AI，部署形态由你选择 ### Community 适合开源爱好者、独立开发者及非商业项目。 免费 立即开始 免费功能： + 公开仓库下发布的所有核心功能 + 单个工作空间 + 遵循 Dify 开源许可协议 ### 企业版 适合需要高级安全、合规、治理与专属支持的企业。 定制 联系销售 仅企业版提供： + 企业级可扩展部署解决方案 + 商业许可授权 + 专属企业功能 + 多工作空间与企业管理 + SSO + 通过 Dify 合作伙伴协商的 SLA + 高级安全与控制 + Dify 官方提供的更新与维护 + 专业技术支持 ## 面向企业全场景的 Dify 版本方案 结合企业的安全合规与基础设施需求，选择适合的部署方式。三种部署模式均提供一致的 Dify 产品体验。 ### Dify 托管（专属）",
+            "adoption": "ADOPTED",
+            "adoptionReason": "保存原句；是否支持问题由逐主张核查决定。",
+            "evidenceId": "782f0b08-293d-4498-b4cd-7d3e2b0ca36a"
+          },
+          {
+            "url": "https://cn.investing.com/news/stock-market-news/article-3114173",
+            "title": "国家金融监督管理总局：金融租赁公司应当建立租赁物、承租人准入管理政策并定期更新",
+            "snippet": "打开应用程序搜索市场、新闻、分析…Ctrl+K 劲爆优惠50% 登录 免费注册 [...] 本网站的广告客户可能会根据您与广告或广告主的互动情况，向Fusion Media支付费用。 本协议的英文版本系主要版本。如英文版本与中文版本存在差异，以英文版本为准。 [...] © 2007-2026 -Fusion Media Limited | 粤ICP备17131071号 | 保留所有权利。 条款及条件 隐私政策 风险警示 Image 23Image 24Image 25Image 26Image 27Image 28Image 29Image 30Image 31Image 32Image 33Image 34",
+            "adoption": "REJECTED",
+            "adoptionReason": "本轮未读取；搜索摘要不是原文证据。",
+            "evidenceId": null
+          }
+        ]
+      },
+      {
+        "id": "399e230b-0012-49cc-b9d3-5a3caeb32d2a",
+        "provider": "tencent-yuanbao-search-api",
+        "query": "Dify 多租户 实际使用 部署 经验 限制 workspace",
+        "calledAt": "2026-10-25T01:48:02.346Z",
+        "status": "SUCCEEDED",
+        "error": null,
+        "returnedSources": [
+          {
+            "url": "https://blog.csdn.net/weixin_35754962/article/details/156282804",
+            "title": "Dify如何保证多租户环境下的隔离安全性?",
+            "snippet": "Dify如何保证多租户环境下的隔离安全性? CSDN博客。所有敏感操作还会记录至审计日志,支持追溯与合规审查。 不过,JWT 的安全性高度依赖密钥管理和传输协议。建议设置较短的过期时间(≤24小时),定期轮换密钥,并始终启用 HTTPS。同时,避免在 Token payload 中明文存储 API Key 等敏感信息。 对于大型组织,还可集成 SSO(如 OAuth2、SAML),实现统一身份治理。 实际应用场景:集团内部多部门协同 设想一家大型企业正在推进智能化转型,希望各部门都能快速构建自己的 AI 应用,又不想各自搭建平台造成重复投入。 他们选择了 Dify 统一部署,财务、HR、客服分别创建独立 Workspace: 财务部上传年报、预算模板,构建财报问答机器人,仅限内部查看; HR 团队训练面试助手,使用专属 Prompt 和评估标准,不与其他部门共享; 客服中心部署智能客服,调用公共 LLM 接口,但检索范围严格限定于自身知识库; 平台管理员则通过统一面板监控资源使用情况,设置各 Workspace 的 API 调用上限。 整个过程中,各部门享受相同的开发体验,却始终处于各自的“安全舱”中。这就是 Dify 多租户设计的价值所在:既实现了能力复用,又保障了数据主权。 问题 解决方案 不同团队共用平台导致数据泄露风险 基于workspace_id的全链路数据过滤 私有知识库被非法检索 向量数据库 Partition + 应用层权限校验 Agent 恶意调用外部接口 工具白名单 + 网络策略隔离 权限混乱导致误操作 RBAC + 审计日志 设计考量与最佳实践 在实际部署中,没有绝对完美的方案,只有适合场景的选择: 初期推荐逻辑隔离:适用于中小型企业或测试环境,成本低、运维简单; 高安全等级建议物理隔离:为金融、政务等客户提供独立实例,彻底规避共享风险; 定期执行权限...",
+            "adoption": "ADOPTED",
+            "adoptionReason": "保存原句；是否支持问题由逐主张核查决定。",
+            "evidenceId": "00bb4824-7ad8-4714-9ca5-b129c99cab42"
+          },
+          {
+            "url": "https://aifoss.dev/blog/dify-review-2026",
+            "title": "Dify Review 2026: The Open-Source LLM App Builder",
+            "snippet": "Dify Review 2026: The Open-Source LLM App Builder AIFoss。 For greenfield deployments, Dify’s architecture is cleaner. When NOT to use Dify When the requirement is a simple chatbot. If you need a chatbot connected to a PDF knowledge base, Flowise or Open WebUI’s RAG feature covers this with far less infrastructure. Dify’s Docker stack is justified when you need workflow logic, agent orchestration, or multiple integrated components. Without that complexity, you’re maintaining overhead for no benefit. Under 8 GB total RAM. The 4 GB minimum runs, but it’s tight enough to be unstable under normal usage. Comfortable deployment starts at 8 GB, and if you’re adding local model inference on the same machine, 16 GB is the practical floor. Commercial multi-tenant deployments. The Dify Open Source Lic...",
+            "adoption": "REJECTED",
+            "adoptionReason": "本轮未读取；搜索摘要不是原文证据。",
+            "evidenceId": null
+          },
+          {
+            "url": "http://www.hqwc.cn/a/1760057.html",
+            "title": "资讯详情",
+            "snippet": "资讯详情 编程知识。 我用多租户主要是为了解决两个问题:一是知识库隔离,A团队的制度文档不能让B团队搜到;二是模型配置隔离,不同团队可能接不同的模型供应商,计费和限额也要分开。 实际操作上,管理入口在系统设置里,可以创建租户并分配管理员。每个租户下的成员、知识库、应用、模型配置都是相对独立的。我的建议是,多租户适合“平台化运营”的场景——你是牵头部门,要开放给多个业务线使用;如果只是十来个功能点的内部项目,强行拆多租户反而增加管理成本。生产环境如果涉及比较严格的合规隔离,我更推荐一个业务线一套环境,数据层面的物理隔离永远比逻辑隔离更安全。 5.4 生产环境上线:这些项不检查,出问题就是事故 从Demo到生产,中间有一道槛。这道槛不在Dify功能本身,而在运维和工程化意识。我给自己定了一个上线前的检查清单: API Key管理:Dify里创建的API Key要按应用分开,不要共用一个;密钥不要硬编码在业务代码里,环境变量或密钥管理服务都行。 SSRF防护:Dify自带ssrf_proxy代理,HTTP请求默认走代理,这是防止服务器被外部恶意请求打到内网的关键机制,别为了省事把它关掉。 沙箱限制:代码节点运行在沙箱里,网络受限。这是安全设计,不要在线上场景试图绕过。 日志监控:至少把api和worker容器的日志收集起来,接入你现有的日志平台,出问题排查效率完全不一样。 自动备份:Dify的PostgreSQL、向量库、Redis数据要定期备份,恢复演练也要做一次,别等到数据丢了才后悔。 HTTPS:对外提供服务一定上HTTPS,不然API Key在传输过程中等于裸奔。 负载与并发:Dify本身可以横向扩展,比如多个api实例加负载均衡。如果只是内部几十个人用,单机4C8G足够;如果是对外SaaS场景,建议做压测再决定架构。 从高手视角再看几个坑:部署、编排、调优的避坑清单 6...",
+            "adoption": "REJECTED",
+            "adoptionReason": "本轮未读取；搜索摘要不是原文证据。",
+            "evidenceId": null
+          },
+          {
+            "url": "https://txtmix.com/posts/tech/dify-agentic-workflow-development-platform-guide",
+            "title": "Dify 拆解:把 LLM 应用的工程外围收进一个可视化平台",
+            "snippet": "Dify 拆解:把 LLM 应用的工程外围收进一个可视化平台 Text Matrix。自己写插件有官方脚手架(dify-plugin CLI),支持模型、工具、Agent 策略等类型,Python 打包、权限声明、生命周期钩子都有现成规范。 企业级能力是另一条线:SAML SSO、细粒度 RBAC、审计日志属于企业版,社区版提供的是工作空间成员的基础角色(所有者、管理员、编辑者、普通成员)。 采用边界与上手顺序 三条 license 边界先划清——Dify 用的是带附加条件的修改版 Apache 2.0: 多租户限制:未经 Dify 书面授权,不能用其源码运营多租户环境。Dify 语境下一个租户等于一个工作空间,也就是说拿它做 SaaS 服务对外卖多租户账号需要商业授权;给单一企业内部用、作为自家应用的后端没问题。 前端标识:使用 Dify 前端时不得移除或修改界面上的 logo 和版权信息;不用它的前端(纯 API 后端用法)不受此限。 商用(含企业内部作为开发平台)本身是允许的。 适合 Dify 的场景: 团队要快速验证 AI 应用,不想在流程编排、日志、权限上重复造轮子;应用需要同时管多模型、RAG 管道和工作流;单一组织内部使用,不涉及多租户转售。 不适合的场景: 工作流逻辑超出节点能力且不愿写插件;已有成熟 LLMOps 栈,再引一层多一套维护成本;拿它做对外多租户 SaaS 又不想买商业授权。 上手顺序: Docker Compose 跑通单机 → 界面装一个模型供应商插件 → 建知识库问答应用走通全流程 → 用工作流搭一个真实业务场景 → 有定制需求再写工具插件。官方文档在 docs.dify.ai,版本变化快,配置项以 docker/.env.example 注释和 changelog 为准。 附录:术语速查 术语 说明 Application(应用) Di...",
+            "adoption": "ADOPTED",
+            "adoptionReason": "保存原句；是否支持问题由逐主张核查决定。",
+            "evidenceId": "4c5105a3-43cf-4121-a9eb-92908321b4e0"
+          },
+          {
+            "url": "https://toolso.ai/tool/dify",
+            "title": "Dify",
+            "snippet": "Dify Toolso.AI。 n8n: a more general automation tool that lets users write JavaScript or Python anywhere in a workflow. It can be deployed with Docker, with its source code on GitHub, and a hosted version is also available. Against these, Dify stands apart through its built-in knowledge pipeline, bundled model credits on hosted plans, and its license conditions. Limitations License conditions for self-hosting Dify is licensed under a modified version of the Apache License 2.0 with additional conditions: Multi-tenant use: unless Dify explicitly authorizes it in writing, the source code may not be used to operate a multi-tenant environment, where one tenant equals one workspace. Branding: when Dify's frontend is used, the LOGO and copyright information in the console or applications may not b...",
+            "adoption": "REJECTED",
+            "adoptionReason": "原文不可用：FAILED；No readable article blocks; JavaScript shell/empty page is not original material",
+            "evidenceId": "7b707441-8fd2-4967-bf52-a782719da3a0"
+          },
+          {
+            "url": "http://www.hqwc.cn/a/1923963.html",
+            "title": "AI Agent选型指南:PolarClaw､Dify与自建方案怎么选",
+            "snippet": "AI Agent选型指南:PolarClaw、Dify与自建方案怎么选 编程知识。Dify可以在界面上调试上下文、变量、示例对话,把prompt当作配置来管理,而不是每次改prompt都要发版。 以最新的Dify 1.17.1为例,社区版在多租户、工作流能力、插件扩展上都有明显更新。多租户这个点对企业内部落地很关键,意味着不同部门可以被隔离开来,使用独立的Agent应用和数据空间,而不是所有人共享一套环境。 4.2 Dify在不同部署形态下的差异 Dify的使用方式非常灵活,这里需要把\"云端版\"和\"自部署版\"分开讨论。 云端版基本实现了\"开箱即用\",但数据会上传到Dify官方服务器。适合个人开发者、低敏感场景,以及想快速验证Dify功能的企业。自部署版则通过Docker Compose在云服务器或内网环境跑起来。如果你选自部署,以下三个坑非常常见: 内网安装插件失败:Dify插件市场默认需要访问外网仓库,完全内网的环境里点安装会报错。解决思路是在有外网的机器上先下载插件包,再通过离线方式导入到内网Dify;或者配置内部镜像源。有些版本需要修改环境变量指定插件源,翻一翻官方部署文档能找到对应说明。 SSL配置错误:Dify通过Nginx反向代理暴露HTTPS时,最常见的坑是忘了把WebSocket路径 /proxy/ 也代理过去,导致前端页面正常但Agent工具调用一直失败。另外就是证书链不全、 SERVER_* 环境变量没配对,造成页面接口返回400或502。 社区版多租户限制:社区版虽然更新频繁,但企业级的多租户隔离、SSO、审计日志通常不会完整开放,而会放在商业版或企业版里。团队如果以为社区版自带完整多租户,很可能要二次开发,这个成本要提前评估。 Dify的更新节奏相当快,好处是新功能来得快,坏处是如果你基于某个版本做深度定制,升级时很容易踩兼容性坑。我自己的习惯是:D...",
+            "adoption": "REJECTED",
+            "adoptionReason": "本轮未读取；搜索摘要不是原文证据。",
+            "evidenceId": null
+          }
+        ]
+      },
+      {
+        "id": "4f246456-065e-419b-8fd3-58b9074be700",
+        "provider": "hacker-news-algolia",
+        "query": "Dify 多租户 实际使用 部署 经验 限制 workspace",
+        "calledAt": "2026-10-25T01:48:02.347Z",
+        "status": "SUCCEEDED",
+        "error": null,
+        "returnedSources": []
+      }
+    ],
+    "verificationAudit": {
+      "modelCalls": [
+        {
+          "provider": "api.deepseek.com",
+          "model": "deepseek-flash",
+          "promptVersion": "a2-evidence-v4",
+          "temperature": null,
+          "thinkingMode": "DISABLED",
+          "generatedAt": "2026-10-25T01:47:50.922Z",
+          "id": "8a3eb6f5-8946-42cf-be22-b9a51e230dcf",
+          "purpose": "investigation-initial-decision",
+          "startedAt": "2026-10-25T01:47:49.563Z",
+          "durationMs": 1359,
+          "outcome": "SUCCEEDED",
+          "inputTokens": 1337,
+          "outputTokens": 115
+        },
+        {
+          "provider": "api.deepseek.com",
+          "model": "deepseek-flash",
+          "promptVersion": "a2-evidence-v4",
+          "temperature": null,
+          "thinkingMode": "DISABLED",
+          "generatedAt": "2026-10-25T01:47:54.870Z",
+          "id": "5a9a66e5-2415-45e4-9f0e-0037794eeedd",
+          "purpose": "investigation-evidence-decision",
+          "startedAt": "2026-10-25T01:47:53.394Z",
+          "durationMs": 1476,
+          "outcome": "SUCCEEDED",
+          "inputTokens": 7646,
+          "outputTokens": 243
+        },
+        {
+          "provider": "api.deepseek.com",
+          "model": "deepseek-flash",
+          "promptVersion": "a2-evidence-v4",
+          "temperature": null,
+          "thinkingMode": "DISABLED",
+          "generatedAt": "2026-10-25T01:47:59.031Z",
+          "id": "a3fd6149-fba8-4c58-9f01-65111cc4d205",
+          "purpose": "investigation-evidence-decision",
+          "startedAt": "2026-10-25T01:47:56.598Z",
+          "durationMs": 2433,
+          "outcome": "SUCCEEDED",
+          "inputTokens": 9264,
+          "outputTokens": 353
+        },
+        {
+          "provider": "api.deepseek.com",
+          "model": "deepseek-flash",
+          "promptVersion": "a2-evidence-v4",
+          "temperature": null,
+          "thinkingMode": "DISABLED",
+          "generatedAt": "2026-10-25T01:48:02.337Z",
+          "id": "bb086dcd-c081-4c55-b442-1ee199ef5a4b",
+          "purpose": "investigation-evidence-decision",
+          "startedAt": "2026-10-25T01:47:59.866Z",
+          "durationMs": 2471,
+          "outcome": "SUCCEEDED",
+          "inputTokens": 10542,
+          "outputTokens": 262
+        },
+        {
+          "provider": "api.deepseek.com",
+          "model": "deepseek-flash",
+          "promptVersion": "a2-evidence-v4",
+          "temperature": null,
+          "thinkingMode": "DISABLED",
+          "generatedAt": "2026-10-25T01:48:05.762Z",
+          "id": "732b22a3-120d-4a3c-a988-c6e76b21fc10",
+          "purpose": "investigation-evidence-decision",
+          "startedAt": "2026-10-25T01:48:03.267Z",
+          "durationMs": 2495,
+          "outcome": "SUCCEEDED",
+          "inputTokens": 13588,
+          "outputTokens": 379
+        },
+        {
+          "provider": "api.deepseek.com",
+          "model": "deepseek-flash",
+          "promptVersion": "a2-evidence-v4",
+          "temperature": null,
+          "thinkingMode": "DISABLED",
+          "generatedAt": "2026-10-25T01:48:10.604Z",
+          "id": "fb864deb-e1a8-44b9-a036-4c756f855e57",
+          "purpose": "investigation-evidence-decision",
+          "startedAt": "2026-10-25T01:48:07.320Z",
+          "durationMs": 3285,
+          "outcome": "SUCCEEDED",
+          "inputTokens": 15475,
+          "outputTokens": 508
+        },
+        {
+          "provider": "api.deepseek.com",
+          "model": "deepseek-flash",
+          "promptVersion": "a2-evidence-v4",
+          "temperature": null,
+          "thinkingMode": "DISABLED",
+          "generatedAt": "2026-10-25T01:48:13.417Z",
+          "id": "fc35b4c7-a5ab-454e-8a75-21766afc3849",
+          "purpose": "claim-extraction",
+          "startedAt": "2026-10-25T01:48:10.626Z",
+          "durationMs": 2791,
+          "outcome": "SUCCEEDED",
+          "inputTokens": 3541,
+          "outputTokens": 423
+        },
+        {
+          "provider": "api.deepseek.com",
+          "model": "deepseek-flash",
+          "promptVersion": "a2-evidence-v4",
+          "temperature": null,
+          "thinkingMode": "DISABLED",
+          "generatedAt": "2026-10-25T01:48:31.271Z",
+          "id": "1444093e-757e-4385-ba89-cb75c6e1e7c8",
+          "purpose": "claim-evidence-verification",
+          "startedAt": "2026-10-25T01:48:13.421Z",
+          "durationMs": 8575,
+          "outcome": "FAILED",
+          "inputTokens": 6171,
+          "outputTokens": 1951,
+          "failureCategory": "output-schema"
+        },
+        {
+          "provider": "api.deepseek.com",
+          "model": "deepseek-flash",
+          "promptVersion": "a2-evidence-v4",
+          "temperature": null,
+          "thinkingMode": "DISABLED",
+          "generatedAt": "2026-10-25T01:48:31.271Z",
+          "id": "c98920bf-6846-44ed-ae69-e5215e8076b9",
+          "purpose": "claim-evidence-verification:format-repair",
+          "startedAt": "2026-10-25T01:48:21.997Z",
+          "durationMs": 9275,
+          "outcome": "SUCCEEDED",
+          "inputTokens": 6220,
+          "outputTokens": 1996
+        },
+        {
+          "provider": "api.deepseek.com",
+          "model": "deepseek-flash",
+          "promptVersion": "a2-evidence-v4",
+          "temperature": null,
+          "thinkingMode": "DISABLED",
+          "generatedAt": "2026-10-25T01:48:38.440Z",
+          "id": "27138235-fa34-4a49-97e0-3bcdfceab898",
+          "purpose": "claim-evidence-verification:validation-repair",
+          "startedAt": "2026-10-25T01:48:31.273Z",
+          "durationMs": 7167,
+          "outcome": "FAILED",
+          "inputTokens": null,
+          "outputTokens": null,
+          "failureCategory": "cancelled-or-budget-exhausted"
+        },
+        {
+          "provider": "api.deepseek.com",
+          "model": "deepseek-flash",
+          "promptVersion": "a2-evidence-v4",
+          "temperature": null,
+          "thinkingMode": "DISABLED",
+          "generatedAt": "2026-10-25T01:48:41.939Z",
+          "id": "89050d33-61fa-4c48-9671-e786c17b5c52",
+          "purpose": "claim-extraction",
+          "startedAt": "2026-10-25T01:48:38.453Z",
+          "durationMs": 3487,
+          "outcome": "SUCCEEDED",
+          "inputTokens": 3729,
+          "outputTokens": 552
+        },
+        {
+          "provider": "api.deepseek.com",
+          "model": "deepseek-flash",
+          "promptVersion": "a2-evidence-v4",
+          "temperature": null,
+          "thinkingMode": "DISABLED",
+          "generatedAt": "2026-10-25T01:48:50.629Z",
+          "id": "6b661095-af7a-49b4-bf35-68181674446e",
+          "purpose": "claim-evidence-verification",
+          "startedAt": "2026-10-25T01:48:41.942Z",
+          "durationMs": 8688,
+          "outcome": "SUCCEEDED",
+          "inputTokens": 6763,
+          "outputTokens": 2159
+        },
+        {
+          "provider": "api.deepseek.com",
+          "model": "deepseek-flash",
+          "promptVersion": "a2-evidence-v4",
+          "temperature": null,
+          "thinkingMode": "DISABLED",
+          "generatedAt": "2026-10-25T01:49:00.268Z",
+          "id": "dfdc869d-b662-4d32-8417-a3b9006d0e0c",
+          "purpose": "claim-evidence-verification:validation-repair",
+          "startedAt": "2026-10-25T01:48:50.630Z",
+          "durationMs": 9638,
+          "outcome": "SUCCEEDED",
+          "inputTokens": 6836,
+          "outputTokens": 2449
+        },
+        {
+          "provider": "api.deepseek.com",
+          "model": "deepseek-flash",
+          "promptVersion": "a2-evidence-v4",
+          "temperature": null,
+          "thinkingMode": "DISABLED",
+          "generatedAt": "2026-10-25T01:49:01.011Z",
+          "id": "30c98306-4de9-492b-b6fa-a81ddfbeccfb",
+          "purpose": "cited-answer-selection",
+          "startedAt": "2026-10-25T01:49:00.286Z",
+          "durationMs": 725,
+          "outcome": "SUCCEEDED",
+          "inputTokens": 1627,
+          "outputTokens": 122
+        },
+        {
+          "provider": "api.deepseek.com",
+          "model": "deepseek-flash",
+          "promptVersion": "a2-evidence-v4",
+          "temperature": null,
+          "thinkingMode": "DISABLED",
+          "generatedAt": "2026-10-25T01:49:03.896Z",
+          "id": "f7c48bd9-7c9a-44ee-a49b-fae03b4614d5",
+          "purpose": "citation-semantic-support-check",
+          "startedAt": "2026-10-25T01:49:01.011Z",
+          "durationMs": 2884,
+          "outcome": "SUCCEEDED",
+          "inputTokens": 2970,
+          "outputTokens": 440
+        }
+      ],
+      "review": {
+        "status": "NOT_CONFIGURED",
+        "reason": "未配置第二模型；不声称完成独立模型复核或精度提高。",
+        "independentAssessment": null,
+        "findings": []
+      },
+      "citationChecks": [
+        {
+          "marker": "[1]",
+          "supported": true,
+          "reason": "原句明确将“服务”定义为“许可方提供 Dify 商业化版本程序，以及相应的文档、材料、电子文档，还包括许可方提供的任何升级、修改版本、更新、补充内容及其副本”，与主张所列定义要素逐一对应。适用范围的描述也与证据 sourceUrl 及标题（最终用户许可协议）一致。"
+        },
+        {
+          "marker": "[2]",
+          "supported": true,
+          "reason": "原句称“本项目基于 Dify，遵循仓库内的 Dify Open Source License（基于 Apache 2.0，并附加条件）。部署、分发和商业使用前请阅读许可证。”，蕴含“基于 Dify”“Apache 2.0 附加条件”“商业使用前阅读许可证”等要素；主张已标注为来源报告、未独立复现，未将其升格为事实。"
+        },
+        {
+          "marker": "[3]",
+          "supported": false,
+          "reason": "所给原句仅含“部署、分发和商业使用前请阅读许可证”及品牌、社区和安全联系渠道归原项目所有，未包含“涉及商业授权、多租户服务或品牌使用等需求，应以 Dify 官方许可条款为准并联系官方获取授权与支持”这一表述；该内容只出现在证据 metadata 的标题说明中，不属于被保存的原句。"
+        },
+        {
+          "marker": "[4]",
+          "supported": true,
+          "reason": "原句“单个 Dify 集群，支持多业务单元独立运行。租户级别的配额、计费与访问策略管理。”与主张中的集群多业务单元独立运行及租户级配额、计费、访问策略管理逐项对应；主张也标明这是官方页面宣称，并注明未注明版本与日期。"
+        },
+        {
+          "marker": "[5]",
+          "supported": true,
+          "reason": "原句“Tenant / Workspace（租户/工作空间）顶级隔离单位，对应独立成员体系与应用配置；license 层面一租户即一工作空间”与主张内容一致，主张标注为来源报告、未复现，并保留发布日期 2026-05-02 及未注明 Dify 版本的条件。"
+        }
+      ],
+      "followup": {
+        "queriesUsed": 1,
+        "maxQueries": 2,
+        "stopReason": "已读原句：官方定价页称社区版“免费、单个工作空间、遵循 Dify 开源许可协议”，多工作空间仅企业版；官方EULA针对商业化版本，禁止“通过SAAS方式使用”及未经书面同意的托管/再许可。实际使用报告方面：CSDN博客描述自托管多租户以 Workspace 隔离并建议高合规场景物理隔离；Text Matrix 与 GitHub dify-plus 说明“一租户=一工作空间”、未经书面授权不得用源码运营多租户、社区版仅有基础角色而 SSO/审计属企业版。两类维度均已覆盖；开源许可原文页因访问限制未能直读，属已知缺口，已用官方定价页与多方一致转述交叉说明。"
+      },
+      "investigationLoop": {
+        "startedAt": "2026-10-25T01:47:49.554Z",
+        "durationMs": 74348,
+        "totalBudgetMs": 180000,
+        "answerReserveMs": 45000,
+        "maxSearchRounds": 3,
+        "searchRounds": 2,
+        "maxReads": 10,
+        "readsUsed": 10,
+        "stopReason": "已读原句：官方定价页称社区版“免费、单个工作空间、遵循 Dify 开源许可协议”，多工作空间仅企业版；官方EULA针对商业化版本，禁止“通过SAAS方式使用”及未经书面同意的托管/再许可。实际使用报告方面：CSDN博客描述自托管多租户以 Workspace 隔离并建议高合规场景物理隔离；Text Matrix 与 GitHub dify-plus 说明“一租户=一工作空间”、未经书面授权不得用源码运营多租户、社区版仅有基础角色而 SSO/审计属企业版。两类维度均已覆盖；开源许可原文页因访问限制未能直读，属已知缺口，已用官方定价页与多方一致转述交叉说明。",
+        "httpAttempts": [
+          {
+            "url": "https://api.wsa.cloud.tencent.com/SearchPro",
+            "method": "POST",
+            "startedAt": "2026-10-25T01:47:50.931Z",
+            "finishedAt": "2026-10-25T01:47:51.489Z",
+            "requestSent": true,
+            "status": 200,
+            "error": null,
+            "ownerId": "fa595583-140e-43de-b67e-cbb5a49b45c7"
+          },
+          {
+            "url": "https://api.tavily.com/search",
+            "method": "POST",
+            "startedAt": "2026-10-25T01:47:50.930Z",
+            "finishedAt": "2026-10-25T01:47:53.392Z",
+            "requestSent": true,
+            "status": 200,
+            "error": null,
+            "ownerId": "7199b7be-b0fe-473a-a71c-8e20f0b4eae5"
+          },
+          {
+            "url": "https://blog.gitcode.com/bf606b1c12983e41c0dd323a1cf419be.html",
+            "method": "GET",
+            "startedAt": "2026-10-25T01:47:54.879Z",
+            "finishedAt": "2026-10-25T01:47:55.730Z",
+            "requestSent": true,
+            "status": 200,
+            "error": null,
+            "ownerId": "029ac157-1359-41e6-89ab-7900c4f0d6cf"
+          },
+          {
+            "url": "https://vdf.ai/blog/dify-vs-n8n-vs-flowise-vs-langflow",
+            "method": "GET",
+            "startedAt": "2026-10-25T01:47:54.879Z",
+            "finishedAt": "2026-10-25T01:47:56.035Z",
+            "requestSent": true,
+            "status": null,
+            "error": "Error: certificate has expired",
+            "ownerId": "f7107a4a-26f1-45c0-8e6d-16a5bfe93c91"
+          },
+          {
+            "url": "https://dify.ai/zh/pricing/dify-enterprise",
+            "method": "GET",
+            "startedAt": "2026-10-25T01:47:54.879Z",
+            "finishedAt": "2026-10-25T01:47:55.746Z",
+            "requestSent": true,
+            "status": 200,
+            "error": null,
+            "ownerId": "1cd7e010-baa2-4bd8-af0b-42a1e73ea539"
+          },
+          {
+            "url": "https://github.com/YFGaia/dify-plus",
+            "method": "GET",
+            "startedAt": "2026-10-25T01:47:54.880Z",
+            "finishedAt": "2026-10-25T01:47:56.507Z",
+            "requestSent": true,
+            "status": 200,
+            "error": null,
+            "ownerId": "5f0b4172-e13b-4e16-b616-612af5223550"
+          },
+          {
+            "url": "https://dify.ai/zh/legal/end-user-license-agreement",
+            "method": "GET",
+            "startedAt": "2026-10-25T01:47:59.037Z",
+            "finishedAt": "2026-10-25T01:47:59.224Z",
+            "requestSent": true,
+            "status": 200,
+            "error": null,
+            "ownerId": "b130d542-df90-4b54-a53c-76395b37dbc5"
+          },
+          {
+            "url": "https://dify.ai/zh/pricing",
+            "method": "GET",
+            "startedAt": "2026-10-25T01:47:59.037Z",
+            "finishedAt": "2026-10-25T01:47:59.853Z",
+            "requestSent": true,
+            "status": 200,
+            "error": null,
+            "ownerId": "1a57c2fd-500d-4901-99d3-c6b0305f2e34"
+          },
+          {
+            "url": "https://api.wsa.cloud.tencent.com/SearchPro",
+            "method": "POST",
+            "startedAt": "2026-10-25T01:48:02.349Z",
+            "finishedAt": "2026-10-25T01:48:02.831Z",
+            "requestSent": true,
+            "status": 200,
+            "error": null,
+            "ownerId": "399e230b-0012-49cc-b9d3-5a3caeb32d2a"
+          },
+          {
+            "url": "https://hn.algolia.com/api/v1/search?query=Dify%20%E5%A4%9A%E7%A7%9F%E6%88%B7%20%E5%AE%9E%E9%99%85%E4%BD%BF%E7%94%A8%20%E9%83%A8%E7%BD%B2%20%E7%BB%8F%E9%AA%8C%20%E9%99%90%E5%88%B6%20workspace&tags=story&hitsPerPage=6",
+            "method": "GET",
+            "startedAt": "2026-10-25T01:48:02.347Z",
+            "finishedAt": "2026-10-25T01:48:03.266Z",
+            "requestSent": true,
+            "status": 200,
+            "error": null,
+            "ownerId": "4f246456-065e-419b-8fd3-58b9074be700"
+          },
+          {
+            "url": "https://dify.ai/zh/dify-enterprise",
+            "method": "GET",
+            "startedAt": "2026-10-25T01:48:05.770Z",
+            "finishedAt": "2026-10-25T01:48:06.760Z",
+            "requestSent": true,
+            "status": 200,
+            "error": null,
+            "ownerId": "782f0b08-293d-4498-b4cd-7d3e2b0ca36a"
+          },
+          {
+            "url": "https://blog.csdn.net/weixin_35754962/article/details/156282804",
+            "method": "GET",
+            "startedAt": "2026-10-25T01:48:05.770Z",
+            "finishedAt": "2026-10-25T01:48:06.649Z",
+            "requestSent": true,
+            "status": 200,
+            "error": null,
+            "ownerId": "00bb4824-7ad8-4714-9ca5-b129c99cab42"
+          },
+          {
+            "url": "https://txtmix.com/posts/tech/dify-agentic-workflow-development-platform-guide",
+            "method": "GET",
+            "startedAt": "2026-10-25T01:48:05.770Z",
+            "finishedAt": "2026-10-25T01:48:07.227Z",
+            "requestSent": true,
+            "status": 308,
+            "error": null,
+            "ownerId": "4c5105a3-43cf-4121-a9eb-92908321b4e0"
+          },
+          {
+            "url": "https://txtmix.com/posts/tech/dify-agentic-workflow-development-platform-guide/",
+            "method": "GET",
+            "startedAt": "2026-10-25T01:48:06.708Z",
+            "finishedAt": "2026-10-25T01:48:07.227Z",
+            "requestSent": true,
+            "status": 200,
+            "error": null,
+            "ownerId": "4c5105a3-43cf-4121-a9eb-92908321b4e0"
+          },
+          {
+            "url": "https://toolso.ai/tool/dify",
+            "method": "GET",
+            "startedAt": "2026-10-25T01:48:05.770Z",
+            "finishedAt": "2026-10-25T01:48:07.298Z",
+            "requestSent": true,
+            "status": 200,
+            "error": null,
+            "ownerId": "7b707441-8fd2-4967-bf52-a782719da3a0"
+          }
+        ],
+        "collectionDiagnostics": [],
+        "decisions": [
+          {
+            "step": 1,
+            "decidedAt": "2026-10-25T01:47:50.922Z",
+            "remainingMs": 178631,
+            "decision": {
+              "action": "SEARCH",
+              "query": "Dify 社区版 自托管 多租户 许可条款 限制",
+              "entries": [
+                "yuanbao",
+                "tavily"
+              ],
+              "readUrls": [],
+              "reason": "尚无任何证据，需先检索 Dify 社区版许可条款及多租户使用限制的官方与实际使用报告。",
+              "observedGap": "缺少 Dify 社区版许可条款原文和多租户实际使用说明。",
+              "basisEvidenceIds": [],
+              "basisRecordIds": [],
+              "clarification": null,
+              "discoveredIdentity": null
+            },
+            "availableEvidenceIds": [],
+            "availableRecordIds": [],
+            "outcome": "EXECUTED",
+            "detail": "实际入口：yuanbao,tavily；返回记录：fa595583-140e-43de-b67e-cbb5a49b45c7:SUCCEEDED,7199b7be-b0fe-473a-a71c-8e20f0b4eae5:SUCCEEDED。"
+          },
+          {
+            "step": 2,
+            "decidedAt": "2026-10-25T01:47:54.870Z",
+            "remainingMs": 174683,
+            "decision": {
+              "action": "READ",
+              "query": "Dify Open Source License 多租户",
+              "entries": [],
+              "readUrls": [
+                "https://blog.gitcode.com/bf606b1c12983e41c0dd323a1cf419be.html",
+                "https://vdf.ai/blog/dify-vs-n8n-vs-flowise-vs-langflow",
+                "https://dify.ai/zh/pricing/dify-enterprise",
+                "https://github.com/YFGaia/dify-plus"
+              ],
+              "reason": "需原句核对官方许可中多租户/LOGO限制条款、社区版单工作空间定位，以及实际社区使用（二开项目声明未涉及多租户功能）作为使用报告证据。",
+              "observedGap": "仅有搜索摘要，无许可条款原文与实际多租户使用报告原句。",
+              "basisEvidenceIds": [],
+              "basisRecordIds": [
+                "fa595583-140e-43de-b67e-cbb5a49b45c7",
+                "7199b7be-b0fe-473a-a71c-8e20f0b4eae5"
+              ],
+              "clarification": null,
+              "discoveredIdentity": null
+            },
+            "availableEvidenceIds": [],
+            "availableRecordIds": [
+              "fa595583-140e-43de-b67e-cbb5a49b45c7",
+              "7199b7be-b0fe-473a-a71c-8e20f0b4eae5"
+            ],
+            "outcome": "EXECUTED",
+            "detail": "已尝试读取：https://blog.gitcode.com/bf606b1c12983e41c0dd323a1cf419be.html,https://vdf.ai/blog/dify-vs-n8n-vs-flowise-vs-langflow,https://dify.ai/zh/pricing/dify-enterprise,https://github.com/YFGaia/dify-plus；累计保存4份原文状态。"
+          },
+          {
+            "step": 3,
+            "decidedAt": "2026-10-25T01:47:59.031Z",
+            "remainingMs": 170522,
+            "decision": {
+              "action": "READ",
+              "query": "Dify Open Source License 多租户 许可",
+              "entries": [],
+              "readUrls": [
+                "https://dify.ai/zh/legal/end-user-license-agreement",
+                "https://dify.ai/zh/pricing"
+              ],
+              "reason": "搜索已返回官方最终用户许可协议与定价页，但此前读取的是企业版定价页的模板文字，未取得许可限制与社区版定位原句。需读官方EULA确认是否覆盖自托管多租户限制，并读定价页确认社区版单工作空间/免费自托管的官方表述。",
+              "observedGap": "缺少官方许可条款中关于多租户/SAAS使用限制的原句，以及官方对社区版单工作空间的表述；实际使用报告仅有二次开发项目声明未涉及多租户，尚不足以说明实际多租户运营报告。",
+              "basisEvidenceIds": [
+                "029ac157-1359-41e6-89ab-7900c4f0d6cf",
+                "f7107a4a-26f1-45c0-8e6d-16a5bfe93c91",
+                "5f0b4172-e13b-4e16-b616-612af5223550",
+                "1cd7e010-baa2-4bd8-af0b-42a1e73ea539"
+              ],
+              "basisRecordIds": [
+                "fa595583-140e-43de-b67e-cbb5a49b45c7",
+                "7199b7be-b0fe-473a-a71c-8e20f0b4eae5"
+              ],
+              "clarification": null,
+              "discoveredIdentity": null
+            },
+            "availableEvidenceIds": [
+              "029ac157-1359-41e6-89ab-7900c4f0d6cf",
+              "1cd7e010-baa2-4bd8-af0b-42a1e73ea539",
+              "f7107a4a-26f1-45c0-8e6d-16a5bfe93c91",
+              "5f0b4172-e13b-4e16-b616-612af5223550"
+            ],
+            "availableRecordIds": [
+              "fa595583-140e-43de-b67e-cbb5a49b45c7",
+              "7199b7be-b0fe-473a-a71c-8e20f0b4eae5"
+            ],
+            "outcome": "EXECUTED",
+            "detail": "已尝试读取：https://dify.ai/zh/legal/end-user-license-agreement,https://dify.ai/zh/pricing；累计保存6份原文状态。"
+          },
+          {
+            "step": 4,
+            "decidedAt": "2026-10-25T01:48:02.337Z",
+            "remainingMs": 167216,
+            "decision": {
+              "action": "SEARCH",
+              "query": "Dify 多租户 实际使用 部署 经验 限制 workspace",
+              "entries": [
+                "yuanbao",
+                "hn"
+              ],
+              "readUrls": [],
+              "reason": "已取得官方社区版单工作空间定位与开源许可多租户限制的旁证，但缺少实际多租户自托管使用报告原句；需检索社区/HN 讨论中的真实部署经验来补齐使用报告维度。",
+              "observedGap": "官方材料说明社区版单工作空间、Dify Open Source License 禁止未经书面授权运营多租户；但尚无实际用户自托管服务多租户的体验/限制报告原句（此前仅为二次开发项目声明）。",
+              "basisEvidenceIds": [
+                "1cd7e010-baa2-4bd8-af0b-42a1e73ea539",
+                "5f0b4172-e13b-4e16-b616-612af5223550",
+                "029ac157-1359-41e6-89ab-7900c4f0d6cf"
+              ],
+              "basisRecordIds": [
+                "fa595583-140e-43de-b67e-cbb5a49b45c7"
+              ],
+              "clarification": null,
+              "discoveredIdentity": null
+            },
+            "availableEvidenceIds": [
+              "029ac157-1359-41e6-89ab-7900c4f0d6cf",
+              "1cd7e010-baa2-4bd8-af0b-42a1e73ea539",
+              "f7107a4a-26f1-45c0-8e6d-16a5bfe93c91",
+              "5f0b4172-e13b-4e16-b616-612af5223550",
+              "b130d542-df90-4b54-a53c-76395b37dbc5",
+              "1a57c2fd-500d-4901-99d3-c6b0305f2e34"
+            ],
+            "availableRecordIds": [
+              "fa595583-140e-43de-b67e-cbb5a49b45c7",
+              "7199b7be-b0fe-473a-a71c-8e20f0b4eae5"
+            ],
+            "outcome": "EXECUTED",
+            "detail": "实际入口：yuanbao,hn；返回记录：399e230b-0012-49cc-b9d3-5a3caeb32d2a:SUCCEEDED,4f246456-065e-419b-8fd3-58b9074be700:SUCCEEDED。"
+          },
+          {
+            "step": 5,
+            "decidedAt": "2026-10-25T01:48:05.762Z",
+            "remainingMs": 163791,
+            "decision": {
+              "action": "READ",
+              "query": "Dify Open Source License 多租户 workspace 单工作空间",
+              "entries": [],
+              "readUrls": [
+                "https://dify.ai/zh/dify-enterprise",
+                "https://blog.csdn.net/weixin_35754962/article/details/156282804",
+                "https://txtmix.com/posts/tech/dify-agentic-workflow-development-platform-guide",
+                "https://toolso.ai/tool/dify"
+              ],
+              "reason": "上次搜索返回多篇关于多租户许可限制与实际部署经验的新来源，但均未读取；需取原句：官方企业版页确认社区版单工作空间与多工作空间仅企业版，CSDN/拆解文/工具站提供实际多租户部署与许可边界的使用报告原句。",
+              "observedGap": "已保存官方EULA（针对商业化版本、禁止SaaS方式使用）与定价页（社区版单工作空间），但缺少明确指出开源许可“未经书面授权不得运营多租户、一租户=一工作空间”的原文，以及实际自托管多租户部署的经验/限制原句。",
+              "basisEvidenceIds": [
+                "b130d542-df90-4b54-a53c-76395b37dbc5",
+                "1cd7e010-baa2-4bd8-af0b-42a1e73ea539",
+                "1a57c2fd-500d-4901-99d3-c6b0305f2e34",
+                "5f0b4172-e13b-4e16-b616-612af5223550"
+              ],
+              "basisRecordIds": [
+                "399e230b-0012-49cc-b9d3-5a3caeb32d2a"
+              ],
+              "clarification": null,
+              "discoveredIdentity": null
+            },
+            "availableEvidenceIds": [
+              "029ac157-1359-41e6-89ab-7900c4f0d6cf",
+              "1cd7e010-baa2-4bd8-af0b-42a1e73ea539",
+              "f7107a4a-26f1-45c0-8e6d-16a5bfe93c91",
+              "5f0b4172-e13b-4e16-b616-612af5223550",
+              "b130d542-df90-4b54-a53c-76395b37dbc5",
+              "1a57c2fd-500d-4901-99d3-c6b0305f2e34"
+            ],
+            "availableRecordIds": [
+              "fa595583-140e-43de-b67e-cbb5a49b45c7",
+              "7199b7be-b0fe-473a-a71c-8e20f0b4eae5",
+              "399e230b-0012-49cc-b9d3-5a3caeb32d2a",
+              "4f246456-065e-419b-8fd3-58b9074be700"
+            ],
+            "outcome": "EXECUTED",
+            "detail": "已尝试读取：https://dify.ai/zh/dify-enterprise,https://blog.csdn.net/weixin_35754962/article/details/156282804,https://txtmix.com/posts/tech/dify-agentic-workflow-development-platform-guide,https://toolso.ai/tool/dify；累计保存10份原文状态。"
+          },
+          {
+            "step": 6,
+            "decidedAt": "2026-10-25T01:48:10.605Z",
+            "remainingMs": 158948,
+            "decision": {
+              "action": "FINISH",
+              "query": null,
+              "entries": [],
+              "readUrls": [],
+              "reason": "已读原句：官方定价页称社区版“免费、单个工作空间、遵循 Dify 开源许可协议”，多工作空间仅企业版；官方EULA针对商业化版本，禁止“通过SAAS方式使用”及未经书面同意的托管/再许可。实际使用报告方面：CSDN博客描述自托管多租户以 Workspace 隔离并建议高合规场景物理隔离；Text Matrix 与 GitHub dify-plus 说明“一租户=一工作空间”、未经书面授权不得用源码运营多租户、社区版仅有基础角色而 SSO/审计属企业版。两类维度均已覆盖；开源许可原文页因访问限制未能直读，属已知缺口，已用官方定价页与多方一致转述交叉说明。",
+              "observedGap": "Dify Open Source License 全文原页（含多租户附加条款）因访问限制未能直读，多租户限制的具体措辞来自官方定价页、社区二次开发项目声明及两篇技术拆解的一致转述，非许可文件逐字原文。",
+              "basisEvidenceIds": [
+                "1cd7e010-baa2-4bd8-af0b-42a1e73ea539",
+                "b130d542-df90-4b54-a53c-76395b37dbc5",
+                "1a57c2fd-500d-4901-99d3-c6b0305f2e34",
+                "782f0b08-293d-4498-b4cd-7d3e2b0ca36a",
+                "00bb4824-7ad8-4714-9ca5-b129c99cab42",
+                "4c5105a3-43cf-4121-a9eb-92908321b4e0",
+                "5f0b4172-e13b-4e16-b616-612af5223550",
+                "029ac157-1359-41e6-89ab-7900c4f0d6cf"
+              ],
+              "basisRecordIds": [
+                "fa595583-140e-43de-b67e-cbb5a49b45c7",
+                "399e230b-0012-49cc-b9d3-5a3caeb32d2a"
+              ],
+              "clarification": null,
+              "discoveredIdentity": null
+            },
+            "availableEvidenceIds": [
+              "029ac157-1359-41e6-89ab-7900c4f0d6cf",
+              "1cd7e010-baa2-4bd8-af0b-42a1e73ea539",
+              "f7107a4a-26f1-45c0-8e6d-16a5bfe93c91",
+              "5f0b4172-e13b-4e16-b616-612af5223550",
+              "b130d542-df90-4b54-a53c-76395b37dbc5",
+              "1a57c2fd-500d-4901-99d3-c6b0305f2e34",
+              "00bb4824-7ad8-4714-9ca5-b129c99cab42",
+              "782f0b08-293d-4498-b4cd-7d3e2b0ca36a",
+              "4c5105a3-43cf-4121-a9eb-92908321b4e0",
+              "7b707441-8fd2-4967-bf52-a782719da3a0"
+            ],
+            "availableRecordIds": [
+              "fa595583-140e-43de-b67e-cbb5a49b45c7",
+              "7199b7be-b0fe-473a-a71c-8e20f0b4eae5",
+              "399e230b-0012-49cc-b9d3-5a3caeb32d2a",
+              "4f246456-065e-419b-8fd3-58b9074be700"
+            ],
+            "outcome": "STOPPED",
+            "detail": "已读原句：官方定价页称社区版“免费、单个工作空间、遵循 Dify 开源许可协议”，多工作空间仅企业版；官方EULA针对商业化版本，禁止“通过SAAS方式使用”及未经书面同意的托管/再许可。实际使用报告方面：CSDN博客描述自托管多租户以 Workspace 隔离并建议高合规场景物理隔离；Text Matrix 与 GitHub dify-plus 说明“一租户=一工作空间”、未经书面授权不得用源码运营多租户、社区版仅有基础角色而 SSO/审计属企业版。两类维度均已覆盖；开源许可原文页因访问限制未能直读，属已知缺口，已用官方定价页与多方一致转述交叉说明。"
+          }
+        ],
+        "collectionCalls": [
+          {
+            "operation": "search:yuanbao",
+            "target": "Dify 社区版 自托管 多租户 许可条款 限制",
+            "startedAt": "2026-10-25T01:47:50.929Z",
+            "durationMs": 566,
+            "outcome": "SUCCEEDED",
+            "resultId": "fa595583-140e-43de-b67e-cbb5a49b45c7",
+            "error": null
+          },
+          {
+            "operation": "search:tavily",
+            "target": "Dify 社区版 自托管 多租户 许可条款 限制",
+            "startedAt": "2026-10-25T01:47:50.929Z",
+            "durationMs": 2465,
+            "outcome": "SUCCEEDED",
+            "resultId": "7199b7be-b0fe-473a-a71c-8e20f0b4eae5",
+            "error": null
+          },
+          {
+            "operation": "read",
+            "target": "https://blog.gitcode.com/bf606b1c12983e41c0dd323a1cf419be.html",
+            "startedAt": "2026-10-25T01:47:54.879Z",
+            "durationMs": 854,
+            "outcome": "FAILED",
+            "resultId": "029ac157-1359-41e6-89ab-7900c4f0d6cf",
+            "error": "Source returned access challenge"
+          },
+          {
+            "operation": "read",
+            "target": "https://dify.ai/zh/pricing/dify-enterprise",
+            "startedAt": "2026-10-25T01:47:54.879Z",
+            "durationMs": 920,
+            "outcome": "SUCCEEDED",
+            "resultId": "1cd7e010-baa2-4bd8-af0b-42a1e73ea539",
+            "error": null
+          },
+          {
+            "operation": "read",
+            "target": "https://vdf.ai/blog/dify-vs-n8n-vs-flowise-vs-langflow",
+            "startedAt": "2026-10-25T01:47:54.879Z",
+            "durationMs": 1156,
+            "outcome": "FAILED",
+            "resultId": "f7107a4a-26f1-45c0-8e6d-16a5bfe93c91",
+            "error": "certificate has expired"
+          },
+          {
+            "operation": "read",
+            "target": "https://github.com/YFGaia/dify-plus",
+            "startedAt": "2026-10-25T01:47:54.879Z",
+            "durationMs": 1717,
+            "outcome": "SUCCEEDED",
+            "resultId": "5f0b4172-e13b-4e16-b616-612af5223550",
+            "error": null
+          },
+          {
+            "operation": "read",
+            "target": "https://dify.ai/zh/legal/end-user-license-agreement",
+            "startedAt": "2026-10-25T01:47:59.037Z",
+            "durationMs": 201,
+            "outcome": "SUCCEEDED",
+            "resultId": "b130d542-df90-4b54-a53c-76395b37dbc5",
+            "error": null
+          },
+          {
+            "operation": "read",
+            "target": "https://dify.ai/zh/pricing",
+            "startedAt": "2026-10-25T01:47:59.037Z",
+            "durationMs": 829,
+            "outcome": "SUCCEEDED",
+            "resultId": "1a57c2fd-500d-4901-99d3-c6b0305f2e34",
+            "error": null
+          },
+          {
+            "operation": "search:yuanbao",
+            "target": "Dify 多租户 实际使用 部署 经验 限制 workspace",
+            "startedAt": "2026-10-25T01:48:02.345Z",
+            "durationMs": 488,
+            "outcome": "SUCCEEDED",
+            "resultId": "399e230b-0012-49cc-b9d3-5a3caeb32d2a",
+            "error": null
+          },
+          {
+            "operation": "search:hn",
+            "target": "Dify 多租户 实际使用 部署 经验 限制 workspace",
+            "startedAt": "2026-10-25T01:48:02.345Z",
+            "durationMs": 922,
+            "outcome": "SUCCEEDED",
+            "resultId": "4f246456-065e-419b-8fd3-58b9074be700",
+            "error": null
+          },
+          {
+            "operation": "read",
+            "target": "https://blog.csdn.net/weixin_35754962/article/details/156282804",
+            "startedAt": "2026-10-25T01:48:05.770Z",
+            "durationMs": 937,
+            "outcome": "SUCCEEDED",
+            "resultId": "00bb4824-7ad8-4714-9ca5-b129c99cab42",
+            "error": null
+          },
+          {
+            "operation": "read",
+            "target": "https://dify.ai/zh/dify-enterprise",
+            "startedAt": "2026-10-25T01:48:05.770Z",
+            "durationMs": 1028,
+            "outcome": "SUCCEEDED",
+            "resultId": "782f0b08-293d-4498-b4cd-7d3e2b0ca36a",
+            "error": null
+          },
+          {
+            "operation": "read",
+            "target": "https://txtmix.com/posts/tech/dify-agentic-workflow-development-platform-guide",
+            "startedAt": "2026-10-25T01:48:05.770Z",
+            "durationMs": 1477,
+            "outcome": "SUCCEEDED",
+            "resultId": "4c5105a3-43cf-4121-a9eb-92908321b4e0",
+            "error": null
+          },
+          {
+            "operation": "read",
+            "target": "https://toolso.ai/tool/dify",
+            "startedAt": "2026-10-25T01:48:05.770Z",
+            "durationMs": 1549,
+            "outcome": "FAILED",
+            "resultId": "7b707441-8fd2-4967-bf52-a782719da3a0",
+            "error": "No readable article blocks; JavaScript shell/empty page is not original material"
+          }
+        ]
+      }
+    },
+    "generatedAt": "2026-10-25T01:49:03.900Z",
+    "contractVersion": "1.0.0"
+  },
+  "answers": [
+    {
+      "id": "58c48111-23a4-429c-aef7-b09e7a85c824",
+      "snapshotId": "1dadef1e-0604-4798-9804-999812fd8412",
+      "body": "Dify 官方《最终用户许可协议》把“服务”定义为许可方提供的 Dify 商业化版本程序及其文档、材料、电子文档，以及升级、修改版本、更新、补充内容与副本。\n适用范围：dify.ai 最终用户许可协议，未注明版本或生效日期 [1]\n\n来源报告（未独立复现）：Dify 社区二手项目 dify-plus 的仓库说明称，其基于 Dify 并遵循 Dify Open Source License（基于 Apache 2.0 并附加条件），部署、分发和商业使用前应阅读许可证。\n适用范围：dify-plus 仓库 README，未注明版本或日期 [2]\n\nDify 官方企业版页面宣称可在单个 Dify 集群上支持多业务单元独立运行，并提供租户级别的配额、计费与访问策略管理。\n适用范围：Dify 企业版，未注明版本与日期 [4]\n\n来源报告（未独立复现）：一篇技术指南称，Tenant/Workspace 是 Dify 的顶级隔离单位，对应独立成员体系与应用配置，并称在 license 层面一个租户即一个工作空间。\n适用范围：txtmix.com 技术指南，发布于 2026-05-02；未注明 Dify 版本 [5]\n\n尚不能确定：来源报告（未独立复现）：dify-plus 仓库说明称，涉及商业授权、多租户服务或品牌使用等需求，应以 Dify 官方许可条款为准并联系官方获取授权与支持。\n原句语义支持复查未通过：所给原句仅含“部署、分发和商业使用前请阅读许可证”及品牌、社区和安全联系渠道归原项目所有，未包含“涉及商业授权、多租户服务或品牌使用等需求，应以 Dify 官方许可条款为准并联系官方获取授权与支持”这一表述；该内容只出现在证据 metadata 的标题说明中，不属于被保存的原句。（条件：dify-plus 仓库 README 标题说明，未注明版本或日期）\n\n尚不能确定：已读取的官方许可条款原文（《最终用户许可协议》“服务”定义）并未说明社区版自托管在多租户使用场景下的具体许可限制。\n仅读到“服务”定义一条摘录，未覆盖许可条款全文，无法判断全文是否另有相关限制；属证据不足而非已证实缺失。（条件：仅限所读取的该条定义摘录）\n\n尚不能确定：已读取的材料没有提供 Dify 社区版自托管用于多租户服务的官方许可条款全文或直接条款，也没有提供该场景下的实际使用报告。\n许可协议仅读到“服务”定义，另有来源读取失败；检索不完整，不能据此断定材料中不存在相关条款或使用报告。（条件：本次检索所读取的摘录范围）\n\n核查缺口：\n• 阶段核查未完成：TimeoutError: Investigation operation budget exhausted；社区版自托管多租户的官方许可全文与直接条款、以及实际使用报告均未取得。\n• https://blog.gitcode.com/bf606b1c12983e41c0dd323a1cf419be.html：RESTRICTED；Source returned access challenge\n• https://vdf.ai/blog/dify-vs-n8n-vs-flowise-vs-langflow：FAILED；certificate has expired\n• https://toolso.ai/tool/dify：FAILED；No readable article blocks; JavaScript shell/empty page is not original material\n• 回答段落未通过原句语义支持核查，已移除：所给原句仅含“部署、分发和商业使用前请阅读许可证”及品牌、社区和安全联系渠道归原项目所有，未包含“涉及商业授权、多租户服务或品牌使用等需求，应以 Dify 官方许可条款为准并联系官方获取授权与支持”这一表述；该内容只出现在证据 metadata 的标题说明中，不属于被保存的原句。",
+      "citations": [
+        {
+          "marker": "[1]",
+          "claimIds": [
+            "fe31d28d-47cf-4749-9aee-9a081bc7af18"
+          ],
+          "evidenceIds": [
+            "b130d542-df90-4b54-a53c-76395b37dbc5"
+          ],
+          "quotes": [
+            {
+              "evidenceId": "b130d542-df90-4b54-a53c-76395b37dbc5",
+              "originalExcerpt": "1. “服务”指许可方提供 Dify 商业化版本程序，以及相应的文档、材料、电子文档，还包括许可方提供的任何升级、修改版本、更新、补充内容及其副本。"
+            }
+          ]
+        },
+        {
+          "marker": "[2]",
+          "claimIds": [
+            "8c5c9826-6c94-4e34-ae49-f59b986677ea"
+          ],
+          "evidenceIds": [
+            "5f0b4172-e13b-4e16-b616-612af5223550"
+          ],
+          "quotes": [
+            {
+              "evidenceId": "5f0b4172-e13b-4e16-b616-612af5223550",
+              "originalExcerpt": "本项目基于 Dify，遵循仓库内的 Dify Open Source License（基于 Apache 2.0，并附加条件）。部署、分发和商业使用前请阅读许可证。上游项目的品牌、社区和安全联系渠道归原项目所有。"
+            }
+          ]
+        },
+        {
+          "marker": "[4]",
+          "claimIds": [
+            "3d102550-7732-4cee-b559-f51484f7d828"
+          ],
+          "evidenceIds": [
+            "782f0b08-293d-4498-b4cd-7d3e2b0ca36a"
+          ],
+          "quotes": [
+            {
+              "evidenceId": "782f0b08-293d-4498-b4cd-7d3e2b0ca36a",
+              "originalExcerpt": "单个 Dify 集群，支持多业务单元独立运行。租户级别的配额、计费与访问策略管理。"
+            }
+          ]
+        },
+        {
+          "marker": "[5]",
+          "claimIds": [
+            "4bf521c0-f0f3-4909-a102-bc6abb2d2be7"
+          ],
+          "evidenceIds": [
+            "4c5105a3-43cf-4121-a9eb-92908321b4e0"
+          ],
+          "quotes": [
+            {
+              "evidenceId": "4c5105a3-43cf-4121-a9eb-92908321b4e0",
+              "originalExcerpt": "Tenant / Workspace（租户/工作空间）顶级隔离单位，对应独立成员体系与应用配置；license 层面一租户即一工作空间"
+            }
+          ]
+        }
+      ],
+      "generationConfig": {
+        "provider": "api.deepseek.com",
+        "model": "deepseek-flash",
+        "promptVersion": "a2-evidence-v4",
+        "temperature": null,
+        "thinkingMode": "DISABLED",
+        "generatedAt": "2026-10-25T01:49:03.896Z"
+      }
+    }
+  ]
+}

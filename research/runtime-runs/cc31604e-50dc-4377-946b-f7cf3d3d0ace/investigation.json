@@ -1,0 +1,32 @@
+{
+  "capturedAt": "2026-10-25T01:49:26.380Z",
+  "url": "http://127.0.0.1:3102/investigations/cc31604e-50dc-4377-946b-f7cf3d3d0ace",
+  "detail": {
+    "investigation": {
+      "id": "cc31604e-50dc-4377-946b-f7cf3d3d0ace",
+      "question": "Dify 社区版自托管为多个租户提供服务，官方许可条款和实际使用报告分别有哪些限制？",
+      "status": "SUCCEEDED",
+      "stage": "COMPLETED",
+      "error": null,
+      "createdAt": "2026-10-25T01:47:49.059Z",
+      "updatedAt": "2026-10-25T01:49:03.943Z",
+      "startedAt": "2026-10-25T01:47:49.538Z",
+      "completedAt": "2026-10-25T01:49:03.943Z",
+      "resultSnapshotId": "1dadef1e-0604-4798-9804-999812fd8412"
+    },
+    "identityConfirmation": null,
+    "retry": {
+      "allowed": false,
+      "reason": "仅失败的调查可以手动重试。",
+      "remaining": 2,
+      "expectedAttemptCount": 1
+    }
+  },
+  "observedStates": [
+    {
+      "status": "SUCCEEDED",
+      "stage": "COMPLETED",
+      "observedAt": "2026-10-25T01:49:26.378Z"
+    }
+  ]
+}

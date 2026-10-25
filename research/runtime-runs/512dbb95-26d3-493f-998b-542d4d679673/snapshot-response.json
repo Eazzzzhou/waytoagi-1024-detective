@@ -1,0 +1,848 @@
+{
+  "snapshot": {
+    "id": "65e67e53-e289-434b-bed1-812cebcc29ff",
+    "investigationId": "512dbb95-26d3-493f-998b-542d4d679673",
+    "version": 1,
+    "parentSnapshotId": null,
+    "productIdentity": {
+      "name": "AnythingLLM",
+      "officialWebsite": "https://anythingllm.com",
+      "version": null,
+      "plan": null,
+      "confirmationStatus": "CONFIRMED",
+      "confirmationBasis": [
+        {
+          "url": "https://anythingllm.com/",
+          "excerpt": "Every document becomes part of your agent's knowledge base with no data leaving your device.",
+          "retrievedAt": "2026-10-25T01:45:06.589Z",
+          "reason": "Explicit question name matches publisher domain label and freshly read page title; readable original text retained. Website self-identification, not verified legal ownership; version/plan unknown"
+        },
+        {
+          "url": "https://anythingllm.com/",
+          "excerpt": "A private AI assistant that runs entirely on your computer. No accounts, no API keys, no token limits.",
+          "retrievedAt": "2026-10-25T01:45:26.466Z",
+          "reason": "Explicit question name matches publisher domain label and freshly read page title; readable original text retained. Website self-identification, not verified legal ownership; version/plan unknown"
+        }
+      ]
+    },
+    "evidence": [
+      {
+        "id": "32568f06-ddd3-4124-b944-5037a2f06294",
+        "sourceUrl": "https://docs.anythingllm.com/mobile/overview",
+        "originalExcerpt": null,
+        "translation": null,
+        "originalLocation": null,
+        "metadata": {
+          "title": null,
+          "siteName": "docs.anythingllm.com",
+          "author": null,
+          "publishedAt": null,
+          "language": null,
+          "sourceType": "UNKNOWN",
+          "contentKind": "UNKNOWN",
+          "productVersion": null,
+          "plan": null,
+          "upstreamUrl": null,
+          "independence": "UNKNOWN",
+          "originGroupId": null,
+          "independenceReason": null
+        },
+        "retrievedAt": "2026-10-25T01:45:05.375Z",
+        "readStatus": "RESTRICTED",
+        "readError": "Source HTTP 403",
+        "contentHash": null
+      },
+      {
+        "id": "b6407630-1247-4448-bd13-96e8a0355c23",
+        "sourceUrl": "https://anythingllm.com/",
+        "originalExcerpt": "Every document becomes part of your agent's knowledge base with no data leaving your device.",
+        "translation": null,
+        "originalLocation": {
+          "kind": "TEXT",
+          "locator": "https://anythingllm.com/ :: main:first :: blocks(p,li,pre,tr,h1,h2,h3)[5]; normalized UTF-16 [0,92)",
+          "context": "Every document becomes part of your agent's knowledge base with no data leaving your device."
+        },
+        "metadata": {
+          "title": "AnythingLLM — On-device AI for productivity | Local & Private",
+          "siteName": "anythingllm.com",
+          "author": null,
+          "publishedAt": null,
+          "language": "en",
+          "sourceType": "OFFICIAL",
+          "contentKind": "OFFICIAL_CLAIM",
+          "productVersion": null,
+          "plan": null,
+          "upstreamUrl": null,
+          "independence": "SHARED_ORIGIN",
+          "originGroupId": "origin:761adf87-38d5-47ea-bf40-f7b0e1d527f7",
+          "independenceReason": "保存的相同原文/重定向URL、明确upstreamUrl、采集来源组，或同路径且同hash的www别名相连；重复读取/转载不增加独立证据数量。"
+        },
+        "retrievedAt": "2026-10-25T01:45:06.589Z",
+        "readStatus": "READ",
+        "readError": null,
+        "contentHash": "24477c4dd32c29044d7c1535c3fe6bbe860223dabe4d8161c39d810e10b2397b"
+      },
+      {
+        "id": "b9cb33bb-ce5f-4808-ad85-bdb2a34f6230",
+        "sourceUrl": "https://anythingllm.com/",
+        "originalExcerpt": "A private AI assistant that runs entirely on your computer. No accounts, no API keys, no token limits.",
+        "translation": null,
+        "originalLocation": {
+          "kind": "TEXT",
+          "locator": "https://anythingllm.com/ :: main:first :: blocks(p,li,pre,tr,h1,h2,h3)[1]; normalized UTF-16 [0,102)",
+          "context": "A private AI assistant that runs entirely on your computer. No accounts, no API keys, no token limits."
+        },
+        "metadata": {
+          "title": "AnythingLLM — On-device AI for productivity | Local & Private",
+          "siteName": "anythingllm.com",
+          "author": null,
+          "publishedAt": null,
+          "language": "en",
+          "sourceType": "OFFICIAL",
+          "contentKind": "OFFICIAL_CLAIM",
+          "productVersion": null,
+          "plan": null,
+          "upstreamUrl": null,
+          "independence": "SHARED_ORIGIN",
+          "originGroupId": "origin:761adf87-38d5-47ea-bf40-f7b0e1d527f7",
+          "independenceReason": "保存的相同原文/重定向URL、明确upstreamUrl、采集来源组，或同路径且同hash的www别名相连；重复读取/转载不增加独立证据数量。"
+        },
+        "retrievedAt": "2026-10-25T01:45:26.466Z",
+        "readStatus": "READ",
+        "readError": null,
+        "contentHash": "880524648356bc5c9a689ca22bd4bf3aad0d7d595218a7191cb4da918cf30170"
+      },
+      {
+        "id": "761adf87-38d5-47ea-bf40-f7b0e1d527f7",
+        "sourceUrl": "https://anythingllm.com/",
+        "originalExcerpt": null,
+        "translation": null,
+        "originalLocation": null,
+        "metadata": {
+          "title": null,
+          "siteName": "anythingllm.com",
+          "author": null,
+          "publishedAt": null,
+          "language": null,
+          "sourceType": "UNKNOWN",
+          "contentKind": "UNKNOWN",
+          "productVersion": null,
+          "plan": null,
+          "upstreamUrl": null,
+          "independence": "SHARED_ORIGIN",
+          "originGroupId": "origin:761adf87-38d5-47ea-bf40-f7b0e1d527f7",
+          "independenceReason": "保存的相同原文/重定向URL、明确upstreamUrl、采集来源组，或同路径且同hash的www别名相连；重复读取/转载不增加独立证据数量。"
+        },
+        "retrievedAt": "2026-10-25T01:45:08.678Z",
+        "readStatus": "FAILED",
+        "readError": "Request time budget exhausted",
+        "contentHash": null
+      }
+    ],
+    "claims": [
+      {
+        "id": "300f233c-660f-468e-be40-363efc15ed6c",
+        "statement": "AnythingLLM 官网声称该产品可完全在用户本机（计算机）上运行。",
+        "kind": "OFFICIAL_CLAIM",
+        "verificationStatus": "INSUFFICIENT",
+        "verificationReason": "本轮核查未完成：Evidence validation: supported claim has no support or unresolved refutation",
+        "scope": "AnythingLLM 官网首页，未注明版本、套餐或地域"
+      },
+      {
+        "id": "4c5a7e7d-c823-4eab-83d4-9b9b653fc542",
+        "statement": "AnythingLLM 官网声称无需账户、无需 API 密钥。",
+        "kind": "OFFICIAL_CLAIM",
+        "verificationStatus": "INSUFFICIENT",
+        "verificationReason": "本轮核查未完成：Evidence validation: supported claim has no support or unresolved refutation",
+        "scope": "AnythingLLM 官网首页，未注明版本、套餐或地域"
+      },
+      {
+        "id": "b0218969-af90-4d36-8967-0e71f92babef",
+        "statement": "AnythingLLM 官网声称文档进入知识库时不会有数据离开用户设备。",
+        "kind": "OFFICIAL_CLAIM",
+        "verificationStatus": "INSUFFICIENT",
+        "verificationReason": "本轮核查未完成：Evidence validation: supported claim has no support or unresolved refutation",
+        "scope": "涉及文档/知识库数据的处理，未注明版本、套餐或地域"
+      },
+      {
+        "id": "99366ba6-d5db-4935-8794-82cd68686084",
+        "statement": "已保存的官方首页文本未明确说明聊天内容是否需要发送给外部服务。",
+        "kind": "FACT",
+        "verificationStatus": "INSUFFICIENT",
+        "verificationReason": "本轮核查未完成：Evidence validation: supported claim has no support or unresolved refutation",
+        "scope": "仅限所提供的两段官网首页摘录"
+      }
+    ],
+    "relations": [],
+    "conflicts": [],
+    "gaps": [
+      {
+        "id": "0d99a915-8102-4c1d-afa8-2ee7c7683775",
+        "claimIds": [],
+        "kind": "INSUFFICIENT_EVIDENCE",
+        "description": "读取 https://anythingllm.com/ 未完成：TimeoutError: Investigation operation budget exhausted；已有证据保留。",
+        "searchScope": "https://anythingllm.com/"
+      },
+      {
+        "id": "0bd0ec21-70bd-46e8-8e64-31b3606a0de0",
+        "claimIds": [],
+        "kind": "INSUFFICIENT_EVIDENCE",
+        "description": "阶段核查未完成：Runtime contract rejected input/output: : custom；保留原句并在最终预算内核查。",
+        "searchScope": null
+      },
+      {
+        "id": "ad5e799e-d76a-42bd-828e-b34801cebddb",
+        "claimIds": [],
+        "kind": "READ_FAILED",
+        "description": "https://docs.anythingllm.com/mobile/overview：RESTRICTED；Source HTTP 403",
+        "searchScope": null
+      },
+      {
+        "id": "a6964f1a-2f6b-4e01-9e2e-9e656f892ee4",
+        "claimIds": [],
+        "kind": "READ_FAILED",
+        "description": "https://anythingllm.com/：FAILED；Request time budget exhausted",
+        "searchScope": null
+      },
+      {
+        "id": "22112075-4252-4731-8394-a2e172830fad",
+        "claimIds": [
+          "300f233c-660f-468e-be40-363efc15ed6c",
+          "4c5a7e7d-c823-4eab-83d4-9b9b653fc542",
+          "b0218969-af90-4d36-8967-0e71f92babef",
+          "99366ba6-d5db-4935-8794-82cd68686084"
+        ],
+        "kind": "INSUFFICIENT_EVIDENCE",
+        "description": "最终核查未完成：Evidence validation: supported claim has no support or unresolved refutation；不将尚未核验的材料强作结论。",
+        "searchScope": "AnythingLLM 是否可以完全在本机运行，聊天内容会不会必须发给外部服务？只核实官方说明。"
+      }
+    ],
+    "retrievalRecords": [
+      {
+        "id": "2e57d64d-1a9c-443a-a739-a9f88b8fc9b7",
+        "provider": "tencent-yuanbao-search-api",
+        "query": "AnythingLLM local run offline official documentation data privacy",
+        "calledAt": "2026-10-25T01:44:53.616Z",
+        "status": "SUCCEEDED",
+        "error": null,
+        "returnedSources": [
+          {
+            "url": "https://anythingllm.com/mobile?ref=aggregata.de",
+            "title": "An AI agent that lives in your pocket, not in the cloud",
+            "snippet": "An AI agent that lives in your pocket, not in the cloud AnythingLLM。An AI agent that lives in your pocket. Search the web, read your documents, write files, run jobs on a schedule, and remember what matters. Powered by a model on your phone, or any model you choose. Your data never leaves the device. Download on Google PlayDownload the .APK directly 68.6K+ downloads on Google Play Privacy focused. Local First. Everything an assistant should do, on your phone. AnythingLLM Mobile ships with the tools that make any agent useful right out the box: web search and reading, document retrieval, file generation, scheduling, personalization, calendar, location and more. Small models pick the right tool for the job so they keep a workable context window without hogging memory. Replace Gemini with you...",
+            "adoption": "REJECTED",
+            "adoptionReason": "本轮未读取；搜索摘要不是原文证据。",
+            "evidenceId": null
+          },
+          {
+            "url": "http://anythingllm.com/mobile",
+            "title": "AnythingLLM Mobile - A local-first AI agent for Android",
+            "snippet": "AnythingLLM Mobile - A local-first AI agent for Android AnythingLLM。An AI agent that lives in your pocket. Search the web, read your documents, write files, run jobs on a schedule, and remember what matters. Powered by a model on your phone, or any model you choose. Your data never leaves the device. Privacy focused. Local First. Everything an assistant should do, on your phone. AnythingLLM Mobile ships with the tools that make any agent useful right out the box: web search and reading, document retrieval, file generation, scheduling, personalization, calendar, location and more. Small models pick the right tool for the job so they keep a workable context window without hogging memory. Make AnythingLLM your phone's default assistant and long-press home in any app to bring it up. Ask about ...",
+            "adoption": "REJECTED",
+            "adoptionReason": "本轮未读取；搜索摘要不是原文证据。",
+            "evidenceId": null
+          },
+          {
+            "url": "https://anythingllm.com/?ref=aisomething.com%2F",
+            "title": "AnythingLLM The all-in-one AI application for everyone",
+            "snippet": "AnythingLLM | The all-in-one AI application for everyone AnythingLLM。The all-in-one AI application Everything great about AI in one desktop application. Chat with docs, use AI Agents, and more - full locally and offline. Leverage powerful AI tooling with no set up Supports custom models Stay local fully with our built-in LLM provider running any model you want. Or leverage enterprise models from OpenAI, Azure, AWS, and more. Use every type of document. PDFs, word documents, CSV, codebases, and so much more make up your business - now you can use them all. Even import docs from online locations Full privacy AnythingLLM comes with sensible and locally running defaults for your LLM, embedder, vector database, and storage and agents. Nothing is shared unless you allow it. Tons of features buil...",
+            "adoption": "REJECTED",
+            "adoptionReason": "本轮未读取；搜索摘要不是原文证据。",
+            "evidenceId": null
+          },
+          {
+            "url": "https://anythingllm.com/",
+            "title": "AnythingLLM",
+            "snippet": "AnythingLLM。The all-in-one AI application Everything great about AI in one desktop application. Chat with docs, use AI Agents, and more - full locally and offline. Leverage powerful AI tooling with no set up Supports custom models Stay local fully with our built-in LLM provider running any model you want. Or leverage enterprise models from OpenAI, Azure, AWS, and more. Use every type of document. PDFs, word documents, CSV, codebases, and so much more make up your business - now you can use them all. Even import docs from online locations Full privacy AnythingLLM comes with sensible and locally running defaults for your LLM, embedder, vector database, and storage and agents. Nothing is shared unless you allow it. Tons of features built-in AnythingLLM ships with a ton of benefits and feature...",
+            "adoption": "REJECTED",
+            "adoptionReason": "原文不可用：FAILED；Request time budget exhausted",
+            "evidenceId": "761adf87-38d5-47ea-bf40-f7b0e1d527f7"
+          },
+          {
+            "url": "https://anythingllm.com/",
+            "title": "AnythingLLM The all-in-one AI application for everyone",
+            "snippet": "AnythingLLM | The all-in-one AI application for everyone AnythingLLM。The all-in-one AI application The all-in-one AI application The all-in-one AI application Everything great about AI in one desktop application. Chat with docs, use AI Agents, and more - full locally and offline. Any LLM, any document, any agent, fully private. Leverage powerful AI tooling with no set up Leverage powerful AI tooling with no set up Leverage powerful AI tooling with no set up Leverage powerful AI tooling with no set up Supports custom models Stay local fully with our built-in LLM provider running any model you want. Or leverage enterprise models from OpenAI, Azure, AWS, and more. Use every type of document. PDFs, word documents, CSV, codebases, and so much more make up your business - now you can use them al...",
+            "adoption": "REJECTED",
+            "adoptionReason": "原文不可用：FAILED；Request time budget exhausted",
+            "evidenceId": "761adf87-38d5-47ea-bf40-f7b0e1d527f7"
+          },
+          {
+            "url": "https://anythingllm.com/?trk=public_post_reshare-text",
+            "title": "AnythingLLM - On-device AI for productivity Local & Private",
+            "snippet": "AnythingLLM - On-device AI for productivity | Local & Private AnythingLLM。Own your intelligence. A private AI assistant that runs entirely on your computer. No accounts, no API keys, no token limits. On-device AI that works 77MM++ Desktop Downloads 223355BB++ Tokens processed locally $$88..77MM++ Saved by users vs. cloud APIs 55MM++ Docker pulls No complex setup. Preconfigured for productivity. Document Knowledge Every document becomes part of your agent's knowledge base with no data leaving your device. Learn more about Document Knowledge Web Scraping & Search Dynamic Model Selection Background Jobs Custom Agent Skills Meeting Assistant Every call becomes context. Automatically transcribes and summarizes any meeting entirely on your computer. Action items, key decisions, and full transcri...",
+            "adoption": "REJECTED",
+            "adoptionReason": "本轮未读取；搜索摘要不是原文证据。",
+            "evidenceId": null
+          }
+        ]
+      },
+      {
+        "id": "82b3bb9f-66c1-41fd-879a-86a2d0c1830a",
+        "provider": "tavily-search-api:keyless-capped",
+        "query": "AnythingLLM local run offline official documentation data privacy",
+        "calledAt": "2026-10-25T01:44:53.616Z",
+        "status": "SUCCEEDED",
+        "error": null,
+        "returnedSources": [
+          {
+            "url": "https://www.youtube.com/watch?v=J6NJCg-hI9c",
+            "title": "AnythingLLM - Chat with Any Docs with full Privacy|Runs Offline|FREE LOCAL LLMs + NO Code #ai",
+            "snippet": "AnythingLLM is an innovative, open-source document chatbot designed to cater to your needs. Whether you're an individual seeking intelligent conversations or a team looking to construct knowledge bases from existing documents, AnythingLLM has you covered. [...] With support for both multi-user and single-user environments, AnythingLLM offers unparalleled privacy controls and accommodates multiple users seamlessly within the same instance. Plus, it comes with a user-friendly desktop application and offers versatile deployment options, including Docker, AWS, Render, and more. [...] LINKS: Download AnythingLLM Desktop: AnythingLLM Docs: AnythingLLM Github: • 1-Bit LLM INSTALLATION| 7B LOCAL LLMs in 1... • Vectorshift:Build and Deploy AI Apps with ... • How I Built the Fastest FULLY LOCAL RAG PD...",
+            "adoption": "REJECTED",
+            "adoptionReason": "本轮未读取；搜索摘要不是原文证据。",
+            "evidenceId": null
+          },
+          {
+            "url": "https://www.datacamp.com/blog/anythingllm",
+            "title": "AnythingLLM: A Complete Guide to Setup, Features, and Use Cases",
+            "snippet": "DimensionAnythingLLMChatGPT Data privacyFull ownership with local models Data sent to OpenAI servers CostFree (self-hosted); cloud from $50/month Free tier; Plus $20/month; Pro $200/month CustomizationAny LLM, embedder, vector DB, agents Limited to OpenAI models Offline capabilityYes (with local models)No Setup effortRequires installation Zero setup, browser-based Document chatFull RAG control (thresholds, chunking, reranking)File uploads with usage limits [...] Local deployment keeps all data on your device. (I have more details in the third FAQ down below.) When using cloud providers, only prompts and retrieved context are sent during inference. Vectors and embeddings stay on your server. Be deliberate about which workspaces use cloud versus local models. [...] As you'll see in the FAQ, AnythingLLM is lightweight: around 2GB RAM, a 2-core CPU, and about 5GB of storage. Running a local LLM alongside it requires more (a 7B model typically needs 8GB+ RAM/VRAM). For this tutorial, I use a 3B model that works on limited hardware. Make sure Docker is installed and running before starting. Windows users also need WSL. ### Step 1: Install Ollama and pull models Download Ollama from ollama.com/download, then pull a chat model and an embedding model:",
+            "adoption": "REJECTED",
+            "adoptionReason": "本轮未读取；搜索摘要不是原文证据。",
+            "evidenceId": null
+          },
+          {
+            "url": "https://anythingllm.com/",
+            "title": "AnythingLLM — On-device AI for productivity | Local & Private",
+            "snippet": "AnythingLLM is fully open-source and licensed for organizational use. Self-host a multi-user deployment on your own servers, or just use the desktop app. Either way, you don't rent your intelligence and your data is yours. 67k+ GitHub Stars 200+ Contributors 5M+ Docker pulls GitHubSelf-host ## Don't rent intelligence. Own it. Break free from rate-limits and token costs. Download AnythingLLM and get a privacy-focused, extensible, and capable AI agent running on your device in minutes. [...] Chat with docs, do research, build workflows, and more — all running locally and on device. No cloud API key needed. 4 ### Scale to infinity The custom tool builder and developer API make it easy to fit AnythingLLM to your exact needs - no extra bloat. Also on Android ## The same agent, in your pocket. [...] AnythingLLM Download # Own your intelligence. A private AI assistant that runs entirely on your computer. No accounts, no API keys, no token limits. Download Free67k+ Stars On-device AI that works 0M+ Desktop Downloads 000B+ Tokens processed locally $0.0M+ Saved by users vs. cloud APIs 0M+ Docker pulls No complex setup. ## Preconfigured for productivity. Every document becomes part of your agent's knowledge base with no data leaving your device.",
+            "adoption": "REJECTED",
+            "adoptionReason": "原文不可用：FAILED；Request time budget exhausted",
+            "evidenceId": "761adf87-38d5-47ea-bf40-f7b0e1d527f7"
+          },
+          {
+            "url": "https://medium.com/@m.tugcezile/build-your-offline-ai-assistant-with-anythingllm-ollama-and-rag-0ca601c936ae",
+            "title": "Build Your Offline AI Assistant with AnythingLLM, Ollama, and RAG",
+            "snippet": "With your internal documents and workspace setup, you now have an AI assistant that understands your company’s specific workflows, can answer domain-specific questions, and operates entirely offline — ensuring full control and privacy. Press enter or click to view image in full size Image 7 AnythingLLM also provides a built-in Developer API, allowing you to manage and test your instance programmatically — just like in the screenshot above. [...] Building your own offline RAG-powered assistant doesn’t just protect your data — it transforms the way you work. From analyzing internal RPA documentation to answering real-time Orchestrator status queries, you now have a personal agent that’s always available, fully private, and infinitely extensible. The next generation of automation isn’t in the cloud — it’s right on your machine. [...] A _“Finance Automation”_ workspace accessible only by the finance RPA team. A _“Support Processes”_ workspace shared with service desk managers. A _“Tech Analysis”_ workspace limited to developers. This structure helps maintain both data privacy and focused AI responses within the same organization. ### 🔍 Now your AI can search and respond based on your documents:",
+            "adoption": "REJECTED",
+            "adoptionReason": "本轮未读取；搜索摘要不是原文证据。",
+            "evidenceId": null
+          },
+          {
+            "url": "https://docs.anythingllm.com/mobile/overview",
+            "title": "Introduction ~ AnythingLLM",
+            "snippet": "Chat with local SLM - Chat with your local SLM (small language model) on your phone. Supports both reasoning and non-reasoning models. Change models on the fly - Easily swap between different models Workspace and Threads - Create workspaces and threads to organize your chats On device RAG - Locally process your documents and use them in your chats all fully offline [...] Currently, to use custom agent tools, MCPs or otherwise, you should use the sync feature with AnythingLLM Desktop or AnythingLLM Cloud. Customization of agent tools on mobile standalone is not yet supported. Privacy PolicyTerms of Service [...] ️💡 Note: For AnythingLLM Desktop you need to enable \"Enable Network Discovery\" in the Settings > \"Admin\" > \"General\" page so that the Desktop app is available on the LAN via 0.0.0.0 bindings. AnythingLLM Mobile while functional and complete standalone, is designed to be also be a companion to AnythingLLM Desktop and AnythingLLM Cloud. You can sync your chats, workspaces, and threads with AnythingLLM Desktop or AnythingLLM Cloud/Self-hosted instances to leverage the full power of AnythingLLM.",
+            "adoption": "REJECTED",
+            "adoptionReason": "原文不可用：RESTRICTED；Source HTTP 403",
+            "evidenceId": "32568f06-ddd3-4124-b944-5037a2f06294"
+          },
+          {
+            "url": "https://finance.yahoo.com/news/inoxoft-launches-offline-ai-tool-203000054.html",
+            "title": "Inoxoft Launches Offline AI Tool for On-Device Text Classification",
+            "snippet": "Built over a year by Inoxoft's AI and ML engineering team, WhiteLightning was created to address a growing need: delivering intelligent, privacy-safe NLP to edge devices, embedded systems, and offline environments. Using a novel teacher-student approach, the tool distills LLM-generated synthetic data into compact ONNX models under 1 MB in size, ready to run anywhere. [...] For developers who need real-world NLP—fast, free, and fully offline—WhiteLightning offers a clean, powerful alternative to hosted LLMs. Contact: pr@inoxoft.com A photo accompanying this announcement is available at Terms and Privacy Policy Privacy Dashboard More Info ## Recommended Stories [...] Under the hood LLM-to-edge distillation. Converts task prompts into synthetic data, then a fast ONNX model. CLI-first experience. Simple Docker-based tool, one command to generate classifiers. Multi-language runtime compatibility. Supports Rust, Swift, Node.js, Dart, and more. GitHub-native DevOps. CI/CD with Flake8, Pytest, pre-commit hooks, test matrix in GitHub Actions Secure by design – No local Python dependencies, environment-variable-based API handling.",
+            "adoption": "REJECTED",
+            "adoptionReason": "本轮未读取；搜索摘要不是原文证据。",
+            "evidenceId": null
+          }
+        ]
+      }
+    ],
+    "verificationAudit": {
+      "modelCalls": [
+        {
+          "provider": "api.deepseek.com",
+          "model": "deepseek-flash",
+          "promptVersion": "a2-evidence-v4",
+          "temperature": null,
+          "thinkingMode": "DISABLED",
+          "generatedAt": "2026-10-25T01:44:53.609Z",
+          "id": "6c00fe57-4e12-4a31-bfa1-2b177662670b",
+          "purpose": "investigation-initial-decision",
+          "startedAt": "2026-10-25T01:44:52.543Z",
+          "durationMs": 1067,
+          "outcome": "SUCCEEDED",
+          "inputTokens": 1335,
+          "outputTokens": 107
+        },
+        {
+          "provider": "api.deepseek.com",
+          "model": "deepseek-flash",
+          "promptVersion": "a2-evidence-v4",
+          "temperature": null,
+          "thinkingMode": "DISABLED",
+          "generatedAt": "2026-10-25T01:44:58.728Z",
+          "id": "d1eeaba8-af29-4760-8d5f-5c936d1c3a0b",
+          "purpose": "investigation-evidence-decision",
+          "startedAt": "2026-10-25T01:44:56.982Z",
+          "durationMs": 1746,
+          "outcome": "SUCCEEDED",
+          "inputTokens": 4962,
+          "outputTokens": 204
+        },
+        {
+          "provider": "api.deepseek.com",
+          "model": "deepseek-flash",
+          "promptVersion": "a2-evidence-v4",
+          "temperature": null,
+          "thinkingMode": "DISABLED",
+          "generatedAt": "2026-10-25T01:45:08.671Z",
+          "id": "c04b4ac1-f0ea-4b39-8b34-ef163ffd8145",
+          "purpose": "investigation-evidence-decision",
+          "startedAt": "2026-10-25T01:45:06.629Z",
+          "durationMs": 2042,
+          "outcome": "SUCCEEDED",
+          "inputTokens": 5828,
+          "outputTokens": 257
+        },
+        {
+          "provider": "api.deepseek.com",
+          "model": "deepseek-flash",
+          "promptVersion": "a2-evidence-v4",
+          "temperature": null,
+          "thinkingMode": "DISABLED",
+          "generatedAt": "2026-10-25T01:45:22.350Z",
+          "id": "6ac93602-421a-436f-a5e4-a064dd1d69f6",
+          "purpose": "investigation-evidence-decision",
+          "startedAt": "2026-10-25T01:45:20.690Z",
+          "durationMs": 1661,
+          "outcome": "SUCCEEDED",
+          "inputTokens": 6198,
+          "outputTokens": 250
+        },
+        {
+          "provider": "api.deepseek.com",
+          "model": "deepseek-flash",
+          "promptVersion": "a2-evidence-v4",
+          "temperature": null,
+          "thinkingMode": "DISABLED",
+          "generatedAt": "2026-10-25T01:45:28.256Z",
+          "id": "b9d7baf0-14da-43fe-a36a-03c4853ef765",
+          "purpose": "investigation-evidence-decision",
+          "startedAt": "2026-10-25T01:45:26.485Z",
+          "durationMs": 1770,
+          "outcome": "SUCCEEDED",
+          "inputTokens": 7055,
+          "outputTokens": 250
+        },
+        {
+          "provider": "api.deepseek.com",
+          "model": "deepseek-flash",
+          "promptVersion": "a2-evidence-v4",
+          "temperature": null,
+          "thinkingMode": "DISABLED",
+          "generatedAt": "2026-10-25T01:45:30.509Z",
+          "id": "f04b85f5-57c3-4295-8866-e606d7574e22",
+          "purpose": "investigation-evidence-decision",
+          "startedAt": "2026-10-25T01:45:28.256Z",
+          "durationMs": 2253,
+          "outcome": "SUCCEEDED",
+          "inputTokens": 7331,
+          "outputTokens": 295
+        },
+        {
+          "provider": "api.deepseek.com",
+          "model": "deepseek-flash",
+          "promptVersion": "a2-evidence-v4",
+          "temperature": null,
+          "thinkingMode": "DISABLED",
+          "generatedAt": "2026-10-25T01:45:31.817Z",
+          "id": "981ff724-10b1-45ef-a0a2-f87836e0bafd",
+          "purpose": "claim-extraction",
+          "startedAt": "2026-10-25T01:45:30.532Z",
+          "durationMs": 1286,
+          "outcome": "SUCCEEDED",
+          "inputTokens": 1438,
+          "outputTokens": 163
+        },
+        {
+          "provider": "api.deepseek.com",
+          "model": "deepseek-flash",
+          "promptVersion": "a2-evidence-v4",
+          "temperature": null,
+          "thinkingMode": "DISABLED",
+          "generatedAt": "2026-10-25T01:45:36.521Z",
+          "id": "ac70c52a-a72d-4ba8-9168-0a5d82827119",
+          "purpose": "claim-evidence-verification",
+          "startedAt": "2026-10-25T01:45:31.819Z",
+          "durationMs": 4703,
+          "outcome": "SUCCEEDED",
+          "inputTokens": 3570,
+          "outputTokens": 1036
+        },
+        {
+          "provider": "api.deepseek.com",
+          "model": "deepseek-flash",
+          "promptVersion": "a2-evidence-v4",
+          "temperature": null,
+          "thinkingMode": "DISABLED",
+          "generatedAt": "2026-10-25T01:45:38.071Z",
+          "id": "03dc4556-f20a-44df-bff1-22cff8263a86",
+          "purpose": "claim-extraction",
+          "startedAt": "2026-10-25T01:45:36.536Z",
+          "durationMs": 1535,
+          "outcome": "SUCCEEDED",
+          "inputTokens": 1546,
+          "outputTokens": 185
+        },
+        {
+          "provider": "api.deepseek.com",
+          "model": "deepseek-flash",
+          "promptVersion": "a2-evidence-v4",
+          "temperature": null,
+          "thinkingMode": "DISABLED",
+          "generatedAt": "2026-10-25T01:45:43.109Z",
+          "id": "c685b9e0-1098-4b03-83a4-4d6aae54e00d",
+          "purpose": "claim-evidence-verification",
+          "startedAt": "2026-10-25T01:45:38.072Z",
+          "durationMs": 5037,
+          "outcome": "SUCCEEDED",
+          "inputTokens": 3847,
+          "outputTokens": 1156
+        }
+      ],
+      "review": {
+        "status": "NOT_CONFIGURED",
+        "reason": "未配置第二模型；不声称完成独立模型复核或精度提高。",
+        "independentAssessment": null,
+        "findings": []
+      },
+      "citationChecks": [],
+      "followup": {
+        "queriesUsed": 0,
+        "maxQueries": 2,
+        "stopReason": "已取得官网原文两段：'A private AI assistant that runs entirely on your computer. No accounts, no API keys, no token limits.' 和 'Every document becomes part of your agent's knowledge base with no data leaving your device.'，足以回答是否可本机运行及数据不外发的官方立场。官网同页重读已多次超时，不再重复；关于选用外部模型时聊天内容外发的明确条件官方原句未完整取得，作为缺口说明。"
+      },
+      "investigationLoop": {
+        "startedAt": "2026-10-25T01:44:52.538Z",
+        "durationMs": 50580,
+        "totalBudgetMs": 180000,
+        "answerReserveMs": 45000,
+        "maxSearchRounds": 3,
+        "searchRounds": 1,
+        "maxReads": 10,
+        "readsUsed": 4,
+        "stopReason": "已取得官网原文两段：'A private AI assistant that runs entirely on your computer. No accounts, no API keys, no token limits.' 和 'Every document becomes part of your agent's knowledge base with no data leaving your device.'，足以回答是否可本机运行及数据不外发的官方立场。官网同页重读已多次超时，不再重复；关于选用外部模型时聊天内容外发的明确条件官方原句未完整取得，作为缺口说明。",
+        "httpAttempts": [
+          {
+            "url": "https://api.wsa.cloud.tencent.com/SearchPro",
+            "method": "POST",
+            "startedAt": "2026-10-25T01:44:53.616Z",
+            "finishedAt": "2026-10-25T01:44:54.033Z",
+            "requestSent": true,
+            "status": 200,
+            "error": null,
+            "ownerId": "2e57d64d-1a9c-443a-a739-a9f88b8fc9b7"
+          },
+          {
+            "url": "https://api.tavily.com/search",
+            "method": "POST",
+            "startedAt": "2026-10-25T01:44:53.616Z",
+            "finishedAt": "2026-10-25T01:44:56.980Z",
+            "requestSent": true,
+            "status": 200,
+            "error": null,
+            "ownerId": "82b3bb9f-66c1-41fd-879a-86a2d0c1830a"
+          },
+          {
+            "url": "https://anythingllm.com/",
+            "method": "GET",
+            "startedAt": "2026-10-25T01:44:58.735Z",
+            "finishedAt": "2026-10-25T01:45:06.589Z",
+            "requestSent": true,
+            "status": 200,
+            "error": null,
+            "ownerId": "b6407630-1247-4448-bd13-96e8a0355c23"
+          },
+          {
+            "url": "https://docs.anythingllm.com/mobile/overview",
+            "method": "GET",
+            "startedAt": "2026-10-25T01:44:58.735Z",
+            "finishedAt": "2026-10-25T01:45:05.375Z",
+            "requestSent": true,
+            "status": 403,
+            "error": null,
+            "ownerId": "32568f06-ddd3-4124-b944-5037a2f06294"
+          },
+          {
+            "url": "https://anythingllm.com/",
+            "method": "GET",
+            "startedAt": "2026-10-25T01:45:08.678Z",
+            "finishedAt": "2026-10-25T01:45:20.688Z",
+            "requestSent": true,
+            "status": 200,
+            "error": "Error: The operation was aborted",
+            "ownerId": "761adf87-38d5-47ea-bf40-f7b0e1d527f7"
+          },
+          {
+            "url": "https://anythingllm.com/",
+            "method": "GET",
+            "startedAt": "2026-10-25T01:45:22.356Z",
+            "finishedAt": "2026-10-25T01:45:26.466Z",
+            "requestSent": true,
+            "status": 200,
+            "error": null,
+            "ownerId": "b9cb33bb-ce5f-4808-ad85-bdb2a34f6230"
+          }
+        ],
+        "collectionDiagnostics": [],
+        "decisions": [
+          {
+            "step": 1,
+            "decidedAt": "2026-10-25T01:44:53.610Z",
+            "remainingMs": 178928,
+            "decision": {
+              "action": "SEARCH",
+              "query": "AnythingLLM local run offline official documentation data privacy",
+              "entries": [
+                "yuanbao",
+                "tavily"
+              ],
+              "readUrls": [],
+              "reason": "需要先找到 AnythingLLM 官方文档中关于本机/离线运行和聊天数据是否发往外部服务的说明。",
+              "observedGap": "尚无任何证据，身份和官网未知；需先检索官方资料。",
+              "basisEvidenceIds": [],
+              "basisRecordIds": [],
+              "clarification": null,
+              "discoveredIdentity": null
+            },
+            "availableEvidenceIds": [],
+            "availableRecordIds": [],
+            "outcome": "EXECUTED",
+            "detail": "实际入口：yuanbao,tavily；返回记录：2e57d64d-1a9c-443a-a739-a9f88b8fc9b7:SUCCEEDED,82b3bb9f-66c1-41fd-879a-86a2d0c1830a:SUCCEEDED。"
+          },
+          {
+            "step": 2,
+            "decidedAt": "2026-10-25T01:44:58.728Z",
+            "remainingMs": 173810,
+            "decision": {
+              "action": "READ",
+              "query": "本地运行 隐私 离线 local privacy no data leaving device",
+              "entries": [],
+              "readUrls": [
+                "https://anythingllm.com/",
+                "https://docs.anythingllm.com/mobile/overview"
+              ],
+              "reason": "官网首页和官方文档概览均声称本地/离线运行与数据私有；需读取原文核实“完全本机运行”和“聊天内容是否必须外发”的官方表述。",
+              "observedGap": "目前只有搜索摘要，没有保存的官方原句，无法核实具体措辞和条件（如选用外部模型时是否发送）。",
+              "basisEvidenceIds": [],
+              "basisRecordIds": [
+                "2e57d64d-1a9c-443a-a739-a9f88b8fc9b7",
+                "82b3bb9f-66c1-41fd-879a-86a2d0c1830a"
+              ],
+              "clarification": null,
+              "discoveredIdentity": null
+            },
+            "availableEvidenceIds": [],
+            "availableRecordIds": [
+              "2e57d64d-1a9c-443a-a739-a9f88b8fc9b7",
+              "82b3bb9f-66c1-41fd-879a-86a2d0c1830a"
+            ],
+            "outcome": "EXECUTED",
+            "detail": "已尝试读取：https://anythingllm.com/,https://docs.anythingllm.com/mobile/overview；累计保存2份原文状态。"
+          },
+          {
+            "step": 3,
+            "decidedAt": "2026-10-25T01:45:08.671Z",
+            "remainingMs": 163866,
+            "decision": {
+              "action": "READ",
+              "query": "runs entirely on your computer no data leaving device",
+              "entries": [],
+              "readUrls": [
+                "https://anythingllm.com/"
+              ],
+              "reason": "官网首页已保存的短引只覆盖“文档知识库数据不离开设备”，尚未保存“可完全本机运行/离线”和“聊天内容何时外发”的官方原句（摘要提到内置本地LLM、选用OpenAI等外部模型时才会共享）。需对同页定向重读，补全这两点官方措辞。",
+              "observedGap": "缺少官方原文明确：(1) 是否可不依赖云端完全本机/离线运行；(2) 聊天内容是否必须发给外部服务，还是只有选用外部模型时才会发送。",
+              "basisEvidenceIds": [
+                "b6407630-1247-4448-bd13-96e8a0355c23"
+              ],
+              "basisRecordIds": [
+                "2e57d64d-1a9c-443a-a739-a9f88b8fc9b7",
+                "82b3bb9f-66c1-41fd-879a-86a2d0c1830a"
+              ],
+              "clarification": null,
+              "discoveredIdentity": null
+            },
+            "availableEvidenceIds": [
+              "32568f06-ddd3-4124-b944-5037a2f06294",
+              "b6407630-1247-4448-bd13-96e8a0355c23"
+            ],
+            "availableRecordIds": [
+              "2e57d64d-1a9c-443a-a739-a9f88b8fc9b7",
+              "82b3bb9f-66c1-41fd-879a-86a2d0c1830a"
+            ],
+            "outcome": "EXECUTED",
+            "detail": "已尝试读取：https://anythingllm.com/；累计保存2份原文状态。"
+          },
+          {
+            "step": 4,
+            "decidedAt": "2026-10-25T01:45:22.350Z",
+            "remainingMs": 150187,
+            "decision": {
+              "action": "READ",
+              "query": "runs entirely on your computer no data leaving device built-in LLM provider OpenAI",
+              "entries": [],
+              "readUrls": [
+                "https://anythingllm.com/"
+              ],
+              "reason": "官网首页先前已保存短引仅覆盖文档知识库不外发；摘要提到内置本地LLM与可选OpenAI等外部模型。需对同页定向重读，补全“可完全本机运行”和“聊天内容是否必须外发/仅在选用外部模型时外发”的官方原句。",
+              "observedGap": "缺少官方原文明确两点：是否能不依赖云端完全本机/离线运行；聊天内容是否必须发给外部服务，或仅在选择外部模型时发送。",
+              "basisEvidenceIds": [
+                "b6407630-1247-4448-bd13-96e8a0355c23"
+              ],
+              "basisRecordIds": [
+                "2e57d64d-1a9c-443a-a739-a9f88b8fc9b7",
+                "82b3bb9f-66c1-41fd-879a-86a2d0c1830a"
+              ],
+              "clarification": null,
+              "discoveredIdentity": null
+            },
+            "availableEvidenceIds": [
+              "32568f06-ddd3-4124-b944-5037a2f06294",
+              "b6407630-1247-4448-bd13-96e8a0355c23"
+            ],
+            "availableRecordIds": [
+              "2e57d64d-1a9c-443a-a739-a9f88b8fc9b7",
+              "82b3bb9f-66c1-41fd-879a-86a2d0c1830a"
+            ],
+            "outcome": "EXECUTED",
+            "detail": "已尝试读取：https://anythingllm.com/；累计保存4份原文状态。"
+          },
+          {
+            "step": 5,
+            "decidedAt": "2026-10-25T01:45:28.256Z",
+            "remainingMs": 144282,
+            "decision": {
+              "action": "READ",
+              "query": "built-in LLM provider local offline OpenAI Azure nothing is shared",
+              "entries": [],
+              "readUrls": [
+                "https://anythingllm.com/"
+              ],
+              "reason": "已保存的官网原句确认“完全在电脑上运行、无账号无API密钥”和“文档数据不离开设备”，但还缺官方对“聊天内容是否必须外发”的明确条件说明（摘要提到内置本地LLM与可选OpenAI等外部模型、Nothing is shared unless you allow it）。对同页定向重读以补齐这段官方措辞。",
+              "observedGap": "缺少官方原文明确：聊天内容是否必须发给外部服务，还是仅当用户主动选用OpenAI/Azure等外部模型时才发送。",
+              "basisEvidenceIds": [
+                "b9cb33bb-ce5f-4808-ad85-bdb2a34f6230",
+                "b6407630-1247-4448-bd13-96e8a0355c23"
+              ],
+              "basisRecordIds": [
+                "2e57d64d-1a9c-443a-a739-a9f88b8fc9b7"
+              ],
+              "clarification": null,
+              "discoveredIdentity": null
+            },
+            "availableEvidenceIds": [
+              "32568f06-ddd3-4124-b944-5037a2f06294",
+              "b6407630-1247-4448-bd13-96e8a0355c23",
+              "b9cb33bb-ce5f-4808-ad85-bdb2a34f6230",
+              "761adf87-38d5-47ea-bf40-f7b0e1d527f7"
+            ],
+            "availableRecordIds": [
+              "2e57d64d-1a9c-443a-a739-a9f88b8fc9b7",
+              "82b3bb9f-66c1-41fd-879a-86a2d0c1830a"
+            ],
+            "outcome": "REJECTED",
+            "detail": "没有未读取的已发现URL，或读取预算耗尽。"
+          },
+          {
+            "step": 6,
+            "decidedAt": "2026-10-25T01:45:30.509Z",
+            "remainingMs": 142028,
+            "decision": {
+              "action": "FINISH",
+              "query": null,
+              "entries": [],
+              "readUrls": [],
+              "reason": "已取得官网原文两段：'A private AI assistant that runs entirely on your computer. No accounts, no API keys, no token limits.' 和 'Every document becomes part of your agent's knowledge base with no data leaving your device.'，足以回答是否可本机运行及数据不外发的官方立场。官网同页重读已多次超时，不再重复；关于选用外部模型时聊天内容外发的明确条件官方原句未完整取得，作为缺口说明。",
+              "observedGap": "缺少官方原文明确表述'聊天内容是否必须外发，还是仅在用户选用OpenAI/Azure等外部模型时才发送'的条件措辞；官网首页多次定向重读超时，文档概览页403。",
+              "basisEvidenceIds": [
+                "b9cb33bb-ce5f-4808-ad85-bdb2a34f6230",
+                "b6407630-1247-4448-bd13-96e8a0355c23"
+              ],
+              "basisRecordIds": [
+                "2e57d64d-1a9c-443a-a739-a9f88b8fc9b7",
+                "82b3bb9f-66c1-41fd-879a-86a2d0c1830a"
+              ],
+              "clarification": null,
+              "discoveredIdentity": null
+            },
+            "availableEvidenceIds": [
+              "32568f06-ddd3-4124-b944-5037a2f06294",
+              "b6407630-1247-4448-bd13-96e8a0355c23",
+              "b9cb33bb-ce5f-4808-ad85-bdb2a34f6230",
+              "761adf87-38d5-47ea-bf40-f7b0e1d527f7"
+            ],
+            "availableRecordIds": [
+              "2e57d64d-1a9c-443a-a739-a9f88b8fc9b7",
+              "82b3bb9f-66c1-41fd-879a-86a2d0c1830a"
+            ],
+            "outcome": "STOPPED",
+            "detail": "已取得官网原文两段：'A private AI assistant that runs entirely on your computer. No accounts, no API keys, no token limits.' 和 'Every document becomes part of your agent's knowledge base with no data leaving your device.'，足以回答是否可本机运行及数据不外发的官方立场。官网同页重读已多次超时，不再重复；关于选用外部模型时聊天内容外发的明确条件官方原句未完整取得，作为缺口说明。"
+          }
+        ],
+        "collectionCalls": [
+          {
+            "operation": "search:yuanbao",
+            "target": "AnythingLLM local run offline official documentation data privacy",
+            "startedAt": "2026-10-25T01:44:53.615Z",
+            "durationMs": 420,
+            "outcome": "SUCCEEDED",
+            "resultId": "2e57d64d-1a9c-443a-a739-a9f88b8fc9b7",
+            "error": null
+          },
+          {
+            "operation": "search:tavily",
+            "target": "AnythingLLM local run offline official documentation data privacy",
+            "startedAt": "2026-10-25T01:44:53.615Z",
+            "durationMs": 3366,
+            "outcome": "SUCCEEDED",
+            "resultId": "82b3bb9f-66c1-41fd-879a-86a2d0c1830a",
+            "error": null
+          },
+          {
+            "operation": "read",
+            "target": "https://docs.anythingllm.com/mobile/overview",
+            "startedAt": "2026-10-25T01:44:58.735Z",
+            "durationMs": 6641,
+            "outcome": "FAILED",
+            "resultId": "32568f06-ddd3-4124-b944-5037a2f06294",
+            "error": "Source HTTP 403"
+          },
+          {
+            "operation": "read",
+            "target": "https://anythingllm.com/",
+            "startedAt": "2026-10-25T01:44:58.735Z",
+            "durationMs": 7894,
+            "outcome": "SUCCEEDED",
+            "resultId": "b6407630-1247-4448-bd13-96e8a0355c23",
+            "error": null
+          },
+          {
+            "operation": "read",
+            "target": "https://anythingllm.com/",
+            "startedAt": "2026-10-25T01:45:08.678Z",
+            "durationMs": 12011,
+            "outcome": "FAILED",
+            "resultId": null,
+            "error": "TimeoutError: Investigation operation budget exhausted"
+          },
+          {
+            "operation": "read",
+            "target": "https://anythingllm.com/",
+            "startedAt": "2026-10-25T01:45:22.356Z",
+            "durationMs": 4129,
+            "outcome": "SUCCEEDED",
+            "resultId": "b9cb33bb-ce5f-4808-ad85-bdb2a34f6230",
+            "error": null
+          }
+        ]
+      }
+    },
+    "generatedAt": "2026-10-25T01:45:43.117Z",
+    "contractVersion": "1.0.0"
+  },
+  "answers": [
+    {
+      "id": "9c98393d-8c1f-4437-b96c-18448fb13a1d",
+      "snapshotId": "65e67e53-e289-434b-bed1-812cebcc29ff",
+      "body": "尚不能确定：AnythingLLM 官网声称该产品可完全在用户本机（计算机）上运行。\n本轮核查未完成：Evidence validation: supported claim has no support or unresolved refutation（条件：AnythingLLM 官网首页，未注明版本、套餐或地域）\n\n尚不能确定：AnythingLLM 官网声称无需账户、无需 API 密钥。\n本轮核查未完成：Evidence validation: supported claim has no support or unresolved refutation（条件：AnythingLLM 官网首页，未注明版本、套餐或地域）\n\n尚不能确定：AnythingLLM 官网声称文档进入知识库时不会有数据离开用户设备。\n本轮核查未完成：Evidence validation: supported claim has no support or unresolved refutation（条件：涉及文档/知识库数据的处理，未注明版本、套餐或地域）\n\n尚不能确定：已保存的官方首页文本未明确说明聊天内容是否需要发送给外部服务。\n本轮核查未完成：Evidence validation: supported claim has no support or unresolved refutation（条件：仅限所提供的两段官网首页摘录）\n\n核查缺口：\n• 读取 https://anythingllm.com/ 未完成：TimeoutError: Investigation operation budget exhausted；已有证据保留。\n• 阶段核查未完成：Runtime contract rejected input/output: : custom；保留原句并在最终预算内核查。\n• https://docs.anythingllm.com/mobile/overview：RESTRICTED；Source HTTP 403\n• https://anythingllm.com/：FAILED；Request time budget exhausted\n• 最终核查未完成：Evidence validation: supported claim has no support or unresolved refutation；不将尚未核验的材料强作结论。",
+      "citations": [],
+      "generationConfig": {
+        "provider": "api.deepseek.com",
+        "model": "deepseek-flash",
+        "promptVersion": "a2-evidence-v4",
+        "temperature": null,
+        "thinkingMode": "DISABLED",
+        "generatedAt": "2026-10-25T01:45:43.116Z"
+      }
+    }
+  ]
+}

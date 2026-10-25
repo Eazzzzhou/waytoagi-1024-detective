@@ -1,0 +1,60 @@
+{
+  "scope": "Real browser submission, actual services, existing application DB and standalone Worker; no case/source injection",
+  "question": "DeepSeek API 的上下文长度是多少？",
+  "commit": "f99d8a2e5b9470fd00c30cab3e79b178208c3c23",
+  "id": "c157cd95-c4ed-4cba-b590-da1233c9af5a",
+  "detail": {
+    "investigation": {
+      "id": "c157cd95-c4ed-4cba-b590-da1233c9af5a",
+      "question": "DeepSeek API 的上下文长度是多少？",
+      "status": "SUCCEEDED",
+      "stage": "COMPLETED",
+      "error": null,
+      "createdAt": "2026-10-25T01:43:31.842Z",
+      "updatedAt": "2026-10-25T01:43:51.662Z",
+      "startedAt": "2026-10-25T01:43:32.356Z",
+      "completedAt": "2026-10-25T01:43:51.662Z",
+      "resultSnapshotId": "ed4d1d80-784f-4354-811a-d106414f4cc7"
+    },
+    "identityConfirmation": null,
+    "retry": {
+      "allowed": false,
+      "reason": "仅失败的调查可以手动重试。",
+      "remaining": 2,
+      "expectedAttemptCount": 1
+    }
+  },
+  "states": [
+    {
+      "state": "PENDING:CREATED",
+      "at": "2026-10-25T01:43:31.983Z"
+    },
+    {
+      "state": "RUNNING:IDENTITY",
+      "at": "2026-10-25T01:43:33.002Z"
+    },
+    {
+      "state": "RUNNING:RETRIEVAL",
+      "at": "2026-10-25T01:43:34.016Z"
+    },
+    {
+      "state": "RUNNING:SOURCE_FETCH",
+      "at": "2026-10-25T01:43:38.068Z"
+    },
+    {
+      "state": "RUNNING:VERIFICATION",
+      "at": "2026-10-25T01:43:44.147Z"
+    },
+    {
+      "state": "RUNNING:ANSWER",
+      "at": "2026-10-25T01:43:49.203Z"
+    },
+    {
+      "state": "SUCCEEDED:COMPLETED",
+      "at": "2026-10-25T01:43:52.250Z"
+    }
+  ],
+  "consoleErrors": [],
+  "url": "http://127.0.0.1:3102/investigations/c157cd95-c4ed-4cba-b590-da1233c9af5a#evidence-687ebf20-5629-48ff-a313-af24f874cb81",
+  "title": "案卷 · AI 产品调查"
+}

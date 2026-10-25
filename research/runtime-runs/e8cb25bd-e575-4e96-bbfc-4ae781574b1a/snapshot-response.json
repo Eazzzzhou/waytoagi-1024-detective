@@ -1,0 +1,1501 @@
+{
+  "snapshot": {
+    "id": "7e0c155b-1ed6-49ae-9611-bbeae17bb9b5",
+    "investigationId": "e8cb25bd-e575-4e96-bbfc-4ae781574b1a",
+    "version": 1,
+    "parentSnapshotId": null,
+    "productIdentity": {
+      "name": "DuckDB",
+      "officialWebsite": "https://www.duckdb.org",
+      "version": null,
+      "plan": null,
+      "confirmationStatus": "CONFIRMED",
+      "confirmationBasis": [
+        {
+          "url": "https://www.duckdb.org/docs/1.4/core_extensions/httpfs/https",
+          "excerpt": "SELECT * FROM read_parquet([ 'https://domain.tld/file1.parquet', 'https://domain.tld/file2.parquet' ]);",
+          "retrievedAt": "2026-10-25T02:01:52.378Z",
+          "reason": "Explicit question name matches publisher domain label and freshly read page title; readable original text retained. Website self-identification, not verified legal ownership; version/plan unknown"
+        },
+        {
+          "url": "https://www.duckdb.org/docs/2.0/guides/file_formats/parquet_import",
+          "excerpt": "To read data from a Parquet file, use the read_parquet function in the FROM clause of a query:",
+          "retrievedAt": "2026-10-25T02:01:52.456Z",
+          "reason": "Explicit question name matches publisher domain label and freshly read page title; readable original text retained. Website self-identification, not verified legal ownership; version/plan unknown"
+        },
+        {
+          "url": "https://www.duckdb.org/docs/2.0/guides/file_formats/parquet_import",
+          "excerpt": "To read data from a Parquet file, use the read_parquet function in the FROM clause of a query:",
+          "retrievedAt": "2026-10-25T02:02:04.995Z",
+          "reason": "Explicit question name matches publisher domain label and freshly read page title; readable original text retained. Website self-identification, not verified legal ownership; version/plan unknown"
+        },
+        {
+          "url": "https://www.duckdb.org/docs/2.0/guides/file_formats/parquet_import",
+          "excerpt": "To read data from a Parquet file, use the read_parquet function in the FROM clause of a query:",
+          "retrievedAt": "2026-10-25T02:02:07.125Z",
+          "reason": "Explicit question name matches publisher domain label and freshly read page title; readable original text retained. Website self-identification, not verified legal ownership; version/plan unknown"
+        },
+        {
+          "url": "https://duckdb.org/2021/06/25/querying-parquet.html",
+          "excerpt": "Querying Parquet with Precision Using DuckDB",
+          "retrievedAt": "2026-10-25T02:02:30.939Z",
+          "reason": "Explicit question name matches publisher domain label and freshly read page title; readable original text retained. Website self-identification, not verified legal ownership; version/plan unknown"
+        },
+        {
+          "url": "https://duckdb.org/2021/06/25/querying-parquet.html",
+          "excerpt": "DuckDB's zero-dependency Parquet reader is able to directly execute SQL queries on Parquet files without any import or analysis step. Because of the natural columnar format of Parquet, this is very fast!",
+          "retrievedAt": "2026-10-25T02:02:33.422Z",
+          "reason": "Explicit question name matches publisher domain label and freshly read page title; readable original text retained. Website self-identification, not verified legal ownership; version/plan unknown"
+        }
+      ]
+    },
+    "evidence": [
+      {
+        "id": "b8a50b93-7c2a-477b-8359-20768465cbaf",
+        "sourceUrl": "https://www.duckdb.org/docs/1.4/core_extensions/httpfs/https",
+        "originalExcerpt": "SELECT * FROM read_parquet([ 'https://domain.tld/file1.parquet', 'https://domain.tld/file2.parquet' ]);",
+        "translation": null,
+        "originalLocation": {
+          "kind": "TEXT",
+          "locator": "https://www.duckdb.org/docs/1.4/core_extensions/httpfs/https :: main:first :: blocks(p,li,pre,tr,h1,h2,h3)[453]; normalized UTF-16 [0,103)",
+          "context": "SELECT * FROM read_parquet([ 'https://domain.tld/file1.parquet', 'https://domain.tld/file2.parquet' ]);"
+        },
+        "metadata": {
+          "title": "HTTP(S) Support – DuckDB",
+          "siteName": "www.duckdb.org",
+          "author": "GitHub User",
+          "publishedAt": null,
+          "language": "en",
+          "sourceType": "OFFICIAL",
+          "contentKind": "OFFICIAL_CLAIM",
+          "productVersion": null,
+          "plan": null,
+          "upstreamUrl": null,
+          "independence": "SHARED_ORIGIN",
+          "originGroupId": "origin:513a27ca-93cc-4f10-9e00-575e3ded5f04",
+          "independenceReason": "保存的相同原文/重定向URL、明确upstreamUrl、采集来源组，或同路径且同hash的www别名相连；重复读取/转载不增加独立证据数量。"
+        },
+        "retrievedAt": "2026-10-25T02:01:52.378Z",
+        "readStatus": "READ",
+        "readError": null,
+        "contentHash": "aba5d659409e7557990772b948f6b11fc3c40f257a86409b3e43e737fb6a4a6a"
+      },
+      {
+        "id": "b71d1848-dcfd-4259-ab58-0b8249f7c05b",
+        "sourceUrl": "https://www.duckdb.org/docs/2.0/guides/file_formats/parquet_import",
+        "originalExcerpt": "To read data from a Parquet file, use the read_parquet function in the FROM clause of a query:",
+        "translation": null,
+        "originalLocation": {
+          "kind": "TEXT",
+          "locator": "https://www.duckdb.org/docs/2.0/guides/file_formats/parquet_import :: main:first :: blocks(p,li,pre,tr,h1,h2,h3)[522]; normalized UTF-16 [0,94)",
+          "context": "To read data from a Parquet file, use the read_parquet function in the FROM clause of a query:"
+        },
+        "metadata": {
+          "title": "Parquet Import – DuckDB",
+          "siteName": "www.duckdb.org",
+          "author": "GitHub User",
+          "publishedAt": null,
+          "language": "en",
+          "sourceType": "OFFICIAL",
+          "contentKind": "OFFICIAL_CLAIM",
+          "productVersion": null,
+          "plan": null,
+          "upstreamUrl": null,
+          "independence": "SHARED_ORIGIN",
+          "originGroupId": "origin:513a27ca-93cc-4f10-9e00-575e3ded5f04",
+          "independenceReason": "保存的相同原文/重定向URL、明确upstreamUrl、采集来源组，或同路径且同hash的www别名相连；重复读取/转载不增加独立证据数量。"
+        },
+        "retrievedAt": "2026-10-25T02:01:52.456Z",
+        "readStatus": "READ",
+        "readError": null,
+        "contentHash": "ae8476619badcf1b1c08d9dc5530667756c8f1cdae981a2cc93991e00bd61ef4"
+      },
+      {
+        "id": "f21df350-33cf-4330-9831-81e09a775b4a",
+        "sourceUrl": "https://duckdb.org/docs/lts/data/multiple_files/overview.html",
+        "originalExcerpt": null,
+        "translation": null,
+        "originalLocation": null,
+        "metadata": {
+          "title": null,
+          "siteName": "duckdb.org",
+          "author": null,
+          "publishedAt": null,
+          "language": null,
+          "sourceType": "UNKNOWN",
+          "contentKind": "UNKNOWN",
+          "productVersion": null,
+          "plan": null,
+          "upstreamUrl": null,
+          "independence": "UNKNOWN",
+          "originGroupId": null,
+          "independenceReason": null
+        },
+        "retrievedAt": "2026-10-25T02:01:54.938Z",
+        "readStatus": "FAILED",
+        "readError": "No readable article blocks; JavaScript shell/empty page is not original material",
+        "contentHash": null
+      },
+      {
+        "id": "b4c8d8dc-4492-4f34-9a91-e7f3a82b1c23",
+        "sourceUrl": "https://www.duckdb.org/docs/2.0/guides/file_formats/parquet_import",
+        "originalExcerpt": "To read data from a Parquet file, use the read_parquet function in the FROM clause of a query:",
+        "translation": null,
+        "originalLocation": {
+          "kind": "TEXT",
+          "locator": "https://www.duckdb.org/docs/2.0/guides/file_formats/parquet_import :: main:first :: blocks(p,li,pre,tr,h1,h2,h3)[522]; normalized UTF-16 [0,94)",
+          "context": "To read data from a Parquet file, use the read_parquet function in the FROM clause of a query:"
+        },
+        "metadata": {
+          "title": "Parquet Import – DuckDB",
+          "siteName": "www.duckdb.org",
+          "author": "GitHub User",
+          "publishedAt": null,
+          "language": "en",
+          "sourceType": "OFFICIAL",
+          "contentKind": "OFFICIAL_CLAIM",
+          "productVersion": null,
+          "plan": null,
+          "upstreamUrl": null,
+          "independence": "SHARED_ORIGIN",
+          "originGroupId": "origin:513a27ca-93cc-4f10-9e00-575e3ded5f04",
+          "independenceReason": "保存的相同原文/重定向URL、明确upstreamUrl、采集来源组，或同路径且同hash的www别名相连；重复读取/转载不增加独立证据数量。"
+        },
+        "retrievedAt": "2026-10-25T02:02:04.995Z",
+        "readStatus": "READ",
+        "readError": null,
+        "contentHash": "ae8476619badcf1b1c08d9dc5530667756c8f1cdae981a2cc93991e00bd61ef4"
+      },
+      {
+        "id": "513a27ca-93cc-4f10-9e00-575e3ded5f04",
+        "sourceUrl": "https://www.duckdb.org/docs/2.0/guides/file_formats/parquet_import",
+        "originalExcerpt": "To read data from a Parquet file, use the read_parquet function in the FROM clause of a query:",
+        "translation": null,
+        "originalLocation": {
+          "kind": "TEXT",
+          "locator": "https://www.duckdb.org/docs/2.0/guides/file_formats/parquet_import :: main:first :: blocks(p,li,pre,tr,h1,h2,h3)[522]; normalized UTF-16 [0,94)",
+          "context": "To read data from a Parquet file, use the read_parquet function in the FROM clause of a query:"
+        },
+        "metadata": {
+          "title": "Parquet Import – DuckDB",
+          "siteName": "www.duckdb.org",
+          "author": "GitHub User",
+          "publishedAt": null,
+          "language": "en",
+          "sourceType": "OFFICIAL",
+          "contentKind": "OFFICIAL_CLAIM",
+          "productVersion": null,
+          "plan": null,
+          "upstreamUrl": null,
+          "independence": "SHARED_ORIGIN",
+          "originGroupId": "origin:513a27ca-93cc-4f10-9e00-575e3ded5f04",
+          "independenceReason": "保存的相同原文/重定向URL、明确upstreamUrl、采集来源组，或同路径且同hash的www别名相连；重复读取/转载不增加独立证据数量。"
+        },
+        "retrievedAt": "2026-10-25T02:02:07.125Z",
+        "readStatus": "READ",
+        "readError": null,
+        "contentHash": "ae8476619badcf1b1c08d9dc5530667756c8f1cdae981a2cc93991e00bd61ef4"
+      },
+      {
+        "id": "b3e6da28-15b8-4a5c-8b51-73ac04c0a29d",
+        "sourceUrl": "https://duckdb.org/2021/06/25/querying-parquet.html",
+        "originalExcerpt": "Querying Parquet with Precision Using DuckDB",
+        "translation": null,
+        "originalLocation": {
+          "kind": "TEXT",
+          "locator": "https://duckdb.org/2021/06/25/querying-parquet :: main:first :: blocks(p,li,pre,tr,h1,h2,h3)[0]; normalized UTF-16 [0,44)",
+          "context": "Querying Parquet with Precision Using DuckDB"
+        },
+        "metadata": {
+          "title": "Querying Parquet with Precision Using DuckDB – DuckDB",
+          "siteName": "duckdb.org",
+          "author": "Hannes Mühleisen",
+          "publishedAt": "2021-06-25T00:00:00.000Z",
+          "language": "en",
+          "sourceType": "OFFICIAL",
+          "contentKind": "OFFICIAL_CLAIM",
+          "productVersion": null,
+          "plan": null,
+          "upstreamUrl": null,
+          "independence": "SHARED_ORIGIN",
+          "originGroupId": "origin:513a27ca-93cc-4f10-9e00-575e3ded5f04",
+          "independenceReason": "保存的相同原文/重定向URL、明确upstreamUrl、采集来源组，或同路径且同hash的www别名相连；重复读取/转载不增加独立证据数量。"
+        },
+        "retrievedAt": "2026-10-25T02:02:30.939Z",
+        "readStatus": "READ",
+        "readError": null,
+        "contentHash": "ac66433a72d6d073dd1afc43975125a65a963758c5dc7440004c44f3a532d8d2"
+      },
+      {
+        "id": "73c1a011-b625-4ea2-ab22-47054acdd028",
+        "sourceUrl": "https://duckdb.org/2021/06/25/querying-parquet.html",
+        "originalExcerpt": "DuckDB's zero-dependency Parquet reader is able to directly execute SQL queries on Parquet files without any import or analysis step. Because of the natural columnar format of Parquet, this is very fast!",
+        "translation": null,
+        "originalLocation": {
+          "kind": "TEXT",
+          "locator": "https://duckdb.org/2021/06/25/querying-parquet :: main:first :: blocks(p,li,pre,tr,h1,h2,h3)[9]; normalized UTF-16 [0,203)",
+          "context": "DuckDB's zero-dependency Parquet reader is able to directly execute SQL queries on Parquet files without any import or analysis step. Because of the natural columnar format of Parquet, this is very fast!"
+        },
+        "metadata": {
+          "title": "Querying Parquet with Precision Using DuckDB – DuckDB",
+          "siteName": "duckdb.org",
+          "author": "Hannes Mühleisen",
+          "publishedAt": "2021-06-25T00:00:00.000Z",
+          "language": "en",
+          "sourceType": "OFFICIAL",
+          "contentKind": "OFFICIAL_CLAIM",
+          "productVersion": null,
+          "plan": null,
+          "upstreamUrl": null,
+          "independence": "SHARED_ORIGIN",
+          "originGroupId": "origin:513a27ca-93cc-4f10-9e00-575e3ded5f04",
+          "independenceReason": "保存的相同原文/重定向URL、明确upstreamUrl、采集来源组，或同路径且同hash的www别名相连；重复读取/转载不增加独立证据数量。"
+        },
+        "retrievedAt": "2026-10-25T02:02:33.422Z",
+        "readStatus": "READ",
+        "readError": null,
+        "contentHash": "5359b5e77144d5129aadba79da3bf387ee1c71ef67793d1a202a15fa7284621b"
+      }
+    ],
+    "claims": [
+      {
+        "id": "a8a227c9-1472-4b3e-a93e-388ecb75e65b",
+        "statement": "DuckDB 的 Parquet 读取器可直接对 Parquet 文件执行 SQL 查询，无需导入或分析步骤。",
+        "kind": "OFFICIAL_CLAIM",
+        "verificationStatus": "SUPPORTED",
+        "verificationReason": "官方博客原句明确写道：Parquet 读取器可直接对 Parquet 文件执行 SQL 查询，无需任何导入或分析步骤。",
+        "scope": "DuckDB 官方博客（2021-06-25）所述，未标注具体版本"
+      },
+      {
+        "id": "48db2914-ccd3-4247-aea5-f1829515f217",
+        "statement": "在查询的 FROM 子句中使用 read_parquet 函数即可从 Parquet 文件读取数据。",
+        "kind": "OFFICIAL_CLAIM",
+        "verificationStatus": "SUPPORTED",
+        "verificationReason": "官方 2.0 文档原句明确指出：要从 Parquet 文件读取数据，应在查询的 FROM 子句中使用 read_parquet 函数。",
+        "scope": "DuckDB 2.0 文档“Parquet Import”页面所述"
+      },
+      {
+        "id": "99f273db-abbc-4325-a586-3d8e086422b6",
+        "statement": "read_parquet 可接受 HTTP(S) 地址形式的 Parquet 文件列表作为参数进行查询。",
+        "kind": "OFFICIAL_CLAIM",
+        "verificationStatus": "SUPPORTED",
+        "verificationReason": "官方 1.4 文档 HTTP(S) Support 页示例显示 read_parquet([...]) 传入两个 https 地址的 Parquet 文件列表。",
+        "scope": "DuckDB 1.4 文档 HTTP(S) Support 页面示例"
+      }
+    ],
+    "relations": [
+      {
+        "claimId": "a8a227c9-1472-4b3e-a93e-388ecb75e65b",
+        "evidenceId": "73c1a011-b625-4ea2-ab22-47054acdd028",
+        "relation": "SUPPORTS",
+        "reason": "原句直接写明可直接对 Parquet 文件执行 SQL 查询，无需导入或分析步骤，与主张一致。"
+      },
+      {
+        "claimId": "48db2914-ccd3-4247-aea5-f1829515f217",
+        "evidenceId": "b71d1848-dcfd-4259-ab58-0b8249f7c05b",
+        "relation": "SUPPORTS",
+        "reason": "原句明确要求在 FROM 子句中使用 read_parquet 函数读取 Parquet 文件。"
+      },
+      {
+        "claimId": "99f273db-abbc-4325-a586-3d8e086422b6",
+        "evidenceId": "b8a50b93-7c2a-477b-8359-20768465cbaf",
+        "relation": "SUPPORTS",
+        "reason": "示例显示 read_parquet 接受由 https 地址组成的 Parquet 文件列表。"
+      }
+    ],
+    "conflicts": [],
+    "gaps": [
+      {
+        "id": "35d1e51d-e41a-4675-bfa5-446e0fc80993",
+        "claimIds": [],
+        "kind": "READ_FAILED",
+        "description": "https://duckdb.org/docs/lts/data/multiple_files/overview.html：FAILED；No readable article blocks; JavaScript shell/empty page is not original material",
+        "searchScope": null
+      }
+    ],
+    "retrievalRecords": [
+      {
+        "id": "f496918d-2b63-4b7a-bc8d-4acbf1ed5dcd",
+        "provider": "tencent-yuanbao-search-api",
+        "query": "DuckDB 官方文档 直接查询 Parquet 文件 无需导入",
+        "calledAt": "2026-10-25T02:01:47.111Z",
+        "status": "SUCCEEDED",
+        "error": null,
+        "returnedSources": [
+          {
+            "url": "https://www.duckdb.org/docs/1.4/core_extensions/httpfs/https",
+            "title": "HTTP(S) Support",
+            "snippet": "HTTP(S) Support。HTTP(S) Support With the httpfs extension, it is possible to directly query files over the HTTP(S) protocol. This works for all files supported by DuckDB or its various extensions, and provides read-only access. SELECT * FROM 'https://domain.tld/file.extension'; Partial Reading For CSV files, files will be downloaded entirely in most cases, due to the row-based nature of the format. For Parquet files, DuckDB supports partial reading, i.e., it can use a combination of the Parquet metadata and HTTP range requests to only download the parts of the file that are actually required by the query. For example, the following query will only read the Parquet metadata and the data for the column_a column: SELECT column_a FROM 'https://domain.tld/file.parquet'; In some cases, no actual...",
+            "adoption": "ADOPTED",
+            "adoptionReason": "保存原句；是否支持问题由逐主张核查决定。",
+            "evidenceId": "b8a50b93-7c2a-477b-8359-20768465cbaf"
+          },
+          {
+            "url": "https://www.duckdb.org/docs/2.0/guides/file_formats/parquet_import",
+            "title": "Parquet Import",
+            "snippet": "Parquet Import DuckDB。Parquet Import To read data from a Parquet file, use the read_parquet function in the FROM clause of a query: SELECT * FROM read_parquet('input.parquet'); Alternatively, you can omit the read_parquet function and let DuckDB infer it from the extension: SELECT * FROM 'input.parquet'; To create a new table using the result from a query, use the CREATE TABLE ... AS SELECT statement: CREATE TABLE new_tbl AS SELECT * FROM read_parquet('input.parquet'); To load data into an existing table from a query, use INSERT INTO from a SELECT statement: INSERT INTO tbl SELECT * FROM read_parquet('input.parquet'); Alternatively, use the COPY statement to load data from a Parquet file into an existing table: COPY tbl FROM 'input.parquet' (FORMAT parquet); Adjusting the Schema on the Fly...",
+            "adoption": "ADOPTED",
+            "adoptionReason": "保存原句；是否支持问题由逐主张核查决定。",
+            "evidenceId": "513a27ca-93cc-4f10-9e00-575e3ded5f04"
+          },
+          {
+            "url": "https://duckdb.org/2026/09/25/hugging-face",
+            "title": "DuckDB and Hugging Face: Querying Datasets Directly",
+            "snippet": "DuckDB and Hugging Face: Querying Datasets Directly DuckDB。DuckDB and Hugging Face: Querying Datasets Directly The DuckDB team TL;DR: Hugging Face hosts hundreds of thousands of datasets, and DuckDB can read them directly, exactly where they are and without downloading anything, over the DuckDB hf:// protocol. This post looks at how the integration works and the scenarios where it works best. Hugging Face is where much of the machine learning community publishes and finds its datasets, while DuckDB is the in-process analytical database that queries files like CSV and Parquet directly, with no server or warehouse to install or run. Did you know that, since DuckDB v0.10.3 (released on May 22, 2024), you can point a SELECT at a dataset on the Hugging Face Hub⁠, using the DuckDB hf:// protocol...",
+            "adoption": "REJECTED",
+            "adoptionReason": "本轮未读取；搜索摘要不是原文证据。",
+            "evidenceId": null
+          },
+          {
+            "url": "https://dbdb.io/db/duckdb/diff/14/15",
+            "title": "DuckDB · Diff #14 #15 · Database of Databases",
+            "snippet": "DuckDB · Diff #14 → #15 · Database of Databases Database of Databases。 DuckDB leverages Arrow's vectorized data processing capabilities to accelerate query processing, taking advantage of the cache-efficient memory layout and SIMD instructions provided by Arrow. DuckDB also includes a zero-dependency Parquet reader that can directly execute SQL queries on Parquet files without any import or analysis step. The system reads Parquet files in a streaming fashion and automatically detects which columns and rows are required for any given query, enabling analysis of larger and more complex Parquet files without manual optimizations or additional hardware. Additionally, DuckDB can run queries directly on top of Parquet files without requiring an initial loading phase, and it takes advantage of al...",
+            "adoption": "REJECTED",
+            "adoptionReason": "本轮未读取；搜索摘要不是原文证据。",
+            "evidenceId": null
+          },
+          {
+            "url": "https://mintlify.wiki/duckdb/duckdb/data/parquet",
+            "title": "Parquet Files",
+            "snippet": "Parquet Files Mintlify Wiki。Parquet Files Efficiently read and write Parquet files with DuckDB’s native columnar format support DuckDB provides high-performance native support for Apache Parquet, a columnar storage format optimized for analytical queries. Parquet files can be queried directly without importing data first. ​ Reading Parquet Files Query Parquet files directly by referencing them in SQL: SELECT * FROM 'data.parquet'; DuckDB automatically reads the Parquet schema and allows you to query the data immediately. ​ Using read_parquet For more control, use the read_parquet function: Single File Multiple Files Glob Pattern With Filter SELECT * FROM read_parquet('sales.parquet'); SELECT * FROM read_parquet(['file1.parquet', 'file2.parquet']); SELECT * FROM read_parquet('data/*.parquet...",
+            "adoption": "REJECTED",
+            "adoptionReason": "本轮未读取；搜索摘要不是原文证据。",
+            "evidenceId": null
+          },
+          {
+            "url": "https://m.toutiao.com/article/7688307066733183528",
+            "title": "DuckDB 编进 Wasm,浏览器里直接查几百兆 parquet 不用起后端 - 今日头条",
+            "snippet": "DuckDB 编进 Wasm,浏览器里直接查几百兆 parquet 不用起后端 - 今日头条 今日头条。 console.log(result.toArray()); 到这一步,浏览器里已经有一个完整的列式分析数据库了。重点在下一步——查文件。 直接查用户选的 parquet 用户从 选了个 parquet,我把它注册给 DuckDB,然后直接当表查: // fileHandle 是 拿到的 File 对象 async function queryParquet(file) { // 把浏览器里的文件注册成 DuckDB 能读的虚拟文件 await db.registerFileHandle( \"data.parquet\", file, duckdb.DuckDBDataProtocol.BROWSER_FILEREADER, true ); // 当成一张表来查,几百兆它也扛得住 const r = await conn.query(` SELECT region, SUM(amount) AS total FROM read_parquet('data.parquet') WHERE year = 2026 GROUP BY region ORDER BY total DESC `); return r.toArray(); } read_parquet('data.parquet') 这一下,DuckDB 在浏览器里直接读那个本地文件、做分组聚合。几百兆的 parquet,因为它是列式存储、DuckDB 又是向量化执行,只扫你 SQL 里点到的那几列,速度比想象中快得多。文件没出过用户的电脑,零上传。 它还能直接查远程的 parquet——给个 URL,DuckDB 走 HTTP range 请求,只拉需要的字节段,不用整个下载: const r = await co...",
+            "adoption": "REJECTED",
+            "adoptionReason": "本轮未读取；搜索摘要不是原文证据。",
+            "evidenceId": null
+          }
+        ]
+      },
+      {
+        "id": "6c5cdd60-1539-4854-ad26-5f352c55cdc6",
+        "provider": "tavily-search-api:keyless-capped",
+        "query": "DuckDB 官方文档 直接查询 Parquet 文件 无需导入",
+        "calledAt": "2026-10-25T02:01:47.112Z",
+        "status": "SUCCEEDED",
+        "error": null,
+        "returnedSources": [
+          {
+            "url": "https://duckdb.org/docs/lts/data/multiple_files/overview.html",
+            "title": "Reading Multiple Files – DuckDB",
+            "snippet": "## Parquet Read all files that match the glob pattern: ``` SELECT FROM'test/.parquet'; ``` Read three Parquet files and treat them as a single table: ``` SELECT FROM read_parquet(['file1.parquet','file2.parquet','file3.parquet']); ``` Read all Parquet files from two specific folders: ``` SELECT FROM read_parquet(['folder1/.parquet','folder2/.parquet']); ``` Read all Parquet files that match the glob pattern at any depth: ``` SELECT FROM read_parquet('dir//.parquet'); ``` [...] Here is an example that reads all the files that end with `.parquet` located in the `test` folder: Read all files that match the glob pattern: ``` SELECT FROM read_parquet('test/.parquet'); ``` ### List of Globs The glob syntax and the list input parameter can be combined to scan files that meet one of multiple patterns. Read all Parquet files from 2 specific folders. ``` SELECT FROM read_parquet(['folder1/.parquet','folder2/.parquet']); ``` [...] Search the current directory for all files. ``` SELECT FROM glob(''); ``` | file | | test.csv | | test.json | | test.parquet | | test2.csv | | test2.parquet | | todos.json | ## Pages in This Section See this page as Markdown Edit this page on GitHub Report content issue,%20Stack%20Overflow,%20or%20Discord.%0A%0APage%20URL:%20%3C \"Create GitHub issue\") © 2026 DuckDB Foundation, Amsterdam NL DuckDB Home Code of Conduct Trademark Use Blog ##### In this article",
+            "adoption": "REJECTED",
+            "adoptionReason": "原文不可用：FAILED；No readable article blocks; JavaScript shell/empty page is not original material",
+            "evidenceId": "f21df350-33cf-4330-9831-81e09a775b4a"
+          },
+          {
+            "url": "https://github.com/duckdb/duckdb/discussions/9019",
+            "title": "SELECT * FROM read_parquet(SELECT filenames FROM table) · duckdb/duckdb · Discussion #9019 · GitHub",
+            "snippet": "In particular, I think this kind of capability would be useful for doing development on data lake formats - it would allow me to directly query things in ducklake format, for example, and make sure I understood the logic, could try slightly different logic, etc. (query postgres for files + metadata, then convert that to a read\\_parquet() query). So, if you do work on this capability, I'd love it! @soerenwolfers ### Uh oh! There was an error while loading. Please reload this page. [...] Hello there, i currently try something potentially strange but for my use case necessary: I have a query on a table which gives me a list (0 to n elements) of locations of parquet files. I append the final parquet filename and try to create a list using something like this: `SELECT list(filepath||my_data.parquet) from table where column='important'` `SELECT list(filepath||my_data.parquet) from table where column='important'` [...] list(name) from file where not name.contains('1'); ┌───────────────────────────────────────┐ │ list(\"name\") │ │ varchar[] │ ├───────────────────────────────────────┤ │ [tmp/data.parquet, tmp/data2.parquet] │ └───────────────────────────────────────┘ ``` |",
+            "adoption": "REJECTED",
+            "adoptionReason": "本轮未读取；搜索摘要不是原文证据。",
+            "evidenceId": null
+          },
+          {
+            "url": "https://duckdb.org/docs/lts/guides/file_formats/parquet_export.html",
+            "title": "Parquet Export – DuckDB",
+            "snippet": "Parquet Export To export the data from a table to a Parquet file, use the `COPY` statement: ``` COPY tbl TO'output.parquet'(FORMAT parquet); ``` The result of queries can also be directly exported to a Parquet file: ``` COPY(SELECT FROM tbl) TO'output.parquet'(FORMAT parquet); ``` The flags for setting compression, row group size, etc. are listed in the Reading and Writing Parquet files page. [...] - Query Syntax SELECT FROM and JOIN WHERE GROUP BY GROUPING SETS HAVING ORDER BY LIMIT and OFFSET SAMPLE Unnesting WITH WINDOW QUALIFY VALUES FILTER Set Operations Prepared Statements - Data Types Overview Array Bitstring Blob Boolean Date Enum Interval List Literal Types Map NULL Values Numeric Struct Text Time Timestamp Time Zones Union Typecasting - Expressions [...] Overview Startup Configuration Query Data Chunks Vectors Values Types Prepared Statements Appender Table Functions Replacement Scans API Reference - C++ - CLI Overview Arguments Dot Commands Output Formats Editing Safe Mode Autocomplete Syntax Highlighting Known Issues - Dart - Go - Java (JDBC) Overview Define Connections Run Queries Import Data Handle Results Define Functions Profile and Monitor Troubleshoot - Julia - Node.js (Deprecated)",
+            "adoption": "REJECTED",
+            "adoptionReason": "本轮未读取；搜索摘要不是原文证据。",
+            "evidenceId": null
+          },
+          {
+            "url": "https://www.cbinsights.com/company/fangcloud-technology",
+            "title": "Yifang Cloud - Products, Competitors, Financials, Employees, Headquarters Locations",
+            "snippet": "群文件、邮件里的压缩包、个人网盘里的备份。时间一长，企业资料成了\"个人资产\"，想沉淀成团队知识非常困难。 3. 多端同步不及时，办公设备切换不顺畅 员工在家里电脑、公司电脑、平板和手机之间切换，文件不同步或同步延迟，出门后才发现没带最新资料，只能再让人发一遍。 4. 外部协作权限不可控，客户/供应商/外包文件共享有风险 把合同、报价、设计稿发给客户或供应商，往往是一个公开链接了事，无法限制\"只能看不能下载\"、无法设置有效期、无法追踪谁打开了，外发之后基本失控。 5. 大文件传输效率低，链接过期或传输失败 图纸、视频、安装包等大文件通过聊天工具或邮件传输，经常遇到大小限制、链接过期、传输中断，远程协作效率被卡在\"传文件\"这一步。 6. 员工离职交接困难，企业文件资产难收回 员工用个人账号传客户资料、存项目文件，离职时交接不清，资料带不走也收不回，企业文件资产随之流失。 三、5 款适合远程/混合办公团队的企业网盘推荐 1. 360 亿方云：适合远程/混合办公团队文件管理与安全协作 360亿方云主打\"安全 + [...] 360亿方云主打\"安全 + 协同\"的企业网盘，适合中小企业、成长型企业、远程/混合办公团队，以及希望把文件分散、版本混乱、外发不可控、离职交接困难等问题一并解决的团队。 文件管理 支持本地与云端自动双向同步，具备历史版本恢复、多级回收站、文件归档能力，并支持 Office、PDF、CAD、PSD、视频等多种专业格式在线预览，适合解决多端不同步和\"找不到最新版\"的问题。 图片 协同办公 支持多人在线协作、文件评论、待办提醒、文件收集、群组空间，让分布在不同地点的团队能围绕同一份文件一起工作，减少在聊天工具里反复传文件的低效协作。 图片 安全权限 支持围绕查看、编辑、预览、下载、外发等动作设置精细化权限，并提供\"只能看不能下载\"、动态水印、外链有效期、访问日志等能力，适合解决外部协作不可控和离职交接难等风险。 图片 官网链接： 2. WPS 云盘：适合 Office/WPS 文档轻量协作 WPS云盘和 WPS Office 深度绑定的轻量文档协作云盘，适合以文档协作为核心的团队。 图片 文件管理 围绕 Word、Excel、PPT [...] 围绕 Word、Excel、PPT 文档的存储与同步，上手快；但在专业格式预览、大文件传输、复杂权限方面相对偏轻量。 协同办公 支持多人在线编辑文档，学习成本低，适合咨询、教培、行政、财务、运营等以 Office/WPS 文档为主的轻量办公场景。 安全权限 具备基础权限与共享能力，但在严密外链防泄密、复杂权限分层方面相对基础。 官网链接： 3.钉盘：适合钉钉生态内的流程化文件协作 钉盘是钉钉生态原生的企业网盘，和其他独立的网盘产品不同，它不是一个单独的工具，而是钉钉整个办公平台的 \"文件底座\"，和钉钉的聊天、审批、会议、项目、通讯录等所有功能完全打通。适合已经在使用钉钉的 10-500 人规模的中小企业和团队，是追求 \"不用折腾、拿来就用\" 的首选。 图片 文件管理 群文件、审批附件可自动归档，文件随组织流程沉淀；但跨生态的专业大文件同步需要进一步评估。 协同办公 与钉钉群聊、审批、项目任务深度打通，适合已经深度使用钉钉、文件围绕协作流程流转的团队。 安全权限 权限可结合组织架构、群组和审批角色流转；对跨生态复杂外部协作、严密外链管控需要进一步评估。 适合场景",
+            "adoption": "REJECTED",
+            "adoptionReason": "本轮未读取；搜索摘要不是原文证据。",
+            "evidenceId": null
+          },
+          {
+            "url": "https://hk.finance.yahoo.com/news/%E5%85%AC%E5%B1%8B%E7%94%B3%E8%AB%8B-%E5%85%A5%E6%81%AF-%E8%B3%87%E7%94%A2%E9%99%90%E9%A1%8D%E8%B3%87%E6%A0%BC%E6%98%AF%E7%94%9A%E9%BA%BC-%E6%89%80%E9%9C%80%E6%96%87%E4%BB%B6-%E7%B6%B2%E4%B8%8A%E7%94%B3%E8%AB%8B%E6%AD%A5%E9%A9%9F-053000663.html",
+            "title": "公屋申請｜入息/資產限額資格是甚麼？所需文件/網上申請步驟/進度電子查詢整合懶人包(附連結)",
+            "snippet": "跳至導覽 跳過主要內容 跳至右欄 [...] 12. 詠竹坊 13. Money Club 14. investing.com HK [...] | 已婚人士的結婚證明文件 | • 結婚證書副本;或 • 公證書副本 (內地結婚但從未申領有關證明文件);或 • 宣誓書正本 (在香港以舊式婚禮結合)。 • 如配偶未獲香港入境權，除上述文件外，須遞交已填妥的聲明書 (編號:RCSU2-013C) 及其配偶所在地身份證副本 (包括底面兩面)。 | | 已向法庭申請離婚的證明文 | • 證明已向法庭申請離婚及處理子女管養、照顧和管束權 (如 適用) 的法律文件副本〔如在香港辦理離婚，即離婚呈請書 (表格2) 或共同申請書 (表格2C) 副本〕。 • 已向法庭申請離婚的申請者，須遞交已填妥的聲明書 (編號: RCSU2-014C)。 • 已向法庭申請離婚的家庭成員，須遞交已填妥的聲明書 (編 號:RCSU2-015C)。 |",
+            "adoption": "REJECTED",
+            "adoptionReason": "本轮未读取；搜索摘要不是原文证据。",
+            "evidenceId": null
+          },
+          {
+            "url": "https://hk.finance.yahoo.com/news/%E5%85%A7%E5%9C%B0%E5%AE%98%E5%AA%92-%E5%85%A8%E6%96%B9%E4%BD%8D%E6%93%B4%E5%A4%A7%E5%85%A7%E9%9C%80-%E8%A6%81%E5%9C%A8%E6%B6%88%E8%B2%BB-%E6%8A%95%E8%B3%87%E5%92%8C%E7%A7%91%E6%8A%80%E5%89%B5%E6%96%B0%E7%AD%89%E7%99%BC%E5%8A%9B-011010331.html",
+            "title": "內地官媒：全方位擴大內需 要在消費、投資和科技創新等發力",
+            "snippet": "跳至導覽 跳過主要內容 跳至右欄 [...] 香港電台-財經 # 內地官媒：全方位擴大內需 要在消費、投資和科技創新等發力 香港電台-財經 內地官媒《經濟日報》刊登評論文章指，為全方位擴大國內需求，要促進消費結構升級，注重優化投資結構，要通過科技創新催生新增長點，創造新市場需求。署名金觀平的文章指出，要通過加大財政對終端消費直接投入、提升社會保障水平等方式，提高居民可支配收入，讓居民敢消費、願意消費。文章指出，消費是拉動經濟增長第一動力，一方面持續優化消費環境，加強消費者權益保護，建立健全信用體系；另一方面鼓勵發展新零售、電子商務、直播帶貨等新興消費模式，利用大數據、人工智能等技術精準匹配供需，滿足個性化、多樣化消費需求。文章說，投資是擴大內需另一重要引擎，投資目標要聚焦於「補短板、增後勁」，在加大基礎設施投資力度的同時，應注重優化投資結構，將資金更多投向人工智能、工業互聯網、新能源等新型基礎設施領域，以及教育、醫療、養老等民生短板領域。文章又指，要加大對關鍵核心技術研發投入，支持企業技術創新和產業升級，特別是在新能源、生物醫藥、高端製造等領域，培育一批具有國際競爭力的創新型企業和產業集群。 條款 及 私隱政策 [...] 2. 新聞 1. 最新新聞 2. Yahoo財經 3. Yahoo Money Talk 4. Tech 3. 外幣 1. 外幣報價 2. 外幣兌換攻略 3. 日圓兌港元 4. 英鎊兌港元 5. 澳元兌港元 6. 美元兌港元 7. 港元兌人民幣 8. 港元兌台幣 9. 加元兌港元 10. 歐元兌港元 11. 貨幣轉換器 4. 港股 1. 港股首頁 2. 恒指 3. 恒生科技指數 4. 最活躍股票排行 5. 最大升幅股票排行 6. 最大跌幅股票排行 5. 美股 1. 美股首頁 2. 美股日誌 3. 道指 4. 標普500 5. 納指 6. 金價 1. 金價 2. 金價新聞 3. 銀價 4. 銅價 7. 油價 1. 紐約期油價格 2. 布蘭特原油價格 3. 油價新聞 4. 天然氣價格 8. 行情 1. 行情總覽 2. 國際指數 3. 期貨 4. 加密貨幣",
+            "adoption": "REJECTED",
+            "adoptionReason": "本轮未读取；搜索摘要不是原文证据。",
+            "evidenceId": null
+          }
+        ]
+      },
+      {
+        "id": "f814b944-5f0d-486b-8897-c0cde78396a7",
+        "provider": "tencent-yuanbao-search-api",
+        "query": "DuckDB Parquet 文件 直接查询 无需导入 site:duckdb.org",
+        "calledAt": "2026-10-25T02:02:16.711Z",
+        "status": "SUCCEEDED",
+        "error": null,
+        "returnedSources": [
+          {
+            "url": "http://duckdb.org.cn/docs/stable/guides/file_formats/query_parquet.html",
+            "title": "查询 Parquet 文件",
+            "snippet": "查询 Parquet 文件 DuckDB。若要直接对 Parquet 文件运行查询,请在查询的 FROM 子句中使用 read_parquet 函数。 SELECT * FROM read_parquet('input.parquet'); Parquet 文件将以并行方式进行处理。过滤器会自动下推(push down)到 Parquet 扫描过程中,并且系统会自动仅读取相关的列。 更多信息请参阅博客文章 “使用 DuckDB 精确查询 Parquet”。...",
+            "adoption": "REJECTED",
+            "adoptionReason": "本轮未读取；搜索摘要不是原文证据。",
+            "evidenceId": null
+          },
+          {
+            "url": "https://mintlify.wiki/duckdb/duckdb/data/parquet",
+            "title": "Parquet Files",
+            "snippet": "Parquet Files Mintlify Wiki。Parquet Files Efficiently read and write Parquet files with DuckDB’s native columnar format support DuckDB provides high-performance native support for Apache Parquet, a columnar storage format optimized for analytical queries. Parquet files can be queried directly without importing data first. ​ Reading Parquet Files Query Parquet files directly by referencing them in SQL: SELECT * FROM 'data.parquet'; DuckDB automatically reads the Parquet schema and allows you to query the data immediately. ​ Using read_parquet For more control, use the read_parquet function: Single File Multiple Files Glob Pattern With Filter SELECT * FROM read_parquet('sales.parquet'); SELECT * FROM read_parquet(['file1.parquet', 'file2.parquet']); SELECT * FROM read_parquet('data/*.parquet...",
+            "adoption": "REJECTED",
+            "adoptionReason": "本轮未读取；搜索摘要不是原文证据。",
+            "evidenceId": null
+          },
+          {
+            "url": "https://duckdb.net.cn/docs/stable/core_extensions/httpfs/https",
+            "title": "HTTP(S) 支持",
+            "snippet": "HTTP(S) 支持 DuckDB。HTTP(S) 支持 通过 httpfs 扩展,可以直接通过 HTTP(S) 协议查询文件。这适用于 DuckDB 或其各种扩展支持的所有文件类型,并提供只读访问权限。 SELECT * FROM 'https://domain.tld/file.extension'; 部分读取 对于 CSV 文件,由于该格式基于行的特性,大多数情况下文件会被完整下载。对于 Parquet 文件,DuckDB 支持部分读取,即它可以通过结合 Parquet 元数据和 HTTP 范围请求 (Range requests),仅下载查询实际所需的文件部分。例如,以下查询将仅读取 Parquet 元数据以及 column_a 列的数据 SELECT column_a FROM 'https://domain.tld/file.parquet'; 在某些情况下,根本不需要读取实际数据,因为它们只需要读取元数据 SELECT count(*) FROM 'https://domain.tld/file.parquet'; 扫描多个文件 同样支持通过 HTTP(S) 扫描多个文件 SELECT * FROM read_parquet([ 'https://domain.tld/file1.parquet', 'https://domain.tld/file2.parquet' ]); 身份验证 要对 HTTP(S) 端点进行身份验证,请使用密钥管理器 (Secrets Manager) 创建一个 HTTP 密钥 CREATE SECRET http_auth ( TYPE http, BEARER_TOKEN 'token' ); 或 CREATE SECRET http_auth ( TYPE http, EXTRA_HTTP_HEADERS MAP { 'Auth...",
+            "adoption": "REJECTED",
+            "adoptionReason": "本轮未读取；搜索摘要不是原文证据。",
+            "evidenceId": null
+          },
+          {
+            "url": "https://chenxutan.com/d/5157.html",
+            "title": "DuckDB 深度解剖:把 OLAP 数据库塞进一个进程,它凭什… - 程序员茄子",
+            "snippet": "DuckDB 深度解剖:把 OLAP 数据库塞进一个进程,它凭什… - 程序员茄子 程序员茄子。 读不阻塞写,写不阻塞读(快照隔离)。 支持 BEGIN / COMMIT / ROLLBACK。 这让它不仅能当分析引擎,还能当一个靠谱的本地数据仓库长期存数据。 4.3 超越内存:Larger-than-Memory 处理 这是 1.x 系列一个杀手级能力。很多人担心\"嵌入式=只能处理放得进内存的数据\",DuckDB 的回答是不。它的核心算子——Hash Join、Hash Aggregate、Sort——都实现了 out-of-core(外存溢写) 版本:当内存不够时,自动把中间数据溢写到磁盘临时文件,用类似外部归并排序的方式分批处理。 配置也简单: -- 限制内存使用,超过就溢写到磁盘 SET memory_limit = '4GB'; SET temp_directory = '/tmp/duckdb_spill'; SET threads = 8; 复制 于是你能在一台 8GB 内存的机器上,对一个 100GB 的 Parquet 数据集跑 GROUP BY——慢一点,但不会崩。这是 pandas 永远做不到的。 五、真正的杀手锏:直接查文件,不用导入 前面讲的都是引擎内功,但 DuckDB 在实际工作流里最爽的一点,是它可以直接对文件跑 SQL,完全跳过\"建表-导入\"这一步。 5.1 直接查 Parquet / CSV / JSON -- 直接对本地 Parquet 文件查询,DuckDB 自动推断 schema SELECT category, AVG(price) FROM 'data/products.parquet' GROUP BY category; -- 用 glob 通配符一次扫一批文件(比如按天分区的日志) SELECT COUNT() FROM ...",
+            "adoption": "REJECTED",
+            "adoptionReason": "本轮未读取；搜索摘要不是原文证据。",
+            "evidenceId": null
+          },
+          {
+            "url": "https://duckdb.net.cn/2021/06/25/querying-parquet",
+            "title": "使用 DuckDB 精确查询 Parquet 文件",
+            "snippet": "使用 DuckDB 精确查询 Parquet 文件 DuckDB。使用 DuckDB 精确查询 Parquet 文件 摘要:DuckDB 是一个免费且开源的分析型数据管理系统,可以直接对 Parquet 文件运行 SQL 查询,并自动利用 Parquet 格式的先进特性。 Apache Parquet 是分析领域最常见的“大数据”存储格式。在 Parquet 文件中,数据以列式压缩的二进制格式存储。每个 Parquet 文件存储一个表。表被分区为行组(row groups),每个行组包含表的部分行。在行组内部,表数据以列式方式存储。 Parquet 格式具有许多使其适合分析场景的特性: 列式表示意味着可以(高效地)读取单个列。无需总是读取整个文件! 文件在每个行组中都包含逐列统计信息(最小值/最大值,以及 NULL 值的数量)。这些统计信息允许读取器在不需要时跳过整个行组。 列式压缩显著减小了文件格式的大小,从而降低了数据集的存储需求。这往往能将“大数据”变成“中等数据”。 DuckDB 与 Parquet DuckDB 的零依赖 Parquet 读取器能够直接对 Parquet 文件执行 SQL 查询,无需任何导入或分析步骤。由于 Parquet 本身的列式格式,这种查询速度非常快! DuckDB 将以流式方式读取 Parquet 文件,这意味着您可以对无法放入内存的大型 Parquet 文件执行查询。 DuckDB 能够自动检测任何给定查询所需的列和行。这使得用户可以分析更大、更复杂的 Parquet 文件,而无需进行手动优化或投入更多硬件资源。 此外,DuckDB 还能够通过并行处理,并利用 glob 语法同时对多个 Parquet 文件执行所有这些操作。 作为简短预告,这是一个允许您直接在 Parquet 文件之上运行 SQL 查询的代码片段。...",
+            "adoption": "REJECTED",
+            "adoptionReason": "本轮未读取；搜索摘要不是原文证据。",
+            "evidenceId": null
+          },
+          {
+            "url": "https://duckdblab.org/zh/post/duckdb-online-shell",
+            "title": "DuckDB在线Shell:浏览器内免安装的数据分析神器",
+            "snippet": "DuckDB在线Shell:浏览器内免安装的数据分析神器 DuckDB实验室。.files 系列命令用于管理上传到浏览器本地的文件: .files list -- 列出所有已注册的文件 .files drop -- 移除特定文件 .files drop-all -- 清除所有已注册的文件 注意:在 Shell 界面上传文件有两种方式——点击 Import 按钮或执行 .pick 命令。 3.3 其他实用命令 .pick -- 打开文件选择对话框,从电脑选择文件 .print 'Hello' -- 打印文字 .share -- 生成当前会话的分享链接 .show -- 显示当前配置 .last -- 重新渲染上次结果(不截断) .large_number_rendering MODE -- 切换大数字的可读渲染 .progress_bar on -- 开启进度条显示 4. 实战示例 示例 1:直接查询远程 Parquet 文件 这是 DuckDB 最强大的特性之一——直接在 URL 上运行 SQL,无需下载: -- 加载 HTTPFS 扩展 LOAD httpfs; -- 查询远程 Parquet 文件的行数 SELECT COUNT(*) FROM 'https://blobs.duckdb.org/data/yellow_tripdata_2010-01.parquet'; 输出: ┌──────────────┐ │ count_star() │ │ int64 │ ├──────────────┤ │ 14863778 │ └──────────────┘ 这一千四百万行数据,查询在几秒内返回——全部在浏览器中本地完成。 -- 多列聚合查询 SELECT COUNT(*) AS trips, AVG(tip_amount) AS avg_tip, AVG(trip_d...",
+            "adoption": "REJECTED",
+            "adoptionReason": "本轮未读取；搜索摘要不是原文证据。",
+            "evidenceId": null
+          }
+        ]
+      },
+      {
+        "id": "96520d5b-03f5-4015-9a6e-6a9ae654fccb",
+        "provider": "tavily-search-api:keyless-capped",
+        "query": "DuckDB Parquet 文件 直接查询 无需导入 site:duckdb.org",
+        "calledAt": "2026-10-25T02:02:16.711Z",
+        "status": "SUCCEEDED",
+        "error": null,
+        "returnedSources": [
+          {
+            "url": "https://duckdb.org/2021/06/25/querying-parquet.html",
+            "title": "Querying Parquet with Precision Using DuckDB – DuckDB",
+            "snippet": "## DuckDB and Parquet DuckDB's zero-dependency Parquet reader is able to directly execute SQL queries on Parquet files without any import or analysis step. Because of the natural columnar format of Parquet, this is very fast! DuckDB will read the Parquet files in a streaming fashion, which means you can perform queries on large Parquet files that do not fit in your main memory. [...] ## Conclusion DuckDB can efficiently run queries directly on top of Parquet files without requiring an initial loading phase. The system will automatically take advantage of all of Parquet's advanced features to speed up query execution. [...] As a short teaser, here is a code snippet that allows you to directly run a SQL query on top of a Parquet file. To install the DuckDB package: ``` pip duckdb ``` To download the Parquet file: ``` wget ``` Then, run the following Python script: ``` import duckdb print(duckdb. query(''' SELECT count() FROM 'taxi_2019_04.parquet' WHERE pickup_at BETWEEN '2019-04-15' AND '2019-04-20' '''). fetchall()) ``` ## Automatic Filter & Projection Pushdown",
+            "adoption": "ADOPTED",
+            "adoptionReason": "保存原句；是否支持问题由逐主张核查决定。",
+            "evidenceId": "73c1a011-b625-4ea2-ab22-47054acdd028"
+          },
+          {
+            "url": "https://duckdb.org/2021/05/14/sql-on-pandas.html",
+            "title": "Efficient SQL on Pandas with DuckDB – DuckDB",
+            "snippet": "One of the core goals of DuckDB is that accessing data in common formats should be easy. DuckDB is fully capable of running queries in parallel directly on top of a Pandas DataFrame (or on a Parquet/CSV file, or on an Arrow table, …). A separate (time-consuming) import step is not necessary. [...] In the benchmarks above, we fully read the Parquet files into Pandas. However, DuckDB also has the capability of directly running queries on top of Parquet files (in parallel!). In this appendix, we show the performance of this compared to loading the file into Python first. [...] For the benchmark, we will run two queries: the simplest query (the ungrouped aggregate) and the most complex query (the final join) and compare the cost of running this query directly on the Parquet file, compared to loading it into Pandas using the `read_parquet` function. ### Setup",
+            "adoption": "REJECTED",
+            "adoptionReason": "本轮未读取；搜索摘要不是原文证据。",
+            "evidenceId": null
+          },
+          {
+            "url": "https://duckdb.org/docs/2.0/data/multiple_files/overview.html",
+            "title": "Reading Multiple Files – DuckDB",
+            "snippet": "``` SELECT FROM read_parquet('dir'); ``` This reads the same files as `read_parquet('dir//.parquet')`. A trailing slash on the directory path is optional. In contrast, `read_parquet('dir/.parquet')` reads only files directly inside `dir`. Files with other extensions are ignored by directory discovery, even if they contain Parquet data. To read those files, supply their filenames explicitly. If the directory contains no matching files, the query raises an error. [...] - File Formats Overview CSV Import CSV Export Directly Reading Files Directly Reading DuckDB Databases Excel Import Excel Export JSON Import JSON Export Parquet Import Parquet Export Querying Parquet Files File Access with the file: Protocol - Meta Queries Describe Table EXPLAIN: Inspect Query Plans EXPLAIN ANALYZE: Profile Queries List Tables Summarize DuckDB Environment - Network and Cloud Storage [...] Read all Parquet files from two specific folders: ``` SELECT FROM read_parquet(['folder1/.parquet','folder2/.parquet']); ``` Read all Parquet files that match the glob pattern at any depth: ``` SELECT FROM read_parquet('dir//.parquet'); ``` ## Multi-File Reads and Globs",
+            "adoption": "REJECTED",
+            "adoptionReason": "本轮未读取；搜索摘要不是原文证据。",
+            "evidenceId": null
+          },
+          {
+            "url": "https://duckdb.org/docs/lts/data/overview.html",
+            "title": "Importing Data – DuckDB",
+            "snippet": "Parquet files can be efficiently loaded and queried using their filename: ``` SELECT FROM'test.parquet'; ``` Alternatively, use the `read_parquet` function: ``` SELECT FROM read_parquet('test.parquet'); ``` Or use the `COPY` statement: ``` COPY tbl FROM'test.parquet'; ``` For more details, see the page on Parquet loading. ### JSON Loading JSON files can be efficiently loaded and queried using their filename: ``` SELECT FROM'test.json'; ``` [...] ``` SELECT FROM read_csv('test.csv', header = false); ``` Or use the `COPY` statement: ``` COPY tbl FROM'test.csv'(HEADER false); ``` It is also possible to read data directly from compressed CSV files (e.g., compressed with gzip): ``` SELECT FROM'test.csv.gz'; ``` DuckDB can create a table from the loaded data using the `CREATE TABLE ... AS SELECT` statement: ``` CREATE TABLE test AS SELECT FROM'test.csv'; ``` For more details, see the page on CSV loading. ### Parquet Loading [...] Alternatively, use the `read_json_auto` function: ``` SELECT FROM read_json_auto('test.json'); ``` Or use the `COPY` statement: ``` COPY tbl FROM'test.json'; ``` For more details, see the page on JSON loading. ### Returning the Filename Since DuckDB v1.3.0, the CSV, JSON and Parquet readers support the `filename` virtual column: ``` COPY(FROM(VALUES(42),(43)) t(x)) TO'test.parquet'; SELECT, filename FROM'test.parquet'; ``` ## Appender",
+            "adoption": "REJECTED",
+            "adoptionReason": "本轮未读取；搜索摘要不是原文证据。",
+            "evidenceId": null
+          },
+          {
+            "url": "https://duckdb.org/docs/lts/data/parquet/metadata.html",
+            "title": "Querying Parquet Metadata – DuckDB",
+            "snippet": "``` SELECT FROM parquet_schema('test.parquet'); ``` Below is a table of the columns returned by `parquet_schema`. | Field | Type | --- | | file\\_name | VARCHAR | | name | VARCHAR | | type | VARCHAR | | type\\_length | VARCHAR | | repetition\\_type | VARCHAR | | num\\_children | BIGINT | | converted\\_type | VARCHAR | | scale | BIGINT | | precision | BIGINT | | field\\_id | BIGINT | | logical\\_type | VARCHAR | ## Parquet File Metadata [...] The `parquet_file_metadata` function can be used to query file-level metadata such as the format version and the encryption algorithm used: ``` SELECT FROM parquet_file_metadata('test.parquet'); ``` Below is a table of the columns returned by `parquet_file_metadata`. [...] ## Parquet Schema The `parquet_schema` function can be used to query the internal schema contained within a Parquet file. Note that this is the schema as it is contained within the metadata of the Parquet file. If you want to figure out the column names and types contained within a Parquet file it is easier to use `DESCRIBE`. Fetch the column names and column types: ``` DESCRIBE SELECT FROM'test.parquet'; ``` Fetch the internal schema of a Parquet file:",
+            "adoption": "REJECTED",
+            "adoptionReason": "本轮未读取；搜索摘要不是原文证据。",
+            "evidenceId": null
+          },
+          {
+            "url": "https://duckdb.org/2024/11/29/duckdb-tricks-part-3.html",
+            "title": "DuckDB Tricks – Part 3 – DuckDB",
+            "snippet": "The run time is about 35 milliseconds. If we would like to use an external binary file format, we can also export the database to a single Parquet file: ``` EXPORT DATABASE 'railway'(FORMAT parquet); ``` We can then directly query it as follows: ``` SELECT avg(Stop_Arrival_delay) FROM'railway/services.parquet' WHERE Service_Company = 'NS' AND Service_Type = 'Intercity direct' AND Stop_Departure_time IS NULL; ```",
+            "adoption": "REJECTED",
+            "adoptionReason": "本轮未读取；搜索摘要不是原文证据。",
+            "evidenceId": null
+          }
+        ]
+      }
+    ],
+    "verificationAudit": {
+      "modelCalls": [
+        {
+          "provider": "api.deepseek.com",
+          "model": "deepseek-flash",
+          "promptVersion": "a2-evidence-v4",
+          "temperature": null,
+          "thinkingMode": "DISABLED",
+          "generatedAt": "2026-10-25T02:01:47.104Z",
+          "id": "ac47ac83-9305-4f63-a2cd-283b766b51a7",
+          "purpose": "investigation-initial-decision",
+          "startedAt": "2026-10-25T02:01:45.945Z",
+          "durationMs": 1159,
+          "outcome": "SUCCEEDED",
+          "inputTokens": 1404,
+          "outputTokens": 124
+        },
+        {
+          "provider": "api.deepseek.com",
+          "model": "deepseek-flash",
+          "promptVersion": "a2-evidence-v4",
+          "temperature": null,
+          "thinkingMode": "DISABLED",
+          "generatedAt": "2026-10-25T02:01:50.963Z",
+          "id": "0814df21-1f21-4887-8f31-08bdb4cfa14f",
+          "purpose": "investigation-evidence-decision",
+          "startedAt": "2026-10-25T02:01:49.549Z",
+          "durationMs": 1414,
+          "outcome": "SUCCEEDED",
+          "inputTokens": 6889,
+          "outputTokens": 190
+        },
+        {
+          "provider": "api.deepseek.com",
+          "model": "deepseek-flash",
+          "promptVersion": "a2-evidence-v4",
+          "temperature": null,
+          "thinkingMode": "DISABLED",
+          "generatedAt": "2026-10-25T02:01:54.189Z",
+          "id": "70f3a115-c83a-4b31-8b5c-584f808598c1",
+          "purpose": "investigation-evidence-decision",
+          "startedAt": "2026-10-25T02:01:52.500Z",
+          "durationMs": 1689,
+          "outcome": "SUCCEEDED",
+          "inputTokens": 8040,
+          "outputTokens": 234
+        },
+        {
+          "provider": "api.deepseek.com",
+          "model": "deepseek-flash",
+          "promptVersion": "a2-evidence-v4",
+          "temperature": null,
+          "thinkingMode": "DISABLED",
+          "generatedAt": "2026-10-25T02:01:57.301Z",
+          "id": "228dd7b2-2257-4d4f-acab-44ca591c6c4f",
+          "purpose": "investigation-evidence-decision",
+          "startedAt": "2026-10-25T02:01:54.940Z",
+          "durationMs": 2361,
+          "outcome": "SUCCEEDED",
+          "inputTokens": 8534,
+          "outputTokens": 301
+        },
+        {
+          "provider": "api.deepseek.com",
+          "model": "deepseek-flash",
+          "promptVersion": "a2-evidence-v4",
+          "temperature": null,
+          "thinkingMode": "DISABLED",
+          "generatedAt": "2026-10-25T02:01:58.672Z",
+          "id": "b83dc9ad-0f66-40ae-8022-4a110c810310",
+          "purpose": "claim-extraction",
+          "startedAt": "2026-10-25T02:01:57.311Z",
+          "durationMs": 1362,
+          "outcome": "SUCCEEDED",
+          "inputTokens": 1718,
+          "outputTokens": 160
+        },
+        {
+          "provider": "api.deepseek.com",
+          "model": "deepseek-flash",
+          "promptVersion": "a2-evidence-v4",
+          "temperature": null,
+          "thinkingMode": "DISABLED",
+          "generatedAt": "2026-10-25T02:02:02.197Z",
+          "id": "7598564e-479d-4120-b4dd-d8118498448d",
+          "purpose": "claim-evidence-verification",
+          "startedAt": "2026-10-25T02:01:58.673Z",
+          "durationMs": 3525,
+          "outcome": "SUCCEEDED",
+          "inputTokens": 3446,
+          "outputTokens": 782
+        },
+        {
+          "provider": "api.deepseek.com",
+          "model": "deepseek-flash",
+          "promptVersion": "a2-evidence-v4",
+          "temperature": null,
+          "thinkingMode": "DISABLED",
+          "generatedAt": "2026-10-25T02:02:04.008Z",
+          "id": "0bbb1650-da91-49de-a832-d091ba9a8600",
+          "purpose": "investigation-evidence-decision",
+          "startedAt": "2026-10-25T02:02:02.198Z",
+          "durationMs": 1810,
+          "outcome": "SUCCEEDED",
+          "inputTokens": 9470,
+          "outputTokens": 255
+        },
+        {
+          "provider": "api.deepseek.com",
+          "model": "deepseek-flash",
+          "promptVersion": "a2-evidence-v4",
+          "temperature": null,
+          "thinkingMode": "DISABLED",
+          "generatedAt": "2026-10-25T02:02:06.811Z",
+          "id": "167283bc-f2d2-4ebf-8aa3-c36c1f698be9",
+          "purpose": "investigation-evidence-decision",
+          "startedAt": "2026-10-25T02:02:05.036Z",
+          "durationMs": 1775,
+          "outcome": "SUCCEEDED",
+          "inputTokens": 10242,
+          "outputTokens": 260
+        },
+        {
+          "provider": "api.deepseek.com",
+          "model": "deepseek-flash",
+          "promptVersion": "a2-evidence-v4",
+          "temperature": null,
+          "thinkingMode": "DISABLED",
+          "generatedAt": "2026-10-25T02:02:09.559Z",
+          "id": "3b5164ff-3920-4b06-96be-13f23e4127f7",
+          "purpose": "investigation-evidence-decision",
+          "startedAt": "2026-10-25T02:02:07.169Z",
+          "durationMs": 2389,
+          "outcome": "SUCCEEDED",
+          "inputTokens": 11005,
+          "outputTokens": 328
+        },
+        {
+          "provider": "api.deepseek.com",
+          "model": "deepseek-flash",
+          "promptVersion": "a2-evidence-v4",
+          "temperature": null,
+          "thinkingMode": "DISABLED",
+          "generatedAt": "2026-10-25T02:02:11.183Z",
+          "id": "77b0ac03-9015-4ee4-8281-1330a1ac2fb4",
+          "purpose": "claim-extraction",
+          "startedAt": "2026-10-25T02:02:09.568Z",
+          "durationMs": 1615,
+          "outcome": "SUCCEEDED",
+          "inputTokens": 2643,
+          "outputTokens": 162
+        },
+        {
+          "provider": "api.deepseek.com",
+          "model": "deepseek-flash",
+          "promptVersion": "a2-evidence-v4",
+          "temperature": null,
+          "thinkingMode": "DISABLED",
+          "generatedAt": "2026-10-25T02:02:14.686Z",
+          "id": "9c5d85d8-b4db-49b6-af48-e7c739a47664",
+          "purpose": "claim-evidence-verification",
+          "startedAt": "2026-10-25T02:02:11.184Z",
+          "durationMs": 3502,
+          "outcome": "SUCCEEDED",
+          "inputTokens": 4457,
+          "outputTokens": 712
+        },
+        {
+          "provider": "api.deepseek.com",
+          "model": "deepseek-flash",
+          "promptVersion": "a2-evidence-v4",
+          "temperature": null,
+          "thinkingMode": "DISABLED",
+          "generatedAt": "2026-10-25T02:02:16.705Z",
+          "id": "7c62976a-c65c-4715-8e69-5f45f9284c19",
+          "purpose": "investigation-evidence-decision",
+          "startedAt": "2026-10-25T02:02:14.692Z",
+          "durationMs": 2013,
+          "outcome": "SUCCEEDED",
+          "inputTokens": 11221,
+          "outputTokens": 285
+        },
+        {
+          "provider": "api.deepseek.com",
+          "model": "deepseek-flash",
+          "promptVersion": "a2-evidence-v4",
+          "temperature": null,
+          "thinkingMode": "DISABLED",
+          "generatedAt": "2026-10-25T02:02:24.787Z",
+          "id": "ffc5c946-ade9-4979-a35f-38288c2019de",
+          "purpose": "investigation-evidence-decision",
+          "startedAt": "2026-10-25T02:02:22.655Z",
+          "durationMs": 2132,
+          "outcome": "SUCCEEDED",
+          "inputTokens": 15701,
+          "outputTokens": 258
+        },
+        {
+          "provider": "api.deepseek.com",
+          "model": "deepseek-flash",
+          "promptVersion": "a2-evidence-v4",
+          "temperature": null,
+          "thinkingMode": "DISABLED",
+          "generatedAt": "2026-10-25T02:02:32.948Z",
+          "id": "1551c0be-b8be-4f5d-80e0-87a14a40b993",
+          "purpose": "investigation-evidence-decision",
+          "startedAt": "2026-10-25T02:02:31.142Z",
+          "durationMs": 1806,
+          "outcome": "SUCCEEDED",
+          "inputTokens": 16478,
+          "outputTokens": 283
+        },
+        {
+          "provider": "api.deepseek.com",
+          "model": "deepseek-flash",
+          "promptVersion": "a2-evidence-v4",
+          "temperature": null,
+          "thinkingMode": "DISABLED",
+          "generatedAt": "2026-10-25T02:02:34.812Z",
+          "id": "3c7e42ef-8c97-4c68-9ac6-95c9cf004364",
+          "purpose": "claim-extraction",
+          "startedAt": "2026-10-25T02:02:33.491Z",
+          "durationMs": 1320,
+          "outcome": "SUCCEEDED",
+          "inputTokens": 3871,
+          "outputTokens": 178
+        },
+        {
+          "provider": "api.deepseek.com",
+          "model": "deepseek-flash",
+          "promptVersion": "a2-evidence-v4",
+          "temperature": null,
+          "thinkingMode": "DISABLED",
+          "generatedAt": "2026-10-25T02:02:37.957Z",
+          "id": "0c8471dd-2ccc-4a1d-92c7-1159802a6867",
+          "purpose": "claim-evidence-verification",
+          "startedAt": "2026-10-25T02:02:34.814Z",
+          "durationMs": 3143,
+          "outcome": "SUCCEEDED",
+          "inputTokens": 5690,
+          "outputTokens": 730
+        },
+        {
+          "provider": "api.deepseek.com",
+          "model": "deepseek-flash",
+          "promptVersion": "a2-evidence-v4",
+          "temperature": null,
+          "thinkingMode": "DISABLED",
+          "generatedAt": "2026-10-25T02:02:38.661Z",
+          "id": "5863878c-72bf-4bf5-8191-cffa68aeb83c",
+          "purpose": "cited-answer-selection",
+          "startedAt": "2026-10-25T02:02:37.963Z",
+          "durationMs": 698,
+          "outcome": "SUCCEEDED",
+          "inputTokens": 1241,
+          "outputTokens": 53
+        },
+        {
+          "provider": "api.deepseek.com",
+          "model": "deepseek-flash",
+          "promptVersion": "a2-evidence-v4",
+          "temperature": null,
+          "thinkingMode": "DISABLED",
+          "generatedAt": "2026-10-25T02:02:40.000Z",
+          "id": "80ffc1ae-e4e3-4c57-ba3d-062f569d0ca0",
+          "purpose": "citation-semantic-support-check",
+          "startedAt": "2026-10-25T02:02:38.662Z",
+          "durationMs": 1338,
+          "outcome": "SUCCEEDED",
+          "inputTokens": 1654,
+          "outputTokens": 143
+        }
+      ],
+      "review": {
+        "status": "NOT_CONFIGURED",
+        "reason": "未配置第二模型；不声称完成独立模型复核或精度提高。",
+        "independentAssessment": null,
+        "findings": []
+      },
+      "citationChecks": [
+        {
+          "marker": "[1]",
+          "supported": true,
+          "reason": "保存原句明确写出 DuckDB 的零依赖 Parquet 读取器能直接对 Parquet 文件执行 SQL 查询、无需导入或分析步骤，并属该官方博客所述；原句未提具体版本，回答以“未标注具体版本”保留该缺口，未以未知补已知。"
+        },
+        {
+          "marker": "[2]",
+          "supported": true,
+          "reason": "保存原句明确说明从 Parquet 文件读取数据需在查询的 FROM 子句使用 read_parquet 函数，与主张一致；适用范围标注为该 2.0 文档页面所述，未超出原句条件。"
+        }
+      ],
+      "followup": {
+        "queriesUsed": 1,
+        "maxQueries": 2,
+        "stopReason": "达到十次决策预算，保留未决缺口并整理回答。"
+      },
+      "investigationLoop": {
+        "startedAt": "2026-10-25T02:01:45.941Z",
+        "durationMs": 54061,
+        "totalBudgetMs": 180000,
+        "answerReserveMs": 45000,
+        "maxSearchRounds": 3,
+        "searchRounds": 2,
+        "maxReads": 10,
+        "readsUsed": 7,
+        "stopReason": "达到十次决策预算，保留未决缺口并整理回答。",
+        "httpAttempts": [
+          {
+            "url": "https://api.wsa.cloud.tencent.com/SearchPro",
+            "method": "POST",
+            "startedAt": "2026-10-25T02:01:47.113Z",
+            "finishedAt": "2026-10-25T02:01:47.714Z",
+            "requestSent": true,
+            "status": 200,
+            "error": null,
+            "ownerId": "f496918d-2b63-4b7a-bc8d-4acbf1ed5dcd"
+          },
+          {
+            "url": "https://api.tavily.com/search",
+            "method": "POST",
+            "startedAt": "2026-10-25T02:01:47.112Z",
+            "finishedAt": "2026-10-25T02:01:49.544Z",
+            "requestSent": true,
+            "status": 200,
+            "error": null,
+            "ownerId": "6c5cdd60-1539-4854-ad26-5f352c55cdc6"
+          },
+          {
+            "url": "https://www.duckdb.org/docs/2.0/guides/file_formats/parquet_import",
+            "method": "GET",
+            "startedAt": "2026-10-25T02:01:50.968Z",
+            "finishedAt": "2026-10-25T02:01:52.456Z",
+            "requestSent": true,
+            "status": 200,
+            "error": null,
+            "ownerId": "b71d1848-dcfd-4259-ab58-0b8249f7c05b"
+          },
+          {
+            "url": "https://www.duckdb.org/docs/1.4/core_extensions/httpfs/https",
+            "method": "GET",
+            "startedAt": "2026-10-25T02:01:50.968Z",
+            "finishedAt": "2026-10-25T02:01:52.378Z",
+            "requestSent": true,
+            "status": 200,
+            "error": null,
+            "ownerId": "b8a50b93-7c2a-477b-8359-20768465cbaf"
+          },
+          {
+            "url": "https://duckdb.org/docs/lts/data/multiple_files/overview.html",
+            "method": "GET",
+            "startedAt": "2026-10-25T02:01:54.195Z",
+            "finishedAt": "2026-10-25T02:01:54.938Z",
+            "requestSent": true,
+            "status": 308,
+            "error": null,
+            "ownerId": "f21df350-33cf-4330-9831-81e09a775b4a"
+          },
+          {
+            "url": "https://duckdb.org/docs/lts/data/multiple_files/overview",
+            "method": "GET",
+            "startedAt": "2026-10-25T02:01:54.754Z",
+            "finishedAt": "2026-10-25T02:01:54.938Z",
+            "requestSent": true,
+            "status": 200,
+            "error": null,
+            "ownerId": "f21df350-33cf-4330-9831-81e09a775b4a"
+          },
+          {
+            "url": "https://www.duckdb.org/docs/2.0/guides/file_formats/parquet_import",
+            "method": "GET",
+            "startedAt": "2026-10-25T02:02:04.014Z",
+            "finishedAt": "2026-10-25T02:02:04.995Z",
+            "requestSent": true,
+            "status": 200,
+            "error": null,
+            "ownerId": "b4c8d8dc-4492-4f34-9a91-e7f3a82b1c23"
+          },
+          {
+            "url": "https://www.duckdb.org/docs/2.0/guides/file_formats/parquet_import",
+            "method": "GET",
+            "startedAt": "2026-10-25T02:02:06.816Z",
+            "finishedAt": "2026-10-25T02:02:07.125Z",
+            "requestSent": true,
+            "status": 200,
+            "error": null,
+            "ownerId": "513a27ca-93cc-4f10-9e00-575e3ded5f04"
+          },
+          {
+            "url": "https://api.wsa.cloud.tencent.com/SearchPro",
+            "method": "POST",
+            "startedAt": "2026-10-25T02:02:16.711Z",
+            "finishedAt": "2026-10-25T02:02:17.212Z",
+            "requestSent": true,
+            "status": 200,
+            "error": null,
+            "ownerId": "f814b944-5f0d-486b-8897-c0cde78396a7"
+          },
+          {
+            "url": "https://api.tavily.com/search",
+            "method": "POST",
+            "startedAt": "2026-10-25T02:02:16.711Z",
+            "finishedAt": "2026-10-25T02:02:22.651Z",
+            "requestSent": true,
+            "status": 200,
+            "error": null,
+            "ownerId": "96520d5b-03f5-4015-9a6e-6a9ae654fccb"
+          },
+          {
+            "url": "https://duckdb.org/2021/06/25/querying-parquet.html",
+            "method": "GET",
+            "startedAt": "2026-10-25T02:02:24.792Z",
+            "finishedAt": "2026-10-25T02:02:30.939Z",
+            "requestSent": true,
+            "status": 308,
+            "error": null,
+            "ownerId": "b3e6da28-15b8-4a5c-8b51-73ac04c0a29d"
+          },
+          {
+            "url": "https://duckdb.org/2021/06/25/querying-parquet",
+            "method": "GET",
+            "startedAt": "2026-10-25T02:02:30.292Z",
+            "finishedAt": "2026-10-25T02:02:30.939Z",
+            "requestSent": true,
+            "status": 200,
+            "error": null,
+            "ownerId": "b3e6da28-15b8-4a5c-8b51-73ac04c0a29d"
+          },
+          {
+            "url": "https://duckdb.org/2021/06/25/querying-parquet.html",
+            "method": "GET",
+            "startedAt": "2026-10-25T02:02:32.961Z",
+            "finishedAt": "2026-10-25T02:02:33.422Z",
+            "requestSent": true,
+            "status": 308,
+            "error": null,
+            "ownerId": "73c1a011-b625-4ea2-ab22-47054acdd028"
+          },
+          {
+            "url": "https://duckdb.org/2021/06/25/querying-parquet",
+            "method": "GET",
+            "startedAt": "2026-10-25T02:02:33.154Z",
+            "finishedAt": "2026-10-25T02:02:33.422Z",
+            "requestSent": true,
+            "status": 200,
+            "error": null,
+            "ownerId": "73c1a011-b625-4ea2-ab22-47054acdd028"
+          }
+        ],
+        "collectionDiagnostics": [],
+        "decisions": [
+          {
+            "step": 1,
+            "decidedAt": "2026-10-25T02:01:47.104Z",
+            "remainingMs": 178836,
+            "decision": {
+              "action": "SEARCH",
+              "query": "DuckDB 官方文档 直接查询 Parquet 文件 无需导入",
+              "entries": [
+                "yuanbao",
+                "tavily"
+              ],
+              "readUrls": [],
+              "reason": "尚无任何证据；需先检索 DuckDB 官方文档中关于直接查询 Parquet 文件的说明，首轮包含元宝并按规则同时使用 tavily。",
+              "observedGap": "缺少 DuckDB 官方文档中关于能否直接查询 Parquet 而不导入的证据。",
+              "basisEvidenceIds": [],
+              "basisRecordIds": [],
+              "clarification": null,
+              "discoveredIdentity": null
+            },
+            "availableEvidenceIds": [],
+            "availableRecordIds": [],
+            "outcome": "EXECUTED",
+            "detail": "实际入口：yuanbao,tavily；返回记录：f496918d-2b63-4b7a-bc8d-4acbf1ed5dcd:SUCCEEDED,6c5cdd60-1539-4854-ad26-5f352c55cdc6:SUCCEEDED。"
+          },
+          {
+            "step": 2,
+            "decidedAt": "2026-10-25T02:01:50.963Z",
+            "remainingMs": 174977,
+            "decision": {
+              "action": "READ",
+              "query": "read_parquet 直接查询 Parquet",
+              "entries": [],
+              "readUrls": [
+                "https://www.duckdb.org/docs/2.0/guides/file_formats/parquet_import",
+                "https://www.duckdb.org/docs/1.4/core_extensions/httpfs/https"
+              ],
+              "reason": "已有官方文档链接但摘要不是原文。需读取 DuckDB 官方 Parquet Import 页与 HTTP(S) 页原句，确认是否支持不经导入直接查询本地/远程 Parquet 文件。",
+              "observedGap": "缺少官方文档原句证明可直接查询 Parquet 而无需创建表或导入。",
+              "basisEvidenceIds": [],
+              "basisRecordIds": [
+                "f496918d-2b63-4b7a-bc8d-4acbf1ed5dcd"
+              ],
+              "clarification": null,
+              "discoveredIdentity": null
+            },
+            "availableEvidenceIds": [],
+            "availableRecordIds": [
+              "f496918d-2b63-4b7a-bc8d-4acbf1ed5dcd",
+              "6c5cdd60-1539-4854-ad26-5f352c55cdc6"
+            ],
+            "outcome": "EXECUTED",
+            "detail": "已尝试读取：https://www.duckdb.org/docs/2.0/guides/file_formats/parquet_import,https://www.duckdb.org/docs/1.4/core_extensions/httpfs/https；累计保存2份原文状态。"
+          },
+          {
+            "step": 3,
+            "decidedAt": "2026-10-25T02:01:54.189Z",
+            "remainingMs": 171752,
+            "decision": {
+              "action": "READ",
+              "query": "read_parquet query directly without import",
+              "entries": [],
+              "readUrls": [
+                "https://duckdb.org/docs/lts/data/multiple_files/overview.html"
+              ],
+              "reason": "已读的官方页面显示可用 read_parquet 在 FROM 中直接读取 Parquet，但缺少明确说明“无需导入/无需加载”的官方原句。读取官方 LTS 多文件读取文档，补充直接扫描文件的官方表述。",
+              "observedGap": "已读官方原句证明可在查询中直接对 Parquet 使用 read_parquet，尚未取得官方明确表述“无需先导入/加载即可查询”。",
+              "basisEvidenceIds": [
+                "b71d1848-dcfd-4259-ab58-0b8249f7c05b",
+                "b8a50b93-7c2a-477b-8359-20768465cbaf"
+              ],
+              "basisRecordIds": [
+                "6c5cdd60-1539-4854-ad26-5f352c55cdc6"
+              ],
+              "clarification": null,
+              "discoveredIdentity": null
+            },
+            "availableEvidenceIds": [
+              "b8a50b93-7c2a-477b-8359-20768465cbaf",
+              "b71d1848-dcfd-4259-ab58-0b8249f7c05b"
+            ],
+            "availableRecordIds": [
+              "f496918d-2b63-4b7a-bc8d-4acbf1ed5dcd",
+              "6c5cdd60-1539-4854-ad26-5f352c55cdc6"
+            ],
+            "outcome": "EXECUTED",
+            "detail": "已尝试读取：https://duckdb.org/docs/lts/data/multiple_files/overview.html；累计保存3份原文状态。"
+          },
+          {
+            "step": 4,
+            "decidedAt": "2026-10-25T02:01:57.301Z",
+            "remainingMs": 168640,
+            "decision": {
+              "action": "FINISH",
+              "query": null,
+              "entries": [],
+              "readUrls": [],
+              "reason": "已读官方文档原句足以回答：DuckDB 官方 Parquet Import 页明确写 “To read data from a Parquet file, use the read_parquet function in the FROM clause of a query: SELECT * FROM read_parquet('input.parquet');”，即直接在查询中读取 Parquet，无需先建表导入；HTTP(S) 官方页也给出 SELECT * FROM read_parquet([...]) 直接查询远程文件。两次搜索与三次读取后关键证据已覆盖问题。",
+              "observedGap": "未能取得官方页面中逐字出现的“without import”措辞（LTS 多文件页读取失败），但官方用法原句已足以证明可直接查询 Parquet；剩余缺口不影响回答。",
+              "basisEvidenceIds": [
+                "b71d1848-dcfd-4259-ab58-0b8249f7c05b",
+                "b8a50b93-7c2a-477b-8359-20768465cbaf"
+              ],
+              "basisRecordIds": [
+                "f496918d-2b63-4b7a-bc8d-4acbf1ed5dcd",
+                "6c5cdd60-1539-4854-ad26-5f352c55cdc6"
+              ],
+              "clarification": null,
+              "discoveredIdentity": null
+            },
+            "availableEvidenceIds": [
+              "b8a50b93-7c2a-477b-8359-20768465cbaf",
+              "b71d1848-dcfd-4259-ab58-0b8249f7c05b",
+              "f21df350-33cf-4330-9831-81e09a775b4a"
+            ],
+            "availableRecordIds": [
+              "f496918d-2b63-4b7a-bc8d-4acbf1ed5dcd",
+              "6c5cdd60-1539-4854-ad26-5f352c55cdc6"
+            ],
+            "outcome": "REJECTED",
+            "detail": "逐主张核查发现缺口或未决项，已将核查结果交回下一轮决策；由模型决定定向补查或如实结束。"
+          },
+          {
+            "step": 5,
+            "decidedAt": "2026-10-25T02:02:04.008Z",
+            "remainingMs": 161931,
+            "decision": {
+              "action": "READ",
+              "query": "read_parquet query Parquet files directly",
+              "entries": [],
+              "readUrls": [
+                "https://www.duckdb.org/docs/2.0/guides/file_formats/parquet_import"
+              ],
+              "reason": "逐主张核查未决项是：已读两段只说明用 read_parquet 读取，无法确认官方文档是否另有“必须先导入/建表”的要求。Parquet Import 页正是导入流程的官方页，同页定向重读可核查其是否提出前置导入要求，从而覆盖该缺口。",
+              "observedGap": "缺少官方原句直接说明可直接查询 Parquet 而无需预先导入/建表；已读摘录未覆盖该页导入相关段落。",
+              "basisEvidenceIds": [
+                "b71d1848-dcfd-4259-ab58-0b8249f7c05b",
+                "b8a50b93-7c2a-477b-8359-20768465cbaf"
+              ],
+              "basisRecordIds": [
+                "f496918d-2b63-4b7a-bc8d-4acbf1ed5dcd"
+              ],
+              "clarification": null,
+              "discoveredIdentity": null
+            },
+            "availableEvidenceIds": [
+              "b8a50b93-7c2a-477b-8359-20768465cbaf",
+              "b71d1848-dcfd-4259-ab58-0b8249f7c05b",
+              "f21df350-33cf-4330-9831-81e09a775b4a"
+            ],
+            "availableRecordIds": [
+              "f496918d-2b63-4b7a-bc8d-4acbf1ed5dcd",
+              "6c5cdd60-1539-4854-ad26-5f352c55cdc6"
+            ],
+            "outcome": "EXECUTED",
+            "detail": "已尝试读取：https://www.duckdb.org/docs/2.0/guides/file_formats/parquet_import；累计保存4份原文状态。"
+          },
+          {
+            "step": 6,
+            "decidedAt": "2026-10-25T02:02:06.811Z",
+            "remainingMs": 159128,
+            "decision": {
+              "action": "READ",
+              "query": "read_parquet query directly without import",
+              "entries": [],
+              "readUrls": [
+                "https://www.duckdb.org/docs/2.0/guides/file_formats/parquet_import"
+              ],
+              "reason": "最终核查缺口是：已读原句只演示用 read_parquet 读取，未直接说明无需先导入/建表。Parquet Import 页标题即导入，同页定向重读定位其导入/创建表段落，可核查官方是否提出任何前置导入要求，从而覆盖或如实保留该缺口。",
+              "observedGap": "缺少官方原句直接表明可直接查询 Parquet 而无需预先导入/建表；已保存摘录仅覆盖该页开头 read_parquet 用法段。",
+              "basisEvidenceIds": [
+                "b71d1848-dcfd-4259-ab58-0b8249f7c05b",
+                "b8a50b93-7c2a-477b-8359-20768465cbaf"
+              ],
+              "basisRecordIds": [
+                "f496918d-2b63-4b7a-bc8d-4acbf1ed5dcd"
+              ],
+              "clarification": null,
+              "discoveredIdentity": null
+            },
+            "availableEvidenceIds": [
+              "b8a50b93-7c2a-477b-8359-20768465cbaf",
+              "b71d1848-dcfd-4259-ab58-0b8249f7c05b",
+              "f21df350-33cf-4330-9831-81e09a775b4a",
+              "b4c8d8dc-4492-4f34-9a91-e7f3a82b1c23"
+            ],
+            "availableRecordIds": [
+              "f496918d-2b63-4b7a-bc8d-4acbf1ed5dcd",
+              "6c5cdd60-1539-4854-ad26-5f352c55cdc6"
+            ],
+            "outcome": "EXECUTED",
+            "detail": "已尝试读取：https://www.duckdb.org/docs/2.0/guides/file_formats/parquet_import；累计保存5份原文状态。"
+          },
+          {
+            "step": 7,
+            "decidedAt": "2026-10-25T02:02:09.559Z",
+            "remainingMs": 156381,
+            "decision": {
+              "action": "FINISH",
+              "query": null,
+              "entries": [],
+              "readUrls": [],
+              "reason": "官方原文已足够回答：Parquet Import 页写明 “To read data from a Parquet file, use the read_parquet function in the FROM clause of a query: SELECT * FROM read_parquet('input.parquet');”，即直接在查询的 FROM 子句中读取 Parquet，未要求先导入或建表；HTTP(S) Support 页也给出 SELECT * FROM read_parquet([...]) 直接查询远程 Parquet。同页已两次定向重读，未出现任何前置导入要求，再读同一段不会新增信息。",
+              "observedGap": "未能取得官方页面逐字出现的“without import”措辞（多文件概览页读取失败返回空壳），且“官方文档未明确说明必须先导入”属全文档否定性主张，现有摘录不足以证明；其余关键点已覆盖，不重复读取同一来源。",
+              "basisEvidenceIds": [
+                "b71d1848-dcfd-4259-ab58-0b8249f7c05b",
+                "b8a50b93-7c2a-477b-8359-20768465cbaf"
+              ],
+              "basisRecordIds": [
+                "f496918d-2b63-4b7a-bc8d-4acbf1ed5dcd",
+                "6c5cdd60-1539-4854-ad26-5f352c55cdc6"
+              ],
+              "clarification": null,
+              "discoveredIdentity": null
+            },
+            "availableEvidenceIds": [
+              "b8a50b93-7c2a-477b-8359-20768465cbaf",
+              "b71d1848-dcfd-4259-ab58-0b8249f7c05b",
+              "f21df350-33cf-4330-9831-81e09a775b4a",
+              "b4c8d8dc-4492-4f34-9a91-e7f3a82b1c23",
+              "513a27ca-93cc-4f10-9e00-575e3ded5f04"
+            ],
+            "availableRecordIds": [
+              "f496918d-2b63-4b7a-bc8d-4acbf1ed5dcd",
+              "6c5cdd60-1539-4854-ad26-5f352c55cdc6"
+            ],
+            "outcome": "REJECTED",
+            "detail": "逐主张核查发现缺口或未决项，已将核查结果交回下一轮决策；由模型决定定向补查或如实结束。"
+          },
+          {
+            "step": 8,
+            "decidedAt": "2026-10-25T02:02:16.705Z",
+            "remainingMs": 149235,
+            "decision": {
+              "action": "SEARCH",
+              "query": "DuckDB Parquet 文件 直接查询 无需导入 site:duckdb.org",
+              "entries": [
+                "yuanbao",
+                "tavily"
+              ],
+              "readUrls": [],
+              "reason": "核查缺口是：仅凭两段摘录无法确认官方文档未要求先导入/建表。同页已读过两次，重复读取无新增信息；改用官方站内检索定位一篇明确说明可直接对 Parquet 执行 SQL、无需导入的官方页面（如 Data Ingestion / Parquet 概览页），再读取原文。",
+              "observedGap": "缺少官方原句明确说明可直接查询 Parquet 而不需要先导入或建表；现有摘录只展示 read_parquet 用法，未覆盖该否定性要点。",
+              "basisEvidenceIds": [
+                "b71d1848-dcfd-4259-ab58-0b8249f7c05b",
+                "b8a50b93-7c2a-477b-8359-20768465cbaf"
+              ],
+              "basisRecordIds": [
+                "f496918d-2b63-4b7a-bc8d-4acbf1ed5dcd",
+                "6c5cdd60-1539-4854-ad26-5f352c55cdc6"
+              ],
+              "clarification": null,
+              "discoveredIdentity": null
+            },
+            "availableEvidenceIds": [
+              "b8a50b93-7c2a-477b-8359-20768465cbaf",
+              "b71d1848-dcfd-4259-ab58-0b8249f7c05b",
+              "f21df350-33cf-4330-9831-81e09a775b4a",
+              "b4c8d8dc-4492-4f34-9a91-e7f3a82b1c23",
+              "513a27ca-93cc-4f10-9e00-575e3ded5f04"
+            ],
+            "availableRecordIds": [
+              "f496918d-2b63-4b7a-bc8d-4acbf1ed5dcd",
+              "6c5cdd60-1539-4854-ad26-5f352c55cdc6"
+            ],
+            "outcome": "EXECUTED",
+            "detail": "实际入口：yuanbao,tavily；返回记录：f814b944-5f0d-486b-8897-c0cde78396a7:SUCCEEDED,96520d5b-03f5-4015-9a6e-6a9ae654fccb:SUCCEEDED。"
+          },
+          {
+            "step": 9,
+            "decidedAt": "2026-10-25T02:02:24.788Z",
+            "remainingMs": 141152,
+            "decision": {
+              "action": "READ",
+              "query": "Querying Parquet with Precision Using DuckDB",
+              "entries": [],
+              "readUrls": [
+                "https://duckdb.org/2021/06/25/querying-parquet.html"
+              ],
+              "reason": "核查缺口是缺少官方原句明确说明可直接查询 Parquet 而无需导入。本轮站内检索已返回官方博客《Querying Parquet with Precision Using DuckDB》，其摘要含有该表述，但摘要不是原句；读取该官方页面可取得原文证据，且不在已读同页重复。",
+              "observedGap": "仍缺官方原句直接说明 DuckDB 可直接对 Parquet 执行 SQL 而无需 import 或加载步骤；现有按需摘录仅展示 read_parquet 用法。",
+              "basisEvidenceIds": [
+                "b71d1848-dcfd-4259-ab58-0b8249f7c05b",
+                "b8a50b93-7c2a-477b-8359-20768465cbaf"
+              ],
+              "basisRecordIds": [
+                "96520d5b-03f5-4015-9a6e-6a9ae654fccb"
+              ],
+              "clarification": null,
+              "discoveredIdentity": null
+            },
+            "availableEvidenceIds": [
+              "b8a50b93-7c2a-477b-8359-20768465cbaf",
+              "b71d1848-dcfd-4259-ab58-0b8249f7c05b",
+              "f21df350-33cf-4330-9831-81e09a775b4a",
+              "b4c8d8dc-4492-4f34-9a91-e7f3a82b1c23",
+              "513a27ca-93cc-4f10-9e00-575e3ded5f04"
+            ],
+            "availableRecordIds": [
+              "f496918d-2b63-4b7a-bc8d-4acbf1ed5dcd",
+              "6c5cdd60-1539-4854-ad26-5f352c55cdc6",
+              "f814b944-5f0d-486b-8897-c0cde78396a7",
+              "96520d5b-03f5-4015-9a6e-6a9ae654fccb"
+            ],
+            "outcome": "EXECUTED",
+            "detail": "已尝试读取：https://duckdb.org/2021/06/25/querying-parquet.html；累计保存6份原文状态。"
+          },
+          {
+            "step": 10,
+            "decidedAt": "2026-10-25T02:02:32.948Z",
+            "remainingMs": 132991,
+            "decision": {
+              "action": "READ",
+              "query": "directly execute SQL queries without any import",
+              "entries": [],
+              "readUrls": [
+                "https://duckdb.org/2021/06/25/querying-parquet.html"
+              ],
+              "reason": "已读该官方博客但仅保存了标题原句，核查缺口仍是缺少官方原句明确说明可直接对 Parquet 执行 SQL 而无需导入。该页搜索摘要含此表述，同页定向重读定位“DuckDB and Parquet”段落可取到原文，非重复同一摘录。",
+              "observedGap": "缺官方原句直接说明 DuckDB 可直接查询 Parquet 文件而无需 import 或初始加载步骤；现有摘录只有 read_parquet 用法示例。",
+              "basisEvidenceIds": [
+                "b3e6da28-15b8-4a5c-8b51-73ac04c0a29d",
+                "b71d1848-dcfd-4259-ab58-0b8249f7c05b",
+                "b8a50b93-7c2a-477b-8359-20768465cbaf"
+              ],
+              "basisRecordIds": [
+                "96520d5b-03f5-4015-9a6e-6a9ae654fccb"
+              ],
+              "clarification": null,
+              "discoveredIdentity": null
+            },
+            "availableEvidenceIds": [
+              "b8a50b93-7c2a-477b-8359-20768465cbaf",
+              "b71d1848-dcfd-4259-ab58-0b8249f7c05b",
+              "f21df350-33cf-4330-9831-81e09a775b4a",
+              "b4c8d8dc-4492-4f34-9a91-e7f3a82b1c23",
+              "513a27ca-93cc-4f10-9e00-575e3ded5f04",
+              "b3e6da28-15b8-4a5c-8b51-73ac04c0a29d"
+            ],
+            "availableRecordIds": [
+              "f496918d-2b63-4b7a-bc8d-4acbf1ed5dcd",
+              "6c5cdd60-1539-4854-ad26-5f352c55cdc6",
+              "f814b944-5f0d-486b-8897-c0cde78396a7",
+              "96520d5b-03f5-4015-9a6e-6a9ae654fccb"
+            ],
+            "outcome": "EXECUTED",
+            "detail": "已尝试读取：https://duckdb.org/2021/06/25/querying-parquet.html；累计保存7份原文状态。"
+          }
+        ],
+        "collectionCalls": [
+          {
+            "operation": "search:yuanbao",
+            "target": "DuckDB 官方文档 直接查询 Parquet 文件 无需导入",
+            "startedAt": "2026-10-25T02:01:47.111Z",
+            "durationMs": 604,
+            "outcome": "SUCCEEDED",
+            "resultId": "f496918d-2b63-4b7a-bc8d-4acbf1ed5dcd",
+            "error": null
+          },
+          {
+            "operation": "search:tavily",
+            "target": "DuckDB 官方文档 直接查询 Parquet 文件 无需导入",
+            "startedAt": "2026-10-25T02:01:47.111Z",
+            "durationMs": 2437,
+            "outcome": "SUCCEEDED",
+            "resultId": "6c5cdd60-1539-4854-ad26-5f352c55cdc6",
+            "error": null
+          },
+          {
+            "operation": "read",
+            "target": "https://www.duckdb.org/docs/1.4/core_extensions/httpfs/https",
+            "startedAt": "2026-10-25T02:01:50.968Z",
+            "durationMs": 1487,
+            "outcome": "SUCCEEDED",
+            "resultId": "b8a50b93-7c2a-477b-8359-20768465cbaf",
+            "error": null
+          },
+          {
+            "operation": "read",
+            "target": "https://www.duckdb.org/docs/2.0/guides/file_formats/parquet_import",
+            "startedAt": "2026-10-25T02:01:50.968Z",
+            "durationMs": 1532,
+            "outcome": "SUCCEEDED",
+            "resultId": "b71d1848-dcfd-4259-ab58-0b8249f7c05b",
+            "error": null
+          },
+          {
+            "operation": "read",
+            "target": "https://duckdb.org/docs/lts/data/multiple_files/overview.html",
+            "startedAt": "2026-10-25T02:01:54.195Z",
+            "durationMs": 745,
+            "outcome": "FAILED",
+            "resultId": "f21df350-33cf-4330-9831-81e09a775b4a",
+            "error": "No readable article blocks; JavaScript shell/empty page is not original material"
+          },
+          {
+            "operation": "read",
+            "target": "https://www.duckdb.org/docs/2.0/guides/file_formats/parquet_import",
+            "startedAt": "2026-10-25T02:02:04.014Z",
+            "durationMs": 1022,
+            "outcome": "SUCCEEDED",
+            "resultId": "b4c8d8dc-4492-4f34-9a91-e7f3a82b1c23",
+            "error": null
+          },
+          {
+            "operation": "read",
+            "target": "https://www.duckdb.org/docs/2.0/guides/file_formats/parquet_import",
+            "startedAt": "2026-10-25T02:02:06.816Z",
+            "durationMs": 352,
+            "outcome": "SUCCEEDED",
+            "resultId": "513a27ca-93cc-4f10-9e00-575e3ded5f04",
+            "error": null
+          },
+          {
+            "operation": "search:yuanbao",
+            "target": "DuckDB Parquet 文件 直接查询 无需导入 site:duckdb.org",
+            "startedAt": "2026-10-25T02:02:16.710Z",
+            "durationMs": 503,
+            "outcome": "SUCCEEDED",
+            "resultId": "f814b944-5f0d-486b-8897-c0cde78396a7",
+            "error": null
+          },
+          {
+            "operation": "search:tavily",
+            "target": "DuckDB Parquet 文件 直接查询 无需导入 site:duckdb.org",
+            "startedAt": "2026-10-25T02:02:16.710Z",
+            "durationMs": 5944,
+            "outcome": "SUCCEEDED",
+            "resultId": "96520d5b-03f5-4015-9a6e-6a9ae654fccb",
+            "error": null
+          },
+          {
+            "operation": "read",
+            "target": "https://duckdb.org/2021/06/25/querying-parquet.html",
+            "startedAt": "2026-10-25T02:02:24.792Z",
+            "durationMs": 6349,
+            "outcome": "SUCCEEDED",
+            "resultId": "b3e6da28-15b8-4a5c-8b51-73ac04c0a29d",
+            "error": null
+          },
+          {
+            "operation": "read",
+            "target": "https://duckdb.org/2021/06/25/querying-parquet.html",
+            "startedAt": "2026-10-25T02:02:32.961Z",
+            "durationMs": 521,
+            "outcome": "SUCCEEDED",
+            "resultId": "73c1a011-b625-4ea2-ab22-47054acdd028",
+            "error": null
+          }
+        ]
+      }
+    },
+    "generatedAt": "2026-10-25T02:02:40.001Z",
+    "contractVersion": "1.0.0"
+  },
+  "answers": [
+    {
+      "id": "4271f107-86c1-46a4-9c21-f7f01aaab278",
+      "snapshotId": "7e0c155b-1ed6-49ae-9611-bbeae17bb9b5",
+      "body": "DuckDB 的 Parquet 读取器可直接对 Parquet 文件执行 SQL 查询，无需导入或分析步骤。\n适用范围：DuckDB 官方博客（2021-06-25）所述，未标注具体版本 [1]\n\n在查询的 FROM 子句中使用 read_parquet 函数即可从 Parquet 文件读取数据。\n适用范围：DuckDB 2.0 文档“Parquet Import”页面所述 [2]\n\n核查缺口：\n• https://duckdb.org/docs/lts/data/multiple_files/overview.html：FAILED；No readable article blocks; JavaScript shell/empty page is not original material",
+      "citations": [
+        {
+          "marker": "[1]",
+          "claimIds": [
+            "a8a227c9-1472-4b3e-a93e-388ecb75e65b"
+          ],
+          "evidenceIds": [
+            "73c1a011-b625-4ea2-ab22-47054acdd028"
+          ],
+          "quotes": [
+            {
+              "evidenceId": "73c1a011-b625-4ea2-ab22-47054acdd028",
+              "originalExcerpt": "DuckDB's zero-dependency Parquet reader is able to directly execute SQL queries on Parquet files without any import or analysis step. Because of the natural columnar format of Parquet, this is very fast!"
+            }
+          ]
+        },
+        {
+          "marker": "[2]",
+          "claimIds": [
+            "48db2914-ccd3-4247-aea5-f1829515f217"
+          ],
+          "evidenceIds": [
+            "b71d1848-dcfd-4259-ab58-0b8249f7c05b"
+          ],
+          "quotes": [
+            {
+              "evidenceId": "b71d1848-dcfd-4259-ab58-0b8249f7c05b",
+              "originalExcerpt": "To read data from a Parquet file, use the read_parquet function in the FROM clause of a query:"
+            }
+          ]
+        }
+      ],
+      "generationConfig": {
+        "provider": "api.deepseek.com",
+        "model": "deepseek-flash",
+        "promptVersion": "a2-evidence-v4",
+        "temperature": null,
+        "thinkingMode": "DISABLED",
+        "generatedAt": "2026-10-25T02:02:40.000Z"
+      }
+    }
+  ]
+}

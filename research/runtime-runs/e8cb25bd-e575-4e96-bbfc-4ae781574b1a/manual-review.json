@@ -1,0 +1,14 @@
+{
+  "scope": "Integration owner manual comparison; not independent human acceptance",
+  "codeCommit": "6f80500d8e2a8ec7350c2b26c634f95a438b785a",
+  "investigationId": "e8cb25bd-e575-4e96-bbfc-4ae781574b1a",
+  "snapshotId": "7e0c155b-1ed6-49ae-9611-bbeae17bb9b5",
+  "answerSupport": "PASSED for displayed conclusions against the saved exact excerpts",
+  "notes": [
+    "The official blog explicitly says no import or analysis step; the 2.0 guide quote supports read_parquet in FROM.",
+    "The model saw verification gaps then actually issued a new site query at decision 8, acquired the blog, and focused a second read on its relevant paragraph.",
+    "54-second loop ended on ten-decision ceiling; final answer published at about55s, with actual failed LTS read retained.",
+    "This product was first submitted on e8f19b0 without any product-specific source/code changes, then rerun unchanged question on final code.",
+    "Historical blog is scoped to its date; no benchmark or latest-version performance claim is made."
+  ]
+}

@@ -1,0 +1,1220 @@
+{
+  "snapshot": {
+    "id": "feae1665-9f12-47a8-8274-7051f9e9bf05",
+    "investigationId": "ecf5a367-826e-4b78-bc90-4a14a6bea5f4",
+    "version": 1,
+    "parentSnapshotId": null,
+    "productIdentity": {
+      "name": "Ollama",
+      "officialWebsite": "https://docs.ollama.com",
+      "version": null,
+      "plan": null,
+      "confirmationStatus": "CONFIRMED",
+      "confirmationBasis": [
+        {
+          "url": "https://docs.ollama.com/api/introduction",
+          "excerpt": "Ollamahttps://ollama.com/apihttp://localhost:11434/api",
+          "retrievedAt": "2026-10-25T01:51:22.283Z",
+          "reason": "模型依据保存原句识别的候选身份；未据此认定官网或独立验证。"
+        }
+      ]
+    },
+    "evidence": [
+      {
+        "id": "45d3a039-ac89-4137-994f-16c713df5900",
+        "sourceUrl": "https://docs.ollama.com/api/introduction",
+        "originalExcerpt": "Ollamahttps://ollama.com/apihttp://localhost:11434/api",
+        "translation": null,
+        "originalLocation": {
+          "kind": "TEXT",
+          "locator": "https://docs.ollama.com/api/introduction :: main:first :: blocks(p,li,pre,tr,h1,h2,h3)[3]; normalized UTF-16 [0,54)",
+          "context": "APIDirect cloud accessLocal Ollama serverOllamahttps://ollama.com/apihttp://localhost:11434/apiOpenAI compatibilityhttps://ollama.com/v1http://localhost:11434/v1Anthropic client base URLhttps://ollama.comhttp://localhost:11434"
+        },
+        "metadata": {
+          "title": "Introduction - Ollama",
+          "siteName": "docs.ollama.com",
+          "author": null,
+          "publishedAt": null,
+          "language": "en",
+          "sourceType": "OFFICIAL",
+          "contentKind": "OFFICIAL_CLAIM",
+          "productVersion": null,
+          "plan": null,
+          "upstreamUrl": null,
+          "independence": "SHARED_ORIGIN",
+          "originGroupId": "origin:0cb58845-a345-45cc-af39-c911b2a5fcac",
+          "independenceReason": "保存的相同原文/重定向URL、明确upstreamUrl、采集来源组，或同路径且同hash的www别名相连；重复读取/转载不增加独立证据数量。"
+        },
+        "retrievedAt": "2026-10-25T01:51:19.908Z",
+        "readStatus": "READ",
+        "readError": null,
+        "contentHash": "48806dc2c56e6ff437c9ff89652ec1296df5db2e4b0e685f3fd60ebe88e9b9e3"
+      },
+      {
+        "id": "e6ae5709-603f-426b-a12d-66acea57e87b",
+        "sourceUrl": "https://docs.ollama.com/api",
+        "originalExcerpt": "Ollamahttps://ollama.com/apihttp://localhost:11434/api",
+        "translation": null,
+        "originalLocation": {
+          "kind": "TEXT",
+          "locator": "https://docs.ollama.com/api/introduction :: main:first :: blocks(p,li,pre,tr,h1,h2,h3)[3]; normalized UTF-16 [0,54)",
+          "context": "APIDirect cloud accessLocal Ollama serverOllamahttps://ollama.com/apihttp://localhost:11434/apiOpenAI compatibilityhttps://ollama.com/v1http://localhost:11434/v1Anthropic client base URLhttps://ollama.comhttp://localhost:11434"
+        },
+        "metadata": {
+          "title": "Introduction - Ollama",
+          "siteName": "docs.ollama.com",
+          "author": null,
+          "publishedAt": null,
+          "language": "en",
+          "sourceType": "OFFICIAL",
+          "contentKind": "OFFICIAL_CLAIM",
+          "productVersion": null,
+          "plan": null,
+          "upstreamUrl": null,
+          "independence": "SHARED_ORIGIN",
+          "originGroupId": "origin:0cb58845-a345-45cc-af39-c911b2a5fcac",
+          "independenceReason": "保存的相同原文/重定向URL、明确upstreamUrl、采集来源组，或同路径且同hash的www别名相连；重复读取/转载不增加独立证据数量。"
+        },
+        "retrievedAt": "2026-10-25T01:51:20.358Z",
+        "readStatus": "READ",
+        "readError": null,
+        "contentHash": "48806dc2c56e6ff437c9ff89652ec1296df5db2e4b0e685f3fd60ebe88e9b9e3"
+      },
+      {
+        "id": "0cb58845-a345-45cc-af39-c911b2a5fcac",
+        "sourceUrl": "https://docs.ollama.com/api/introduction",
+        "originalExcerpt": "Ollamahttps://ollama.com/apihttp://localhost:11434/api",
+        "translation": null,
+        "originalLocation": {
+          "kind": "TEXT",
+          "locator": "https://docs.ollama.com/api/introduction :: main:first :: blocks(p,li,pre,tr,h1,h2,h3)[3]; normalized UTF-16 [0,54)",
+          "context": "APIDirect cloud accessLocal Ollama serverOllamahttps://ollama.com/apihttp://localhost:11434/apiOpenAI compatibilityhttps://ollama.com/v1http://localhost:11434/v1Anthropic client base URLhttps://ollama.comhttp://localhost:11434"
+        },
+        "metadata": {
+          "title": "Introduction - Ollama",
+          "siteName": "docs.ollama.com",
+          "author": null,
+          "publishedAt": null,
+          "language": "en",
+          "sourceType": "OFFICIAL",
+          "contentKind": "OFFICIAL_CLAIM",
+          "productVersion": null,
+          "plan": null,
+          "upstreamUrl": null,
+          "independence": "SHARED_ORIGIN",
+          "originGroupId": "origin:0cb58845-a345-45cc-af39-c911b2a5fcac",
+          "independenceReason": "保存的相同原文/重定向URL、明确upstreamUrl、采集来源组，或同路径且同hash的www别名相连；重复读取/转载不增加独立证据数量。"
+        },
+        "retrievedAt": "2026-10-25T01:51:22.283Z",
+        "readStatus": "READ",
+        "readError": null,
+        "contentHash": "48806dc2c56e6ff437c9ff89652ec1296df5db2e4b0e685f3fd60ebe88e9b9e3"
+      },
+      {
+        "id": "a28f12c8-d281-4638-af75-1731608e1f34",
+        "sourceUrl": "https://docs.ollama.com/api/introduction",
+        "originalExcerpt": "Ollamahttps://ollama.com/apihttp://localhost:11434/api",
+        "translation": null,
+        "originalLocation": {
+          "kind": "TEXT",
+          "locator": "https://docs.ollama.com/api/introduction :: main:first :: blocks(p,li,pre,tr,h1,h2,h3)[3]; normalized UTF-16 [0,54)",
+          "context": "APIDirect cloud accessLocal Ollama serverOllamahttps://ollama.com/apihttp://localhost:11434/apiOpenAI compatibilityhttps://ollama.com/v1http://localhost:11434/v1Anthropic client base URLhttps://ollama.comhttp://localhost:11434"
+        },
+        "metadata": {
+          "title": "Introduction - Ollama",
+          "siteName": "docs.ollama.com",
+          "author": null,
+          "publishedAt": null,
+          "language": "en",
+          "sourceType": "OFFICIAL",
+          "contentKind": "OFFICIAL_CLAIM",
+          "productVersion": null,
+          "plan": null,
+          "upstreamUrl": null,
+          "independence": "SHARED_ORIGIN",
+          "originGroupId": "origin:0cb58845-a345-45cc-af39-c911b2a5fcac",
+          "independenceReason": "保存的相同原文/重定向URL、明确upstreamUrl、采集来源组，或同路径且同hash的www别名相连；重复读取/转载不增加独立证据数量。"
+        },
+        "retrievedAt": "2026-10-25T01:51:24.066Z",
+        "readStatus": "READ",
+        "readError": null,
+        "contentHash": "48806dc2c56e6ff437c9ff89652ec1296df5db2e4b0e685f3fd60ebe88e9b9e3"
+      },
+      {
+        "id": "4384dc4f-c500-4fb7-8c2b-db0816c85357",
+        "sourceUrl": "https://docs.ollama.com/api/introduction",
+        "originalExcerpt": "Anthropic client base URLhttps://ollama.comhttp://localhost:11434",
+        "translation": null,
+        "originalLocation": {
+          "kind": "TEXT",
+          "locator": "https://docs.ollama.com/api/introduction :: main:first :: blocks(p,li,pre,tr,h1,h2,h3)[5]; normalized UTF-16 [0,65)",
+          "context": "APIDirect cloud accessLocal Ollama serverOllamahttps://ollama.com/apihttp://localhost:11434/apiOpenAI compatibilityhttps://ollama.com/v1http://localhost:11434/v1Anthropic client base URLhttps://ollama.comhttp://localhost:11434"
+        },
+        "metadata": {
+          "title": "Introduction - Ollama",
+          "siteName": "docs.ollama.com",
+          "author": null,
+          "publishedAt": null,
+          "language": "en",
+          "sourceType": "OFFICIAL",
+          "contentKind": "OFFICIAL_CLAIM",
+          "productVersion": null,
+          "plan": null,
+          "upstreamUrl": null,
+          "independence": "SHARED_ORIGIN",
+          "originGroupId": "origin:0cb58845-a345-45cc-af39-c911b2a5fcac",
+          "independenceReason": "保存的相同原文/重定向URL、明确upstreamUrl、采集来源组，或同路径且同hash的www别名相连；重复读取/转载不增加独立证据数量。"
+        },
+        "retrievedAt": "2026-10-25T01:51:26.018Z",
+        "readStatus": "READ",
+        "readError": null,
+        "contentHash": "2a561853cd2fb9d33a7cba7028bcabb86128b616eabdd054513e16de2b063cc7"
+      },
+      {
+        "id": "ad246f02-f1b3-4fa6-8af6-e239d6001702",
+        "sourceUrl": "https://docs.ollama.com/api/introduction",
+        "originalExcerpt": "curl https://ollama.com/api/chat \\ -H \"Authorization: Bearer $OLLAMA_API_KEY\" \\ -H \"Content-Type: application/json\" \\ -d '{ \"model\": \"gemma4:31b\", \"messages\": [{\"role\": \"user\", \"content\": \"Why is the sky blue?\"}], \"stream\": false }'",
+        "translation": null,
+        "originalLocation": {
+          "kind": "TEXT",
+          "locator": "https://docs.ollama.com/api/introduction :: main:first :: blocks(p,li,pre,tr,h1,h2,h3)[7]; normalized UTF-16 [0,232)",
+          "context": "curl https://ollama.com/api/chat \\ -H \"Authorization: Bearer $OLLAMA_API_KEY\" \\ -H \"Content-Type: application/json\" \\ -d '{ \"model\": \"gemma4:31b\", \"messages\": [{\"role\": \"user\", \"content\": \"Why is the sky blue?\"}], \"stream\": false }'"
+        },
+        "metadata": {
+          "title": "Introduction - Ollama",
+          "siteName": "docs.ollama.com",
+          "author": null,
+          "publishedAt": null,
+          "language": "en",
+          "sourceType": "OFFICIAL",
+          "contentKind": "OFFICIAL_CLAIM",
+          "productVersion": null,
+          "plan": null,
+          "upstreamUrl": null,
+          "independence": "SHARED_ORIGIN",
+          "originGroupId": "origin:0cb58845-a345-45cc-af39-c911b2a5fcac",
+          "independenceReason": "保存的相同原文/重定向URL、明确upstreamUrl、采集来源组，或同路径且同hash的www别名相连；重复读取/转载不增加独立证据数量。"
+        },
+        "retrievedAt": "2026-10-25T01:51:37.106Z",
+        "readStatus": "READ",
+        "readError": null,
+        "contentHash": "abf41923c259ee8d2d19ecd19abc19c1ce42b978be6f5ff81c31b4b5477b814d"
+      }
+    ],
+    "claims": [
+      {
+        "id": "3ff10dbb-891d-438b-bd8a-42824588ac49",
+        "statement": "Ollama 官方 API 文档列出本机地址 http://localhost:11434/api 作为 API 入口。",
+        "kind": "OFFICIAL_CLAIM",
+        "verificationStatus": "SUPPORTED",
+        "verificationReason": "官方 API 介绍页原句同时出现 \"https://ollama.com/api\" 与 \"http://localhost:11434/api\"，可支持文档将本机地址列为 API 入口。",
+        "scope": "docs.ollama.com/api 文档页面；未标注产品版本与日期"
+      },
+      {
+        "id": "f55711ea-a35d-4d18-a082-df42c24e62d6",
+        "statement": "Ollama 官方 API 文档提到 Anthropic 客户端可将其 base URL 指向本机地址 http://localhost:11434。",
+        "kind": "OFFICIAL_CLAIM",
+        "verificationStatus": "SUPPORTED",
+        "verificationReason": "官方介绍页原句含 \"Anthropic client base URL\" 并同时给出 \"http://localhost:11434\"，支持该段说明。",
+        "scope": "docs.ollama.com/api/introduction 的 Anthropic 客户端 base URL 段落；未标注产品版本与日期"
+      }
+    ],
+    "relations": [
+      {
+        "claimId": "3ff10dbb-891d-438b-bd8a-42824588ac49",
+        "evidenceId": "0cb58845-a345-45cc-af39-c911b2a5fcac",
+        "relation": "SUPPORTS",
+        "reason": "官方原句并列给出 ollama.com/api 与 http://localhost:11434/api，直接支撑本机 API 入口主张。"
+      },
+      {
+        "claimId": "f55711ea-a35d-4d18-a082-df42c24e62d6",
+        "evidenceId": "4384dc4f-c500-4fb7-8c2b-db0816c85357",
+        "relation": "SUPPORTS",
+        "reason": "原句为 \"Anthropic client base URL\" 并列出 http://localhost:11434，支撑该表述。"
+      }
+    ],
+    "conflicts": [],
+    "gaps": [
+      {
+        "id": "b7c1d2e3-0000-4000-8000-000000000001",
+        "claimIds": [
+          "3ff10dbb-891d-438b-bd8a-42824588ac49",
+          "f55711ea-a35d-4d18-a082-df42c24e62d6"
+        ],
+        "kind": "INSUFFICIENT_EVIDENCE",
+        "description": "仅有首屏短摘录，未取得 REST 端点清单、请求示例细节及产品版本，无法进一步核实完整支持范围。",
+        "searchScope": "docs.ollama.com/api 与 docs.ollama.com/api/introduction 已保存短摘录"
+      }
+    ],
+    "retrievalRecords": [
+      {
+        "id": "3a682e12-d4a1-4f68-aa6f-c73321f74957",
+        "provider": "tencent-yuanbao-search-api",
+        "query": "Ollama 官方文档 本地 REST API 调用模型",
+        "calledAt": "2026-10-25T01:51:14.844Z",
+        "status": "SUCCEEDED",
+        "error": null,
+        "returnedSources": [
+          {
+            "url": "https://ai-ollama.github.io/python.html",
+            "title": "Ollama Python API on Windows — chat, stream & REST",
+            "snippet": "Ollama Python API on Windows — chat, stream & REST Ollama。Run Ollama from Python on Windows using the official ollama library or the REST API at localhost:11434. This guide covers install, chat calls, streaming and practical tips. Ollama must be running locally before you can call its API. Check with curl http://localhost:11434 — you should see \"Ollama is running\". Setup Install the Ollama Python library PowerShell or cmd.exe C:\\> pip install ollama Successfully installed ollama # Or with uv: C:\\> uv add ollama Quick start Your first chat call Python import ollama response = ollama.chat( model='llama3', messages=[{ 'role': 'user', 'content': 'Explain Python generators in one paragraph' }] ) print(response['message']['content']) Streaming Stream responses token by token For long responses, ...",
+            "adoption": "REJECTED",
+            "adoptionReason": "本轮未读取；搜索摘要不是原文证据。",
+            "evidenceId": null
+          },
+          {
+            "url": "https://docs.ollama.com/api",
+            "title": "Introduction",
+            "snippet": "Introduction Ollama。Introduction Use Ollama’s API to build applications with cloud or local models. Get started Call cloud models with an API key. No Ollama installation required. Start with the API quickstart. To run models on your computer, install Ollama and run a local model. Base URLs API Direct cloud access Local Ollama server Ollama https://ollama.com/api http://localhost:11434/api OpenAI compatibility https://ollama.com/v1 http://localhost:11434/v1 Anthropic client base URL https://ollama.com http://localhost:11434 The Anthropic client appends /v1/messages to its base URL. Cloud requests need an API key. Local requests do not. To use cloud models through your local server, sign in to Ollama. Creating or deleting models requires a local Ollama server. System One also requires a loca...",
+            "adoption": "ADOPTED",
+            "adoptionReason": "保存原句；是否支持问题由逐主张核查决定。",
+            "evidenceId": "e6ae5709-603f-426b-a12d-66acea57e87b"
+          },
+          {
+            "url": "https://ollama.readthedocs.io/quickstart",
+            "title": "快速入门 - Ollama 中文文档",
+            "snippet": "快速入门 - Ollama 中文文档 Ollama中文文档。 构建 参见 开发者指南 运行本地构建 接下来,启动服务器: ./ollama serve 最后,在单独的 shell 中运行模型: ./ollama run llama3.2 REST API Ollama 拥有一个用于运行和管理模型的 REST API。 生成响应 curl http://localhost:11434/api/generate -d '{ \"model\": \"llama3.2\", \"prompt\":\"Why is the sky blue?\" }' 与模型聊天 curl http://localhost:11434/api/chat -d '{ \"model\": \"llama3.2\", \"messages\": [ { \"role\": \"user\", \"content\": \"why is the sky blue?\" } ] }' 请参阅 API 文档 以获取所有端点的信息。 社区集成 Web 与桌面端 Open WebUI Enchanted (macOS 原生) Hollama Lollms-Webui LibreChat Bionic GPT HTML UI Saddle Chatbot UI Chatbot UI v2 Typescript UI Minimalistic React UI for Ollama Models Ollamac big-AGI Cheshire Cat assistant framework Amica chatd Ollama-SwiftUI Dify....",
+            "adoption": "REJECTED",
+            "adoptionReason": "本轮未读取；搜索摘要不是原文证据。",
+            "evidenceId": null
+          },
+          {
+            "url": "https://docs.ollama.com/api/introduction?ref=probamosia.com",
+            "title": "Introduction",
+            "snippet": "Introduction Ollama文档。Introduction Use Ollama’s API to build applications with cloud or local models. Get started Call cloud models with an API key. No Ollama installation required. Start with the API quickstart. To run models on your computer, install Ollama and run a local model. Base URLs API Direct cloud access Local Ollama server Ollama https://ollama.com/api http://localhost:11434/api OpenAI compatibility https://ollama.com/v1 http://localhost:11434/v1 Anthropic client base URL https://ollama.com http://localhost:11434 The Anthropic client appends /v1/messages to its base URL. Cloud requests need an API key. Local requests do not. To use cloud models through your local server, sign in to Ollama. Creating or deleting models requires a local Ollama server. For supported API features, s...",
+            "adoption": "REJECTED",
+            "adoptionReason": "本轮未读取；搜索摘要不是原文证据。",
+            "evidenceId": null
+          },
+          {
+            "url": "https://ollama.cadn.net.cn/",
+            "title": "快速入门",
+            "snippet": "快速入门 Ollama中文文档。ollama.cadn.net.cn 构建 请参阅 开发者指南ollama.cadn.net.cn 运行本地构建 接下来,启动服务器:ollama.cadn.net.cn ./ollama serve 最后,在一个独立的终端中运行一个模型:ollama.cadn.net.cn ./ollama run llama3.2 REST API Ollama 提供了用于运行和管理模型的 REST API。ollama.cadn.net.cn 生成响应 curl http://localhost:11434/api/generate -d '{ \"model\": \"llama3.2\", \"prompt\":\"Why is the sky blue?\" }' 与模型对话 curl http://localhost:11434/api/chat -d '{ \"model\": \"llama3.2\", \"messages\": [ { \"role\": \"user\", \"content\": \"why is the sky blue?\" } ] }' 查看 API 文档 以获取所有端点。ollama.cadn.net.cn 社区集成 Web 和 桌面应用 Open WebUI Enchanted (macOS native) Hollama Lollms-Webui LibreChat Bionic GPT HTML UI Saddle 聊天机器人界面 聊天机器人界面 v2 TypeScript 用户界面 适用于 Ollama 模型的极简 React UI Ollamac big-AGI 切萨雷猫(Cheshire Cat)助手框架 Amica chatd Ollama-SwiftUI Dify....",
+            "adoption": "REJECTED",
+            "adoptionReason": "本轮未读取；搜索摘要不是原文证据。",
+            "evidenceId": null
+          },
+          {
+            "url": "https://ollama.cadn.net.cn/",
+            "title": "文档 -- Ollama 中文文档Ollama官方文档",
+            "snippet": "Ollama 本文内容均由Ollama官方文档翻译,仅供个人学习,如有差异请以官网文档为准(https://ollama.com) 启动并运行大型语言模型。 macOS 的 Windows Linux curl -fsSL https://ollama.com/install.sh | sh Docker 官方 Ollama Docker 镜像 ollama/ollama在 Docker Hub 上可用。 开发库 社区 快速入门 要运行 Llama 并与 Llama3.2 聊天: ollama run llama3.2 模型库 Ollama 支持 ollama.com/library 上可用的模型列表 以下是一些可以下载的示例模型: 型 | 参数 | 大小 | 下载 ---|---|---|--- Deepseek-R1 | 7B | 4.7GB | `ollama run deepseek-r1` Deepseek-R1 | 671B | 404GB | `ollama run deepseek-r1:671b` llama 3.3 | 70B | 43GB | `ollama run llama3.3` llama 3.2 | 3B | 2.0GB | `ollama run llama3.2` llama 3.2 | 1B | 1.3GB | `ollama run llama3.2:1b` llama 3.2 Vision | 11B | 7.9GB | `ollama run llama3.2-vision` llama 3.2 Vision | 90B | 55GB | `ollama run llama3.2-vision:90b` llama 3.1 | 8B | 4.7GB | `ollama run llama3.1` ll...",
+            "adoption": "REJECTED",
+            "adoptionReason": "本轮未读取；搜索摘要不是原文证据。",
+            "evidenceId": null
+          }
+        ]
+      },
+      {
+        "id": "c4c20b37-ab9d-4288-b22e-07480feb6d14",
+        "provider": "tavily-search-api:keyless-capped",
+        "query": "Ollama 官方文档 本地 REST API 调用模型",
+        "calledAt": "2026-10-25T01:51:14.844Z",
+        "status": "SUCCEEDED",
+        "error": null,
+        "returnedSources": [
+          {
+            "url": "https://apifox.com/apiskills/how-to-use-ollama-api",
+            "title": "如何调用 Ollama API？Ollama 本地 API 调用的详细指南",
+            "snippet": "其它常见模型及命令如下： | | | --- | | 模型名 | 命令 | | DeepSeek-R1 | ollama run deepseek-r1 | | DeepSeek-R1 | ollama run deepseek-r1:671b | | Llama 3.2 | ollama run llama3.2 | | Llama 3.2 Vision | ollama run llama3.2-vision | | Phi 4 | ollama run phi4 | | Mistral | ollama run mistral | | Code Llama | ollama run codellama | 运行命令后会自动下载模型文件（体积较大，请耐心等待，取决于网络速度和模型大小）。 下载完成后，终端会显示输入提示，即可直接与模型进行对话： ``` > Send a message: ``` ## 三、本地对话体验 你可以在终端直接和模型互动，例如输入： ``` 你是谁？ ``` [...] ``` curl --location --request POST ' \\ --header 'Content-Type: application/json' \\ --data-raw '{ \"model\": \"llama3.2\", \"prompt\": \"Why is the sky blue?\", \"stream\": false }' ``` 在 Apifox 创建新接口，将以上 cURL 粘贴导入，即可自动解析参数和地址。 立即体验 Apifox ### 2. 发送请求并获取响应 点击「发送」后，等待模型生成的回复。结果会直接显示在接口调试工具中。你也可以将 `\"stream\": false` 改为 `true`，体验流式输出（适合长文本）。 #### 请求参数说明 `model`: 需调用的已下载模型名。 `prompt`: 输入的提示文本，即你想问的问题。 `stream`: 是否流式输出。 #### 响应结构通常返回如下 JSON（简化示例）： [...] ``` 你是谁？ ``` 模型会即时响应。每次对话结束，可通过 `Ctrl+D` 退出，或直接关闭窗口。若日后还需对话，只需重新运行对应命令即可。 ## 四、图形化界面（可选） 若觉得在命令行对话不便，Ollama 社区和第三方开发了多种 Web/桌面前端。你可以在 Ollama 官方插件列表中找到并选择合适的 GUI 项目，按说明进行安装配置，从而享受更友好的视觉体验。 ## 五、Ollama API 本地调用详解 Ollama 内置 HTTP RESTful API，默认监听在 `localhost:11434`。你可以通过 Apifox 等工具或直接用代码访问。 ### 1. 调试入门（以 Apifox 为例） 假设你的模型名为 `llama3.2`，可用如下 cURL 方式实现一次问答测试：",
+            "adoption": "REJECTED",
+            "adoptionReason": "本轮未读取；搜索摘要不是原文证据。",
+            "evidenceId": null
+          },
+          {
+            "url": "https://ollama.readthedocs.io/api",
+            "title": "API 参考 - Ollama 中文文档",
+            "snippet": "##### 响应 如果 blob 创建成功，则返回 201 Created；如果使用的摘要不符合预期，则返回 400 Bad Request。 ## 列出本地模型 ``` GET /api/tags ``` 列出本地可用的模型。 ### 示例 #### 请求 ``` curl ``` #### 响应 将返回一个 JSON 对象。 [...] curl -d '{ \"model\": \"llava\", \"messages\": [ { \"role\": \"user\", \"content\": \"what is in this image?\", \"images\": [...] # API ## 端点 生成Completion 生成ChatCompletion 创建模型 列出本地模型 显示模型信息 复制模型 删除模型 拉取模型 推送模型 生成嵌入 列出正在运行的模型 ## 约定 ### 模型名称 模型名称遵循 `model:tag` 格式，其中 `model` 可以有一个可选的命名空间，例如 `example/model`。一些示例包括 `orca-mini:3b-q4_1` 和 `llama3:70b`。标签是可选的，如果未提供，则默认为 `latest`。标签用于标识特定版本。 ### 持续时间 所有持续时间都以纳秒为单位返回。 ### 流式响应 某些端点以 JSON 对象的形式流式传输响应。可以通过为这些端点提供 `{\"stream\": false}` 来禁用流式传输。 ## 生成Completion ``` POST /api/generate ``` 生成给定提示的响应。这是一个流式端点，因此将有一系列响应。最终的响应对象将包括请求的统计信息和附加数据。 ### 参数",
+            "adoption": "REJECTED",
+            "adoptionReason": "本轮未读取；搜索摘要不是原文证据。",
+            "evidenceId": null
+          },
+          {
+            "url": "https://github.com/datawhalechina/handy-ollama/blob/main/docs/C4/1.%20Ollama%20API%20%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97.md",
+            "title": "handy-ollama/docs/C4/1. Ollama API 使用指南.md at main · datawhalechina/handy-ollama · GitHub",
+            "snippet": "## Navigation Menu ## FilesExpand file tree ## Breadcrumbs # 1. Ollama API 使用指南.md ## Latest commit ## History ## Breadcrumbs # 1. Ollama API 使用指南.md ## File metadata and controls # Ollama API 使用指南 ## 简介 Ollama 提供了强大的 REST API，使开发者能够方便地与大语言模型进行交互。通过 Ollama API，用户可以发送请求并接收模型生成的响应，应用于自然语言处理、文本生成等任务。本文将详细介绍生成补全、对话生成的基本操作，并对创建模型、复制模型、删除模型等常见操作也进行了说明。 ## 端点 ## 一、回答补全 使用指定的模型生成给定提示的响应。这是一个流式端点，因此会有一系列响应。最终的响应对象将包括来自请求的统计信息和其他数据。 ### 参数 `model` `prompt` `suffix` `images` `llava` [...] ### 示例请求 ### 示例响应 ## 七、列出本地模型 列出本地可用的模型。 ### 示例请求 ### 示例响应 ## 八、显示模型信息 显示有关模型的信息，包括详细信息、modelfile、模板、参数、许可证、系统提示。 ### 参数 `name` `verbose` `true` ### 示例请求 ### 示例响应 ## 九、拉取模型 从 `ollama` 库下载模型。中断的拉取操作会从断点继续下载，多个调用将共享相同的下载进度。 `ollama` ### 参数 `name` `insecure` `stream` `false` ### 示例请求 ### 示例响应 如果 `stream` 未指定或设置为 `true`，则返回一串 JSON 对象： `stream` `true` 第一个对象是清单： 然后是一系列下载响应。在下载完成之前，可能不会包含 `completed` 键。要下载的文件数量取决于清单中指定的层数。 `completed` 在所有文件下载完成后，最后的响应是： [...] 在所有文件下载完成后，最后的响应是： 如果 `stream` 设置为 false，则响应是一个单一的 JSON 对象： `stream` ## 十、推送模型 将模型上传到模型库。需要先注册 ollama.ai 并添加公钥。 ### 参数 `name` `<namespace>/<model>:<tag>` `insecure` `stream` `false` ### 示例请求 ### 示例响应 如果 `stream` 未指定或设置为 `true`，则返回一串 JSON 对象： `stream` `true` 然后是一系列上传响应： 最后，当上传完成时： 如果 `stream` 设置为 `false`，则响应是一个单一的 JSON 对象： `stream` `false` ## 十一、生成嵌入 从模型生成嵌入。 ### 参数 `model` `input` 高级参数： `truncate` `false` `true` `options` `temperature` `seed` `keep_alive` `5m` ### 示例请求",
+            "adoption": "REJECTED",
+            "adoptionReason": "本轮未读取；搜索摘要不是原文证据。",
+            "evidenceId": null
+          },
+          {
+            "url": "https://docs.ollama.com/api/introduction",
+            "title": "Introduction - Ollama",
+            "snippet": "``` curl \\ curl \\ -H \"Authorization: Bearer $OLLAMA_API_KEY\" \\ -H \"Authorization: Bearer $OLLAMA_API_KEY \" \\ -H \"Content-Type: application/json\" \\ -H \"Content-Type: application/json\" \\ -d '{ -d '{ \"model\": \"gemma4:31b\", \"model\": \"gemma4:31b\", \"messages\": [{\"role\": \"user\", \"content\": \"Why is the sky blue?\"}], \"messages\": [{\"role\": \"user\", \"content\": \"Why is the sky blue?\"}], \"stream\": false \"stream\": false }' }' ``` [...] on your computer, `,\\_jsx(\\_components.a,{href:`/quickstart#run-a-model-locally`,children:`install Ollama and run a local model`}),`.`]}),`\\n`,\\_jsx(Heading,{level:`2`,id:`base-urls`,children:`Base URLs`}),`\\n`,\\_jsxs(Table,{children:[\\_jsx(\\_components.thead,{children:\\_jsxs(\\_components.tr,{children:[\\_jsx(\\_components.th,{children:`API`}),\\_jsx(\\_components.th,{children:`Direct cloud access`}),\\_jsx(\\_components.th,{children:`Local Ollama [...] to its base URL.`]}),`\\n`,\\_jsxs(\\_components.p,{children:[`Cloud requests need an API key. Local requests do not. To use cloud models through your local server, `,\\_jsx(\\_components.a,{href:`/api/authentication#signing-in`,children:`sign in to Ollama`}),`.`]}),`\\n`,\\_jsxs(\\_components.p,{children:[`Creating or deleting models requires a local Ollama server. For supported API features, see `,\\_jsx(\\_components.a,{href:`/api/openai-compatibility`,children:`OpenAI compatibility`}),` and",
+            "adoption": "ADOPTED",
+            "adoptionReason": "保存原句；是否支持问题由逐主张核查决定。",
+            "evidenceId": "ad246f02-f1b3-4fa6-8af6-e239d6001702"
+          },
+          {
+            "url": "https://ollama.com/",
+            "title": "Ollama",
+            "snippet": "Your data is never trained on by any provider. All cloud models are hosted in the US, Europe & Singapore. Get the privacy benefits of local and the power of cloud. Private Your prompts are never tracked or trained on. Hosted Cloud models are only hosted in US, Europe & Singapore. Local Nothing you run locally ever leaves your machine. Open Open weights and open source. How we handle data → ## Predictable pricing [...] No hidden limits or confusing pricing. Start free and upgrade or add more usage when you need more. Local models are always free. Pro $20/mo Includes $60 of usage $37.20 used · resets on the 1st Add extra usage Usage included Pro — $60 Max — $300 See pricing → ## Get up and running in less than two minutes Download [...] gpt-5.6-sol [max] 73% ±3% $6.46 claude-fable-5 [max] 70% ±4% $21.63 kimi-k3 [max] 69% ±5% $4.65 deepseek-v4-pro [max] 63% ±6% $1.67 0% 20% 40% 60% 80% Source: DeepSWE, August 2026. Browse all models → ## Keep your setup Launch Claude Code, Codex, and more with one command. Switch models without changing your workflow. Claude Code Codex OpenCode Hermes Agent OpenClaw VS Code Pi n8n See all integrations → ## Your data stays yours",
+            "adoption": "REJECTED",
+            "adoptionReason": "本轮未读取；搜索摘要不是原文证据。",
+            "evidenceId": null
+          },
+          {
+            "url": "https://hk.finance.yahoo.com/news/%E6%99%BA%E8%AD%9C-02513-hk-%E6%8E%A8%E5%85%A7%E5%9C%B0%E9%A6%96%E5%80%8B-%E9%8D%B5%E5%AE%89%E8%A3%9D%E6%9C%AC%E5%9C%B0openclaw%E6%87%89%E7%94%A8%E6%A8%A1%E5%9E%8B-015937344.html",
+            "title": "智譜推內地首個一鍵安裝本地OpenClaw應用模型",
+            "snippet": "跳至導覽 跳過主要內容 跳至右欄 [...] 8. 28Hse.com 9. AM730 10. Infocast 11. 鉅亨網 12. 詠竹坊 13. Money Club 14. investing.com HK [...] AASTOCKS # 智譜推內地首個一鍵安裝本地OpenClaw應用模型 AASTOCKS 更新時間 智譜(2513.HK)今早(10日)高開12.7%報648元，盤中曾高見666元一度炒上15.8%，最新報625元上揚8.7%，成交額9.41億元。據《新京報》報道，在近期的「龍蝦熱」(OpenClaw熱潮)之下，Kimi(月之暗面)和MiniMax-WP(稀宇科技)(00100.HK)都成為「龍蝦用戶」們所追捧的模型調用方。 相比之下，同為初創獨角獸大模型公司的智譜似乎顯得頗為低調。現在，智譜終於出手，且直接端上來了一盤「澳龍」。 今日早間，智譜正式上線AutoClaw(中文名：澳龍)，這是國內首個一鍵安裝本地OpenClaw應用。它預置50+熱門Skills，並支持一鍵接入飛書等即時通訊工具。相比各大雲廠商推出的「養龍蝦」方案，智譜的AutoClaw主要面向本地安裝。智譜還為用戶提供了一定的免費額度，AutoClaw也完全開放模型接入，支持任意模型的Coding Plan或API。",
+            "adoption": "REJECTED",
+            "adoptionReason": "本轮未读取；搜索摘要不是原文证据。",
+            "evidenceId": null
+          }
+        ]
+      }
+    ],
+    "verificationAudit": {
+      "modelCalls": [
+        {
+          "provider": "api.deepseek.com",
+          "model": "deepseek-flash",
+          "promptVersion": "a2-evidence-v4",
+          "temperature": null,
+          "thinkingMode": "DISABLED",
+          "generatedAt": "2026-10-25T01:51:14.834Z",
+          "id": "fb5e1396-4c04-4569-a1f5-1f6c96a509cf",
+          "purpose": "investigation-initial-decision",
+          "startedAt": "2026-10-25T01:51:13.755Z",
+          "durationMs": 1079,
+          "outcome": "SUCCEEDED",
+          "inputTokens": 1329,
+          "outputTokens": 125
+        },
+        {
+          "provider": "api.deepseek.com",
+          "model": "deepseek-flash",
+          "promptVersion": "a2-evidence-v4",
+          "temperature": null,
+          "thinkingMode": "DISABLED",
+          "generatedAt": "2026-10-25T01:51:18.881Z",
+          "id": "ace255ad-d40f-4680-803c-195067e00f60",
+          "purpose": "investigation-evidence-decision",
+          "startedAt": "2026-10-25T01:51:17.429Z",
+          "durationMs": 1452,
+          "outcome": "SUCCEEDED",
+          "inputTokens": 6691,
+          "outputTokens": 197
+        },
+        {
+          "provider": "api.deepseek.com",
+          "model": "deepseek-flash",
+          "promptVersion": "a2-evidence-v4",
+          "temperature": null,
+          "thinkingMode": "DISABLED",
+          "generatedAt": "2026-10-25T01:51:22.056Z",
+          "id": "873a1fad-d776-4b4e-ab30-47a22ebd87da",
+          "purpose": "investigation-evidence-decision",
+          "startedAt": "2026-10-25T01:51:20.374Z",
+          "durationMs": 1682,
+          "outcome": "SUCCEEDED",
+          "inputTokens": 7689,
+          "outputTokens": 249
+        },
+        {
+          "provider": "api.deepseek.com",
+          "model": "deepseek-flash",
+          "promptVersion": "a2-evidence-v4",
+          "temperature": null,
+          "thinkingMode": "DISABLED",
+          "generatedAt": "2026-10-25T01:51:23.847Z",
+          "id": "8367970d-ed24-4f81-b942-0d8a1bb3a417",
+          "purpose": "investigation-evidence-decision",
+          "startedAt": "2026-10-25T01:51:22.293Z",
+          "durationMs": 1555,
+          "outcome": "SUCCEEDED",
+          "inputTokens": 8375,
+          "outputTokens": 178
+        },
+        {
+          "provider": "api.deepseek.com",
+          "model": "deepseek-flash",
+          "promptVersion": "a2-evidence-v4",
+          "temperature": null,
+          "thinkingMode": "DISABLED",
+          "generatedAt": "2026-10-25T01:51:25.806Z",
+          "id": "d0424253-e6c5-4301-ae60-112a268296d8",
+          "purpose": "investigation-evidence-decision",
+          "startedAt": "2026-10-25T01:51:24.076Z",
+          "durationMs": 1730,
+          "outcome": "SUCCEEDED",
+          "inputTokens": 8994,
+          "outputTokens": 241
+        },
+        {
+          "provider": "api.deepseek.com",
+          "model": "deepseek-flash",
+          "promptVersion": "a2-evidence-v4",
+          "temperature": null,
+          "thinkingMode": "DISABLED",
+          "generatedAt": "2026-10-25T01:51:27.589Z",
+          "id": "e051366c-27bc-47f8-b69b-4fd8323d07a9",
+          "purpose": "investigation-evidence-decision",
+          "startedAt": "2026-10-25T01:51:26.029Z",
+          "durationMs": 1561,
+          "outcome": "SUCCEEDED",
+          "inputTokens": 9673,
+          "outputTokens": 239
+        },
+        {
+          "provider": "api.deepseek.com",
+          "model": "deepseek-flash",
+          "promptVersion": "a2-evidence-v4",
+          "temperature": null,
+          "thinkingMode": "DISABLED",
+          "generatedAt": "2026-10-25T01:51:29.459Z",
+          "id": "a8a15431-fb26-4a29-bb6c-a240d1319b5c",
+          "purpose": "investigation-evidence-decision",
+          "startedAt": "2026-10-25T01:51:27.590Z",
+          "durationMs": 1870,
+          "outcome": "SUCCEEDED",
+          "inputTokens": 9938,
+          "outputTokens": 309
+        },
+        {
+          "provider": "api.deepseek.com",
+          "model": "deepseek-flash",
+          "promptVersion": "a2-evidence-v4",
+          "temperature": null,
+          "thinkingMode": "DISABLED",
+          "generatedAt": "2026-10-25T01:51:30.760Z",
+          "id": "d0df49f6-bd47-4afd-af6e-8ddc22e823ce",
+          "purpose": "claim-extraction",
+          "startedAt": "2026-10-25T01:51:29.469Z",
+          "durationMs": 1291,
+          "outcome": "SUCCEEDED",
+          "inputTokens": 2320,
+          "outputTokens": 185
+        },
+        {
+          "provider": "api.deepseek.com",
+          "model": "deepseek-flash",
+          "promptVersion": "a2-evidence-v4",
+          "temperature": null,
+          "thinkingMode": "DISABLED",
+          "generatedAt": "2026-10-25T01:51:34.516Z",
+          "id": "03c21b9c-e49d-4788-9bee-bf70cc351b16",
+          "purpose": "claim-evidence-verification",
+          "startedAt": "2026-10-25T01:51:30.764Z",
+          "durationMs": 3753,
+          "outcome": "SUCCEEDED",
+          "inputTokens": 4106,
+          "outputTokens": 858
+        },
+        {
+          "provider": "api.deepseek.com",
+          "model": "deepseek-flash",
+          "promptVersion": "a2-evidence-v4",
+          "temperature": null,
+          "thinkingMode": "DISABLED",
+          "generatedAt": "2026-10-25T01:51:36.221Z",
+          "id": "c0d9ef23-8098-4354-b2cb-ff4d430282e6",
+          "purpose": "investigation-evidence-decision",
+          "startedAt": "2026-10-25T01:51:34.524Z",
+          "durationMs": 1697,
+          "outcome": "SUCCEEDED",
+          "inputTokens": 10478,
+          "outputTokens": 218
+        },
+        {
+          "provider": "api.deepseek.com",
+          "model": "deepseek-flash",
+          "promptVersion": "a2-evidence-v4",
+          "temperature": null,
+          "thinkingMode": "DISABLED",
+          "generatedAt": "2026-10-25T01:51:39.023Z",
+          "id": "54bdae5d-1f4a-4fc1-a5a8-279880ce2d78",
+          "purpose": "investigation-evidence-decision",
+          "startedAt": "2026-10-25T01:51:37.137Z",
+          "durationMs": 1887,
+          "outcome": "SUCCEEDED",
+          "inputTokens": 11633,
+          "outputTokens": 278
+        },
+        {
+          "provider": "api.deepseek.com",
+          "model": "deepseek-flash",
+          "promptVersion": "a2-evidence-v4",
+          "temperature": null,
+          "thinkingMode": "DISABLED",
+          "generatedAt": "2026-10-25T01:51:42.173Z",
+          "id": "142602e4-8891-4289-b065-251c68d629b9",
+          "purpose": "investigation-evidence-decision",
+          "startedAt": "2026-10-25T01:51:39.024Z",
+          "durationMs": 3149,
+          "outcome": "SUCCEEDED",
+          "inputTokens": 11937,
+          "outputTokens": 351
+        },
+        {
+          "provider": "api.deepseek.com",
+          "model": "deepseek-flash",
+          "promptVersion": "a2-evidence-v4",
+          "temperature": null,
+          "thinkingMode": "DISABLED",
+          "generatedAt": "2026-10-25T01:51:43.620Z",
+          "id": "0dfe15e1-7eb8-4a0b-9d31-3f4d514a9a2d",
+          "purpose": "claim-extraction",
+          "startedAt": "2026-10-25T01:51:42.179Z",
+          "durationMs": 1441,
+          "outcome": "SUCCEEDED",
+          "inputTokens": 2695,
+          "outputTokens": 132
+        },
+        {
+          "provider": "api.deepseek.com",
+          "model": "deepseek-flash",
+          "promptVersion": "a2-evidence-v4",
+          "temperature": null,
+          "thinkingMode": "DISABLED",
+          "generatedAt": "2026-10-25T01:51:46.458Z",
+          "id": "902358ad-ccc3-4db2-a118-f9c4f633ad64",
+          "purpose": "claim-evidence-verification",
+          "startedAt": "2026-10-25T01:51:43.621Z",
+          "durationMs": 2836,
+          "outcome": "SUCCEEDED",
+          "inputTokens": 4404,
+          "outputTokens": 610
+        },
+        {
+          "provider": "api.deepseek.com",
+          "model": "deepseek-flash",
+          "promptVersion": "a2-evidence-v4",
+          "temperature": null,
+          "thinkingMode": "DISABLED",
+          "generatedAt": "2026-10-25T01:51:47.210Z",
+          "id": "33929ca4-c5e4-45df-a5a8-8a3ad99725d7",
+          "purpose": "cited-answer-selection",
+          "startedAt": "2026-10-25T01:51:46.476Z",
+          "durationMs": 734,
+          "outcome": "SUCCEEDED",
+          "inputTokens": 1032,
+          "outputTokens": 51
+        },
+        {
+          "provider": "api.deepseek.com",
+          "model": "deepseek-flash",
+          "promptVersion": "a2-evidence-v4",
+          "temperature": null,
+          "thinkingMode": "DISABLED",
+          "generatedAt": "2026-10-25T01:51:48.575Z",
+          "id": "35ddc5f3-f791-4b0c-953a-3241bbca9001",
+          "purpose": "citation-semantic-support-check",
+          "startedAt": "2026-10-25T01:51:47.211Z",
+          "durationMs": 1364,
+          "outcome": "SUCCEEDED",
+          "inputTokens": 1456,
+          "outputTokens": 188
+        }
+      ],
+      "review": {
+        "status": "NOT_CONFIGURED",
+        "reason": "未配置第二模型；不声称完成独立模型复核或精度提高。",
+        "independentAssessment": null,
+        "findings": []
+      },
+      "citationChecks": [
+        {
+          "marker": "[1]",
+          "supported": true,
+          "reason": "原句“Ollamahttps://ollama.com/apihttp://localhost:11434/api”位于 docs.ollama.com/api/introduction（OFFICIAL_CLAIM），确实把 http://localhost:11434/api 作为 API 入口列出，与主张中的本机地址一致；主张保留“未标注版本与日期”这一条件，未越出原句。"
+        },
+        {
+          "marker": "[2]",
+          "supported": true,
+          "reason": "原句“Anthropic client base URLhttps://ollama.comhttp://localhost:11434”位于同一官方文档页，确以“Anthropic client base URL”为段落标题并给出 http://localhost:11434，蕴含 Anthropic 客户端可将 base URL 指向该本机地址；主张已限定为官方文档的表述且未标注版本与日期，条件可比。"
+        }
+      ],
+      "followup": {
+        "queriesUsed": 0,
+        "maxQueries": 2,
+        "stopReason": "达到十次决策预算，保留未决缺口并整理回答。"
+      },
+      "investigationLoop": {
+        "startedAt": "2026-10-25T01:51:13.747Z",
+        "durationMs": 34832,
+        "totalBudgetMs": 180000,
+        "answerReserveMs": 45000,
+        "maxSearchRounds": 3,
+        "searchRounds": 1,
+        "maxReads": 10,
+        "readsUsed": 6,
+        "stopReason": "达到十次决策预算，保留未决缺口并整理回答。",
+        "httpAttempts": [
+          {
+            "url": "https://api.wsa.cloud.tencent.com/SearchPro",
+            "method": "POST",
+            "startedAt": "2026-10-25T01:51:14.845Z",
+            "finishedAt": "2026-10-25T01:51:15.467Z",
+            "requestSent": true,
+            "status": 200,
+            "error": null,
+            "ownerId": "3a682e12-d4a1-4f68-aa6f-c73321f74957"
+          },
+          {
+            "url": "https://api.tavily.com/search",
+            "method": "POST",
+            "startedAt": "2026-10-25T01:51:14.844Z",
+            "finishedAt": "2026-10-25T01:51:17.427Z",
+            "requestSent": true,
+            "status": 200,
+            "error": null,
+            "ownerId": "c4c20b37-ab9d-4288-b22e-07480feb6d14"
+          },
+          {
+            "url": "https://docs.ollama.com/api",
+            "method": "GET",
+            "startedAt": "2026-10-25T01:51:18.905Z",
+            "finishedAt": "2026-10-25T01:51:20.358Z",
+            "requestSent": true,
+            "status": 308,
+            "error": null,
+            "ownerId": "e6ae5709-603f-426b-a12d-66acea57e87b"
+          },
+          {
+            "url": "https://docs.ollama.com/api/introduction",
+            "method": "GET",
+            "startedAt": "2026-10-25T01:51:19.963Z",
+            "finishedAt": "2026-10-25T01:51:20.358Z",
+            "requestSent": true,
+            "status": 200,
+            "error": null,
+            "ownerId": "e6ae5709-603f-426b-a12d-66acea57e87b"
+          },
+          {
+            "url": "https://docs.ollama.com/api/introduction",
+            "method": "GET",
+            "startedAt": "2026-10-25T01:51:18.905Z",
+            "finishedAt": "2026-10-25T01:51:19.908Z",
+            "requestSent": true,
+            "status": 200,
+            "error": null,
+            "ownerId": "45d3a039-ac89-4137-994f-16c713df5900"
+          },
+          {
+            "url": "https://docs.ollama.com/api/introduction",
+            "method": "GET",
+            "startedAt": "2026-10-25T01:51:22.061Z",
+            "finishedAt": "2026-10-25T01:51:22.283Z",
+            "requestSent": true,
+            "status": 200,
+            "error": null,
+            "ownerId": "0cb58845-a345-45cc-af39-c911b2a5fcac"
+          },
+          {
+            "url": "https://docs.ollama.com/api/introduction",
+            "method": "GET",
+            "startedAt": "2026-10-25T01:51:23.852Z",
+            "finishedAt": "2026-10-25T01:51:24.066Z",
+            "requestSent": true,
+            "status": 200,
+            "error": null,
+            "ownerId": "a28f12c8-d281-4638-af75-1731608e1f34"
+          },
+          {
+            "url": "https://docs.ollama.com/api/introduction",
+            "method": "GET",
+            "startedAt": "2026-10-25T01:51:25.811Z",
+            "finishedAt": "2026-10-25T01:51:26.018Z",
+            "requestSent": true,
+            "status": 200,
+            "error": null,
+            "ownerId": "4384dc4f-c500-4fb7-8c2b-db0816c85357"
+          },
+          {
+            "url": "https://docs.ollama.com/api/introduction",
+            "method": "GET",
+            "startedAt": "2026-10-25T01:51:36.227Z",
+            "finishedAt": "2026-10-25T01:51:37.106Z",
+            "requestSent": true,
+            "status": 200,
+            "error": null,
+            "ownerId": "ad246f02-f1b3-4fa6-8af6-e239d6001702"
+          }
+        ],
+        "collectionDiagnostics": [],
+        "decisions": [
+          {
+            "step": 1,
+            "decidedAt": "2026-10-25T01:51:14.834Z",
+            "remainingMs": 178912,
+            "decision": {
+              "action": "SEARCH",
+              "query": "Ollama 官方文档 本地 REST API 调用模型",
+              "entries": [
+                "yuanbao",
+                "tavily"
+              ],
+              "readUrls": [],
+              "reason": "需要检索 Ollama 官方文档，确认是否提供本机 REST API 及调用模型的方式；首轮使用元宝，并同时用 tavily 获取官方文档链接。",
+              "observedGap": "尚无任何证据，缺少 Ollama 官方文档中关于 REST API 的说明。",
+              "basisEvidenceIds": [],
+              "basisRecordIds": [],
+              "clarification": null,
+              "discoveredIdentity": null
+            },
+            "availableEvidenceIds": [],
+            "availableRecordIds": [],
+            "outcome": "EXECUTED",
+            "detail": "实际入口：yuanbao,tavily；返回记录：3a682e12-d4a1-4f68-aa6f-c73321f74957:SUCCEEDED,c4c20b37-ab9d-4288-b22e-07480feb6d14:SUCCEEDED。"
+          },
+          {
+            "step": 2,
+            "decidedAt": "2026-10-25T01:51:18.881Z",
+            "remainingMs": 174865,
+            "decision": {
+              "action": "READ",
+              "query": "REST API localhost:11434 本地",
+              "entries": [],
+              "readUrls": [
+                "https://docs.ollama.com/api",
+                "https://docs.ollama.com/api/introduction"
+              ],
+              "reason": "搜索已返回 Ollama 官方文档 docs.ollama.com 的 API 介绍页，摘要提示包含本地 Base URL http://localhost:11434/api；需读取官方原文确认是否支持本机 REST API 调用模型。",
+              "observedGap": "尚无已读原句证据，只有搜索摘要显示官方文档列出本地 Ollama 服务器 Base URL。",
+              "basisEvidenceIds": [],
+              "basisRecordIds": [
+                "3a682e12-d4a1-4f68-aa6f-c73321f74957",
+                "c4c20b37-ab9d-4288-b22e-07480feb6d14"
+              ],
+              "clarification": null,
+              "discoveredIdentity": null
+            },
+            "availableEvidenceIds": [],
+            "availableRecordIds": [
+              "3a682e12-d4a1-4f68-aa6f-c73321f74957",
+              "c4c20b37-ab9d-4288-b22e-07480feb6d14"
+            ],
+            "outcome": "EXECUTED",
+            "detail": "已尝试读取：https://docs.ollama.com/api,https://docs.ollama.com/api/introduction；累计保存2份原文状态。"
+          },
+          {
+            "step": 3,
+            "decidedAt": "2026-10-25T01:51:22.056Z",
+            "remainingMs": 171690,
+            "decision": {
+              "action": "READ",
+              "query": "localhost:11434/api 本地请求 REST",
+              "entries": [],
+              "readUrls": [
+                "https://docs.ollama.com/api/introduction"
+              ],
+              "reason": "已读原句仅抓到页面标题式短引“Ollamahttps://ollama.com/apihttp://localhost:11434/api”，缺少明确表述“本地 REST API 支持调用模型”的句子；需对同一官方页定向重读 Base URLs 与本地请求段落。",
+              "observedGap": "缺少官方原文中关于本地服务器 Base URL http://localhost:11434/api 及本地请求无需 API key 可用于调用模型的完整句子。",
+              "basisEvidenceIds": [
+                "45d3a039-ac89-4137-994f-16c713df5900",
+                "e6ae5709-603f-426b-a12d-66acea57e87b"
+              ],
+              "basisRecordIds": [
+                "3a682e12-d4a1-4f68-aa6f-c73321f74957",
+                "c4c20b37-ab9d-4288-b22e-07480feb6d14"
+              ],
+              "clarification": null,
+              "discoveredIdentity": null
+            },
+            "availableEvidenceIds": [
+              "45d3a039-ac89-4137-994f-16c713df5900",
+              "e6ae5709-603f-426b-a12d-66acea57e87b"
+            ],
+            "availableRecordIds": [
+              "3a682e12-d4a1-4f68-aa6f-c73321f74957",
+              "c4c20b37-ab9d-4288-b22e-07480feb6d14"
+            ],
+            "outcome": "EXECUTED",
+            "detail": "已尝试读取：https://docs.ollama.com/api/introduction；累计保存3份原文状态。"
+          },
+          {
+            "step": 4,
+            "decidedAt": "2026-10-25T01:51:23.848Z",
+            "remainingMs": 169898,
+            "decision": {
+              "action": "READ",
+              "query": "localhost:11434/api 本地请求 REST API",
+              "entries": [],
+              "readUrls": [
+                "https://docs.ollama.com/api/introduction"
+              ],
+              "reason": "已保存原句仍只是标题式短引，缺少明确说明本地 Ollama 服务器提供 http://localhost:11434/api 并可调用模型的完整句子；需对同一官方页重读 Base URLs 段落。",
+              "observedGap": "缺少官方原文明确表述本地服务器 REST API 基址可用于调用本地模型的句子。",
+              "basisEvidenceIds": [
+                "0cb58845-a345-45cc-af39-c911b2a5fcac"
+              ],
+              "basisRecordIds": [
+                "3a682e12-d4a1-4f68-aa6f-c73321f74957"
+              ],
+              "clarification": null,
+              "discoveredIdentity": null
+            },
+            "availableEvidenceIds": [
+              "45d3a039-ac89-4137-994f-16c713df5900",
+              "e6ae5709-603f-426b-a12d-66acea57e87b",
+              "0cb58845-a345-45cc-af39-c911b2a5fcac"
+            ],
+            "availableRecordIds": [
+              "3a682e12-d4a1-4f68-aa6f-c73321f74957",
+              "c4c20b37-ab9d-4288-b22e-07480feb6d14"
+            ],
+            "outcome": "EXECUTED",
+            "detail": "已尝试读取：https://docs.ollama.com/api/introduction；累计保存4份原文状态。"
+          },
+          {
+            "step": 5,
+            "decidedAt": "2026-10-25T01:51:25.806Z",
+            "remainingMs": 167940,
+            "decision": {
+              "action": "READ",
+              "query": "Base URLs Local Ollama server localhost:11434/api",
+              "entries": [],
+              "readUrls": [
+                "https://docs.ollama.com/api/introduction"
+              ],
+              "reason": "search摘要显示官方 Introduction 页的 Base URLs 表格列出本地 Ollama 服务器 http://localhost:11434/api，并且本地请求无需 API key；但多次读取只抓到标题式短引。现在需要用更精确的定位词重读该页 Base URLs 段落，以获取完整原句。",
+              "observedGap": "仍缺少官方原文中明确写出“Local Ollama server http://localhost:11434/api”以及“Local requests do not [need an API key]”的完整句子。",
+              "basisEvidenceIds": [
+                "0cb58845-a345-45cc-af39-c911b2a5fcac",
+                "a28f12c8-d281-4638-af75-1731608e1f34"
+              ],
+              "basisRecordIds": [
+                "c4c20b37-ab9d-4288-b22e-07480feb6d14"
+              ],
+              "clarification": null,
+              "discoveredIdentity": null
+            },
+            "availableEvidenceIds": [
+              "45d3a039-ac89-4137-994f-16c713df5900",
+              "e6ae5709-603f-426b-a12d-66acea57e87b",
+              "0cb58845-a345-45cc-af39-c911b2a5fcac",
+              "a28f12c8-d281-4638-af75-1731608e1f34"
+            ],
+            "availableRecordIds": [
+              "3a682e12-d4a1-4f68-aa6f-c73321f74957",
+              "c4c20b37-ab9d-4288-b22e-07480feb6d14"
+            ],
+            "outcome": "EXECUTED",
+            "detail": "已尝试读取：https://docs.ollama.com/api/introduction；累计保存5份原文状态。"
+          },
+          {
+            "step": 6,
+            "decidedAt": "2026-10-25T01:51:27.589Z",
+            "remainingMs": 166157,
+            "decision": {
+              "action": "READ",
+              "query": "Local Ollama server localhost:11434/api local requests",
+              "entries": [],
+              "readUrls": [
+                "https://docs.ollama.com/api"
+              ],
+              "reason": "搜索摘要显示官方 API 页列出本机 Base URL http://localhost:11434/api 且本地请求无需 API key；此前只抓到标题式短引，需读取该页正文以取得明确原句。",
+              "observedGap": "缺少官方原文明确写出本机 REST API 基址 http://localhost:11434/api 以及本地请求无需 API key 的完整句子。",
+              "basisEvidenceIds": [
+                "0cb58845-a345-45cc-af39-c911b2a5fcac",
+                "4384dc4f-c500-4fb7-8c2b-db0816c85357"
+              ],
+              "basisRecordIds": [
+                "c4c20b37-ab9d-4288-b22e-07480feb6d14",
+                "3a682e12-d4a1-4f68-aa6f-c73321f74957"
+              ],
+              "clarification": null,
+              "discoveredIdentity": null
+            },
+            "availableEvidenceIds": [
+              "45d3a039-ac89-4137-994f-16c713df5900",
+              "e6ae5709-603f-426b-a12d-66acea57e87b",
+              "0cb58845-a345-45cc-af39-c911b2a5fcac",
+              "a28f12c8-d281-4638-af75-1731608e1f34",
+              "4384dc4f-c500-4fb7-8c2b-db0816c85357"
+            ],
+            "availableRecordIds": [
+              "3a682e12-d4a1-4f68-aa6f-c73321f74957",
+              "c4c20b37-ab9d-4288-b22e-07480feb6d14"
+            ],
+            "outcome": "REJECTED",
+            "detail": "没有未读取的已发现URL，或读取预算耗尽。"
+          },
+          {
+            "step": 7,
+            "decidedAt": "2026-10-25T01:51:29.459Z",
+            "remainingMs": 164287,
+            "decision": {
+              "action": "FINISH",
+              "query": null,
+              "entries": [],
+              "readUrls": [],
+              "reason": "官方文档已读到本地 API 基址 http://localhost:11434/api（证据 0cb58845、a28f12c8、4384dc4f），且 Introduction 页标题与正文都指向同一 API 页面；足以确认 Ollama 提供本机 REST API 供调用模型。重复读取同页只得到相同短引，不再重复。",
+              "observedGap": "原句仅为基址片段，未取得完整句子说明“Local requests do not need an API key”，但不影响“支持本机 REST API”这一核心结论。",
+              "basisEvidenceIds": [
+                "0cb58845-a345-45cc-af39-c911b2a5fcac",
+                "a28f12c8-d281-4638-af75-1731608e1f34",
+                "4384dc4f-c500-4fb7-8c2b-db0816c85357"
+              ],
+              "basisRecordIds": [
+                "3a682e12-d4a1-4f68-aa6f-c73321f74957",
+                "c4c20b37-ab9d-4288-b22e-07480feb6d14"
+              ],
+              "clarification": null,
+              "discoveredIdentity": {
+                "name": "Ollama",
+                "evidenceId": "0cb58845-a345-45cc-af39-c911b2a5fcac"
+              }
+            },
+            "availableEvidenceIds": [
+              "45d3a039-ac89-4137-994f-16c713df5900",
+              "e6ae5709-603f-426b-a12d-66acea57e87b",
+              "0cb58845-a345-45cc-af39-c911b2a5fcac",
+              "a28f12c8-d281-4638-af75-1731608e1f34",
+              "4384dc4f-c500-4fb7-8c2b-db0816c85357"
+            ],
+            "availableRecordIds": [
+              "3a682e12-d4a1-4f68-aa6f-c73321f74957",
+              "c4c20b37-ab9d-4288-b22e-07480feb6d14"
+            ],
+            "outcome": "REJECTED",
+            "detail": "逐主张核查发现缺口或未决项，已将核查结果交回下一轮决策；由模型决定定向补查或如实结束。"
+          },
+          {
+            "step": 8,
+            "decidedAt": "2026-10-25T01:51:36.221Z",
+            "remainingMs": 157525,
+            "decision": {
+              "action": "READ",
+              "query": "POST /api/generate POST /api/chat 生成补全",
+              "entries": [],
+              "readUrls": [
+                "https://docs.ollama.com/api/introduction"
+              ],
+              "reason": "核查指出缺口：已存原句只有基址片段，缺少具体请求方式/示例。Introduction 页含 curl 示例与本地端点说明，定向重读以取具体调用模型的原句。",
+              "observedGap": "缺少官方原文中明确给出本机 REST API 调用模型的具体端点与方法（如 POST /api/chat 或 /api/generate）的句子。",
+              "basisEvidenceIds": [
+                "4384dc4f-c500-4fb7-8c2b-db0816c85357",
+                "0cb58845-a345-45cc-af39-c911b2a5fcac"
+              ],
+              "basisRecordIds": [
+                "c4c20b37-ab9d-4288-b22e-07480feb6d14"
+              ],
+              "clarification": null,
+              "discoveredIdentity": null
+            },
+            "availableEvidenceIds": [
+              "45d3a039-ac89-4137-994f-16c713df5900",
+              "e6ae5709-603f-426b-a12d-66acea57e87b",
+              "0cb58845-a345-45cc-af39-c911b2a5fcac",
+              "a28f12c8-d281-4638-af75-1731608e1f34",
+              "4384dc4f-c500-4fb7-8c2b-db0816c85357"
+            ],
+            "availableRecordIds": [
+              "3a682e12-d4a1-4f68-aa6f-c73321f74957",
+              "c4c20b37-ab9d-4288-b22e-07480feb6d14"
+            ],
+            "outcome": "EXECUTED",
+            "detail": "已尝试读取：https://docs.ollama.com/api/introduction；累计保存6份原文状态。"
+          },
+          {
+            "step": 9,
+            "decidedAt": "2026-10-25T01:51:39.023Z",
+            "remainingMs": 154723,
+            "decision": {
+              "action": "READ",
+              "query": "POST /api/chat /api/generate local requests",
+              "entries": [],
+              "readUrls": [
+                "https://docs.ollama.com/api"
+              ],
+              "reason": "核查缺口是本机 REST 调用的具体方法与示例；搜索记录中 docs.ollama.com/api 摘要含 Base URLs 表与本地请求无需 API key 的表述，而该页此前读取被拒、尚未取得正文。定向读取以取得调用模型的端点/方法原句。",
+              "observedGap": "缺少官方原文明确写出本机 REST 端点（如 /api/chat）与请求方法的完整句子；已存原句仅为基址片段。",
+              "basisEvidenceIds": [
+                "0cb58845-a345-45cc-af39-c911b2a5fcac",
+                "a28f12c8-d281-4638-af75-1731608e1f34",
+                "4384dc4f-c500-4fb7-8c2b-db0816c85357"
+              ],
+              "basisRecordIds": [
+                "3a682e12-d4a1-4f68-aa6f-c73321f74957",
+                "c4c20b37-ab9d-4288-b22e-07480feb6d14"
+              ],
+              "clarification": null,
+              "discoveredIdentity": null
+            },
+            "availableEvidenceIds": [
+              "45d3a039-ac89-4137-994f-16c713df5900",
+              "e6ae5709-603f-426b-a12d-66acea57e87b",
+              "0cb58845-a345-45cc-af39-c911b2a5fcac",
+              "a28f12c8-d281-4638-af75-1731608e1f34",
+              "4384dc4f-c500-4fb7-8c2b-db0816c85357",
+              "ad246f02-f1b3-4fa6-8af6-e239d6001702"
+            ],
+            "availableRecordIds": [
+              "3a682e12-d4a1-4f68-aa6f-c73321f74957",
+              "c4c20b37-ab9d-4288-b22e-07480feb6d14"
+            ],
+            "outcome": "REJECTED",
+            "detail": "没有未读取的已发现URL，或读取预算耗尽。"
+          },
+          {
+            "step": 10,
+            "decidedAt": "2026-10-25T01:51:42.173Z",
+            "remainingMs": 151573,
+            "decision": {
+              "action": "FINISH",
+              "query": null,
+              "entries": [],
+              "readUrls": [],
+              "reason": "官方 API 文档原文已明确列出本机服务器基址 http://localhost:11434/api，且保存的另一个原句给出 POST/chat 及 curl 请求示例（含 model 与 messages 请求体），足以核实 Ollama 支持通过本机 REST API 调用模型。用户只要求核实官方文档，官方规定本身即为答案，无需独立实测或第三方报告。",
+              "observedGap": "原句未标注适用版本，也未取得 Base URLs 段中“本地请求无需 API key”的完整句子；这不改变“支持本机 REST API”的核心结论，且 READ 预算已耗尽、无未读已发现 URL。",
+              "basisEvidenceIds": [
+                "0cb58845-a345-45cc-af39-c911b2a5fcac",
+                "a28f12c8-d281-4638-af75-1731608e1f34",
+                "4384dc4f-c500-4fb7-8c2b-db0816c85357",
+                "ad246f02-f1b3-4fa6-8af6-e239d6001702"
+              ],
+              "basisRecordIds": [
+                "3a682e12-d4a1-4f68-aa6f-c73321f74957",
+                "c4c20b37-ab9d-4288-b22e-07480feb6d14"
+              ],
+              "clarification": null,
+              "discoveredIdentity": {
+                "name": "Ollama",
+                "evidenceId": "0cb58845-a345-45cc-af39-c911b2a5fcac"
+              }
+            },
+            "availableEvidenceIds": [
+              "45d3a039-ac89-4137-994f-16c713df5900",
+              "e6ae5709-603f-426b-a12d-66acea57e87b",
+              "0cb58845-a345-45cc-af39-c911b2a5fcac",
+              "a28f12c8-d281-4638-af75-1731608e1f34",
+              "4384dc4f-c500-4fb7-8c2b-db0816c85357",
+              "ad246f02-f1b3-4fa6-8af6-e239d6001702"
+            ],
+            "availableRecordIds": [
+              "3a682e12-d4a1-4f68-aa6f-c73321f74957",
+              "c4c20b37-ab9d-4288-b22e-07480feb6d14"
+            ],
+            "outcome": "REJECTED",
+            "detail": "逐主张核查发现缺口或未决项，已将核查结果交回下一轮决策；由模型决定定向补查或如实结束。"
+          }
+        ],
+        "collectionCalls": [
+          {
+            "operation": "search:yuanbao",
+            "target": "Ollama 官方文档 本地 REST API 调用模型",
+            "startedAt": "2026-10-25T01:51:14.843Z",
+            "durationMs": 628,
+            "outcome": "SUCCEEDED",
+            "resultId": "3a682e12-d4a1-4f68-aa6f-c73321f74957",
+            "error": null
+          },
+          {
+            "operation": "search:tavily",
+            "target": "Ollama 官方文档 本地 REST API 调用模型",
+            "startedAt": "2026-10-25T01:51:14.843Z",
+            "durationMs": 2586,
+            "outcome": "SUCCEEDED",
+            "resultId": "c4c20b37-ab9d-4288-b22e-07480feb6d14",
+            "error": null
+          },
+          {
+            "operation": "read",
+            "target": "https://docs.ollama.com/api/introduction",
+            "startedAt": "2026-10-25T01:51:18.904Z",
+            "durationMs": 1058,
+            "outcome": "SUCCEEDED",
+            "resultId": "45d3a039-ac89-4137-994f-16c713df5900",
+            "error": null
+          },
+          {
+            "operation": "read",
+            "target": "https://docs.ollama.com/api",
+            "startedAt": "2026-10-25T01:51:18.904Z",
+            "durationMs": 1468,
+            "outcome": "SUCCEEDED",
+            "resultId": "e6ae5709-603f-426b-a12d-66acea57e87b",
+            "error": null
+          },
+          {
+            "operation": "read",
+            "target": "https://docs.ollama.com/api/introduction",
+            "startedAt": "2026-10-25T01:51:22.061Z",
+            "durationMs": 231,
+            "outcome": "SUCCEEDED",
+            "resultId": "0cb58845-a345-45cc-af39-c911b2a5fcac",
+            "error": null
+          },
+          {
+            "operation": "read",
+            "target": "https://docs.ollama.com/api/introduction",
+            "startedAt": "2026-10-25T01:51:23.852Z",
+            "durationMs": 223,
+            "outcome": "SUCCEEDED",
+            "resultId": "a28f12c8-d281-4638-af75-1731608e1f34",
+            "error": null
+          },
+          {
+            "operation": "read",
+            "target": "https://docs.ollama.com/api/introduction",
+            "startedAt": "2026-10-25T01:51:25.811Z",
+            "durationMs": 217,
+            "outcome": "SUCCEEDED",
+            "resultId": "4384dc4f-c500-4fb7-8c2b-db0816c85357",
+            "error": null
+          },
+          {
+            "operation": "read",
+            "target": "https://docs.ollama.com/api/introduction",
+            "startedAt": "2026-10-25T01:51:36.226Z",
+            "durationMs": 910,
+            "outcome": "SUCCEEDED",
+            "resultId": "ad246f02-f1b3-4fa6-8af6-e239d6001702",
+            "error": null
+          }
+        ]
+      }
+    },
+    "generatedAt": "2026-10-25T01:51:48.578Z",
+    "contractVersion": "1.0.0"
+  },
+  "answers": [
+    {
+      "id": "acb99296-db92-4e1e-9efc-93b108c14a29",
+      "snapshotId": "feae1665-9f12-47a8-8274-7051f9e9bf05",
+      "body": "Ollama 官方 API 文档列出本机地址 http://localhost:11434/api 作为 API 入口。\n适用范围：docs.ollama.com/api 文档页面；未标注产品版本与日期 [1]\n\nOllama 官方 API 文档提到 Anthropic 客户端可将其 base URL 指向本机地址 http://localhost:11434。\n适用范围：docs.ollama.com/api/introduction 的 Anthropic 客户端 base URL 段落；未标注产品版本与日期 [2]\n\n核查缺口：\n• 仅有首屏短摘录，未取得 REST 端点清单、请求示例细节及产品版本，无法进一步核实完整支持范围。",
+      "citations": [
+        {
+          "marker": "[1]",
+          "claimIds": [
+            "3ff10dbb-891d-438b-bd8a-42824588ac49"
+          ],
+          "evidenceIds": [
+            "0cb58845-a345-45cc-af39-c911b2a5fcac"
+          ],
+          "quotes": [
+            {
+              "evidenceId": "0cb58845-a345-45cc-af39-c911b2a5fcac",
+              "originalExcerpt": "Ollamahttps://ollama.com/apihttp://localhost:11434/api"
+            }
+          ]
+        },
+        {
+          "marker": "[2]",
+          "claimIds": [
+            "f55711ea-a35d-4d18-a082-df42c24e62d6"
+          ],
+          "evidenceIds": [
+            "4384dc4f-c500-4fb7-8c2b-db0816c85357"
+          ],
+          "quotes": [
+            {
+              "evidenceId": "4384dc4f-c500-4fb7-8c2b-db0816c85357",
+              "originalExcerpt": "Anthropic client base URLhttps://ollama.comhttp://localhost:11434"
+            }
+          ]
+        }
+      ],
+      "generationConfig": {
+        "provider": "api.deepseek.com",
+        "model": "deepseek-flash",
+        "promptVersion": "a2-evidence-v4",
+        "temperature": null,
+        "thinkingMode": "DISABLED",
+        "generatedAt": "2026-10-25T01:51:48.575Z"
+      }
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "scope": "Real browser submission, actual services, existing application DB and standalone Worker; no case/source injection",
+  "question": "Ollama 是否支持通过本机 REST API 调用模型？只核实官方文档。",
+  "commit": "39b339ae035771498833c25c0d6ceacb91dd1e57",
+  "id": "ecf5a367-826e-4b78-bc90-4a14a6bea5f4",
+  "detail": {
+    "investigation": {
+      "id": "ecf5a367-826e-4b78-bc90-4a14a6bea5f4",
+      "question": "Ollama 是否支持通过本机 REST API 调用模型？只核实官方文档。",
+      "status": "SUCCEEDED",
+      "stage": "COMPLETED",
+      "error": null,
+      "createdAt": "2026-10-25T01:51:13.185Z",
+      "updatedAt": "2026-10-25T01:51:48.603Z",
+      "startedAt": "2026-10-25T01:51:13.733Z",
+      "completedAt": "2026-10-25T01:51:48.603Z",
+      "resultSnapshotId": "feae1665-9f12-47a8-8274-7051f9e9bf05"
+    },
+    "identityConfirmation": null,
+    "retry": {
+      "allowed": false,
+      "reason": "仅失败的调查可以手动重试。",
+      "remaining": 2,
+      "expectedAttemptCount": 1
+    }
+  },
+  "states": [
+    {
+      "state": "PENDING:CREATED",
+      "at": "2026-10-25T01:51:13.323Z"
+    },
+    {
+      "state": "RUNNING:IDENTITY",
+      "at": "2026-10-25T01:51:14.342Z"
+    },
+    {
+      "state": "RUNNING:RETRIEVAL",
+      "at": "2026-10-25T01:51:15.379Z"
+    },
+    {
+      "state": "RUNNING:SOURCE_FETCH",
+      "at": "2026-10-25T01:51:19.446Z"
+    },
+    {
+      "state": "RUNNING:VERIFICATION",
+      "at": "2026-10-25T01:51:29.601Z"
+    },
+    {
+      "state": "RUNNING:SOURCE_FETCH",
+      "at": "2026-10-25T01:51:36.775Z"
+    },
+    {
+      "state": "RUNNING:VERIFICATION",
+      "at": "2026-10-25T01:51:42.903Z"
+    },
+    {
+      "state": "RUNNING:ANSWER",
+      "at": "2026-10-25T01:51:46.977Z"
+    },
+    {
+      "state": "SUCCEEDED:COMPLETED",
+      "at": "2026-10-25T01:51:49.003Z"
+    }
+  ],
+  "consoleErrors": [],
+  "url": "http://127.0.0.1:3102/investigations/ecf5a367-826e-4b78-bc90-4a14a6bea5f4#evidence-0cb58845-a345-45cc-af39-c911b2a5fcac",
+  "title": "案卷 · AI 产品调查"
+}

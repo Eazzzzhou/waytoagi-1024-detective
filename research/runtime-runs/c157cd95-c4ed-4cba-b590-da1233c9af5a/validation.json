@@ -1,0 +1,184 @@
+{
+  "investigationId": "c157cd95-c4ed-4cba-b590-da1233c9af5a",
+  "snapshotId": "ed4d1d80-784f-4354-811a-d106414f4cc7",
+  "status": "SUCCEEDED",
+  "url": "http://127.0.0.1:3102/investigations/c157cd95-c4ed-4cba-b590-da1233c9af5a",
+  "citations": 3,
+  "exactQuoteChecks": "PASSED",
+  "excerptHashChecks": "PASSED",
+  "semanticChecks": [
+    {
+      "marker": "[1]",
+      "supported": true,
+      "reason": "原句“上下文长度1M”出自“模型 & 价格”页，蕴含该页表格所列模型上下文长度为1M；回答限定为官方文档该页所述，并注明未标明具体模型版本与套餐，与原句条件一致（两条证据同源重复，不增加独立性）。"
+    },
+    {
+      "marker": "[2]",
+      "supported": true,
+      "reason": "原句明确“未设置时，非思考模式默认 8K，思考模式默认 64K（reasoning_effort 为 max 时为 128K）”，与回答中默认值数值和条件逐项一致；回答限为Chat Completions API参数默认值且未标明模型版本，与原句范围相符。"
+    },
+    {
+      "marker": "[3]",
+      "supported": true,
+      "reason": "原句“输入 token 和输出 token 的总长度受模型的上下文长度的限制。详见模型 & 价格。”蕴含输入与输出总数受模型上下文长度限制，并指引到模型 & 价格页查看；回答表述为官方文档如此称，与原句一致，未额外补充具体长度。"
+    }
+  ],
+  "review": {
+    "status": "NOT_CONFIGURED",
+    "reason": "未配置第二模型；不声称完成独立模型复核或精度提高。",
+    "independentAssessment": null,
+    "findings": []
+  },
+  "retrieval": [
+    {
+      "provider": "tencent-yuanbao-search-api",
+      "status": "SUCCEEDED",
+      "returnedSources": 6,
+      "adopted": 2
+    },
+    {
+      "provider": "tavily-search-api:keyless-capped",
+      "status": "SUCCEEDED",
+      "returnedSources": 6,
+      "adopted": 2
+    }
+  ],
+  "modelCalls": [
+    {
+      "provider": "api.deepseek.com",
+      "model": "deepseek-flash",
+      "promptVersion": "a2-evidence-v4",
+      "temperature": null,
+      "thinkingMode": "DISABLED",
+      "generatedAt": "2026-10-25T01:43:33.486Z",
+      "id": "741e1fe9-2f74-4a23-bd51-747aefc19fcf",
+      "purpose": "investigation-initial-decision",
+      "startedAt": "2026-10-25T01:43:32.377Z",
+      "durationMs": 1109,
+      "outcome": "SUCCEEDED",
+      "inputTokens": 1309,
+      "outputTokens": 100
+    },
+    {
+      "provider": "api.deepseek.com",
+      "model": "deepseek-flash",
+      "promptVersion": "a2-evidence-v4",
+      "temperature": null,
+      "thinkingMode": "DISABLED",
+      "generatedAt": "2026-10-25T01:43:37.566Z",
+      "id": "e38f2aa7-8f40-4f2c-9188-f9fddb3404f9",
+      "purpose": "investigation-evidence-decision",
+      "startedAt": "2026-10-25T01:43:36.041Z",
+      "durationMs": 1525,
+      "outcome": "SUCCEEDED",
+      "inputTokens": 7876,
+      "outputTokens": 221
+    },
+    {
+      "provider": "api.deepseek.com",
+      "model": "deepseek-flash",
+      "promptVersion": "a2-evidence-v4",
+      "temperature": null,
+      "thinkingMode": "DISABLED",
+      "generatedAt": "2026-10-25T01:43:39.562Z",
+      "id": "64e60584-ef5e-4f91-a2db-ea50557aa61a",
+      "purpose": "investigation-evidence-decision",
+      "startedAt": "2026-10-25T01:43:37.919Z",
+      "durationMs": 1643,
+      "outcome": "SUCCEEDED",
+      "inputTokens": 9576,
+      "outputTokens": 245
+    },
+    {
+      "provider": "api.deepseek.com",
+      "model": "deepseek-flash",
+      "promptVersion": "a2-evidence-v4",
+      "temperature": null,
+      "thinkingMode": "DISABLED",
+      "generatedAt": "2026-10-25T01:43:41.788Z",
+      "id": "e53b6b57-7744-4aaf-b38b-36d23aade3d5",
+      "purpose": "investigation-evidence-decision",
+      "startedAt": "2026-10-25T01:43:39.928Z",
+      "durationMs": 1860,
+      "outcome": "SUCCEEDED",
+      "inputTokens": 10800,
+      "outputTokens": 229
+    },
+    {
+      "provider": "api.deepseek.com",
+      "model": "deepseek-flash",
+      "promptVersion": "a2-evidence-v4",
+      "temperature": null,
+      "thinkingMode": "DISABLED",
+      "generatedAt": "2026-10-25T01:43:43.698Z",
+      "id": "d9086fcb-ca2d-4a9b-8dbd-9aeee3d83d74",
+      "purpose": "investigation-evidence-decision",
+      "startedAt": "2026-10-25T01:43:41.788Z",
+      "durationMs": 1910,
+      "outcome": "SUCCEEDED",
+      "inputTokens": 11055,
+      "outputTokens": 337
+    },
+    {
+      "provider": "api.deepseek.com",
+      "model": "deepseek-flash",
+      "promptVersion": "a2-evidence-v4",
+      "temperature": null,
+      "thinkingMode": "DISABLED",
+      "generatedAt": "2026-10-25T01:43:45.169Z",
+      "id": "dc4bf2e8-40c9-444e-be72-af024d60b807",
+      "purpose": "claim-extraction",
+      "startedAt": "2026-10-25T01:43:43.704Z",
+      "durationMs": 1465,
+      "outcome": "SUCCEEDED",
+      "inputTokens": 2876,
+      "outputTokens": 233
+    },
+    {
+      "provider": "api.deepseek.com",
+      "model": "deepseek-flash",
+      "promptVersion": "a2-evidence-v4",
+      "temperature": null,
+      "thinkingMode": "DISABLED",
+      "generatedAt": "2026-10-25T01:43:48.968Z",
+      "id": "41cb28ed-a9b8-4b8f-a26a-be4d1a162bb1",
+      "purpose": "claim-evidence-verification",
+      "startedAt": "2026-10-25T01:43:45.172Z",
+      "durationMs": 3796,
+      "outcome": "SUCCEEDED",
+      "inputTokens": 4696,
+      "outputTokens": 830
+    },
+    {
+      "provider": "api.deepseek.com",
+      "model": "deepseek-flash",
+      "promptVersion": "a2-evidence-v4",
+      "temperature": null,
+      "thinkingMode": "DISABLED",
+      "generatedAt": "2026-10-25T01:43:49.819Z",
+      "id": "4a77b6e4-4518-49f9-9635-76a20edd3414",
+      "purpose": "cited-answer-selection",
+      "startedAt": "2026-10-25T01:43:48.986Z",
+      "durationMs": 833,
+      "outcome": "SUCCEEDED",
+      "inputTokens": 1058,
+      "outputTokens": 76
+    },
+    {
+      "provider": "api.deepseek.com",
+      "model": "deepseek-flash",
+      "promptVersion": "a2-evidence-v4",
+      "temperature": null,
+      "thinkingMode": "DISABLED",
+      "generatedAt": "2026-10-25T01:43:51.612Z",
+      "id": "6fac9260-1f10-4d4c-8720-e679ee6bd12a",
+      "purpose": "citation-semantic-support-check",
+      "startedAt": "2026-10-25T01:43:49.820Z",
+      "durationMs": 1793,
+      "outcome": "SUCCEEDED",
+      "inputTokens": 2304,
+      "outputTokens": 236
+    }
+  ],
+  "directory": "C:\\Users\\qianchen\\Documents\\waytoagi-1024-detective-a2-v3\\research\\runtime-runs\\c157cd95-c4ed-4cba-b590-da1233c9af5a"
+}

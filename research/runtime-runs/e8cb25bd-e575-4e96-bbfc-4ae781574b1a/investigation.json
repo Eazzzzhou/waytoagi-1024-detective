@@ -1,0 +1,32 @@
+{
+  "capturedAt": "2026-10-25T02:02:55.236Z",
+  "url": "http://127.0.0.1:3102/investigations/e8cb25bd-e575-4e96-bbfc-4ae781574b1a",
+  "detail": {
+    "investigation": {
+      "id": "e8cb25bd-e575-4e96-bbfc-4ae781574b1a",
+      "question": "DuckDB 能否直接查询 Parquet 文件，而不先导入数据库？只核实官方文档。",
+      "status": "SUCCEEDED",
+      "stage": "COMPLETED",
+      "error": null,
+      "createdAt": "2026-10-25T02:01:45.536Z",
+      "updatedAt": "2026-10-25T02:02:40.016Z",
+      "startedAt": "2026-10-25T02:01:45.938Z",
+      "completedAt": "2026-10-25T02:02:40.016Z",
+      "resultSnapshotId": "7e0c155b-1ed6-49ae-9611-bbeae17bb9b5"
+    },
+    "identityConfirmation": null,
+    "retry": {
+      "allowed": false,
+      "reason": "仅失败的调查可以手动重试。",
+      "remaining": 2,
+      "expectedAttemptCount": 1
+    }
+  },
+  "observedStates": [
+    {
+      "status": "SUCCEEDED",
+      "stage": "COMPLETED",
+      "observedAt": "2026-10-25T02:02:55.233Z"
+    }
+  ]
+}

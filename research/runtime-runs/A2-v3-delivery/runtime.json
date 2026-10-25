@@ -1,0 +1,19 @@
+{
+  "status": "passed",
+  "checks": [
+    "fresh_schema_prisma_migrate_deploy",
+    "production_web_start",
+    "real_http_enqueue",
+    "idempotent_network_submission",
+    "real_worker_claim",
+    "unknown_identity_does_not_gate",
+    "fresh_api_reads_preserve_partial_result",
+    "no_synthetic_evidence",
+    "independent_worker_graceful_shutdown",
+    "network_json_405",
+    "network_json_404",
+    "network_configuration_error_is_safe_json"
+  ],
+  "error": null,
+  "isolatedSchemaCleaned": true
+}

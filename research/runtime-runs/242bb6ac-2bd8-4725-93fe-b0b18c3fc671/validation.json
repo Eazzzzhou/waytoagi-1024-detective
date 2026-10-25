@@ -1,0 +1,189 @@
+{
+  "investigationId": "242bb6ac-2bd8-4725-93fe-b0b18c3fc671",
+  "snapshotId": "551fd385-b8a6-49af-a924-d26d02437abb",
+  "status": "SUCCEEDED",
+  "url": "http://127.0.0.1:3102/investigations/242bb6ac-2bd8-4725-93fe-b0b18c3fc671",
+  "citations": 1,
+  "exactQuoteChecks": "PASSED",
+  "excerptHashChecks": "PASSED",
+  "semanticChecks": [
+    {
+      "marker": "[1]",
+      "supported": true,
+      "reason": "原句明确指出：要对 Parquet 文件直接运行查询，就在查询的 FROM 子句中使用 read_parquet 函数。这蕴含了“可在 FROM 子句用 read_parquet 直接查询 Parquet 文件”以及“无需先导入数据库”的对照含义；证据来源页面为 duckdb.org 文档 0.10 版路径，与所述范围相符。证据属于官方文档的规范说明，仅证明官方如此规定，符合主张中“官方文档说明”的表述。"
+    }
+  ],
+  "review": {
+    "status": "NOT_CONFIGURED",
+    "reason": "未配置第二模型；不声称完成独立模型复核或精度提高。",
+    "independentAssessment": null,
+    "findings": []
+  },
+  "retrieval": [
+    {
+      "provider": "tencent-yuanbao-search-api",
+      "status": "SUCCEEDED",
+      "returnedSources": 6,
+      "adopted": 3
+    },
+    {
+      "provider": "tavily-search-api:keyless-capped",
+      "status": "SUCCEEDED",
+      "returnedSources": 6,
+      "adopted": 0
+    }
+  ],
+  "modelCalls": [
+    {
+      "provider": "api.deepseek.com",
+      "model": "deepseek-flash",
+      "promptVersion": "a2-evidence-v4",
+      "temperature": null,
+      "thinkingMode": "DISABLED",
+      "generatedAt": "2026-10-25T01:56:19.749Z",
+      "id": "c0e46cae-7938-4943-a0f5-db9e53f33054",
+      "purpose": "investigation-initial-decision",
+      "startedAt": "2026-10-25T01:56:18.349Z",
+      "durationMs": 1400,
+      "outcome": "SUCCEEDED",
+      "inputTokens": 1333,
+      "outputTokens": 119
+    },
+    {
+      "provider": "api.deepseek.com",
+      "model": "deepseek-flash",
+      "promptVersion": "a2-evidence-v4",
+      "temperature": null,
+      "thinkingMode": "DISABLED",
+      "generatedAt": "2026-10-25T01:56:25.278Z",
+      "id": "2dab4f2c-38ad-4c95-9f12-7b17c04f60a5",
+      "purpose": "investigation-evidence-decision",
+      "startedAt": "2026-10-25T01:56:23.657Z",
+      "durationMs": 1622,
+      "outcome": "SUCCEEDED",
+      "inputTokens": 5438,
+      "outputTokens": 202
+    },
+    {
+      "provider": "api.deepseek.com",
+      "model": "deepseek-flash",
+      "promptVersion": "a2-evidence-v4",
+      "temperature": null,
+      "thinkingMode": "DISABLED",
+      "generatedAt": "2026-10-25T01:56:28.025Z",
+      "id": "1bdf6097-3a26-4532-a695-be273cbcee7b",
+      "purpose": "investigation-evidence-decision",
+      "startedAt": "2026-10-25T01:56:26.034Z",
+      "durationMs": 1991,
+      "outcome": "SUCCEEDED",
+      "inputTokens": 6150,
+      "outputTokens": 283
+    },
+    {
+      "provider": "api.deepseek.com",
+      "model": "deepseek-flash",
+      "promptVersion": "a2-evidence-v4",
+      "temperature": null,
+      "thinkingMode": "DISABLED",
+      "generatedAt": "2026-10-25T01:56:31.942Z",
+      "id": "adde87c2-ebdc-4c0b-8cf2-651bb02e5ce3",
+      "purpose": "investigation-evidence-decision",
+      "startedAt": "2026-10-25T01:56:29.906Z",
+      "durationMs": 2036,
+      "outcome": "SUCCEEDED",
+      "inputTokens": 7053,
+      "outputTokens": 332
+    },
+    {
+      "provider": "api.deepseek.com",
+      "model": "deepseek-flash",
+      "promptVersion": "a2-evidence-v4",
+      "temperature": null,
+      "thinkingMode": "DISABLED",
+      "generatedAt": "2026-10-25T01:56:35.460Z",
+      "id": "66bde26c-5ef9-4d96-a16f-721e79abf7bf",
+      "purpose": "investigation-evidence-decision",
+      "startedAt": "2026-10-25T01:56:33.767Z",
+      "durationMs": 1693,
+      "outcome": "SUCCEEDED",
+      "inputTokens": 8204,
+      "outputTokens": 254
+    },
+    {
+      "provider": "api.deepseek.com",
+      "model": "deepseek-flash",
+      "promptVersion": "a2-evidence-v4",
+      "temperature": null,
+      "thinkingMode": "DISABLED",
+      "generatedAt": "2026-10-25T01:56:36.193Z",
+      "id": "965a9cee-d13c-4907-97df-36b79000bbe0",
+      "purpose": "claim-extraction",
+      "startedAt": "2026-10-25T01:56:35.465Z",
+      "durationMs": 728,
+      "outcome": "SUCCEEDED",
+      "inputTokens": 1802,
+      "outputTokens": 84
+    },
+    {
+      "provider": "api.deepseek.com",
+      "model": "deepseek-flash",
+      "promptVersion": "a2-evidence-v4",
+      "temperature": null,
+      "thinkingMode": "DISABLED",
+      "generatedAt": "2026-10-25T01:56:39.153Z",
+      "id": "a27637fc-83af-4e56-a01d-c814c63e3f71",
+      "purpose": "claim-evidence-verification",
+      "startedAt": "2026-10-25T01:56:36.194Z",
+      "durationMs": 2959,
+      "outcome": "SUCCEEDED",
+      "inputTokens": 3729,
+      "outputTokens": 575
+    },
+    {
+      "provider": "api.deepseek.com",
+      "model": "deepseek-flash",
+      "promptVersion": "a2-evidence-v4",
+      "temperature": null,
+      "thinkingMode": "DISABLED",
+      "generatedAt": "2026-10-25T01:56:41.425Z",
+      "id": "60fe34de-dcff-40fe-a01c-af6f2f2e173e",
+      "purpose": "investigation-evidence-decision",
+      "startedAt": "2026-10-25T01:56:39.154Z",
+      "durationMs": 2271,
+      "outcome": "SUCCEEDED",
+      "inputTokens": 8791,
+      "outputTokens": 358
+    },
+    {
+      "provider": "api.deepseek.com",
+      "model": "deepseek-flash",
+      "promptVersion": "a2-evidence-v4",
+      "temperature": null,
+      "thinkingMode": "DISABLED",
+      "generatedAt": "2026-10-25T01:56:42.081Z",
+      "id": "6826f164-762e-416f-b8dd-5c3fe68e1650",
+      "purpose": "cited-answer-selection",
+      "startedAt": "2026-10-25T01:56:41.438Z",
+      "durationMs": 643,
+      "outcome": "SUCCEEDED",
+      "inputTokens": 920,
+      "outputTokens": 29
+    },
+    {
+      "provider": "api.deepseek.com",
+      "model": "deepseek-flash",
+      "promptVersion": "a2-evidence-v4",
+      "temperature": null,
+      "thinkingMode": "DISABLED",
+      "generatedAt": "2026-10-25T01:56:43.490Z",
+      "id": "b52d47ff-3112-4651-9021-dc007657018d",
+      "purpose": "citation-semantic-support-check",
+      "startedAt": "2026-10-25T01:56:42.082Z",
+      "durationMs": 1408,
+      "outcome": "SUCCEEDED",
+      "inputTokens": 1069,
+      "outputTokens": 124
+    }
+  ],
+  "directory": "C:\\Users\\qianchen\\Documents\\waytoagi-1024-detective-a2-v3\\research\\runtime-runs\\242bb6ac-2bd8-4725-93fe-b0b18c3fc671"
+}

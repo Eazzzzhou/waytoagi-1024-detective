@@ -1,0 +1,30 @@
+{
+  "checkedAt": "2026-10-25T02:04:50.220Z",
+  "productionCodeCommit": "6f80500d8e2a8ec7350c2b26c634f95a438b785a",
+  "check": {
+    "status": "PASSED",
+    "unitTests": 82,
+    "typecheck": [
+      "Web",
+      "Worker"
+    ],
+    "lint": true
+  },
+  "build": "PASSED",
+  "database": {
+    "status": "PASSED",
+    "tests": 56,
+    "isolatedSchemas": true,
+    "businessDatabaseReset": false
+  },
+  "scope": "Synthetic controls and process checks are separate from real business acceptance",
+  "realRuns": [
+    "ed003ab8-fc41-4276-9d82-a4e3b20d1e8b",
+    "e8cb25bd-e575-4e96-bbfc-4ae781574b1a",
+    "739dddfd-a9f4-4043-8e2f-dcd14df5e6f2"
+  ],
+  "businessAssessment": "Local integrated demonstration recorded; Dify original-license/use-report/complete-quote semantics NOT fully accepted",
+  "demo": "http://127.0.0.1:3102",
+  "remotePush": false,
+  "publicDeployment": false
+}

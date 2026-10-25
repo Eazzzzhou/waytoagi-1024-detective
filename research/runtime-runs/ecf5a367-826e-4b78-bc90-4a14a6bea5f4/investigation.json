@@ -1,0 +1,32 @@
+{
+  "capturedAt": "2026-10-25T01:53:07.383Z",
+  "url": "http://127.0.0.1:3102/investigations/ecf5a367-826e-4b78-bc90-4a14a6bea5f4",
+  "detail": {
+    "investigation": {
+      "id": "ecf5a367-826e-4b78-bc90-4a14a6bea5f4",
+      "question": "Ollama 是否支持通过本机 REST API 调用模型？只核实官方文档。",
+      "status": "SUCCEEDED",
+      "stage": "COMPLETED",
+      "error": null,
+      "createdAt": "2026-10-25T01:51:13.185Z",
+      "updatedAt": "2026-10-25T01:51:48.603Z",
+      "startedAt": "2026-10-25T01:51:13.733Z",
+      "completedAt": "2026-10-25T01:51:48.603Z",
+      "resultSnapshotId": "feae1665-9f12-47a8-8274-7051f9e9bf05"
+    },
+    "identityConfirmation": null,
+    "retry": {
+      "allowed": false,
+      "reason": "仅失败的调查可以手动重试。",
+      "remaining": 2,
+      "expectedAttemptCount": 1
+    }
+  },
+  "observedStates": [
+    {
+      "status": "SUCCEEDED",
+      "stage": "COMPLETED",
+      "observedAt": "2026-10-25T01:53:07.381Z"
+    }
+  ]
+}

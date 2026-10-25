@@ -1,0 +1,80 @@
+{
+  "scope": "Real browser submission, actual services, existing application DB and standalone Worker; no case/source injection",
+  "question": "DuckDB 能否直接查询 Parquet 文件，而不先导入数据库？只核实官方文档。",
+  "commit": "6f80500d8e2a8ec7350c2b26c634f95a438b785a",
+  "id": "e8cb25bd-e575-4e96-bbfc-4ae781574b1a",
+  "detail": {
+    "investigation": {
+      "id": "e8cb25bd-e575-4e96-bbfc-4ae781574b1a",
+      "question": "DuckDB 能否直接查询 Parquet 文件，而不先导入数据库？只核实官方文档。",
+      "status": "SUCCEEDED",
+      "stage": "COMPLETED",
+      "error": null,
+      "createdAt": "2026-10-25T02:01:45.536Z",
+      "updatedAt": "2026-10-25T02:02:40.016Z",
+      "startedAt": "2026-10-25T02:01:45.938Z",
+      "completedAt": "2026-10-25T02:02:40.016Z",
+      "resultSnapshotId": "7e0c155b-1ed6-49ae-9611-bbeae17bb9b5"
+    },
+    "identityConfirmation": null,
+    "retry": {
+      "allowed": false,
+      "reason": "仅失败的调查可以手动重试。",
+      "remaining": 2,
+      "expectedAttemptCount": 1
+    }
+  },
+  "states": [
+    {
+      "state": "PENDING:CREATED",
+      "at": "2026-10-25T02:01:45.582Z"
+    },
+    {
+      "state": "RUNNING:IDENTITY",
+      "at": "2026-10-25T02:01:46.591Z"
+    },
+    {
+      "state": "RUNNING:RETRIEVAL",
+      "at": "2026-10-25T02:01:47.597Z"
+    },
+    {
+      "state": "RUNNING:SOURCE_FETCH",
+      "at": "2026-10-25T02:01:51.650Z"
+    },
+    {
+      "state": "RUNNING:VERIFICATION",
+      "at": "2026-10-25T02:01:57.778Z"
+    },
+    {
+      "state": "RUNNING:SOURCE_FETCH",
+      "at": "2026-10-25T02:02:04.867Z"
+    },
+    {
+      "state": "RUNNING:VERIFICATION",
+      "at": "2026-10-25T02:02:09.929Z"
+    },
+    {
+      "state": "RUNNING:RETRIEVAL",
+      "at": "2026-10-25T02:02:17.030Z"
+    },
+    {
+      "state": "RUNNING:SOURCE_FETCH",
+      "at": "2026-10-25T02:02:25.148Z"
+    },
+    {
+      "state": "RUNNING:VERIFICATION",
+      "at": "2026-10-25T02:02:34.357Z"
+    },
+    {
+      "state": "RUNNING:ANSWER",
+      "at": "2026-10-25T02:02:38.435Z"
+    },
+    {
+      "state": "SUCCEEDED:COMPLETED",
+      "at": "2026-10-25T02:02:40.461Z"
+    }
+  ],
+  "consoleErrors": [],
+  "url": "http://127.0.0.1:3102/investigations/e8cb25bd-e575-4e96-bbfc-4ae781574b1a#evidence-73c1a011-b625-4ea2-ab22-47054acdd028",
+  "title": "案卷 · AI 产品调查"
+}
