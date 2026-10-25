@@ -43,7 +43,8 @@ export function budgetModel(model: ModelProvider, budget: ResearchBudget, calls:
         const measured = calls.reduce((sum, call) => sum + (call.inputTokens ?? 0) + (call.outputTokens ?? 0), 0);
         const estimate = Math.ceil(request.prompt.length / 2) + 4000;
         const ceiling = finalPhase ? budget.totalTokens : budget.explorationTokens;
-        if (attempts >= budget.modelCalls || Math.max(measured, reservedTokens) + estimate > ceiling || remaining() < 150) throw new Error("Research model/token budget exhausted; unresolved items retained");
+        const attemptCeiling = finalPhase ? budget.modelCalls : budget.modelCalls - Math.min(6, Math.floor(budget.modelCalls / 4));
+        if (attempts >= attemptCeiling || Math.max(measured, reservedTokens) + estimate > ceiling || remaining() < 150) throw new Error("Research model/token budget exhausted; unresolved items retained");
         attempts++; reservedTokens += estimate;
         return model.generate({ ...request, formatRepair: false });
       }

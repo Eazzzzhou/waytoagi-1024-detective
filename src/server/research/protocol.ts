@@ -20,6 +20,6 @@ export interface ResearchReader {
   journal?: { httpAttempts: { url: string; method: string; startedAt: string; finishedAt: string | null; requestSent: boolean; status: number | null; error: string | null; documentId: string | null }[] };
   load?(id: string): Promise<ResearchDocument>;
   read(url: string, context?: { signal?: AbortSignal; timeoutMs?: number; render?: "auto" | "never" | "always" }): Promise<{ document: ResearchDocument; cacheHit: boolean }>;
-  select(document: ResearchDocument, input: { query: string; maxFragments?: number; maxChars?: number; exclude?: Pick<ResearchFragment, "documentId" | "documentVersion" | "start" | "end">[]; signal?: AbortSignal }): ResearchFragment[] | Promise<ResearchFragment[]>;
+  select(document: ResearchDocument, input: { query: string; maxFragments?: number; maxChars?: number; blockIds?: string[]; exclude?: Pick<ResearchFragment, "documentId" | "documentVersion" | "start" | "end">[]; signal?: AbortSignal }): ResearchFragment[] | Promise<ResearchFragment[]>;
   toEvidence(document: ResearchDocument, fragment: ResearchFragment, options?: { officialWebsite?: string | null }): Evidence;
 }

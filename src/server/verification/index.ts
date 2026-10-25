@@ -57,7 +57,7 @@ function canonicalUrl(value: string): string {
 }
 
 /** Only observable URL/upstream/group links imply shared origin. A second domain implies nothing. */
-export function groupOrigins(evidence: Evidence[]): Evidence[] {
+export function groupOrigins(evidence: Evidence[], options: { preserveConfirmedReports?: boolean } = {}): Evidence[] {
   const parents = evidence.map((_, index) => index);
   const root = (index: number): number => parents[index] === index ? index : (parents[index] = root(parents[index]!));
   const keys = new Map<string, number>();
@@ -84,7 +84,8 @@ export function groupOrigins(evidence: Evidence[]): Evidence[] {
   return evidence.map((item, index) => {
     const group = groups.get(root(index))!;
     if (group.length < 2) return item;
-    return { ...item, metadata: { ...item.metadata, independence: "SHARED_ORIGIN", originGroupId: `origin:${group.map((entry) => entry.id).sort()[0]}`, independenceReason: "保存的相同原文/重定向URL、明确upstreamUrl、采集来源组，或同路径且同hash的www别名相连；重复读取/转载不增加独立证据数量。" } };
+    const confirmed = options.preserveConfirmedReports && item.metadata.independence === "INDEPENDENT" && item.metadata.contentKind === "USER_REPORT" && !!item.metadata.independenceReason;
+    return { ...item, metadata: { ...item.metadata, independence: confirmed ? "INDEPENDENT" : "SHARED_ORIGIN", originGroupId: `origin:${group.map((entry) => entry.id).sort()[0]}`, independenceReason: confirmed ? item.metadata.independenceReason : "保存的相同原文/重定向URL、明确upstreamUrl、采集来源组，或同路径且同hash的www别名相连；重复读取/转载不增加独立证据数量。" } };
   });
 }
 

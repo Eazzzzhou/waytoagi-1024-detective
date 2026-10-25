@@ -7,6 +7,8 @@ import { createResearchHandler } from "../../src/server/research/engine";
 import type { ModelProvider, ModelRequest } from "../../src/server/models";
 import type { ResearchDocument, ResearchFragment, ResearchReader } from "../../src/server/research/protocol";
 import { makeSnapshot } from "../fixtures/snapshot";
+import { createResearchVerifier } from "../../src/server/research/verification";
+import { groupOrigins } from "../../src/server/verification";
 
 const hash = (text: string) => createHash("sha256").update(text).digest("hex");
 function research(): ResearchAudit {
@@ -14,6 +16,52 @@ function research(): ResearchAudit {
 }
 
 describe("v4 research controls (synthetic only, not external-service acceptance)", () => {
+  it("counts a copied first-hand report once across sites, while retaining a different experiment by the same author", async () => {
+    const reports: Evidence[] = [];
+    for (const [index, task] of ["I tested a synthetic assembly containing thirty separate parts and measured every connection.", "I tested a synthetic assembly containing thirty separate parts and measured every connection.", "I tested a different synthetic rendering task with a glass object and measured lighting artifacts."].entries()) {
+      const audit = research(), snapshot = makeSnapshot(), evidence = snapshot.evidence[0]!;
+      const process = "I wrote a local script, recorded the commands and checked the generated object in the editor.";
+      const result = "The saved output contained the requested shape, with one edge requiring a manual correction.";
+      evidence.sourceUrl = `https://site${index}.example.org/report`;
+      evidence.originalExcerpt = `${task} ${process} ${result}`;
+      evidence.contentHash = hash(evidence.originalExcerpt); evidence.metadata.author = "Same synthetic author";
+      snapshot.claims = []; snapshot.relations = [];
+      const model: ModelProvider = { async generate<T>(request: ModelRequest<T>) {
+        const input = JSON.parse(request.prompt.split("\n").at(-1)!);
+        const quote = (text: string) => ({ evidenceId: evidence.id, exactText: text });
+        return request.outputSchema.parse(request.purpose === "v4-claim-extraction" ? { items: [{ statement: "The synthetic author reports a completed test with a manual correction.", kind: "USER_REPORT", scope: "Synthetic report", taskIds: [audit.tasks[0]!.id], evidenceIds: [evidence.id] }] } : { items: [{ claimId: input.claims[0].id, status: "SUPPORTED", reason: "Synthetic report", relations: [{ evidenceId: evidence.id, relation: "SUPPORTS", comparable: true, reason: "Synthetic exact proof" }], reportProvenance: { firsthand: true, task: quote(task), process: quote(process), result: quote(result), reason: "Synthetic recorded task/process/result" } }] });
+      } };
+      await createResearchVerifier(model, audit).assess(snapshot, snapshot.evidence, new AbortController().signal, 1000);
+      reports.push(evidence);
+    }
+    const grouped = groupOrigins(reports, { preserveConfirmedReports: true });
+    expect(grouped[0]!.metadata.originGroupId).toBe(grouped[1]!.metadata.originGroupId);
+    expect(grouped[2]!.metadata.originGroupId).not.toBe(grouped[0]!.metadata.originGroupId);
+  });
+  it.each([
+    ["Synthetic author", "I tested", "INDEPENDENT"],
+    [null, "I tested", "UNKNOWN"],
+    ["Synthetic author", "Invented proof", "UNKNOWN"]
+  ] as const)("requires saved first-hand proof and author for report independence (%s, %s)", async (author, taskQuote, expected) => {
+    const snapshot = makeSnapshot(), audit = research();
+    snapshot.claims = []; snapshot.relations = [];
+    const evidence = snapshot.evidence[0]!;
+    evidence.originalExcerpt = "I tested a synthetic task. I wrote a script. It created a cube.";
+    evidence.contentHash = hash(evidence.originalExcerpt);
+    evidence.metadata.author = author;
+    const model: ModelProvider = { async generate<T>(request: ModelRequest<T>) {
+      const input = JSON.parse(request.prompt.split("\n").at(-1)!);
+      return request.outputSchema.parse(request.purpose === "v4-claim-extraction" ? { items: [{ statement: "The synthetic author reports creating a cube with a script.", kind: "USER_REPORT", scope: "Synthetic only", taskIds: [audit.tasks[0]!.id], evidenceIds: [evidence.id] }] } : { items: [{ claimId: input.claims[0].id, status: "SUPPORTED", reason: "Synthetic attributed report only", relations: [{ evidenceId: evidence.id, relation: "SUPPORTS", comparable: true, reason: "Synthetic quote" }], reportProvenance: { firsthand: true, task: { evidenceId: evidence.id, exactText: taskQuote }, process: { evidenceId: evidence.id, exactText: "I wrote a script." }, result: { evidenceId: evidence.id, exactText: "It created a cube." }, reason: "Synthetic first-hand task/process/result" } }] });
+    } };
+    await createResearchVerifier(model, audit).assess(snapshot, snapshot.evidence, new AbortController().signal, 1000);
+    expect(evidence.metadata.independence).toBe(expected);
+    if (expected === "INDEPENDENT") {
+      const duplicate = { ...evidence, id: randomUUID(), metadata: { ...evidence.metadata } };
+      const grouped = groupOrigins([evidence, duplicate], { preserveConfirmedReports: true });
+      expect(grouped.every(item => item.metadata.independence === "INDEPENDENT")).toBe(true);
+      expect(new Set(grouped.map(item => item.metadata.originGroupId)).size).toBe(1);
+    }
+  });
   it("preserves user requirements when new subtasks or misleading complete assignments arrive", () => {
     const audit = research(), root = audit.tasks[0]!;
     const limits = addTask(audit, { label: "limits", requirementAnchor: "limits", required: true, evidenceNeed: "OFFICIAL" }, root.id)!;
@@ -53,12 +101,13 @@ describe("v4 research controls (synthetic only, not external-service acceptance)
     const text = "Synthetic limit is 42 units.\nSynthetic fee is unknown.";
     const document: ResearchDocument = { id: hash("synthetic document"), version: hash(text), requestedUrl: "https://example.com/source", finalUrl: "https://example.com/source", retrievedAt: new Date().toISOString(), status: "READ", readError: null, text, rawHash: hash(text), textHash: hash(text), storage: { manifestPath: ".cache/synthetic-not-delivery.json" }, parser: { name: "synthetic", version: "1" }, completeness: "COMPLETE", warnings: [], metadata: { title: "Synthetic source", author: null, publishedAt: null, language: "en" }, blocks: [{ id: "b1", start: 0, end: text.indexOf("\n"), kind: "PARAGRAPH", headingPath: [] }, { id: "b2", start: text.indexOf("\n") + 1, end: text.length, kind: "PARAGRAPH", headingPath: [] }], links: [] };
     const fragments: ResearchFragment[] = document.blocks.map(block => ({ documentId: document.id, documentVersion: document.version, blockId: block.id, start: block.start, end: block.end, exactText: text.slice(block.start, block.end), fragmentHash: hash(text.slice(block.start, block.end)), sourceUrl: document.finalUrl, locator: block.id, context: text, score: 1 }));
-    let fetches = 0, selections = 0, decisions = 0;
+    let fetches = 0, selections = 0, decisions = 0, readings = 0;
     const reader: ResearchReader = { async read() { fetches++; return { document, cacheHit: false }; }, select(_document, input) { selections++; return fragments.filter(fragment => !input.exclude?.some(exclude => exclude.start === fragment.start)); }, toEvidence(_document, fragment): Evidence { return { ...makeSnapshot().evidence[0]!, id: randomUUID(), sourceUrl: document.finalUrl, metadata: { ...makeSnapshot().evidence[0]!.metadata, sourceType: "OFFICIAL" }, originalExcerpt: fragment.exactText, contentHash: fragment.fragmentHash, originalLocation: { kind: "TEXT", locator: fragment.locator, context: text } }; } };
     const model: ModelProvider = { config: () => ({ provider: "synthetic", model: "synthetic", promptVersion: "test", temperature: null, generatedAt: new Date().toISOString() }), async generate<T>(request: ModelRequest<T>) {
       const input = JSON.parse(request.prompt.split("\n").at(-1)!);
       let value: unknown;
       if (request.purpose === "v4-research-plan") value = { intent: "FACT", tasks: [{ label: "limits", required: true, requirementAnchor: "limits", evidenceNeed: "OFFICIAL" }, { label: "fees", required: true, requirementAnchor: "fees", evidenceNeed: "OFFICIAL" }], initialQueries: [{ query: "Synthetic limits fees", taskIndexes: [0, 1], secondary: true }], clarification: null };
+      else if (request.purpose === "v4-document-reading") { readings++; expect(input.completeModelView).toBe(true); expect(input.blocks[1].text).toBe("Synthetic fee is unknown."); value = { blockIds: input.blocks.map((block: { id: string }) => block.id), focus: "Synthetic", reason: "Read both saved source blocks" }; }
       else if (request.purpose === "v4-next-research-action") { decisions++; value = { action: decisions === 1 ? "READ" : decisions === 2 ? "SELECT" : "FINISH", searches: [], candidateIds: decisions === 1 ? [input.candidates[0].id] : [], documentIds: decisions === 2 ? [document.id] : [], taskIds: input.tasks.map((task: { id: string }) => task.id), focus: decisions === 2 ? "Synthetic fee followup" : "Synthetic focused fees", reason: "Synthetic gap-driven decision", gap: "Fees still unknown", basisEvidenceIds: input.evidence.map((item: { id: string }) => item.id), basisRecordIds: input.records.map((item: { id: string }) => item.id), newTasks: [], clarification: null }; }
       else if (request.purpose === "v4-claim-extraction") value = { items: [{ statement: "Synthetic limit is 42 units.", kind: "OFFICIAL_CLAIM", scope: "Synthetic only", taskIds: [input.tasks[1].id], evidenceIds: [input.evidence[0].id] }, { statement: "Synthetic fee is 9.", kind: "OFFICIAL_CLAIM", scope: "Synthetic only", taskIds: [input.tasks[2].id], evidenceIds: [input.evidence[1].id] }] };
       else if (request.purpose === "v4-claim-verification-batch") value = { items: [{ claimId: input.claims[0].id, status: "SUPPORTED", reason: "Synthetic exact support", relations: [{ evidenceId: input.evidence[0].id, relation: "SUPPORTS", comparable: true, reason: "Synthetic matching units" }] }, { claimId: input.claims[1].id, status: "BROKEN" }] };
@@ -73,7 +122,7 @@ describe("v4 research controls (synthetic only, not external-service acceptance)
     const result = await handler({ investigationId: randomUUID(), question: "limits and fees", confirmedIdentity: null, signal: new AbortController().signal, setStage: async () => {} });
     expect(result.kind).toBe("COMPLETE"); if (result.kind !== "COMPLETE") throw Error("Expected synthetic completion");
     const snapshot = EvidenceSnapshotSchema.parse(result.result.snapshot);
-    expect(fetches).toBe(1); expect(selections).toBe(2);
+    expect(fetches).toBe(1); expect(selections).toBe(2); expect(readings).toBe(2);
     expect(snapshot.claims.map(claim => claim.verificationStatus)).toEqual(["SUPPORTED", "INSUFFICIENT"]);
     expect(result.result.answer.citations).toHaveLength(1);
     expect(result.result.answer.body).toContain("42 units");
