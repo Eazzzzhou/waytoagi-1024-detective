@@ -14,7 +14,7 @@ import {
 import { EXAMPLES, HOME_ARCHIVE, SCENARIOS } from '../data/scenarios'
 import { cn } from '../lib/utils'
 import { ChainPreview } from './ChainPreview'
-import { FoldText } from './FoldText'
+import { DecodeHeadline } from './DecodeHeadline'
 
 const QUICK_TAGS = [
   { label: '自动化工作流', insert: ' · 用于自动化工作流' },
@@ -102,12 +102,7 @@ export function HomeScreen({
               </span>
             </motion.div>
 
-            <h1 className="mt-7 pb-2 font-display text-[clamp(2.55rem,7.4vw,4.5rem)] font-semibold leading-[1.12] tracking-[-0.015em]">
-              <FoldText text="让每句结论，" className="block" delay={0.08} />
-              <span className="inline-block">
-                <FoldText text="都回到出处。" delay={0.18} />
-              </span>
-            </h1>
+            <DecodeHeadline />
             <span className="mt-5 block h-[3px] w-14 rounded-full bg-seal" />
 
             <motion.p
@@ -128,13 +123,10 @@ export function HomeScreen({
                 submit()
               }}
               className={cn(
-                'group relative mt-7 rounded-[18px] border bg-paper-raised shadow-[0_10px_30px_-22px_rgba(16,24,40,0.35)] transition-all duration-300',
-                focused
-                  ? 'border-seal/45 shadow-[0_0_0_4px_rgba(26,115,232,0.1),0_18px_40px_-30px_rgba(16,24,40,0.3)]'
-                  : 'border-line-strong/70 hover:border-line-strong',
+                'search-input-container group relative mt-7',
+                focused && 'is-focused',
               )}
             >
-              <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/70 to-transparent" />
               <textarea
                 ref={askRef}
                 rows={2}
@@ -254,7 +246,7 @@ export function HomeScreen({
                       onClick={() =>
                         onExample(example.scenarioId as keyof typeof SCENARIOS, example.question)
                       }
-                      className="group/card flex min-h-[132px] flex-col items-start rounded-[10px] border border-line bg-paper-raised p-2.5 text-left transition-all duration-300 hover:-translate-y-0.5 hover:border-seal/30 hover:shadow-[0_12px_28px_-24px_rgba(16,24,40,0.4)]"
+                      className="corner-reveal-card group/card flex min-h-[132px] flex-col items-start p-2.5 text-left"
                     >
                       <span
                         className={cn(
@@ -268,7 +260,7 @@ export function HomeScreen({
                         </span>
                         <span className={cn('h-1.5 w-1.5 rounded-full', tone.dot)} />
                       </span>
-                      <span className="mt-3 line-clamp-3 px-1 font-sans text-[13px] font-medium leading-[1.6] text-ink transition-colors group-hover/card:text-seal">
+                      <span className="mt-3 line-clamp-3 px-1 font-sans text-[13px] font-medium leading-[1.6] text-ink">
                         {example.question}
                       </span>
                     </motion.button>
@@ -316,13 +308,13 @@ export function HomeScreen({
                   key={item.caseNo}
                   type="button"
                   onClick={() => onArchive(item.scenarioId, item.at, item.caseNo)}
-                  className="group/file relative w-full rounded-[10px] border border-line bg-paper-raised/80 p-4 text-left transition-all duration-300 hover:-translate-y-0.5 hover:border-line-strong hover:shadow-card"
+                  className="corner-reveal-card group/file w-full p-4 text-left"
                 >
-                  <div className="flex items-center justify-between font-mono text-[9px] text-ink-faint">
+                  <div className="flex items-center justify-between font-mono text-[9px] text-ink-soft">
                     <span className="tracking-[0.08em]">{item.caseNo}</span>
                     <span>{item.date}</span>
                   </div>
-                  <p className="mt-2 font-sans text-[13.5px] font-medium leading-[1.55] text-ink transition-colors group-hover/file:text-seal">
+                  <p className="mt-2 font-sans text-[13.5px] font-medium leading-[1.55] text-ink">
                     {item.question}
                   </p>
                   <div className="mt-3 flex items-center justify-between">
@@ -344,7 +336,7 @@ export function HomeScreen({
               ))}
             </div>
 
-            <ChainPreview className="mt-6" />
+            <ChainPreview className="mt-10" />
           </motion.aside>
         </div>
       </section>
