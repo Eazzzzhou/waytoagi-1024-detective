@@ -1,62 +1,35 @@
-/* 案卷 · Neo-Classical Minimalism + Premium Editorial
-   暖白纸面 × 炭墨正文 × 香槟金线 × 鼠尾草辅助；金色不承载状态语义。
-   展示衬线与 Noto 采用零下载字体栈（系统回退），不引入字体依赖。 */
 @font-face { font-family: Geist; src: url('/fonts/geist-latin.woff2') format('woff2'); font-weight: 100 900; font-display: swap; }
 @font-face { font-family: 'Geist Mono'; src: url('/fonts/geist-mono-latin.woff2') format('woff2'); font-weight: 100 900; font-display: swap; }
-
 :root {
-  /* 纸面 */
-  --bg: #fefefc;
-  --surface: #f7f6f3;
-  --surface-hover: #f0efeb;
-  --paper: #ffffff;
-
-  /* 炭墨文字 */
-  --ink: #292930;
-  --ink-soft: #747680;
-  --muted: #747680;
-
-  /* 香槟金（装饰与品牌线，不作状态色） */
-  --gold: #c4a16e;
-  --gold-soft: #f2eadf;
-  --gold-deep: #8c632c;
-
-  /* 鼠尾草（辅助与链接） */
-  --sage: #8ea79b;
-  --sage-soft: #e7ece6;
-  --sage-deep: #3e5a4b;
-
-  /* 边框 */
-  --border: #e5e1db;
-  --border-soft: #eeebe5;
-  --rule: #efede8;
-  --border-focus: #d2bea4;
-  --control: #cfc9bf;
-
-  /* 语义状态（成对使用，始终伴随文字） */
-  --positive: #3b7655; --positive-surface: #e4efe8;
-  --warning: #8c632c; --warning-surface: #f6ecdd;
-  --negative: #a33f47; --negative-surface: #f7e7e8;
-
-  /* 字体 */
-  --font-serif: 'Cormorant Garamond', 'Noto Serif SC', Georgia, 'Songti SC', 'STZhongsong', 'SimSun', serif;
-  --font-sans: Geist, 'Noto Sans SC', 'Microsoft YaHei', 'PingFang SC', sans-serif;
-  --font-mono: 'Geist Mono', monospace;
-
-  /* 圆角与间距 */
-  --radius-card: 12px; --radius-control: 10px; --radius-inline: 6px;
-  --gap: 16px; --pad: 28px;
+  --color-brand: #1E3A5F; --color-link: #23548F; --color-brand-deep: #142A45; --color-ground: #F6F2E8; --color-paper: #FFFFFF; --color-ink: #17212B; --color-muted: #53606E; --color-warning: #8A4B08; --color-negative: #B42332; --hl: #FFF0B3;
+  --grad-brand: linear-gradient(100deg, #1E3A5F 0%, #2F6293 100%); --grad-hero: linear-gradient(105deg, #FFFFFF 20%, #C9D9EA 100%); --grad-button: linear-gradient(135deg, #2B5B8C 0%, #1E3A5F 100%);
+  --ground: var(--color-ground); --surface: var(--color-paper); --text: var(--color-ink); --muted: var(--color-muted); --negative: var(--color-negative); --accent: var(--color-brand);
+  --raised: color-mix(in oklab, var(--ground) 60%, var(--surface)); --border: color-mix(in oklab, var(--text) 10%, transparent); --rule: var(--border); --control: color-mix(in oklab, var(--text) 28%, var(--surface));
+  --font-body: 'PingFang SC', 'HarmonyOS Sans SC', 'MiSans', 'Microsoft YaHei', sans-serif; --font-serif: var(--font-dossier-serif, 'Noto Serif SC'), 'Source Han Serif SC', 'Songti SC', 'SimSun', serif; --font-mono: 'Geist Mono', monospace;
+  --text-hero: clamp(40px, 6.5vw, 72px); --text-h1: clamp(28px, 3vw, 36px); --text-h2: clamp(20px, 2.2vw, 24px); --text-h3: 18px; --text-body: 16px; --text-quote: 17px; --text-meta: 13px; --text-kicker: 12px;
+  --weight-body: 400; --weight-control: 500; --weight-title: 700; --weight-hero: 900;
+  --s1: 4px; --s2: 8px; --s3: 12px; --s4: 16px; --s6: 24px; --s8: 32px; --s12: 48px; --s16: 64px; --s24: 96px;
+  --radius-mark: 4px; --radius-control: 8px; --radius-card: 12px; --gap: var(--s6); --pad: var(--s8); --hit: 44px; --anchor-offset: 88px;
+  --dur-1: 120ms; --dur-2: 180ms; --dur-3: 240ms; --ease: cubic-bezier(.22, 1, .36, 1);
+  --shadow-card: 0 1px 2px rgb(23 33 43 / .06), 0 4px 12px rgb(23 33 43 / .08), 0 16px 32px rgb(23 33 43 / .12); --shadow-sheet: 0 1px 2px rgb(23 33 43 / .06), 0 4px 12px rgb(23 33 43 / .08), 0 8px 16px rgb(23 33 43 / .06);
+  --cover-grid: linear-gradient(rgb(255 255 255 / .07) 1px, transparent 1px), linear-gradient(90deg, rgb(255 255 255 / .07) 1px, transparent 1px); --cover-light: radial-gradient(1100px 560px at 12% -8%, rgb(74 113 150 / .5), transparent 62%); --cover-shade: linear-gradient(180deg, transparent 60%, rgb(9 20 35 / .55)); --grid-size: 36px;
+  --white-body: rgb(255 255 255 / .82); --white-meta: rgb(255 255 255 / .82);
+  --noise: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.88' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Cpath fill='%23fff' filter='url(%23n)' opacity='.5' d='M0 0h180v180H0z'/%3E%3C/svg%3E");
 }
-
 * { box-sizing: border-box; }
-html { color-scheme: light; scroll-behavior: auto; scrollbar-color: var(--control) var(--bg); }
-body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--font-sans); font-size: 15px; line-height: 1.7; }
-a { color: inherit; text-underline-offset: 3px; -webkit-tap-highlight-color: transparent; }
-button, a { touch-action: manipulation; }
-code { font-family: var(--font-mono); font-size: 12px; overflow-wrap: anywhere; }
+html { color-scheme: light; scrollbar-gutter: stable; }
+body { margin: 0; background: var(--ground); color: var(--text); font-family: var(--font-body); font-size: var(--text-body); line-height: 1.75; }
+a { color: var(--color-link); text-underline-offset: .25em; text-decoration-thickness: 1px; }
+a:hover { text-decoration-thickness: 2px; }
+code { font-family: var(--font-mono); font-size: var(--text-meta); overflow-wrap: anywhere; font-variant-numeric: tabular-nums; }
 button, input, textarea { font: inherit; }
-:focus-visible { outline: 3px solid var(--gold-deep); outline-offset: 3px; }
-::selection { background: var(--gold-soft); color: var(--ink); }
-input, textarea { caret-color: var(--gold-deep); }
-
-@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { animation: none !important; transition: none !important; } }
+button, a, summary, input, textarea { -webkit-tap-highlight-color: transparent; }
+:focus-visible { outline: 2px solid var(--color-link); outline-offset: 3px; }
+::selection { background: var(--color-brand); color: var(--surface); }
+h1, h2, h3 { text-wrap: balance; overflow-wrap: anywhere; }
+p { text-wrap: pretty; }
+mark { background: var(--hl); color: var(--text); padding: 0 .12em; border-radius: var(--radius-mark); -webkit-box-decoration-break: clone; box-decoration-break: clone; }
+[id] { scroll-margin-top: var(--anchor-offset); }
+@media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; } }
+@media (prefers-contrast: more) { :root { --muted: var(--text); --white-body: var(--surface); --white-meta: var(--surface); --control: var(--text); } }

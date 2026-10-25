@@ -1,12 +1,10 @@
-# 前端收藏
+# 前端素材收藏
 
-**双击 `打开收藏.html` 就能浏览。** 支持按类别筛选、文字搜索、快速预览，以及直达官网和代码文档。
+双击[打开收藏.html](打开收藏.html)浏览，或按需读[数据索引](数据/resources.json)。本目录不决定当前项目版式、组件或任务，前端由甲维护。
 
-- 24个收藏站点 + Animata Ripple Button，包含独立的“作品集灵感”分类。
-- 作品集灵感入口：[作品集灵感/README.md](作品集灵感/README.md)。
-- Happy Hues 14作为普通案例保存，色值在 `配色参考/tokens.css`。
-- 给其他agent：让它读本目录 `AGENTS.md`，然后按需查 `数据/resources.json`。本机后续Codex已有入口提示。
-- React Bits、Aceternity、Shadcnblocks共用已安装的shadcn MCP；Magic UI使用独立官方MCP。
-- 21st已留配置，缺账号密钥，保持禁用。详细状态见 `接入/MCP使用说明.md`。
+- [配色参考](配色参考/Happy-Hues-14.md)仅为收藏，当前工程色彩以src/app/globals.css为准。
+- [作品集灵感](作品集灵感/README.md)与[Animata按钮](案例/Animata-Ripple-Button.md)按需参考。
+- [MCP接入说明](接入/MCP使用说明.md)是可移植配置入口，不承诺当前机器已安装或有账号权限。
+- 更新数据后可运行维护/build_library.py刷新收藏首页；不在收藏目录安装业务组件。
 
-本库以链接、预览和获取方法为主，不镜像第三方组件包。首页缩略图来自原站，联网加载；索引和搜索本地可用。原有 `网站网址.txt` 保留。
+链接和远程预览可能变化，许可、付费范围及接口使用前核实；不为此项目安装额外设计Skill。

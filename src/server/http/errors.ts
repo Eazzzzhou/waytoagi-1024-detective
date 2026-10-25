@@ -15,8 +15,10 @@ export function apiFailure(error: unknown): Response {
   else {
     const detail = classifyFailure(error);
     failure = detail.code === "STORAGE_FAILED" ? new HttpError(503, "STORAGE_UNAVAILABLE", "数据库暂不可用，请稍后刷新或重试提交。") : new HttpError(500, "INTERNAL_ERROR", "服务暂时无法处理请求，请稍后重试。");
-    console.error(JSON.stringify({ event: "http.failure", error: detail }));
   }
+  // Emit every server failure through one boundary. Exception messages, Zod issues
+  // and request/provider payloads can contain business data even after secret redaction.
+  if (failure.status >= 500) console.error(JSON.stringify({ event: "http.failure", status: failure.status, code: failure.code }));
   return Response.json(ApiErrorResponseSchema.parse({ error: { code: failure.code, message: failure.message } }), { status: failure.status, headers: JSON_HEADERS });
 }
 export function methodNotAllowed(allowed: string): Response {

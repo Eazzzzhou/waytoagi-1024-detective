@@ -11,7 +11,7 @@ import {
   type Investigation
 } from "../../src/contracts";
 
-export const D1_EVALUATOR_VERSION = "0.1.0";
+export const D1_EVALUATOR_VERSION = "0.1.2";
 export const D1_RUN_SCHEMA_VERSION = "d1-run/1" as const;
 
 export const D1CheckStatusSchema = z.enum(["PASS", "FAIL", "WARN", "NOT_APPLICABLE", "NOT_RUN"]);
@@ -20,7 +20,8 @@ export type D1CheckStatus = z.infer<typeof D1CheckStatusSchema>;
 export const D1VerdictSchema = z.enum(["PASS", "FAIL", "NEEDS_HUMAN", "NOT_RUN"]);
 export type D1Verdict = z.infer<typeof D1VerdictSchema>;
 
-export const D1OwnerSchema = z.enum(["甲", "丙", "乙/公共工程"]);
+// Legacy owners remain readable in immutable runs; new issues use 甲 / 乙丙.
+export const D1OwnerSchema = z.enum(["甲", "乙丙", "丙", "乙/公共工程"]);
 export type D1Owner = z.infer<typeof D1OwnerSchema>;
 
 export const D1CheckSchema = z.strictObject({
@@ -128,6 +129,7 @@ export type EvaluationResult = {
 export type EvaluateInput = {
   caseId: string;
   caseType: "A" | "B" | "C";
+  caseQuestion: string;
   intent: "objective" | "advice";
   investigation: unknown;
   snapshot: unknown;
@@ -151,7 +153,7 @@ function normalizeUrl(value: string): string {
 
 function issueFor(checkValue: D1Check): D1Issue | null {
   if (checkValue.status !== "FAIL" && checkValue.status !== "WARN") return null;
-  const owner: D1Owner = ["R4_SOURCE_METADATA", "R5_SOURCE_INDEPENDENCE", "R6_UNREQUESTED_ADVICE", "R7_TASK_SUCCESS", "R10_ANSWER_CITATIONS"].includes(checkValue.id) ? "甲" : "乙/公共工程";
+  const owner: D1Owner = ["R4_SOURCE_METADATA", "R5_SOURCE_INDEPENDENCE", "R6_UNREQUESTED_ADVICE", "R7_TASK_SUCCESS", "R10_ANSWER_CITATIONS"].includes(checkValue.id) ? "甲" : "乙丙";
   return {
     id: checkValue.id,
     checkId: checkValue.id,
@@ -300,6 +302,8 @@ export function evaluateSnapshot(input: EvaluateInput): EvaluationResult {
 
   const associationProblems: string[] = [];
   if (!input.caseId.startsWith(`${input.caseType}-`)) associationProblems.push(`caseId ${input.caseId} 与 caseType ${input.caseType} 不一致`);
+  // Match the submitted question, never the human reference answer. HTTP trims only outer whitespace.
+  if (investigation.question !== input.caseQuestion.trim()) associationProblems.push("investigation.question 与案例原问题不一致");
   if (snapshot.investigationId !== investigation.id) associationProblems.push("snapshot.investigationId 与 investigation.id 不一致");
   checks.push(check("R9_CASE_ASSOCIATION", associationProblems.length ? "FAIL" : "PASS", associationProblems.length ? "案例/调查/快照关联不成立" : "案例与调查/快照关联成立", associationProblems.join(" | ") || null));
 

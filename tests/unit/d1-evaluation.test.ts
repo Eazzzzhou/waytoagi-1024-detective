@@ -7,6 +7,7 @@ import { InvestigationSchema, type EvidenceSnapshot, type Investigation } from "
 import { makeAnswer, makeSnapshot } from "../fixtures/snapshot";
 import { loadCaseRecord } from "../../scripts/d1/case";
 import {
+  D1OwnerSchema,
   D1RunRecordSchema,
   buildNotRunRecord,
   evaluateSnapshot,
@@ -47,10 +48,11 @@ function succeededInvestigation(snapshot: EvidenceSnapshot): Investigation {
   });
 }
 
-function evaluate(snapshot: EvidenceSnapshot, overrides: { adviceCount?: number; investigation?: unknown; answers?: unknown[]; parentSnapshot?: unknown | null } = {}): EvaluationResult {
+function evaluate(snapshot: EvidenceSnapshot, overrides: { caseQuestion?: string; adviceCount?: number; investigation?: unknown; answers?: unknown[]; parentSnapshot?: unknown | null } = {}): EvaluationResult {
   return evaluateSnapshot({
     caseId: "A-01",
     caseType: "A",
+    caseQuestion: overrides.caseQuestion ?? "Synthetic D1 evaluation question",
     intent: "objective",
     investigation: overrides.investigation ?? succeededInvestigation(snapshot),
     snapshot,
@@ -65,6 +67,12 @@ function checkStatus(result: EvaluationResult, id: string) {
 }
 
 describe("D1 deterministic evaluator", () => {
+  it("reads historical issue owners without rewriting them", () => {
+    for (const owner of ["甲", "乙丙", "丙", "乙/公共工程"]) {
+      expect(D1OwnerSchema.parse(owner)).toBe(owner);
+    }
+  });
+
   it("passes a structurally valid snapshot and answer", () => {
     const result = evaluate(validSnapshot());
     expect(result.verdict).toBe("PASS");
@@ -81,7 +89,7 @@ describe("D1 deterministic evaluator", () => {
     const result = evaluate(snapshot, { answers: [answer] });
     expect(checkStatus(result, "R3_QUOTE_MATCH")).toBe("FAIL");
     expect(result.verdict).toBe("FAIL");
-    expect(result.issues.some((issue) => issue.owner === "乙/公共工程")).toBe(true);
+    expect(result.issues.some((issue) => issue.owner === "乙丙")).toBe(true);
   });
 
   it("fails when required source metadata is missing", () => {
@@ -129,6 +137,18 @@ describe("D1 deterministic evaluator", () => {
     snapshot.investigationId = randomUUID();
     const result = evaluate(snapshot, { investigation });
     expect(checkStatus(result, "R9_CASE_ASSOCIATION")).toBe("FAIL");
+  });
+
+  it("rejects a valid result for a different case question", () => {
+    const snapshot = validSnapshot();
+    const investigation = { ...succeededInvestigation(snapshot), question: "An unrelated product question" };
+    const result = evaluate(snapshot, { investigation });
+    expect(checkStatus(result, "R9_CASE_ASSOCIATION")).toBe("FAIL");
+    expect(result.verdict).toBe("FAIL");
+  });
+
+  it("matches the question using the same outer whitespace normalization as HTTP", () => {
+    expect(evaluate(validSnapshot(), { caseQuestion: "  Synthetic D1 evaluation question\n" }).verdict).toBe("PASS");
   });
 
   it("records NOT_RUN without inventing a system result", () => {

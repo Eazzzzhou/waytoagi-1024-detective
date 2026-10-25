@@ -1,4 +1,9 @@
 import "dotenv/config";
+import { spawnSync } from "node:child_process";
+import { randomUUID } from "node:crypto";
+import { mkdtemp, rmdir, unlink, writeFile } from "node:fs/promises";
+import { tmpdir } from "node:os";
+import { join } from "node:path";
 import { afterAll, beforeAll, describe, expect, it } from "vitest";
 import type { Prisma } from "../../src/generated/prisma/client";
 import { createQueueTestDatabase } from "../support/database";
@@ -46,7 +51,7 @@ describe("D1 read-only snapshot evaluation", () => {
       answers: await tx.answer.count()
     };
     const result = evaluateSnapshot({
-      caseId: "A-01", caseType: "A", intent: "objective",
+      caseId: "A-01", caseType: "A", caseQuestion: investigation.question, intent: "objective",
       investigation: loadedInvestigation, snapshot: loadedSnapshot, answers: [loadedAnswer],
       adviceCount: 0, parentSnapshot: null
     });
@@ -59,4 +64,23 @@ describe("D1 read-only snapshot evaluation", () => {
     expect(result.verdict).toBe("PASS");
     expect(after).toEqual(before);
   }));
+
+  it("loads the CLI database URL from an env file without writing a run or business data", async () => {
+    const directory = await mkdtemp(join(tmpdir(), "d1-cli-env-"));
+    const path = join(directory, ".env");
+    try {
+      await writeFile(path, `DATABASE_URL=${database.connectionString}\n`);
+      const env: NodeJS.ProcessEnv = { ...process.env, DOTENV_CONFIG_PATH: path };
+      delete env.DATABASE_URL;
+      const id = randomUUID();
+      const result = spawnSync(process.execPath, ["--import", "tsx", "scripts/d1/evaluate.ts", "--case", "A-01", "--investigation", id, "--snapshot", randomUUID()], { env, encoding: "utf8", timeout: 10000, windowsHide: true });
+      expect(result.error).toBeUndefined();
+      expect(result.status).toBe(1);
+      expect(result.stderr).toContain(`未找到 investigation：${id}`);
+      expect(await database.db.investigation.count()).toBe(0);
+    } finally {
+      await unlink(path);
+      await rmdir(directory);
+    }
+  });
 });

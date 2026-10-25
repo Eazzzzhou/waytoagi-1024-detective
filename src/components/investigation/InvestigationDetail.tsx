@@ -1,78 +1,88 @@
 "use client";
-import { useCallback, useState } from "react";
-import { AcceptedInvestigationSchema, InvestigationDetailSchema, SnapshotResponseSchema, type InvestigationDetail as Detail } from "@/contracts";
-import { CONFLICT_MESSAGE, errorMessage, isConflict, postJson, readApi } from "./api-client";
-import { useApiResource } from "./use-api-resource";
-import { useRequestAction } from "./use-request-action";
+import { useCallback, useEffect, useRef, useState } from "react";
+import { AcceptedInvestigationSchema, InvestigationDetailSchema, SnapshotResponseSchema, type InvestigationDetail as Detail, type SnapshotResponse } from "@/contracts";
+import { errorMessage, isStateConflict, postJson, readApi } from "./api-client";
 import { STAGE_LABELS, STATUS_LABELS, formatTime } from "./labels";
 import { IdentityConfirmationForm } from "./IdentityConfirmationForm";
 import { SnapshotView } from "./SnapshotView";
+import { AdviceSlot } from "./AdviceSlot";
 import styles from "./workbench.module.css";
 
 export function InvestigationDetail({ investigationId }: { investigationId: string }) {
-  return <InvestigationContent key={investigationId} investigationId={investigationId} />;
-}
-function shouldPoll(data: Detail) { return data.investigation.status === "PENDING" || data.investigation.status === "RUNNING"; }
-function InvestigationContent({ investigationId }: { investigationId: string }) {
-  const [actionError, setActionError] = useState<string | null>(null);
-  const { busy, run } = useRequestAction();
+  const [data, setData] = useState<Detail | null>(null);
+  const [error, setError] = useState<string | null>(null);
+  const [snapshot, setSnapshot] = useState<SnapshotResponse | null>(null);
+  const [snapshotError, setSnapshotError] = useState<string | null>(null);
+  const [busy, setBusy] = useState(false);
+  const [recovering, setRecovering] = useState(false);
+  const actionPending = useRef(false);
   const [revision, setRevision] = useState(0);
   const refresh = useCallback(async () => { setRevision((value) => value + 1); }, []);
-  const conflict = useCallback(async () => { setActionError(CONFLICT_MESSAGE); await refresh(); }, [refresh]);
-  const state = useApiResource(`/api/investigations/${investigationId}`, InvestigationDetailSchema, revision, shouldPoll);
-  const { data, error } = state;
-  const snapshotId = data?.investigation.resultSnapshotId ?? null;
-  const result = useApiResource(snapshotId ? `/api/snapshots/${snapshotId}` : null, SnapshotResponseSchema, revision);
-  const snapshot = result.data;
-  const snapshotError = result.error;
-  const matchingSnapshot = snapshot?.snapshot.id === snapshotId && snapshot.snapshot.investigationId === investigationId;
-  // A snapshot pointer alone does not establish success for the current execution.
-  const currentSuccess = data?.investigation.status === "SUCCEEDED";
-  const executionRecord = data && <>
-    <dl className={styles.metadata}>
-      <div><dt>创建时间</dt><dd>{formatTime(data.investigation.createdAt)}</dd></div>
-      <div><dt>开始时间</dt><dd>{data.investigation.startedAt ? formatTime(data.investigation.startedAt) : "尚未开始"}</dd></div>
-      <div><dt>结束时间</dt><dd>{data.investigation.completedAt ? formatTime(data.investigation.completedAt) : "尚未结束"}</dd></div>
-      <div><dt>更新时间</dt><dd>{formatTime(data.investigation.updatedAt)}</dd></div>
-    </dl>
-    <p className={styles.meta}>调查 ID <code>{investigationId}</code></p>
-  </>;
-  async function retry() {
-    if (!data?.retry.allowed || state.loading || error) return;
-    await run(async (signal) => {
-      setActionError(null);
+  const recoverConflict = useCallback(async () => { setRecovering(true); setError(null); await refresh(); }, [refresh]);
+  useEffect(() => {
+    const controller = new AbortController();
+    let timer: ReturnType<typeof setTimeout> | undefined;
+    let errors = 0;
+    async function poll() {
       try {
-        await readApi(`/api/investigations/${investigationId}/retry`, AcceptedInvestigationSchema, { ...postJson({ expectedAttemptCount: data.retry.expectedAttemptCount }), signal, expectedStatus: 202 });
-        if (!signal.aborted) await refresh();
+        const detail = await readApi(`/api/investigations/${investigationId}`, InvestigationDetailSchema, { signal: controller.signal });
+        if (controller.signal.aborted) return;
+        setData(detail); setError(null); setRecovering(false); errors = 0;
+        if (detail.investigation.status === "PENDING" || detail.investigation.status === "RUNNING") timer = setTimeout(poll, 2000);
       } catch (failure) {
-        if (signal.aborted) return;
-        if (isConflict(failure)) await conflict();
-        else setActionError(errorMessage(failure));
+        if (controller.signal.aborted) return;
+        setError(errorMessage(failure));
+        setRecovering(false);
+        if (++errors < 3) timer = setTimeout(poll, 3000);
       }
-    });
+    }
+    void poll();
+    return () => { controller.abort(); if (timer) clearTimeout(timer); };
+  }, [investigationId, revision]);
+  const snapshotId = data?.investigation.resultSnapshotId;
+  useEffect(() => {
+    if (!snapshotId) return;
+    const controller = new AbortController();
+    readApi(`/api/snapshots/${snapshotId}`, SnapshotResponseSchema, { signal: controller.signal }).then((value) => {
+      if (!controller.signal.aborted) { setSnapshot(value); setSnapshotError(null); }
+    }).catch((failure: unknown) => { if (!controller.signal.aborted) setSnapshotError(errorMessage(failure)); });
+    return () => controller.abort();
+  }, [snapshotId, revision]);
+  async function retry() {
+    if (!data?.retry.allowed || actionPending.current || recovering) return;
+    actionPending.current = true; setBusy(true); setError(null);
+    try { await readApi(`/api/investigations/${investigationId}/retry`, AcceptedInvestigationSchema, postJson({ expectedAttemptCount: data.retry.expectedAttemptCount })); await refresh(); }
+    catch (failure) { if (isStateConflict(failure)) await recoverConflict(); else setError(errorMessage(failure)); }
+    finally { actionPending.current = false; setBusy(false); }
   }
-  return <div className={styles.detail}>
-    <header className={`${styles.titleRow} ${styles.detailIntro}`}><div><h1>{data?.investigation.question ?? "调查详情"}</h1>{state.readAt && <p className={`${styles.meta} ${styles.lastRead}`}>最后成功读取状态：{formatTime(state.readAt)}</p>}</div><button className={styles.secondary} onClick={() => void refresh()}>刷新状态</button></header>
-    {actionError && <div role="alert" className={styles.notice}><p>{actionError}</p></div>}
-    {state.loading && data && <p className={styles.meta} role="status">正在刷新状态，暂时不能提交确认或重试。</p>}
-    {error && <div role="alert" className={styles.notice}><p>当前状态读取失败：{error}</p>{data && <p className={styles.meta}>已保留最后一次成功加载的数据，后台状态未被改写。</p>}<p>{state.stopped ? "自动读取已停止，请使用“刷新状态”重新读取。" : "正在自动重试读取，最多重试 3 次。"}</p></div>}
+  return <>
+    <header className={styles.titleRow}><div><p className={styles.kicker}>调查报告 · INVESTIGATION REPORT</p><h1>{data?.investigation.question ?? "调查详情"}</h1><p className={styles.muted}>查看执行状态，核对每一条依据。</p></div><button className={styles.secondary} onClick={() => void refresh()}>刷新状态</button></header>
+    {recovering && <p role="status" className={styles.notice}>状态已变化，正在更新</p>}
+    {error && <div role="alert" className={`${styles.notice} ${styles.errorText}`}><p>{error}</p>{data && <p className={styles.meta}>当前保留的是上次读取的状态，更新时间：{formatTime(data.investigation.updatedAt)}</p>}</div>}
     {!data && !error && <section className={styles.panel} aria-busy="true"><p>正在读取调查记录…</p></section>}
     {data && <>
-      <section className={`${styles.panel} ${styles.statePanel}`} aria-label="调查状态" data-state={data.investigation.status}>
-        <div className={styles.stateRibbon}><span role="status" className={`${styles.status} ${data.investigation.status === "FAILED" ? styles.failed : ""}`}>{STATUS_LABELS[data.investigation.status]}</span><span className={styles.stage}>{STAGE_LABELS[data.investigation.stage]}</span><details className={styles.executionRecord}><summary>执行记录 · 更新于 {formatTime(data.investigation.updatedAt)}</summary>{executionRecord}</details></div>
+      <section className={`${styles.panel} ${styles.statusPanel}`} aria-label="调查状态">
+        <div className={styles.sectionHead}><h2>调查状态与范围</h2><span role="status" className={`${styles.status} ${data.investigation.status === "FAILED" ? styles.failed : ""}`}>{STATUS_LABELS[data.investigation.status]}</span></div>
+        <p className={styles.meta}>当前阶段：{STAGE_LABELS[data.investigation.stage]}</p>
+        <details className={styles.details}><summary>调查记录与时间</summary><dl className={styles.metadata}>
+          <div><dt>执行阶段</dt><dd>{STAGE_LABELS[data.investigation.stage]}</dd></div>
+          <div><dt>创建时间</dt><dd>{formatTime(data.investigation.createdAt)}</dd></div>
+          <div><dt>更新时间</dt><dd>{formatTime(data.investigation.updatedAt)}</dd></div>
+        </dl><p className={styles.meta}>调查 ID <code>{investigationId}</code></p></details>
         {data.investigation.status === "PENDING" && <p className={styles.muted}>任务已入队，等待 Worker 领取。自动退避中的任务将在到期后继续；Worker 未启动时会保持排队。</p>}
         {data.investigation.status === "RUNNING" && <p className={styles.muted}>后台正在执行调查，状态每两秒读取一次。</p>}
-        {data.investigation.status === "AWAITING_CONFIRMATION" && <p className={styles.muted}>调查暂停等待身份确认；确认后或手动刷新时重新读取状态。</p>}
-        {data.investigation.status === "CANCELLED" && <p className={styles.muted}>本次调查已取消。</p>}
-        {data.investigation.error && <div className={styles.notice}><h3>{data.investigation.status === "FAILED" ? "执行未完成" : "最近一次执行错误"}</h3><p>{data.investigation.error.message}</p><code>{data.investigation.error.code}</code>
+        {(data.investigation.status === "PENDING" || data.investigation.status === "RUNNING") && <div className={styles.skeleton} aria-hidden="true"><span /><span /><span /></div>}
+        {data.investigation.status === "SUCCEEDED" && <p className={styles.muted}>结果已保存，可以通过来源链接和原文定位复核。</p>}
+        {data.investigation.error && <div className={`${styles.notice} ${styles.errorText}`}><h3>{data.investigation.status === "FAILED" ? "执行未完成" : "最近一次执行错误"}</h3><p>{data.investigation.error.message}</p><code>{data.investigation.error.code}</code>
           {data.investigation.error.code === "PROVIDER_NOT_CONFIGURED" && <p>真实检索或核查服务尚未配置，本次调查没有生成答案或证据。</p>}
         </div>}
-        {data.investigation.status === "FAILED" && <div className={styles.actionRow}><button className={styles.primary} disabled={!data.retry.allowed || busy || state.loading || !!error} onClick={() => void retry()}>{busy ? "正在恢复任务…" : "重试调查"}</button><p className={styles.muted}>{error || state.loading ? "请先成功刷新调查状态，再按后台规则重试。" : data.retry.reason}</p></div>}
+        {data.investigation.status === "FAILED" && <div className={styles.actionRow}><button className={styles.primary} disabled={!data.retry.allowed || busy || recovering} onClick={() => void retry()}>{busy ? "正在恢复任务…" : "重试调查"}</button><p className={styles.muted}>{data.retry.reason}</p></div>}
       </section>
-      {data.investigation.status === "AWAITING_CONFIRMATION" && data.identityConfirmation && <IdentityConfirmationForm key={data.retry.expectedAttemptCount} investigationId={investigationId} request={data.identityConfirmation} expectedAttemptCount={data.retry.expectedAttemptCount} onConfirmed={refresh} onConflict={conflict} disabled={state.loading || !!error} />}
-      {snapshotId ? <>{!currentSuccess && <p className={styles.notice}>下方为已保存的历史快照，不代表本轮执行成功。</p>}{snapshotError && <section className={styles.panel} role="alert"><h2>结果暂时无法读取</h2><p>{snapshotError}</p>{result.readAt && <p>下方保留上次成功读取的快照。最后读取：{formatTime(result.readAt)}</p>}<p>{result.stopped ? "自动读取已停止。" : "正在重试读取，最多重试 3 次。"}</p><button className={styles.secondary} onClick={() => void refresh()}>重新读取结果</button></section>}
-        {matchingSnapshot && snapshot ? <SnapshotView data={snapshot} /> : snapshot && !matchingSnapshot ? <section className={styles.panel} role="alert"><p>快照与当前调查或快照 ID 不匹配，已停止展示，请刷新后重试。</p></section> : !snapshotError && <section className={styles.panel} aria-busy="true"><h2>调查结果</h2><p>正在读取证据快照与回答…</p></section>}</>
+      {data.identityConfirmation && <IdentityConfirmationForm key={data.retry.expectedAttemptCount} investigationId={investigationId} request={data.identityConfirmation} expectedAttemptCount={data.retry.expectedAttemptCount} onConfirmed={refresh} onConflict={recoverConflict} recovering={recovering} />}
+      {snapshotId ? <>{snapshotError && <section className={`${styles.panel} ${styles.errorText}`} role="alert"><h2>结果暂时无法读取</h2><p>{snapshotError}</p><button className={styles.secondary} onClick={() => void refresh()}>重新读取结果</button></section>}
+        {snapshot?.snapshot.id === snapshotId ? <SnapshotView data={snapshot} /> : !snapshotError && <section className={styles.panel} aria-busy="true"><h2>调查结果</h2><p>正在读取证据快照与回答…</p></section>}</>
         : <section className={styles.panel}><h2>证据与回答</h2><p className={styles.empty}>尚无证据快照。取得并核查的来源、原文与回答将在此显示。</p></section>}
+      <AdviceSlot />
     </>}
-  </div>;
+  </>;
 }

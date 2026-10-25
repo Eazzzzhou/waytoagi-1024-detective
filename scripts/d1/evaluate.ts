@@ -1,3 +1,4 @@
+import "dotenv/config";
 import { readFile } from "node:fs/promises";
 import { createDatabaseClient, InvestigationRepository } from "../../src/server/storage";
 import { loadCaseRecord } from "./case";
@@ -116,7 +117,7 @@ async function main(): Promise<void> {
     const adviceCount = await db.advice.count({ where: { snapshotId: snapshot.id } });
     const parentSnapshot = snapshot.parentSnapshotId ? await repository.findSnapshot(snapshot.parentSnapshotId) : null;
     const evaluation = evaluateSnapshot({
-      caseId: caseRecord.caseId, caseType: caseRecord.caseType, intent: args.intent,
+      caseId: caseRecord.caseId, caseType: caseRecord.caseType, caseQuestion: caseRecord.question, intent: args.intent,
       investigation, snapshot, answers, adviceCount, parentSnapshot
     });
     const record = buildRunRecord({ caseRecord, runId, runAt, intent: args.intent, appVersion: version, nodeVersion: process.version, evaluation, review, notes: ["评估器只读；未写入 investigation/snapshot/answer/advice。"] });
