@@ -1,0 +1,11 @@
+{
+  "extends": "../tsconfig.json",
+  "compilerOptions": {
+    "lib": ["es2022"],
+    "types": ["node"],
+    "plugins": [],
+    "incremental": false
+  },
+  "include": ["../src/worker/**/*.ts", "../src/server/**/*.ts", "../src/contracts/**/*.ts"],
+  "exclude": ["../node_modules", "../src/app", "**/*.test.ts"]
+}
