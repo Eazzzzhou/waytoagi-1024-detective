@@ -4,10 +4,20 @@ import { load } from "cheerio";
 import { z } from "zod";
 import { EvidenceSchema, ProductIdentitySchema, RetrievalRecordSchema, RetrievedSourceSchema,
   type Evidence, type ProductIdentity, type RetrievalRecord } from "../../contracts";
-import { publicUrl, requestText } from "./http";
+import { normalizeSourceUrl, publicUrl, requestText, type HttpAttempt, type HttpRequestOptions } from "./http";
 
 export interface CollectionContext { signal?: AbortSignal; timeoutMs?: number; question?: string; officialWebsite?: string | null }
 export interface CollectionOptions extends CollectionContext { maxSources?: number; yuanbaoImportPath?: string }
+export type SearchEntry = "yuanbao" | "bing" | "hn" | "tavily";
+export interface CollectionRequest {
+  query: string;
+  entry: SearchEntry;
+  /** Omit to read the returned URLs; [] performs search only. */
+  readUrls?: string[];
+  maxReads?: number;
+}
+export interface CollectionDiagnostic { retrievalRecordId: string | null; stage: "SEARCH_RESULT" | "READ"; index: number; error: string }
+export interface CollectionResult { retrievalRecords: RetrievalRecord[]; evidence: Evidence[]; diagnostics: CollectionDiagnostic[] }
 const now = () => new Date().toISOString();
 const clean = (s: string | null | undefined) => s?.replace(/\s+/g, " ").trim() || null;
 const sha = (s: string) => createHash("sha256").update(s).digest("hex");
@@ -19,16 +29,24 @@ function isOfficialUrl(source: string, official: string) {
   // Shared-host product pages do not make every repository/page on that host official.
   return o.pathname === "/" || u.pathname === o.pathname || u.pathname.startsWith(`${o.pathname.replace(/\/$/, "")}/`);
 }
-// Domain hints only; never evidence/answers. Every confirmation reads the website afresh.
-const products = [
-  { name: "Dify", aliases: /\bdify\b/i, url: "https://dify.ai" },
-  { name: "GitHub Copilot", aliases: /github\s+copilot/i, url: "https://github.com/features/copilot" },
-  { name: "Amazon Q Developer", aliases: /amazon\s+q\s+developer/i, url: "https://aws.amazon.com/q/developer/" },
-  { name: "Devin", aliases: /\bdevin\b/i, url: "https://devin.ai" },
-  { name: "Cursor", aliases: /\bcursor\b/i, url: "https://cursor.com" },
-  { name: "Claude", aliases: /\bclaude\b/i, url: "https://claude.ai" },
-  { name: "ChatGPT", aliases: /\bchatgpt\b/i, url: "https://chatgpt.com" }
-];
+export function unresolvedIdentity(question: string): ProductIdentity {
+  return ProductIdentitySchema.parse({ name: question.trim().slice(0, 120), officialWebsite: null,
+    version: null, plan: null, confirmationStatus: "UNRESOLVED", confirmationBasis: [] });
+}
+
+/** A conservative discovery hint, never proof of legal ownership or a version. */
+function identityName(question: string, evidence: Evidence): string | null {
+  if (evidence.readStatus !== "READ" || !evidence.originalExcerpt) return null;
+  if (/\bcompare\b|\bversus\b|\bvs\b|比较|对比/i.test(question)) return null;
+  const finalUrl = evidence.originalLocation?.locator.split(" :: ")[0];
+  if (!finalUrl) return null;
+  const hostLabels = new URL(finalUrl).hostname.toLowerCase().split(".");
+  const tokens = question.match(/[a-z][a-z0-9-]{2,}/gi) ?? [];
+  const ignored = new Set(["www", "com", "org", "net", "api", "docs", "app", "cloud", "what", "how", "the"]);
+  const names = [...new Set(tokens.filter(t => !ignored.has(t.toLowerCase()) && hostLabels.at(-2) === t.toLowerCase() &&
+    evidence.metadata.title?.toLowerCase().includes(t.toLowerCase())))];
+  return names.length === 1 ? names[0]! : null;
+}
 
 // Manual import is explicitly semi-automatic. It cannot be silently reused for a new question.
 export const YuanbaoImportSchema = z.strictObject({
@@ -57,11 +75,16 @@ export function extractHtml(html: string, question = "") {
   $("script,style,noscript,nav,header,footer,form,svg,template,aside,[hidden],[aria-hidden='true']").remove();
   const root = $("article").first().length ? $("article").first() : $("main").first().length ? $("main").first() : $("body");
   const rootSelector = root.is("article") ? "article:first" : root.is("main") ? "main:first" : "body";
-  const terms = [...new Set(question.toLowerCase().match(/[a-z][a-z0-9_-]{2,}|[\u4e00-\u9fff]{2,4}/g) ?? [])];
-  const blocks = root.find("p,li,pre,td,h1,h2,h3").toArray().map((el, index) => ({ el, index }))
-    .filter(({ el }) => !$(el).find("p,li,pre,td,h1,h2,h3").length).map(({ el, index }) => ({
-      text: clean($(el).text()) ?? "", locator: `${rootSelector} :: blocks(p,li,pre,td,h1,h2,h3)[${index}]`
-    })).filter(b => b.text.length >= 30);
+  const chinese = question.match(/[\u4e00-\u9fff]+/g) ?? [];
+  const grams = chinese.flatMap(span => [2, 3, 4].flatMap(size => Array.from({ length: Math.max(0, span.length - size + 1) }, (_, i) => span.slice(i, i + size))));
+  const terms = [...new Set([...(question.toLowerCase().match(/[a-z][a-z0-9_-]{2,}/g) ?? []), ...grams])];
+  const selector = "p,li,pre,tr,h1,h2,h3";
+  const blocks = root.find(selector).toArray().map((el, index) => ({ el, index }))
+    .filter(({ el }) => $(el).is("tr") || (!$(el).closest("tr").length && !$(el).find(selector).length)).map(({ el, index }) => ({
+      text: clean($(el).text()) ?? "", minimum: $(el).is("tr") ? 3 : 30,
+      tableContext: $(el).is("tr") ? clean($(el).closest("table").text())?.slice(0, 4000) : null,
+      locator: `${rootSelector} :: blocks(${selector})[${index}]`
+    })).filter(b => b.text.length >= b.minimum);
   const ranked = blocks.map(b => ({ ...b, score: terms.reduce((s, t) => s + (b.text.toLowerCase().includes(t) ? t.length : 0), 0) })).sort((a, b) => b.score - a.score);
   const chosen = ranked[0];
   if (!chosen) return null;
@@ -71,7 +94,7 @@ export function extractHtml(html: string, question = "") {
   const excerpt = chosen.text.slice(start, start + 300).trim();
   const offset = chosen.text.indexOf(excerpt, start);
   return { title, author, language, publishedAt, excerpt, locator: `${chosen.locator}; normalized UTF-16 [${offset},${offset + excerpt.length})`,
-    context: chosen.text.slice(Math.max(0, offset - 100), offset + excerpt.length + 100) };
+    context: chosen.tableContext ?? chosen.text.slice(Math.max(0, offset - 100), offset + excerpt.length + 100) };
 }
 
 export function createCollectionProviders(options: CollectionOptions = {}) {
@@ -80,23 +103,49 @@ export function createCollectionProviders(options: CollectionOptions = {}) {
   const budget = AbortSignal.timeout(totalMs);
   const overall = options.signal ? AbortSignal.any([options.signal, budget]) : budget;
   const maxSources = Math.min(12, Math.max(1, options.maxSources ?? 6));
+  const diagnostics: CollectionDiagnostic[] = [];
+  const retrievalRecords: RetrievalRecord[] = [];
+  const evidenceRecords: Evidence[] = [];
+  const httpAttempts: (HttpAttempt & { ownerId: string | null })[] = [];
+  const request = (url: string, signal: AbortSignal, init: HttpRequestOptions = {}, ownerId: string | null = null) =>
+    requestText(url, signal, { ...init, onAttempt: attempt => httpAttempts.push(Object.assign(attempt, { ownerId })) });
   function operation(context: CollectionContext = {}) {
     const parent = context.signal ? AbortSignal.any([overall, context.signal]) : overall;
     const signal = AbortSignal.any([parent, AbortSignal.timeout(Math.min(context.timeoutMs ?? 15_000, 30_000))]);
     parent.throwIfAborted();
     return { parent, signal };
   }
-  function failure(error: unknown, parent: AbortSignal) {
-    // Cancellation / total deadline must escape to the Worker; individual failures are records.
-    parent.throwIfAborted();
+  function failure(error: unknown) {
+    // Redact before journaling; propagate parent cancellation after saving records.
     if (error instanceof Error && error.name === "TimeoutError") return "Request time budget exhausted";
     return error instanceof Error ? error.message.replace(/Bearer\s+\S+/gi, "Bearer [redacted]").slice(0, 500) : "Unknown collection failure";
   }
   function record(provider: string, query: string): RetrievalRecord {
+    if (!query.trim()) throw new Error("Search query must not be empty");
     return { id: randomUUID(), provider, query, calledAt: now(), status: "SUCCEEDED", error: null, returnedSources: [] };
   }
 
-  async function search(query: string, _identity: ProductIdentity, context: CollectionContext = {}): Promise<RetrievalRecord> {
+  function finish(out: RetrievalRecord): RetrievalRecord {
+    if (!out.returnedSources.length && diagnostics.some(d => d.retrievalRecordId === out.id)) {
+      out.status = "FAILED"; out.error = "Search returned no usable URLs; malformed/unsafe result diagnostics retained";
+    }
+    const parsed = RetrievalRecordSchema.parse(out);
+    retrievalRecords.push(parsed);
+    return parsed;
+  }
+
+  function addSource(out: RetrievalRecord, index: number, read: () => { url: string; title?: string | null; snippet?: string | null }) {
+    try {
+      const source = read();
+      out.returnedSources.push(RetrievedSourceSchema.parse({ url: normalizeSourceUrl(source.url), title: clean(source.title),
+        snippet: clean(source.snippet), adoption: "PENDING", adoptionReason: null, evidenceId: null }));
+    } catch {
+      // Do not echo untrusted raw result fields (which may include credentials).
+      diagnostics.push({ retrievalRecordId: out.id, stage: "SEARCH_RESULT", index, error: "Malformed or unsafe search result rejected" });
+    }
+  }
+
+  async function search(query: string, _identity?: ProductIdentity, context: CollectionContext = {}): Promise<RetrievalRecord> {
     const { signal, parent } = operation(context);
     const out = record("tencent-yuanbao-search-api", query);
     try {
@@ -118,50 +167,86 @@ export function createCollectionProviders(options: CollectionOptions = {}) {
         }
         if (!key) throw new Error("Missing TENCENTCLOUD_WSA_APIKEY or question-matched YUANBAO_IMPORT_PATH; no authenticated request sent");
         // Service tiers constrain Cnt (e.g. 5 is rejected); use the documented minimal request and cap locally.
-        const response = await requestText(WSA, signal, { method: "POST", headers: { Authorization: `Bearer ${key}`, "Content-Type": "application/json; charset=utf-8" }, body: JSON.stringify({ Query: query }) });
+        const response = await request(WSA, signal, { method: "POST", headers: { Authorization: `Bearer ${key}`, "Content-Type": "application/json; charset=utf-8" }, body: JSON.stringify({ Query: query }) }, out.id);
         if (response.status !== 200) throw new Error(`Yuanbao search HTTP ${response.status}`);
         const envelope = JSON.parse(response.text).Response;
         if (envelope?.Error) throw new Error(`Yuanbao service ${String(envelope.Error.Code ?? "UNKNOWN")}`);
         if (!Array.isArray(envelope?.Pages)) throw new Error("Yuanbao response missing Pages array");
-        for (const page of envelope.Pages.slice(0, maxSources)) {
+        envelope.Pages.slice(0, maxSources).forEach((page: unknown, index: number) => addSource(out, index, () => {
           const p = typeof page === "string" ? JSON.parse(page) : page;
-          out.returnedSources.push({ url: publicUrl(p.url).href, title: clean(p.title), snippet: clean(p.passage ?? p.snippet ?? p.abstract), adoption: "PENDING", adoptionReason: null, evidenceId: null });
-        }
+          const parsed = z.object({ url: z.string(), title: z.string().nullish(), passage: z.string().nullish(), snippet: z.string().nullish(), abstract: z.string().nullish() }).parse(p);
+          return { url: parsed.url, title: parsed.title ?? null, snippet: parsed.passage ?? parsed.snippet ?? parsed.abstract ?? null };
+        }));
       }
-    } catch (error) { out.status = "FAILED"; out.error = failure(error, parent); }
-    return RetrievalRecordSchema.parse(out);
+    } catch (error) { out.status = "FAILED"; out.error = failure(signal.aborted ? signal.reason : error); }
+    const result = finish(out);
+    parent.throwIfAborted();
+    return result;
   }
 
-  async function searchCommunity(query: string, _identity: ProductIdentity, context: CollectionContext = {}): Promise<RetrievalRecord> {
+  async function searchCommunity(query: string, _identity?: ProductIdentity, context: CollectionContext = {}): Promise<RetrievalRecord> {
     const { signal, parent } = operation(context); const out = record("hacker-news-algolia", query);
     try {
-      const response = await requestText(`https://hn.algolia.com/api/v1/search?query=${encodeURIComponent(query)}&tags=story&hitsPerPage=${maxSources}`, signal);
+      const response = await request(`https://hn.algolia.com/api/v1/search?query=${encodeURIComponent(query)}&tags=story&hitsPerPage=${maxSources}`, signal, {}, out.id);
       if (response.status !== 200) throw new Error(`HN search HTTP ${response.status}`);
       const data = JSON.parse(response.text);
       if (!Array.isArray(data.hits)) throw new Error("HN search missing hits");
-      out.returnedSources = data.hits.map((hit: { objectID: string; title?: string; story_text?: string }) => ({
-        url: `https://news.ycombinator.com/item?id=${encodeURIComponent(hit.objectID)}`, title: clean(hit.title), snippet: clean(hit.story_text), adoption: "PENDING", adoptionReason: null, evidenceId: null
+      data.hits.slice(0, maxSources).forEach((hit: unknown, index: number) => addSource(out, index, () => {
+        const p = z.object({ objectID: z.string().regex(/^\d+$/), title: z.string().nullish(), story_text: z.string().nullish() }).parse(hit);
+        return { url: `https://news.ycombinator.com/item?id=${p.objectID}`, title: p.title ?? null, snippet: p.story_text ?? null };
       }));
-    } catch (error) { out.status = "FAILED"; out.error = failure(error, parent); }
-    return RetrievalRecordSchema.parse(out);
+    } catch (error) { out.status = "FAILED"; out.error = failure(signal.aborted ? signal.reason : error); }
+    const result = finish(out);
+    parent.throwIfAborted();
+    return result;
   }
 
-  async function searchWeb(query: string, _identity: ProductIdentity, context: CollectionContext = {}): Promise<RetrievalRecord> {
+  async function searchWeb(query: string, _identity?: ProductIdentity, context: CollectionContext = {}): Promise<RetrievalRecord> {
     const { signal, parent } = operation(context); const out = record("bing-rss-public-search", query);
     try {
-      const response = await requestText(`https://www.bing.com/search?format=rss&q=${encodeURIComponent(query)}`, signal);
+      const response = await request(`https://www.bing.com/search?format=rss&q=${encodeURIComponent(query)}`, signal, {}, out.id);
       if (response.status !== 200) throw new Error(`Web search HTTP ${response.status}`);
       const $ = load(response.text, { xml: true });
       if (!$("rss").length) throw new Error("Search response is not RSS");
-      out.returnedSources = $("item").slice(0, maxSources).toArray().map(el => ({ url: publicUrl($(el).find("link").text()).href,
-        title: clean($(el).find("title").text()), snippet: clean(load($(el).find("description").text()).text()), adoption: "PENDING", adoptionReason: null, evidenceId: null }));
-    } catch (error) { out.status = "FAILED"; out.error = failure(error, parent); }
-    return RetrievalRecordSchema.parse(out);
+      $("item").slice(0, maxSources).toArray().forEach((el, index) => addSource(out, index, () => ({ url: $(el).find("link").text(),
+        title: $(el).find("title").text(), snippet: load($(el).find("description").text()).text() })));
+    } catch (error) { out.status = "FAILED"; out.error = failure(signal.aborted ? signal.reason : error); }
+    const result = finish(out);
+    parent.throwIfAborted();
+    return result;
+  }
+
+  async function searchSecondary(query: string, _identity?: ProductIdentity, context: CollectionContext = {}): Promise<RetrievalRecord> {
+    const { signal, parent } = operation(context);
+    const key = process.env.TAVILY_API_KEY?.trim();
+    const out = record(key ? "tavily-search-api" : "tavily-search-api:keyless-capped", query);
+    try {
+      const response = await request("https://api.tavily.com/search", signal, { method: "POST",
+        headers: { "Content-Type": "application/json", "X-Client-Source": "waytoagi-collection",
+          ...(key ? { Authorization: `Bearer ${key}` } : { "X-Tavily-Access-Mode": "keyless" }) },
+        body: JSON.stringify({ query, search_depth: "basic", max_results: maxSources, include_answer: false, include_raw_content: false }) }, out.id);
+      if (response.status !== 200) throw new Error(`Tavily search HTTP ${response.status}${key ? "" : "; capped keyless access unavailable; configure TAVILY_API_KEY for authenticated search"}`);
+      const body = JSON.parse(response.text);
+      if (body.error) throw new Error(`Tavily service error${key ? "" : "; keyless limit/access failure; configure TAVILY_API_KEY"}`);
+      if (!Array.isArray(body.results)) throw new Error("Tavily response missing results array");
+      body.results.slice(0, maxSources).forEach((result: unknown, index: number) => addSource(out, index, () => {
+        const p = z.object({ url: z.string(), title: z.string().nullish(), content: z.string().nullish() }).parse(result);
+        return { url: p.url, title: p.title ?? null, snippet: p.content ?? null };
+      }));
+    } catch (error) { out.status = "FAILED"; out.error = failure(signal.aborted ? signal.reason : error); }
+    const result = finish(out);
+    parent.throwIfAborted();
+    return result;
   }
 
   async function fetchSource(url: string, context: CollectionContext = {}): Promise<Evidence> {
     const { signal, parent } = operation(context);
     const out = emptyEvidence(url);
+    const finishEvidence = () => {
+      const parsed = EvidenceSchema.parse(out);
+      evidenceRecords.push(parsed);
+      return parsed;
+    };
     try {
       const u = new URL(url);
       let requestUrl = url;
@@ -169,14 +254,14 @@ export function createCollectionProviders(options: CollectionOptions = {}) {
       const hnId = u.hostname === "news.ycombinator.com" && u.pathname === "/item" ? u.searchParams.get("id") : null;
       if (hnId && /^\d+$/.test(hnId)) requestUrl = `https://hn.algolia.com/api/v1/items/${hnId}`;
       if (tweet) {
-        if (!process.env.X_BEARER_TOKEN) { out.readStatus = "RESTRICTED"; out.readError = "X post requires configured X_BEARER_TOKEN; HTML shell is not post text"; return EvidenceSchema.parse(out); }
+        if (!process.env.X_BEARER_TOKEN) { out.readStatus = "RESTRICTED"; out.readError = "X post requires configured X_BEARER_TOKEN; HTML shell is not post text"; return finishEvidence(); }
         requestUrl = `https://api.x.com/2/tweets/${tweet}?tweet.fields=created_at,author_id,lang`;
       }
-      const response = await requestText(requestUrl, signal, tweet ? { headers: { Authorization: `Bearer ${process.env.X_BEARER_TOKEN}` } } : {});
+      const response = await request(requestUrl, signal, tweet ? { headers: { Authorization: `Bearer ${process.env.X_BEARER_TOKEN}` } } : {}, out.id);
       out.retrievedAt = now();
       if (response.status !== 200) {
         out.readStatus = [401, 403, 429, 451].includes(response.status) ? "RESTRICTED" : "FAILED";
-        out.readError = `Source HTTP ${response.status}`; return EvidenceSchema.parse(out);
+        out.readError = `Source HTTP ${response.status}`; return finishEvidence();
       }
       let extracted;
       if (tweet) {
@@ -214,7 +299,7 @@ export function createCollectionProviders(options: CollectionOptions = {}) {
         const charset = response.contentType.match(/charset=([^;\s]+)/i)?.[1];
         if (charset && !/^['"]?utf-8['"]?$/i.test(charset)) throw new Error("Unsupported source encoding; UTF-8 required");
         if (/captcha|verify you are human|just a moment|access denied/i.test(response.text.slice(0, 12000))) {
-          out.readStatus = "RESTRICTED"; out.readError = "Source returned access challenge"; return EvidenceSchema.parse(out);
+          out.readStatus = "RESTRICTED"; out.readError = "Source returned access challenge"; return finishEvidence();
         }
         extracted = extractHtml(response.text, context.question ?? options.question ?? "");
         if (!extracted) throw new Error("No readable article blocks; JavaScript shell/empty page is not original material");
@@ -233,49 +318,93 @@ export function createCollectionProviders(options: CollectionOptions = {}) {
       out.originalLocation = { kind: tweet || hnId ? "COMMENT" : "TEXT", locator: `${response.url} :: ${extracted.locator}`, context: extracted.context };
       // Hash only the exact persisted excerpt, so consumers can independently recompute it.
       out.contentHash = sha(extracted.excerpt);
-    } catch (error) { out.readStatus = "FAILED"; out.readError = failure(error, parent); }
-    return EvidenceSchema.parse(out);
+    } catch (error) { out.readStatus = "FAILED"; out.readError = failure(signal.aborted ? signal.reason : error); }
+    const result = finishEvidence();
+    parent.throwIfAborted();
+    return result;
   }
 
-  async function resolve(question: string, context: CollectionContext = {}): Promise<ProductIdentity> {
-    const candidates = products.filter(p => p.aliases.test(question));
-    const p = candidates.length === 1 ? candidates[0] : undefined;
-    const identity: ProductIdentity = { name: p?.name ?? question.slice(0, 120), officialWebsite: p?.url ?? null,
-      version: null, plan: null, confirmationStatus: "NEEDS_CONFIRMATION", confirmationBasis: [] };
-    if (p) {
-      const evidence = await fetchSource(p.url, { ...context, question: p.name, officialWebsite: p.url });
-      if (evidence.readStatus === "READ" && evidence.metadata.sourceType === "OFFICIAL" && evidence.originalExcerpt?.toLowerCase().includes(p.name.toLowerCase())) {
-        identity.confirmationBasis.push({ url: evidence.sourceUrl, excerpt: evidence.originalExcerpt, retrievedAt: evidence.retrievedAt,
-          reason: "Unique explicit product name in question, matched in freshly read official domain text; version and plan unknown" });
-        identity.confirmationStatus = "CONFIRMED";
-      }
-    }
+  function discoverIdentity(question: string, evidence: Evidence[]): ProductIdentity {
+    const identity = unresolvedIdentity(question);
+    const matches = evidence.map(e => ({ evidence: e, name: identityName(question, e) })).filter(m => m.name);
+    const names = new Set(matches.map(m => m.name!.toLowerCase()));
+    if (names.size !== 1) return identity;
+    const match = matches[0]!;
+    identity.name = match.name!;
+    identity.officialWebsite = new URL(match.evidence.originalLocation!.locator.split(" :: ")[0]!).origin;
+    identity.confirmationStatus = "CONFIRMED";
+    identity.confirmationBasis = matches.map(m => ({ url: m.evidence.sourceUrl, excerpt: m.evidence.originalExcerpt!,
+      retrievedAt: m.evidence.retrievedAt,
+      reason: "Explicit question name matches publisher domain label and freshly read page title; readable original text retained. Website self-identification, not verified legal ownership; version/plan unknown" }));
     return ProductIdentitySchema.parse(identity);
   }
 
-  async function collect(question: string, confirmedIdentity?: ProductIdentity) {
-    const identity = confirmedIdentity ? ProductIdentitySchema.parse(confirmedIdentity) : await resolve(question);
-    const retrievalRecords: RetrievalRecord[] = []; const evidence: Evidence[] = [];
-    if (identity.confirmationStatus !== "CONFIRMED") return { identity, retrievalRecords, evidence };
-    const context = { question, officialWebsite: identity.officialWebsite };
-    retrievalRecords.push(await search(question, identity, context));
-    retrievalRecords.push(await searchWeb(question, identity, context));
-    if (/forum|community|experience|user|论坛|社区|用户|体验|评价|争议/i.test(question)) retrievalRecords.push(await searchCommunity(identity.name, identity, context));
+  async function resolve(question: string, context: CollectionContext = {}): Promise<ProductIdentity> {
+    // This is a real, budgeted discovery operation. A2 may instead call discoverIdentity
+    // on materials it already collected, avoiding an additional search/read attempt.
+    const result = await execute({ query: question, entry: "yuanbao", maxReads: Math.min(3, maxSources) }, { ...context, question });
+    return discoverIdentity(question, result.evidence);
+  }
+
+  async function readResults(records: RetrievalRecord[], urls: string[], context: CollectionContext, limit: number) {
+    const evidence: Evidence[] = [];
     const seen = new Map<string, Evidence>();
-    for (const r of retrievalRecords) for (const s of r.returnedSources) {
-      let e = seen.get(s.url);
-      if (!e && seen.size < maxSources) {
-        e = await fetchSource(s.url, context); seen.set(s.url, e); evidence.push(e);
-      }
-      if (e?.readStatus === "READ") { s.adoption = "ADOPTED"; s.adoptionReason = "Original text fetched; relevance and claim support require A2 verification"; s.evidenceId = e.id; }
-      else if (e) { s.adoption = "REJECTED"; s.adoptionReason = `Original text unavailable: ${e.readStatus}`; s.evidenceId = e.id; }
-      else {
-        const unread = emptyEvidence(s.url); unread.readStatus = s.snippet ? "SNIPPET_ONLY" : "NOT_FETCHED";
-        unread.metadata.title = s.title; evidence.push(EvidenceSchema.parse(unread)); seen.set(s.url, unread);
-        s.adoptionReason = "Source budget exhausted; search summary is not original evidence";
+    function link() {
+      for (const r of records) for (const s of r.returnedSources) {
+        const e = seen.get(normalizeSourceUrl(s.url));
+        if (e?.readStatus === "READ") { s.adoption = "ADOPTED"; s.adoptionReason = "Original text fetched; relevance and claim support require A2 verification"; s.evidenceId = e.id; }
+        else if (e && !["SNIPPET_ONLY", "NOT_FETCHED"].includes(e.readStatus)) {
+          s.adoption = "REJECTED"; s.adoptionReason = `Original text unavailable: ${e.readStatus}: ${e.readError}`; s.evidenceId = e.id;
+        } else if (e) {
+          s.adoptionReason = "Source budget exhausted; search summary is not original evidence"; s.evidenceId = e.id;
+        }
       }
     }
-    return { identity: ProductIdentitySchema.parse(identity), retrievalRecords: retrievalRecords.map(r => RetrievalRecordSchema.parse(r)), evidence: evidence.map(e => EvidenceSchema.parse(e)) };
+    let attempts = 0;
+    for (const [index, url] of urls.entries()) {
+      try {
+        const normalized = normalizeSourceUrl(url);
+        if (seen.has(normalized)) continue;
+        let e: Evidence;
+        if (attempts < limit) { attempts++; e = await fetchSource(normalized, context); }
+        else {
+          e = emptyEvidence(normalized);
+          const source = records.flatMap(r => r.returnedSources).find(s => s.url === normalized);
+          e.readStatus = source?.snippet ? "SNIPPET_ONLY" : "NOT_FETCHED";
+          e.readError = "Source read budget exhausted; search summary is not original evidence";
+          e.metadata.title = source?.title ?? null;
+          evidenceRecords.push(e);
+        }
+        seen.set(normalized, e); evidence.push(e); link();
+      } catch (error) {
+        overall.throwIfAborted(); context.signal?.throwIfAborted();
+        diagnostics.push({ retrievalRecordId: records[0]?.id ?? null, stage: "READ", index,
+          error: failure(error) });
+      }
+    }
+    return evidence;
   }
-  return { resolve, search, fetch: fetchSource, searchCommunity, searchWeb, collect };
+
+  async function execute(input: CollectionRequest, context: CollectionContext = {}): Promise<CollectionResult> {
+    const start = diagnostics.length;
+    const entries = { yuanbao: search, bing: searchWeb, hn: searchCommunity, tavily: searchSecondary };
+    if (!Object.hasOwn(entries, input.entry)) throw new Error("Unsupported search entry");
+    if (input.maxReads !== undefined && (!Number.isInteger(input.maxReads) || input.maxReads < 0 || input.maxReads > 12)) throw new Error("maxReads must be 0..12");
+    const r = await entries[input.entry](input.query, undefined, context);
+    const evidence = await readResults([r], input.readUrls ?? r.returnedSources.map(s => s.url), context, input.maxReads ?? maxSources);
+    return { retrievalRecords: [RetrievalRecordSchema.parse(r)], evidence, diagnostics: diagnostics.slice(start) };
+  }
+
+  async function collect(question: string, confirmedIdentity?: ProductIdentity) {
+    // Backward-compatible convenience only. Investigation planning belongs to A2.
+    let identity = confirmedIdentity ? ProductIdentitySchema.parse(confirmedIdentity) : unresolvedIdentity(question);
+    const context = { question, officialWebsite: identity.officialWebsite };
+    const records = [await search(question, identity, context), await searchWeb(question, identity, context)];
+    const evidence = await readResults(records, records.flatMap(r => r.returnedSources.map(s => s.url)), context, maxSources);
+    if (identity.confirmationStatus !== "CONFIRMED") identity = discoverIdentity(question, evidence);
+    return { identity, retrievalRecords: records.map(r => RetrievalRecordSchema.parse(r)), evidence, diagnostics: [...diagnostics] };
+  }
+  // Live journal survives a later cancellation; callers retain completed records.
+  const journal = { retrievalRecords, evidence: evidenceRecords, diagnostics, httpAttempts };
+  return { resolve, discoverIdentity, search, fetch: fetchSource, searchCommunity, searchWeb, searchSecondary, execute, collect, journal };
 }

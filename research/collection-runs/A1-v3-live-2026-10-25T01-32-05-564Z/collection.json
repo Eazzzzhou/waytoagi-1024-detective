@@ -1,0 +1,871 @@
+{
+  "runId": "A1-v3-live-2026-10-25T01-32-05-564Z",
+  "question": "Marimo 的笔记本是否支持响应式执行？",
+  "entries": [
+    "yuanbao",
+    "tavily"
+  ],
+  "startedAt": "2026-10-25T01:32:05.564Z",
+  "finishedAt": "2026-10-25T01:32:13.135Z",
+  "stopped": null,
+  "identity": {
+    "name": "Marimo 的笔记本是否支持响应式执行？",
+    "officialWebsite": null,
+    "version": null,
+    "plan": null,
+    "confirmationStatus": "UNRESOLVED",
+    "confirmationBasis": []
+  },
+  "batches": [
+    {
+      "entry": "yuanbao",
+      "elapsedMs": 2620,
+      "retrievalRecords": [
+        {
+          "id": "9b7c5343-f8ed-456e-825b-62bd35a83ba8",
+          "provider": "tencent-yuanbao-search-api",
+          "query": "Marimo 的笔记本是否支持响应式执行？",
+          "calledAt": "2026-10-25T01:32:05.566Z",
+          "status": "SUCCEEDED",
+          "error": null,
+          "returnedSources": [
+            {
+              "url": "https://oa0.com/c/1000499",
+              "title": "Marimo — 面向数据与 AI 工作流的下一代 Python 笔记本",
+              "snippet": "Marimo — 面向数据与 AI 工作流的下一代 Python 笔记本 OA0。Marimo — 面向数据与 AI 工作流的下一代 Python 笔记本 一个反应式的 Python 笔记本,可重现、对 Git 友好,并能作为脚本或应用部署。 文档 · Discord · 示例 · 图库 · YouTube marimo 是一个反应式 Python 笔记本:运行一个单元格或与 UI 元素交互,marimo 会自动运行依赖的单元格(或将其标记为过时),保持代码和输出的一致性。marimo 笔记本存储为纯 Python 文件(具有一流的 SQL 支持),可作为脚本执行,也可作为应用部署。 亮点: 🚀 开箱即用:替代 jupyter、streamlit、jupytext、ipywidgets、papermill 等工具 ⚡️ 反应式:运行一个单元格,marimo 会反应式地运行所有依赖的单元格或将其标记为过时 🖐️ 交互式:将滑块、表格、图表等绑定到 Python —— 无需回调函数 🐍 Git 友好:存储为 .py 文件 🛢️ 为数据设计:使用 SQL 查询数据框、数据库、数据仓库或湖仓,过滤和搜索数据框 🤖 AI 原生:使用 AI 生成单元格,专为数据处理工作定制 🔬 可重现:无隐藏状态,确定性执行,内置包管理 🏃 可执行:作为 Python 脚本执行,可通过 CLI 参数化 🛜 可分享:部署为交互式 Web 应用或幻灯片,通过 WASM 在浏览器中运行 🧩 可复用:从一个笔记本导入函数和类到另一个笔记本 🧪 可测试:在笔记本上运行 pytest ⌨️ 现代化编辑器:GitHub Copilot、AI 助手、vim 键绑定、变量浏览器等更多功能 🧑‍💻 使用你喜欢的编辑器:在 VS Code 或 Cursor 中运行,或在 neovim、Zed 或任何其他文本编辑器中编辑 pip ins...",
+              "adoption": "ADOPTED",
+              "adoptionReason": "Original text fetched; relevance and claim support require A2 verification",
+              "evidenceId": "feab48df-5790-4f51-ad18-8741db8ba123"
+            },
+            {
+              "url": "https://github.com/sclee0620/marimo/blob/main/README_Chinese.md",
+              "title": "README_Chinese.md",
+              "snippet": "README_Chinese.md GitHub。这是一款响应式的Python笔记本,具有优秀的可复现性,原生支持Git,并可作为脚本或应用程序部署。 用户手册 · Discord 社区 · 示例 · 展示廊 · YouTube English | 简体中文 | 日本語 | Español Marimo 是一款响应式 Python 笔记本:运行单元格可与 UI 元素交互,marimo 会自动更新依赖于它的单元格(或将其标记为过时单元格),从而保持代码和输出的一致性。marimo 笔记本以纯 Python 格式存储,可作为脚本执行,也可作为应用程序部署。 为什么选择 marimo 🚀 功能齐全:替代 jupyter、streamlit、jupytext、ipywidgets、papermill 等更多工具 ⚡️ 响应式:运行一个单元格,marimo会响应式地运行所有依赖单元格或将它们标记为过时 🖐️ 交互性:绑定滑块、表格、图表等UI元素到Python代码——无需回调函数 🔬 可复现:无隐藏状态,确定性执行,内置包管理 🏃 可执行:作为Python脚本执行,通过命令行参数进行配置 🛜 可分享:部署为交互式Web应用或幻灯片,通过WASM在浏览器中运行 🛢️ 为数据设计:使用SQL查询数据框和数据库,过滤和搜索数据框 🐍 支持Git版本控制:笔记本以.py文件格式存储 ⌨️ 现代编辑器:GitHub Copilot、AI助手、vim快捷键、变量浏览器和更多功能 pip install marimo && marimo tutorial intro 在我们的在线体验平台试用marimo,完全在浏览器中运行! 跳转到快速入门了解我们的命令行工具。 响应式编程环境 Marimo 确保了您的代码、输出和程序的状态始的一致性,解决了与 Jupyter 等传统笔记本相关的许多问题。 独有的响应式设...",
+              "adoption": "ADOPTED",
+              "adoptionReason": "Original text fetched; relevance and claim support require A2 verification",
+              "evidenceId": "cf8cad84-b128-40f0-bce6-15946033cbf5"
+            },
+            {
+              "url": "https://moge.ai/zh/product/marimo",
+              "title": "marimo",
+              "snippet": "marimo MOGE。marimo 一款开源响应式Python笔记本,专为可复现、交互和易于分享的数据工作流设计,所有内容均以纯Python文件存储。 产品概览 什么是marimo? marimo是一款新一代Python笔记本,重新定义了交互式计算,确保可复现性、可维护性和无缝交互体验。与传统笔记本不同,marimo将笔记本以纯Python脚本(.py文件)存储,支持通过Git进行版本控制、脚本执行及Web应用部署。其响应式执行可自动更新依赖单元格,杜绝隐藏状态与同步错误。内置SQL支持、交互式UI元素和AI原生编辑器功能,助力Python开发者高效进行数据探索、原型开发与生产部署。 主要功能 响应式执行 当单元格或UI元素发生变化时,自动重新运行相关依赖单元格,无需手动操作即可保持代码、输出和程序状态的一致性。 Python优先与Git友好 笔记本以纯Python文件形式存储,便于版本控制、脚本执行,以及在不同笔记本或Python文件间导入符号。 内置包管理与沙盒环境 可在笔记本中序列化包依赖,并能创建隔离的虚拟环境,确保从包版本到环境的可复现性。 交互式UI元素 内置滑块、下拉菜单、数据表和图表,可直接绑定到Python变量,实现快速、零代码的交互和数据探索。 一流SQL支持 可在笔记本中直接使用SQL单元查询数据框和数据库,结果以Python数据框形式返回,便于进一步处理。 可分享与部署 笔记本可导出为由WebAssembly驱动的交互式Web应用,或通过CLI服务,方便分享和部署。 使用场景 数据科学与分析 : 数据科学家可构建可复现、交互式的笔记本,将Python与SQL无缝集成,实现数据查询与可视化。 科研与原型开发 : 研究人员受益于确定性执行和响应式编程,可快速迭代代码与模型,避免隐藏状态带来的Bug。 协作开发 : 团队可将笔记本作为Python脚本进行...",
+              "adoption": "PENDING",
+              "adoptionReason": "Source budget exhausted; search summary is not original evidence",
+              "evidenceId": "51f5614e-1cd7-4590-b888-3d203ca64daa"
+            },
+            {
+              "url": "https://www.zendot.org/posts/marimo-team-marimo",
+              "title": "marimo:响应式 Python 笔记本,脚本与应用一体",
+              "snippet": "marimo:响应式 Python 笔记本,脚本与应用一体。它是什么 marimo 是一个开源的响应式 Python 笔记本,采用 Apache-2.0 许可,GitHub 上已有约 22.9k star。传统笔记本靠手动按顺序执行单元,marimo 把代码组织成数据流图:运行某个单元后,引用其变量的下游单元会自动重跑;如果把运行时配置成惰性模式,它们则被标记为过期而不是立即执行。笔记本以纯 .py 文件保存,可以直接作为脚本运行并通过 CLI 参数化,也能部署成交互式网页应用或幻灯片。官方把它定位为 jupyter、streamlit、jupytext、ipywidgets、papermill 等一串工具的合并替代品。 亮点在哪 可复现是硬约束:无隐藏状态,删掉单元即从内存清除其变量;执行顺序确定,并内置包管理来缓解环境漂移。 git 真正可用:笔记本就是 .py 文件,diff 与合并照常工作;单元之间可以互相 import 函数和类,还能直接跑 pytest。 为数据工作设计:对 dataframe、数据库、数仓、lakehouse 直接写 SQL;滑块、表格、图表等 UI 元素绑定到 Python 变量,做交互不需要写回调。 编辑器跟得上:内置 Copilot 补全、vim 键位、变量浏览器,也能在 VS Code 或 PyCharm 里运行。 跑起来的门槛 先把容易误解的点说清楚:这不是需要显卡或下载权重的项目,也不存在本地部署还是调用 API 的选择——它就是一个纯 Python 工具。pip install marimo && marimo tutorial intro 即可启动,另有 conda-forge 安装渠道和免费的在线环境 molab。项目文档没有列出硬件要求,普通开发机足够;真正的开销来自你自己的 notebook 在做什么,比如查询数仓或执行训...",
+              "adoption": "PENDING",
+              "adoptionReason": "Source budget exhausted; search summary is not original evidence",
+              "evidenceId": "164f8333-1d44-4537-ae20-2478843bb4ff"
+            },
+            {
+              "url": "https://docs.marimo.io/faq/",
+              "title": "FAQ",
+              "snippet": "FAQ marimo。Choosing marimo ¶ How is marimo different from Jupyter? ¶ marimo is a reinvention of the Python notebook as a reproducible, interactive,and shareable Python program that can be executed as scripts or deployed asinteractive web apps. Consistent state. In marimo, your notebook code, outputs, and program stateare guaranteed to be consistent. Run a cell and marimo reacts by automaticallyrunning the cells that reference its variables. Delete a cell and marimo scrubsits variables from program memory, eliminating hidden state. Built-in interactivity. marimo also comes with UIelements like sliders, a dataframe transformer, andinteractive plots that are automatically synchronized with Python. Interactwith an element and the cells that use it are automatically re-run with itslatest value....",
+              "adoption": "PENDING",
+              "adoptionReason": "Source budget exhausted; search summary is not original evidence",
+              "evidenceId": "e2f5cde5-25cf-4f81-a4be-0bd2be0f3b3a"
+            }
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "id": "feab48df-5790-4f51-ad18-8741db8ba123",
+          "sourceUrl": "https://oa0.com/c/1000499",
+          "originalExcerpt": "marimo 保证你的笔记本代码、输出和程序状态保持一致。这解决了许多与传统笔记本（如 Jupyter）相关的问题。",
+          "translation": null,
+          "originalLocation": {
+            "kind": "TEXT",
+            "locator": "https://oa0.com/c/1000499 :: body :: blocks(p,li,pre,tr,h1,h2,h3)[24]; normalized UTF-16 [0,58)",
+            "context": "marimo 保证你的笔记本代码、输出和程序状态保持一致。这解决了许多与传统笔记本（如 Jupyter）相关的问题。"
+          },
+          "metadata": {
+            "title": "Marimo — 面向数据与 AI 工作流的下一代 Python 笔记本",
+            "siteName": "oa0.com",
+            "author": "OA0",
+            "publishedAt": null,
+            "language": "zh-CN",
+            "sourceType": "UNKNOWN",
+            "contentKind": "UNKNOWN",
+            "productVersion": null,
+            "plan": null,
+            "upstreamUrl": null,
+            "independence": "UNKNOWN",
+            "originGroupId": null,
+            "independenceReason": null
+          },
+          "retrievedAt": "2026-10-25T01:32:06.427Z",
+          "readStatus": "READ",
+          "readError": null,
+          "contentHash": "9c644ba17958fd6ab4a57af2e2433cad75b63ce9ca9a054abf448d98c4c9c51e"
+        },
+        {
+          "id": "cf8cad84-b128-40f0-bce6-15946033cbf5",
+          "sourceUrl": "https://github.com/sclee0620/marimo/blob/main/README_Chinese.md",
+          "originalExcerpt": "Marimo 是一款响应式 Python 笔记本：运行单元格可与 UI 元素交互，marimo 会自动更新依赖于它的单元格（或将其标记为过时单元格），从而保持代码和输出的一致性。marimo 笔记本以纯 Python 格式存储，可作为脚本执行，也可作为应用程序部署。",
+          "translation": null,
+          "originalLocation": {
+            "kind": "TEXT",
+            "locator": "https://github.com/sclee0620/marimo/blob/main/README_Chinese.md :: article:first :: blocks(p,li,pre,tr,h1,h2,h3)[5]; normalized UTF-16 [0,133)",
+            "context": "Marimo 是一款响应式 Python 笔记本：运行单元格可与 UI 元素交互，marimo 会自动更新依赖于它的单元格（或将其标记为过时单元格），从而保持代码和输出的一致性。marimo 笔记本以纯 Python 格式存储，可作为脚本执行，也可作为应用程序部署。"
+          },
+          "metadata": {
+            "title": "marimo/README_Chinese.md at main · sclee0620/marimo · GitHub",
+            "siteName": "github.com",
+            "author": null,
+            "publishedAt": null,
+            "language": "en",
+            "sourceType": "COMMUNITY",
+            "contentKind": "UNKNOWN",
+            "productVersion": null,
+            "plan": null,
+            "upstreamUrl": null,
+            "independence": "UNKNOWN",
+            "originGroupId": null,
+            "independenceReason": null
+          },
+          "retrievedAt": "2026-10-25T01:32:08.121Z",
+          "readStatus": "READ",
+          "readError": null,
+          "contentHash": "dbc0c6d3cafd9764d6aa58877c5d56119d948c9061c56ece1037a069c5bb9d22"
+        },
+        {
+          "id": "51f5614e-1cd7-4590-b888-3d203ca64daa",
+          "sourceUrl": "https://moge.ai/zh/product/marimo",
+          "originalExcerpt": null,
+          "translation": null,
+          "originalLocation": null,
+          "metadata": {
+            "title": "marimo",
+            "siteName": "moge.ai",
+            "author": null,
+            "publishedAt": null,
+            "language": null,
+            "sourceType": "UNKNOWN",
+            "contentKind": "UNKNOWN",
+            "productVersion": null,
+            "plan": null,
+            "upstreamUrl": null,
+            "independence": "UNKNOWN",
+            "originGroupId": null,
+            "independenceReason": null
+          },
+          "retrievedAt": "2026-10-25T01:32:08.184Z",
+          "readStatus": "SNIPPET_ONLY",
+          "readError": "Source read budget exhausted; search summary is not original evidence",
+          "contentHash": null
+        },
+        {
+          "id": "164f8333-1d44-4537-ae20-2478843bb4ff",
+          "sourceUrl": "https://www.zendot.org/posts/marimo-team-marimo",
+          "originalExcerpt": null,
+          "translation": null,
+          "originalLocation": null,
+          "metadata": {
+            "title": "marimo:响应式 Python 笔记本,脚本与应用一体",
+            "siteName": "www.zendot.org",
+            "author": null,
+            "publishedAt": null,
+            "language": null,
+            "sourceType": "UNKNOWN",
+            "contentKind": "UNKNOWN",
+            "productVersion": null,
+            "plan": null,
+            "upstreamUrl": null,
+            "independence": "UNKNOWN",
+            "originGroupId": null,
+            "independenceReason": null
+          },
+          "retrievedAt": "2026-10-25T01:32:08.185Z",
+          "readStatus": "SNIPPET_ONLY",
+          "readError": "Source read budget exhausted; search summary is not original evidence",
+          "contentHash": null
+        },
+        {
+          "id": "e2f5cde5-25cf-4f81-a4be-0bd2be0f3b3a",
+          "sourceUrl": "https://docs.marimo.io/faq/",
+          "originalExcerpt": null,
+          "translation": null,
+          "originalLocation": null,
+          "metadata": {
+            "title": "FAQ",
+            "siteName": "docs.marimo.io",
+            "author": null,
+            "publishedAt": null,
+            "language": null,
+            "sourceType": "UNKNOWN",
+            "contentKind": "UNKNOWN",
+            "productVersion": null,
+            "plan": null,
+            "upstreamUrl": null,
+            "independence": "UNKNOWN",
+            "originGroupId": null,
+            "independenceReason": null
+          },
+          "retrievedAt": "2026-10-25T01:32:08.185Z",
+          "readStatus": "SNIPPET_ONLY",
+          "readError": "Source read budget exhausted; search summary is not original evidence",
+          "contentHash": null
+        }
+      ],
+      "diagnostics": []
+    },
+    {
+      "entry": "tavily",
+      "elapsedMs": 4944,
+      "retrievalRecords": [
+        {
+          "id": "7fd64f59-f5ed-474e-9ca0-e8dfff02a5e4",
+          "provider": "tavily-search-api:keyless-capped",
+          "query": "Marimo 的笔记本是否支持响应式执行？",
+          "calledAt": "2026-10-25T01:32:08.185Z",
+          "status": "SUCCEEDED",
+          "error": null,
+          "returnedSources": [
+            {
+              "url": "https://blog.cloudflare.com/zh-cn/marimo-cloudflare-notebooks",
+              "title": "由 marimo 提供支持，通过 Python 笔记本探索您的 Cloudflare 数据 | Cloudflare 博客",
+              "snippet": "将 marimo 与传统笔记本区分开来的核心功能在于其响应式执行模型，该模型由单元格上的静态推理数据流图谱提供支持。运行一个单元格或与 UI 元素交互，marimo 要么运行依赖的单元格，要么将其标记为过时（您的选择）。这可以保持代码和输出的一致性，防止错误发生，并显着提高用数据进行实验的速度。 得益于被动执行，笔记本也可作为数据应用部署，易于共享。虽然您可以在本地、在云服务器、GPU —— 任何可以传统上运行软件的地方运行 marimo 笔记本，但你也可以通过 WebAssembly 完全在浏览器中运行它们，使共享成本降至零。 因为 marimo 笔记本以 Python 格式存储，所以它们享受软件的所有好处：使用 Git 管理版本，作为脚本或管道执行，使用 pytest 测试，使用 uv 内联包要求，并将符号从笔记本导入其他 Python 模块。虽然存储为 Python，marimo 也支持 SQL 和数据源，例如 DuckDB、Postgres 和基于 Iceberg 的数据目录（除了 RAM 中的数据外，marimo 的AI 助手还可以访问这些数据目录）。 [...] 许多开发人员、数据科学家和研究人员在 Python 笔记本中完成大部分工作：十多年来， Python 笔记本一直是数据科学和共享的事实上的标准。笔记本之所以受欢迎，是因为它们可以轻松编码、探索数据、制作原型和分享结果。Cloudflare 大量使用笔记本，发现越来越多的开发人员使用笔记本处理数据，从分析 HTTP 流量趋势、查询 Workers Analytics Engine 到查询自己存储在 R2 中的 Iceberg 表。 传统笔记本非常强大，但在构建它们时并没有考虑到协作、可重复性或作为数据应用部署的因素。随着使用量在不同团队和工作流程中增长，这些限制开始面临大规模工作的现实。 考虑到这些挑战，marimo 重新构想了笔记本的体验。这是一个开源的反应式 Python 笔记本，具有可重复性，易于在 Git 中跟踪，可作为独立脚本执行并且可部署。我们与 marimo 团队合作，为 Cloudflare 开发人员带来这种简化的、生产友好的体验。减少因工具问题带来的麻烦，将更多时间用于探索数据。 今天，我们隆重宣布三件事： [...] 今天，我们隆重宣布三件事： marimo 笔记本内置 Cloudflare 身份验证 – 直接从笔记本登录您的 Cloudflare 帐户，即可使用 Cloudflare API，无需创建 API 令牌 开源笔记本示例 – 通过适用于 R2、Workers AI、D1 等服务的现成运行的笔记本示例探索您的 Cloudflare 数据 在 Cloudflare 容器上运行 marimo – 轻松将 marimo 笔记本部署到 Cloudflare 容器，实现可扩展、长时间运行的数据工作流 想立即开始探索您的 Cloudflare 数据吗？前往 notebooks.cloudflare.com 。您也可以继续阅读，了解关于 marimo 的更多信息，我们如何在笔记本中简化身份验证，以及如何使用 marimo 在 Cloudflare 上浏览和共享笔记本和应用。 ### 为什么选择 marimo？ marimo 是一个开源的反应式 Python 笔记本，专门为处理数据而设计，从头开始构建，以解决传统笔记本的许多问题。",
+              "adoption": "ADOPTED",
+              "adoptionReason": "Original text fetched; relevance and claim support require A2 verification",
+              "evidenceId": "e5b6a7c0-71f5-408f-8542-0f3d5ce704c0"
+            },
+            {
+              "url": "https://cn.x-cmd.com/install/marimo",
+              "title": "Jupyter 笔记本难复现？marimo 响应式、纯代码无隐藏状态 | X-CMD 推荐 | marimo",
+              "snippet": "Skip to content x-cmd-logox-cmd-logo X-CMD 数据有误？提交 PR 进行修改 # marimo Marimo 是一款响应式 Python 笔记本：运行单元格可与 UI 元素交互，marimo 会自动更新依赖于它的单元格（或将其标记为过时单元格），从而保持代码和输出的一致性。marimo 笔记本以纯 Python 格式存储，可作为脚本执行，也可作为应用程序部署。 23.3K Stars interactiveApache-2.0 marimo-team/marimo 360贡献者 374发布 2026-10-23最近提交 2026-10-19最近发布 资源概况 安装体积小，内存占用低 内存使用~5 MB CPU 要求极低 进程数1 网络需要否 磁盘占用1.1 MB 以 Python 为主 Python61.4% TypeScript22.4% Tsx15.8% 其他0.4% 源码体积26.1 MB 代码统计 代码790,699 注释79,033 空行135,807 总行数1,005,539 [...] | 特性 | marimo | Jupyter | --- | 执行模型 | 响应式（自动追踪依赖） | 手动（按顺序执行单元格） | | 隐藏状态 | 无（删除即清除） | 有（变量残留） | | 文件格式 | 纯 Python (.py) | JSON (.ipynb) | | Git 友好度 | 高（可直接 diff） | 低（包含元数据和输出） | | 部署方式 | 脚本、Web 应用、WASM | 需转换或导出 | | 可复现性 | 确定性执行顺序 | 依赖手动执行顺序 | marimo 的核心设计是响应式数据流：它通过静态分析代码自动构建变量依赖图，确保代码、输出和程序状态始终一致。这种架构借鉴了 Pluto.jl（Julia 生态）和 ObservableHQ 的理念，将函数式、声明式的编程范式引入 Python 笔记本。 ## 核心功能详解 ​ ## 1. 响应式执行引擎 ​ marimo 的杀手级特性是自动依赖追踪。当你运行一个单元格时，它会自动识别该单元格定义的变量，并找出所有依赖这些变量的下游单元格重新执行。 python [...] ## 使用建议 ​ 1. 充分利用响应式特性：不要手动管理单元格执行顺序，让 marimo 自动处理依赖关系。 2. 保持单元格聚焦：每个单元格只做一件事，便于依赖追踪和错误定位。 3. 善用 UI 组件：将频繁调整的参数（如模型超参数、筛选阈值）提取为 UI 控件。 4. 版本控制最佳实践：使用 `marimo` 命令导出无输出版本的 notebook 用于代码审查。 5. SQL 与 Python 结合：对于复杂数据操作，优先使用 SQL 单元格，结果传给 Python 做可视化。 6. 渐进式迁移：已有 Jupyter 工作流不必一次性全迁，可以从新实验开始尝试 marimo。 来源： 相关资源： marimo 教程 - 核心概念介绍 示例库 - 官方示例代码 Gallery - 社区作品展示 NumFOCUS 附属项目 - marimo 是 NumFOCUS 支持的科学计算生态成员 容器调用: 实验性功能",
+              "adoption": "ADOPTED",
+              "adoptionReason": "Original text fetched; relevance and claim support require A2 verification",
+              "evidenceId": "05374a11-ff79-48b4-b404-5b4d0a555f61"
+            },
+            {
+              "url": "https://cn.investing.com/news/stock-market-news/article-3154760",
+              "title": "告别纯免费！小红书最高199元试水笔记付费，能否跑通内容变现新模式？ 提供者 时代周报",
+              "snippet": "提供者 Investing.co... 2026年10月22日 []( A股收评 | 创业板指探底回升涨4.16% 机器人产业链多股涨停 提供者 智通财经 2026年10月22日 []( 印尼股市雪崩，高盛预警！ 提供者 格隆汇 2026年10月19日 []( 恐慌指数飙21%！黄仁勋喊话“终将过去” 提供者 格隆汇 2026年10月18日 []( 杀跌近50%！奈飞的逻辑彻底变了 提供者 格隆汇 2026年10月20日 []( 马斯克豪言：SpaceX明年冲击万亿营收！ 提供者 格隆汇 2026年10月21日 []( 全球股票基金流入显著放量，货币市场基金转为净流出——全球资金流动周报第31期 提供者 张瑜 2026年10月21日 更多资讯 股市走势 [...] BABA 101.82 -2.59 -2.48% 0700 386.00 +3.60 +0.94% BIDU 77.98 -0.84 -1.07% JD 25.68 -0.11 -0.43% AMZN 250.38 -11.99 -4.57% META 648.85 -48.67 -6.98% AAPL 348.22 +4.23 +1.23% 广告 最热门文章 资讯 分析评论 []( TS Lombard情景分析：AI泡沫破裂或引发标普500暴跌30%、20万亿美元市值蒸发 但别急着做空！ 提供者 智通财经 2026年10月22日 []( 港股收评：A股半导体龙头称行业发展向好，港股午后存储光通信PCB集体拉升，恒指重回23000点 提供者 格隆汇 2026年10月22日 []( 智通港股早知道 | 能源冲击推升布伦特原油破113美元 美股科技股重挫、纳指跌2.6% 提供者 智通财经 2026年10月22日 []( 月涨幅高达+31%：AI选股助力零售股强势飙升，业绩超预期叠加分析师上调评级 [...] 更多工具 选股器货币换算器 安装我们的APP扫描二维码，安装APP",
+              "adoption": "PENDING",
+              "adoptionReason": "Source budget exhausted; search summary is not original evidence",
+              "evidenceId": "67bec741-fe93-42b6-b28a-653a6c68d480"
+            },
+            {
+              "url": "https://cn.investing.com/news/company-news/article-93CH-3089892",
+              "title": "Nuburu执行首笔200万欧元支持Tekne/n",
+              "snippet": "English (USA) English (UK) English (India) English (Canada) English (Australia) English (South Africa) English (Philippines) English (Nigeria) Deutsch Español (España) Español (México) Français Italiano Nederlands Polski Português (Portugal) Português (Brasil) Русский Türkçe ‏العربية‏ Ελληνικά Svenska Suomi עברית 日本語 한국어 繁體中文 Bahasa Indonesia Bahasa Melayu ไทย Tiếng Việt हिंदी 劲爆优惠50% 登录 免费注册 [...] 打开应用程序搜索市场、新闻、分析…Ctrl+K 劲爆优惠50% 登录 免费注册 [...] 提供者 Investing.co... 2026年10月22日 Image 10 Image 11 避险时刻黄金又成“提款机”!单日跌近3%、逼近三个月低点 3900美元关口将受考验 提供者 智通财经 2026年10月22日 Image 12 Image 13 印尼股市雪崩，高盛预警！ 提供者 格隆汇 2026年10月19日 Image 14 Image 15 恐慌指数飙21%！黄仁勋喊话“终将过去” 提供者 格隆汇 2026年10月18日 Image 16 Image 17 杀跌近50%！奈飞的逻辑彻底变了 提供者 格隆汇 2026年10月20日 Image 18 Image 19 马斯克豪言：SpaceX明年冲击万亿营收！ 提供者 格隆汇 2026年10月21日 Image 20 Image 21 全球股票基金流入显著放量，货币市场基金转为净流出——全球资金流动周报第31期 提供者 张瑜 2026年10月21日 更多资讯 股市走势 最活跃股票 领涨个股 领跌个股",
+              "adoption": "PENDING",
+              "adoptionReason": "Source budget exhausted; search summary is not original evidence",
+              "evidenceId": "8bff53ae-acfd-46f7-8d41-37248dfc4ad9"
+            },
+            {
+              "url": "https://3g.china.com/act/finance/13004692/20260929/49770213.html",
+              "title": "鱼跃医疗新增1312.45万元被执行记录_中华网",
+              "snippet": "推荐 TMT 金融 地产 消费 医药 酒业 IPO ## 鱼跃医疗新增1312.45万元被执行记录 蓝鲸新闻 2026-09-29 09:30:38 A+ A- 据中国执行信息公开网显示，江苏鱼跃医疗设备股份有限公司（002223）于2026年9月23日新增一条被执行人记录，执行法院为丹阳市人民法院，执行标的1312.45万元。因鱼跃医疗注册地位于丹阳，此次由本地法院执行在地域上吻合，但案件具体案由尚未公开。 天眼查信息显示，丹阳市人民法院曾于2025年9月受理镇江正荣建筑工程有限公司诉鱼跃医疗的债权人代位权纠纷，不过目前无证据表明该历史案件与本次千万元级执行直接关联。 截至目前，鱼跃医疗未就上述被执行事项发布公告或说明。作为家用医疗器械龙头，单笔超千万元执行金额相对其经营规模有限，但后续案由、是否涉及履约或债务争议仍值得关注。 责任编辑：zx0600 加载更多……",
+              "adoption": "PENDING",
+              "adoptionReason": "Source budget exhausted; search summary is not original evidence",
+              "evidenceId": "1ea0c2d8-d3e3-4e1c-b76a-fc8a5e833245"
+            }
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "id": "e5b6a7c0-71f5-408f-8542-0f3d5ce704c0",
+          "sourceUrl": "https://blog.cloudflare.com/zh-cn/marimo-cloudflare-notebooks",
+          "originalExcerpt": "将 marimo 与传统笔记本区分开来的核心功能在于其响应式执行模型，该模型由单元格上的静态推理数据流图谱提供支持。运行一个单元格或与 UI 元素交互，marimo 要么运行依赖的单元格，要么将其标记为过时（您的选择）。这可以保持代码和输出的一致性，防止错误发生，并显着提高用数据进行实验的速度。",
+          "translation": null,
+          "originalLocation": {
+            "kind": "TEXT",
+            "locator": "https://blog.cloudflare.com/zh-cn/marimo-cloudflare-notebooks :: article:first :: blocks(p,li,pre,tr,h1,h2,h3)[11]; normalized UTF-16 [0,148)",
+            "context": "将 marimo 与传统笔记本区分开来的核心功能在于其响应式执行模型，该模型由单元格上的静态推理数据流图谱提供支持。运行一个单元格或与 UI 元素交互，marimo 要么运行依赖的单元格，要么将其标记为过时（您的选择）。这可以保持代码和输出的一致性，防止错误发生，并显着提高用数据进行实验的速度。"
+          },
+          "metadata": {
+            "title": "由 marimo 提供支持，通过 Python 笔记本探索您的 Cloudflare 数据 | Cloudflare 博客",
+            "siteName": "blog.cloudflare.com",
+            "author": null,
+            "publishedAt": "2025-07-16T13:00:00.000Z",
+            "language": "zh-cn",
+            "sourceType": "UNKNOWN",
+            "contentKind": "UNKNOWN",
+            "productVersion": null,
+            "plan": null,
+            "upstreamUrl": null,
+            "independence": "UNKNOWN",
+            "originGroupId": null,
+            "independenceReason": null
+          },
+          "retrievedAt": "2026-10-25T01:32:12.048Z",
+          "readStatus": "READ",
+          "readError": null,
+          "contentHash": "9d2569b062a472561e9fdeb5338609daf3a57b7174482468053af979f94d1535"
+        },
+        {
+          "id": "05374a11-ff79-48b4-b404-5b4d0a555f61",
+          "sourceUrl": "https://cn.x-cmd.com/install/marimo",
+          "originalExcerpt": "数据分析与探索：响应式执行让数据清洗和可视化迭代更流畅，SQL 支持简化了复杂查询。",
+          "translation": null,
+          "originalLocation": {
+            "kind": "TEXT",
+            "locator": "https://cn.x-cmd.com/install/marimo/ :: main:first :: blocks(p,li,pre,tr,h1,h2,h3)[74]; normalized UTF-16 [0,42)",
+            "context": "数据分析与探索：响应式执行让数据清洗和可视化迭代更流畅，SQL 支持简化了复杂查询。"
+          },
+          "metadata": {
+            "title": "Jupyter 笔记本难复现？marimo 响应式、纯代码无隐藏状态 | X-CMD 推荐 | marimo",
+            "siteName": "cn.x-cmd.com",
+            "author": "X-CMD",
+            "publishedAt": null,
+            "language": "zh-Hans",
+            "sourceType": "UNKNOWN",
+            "contentKind": "UNKNOWN",
+            "productVersion": null,
+            "plan": null,
+            "upstreamUrl": null,
+            "independence": "UNKNOWN",
+            "originGroupId": null,
+            "independenceReason": null
+          },
+          "retrievedAt": "2026-10-25T01:32:13.099Z",
+          "readStatus": "READ",
+          "readError": null,
+          "contentHash": "64ecdcf7f51c2cddc861003c754c8ba0d8ec7af66d40d98e5e4498b6a9ddb67b"
+        },
+        {
+          "id": "67bec741-fe93-42b6-b28a-653a6c68d480",
+          "sourceUrl": "https://cn.investing.com/news/stock-market-news/article-3154760",
+          "originalExcerpt": null,
+          "translation": null,
+          "originalLocation": null,
+          "metadata": {
+            "title": "告别纯免费！小红书最高199元试水笔记付费，能否跑通内容变现新模式？ 提供者 时代周报",
+            "siteName": "cn.investing.com",
+            "author": null,
+            "publishedAt": null,
+            "language": null,
+            "sourceType": "UNKNOWN",
+            "contentKind": "UNKNOWN",
+            "productVersion": null,
+            "plan": null,
+            "upstreamUrl": null,
+            "independence": "UNKNOWN",
+            "originGroupId": null,
+            "independenceReason": null
+          },
+          "retrievedAt": "2026-10-25T01:32:13.129Z",
+          "readStatus": "SNIPPET_ONLY",
+          "readError": "Source read budget exhausted; search summary is not original evidence",
+          "contentHash": null
+        },
+        {
+          "id": "8bff53ae-acfd-46f7-8d41-37248dfc4ad9",
+          "sourceUrl": "https://cn.investing.com/news/company-news/article-93CH-3089892",
+          "originalExcerpt": null,
+          "translation": null,
+          "originalLocation": null,
+          "metadata": {
+            "title": "Nuburu执行首笔200万欧元支持Tekne/n",
+            "siteName": "cn.investing.com",
+            "author": null,
+            "publishedAt": null,
+            "language": null,
+            "sourceType": "UNKNOWN",
+            "contentKind": "UNKNOWN",
+            "productVersion": null,
+            "plan": null,
+            "upstreamUrl": null,
+            "independence": "UNKNOWN",
+            "originGroupId": null,
+            "independenceReason": null
+          },
+          "retrievedAt": "2026-10-25T01:32:13.129Z",
+          "readStatus": "SNIPPET_ONLY",
+          "readError": "Source read budget exhausted; search summary is not original evidence",
+          "contentHash": null
+        },
+        {
+          "id": "1ea0c2d8-d3e3-4e1c-b76a-fc8a5e833245",
+          "sourceUrl": "https://3g.china.com/act/finance/13004692/20260929/49770213.html",
+          "originalExcerpt": null,
+          "translation": null,
+          "originalLocation": null,
+          "metadata": {
+            "title": "鱼跃医疗新增1312.45万元被执行记录_中华网",
+            "siteName": "3g.china.com",
+            "author": null,
+            "publishedAt": null,
+            "language": null,
+            "sourceType": "UNKNOWN",
+            "contentKind": "UNKNOWN",
+            "productVersion": null,
+            "plan": null,
+            "upstreamUrl": null,
+            "independence": "UNKNOWN",
+            "originGroupId": null,
+            "independenceReason": null
+          },
+          "retrievedAt": "2026-10-25T01:32:13.129Z",
+          "readStatus": "SNIPPET_ONLY",
+          "readError": "Source read budget exhausted; search summary is not original evidence",
+          "contentHash": null
+        }
+      ],
+      "diagnostics": []
+    }
+  ],
+  "journal": {
+    "retrievalRecords": [
+      {
+        "id": "9b7c5343-f8ed-456e-825b-62bd35a83ba8",
+        "provider": "tencent-yuanbao-search-api",
+        "query": "Marimo 的笔记本是否支持响应式执行？",
+        "calledAt": "2026-10-25T01:32:05.566Z",
+        "status": "SUCCEEDED",
+        "error": null,
+        "returnedSources": [
+          {
+            "url": "https://oa0.com/c/1000499",
+            "title": "Marimo — 面向数据与 AI 工作流的下一代 Python 笔记本",
+            "snippet": "Marimo — 面向数据与 AI 工作流的下一代 Python 笔记本 OA0。Marimo — 面向数据与 AI 工作流的下一代 Python 笔记本 一个反应式的 Python 笔记本,可重现、对 Git 友好,并能作为脚本或应用部署。 文档 · Discord · 示例 · 图库 · YouTube marimo 是一个反应式 Python 笔记本:运行一个单元格或与 UI 元素交互,marimo 会自动运行依赖的单元格(或将其标记为过时),保持代码和输出的一致性。marimo 笔记本存储为纯 Python 文件(具有一流的 SQL 支持),可作为脚本执行,也可作为应用部署。 亮点: 🚀 开箱即用:替代 jupyter、streamlit、jupytext、ipywidgets、papermill 等工具 ⚡️ 反应式:运行一个单元格,marimo 会反应式地运行所有依赖的单元格或将其标记为过时 🖐️ 交互式:将滑块、表格、图表等绑定到 Python —— 无需回调函数 🐍 Git 友好:存储为 .py 文件 🛢️ 为数据设计:使用 SQL 查询数据框、数据库、数据仓库或湖仓,过滤和搜索数据框 🤖 AI 原生:使用 AI 生成单元格,专为数据处理工作定制 🔬 可重现:无隐藏状态,确定性执行,内置包管理 🏃 可执行:作为 Python 脚本执行,可通过 CLI 参数化 🛜 可分享:部署为交互式 Web 应用或幻灯片,通过 WASM 在浏览器中运行 🧩 可复用:从一个笔记本导入函数和类到另一个笔记本 🧪 可测试:在笔记本上运行 pytest ⌨️ 现代化编辑器:GitHub Copilot、AI 助手、vim 键绑定、变量浏览器等更多功能 🧑‍💻 使用你喜欢的编辑器:在 VS Code 或 Cursor 中运行,或在 neovim、Zed 或任何其他文本编辑器中编辑 pip ins...",
+            "adoption": "ADOPTED",
+            "adoptionReason": "Original text fetched; relevance and claim support require A2 verification",
+            "evidenceId": "feab48df-5790-4f51-ad18-8741db8ba123"
+          },
+          {
+            "url": "https://github.com/sclee0620/marimo/blob/main/README_Chinese.md",
+            "title": "README_Chinese.md",
+            "snippet": "README_Chinese.md GitHub。这是一款响应式的Python笔记本,具有优秀的可复现性,原生支持Git,并可作为脚本或应用程序部署。 用户手册 · Discord 社区 · 示例 · 展示廊 · YouTube English | 简体中文 | 日本語 | Español Marimo 是一款响应式 Python 笔记本:运行单元格可与 UI 元素交互,marimo 会自动更新依赖于它的单元格(或将其标记为过时单元格),从而保持代码和输出的一致性。marimo 笔记本以纯 Python 格式存储,可作为脚本执行,也可作为应用程序部署。 为什么选择 marimo 🚀 功能齐全:替代 jupyter、streamlit、jupytext、ipywidgets、papermill 等更多工具 ⚡️ 响应式:运行一个单元格,marimo会响应式地运行所有依赖单元格或将它们标记为过时 🖐️ 交互性:绑定滑块、表格、图表等UI元素到Python代码——无需回调函数 🔬 可复现:无隐藏状态,确定性执行,内置包管理 🏃 可执行:作为Python脚本执行,通过命令行参数进行配置 🛜 可分享:部署为交互式Web应用或幻灯片,通过WASM在浏览器中运行 🛢️ 为数据设计:使用SQL查询数据框和数据库,过滤和搜索数据框 🐍 支持Git版本控制:笔记本以.py文件格式存储 ⌨️ 现代编辑器:GitHub Copilot、AI助手、vim快捷键、变量浏览器和更多功能 pip install marimo && marimo tutorial intro 在我们的在线体验平台试用marimo,完全在浏览器中运行! 跳转到快速入门了解我们的命令行工具。 响应式编程环境 Marimo 确保了您的代码、输出和程序的状态始的一致性,解决了与 Jupyter 等传统笔记本相关的许多问题。 独有的响应式设...",
+            "adoption": "ADOPTED",
+            "adoptionReason": "Original text fetched; relevance and claim support require A2 verification",
+            "evidenceId": "cf8cad84-b128-40f0-bce6-15946033cbf5"
+          },
+          {
+            "url": "https://moge.ai/zh/product/marimo",
+            "title": "marimo",
+            "snippet": "marimo MOGE。marimo 一款开源响应式Python笔记本,专为可复现、交互和易于分享的数据工作流设计,所有内容均以纯Python文件存储。 产品概览 什么是marimo? marimo是一款新一代Python笔记本,重新定义了交互式计算,确保可复现性、可维护性和无缝交互体验。与传统笔记本不同,marimo将笔记本以纯Python脚本(.py文件)存储,支持通过Git进行版本控制、脚本执行及Web应用部署。其响应式执行可自动更新依赖单元格,杜绝隐藏状态与同步错误。内置SQL支持、交互式UI元素和AI原生编辑器功能,助力Python开发者高效进行数据探索、原型开发与生产部署。 主要功能 响应式执行 当单元格或UI元素发生变化时,自动重新运行相关依赖单元格,无需手动操作即可保持代码、输出和程序状态的一致性。 Python优先与Git友好 笔记本以纯Python文件形式存储,便于版本控制、脚本执行,以及在不同笔记本或Python文件间导入符号。 内置包管理与沙盒环境 可在笔记本中序列化包依赖,并能创建隔离的虚拟环境,确保从包版本到环境的可复现性。 交互式UI元素 内置滑块、下拉菜单、数据表和图表,可直接绑定到Python变量,实现快速、零代码的交互和数据探索。 一流SQL支持 可在笔记本中直接使用SQL单元查询数据框和数据库,结果以Python数据框形式返回,便于进一步处理。 可分享与部署 笔记本可导出为由WebAssembly驱动的交互式Web应用,或通过CLI服务,方便分享和部署。 使用场景 数据科学与分析 : 数据科学家可构建可复现、交互式的笔记本,将Python与SQL无缝集成,实现数据查询与可视化。 科研与原型开发 : 研究人员受益于确定性执行和响应式编程,可快速迭代代码与模型,避免隐藏状态带来的Bug。 协作开发 : 团队可将笔记本作为Python脚本进行...",
+            "adoption": "PENDING",
+            "adoptionReason": "Source budget exhausted; search summary is not original evidence",
+            "evidenceId": "51f5614e-1cd7-4590-b888-3d203ca64daa"
+          },
+          {
+            "url": "https://www.zendot.org/posts/marimo-team-marimo",
+            "title": "marimo:响应式 Python 笔记本,脚本与应用一体",
+            "snippet": "marimo:响应式 Python 笔记本,脚本与应用一体。它是什么 marimo 是一个开源的响应式 Python 笔记本,采用 Apache-2.0 许可,GitHub 上已有约 22.9k star。传统笔记本靠手动按顺序执行单元,marimo 把代码组织成数据流图:运行某个单元后,引用其变量的下游单元会自动重跑;如果把运行时配置成惰性模式,它们则被标记为过期而不是立即执行。笔记本以纯 .py 文件保存,可以直接作为脚本运行并通过 CLI 参数化,也能部署成交互式网页应用或幻灯片。官方把它定位为 jupyter、streamlit、jupytext、ipywidgets、papermill 等一串工具的合并替代品。 亮点在哪 可复现是硬约束:无隐藏状态,删掉单元即从内存清除其变量;执行顺序确定,并内置包管理来缓解环境漂移。 git 真正可用:笔记本就是 .py 文件,diff 与合并照常工作;单元之间可以互相 import 函数和类,还能直接跑 pytest。 为数据工作设计:对 dataframe、数据库、数仓、lakehouse 直接写 SQL;滑块、表格、图表等 UI 元素绑定到 Python 变量,做交互不需要写回调。 编辑器跟得上:内置 Copilot 补全、vim 键位、变量浏览器,也能在 VS Code 或 PyCharm 里运行。 跑起来的门槛 先把容易误解的点说清楚:这不是需要显卡或下载权重的项目,也不存在本地部署还是调用 API 的选择——它就是一个纯 Python 工具。pip install marimo && marimo tutorial intro 即可启动,另有 conda-forge 安装渠道和免费的在线环境 molab。项目文档没有列出硬件要求,普通开发机足够;真正的开销来自你自己的 notebook 在做什么,比如查询数仓或执行训...",
+            "adoption": "PENDING",
+            "adoptionReason": "Source budget exhausted; search summary is not original evidence",
+            "evidenceId": "164f8333-1d44-4537-ae20-2478843bb4ff"
+          },
+          {
+            "url": "https://docs.marimo.io/faq/",
+            "title": "FAQ",
+            "snippet": "FAQ marimo。Choosing marimo ¶ How is marimo different from Jupyter? ¶ marimo is a reinvention of the Python notebook as a reproducible, interactive,and shareable Python program that can be executed as scripts or deployed asinteractive web apps. Consistent state. In marimo, your notebook code, outputs, and program stateare guaranteed to be consistent. Run a cell and marimo reacts by automaticallyrunning the cells that reference its variables. Delete a cell and marimo scrubsits variables from program memory, eliminating hidden state. Built-in interactivity. marimo also comes with UIelements like sliders, a dataframe transformer, andinteractive plots that are automatically synchronized with Python. Interactwith an element and the cells that use it are automatically re-run with itslatest value....",
+            "adoption": "PENDING",
+            "adoptionReason": "Source budget exhausted; search summary is not original evidence",
+            "evidenceId": "e2f5cde5-25cf-4f81-a4be-0bd2be0f3b3a"
+          }
+        ]
+      },
+      {
+        "id": "7fd64f59-f5ed-474e-9ca0-e8dfff02a5e4",
+        "provider": "tavily-search-api:keyless-capped",
+        "query": "Marimo 的笔记本是否支持响应式执行？",
+        "calledAt": "2026-10-25T01:32:08.185Z",
+        "status": "SUCCEEDED",
+        "error": null,
+        "returnedSources": [
+          {
+            "url": "https://blog.cloudflare.com/zh-cn/marimo-cloudflare-notebooks",
+            "title": "由 marimo 提供支持，通过 Python 笔记本探索您的 Cloudflare 数据 | Cloudflare 博客",
+            "snippet": "将 marimo 与传统笔记本区分开来的核心功能在于其响应式执行模型，该模型由单元格上的静态推理数据流图谱提供支持。运行一个单元格或与 UI 元素交互，marimo 要么运行依赖的单元格，要么将其标记为过时（您的选择）。这可以保持代码和输出的一致性，防止错误发生，并显着提高用数据进行实验的速度。 得益于被动执行，笔记本也可作为数据应用部署，易于共享。虽然您可以在本地、在云服务器、GPU —— 任何可以传统上运行软件的地方运行 marimo 笔记本，但你也可以通过 WebAssembly 完全在浏览器中运行它们，使共享成本降至零。 因为 marimo 笔记本以 Python 格式存储，所以它们享受软件的所有好处：使用 Git 管理版本，作为脚本或管道执行，使用 pytest 测试，使用 uv 内联包要求，并将符号从笔记本导入其他 Python 模块。虽然存储为 Python，marimo 也支持 SQL 和数据源，例如 DuckDB、Postgres 和基于 Iceberg 的数据目录（除了 RAM 中的数据外，marimo 的AI 助手还可以访问这些数据目录）。 [...] 许多开发人员、数据科学家和研究人员在 Python 笔记本中完成大部分工作：十多年来， Python 笔记本一直是数据科学和共享的事实上的标准。笔记本之所以受欢迎，是因为它们可以轻松编码、探索数据、制作原型和分享结果。Cloudflare 大量使用笔记本，发现越来越多的开发人员使用笔记本处理数据，从分析 HTTP 流量趋势、查询 Workers Analytics Engine 到查询自己存储在 R2 中的 Iceberg 表。 传统笔记本非常强大，但在构建它们时并没有考虑到协作、可重复性或作为数据应用部署的因素。随着使用量在不同团队和工作流程中增长，这些限制开始面临大规模工作的现实。 考虑到这些挑战，marimo 重新构想了笔记本的体验。这是一个开源的反应式 Python 笔记本，具有可重复性，易于在 Git 中跟踪，可作为独立脚本执行并且可部署。我们与 marimo 团队合作，为 Cloudflare 开发人员带来这种简化的、生产友好的体验。减少因工具问题带来的麻烦，将更多时间用于探索数据。 今天，我们隆重宣布三件事： [...] 今天，我们隆重宣布三件事： marimo 笔记本内置 Cloudflare 身份验证 – 直接从笔记本登录您的 Cloudflare 帐户，即可使用 Cloudflare API，无需创建 API 令牌 开源笔记本示例 – 通过适用于 R2、Workers AI、D1 等服务的现成运行的笔记本示例探索您的 Cloudflare 数据 在 Cloudflare 容器上运行 marimo – 轻松将 marimo 笔记本部署到 Cloudflare 容器，实现可扩展、长时间运行的数据工作流 想立即开始探索您的 Cloudflare 数据吗？前往 notebooks.cloudflare.com 。您也可以继续阅读，了解关于 marimo 的更多信息，我们如何在笔记本中简化身份验证，以及如何使用 marimo 在 Cloudflare 上浏览和共享笔记本和应用。 ### 为什么选择 marimo？ marimo 是一个开源的反应式 Python 笔记本，专门为处理数据而设计，从头开始构建，以解决传统笔记本的许多问题。",
+            "adoption": "ADOPTED",
+            "adoptionReason": "Original text fetched; relevance and claim support require A2 verification",
+            "evidenceId": "e5b6a7c0-71f5-408f-8542-0f3d5ce704c0"
+          },
+          {
+            "url": "https://cn.x-cmd.com/install/marimo",
+            "title": "Jupyter 笔记本难复现？marimo 响应式、纯代码无隐藏状态 | X-CMD 推荐 | marimo",
+            "snippet": "Skip to content x-cmd-logox-cmd-logo X-CMD 数据有误？提交 PR 进行修改 # marimo Marimo 是一款响应式 Python 笔记本：运行单元格可与 UI 元素交互，marimo 会自动更新依赖于它的单元格（或将其标记为过时单元格），从而保持代码和输出的一致性。marimo 笔记本以纯 Python 格式存储，可作为脚本执行，也可作为应用程序部署。 23.3K Stars interactiveApache-2.0 marimo-team/marimo 360贡献者 374发布 2026-10-23最近提交 2026-10-19最近发布 资源概况 安装体积小，内存占用低 内存使用~5 MB CPU 要求极低 进程数1 网络需要否 磁盘占用1.1 MB 以 Python 为主 Python61.4% TypeScript22.4% Tsx15.8% 其他0.4% 源码体积26.1 MB 代码统计 代码790,699 注释79,033 空行135,807 总行数1,005,539 [...] | 特性 | marimo | Jupyter | --- | 执行模型 | 响应式（自动追踪依赖） | 手动（按顺序执行单元格） | | 隐藏状态 | 无（删除即清除） | 有（变量残留） | | 文件格式 | 纯 Python (.py) | JSON (.ipynb) | | Git 友好度 | 高（可直接 diff） | 低（包含元数据和输出） | | 部署方式 | 脚本、Web 应用、WASM | 需转换或导出 | | 可复现性 | 确定性执行顺序 | 依赖手动执行顺序 | marimo 的核心设计是响应式数据流：它通过静态分析代码自动构建变量依赖图，确保代码、输出和程序状态始终一致。这种架构借鉴了 Pluto.jl（Julia 生态）和 ObservableHQ 的理念，将函数式、声明式的编程范式引入 Python 笔记本。 ## 核心功能详解 ​ ## 1. 响应式执行引擎 ​ marimo 的杀手级特性是自动依赖追踪。当你运行一个单元格时，它会自动识别该单元格定义的变量，并找出所有依赖这些变量的下游单元格重新执行。 python [...] ## 使用建议 ​ 1. 充分利用响应式特性：不要手动管理单元格执行顺序，让 marimo 自动处理依赖关系。 2. 保持单元格聚焦：每个单元格只做一件事，便于依赖追踪和错误定位。 3. 善用 UI 组件：将频繁调整的参数（如模型超参数、筛选阈值）提取为 UI 控件。 4. 版本控制最佳实践：使用 `marimo` 命令导出无输出版本的 notebook 用于代码审查。 5. SQL 与 Python 结合：对于复杂数据操作，优先使用 SQL 单元格，结果传给 Python 做可视化。 6. 渐进式迁移：已有 Jupyter 工作流不必一次性全迁，可以从新实验开始尝试 marimo。 来源： 相关资源： marimo 教程 - 核心概念介绍 示例库 - 官方示例代码 Gallery - 社区作品展示 NumFOCUS 附属项目 - marimo 是 NumFOCUS 支持的科学计算生态成员 容器调用: 实验性功能",
+            "adoption": "ADOPTED",
+            "adoptionReason": "Original text fetched; relevance and claim support require A2 verification",
+            "evidenceId": "05374a11-ff79-48b4-b404-5b4d0a555f61"
+          },
+          {
+            "url": "https://cn.investing.com/news/stock-market-news/article-3154760",
+            "title": "告别纯免费！小红书最高199元试水笔记付费，能否跑通内容变现新模式？ 提供者 时代周报",
+            "snippet": "提供者 Investing.co... 2026年10月22日 []( A股收评 | 创业板指探底回升涨4.16% 机器人产业链多股涨停 提供者 智通财经 2026年10月22日 []( 印尼股市雪崩，高盛预警！ 提供者 格隆汇 2026年10月19日 []( 恐慌指数飙21%！黄仁勋喊话“终将过去” 提供者 格隆汇 2026年10月18日 []( 杀跌近50%！奈飞的逻辑彻底变了 提供者 格隆汇 2026年10月20日 []( 马斯克豪言：SpaceX明年冲击万亿营收！ 提供者 格隆汇 2026年10月21日 []( 全球股票基金流入显著放量，货币市场基金转为净流出——全球资金流动周报第31期 提供者 张瑜 2026年10月21日 更多资讯 股市走势 [...] BABA 101.82 -2.59 -2.48% 0700 386.00 +3.60 +0.94% BIDU 77.98 -0.84 -1.07% JD 25.68 -0.11 -0.43% AMZN 250.38 -11.99 -4.57% META 648.85 -48.67 -6.98% AAPL 348.22 +4.23 +1.23% 广告 最热门文章 资讯 分析评论 []( TS Lombard情景分析：AI泡沫破裂或引发标普500暴跌30%、20万亿美元市值蒸发 但别急着做空！ 提供者 智通财经 2026年10月22日 []( 港股收评：A股半导体龙头称行业发展向好，港股午后存储光通信PCB集体拉升，恒指重回23000点 提供者 格隆汇 2026年10月22日 []( 智通港股早知道 | 能源冲击推升布伦特原油破113美元 美股科技股重挫、纳指跌2.6% 提供者 智通财经 2026年10月22日 []( 月涨幅高达+31%：AI选股助力零售股强势飙升，业绩超预期叠加分析师上调评级 [...] 更多工具 选股器货币换算器 安装我们的APP扫描二维码，安装APP",
+            "adoption": "PENDING",
+            "adoptionReason": "Source budget exhausted; search summary is not original evidence",
+            "evidenceId": "67bec741-fe93-42b6-b28a-653a6c68d480"
+          },
+          {
+            "url": "https://cn.investing.com/news/company-news/article-93CH-3089892",
+            "title": "Nuburu执行首笔200万欧元支持Tekne/n",
+            "snippet": "English (USA) English (UK) English (India) English (Canada) English (Australia) English (South Africa) English (Philippines) English (Nigeria) Deutsch Español (España) Español (México) Français Italiano Nederlands Polski Português (Portugal) Português (Brasil) Русский Türkçe ‏العربية‏ Ελληνικά Svenska Suomi עברית 日本語 한국어 繁體中文 Bahasa Indonesia Bahasa Melayu ไทย Tiếng Việt हिंदी 劲爆优惠50% 登录 免费注册 [...] 打开应用程序搜索市场、新闻、分析…Ctrl+K 劲爆优惠50% 登录 免费注册 [...] 提供者 Investing.co... 2026年10月22日 Image 10 Image 11 避险时刻黄金又成“提款机”!单日跌近3%、逼近三个月低点 3900美元关口将受考验 提供者 智通财经 2026年10月22日 Image 12 Image 13 印尼股市雪崩，高盛预警！ 提供者 格隆汇 2026年10月19日 Image 14 Image 15 恐慌指数飙21%！黄仁勋喊话“终将过去” 提供者 格隆汇 2026年10月18日 Image 16 Image 17 杀跌近50%！奈飞的逻辑彻底变了 提供者 格隆汇 2026年10月20日 Image 18 Image 19 马斯克豪言：SpaceX明年冲击万亿营收！ 提供者 格隆汇 2026年10月21日 Image 20 Image 21 全球股票基金流入显著放量，货币市场基金转为净流出——全球资金流动周报第31期 提供者 张瑜 2026年10月21日 更多资讯 股市走势 最活跃股票 领涨个股 领跌个股",
+            "adoption": "PENDING",
+            "adoptionReason": "Source budget exhausted; search summary is not original evidence",
+            "evidenceId": "8bff53ae-acfd-46f7-8d41-37248dfc4ad9"
+          },
+          {
+            "url": "https://3g.china.com/act/finance/13004692/20260929/49770213.html",
+            "title": "鱼跃医疗新增1312.45万元被执行记录_中华网",
+            "snippet": "推荐 TMT 金融 地产 消费 医药 酒业 IPO ## 鱼跃医疗新增1312.45万元被执行记录 蓝鲸新闻 2026-09-29 09:30:38 A+ A- 据中国执行信息公开网显示，江苏鱼跃医疗设备股份有限公司（002223）于2026年9月23日新增一条被执行人记录，执行法院为丹阳市人民法院，执行标的1312.45万元。因鱼跃医疗注册地位于丹阳，此次由本地法院执行在地域上吻合，但案件具体案由尚未公开。 天眼查信息显示，丹阳市人民法院曾于2025年9月受理镇江正荣建筑工程有限公司诉鱼跃医疗的债权人代位权纠纷，不过目前无证据表明该历史案件与本次千万元级执行直接关联。 截至目前，鱼跃医疗未就上述被执行事项发布公告或说明。作为家用医疗器械龙头，单笔超千万元执行金额相对其经营规模有限，但后续案由、是否涉及履约或债务争议仍值得关注。 责任编辑：zx0600 加载更多……",
+            "adoption": "PENDING",
+            "adoptionReason": "Source budget exhausted; search summary is not original evidence",
+            "evidenceId": "1ea0c2d8-d3e3-4e1c-b76a-fc8a5e833245"
+          }
+        ]
+      }
+    ],
+    "evidence": [
+      {
+        "id": "feab48df-5790-4f51-ad18-8741db8ba123",
+        "sourceUrl": "https://oa0.com/c/1000499",
+        "originalExcerpt": "marimo 保证你的笔记本代码、输出和程序状态保持一致。这解决了许多与传统笔记本（如 Jupyter）相关的问题。",
+        "translation": null,
+        "originalLocation": {
+          "kind": "TEXT",
+          "locator": "https://oa0.com/c/1000499 :: body :: blocks(p,li,pre,tr,h1,h2,h3)[24]; normalized UTF-16 [0,58)",
+          "context": "marimo 保证你的笔记本代码、输出和程序状态保持一致。这解决了许多与传统笔记本（如 Jupyter）相关的问题。"
+        },
+        "metadata": {
+          "title": "Marimo — 面向数据与 AI 工作流的下一代 Python 笔记本",
+          "siteName": "oa0.com",
+          "author": "OA0",
+          "publishedAt": null,
+          "language": "zh-CN",
+          "sourceType": "UNKNOWN",
+          "contentKind": "UNKNOWN",
+          "productVersion": null,
+          "plan": null,
+          "upstreamUrl": null,
+          "independence": "UNKNOWN",
+          "originGroupId": null,
+          "independenceReason": null
+        },
+        "retrievedAt": "2026-10-25T01:32:06.427Z",
+        "readStatus": "READ",
+        "readError": null,
+        "contentHash": "9c644ba17958fd6ab4a57af2e2433cad75b63ce9ca9a054abf448d98c4c9c51e"
+      },
+      {
+        "id": "cf8cad84-b128-40f0-bce6-15946033cbf5",
+        "sourceUrl": "https://github.com/sclee0620/marimo/blob/main/README_Chinese.md",
+        "originalExcerpt": "Marimo 是一款响应式 Python 笔记本：运行单元格可与 UI 元素交互，marimo 会自动更新依赖于它的单元格（或将其标记为过时单元格），从而保持代码和输出的一致性。marimo 笔记本以纯 Python 格式存储，可作为脚本执行，也可作为应用程序部署。",
+        "translation": null,
+        "originalLocation": {
+          "kind": "TEXT",
+          "locator": "https://github.com/sclee0620/marimo/blob/main/README_Chinese.md :: article:first :: blocks(p,li,pre,tr,h1,h2,h3)[5]; normalized UTF-16 [0,133)",
+          "context": "Marimo 是一款响应式 Python 笔记本：运行单元格可与 UI 元素交互，marimo 会自动更新依赖于它的单元格（或将其标记为过时单元格），从而保持代码和输出的一致性。marimo 笔记本以纯 Python 格式存储，可作为脚本执行，也可作为应用程序部署。"
+        },
+        "metadata": {
+          "title": "marimo/README_Chinese.md at main · sclee0620/marimo · GitHub",
+          "siteName": "github.com",
+          "author": null,
+          "publishedAt": null,
+          "language": "en",
+          "sourceType": "COMMUNITY",
+          "contentKind": "UNKNOWN",
+          "productVersion": null,
+          "plan": null,
+          "upstreamUrl": null,
+          "independence": "UNKNOWN",
+          "originGroupId": null,
+          "independenceReason": null
+        },
+        "retrievedAt": "2026-10-25T01:32:08.121Z",
+        "readStatus": "READ",
+        "readError": null,
+        "contentHash": "dbc0c6d3cafd9764d6aa58877c5d56119d948c9061c56ece1037a069c5bb9d22"
+      },
+      {
+        "id": "51f5614e-1cd7-4590-b888-3d203ca64daa",
+        "sourceUrl": "https://moge.ai/zh/product/marimo",
+        "originalExcerpt": null,
+        "translation": null,
+        "originalLocation": null,
+        "metadata": {
+          "title": "marimo",
+          "siteName": "moge.ai",
+          "author": null,
+          "publishedAt": null,
+          "language": null,
+          "sourceType": "UNKNOWN",
+          "contentKind": "UNKNOWN",
+          "productVersion": null,
+          "plan": null,
+          "upstreamUrl": null,
+          "independence": "UNKNOWN",
+          "originGroupId": null,
+          "independenceReason": null
+        },
+        "retrievedAt": "2026-10-25T01:32:08.184Z",
+        "readStatus": "SNIPPET_ONLY",
+        "readError": "Source read budget exhausted; search summary is not original evidence",
+        "contentHash": null
+      },
+      {
+        "id": "164f8333-1d44-4537-ae20-2478843bb4ff",
+        "sourceUrl": "https://www.zendot.org/posts/marimo-team-marimo",
+        "originalExcerpt": null,
+        "translation": null,
+        "originalLocation": null,
+        "metadata": {
+          "title": "marimo:响应式 Python 笔记本,脚本与应用一体",
+          "siteName": "www.zendot.org",
+          "author": null,
+          "publishedAt": null,
+          "language": null,
+          "sourceType": "UNKNOWN",
+          "contentKind": "UNKNOWN",
+          "productVersion": null,
+          "plan": null,
+          "upstreamUrl": null,
+          "independence": "UNKNOWN",
+          "originGroupId": null,
+          "independenceReason": null
+        },
+        "retrievedAt": "2026-10-25T01:32:08.185Z",
+        "readStatus": "SNIPPET_ONLY",
+        "readError": "Source read budget exhausted; search summary is not original evidence",
+        "contentHash": null
+      },
+      {
+        "id": "e2f5cde5-25cf-4f81-a4be-0bd2be0f3b3a",
+        "sourceUrl": "https://docs.marimo.io/faq/",
+        "originalExcerpt": null,
+        "translation": null,
+        "originalLocation": null,
+        "metadata": {
+          "title": "FAQ",
+          "siteName": "docs.marimo.io",
+          "author": null,
+          "publishedAt": null,
+          "language": null,
+          "sourceType": "UNKNOWN",
+          "contentKind": "UNKNOWN",
+          "productVersion": null,
+          "plan": null,
+          "upstreamUrl": null,
+          "independence": "UNKNOWN",
+          "originGroupId": null,
+          "independenceReason": null
+        },
+        "retrievedAt": "2026-10-25T01:32:08.185Z",
+        "readStatus": "SNIPPET_ONLY",
+        "readError": "Source read budget exhausted; search summary is not original evidence",
+        "contentHash": null
+      },
+      {
+        "id": "e5b6a7c0-71f5-408f-8542-0f3d5ce704c0",
+        "sourceUrl": "https://blog.cloudflare.com/zh-cn/marimo-cloudflare-notebooks",
+        "originalExcerpt": "将 marimo 与传统笔记本区分开来的核心功能在于其响应式执行模型，该模型由单元格上的静态推理数据流图谱提供支持。运行一个单元格或与 UI 元素交互，marimo 要么运行依赖的单元格，要么将其标记为过时（您的选择）。这可以保持代码和输出的一致性，防止错误发生，并显着提高用数据进行实验的速度。",
+        "translation": null,
+        "originalLocation": {
+          "kind": "TEXT",
+          "locator": "https://blog.cloudflare.com/zh-cn/marimo-cloudflare-notebooks :: article:first :: blocks(p,li,pre,tr,h1,h2,h3)[11]; normalized UTF-16 [0,148)",
+          "context": "将 marimo 与传统笔记本区分开来的核心功能在于其响应式执行模型，该模型由单元格上的静态推理数据流图谱提供支持。运行一个单元格或与 UI 元素交互，marimo 要么运行依赖的单元格，要么将其标记为过时（您的选择）。这可以保持代码和输出的一致性，防止错误发生，并显着提高用数据进行实验的速度。"
+        },
+        "metadata": {
+          "title": "由 marimo 提供支持，通过 Python 笔记本探索您的 Cloudflare 数据 | Cloudflare 博客",
+          "siteName": "blog.cloudflare.com",
+          "author": null,
+          "publishedAt": "2025-07-16T13:00:00.000Z",
+          "language": "zh-cn",
+          "sourceType": "UNKNOWN",
+          "contentKind": "UNKNOWN",
+          "productVersion": null,
+          "plan": null,
+          "upstreamUrl": null,
+          "independence": "UNKNOWN",
+          "originGroupId": null,
+          "independenceReason": null
+        },
+        "retrievedAt": "2026-10-25T01:32:12.048Z",
+        "readStatus": "READ",
+        "readError": null,
+        "contentHash": "9d2569b062a472561e9fdeb5338609daf3a57b7174482468053af979f94d1535"
+      },
+      {
+        "id": "05374a11-ff79-48b4-b404-5b4d0a555f61",
+        "sourceUrl": "https://cn.x-cmd.com/install/marimo",
+        "originalExcerpt": "数据分析与探索：响应式执行让数据清洗和可视化迭代更流畅，SQL 支持简化了复杂查询。",
+        "translation": null,
+        "originalLocation": {
+          "kind": "TEXT",
+          "locator": "https://cn.x-cmd.com/install/marimo/ :: main:first :: blocks(p,li,pre,tr,h1,h2,h3)[74]; normalized UTF-16 [0,42)",
+          "context": "数据分析与探索：响应式执行让数据清洗和可视化迭代更流畅，SQL 支持简化了复杂查询。"
+        },
+        "metadata": {
+          "title": "Jupyter 笔记本难复现？marimo 响应式、纯代码无隐藏状态 | X-CMD 推荐 | marimo",
+          "siteName": "cn.x-cmd.com",
+          "author": "X-CMD",
+          "publishedAt": null,
+          "language": "zh-Hans",
+          "sourceType": "UNKNOWN",
+          "contentKind": "UNKNOWN",
+          "productVersion": null,
+          "plan": null,
+          "upstreamUrl": null,
+          "independence": "UNKNOWN",
+          "originGroupId": null,
+          "independenceReason": null
+        },
+        "retrievedAt": "2026-10-25T01:32:13.099Z",
+        "readStatus": "READ",
+        "readError": null,
+        "contentHash": "64ecdcf7f51c2cddc861003c754c8ba0d8ec7af66d40d98e5e4498b6a9ddb67b"
+      },
+      {
+        "id": "67bec741-fe93-42b6-b28a-653a6c68d480",
+        "sourceUrl": "https://cn.investing.com/news/stock-market-news/article-3154760",
+        "originalExcerpt": null,
+        "translation": null,
+        "originalLocation": null,
+        "metadata": {
+          "title": "告别纯免费！小红书最高199元试水笔记付费，能否跑通内容变现新模式？ 提供者 时代周报",
+          "siteName": "cn.investing.com",
+          "author": null,
+          "publishedAt": null,
+          "language": null,
+          "sourceType": "UNKNOWN",
+          "contentKind": "UNKNOWN",
+          "productVersion": null,
+          "plan": null,
+          "upstreamUrl": null,
+          "independence": "UNKNOWN",
+          "originGroupId": null,
+          "independenceReason": null
+        },
+        "retrievedAt": "2026-10-25T01:32:13.129Z",
+        "readStatus": "SNIPPET_ONLY",
+        "readError": "Source read budget exhausted; search summary is not original evidence",
+        "contentHash": null
+      },
+      {
+        "id": "8bff53ae-acfd-46f7-8d41-37248dfc4ad9",
+        "sourceUrl": "https://cn.investing.com/news/company-news/article-93CH-3089892",
+        "originalExcerpt": null,
+        "translation": null,
+        "originalLocation": null,
+        "metadata": {
+          "title": "Nuburu执行首笔200万欧元支持Tekne/n",
+          "siteName": "cn.investing.com",
+          "author": null,
+          "publishedAt": null,
+          "language": null,
+          "sourceType": "UNKNOWN",
+          "contentKind": "UNKNOWN",
+          "productVersion": null,
+          "plan": null,
+          "upstreamUrl": null,
+          "independence": "UNKNOWN",
+          "originGroupId": null,
+          "independenceReason": null
+        },
+        "retrievedAt": "2026-10-25T01:32:13.129Z",
+        "readStatus": "SNIPPET_ONLY",
+        "readError": "Source read budget exhausted; search summary is not original evidence",
+        "contentHash": null
+      },
+      {
+        "id": "1ea0c2d8-d3e3-4e1c-b76a-fc8a5e833245",
+        "sourceUrl": "https://3g.china.com/act/finance/13004692/20260929/49770213.html",
+        "originalExcerpt": null,
+        "translation": null,
+        "originalLocation": null,
+        "metadata": {
+          "title": "鱼跃医疗新增1312.45万元被执行记录_中华网",
+          "siteName": "3g.china.com",
+          "author": null,
+          "publishedAt": null,
+          "language": null,
+          "sourceType": "UNKNOWN",
+          "contentKind": "UNKNOWN",
+          "productVersion": null,
+          "plan": null,
+          "upstreamUrl": null,
+          "independence": "UNKNOWN",
+          "originGroupId": null,
+          "independenceReason": null
+        },
+        "retrievedAt": "2026-10-25T01:32:13.129Z",
+        "readStatus": "SNIPPET_ONLY",
+        "readError": "Source read budget exhausted; search summary is not original evidence",
+        "contentHash": null
+      }
+    ],
+    "diagnostics": [],
+    "httpAttempts": [
+      {
+        "url": "https://api.wsa.cloud.tencent.com/SearchPro",
+        "method": "POST",
+        "startedAt": "2026-10-25T01:32:05.575Z",
+        "finishedAt": "2026-10-25T01:32:06.087Z",
+        "requestSent": true,
+        "status": 200,
+        "error": null,
+        "ownerId": "9b7c5343-f8ed-456e-825b-62bd35a83ba8"
+      },
+      {
+        "url": "https://oa0.com/c/1000499",
+        "method": "GET",
+        "startedAt": "2026-10-25T01:32:06.101Z",
+        "finishedAt": "2026-10-25T01:32:06.427Z",
+        "requestSent": true,
+        "status": 200,
+        "error": null,
+        "ownerId": "feab48df-5790-4f51-ad18-8741db8ba123"
+      },
+      {
+        "url": "https://github.com/sclee0620/marimo/blob/main/README_Chinese.md",
+        "method": "GET",
+        "startedAt": "2026-10-25T01:32:06.474Z",
+        "finishedAt": "2026-10-25T01:32:08.121Z",
+        "requestSent": true,
+        "status": 200,
+        "error": null,
+        "ownerId": "cf8cad84-b128-40f0-bce6-15946033cbf5"
+      },
+      {
+        "url": "https://api.tavily.com/search",
+        "method": "POST",
+        "startedAt": "2026-10-25T01:32:08.185Z",
+        "finishedAt": "2026-10-25T01:32:11.046Z",
+        "requestSent": true,
+        "status": 200,
+        "error": null,
+        "ownerId": "7fd64f59-f5ed-474e-9ca0-e8dfff02a5e4"
+      },
+      {
+        "url": "https://blog.cloudflare.com/zh-cn/marimo-cloudflare-notebooks",
+        "method": "GET",
+        "startedAt": "2026-10-25T01:32:11.051Z",
+        "finishedAt": "2026-10-25T01:32:12.048Z",
+        "requestSent": true,
+        "status": 200,
+        "error": null,
+        "ownerId": "e5b6a7c0-71f5-408f-8542-0f3d5ce704c0"
+      },
+      {
+        "url": "https://cn.x-cmd.com/install/marimo",
+        "method": "GET",
+        "startedAt": "2026-10-25T01:32:12.155Z",
+        "finishedAt": "2026-10-25T01:32:13.099Z",
+        "requestSent": true,
+        "status": 302,
+        "error": null,
+        "ownerId": "05374a11-ff79-48b4-b404-5b4d0a555f61"
+      },
+      {
+        "url": "https://cn.x-cmd.com/install/marimo/",
+        "method": "GET",
+        "startedAt": "2026-10-25T01:32:12.862Z",
+        "finishedAt": "2026-10-25T01:32:13.099Z",
+        "requestSent": true,
+        "status": 200,
+        "error": null,
+        "ownerId": "05374a11-ff79-48b4-b404-5b4d0a555f61"
+      }
+    ]
+  },
+  "scope": "Real collection only; no handler, model decisions, database, Worker or end-to-end acceptance claimed. Search snippets are not original text."
+}

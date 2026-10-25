@@ -24,9 +24,41 @@ export function publicUrl(input: string): URL {
   return url;
 }
 
-export async function requestText(input: string, signal: AbortSignal, options: {
+/** Remove navigation/tracking decoration only; preserve semantic query parameters. */
+export function normalizeSourceUrl(input: string): string {
+  const url = publicUrl(input);
+  url.hash = "";
+  for (const key of [...url.searchParams.keys()]) {
+    if (/^utm_/i.test(key) || /^(fbclid|gclid|msclkid|_hsenc|_hsmi|mkt_tok)$/i.test(key)) url.searchParams.delete(key);
+  }
+  url.searchParams.sort();
+  return url.href;
+}
+
+export interface HttpAttempt {
+  url: string; method: string; startedAt: string; finishedAt: string | null;
+  requestSent: boolean; status: number | null; error: string | null;
+}
+export interface HttpRequestOptions {
   method?: string; body?: string; headers?: Record<string, string>; maxBytes?: number;
-} = {}, redirects = 0): Promise<{ url: string; status: number; text: string; contentType: string }> {
+  onAttempt?: (attempt: HttpAttempt) => void;
+}
+
+export async function requestText(input: string, signal: AbortSignal, options: HttpRequestOptions = {}, redirects = 0): Promise<{ url: string; status: number; text: string; contentType: string }> {
+  const attempt: HttpAttempt = { url: publicUrl(input).href, method: options.method ?? "GET", startedAt: new Date().toISOString(),
+    finishedAt: null, requestSent: false, status: null, error: null };
+  options.onAttempt?.(attempt);
+  try {
+    return await requestTextAttempt(input, signal, options, redirects, attempt);
+  } catch (error) {
+    attempt.error = error instanceof Error ? error.message.replace(/Bearer\s+\S+/gi, "Bearer [redacted]").slice(0, 500) : "HTTP attempt failed";
+    throw error;
+  } finally {
+    attempt.finishedAt = new Date().toISOString();
+  }
+}
+
+async function requestTextAttempt(input: string, signal: AbortSignal, options: HttpRequestOptions, redirects: number, attempt: HttpAttempt): Promise<{ url: string; status: number; text: string; contentType: string }> {
   signal.throwIfAborted();
   const url = publicUrl(input);
   const host = url.hostname.replace(/^\[|\]$/g, "");
@@ -48,6 +80,7 @@ export async function requestText(input: string, signal: AbortSignal, options: {
       lookup: (_host, _options, callback) => callback(null, address.address, address.family),
       headers: { "User-Agent": "Anjuan-Collection/1.0", Accept: "text/html,application/json,text/plain,application/rss+xml", "Accept-Encoding": "identity", ...options.headers }
     }, res => {
+      attempt.status = res.statusCode ?? 0;
       const chunks: Buffer[] = []; let size = 0;
       res.on("data", (chunk: Buffer) => {
         size += chunk.length;
@@ -58,13 +91,13 @@ export async function requestText(input: string, signal: AbortSignal, options: {
       res.on("end", () => resolve({ status: res.statusCode ?? 0, text: Buffer.concat(chunks).toString("utf8"),
         ...(res.headers.location ? { location: res.headers.location } : {}), contentType: res.headers["content-type"] ?? "" }));
     });
-    req.on("error", reject); req.end(options.body);
+    req.on("error", reject); attempt.requestSent = true; req.end(options.body);
   });
   if ([301, 302, 303, 307, 308].includes(result.status) && result.location) {
     if (redirects >= 3) throw new Error("Redirect budget exhausted");
     // Never forward credentials or POST bodies to a redirect destination.
     if (options.method === "POST" || options.headers?.Authorization) throw new Error("Authenticated redirects rejected");
-    return requestText(new URL(result.location, url).href, signal, {}, redirects + 1);
+    return requestText(new URL(result.location, url).href, signal, options.onAttempt ? { onAttempt: options.onAttempt } : {}, redirects + 1);
   }
   return { ...result, url: url.href };
 }
