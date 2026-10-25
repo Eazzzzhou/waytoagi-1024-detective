@@ -179,6 +179,18 @@ describe("real collection boundaries (responses below are explicit test doubles)
     const table = '<title>Quillbench API</title><main><p>Quillbench API is a long introductory description for all developers.</p><table><tr><td><p>上下文长度</p></td><td><p>128K</p></td></tr></table></main>';
     expect(extractHtml(table, "Quillbench API 的上下文长度是多少？")?.excerpt).toBe("上下文长度128K");
   });
+  it("keeps model/version headers and the requested table field in one exact contiguous quote", () => {
+    const text = "模型Quillbench-miniQuillbench-pro模型版本v2v3上下文长度128K";
+    const html = '<main><table><tr><th>模型</th><th>Quillbench-mini</th><th>Quillbench-pro</th></tr><tr><td>模型版本</td><td>v2</td><td>v3</td></tr><tr><td>上下文长度</td><td colspan="2">128K</td></tr></table></main>';
+    const result = extractHtml(html, "上下文长度");
+    expect(result?.excerpt).toBe(text);
+    expect(result?.locator).toContain("tables[0]; normalized UTF-16 [0,");
+    expect(result!.excerpt.length).toBeLessThanOrEqual(300);
+  });
+  it("does not drop a short parameter subject when matching a later default-value phrase", () => {
+    const text = "限制模型生成 completion 的最大 token 数。未设置时，非思考模式默认 8K，思考模式默认 64K。";
+    expect(extractHtml(`<main><p>${text}</p></main>`, "非思考模式默认")?.excerpt).toBe(text);
+  });
 
   it("keeps a per-request timeout local and reads the next source within the shared budget", async () => {
     vi.stubEnv("TENCENTCLOUD_WSA_APIKEY", "sk-test-only");

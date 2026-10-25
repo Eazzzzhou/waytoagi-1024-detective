@@ -75,6 +75,7 @@ export function extractHtml(html: string, question = "") {
   $("script,style,noscript,nav,header,footer,form,svg,template,aside,[hidden],[aria-hidden='true']").remove();
   const root = $("article").first().length ? $("article").first() : $("main").first().length ? $("main").first() : $("body");
   const rootSelector = root.is("article") ? "article:first" : root.is("main") ? "main:first" : "body";
+  const tables = root.find("table").toArray();
   const chinese = question.match(/[\u4e00-\u9fff]+/g) ?? [];
   const grams = chinese.flatMap(span => [2, 3, 4].flatMap(size => Array.from({ length: Math.max(0, span.length - size + 1) }, (_, i) => span.slice(i, i + size))));
   const terms = [...new Set([...(question.toLowerCase().match(/[a-z][a-z0-9_-]{2,}/g) ?? []), ...grams])];
@@ -82,19 +83,22 @@ export function extractHtml(html: string, question = "") {
   const blocks = root.find(selector).toArray().map((el, index) => ({ el, index }))
     .filter(({ el }) => $(el).is("tr") || (!$(el).closest("tr").length && !$(el).find(selector).length)).map(({ el, index }) => ({
       text: clean($(el).text()) ?? "", minimum: $(el).is("tr") ? 3 : 30,
-      tableContext: $(el).is("tr") ? clean($(el).closest("table").text())?.slice(0, 4000) : null,
-      locator: `${rootSelector} :: blocks(${selector})[${index}]`
+      tableContext: $(el).is("tr") ? clean($(el).closest("table").text()) : null,
+      locator: $(el).is("tr") ? `${rootSelector} :: tables[${tables.indexOf($(el).closest("table").get(0)!)}]` : `${rootSelector} :: blocks(${selector})[${index}]`
     })).filter(b => b.text.length >= b.minimum);
   const ranked = blocks.map(b => ({ ...b, score: terms.reduce((s, t) => s + (b.text.toLowerCase().includes(t) ? t.length : 0), 0) })).sort((a, b) => b.score - a.score);
   const chosen = ranked[0];
   if (!chosen) return null;
   // Center a <=300-character contiguous excerpt on the first matched query term.
   const match = terms.map(t => chosen.text.toLowerCase().indexOf(t)).filter(i => i >= 0).sort((a, b) => a - b)[0] ?? 0;
-  const start = Math.max(0, match - 80);
-  const excerpt = chosen.text.slice(start, start + 300).trim();
-  const offset = chosen.text.indexOf(excerpt, start);
+  const original = chosen.tableContext ?? chosen.text;
+  const target = chosen.tableContext ? Math.max(0, original.indexOf(chosen.text)) + match : match;
+  // Keep the actual table header/field subject when it fits; never concatenate rows.
+  const start = original.length <= 300 || target + chosen.text.length <= 300 ? 0 : Math.max(0, target - 80);
+  const excerpt = original.slice(start, start + 300).trim();
+  const offset = original.indexOf(excerpt, start);
   return { title, author, language, publishedAt, excerpt, locator: `${chosen.locator}; normalized UTF-16 [${offset},${offset + excerpt.length})`,
-    context: chosen.tableContext ?? chosen.text.slice(Math.max(0, offset - 100), offset + excerpt.length + 100) };
+    context: chosen.tableContext?.slice(0, 4000) ?? chosen.text.slice(Math.max(0, offset - 100), offset + excerpt.length + 100) };
 }
 
 export function createCollectionProviders(options: CollectionOptions = {}) {
