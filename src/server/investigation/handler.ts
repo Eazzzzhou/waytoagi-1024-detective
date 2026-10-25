@@ -230,7 +230,7 @@ export function createInvestigationHandler(dependencies: {
       } else {
         const observed = observedUrls();
         const focus = decision.query?.trim() || `${context.question} ${decision.observedGap ?? ""}`;
-        const urls = [...new Set(decision.readUrls.filter(url => { try { canonical(url); return true; } catch { return false; } }).map(canonical))].filter(url => observed.has(url) && (!fetched.has(url) || Boolean(decision.query && decision.observedGap && decision.basisEvidenceIds.some(id => fetched.get(url)?.id === id))) && !readKeys.has(`${url}:${focus.toLowerCase()}`));
+        const urls = [...new Set(decision.readUrls.filter(url => { try { canonical(url); return true; } catch { return false; } }).map(canonical))].filter(url => observed.has(url) && (!fetched.has(url) || Boolean(decision.query && decision.observedGap && evidence.some(item => canonical(item.sourceUrl) === url && decision.basisEvidenceIds.includes(item.id)))) && !readKeys.has(`${url}:${focus.toLowerCase()}`));
         if (!urls.length || loop.readsUsed >= loop.maxReads) { reject("没有未读取的已发现URL，或读取预算耗尽。 "); continue; }
         const selected = urls.slice(0, loop.maxReads - loop.readsUsed);
         for (const url of selected) readKeys.add(`${url}:${focus.toLowerCase()}`);

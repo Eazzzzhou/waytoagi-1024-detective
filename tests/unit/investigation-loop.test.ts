@@ -148,4 +148,22 @@ describe("evidence-driven investigation loop (synthetic controls, not business a
     expect(result.result.snapshot.gaps).toEqual([]);
     expect(verifications).toBe(2);
   });
+  it("can target another passage using an earlier good read after a later read fails", async () => {
+    const test = rig((input, call) => {
+      const evidence = input.evidence as Evidence[];
+      if (call === 1) return choose("SEARCH", { query: "initial", entries: ["yuanbao"] });
+      if (call === 2) return choose("READ", { readUrls: ["https://example.com/v1"] });
+      if (call <= 4) return choose("READ", { query: call === 3 ? "failing focus" : "model version", readUrls: ["https://example.com/v1"], observedGap: "Need another passage", basisEvidenceIds: [evidence[0]!.id] });
+      return choose("FINISH");
+    });
+    const original = test.collection(); let reads = 0;
+    const collection = () => ({ ...original, fetch: async (url: string, context?: { question?: string }) => {
+      if (++reads === 2) return { ...makeSnapshot().evidence[0]!, sourceUrl: url, readStatus: "FAILED" as const, originalExcerpt: null, originalLocation: null, contentHash: null, readError: "Injected later read failure" };
+      return original.fetch(url, context);
+    } });
+    const result = await run(createInvestigationHandler({ ...test, collection }));
+    if (result.kind !== "COMPLETE") throw new Error("Expected completion");
+    expect(reads).toBe(3);
+    expect(result.result.snapshot.evidence.filter(item => item.readStatus === "READ")).toHaveLength(2);
+  });
 });

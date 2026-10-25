@@ -77,6 +77,17 @@ describe("A2 synthetic boundary regressions (not real investigation acceptance)"
     snapshot.conflicts.push({ id: randomUUID(), claimIds: [snapshot.claims[0]!.id], evidenceIds: snapshot.evidence.map(item => item.id), description: "Synthetic condition difference", resolution: null });
     expect(() => validateAnalysis(snapshot, analysis(snapshot))).toThrow("opposing relations");
   });
+  it("repairs an invalid evidence analysis once without weakening validation", async () => {
+    const snapshot = supportedSnapshot();
+    const requests: ModelRequest<unknown>[] = [];
+    const invalid = { ...analysis(snapshot), relations: [] };
+    const providers = createVerificationProviders({ model: scriptedModel([invalid, analysis(snapshot)], requests), env: {} });
+    const output = await providers.verification.verify(snapshot);
+    expect(output.claims[0]!.verificationStatus).toBe("SUPPORTED");
+    expect(requests.map(request => request.purpose)).toEqual(["claim-evidence-verification", "claim-evidence-verification:validation-repair"]);
+    expect(requests[1]!.prompt).toContain("不能为了通过校验而编造支持关系");
+    await expect(createVerificationProviders({ model: scriptedModel([invalid, invalid]), env: {} }).verification.verify(snapshot)).rejects.toThrow("supported claim has no support");
+  });
   it("preserves evidence-backed unresolved conflict, unknowns and source read failures", () => {
     const snapshot = supportedSnapshot();
     const other = { ...structuredClone(snapshot.evidence[0]!), id: randomUUID(), sourceUrl: "https://other.test/article" };
