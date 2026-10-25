@@ -79,11 +79,13 @@ export function createResearchVerifier(model: ModelProvider, audit: ResearchAudi
             result = { success: true, data: repaired };
           } catch { signal.throwIfAborted(); }
         }
+        if (!result?.success || result.data.claimId !== claim.id) {
+          const reason = "该主张本轮核查输出未通过结构校验；既有有效核查及其他主张保留，新材料影响尚未判定。";
+          if (claim.verificationStatus === "UNVERIFIED") { claim.verificationStatus = "INSUFFICIENT"; claim.verificationReason = reason; }
+          gap(snapshot, reason, [claim.id]); continue;
+        }
         snapshot.relations = snapshot.relations.filter(item => item.claimId !== claim.id);
         snapshot.conflicts = snapshot.conflicts.filter(item => !item.claimIds.includes(claim.id));
-        if (!result?.success || result.data.claimId !== claim.id) {
-          claim.verificationStatus = "INSUFFICIENT"; claim.verificationReason = "该主张核查输出未通过结构校验；其他主张不受影响。"; gap(snapshot, claim.verificationReason, [claim.id]); continue;
-        }
         const judgment = result.data;
         const seen = new Set<string>();
         for (const relation of judgment.relations) {

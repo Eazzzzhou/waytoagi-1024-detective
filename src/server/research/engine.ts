@@ -250,7 +250,7 @@ export function createResearchHandler(dependencies: ResearchDependencies): Inves
       audit.stopReason = `研究受执行/模型预算或服务失败限制：${errorText(error)}`; gap(audit.stopReason);
     } finally { mergeSearchJournal(); }
     metered.finishPhase(); sync();
-    if (audit.intent !== "OUT_OF_SCOPE" && remaining() > 6000) {
+    if (audit.intent !== "OUT_OF_SCOPE" && remaining() > 15000) {
       const item = action("VERIFY", "final affected claims", audit.tasks.map(task => task.id), "最终预算仅核查未完成/受新材料影响的主张，不清空已核验结果。" );
       const result = await timed(item, () => verifier.assess(snapshot, snapshot.evidence, signal, Math.min(remaining() - 12000, budget.reserveMs / 2)));
       item.coverageChanges = result ?? [];

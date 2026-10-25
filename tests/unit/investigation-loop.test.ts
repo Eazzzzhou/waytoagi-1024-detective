@@ -1,7 +1,7 @@
 import { createHash, randomUUID } from "node:crypto";
 import { describe, expect, it } from "vitest";
 import type { Evidence, InvestigationDecision, ModelCall, RetrievalRecord } from "../../src/contracts";
-import { createInvestigationHandler } from "../../src/server/investigation/handler";
+import { createV3InvestigationHandler as createInvestigationHandler } from "../../src/server/investigation/legacy-v3";
 import { createVerificationProviders } from "../../src/server/verification";
 import type { ModelProvider, ModelRequest } from "../../src/server/models";
 import { makeSnapshot } from "../fixtures/snapshot";

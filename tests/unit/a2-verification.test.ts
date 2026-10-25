@@ -3,7 +3,7 @@ import { describe, expect, it } from "vitest";
 import { z } from "zod";
 import { createModelProvider, type ModelProvider, type ModelRequest } from "../../src/server/models";
 import { createVerificationProviders, groupOrigins, validateAnalysis } from "../../src/server/verification";
-import { createInvestigationHandler } from "../../src/server/investigation/handler";
+import { createV3InvestigationHandler as createInvestigationHandler } from "../../src/server/investigation/legacy-v3";
 import { createCollectionProviders } from "../../src/server/retrieval";
 import type { GenerationConfig } from "../../src/contracts";
 import { makeAnswer, makeSnapshot } from "../fixtures/snapshot";
