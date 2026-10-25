@@ -29,6 +29,11 @@ export const InvestigationLoopAuditSchema = z.strictObject({
   maxSearchRounds: z.number().int().positive(), searchRounds: z.number().int().nonnegative(),
   maxReads: z.number().int().positive(), readsUsed: z.number().int().nonnegative(),
   stopReason: TextSchema,
+  httpAttempts: z.array(z.strictObject({
+    url: z.url(), method: TextSchema, startedAt: TimestampSchema, finishedAt: TimestampSchema.nullable(),
+    requestSent: z.boolean(), status: z.number().int().nullable(), error: TextSchema.nullable(), ownerId: IdSchema.nullable()
+  })).optional(),
+  collectionDiagnostics: z.array(z.strictObject({ retrievalRecordId: IdSchema.nullable(), stage: z.enum(["SEARCH_RESULT", "READ"]), index: z.number().int().nonnegative(), error: TextSchema })).optional(),
   decisions: z.array(z.strictObject({
     step: z.number().int().positive(), decidedAt: TimestampSchema,
     remainingMs: z.number().int().nonnegative(), decision: InvestigationDecisionSchema,

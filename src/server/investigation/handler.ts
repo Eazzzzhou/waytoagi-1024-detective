@@ -8,7 +8,7 @@ import {
 import type { z } from "zod";
 import type { HandlerResult } from "../queue/contracts";
 import { classifyFailure } from "../queue/errors";
-import { createCollectionProviders } from "../retrieval";
+import { createCollectionProviders, normalizeSourceUrl } from "../retrieval";
 import { createVerificationProviders, groupOrigins } from "../verification";
 import { createModelProvider, type ModelProvider } from "../models";
 
@@ -20,17 +20,12 @@ export interface InvestigationContext {
   setStage(stage: Exclude<InvestigationStage, "COMPLETED">): Promise<void>;
 }
 export type InvestigationHandler = (context: InvestigationContext) => Promise<HandlerResult>;
-type Collection = ReturnType<typeof createCollectionProviders> & {
-  searchSecondary?: ReturnType<typeof createCollectionProviders>["search"];
-};
+type Providers = ReturnType<typeof createCollectionProviders>;
+type Collection = Pick<Providers, "search" | "searchWeb" | "searchCommunity" | "fetch"> & Partial<Pick<Providers, "searchSecondary" | "discoverIdentity" | "journal">>;
 type Verification = ReturnType<typeof createVerificationProviders>;
 type LoopAudit = z.infer<typeof InvestigationLoopAuditSchema>;
 type Entry = InvestigationDecision["entries"][number];
-const canonical = (value: string) => {
-  const url = new URL(value); url.hash = "";
-  for (const key of [...url.searchParams.keys()]) if (/^utm_|^(fbclid|gclid)$/.test(key)) url.searchParams.delete(key);
-  url.searchParams.sort(); return url.href;
-};
+const canonical = normalizeSourceUrl;
 const errorText = (error: unknown) => classifyFailure(error).message;
 
 /** A raced deadline also bounds adapters that fail to honor AbortSignal. */
@@ -77,7 +72,7 @@ export function createInvestigationHandler(dependencies: {
     const explorationRemaining = () => Math.max(0, remaining() - answerReserveMs);
     const verification = dependencies.verification?.() ?? createVerificationProviders();
     const planner = dependencies.planner ?? createModelProvider({ onCall: call => verification.audit.modelCalls.push(call) });
-    const availableEntries = dependencies.availableEntries ?? (["yuanbao", "bing", "hn", ...(process.env.TAVILY_API_KEY ? ["tavily"] : [])] as Entry[]);
+    const availableEntries: Entry[] = dependencies.availableEntries ?? (dependencies.collection ? ["yuanbao", "bing", "hn"] : ["yuanbao", "tavily", "bing", "hn"]);
     const loop: LoopAudit = {
       startedAt: new Date().toISOString(), durationMs: 0, totalBudgetMs, answerReserveMs,
       maxSearchRounds: Math.min(3, Math.max(1, dependencies.maxSearchRounds ?? 3)), searchRounds: 0,
@@ -97,6 +92,19 @@ export function createInvestigationHandler(dependencies: {
     });
     const searchKeys = new Set<string>();
     const fetched = new Map<string, Evidence>();
+    const usedProviders: Collection[] = [];
+    const providerFor = (signal: AbortSignal, timeoutMs: number) => {
+      const provider = collectionFactory(signal, context.question, timeoutMs);
+      usedProviders.push(provider); return provider;
+    };
+    const mergeJournals = () => {
+      for (const provider of usedProviders) {
+        for (const record of provider.journal?.retrievalRecords ?? []) if (!records.some(item => item.id === record.id)) records.push(RetrievalRecordSchema.parse(record));
+        for (const item of provider.journal?.evidence ?? []) if (!evidence.some(existing => existing.id === item.id)) { evidence.push(EvidenceSchema.parse(item)); fetched.set(canonical(item.sourceUrl), item); }
+      }
+      loop.httpAttempts = usedProviders.flatMap(provider => provider.journal?.httpAttempts ?? []).map(attempt => ({ ...attempt, error: attempt.error ? errorText(new Error(attempt.error)) : null }));
+      loop.collectionDiagnostics = usedProviders.flatMap(provider => provider.journal?.diagnostics ?? []).map(item => ({ ...item, error: errorText(new Error(item.error)) }));
+    };
     const observedUrls = () => new Set(records.flatMap(record => record.returnedSources.map(source => canonical(source.url))));
     const syncSources = () => {
       for (const record of records) for (const source of record.returnedSources) {
@@ -109,28 +117,31 @@ export function createInvestigationHandler(dependencies: {
     async function search(entry: Entry, query: string) {
       const start = performance.now(); const calledAt = new Date().toISOString();
       let record: RetrievalRecord;
+      let activeProvider: Collection | undefined;
       try {
         record = await bounded(context.signal, Math.min(20000, explorationRemaining()), async signal => {
-          const provider = collectionFactory(signal, context.question, Math.max(1, Math.min(20000, explorationRemaining())));
+          const provider = providerFor(signal, Math.max(1, Math.min(20000, explorationRemaining())));
+          activeProvider = provider;
           const method = entry === "yuanbao" ? provider.search : entry === "bing" ? provider.searchWeb : entry === "hn" ? provider.searchCommunity : provider.searchSecondary;
           if (!method) throw new Error("Second AI search provider not configured");
           return RetrievalRecordSchema.parse(await method(query, identity));
         });
       } catch (error) {
         context.signal.throwIfAborted();
-        record = { id: randomUUID(), provider: entry, query, calledAt, status: "FAILED", error: errorText(error), returnedSources: [] };
+        record = activeProvider?.journal?.retrievalRecords.at(-1) ?? { id: randomUUID(), provider: entry, query, calledAt, status: "FAILED", error: errorText(error), returnedSources: [] };
       }
-      records.push(record);
+      if (!records.some(item => item.id === record.id)) records.push(record);
+      mergeJournals();
       loop.collectionCalls.push({ operation: `search:${entry}`, target: query, startedAt: calledAt, durationMs: Math.round(performance.now() - start), outcome: record.status, resultId: record.id, error: record.error });
       if (record.status === "FAILED") gap(`${record.provider} 检索失败：${record.error}；不能据此判断没有相关材料。`, query);
     }
-    async function read(url: string) {
+    async function read(url: string, focus: string) {
       const start = performance.now(); const startedAt = new Date().toISOString();
       loop.readsUsed++;
       try {
         const item = await bounded(context.signal, Math.min(12000, explorationRemaining()), async signal => {
-          const provider = collectionFactory(signal, context.question, Math.max(1, Math.min(12000, explorationRemaining())));
-          return EvidenceSchema.parse(await provider.fetch(url, { question: context.question, officialWebsite: identity.officialWebsite }));
+          const provider = providerFor(signal, Math.max(1, Math.min(12000, explorationRemaining())));
+          return EvidenceSchema.parse(await provider.fetch(url, { question: focus, officialWebsite: identity.officialWebsite }));
         });
         if (!evidence.some(existing => existing.id === item.id)) evidence.push(item);
         fetched.set(canonical(url), item);
@@ -141,6 +152,7 @@ export function createInvestigationHandler(dependencies: {
         loop.collectionCalls.push({ operation: "read", target: url, startedAt, durationMs: Math.round(performance.now() - start), outcome: "FAILED", resultId: null, error: message });
         gap(`读取 ${url} 未完成：${message}；已有证据保留。`, url);
       }
+      mergeJournals();
       syncSources();
     }
 
@@ -197,16 +209,35 @@ export function createInvestigationHandler(dependencies: {
         log.outcome = "EXECUTED"; log.detail = `实际入口：${unused.join(",")}；返回记录：${records.slice(-unused.length).map(record => `${record.id}:${record.status}`).join(",")}。`;
       } else {
         const observed = observedUrls();
-        const urls = [...new Set(decision.readUrls.map(canonical))].filter(url => observed.has(url) && !fetched.has(url));
+        const urls = [...new Set(decision.readUrls.filter(url => { try { canonical(url); return true; } catch { return false; } }).map(canonical))].filter(url => observed.has(url) && !fetched.has(url));
         if (!urls.length || loop.readsUsed >= loop.maxReads) { reject("没有未读取的已发现URL，或读取预算耗尽。 "); continue; }
         const selected = urls.slice(0, loop.maxReads - loop.readsUsed);
         await context.setStage("SOURCE_FETCH");
-        await Promise.all(selected.map(url => read(url)));
+        await Promise.all(selected.map(url => read(url, `${context.question} ${decision.observedGap ?? ""}`)));
+        try {
+          const discovered = usedProviders.find(provider => provider.discoverIdentity)?.discoverIdentity?.(context.question, evidence);
+          if (discovered?.confirmationStatus === "CONFIRMED" && !context.confirmedIdentity?.officialWebsite) identity = ProductIdentitySchema.parse({ ...discovered, ...(identity.userClarification ? { userClarification: identity.userClarification } : {}) });
+        } catch (error) {
+          gap(`候选身份识别未完成：${errorText(error)}；保留未知身份，继续核查已取得材料。`);
+        }
         log.outcome = "EXECUTED"; log.detail = `已尝试读取：${selected.join(",")}；累计保存${evidence.length}份原文状态。`;
       }
       if (step === 10) loop.stopReason = "达到十次决策预算，保留缺口并整理回答。";
     }
+    mergeJournals();
     syncSources();
+    // Apply the discovered publisher to earlier reads as well as subsequent reads.
+    if (identity.confirmationStatus === "CONFIRMED" && identity.officialWebsite) {
+      const publisher = new URL(identity.officialWebsite);
+      const host = publisher.hostname.replace(/^www\./, "");
+      evidence = evidence.map(item => {
+        if (item.readStatus !== "READ") return item;
+        const effective = item.originalLocation?.locator.match(/^(https?:\/\/\S+) :: /)?.[1] ?? item.sourceUrl;
+        const url = new URL(effective);
+        if (!(url.hostname === host || url.hostname.endsWith(`.${host}`)) || publisher.pathname !== "/" && url.pathname !== publisher.pathname && !url.pathname.startsWith(`${publisher.pathname.replace(/\/$/, "")}/`)) return item;
+        return { ...item, metadata: { ...item.metadata, sourceType: "OFFICIAL", contentKind: "OFFICIAL_CLAIM", originGroupId: `official-publisher:${host}${publisher.pathname === "/" ? "" : publisher.pathname.replace(/\/$/, "")}`, independenceReason: "本轮读取后发现的同一出版方，语言/子域版本不视为独立实验；不推断未知上游。" } };
+      });
+    }
     evidence = groupOrigins(evidence);
     for (const item of evidence.filter(item => item.readStatus !== "READ")) operationalGaps.push({ id: randomUUID(), claimIds: [], kind: item.readStatus === "SNIPPET_ONLY" || item.readStatus === "NOT_FETCHED" ? "NOT_FETCHED" : "READ_FAILED", description: `${item.sourceUrl}：${item.readStatus}；${item.readError ?? "未取得可核验原句"}`, searchScope: null });
     if (!evidence.some(item => item.readStatus === "READ")) gap("本次未取得可核验的网页原句，不能据此判断外界没有相关资料。");
