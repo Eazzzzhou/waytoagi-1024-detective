@@ -1,7 +1,7 @@
 import "dotenv/config";
 import { randomUUID } from "node:crypto";
 import { setTimeout as delay } from "node:timers/promises";
-import { beforeAll, afterAll, beforeEach, describe, expect, it } from "vitest";
+import { beforeAll, afterAll, afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { createQueueTestDatabase } from "../support/database";
 import { emptyCompletion } from "../fixtures/empty-completion";
 import { PostgresInvestigationQueue } from "../../src/server/queue";
@@ -12,6 +12,7 @@ let database: Awaited<ReturnType<typeof createQueueTestDatabase>>;
 let queue: PostgresInvestigationQueue;
 beforeAll(async () => { database = await createQueueTestDatabase(); });
 afterAll(async () => { await database?.close(); });
+afterEach(() => vi.unstubAllEnvs());
 beforeEach(async () => {
   await database.pool.query('TRUNCATE "Job", "ExecutionAttempt", "Investigation", "EvidenceSnapshot", "Answer", "Advice" CASCADE');
   queue = new PostgresInvestigationQueue(database.db, { leaseMs: 300, attemptTimeoutMs: 3000, retryBaseMs: 10, retryMaxMs: 10 });
@@ -20,22 +21,24 @@ const silent = () => undefined;
 async function submit() { return queue.enqueue({ question: "Worker test only", idempotencyKey: randomUUID() }); }
 
 describe("independent Worker execution with real PostgreSQL", () => {
-  it("runs the production entry and records PROVIDER_NOT_CONFIGURED without publishing", async () => {
+  it("fails missing primary configuration without publishing an empty success", async () => {
+    vi.stubEnv("MODEL_API_KEY", "");
     const created = await submit();
     const worker = new WorkerRunner(queue, investigationHandler, "real-entry-test", { heartbeatMs: 50 }, silent);
     expect(await worker.processOne()).toBe(true);
     const job = await database.db.job.findUniqueOrThrow({ where: { id: created.jobId } });
     expect(job.status).toBe("FAILED");
     expect(job.lastError).toMatchObject({ code: "PROVIDER_NOT_CONFIGURED", retryable: false });
-    expect((await database.db.executionAttempt.findFirstOrThrow()).stage).toBe("IDENTITY");
+    expect((await database.db.investigation.findUniqueOrThrow({ where: { id: created.investigation!.id } })).status).toBe("FAILED");
     expect(await database.db.evidenceSnapshot.count()).toBe(0);
     expect(await database.db.answer.count()).toBe(0);
   });
 
   it("keeps a long-running test handler alive through sequential database heartbeats", async () => {
-    await submit();
+    await queue.enqueue({ question: "Synthetic deep request propagation", researchDepth: "DEEP", idempotencyKey: randomUUID() });
     let heartbeats = 0;
     const handler: InvestigationHandler = async (context) => {
+      expect(context.researchDepth).toBe("DEEP");
       await context.setStage("RETRIEVAL");
       // Wait for several real heartbeat advances, longer than the original lease.
       const first = await database.db.job.findFirstOrThrow();

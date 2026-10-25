@@ -6,7 +6,7 @@ import { readTestDatabaseUrl } from "../../src/server/env";
 import { createDatabaseClient } from "../../src/server/storage/client";
 
 /** Committed concurrency tests live in an isolated schema, never in the application database. */
-export async function createQueueTestDatabase(options: { migrateWithPrisma?: boolean } = {}) {
+export async function createQueueTestDatabase(options: { migrateWithPrisma?: boolean; throughMigration?: string } = {}) {
   const baseUrl = readTestDatabaseUrl();
   const schema = `queue_test_${randomUUID().replaceAll("-", "")}`;
   const admin = new Pool({ connectionString: baseUrl });
@@ -18,11 +18,13 @@ export async function createQueueTestDatabase(options: { migrateWithPrisma?: boo
   await admin.query(`CREATE SCHEMA "${schema}"`);
   try {
     if (options.migrateWithPrisma) {
+      if (options.throughMigration) throw new Error("Partial migrations require SQL test setup");
       const migration = spawnSync(process.execPath, ["node_modules/prisma/build/index.js", "migrate", "deploy"], { env: { ...process.env, DATABASE_URL: connectionString }, encoding: "utf8", timeout: 30000 });
       if (migration.error || migration.status !== 0) throw new Error("Prisma migrate deploy failed on the isolated acceptance schema");
     } else {
       const migrations = (await readdir("prisma/migrations", { withFileTypes: true })).filter((item) => item.isDirectory()).map((item) => item.name).sort();
-      for (const name of migrations) await pool.query(await readFile(`prisma/migrations/${name}/migration.sql`, "utf8"));
+      if (options.throughMigration && !migrations.includes(options.throughMigration)) throw new Error("Unknown test migration boundary");
+      for (const name of migrations.filter((name) => !options.throughMigration || name <= options.throughMigration)) await pool.query(await readFile(`prisma/migrations/${name}/migration.sql`, "utf8"));
     }
   } catch (error) {
     await pool.end();

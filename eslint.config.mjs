@@ -9,7 +9,7 @@ export default defineConfig([
   ...tseslint.configs.recommended,
   { languageOptions: { globals: { ...globals.node, ...globals.browser } } },
   { files: ["src/app/**/*.{ts,tsx}"], plugins: { "@next/next": nextPlugin }, rules: { ...nextPlugin.configs.recommended.rules, ...nextPlugin.configs["core-web-vitals"].rules } },
-  globalIgnores(["backend/**", ".next/**", "src/generated/**", "next-env.d.ts", ".cache/**", ".taste-skill/**", ".agents/**", ".codex/**", "docs/reference/**"]),
+  globalIgnores([".next/**", "src/generated/**", "next-env.d.ts", ".cache/**", ".taste-skill/**", ".agents/**", ".codex/**", "docs/reference/**"]),
   {
     files: ["src/components/**/*.{ts,tsx}"],
     rules: {

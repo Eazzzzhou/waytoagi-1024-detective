@@ -62,6 +62,8 @@ export class WorkerRunner {
         controller.signal.throwIfAborted();
         return this.handler({
           investigationId: task.investigation.id, question: task.investigation.question,
+          researchDepth: task.investigation.researchDepth ?? "AUTO",
+          executionBudgetMs: this.queue.options.attemptTimeoutMs,
           confirmedIdentity: task.confirmedIdentity, signal: controller.signal,
           setStage: async (stage) => { controller.signal.throwIfAborted(); await this.queue.advanceStage(lease, stage); }
         });

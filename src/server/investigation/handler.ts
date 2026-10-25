@@ -1,19 +1,23 @@
-import type { InvestigationStage, ProductIdentity } from "../../contracts";
-import type { HandlerResult } from "../queue/contracts";
-import { unavailable } from "../errors";
+import { resolve } from "node:path";
+import { createResearchHandler, type ResearchDependencies } from "../research/engine";
+import { createDocumentReader, SourceDocumentSchema } from "../retrieval/documents";
+import { createV3InvestigationHandler } from "./legacy-v3";
+export type { InvestigationContext, InvestigationHandler } from "./legacy-v3";
 
-export interface InvestigationContext {
-  investigationId: string;
-  question: string;
-  confirmedIdentity: ProductIdentity | null;
-  signal: AbortSignal;
-  setStage(stage: Exclude<InvestigationStage, "COMPLETED">): Promise<void>;
+/** Lifecycle adapter only; research policy lives in the research module. */
+export function createInvestigationHandler(options: Partial<ResearchDependencies> = {}) {
+  return createResearchHandler({ ...options, reader: options.reader ?? (({ signal, investigationId }) => {
+    const reader = createDocumentReader({ signal, timeoutMs: 660000,
+      storageDir: resolve(process.env.SOURCE_DOCUMENT_DIRECTORY ?? ".cache/source-documents-v4", investigationId) });
+    return {
+      read: reader.read, load: reader.load, journal: reader.journal,
+      select: (document, input) => reader.select(SourceDocumentSchema.parse(document), input),
+      toEvidence: (document, fragment, input) => reader.toEvidence(SourceDocumentSchema.parse(document), fragment, input)
+    };
+  }) });
 }
-export type InvestigationHandler = (context: InvestigationContext) => Promise<HandlerResult>;
 
-/** Production entry point for teammate 甲. No test processor or synthetic evidence is wired here. */
-export const investigationHandler: InvestigationHandler = async (context) => {
-  context.signal.throwIfAborted();
-  await context.setStage("IDENTITY");
-  return unavailable("investigation orchestration");
-};
+const v4 = createInvestigationHandler();
+const v3 = createV3InvestigationHandler({ availableEntries: ["yuanbao", "tavily"], totalBudgetMs: 180000, answerReserveMs: 45000, maxReads: 10, maxSearchRounds: 3 });
+export const investigationHandler: import("./legacy-v3").InvestigationHandler = context =>
+  (process.env.RESEARCH_ENGINE_VERSION === "v3" ? v3 : v4)(context);

@@ -1,0 +1,10 @@
+import "dotenv/config";
+import { createDatabaseClient } from "../../src/server/storage/client";
+import { readTestDatabaseUrl } from "../../src/server/env";
+import { PostgresAdviceQueue } from "../../src/server/queue/advice-postgres";
+const db = createDatabaseClient(readTestDatabaseUrl());
+const queue = new PostgresAdviceQueue(db, { leaseMs: 150, attemptTimeoutMs: 5000 });
+const lease = await queue.claim("crash-advice-fixture");
+if (!lease || !process.send) throw new Error("Crash fixture could not claim advice task");
+process.send({ lease });
+setInterval(() => undefined, 1000);

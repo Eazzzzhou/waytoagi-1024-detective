@@ -7,3 +7,6 @@ export * from "./retrieval";
 export * from "./snapshot";
 export * from "./answer";
 export * from "./http";
+export * from "./verification-audit";
+export * from "./research";
+export * from "./advice-request";

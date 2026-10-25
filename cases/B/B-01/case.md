@@ -6,7 +6,7 @@ owner: "乙"
 created_at: "2026-10-24T22:34:00+08:00"
 updated_at: "2026-10-24T22:37:26+08:00"
 status:
-  material: "待人工核实"
+  material: "人工已确认"
   system: "未运行"
   review: "未复核"
 question_sha256: "b53901e4c8505769745d6601abe55a87e65e175f9a793934c0d7fb7a4cb468f7"
@@ -17,11 +17,11 @@ snapshot_version: null
 
 # B-01 · Devin 自主软件工程能力
 
-> 材料状态：待人工核实 · 系统状态：未运行 · 复核状态：未复核
+> 材料状态：人工已确认 · 系统状态：未运行 · 复核状态：未复核
 >
 > 本文件记录真实官方材料、海外原文、主张关系、冲突与系统阻塞，不记录人工参考答案。参考判断在 `reference.md`，独立复核在 `review.md`。
 >
-> **当前不是人工金标准。** 所有结论待实际核查者确认；系统提供方未接入，未提交调查，无调查 ID 或快照 ID。
+> **当前材料/参考已由乙（本对话用户）确认通过，保留已列未知。** 确认依据与范围见 reference.md §8；系统仍未运行，独立复核未完成。
 
 ## 1. 案例标识
 
@@ -31,7 +31,7 @@ snapshot_version: null
 | 类型 | B | 海外开发者观点与真实冲突 |
 | 当前组织 | 乙丙 | 材料、关系、交付完整性；历史owner原值保留 |
 | 创建／更新时间 | 2026-10-24T22:34:00+08:00 / 2026-10-24T22:37:26+08:00 | Asia/Shanghai |
-| 材料状态 | 待人工核实 | 已有真实材料与参考草稿；未经实际核查者确认 |
+| 材料状态 | 人工已确认 | 用户确认当前辅助修订版本，保留已列未知；详见 reference.md §8 |
 | 系统状态 | 未运行 | 正式提供方未接入，见 §12 |
 | 复核状态 | 未复核 | 实际独立复核尚未完成 |
 
@@ -202,7 +202,7 @@ snapshot_version: null
 | HN 直接使用作者 | 2 | tlarkworthy、rfoo；各自一条评论，不能按摘录数计 |
 | HN 上下文/分析作者 | 2 | davedx、falcor84；不计入独立性能证据 |
 | 独立来源总数（性能证据） | 3 | Answer.AI + 2 位 HN 直接使用者；不是代表性样本 |
-| 同源组 | 3 | cognition-official、answerai-test、hn-tlarkworthy、hn-rfoo（按作者/文章分组） |
+| 已列作者／文章分组 | 4 | cognition-official、answerai-test、hn-tlarkworthy、hn-rfoo；仅作来源关系索引，不是各主张的独立支持票数 |
 | 开发者群体共识 | 否 | 2 位 HN 直接使用者 + 1 个 20 任务测试，不能代表开发者群体 |
 
 ### 7.5 海外原句与关系分类
@@ -223,6 +223,58 @@ snapshot_version: null
 
 > 分类只针对本条材料与主张的关系；“直接反驳”不表示 Devin 在所有场景失败，也不表示开发者群体共识。
 
+### 7.6 模型辅助联网核查标注
+
+> 本轮直接获取时间：2026-10-25T13:48:20+08:00（各 URL 的精确时间见保存清单）。Codex 已看参考，属于非盲模型辅助核查；人工状态及署名保持待确认。历史 §7.1/§7.2 的获取时间、原句、hash 不覆盖。
+> 原句匹配仅表示空白归一化后在本次解析正文找到，语义/定位意见另列；不表示独立实测、人工通过或 D1 验收通过。网页搜索工具可能返回缓存，以下“直接”专指本机公开 GET。
+
+本轮历史证据直接匹配 **20/20**。标记说明：原句匹配＝可先看对应结论；定位需修正＝按本表新定位复找；待复查＝不能视为本轮逐字核实。
+
+| E-ID | 原始网址 | 本轮标记 | 对应结论与阅读提示 |
+|---|---|---|---|
+| E1 | [来源](https://cognition.com/blog/introducing-devin) | 原句匹配 | 发布文首段；只证明官方宣称存在。 |
+| E2 | [来源](https://cognition.com/blog/introducing-devin) | 原句匹配 | Capabilities 段；仍是官方能力宣称。 |
+| E3 | [来源](https://cognition.com/blog/introducing-devin) | 原句匹配 | Performance 段；数字为官方 benchmark 口径。 |
+| E4 | [来源](https://cognition.com/blog/introducing-devin) | 原句匹配 | 图表后条件：随机 25% 子集、辅助条件不同；不能跨任务比较。 |
+| E5 | [来源](https://cognition.com/) | 原句匹配 | 首页标题；自我定位不等于独立证实。 |
+| E6 | [来源](https://cognition.com/) | 原句匹配 | 首页标题下正文；不能解读为所有任务都能自主完成。 |
+| E7 | [来源](https://devin.ai/) | 原句匹配 | 产品页 hero；营销表述不是成功率保证。 |
+| E8 | [来源](https://cognition.com/blog/devin-annual-performance-review-2025) | 原句匹配 | Strength pattern #1；任务范围/4–8h，不是 4x/67% 摘录。 |
+| E9 | [来源](https://cognition.com/blog/devin-annual-performance-review-2025) | 原句匹配 | Independent execution on ambiguous requirements；支持官方局限自述。 |
+| E10 | [来源](https://www.answer.ai/posts/2025-01-08-devin) | 原句匹配，原定位需修正 | 实际在 A Deeper Look at What Went Wrong 段、任务分类之后；不是 Scaling Up Our Testing。 |
+| E11 | [来源](https://www.answer.ai/posts/2025-01-08-devin) | 原句匹配，原定位需修正 | 实际在 Conclusion 首段末；不是 Early Wins。 |
+| E12 | [来源](https://www.answer.ai/posts/2025-01-08-devin) | 原句匹配 | Conclusion；作者对自身测试的总结，非所有版本普遍表现。 |
+| E13 | [来源](https://www.answer.ai/posts/2025-01-08-devin) | 原句匹配 | Scaling Up Our Testing；2025 测试中的失败模式。 |
+| E14 | [来源](https://news.ycombinator.com/item?id=42734916) | 原句匹配 | tlarkworthy 同一评论含正面条件；自述直接试用，非独立复现实验。 |
+| E15 | [来源](https://news.ycombinator.com/item?id=42734916) | 原句匹配 | 同一评论的负面条件；不能与 E14/E16 算三位使用者。 |
+| E16 | [来源](https://news.ycombinator.com/item?id=42734916) | 原句匹配 | 同一评论的时间/费用评价；不代表总体生产力。 |
+| E17 | [来源](https://news.ycombinator.com/item?id=42736857) | 原句匹配 | rfoo 紧接着自述请教测试套件，支持直接接触；求助不证明完成任务。 |
+| E18 | [来源](https://news.ycombinator.com/item?id=42736857) | 原句匹配 | rfoo 第二段；同作者个体报告，不能代表开发者共识。 |
+| E19 | [来源](https://news.ycombinator.com/item?id=42735023) | 原句匹配 | davedx 反应文章，提到其他 agents 经验；不能当 Devin 直接使用证据。 |
+| E20 | [来源](https://news.ycombinator.com/item?id=42735633) | 原句匹配 | falcor84 比较数字；3/20=15%，不等于 13.86%，任务集也不同。 |
+
+**本轮新增取得的依据（模型整理，待人工确认）**
+
+| E-ID | URL | 新摘录 | 定位／范围 | 获取时间 | 本轮 HTML SHA-256 |
+|---|---|---|---|---|---|
+| E21 | [来源](https://cognition.com/blog/devin-annual-performance-review-2025) | 4x faster at problem solving | Strength pattern #1，E8 后的 Over the past year 段。官方自述，不是独立复核。 | 2026-10-25T13:48:16+08:00 | `49725411f002b3520d7f3b53c712acdc825d00c7c5452dc68a727bcd6e262238` |
+| E22 | [来源](https://cognition.com/blog/devin-annual-performance-review-2025) | 67% of its PRs are now merged vs 34% last year | 同段 PR 合并比例；不能等同任务成功率或总体省时。 | 2026-10-25T13:48:16+08:00 | `49725411f002b3520d7f3b53c712acdc825d00c7c5452dc68a727bcd6e262238` |
+
+**保存依据**
+
+公开响应原始字节和解析文本保存在本机忽略目录 `.cache/d1/network-check-2026-10-25/`；[本轮获取清单](../../../.cache/d1/network-check-2026-10-25/manifest.json)含每个 URL 的时间、状态、保存路径、新 hash，以及修改前 case/reference/review hash。此本机保存不随 Git 交付，P-07 仍未关闭。外站可能动态变化，整页新旧 hash 不同不能单独证明原句改变。
+
+| URL | 本次直接获取 | 保存字节 SHA-256 | 本机原始响应 |
+|---|---|---|---|
+| [来源](https://cognition.com/) | 2026-10-25T13:48:16+08:00；HTTP 200 | `fe1c45f246c73f90d5d775dffec96ce7414f1af64506635252478ce7afb5a0a4` | [HTML](../../../.cache/d1/network-check-2026-10-25/d1d3dcb02036789a.html) |
+| [来源](https://cognition.com/blog/devin-annual-performance-review-2025) | 2026-10-25T13:48:16+08:00；HTTP 200 | `49725411f002b3520d7f3b53c712acdc825d00c7c5452dc68a727bcd6e262238` | [HTML](../../../.cache/d1/network-check-2026-10-25/619d7bac08e7c5f0.html) |
+| [来源](https://cognition.com/blog/introducing-devin) | 2026-10-25T13:48:16+08:00；HTTP 200 | `11cb3794a8d50a16b4cfc025730b96bd0e08ab798e21200405ded5f178a04895` | [HTML](../../../.cache/d1/network-check-2026-10-25/849efdba3289775f.html) |
+| [来源](https://devin.ai/) | 2026-10-25T13:48:17+08:00；HTTP 200 | `ca891836a989e17e0e0507d3ac7262f37ae41b8b9454982358744147064c4389` | [HTML](../../../.cache/d1/network-check-2026-10-25/2a40d519ee4084f6.html) |
+| [来源](https://news.ycombinator.com/item?id=42734916) | 2026-10-25T13:48:17+08:00；HTTP 200 | `f139bbe37472cebd3b9372456e0b6582176b59e70d74d09240b31f7d8aaefc05` | [HTML](../../../.cache/d1/network-check-2026-10-25/3076ca662bb8b355.html) |
+| [来源](https://news.ycombinator.com/item?id=42735023) | 2026-10-25T13:48:18+08:00；HTTP 200 | `4afe3e23c001cd82e7ea53ec2cd507cfc53d98dc6f1c119db408bba45166e5da` | [HTML](../../../.cache/d1/network-check-2026-10-25/130fc7465a946740.html) |
+| [来源](https://news.ycombinator.com/item?id=42735633) | 2026-10-25T13:48:18+08:00；HTTP 200 | `056e5205458939150004dcbac920cd60fe1803899fea2991ff81933826b56b0b` | [HTML](../../../.cache/d1/network-check-2026-10-25/7aa82371b2581aa1.html) |
+| [来源](https://news.ycombinator.com/item?id=42736857) | 2026-10-25T13:48:18+08:00；HTTP 200 | `f7d8406233cbe192ed0f5e71b20b4f162e2ccff54627f6cb10436ce4d6cf0f18` | [HTML](../../../.cache/d1/network-check-2026-10-25/6b54a779bb1f5db8.html) |
+| [来源](https://www.answer.ai/posts/2025-01-08-devin) | 2026-10-25T13:48:19+08:00；HTTP 200 | `8458e48c7419fb7d1458381b8531c4d0b8fa7b6e9598f2ab3c52570329794c99` | [HTML](../../../.cache/d1/network-check-2026-10-25/15fa73f32781aed7.html) |
 ## 8. 主张与证据关系
 
 ### 8.1 主张
@@ -232,11 +284,11 @@ snapshot_version: null
 | C1 | 2024 官方宣称 Devin 是“first AI software engineer”，是“tireless, skilled teammate”，能独立完成任务，并能规划/执行需要数千次决策的复杂工程任务。 | OFFICIAL_CLAIM | SUPPORTED | E1、E2 直接给出 2024 发布文原句；这是官方自我宣称，不是独立验证。 | 2024-03-12 发布文；early access | Q1 |
 | C2 | 当前官方仍称 Devin 是“first autonomous software engineer”，能自行规划、编写、测试并交付生产代码，直到 PR 可合并才停止。 | OFFICIAL_CLAIM | SUPPORTED | E5、E6、E7 直接给出当前公司页/产品页原句；这是当前官方定位。 | 2026-10-24 当前页面；无版本号 | Q1 |
 | C3 | 2025 官方性能回顾把能力缩窄为“需求清晰、结果可验证、初级工程师 4–8 小时”的任务，并承认无法像资深工程师那样独立处理模糊项目。 | OFFICIAL_CLAIM | SUPPORTED | E8、E9 直接给出官方回顾原句；这是官方后来对自身局限的表述。 | 2025-11-14 官方回顾；18 个月产品 | Q1 |
-| C4 | 独立证据支持“Devin 能在广泛真实软件工程任务上独立完成”的 general claim。 | FACT | REFUTED | E10 的 20 任务测试为 14 失败/3 成功/3 无结论；E12、E13 总结“rarely worked”；E16、E18 的 HN 直接报告也不支持 general autonomy。 | 2024/Jan 2025 产品与任务；不是 2026 产品 | Q2、Q3、Q6 |
-| C5 | Devin 能完成至少一些 well-scoped 任务并产出可用代码。 | FACT | SUPPORTED | E11 的早期成功；E14 的 HN 条件性正面；E17 的求助行为说明并非完全无协作。 | 特定任务/场景；不是 general | Q2、Q3 |
-| C6 | Devin 在真实任务上总体上节省开发者时间。 | FACT | DISPUTED | E15、E16 的 HN 直接报告说需要更多清理、没有节省时间；E8 的官方 2025 回顾只对窄任务给 4–8h/4x 指标；任务不同，无同一任务测量。 | 测试任务与官方窄任务；不能外推 | Q2、Q3、Q6 |
-| C7 | Devin 能像资深工程师一样，凭自己的判断独立端到端处理模糊编码项目。 | FACT | REFUTED | E9 官方自己写“can't independently tackle an ambiguous coding project end-to-end like a senior engineer”；E10/E13 的独立测试也显示大量失败。 | 模糊/端到端任务；官方自述+独立测试 | Q3、Q4 |
-| C8 | 2024/当前 broad claim 与 2025 官方回顾的能力描述存在真实张力。 | FACT | SUPPORTED | E1/E2/E5/E6/E7 的 broad claim 与 E8/E9 的“junior at execution / can't ambiguous”并列；不是单纯措辞差异。 | 官方文本；时间/范围差异 | Q4 |
+| C4 | 独立证据支持“Devin 能在广泛真实软件工程任务上独立完成”的 general claim。 | FACT | INSUFFICIENT | 本轮语义复查：2025 测试与报告有失败反例，足以限制结论，但有限样本不直接反驳全部广泛任务/2026 能力；保留样本内反例。 | 2024/Jan 2025 产品与任务；不是 2026 产品 | Q2、Q3、Q6 |
+| C5 | Devin 能完成至少一些 well-scoped 任务并产出可用代码。 | FACT | SUPPORTED | E11 的早期成功与 E14 的 HN 条件性正面；E17 只说明求助，不证明任务完成。 | Jan 2025 特定任务/场景；不代表 2026 | Q2、Q3 |
+| C6 | Devin 在真实任务上总体上节省开发者时间。 | FACT | INSUFFICIENT | E15、E16 的 HN 直接报告说需要更多清理、没有节省时间；E8 原句只给适用任务及 4–8h，未摘录 4x 指标，不能据此证明节省时间；缺同任务测量。 | 测试任务与官方窄任务；不能外推 | Q2、Q3、Q6 |
+| C7 | Cognition 在 2025 官方回顾中自述，Devin 无法像资深工程师一样独立端到端处理模糊编码项目。 | OFFICIAL_CLAIM | SUPPORTED | E9 直接支持这项官方自述局限；不等于独立实测全部能力。E10/E13 仅作 Jan 2025 上下文。 | 2025-11 官方自述；非 2026 独立实测 | Q3、Q4 |
+| C8 | 2024/当前 broad claim 与 2025 官方回顾的能力描述存在真实张力。 | FACT | INSUFFICIENT | 本轮语义复查：宽泛定位与清晰任务/模糊项目局限存在解释张力；时间、任务不同，尚未证实同条件事实矛盾。 | 官方文本；时间/范围差异 | Q4 |
 | C9 | 官方 SWE-bench 13.86% 能支持“Devin 具备 general autonomous software engineering”结论。 | FACT | INSUFFICIENT | E3 的 13.86% 仅在随机 25% 子集、unassisted 条件下；E4 给出条件；E20 指出 3/20 约 15% 近似，但任务集不同；benchmark 不能替代真实任务。 | SWE-bench；2024 发布文 | Q1、Q6 |
 | C10 | 当前 2026 产品的 broad claim 已被独立证据支持。 | FACT | INSUFFICIENT | 独立测试是 Jan 2025，未覆盖 2026 产品；官方 2025 回顾虽称改进，但不是独立验证。 | 2026 产品；无独立测试 | Q2、Q6 |
 | C11 | 版本/时间可以完全解释官方 broad claim 与独立报告之间的冲突。 | FACT | INSUFFICIENT | 2025 官方回顾确实缩窄了范围，能解释一部分；但当前 2026 页面仍保留 broad claim，且无版本号/独立 2026 测试。 | 2024–2026 时间线 | Q4 |
@@ -254,20 +306,20 @@ snapshot_version: null
 | C2 | E7 | SUPPORTS | 当前产品页称“won't stop until the PR is ready to merge” |
 | C3 | E8 | SUPPORTS | 官方回顾把强项限定为清晰、可验证、4–8h 初级任务 |
 | C3 | E9 | SUPPORTS | 官方回顾承认无法独立端到端处理模糊项目 |
-| C4 | E10 | REFUTES | 20 任务中 14 失败/3 成功，直接反驳“广泛任务 general autonomy” |
-| C4 | E12 | REFUTES | 作者总结“rarely worked” |
-| C4 | E13 | REFUTES | 直接任务耗时数天、技术死胡同 |
-| C4 | E16 | REFUTES | 直接使用者说没有节省时间 |
-| C4 | E18 | REFUTES | 直接使用者说它会原地打转 |
+| C4 | E10 | CONTEXT | 2025 报告的样本内反例；广泛/当前能力仅作上下文，不能直接判普遍反驳。 |
+| C4 | E12 | CONTEXT | 2025 报告的样本内反例；广泛/当前能力仅作上下文，不能直接判普遍反驳。 |
+| C4 | E13 | CONTEXT | 2025 报告的样本内反例；广泛/当前能力仅作上下文，不能直接判普遍反驳。 |
+| C4 | E16 | CONTEXT | 2025 报告的样本内反例；广泛/当前能力仅作上下文，不能直接判普遍反驳。 |
+| C4 | E18 | CONTEXT | 2025 报告的样本内反例；广泛/当前能力仅作上下文，不能直接判普遍反驳。 |
 | C5 | E11 | SUPPORTS | “When it worked, it was impressive” 及早期成功 |
 | C5 | E14 | SUPPORTS | 本地测试/格式化场景能产出通过测试的代码 |
-| C5 | E17 | SUPPORTS | 它会在需要时求助，说明可协作但非完全自主 |
+| C5 | E17 | CONTEXT | 求助行为不能证明任务完成或产出可用代码 |
 | C6 | E15 | REFUTES | 多余改动、不可撤销、更多清理 |
 | C6 | E16 | REFUTES | 没有节省时间、昂贵 |
 | C6 | E8 | CONTEXT | 官方只对 4–8h 清晰任务声称效率；不是同一任务测量 |
-| C7 | E9 | REFUTES | 官方自己承认不能像资深工程师那样独立处理模糊项目 |
-| C7 | E10 | REFUTES | 20 任务大量失败，不能支持端到端自主 |
-| C7 | E13 | REFUTES | 任务耗时数天、陷入死胡同 |
+| C7 | E9 | SUPPORTS | 支持“官方自述无法处理模糊项目”这一宣称的存在，不是独立实测 |
+| C7 | E10 | CONTEXT | Jan 2025 的 20 任务测试不能直接对应模糊项目或 2026 能力 |
+| C7 | E13 | CONTEXT | Jan 2025 报告的失败模式；不替代同版本同条件实测 |
 | C8 | E1、E2、E5、E6、E7 | CONTEXT | broad claim 一侧 |
 | C8 | E8、E9 | CONTEXT | 2025 官方缩窄一侧 |
 | C9 | E3、E4 | CONTEXT | benchmark 数字与条件 |
@@ -288,7 +340,7 @@ snapshot_version: null
 |---|---|---|---|---|
 | X1 | C1、C2、C4、C7 | E1、E2、E5、E6、E7 对 E10、E12、E13、E16、E18 | 官方 broad claim：Devin 能独立完成软件工程任务/自主交付生产代码；独立测试与 HN 直接报告：20 任务 14 失败、rarely worked、需要清理、原地打转 | **真实冲突，保留**。部分可由 2025 官方缩窄（E8/E9）解释，但不能完全解释当前 2026 页面仍 broad；不能把 3 次成功说成 general autonomy |
 | X2 | C2、C3、C7、C8 | E5、E6、E7 对 E8、E9 | 当前官方页称“plans, writes, tests, ships production code on its own / won't stop until PR ready”；2025 官方回顾称“can't independently tackle an ambiguous coding project end-to-end like a senior engineer / junior at execution” | **官方内部张力，保留**。可用“清晰任务 vs 模糊项目、junior vs senior”部分解释，但当前页面没有写明这一限制；不能宣称已消除 |
-| X3 | C6 | E8 对 E15、E16 | 官方 2025 回顾称部分任务 4x faster / 67% PR merged；HN 直接使用者称需要更多清理、没有节省时间 | **条件冲突，保留**。任务、指标、版本不同；缺同一任务的前后测量，不能判谁对谁错 |
+| X3 | C6 | E8 对 E15、E16 | 官方 2025 回顾称部分任务 4x faster / 67% PR merged；HN 直接使用者称需要更多清理、没有节省时间 | **可比性缺口**。E8 未摘录 4x/67%，不能用它确认这些数字；任务、指标、版本不同，需补对应原句及同任务测量 |
 | X4 | C9 | E3、E4 对 E10、E20 | 官方 SWE-bench 13.86%（25% 子集、unassisted）与 Answer.AI 3/20≈15% 数值接近；但任务集不同 | **不是事实冲突**。保留为数值/条件对照；不能把相近比例当因果或 general 证明 |
 
 > 真实冲突在 X1/X2：不是“Devin 完全不能用”，而是“官方 general autonomy claim”与“独立测试/HN 直接经验/官方后来缩窄”之间的冲突。X3 是生产力条件冲突；X4 是 benchmark 解释问题。
@@ -365,7 +417,7 @@ system_inputs:
 
 ## 14. 阻断性错误自检
 
-> 这是材料自检，不是实际独立复核。
+> 以下为历史材料自检，不是本轮通过结论；后续修正和关闭条件见[案例状态](../../D1-状态与验收记录.md)。
 
 | 阻断 ID | 是否成立 | 依据 |
 |---|---|---|
@@ -387,3 +439,6 @@ system_inputs:
 | 日期 | 变更 | 变更人 |
 |---|---|---|
 | 2026-10-24 | 创建 B-01；记录 Devin 官方 claim、Answer.AI 测试、HN 直接报告、冲突和系统阻塞 | 乙 |
+| 2026-10-25 | Codex 非盲复查：E17 对 C5 改为上下文；保留 Jan 2025 使用范围、2026 缺口及待人工确认状态 | Codex（模型协助） |
+| 2026-10-25 | 新增模型辅助联网核查标注、新取得依据和范围修正；未代签人工、未运行正式调查，旧 runs 保留 | Codex（模型辅助、非盲） |
+| 2026-10-25 | 用户明确确认当前材料/参考通过；同步材料状态；系统和复核保持实际未完成状态 | 乙确认；Codex 代录 |

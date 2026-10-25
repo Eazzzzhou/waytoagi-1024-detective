@@ -10,12 +10,15 @@ import {
   D1OwnerSchema,
   D1RunRecordSchema,
   buildNotRunRecord,
+  buildFailedRunRecord,
+  buildRunRecord,
   evaluateSnapshot,
   type D1CaseRecord,
   type D1Review,
   type EvaluationResult
 } from "../../scripts/d1/rules";
 import { writeRunRecord } from "../../scripts/d1/store";
+import { parseArgs } from "../../scripts/d1/evaluate";
 
 const timestamp = "2026-10-24T10:00:00.000Z";
 
@@ -67,6 +70,51 @@ function checkStatus(result: EvaluationResult, id: string) {
 }
 
 describe("D1 deterministic evaluator", () => {
+  it("keeps successful records bound to their real evaluated snapshot", async () => {
+    const snapshot = validSnapshot();
+    const caseRecord = await loadCaseRecord("A-01");
+    const evaluation = evaluate(snapshot, { caseQuestion: caseRecord.question, investigation: { ...succeededInvestigation(snapshot), question: caseRecord.question } });
+    const record = buildRunRecord({ caseRecord, runId: "success-test", runAt: timestamp, intent: "objective", appVersion: "test", nodeVersion: "test", evaluation, review: { status: "NOT_REVIEWED", reviewer: null, reviewedAt: null, opinionPath: null }, notes: [] });
+    expect(record.execution).toBe("COMPLETED");
+    expect(record.system.snapshotId).toBe(snapshot.id);
+    expect(record.snapshotSha256).toMatch(/^[a-f0-9]{64}$/);
+    expect(record.failure).toBeUndefined();
+  });
+
+  it("records a failed investigation without inventing a snapshot or losing its error", async () => {
+    const caseRecord = await loadCaseRecord("A-01");
+    const investigation = { ...succeededInvestigation(validSnapshot()), question: caseRecord.question, status: "FAILED", stage: "IDENTITY", resultSnapshotId: null, error: { code: "PROVIDER_NOT_CONFIGURED", message: "Synthetic configuration failure", retryable: false } };
+    const input = { caseRecord, runId: "failed-test", runAt: timestamp, appVersion: "test", nodeVersion: "test", intent: "objective" as const, reason: "Synthetic failure only", investigation, evidence: { path: "test-only-status.json", sha256: "d".repeat(64) }, review: { status: "NOT_REVIEWED" as const, reviewer: null, reviewedAt: null, opinionPath: null }, notes: [] };
+    const record = buildFailedRunRecord(input);
+    expect(record.execution).toBe("FAILED");
+    expect(record.verdict).toBe("FAIL");
+    expect(record.system.investigationId).toBe(investigation.id);
+    expect(record.system.snapshotId).toBeNull();
+    expect(record.failure?.investigation).toEqual(investigation);
+    expect(record.snapshot).toBeNull();
+    expect(record.answers).toEqual([]);
+    expect(record.review.status).toBe("NOT_REVIEWED");
+    for (const patch of [{ status: "RUNNING", completedAt: null }, { status: "SUCCEEDED", stage: "COMPLETED", error: null, resultSnapshotId: randomUUID() }, { error: null }, { question: "Different question" }, { resultSnapshotId: randomUUID() }]) {
+      expect(() => buildFailedRunRecord({ ...input, investigation: { ...investigation, ...patch } })).toThrow();
+    }
+    expect(() => buildFailedRunRecord({ ...input, reason: " " })).toThrow();
+    for (const patch of [{ failure: undefined }, { verdict: "PASS" }, { answers: [makeAnswer(validSnapshot())] }, { system: { ...record.system, investigationId: randomUUID() } }]) {
+      expect(D1RunRecordSchema.safeParse({ ...record, ...patch }).success).toBe(false);
+    }
+  });
+
+  it("validates mutually exclusive CLI modes and required IDs before database access", () => {
+    const id = randomUUID();
+    const base = ["--case", "A-01"];
+    const failure = ["--failed", "--investigation", id, "--reason", "Actual failure", "--evidence", "status.json"];
+    expect(parseArgs([...base, ...failure]).failed).toBe(true);
+    expect(parseArgs([...base, "--investigation", id, "--snapshot", randomUUID()]).snapshot).toBeTruthy();
+    expect(parseArgs([...base, "--not-run", "--reason", "Not submitted"]).notRun).toBe(true);
+    for (const flags of [[], ["--investigation", id], ["--not-run"], ["--not-run", "--reason", " "], ["--not-run", ...failure], [...failure, "--snapshot", randomUUID()], ["--failed", "--investigation", id], ["--failed", "--investigation", "invalid", "--reason", "Failure", "--evidence", "status.json"], ["--not-run", "--reason", "Not submitted", "--investigation", id], ["--investigation", id, "--snapshot", "invalid"]]) {
+      expect(() => parseArgs([...base, ...flags])).toThrow();
+    }
+  });
+
   it("reads historical issue owners without rewriting them", () => {
     for (const owner of ["甲", "乙丙", "丙", "乙/公共工程"]) {
       expect(D1OwnerSchema.parse(owner)).toBe(owner);
@@ -198,7 +246,6 @@ describe("D1 deterministic evaluator", () => {
     expect(record.caseId).toBe("C-01");
     expect(record.caseType).toBe("C");
     expect(record.question).toContain("GitHub Copilot Free");
-    expect(record.referenceStatus).toBe("待人工核实");
   });
 
   it("validates every stored run record against the D1 schema", async () => {

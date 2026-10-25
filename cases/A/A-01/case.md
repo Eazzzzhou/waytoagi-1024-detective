@@ -6,7 +6,7 @@ owner: "乙"
 created_at: "2026-10-24T21:59:06+08:00"
 updated_at: "2026-10-24T22:03:38+08:00"
 status:
-  material: "待人工核实"
+  material: "人工已确认"
   system: "未运行"
   review: "未复核"
 question_sha256: "dce259e238cc27e4b99bf2e4cdbb568d22a590da94c8b32e6c1dadee2838ea97"
@@ -17,11 +17,11 @@ snapshot_version: null
 
 # A-01 · Amazon Q Developer Free Tier 额度
 
-> 材料状态：待人工核实 · 系统状态：未运行 · 复核状态：未复核
+> 材料状态：人工已确认 · 系统状态：未运行 · 复核状态：未复核
 >
 > 本文件记录真实材料与系统阻塞，不记录人工参考答案。参考判断在 `reference.md`，独立复核在 `review.md`。
 >
-> **当前不是人工金标准。** 所有结论待实际核查者逐条确认；系统提供方未接入，未提交调查，无调查 ID 或快照 ID。
+> **当前材料/参考已由乙（本对话用户）确认通过，保留已列未知。** 确认依据与范围见 reference.md §8；系统仍未运行，独立复核未完成。
 
 ## 1. 案例标识
 
@@ -31,7 +31,7 @@ snapshot_version: null
 | 类型 | A | 功能、套餐与版本事实 |
 | 当前组织 | 乙丙 | 材料、关系、交付完整性；历史owner原值保留 |
 | 创建／更新时间 | 2026-10-24T21:59:06+08:00 / 2026-10-24T22:03:38+08:00 | Asia/Shanghai |
-| 材料状态 | 待人工核实 | 已有真实材料与参考草稿；未经实际核查者确认 |
+| 材料状态 | 人工已确认 | 用户确认当前辅助修订版本，保留已列未知；详见 reference.md §8 |
 | 系统状态 | 未运行 | 正式提供方未接入，见 §12 |
 | 复核状态 | 未复核 | 实际独立复核尚未完成 |
 
@@ -171,11 +171,11 @@ snapshot_version: null
 
 | E-ID | upstreamUrl | independence | originGroupId | independenceReason |
 |---|---|---|---|---|
-| E1–E9 | null | SHARED_ORIGIN | aws-official-pricing | 同一 AWS 官方定价页的不同段落；不构成独立第三方来源 |
+| E1–E9 | null | SHARED_ORIGIN | aws-official | 同一 AWS 官方定价页的不同段落；不构成独立第三方来源 |
 | E10 | null | SHARED_ORIGIN | aws-official | 同一发布方 AWS 的官方产品页 |
-| E11–E12 | null | SHARED_ORIGIN | aws-official-docs | 同一 AWS 官方文档页 |
-| E13 | null | SHARED_ORIGIN | aws-official-docs | 同一 AWS 官方文档页 |
-| E14 | null | SHARED_ORIGIN | aws-official-docs | 同一发布方 AWS 的官方文档；仅用于说明 Pro 表异常 |
+| E11–E12 | null | SHARED_ORIGIN | aws-official | 同一 AWS 官方文档页 |
+| E13 | null | SHARED_ORIGIN | aws-official | 同一 AWS 官方文档页 |
+| E14 | null | SHARED_ORIGIN | aws-official | 同一发布方 AWS 的官方文档；仅用于说明 Pro 表异常 |
 
 ### 7.4 独立性汇总
 
@@ -188,6 +188,49 @@ snapshot_version: null
 | 不确定（UNKNOWN） | 0 | 来源归属明确 |
 | 计数理由 | 官方页面同属 AWS；不把多个官方 URL 当成独立证实 |  |
 
+### 7.5 模型辅助联网核查标注
+
+> 本轮直接获取时间：2026-10-25T13:48:20+08:00（各 URL 的精确时间见保存清单）。Codex 已看参考，属于非盲模型辅助核查；人工状态及署名保持待确认。历史 §7.1/§7.2 的获取时间、原句、hash 不覆盖。
+> 原句匹配仅表示空白归一化后在本次解析正文找到，语义/定位意见另列；不表示独立实测、人工通过或 D1 验收通过。网页搜索工具可能返回缓存，以下“直接”专指本机公开 GET。
+
+本轮历史证据直接匹配 **14/14**。标记说明：原句匹配＝可先看对应结论；定位需修正＝按本表新定位复找；待复查＝不能视为本轮逐字核实。
+
+| E-ID | 原始网址 | 本轮标记 | 对应结论与阅读提示 |
+|---|---|---|---|
+| E1 | [来源](https://aws.amazon.com/q/developer/pricing/) | 原句匹配 | 定价表 Free 列；支持 C2 的 50/月，不是 LOC。 |
+| E2 | [来源](https://aws.amazon.com/q/developer/pricing/) | 原句匹配 | FAQ 定义含聊天与 agentic coding；支持 C2。 |
+| E3 | [来源](https://aws.amazon.com/q/developer/pricing/) | 原句匹配 | FAQ 合计 IDE/CLI；支持 C2，不证明每次工具调用如何计数。 |
+| E4 | [来源](https://aws.amazon.com/q/developer/pricing/) | 原句匹配 | 注释说明持续免费及月限；支持 C4，不说明重置时刻。 |
+| E5 | [来源](https://aws.amazon.com/q/developer/pricing/) | 原句匹配 | 仅限定 IDE 的 Builder ID；不能扩大到全部界面。 |
+| E6 | [来源](https://aws.amazon.com/q/developer/pricing/) | 原句匹配 | IAM 账户级、Builder ID 用户级；结合界面映射表阅读。 |
+| E7 | [来源](https://aws.amazon.com/q/developer/pricing/) | 原句匹配 | Java 转换独立额度，按用户每月；支持 C3。 |
+| E8 | [来源](https://aws.amazon.com/q/developer/pricing/) | 原句匹配 | Java 脚注：收到升级建议才计，失败/中止不计；支持 C3。 |
+| E9 | [来源](https://aws.amazon.com/q/developer/pricing/) | 原句匹配 | 排除注释和空行；支持 C3。 |
+| E10 | [来源](https://aws.amazon.com/q/developer/) | 原句匹配 | 产品页措辞为 chat interactions；按较具体的定价 FAQ 解释范围。 |
+| E11 | [来源](https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/q-tiers.html) | 原句匹配 | Free tier 段说明持续/月度；不证明精确周期边界。 |
+| E12 | [来源](https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/q-tiers.html) | 原句匹配但摘录不完整 | 完整句还列 IAM Identity Center 与 IAM；Free 不限 Builder ID，界面映射见新增 E15/E16。 |
+| E13 | [来源](https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/what-is.html) | 原句匹配 | 顶部通知只针对 IDE 插件；不扩大为 CLI/Console 全部终止。 |
+| E14 | [来源](https://docs.aws.amazon.com/general/latest/gr/amazonqdev.html) | 原句匹配但不足以单独证明配额值 | 已另看同一 tr 的配额单元格，确有 LOC 文本，新增 E17；错误原因仍未知。 |
+
+**本轮新增取得的依据（模型整理，待人工确认）**
+
+| E-ID | URL | 新摘录 | 定位／范围 | 获取时间 | 本轮 HTML SHA-256 |
+|---|---|---|---|---|---|
+| E15 | [来源](https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/q-tiers.html) | AWS Management Console, and AWS apps and websites | Free tier availability table：该行三列依次为 No / Yes / Yes（Builder ID / IAM Identity Center / IAM）。只用于账户界面映射。 | 2026-10-25T13:48:16+08:00 | `d71e9df56a1d3fe8147932951dacd38ad3a50305bb269c6f4033bce0aa19daa0` |
+| E16 | [来源](https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/q-tiers.html) | Command line | 同表 IDE 和 Command line 两行均依次为 Yes / No / No；保留列头共同解读。 | 2026-10-25T13:48:16+08:00 | `d71e9df56a1d3fe8147932951dacd38ad3a50305bb269c6f4033bce0aa19daa0` |
+| E17 | [来源](https://docs.aws.amazon.com/general/latest/gr/amazonqdev.html) | 1,000 lines of code per month | Pro (in IDEs and CLI) 表，E14 行标题的同一行配额格。只确认页面呈现，原因未知，不作为 Free 配额。 | 2026-10-25T13:48:17+08:00 | `6db47c3a05f92f72c82349f14dd4de4dc582eaeca48bb2be4d64b68a736d4f08` |
+
+**保存依据**
+
+公开响应原始字节和解析文本保存在本机忽略目录 `.cache/d1/network-check-2026-10-25/`；[本轮获取清单](../../../.cache/d1/network-check-2026-10-25/manifest.json)含每个 URL 的时间、状态、保存路径、新 hash，以及修改前 case/reference/review hash。此本机保存不随 Git 交付，P-07 仍未关闭。外站可能动态变化，整页新旧 hash 不同不能单独证明原句改变。
+
+| URL | 本次直接获取 | 保存字节 SHA-256 | 本机原始响应 |
+|---|---|---|---|
+| [来源](https://aws.amazon.com/q/developer/) | 2026-10-25T13:48:16+08:00；HTTP 200 | `a3d2f874877e9fd8f118556263dc88b77e96f3bba62d8d36a9b915cc567d9be8` | [HTML](../../../.cache/d1/network-check-2026-10-25/2c11ff36e9f987de.html) |
+| [来源](https://aws.amazon.com/q/developer/pricing/) | 2026-10-25T13:48:16+08:00；HTTP 200 | `02e8c6c0b009bdc58999ae6ef77c05fb90cea01bd34dd1df0c0313ff3a71c642` | [HTML](../../../.cache/d1/network-check-2026-10-25/510f6c0ace303b6b.html) |
+| [来源](https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/q-tiers.html) | 2026-10-25T13:48:16+08:00；HTTP 200 | `d71e9df56a1d3fe8147932951dacd38ad3a50305bb269c6f4033bce0aa19daa0` | [HTML](../../../.cache/d1/network-check-2026-10-25/9c80fb27de922c43.html) |
+| [来源](https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/what-is.html) | 2026-10-25T13:48:17+08:00；HTTP 200 | `254d88209eeeed92d67a040eda3b78a30946dc6cb04c8ee6029f99fe578d774b` | [HTML](../../../.cache/d1/network-check-2026-10-25/22156262212796d2.html) |
+| [来源](https://docs.aws.amazon.com/general/latest/gr/amazonqdev.html) | 2026-10-25T13:48:17+08:00；HTTP 200 | `6db47c3a05f92f72c82349f14dd4de4dc582eaeca48bb2be4d64b68a736d4f08` | [HTML](../../../.cache/d1/network-check-2026-10-25/b4506f2e0a51ce12.html) |
 ## 8. 主张与证据关系
 
 ### 8.1 主张
@@ -204,7 +247,7 @@ snapshot_version: null
 | C8 | Amazon Q Developer IDE 插件支持将于 2027-04-30 结束。 | FACT | SUPPORTED | E13 明确该日期停止支持 IDE plugins；未说明 CLI／Console 同步停止。 | IDE 插件；未来适用范围 | Q5 |
 | C9 | 已查官方页面没有列出地区限制；本次未验证中国大陆等区域的可用性。 | FACT | INSUFFICIENT | E1/E3/E4/E10 未列地区；这是已查范围内的缺口，不能写成全球可用或不可用。 | 已查 5 个官方页面；2026-10-24；en-US | Q5、Q6 |
 | C10 | 已查 Free 层数值在定价页与产品页一致：50 requests／month、1,000 LOC／month；未发现 Free 数值冲突。 | FACT | SUPPORTED | E1 的 50、E7 的 1,000、E10 的 50／1,000 一致；E2/E3 补充计量定义。 | Free Tier；已查官方页面；en-US；2026-10-24 | Q2、Q6 |
-| C11 | General Reference 的 Pro 配额表把 "Agentic requests" 行标为 "1,000 lines of code per month"；该表限定 Pro，不是 Free。 | FACT | SUPPORTED | E14 的章节标题为 "Amazon Q Developer Pro service quotas"；同一行配额单元格写 1,000 LOC／month，与 Free 定价页的 50 requests 不是同一范围。 | Pro 配额表；文档异常；不用于 Free | Q6 |
+| C11 | General Reference 的 Pro 配额表把 "Agentic requests" 行标为 "1,000 lines of code per month"；该表限定 Pro，不是 Free。 | FACT | INSUFFICIENT | E14 原句只有行标题；保存的定位上下文记录了配额单元格，但不能用行标题单独证明单位异常，需实际核查者复找该行及单元格；不能据此改写 Free 额度。 | Pro 配额表；文档异常；不用于 Free | Q6 |
 
 ### 8.2 关系
 
@@ -236,7 +279,7 @@ snapshot_version: null
 | C10 | E1 | SUPPORTS | 定价页写 50 requests／month |
 | C10 | E7 | SUPPORTS | 定价页写 1,000 LOC／month |
 | C10 | E10 | SUPPORTS | 产品页写 50／1,000 |
-| C11 | E14 | SUPPORTS | Pro 配额表同一行写 1,000 LOC／month；页面标题限定 Pro |
+| C11 | E14 | CONTEXT | 原句仅含行标题；单元格值须连同 Pro 章节复核，暂不构成对单位异常的直接引用支持 |
 
 > 只有 READ 证据用于 SUPPORTS／REFUTES。E10 的产品页是官方营销描述，只在数值一致处作背景，不用它扩大 "chat interactions" 的范围。
 
@@ -322,7 +365,7 @@ system_inputs:
 
 ## 14. 阻断性错误自检
 
-> 这是材料自检，不是实际独立复核。
+> 这是 2026-10-24 的历史材料自检，不是实际独立复核；后续修正与未关闭问题见[案例状态](../../D1-状态与验收记录.md)。
 
 | 阻断 ID | 是否成立 | 依据 |
 |---|---|---|
@@ -344,3 +387,6 @@ system_inputs:
 | 日期 | 变更 | 变更人 |
 |---|---|---|
 | 2026-10-24 | 创建 A-01；记录 Amazon Q Developer Free Tier 官方材料、主张、缺口和系统阻塞 | 乙 |
+| 2026-10-25 | Codex 非盲材料复查：按已存 HTML 核对原句/hash；统一 AWS 分组；C11 降为证据不足，E14 改 CONTEXT；未代签确认 | Codex（模型协助） |
+| 2026-10-25 | 新增模型辅助联网核查标注、新取得依据和范围修正；未代签人工、未运行正式调查，旧 runs 保留 | Codex（模型辅助、非盲） |
+| 2026-10-25 | 用户明确确认当前材料/参考通过；同步材料状态；系统和复核保持实际未完成状态 | 乙确认；Codex 代录 |

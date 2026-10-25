@@ -1,19 +1,18 @@
 import { describe, expect, it } from "vitest";
 import { readDatabaseUrl, readTestDatabaseUrl } from "../../src/server/env";
-import { identityProvider } from "../../src/server/identity";
-import { retrievalProvider, sourceProvider } from "../../src/server/retrieval";
-import { answerProvider, claimExtractionProvider, verificationProvider } from "../../src/server/verification";
+import { createVerificationProviders } from "../../src/server/verification";
 import { recommendationProvider } from "../../src/server/recommendation";
-import { modelProvider } from "../../src/server/models";
+import { createModelProvider } from "../../src/server/models";
 import { AnswerSchema } from "../../src/contracts";
 import { makeSnapshot } from "../fixtures/snapshot";
 
 describe("server boundaries", () => {
   it("fails closed for every unconfigured real capability", async () => {
     const snapshot = makeSnapshot();
+    const modelProvider = createModelProvider({ env: {} });
+    const { verification: verificationProvider, extraction: claimExtractionProvider, answer: answerProvider } = createVerificationProviders({ model: modelProvider, env: {} });
     for (const action of [
-      () => identityProvider.resolve("test"), () => retrievalProvider.search("test", snapshot.productIdentity),
-      () => sourceProvider.fetch("https://example.com"), () => verificationProvider.verify(snapshot),
+      () => verificationProvider.verify(snapshot),
       () => answerProvider.generate(snapshot), () => recommendationProvider.generate(snapshot, { useCase: "test", experience: null, budget: null, requirements: [] }),
       () => claimExtractionProvider.extract(snapshot.evidence, snapshot.productIdentity),
       () => modelProvider.generate({ prompt: "test", outputSchema: AnswerSchema })

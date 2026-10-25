@@ -1,7 +1,8 @@
 import { z } from "zod";
 import type { PrismaClient } from "../../generated/prisma/client";
-import { AcceptedInvestigationSchema, ConfirmationRequestSchema, CreateInvestigationSchema, IdSchema, IdentityConfirmationBodySchema, InvestigationDetailSchema, RetryBodySchema, SnapshotResponseSchema, TextSchema } from "../../contracts";
+import { AcceptedAdviceRequestSchema, AcceptedInvestigationSchema, AdviceRequestDetailSchema, ConfirmationRequestSchema, CreateAdviceRequestSchema, CreateInvestigationSchema, IdSchema, IdentityConfirmationBodySchema, InvestigationDetailSchema, RetryBodySchema, SnapshotResponseSchema, TextSchema } from "../../contracts";
 import { InvestigationRepository } from "../storage/repository";
+import { AdviceRepository } from "../storage/advice-repository";
 import { PostgresInvestigationQueue, readQueueConfig, redactFailure } from "../queue";
 import { retryAvailability } from "../queue/retry-policy";
 import { HttpError, JSON_HEADERS as headers, apiFailure } from "./errors";
@@ -13,7 +14,8 @@ function parseInput<T>(schema: z.ZodType<T>, value: unknown): T {
 }
 
 export class InvestigationHttpApi {
-  constructor(private readonly db: PrismaClient) {}
+  // Default is the existing shared local workspace, not a user identity/authentication system.
+  constructor(private readonly db: PrismaClient, private readonly canAccessAdviceInvestigation: (request: Request, investigationId: string) => boolean | Promise<boolean> = () => true) {}
   get queue(): PostgresInvestigationQueue {
     try { return new PostgresInvestigationQueue(this.db, readQueueConfig()); }
     catch { throw new HttpError(503, "STORAGE_UNAVAILABLE", "任务配置尚未就绪，请检查服务端配置。"); }
@@ -117,6 +119,36 @@ export class InvestigationHttpApi {
         return SnapshotResponseSchema.parse({ snapshot, answers });
       }, { isolationLevel: "RepeatableRead", timeout: 5000 });
       return Response.json(data, { headers });
+    });
+  }
+
+  private async adviceAccess(request: Request, idInput: unknown) {
+    const id = parseInput(IdSchema, idInput);
+    if (!await this.canAccessAdviceInvestigation(request, id)) throw new HttpError(403, "NOT_ALLOWED", "不允许访问此调查的建议任务。");
+    return id;
+  }
+
+  createAdviceRequest(request: Request, investigationIdInput: unknown) {
+    return this.serve(request, async () => {
+      const investigationId = await this.adviceAccess(request, investigationIdInput);
+      const body = parseInput(CreateAdviceRequestSchema, await this.body(request));
+      const key = parseInput(TextSchema.max(200), request.headers.get("Idempotency-Key"));
+      const maxAttempts = this.queue.options.maxAttempts;
+      const result = await this.db.$transaction((tx) => new AdviceRepository(tx).createRequest(investigationId, body, key, maxAttempts), { timeout: 5000 });
+      const adviceRequestId = result.request.id;
+      return Response.json(AcceptedAdviceRequestSchema.parse({ adviceRequestId, reused: result.reused }), {
+        status: 202, headers: { ...headers, Location: `/api/investigations/${investigationId}/advice-requests/${adviceRequestId}` }
+      });
+    });
+  }
+
+  adviceRequest(request: Request, investigationIdInput: unknown, requestIdInput: unknown) {
+    return this.serve(request, async () => {
+      const investigationId = await this.adviceAccess(request, investigationIdInput);
+      const id = parseInput(IdSchema, requestIdInput);
+      const result = await this.db.$transaction((tx) => new AdviceRepository(tx).findRequest(investigationId, id), { isolationLevel: "RepeatableRead", timeout: 5000 });
+      if (result.request.error) result.request.error = redactFailure(result.request.error);
+      return Response.json(AdviceRequestDetailSchema.parse(result), { headers });
     });
   }
 }

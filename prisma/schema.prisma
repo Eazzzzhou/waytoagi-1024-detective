@@ -43,9 +43,26 @@ enum AttemptStatus {
   LEASE_EXPIRED
 }
 
+enum AdviceRequestStatus {
+  PENDING
+  RUNNING
+  SUCCEEDED
+  INSUFFICIENT_CONDITIONS
+  FAILED
+}
+
+enum AdviceAttemptStatus {
+  RUNNING
+  SUCCEEDED
+  INSUFFICIENT_CONDITIONS
+  FAILED
+  LEASE_EXPIRED
+}
+
 model Investigation {
   id               String              @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
   question         String              @db.VarChar(4000)
+  researchDepth    String              @default("AUTO") @db.VarChar(16)
   status           InvestigationStatus @default(PENDING)
   stage            InvestigationStage  @default(CREATED)
   error            Json?               @db.JsonB
@@ -57,6 +74,7 @@ model Investigation {
   resultSnapshot   EvidenceSnapshot?   @relation("CurrentResult", fields: [resultSnapshotId, id], references: [id, investigationId], onDelete: Restrict, onUpdate: NoAction)
   snapshots        EvidenceSnapshot[]  @relation("InvestigationSnapshots")
   jobs             Job[]
+  adviceRequests   AdviceRequest[]
 
   @@unique([resultSnapshotId, id])
   @@index([status, createdAt])
@@ -128,6 +146,7 @@ model EvidenceSnapshot {
   answers          Answer[]
   advice           Advice[]
   publishedBy      Job?               @relation("JobPublication")
+  adviceRequests   AdviceRequest[]    @relation("AdviceRequestSnapshot")
 
   @@unique([investigationId, version])
   @@unique([id, investigationId])
@@ -150,6 +169,64 @@ model Advice {
   snapshot    EvidenceSnapshot @relation(fields: [snapshotId], references: [id], onDelete: Restrict)
   body        Json             @db.JsonB
   generatedAt DateTime         @db.Timestamptz(3)
+  resultFor   AdviceRequest?   @relation("AdviceRequestResult")
 
+  @@unique([id, snapshotId])
   @@index([snapshotId, generatedAt])
+}
+
+model AdviceRequest {
+  id                String              @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  type              String              @default("ADVICE") @db.VarChar(32)
+  investigationId   String              @db.Uuid
+  investigation     Investigation       @relation(fields: [investigationId], references: [id], onDelete: Restrict)
+  snapshotId        String              @db.Uuid
+  snapshot          EvidenceSnapshot    @relation("AdviceRequestSnapshot", fields: [snapshotId, investigationId], references: [id, investigationId], onDelete: Restrict, onUpdate: NoAction)
+  userConditions    Json                @db.JsonB
+  idempotencyKey    String              @db.VarChar(200)
+  requestHash       String              @db.Char(64)
+  status            AdviceRequestStatus @default(PENDING)
+  resultAdviceId    String?             @unique @db.Uuid
+  resultAdvice      Advice?             @relation("AdviceRequestResult", fields: [resultAdviceId, snapshotId], references: [id, snapshotId], onDelete: Restrict, onUpdate: NoAction)
+  conditionsIssue   Json?               @db.JsonB
+  error             Json?               @db.JsonB
+  createdAt         DateTime            @default(now()) @db.Timestamptz(3)
+  updatedAt         DateTime            @updatedAt @db.Timestamptz(3)
+  completedAt       DateTime?           @db.Timestamptz(3)
+  availableAt       DateTime            @default(now()) @db.Timestamptz(3)
+  attemptCount      Int                 @default(0)
+  failureCount      Int                 @default(0)
+  maxAttempts       Int                 @default(3)
+  leaseOwner        String?
+  leaseExpiresAt    DateTime?           @db.Timestamptz(3)
+  heartbeatAt       DateTime?           @db.Timestamptz(3)
+  runDeadlineAt     DateTime?           @db.Timestamptz(3)
+  executionToken    String?             @unique @db.Uuid
+  completionHash    String?             @db.Char(64)
+  lastError         Json?               @db.JsonB
+  attempts          AdviceExecutionAttempt[]
+
+  @@unique([investigationId, idempotencyKey])
+  @@unique([resultAdviceId, snapshotId])
+  @@index([status, createdAt])
+  @@index([snapshotId, createdAt])
+  @@index([status, availableAt])
+  @@index([status, leaseExpiresAt])
+}
+
+model AdviceExecutionAttempt {
+  id             String              @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  requestId      String              @db.Uuid
+  request        AdviceRequest       @relation(fields: [requestId], references: [id], onDelete: Restrict)
+  attemptNumber  Int
+  executionToken String              @unique @db.Uuid
+  workerId       String
+  status         AdviceAttemptStatus @default(RUNNING)
+  startedAt      DateTime            @default(now()) @db.Timestamptz(3)
+  heartbeatAt    DateTime            @default(now()) @db.Timestamptz(3)
+  finishedAt     DateTime?           @db.Timestamptz(3)
+  error          Json?               @db.JsonB
+
+  @@unique([requestId, attemptNumber])
+  @@index([requestId, startedAt])
 }

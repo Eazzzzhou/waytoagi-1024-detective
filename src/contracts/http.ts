@@ -1,7 +1,7 @@
 import { z } from "zod";
 import { IdSchema, TextSchema } from "./common";
 import { InvestigationSchema } from "./investigation";
-import { ConfirmationRequestSchema, ConfirmedIdentitySchema } from "./identity";
+import { ConfirmationRequestSchema, ResumedIdentitySchema } from "./identity";
 import { EvidenceSnapshotSchema } from "./snapshot";
 import { AnswerSchema, assertAnswerReferences } from "./answer";
 
@@ -15,7 +15,7 @@ export const InvestigationDetailSchema = z.strictObject({
   investigation: InvestigationSchema, identityConfirmation: ConfirmationRequestSchema.nullable(), retry: RetryAvailabilitySchema
 });
 export type InvestigationDetail = z.infer<typeof InvestigationDetailSchema>;
-export const IdentityConfirmationBodySchema = z.strictObject({ identity: ConfirmedIdentitySchema, expectedAttemptCount: z.number().int().positive() });
+export const IdentityConfirmationBodySchema = z.strictObject({ identity: ResumedIdentitySchema, expectedAttemptCount: z.number().int().positive() });
 export type IdentityConfirmationBody = z.infer<typeof IdentityConfirmationBodySchema>;
 export const RetryBodySchema = z.strictObject({ expectedAttemptCount: z.number().int().positive() });
 export type RetryBody = z.infer<typeof RetryBodySchema>;

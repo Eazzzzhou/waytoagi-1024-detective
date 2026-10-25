@@ -11,7 +11,7 @@ import {
   type Investigation
 } from "../../src/contracts";
 
-export const D1_EVALUATOR_VERSION = "0.1.2";
+export const D1_EVALUATOR_VERSION = "0.1.3";
 export const D1_RUN_SCHEMA_VERSION = "d1-run/1" as const;
 
 export const D1CheckStatusSchema = z.enum(["PASS", "FAIL", "WARN", "NOT_APPLICABLE", "NOT_RUN"]);
@@ -89,6 +89,12 @@ export const D1SystemSchema = z.strictObject({
 });
 export type D1System = z.infer<typeof D1SystemSchema>;
 
+export const D1FailureSchema = z.strictObject({
+  investigation: InvestigationSchema.refine((value) => value.status === "FAILED" && value.resultSnapshotId === null, "必须是无结果快照的真实 FAILED 调查"),
+  reason: z.string().trim().min(1),
+  evidence: z.strictObject({ path: z.string().trim().min(1), sha256: z.string().regex(/^[a-f0-9]{64}$/) })
+});
+
 export const D1RunRecordSchema = z.strictObject({
   schemaVersion: z.literal(D1_RUN_SCHEMA_VERSION),
   evaluatorVersion: z.string().min(1),
@@ -100,7 +106,9 @@ export const D1RunRecordSchema = z.strictObject({
     question: z.string().min(1),
     questionSha256: z.string().regex(/^[a-f0-9]{64}$/)
   }),
-  execution: z.enum(["COMPLETED", "NOT_RUN"]),
+  execution: z.enum(["COMPLETED", "NOT_RUN", "FAILED"]),
+  // Additive and optional for immutable d1-run/1 records written before failure support.
+  failure: D1FailureSchema.optional(),
   system: D1SystemSchema,
   snapshot: EvidenceSnapshotSchema.nullable(),
   answers: z.array(AnswerSchema),
@@ -112,6 +120,16 @@ export const D1RunRecordSchema = z.strictObject({
   review: D1ReviewSchema,
   verdict: D1VerdictSchema,
   notes: z.array(z.string())
+}).superRefine((record, ctx) => {
+  const reject = (message: string) => ctx.addIssue({ code: "custom", message });
+  if (record.execution !== "FAILED" && record.failure) reject("只有 FAILED 可包含 failure");
+  if (record.execution === "NOT_RUN" && (record.system.investigationId || record.system.snapshotId || record.snapshot || record.answers.length || record.verdict !== "NOT_RUN")) reject("NOT_RUN 不得包含已运行结果");
+  if (record.execution === "FAILED") {
+    if (!record.failure) { reject("FAILED 必须保留真实调查、原因和证据"); return; }
+    if (record.verdict !== "FAIL" || record.system.investigationId !== record.failure.investigation.id) reject("FAILED 的结论或调查 ID 不一致");
+    if (record.failure.investigation.question !== record.case.question.trim()) reject("失败调查与案例问题不一致");
+    if (record.system.snapshotId || record.system.snapshotVersion || record.system.snapshotGeneratedAt || record.system.contractVersion || record.snapshot || record.snapshotSha256 || record.answers.length || record.adviceCount !== null || record.independentOrigins.length) reject("无快照失败不得包含快照、回答或推定结果");
+  }
 });
 export type D1RunRecord = z.infer<typeof D1RunRecordSchema>;
 
@@ -379,17 +397,18 @@ export function buildNotRunRecord(input: {
   review: D1Review;
   notes: string[];
 }): D1RunRecord {
-  const checks = [check("SYSTEM_RUN", "NOT_RUN", "真实调查未运行", input.reason)];
+  const reason = z.string().trim().min(1).parse(input.reason);
+  const checks = [check("SYSTEM_RUN", "NOT_RUN", "真实调查未运行", reason)];
   const issues: D1Issue[] = [{
     id: "SYSTEM_RUN",
     checkId: "SYSTEM_RUN",
     severity: "blocking",
     owner: "甲",
-    title: "正式调查模块未接入，无法产生真实 investigation/snapshot",
+    title: "案例尚未通过正式 API/Worker 执行",
     reproduction: "运行 npm run d1:evaluate -- --case <ID> --not-run --reason <具体阻塞>",
     expected: "使用正式 API/Worker 提交问题，得到真实 investigation ID、终态和 snapshot ID",
-    actual: input.reason,
-    evidence: "src/server/investigation/handler.ts 的 unavailable('investigation orchestration')；.env 注明真实适配器未实现",
+    actual: reason,
+    evidence: "未运行声明及具体原因；不代表已实际执行失败",
     status: "open"
   }];
   const record: D1RunRecord = {
@@ -426,4 +445,30 @@ export function buildNotRunRecord(input: {
     notes: input.notes
   };
   return D1RunRecordSchema.parse(record);
+}
+
+export function buildFailedRunRecord(input: Parameters<typeof buildNotRunRecord>[0] & {
+  intent: "objective" | "advice";
+  investigation: unknown;
+  evidence: z.infer<typeof D1FailureSchema>["evidence"];
+}): D1RunRecord {
+  const failure = D1FailureSchema.parse({ investigation: input.investigation, reason: input.reason, evidence: input.evidence });
+  const record = buildNotRunRecord(input);
+  return D1RunRecordSchema.parse({
+    ...record,
+    submission: { ...record.submission, intent: input.intent },
+    execution: "FAILED",
+    failure,
+    system: { ...record.system, investigationId: failure.investigation.id },
+    checks: [check("SYSTEM_RUN", "FAIL", "真实调查失败且无结果快照", `${failure.investigation.stage}: ${failure.investigation.error!.code}; ${failure.reason}`)],
+    issues: [{
+      id: "SYSTEM_RUN", checkId: "SYSTEM_RUN", severity: "blocking", owner: "乙丙",
+      title: "真实调查失败，尚无可对照快照；需按错误定位责任方",
+      reproduction: "按 failure.investigation.id 读取正式调查状态，并核对 failure.evidence",
+      expected: "正式调查成功后另建唯一 run-id 评估真实快照；失败记录保留",
+      actual: `${failure.investigation.error!.code}: ${failure.investigation.error!.message}; ${failure.reason}`,
+      evidence: `${failure.evidence.path} (SHA-256: ${failure.evidence.sha256})`, status: "open"
+    }],
+    verdict: "FAIL"
+  });
 }

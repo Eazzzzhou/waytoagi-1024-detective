@@ -1,5 +1,6 @@
 import { z } from "zod";
 import { HttpUrlSchema, IdSchema, TextSchema, TimestampSchema } from "./common";
+import { DocumentReferenceSchema } from "./research";
 
 export const OriginalLocationSchema = z.strictObject({
   kind: z.enum(["TEXT", "COMMENT", "PAGE", "TIMECODE"]),
@@ -36,7 +37,8 @@ export const EvidenceSchema = z.strictObject({
   retrievedAt: TimestampSchema,
   readStatus: z.enum(["READ", "NOT_FETCHED", "FAILED", "RESTRICTED", "SNIPPET_ONLY"]),
   readError: TextSchema.nullable(),
-  contentHash: z.string().regex(/^[a-f0-9]{64}$/).nullable()
+  contentHash: z.string().regex(/^[a-f0-9]{64}$/).nullable(),
+  documentReference: DocumentReferenceSchema.optional()
 }).superRefine((value, ctx) => {
   if (value.readStatus === "READ") {
     if (!value.originalExcerpt || !value.originalLocation || !value.contentHash || value.readError) ctx.addIssue({ code: "custom", message: "READ requires excerpt, location, SHA-256 hash and no error" });

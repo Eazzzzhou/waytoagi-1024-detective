@@ -1,7 +1,7 @@
 import { z } from "zod";
 import { ApiErrorResponseSchema, type ApiErrorResponse } from "../../contracts";
 import { IdempotencyConflictError, classifyFailure } from "../queue/errors";
-import { StoredDataError } from "../storage/errors";
+import { ResourceNotFoundError, StoredDataError } from "../storage/errors";
 
 export const JSON_HEADERS = { "Cache-Control": "no-store", "X-Content-Type-Options": "nosniff" };
 export class HttpError extends Error {
@@ -10,6 +10,7 @@ export class HttpError extends Error {
 export function apiFailure(error: unknown): Response {
   let failure: HttpError;
   if (error instanceof HttpError) failure = error;
+  else if (error instanceof ResourceNotFoundError) failure = new HttpError(404, "NOT_FOUND", "未找到此调查范围内的资源。");
   else if (error instanceof IdempotencyConflictError) failure = new HttpError(409, "CONFLICT", error.detail.message);
   else if (error instanceof z.ZodError || error instanceof StoredDataError) failure = new HttpError(500, "INVALID_STORED_DATA", "数据库内容未通过契约校验，无法安全显示。");
   else {

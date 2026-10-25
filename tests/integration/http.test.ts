@@ -34,6 +34,7 @@ beforeEach(async () => {
 
 describe("HTTP handlers against real PostgreSQL", () => {
   it("accepts a real submission, preserves its status/error through Worker execution and a fresh API instance", async () => {
+    vi.stubEnv("MODEL_API_KEY", "");
     const { investigationId } = await create();
     expect((await detail(investigationId)).investigation.status).toBe("PENDING");
     expect(await new WorkerRunner(queue, investigationHandler, "http-real-worker", {}, () => undefined).processOne()).toBe(true);
@@ -42,6 +43,7 @@ describe("HTTP handlers against real PostgreSQL", () => {
     const result = InvestigationDetailSchema.parse(await response.json());
     expect(result.investigation.status).toBe("FAILED");
     expect(result.investigation.error).toMatchObject({ code: "PROVIDER_NOT_CONFIGURED" });
+    expect(result.identityConfirmation).toBeNull();
     expect(result.retry.allowed).toBe(false);
     expect(response.headers.get("Cache-Control")).toBe("no-store");
     const text = JSON.stringify(result);
@@ -108,6 +110,19 @@ describe("HTTP handlers against real PostgreSQL", () => {
     expect((await api.identity(request("/identity", { identity: {}, expectedAttemptCount: 1 }), investigationId)).status).toBe(400);
     const identity = { name: "Fixture", officialWebsite: "https://example.com", version: null, plan: null, confirmationStatus: "CONFIRMED", confirmationBasis: [{ url: "https://example.com", excerpt: "Fixture", retrievedAt: new Date().toISOString(), reason: "Fixture" }] };
     expect((await api.identity(request("/identity", { identity, expectedAttemptCount: 1 }), investigationId)).status).toBe(409);
+  });
+
+  it("resumes a real waiting job from one short clarification without asking for research evidence", async () => {
+    const { investigationId } = await create();
+    const lease = (await queue.claim("clarification-http-worker"))!;
+    const identity = { name: "Ambiguous fixture", officialWebsite: null, version: null, plan: null, confirmationStatus: "NEEDS_CONFIRMATION" as const, confirmationBasis: [] };
+    await queue.awaitConfirmation(lease, { identity, reason: "指应用还是同名公司？" });
+    const response = await api.identity(request("/identity", { expectedAttemptCount: 1, identity: { ...identity, confirmationStatus: "UNRESOLVED", userClarification: "应用" } }), investigationId);
+    expect(response.status).toBe(202);
+    const resumed = await queue.loadTask((await queue.claim("resumed-worker"))!);
+    expect(resumed.confirmedIdentity?.userClarification).toBe("应用");
+    expect(resumed.confirmedIdentity?.officialWebsite).toBeNull();
+    expect(resumed.confirmedIdentity?.confirmationBasis).toEqual([]);
   });
 
   it("limits manual retry, rejects concurrent/stale requests, and retains attempts and failure counters", async () => {

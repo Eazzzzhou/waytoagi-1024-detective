@@ -13,6 +13,7 @@ import { WorkerRunner } from "../../src/worker/runner";
 import { investigationHandler } from "../../src/server/investigation/handler";
 import { AcceptedInvestigationSchema, InvestigationDetailSchema, SnapshotResponseSchema } from "../../src/contracts";
 
+process.env.MODEL_API_KEY = ""; // Explicit unavailable-service control, no external calls during isolated UI QA.
 const database = await createQueueTestDatabase();
 const queue = new PostgresInvestigationQueue(database.db, { maxAttempts: 1 });
 const submitted = async (question: string) => queue.enqueue({ question, idempotencyKey: randomUUID() });
@@ -37,6 +38,7 @@ const retryJob = await submitted("隔离浏览器测试：有限手动重试");
 await queue.fail((await queue.claim("browser-qa-fixture"))!, { code: "PROVIDER_FAILED", message: "隔离测试的可重试错误，未调用外部提供方。", retryable: true });
 
 const controller = new AbortController();
+const autoStop = process.env.BROWSER_QA_DURATION_MS ? setTimeout(() => controller.abort(), Number(process.env.BROWSER_QA_DURATION_MS)) : undefined;
 const child = spawn(process.execPath, ["node_modules/next/dist/bin/next", "start", "--hostname", "127.0.0.1", "--port", "3100"], {
   env: { ...process.env, DATABASE_URL: database.connectionString }, stdio: ["ignore", "pipe", "pipe"], windowsHide: true
 });
@@ -66,11 +68,11 @@ try {
   let failed = false;
   for (let attempt = 0; attempt < 100 && !failed; attempt++) {
     const detail = InvestigationDetailSchema.parse(await (await fetch(`${base}/api/investigations/${created.investigationId}`)).json());
-    failed = detail.investigation.status === "FAILED";
-    if (failed) assert.equal(detail.investigation.error?.code, "PROVIDER_NOT_CONFIGURED");
+    failed = detail.investigation.status === "SUCCEEDED";
+    if (failed) assert.equal(detail.investigation.error, null);
     else await delay(50);
   }
-  assert(failed, "Worker did not record unavailable provider error");
+  assert(failed, "Worker did not publish honest unavailable-service gaps");
   const persisted = SnapshotResponseSchema.parse(await (await fetch(`${base}/api/snapshots/${snapshot.id}`)).json());
   assert.equal(persisted.snapshot.id, snapshot.id);
   const links = {
@@ -82,6 +84,7 @@ try {
   console.log(JSON.stringify({ event: "browser_qa.ready", networkAssertions: "passed", ...links }));
   if (!controller.signal.aborted) await new Promise<void>((resolve) => controller.signal.addEventListener("abort", () => resolve(), { once: true }));
 } finally {
+  clearTimeout(autoStop);
   controller.abort();
   await worker;
   if (child.exitCode === null && child.signalCode === null) { const exited = once(child, "exit"); child.kill(); await exited; }

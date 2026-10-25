@@ -6,7 +6,7 @@ owner: "乙"
 created_at: "2026-10-24T22:47:37+08:00"
 updated_at: "2026-10-24T22:52:18+08:00"
 status:
-  material: "待人工核实"
+  material: "人工已确认"
   system: "未运行"
   review: "未复核"
 question_sha256: "a00babf0802eba93d6957cfbd35ec3e3eb99157812df749dc69042e0d411b99d"
@@ -17,11 +17,11 @@ snapshot_version: null
 
 # C-01 · GitHub Copilot Free 50 chat requests 说法来源关系
 
-> 材料状态：待人工核实 · 系统状态：未运行 · 复核状态：未复核
+> 材料状态：人工已确认 · 系统状态：未运行 · 复核状态：未复核
 >
 > 本文件记录真实来源、原文、翻译、引用关系和证据缺口，不记录人工参考答案。参考判断在 `reference.md`，独立复核在 `review.md`。
 >
-> **当前不是人工金标准。** 所有结论待实际核查者确认；系统提供方未接入，未提交调查，无调查 ID 或快照 ID。
+> **当前材料/参考已由乙（本对话用户）确认通过，保留已列未知。** 确认依据与范围见 reference.md §8；系统仍未运行，独立复核未完成。
 
 ## 1. 案例标识
 
@@ -31,7 +31,7 @@ snapshot_version: null
 | 类型 | C | 来源关系、转载与证据不足 |
 | 当前组织 | 乙丙 | 材料、关系、交付完整性；历史owner原值保留 |
 | 创建／更新时间 | 2026-10-24T22:47:37+08:00 / 2026-10-24T22:52:18+08:00 | Asia/Shanghai |
-| 材料状态 | 待人工核实 | 已有真实材料与参考草稿；未经实际核查者确认 |
+| 材料状态 | 人工已确认 | 用户确认当前辅助修订版本，保留已列未知；详见 reference.md §8 |
 | 系统状态 | 未运行 | 正式提供方未接入，见 §12 |
 | 复核状态 | 未复核 | 实际独立复核尚未完成 |
 
@@ -82,7 +82,7 @@ snapshot_version: null
 | 研究结束 | 2026-10-24T22:47:37+08:00 | 本次检索结束 |
 | 事实基准日 | 2026-10-24 | 结论依据材料截止到该日 |
 | 事实适用起 | 2024-12-18 | 2024 公告的发布日期 |
-| 事实适用止 | `null` | 2024 说法之后何时改变未确定；当前文档已改为 AI credits |
+| 事实适用止 | `null` | 2024 说法之后何时改变未确定；当前摘录提到 AI credits；是否替代固定次数未知 |
 | 适用依据 | 2024 公告、VS Code 公告、2026 当前文档 | 见 §7 |
 | 时区 | Asia/Shanghai（显示） | 存储用含偏移 ISO 8601 |
 
@@ -109,7 +109,7 @@ snapshot_version: null
 
 ### 5.3 类型特有门槛
 
-- C：至少三条可定位说法；至少一组同源关系；独立来源按源头计；一手来源已尝试定位。本案例有 9 个 URL、6 个 50 说法页面、1 个官方源头组；独立第一手 0。
+- C：至少三条可定位说法；至少一组同源关系；独立来源按源头计；一手来源已尝试定位。本案例有 9 个已读 URL、6 个 50 说法页面；E1–E9 为 1 个已知官方发布／派生组，YixScout 上游 UNKNOWN；本次取得的独立第一手验证为 0。
 
 ## 6. 检索记录
 
@@ -181,7 +181,7 @@ snapshot_version: null
 |---|---|---|---|---|
 | E1–E3 | null | SHARED_ORIGIN | github-official-launch | GitHub Changelog 与 VS Code Blog 是同一发布方、同一天、同一发布事件；不能当两个独立来源 |
 | E4–E5 | https://github.blog/news-insights/product-news/github-copilot-in-vscode-free/ | SHARED_ORIGIN | github-official-launch | SD Times 明确引用 GitHub CEO 的 post；二次改写 |
-| E6–E9 | https://code.visualstudio.com/blogs/2024/12/18/free-github-copilot | SHARED_ORIGIN | vscode-blog-translations | 同标题、同作者、同日期、同段落结构的简体/繁体中文翻译；不是独立来源 |
+| E6–E9 | https://code.visualstudio.com/blogs/2024/12/18/free-github-copilot | SHARED_ORIGIN | github-official-launch | 同标题、同作者、同日期、同段落结构的简体/繁体中文翻译；不是独立来源 |
 | E10–E11 | null | UNKNOWN | null | 声称 2026-07-11 对照 GitHub 官方定价页，但未给页面快照；无法确认当时页面；不计独立来源 |
 | E12–E16 | null | SHARED_ORIGIN | github-official-current | 同一发布方 GitHub 的当前文档；官方基线，不是独立第三方 |
 
@@ -191,10 +191,10 @@ snapshot_version: null
 |---|---|---|
 | URL 总数 | 9 | GitHub Changelog、VS Code Blog、SD Times、js.cn、com.tw、YixScout、GitHub Plans、Billing、Legacy |
 | “50 chat”说法页面数 | 6 | E1–E11 来自 6 个页面（官方 2 + SD Times + 2 翻译 + YixScout） |
-| 已识别源头组数 | 2 | github-official-launch、vscode-blog-translations；另 1 个 UNKNOWN（YixScout） |
+| 已识别源头组数（50 说法） | 1 | github-official-launch，含 SD Times 与翻译派生；YixScout 为 UNKNOWN，不归并 |
 | 独立第三方第一手来源数 | 0 | 没有找到独立测试 50 chat 配额的第一手材料 |
 | 独立第三方第一手 2,000 completions 测试 | 0 | 只有官方公告及其派生 |
-| 同源组 | 2 + 1 UNKNOWN | 官方发布组、翻译组、YixScout 未知 |
+| 全部证据的分组 | 2 个已知组 + UNKNOWN | 发布及其派生 github-official-launch；当前文档 github-official-current；YixScout 上游未知；不是独立支持总数 |
 | 开发者群体共识 | 不适用 | 本案例不是观点调查；没有代表样本 |
 
 ### 7.5 来源关系表
@@ -227,6 +227,58 @@ flowchart LR
 
 > 实线 = 原文明确引用/翻译关系；虚线 = 同一发布方、同一发布事件或时间关系，不是引用。YixScout 的具体上游页面在 2026-07-11 的版本未取得，因此只画“引用 GitHub 页面”，不把它接到某个具体 2026 文档。
 
+### 7.7 模型辅助联网核查标注
+
+> 本轮直接获取时间：2026-10-25T13:48:20+08:00（各 URL 的精确时间见保存清单）。Codex 已看参考，属于非盲模型辅助核查；人工状态及署名保持待确认。历史 §7.1/§7.2 的获取时间、原句、hash 不覆盖。
+> 原句匹配仅表示空白归一化后在本次解析正文找到，语义/定位意见另列；不表示独立实测、人工通过或 D1 验收通过。网页搜索工具可能返回缓存，以下“直接”专指本机公开 GET。
+
+本轮历史证据直接匹配 **14/16**。标记说明：原句匹配＝可先看对应结论；定位需修正＝按本表新定位复找；待复查＝不能视为本轮逐字核实。
+
+| E-ID | 原始网址 | 本轮标记 | 对应结论与阅读提示 |
+|---|---|---|---|
+| E1 | [来源](https://github.blog/changelog/2024-12-18-announcing-github-copilot-free/) | 原句匹配 | 2024 公告首段；历史套餐声明，不直接证明当前套餐。 |
+| E2 | [来源](https://code.visualstudio.com/blogs/2024/12/18/free-github-copilot) | 原句匹配 | VS Code 公告额度段；与 E1 同一发布事件。 |
+| E3 | [来源](https://code.visualstudio.com/blogs/2024/12/18/free-github-copilot) | 原句匹配 | 同段 chat 数值；同页摘录不增加来源数。 |
+| E4 | [来源](https://sdtimes.com/ai/github-copilot-free-launches-to-expand-reach-of-platform-to-all-developers/) | 原句匹配 | SD Times 数字段；转述官方，不是实测。 |
+| E5 | [来源](https://sdtimes.com/ai/github-copilot-free-launches-to-expand-reach-of-platform-to-all-developers/) | 原句匹配且链接已核 | 已检查 post 的 href 并打开 GitHub CEO 公告；确认官方上游。 |
+| E6 | [来源](https://vscode.js.cn/blogs/2024/12/18/free-github-copilot) | 原句匹配 | 简体翻译额度段与英文结构对应；不算独立验证。 |
+| E7 | [来源](https://vscode.js.cn/blogs/2024/12/18/free-github-copilot) | 原句匹配 | 同一简体页面，同源；只核对翻译含义。 |
+| E8 | [来源](https://vscode.com.tw/blogs/2024/12/18/free-github-copilot) | 待复查：直接读取 429 | 网页缓存返回另一版繁体措辞，未复现本轮直接 HTML；历史原句/hash 不覆盖。 |
+| E9 | [来源](https://vscode.com.tw/blogs/2024/12/18/free-github-copilot) | 待复查：直接读取 429 | 缓存的 50 数字一致，但完整句与历史摘录不同；不能写逐字匹配。 |
+| E10 | [来源](https://yixscout.com/zh/resources/columns/github-copilot-pricing-free) | 原句匹配但上游未证实 | 文章确实写含 Edits；不能因此证明官方在其标注日期也这样写。 |
+| E11 | [来源](https://yixscout.com/zh/resources/columns/github-copilot-pricing-free) | 原句匹配但只是自称核验 | 页面未给当时官方快照；UNKNOWN 保留。 |
+| E12 | [来源](https://docs.github.com/en/copilot/get-started/plans) | 原句匹配 | 当前 Plans 的 Inline suggestions 段；支持当前 2,000 补全。 |
+| E13 | [来源](https://docs.github.com/en/copilot/get-started/plans) | 原句匹配 | AI credits allowance 段；未明确固定 50 及其与 credits 关系。 |
+| E14 | [来源](https://docs.github.com/en/copilot/concepts/billing-and-usage/individuals/billing) | 原句匹配 | Billing 的 How do AI credits work；不自动推定取消次数上限。 |
+| E15 | [来源](https://docs.github.com/en/copilot/concepts/billing-and-usage/individuals/billing) | 原句匹配 | Billing 同节；补全与 Chat 计量不可混同。 |
+| E16 | [来源](https://docs.github.com/en/copilot/reference/copilot-billing/request-based-billing-legacy/copilot-requests) | 原句匹配 | 顶部 Important 仅限特定 Pro/Pro+ 年付旧计费；不能用于 Free。 |
+
+**本轮新增取得的依据（模型整理，待人工确认）**
+
+| E-ID | URL | 新摘录 | 定位／范围 | 获取时间 | 本轮 HTML SHA-256 |
+|---|---|---|---|---|---|
+| E17 | [来源](https://www.c114.com.cn/ai/5339/a1280355.html) | IT之家 | 标题下署名还列故渊、页面显示 2024/12/19 09:45（未注明时区）；正文自称引用 GitHub 博文，未提供可定位的 IT之家 原文链接。 | 2026-10-25T13:48:18+08:00 | `dda832313af0551d81c0d9c90d8fde66c675d4bbf6490eaa0a93d4528ceddf12` |
+| E18 | [来源](https://www.c114.com.cn/ai/5339/a1280355.html) | 以及 50 次聊天信息 | 正文 开发者通过 GitHub Copilot Free 免费订阅 段，前文还列每月 2000 次；这是转述，未给账户测试。GB2312 声明，按 GB18030 解码保存。 | 2026-10-25T13:48:18+08:00 | `dda832313af0551d81c0d9c90d8fde66c675d4bbf6490eaa0a93d4528ceddf12` |
+
+**保存依据**
+
+公开响应原始字节和解析文本保存在本机忽略目录 `.cache/d1/network-check-2026-10-25/`；[本轮获取清单](../../../.cache/d1/network-check-2026-10-25/manifest.json)含每个 URL 的时间、状态、保存路径、新 hash，以及修改前 case/reference/review hash。此本机保存不随 Git 交付，P-07 仍未关闭。外站可能动态变化，整页新旧 hash 不同不能单独证明原句改变。
+
+| URL | 本次直接获取 | 保存字节 SHA-256 | 本机原始响应 |
+|---|---|---|---|
+| [来源](https://code.visualstudio.com/blogs/2024/12/18/free-github-copilot) | 2026-10-25T13:48:18+08:00；HTTP 200 | `7bbcf5e35e4751d2a12f2eb71e4714b319ef4b8a8d4e1eff19e5842b8b3c0a7a` | [HTML](../../../.cache/d1/network-check-2026-10-25/fb5b9a92c96b7f9c.html) |
+| [来源](https://docs.github.com/en/copilot/concepts/billing-and-usage/individuals/billing) | 2026-10-25T13:48:17+08:00；HTTP 200 | `82731d546cf898308e7cf83c7e376d41f729ee20adf9c685cfbc4d11416af454` | [HTML](../../../.cache/d1/network-check-2026-10-25/672bd48f791c7327.html) |
+| [来源](https://docs.github.com/en/copilot/get-started/plans) | 2026-10-25T13:48:18+08:00；HTTP 200 | `cb6109e259062cda3215ef47114b6a4d1704c9314e59e6b952f40160a7359a23` | [HTML](../../../.cache/d1/network-check-2026-10-25/13864e35ed1f02d1.html) |
+| [来源](https://docs.github.com/en/copilot/reference/copilot-billing/request-based-billing-legacy/copilot-requests) | 2026-10-25T13:48:17+08:00；HTTP 200 | `c5599178aa7c51501f7c320349893ee0bc1c8a4481ec818a3b4ad3aa284d5593` | [HTML](../../../.cache/d1/network-check-2026-10-25/758a0ba1c6bed07a.html) |
+| [来源](https://github.blog/changelog/2024-12-18-announcing-github-copilot-free/) | 2026-10-25T13:48:18+08:00；HTTP 200 | `3bcdd320436f96d8d5460340a72c3d29bbd2718a54048ea287d8fbd3d2041e4d` | [HTML](../../../.cache/d1/network-check-2026-10-25/34810fa45f363ffa.html) |
+| [来源](https://sdtimes.com/ai/github-copilot-free-launches-to-expand-reach-of-platform-to-all-developers/) | 2026-10-25T13:48:20+08:00；HTTP 200 | `09becfe8367754e49317815efb4158e9bdd2ce4900d2e55f1a0676d9c7b9af1b` | [HTML](../../../.cache/d1/network-check-2026-10-25/4caab37976e75430.html) |
+| [来源](https://vscode.com.tw/blogs/2024/12/18/free-github-copilot) | 2026-10-25T13:48:18+08:00；HTTP Error 429: Too Many Requests | 无新响应正文 | 未保存成功正文 |
+| [来源](https://vscode.js.cn/blogs/2024/12/18/free-github-copilot) | 2026-10-25T13:48:19+08:00；HTTP 200 | `3ce79de4e860a69e70106ef2784368bbe4541a49731081ea0f82d2404ad19c9f` | [HTML](../../../.cache/d1/network-check-2026-10-25/0c562f2169fb37b1.html) |
+| [来源](https://www.c114.com.cn/ai/5339/a1280355.html) | 2026-10-25T13:48:18+08:00；HTTP 200 | `dda832313af0551d81c0d9c90d8fde66c675d4bbf6490eaa0a93d4528ceddf12` | [HTML](../../../.cache/d1/network-check-2026-10-25/8b057b761513b615.html) |
+| [来源](https://yixscout.com/zh/resources/columns/github-copilot-pricing-free) | 2026-10-25T13:48:19+08:00；HTTP 200 | `5d9501d951c49f6cc8207be7ff8a00fefae42fb603a55f32669fbf4e9815e9c0` | [HTML](../../../.cache/d1/network-check-2026-10-25/ab903497e48e001d.html) |
+
+繁体补充：网页搜索服务返回的缓存（抓取标签为约 4 个月前）在开头额度段显示“透過”及“自動補全”等另一版措辞；数字仍为 2,000/50，但 E8/E9 历史完整原句不能据此标本轮匹配。当前直接 GET 429，不绕过限流。C114 先经网页工具遇解码错误，后公开直接 GET 200；按 HTML 声明解码后看到正文，并非绕过 403。
+
 ## 8. 主张与证据关系
 
 ### 8.1 主张
@@ -239,11 +291,11 @@ flowchart LR
 | C4 | vscode.js.cn 与 vscode.com.tw 是 VS Code Blog 的中文翻译/镜像，不是独立来源。 | FACT | SUPPORTED | E6–E9 同标题、同作者、同日期、同结构；E2–E3 英文原文。 | 2024-12-18 翻译 | Q2、Q3 |
 | C5 | YixScout 2026-07-11 仍重复 2,000/50，并把它写成“含 Copilot Edits”；它没有独立测试 chat 配额。 | FACT | SUPPORTED | E10、E11；文章自己说对照 GitHub 页；无 chat 测试。 | 2026-07-11 | Q2、Q3、Q5 |
 | C6 | 2026-10-24 当前 GitHub Docs 只明确 2,000 completions + AI credits allowance，没有列出固定 50 chat requests。 | FACT | SUPPORTED | E12–E15 当前文档；E16 legacy 只限 Pro/Pro+。 | 2026-10-24 current docs | Q2、Q6 |
-| C7 | “Copilot Free 当前仍固定包含 50 chat requests/month”在 2026 是否成立，证据不足/存在冲突。 | FACT | DISPUTED | E10/E11 说 50；E12–E15 当前官方说 AI credits、未列 50；无独立测试。 | 2026 current Free | Q6 |
-| C8 | 多个页面重复 50 说法，构成多个独立来源证实。 | FACT | REFUTED | E1–E11 全部可追到同一官方发布或翻译/改写；独立第一手 0。 | 50 claim；2024–2026 | Q4、Q6 |
+| C7 | “Copilot Free 当前仍固定包含 50 chat requests/month”在 2026 是否成立，证据不足；未列出不能证明不存在。 | FACT | INSUFFICIENT | E10/E11 说 50；E12–E15 当前官方说 AI credits、未列 50；无独立测试。 | 2026 current Free | Q6 |
+| C8 | 多个页面重复 50 说法，构成多个独立来源证实。 | FACT | INSUFFICIENT | E1–E9 的已识别链同属官方发布／翻译／改写；E10–E11 为 UNKNOWN，不能推定同源或计作独立支持。 | 50 claim；2024–2026 | Q4、Q6 |
 | C9 | 2,000 completions/month 仍有当前官方支持。 | FACT | SUPPORTED | E12、E15 当前官方；E1/E2 原始。 | current Free；completions | Q6 |
-| C10 | 2,000 completions/month 有多个独立来源分别证实。 | FACT | REFUTED | E1–E15 同一官方源头/派生；独立第三方 0。 | 2,000 claim | Q4、Q6 |
-| C11 | YixScout 把 50 chat requests 扩写为“含 Copilot Edits”，超出 2024 官方原文的明确表述。 | FACT | SUPPORTED | E10 vs E1/E2；官方原文只说 50 chat messages/requests，未在该句写“含 Copilot Edits”。 | 2026 二次转写 | Q5 |
+| C10 | 2,000 completions/month 有多个独立来源分别证实。 | FACT | INSUFFICIENT | E1–E9、E12–E15 为已识别官方／派生；E10–E11 上游未知；本次未取得独立第一手验证。 | 2,000 claim | Q4、Q6 |
+| C11 | YixScout 的“含 Copilot Edits”扩大了 2024 官方实际套餐范围。 | FACT | INSUFFICIENT | 本轮语义复查：E10 与旧摘句措辞不同，但 GitHub 2024 同文已提 Copilot Edits/多文件编辑；缺明确计数范围说明，不能仅凭摘句差异判扩写不实。 | 2026 二次转写 | Q5 |
 | C12 | 没有找到独立第一手测试 50 chat 配额；C114/IT之家 403 未读取。 | FACT | INSUFFICIENT | 本次检索未找到；R11 403；不能补造。 | 本次检索范围 | Q4、Q6 |
 | C13 | 多个 URL 重复同一说法不等于多个独立来源证实同一事实。 | FACT | SUPPORTED | 来源关系表：6 个 50 页面 → 1 个官方发布组 + 1 个 UNKNOWN。 | 方法论结论 | Q4、Q6 |
 
@@ -258,8 +310,8 @@ flowchart LR
 | C5 | E10、E11 | SUPPORTS | 2026 文章重复 50 并称已核验 |
 | C6 | E12–E15 | SUPPORTS | 当前文档 2000 + AI credits，无固定 50 |
 | C7 | E10、E11 | CONTEXT | 2026 二手说 50 |
-| C7 | E12–E15 | CONTEXT | 当前官方未列 50，改为 AI credits |
-| C8 | E1–E11 | CONTEXT | 同源/派生链；不是独立证实 |
+| C7 | E12–E15 | CONTEXT | 当前官方摘录提到 AI credits、未列 50；不证明固定次数已取消 |
+| C8 | E1–E11 | CONTEXT | E1–E9 已知派生；E10–E11 UNKNOWN；不构成多个独立证实 |
 | C9 | E12、E15 | SUPPORTS | 当前官方 2000 completions |
 | C10 | E1–E15 | CONTEXT | 同一官方源头/派生，独立第三方 0 |
 | C11 | E10 | SUPPORTS | 二次文章加“含 Copilot Edits” |
@@ -273,19 +325,19 @@ flowchart LR
 
 | X-ID | 涉及主张 | 证据（≥2） | 冲突描述（双方、条件） | 处理结果 |
 |---|---|---|---|---|
-| X1 | C6、C7 | E10/E11 对 E12–E15 | 2026-07-11 二手文章说 Free 有 50 chat；2026-10-24 当前官方 Docs 说 AI credits，未列固定 50 | 保留为当前口径冲突；当前官方 Docs 是更新后的基线；YixScout 的具体上游页面未取得，不能判谁对；需官方澄清 |
-| X2 | C1、C2、C6 | E1/E2 对 E12–E15 | 2024-12-18 官方明确 50；2026 当前官方改为 AI credits、未列 50 | 时间/版本差异，不是同一时点矛盾；50 说法适用于 2024 公告，不应直接外推到 2026 |
-| X3 | C5、C11 | E10 对 E1/E2 | YixScout 把 50 写成“含 Copilot Edits”；2024 官方原句只说 50 chat messages/requests | 二次转写增加范围；不能当官方原文；保留为改写差异 |
-| X4 | C8、C10 | E1–E11 | 多个 URL 重复 50/2,000，但都可追到同一官方发布 | 不是独立来源冲突；是“重复 vs 独立”的计数问题；独立第三方 0 |
+| X1 | C6、C7 | E10/E11 对 E12–E15 | 2026-07-11 二手文章说 Free 有 50 chat；2026-10-24 当前官方 Docs 说 AI credits，未列固定 50 | 保留为口径差异／证据缺口；未列固定 50 不等于否定 50，AI credits 与请求上限可能并存；上游与适用条件待核实，不据此认定直接事实冲突 |
+| X2 | C1、C2、C6 | E1/E2 对 E12–E15 | 2024-12-18 官方明确 50；2026 当前官方摘录提 AI credits、未列 50 | 时间／范围差异，不是同一时点矛盾；未列出不证明已替代，2024 公告不能直接外推到 2026 |
+| X3 | C5、C11 | E10 对 E1/E2 | YixScout 把 50 写成“含 Copilot Edits”；2024 官方原句只说 50 chat messages/requests | 摘句措辞不同；官方同文亦提 Edits，不据此认定实际范围扩大 |
+| X4 | C8、C10 | E1–E11 | E1–E9 有官方发布／翻译／改写链；E10–E11 的具体上游仍未知 | 不是事实冲突；重复不能累加支持，UNKNOWN 不归并；本次未取得独立第一手验证 |
 
-> 本案例的“真实冲突”不是“Copilot Free 有没有 50”这一点本身，而是 **2024 官方说法 vs 2026 当前官方口径**、以及 **2026 二手文章 vs 当前 Docs**。重复页面不构成独立证实。
+> 这里保留来源措辞、时间与范围差异，不把“当前摘录未列 50”视为反驳或已证实的事实冲突；是否替代固定次数仍未知。E10–E11 上游 UNKNOWN，不计独立支持，也不归入已确认同源链。
 
 ## 10. 缺口
 
 | G-ID | 涉及主张 | kind | 描述 | searchScope |
 |---|---|---|---|---|
 | G1 | C12 | INSUFFICIENT_EVIDENCE | 没有独立第一手测试 50 chat 配额；未登录、未绕过限制，无法做账户实测 | GitHub 官方、SD Times、翻译、YixScout；2026-10-24 |
-| G2 | C7 | INSUFFICIENT_EVIDENCE | 2024 的 50 说法何时被 AI credits 取代，未有官方生效日/变更说明 | GitHub Changelog、Docs；2026-10-24 |
+| G2 | C7 | INSUFFICIENT_EVIDENCE | 2024 的 50 说法与 AI credits 的关系；是否及何时发生替代，未有可定位的官方说明 | GitHub Changelog、Docs；2026-10-24 |
 | G3 | C12 | READ_FAILED | C114/IT之家页面 403，未能读取；疑似中文转载链无法核实 | https://www.c114.com.cn/ai/5339/a1280355.html；2026-10-24；HTTP 403 |
 | G4 | C5、C11 | INSUFFICIENT_EVIDENCE | YixScout 声称 2026-07-11 对照 GitHub 官方页，但未给页面快照；当前页面已不同 | YixScout、GitHub pages；2026-10-24 |
 | G5 | C4 | IDENTITY_UNCLEAR | 中文翻译的译者未署名；无法确认两站是否同一译者/镜像，但上游明确是 VS Code Blog | vscode.js.cn、vscode.com.tw；2026-10-24 |
@@ -352,13 +404,13 @@ system_inputs:
 
 ## 14. 阻断性错误自检
 
-> 这是材料自检，不是实际独立复核。
+> 以下为历史材料自检，不是本轮通过结论；后续修正和关闭条件见[案例状态](../../D1-状态与验收记录.md)。
 
 | 阻断 ID | 是否成立 | 依据 |
 |---|---|---|
 | X1 虚构／不可定位引用 | 未发现 | E1–E16 均有 URL、原句、定位、hash；C114 403 未计入 |
 | X2 错误证据关联 | 未发现 | 来源关系逐条列明；翻译/引用/同发布方分开 |
-| X3 证据不足却断言 | 未发现 | C7/C12 标 DISPUTED/INSUFFICIENT；未写“当前 50 确定” |
+| X3 证据不足却断言 | 未发现 | C7/C12 均标 INSUFFICIENT；未写“当前 50 确定” |
 | X4 同源转载当独立 | 未发现 | E1–E9 同源；E10/E11 UNKNOWN；独立第三方 0 |
 | X5 官方宣称／benchmark 当独立实测 | 未发现 | 官方公告标 OFFICIAL_CLAIM；没有 benchmark |
 | X6 读取失败写成没有讨论 | 未发现 | C114 403 保留为 READ_FAILED |
@@ -374,3 +426,6 @@ system_inputs:
 | 日期 | 变更 | 变更人 |
 |---|---|---|
 | 2026-10-24 | 创建 C-01；记录 Copilot Free 50 chat 说法的官方源头、引用、翻译、2026 二手复述、当前 Docs 与系统阻塞 | 乙 |
+| 2026-10-25 | Codex 非盲复查：收窄 C7/C8/C10，保留 UNKNOWN 和 403；统一已知来源分组；未将“未列 50”判为不存在或直接反驳 | Codex（模型协助） |
+| 2026-10-25 | 新增模型辅助联网核查标注、新取得依据和范围修正；未代签人工、未运行正式调查，旧 runs 保留 | Codex（模型辅助、非盲） |
+| 2026-10-25 | 用户明确确认当前材料/参考通过；同步材料状态；系统和复核保持实际未完成状态 | 乙确认；Codex 代录 |
