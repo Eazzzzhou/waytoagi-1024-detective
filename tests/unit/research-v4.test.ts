@@ -45,6 +45,28 @@ describe("v4 research controls (synthetic only, not external-service acceptance)
     await verifier.assess(snapshot, snapshot.evidence, new AbortController().signal, 1000);
     expect(snapshot.claims[0]!.verificationStatus).toBe("SUPPORTED");
   });
+  it("publishes verified claims when every synthesized paragraph fails semantic re-check", async () => {
+    const snapshot = makeSnapshot(), audit = research(), claim = snapshot.claims[0]!, evidence = snapshot.evidence[0]!;
+    claim.verificationStatus = "SUPPORTED";
+    claim.verificationReason = "Synthetic exact support";
+    snapshot.relations = [{ claimId: claim.id, evidenceId: evidence.id, relation: "SUPPORTS", reason: "Synthetic exact proof" }];
+    const model: ModelProvider = {
+      config: () => ({ provider: "synthetic", model: "synthetic", promptVersion: "test", temperature: null, generatedAt: new Date().toISOString() }),
+      async generate<T>(request: ModelRequest<T>) {
+        const input = JSON.parse(request.prompt.split("\n").at(-1)!);
+        if (request.purpose === "v4-direct-answer-and-analysis") return request.outputSchema.parse({ paragraphs: [{ text: "Synthetic synthesized prose.", claimIds: [claim.id], kind: "ANSWER", recommendation: false }] });
+        if (request.purpose === "v4-synthesis-semantic-check") return request.outputSchema.parse({ items: input.map((item: { index: number }) => ({ index: item.index, supported: false, reason: "Synthetic semantic rejection" })) });
+        throw new Error(`Unexpected synthetic purpose ${request.purpose}`);
+      }
+    };
+    const answer = await createResearchVerifier(model, audit).answer(snapshot, new AbortController().signal, 5000);
+    expect(answer.body).toContain("Synthetic test claim.");
+    expect(answer.body).not.toContain("尚未形成可通过原句复核的直接结论");
+    expect(answer.citations).toHaveLength(1);
+    const citation = answer.citations[0]!;
+    const quote = citation.quotes?.[0];
+    expect(quote?.originalExcerpt).toBe(evidence.originalExcerpt);
+  });
   it("quotes a table's column header and requested row as separate saved ranges", () => {
     const text = "Model Alpha Beta\nContext 42K 84K\nPrice 1 2";
     const rows = text.split("\n").map((line, index) => {

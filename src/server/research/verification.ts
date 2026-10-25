@@ -185,6 +185,17 @@ export function createResearchVerifier(model: ModelProvider, audit: ResearchAudi
       body.push(`${paragraph.text} ${marker}`);
       citations.push({ marker, claimIds: [...new Set(paragraph.claimIds)], evidenceIds: ids, quotes: ids.map(id => ({ evidenceId: id, originalExcerpt: snapshot.evidence.find(item => item.id === id)!.originalExcerpt! })) });
     }
+    if (!body.length && resolved.length) {
+      // Synthesis can fail semantic re-check while individual claims were already verified.
+      // Publish those claims verbatim-in-substance with their exact quotes instead of an empty answer.
+      for (const claim of resolved.slice(0, 12)) {
+        const ids = paragraphEvidence([claim.id]);
+        if (!ids.length) continue;
+        const marker = `[${citations.length + 1}]`;
+        body.push(`${claim.statement}${claim.scope ? `（${claim.scope}）` : ""} ${marker}`);
+        citations.push({ marker, claimIds: [claim.id], evidenceIds: ids, quotes: ids.map(id => ({ evidenceId: id, originalExcerpt: snapshot.evidence.find(item => item.id === id)!.originalExcerpt! })) });
+      }
+    }
     if (!body.length) body.push("本次尚未形成可通过原句复核的直接结论；已取得的来源与片段仍可查看。");
     const missing = audit.tasks.filter((task, index) => index > 0 && task.required && task.status !== "SUPPORTED");
     if (missing.length) body.push(`尚未核实：${missing.map(task => task.label).join("；")}。具体查阅范围与访问限制见来源记录。`);
